@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-10-31-moridinamael-2e6c7f8e",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N11461-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T22:30:27+00:00",
+ "neighbours": [
+  {
+   "unit": "L23/N11461",
+   "pole": "-",
+   "label": "The first token of a new sibling line inside an indented Python block: a def after a decorator or comment, or a quoted entry in an indented list or dict",
+   "roles": ["reads bonsai1/L20/N11755+"],
+   "fire": [
+    "class A:\n    x = 1\n\n    def run(self):\n        return self.x",
+    "@classmethod\n    def make(cls, x):\n        return cls(x)",
+    "class Cache:\n    @property\n    def size(self):\n        return len(self._data)",
+    "class Parser:\n    # parse a single line\n    def parse_line(self, line):\n        return line.split(',')",
+    "CONFIG = {\n    \"host\": \"localhost\",\n    \"port\": 8080,\n    \"debug\": True,\n}",
+    "FRUITS = [\n    \"apple\",\n    \"banana\",\n    \"cherry\",\n]",
+    "class Service:\n    @staticmethod\n    def ping():\n        return 'pong'",
+    "# helper for retries\n    def backoff(self, attempt):\n        return 2 ** attempt"
+   ],
+   "quiet": [
+    "The size property of the cache simply returns the length of its stored data.",
+    "def parse_line(line): return line.split(',')",
+    "CONFIG = {\"host\": \"localhost\", \"port\": 8080, \"debug\": True}",
+    "FRUITS = [\"apple\", \"banana\", \"cherry\"]",
+    "The service exposes a static ping method that always answers pong.",
+    "Retries use exponential backoff, doubling the wait after each failed attempt.",
+    "install_requires = ['requests>=2.0', 'numpy', 'pandas']",
+    "Only logged-in users can load the home page view in this app."
+   ]
+  }
+ ],
+ "predictions": "Unsure: short snippets read low on this pole (my probes gave 0.1-0.5 of max); expect a weak median and a possible fail.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+    "look",
+    "probe",
+    "step-down",
+    "inverse-gmoo"
+  ]
+ }
+}
