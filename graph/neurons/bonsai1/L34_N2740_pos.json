@@ -4,10 +4,10 @@
  "layer": 34,
  "index": 2740,
  "pole": "+",
- "label": "Fires on a stray word-initial 'g' piece (' g', '/g') when the tokenizer splits a word right after its first letter g, mostly Spanish words and slash-joined English words; not on g-words that are whole tokens or split into larger pieces, nor on 'g' for grams.",
+ "label": "Two parts: (1) a Latin-script word-onset fragment of g where the word continues in the next token (' g' in Spanish gobierno/gremial, '/g' in parents/guardians, ' Ng', ' Og', ' antig', ' eng'); (2) Spanish/Portuguese masculine singular articles ' el', ' del', ' un', ' um'. Not whole-token g-words (great, gift, gente), not 'g' for grams, not Arabic or Cyrillic g, not feminine/plural articles (la, una, los) and not English or German articles.",
  "short": "split-off word-initial 'g' piece",
  "kind": "spelling unit",
- "status": "partial",
+ "status": "held",
  "depth": "quick",
  "tests": [
   {
@@ -131,6 +131,128 @@
     "near_misses_at_0.3": 1
    },
    "contribution": "2026-10-22-ChopinDavid-e8858ddb"
+  },
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N2740_pos/2026-10-31-moridinamael-3459adfd.tests.json",
+   "prereg_commit": "673227db5",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.124,
+     "peak": " gobierno"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.73,
+     "peak": "/g"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.386,
+     "peak": " un"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.341,
+     "peak": " um"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.725,
+     "peak": " g"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.158,
+     "peak": " Ng"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.596,
+     "peak": " antig"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.394,
+     "peak": " um"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.077,
+     "peak": "ó"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.127,
+     "peak": " con"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.143,
+     "peak": " no"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.175,
+     "peak": "ga"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " results"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.08,
+     "peak": " muy"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.39,
+    "near_misses_at_0.3": 0
+   },
+   "contribution": "2026-10-31-moridinamael-3459adfd"
   }
  ],
  "label_history": [
@@ -138,34 +260,37 @@
    "2026-10-22-ChopinDavid-e8858ddb",
    "Fires on a stray word-initial 'g' piece (' g', '/g') when the tokenizer splits a word right after its first letter g, mostly Spanish words and slash-joined English words; not on g-words that are whole tokens or split into larger pieces, nor on 'g' for grams.",
    "held"
+  ],
+  [
+   "2026-10-31-moridinamael-3459adfd",
+   "Two parts: (1) a Latin-script word-onset fragment of g where the word continues in the next token (' g' in Spanish gobierno/gremial, '/g' in parents/guardians, ' Ng', ' Og', ' antig', ' eng'); (2) Spanish/Portuguese masculine singular articles ' el', ' del', ' un', ' um'. Not whole-token g-words (great, gift, gente), not 'g' for grams, not Arabic or Cyrillic g, not feminine/plural articles (la, una, los) and not English or German articles.",
+   "held"
   ]
  ],
  "examples": [],
  "evidence": [],
  "roles": [],
  "contributors": [
-  "ChopinDavid"
+  "ChopinDavid",
+  "moridinamael"
  ],
  "contributions": [
-  "2026-10-22-ChopinDavid-e8858ddb"
+  "2026-10-22-ChopinDavid-e8858ddb",
+  "2026-10-31-moridinamael-3459adfd"
  ],
  "qc": {
   "confirm": 0,
   "dispute": 0,
-  "refine": 0
+  "refine": 1
  },
  "replications": [],
- "coverage": {
-  "value": 0.1163,
-  "method": "estimated from the label's quoted words (token measure)",
-  "strong": 1891
- },
+ "coverage": null,
  "scrutiny": {
-  "level": 1,
-  "name": "tested",
-  "test_rounds": 1,
-  "sentences": 16,
-  "contributors": 1,
-  "qc": 0
+  "level": 3,
+  "name": "checked",
+  "test_rounds": 2,
+  "sentences": 32,
+  "contributors": 2,
+  "qc": 1
  }
 }
