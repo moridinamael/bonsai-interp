@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-10-31-moridinamael-3459adfd",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L34/N2740+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T22:06:36+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "Fires on a stray word-initial 'g' piece (' g', '/g') when the tokenizer splits a word right after its first letter g, mostly Spanish words and slash-joined English words; not on g-words that are whole tokens or split into larger pieces, nor on 'g' for grams."
+ },
+ "trigger": {
+  "tokens": [" el", " del", " un", " um", " g", "/g", " Ng", " Og", " antig", " eng"]
+ },
+ "neighbours": [
+  {
+   "unit": "L34/N2740",
+   "pole": "+",
+   "label": "Two parts: (1) a Latin-script word-onset fragment of g where the word continues in the next token (' g' in Spanish gobierno/gremial, '/g' in parents/guardians, ' Ng', ' Og', ' antig', ' eng'); (2) Spanish/Portuguese masculine singular articles ' el', ' del', ' un', ' um'. Not whole-token g-words (great, gift, gente), not 'g' for grams, not Arabic or Cyrillic g, not feminine/plural articles (la, una, los) and not English or German articles.",
+   "fire": [
+    "El gobierno anunció nuevas medidas económicas ayer por la tarde.",
+    "Please have your parents/guardians sign the permission slip before Friday.",
+    "Fui a la tienda con un amigo del barrio.",
+    "Comprei um carro novo no fim de semana.",
+    "El sindicato gremial convocó una huelga para el lunes.",
+    "Dr. Ng presented the new results at the conference.",
+    "Visitamos el antiguo convento del pueblo.",
+    "O presidente fez um discurso longo na reunião."
+   ],
+   "quiet": [
+    "La administración anunció nuevas medidas económicas ayer por la tarde.",
+    "Please have your parents sign the permission slip before Friday.",
+    "Fui a la tienda con una amiga de la ciudad.",
+    "Comprei uma casa nova no fim de semana.",
+    "Las trabajadoras convocaron una huelga para mañana.",
+    "The great results were presented at the conference.",
+    "Add 200 g of flour to the bowl and stir slowly.",
+    "La gente estaba muy contenta con la noticia."
+   ]
+  }
+ ],
+ "predictions": "Expect most Spanish/Portuguese masculine-article sentences to fire (~0.3-0.5); g-fragment ones less certain (Dr. Ng, antiguo may be weak). Near misses mostly quiet; 'La gente' / 'La administracion' could leak slightly.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "neighbors",
+   "inverse-gmoo"
+  ]
+ }
+}
