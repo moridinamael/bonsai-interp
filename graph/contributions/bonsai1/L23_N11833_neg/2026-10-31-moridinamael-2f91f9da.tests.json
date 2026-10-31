@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-10-31-moridinamael-2f91f9da",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L23/N11833-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T23:58:46+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "In multi-line code, a variable name that is already defined (a function argument or an earlier assignment) when it is reused, strongest when it begins a line (before +=, [..], .method()); first-time definitions, literals, undefined names and prose stay near floor."
+ },
+ "neighbours": [
+  {
+   "unit": "L23/N11833",
+   "pole": "-",
+   "label": "In multi-line code, a name that opens a statement line as an already-defined object about to be worked on (before .method(), [..] or +=); the same name mid-line is weaker, and calls, keywords, new assignments, undefined names, one-line snippets and prose stay near floor.",
+   "fire": [
+    "items = []\nitems.append(5)",
+    "counts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1",
+    "total = 0\nfor x in nums:\n    total += x",
+    "df = pd.read_csv('data.csv')\ndf.dropna(inplace=True)",
+    "const list = [];\nlist.push(item);",
+    "parser = argparse.ArgumentParser()\nparser.add_argument('--path')",
+    "grid = [[0] * 3 for _ in range(3)]\ngrid[1][2] = 7",
+    "let msg = '';\nmsg += 'hello';"
+   ],
+   "quiet": [
+    "items = []\nprint(len(items))",
+    "counts = {}\nfor w in words:\n    print(w)",
+    "total = 0\nfor x in nums:\n    result = x * 2",
+    "df = pd.read_csv('data.csv')\nreturn df",
+    "const list = [];\nif (ready) { render(); }",
+    "parser.add_argument('--path')",
+    "The grid object stores a three-by-three array of zeros.",
+    "let msg = '';\nlet greeting = 'hello';"
+   ]
+  }
+ ],
+ "predictions": "Blind test on short 2-line snippets; the neuron reads low on short code, so I expect the median fire sentence to be marginal (around 0.2) and AUROC near the 0.90 bar. Maybe 5-6/8 fire, 1 near miss leaking.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "neighbors"
+  ]
+ }
+}
