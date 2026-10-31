@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-10-31-moridinamael-f56a09e4",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L23/N11833-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T20:21:44+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "In multi-line code, a variable name that is already defined (a function argument or an earlier assignment) when it is reused, strongest when it begins a line (before +=, [..], .method()); first-time definitions, literals, undefined names and prose stay near floor."
+ },
+ "neighbours": [
+  {
+   "unit": "L23/N11833",
+   "pole": "-",
+   "label": "In multi-line code, a variable name that is already defined (a function argument or an earlier assignment) when it is reused, strongest when it begins a line (before +=, [..], .method()); first-time definitions, literals, undefined names and prose stay near floor.",
+   "fire": [
+    "def add_item(items, x):\n    items.append(x)\n    return items",
+    "total = 0\nfor n in nums:\n    total += n",
+    "def scale(vec, k):\n    vec[0] *= k\n    vec[1] *= k",
+    "counts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1",
+    "def clean(text):\n    text = text.strip()\n    return text.lower()",
+    "buf = []\nbuf.append('header')\nbuf.extend(rows)",
+    "let score = 0;\nscore += bonus;\nconsole.log(score);",
+    "def update(config, key, value):\n    config[key] = value\n    config.save()"
+   ],
+   "quiet": [
+    "def add_item(x):\n    items = [x]\n    return []",
+    "total = 0\nfor n in range(10):\n    print('done')",
+    "def scale(k):\n    out = [1, 2]\n    return None",
+    "counts = {}\nwords = ['a', 'b']\nlimit = 5",
+    "def clean():\n    text = 'hello'\n    return 'ok'",
+    "buf = []\nrows = [1, 2, 3]\nheader = 'name'",
+    "let score = 0;\nlet bonus = 10;\nconst max = 100;",
+    "The update function takes a config, a key and a value, then saves the configuration to disk."
+   ]
+  }
+ ],
+ "predictions": "Fire should beat quiet, but short snippets read low on this neuron and quiet items such as 'def add_item(x)' (parameter use) may leak; expect borderline, 5-6/8 fire.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo"
+  ]
+ }
+}
