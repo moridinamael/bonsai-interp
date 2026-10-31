@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-10-31-moridinamael-31d48347",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L34/N2384-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T20:44:55+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "a lone capital letter (' L', ' S') that opens a capitalized word split into pieces, typically a brand or product name"
+ },
+ "trigger": {
+  "tokens": [" S", " L", " B", " V"]
+ },
+ "neighbours": [
+  {
+   "unit": "L34/N2384",
+   "pole": "-",
+   "label": "a lone space-prefixed capital S, L, B or V (not other letters) standing as its own piece mid-text, opening a chopped-up name or serving as an initial",
+   "fire": [
+    "The theorem was first proved by S. Ramanujan in a letter sent from Madras.",
+    "Every organ student eventually practices the fugues of J. S. Bach.",
+    "The report was signed simply \"L. Moreau, Director of Research.\"",
+    "Our new neighbor introduced himself as B. Okonkwo from the third floor.",
+    "The novel's narrator, known only as V., never reveals her full name.",
+    "The team's goalkeeper, Szczepkowski, saved two penalties in the final.",
+    "Captain Lwazi Ndlovu led the expedition across the dunes.",
+    "Researchers in Bjørnstad's lab mapped the fjord's sediment layers."
+   ],
+   "quiet": [
+    "The theorem was first proved by Ramanujan in a letter sent from Madras.",
+    "Every organ student eventually practices the fugues of Bach.",
+    "The report was signed simply \"M. Moreau, Director of Research.\"",
+    "Our new neighbor introduced himself as K. Okonkwo from the third floor.",
+    "The novel's narrator, known only as J., never reveals her full name.",
+    "The team's goalkeeper, Martin, saved two penalties in the final.",
+    "Captain Thomas Ndlovu led the expedition across the dunes.",
+    "Researchers in Professor Hansen's lab mapped the fjord's sediment layers."
+   ]
+  }
+ ],
+ "predictions": "Initials S./L./B./V. should fire moderately (0.15-0.3); split-name fire items less sure; expect 5-6 of 8 fire items to clear 0.2, near misses quiet. Likely hold, but medium confidence.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
