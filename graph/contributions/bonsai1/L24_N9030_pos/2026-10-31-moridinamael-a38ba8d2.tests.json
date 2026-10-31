@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-10-31-moridinamael-a38ba8d2",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9030+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T23:11:31+00:00",
+ "roles": ["reads bonsai1/L23/N11833-"],
+ "neighbours": [
+  {
+   "unit": "L24/N9030",
+   "pole": "+",
+   "label": "In multi-line Python code, the dot after ] or ) (items[0]. / config[name]. / fromarray(img).) right before a method call on that value; one-line snippets and prose stay near floor",
+   "fire": [
+    "def first_name(items):\n    if not items:\n        return None\n    return items[0].strip()",
+    "import numpy as np\nfrom PIL import Image\n\nimg = np.zeros((64, 64, 3), dtype=np.uint8)\nImage.fromarray(img).save(\"out.png\")",
+    "for name in config:\n    value = config[name].lower()\n    print(name, value)",
+    "with open(path) as f:\n    lines = f.readlines()\nheader = lines[0].split(\",\")",
+    "df = pd.read_csv(\"sales.csv\")\nresult = df.groupby(\"region\").sum()\nprint(result)",
+    "class Cache:\n    def get(self, key):\n        entry = self.store[key]\n        return entry[\"value\"].copy()",
+    "response = requests.get(url, timeout=10)\ndata = response.json()\nusers = data[\"users\"]\nfirst = users[0].get(\"email\")",
+    "def load(path):\n    text = Path(path).read_text()\n    return text"
+   ],
+   "quiet": [
+    "def first_name(items):\n    if not items:\n        return None\n    name = items[0]\n    return name",
+    "import numpy as np\nfrom PIL import Image\n\nimg = np.zeros((64, 64, 3), dtype=np.uint8)\nsave_image(img, \"out.png\")",
+    "for name in config:\n    value = config[name]\n    print(name, value)",
+    "header = lines[0].split(\",\")",
+    "To read the header, take the first element of the list and then call split on it with a comma.",
+    "class Cache:\n    def get(self, key):\n        entry = self.store[key]\n        return entry",
+    "response = requests.get(url, timeout=10)\ndata = response.json\nusers = data\nprint(users)",
+    "Image.fromarray(img).save(\"out.png\")"
+   ]
+  }
+ ],
+ "predictions": "Unsure: fire items with ].  and ). before a method should be moderate; the one-line near misses should be near floor.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "look",
+   "card",
+   "probe",
+   "step-down",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
