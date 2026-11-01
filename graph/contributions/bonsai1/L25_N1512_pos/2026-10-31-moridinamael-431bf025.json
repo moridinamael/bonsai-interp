@@ -1,0 +1,167 @@
+{
+ "id": "2026-10-31-moridinamael-431bf025",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N1512+",
+ "contributor": "moridinamael",
+ "created": "2026-11-01T01:44:11+00:00",
+ "recipe": {
+  "toolchain_commit": "3c9d45847",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N1512_pos/2026-10-31-moridinamael-431bf025.tests.json"
+ },
+ "label": "In multi-line code, an already-defined object's name opening a line, right before its method call (msg.attach(...), el.classList.add(...)); not as an argument or return value",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N1512_pos/2026-10-31-moridinamael-431bf025.tests.json",
+   "prereg_commit": "3c9d45847",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 0,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.224,
+     "peak": "msg"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.069,
+     "peak": "el"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.016,
+     "peak": "_item"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.012,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.02,
+     "peak": ".getContext"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.027,
+     "peak": "server"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.019,
+     "peak": "sb"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.02,
+     "peak": " conn"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.852,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.134,
+     "peak": "send"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": "toggle"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " items"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": ".getContext"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": "_with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "(sb"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.672,
+    "median_fire": 0.02,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "bank-solo",
+   "blind-room",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "step-down"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "3c9d45847",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "roles": [
+  "reads bonsai1/L24/N9030+"
+ ],
+ "edges": [
+  {
+   "from": "bonsai1/L24/N9030+",
+   "to": "bonsai1/L25/N1512+",
+   "kind": "feeds",
+   "weight": 0.13,
+   "method": "single-unit zero ablation, downstream (play step --down)"
+  }
+ ],
+ "notes": "Cold label from top examples and probes. Failed: the fire items were 2-3 line snippets and read near floor (median 0.02), while in longer multi-line code line-start object names reached ~0.23-0.32 of max in my probes. The solver found a prose leak ('numbers of electrons', 0.85) that the label does not cover; the pole has a prose family (' on' after click, ' of' after numbers, ' its') beside the code family. Mixed pole; this reader's label has little to do with N9030's dot-before-method label except in code."
+}
