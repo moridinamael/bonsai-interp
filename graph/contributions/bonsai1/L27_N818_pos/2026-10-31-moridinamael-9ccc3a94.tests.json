@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-10-31-moridinamael-9ccc3a94",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N818+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T00:40:05+00:00",
+ "roles": ["reads bonsai1/L24/N9030+"],
+ "neighbours": [
+  {
+   "unit": "L27/N818",
+   "pole": "+",
+   "label": "In multi-line Python code, the last token of a variable name that was assigned earlier (zip_file, msg, f), when it is reused, typically right before a .method() call; undefined names and prose stay near floor",
+   "fire": [
+    "zip_file = zipfile.ZipFile(path, 'r')\nzip_file.extractall(target_dir)",
+    "msg = EmailMessage()\nmsg['Subject'] = 'Weekly report'\nmsg.set_content(body)",
+    "f = open('data.txt')\nlines = f.readlines()\nf.close()",
+    "conn = sqlite3.connect('app.db')\ncursor = conn.cursor()\nconn.commit()",
+    "names = []\nfor row in rows:\n    names.append(row['name'])",
+    "session = requests.Session()\nresp = session.get(url, timeout=10)",
+    "df = pd.read_csv('sales.csv')\ndf.dropna(inplace=True)\nprint(df.head())",
+    "logger = logging.getLogger(__name__)\nif error:\n    logger.warning('retrying request')"
+   ],
+   "quiet": [
+    "import zipfile\nwith zipfile.ZipFile(path, 'r') as archive_handle_unused: pass",
+    "We attached the zip file to the message and sent it to the team this morning.",
+    "def load():\n    return open('data.txt').readlines()",
+    "Remember to commit the connection before closing the cursor, the docs say.",
+    "for row in rows:\n    print(row['name'])",
+    "resp = requests.get(url, timeout=10)",
+    "The sales spreadsheet had a few empty rows, so we cleaned them by hand.",
+    "import logging\nlogging.basicConfig(level=logging.INFO)"
+   ]
+  }
+ ],
+ "predictions": "Unsure: short snippets read weak on this pole; expect AUROC near 0.8-0.9 and a median fire score under 0.20 (fail likely on strength)",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "look",
+   "probe",
+   "step-down",
+   "inverse-gmoo",
+   "neighbors"
+  ]
+ }
+}
