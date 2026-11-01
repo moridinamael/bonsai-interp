@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-01-moridinamael-5b199be7",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L0/N4376+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T16:22:30+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "The chunk \"ass\" when the tokenizer cuts it off as its own piece: after a hyphen in compounds (Steam-Assisted, Quality-Assurance, power-assisted, self-assessment, lane-assist, character-assassination), at the start of names like Assam and Assassin's Creed, and the standalone word for a donkey. Quiet for ordinary whole words that merely contain the letters (assist, assess, assets, assignment, Assembly, class, glass, embassy, Massachusetts, unhyphenated \"Quality Assurance\") and for hyphen splits that give \"-as\" (machine-assembled). Weak (about 0.3-0.4) on short words ending in -ass (grass, bass, brass)."
+ },
+ "neighbours": [
+  {
+   "unit": "L0/N4376",
+   "pole": "+",
+   "label": "The chunk \"ass\" when the tokenizer leaves it standing alone as its own piece: after a hyphen (Steam-Assisted, Quality-Assurance, self-assessment), at the start of a split word (assent, assuring, lay assessor, Assam, Assagioli, French assister) and the animal \"ass\". Quiet for common whole words starting or ending with those letters (assume, assist, assess, class, glass, Massachusetts, unhyphenated Quality Assurance); weaker for rare whole words (assassin, Assad) and -ass endings (grass, bass).",
+   "fire": [
+    "The field uses Steam-Assisted Gravity Drainage to pull heavy oil out of the sands.",
+    "Our Quality-Assurance team signed off on the release late last night.",
+    "Each student filled in a self-assessment form before the review meeting.",
+    "The farmer loaded the sacks onto the back of his patient old ass.",
+    "After a long debate, the council finally gave its assent to the bridge plan.",
+    "She kept assuring the passengers that the delay would be short.",
+    "He served as a lay assessor at the employment tribunal for five years.",
+    "Tea grown in Assam has a strong, malty flavor that holds up well with milk."
+   ],
+   "quiet": [
+    "The field uses steam injection to pull heavy oil out of the sands.",
+    "Our Quality Assurance team signed off on the release late last night.",
+    "Each student had to assess their own work before the review meeting.",
+    "The farmer loaded the sacks onto the back of his patient old mule.",
+    "After a long debate, the council finally approved the bridge plan.",
+    "She kept telling the passengers that the delay would be short.",
+    "He served as a juror at the county court for five years.",
+    "Tea grown in Kenya has a strong, bright flavor that holds up well with milk."
+   ]
+  }
+ ],
+ "predictions": "Expect 7-8/8 fire (hyphen and split-piece cases), 0-1 near misses (unhyphenated Quality Assurance may reach ~0.2-0.3).",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo"
+  ]
+ }
+}
