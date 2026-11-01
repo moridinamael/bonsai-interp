@@ -1,0 +1,160 @@
+{
+ "id": "2026-10-31-lm1909-3b9da81d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N9881-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T17:39:23+00:00",
+ "recipe": {
+  "toolchain_commit": "4f0414a44",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N9881_neg/2026-10-31-lm1909-3b9da81d.tests.json"
+ },
+ "label": "the token ' better' (any case) or the piece ' best' (also inside 'bestow'): the comparative/superlative better/best",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N9881_neg/2026-10-31-lm1909-3b9da81d.tests.json",
+   "prereg_commit": "4f0414a44",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.219,
+     "peak": " better"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.554,
+     "peak": " better"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.182,
+     "peak": " best"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.077,
+     "peak": " better"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.496,
+     "peak": " better"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.282,
+     "peak": " best"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.145,
+     "peak": " better"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.333,
+     "peak": " better"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.143,
+     "peak": " good"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " worse"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.043,
+     "peak": " inferior"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " superior"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": " preferable"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " closer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.057,
+     "peak": " rather"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.307,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f0414a44",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "the word 'better' / 'best'",
+ "unit_kind": "lexical / token",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens are ' better' x24, ' Better' x4, ' best' x3. Probes showed ' better' fires in comparative and verb uses ('to better his record'), ' best' fires as a piece inside 'bestow', while good/worse/inferior/superior/preferable/more/less/rather/instead stay below 0.12. ' worse off' reached 0.359, so plain 'worse' is used as the near miss, not 'worse off'.",
+ "selection": "random draw (play draw --k 12 --seed 202610316)",
+ "trigger": {
+  "words": [
+   "better",
+   "best"
+  ]
+ }
+}
