@@ -4,10 +4,10 @@
  "layer": 24,
  "index": 1123,
  "pole": "-",
- "label": "a lone Cyrillic letter token ('в', 'д') right after a word-initial З/В that the tokenizer split off (З|в|он-, З|в|ук, З|д|ание, В|д|оль)",
+ "label": "the second consonant piece of a vowel-less word start that the tokenizer splits (Zv|, Zd|, Zh|v, XK, LF, RW), in Latin or Cyrillic",
  "short": "Cyrillic З|в split letter",
  "kind": "lexical",
- "status": "partial",
+ "status": "held",
  "depth": "quick",
  "tests": [
   {
@@ -131,6 +131,128 @@
     "near_misses_at_0.3": 0
    },
    "contribution": "2026-10-22-lm1909-e29c1b85"
+  },
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1123_neg/2026-11-01-moridinamael-3a0bcfcb.tests.json",
+   "prereg_commit": "0bedd7db2",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.397,
+     "peak": "von"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.419,
+     "peak": "dr"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.763,
+     "peak": "v"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.457,
+     "peak": " XK"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.196,
+     "peak": "FG"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.797,
+     "peak": " RW"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.756,
+     "peak": "д"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.183,
+     "peak": "вез"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "er"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " greeted"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "i"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " final"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "t"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " во"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.177,
+     "peak": "г"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.438,
+    "near_misses_at_0.3": 0
+   },
+   "contribution": "2026-11-01-moridinamael-3a0bcfcb"
   }
  ],
  "label_history": [
@@ -138,34 +260,37 @@
    "2026-10-22-lm1909-e29c1b85",
    "a lone Cyrillic letter token ('в', 'д') right after a word-initial З/В that the tokenizer split off (З|в|он-, З|в|ук, З|д|ание, В|д|оль)",
    "held"
+  ],
+  [
+   "2026-11-01-moridinamael-3a0bcfcb",
+   "the second consonant piece of a vowel-less word start that the tokenizer splits (Zv|, Zd|, Zh|v, XK, LF, RW), in Latin or Cyrillic",
+   "held"
   ]
  ],
  "examples": [],
  "evidence": [],
  "roles": [],
  "contributors": [
-  "lm1909"
+  "lm1909",
+  "moridinamael"
  ],
  "contributions": [
-  "2026-10-22-lm1909-e29c1b85"
+  "2026-10-22-lm1909-e29c1b85",
+  "2026-11-01-moridinamael-3a0bcfcb"
  ],
  "qc": {
   "confirm": 0,
   "dispute": 0,
-  "refine": 0
+  "refine": 1
  },
  "replications": [],
- "coverage": {
-  "value": 0.0635,
-  "method": "estimated from the label's quoted words (token measure)",
-  "strong": 1449
- },
+ "coverage": null,
  "scrutiny": {
-  "level": 1,
-  "name": "tested",
-  "test_rounds": 1,
-  "sentences": 16,
-  "contributors": 1,
-  "qc": 0
+  "level": 3,
+  "name": "checked",
+  "test_rounds": 2,
+  "sentences": 32,
+  "contributors": 2,
+  "qc": 1
  }
 }
