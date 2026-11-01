@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-01-moridinamael-b815b1e4",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L35/N3261+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T19:09:34+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "A bare word-onset token (' p' or Korean ' 프') that starts a word the tokenizer splits, ahead of the rest of the word"
+ },
+ "neighbours": [
+  {
+   "unit": "L35/N3261",
+   "pole": "+",
+   "label": "A word-initial piece ending in the letter p (' p', ' ap', ' rep', ' imp', ' cop', ' sup'; Korean ' 프') with the rest of the word still to come, mostly in Spanish, French or Korean text; not whole-token words like 'pan' and not mid-word pieces",
+   "fire": [
+    "Tenemos que aprovechar el buen tiempo antes de que llegue la lluvia.",
+    "La representación teatral de anoche duró casi tres horas.",
+    "Es imprescindible traer el pasaporte al aeropuerto.",
+    "Supongo que el tren llegará con retraso otra vez.",
+    "Il faut apprendre les verbes irréguliers avant l'examen.",
+    "Le technicien va supprimer les anciens fichiers du serveur.",
+    "Cette solution me paraît complètement impraticable.",
+    "Elle a recopié toute la lettre à la main."
+   ],
+   "quiet": [
+    "Tenemos que disfrutar el buen tiempo antes de que llegue la lluvia.",
+    "La función teatral de anoche duró casi tres horas.",
+    "Es necesario traer el documento al aeropuerto.",
+    "Creo que el tren llegará con retraso otra vez.",
+    "Il faut étudier les verbes irréguliers avant l'examen.",
+    "Le technicien va effacer les anciens fichiers du serveur.",
+    "Cette solution me semble complètement irréalisable.",
+    "Elle a écrit toute la lettre à la main."
+   ]
+  }
+ ],
+ "predictions": "Expect most fire items above 0.20 (rep/imp/ap pieces); some French fire items (apprendre, paraît) may be whole tokens and miss.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
