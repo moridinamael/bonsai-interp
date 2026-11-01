@@ -1,0 +1,154 @@
+{
+ "id": "2026-10-31-lm1909-9322439f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N1243-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T19:35:15+00:00",
+ "recipe": {
+  "toolchain_commit": "c65fcbe3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N1243_neg/2026-10-31-lm1909-9322439f.tests.json"
+ },
+ "label": "football match reports — team lineups, formations and in-game tactics (the - pole) — as against transfer news (the + pole side: 'move to', 'join', 'contract') and other sports",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N1243_neg/2026-10-31-lm1909-9322439f.tests.json",
+   "prereg_commit": "c65fcbe3d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.027,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.768,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.238,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.779,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.518,
+     "peak": " early"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.599,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.315,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.357,
+     "peak": " F"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " signed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.108,
+     "peak": " Italian"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " went"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.097,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": " thousand"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 2,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.683,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c65fcbe3d",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "football match-report language: lineups and formations ('back four', '(4-5-1): ...')",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card top-32 peak tokens of the - pole: ' P', ' of', ' their', ' the', 'onal' (zonal), ' specific' — all inside football match reports (zonal defending, 'back four', 'Everton (4-5-1): Howard; ...', 'Paddy McNair excelled at Stamford Bridge'); the + pole peaks on transfer language ('join', 'to', 'move', 'striker', 'score'). Probes: lineup/formation sentences 0.19-0.98 ('Everton (4-5-1): ...' 0.979, 'back four' 0.47-0.50, 'zonal defending' 0.21); transfer news 0.001-0.013; other sports 0.007-0.11. Context label, no token trigger declared.",
+ "selection": "random draw"
+}
