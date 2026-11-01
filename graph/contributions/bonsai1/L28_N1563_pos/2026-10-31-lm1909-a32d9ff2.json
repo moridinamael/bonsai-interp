@@ -1,0 +1,154 @@
+{
+ "id": "2026-10-31-lm1909-a32d9ff2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N1563+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T20:40:32+00:00",
+ "recipe": {
+  "toolchain_commit": "5ab60557b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N1563_pos/2026-10-31-lm1909-a32d9ff2.tests.json"
+ },
+ "label": "compound measurement unit symbols after a number in scientific/technical text (J.s, ohm.cm, lb-ft, ergs/cm^2/s, L/M/cm, W/m^2, Pa.s, Gy/h); the + pole peaks on unit pieces '/s', ' J', ' lb', '/M', 'ohm', 'Pa', as against the same numbers with the unit dropped (simple units like kg, hp, nm do not fire)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N1563_pos/2026-10-31-lm1909-a32d9ff2.tests.json",
+   "prereg_commit": "5ab60557b",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.849,
+     "peak": " J"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.136,
+     "peak": "m"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.233,
+     "peak": " lb"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.356,
+     "peak": "/cm"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.528,
+     "peak": "/M"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.105,
+     "peak": "/m"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.75,
+     "peak": " Pa"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.057,
+     "peak": "/h"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.072,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " flux"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": "pt"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " panel"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " viscosity"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " room"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.442,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5ab60557b",
+  "minutes": 2,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "compound unit symbols after measurements",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card top examples are physics/spec lines with compound units (J.s, ergs/cm^2/s, lb-ft, L/M/cm, ohm.cm). Probes: numbers followed by compound unit symbols fire 0.06-1.16 of max; the same numbers without the unit score <= 0.064; simple units (kg, hp, nm, T) score ~0.01.",
+ "selection": "random draw"
+}
