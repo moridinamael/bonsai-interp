@@ -1,0 +1,169 @@
+{
+ "id": "2026-11-01-moridinamael-ba1e3c83",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N5895+",
+ "contributor": "moridinamael",
+ "created": "2026-11-01T20:16:50+00:00",
+ "recipe": {
+  "toolchain_commit": "4ab6fc2c2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N5895_pos/2026-11-01-moridinamael-ba1e3c83.tests.json"
+ },
+ "label": "a piece inside a long word or identifier in Japanese, Korean, Chinese or code text; plain English prose stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N5895_pos/2026-11-01-moridinamael-ba1e3c83.tests.json",
+   "prereg_commit": "4ab6fc2c2",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.511,
+     "peak": "中央"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.496,
+     "peak": "任"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.371,
+     "peak": "国家"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.487,
+     "peak": "국"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.439,
+     "peak": "교육"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.304,
+     "peak": " Date"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.274,
+     "peak": "_portfolio"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.286,
+     "peak": "Response"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.145,
+     "peak": " central"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.233,
+     "peak": "De"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.196,
+     "peak": " very"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.121,
+     "peak": " intelligence"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.19,
+     "peak": " school"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.099,
+     "peak": " hour"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.12,
+     "peak": " savings"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.149,
+     "peak": " simply"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.405,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "step-down"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "4ab6fc2c2",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "short": "mid-word piece in CJK or code identifiers",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Held, but the test peaks were mostly on whole CJK words (e.g. 中央, 国家, 教育) and code pieces, so the held claim is really CJK/code text vs plain English prose, not a mid-word fragment mechanism; the pole is dense so coverage of strong activations is unmeasured. Cold label from the neuron's own top examples and probes only. Probes of repeated names (copy/echo idea) were not clean; solver found no leak; strongest bank text was a Korean Tripadvisor fragment (0.41) and a plain Japanese sentence (0.33). Feeder drop only 0.01.",
+ "roles": [
+  "reads bonsai1/L25/N9434+"
+ ],
+ "edges": [
+  {
+   "from": "bonsai1/L25/N9434+",
+   "to": "bonsai1/L35/N5895+",
+   "kind": "feeds",
+   "weight": 0.01,
+   "method": "single-unit zero ablation, downstream (play step --down)"
+  }
+ ]
+}
