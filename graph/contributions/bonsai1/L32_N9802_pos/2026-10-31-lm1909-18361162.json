@@ -1,0 +1,161 @@
+{
+ "id": "2026-10-31-lm1909-18361162",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9802+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T21:06:36+00:00",
+ "recipe": {
+  "toolchain_commit": "93f366233",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N9802_pos/2026-10-31-lm1909-18361162.tests.json"
+ },
+ "label": "privative/negative prefixes in hyphenated compounds: ' non-' (x14 in the top 32), ' anti-' (x6), ' post-' (x2) — non-employees, non-Muslim, anti-virus, post-war; the + pole peaks on the prefix piece itself",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N9802_pos/2026-10-31-lm1909-18361162.tests.json",
+   "prereg_commit": "93f366233",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.018,
+     "peak": " non"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.344,
+     "peak": " non"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.27,
+     "peak": " anti"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.06,
+     "peak": " post"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.049,
+     "peak": " non"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.27,
+     "peak": " anti"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.06,
+     "peak": " post"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.107,
+     "peak": " non"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " covers"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " welcomes"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.083,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "93f366233",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "non-/anti-/post- prefix compounds",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card: ' non' x14, ' anti' x6, ' post' x2, ' %' x3 in the top 32. Probes: sentences with non-/anti-/post- compounds fire 0.04-0.32 peaking on the prefix piece; the same topics without the prefix score <= 0.005.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   " non",
+   " anti",
+   " post"
+  ]
+ }
+}
