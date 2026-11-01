@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-01-moridinamael-3a0bcfcb",
+ "kind": "qc",
+ "neuron": "bonsai1/L24/N1123-",
+ "contributor": "moridinamael",
+ "created": "2026-11-01T23:22:14+00:00",
+ "recipe": {
+  "toolchain_commit": "0bedd7db2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N1123_neg/2026-11-01-moridinamael-3a0bcfcb.tests.json"
+ },
+ "label": "the second consonant piece of a vowel-less word start that the tokenizer splits (Zv|, Zd|, Zh|v, XK, LF, RW), in Latin or Cyrillic",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1123_neg/2026-11-01-moridinamael-3a0bcfcb.tests.json",
+   "prereg_commit": "0bedd7db2",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.397,
+     "peak": "von"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.419,
+     "peak": "dr"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.763,
+     "peak": "v"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.457,
+     "peak": " XK"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.196,
+     "peak": "FG"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.797,
+     "peak": " RW"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.756,
+     "peak": "д"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.183,
+     "peak": "вез"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "er"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " greeted"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "i"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " final"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "t"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " во"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.177,
+     "peak": "г"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.438,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "bank-solo",
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "second-round"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "0bedd7db2",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "a lone Cyrillic letter token ('в', 'д') right after a word-initial З/В that the tokenizer split off (З|в|он-, З|в|ук, З|д|ание, В|д|оль)"
+ }
+}
