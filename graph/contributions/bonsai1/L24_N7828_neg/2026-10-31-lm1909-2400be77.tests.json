@@ -1,0 +1,71 @@
+{
+ "contribution": "2026-10-31-lm1909-2400be77",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7828-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T19:54:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N7828",
+   "pole": "-",
+   "label": "community event and fair listings — sentences enumerating attractions ('food', 'raffles', 'face painting', 'vendors', 'bounce house', 'giveaways') — as against plain announcements of the same events without the attraction list",
+   "fire": [
+    "The block party will have face painting, a dunk tank, food trucks, music, and raffles for the kids.",
+    "This year's county fair features food booths, carnival rides, live bands, and a pie-eating contest.",
+    "Join us Saturday for food, games, a bounce house, raffles, and prize drawings at the school gym.",
+    "The street festival offers free food samples, live music, vendor booths, and activities for children.",
+    "There will be food and beverages, face painting, a photo booth, and giveaways at the grand opening.",
+    "The church picnic includes food, games, a raffle, and a bake sale on the lawn.",
+    "The summer concert series features food trucks, local bands, and a kids' zone with games.",
+    "The charity gala includes dinner, drinks, a silent auction, raffles, and live entertainment."
+   ],
+   "quiet": [
+    "The neighborhood meeting is scheduled for Thursday evening at the community center.",
+    "This year's harvest celebration will be held at the town square.",
+    "Join us Saturday at the school gym for the annual open house.",
+    "The market offers fresh produce, baked goods, and local crafts every weekend.",
+    "The store is having a grand opening with special discounts all week.",
+    "The church serves lunch after the Sunday service.",
+    "The concert hall hosts local bands every Friday night.",
+    "The gala raises money for the local food bank."
+   ]
+  }
+ ],
+ "predictions": "8/8 fire sentences (event attraction lists) peak at >= 0.20 of max; 0 near misses (plain event announcements) reach 0.30",
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "_screens_vocabulary": [
+   "atlas",
+   "bands",
+   "bank-solo",
+   "blind-room",
+   "card",
+   "coverage-round",
+   "disproof",
+   "held-out",
+   "induce",
+   "inverse-de",
+   "inverse-gmoo",
+   "look",
+   "neighbors",
+   "probe",
+   "quick-test",
+   "second-round",
+   "step-down",
+   "step-out",
+   "which"
+  ]
+ },
+ "short": "community event / fair listings (food, raffles, face painting, vendors, bounce house)",
+ "notes": "Card top-32 peak tokens of the - pole: ',' x6, ' food' x5, ' be', ' Food', ' available', ' have' — all inside community event listings (face painting, bounce house, food and beverages, raffles, vendors); the + pole peaks on numbers/Chinese/Russian list items. Probes: event-listing sentences 0.45-0.99 (median ~0.61); plain announcements and unrelated sentences 0.007-0.10. Context label, no token trigger declared.",
+ "unit_kind": "context",
+ "confidence": "high"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-10-31-lm1909-2400be77",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7828-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T19:56:29+00:00",
+ "recipe": {
+  "toolchain_commit": "03164a94c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N7828_neg/2026-10-31-lm1909-2400be77.tests.json"
+ },
+ "label": "community event and fair listings — sentences enumerating attractions ('food', 'raffles', 'face painting', 'vendors', 'bounce house', 'giveaways') — as against plain announcements of the same events without the attraction list",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N7828_neg/2026-10-31-lm1909-2400be77.tests.json",
+   "prereg_commit": "03164a94c",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.048,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.656,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.583,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.88,
+     "peak": " live"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.723,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.513,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.727,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.273,
+     "peak": " live"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.044,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.212,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.144,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.17,
+     "peak": " weekend"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.121,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.043,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": " bands"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.06,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.69,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "03164a94c",
+  "minutes": 2,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "community event / fair listings (food, raffles, face painting, vendors, bounce house)",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens of the - pole: ',' x6, ' food' x5, ' be', ' Food', ' available', ' have' — all inside community event listings (face painting, bounce house, food and beverages, raffles, vendors); the + pole peaks on numbers/Chinese/Russian list items. Probes: event-listing sentences 0.45-0.99 (median ~0.61); plain announcements and unrelated sentences 0.007-0.10. Context label, no token trigger declared.",
+ "selection": "random draw"
+}

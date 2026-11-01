@@ -1,0 +1,161 @@
+{
+ "id": "2026-10-31-lm1909-4918fbff",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N4709-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T19:56:25+00:00",
+ "recipe": {
+  "toolchain_commit": "03164a94c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N4709_neg/2026-10-31-lm1909-4918fbff.tests.json"
+ },
+ "label": "the corporate/organizational word family — 'corporate', 'organizational', 'Organization' (the - pole peaks on ' corporate' x5, 'izational', ' organizational', ' Organization') — as against plain business prose without those words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N4709_neg/2026-10-31-lm1909-4918fbff.tests.json",
+   "prereg_commit": "03164a94c",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.758,
+     "peak": " organizational"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.154,
+     "peak": " policy"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.546,
+     "peak": " organizational"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.088,
+     "peak": "Corporate"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.607,
+     "peak": " organizational"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.196,
+     "peak": "ing"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.453,
+     "peak": "izational"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.141,
+     "peak": " leadership"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.109,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.095,
+     "peak": " policy"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.098,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " reviewed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.032,
+     "peak": " survey"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.155,
+     "peak": "ing"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " affect"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.063,
+     "peak": " leadership"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.325,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "03164a94c",
+  "minutes": 2,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "corporate / organizational vocabulary ('corporate', 'organizational', 'Organization')",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens of the - pole: ' corporate' x5, 'izational' x2, ' organizational' x2, 'ational' x2, ' Organization' — all the corporate/organizational word family in business prose; the + pole peaks on HR/military staff text (' Naval', ' Staff', ' your', ' James'). Probes: sentences with organizational/corporate 0.16-1.20 (median ~0.55); same sentences without those words 0.01-0.52 (the 'management structure' variant leaks at 0.52, so near misses here avoid that word).",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "corporate",
+   "organizational",
+   "organization"
+  ]
+ }
+}
