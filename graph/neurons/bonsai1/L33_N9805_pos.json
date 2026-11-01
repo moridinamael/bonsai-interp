@@ -5,8 +5,8 @@
  "index": 9805,
  "pole": "+",
  "label": "Low-confidence guess: the nouns popcorn, balloon and compost (and similar household or party items) used before another noun ('a popcorn party', 'balloon releases', 'the compost bin'); other food or household nouns in the same frames stay lower.",
- "short": "popcorn / balloon / compost (guess)",
- "kind": "unclear",
+ "short": "attributive object/activity noun before another noun",
+ "kind": "contextual",
  "status": "held",
  "depth": "quick",
  "tests": [
@@ -131,6 +131,128 @@
     "near_misses_at_0.3": 1
    },
    "contribution": "2026-10-30-lm1909-4b1b07a4"
+  },
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N9805_pos/2026-10-31-lm1909-88f2c1f0.tests.json",
+   "prereg_commit": "a02ba6a85",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.421,
+     "peak": " coffee"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.174,
+     "peak": " sky"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.029,
+     "peak": " rake"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.211,
+     "peak": " water"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.041,
+     "peak": " lamp"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.08,
+     "peak": " fan"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.198,
+     "peak": " petrol"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.183,
+     "peak": "bell"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.213,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.083,
+     "peak": " lantern"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.079,
+     "peak": " rake"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.127,
+     "peak": " lamp"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.1,
+     "peak": " fan"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.047,
+     "peak": " mower"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.198,
+     "peak": " camera"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.586,
+    "median_fire": 0.178,
+    "near_misses_at_0.3": 0
+   },
+   "contribution": "2026-10-31-lm1909-88f2c1f0"
   }
  ],
  "label_history": [
@@ -138,6 +260,11 @@
    "2026-10-30-lm1909-4b1b07a4",
    "Low-confidence guess: the nouns popcorn, balloon and compost (and similar household or party items) used before another noun ('a popcorn party', 'balloon releases', 'the compost bin'); other food or household nouns in the same frames stay lower.",
    "held"
+  ],
+  [
+   "2026-10-31-lm1909-88f2c1f0",
+   "REFINE of the held list label: a concrete object or activity noun used attributively before another noun (noun-modifier compounds like 'popcorn machine', 'compost bin', 'vending machine', 'tape recorder'); the pole fires on the modifier noun itself, and plain adjectives in the same frames stay quiet. The old label (popcorn/balloon/compost household-or-party items only) is too narrow: probes show 'vending machine' fires 0.338, 'record player' 0.157, 'trash bin' 0.215.",
+   "failed"
   ]
  ],
  "examples": [],
@@ -147,21 +274,22 @@
   "lm1909"
  ],
  "contributions": [
-  "2026-10-30-lm1909-4b1b07a4"
+  "2026-10-30-lm1909-4b1b07a4",
+  "2026-10-31-lm1909-88f2c1f0"
  ],
  "qc": {
   "confirm": 0,
   "dispute": 0,
-  "refine": 0
+  "refine": 1
  },
  "replications": [],
  "coverage": null,
  "scrutiny": {
-  "level": 1,
-  "name": "tested",
-  "test_rounds": 1,
-  "sentences": 16,
+  "level": 2,
+  "name": "re-tested",
+  "test_rounds": 2,
+  "sentences": 32,
   "contributors": 1,
-  "qc": 0
+  "qc": 1
  }
 }
