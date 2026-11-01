@@ -4,10 +4,10 @@
  "layer": 0,
  "index": 3311,
  "pole": "+",
- "label": "Fires on the word piece 'ored' where it is its own token (lab+ored, flo+ored, ad+ored, sn+ored, mo+ored); quiet on -ored words that are single tokens (ignored, anchored, colored).",
+ "label": "Fires on a few split-off word pieces: 'ored' (lab+ored, arm+ored), 'nut' (chest+nut) and 'ark' (disemb+ark), when each is its own token; quiet on whole-token words like ignored, tailored, peanut, bookmark.",
  "short": "'ored' word piece",
  "kind": "lexical",
- "status": "partial",
+ "status": "held",
  "depth": "quick",
  "tests": [
   {
@@ -131,6 +131,128 @@
     "near_misses_at_0.3": 0
    },
    "contribution": "2026-10-22-ChopinDavid-2eaf4090"
+  },
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N3311_pos/2026-10-31-moridinamael-1cd3658a.tests.json",
+   "prereg_commit": "39c84f650",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.924,
+     "peak": "ored"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.213,
+     "peak": " armored"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.326,
+     "peak": "nuts"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.775,
+     "peak": "ark"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.92,
+     "peak": "ored"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.286,
+     "peak": " armored"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.638,
+     "peak": "nut"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.732,
+     "peak": "ark"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " slowly"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.41,
+     "peak": "engers"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " tailored"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": " village"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": " sea"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.685,
+    "near_misses_at_0.3": 1
+   },
+   "contribution": "2026-10-31-moridinamael-1cd3658a"
   }
  ],
  "label_history": [
@@ -138,34 +260,37 @@
    "2026-10-22-ChopinDavid-2eaf4090",
    "Fires on the word piece 'ored' where it is its own token (lab+ored, flo+ored, ad+ored, sn+ored, mo+ored); quiet on -ored words that are single tokens (ignored, anchored, colored).",
    "held"
+  ],
+  [
+   "2026-10-31-moridinamael-1cd3658a",
+   "Fires on a few split-off word pieces: 'ored' (lab+ored, arm+ored), 'nut' (chest+nut) and 'ark' (disemb+ark), when each is its own token; quiet on whole-token words like ignored, tailored, peanut, bookmark.",
+   "held"
   ]
  ],
  "examples": [],
  "evidence": [],
  "roles": [],
  "contributors": [
-  "ChopinDavid"
+  "ChopinDavid",
+  "moridinamael"
  ],
  "contributions": [
-  "2026-10-22-ChopinDavid-2eaf4090"
+  "2026-10-22-ChopinDavid-2eaf4090",
+  "2026-10-31-moridinamael-1cd3658a"
  ],
  "qc": {
   "confirm": 0,
   "dispute": 0,
-  "refine": 0
+  "refine": 1
  },
  "replications": [],
- "coverage": {
-  "value": 0.0482,
-  "method": "estimated from the label's quoted words (token measure)",
-  "strong": 2284
- },
+ "coverage": null,
  "scrutiny": {
-  "level": 1,
-  "name": "tested",
-  "test_rounds": 1,
-  "sentences": 16,
-  "contributors": 1,
-  "qc": 0
+  "level": 3,
+  "name": "checked",
+  "test_rounds": 2,
+  "sentences": 32,
+  "contributors": 2,
+  "qc": 1
  }
 }
