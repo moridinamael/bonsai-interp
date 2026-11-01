@@ -1,0 +1,77 @@
+{
+ "contribution": "2026-10-31-lm1909-84058c7d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8395+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T18:48:31+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N8395",
+   "pole": "+",
+   "label": "the conversion letter of an old-style Python %-format placeholder inside a code string ('%s', '%d', '%x' etc. after '%'), as against f-strings, .format, concatenation and prose",
+   "fire": [
+    "def show_user(acct):\n    print('user %s has %d points' % (acct.name, acct.score))\n    return True",
+    "for row in cursor:\n    sys.stdout.write('%s,%d,%s\\n' % (row.name, row.age, row.city))",
+    "try:\n    conn = connect(host)\nexcept Error as e:\n    print('connection failed: %s (%d)' % (e.msg, e.code))",
+    "def load(path):\n    with open(path) as fh:\n        data = fh.read()\n    print('read %d bytes from %s' % (len(data), path))",
+    "class Job:\n    def run(self):\n        print('job %s started on %s' % (self.name, self.host))\n        print('progress: %d%%' % self.pct)",
+    "if total > 0:\n    print('average %d over %d players: %s' % (avg, total, label))",
+    "msg = 'ticket %s assigned to %s after %d minutes' % (tid, owner, mins)\nlog.info(msg)",
+    "print('result: %s = %d (expected %s)' % (name, got, want))"
+   ],
+   "quiet": [
+    "def show_user(acct):\n    print(f'user {acct.name} has {acct.score} points')\n    return True",
+    "for row in cursor:\n    sys.stdout.write('{},{},{}\\n'.format(row.name, row.age, row.city))",
+    "try:\n    conn = connect(host)\nexcept Error as e:\n    print('connection failed:', e.msg, e.code)",
+    "def load(path):\n    with open(path) as fh:\n        data = fh.read()\n    print('read', len(data), 'bytes from', path)",
+    "class Job:\n    def run(self):\n        print('job', self.name, 'started on', self.host)\n        print('progress:', self.pct, '%')",
+    "if total > 0:\n    print('average', avg, 'over', total, 'players:', label)",
+    "msg = 'ticket ' + tid + ' assigned to ' + owner\nlog.info(msg)",
+    "print('done')"
+   ]
+  }
+ ],
+ "predictions": "8/8 fire snippets peak on the 's'/'d' after '%' at >= 0.20 of max; 0 near misses (f-string/.format/concat/plain print) reach 0.30",
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "_screens_vocabulary": [
+   "atlas",
+   "bands",
+   "bank-solo",
+   "blind-room",
+   "card",
+   "coverage-round",
+   "disproof",
+   "held-out",
+   "induce",
+   "inverse-de",
+   "inverse-gmoo",
+   "look",
+   "neighbors",
+   "probe",
+   "quick-test",
+   "second-round",
+   "step-down",
+   "step-out",
+   "which"
+  ]
+ },
+ "short": "Python %-format placeholder letter ('%s'/'%d') in code",
+ "trigger": {
+  "words": [
+   "%s",
+   "%d"
+  ]
+ },
+ "notes": "Card top-32 peak tokens: 's' x14, 'd' x11, 'i' x2, all inside Python %-format strings. Probes: multi-line code with %s/%d 0.15-0.82 (median ~0.45); code without %-format 0.000-0.037; prose containing '%s' 0.015. Code/repeat pole: fire items are multi-line passages with earlier context, per the stream tips.",
+ "unit_kind": "context",
+ "confidence": "high"
+}

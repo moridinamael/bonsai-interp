@@ -1,0 +1,80 @@
+{
+ "contribution": "2026-10-31-lm1909-c371306b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N8107-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T18:48:31+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N8107",
+   "pole": "-",
+   "label": "French prepositions — the - pole fires on 'dans' (strongest), 'avec', 'par', 'pour', 'de' in French text, as against English 'in/with/for' and French non-preposition words",
+   "fire": [
+    "Le rapport sera publié dans une revue scientifique à comité de lecture.",
+    "Nous avons passé la soirée dans un petit restaurant près de la gare.",
+    "Elle a garé sa voiture dans le parking souterrain du centre commercial.",
+    "Les enfants ont caché leurs jouets dans le coffre du grenier.",
+    "Il a rencontré sa future épouse dans un cours de danse à Lyon.",
+    "Le train s'arrête dans toutes les gares entre Paris et Marseille.",
+    "Elle discute de ce projet avec le directeur depuis le printemps.",
+    "Nous avons lu ce passage dans le chapitre consacré à l'histoire romaine."
+   ],
+   "quiet": [
+    "Le rapport sera publié à la fin du trimestre.",
+    "Nous avons passé la soirée chez un ami près de la gare.",
+    "Elle a garé sa voiture devant le centre commercial.",
+    "Les enfants ont caché leurs jouets sous le lit du grenier.",
+    "Elle travaille à Lyon depuis le printemps.",
+    "Nous avons évoqué ce projet pendant la réunion de lundi.",
+    "He parked his car in the underground garage of the mall.",
+    "The children hid their toys in the attic chest."
+   ]
+  }
+ ],
+ "predictions": "8/8 fire sentences peak on the French preposition at >= 0.20 of max; at most 1 near miss (French without the preposition, or English 'in') reaches 0.30",
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "_screens_vocabulary": [
+   "atlas",
+   "bands",
+   "bank-solo",
+   "blind-room",
+   "card",
+   "coverage-round",
+   "disproof",
+   "held-out",
+   "induce",
+   "inverse-de",
+   "inverse-gmoo",
+   "look",
+   "neighbors",
+   "probe",
+   "quick-test",
+   "second-round",
+   "step-down",
+   "step-out",
+   "which"
+  ]
+ },
+ "short": "French prepositions (dans, avec, par, pour, de)",
+ "trigger": {
+  "words": [
+   "dans",
+   "avec",
+   "par",
+   "pour",
+   "de"
+  ]
+ },
+ "notes": "Card top-32 peak tokens of the - pole: ' dans' x9, ' avec' x4, ' par' x2, ' de' x2, ' pour' x2, 'çu' x2 — all French prepositions; the + pole peaks on ' avoir'/' été'/'’ai' (French verb forms). Probes: 'dans' 0.15-0.54, 'avec' 0.26, 'pour' 0.20, 'de' 0.36; English 'in/with' 0.002; French without a preposition 0.07-0.18.",
+ "unit_kind": "context",
+ "confidence": "high"
+}

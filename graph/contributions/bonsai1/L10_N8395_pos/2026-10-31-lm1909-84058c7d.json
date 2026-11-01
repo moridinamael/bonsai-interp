@@ -1,0 +1,160 @@
+{
+ "id": "2026-10-31-lm1909-84058c7d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8395+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T18:51:06+00:00",
+ "recipe": {
+  "toolchain_commit": "5f50fd9b4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N8395_pos/2026-10-31-lm1909-84058c7d.tests.json"
+ },
+ "label": "the conversion letter of an old-style Python %-format placeholder inside a code string ('%s', '%d', '%x' etc. after '%'), as against f-strings, .format, concatenation and prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N8395_pos/2026-10-31-lm1909-84058c7d.tests.json",
+   "prereg_commit": "5f50fd9b4",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.576,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.804,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.241,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.142,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.163,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.556,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.357,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.789,
+     "peak": "d"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": "}"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.236,
+     "peak": "},"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": ":',"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.032,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": "('"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 1,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.457,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5f50fd9b4",
+  "minutes": 1,
+  "batch_size": 3,
+  "dtype": "float16"
+ },
+ "short": "Python %-format placeholder letter ('%s'/'%d') in code",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens: 's' x14, 'd' x11, 'i' x2, all inside Python %-format strings. Probes: multi-line code with %s/%d 0.15-0.82 (median ~0.45); code without %-format 0.000-0.037; prose containing '%s' 0.015. Code/repeat pole: fire items are multi-line passages with earlier context, per the stream tips.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "%s",
+   "%d"
+  ]
+ }
+}
