@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-10-31-moridinamael-1cd3658a",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L0/N3311+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T01:02:28+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "Fires on the word piece 'ored' where it is its own token (lab+ored, flo+ored, ad+ored, sn+ored, mo+ored); quiet on -ored words that are single tokens (ignored, anchored, colored)."
+ },
+ "neighbours": [
+  {
+   "unit": "L0/N3311",
+   "pole": "+",
+   "label": "Fires on a few split-off word pieces: 'ored' (lab+ored, arm+ored), 'nut' (chest+nut) and 'ark' (disemb+ark), when each is its own token; quiet on whole-token words like ignored, tailored, peanut, bookmark.",
+   "fire": [
+    "The old horse labored up the steep hill with the cart behind it.",
+    "An armored truck pulled up outside the bank at exactly nine o'clock.",
+    "We roasted chestnuts over the fire on a cold December evening.",
+    "Passengers were asked to disembark through the rear doors of the plane.",
+    "Her breathing was labored after she climbed the twelve flights of stairs.",
+    "The knight's armored glove clanked against the stone wall.",
+    "A tall chestnut tree shades the corner of the village green.",
+    "After six days at sea, the crew finally began to disembark at the harbor."
+   ],
+   "quiet": [
+    "The old horse walked slowly up the steep hill with the cart behind it.",
+    "A delivery truck pulled up outside the bank at exactly nine o'clock.",
+    "We roasted peanuts over the fire on a cold December evening.",
+    "Passengers were asked to leave through the rear doors of the plane.",
+    "Her warnings were ignored after she climbed the twelve flights of stairs.",
+    "The knight's tailored glove fit neatly against his hand.",
+    "A tall walnut tree shades the corner of the village green.",
+    "After six days at sea, the crew finally reached the landmark at the harbor."
+   ]
+  }
+ ],
+ "predictions": "Expect labored/disembark/chestnut to fire strongly; lowercase armored may be a single token and miss, so about 6/8 fire, 0 near misses.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo"
+  ]
+ }
+}
