@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-01-moridinamael-0e96d7db",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L33/N11718+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T17:43:04+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "a lone word-initial letter piece (' d', ' D', ' c') when the tokenizer splits a word as letter + rest (d|ritte, D|ances, c|érémonie)"
+ },
+ "neighbours": [
+  {
+   "unit": "L33/N11718",
+   "pole": "+",
+   "label": "a word-start piece (' d', ' c', ' D', ' ind', ' int') that the tokenizer cuts off from the rest of the word, strongest in German/French (d|ritte, c|érémonie, int|érieure); whole common words stay quiet",
+   "fire": [
+    "Er wohnt seit Jahren im dritten Stock des alten Hauses.",
+    "La cérémonie a eu lieu dans la grande salle de la mairie.",
+    "La décoration intérieure de cet appartement est très élégante.",
+    "Die Durchführung des Projekts war schwieriger als erwartet.",
+    "Die Region ist seit dem neunzehnten Jahrhundert stark industriell geprägt.",
+    "Les premiers résultats indiquent une croissance modeste cette année.",
+    "La police a interrogé les témoins pendant toute la soirée.",
+    "Le cinquième chapitre du roman est étonnamment court."
+   ],
+   "quiet": [
+    "Er wohnt seit Jahren oben im alten Haus.",
+    "La fête a eu lieu dans la grande salle de la mairie.",
+    "La maison de mon oncle est très belle et calme.",
+    "Es war viel schwieriger als erwartet.",
+    "Die Region ist seit langer Zeit sehr reich und groß.",
+    "Les premiers résultats montrent une hausse modeste cette année.",
+    "La police a parlé aux témoins pendant toute la soirée.",
+    "Le premier chapitre du roman est étonnamment court."
+   ]
+  }
+ ],
+ "predictions": "Expect about 5/8 fire sentences to reach 0.2 (dritten, cérémonie, décoration, Durchführung, intérieure); the c/i-initial ones like cinquième, interrogé, indiquent are less sure; near misses should stay quiet.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "quick-test"
+  ]
+ }
+}
