@@ -1,0 +1,51 @@
+{
+ "contribution": "2026-10-31-moridinamael-4aa83b42",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L0/N4039-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T04:48:18+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "the pieces 'aring'/'ared'/'ptic' after the ' se' prefix token (searing, seared, septic)"
+ },
+ "neighbours": [
+  {
+   "unit": "L0/N4039",
+   "pole": "-",
+   "label": "word-ending pieces split off a short start (se|aring, se|ared, ne|ared, we|arily, bere|aved, se|ptic), plus the token ' wake'; whole-word tokens like scared, nearing, wearing stay quiet",
+   "fire": [
+    "The searing heat of the desert afternoon made the travelers stop under a rock ledge.",
+    "She seared the steaks in a hot cast-iron pan before moving them to the oven.",
+    "As the ship neared the harbor, the passengers crowded onto the deck.",
+    "He climbed the last flight of stairs wearily and dropped onto the couch.",
+    "The bereaved family gathered quietly at the small chapel on Sunday.",
+    "The wound had turned septic, so the doctor ordered stronger antibiotics.",
+    "Please wake me up at six tomorrow so I don't miss the train.",
+    "A searing pain shot through his ankle when he stepped off the curb."
+   ],
+   "quiet": [
+    "The scared travelers stopped under a rock ledge during the desert storm.",
+    "She cooked the steaks in a hot cast-iron pan before moving them to the oven.",
+    "As the ship was nearing the harbor, the passengers crowded onto the deck.",
+    "He climbed the last flight of stairs slowly and dropped onto the couch.",
+    "The grieving family gathered quietly at the small chapel on Sunday.",
+    "The wound had become infected, so the doctor ordered stronger antibiotics.",
+    "Please call me at six tomorrow so I don't miss the train.",
+    "A sharp pain shot through his ankle when he stepped off the curb."
+   ],
+   "trigger": {"words": ["aring", "ared", "aved", "arily", "ptic", " wake"]}
+  }
+ ],
+ "predictions": "expect 8/8 fire at or above 0.2 of max, near misses under 0.1; the risk is the weaker 'wearily' and 'wake' items",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
