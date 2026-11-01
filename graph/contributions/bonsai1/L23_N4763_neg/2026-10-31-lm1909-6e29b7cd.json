@@ -1,0 +1,160 @@
+{
+ "id": "2026-10-31-lm1909-6e29b7cd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N4763-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T20:12:56+00:00",
+ "recipe": {
+  "toolchain_commit": "7d4437ec9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N4763_neg/2026-10-31-lm1909-6e29b7cd.tests.json"
+ },
+ "label": "single-person compounds — 'one-man' / 'one-person' (the - pole peaks on '-man' x5, ' person' x3, '-person' x3, ' man' x2, 人 x2) — as against multi-person teams and crews",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N4763_neg/2026-10-31-lm1909-6e29b7cd.tests.json",
+   "prereg_commit": "7d4437ec9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.937,
+     "peak": "-person"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.859,
+     "peak": "-man"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.765,
+     "peak": "-person"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.848,
+     "peak": "-man"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.018,
+     "peak": "-person"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.91,
+     "peak": "-man"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.907,
+     "peak": "-person"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.641,
+     "peak": "-man"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " group"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " exhibition"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " whole"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " crew"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": " business"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " small"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.883,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7d4437ec9",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "one-person compounds ('one-man', 'one-person')",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens of the - pole: '-man' x5, ' person' x3, '-element' x3, '-person' x3, ' man' x2, 人 x2 — all one-person compounds (one-man show, one person information center, 1人ユニット); the + pole peaks on negation/absence (' no', ' has', ' have', ' not'). Probes: one-man/one-person sentences 0.72-1.04; team/crew/partner versions 0.000-0.10.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "-man",
+   "-person"
+  ]
+ }
+}

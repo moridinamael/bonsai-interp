@@ -1,0 +1,160 @@
+{
+ "id": "2026-10-31-lm1909-e58647e3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N1342-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T20:12:51+00:00",
+ "recipe": {
+  "toolchain_commit": "7d4437ec9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N1342_neg/2026-10-31-lm1909-e58647e3.tests.json"
+ },
+ "label": "beef and cattle — the words 'beef' and 'cattle' (the - pole peaks on ' beef' x10, ' cattle' x7, 牛 'cow') — as against other meats and livestock (pork, chicken, pigs, horses)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N1342_neg/2026-10-31-lm1909-e58647e3.tests.json",
+   "prereg_commit": "7d4437ec9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.658,
+     "peak": " cattle"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.77,
+     "peak": "ef"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.707,
+     "peak": " cattle"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.711,
+     "peak": " beef"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.693,
+     "peak": " beef"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.691,
+     "peak": "attle"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.544,
+     "peak": " beef"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.77,
+     "peak": "ef"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.102,
+     "peak": " pigs"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.138,
+     "peak": "Chicken"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.134,
+     "peak": " horses"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.139,
+     "peak": " chicken"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.233,
+     "peak": " butcher"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.482,
+     "peak": "ep"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.471,
+     "peak": " steak"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.138,
+     "peak": "Chicken"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.7,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7d4437ec9",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "beef / cattle vocabulary ('beef', 'cattle')",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens of the - pole: ' beef' x10, ' cattle' x7, 'ef' x4, 牛 x4, ' cow' x2, ' Beef' — all beef/cattle vocabulary; the + pole peaks on '-ock/-ec' name pieces (Nocera, Tocqueville, Koehler). Probes: beef/cattle sentences 0.37-0.73 (median ~0.64); pork/chicken/pigs/horses/salmon 0.08-0.32 (the 'sheep' variant reached 0.32, so near misses here avoid sheep).",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "beef",
+   "cattle"
+  ]
+ }
+}
