@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-01-moridinamael-644bb2a9",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L25/N9434+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T21:45:26+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "the word right after a rare specialist name or acronym (drug, agency, project, technical term), whatever it is: \"(\", \"'s\", a comma, \"and\", \"for\" or a verb; not after common or personal names"
+ },
+ "neighbours": [
+  {
+   "unit": "L25/N9434",
+   "pole": "+",
+   "label": "the token right after a specific named product, drug, agency or acronym in technical or institutional text (Diamox, EPA, Amazon S3): \"(\", \"'s\", a comma or \"and\"; much weaker after generic descriptions, quiet after everyday nouns and personal names",
+   "fire": [
+    "Those who take Diamox (Acetazolamide) need to be extra careful.",
+    "Those who take Diamox (acetazolamide) should drink plenty of water at altitude.",
+    "The EPA's new guidance tightens limits on airborne particulates.",
+    "Logs are archived nightly to Amazon S3, and older files move to Glacier after ninety days.",
+    "The FDA and the CDC issued a joint statement on the recall.",
+    "Patients on Lipitor, simvastatin or similar statins should report muscle pain.",
+    "Configure the NASA (National Aeronautics and Space Administration) data portal before downloading imagery.",
+    "Microsoft Azure's pricing model changed in the latest billing cycle."
+   ],
+   "quiet": [
+    "Those who take the altitude pills should drink plenty of water on the mountain.",
+    "My neighbor's new fence finally went up on Saturday.",
+    "We keep old photos in a box in the attic, and the rest sit in drawers.",
+    "The baker and the florist opened their shops at the same time.",
+    "Kids who eat apples or pears usually enjoy the fruit stand.",
+    "Sarah (my cousin) is coming over for dinner tonight.",
+    "The dog's bowl was empty again this morning.",
+    "The children played tag and hide-and-seek all afternoon."
+   ]
+  }
+ ],
+ "predictions": "Fire items should mostly clear 0.2 (Diamox known 0.67). Near misses are everyday text, expected under 0.15; main risk is a weak AUROC from the plain-word fire items like FDA and the CDC.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo"
+  ]
+ }
+}
