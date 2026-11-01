@@ -1,0 +1,160 @@
+{
+ "id": "2026-10-31-lm1909-eadcb3a3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6236+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T18:20:17+00:00",
+ "recipe": {
+  "toolchain_commit": "8b056847c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N6236_pos/2026-10-31-lm1909-eadcb3a3.tests.json"
+ },
+ "label": "health / public-health vocabulary and health-policy register (health, Ministry of Health, health services, health outcomes, public health)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N6236_pos/2026-10-31-lm1909-eadcb3a3.tests.json",
+   "prereg_commit": "8b056847c",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.21,
+     "peak": " health"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.227,
+     "peak": " recommend"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.175,
+     "peak": " health"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.166,
+     "peak": " health"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.169,
+     "peak": " health"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.129,
+     "peak": " between"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.29,
+     "peak": " health"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.137,
+     "peak": "ination"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.086,
+     "peak": " metro"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.074,
+     "peak": "ism"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " novel"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.033,
+     "peak": "Heavy"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " startup"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.08,
+     "peak": "Local"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.172,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8b056847c",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "health / public-health register",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card top-32 peak tokens: ' health' x10, ' for' x6, ' of' x4, ' in' x2, 'ilitation' x1; top examples are public-health / medical-academic passages (rehabilitation practitioners, family caregivers and health professionals, health education handouts, Alzheimer's patients). Probes: health sentences 0.05-0.51 (Ministry of Health 0.51, mental health 0.44, health outcomes 0.33, public health officials 0.22, Health insurance 0.22, health screenings 0.21); non-health sentences 0.02-0.15. 'Smoking is a major risk to public health' scored only 0.05, so fire sentences use the stronger health-policy forms.",
+ "selection": "random draw (play draw --k 12 --seed 202610317)",
+ "trigger": {
+  "words": [
+   "health",
+   "healthcare"
+  ]
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "contribution": "2026-10-31-lm1909-eadcb3a3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6236+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T18:19:04+00:00",
+ "selection": "random draw (play draw --k 12 --seed 202610317)",
+ "neighbours": [
+  {
+   "unit": "L33/N6236",
+   "pole": "+",
+   "label": "health / public-health vocabulary and health-policy register (health, Ministry of Health, health services, health outcomes, public health)",
+   "fire": [
+    "The national health strategy aims to reduce child mortality.",
+    "Doctors recommend regular exercise for good health.",
+    "The health ministry issued a warning about the outbreak.",
+    "Workplace health and safety rules must be followed.",
+    "Universal health coverage remains a goal for many countries.",
+    "The report highlights health disparities between regions.",
+    "She works in health policy at the university.",
+    "Vaccination campaigns protect public health."
+   ],
+   "quiet": [
+    "The stock market rallied after the central bank's announcement.",
+    "Farmers planted wheat across the valley this spring.",
+    "The new metro line will connect the suburbs to downtown.",
+    "Tourism brought record revenue to the island last summer.",
+    "The novel explores ambition and betrayal in a small town.",
+    "Heavy snow blocked the mountain pass for three days.",
+    "The startup raised funding to expand into Asia.",
+    "Local schools will add a second foreign language next year."
+   ]
+  }
+ ],
+ "predictions": "8/8 health-register fire sentences rank above the 8 non-health near misses (AUROC >= 0.90); median fire >= 0.20; 0 near misses >= 0.30",
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ]
+ },
+ "short": "health / public-health register",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card top-32 peak tokens: ' health' x10, ' for' x6, ' of' x4, ' in' x2, 'ilitation' x1; top examples are public-health / medical-academic passages (rehabilitation practitioners, family caregivers and health professionals, health education handouts, Alzheimer's patients). Probes: health sentences 0.05-0.51 (Ministry of Health 0.51, mental health 0.44, health outcomes 0.33, public health officials 0.22, Health insurance 0.22, health screenings 0.21); non-health sentences 0.02-0.15. 'Smoking is a major risk to public health' scored only 0.05, so fire sentences use the stronger health-policy forms.",
+ "trigger": {
+  "words": [
+   "health",
+   "healthcare"
+  ]
+ }
+}

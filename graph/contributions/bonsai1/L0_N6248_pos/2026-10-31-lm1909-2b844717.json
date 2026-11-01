@@ -1,0 +1,159 @@
+{
+ "id": "2026-10-31-lm1909-2b844717",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N6248+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T18:20:12+00:00",
+ "recipe": {
+  "toolchain_commit": "8b056847c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N6248_pos/2026-10-31-lm1909-2b844717.tests.json"
+ },
+ "label": "the token ' powered' / '-powered': the word 'powered' in any use, incl. X-powered compounds (battery-powered, solar-powered) and 'powered by'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N6248_pos/2026-10-31-lm1909-2b844717.tests.json",
+   "prereg_commit": "8b056847c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.741,
+     "peak": " powered"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.547,
+     "peak": "-powered"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.42,
+     "peak": "-powered"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.616,
+     "peak": "-powered"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.794,
+     "peak": " powered"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.487,
+     "peak": "-powered"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.822,
+     "peak": " powered"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.736,
+     "peak": " powered"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.03,
+     "peak": " powerful"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " comes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " growing"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.228,
+     "peak": " carried"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " engine"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " sunlight"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " previous"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.676,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8b056847c",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "the word 'powered' (' powered' / '-powered')",
+ "unit_kind": "lexical / token",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens: ' powered' x30, ' dominated' x2. Probes: ' powered' 0.58-0.97, '-powered' 0.43-0.61, 'powered through' 0.67; power/powerful/electric power/king's power/willpower/horsepower 0.005-0.15; 'repowered' 0.286 (piece 'owered') so it is not used as a near miss. Early layer (L0), piece-level pole.",
+ "selection": "random draw (play draw --k 12 --seed 202610317)",
+ "trigger": {
+  "words": [
+   "powered"
+  ]
+ }
+}
