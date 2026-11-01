@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-10-31-lm1909-88f2c1f0",
+ "contributor": "lm1909",
+ "kind": "qc",
+ "neuron": "bonsai1/L33/N9805+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T21:16:33+00:00",
+ "selection": "qc of held list label",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "Low-confidence guess: the nouns popcorn, balloon and compost (and similar household or party items) used before another noun ('a popcorn party', 'balloon releases', 'the compost bin'); other food or household nouns in the same frames stay lower."
+ },
+ "neighbours": [
+  {
+   "unit": "L33/N9805",
+   "pole": "+",
+   "label": "REFINE of the held list label: a concrete object or activity noun used attributively before another noun (noun-modifier compounds like 'popcorn machine', 'compost bin', 'vending machine', 'tape recorder'); the pole fires on the modifier noun itself, and plain adjectives in the same frames stay quiet. The old label (popcorn/balloon/compost household-or-party items only) is too narrow: probes show 'vending machine' fires 0.338, 'record player' 0.157, 'trash bin' 0.215.",
+   "fire": [
+    "The cafe bought a coffee grinder for the counter.",
+    "The kids released a sky lantern at the festival.",
+    "We keep the rake in the garden shed.",
+    "The office installed a water cooler in the hall.",
+    "She uses a desk lamp for late work.",
+    "The garage has a ceiling fan over the bench.",
+    "He mows the lawn with a petrol mower.",
+    "The doorbell camera records every visitor."
+   ],
+   "quiet": [
+    "The cafe bought a new grinder for the counter.",
+    "The kids released a bright lantern at the festival.",
+    "We keep the old rake in the garden shed.",
+    "The office installed a small cooler in the hall.",
+    "She uses a cheap lamp for late work.",
+    "The garage has a large fan over the bench.",
+    "He mows the lawn with a quiet mower.",
+    "The old camera records every visitor."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ]
+ },
+ "short": "attributive object/activity noun before another noun",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card top examples: popcorn, balloon, tape, blackout, paragliding, snack, ironing as modifiers; logit effect promotes ' machine',' system',' gun',' iron'. Probes: object-noun modifiers fire 0.13-0.82 peaking on the modifier; adjective modifiers (driving school 0.042, folding board 0.098, paper animal 0.162) stay low."
+}

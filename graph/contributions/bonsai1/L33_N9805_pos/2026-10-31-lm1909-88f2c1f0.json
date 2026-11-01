@@ -1,0 +1,159 @@
+{
+ "id": "2026-10-31-lm1909-88f2c1f0",
+ "kind": "qc",
+ "neuron": "bonsai1/L33/N9805+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T21:18:08+00:00",
+ "recipe": {
+  "toolchain_commit": "a02ba6a85",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N9805_pos/2026-10-31-lm1909-88f2c1f0.tests.json"
+ },
+ "label": "REFINE of the held list label: a concrete object or activity noun used attributively before another noun (noun-modifier compounds like 'popcorn machine', 'compost bin', 'vending machine', 'tape recorder'); the pole fires on the modifier noun itself, and plain adjectives in the same frames stay quiet. The old label (popcorn/balloon/compost household-or-party items only) is too narrow: probes show 'vending machine' fires 0.338, 'record player' 0.157, 'trash bin' 0.215.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N9805_pos/2026-10-31-lm1909-88f2c1f0.tests.json",
+   "prereg_commit": "a02ba6a85",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.421,
+     "peak": " coffee"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.174,
+     "peak": " sky"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.029,
+     "peak": " rake"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.211,
+     "peak": " water"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.041,
+     "peak": " lamp"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.08,
+     "peak": " fan"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.198,
+     "peak": " petrol"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.183,
+     "peak": "bell"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.213,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.083,
+     "peak": " lantern"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.079,
+     "peak": " rake"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.127,
+     "peak": " lamp"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.1,
+     "peak": " fan"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.047,
+     "peak": " mower"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.198,
+     "peak": " camera"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.586,
+    "median_fire": 0.178,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test",
+   "second-round"
+  ],
+  "detected": [],
+  "toolchain_commit": "a02ba6a85",
+  "minutes": 1,
+  "batch_size": 1,
+  "dtype": "float16"
+ },
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "Low-confidence guess: the nouns popcorn, balloon and compost (and similar household or party items) used before another noun ('a popcorn party', 'balloon releases', 'the compost bin'); other food or household nouns in the same frames stay lower."
+ },
+ "short": "attributive object/activity noun before another noun",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card top examples: popcorn, balloon, tape, blackout, paragliding, snack, ironing as modifiers; logit effect promotes ' machine',' system',' gun',' iron'. Probes: object-noun modifiers fire 0.13-0.82 peaking on the modifier; adjective modifiers (driving school 0.042, folding board 0.098, paper animal 0.162) stay low.",
+ "selection": "qc of held list label"
+}
