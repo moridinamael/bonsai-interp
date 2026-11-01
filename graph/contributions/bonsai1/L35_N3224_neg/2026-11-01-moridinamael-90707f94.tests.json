@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-01-moridinamael-90707f94",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3224-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T18:06:49+00:00",
+ "neighbours": [
+  {
+   "unit": "L35/N3224",
+   "pole": "-",
+   "label": "Weak, broad: running source code and non-English text (Chinese, Japanese, Russian), not plain English prose",
+   "fire": [
+    "for (int i = 0; i < n; i++) { total += values[i]; }",
+    "def greet(name):\n    return f\"Hello, {name}!\"",
+    "const users = await db.query('SELECT * FROM users WHERE active = 1');",
+    "if (err != nil) { log.Fatal(err) }",
+    "import numpy as np\narr = np.zeros((3, 4))",
+    "今天天气很好，我们一起去公园散步吧。",
+    "我昨天在图书馆借了三本关于历史的书。",
+    "東京の桜は四月の初めに満開になります。"
+   ],
+   "quiet": [
+    "She painted the fence white and waved at the neighbours as they passed.",
+    "He wondered whether the old bridge would hold, and then he stepped onto it carefully.",
+    "The loop adds up every value in the list until it reaches the end.",
+    "She greeted each guest by name as they came through the door.",
+    "The manager looked through the records to find all the active members.",
+    "If something goes wrong, he writes it down in his notebook and stops.",
+    "He set out three rows of four empty chairs in the hall.",
+    "The weather is lovely today, so let's take a walk in the park together."
+   ]
+  }
+ ],
+ "predictions": "Dense weak pole (55% of tokens above 0.1 of max): expect fire sentences around 0.4-0.6, English quiet around 0.15; risk that some quiet sentences pass 0.30 via the ' ' / leading-token artifact.",
+ "roles": ["reads bonsai1/L25/N9434+"],
+ "short": "code and non-English text, weak",
+ "notes": "Step-in reader of L25/N9434+ (drop 0.01, tiny). Pole is dense and weak (max 6.03 vs + pole 170). Feeders-first arm: strongest feeders had no labels (L34/N2005+, L0/N4505- ' deficiency', L0/N516+), so they did not shape the label; probes did.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "step-down",
+   "inverse-gmoo"
+  ]
+ }
+}

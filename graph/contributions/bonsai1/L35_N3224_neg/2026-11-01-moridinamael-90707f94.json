@@ -1,0 +1,167 @@
+{
+ "id": "2026-11-01-moridinamael-90707f94",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3224-",
+ "contributor": "moridinamael",
+ "created": "2026-11-01T18:07:20+00:00",
+ "recipe": {
+  "toolchain_commit": "adbd79742",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N3224_neg/2026-11-01-moridinamael-90707f94.tests.json"
+ },
+ "label": "Weak, broad: running source code and non-English text (Chinese, Japanese, Russian), not plain English prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N3224_neg/2026-11-01-moridinamael-90707f94.tests.json",
+   "prereg_commit": "adbd79742",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.459,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.251,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.609,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.305,
+     "peak": " log"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.43,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.418,
+     "peak": "公园"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.458,
+     "peak": "的"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.434,
+     "peak": "東"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.15,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.172,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.141,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.194,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.158,
+     "peak": " active"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.192,
+     "peak": " goes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.163,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.142,
+     "peak": " is"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 1,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.432,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "step-down"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "adbd79742",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "short": "code and non-English text, weak",
+ "notes": "Step-in reader of L25/N9434+ (drop 0.01, tiny). Pole is dense and weak (max 6.03 vs + pole 170). Feeders-first arm: strongest feeders had no labels (L34/N2005+, L0/N4505- ' deficiency', L0/N516+), so they did not shape the label; probes did.",
+ "roles": [
+  "reads bonsai1/L25/N9434+"
+ ],
+ "edges": [
+  {
+   "from": "bonsai1/L25/N9434+",
+   "to": "bonsai1/L35/N3224-",
+   "kind": "feeds",
+   "weight": 0.01,
+   "method": "single-unit zero ablation, downstream (play step --down)"
+  }
+ ]
+}
