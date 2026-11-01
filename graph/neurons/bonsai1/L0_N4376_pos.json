@@ -4,10 +4,10 @@
  "layer": 0,
  "index": 4376,
  "pole": "+",
- "label": "The chunk \"ass\" when the tokenizer cuts it off as its own piece: after a hyphen in compounds (Steam-Assisted, Quality-Assurance, power-assisted, self-assessment, lane-assist, character-assassination), at the start of names like Assam and Assassin's Creed, and the standalone word for a donkey. Quiet for ordinary whole words that merely contain the letters (assist, assess, assets, assignment, Assembly, class, glass, embassy, Massachusetts, unhyphenated \"Quality Assurance\") and for hyphen splits that give \"-as\" (machine-assembled). Weak (about 0.3-0.4) on short words ending in -ass (grass, bass, brass).",
+ "label": "The chunk \"ass\" when the tokenizer leaves it standing alone as its own piece: after a hyphen (Steam-Assisted, Quality-Assurance, self-assessment), at the start of a split word (assent, assuring, lay assessor, Assam, Assagioli, French assister) and the animal \"ass\". Quiet for common whole words starting or ending with those letters (assume, assist, assess, class, glass, Massachusetts, unhyphenated Quality Assurance); weaker for rare whole words (assassin, Assad) and -ass endings (grass, bass).",
  "short": null,
  "kind": null,
- "status": "partial",
+ "status": "held",
  "depth": "quick",
  "tests": [
   {
@@ -131,12 +131,139 @@
     "near_misses_at_0.3": 0
    },
    "contribution": "2026-10-23-moridinamael-ddcb5510"
+  },
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N4376_pos/2026-11-01-moridinamael-5b199be7.tests.json",
+   "prereg_commit": "a15333fe6",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.867,
+     "peak": "-Ass"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.886,
+     "peak": "-Ass"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.558,
+     "peak": "-ass"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.844,
+     "peak": " ass"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.721,
+     "peak": " ass"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.87,
+     "peak": " ass"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.83,
+     "peak": " ass"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.642,
+     "peak": " Ass"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " sands"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.199,
+     "peak": " Assurance"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.093,
+     "peak": " assess"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": " sacks"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "After"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.093,
+     "peak": " passengers"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " up"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.837,
+    "near_misses_at_0.3": 0
+   },
+   "contribution": "2026-11-01-moridinamael-5b199be7"
   }
  ],
  "label_history": [
   [
    "2026-10-23-moridinamael-ddcb5510",
    "The chunk \"ass\" when the tokenizer cuts it off as its own piece: after a hyphen in compounds (Steam-Assisted, Quality-Assurance, power-assisted, self-assessment, lane-assist, character-assassination), at the start of names like Assam and Assassin's Creed, and the standalone word for a donkey. Quiet for ordinary whole words that merely contain the letters (assist, assess, assets, assignment, Assembly, class, glass, embassy, Massachusetts, unhyphenated \"Quality Assurance\") and for hyphen splits that give \"-as\" (machine-assembled). Weak (about 0.3-0.4) on short words ending in -ass (grass, bass, brass).",
+   "held"
+  ],
+  [
+   "2026-11-01-moridinamael-5b199be7",
+   "The chunk \"ass\" when the tokenizer leaves it standing alone as its own piece: after a hyphen (Steam-Assisted, Quality-Assurance, self-assessment), at the start of a split word (assent, assuring, lay assessor, Assam, Assagioli, French assister) and the animal \"ass\". Quiet for common whole words starting or ending with those letters (assume, assist, assess, class, glass, Massachusetts, unhyphenated Quality Assurance); weaker for rare whole words (assassin, Assad) and -ass endings (grass, bass).",
    "held"
   ]
  ],
@@ -149,25 +276,22 @@
   "moridinamael"
  ],
  "contributions": [
-  "2026-10-23-moridinamael-ddcb5510"
+  "2026-10-23-moridinamael-ddcb5510",
+  "2026-11-01-moridinamael-5b199be7"
  ],
  "qc": {
   "confirm": 0,
   "dispute": 0,
-  "refine": 0
+  "refine": 1
  },
  "replications": [],
- "coverage": {
-  "value": 0.3492,
-  "method": "estimated from the label's quoted words (token measure)",
-  "strong": 1916
- },
+ "coverage": null,
  "scrutiny": {
-  "level": 1,
-  "name": "tested",
-  "test_rounds": 1,
-  "sentences": 16,
+  "level": 2,
+  "name": "re-tested",
+  "test_rounds": 2,
+  "sentences": 32,
   "contributors": 1,
-  "qc": 0
+  "qc": 1
  }
 }
