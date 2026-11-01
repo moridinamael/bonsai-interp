@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-01-moridinamael-3a0bcfcb",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L24/N1123-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-01T23:22:01+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "a lone Cyrillic letter token ('в', 'д') right after a word-initial З/В that the tokenizer split off (З|в|он-, З|в|ук, З|д|ание, В|д|оль)"
+ },
+ "neighbours": [
+  {
+   "unit": "L24/N1123",
+   "pole": "-",
+   "label": "the second consonant piece of a vowel-less word start that the tokenizer splits (Zv|, Zd|, Zh|v, XK, LF, RW), in Latin or Cyrillic",
+   "fire": [
+    "The Croatian footballer Zvonimir Boban captained the team that summer.",
+    "Zdravko greeted us warmly at the station in Belgrade.",
+    "The Georgian politician Zurab Zhvania was a well-known reformer.",
+    "My favorite webcomic is XKCD, especially the one about passwords.",
+    "She posted \"LFG\" right after her team won the final.",
+    "He studied mechanical engineering at RWTH Aachen University.",
+    "Он вошёл, сказал «Здравствуйте» и сел за стол.",
+    "Над тёмным морем зажглась яркая звезда."
+   ],
+   "quiet": [
+    "The Croatian footballer Davor Šuker scored the goal that summer.",
+    "Marko greeted us warmly at the station in Belgrade.",
+    "The Georgian politician Giorgi was a well-known reformer.",
+    "My favorite webcomic is Garfield, especially the one about lasagna.",
+    "She posted \"great game\" right after her team won the final.",
+    "He studied mechanical engineering at Delft University.",
+    "Он вошёл, сказал «Добрый день» и сел за стол.",
+    "Над тёмным морем зажглась яркая луна."
+   ]
+  }
+ ],
+ "predictions": "Expect most fire items to peak on the second piece (v, d, K, F, W) and the quiet ones to stay near floor; Zdravko and the Cyrillic Здравствуйте may be weaker.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
