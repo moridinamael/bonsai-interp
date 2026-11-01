@@ -1,0 +1,158 @@
+{
+ "id": "2026-10-31-moridinamael-4aa83b42",
+ "kind": "qc",
+ "neuron": "bonsai1/L0/N4039-",
+ "contributor": "moridinamael",
+ "created": "2026-11-01T04:48:34+00:00",
+ "recipe": {
+  "toolchain_commit": "e2c582bbb",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N4039_neg/2026-10-31-moridinamael-4aa83b42.tests.json"
+ },
+ "label": "word-ending pieces split off a short start (se|aring, se|ared, ne|ared, we|arily, bere|aved, se|ptic), plus the token ' wake'; whole-word tokens like scared, nearing, wearing stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N4039_neg/2026-10-31-moridinamael-4aa83b42.tests.json",
+   "prereg_commit": "e2c582bbb",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.893,
+     "peak": "aring"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.762,
+     "peak": "ared"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.624,
+     "peak": "ared"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.609,
+     "peak": "arily"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.612,
+     "peak": "aved"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.663,
+     "peak": "ptic"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.498,
+     "peak": " wake"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.812,
+     "peak": "aring"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.048,
+     "peak": " stopped"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": " moving"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.091,
+     "peak": " gathered"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.096,
+     "peak": " doctor"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": "'t"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.063,
+     "peak": " he"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.643,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "bank-solo",
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "second-round"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "e2c582bbb",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "the pieces 'aring'/'ared'/'ptic' after the ' se' prefix token (searing, seared, septic)"
+ }
+}
