@@ -1,0 +1,157 @@
+{
+ "id": "2026-11-01-moridinamael-0e96d7db",
+ "kind": "qc",
+ "neuron": "bonsai1/L33/N11718+",
+ "contributor": "moridinamael",
+ "created": "2026-11-01T17:43:23+00:00",
+ "recipe": {
+  "toolchain_commit": "48944f96b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N11718_pos/2026-11-01-moridinamael-0e96d7db.tests.json"
+ },
+ "label": "a word-start piece (' d', ' c', ' D', ' ind', ' int') that the tokenizer cuts off from the rest of the word, strongest in German/French (d|ritte, c|érémonie, int|érieure); whole common words stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N11718_pos/2026-11-01-moridinamael-0e96d7db.tests.json",
+   "prereg_commit": "48944f96b",
+   "author": "blind:claude-sonnet-5-5 (label-only)",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.505,
+     "peak": " d"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.181,
+     "peak": " c"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.608,
+     "peak": " int"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.01,
+     "peak": " er"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.206,
+     "peak": "pr"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.055,
+     "peak": " prem"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.073,
+     "peak": " té"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.039,
+     "peak": " du"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.057,
+     "peak": " im"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.118,
+     "peak": " m"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.0,
+     "peak": " belle"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": "Es"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "anger"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": " prem"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.105,
+     "peak": " té"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " du"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.773,
+    "median_fire": 0.127,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "second-round"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "48944f96b",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "a lone word-initial letter piece (' d', ' D', ' c') when the tokenizer splits a word as letter + rest (d|ritte, D|ances, c|érémonie)"
+ }
+}
