@@ -1,0 +1,164 @@
+{
+ "id": "2026-10-31-lm1909-f2608d7c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N4043-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T19:19:21+00:00",
+ "recipe": {
+  "toolchain_commit": "d76c7a15c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N4043_neg/2026-10-31-lm1909-f2608d7c.tests.json"
+ },
+ "label": "the '␣X' piece where X is a capitalized common English word used as part of a proper name (North Platte, New Haven, the Good Earth, South Austin, Dr Z) — as against unambiguous names (Omaha, Yale, Paris) and common-word uses after 'the'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N4043_neg/2026-10-31-lm1909-f2608d7c.tests.json",
+   "prereg_commit": "d76c7a15c",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.585,
+     "peak": " North"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.16,
+     "peak": " Haven"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.056,
+     "peak": " Good"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.175,
+     "peak": " South"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.055,
+     "peak": " Village"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.229,
+     "peak": " Z"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.015,
+     "peak": " renovated"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.256,
+     "peak": " New"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " county"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " grew"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " renovated"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " Paris"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.167,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d76c7a15c",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "capitalized common words inside proper names (' North', ' Good', ' New', ' South', ' Z')",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card top-32 peak tokens of the - pole: ' North' x7, ' Z' x5, 'Z' x3, ' Good' x2, ' E' x2, 'E' x2 — all '␣X' pieces with X a capitalized common word or single letter inside proper names (North Bellmore, Dr Zdenek, Good Morning America, North Denver News, Zaddikim); the + pole peaks on ' P' (Spanish P-words). Probes: proper-name uses of North/Good/New/South/Z 0.16-0.64; unambiguous names (Everest, Gettysburg, Paris, London, Mount Rainier, Cape Cod) 0.007-0.039; common-word uses after 'the' ('from the North', 'the letter E') 0.011-0.135.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "North",
+   "South",
+   "East",
+   "West",
+   "New",
+   "Good"
+  ]
+ }
+}

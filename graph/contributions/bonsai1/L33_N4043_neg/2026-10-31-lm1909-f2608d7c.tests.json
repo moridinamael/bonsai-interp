@@ -1,0 +1,81 @@
+{
+ "contribution": "2026-10-31-lm1909-f2608d7c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N4043-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T19:17:42+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N4043",
+   "pole": "-",
+   "label": "the '␣X' piece where X is a capitalized common English word used as part of a proper name (North Platte, New Haven, the Good Earth, South Austin, Dr Z) — as against unambiguous names (Omaha, Yale, Paris) and common-word uses after 'the'",
+   "fire": [
+    "The storm damaged homes in North Platte and across the county.",
+    "He joined the New Haven team after college.",
+    "The Good Earth remains a classic of modern literature.",
+    "She grew up in South Austin before moving downtown.",
+    "The East Village has many small restaurants and bars.",
+    "Dr Z Ahmed presented the results at the conference.",
+    "The West Wing of the building was renovated last year.",
+    "They honeymooned in New Orleans and then flew home."
+   ],
+   "quiet": [
+    "The storm damaged homes in Omaha and across the county.",
+    "He joined the Yale team after college.",
+    "The Grapes of Wrath remains a classic of modern literature.",
+    "She grew up in Portland before moving downtown.",
+    "The village has many small restaurants and bars.",
+    "Dr Ahmed presented the results at the conference.",
+    "The old wing of the building was renovated last year.",
+    "They honeymooned in Paris and then flew home."
+   ]
+  }
+ ],
+ "predictions": "8/8 fire sentences peak on the capitalized common word at >= 0.20 of max; 0 near misses (unambiguous names) reach 0.30",
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "_screens_vocabulary": [
+   "atlas",
+   "bands",
+   "bank-solo",
+   "blind-room",
+   "card",
+   "coverage-round",
+   "disproof",
+   "held-out",
+   "induce",
+   "inverse-de",
+   "inverse-gmoo",
+   "look",
+   "neighbors",
+   "probe",
+   "quick-test",
+   "second-round",
+   "step-down",
+   "step-out",
+   "which"
+  ]
+ },
+ "short": "capitalized common words inside proper names (' North', ' Good', ' New', ' South', ' Z')",
+ "trigger": {
+  "words": [
+   "North",
+   "South",
+   "East",
+   "West",
+   "New",
+   "Good"
+  ]
+ },
+ "notes": "Card top-32 peak tokens of the - pole: ' North' x7, ' Z' x5, 'Z' x3, ' Good' x2, ' E' x2, 'E' x2 — all '␣X' pieces with X a capitalized common word or single letter inside proper names (North Bellmore, Dr Zdenek, Good Morning America, North Denver News, Zaddikim); the + pole peaks on ' P' (Spanish P-words). Probes: proper-name uses of North/Good/New/South/Z 0.16-0.64; unambiguous names (Everest, Gettysburg, Paris, London, Mount Rainier, Cape Cod) 0.007-0.039; common-word uses after 'the' ('from the North', 'the letter E') 0.011-0.135.",
+ "unit_kind": "context",
+ "confidence": "medium"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-10-31-lm1909-f1be2b97",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N810-",
+ "contributor": "lm1909",
+ "created": "2026-10-31T19:19:15+00:00",
+ "recipe": {
+  "toolchain_commit": "d76c7a15c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N810_neg/2026-10-31-lm1909-f1be2b97.tests.json"
+ },
+ "label": "Latin binomial species names in text (e.g. 'Ursus arctos', 'Dionaea muscipula') — the - pole peaks on the Latin name pieces ('ica', 'us', 'ia', 'la', 'opus') — as against the same facts with common names only",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N810_neg/2026-10-31-lm1909-f1be2b97.tests.json",
+   "prereg_commit": "d76c7a15c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.23,
+     "peak": "os"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.438,
+     "peak": "ula"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.063,
+     "peak": " sapi"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.403,
+     "peak": "ale"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.452,
+     "peak": "us"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.471,
+     "peak": "icana"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.446,
+     "peak": "era"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.239,
+     "peak": "odon"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " predator"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " fraction"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " common"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " continent"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " animal"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": "ome"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.42,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d76c7a15c",
+  "minutes": 1,
+  "batch_size": 2,
+  "dtype": "float16"
+ },
+ "short": "Latin binomial species names (scientific nomenclature)",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card top-32 peak tokens of the - pole: 'ica' x3, ')' x2, 'us' x2, 'la', 'Z', 'ia' — all inside Latin binomials (Torreya californica, Branta bernicla hrota, Sansevieria laurentii, Lagopus lagopus scoticus). Probes: sentences with a Latin binomial 0.11-0.68 (median ~0.45); the same facts with common names only 0.005-0.019; a lone capital 'Z' (atomic number) 0.235. Context label, no token trigger declared.",
+ "selection": "random draw"
+}

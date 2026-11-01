@@ -1,0 +1,71 @@
+{
+ "contribution": "2026-10-31-lm1909-f1be2b97",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N810-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T19:17:42+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N810",
+   "pole": "-",
+   "label": "Latin binomial species names in text (e.g. 'Ursus arctos', 'Dionaea muscipula') — the - pole peaks on the Latin name pieces ('ica', 'us', 'ia', 'la', 'opus') — as against the same facts with common names only",
+   "fire": [
+    "Ursus arctos is the scientific name of the brown bear.",
+    "The Venus flytrap, Dionaea muscipula, snaps shut in milliseconds.",
+    "Homo sapiens is the only surviving human species.",
+    "The common dandelion is Taraxacum officinale.",
+    "Canis lupus is the gray wolf of North America.",
+    "The African elephant is Loxodonta africana.",
+    "Apis mellifera is the western honey bee kept by beekeepers.",
+    "The great white shark is Carcharodon carcharias."
+   ],
+   "quiet": [
+    "The brown bear is a large predator found across northern forests.",
+    "The flytrap snaps shut in a fraction of a second.",
+    "Modern humans are the only surviving human species.",
+    "The common dandelion grows in lawns everywhere.",
+    "The gray wolf hunts in packs across the continent.",
+    "The African elephant is the largest land animal alive today.",
+    "Beekeepers keep the western honey bee in wooden hives.",
+    "The great white shark is a fearsome ocean predator."
+   ]
+  }
+ ],
+ "predictions": "8/8 fire sentences peak on a Latin-name piece at >= 0.20 of max; 0 near misses (common-name versions) reach 0.30",
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "_screens_vocabulary": [
+   "atlas",
+   "bands",
+   "bank-solo",
+   "blind-room",
+   "card",
+   "coverage-round",
+   "disproof",
+   "held-out",
+   "induce",
+   "inverse-de",
+   "inverse-gmoo",
+   "look",
+   "neighbors",
+   "probe",
+   "quick-test",
+   "second-round",
+   "step-down",
+   "step-out",
+   "which"
+  ]
+ },
+ "short": "Latin binomial species names (scientific nomenclature)",
+ "notes": "Card top-32 peak tokens of the - pole: 'ica' x3, ')' x2, 'us' x2, 'la', 'Z', 'ia' — all inside Latin binomials (Torreya californica, Branta bernicla hrota, Sansevieria laurentii, Lagopus lagopus scoticus). Probes: sentences with a Latin binomial 0.11-0.68 (median ~0.45); the same facts with common names only 0.005-0.019; a lone capital 'Z' (atomic number) 0.235. Context label, no token trigger declared.",
+ "unit_kind": "context",
+ "confidence": "high"
+}
