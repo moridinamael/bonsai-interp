@@ -1,0 +1,160 @@
+{
+ "id": "2026-10-31-lm1909-9c9c49a6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N79+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T20:52:54+00:00",
+ "recipe": {
+  "toolchain_commit": "16cffcd03",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N79_pos/2026-10-31-lm1909-9c9c49a6.tests.json"
+ },
+ "label": "the ' mus'/' Mus' piece in words the tokenizer splits at 'mus' (musicians, muscular, muskrat, muslin, Muslim, muscat, musket, mustache); the + pole peaks on ' Mus' x10, ' mus' x8; whole-token words like ' music'/' museum' do not fire",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N79_pos/2026-10-31-lm1909-9c9c49a6.tests.json",
+   "prereg_commit": "16cffcd03",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.008,
+     "peak": "ture"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.047,
+     "peak": " years"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.411,
+     "peak": " mus"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.26,
+     "peak": " mus"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.026,
+     "peak": " muslim"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.411,
+     "peak": " mus"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.437,
+     "peak": " mus"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.009,
+     "peak": "ache"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": "ture"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.054,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " scarf"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " quarter"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " beard"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.153,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "16cffcd03",
+  "minutes": 1,
+  "batch_size": 3,
+  "dtype": "float16"
+ },
+ "short": "' mus' piece in mus-split words",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Card examples: Mus⟦krat⟧ Falls, Mus⟦affah⟧, mus⟦icians⟧, Duchenne Mus⟦cular⟧, mus⟦lims⟧. Probes: sentence-initial 'Muscular' fired 0.483 on 'Mus'; whole-token ' music'/' museum' scored ~0.01.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   " Mus",
+   " mus"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-10-31-lm1909-490d57e6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N6331+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-10-31T20:49:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N6331",
+   "pole": "+",
+   "label": "the Python keyword 'pass' as a no-op statement body in code (the + pole peaks on ' pass' x32, all top examples are multi-line Python snippets with a pass statement); as against the same code shapes with a real statement instead",
+   "fire": [
+    "def open_db(path):\n    try:\n        return sqlite3.connect(path)\n    except sqlite3.Error:\n        pass\n",
+    "class Listener:\n    def on_event(self, name):\n        pass\n",
+    "try:\n    from PIL import Image\nexcept ImportError:\n    pass\n",
+    "def close(self):\n    # TODO: release the lock\n    pass\n",
+    "class Adapter:\n    def send(self, data):\n        pass\n",
+    "except KeyboardInterrupt:\n    pass\n",
+    "def validate(self, value):\n    pass\n",
+    "if sys.platform == 'win32':\n    def tempdir():\n        pass\n"
+   ],
+   "quiet": [
+    "def open_db(path):\n    try:\n        return sqlite3.connect(path)\n    except sqlite3.Error:\n        return None\n",
+    "class Listener:\n    def on_event(self, name):\n        log(name)\n",
+    "try:\n    from PIL import Image\nexcept ImportError:\n    Image = None\n",
+    "def close(self):\n    self.lock.release()\n",
+    "class Adapter:\n    def send(self, data):\n        self.queue.put(data)\n",
+    "except KeyboardInterrupt:\n    break\n",
+    "def validate(self, value):\n    return isinstance(value, str)\n",
+    "if sys.platform == 'win32':\n    def tempdir():\n        return 'C:\\\\Temp'\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ]
+ },
+ "short": "Python 'pass' no-op statement in code",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card: ' pass' dominates the top 32 (x32), all examples multi-line Python with pass. Probes: multi-line snippets containing pass fire 0.8-0.93 of max peaking on ' pass'; the same snippets with return/print/raise instead score near zero.",
+ "trigger": {
+  "words": [
+   "pass"
+  ]
+ }
+}

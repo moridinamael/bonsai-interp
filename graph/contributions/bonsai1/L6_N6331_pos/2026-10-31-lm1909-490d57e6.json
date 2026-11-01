@@ -1,0 +1,159 @@
+{
+ "id": "2026-10-31-lm1909-490d57e6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N6331+",
+ "contributor": "lm1909",
+ "created": "2026-10-31T20:52:49+00:00",
+ "recipe": {
+  "toolchain_commit": "16cffcd03",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N6331_pos/2026-10-31-lm1909-490d57e6.tests.json"
+ },
+ "label": "the Python keyword 'pass' as a no-op statement body in code (the + pole peaks on ' pass' x32, all top examples are multi-line Python snippets with a pass statement); as against the same code shapes with a real statement instead",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N6331_pos/2026-10-31-lm1909-490d57e6.tests.json",
+   "prereg_commit": "16cffcd03",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.792,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.044,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.782,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.836,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.964,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.482,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.765,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.771,
+     "peak": " pass"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.077,
+     "peak": " None"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.049,
+     "peak": " None"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.067,
+     "peak": " break"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.127,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.126,
+     "peak": " return"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.787,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "mistral-vibe mistral-large-4-0-3 (thinking high)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "16cffcd03",
+  "minutes": 1,
+  "batch_size": 3,
+  "dtype": "float16"
+ },
+ "short": "Python 'pass' no-op statement in code",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card: ' pass' dominates the top 32 (x32), all examples multi-line Python with pass. Probes: multi-line snippets containing pass fire 0.8-0.93 of max peaking on ' pass'; the same snippets with return/print/raise instead score near zero.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "pass"
+  ]
+ }
+}
