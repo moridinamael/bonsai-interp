@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-01-ChopinDavid-5e1b3693",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N2889-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T00:28:16+00:00",
+ "recipe": {
+  "toolchain_commit": "96d0cb454",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N2889_neg/2026-11-01-ChopinDavid-5e1b3693.tests.json"
+ },
+ "label": "A non-initial word piece of a split Spanish or Portuguese (mostly Latin American) place name (Pat|agon|ia, Zam|ora, P|otos|í, G|rosso), not the same pieces in English words and not place names that are single tokens",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N2889_neg/2026-11-01-ChopinDavid-5e1b3693.tests.json",
+   "prereg_commit": "96d0cb454",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.025,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.025,
+     "peak": " miners"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.121,
+     "peak": "es"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.264,
+     "peak": "inal"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.025,
+     "peak": "aca"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.113,
+     "peak": "oz"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.015,
+     "peak": " hills"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.019,
+     "peak": "ond"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " miners"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.091,
+     "peak": "es"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " Madrid"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " hills"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " Chile"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.727,
+    "median_fire": 0.025,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "96d0cb454",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "inner piece of Iberian place name",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Probe: 'Mato Grosso' 1.062 ('rosso'); 'Potosí' 0.871 ('otos'); 'Patagonia' 0.760 ('agon'); 'Zamora' 0.694 ('ora'); 'Pagosa Springs' 0.682 ('osa'); but 'Antofagasta' 0.053 ('ag'), a miss; 'pentagon' 0.007 ('agon'); floors 0.008-0.010. Card: 'agon' x6 (Patagonia), 'ora' x3 (Zamora), Vila, Potosí, Pagosa, Mato Grosso (max 8.8, layer 7). Tokens checked: Cuernavaca ' Cu|ern|av|aca', Cochabamba ' Coch|ab|amba', Ayacucho ' Ay|ac|u|cho', Sinaloa ' S|inal|oa', Maracaibo ' Mar|aca|ibo', Badajoz ' Bad|aj|oz', Durango ' Dur|ango', Rondônia ' R|ond|ô|nia'; Lima, Madrid, Mexico, Chile are single tokens.",
+ "selection": "random draw"
+}
