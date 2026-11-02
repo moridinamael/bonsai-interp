@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-737da950",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2633+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T14:31:54+00:00",
+ "recipe": {
+  "toolchain_commit": "4971c3878",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N2633_pos/2026-11-02-ChopinDavid-737da950.tests.json"
+ },
+ "label": "The selector string passed to a DOM or HTML query in scraping and test code (.css(\".x\"), .select('.x'), find_element_by_id('x'), XPath './/x'): the opening of the selector and its class-name pieces, vs string arguments to non-DOM functions",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N2633_pos/2026-11-02-ChopinDavid-737da950.tests.json",
+   "prereg_commit": "4971c3878",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.728,
+     "peak": "-name"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.727,
+     "peak": "('."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.66,
+     "peak": "-input"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.538,
+     "peak": "=\""
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.812,
+     "peak": "('"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.706,
+     "peak": "('."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.721,
+     "peak": "(\"."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.459,
+     "peak": "('."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.088,
+     "peak": "(\""
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.084,
+     "peak": "           "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.049,
+     "peak": " field"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.06,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.032,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.128,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": "\"]."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.1,
+     "peak": " header"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.714,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4971c3878",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "CSS/XPath selector string in DOM query",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Card: peaks on '-name' in .css(\".product-name\"), \"('\" after find_element_by_id and .select, \"(\\\".\" before //title. Probe: .css(\".product-price\") 0.762, select('.result-row') 0.684, find_element_by_id('submit-button') 0.609, class_='page-title' 0.654, CSS rule '.article-body >' 0.655; item[\"price\"] 0.027, data.split('\\n') 0.074, prose 0.006.",
+ "selection": "random draw"
+}
