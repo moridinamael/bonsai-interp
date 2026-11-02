@@ -1,0 +1,175 @@
+{
+ "id": "2026-11-02-moridinamael-33bf3eae",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N1114+",
+ "contributor": "moridinamael",
+ "created": "2026-11-02T09:52:00+00:00",
+ "recipe": {
+  "toolchain_commit": "4a79778b0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N1114_pos/2026-11-02-moridinamael-33bf3eae.tests.json"
+ },
+ "label": "the word piece 'tensor' itself (Tensor, _tensor, tensors), any context",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N1114_pos/2026-11-02-moridinamael-33bf3eae.tests.json",
+   "prereg_commit": "4a79778b0",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.698,
+     "peak": " tensor"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.393,
+     "peak": ".tensor"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.559,
+     "peak": " tensor"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.699,
+     "peak": " Tensor"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.584,
+     "peak": " tensor"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.641,
+     "peak": " tensors"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.554,
+     "peak": "_tensor"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.773,
+     "peak": "Tensor"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": ".array"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " field"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " rel"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": "_matrix"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " as"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.613,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "step-out"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "4a79778b0",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "edges": [
+  {
+   "from": "bonsai1/L3/N1114+",
+   "to": "bonsai1/L22/N12180+",
+   "kind": "feeds",
+   "weight": 0,
+   "method": "attribution ranking on top-4 corpus examples (chat feeders); play step OOM, so zero-ablation drop unmeasured (weight 0 is a placeholder)"
+  }
+ ],
+ "short": "'tensor' word piece",
+ "notes": "play step ran out of GPU memory (5.5 GiB cap), so the feeder drop is unmeasured; feeder picked from the chat feeders attribution ranking.",
+ "roles": [
+  "feeds bonsai1/L22/N12180+"
+ ],
+ "selection": "step-out from bonsai1/L22/N12180+",
+ "trigger": {
+  "words": [
+   "tensor",
+   "Tensor",
+   "tensors"
+  ]
+ }
+}
