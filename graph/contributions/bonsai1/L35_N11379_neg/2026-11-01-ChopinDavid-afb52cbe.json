@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-01-ChopinDavid-afb52cbe",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11379-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T05:30:13+00:00",
+ "recipe": {
+  "toolchain_commit": "dac6002b1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N11379_neg/2026-11-01-ChopinDavid-afb52cbe.tests.json"
+ },
+ "label": "Positional: fires on the first token of a context window (any word); does not fire on whole sentences scored from the start of a document",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N11379_neg/2026-11-01-ChopinDavid-afb52cbe.tests.json",
+   "prereg_commit": "dac6002b1",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.001,
+     "peak": " suggest"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.001,
+     "peak": " stopping"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.008,
+     "peak": "ind"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.0,
+     "peak": "climate"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.0,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.0,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.001,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.001,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": " ordered"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.0,
+     "peak": " Geneva"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " saying"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.0,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " be"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.539,
+    "median_fire": 0.001,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dac6002b1",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "window position 0 (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: 100% of top peaks at window position 0, max 836, the word itself irrelevant (tasks, several, J, us). Probe: 8 sentences including 'tasks required in daily life' and 'several months after his death' all 0.000-0.001, so the trigger cannot be reached in a fresh document. Best-guess test only.",
+ "selection": "random draw"
+}
