@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-c047b3fa",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N11020-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T22:20:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N11020",
+   "pole": "-",
+   "label": "End of a Python statement line that closes a call or signature (')\\n', '):\\n') in multi-line code, vs a closing parenthesis at a line end in prose",
+   "fire": [
+    "def load(path):\n    items = list(read_lines(path))\n    count = 0\n    return items",
+    "class Node:\n    def __init__(self, value: int):\n        self.value = value",
+    "def run(graph):\n    seen = set(graph.nodes)\n    queue = []\n    return queue",
+    "class Point:\n    def __init__(self, x: float, y: float):\n        self.x = x",
+    "def clean(text):\n    words = sorted(text.split())\n    out = []\n    return out",
+    "class Cache:\n    def __init__(self, size: int):\n        self.size = size",
+    "def main():\n    data = dict(load_config())\n    total = 0\n    return data",
+    "class Timer:\n    def __init__(self, delay: float):\n        self.delay = delay"
+   ],
+   "quiet": [
+    "He packed his bag (the old green one)\nand walked to the station.",
+    "The class met at noon (as planned)\nand finished before two.",
+    "She read the list (all three pages)\nand then went to bed.",
+    "We met at the café (near the river)\nand talked for an hour.",
+    "The node was broken (again)\nso the team replaced it.",
+    "Our cache of food (mostly rice)\nlasted for a week.",
+    "The timer rang (too early)\nand the bread was still raw.",
+    "The points were counted (twice)\nand the result was clear."
+   ]
+  }
+ ],
+ "predictions": "')\\n' or '):\\n' mid-way through a Python block reaches 0.3-0.55; a prose parenthesis followed by a newline stays under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python line-ending close paren",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: peaks on ')\\n', '),\\n', '):\\n', ',\\n' in Python. Probe: 'set(vertices)\\n' 0.528, '__init__(self, idx: int):\\n' 0.442, add_nodes_from 0.203; prose '(a little sadly)\\n' 0.039, '(as usual)\\n' 0.026."
+}
