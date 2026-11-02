@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-b424d79c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N772+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T18:20:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N772",
+   "pole": "+",
+   "label": "Argument boundary in TensorFlow-style API calls: the comma or indentation that follows a completed argument and precedes the next keyword argument (', name=', '), global_step='), vs argument lists in plain Python or non-TF library calls",
+   "fire": [
+    "logits = tf.layers.dense(\n    inputs=hidden, units=num_classes,\n    activation=None, name=\"logits\")",
+    "pool = tf.nn.max_pool(\n    conv1, ksize=[1, 2, 2, 1],\n    strides=[1, 2, 2, 1], padding='SAME')",
+    "opt_op = tf.train.AdamOptimizer(lr).apply_gradients(\n    zip(gradients, variables), global_step=global_step)",
+    "acc = tf.reduce_mean(\n    tf.cast(tf.equal(preds, labels), tf.float32),\n    name=\"accuracy\")",
+    "drop = tf.layers.dropout(\n    inputs=fc1, rate=0.5,\n    training=is_training)",
+    "net = slim.conv2d(\n    net, 64, [3, 3],\n    stride=2,\n    scope='conv2')",
+    "probs = tf.nn.softmax(\n    tf.matmul(h, W) + b,\n    name=\"probs\")",
+    "emb = tf.nn.embedding_lookup(\n    embedding_matrix, input_ids,\n    name=\"embeddings\")"
+   ],
+   "quiet": [
+    "response = requests.get(\n    url, params=query,\n    timeout=10)",
+    "plt.plot(\n    xs, ys,\n    color=\"red\", label=\"train\")",
+    "df = pd.read_csv(\n    path, sep=\",\",\n    header=0)",
+    "server = http.server.HTTPServer(\n    (host, port), Handler)",
+    "with open(\n    filename, \"w\",\n    encoding=\"utf-8\") as f:\n    f.write(text)",
+    "parser.add_argument(\n    \"--epochs\", type=int,\n    default=10)",
+    "msg = \"{} items, {} errors\".format(\n    count, errors)",
+    "logging.basicConfig(\n    level=logging.INFO,\n    format=\"%(message)s\")"
+   ]
+  }
+ ],
+ "predictions": "TensorFlow calls with a following keyword argument reach 0.3-0.6; plain Python and non-TF calls with similar argument lists stay under 0.2. Gene-symbol lists also fire (probe 0.714) and are left out of this test.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "TF call argument boundary",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: tf.layers.dropout(...rate=0.4, training=...), apply_gradients(zip(...), global_step=...), slim-style layer kwargs, gene lists (CDKN2A). Probe: gene list 0.714, softmax_cross_entropy ', name=' 0.555, apply_gradients 0.490, conv2d kwargs 0.397, def with defaults 0.180, Keras model.fit 0.046, print 0.002."
+}
