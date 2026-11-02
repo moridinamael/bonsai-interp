@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-01-ChopinDavid-88719172",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9957+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T01:30:32+00:00",
+ "recipe": {
+  "toolchain_commit": "ccb3a8689",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N9957_pos/2026-11-01-ChopinDavid-88719172.tests.json"
+ },
+ "label": "Dense low-amplitude unit on mid-word pieces of Russian (and Arabic) words, strongest on stems of prefixed verbs (отд|ели|ть, разы|гр|ать); English text sits lower",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N9957_pos/2026-11-01-ChopinDavid-88719172.tests.json",
+   "prereg_commit": "ccb3a8689",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.914,
+     "peak": "ели"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.964,
+     "peak": "г"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.718,
+     "peak": "ла"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.976,
+     "peak": "еля"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.912,
+     "peak": "ели"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.846,
+     "peak": "гр"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.905,
+     "peak": "ить"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.778,
+     "peak": "ла"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.174,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.201,
+     "peak": " put"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.177,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.164,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.254,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.28,
+     "peak": " students"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.142,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.169,
+     "peak": " investigator"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.909,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ccb3a8689",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "mid-word Cyrillic/Arabic pieces (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Probe: 'отделил листья' 0.913; 'разыграли сцену' 0.940; 'неотделима' 0.862; Arabic 'الاستعراض' 0.877; plain 'взял ... положил' 0.546 ('ил'); 'показали' 0.152; 'Мы пошли' 0.158; English translations 0.191 and 0.197. Card: dense (37.5% of tokens at 0.1 of max), max 0.97, gate-closed regime 100%. Near misses are English translations; dense flag means a hold here says little.",
+ "selection": "random draw"
+}
