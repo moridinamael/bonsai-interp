@@ -4,10 +4,10 @@
  "layer": 4,
  "index": 9142,
  "pole": "-",
- "label": "the 'ак' piece of a line-initial Russian 'Так/Такой' (split as 'Т' + 'ак' after a newline); weak, broad pole",
+ "label": "the 'ак' piece of a line-initial Russian Так-word (Так, Такой, Также, Таким), after a newline; the rest of this weak, broad pole is scattered stray tokens (e.g. ' Bing' in a list, ' still')",
  "short": "line-initial Russian 'Т|ак'",
  "kind": "token/lexical",
- "status": "partial",
+ "status": "held",
  "depth": "quick",
  "tests": [
   {
@@ -131,6 +131,128 @@
     "near_misses_at_0.3": 0
    },
    "contribution": "2026-10-25-ChopinDavid-d7ea8bbb"
+  },
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N9142_neg/2026-11-02-moridinamael-be898d55.tests.json",
+   "prereg_commit": "171a55edf",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.574,
+     "peak": " Bing"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.523,
+     "peak": "ак"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.521,
+     "peak": "ак"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.681,
+     "peak": "ак"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.483,
+     "peak": "ак"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.378,
+     "peak": "ак"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.573,
+     "peak": "ак"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.554,
+     "peak": "ак"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.062,
+     "peak": "или"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.08,
+     "peak": "ор"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.06,
+     "peak": "уп"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.09,
+     "peak": "По"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.075,
+     "peak": " его"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.146,
+     "peak": "ый"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.06,
+     "peak": "Е"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.09,
+     "peak": "О"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.538,
+    "near_misses_at_0.3": 0
+   },
+   "contribution": "2026-11-02-moridinamael-be898d55"
   }
  ],
  "label_history": [
@@ -138,34 +260,37 @@
    "2026-10-25-ChopinDavid-d7ea8bbb",
    "the 'ак' piece of a line-initial Russian 'Так/Такой' (split as 'Т' + 'ак' after a newline); weak, broad pole",
    "held"
+  ],
+  [
+   "2026-11-02-moridinamael-be898d55",
+   "the 'ак' piece of a line-initial Russian Так-word (Так, Такой, Также, Таким), after a newline; the rest of this weak, broad pole is scattered stray tokens (e.g. ' Bing' in a list, ' still')",
+   "held"
   ]
  ],
  "examples": [],
  "evidence": [],
  "roles": [],
  "contributors": [
-  "ChopinDavid"
+  "ChopinDavid",
+  "moridinamael"
  ],
  "contributions": [
-  "2026-10-25-ChopinDavid-d7ea8bbb"
+  "2026-10-25-ChopinDavid-d7ea8bbb",
+  "2026-11-02-moridinamael-be898d55"
  ],
  "qc": {
   "confirm": 0,
   "dispute": 0,
-  "refine": 0
+  "refine": 1
  },
  "replications": [],
- "coverage": {
-  "value": 0.0142,
-  "method": "estimated from the label's quoted words (token measure)",
-  "strong": 1479
- },
+ "coverage": null,
  "scrutiny": {
-  "level": 1,
-  "name": "tested",
-  "test_rounds": 1,
-  "sentences": 16,
-  "contributors": 1,
-  "qc": 0
+  "level": 3,
+  "name": "checked",
+  "test_rounds": 2,
+  "sentences": 32,
+  "contributors": 2,
+  "qc": 1
  }
 }
