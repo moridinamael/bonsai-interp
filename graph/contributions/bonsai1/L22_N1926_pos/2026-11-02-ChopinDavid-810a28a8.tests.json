@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-810a28a8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N1926+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T20:23:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N1926",
+   "pole": "+",
+   "label": "Statement start in Python code: indentation and the ' =' of an assignment line inside a code block, vs prose with similar words; broad weak unit",
+   "fire": [
+    "import numpy as np\n\ndef normalize(v):\n    norm = np.linalg.norm(v)\n    result = v / norm\n    return result",
+    "def main():\n    args = parse_args()\n    config = load_config(args.path)\n    model = build(config)",
+    "class Counter:\n    def __init__(self):\n        self.count = 0\n        self.items = []",
+    "with open('out.csv') as fh:\n    reader = csv.reader(fh)\n    rows = list(reader)\n    header = rows[0]",
+    "def score(a, b):\n    diff = a - b\n    sq = diff ** 2\n    total = sq.sum()\n    return total",
+    "while queue:\n    node = queue.pop()\n    seen = seen | {node}\n    children = graph[node]",
+    "def plot(xs, ys):\n    fig, ax = plt.subplots()\n    line = ax.plot(xs, ys)\n    return fig",
+    "try:\n    value = int(text)\n    ok = True\nexcept ValueError:\n    value = 0"
+   ],
+   "quiet": [
+    "To normalize a vector, you divide each of its entries by the length of the whole vector.",
+    "First the program reads the arguments, then it loads the settings and builds the model.",
+    "A counter starts at zero and keeps a list of every item it has seen so far.",
+    "Open the spreadsheet, read every row, and treat the first row as the header.",
+    "The score is the sum of the squared differences between the two lists of numbers.",
+    "While there are nodes left in the queue, take one out and visit all of its children.",
+    "To draw the chart, make a figure, add a line for the data, and show it on screen.",
+    "If the text is not a number, the value falls back to zero and the check fails."
+   ]
+  }
+ ],
+ "predictions": "Multi-line Python with assignments reaches 0.2-0.4; prose stays under 0.15 but the broad baseline may leak.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python assignment line start",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: indentation runs x10, ' =' x4 at the start of assignment lines (plt.hist, counts = compute_prob, sample = sample.T), max 14.6, flagged broad (1.3%). Probe: def/with/json.load block 0.336, for loop 0.106, if/assign 0.081, x = np.zeros 0.103; but prose recipe 0.140 and 'let's look at why' 0.168. Weak separation expected."
+}
