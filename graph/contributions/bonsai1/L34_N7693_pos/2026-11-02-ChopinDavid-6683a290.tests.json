@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-6683a290",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7693+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T23:23:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N7693",
+   "pole": "+",
+   "label": "First piece of a postal-style US state abbreviation split by the tokenizer after a city or party tag (Tempe, Ar|iz.; D-|I|ll.; (I|owa)), vs the same sentences with the state omitted or spelled as a whole word",
+   "fire": [
+    "Maria Lopez, 37, a nurse from Mesa, Ariz., said the line moved slowly.",
+    "Representative Mike Quigley, D-Ill., voted against the measure.",
+    "The Pioneers host Grinnell College (Iowa) in the season opener.",
+    "Senator John McCain, R-Ariz., criticized the delay on Tuesday.",
+    "A driver from Flagstaff, Ariz., was arrested after the crash.",
+    "Representative Darin LaHood, R-Ill., said he would back the bill.",
+    "Senator Tom Harkin, D-Iowa, praised the farm program.",
+    "Luther College (Iowa) won the conference title last year."
+   ],
+   "quiet": [
+    "Maria Lopez, 37, a nurse from the area, said the line moved slowly.",
+    "Representative Mike Quigley voted against the measure on Monday.",
+    "The Pioneers host Grinnell College in the season opener.",
+    "Senator John McCain criticized the delay on Tuesday.",
+    "A driver from Flagstaff, Arizona, was arrested after the crash.",
+    "Representative Darin LaHood said he would back the bill.",
+    "Senator Tom Harkin praised the farm program in a speech.",
+    "Luther College won the conference title last year."
+   ]
+  }
+ ],
+ "predictions": "Split abbreviations after a city or party tag reach 0.5-0.8; sentences without the state, or with a whole-token state name, stay under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split state abbreviation (Ar|iz., -I|ll.)",
+ "unit_kind": "token/lexical",
+ "confidence": "medium",
+ "notes": "Card: Avondale, Ar|iz.; Coe College (I|owa); R-|I|ll.; I|thaca; D-|A|riz.; U|BC. Probe: D-Ill. 0.732, Tempe, Ariz. 0.668, (Iowa) 0.543, Tulsa, Okla. 0.317 (peak ','), University of California 0.124; state removed 0.002-0.007."
+}

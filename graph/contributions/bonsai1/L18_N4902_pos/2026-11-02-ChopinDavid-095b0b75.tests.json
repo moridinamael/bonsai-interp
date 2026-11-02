@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-095b0b75",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4902+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T23:23:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N4902",
+   "pole": "+",
+   "label": "Opening quote token of a string literal passed as an argument in Python code (assertEqual(x, 'value'), print('...'), (\"prefix\")), vs the same code passing variables or numbers",
+   "fire": [
+    "class NameTest(TestCase):\n    def test_label(self):\n        self.assertEqual(form.label, 'customer')\n        self.assertEqual(form.kind, 'retail')",
+    "def setup(db):\n    db.connect()\n    print('loading tables...')\n    db.load(\"orders\")",
+    "for row in rows:\n    # drop the prefix (\"tmp_\" or \"old_\")\n    row.name = row.name[4:]",
+    "def test_status(self):\n    resp = self.client.get(url)\n    self.assertIn('approved', resp.text)",
+    "logger.info('starting worker')\nqueue = Queue(\"jobs\")\nqueue.start()",
+    "class PathTest(TestCase):\n    def test_join(self):\n        self.assertEqual(join(a, b), '/tmp/out')",
+    "def main():\n    args = parse()\n    print(\"done in\", args.time)",
+    "config.set('server', 'port')\nconfig.set('server', 'host')\nconfig.save()"
+   ],
+   "quiet": [
+    "class NameTest(TestCase):\n    def test_label(self):\n        self.assertEqual(form.label, expected)\n        self.assertEqual(form.size, 3)",
+    "def setup(db):\n    db.connect()\n    db.load(tables)\n    db.close()",
+    "for row in rows:\n    # drop the first four characters\n    row.name = row.name[4:]",
+    "def test_status(self):\n    resp = self.client.get(url)\n    self.assertTrue(resp.ok)",
+    "logger.info(msg)\nqueue = Queue(jobs)\nqueue.start()",
+    "class PathTest(TestCase):\n    def test_join(self):\n        self.assertEqual(join(a, b), out)",
+    "def main():\n    args = parse()\n    print(args.time)",
+    "config.set(section, port)\nconfig.set(section, host)\nconfig.save()"
+   ]
+  }
+ ],
+ "predictions": "String-argument quotes in Python reach 0.2-0.45; the same calls with variable or number arguments stay under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "opening quote of a Python string argument",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: assertEqual(..., 'department'), convert(...), \"Opening\"), (\"processed_crash.\"), print('creating indexes'), return \"/veliquest\". Probe: quote in a comment '(\"raw.\"' 0.430, assertEqual string args 0.212, return \"/data/\" 0.102; same test with variable args 0.142, prose quotes 0.039-0.051. Separation is small, so confidence is low."
+}

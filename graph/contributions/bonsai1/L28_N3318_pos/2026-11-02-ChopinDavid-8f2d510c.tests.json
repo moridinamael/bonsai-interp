@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-8f2d510c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N3318+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T23:23:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N3318",
+   "pole": "+",
+   "label": "Inner word-piece of a split Japanese (East Asian) proper name, romanized or in CJK (Sumit|omo, Asah|ik|awa, Niss|in, 中|島), vs inner pieces of split European place and brand names and single-token Japanese names",
+   "fire": [
+    "Engineers at Fujitsu showed a new server design in Tokyo on Tuesday.",
+    "The castle in Kumamoto was damaged by the earthquake in 2016.",
+    "She bought a bottle of Kikkoman soy sauce at the corner shop.",
+    "The department store Takashimaya opened a branch in Singapore.",
+    "Our flight landed in Kitakyushu just after midnight.",
+    "The cosmetics maker Shiseido reported higher sales in China.",
+    "Tourists crowded the old flagship store of Mitsukoshi in Ginza.",
+    "The bombing of Nagasaki took place three days after Hiroshima."
+   ],
+   "quiet": [
+    "Engineers at Siemens showed a new server design in Munich on Tuesday.",
+    "The stadium in Gelsenkirchen was renovated in 2001.",
+    "She bought a bottle of Schweppes tonic at the corner shop.",
+    "The carmaker in Wolfsburg opened a new plant in Mexico.",
+    "Our flight landed in Kalamazoo just after midnight.",
+    "The motorcycle maker Yamaha reported higher sales in India.",
+    "Tourists crowded the old town squares of Liechtenstein in summer.",
+    "The flooding in Mississauga took place three days after the storm."
+   ]
+  }
+ ],
+ "predictions": "Romanized Japanese names split into pieces reach 0.3-0.9 on an inner piece; split German/Canadian/US names and single-token Japanese names stay under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "inner piece of split Japanese name",
+ "unit_kind": "token/lexical",
+ "confidence": "medium",
+ "notes": "Card: Nissin, Asahikawa, 中込, 三菱東京, 中島, Sumitomo, Nikken, 楽天ブックス, lisinopril. Probe: Asahikawa 0.940 ('ik'), Sumitomo 0.748 ('omo'), lisinopril 0.714 ('op'), 中島 0.409, Nissin 0.368, 楽天ブックス 0.271; Sapporo only 0.079; Siemens 0.009, Minnesota 0.006 (single tokens). Lisinopril shows the pole is not purely Japanese; the near misses test whether split non-Asian names fire too."
+}
