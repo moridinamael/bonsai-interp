@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-01-ChopinDavid-8192bddf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N4611-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T03:28:07+00:00",
+ "recipe": {
+  "toolchain_commit": "a39692315",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N4611_neg/2026-11-01-ChopinDavid-8192bddf.tests.json"
+ },
+ "label": "The Arabic particle ان / إن / أن (inna/anna 'that', 'indeed'), especially after كما or طالما or at the start of a sentence",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N4611_neg/2026-11-01-ChopinDavid-8192bddf.tests.json",
+   "prereg_commit": "a39692315",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.915,
+     "peak": " ان"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.921,
+     "peak": " ان"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.828,
+     "peak": " ان"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.828,
+     "peak": "إن"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.481,
+     "peak": " أن"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.97,
+     "peak": " ان"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.73,
+     "peak": " ان"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.859,
+     "peak": "إن"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.235,
+     "peak": " مع"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.258,
+     "peak": "سن"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.261,
+     "peak": "اش"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.16,
+     "peak": " ق"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.085,
+     "peak": " الخميس"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.176,
+     "peak": "ح"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.347,
+     "peak": "وقع"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.164,
+     "peak": "نا"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.843,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a39692315",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Arabic particle ان/إن",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Probe: 'كما ان' 1.009 vs 'كما' alone 0.175; 'طالما ان' 1.037; sentence-initial 'إن' 0.795 vs without 0.055; 'قال المدير أن' 0.537; plain Arabic 0.100-0.285. Card: ' ان' x17, 'إن' x10. Broad flag (4.8%).",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " ان",
+   "إن",
+   " أن",
+   " إن"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-ac68684a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N2725+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T03:20:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N2725",
+   "pole": "+",
+   "label": "Set-up tooling words in code and shell: ' install' after a package manager (apt-get/pip install) and ' logging' as an imported module",
+   "fire": [
+    "First update the package list, then run: sudo apt-get install libssl-dev",
+    "Install the dependencies with:\n\n    pip install requests",
+    "On macOS you can use Homebrew:\n\n    brew install wget",
+    "import logging\nimport argparse\n\nlog = logging.getLogger('app')",
+    "# Setup\napt-get install -y curl git",
+    "import time\nimport logging\nfrom pathlib import Path",
+    "To build the docs, run `pip install sphinx` and then `make html`.",
+    "#!/usr/bin/env python\nimport logging\nlogging.basicConfig(level=logging.INFO)"
+   ],
+   "quiet": [
+    "We hired a plumber to install the new sink in the kitchen.",
+    "The town banned logging in the hills above the river.",
+    "It took two days to install the solar panels on the roof.",
+    "The guide described logging camps in nineteenth-century Maine.",
+    "Volunteers helped install benches along the trail.",
+    "She kept logging her runs in a small notebook.",
+    "The museum will install a new exhibit next month.",
+    "Logging trucks rumbled down the mountain road every hour."
+   ]
+  }
+ ],
+ "predictions": "' install' after apt-get/pip/brew reaches 0.6-0.9 and the logging import 0.4-0.6; the same words in ordinary prose stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "install / import logging",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Probe: 'apt-get install python3-dev' 0.907; 'import logging ... logger' 0.540 (peak on logger); 'import json' 0.322; 'import os/sys' 0.049; prose 'illegal logging' 0.026, 'logging every request' 0.042. Card: ' logging' x7, ' install' x3, flask, from.",
+ "trigger": {
+  "words": [
+   " install",
+   " logging"
+  ]
+ }
+}
