@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-6446d190",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N2716+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T06:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N2716",
+   "pole": "+",
+   "label": "The word-initial piece ' vie' / ' Vie' of a split Romance or Portuguese word or name (vie|jos, vie|les, Vie|ira), plus word-final pieces of Slavic/Hungarian words",
+   "fire": [
+    "Mi abuelo era un hombre viejo que vivía cerca del mar.",
+    "En la plaza, dos señoras viejas daban de comer a las palomas.",
+    "Auf dem Markt gibt es Obst, Käse und vieles andere.",
+    "The defender João Vieira signed a new contract with the club.",
+    "Guardo en una caja las fotos viejas de la familia.",
+    "Wir haben im Urlaub vieles gesehen und gelernt.",
+    "A paper by Vieira and Santos reviewed the fishing data.",
+    "Ese coche viejo todavía funciona muy bien."
+   ],
+   "quiet": [
+    "Mi abuelo era un hombre alto que vivía cerca del mar.",
+    "En la plaza, dos señoras mayores daban de comer a las palomas.",
+    "Auf dem Markt gibt es Obst, Käse und noch anderes.",
+    "The defender João Silva signed a new contract with the club.",
+    "Guardo en una caja las fotos antiguas de la familia.",
+    "Wir haben im Urlaub sehr viel gesehen und gelernt.",
+    "A paper by Costa and Santos reviewed the fishing data.",
+    "Ese coche rojo todavía funciona muy bien."
+   ]
+  }
+ ],
+ "predictions": "Words split as ' vie'+rest (viejo, viejas, vieles, Vieira) reach 0.35-0.6 at ' vie'; the same sentence with a different word stays under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' vie' word-start piece",
+ "unit_kind": "spelling-unit",
+ "confidence": "medium",
+ "notes": "Card: ' vie' x8 and ' Vie' x2 in the top 32. Probe: Vieira 0.502, viejos 0.417, vieles 0.394; Silva 0.011, 'noch mehr' 0.048. Slavic/Hungarian word-final pieces also fire (izbere 0.901, megye 0.799) but this test covers only ' vie'. Splits checked: viejo, viejas = vie|jo, vie|jas; viele is one token so it is not used.",
+ "trigger": {
+  "tokens": [
+   " vie",
+   " Vie"
+  ]
+ }
+}

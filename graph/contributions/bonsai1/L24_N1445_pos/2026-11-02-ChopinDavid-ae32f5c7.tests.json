@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-ae32f5c7",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1445+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T06:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N1445",
+   "pole": "+",
+   "label": "The slot where 'return' / 'returning' is the expected next word ('...never to return', 'when you plan on returning'): a predictor of going back",
+   "fire": [
+    "The young sailor left the island in 1820, never to return.",
+    "Thousands of soldiers marched off to the front never to return home.",
+    "Let your family know which day you plan on returning from the hike.",
+    "She walked out of the village one winter morning, never to return.",
+    "Please tell the front desk what time you plan on returning to the hotel.",
+    "Her brother sailed for America and was gone, never to return to Ireland.",
+    "Before you leave, write down when you plan on returning the rental car.",
+    "The old king rode into the mountains alone, never to return."
+   ],
+   "quiet": [
+    "The young sailor left the island in 1820 to hunt whales in the south.",
+    "Thousands of soldiers marched off to the front in the first week.",
+    "Let your family know which trail you will take on the hike.",
+    "She walked out of the village one winter morning to buy flour.",
+    "Please tell the front desk what time you would like breakfast.",
+    "Her brother sailed for America and found work in Boston.",
+    "Before you leave, write down the fuel level of the rental car.",
+    "The old king rode into the mountains alone to hunt deer."
+   ]
+  }
+ ],
+ "predictions": "The word right before an expected 'return' (never, on, to) reaches 0.4-0.8 in departure contexts; the same departure sentences continued with a purpose instead stay under 0.06.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot predicting 'return'",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card logit effect promotes ' recover', ' returning', ' return', ' back', ' revert'. Probe: 'travelled into that desert never to return' 0.775 (peak ' never'), 'when you plan on returning' 0.567 (peak ' on'); 'don't recover' 0.094, 'To get back to Windows' 0.032, 'never come out' 0.120; departure sentences with a purpose 0.001-0.052. Only the 'never to return' and 'plan on returning' frames scored high, so the test uses those frames."
+}
