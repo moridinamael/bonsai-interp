@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-54501b66",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N3039-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T04:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N3039",
+   "pole": "-",
+   "label": "The token naming the variable being described in a code docstring or comment (`index` contains the..., traj, int, the trajectory)",
+   "fire": [
+    "def write_row(row, f):\n    \"\"\"Write one record.\n\n    Parameters\n    ----------\n    row : dict\n        the record to be written\n    \"\"\"",
+    "def get_item(idx):\n    \"\"\"Return an item.\n\n    Args:\n        idx (int): the position of the item in the list\n    \"\"\"",
+    "def plot(ax, data):\n    \"\"\"Draw data.\n\n    Parameters\n    ----------\n    ax : Axes\n        the axes on which the curve is drawn\n    \"\"\"",
+    "def lookup(key):\n    \"\"\"Find a value.\n\n    If found, `slot` holds the bucket where the key was stored.\n    \"\"\"",
+    "def step(state, dt):\n    \"\"\"Advance the simulation.\n\n    @ In, dt, float, the time step used for the update\n    \"\"\"",
+    "def merge(a, b):\n    \"\"\"Merge two lists.\n\n    Args:\n        b (list): the second list, appended after a\n    \"\"\"",
+    "def load_image(path):\n    \"\"\"Read an image.\n\n    Parameters\n    ----------\n    path : str\n        the file from which pixels are read\n    \"\"\"",
+    "def score(model, batch):\n    \"\"\"Evaluate.\n\n    Args:\n        batch (Tensor): the inputs fed to the model\n    \"\"\""
+   ],
+   "quiet": [
+    "Every morning she wrote one record of the weather in a notebook by the window.",
+    "Ask the clerk for the position of the item on the shelf.",
+    "The painter set up the easel on which the canvas was stretched.",
+    "If you are lucky, the guide will show you the bucket where the coins were kept.",
+    "The coach explained the time step used in the dance routine.",
+    "Bring the second list of guests and add it after the first one.",
+    "The old diary was the file from which the historians read most dates.",
+    "After lunch the teacher handed out the inputs for the experiment."
+   ]
+  }
+ ],
+ "predictions": "The noun or 'the' that names the described variable inside a docstring/param comment reaches 0.3-0.6; the same nouns in ordinary prose stay under 0.05. For-loop variables, strong on the card, scored only 0.06-0.16 in short snippets and are not used.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "variable named in a docstring",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Probe: numpy-style 'traj : int / the trajectory' 0.529 (peak ' the'); for-loop variables 'for sample/column/order/layer' 0.06-0.16; prose 'one column for every sample' 0.006. Card peaks (-232 '`index` contains the', -231 'for atom in') come from long files. Low confidence."
+}

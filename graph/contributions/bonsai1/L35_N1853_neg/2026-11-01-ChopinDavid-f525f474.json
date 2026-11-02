@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-01-ChopinDavid-f525f474",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1853-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T04:28:51+00:00",
+ "recipe": {
+  "toolchain_commit": "6e6da2278",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N1853_neg/2026-11-01-ChopinDavid-f525f474.tests.json"
+ },
+ "label": "First piece of a word the tokenizer splits, where the model must predict the rest (byte-split 貢 of 貢献, 販 of 販売, ' P'|iers, ' Tr'|iffids, ' Qu'|etzalcoatl), vs single-token words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N1853_neg/2026-11-01-ChopinDavid-f525f474.tests.json",
+   "prereg_commit": "6e6da2278",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.662,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.375,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.086,
+     "peak": " old"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.227,
+     "peak": " Tr"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.011,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.013,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.065,
+     "peak": "av"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.026,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": "長"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "置いて"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.086,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.101,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": " rented"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.742,
+    "median_fire": 0.075,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e6da2278",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "first piece of a split word",
+ "unit_kind": "spelling-unit",
+ "confidence": "medium",
+ "notes": "Probe: 'Triffids' 0.820, '貢献' 0.757, 'retratos' 0.686, 'Chelsea Piers' 0.664, '通信販売' 0.482; controls '寄与' 0.038, 'Plaza Hotel' 0.180, 'portraits' 0.031. Overlaps the earlier L34/N10094+ split-place-name result.",
+ "selection": "random draw"
+}

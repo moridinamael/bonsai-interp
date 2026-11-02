@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-f525f474",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1853-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T04:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N1853",
+   "pole": "-",
+   "label": "First piece of a word the tokenizer splits, where the model must predict the rest (byte-split 貢 of 貢献, 販 of 販売, ' P'|iers, ' Tr'|iffids, ' Qu'|etzalcoatl), vs single-token words",
+   "fire": [
+    "長年にわたり地元の文化振興に貢献してきた人物です。",
+    "この商品はネット通販限定で、店頭には置いていません。",
+    "The ferry docked beside the old Piers district before noon.",
+    "My uncle kept a battered Triffid paperback on the shelf beside his bed.",
+    "The museum displays a rare Quetzalcoatl mask from the valley.",
+    "We drove across the Pyrenees in a rented van last summer.",
+    "The walkers followed the river toward the Okavango delta.",
+    "Her favourite composer to play in winter is Tchaikovsky."
+   ],
+   "quiet": [
+    "長年にわたり地元の文化振興に尽力してきた人物です。",
+    "この商品はネット限定で、店頭には置いていません。",
+    "The ferry docked beside the old harbour district before noon.",
+    "My uncle kept a battered thriller paperback on the shelf beside his bed.",
+    "The museum displays a rare stone mask from the valley.",
+    "We drove across the mountains in a rented van last summer.",
+    "The walkers followed the river toward the southern delta.",
+    "Her favourite composer to play in winter is Mozart."
+   ]
+  }
+ ],
+ "predictions": "The first piece of a multi-token word (Japanese byte-split kanji, rare English or Spanish words) reaches 0.4-0.8; the same sentence with a common single-token word stays under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "first piece of a split word",
+ "unit_kind": "spelling-unit",
+ "confidence": "medium",
+ "notes": "Probe: 'Triffids' 0.820, '貢献' 0.757, 'retratos' 0.686, 'Chelsea Piers' 0.664, '通信販売' 0.482; controls '寄与' 0.038, 'Plaza Hotel' 0.180, 'portraits' 0.031. Overlaps the earlier L34/N10094+ split-place-name result."
+}
