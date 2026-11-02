@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-fcc3dc82",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9867-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T02:20:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9867",
+   "pole": "-",
+   "label": "Byte-fallback first piece (' �') of a katakana or Hangul word that follows a space, in Japanese or Korean text; the same word written without the space does not split this way and stays quiet",
+   "fire": [
+    "週末は友達と一緒に ビーチでのんびり過ごしました。",
+    "彼女は東京で有名な デザイナーとして働いています。",
+    "このアプリは毎朝 フィードを自動で更新します。",
+    "駅前に新しい ブティックがオープンしました。",
+    "当店では春の ポイントキャンペーンを実施中です。",
+    "新型モデルには大型の ディスプレイが付いています。",
+    "우리 팀은 이번 달에 새로운 디자인을 발표했습니다.",
+    "그 회사는 경험 많은 엔지니어를 찾고 있습니다."
+   ],
+   "quiet": [
+    "週末は友達と一緒にビーチでのんびり過ごしました。",
+    "彼女は東京で有名なデザイナーとして働いています。",
+    "このアプリは毎朝フィードを自動で更新します。",
+    "駅前に新しいブティックがオープンしました。",
+    "当店では春のポイントキャンペーンを実施中です。",
+    "新型モデルには大型のディスプレイが付いています。",
+    "母は台所でパンを焼いてくれました。",
+    "私たちはホテルのプールで泳ぎました。"
+   ]
+  }
+ ],
+ "predictions": "Space-preceded katakana/Hangul words whose first character falls back to bytes reach 0.5-0.8 on ' �'; the same words with no space before them stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space + byte-split katakana/Hangul start",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Probe: '大きな ディスプレイ' 0.754 vs no space 0.022; '無料の フィットネス' 0.713 vs 0.002; '1000 ポイント' 0.589; Korean '새로운 엔지니어' 0.460 (no-space Korean still 0.375, so quiet items are Japanese only); 'は とても' 0.281 on the bare space. Card: ' �' x29 of top 32, max 388, all space + katakana/Hangul starts."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-9647101a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N11652+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T02:20:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N11652",
+   "pole": "+",
+   "label": "x/y coordinate values in numeric Python code (point lists, bounds, coordinate pairs), as opposed to code that handles names, strings or records",
+   "fire": [
+    "corners = [{'x': 0, 'y': 0}, {'x': 10, 'y': 0}, {'x': 10, 'y': 4}]",
+    "self.x_min = x_min\nself.x_max = x_max\nself.y_min = y_min\nself.y_max = y_max",
+    "path = [(0.0, 1.5), (2.0, -1.0), (4.5, 0.25), (6.0, 0.0)]",
+    "for i in range(n):\n    if 0 < x[i] < 1 and 0 < y[i] < 1:\n        inside += 1",
+    "xs = np.linspace(-1.0, 1.0, 200)\nys = np.sin(xs) * 0.5",
+    "box = (x0, y0, x1, y1)\nwidth = x1 - x0\nheight = y1 - y0",
+    "p1 = Point(x=3.0, y=-2.0)\np2 = Point(x=-1.0, y=4.0)",
+    "for (x, y) in zip(xs, ys):\n    ax.plot(x, y, 'o', ms=2)"
+   ],
+   "quiet": [
+    "users = [{'name': 'ann', 'role': 'admin'}, {'name': 'bo', 'role': 'user'}]",
+    "self.first_name = first_name\nself.last_name = last_name\nself.email = email\nself.phone = phone",
+    "words = [('cat', 'noun'), ('run', 'verb'), ('red', 'adj'), ('up', 'adv')]",
+    "for user in users:\n    if user.is_admin and user.is_active:\n        allowed += 1",
+    "lines = open(path).readlines()\ntext = ''.join(lines).strip()",
+    "parts = (scheme, host, user, query)\nurl = scheme + host\nlabel = user.upper()",
+    "u1 = User(name='Ann', city='Oslo')\nu2 = User(name='Bo', city='Rome')",
+    "for (key, value) in config.items():\n    print(key, value, sep='=')"
+   ]
+  }
+ ],
+ "predictions": "Coordinate literals and x/y bounds in numeric code reach 0.2-0.45; similarly shaped code over names, strings or records stays under 0.05. Probe amplitudes were low, so the median may fall short of 0.3.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "coordinates in numeric code",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Probe: \"[{'x': 0, 'y': 5}, ...]\" 0.424 ('}]'); 'The bounds are 0 < x < 1' 0.272; 'global_max' 0.247; 'linspace(0, 1, 50)' 0.125; \"input('Name: ')\" 0.013; \"['apple', 'pear']\" 0.010. Card max only 7: numeric code with xi, linspace, bounds, global_max, (x1,y1) pairs; 13% sign echo."
+}
