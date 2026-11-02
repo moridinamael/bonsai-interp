@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-d6fcde7a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N9039+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T04:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N9039",
+   "pole": "+",
+   "label": "The blank-line token that closes a finished code block (after return or the last statement of a function) before the next top-level definition",
+   "fire": [
+    "import json\n\ndef read_config(path):\n    with open(path) as f:\n        cfg = json.load(f)\n    return cfg\n\ndef write_config(path, cfg):\n    pass",
+    "def parse_args():\n    p = argparse.ArgumentParser()\n    p.add_argument('--n', type=int)\n    return p.parse_args()\n\ndef run(n):\n    print(n)",
+    "def greet(name):\n    msg = 'hello ' + name\n    print(msg)\n\ndef farewell(name):\n    print('bye', name)",
+    "def scale(xs, k):\n    out = [x * k for x in xs]\n    return out\n\nclass Scaler:\n    pass",
+    "def fetch(url):\n    r = requests.get(url)\n    return r.json()\n\ndef store(data):\n    db.insert(data)",
+    "def mean(xs):\n    if not xs:\n        return None\n    return sum(xs) / len(xs)\n\ndef median(xs):\n    pass",
+    "def setup():\n    logging.basicConfig(level=logging.INFO)\n    log.info('ready')\n\nif __name__ == '__main__':\n    setup()",
+    "def count_words(text):\n    words = text.split()\n    return len(words)\n\ndef count_lines(text):\n    return text.count('\\n')"
+   ],
+   "quiet": [
+    "def read_config(path):\n    cfg = {}\n\n    with open(path) as f:\n        cfg = json.load(f)\n    return cfg",
+    "def parse_args():\n    p = argparse.ArgumentParser()\n\n    p.add_argument('--n', type=int)\n    return p.parse_args()",
+    "Our hike started early.\n\nBy noon we had reached the lake and stopped for lunch.",
+    "def scale(xs, k):\n    out = []\n\n    for x in xs:\n        out.append(x * k)\n    return out",
+    "Dear Tom,\n\nI hope the move went well and the new flat is warm.",
+    "def mean(xs):\n    total = 0\n\n    for x in xs:\n        total += x\n    return total / len(xs)",
+    "Chapter One\n\nThe village woke slowly under a grey sky.",
+    "def count_words(text):\n    text = text.strip()\n\n    words = text.split()\n    return len(words)"
+   ]
+  }
+ ],
+ "predictions": "'\\n\\n' or ')\\n\\n' right after a function's final statement reaches 0.2-0.4 on short snippets; a blank line inside a function body or between prose paragraphs stays under 0.06.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "blank line ending a code block",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Probe (weak): end of main() before if __name__ 0.324, end of load() 0.252, after imports 0.224, between methods 0.193; blank line inside a body before a for loop 0.014, prose paragraphs 0.052, '\\n\\n\\n' after a function 0.018 (different token). Card max 36.5 comes from long files; short snippets may stay under the hold bar."
+}
