@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-235c0045",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N6295+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T16:30:39+00:00",
+ "recipe": {
+  "toolchain_commit": "9ce6314a8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N6295_pos/2026-11-02-ChopinDavid-235c0045.tests.json"
+ },
+ "label": "The qualifier that marks land, premises or a service as private, residential or free (private land, residential addresses, free pickup), vs public, commercial or paid counterparts",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N6295_pos/2026-11-02-ChopinDavid-235c0045.tests.json",
+   "prereg_commit": "9ce6314a8",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.792,
+     "peak": " private"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.682,
+     "peak": " residential"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.212,
+     "peak": " free"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.574,
+     "peak": " private"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.243,
+     "peak": " include"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.011,
+     "peak": " library"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.747,
+     "peak": " private"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.048,
+     "peak": " residential"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.129,
+     "peak": " state"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.309,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.105,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " office"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " library"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.384,
+     "peak": " public"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.089,
+     "peak": " commercial"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.408,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ce6314a8",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "private/residential/free qualifier",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: ' private' x5, ' residential' x2, ' affordable' x2, '-cost', ' free', 'your property'. Probe: 'on private land' 0.718, 'residential addresses' 0.663, 'free local pickup' 0.540, 'your property' 0.173; 'national forest' 0.094, 'downtown offices' 0.086.",
+ "selection": "random draw"
+}
