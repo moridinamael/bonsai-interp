@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-1f644f1a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N12145+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T21:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N12145",
+   "pole": "+",
+   "label": "the '.\\n\\n' that ends the one-line summary of a multi-line Python docstring, before the extended description or Args section",
+   "fire": [
+    "def scale(v, k):\n    \"\"\"Multiply every element of the vector by k.\n\n    Args:\n        v: a list of numbers\n        k: the factor\n    \"\"\"\n    return [x * k for x in v]",
+    "def connect(host):\n    \"\"\"Open a socket connection to the given host.\n\n    The port defaults to 80.\n    \"\"\"\n    return socket.create_connection((host, 80))",
+    "class Queue:\n    \"\"\"A simple first-in first-out queue.\n\n    Items are stored in a list.\n    \"\"\"\n    def __init__(self):\n        self.items = []",
+    "def parse_date(s):\n    \"\"\"Convert an ISO date string into a date object.\n\n    Returns:\n        A datetime.date instance.\n    \"\"\"",
+    "def mean(xs):\n    \"\"\"Compute the arithmetic mean of a sequence.\n\n    Raises ValueError if the sequence is empty.\n    \"\"\"\n    return sum(xs) / len(xs)",
+    "    def save(self, path):\n        \"\"\"Write the current model weights to a file.\n\n        Args:\n            path: destination file\n        \"\"\"",
+    "def retry(fn, n=3):\n    \"\"\"Call fn until it succeeds or n attempts fail.\n\n    >>> retry(lambda: 1)\n    1\n    \"\"\"",
+    "class Timer:\n    \"\"\"Measure the time spent inside a block.\n\n    Use it as a context manager.\n    \"\"\"\n    pass"
+   ],
+   "quiet": [
+    "def scale(v, k):\n    \"\"\"Multiply every element of the vector by k.\"\"\"\n    return [x * k for x in v]",
+    "def connect(host):\n    # Open a socket connection to the given host.\n    return socket.create_connection((host, 80))",
+    "class Queue:\n    \"\"\"A simple first-in first-out queue.\"\"\"\n    def __init__(self):\n        self.items = []",
+    "def parse_date(s):\n    # Convert an ISO date string into a date object.\n    return date.fromisoformat(s)",
+    "We computed the arithmetic mean of each sequence.\n\nThe results are shown in the table below.",
+    "    def save(self, path):\n        \"\"\"Write the current model weights to a file.\"\"\"\n        torch.save(self.state, path)",
+    "The function retries until it succeeds.\n\nAfter three failed attempts it gives up.",
+    "class Timer:\n    # Measure the time spent inside a block.\n    pass"
+   ]
+  }
+ ],
+ "predictions": "7/8 fire; one-line docstrings, comments and prose paragraphs quiet",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring summary break",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: '.\\n\\n' x21 of 32, nearly all in docstrings. Probe: docstring summary breaks 0.593, 0.500, 0.452; one-line docstring 0.042, '#' comment 0.042, prose paragraph break 0.036 and 0.050. Side trigger: KJV 'should be' 0.416 (not tested)."
+}

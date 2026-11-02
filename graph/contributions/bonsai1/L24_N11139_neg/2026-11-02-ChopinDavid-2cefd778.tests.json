@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-2cefd778",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N11139-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T21:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N11139",
+   "pole": "-",
+   "label": "unclear: weak firing on comparison and concatenation operators ('==', 'in', '+') in Python code",
+   "fire": [
+    "for row in rows:\n    if row.kind == 'header':\n        skip = True\n    elif row.kind == 'footer':\n        stop = True",
+    "if ext in ['.png', '.jpg', '.gif']:\n    images.append(fname)",
+    "full = prefix + '_' + suffix + '.txt'\nopen(full).close()",
+    "if status == 'done' and retries == 0:\n    report(job)",
+    "elif os_name in ['linux', 'darwin']:\n    sep = '/'",
+    "line = '[' + stamp + '] ' + message\nlog.write(line)",
+    "while token != 'END':\n    if token == '(':\n        depth += 1",
+    "key = user + ':' + str(port)\ncache[key] = value"
+   ],
+   "quiet": [
+    "for row in rows:\n    process(row)\n    count_rows(row)\n    flush()",
+    "images.append(fname)\nsave(images)",
+    "full = build_name(prefix, suffix)\nopen(full).close()",
+    "report(job)\nnotify(job.owner)",
+    "sep = get_separator()\nprint(sep)",
+    "log.write(message)\nlog.flush()",
+    "depth = 0\nparse(tokens)\nreturn depth",
+    "cache[key] = value\nsave_cache(cache)"
+   ]
+  }
+ ],
+ "predictions": "likely fails: probe peaks only ~0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code operators (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: '==', 'in', '+' in code plus one ' titled'. Probe peaks were all weak: '+' concatenation 0.105, 'in [...]' 0.093, '==' 0.054, ' titled' 0.016, prose 0.014-0.032. Best-guess test of operators in code against code without them."
+}
