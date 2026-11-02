@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-2d8c1653",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N4446+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T13:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N4446",
+   "pole": "+",
+   "label": "A configuration or settings object in code (self.settings(...), cfg.CONF.set_override, params = {...}, args = parser.parse_args()), vs code that handles result or data objects",
+   "fire": [
+    "    with override_settings(LANGUAGE_CODE='fr'):\n        resp = client.get('/home')",
+    "    conf.CONF.set_default('workers', 4)\n    start()",
+    "train_params = {\n    'batch_size': 32,\n    'dropout': 0.1,\n}",
+    "    self.config = load_config(path)\n    self.config.update(defaults)",
+    "    opts = argparser.parse_args()\n    main(opts)",
+    "        with self.settings(TIME_ZONE='UTC'):\n            self.assertTrue(check())",
+    "model_config = {\n    'hidden': 256,\n    'layers': 4,\n}",
+    "    settings.configure(DEBUG=False)\n    django.setup()"
+   ],
+   "quiet": [
+    "    with open('home.html') as fh:\n        resp = fh.read()",
+    "    counts.append(4)\n    start()",
+    "train_scores = [\n    0.81,\n    0.79,\n]",
+    "    self.rows = load_rows(path)\n    self.rows.sort()",
+    "    total = compute_sum(items)\n    print(total)",
+    "        with self.assertRaises(ValueError):\n            parse('x')",
+    "model_outputs = [\n    0.25,\n    0.75,\n]",
+    "    records.append(entry)\n    flush()"
+   ]
+  }
+ ],
+ "predictions": "Code tokens naming or setting a settings/config/params object reach 0.15-0.3; code naming results, data or totals stays under 0.1. Probe amplitudes were low (max 0.25 vs corpus 99), so the median may miss 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "configuration/settings object in code",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: peaks on ' =' after params/optimizer_params, ' models', '.set', ' cfg', '.settings', 'config'; negative pole suppresses parameters/settings/properties. Probe: self.settings 0.247, cfg.CONF.set_override 0.169, params = {...} 0.157, self.args 0.157; results = [...] 0.060, sum(values) 0.013; prose 'settings on the oven' 0.227 (the word leaks into prose)."
+}
