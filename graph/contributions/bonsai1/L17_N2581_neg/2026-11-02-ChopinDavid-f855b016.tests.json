@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-f855b016",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2581-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T21:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N2581",
+   "pole": "-",
+   "label": "unclear: weak firing inside Python argument and tuple lists (identifiers and keyword arguments)",
+   "fire": [
+    "FIELDS = ('name', 'email', 'phone_number', 'address', 'city')",
+    "layout = [[sg.Input(key='USER_NAME', size=(20, 1))], [sg.Button('OK')]]",
+    "self.loader = DataLoader(batch_size=32, shuffle=True, num_workers=4)",
+    "def update_record(self, record_id, field_name, new_value, commit=True):",
+    "COLUMNS = ('order_id', 'customer_id', 'total_price', 'created_at')",
+    "plot_curve(xs, ys, line_width=2, color='red', label='fit')",
+    "self.reader = make_reader(env, schema, strict=False)",
+    "build_index(docs, min_count=2, max_len=512, lower=True)"
+   ],
+   "quiet": [
+    "We collected each name, email, phone number and address on the form.",
+    "Please press OK after you type your user name.",
+    "The loader reads thirty-two examples at a time in random order.",
+    "Update the record once you have checked the new value.",
+    "Each order lists the customer, the total price and the date.",
+    "Draw the fitted curve in red with a thicker line.",
+    "The reader follows the schema but is not strict about it.",
+    "We built the index from all documents longer than two words."
+   ]
+  }
+ ],
+ "predictions": "likely fails: probe max 0.095",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code argument lists (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card: no dominant token (\"',\" in a tuple, 'lector', '_points', 'size='). Probe all weak: sg.Text keyword args 0.095, tuple of strings 0.034, argument lists 0.033, plain code 0.035, prose 0.019-0.026. Best-guess test only."
+}

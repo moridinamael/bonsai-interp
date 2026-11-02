@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-ab3d93b6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4553-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T21:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N4553",
+   "pole": "-",
+   "label": "a lone word-initial ' t' / ' т' piece where the tokenizer splits off the first letter of a word ('t|urrets', 'т|анчик'), versus the same slot filled by an unsplit word",
+   "fire": [
+    "From the hill we could see the castle turrets above the trees.",
+    "The old fortress had four stone turrets and a moat.",
+    "Солидный танчик стоял прямо у входа в музей.",
+    "Он купил маленький танчик для своей коллекции.",
+    "Several armoured cars with gun turrets drove past the gate.",
+    "Ящик оказался очень тяжелым, и мы его оставили.",
+    "Mechanics replaced the worn tumbler inside the lock.",
+    "Сумка была слишком тяжелой для ребёнка."
+   ],
+   "quiet": [
+    "From the hill we could see the castle towers above the trees.",
+    "The old fortress had four stone walls and a moat.",
+    "Солидный корабль стоял прямо у входа в музей.",
+    "Он купил маленький самолёт для своей коллекции.",
+    "Several armoured cars with gun mounts drove past the gate.",
+    "Ящик оказался очень большим, и мы его оставили.",
+    "Mechanics replaced the worn spring inside the lock.",
+    "Сумка была слишком большой для ребёнка."
+   ]
+  }
+ ],
+ "predictions": "6/8 fire; firing varies by word",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off initial t/т",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' т' x12, ' T' x10, ' t' x6, all first letters split from the rest of a word. Probe: 't|urrets' 0.703, 'т|анчик' 0.321, 'т|яжелой' 0.180, 't|umbler' 0.179; 'domes' 0.027, 'большой' 0.097, 'tampers' (unsplit ' tamp') 0.075. Items checked with tokcheck."
+}
