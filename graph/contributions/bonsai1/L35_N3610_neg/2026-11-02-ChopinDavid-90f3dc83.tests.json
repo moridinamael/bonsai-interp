@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-90f3dc83",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3610-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T15:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N3610",
+   "pole": "-",
+   "label": "The first piece of a word meaning 'consistent / continuous' in a statement that something stays the same (一 of 一貫, مست of مستمرة), vs the same statements phrased without that word",
+   "fire": [
+    "政府の方針は十年間ずっと一貫していた。",
+    "彼女の主張は会議の間、一貫して変わらなかった。",
+    "このブランドは創業以来、品質に一貫したこだわりを持っている。",
+    "被告の証言は最初から最後まで一貫性があった。",
+    "その作家の作品には一貫したテーマが流れている。",
+    "当社は企画から販売まで一貫して担当します。",
+    "يجب أن يكون التدريب مستمرا طوال العام.",
+    "彼の行動は昔から一貫している。"
+   ],
+   "quiet": [
+    "政府の方針は十年間ずっと変わらなかった。",
+    "彼女の主張は会議の間、一度も変わらなかった。",
+    "このブランドは創業以来、品質に強いこだわりを持っている。",
+    "被告の証言は最初から最後まで矛盾がなかった。",
+    "その作家の作品には共通したテーマが流れている。",
+    "当社は企画から販売まで全て担当します。",
+    "يجب أن يكون التدريب ممتعا طوال العام.",
+    "彼の行動は昔から変わっている。"
+   ]
+  }
+ ],
+ "predictions": "一 of 一貫 after a span like 最初から最後まで reaches 0.5-1.8, weaker (0.2) in 一貫して after a process; the same sentences with 変わらない/全て stay under 0.45 (まで itself leaked 0.45).",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'consistent' word start (一貫)",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: huge max (340), peaks '一' x5 (態度が一貫, 一貫して, 一時的), ' مست' (مستمرة), 'تظ' (منتظمة), 'Reg' (Regelmäßiges). Probe: '最初から最後まで一貫している' 1.820, '自社で一貫して' 0.233, 一時的 0.156, 一般的 0.000, Arabic مستمرة 0.440; '最後まで変わらない' 0.448 at まで."
+}

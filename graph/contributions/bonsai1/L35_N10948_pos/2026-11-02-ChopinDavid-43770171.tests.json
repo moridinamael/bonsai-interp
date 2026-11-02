@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-43770171",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10948+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T15:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N10948",
+   "pole": "+",
+   "label": "Unclear: a short piece inside an abbreviated or code-like string (month abbreviations in a list, URL subdomains, attribute access, letters inside Arabic place names), vs the same content written as prose",
+   "fire": [
+    "days = [\"lun\",\"mar\",\"mer\",\"jeu\",\"ven\",\"sam\",\"dim\"]",
+    "Details are posted at http://oet.example.gc.ca/programs/index.html today.",
+    "    if hasattr(node, 'obj'):\n        node = node.obj.parent",
+    "سافرنا إلى تايلاند وماليزيا وإندونيسيا في الصيف.",
+    "mois = ['janv', 'fevr', 'mars', 'avri', 'mai', 'juin']",
+    "    x = self.cfg.opts.get('eta')",
+    "Read more at http://oaa.example.org/docs before you start.",
+    "انضمت دول أخرى مثل تونس والمغرب والجزائر."
+   ],
+   "quiet": [
+    "The days of the week are listed on the calendar by the door.",
+    "Details are posted on the government website for the program today.",
+    "If the node has an object, we move on to its parent.",
+    "We travelled to Thailand, Malaysia and Indonesia in the summer.",
+    "The months from January to June were unusually dry.",
+    "The settings include an option for the estimated arrival time.",
+    "Read more on the organization's website before you start.",
+    "Other countries such as Tunisia, Morocco and Algeria joined."
+   ]
+  }
+ ],
+ "predictions": "Best guess: inner pieces of abbreviation lists, URLs, attribute chains and Arabic names reach 0.5-0.9; English prose with the same content stays under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (pieces in code/abbreviations)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: max 416, peaks 'o' (Steroide, http://oee), 'inte' (archinte), '.e' (n.evt), ':o' (urn:oasis), 'ا' (تايوان), 'a' (\"aou\"), 'rie' (briefer). Probe: month list 0.877, تايوان list 0.856, n.evt 0.768, oee URL 0.591, briefer 0.270; 'Long-term use of anabolic steroids' 0.000, Archives of Internal Medicine 0.004, cat 0.003."
+}

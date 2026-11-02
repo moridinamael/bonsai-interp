@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-9646d525",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N5799+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T15:27:31+00:00",
+ "recipe": {
+  "toolchain_commit": "63c96989f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N5799_pos/2026-11-02-ChopinDavid-9646d525.tests.json"
+ },
+ "label": "Dense layer-2 unit: word-internal pieces of non-English or rare words (学 in 工学, 'asc' in antifascist, 'ам' in памяти, 'uch' in Versuch), vs English renderings of the same content",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N5799_pos/2026-11-02-ChopinDavid-9646d525.tests.json",
+   "prereg_commit": "63c96989f",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.107,
+     "peak": "勉"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.246,
+     "peak": " fascist"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.524,
+     "peak": "ам"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.261,
+     "peak": " ist"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.297,
+     "peak": "学"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.297,
+     "peak": " fascist"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.141,
+     "peak": "Э"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.453,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.137,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.166,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.166,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.321,
+     "peak": " solve"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.128,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.093,
+     "peak": "M"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.158,
+     "peak": " important"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.157,
+     "peak": "Many"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.75,
+    "median_fire": 0.279,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63c96989f",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "word-internal foreign pieces (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: FLAG dense (15.3% of tokens over 0.1 max), peaks ' fasc', 'из', 'asc', '学', 'uch'. Probe: 電気工学 0.717, antifascist 0.638, fascism 0.582, памяти 0.549, ww2 0.525, Versuch 0.381; 'The cat slept' 0.172, apples 0.133.",
+ "selection": "random draw"
+}

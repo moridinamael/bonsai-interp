@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-6841fb02",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N4875-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T15:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N4875",
+   "pole": "-",
+   "label": "The opening quote of a message string literal that Python code prints, writes or returns (print(\"Error: ...\"), return \"Unknown\"), vs the same code printing or returning a variable",
+   "fire": [
+    "    if not os.path.exists(path):\n        print(\"Warning: output folder is missing.\")\n        sys.exit(1)",
+    "    if user is None:\n        return \"Anonymous\"",
+    "    except ImportError:\n        print('Error: numpy is required.')\n        raise",
+    "    if count == 0:\n        print(\"No records found.\")\n        return",
+    "    if not token:\n        return 'Missing token'",
+    "    def __str__(self):\n        return \"Point object\"",
+    "    if args.verbose:\n        print(\"Loading configuration...\")",
+    "    else:\n        logger.info(\"Done.\")\n        return True"
+   ],
+   "quiet": [
+    "    if not os.path.exists(path):\n        print(path)\n        sys.exit(1)",
+    "    if user is None:\n        return default_name",
+    "    except ImportError:\n        print(err)\n        raise",
+    "    if count == 0:\n        print(count)\n        return",
+    "    if not token:\n        return None",
+    "    def __str__(self):\n        return self.name",
+    "    if args.verbose:\n        print(config)",
+    "    else:\n        logger.info(result)\n        return True"
+   ]
+  }
+ ],
+ "predictions": "The '(\"'/' \"'/\" '\" token opening a printed or returned message reaches 0.4-0.85; the same lines with a variable instead of a string stay under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "opening quote of printed/returned string",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Card: '(\"' x9, ' \"' x8, \" '\" x4, \"('\" x2 after print/return/Write, plus ' if' in docstrings. Probe: print(\"Error: config...\") 0.844, return \"Unknown\" 0.824, msg = \"...\" 0.238, Write('WARNING') 0.204; print(config_path) 0.041, return None 0.041, prose quote 0.027."
+}
