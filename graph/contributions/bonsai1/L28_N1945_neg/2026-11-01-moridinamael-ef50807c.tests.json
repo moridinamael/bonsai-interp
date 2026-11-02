@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-01-moridinamael-ef50807c",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L28/N1945-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T04:54:28+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "the capitalized word ' Historical' or ' Historic' opening an institution or publication title (Trust for Historic Preservation, journal Historical Studies); lowercase 'historical' in prose and other capitalized title words stay quiet"
+ },
+ "neighbours": [
+  {
+   "unit": "L28/N1945",
+   "pole": "-",
+   "label": "Capitalized ' Historical' or ' Historic' opening a name or title (Historical Society, Trust for Historic Preservation), and the comma closing the date in a forum footer 'Last edited by X on <date>, edited N times in total'; lowercase 'historical' in prose is weak",
+   "fire": [
+    "She volunteers every Saturday at the Lancaster County Historical Society.",
+    "The National Trust for Historic Preservation awarded the town a grant.",
+    "Last edited by moderator42 on Tue Mar 14, 2017 9:12 pm, edited 2 times in total.",
+    "We toured the Boston Historic District before lunch.",
+    "The Minnesota Historical Society Press published her memoir last spring.",
+    "Last edited by greenthumb on Sat Jun 03, 2023 4:45 am, edited 1 time in total.",
+    "Records are kept at the Historic New England archive in Haverhill.",
+    "He donated the letters to the Ohio Historical Society."
+   ],
+   "quiet": [
+    "from django.utils.translation import ugettext_lazy as _",
+    "She volunteers every Saturday at the Lancaster County public library.",
+    "The national fund for old buildings awarded the town a grant.",
+    "Posted by moderator42 on Tue Mar 14 at 9:12 pm in the general board.",
+    "We toured the old part of Boston before lunch.",
+    "The Minnesota University Press published her memoir last spring.",
+    "Thanks for the tip, greenthumb, the tomatoes are doing great now.",
+    "Records are kept at a regional archive in Haverhill."
+   ]
+  }
+ ],
+ "predictions": "Expect most fire items to pass; the Django import line is the solver's leak and will likely fire despite being listed as quiet, so the test may fail on that one near miss.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
