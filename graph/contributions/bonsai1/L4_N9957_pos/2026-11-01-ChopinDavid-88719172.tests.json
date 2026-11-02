@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-88719172",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9957+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T01:22:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N9957",
+   "pole": "+",
+   "label": "Dense low-amplitude unit on mid-word pieces of Russian (and Arabic) words, strongest on stems of prefixed verbs (отд|ели|ть, разы|гр|ать); English text sits lower",
+   "fire": [
+    "Повар аккуратно отделил желток от белка и взбил его.",
+    "Дети разыграли небольшой спектакль для родителей.",
+    "Журналист разоблачил схему, которую власти скрывали годами.",
+    "Врачи разделяют пациентов по тяжести ранения.",
+    "Она отделила старые фотографии от новых и убрала их.",
+    "Студенты разыгрывают сцены из пьесы на каждом занятии.",
+    "Эту тему невозможно отделить от истории региона.",
+    "Следователь разоблачил ложь подозреваемого на допросе."
+   ],
+   "quiet": [
+    "The cook carefully separated the yolk from the white and whisked it.",
+    "The children put on a small play for their parents.",
+    "The journalist exposed a scheme the authorities had hidden for years.",
+    "Doctors sort patients by the severity of their wounds.",
+    "She separated the old photos from the new ones and put them away.",
+    "The students act out scenes from the play in every class.",
+    "This topic cannot be separated from the history of the region.",
+    "The investigator exposed the suspect's lie during questioning."
+   ]
+  }
+ ],
+ "predictions": "Russian sentences with prefixed verbs reach 0.8-0.95; English translations of the same sentences stay near 0.2. Plain Russian sentences already reach 0.15-0.55, so this tests language rather than the verb.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "mid-word Cyrillic/Arabic pieces (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Probe: 'отделил листья' 0.913; 'разыграли сцену' 0.940; 'неотделима' 0.862; Arabic 'الاستعراض' 0.877; plain 'взял ... положил' 0.546 ('ил'); 'показали' 0.152; 'Мы пошли' 0.158; English translations 0.191 and 0.197. Card: dense (37.5% of tokens at 0.1 of max), max 0.97, gate-closed regime 100%. Near misses are English translations; dense flag means a hold here says little."
+}

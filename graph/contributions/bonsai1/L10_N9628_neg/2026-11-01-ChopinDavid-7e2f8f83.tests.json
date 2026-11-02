@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-7e2f8f83",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N9628-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T01:22:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N9628",
+   "pole": "-",
+   "label": "The ':\\n' that closes a broad 'except Exception' clause in Python; narrower handlers (except ValueError:, bare except:, except Exception as e:) do not fire",
+   "fire": [
+    "def stop(self):\n    try:\n        self.sock.shutdown()\n    except Exception:\n        pass",
+    "for path in files:\n    try:\n        os.unlink(path)\n    except Exception:\n        continue",
+    "try:\n    data = json.loads(raw)\nexcept Exception:\n    data = {}",
+    "        try:\n            await client.close()\n        except Exception:\n            log.warning('close failed')",
+    "def safe_div(a, b):\n    try:\n        return a / b\n    except Exception:\n        return None",
+    "    try:\n        cache.flush()\n    except Exception:\n        raise RuntimeError('flush')",
+    "try:\n    import yaml\nexcept Exception:\n    yaml = None",
+    "            try:\n                job.cancel()\n            except Exception:\n                traceback.print_exc()"
+   ],
+   "quiet": [
+    "def stop(self):\n    try:\n        self.sock.shutdown()\n    except OSError:\n        pass",
+    "for path in files:\n    try:\n        os.unlink(path)\n    except FileNotFoundError:\n        continue",
+    "try:\n    data = json.loads(raw)\nexcept Exception as err:\n    data = {}",
+    "        try:\n            await client.close()\n        except:\n            log.warning('close failed')",
+    "def safe_div(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None",
+    "    try:\n        cache.flush()\n    except KeyError:\n        raise RuntimeError('flush')",
+    "try:\n    import yaml\nexcept ImportError:\n    yaml = None",
+    "            try:\n                job.cancel()\n            finally:\n                traceback.print_exc()"
+   ]
+  }
+ ],
+ "predictions": "':\\n' after 'except Exception' reaches 0.4-0.7 in try blocks of any indent; specific exception types, bare except and 'as e' forms stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "':\\n' after except Exception",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Probe: 'except Exception:\\n' 0.548 and 0.562 (indented); 'except ValueError:' 0.069; bare 'except:' 0.052; 'except Exception as e:' 0.038; plain 'if ...:' -0.002; prose 'caught the exception' 0.006. Card: ':\\n' x28 after except Exception (max 10, layer 10)."
+}
