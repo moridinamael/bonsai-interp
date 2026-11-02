@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-moridinamael-8a73ee97",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N1238-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T20:52:38+00:00",
+ "roles": ["reads bonsai1/L31/N6370+"],
+ "neighbours": [
+  {
+   "unit": "L33/N1238",
+   "pole": "-",
+   "label": "Inside a quoted code string, a merged space-or-punctuation + backslash token (' \\' or '.\\') that opens an escape like \\n; a backslash glued to a word, LaTeX and paths stay low",
+   "short": "' \\' / '.\\' token opening an escape in a code string",
+   "fire": [
+    "sys.stdout.write(\"Done.\\nGoodbye\")",
+    "print(\"Loading data... \\nPlease wait\")",
+    "printf(\"Error: file not found.\\n\");",
+    "console.log(\"Step 1 complete. \\tNext step\");",
+    "msg = \"Hello, world!\\n\"",
+    "f.write(\"name,age,city \\n\")",
+    "echo -e \"Build finished.\\n\"",
+    "String s = \"Total: 42.\\r\\n\";"
+   ],
+   "quiet": [
+    "print(\"Loading data\\nPlease wait\")",
+    "printf(\"Error: file not found\\n\");",
+    "console.log(\"Step 1 complete\\tNext step\");",
+    "msg = \"Hello world\\n\"",
+    "f.write(\"name,age,city\\n\")",
+    "echo -e \"Build finished\\n\"",
+    "String s = \"Total 42\\r\\n\";",
+    "puts(\"Are you sure\\n[y/n]\");"
+   ]
+  }
+ ],
+ "predictions": "Expect most fire items to pass; risk is that '!\\' and ',\\' tokens differ from '.\\' and ' \\'. Weak link: the reader's drop from L31/N6370+ is ~0.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "look",
+   "probe",
+   "step-down",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
