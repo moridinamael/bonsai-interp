@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-9bdfed2e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N10437+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T01:22:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N10437",
+   "pole": "+",
+   "label": "The slot right before an adjudicated outcome noun (returned a | verdict, a binding | decision, reasons for | the ruling): the model expecting a verdict, decision or ruling",
+   "fire": [
+    "After a week-long trial, the jury returned a unanimous verdict on Thursday.",
+    "Mediation failed, so the dispute went to arbitration and a binding award.",
+    "The tribunal will issue a final decision on the claim next month.",
+    "The appeals court has not yet explained the reasons for its judgment.",
+    "Following deliberations, the panel delivered a split verdict on the charges.",
+    "Both parties agreed in advance to accept a binding ruling from the arbitrator.",
+    "The commission handed down a formal decision against the airline.",
+    "The jurors reached a verdict after nine hours behind closed doors."
+   ],
+   "quiet": [
+    "After a week-long trial, the jury returned to their hotel on Thursday.",
+    "Mediation failed, so the two sides went to a pub and a long dinner.",
+    "The tribunal will move to a new building on the hill next month.",
+    "The appeals court has not yet explained the layout of its new website.",
+    "Following deliberations, the panel delivered a short speech on the history.",
+    "Both parties agreed in advance to bring a packed lunch for the arbitrator.",
+    "The commission handed out free coffee to staff at the airline.",
+    "The jurors reached the cafeteria after nine hours behind closed doors."
+   ]
+  }
+ ],
+ "predictions": "The determiner or adjective before verdict/decision/ruling in legal or arbitration prose reaches 0.35-0.95; the same frames ending in a non-outcome noun stay under 0.1. A plain 'if she wins' contest outcome does not fire.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot before verdict/decision",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Probe: 'the jury returned a verdict' 0.893 (' a'); 'ends in a binding decision' 0.937 (' binding'); 'reasons for the ruling' 0.368 (' for'); 'If she wins the contest' 0.063; 'jury went home' 0.096; 'give his coat' 0.092. Card: returned| a guilty verdict, results in| a decision, reasons for| the verdict, ' finally' x2; negative pole suppresses final/ultimately (max 29, layer 27)."
+}

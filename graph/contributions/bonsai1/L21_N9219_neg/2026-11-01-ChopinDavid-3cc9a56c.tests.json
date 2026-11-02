@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-3cc9a56c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N9219-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T01:22:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N9219",
+   "pole": "-",
+   "label": "Section header 'Parameters' inside a numpy-style Python docstring (best guess); the pole is broad and weak in short code",
+   "fire": [
+    "def fit(X, y):\n    \"\"\"Fit the model to the data.\n\n    Parameters\n    ----------\n    X : ndarray\n    \"\"\"",
+    "def smooth(signal, width):\n    \"\"\"Apply a moving average.\n\n    Parameters\n    ----------\n    signal : array_like\n    \"\"\"",
+    "    def predict(self, X):\n        \"\"\"Return class labels.\n\n        Parameters\n        ----------\n        X : array\n        \"\"\"",
+    "def distance(p, q):\n    \"\"\"Euclidean distance between two points.\n\n    Parameters\n    ----------\n    p : tuple\n    \"\"\"",
+    "def resample(df, rule):\n    \"\"\"Resample a time series.\n\n    Parameters\n    ----------\n    df : DataFrame\n    \"\"\"",
+    "def clip(x, lo, hi):\n    \"\"\"Clip values to a range.\n\n    Parameters\n    ----------\n    x : ndarray\n    \"\"\"",
+    "    def transform(self, data):\n        \"\"\"Scale the features.\n\n        Parameters\n        ----------\n        data : ndarray\n        \"\"\"",
+    "def load_image(path):\n    \"\"\"Read an image from disk.\n\n    Parameters\n    ----------\n    path : str\n    \"\"\""
+   ],
+   "quiet": [
+    "def fit(X, y):\n    \"\"\"Fit the model to the data.\"\"\"\n    return model.train(X, y)",
+    "def smooth(signal, width):\n    # apply a moving average\n    return np.convolve(signal, kernel)",
+    "    def predict(self, X):\n        \"\"\"Return class labels.\"\"\"\n        return self.clf.predict(X)",
+    "The parameters of the distance function are two points p and q.",
+    "def resample(df, rule):\n    \"\"\"Resample a time series.\"\"\"\n    return df.resample(rule).mean()",
+    "def clip(x, lo, hi):\n    return np.minimum(np.maximum(x, lo), hi)",
+    "Parameters such as the scale factor are set in the config file.",
+    "def load_image(path):\n    \"\"\"Read an image from disk.\"\"\"\n    return imread(path)"
+   ]
+  }
+ ],
+ "predictions": "An indented 'Parameters' line in a docstring after a description line reaches about 0.25-0.3; prose 'Parameters' and ordinary code lines stay under 0.05. A fail is likely: the probe high was 0.245.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring 'Parameters' header",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Probe: docstring '    Parameters' 0.245; prose 'Parameters for the experiment' 0.033; method body 0.028; assert test 0.035; Russian confession 'обещаю исправиться.' 0.037 (card top). Card: broad (0.9%), indentation runs, ' Parameters', '.' (max 19, layer 21). Low confidence."
+}

@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-01-ChopinDavid-e949b1e3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1782+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T01:32:01+00:00",
+ "recipe": {
+  "toolchain_commit": "ccb3a8689",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N1782_pos/2026-11-01-ChopinDavid-e949b1e3.tests.json"
+ },
+ "label": "Dense layer-1 unit whose strongest tokens are the dunder ' __' (from __future__, if __name__, __init__) and ' foremost'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N1782_pos/2026-11-01-ChopinDavid-e949b1e3.tests.json",
+   "prereg_commit": "ccb3a8689",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.672,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.742,
+     "peak": " foremost"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.545,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.417,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.734,
+     "peak": " foremost"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.757,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.433,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.707,
+     "peak": " foremost"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.317,
+     "peak": "#!/"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.167,
+     "peak": " all"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.215,
+     "peak": " run"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.198,
+     "peak": " def"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.109,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.189,
+     "peak": " -*-"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.211,
+     "peak": " def"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.049,
+     "peak": " goal"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.69,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ccb3a8689",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "dunder ' __' and 'foremost'",
+ "unit_kind": "dense / positional",
+ "confidence": "medium",
+ "notes": "Probe: 'from __future__ import' 0.756; 'First and foremost' 0.742; \"if __name__ == '__main__'\" 0.561; 'def __init__' 0.447; 'from typing import' 0.103; 'def init' 0.202 (' def'); 'First of all' 0.167; \"if name == 'main'\" 0.044. Card: ' __' x18, '__' x5, ' foremost' x2, max 0.17, dense (10.4%).",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " __",
+   " foremost"
+  ]
+ }
+}
