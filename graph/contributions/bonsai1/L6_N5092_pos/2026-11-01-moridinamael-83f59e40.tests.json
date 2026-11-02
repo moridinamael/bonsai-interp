@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-01-moridinamael-83f59e40",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L6/N5092+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T01:58:26+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "the Arabic word-internal piece 'سم' (as in تسمى/يسمى 'is called' and تسمح 'allows'), as against Arabic sentences without that piece"
+ },
+ "neighbours": [
+  {
+   "unit": "L6/N5092",
+   "pole": "+",
+   "label": "the Arabic piece 'سم' split off right after a verb prefix ت/ي (تسمى, يسمح, تسمم), not 'سم' inside other Arabic words (السم, أسماء, يقسم)",
+   "fire": [
+    "هذه المدينة تسمى عروس البحر منذ زمن بعيد.",
+    "لا يسمح للزوار بالتصوير داخل المتحف.",
+    "قد تسمم الطعام إذا ترك خارج الثلاجة طويلاً.",
+    "يسمى هذا الطائر الهدهد في كتب التراث.",
+    "هل تسمح لي بالجلوس هنا قليلاً؟",
+    "يسمع الأطفال القصص قبل النوم كل ليلة.",
+    "تسمع أمي الراديو كل صباح مع القهوة.",
+    "القوانين الجديدة لا تسمح بالبناء قرب النهر."
+   ],
+   "quiet": [
+    "اسم هذه المدينة عروس البحر منذ زمن بعيد.",
+    "الرسم ممنوع على جدران المتحف.",
+    "السم موجود في بعض النباتات البرية.",
+    "أسماء الطيور في كتب التراث كثيرة.",
+    "يقسم الأب الكعكة بين أطفاله.",
+    "جسم الإنسان يحتاج إلى الماء كل يوم.",
+    "موسم الأمطار يبدأ في الخريف عادة.",
+    "قسم الشرطة قريب من النهر."
+   ]
+  }
+ ],
+ "predictions": "Expect most of the 8 fire to pass (تسمى/يسمح/تسمح/تسمم); the two hearing verbs (يسمع/تسمع) probably stay quiet since تسمع scored ~0.1 in exploration, and several sentence-initial items may be weak. 0-1 near misses.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
