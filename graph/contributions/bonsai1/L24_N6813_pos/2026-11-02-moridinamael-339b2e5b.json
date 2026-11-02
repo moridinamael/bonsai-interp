@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-02-moridinamael-339b2e5b",
+ "kind": "qc",
+ "neuron": "bonsai1/L24/N6813+",
+ "contributor": "moridinamael",
+ "created": "2026-11-02T09:03:25+00:00",
+ "recipe": {
+  "toolchain_commit": "5c627859e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N6813_pos/2026-11-02-moridinamael-339b2e5b.tests.json"
+ },
+ "label": "In practical how-to text (web forms, documents, medicines), the 'and' / 'and then' that adds a second step after a first action, and that second step's verb (e.g. 'register online and then print'); any person or tense. Plain 'you can also...' offers and single-step instructions stay low.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N6813_pos/2026-11-02-moridinamael-339b2e5b.tests.json",
+   "prereg_commit": "5c627859e",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.77,
+     "peak": " print"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.229,
+     "peak": " then"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.475,
+     "peak": "'"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.119,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.417,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.524,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.078,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.264,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.214,
+     "peak": " online"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.156,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.475,
+     "peak": "'"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.098,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.094,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.244,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.264,
+     "peak": " avoid"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.719,
+    "median_fire": 0.341,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "neighbors",
+   "probe",
+   "quick-test",
+   "second-round"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "5c627859e",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "In English instructions or advice addressed to the reader, offering YOU an optional or alternative way to do something ('or you can...', 'you can also...', 'if you prefer, you could...'), strongest on 'can/could', the verb after it or the 'and' joining a second step. The same actions told as past-tense narrative stay low, as do passive or third-person options ('it can be...', 'applicants may...') and other languages; a camelCase code key piece can leak."
+ }
+}
