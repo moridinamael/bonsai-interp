@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-51f53097",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N9048-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T08:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N9048",
+   "pole": "-",
+   "label": "Unclear; best guess: an 'open' or '_system' piece inside a compound code identifier or filename (openssl.py, load_system_keys), vs the same code with other identifiers",
+   "fire": [
+    "#!/usr/bin/env python\n# openssl_wrap.py: helpers for certificate handling\nimport os",
+    "conn = Client()\nconn.load_system_settings()\nconn.start()",
+    "import logging\n# opencv_utils.py: image helpers\nimport numpy as np",
+    "agent = Agent()\nagent.read_system_config()\nagent.run()",
+    "from nova import exception\n# OpenStack compute driver helpers\nLOG = logging.getLogger(__name__)",
+    "ctx = Context()\nctx.load_system_fonts()\nctx.render()",
+    "import sys\n# openldap_sync.py: sync users from the directory\nimport ldap",
+    "mgr = Manager()\nmgr.clear_system_cache()\nmgr.stop()"
+   ],
+   "quiet": [
+    "#!/usr/bin/env python\n# certwrap.py: helpers for certificate handling\nimport os",
+    "conn = Client()\nconn.load_user_settings()\nconn.start()",
+    "import logging\n# image_utils.py: image helpers\nimport numpy as np",
+    "agent = Agent()\nagent.read_local_config()\nagent.run()",
+    "from nova import exception\n# Compute driver helpers\nLOG = logging.getLogger(__name__)",
+    "ctx = Context()\nctx.load_custom_fonts()\nctx.render()",
+    "import sys\n# ldap_sync.py: sync users from the directory\nimport ldap",
+    "mgr = Manager()\nmgr.clear_page_cache()\nmgr.stop()"
+   ]
+  }
+ ],
+ "predictions": "'open' / '_system' identifier pieces reach 0.3-0.8; the same code with other identifier pieces stays under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (open/_system in code identifier)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: peaks on 'open'/' open' in code comments and identifiers (openvpn, openclos, OpenStack), '_system', '.major'. Probe: load_system_host_keys 0.860, '# openvpn.py' 0.695, '# open users.txt' 0.335, '.major' 0.233 vs '.width' 0.194 (no contrast), with open( 0.159, prose 'open' 0.055."
+}

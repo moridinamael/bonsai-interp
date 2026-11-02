@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-02-ChopinDavid-79b82213",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10826-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T08:32:11+00:00",
+ "recipe": {
+  "toolchain_commit": "141e6cd39",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N10826_neg/2026-11-02-ChopinDavid-79b82213.tests.json"
+ },
+ "label": "A concessive adverb that opens a sentence to grant a point (Of course, ... / Certainly, ...) after a preceding claim, vs 'course' as a noun and 'of course' tucked inside a clause",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N10826_neg/2026-11-02-ChopinDavid-79b82213.tests.json",
+   "prereg_commit": "141e6cd39",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.148,
+     "peak": " course"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.036,
+     "peak": " course"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.187,
+     "peak": " Certainly"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.389,
+     "peak": " course"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.272,
+     "peak": " course"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.137,
+     "peak": " Certainly"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.131,
+     "peak": " course"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.321,
+     "peak": " course"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.03,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "Our"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " rising"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " evening"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.167,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "141e6cd39",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "sentence-opening concessive Of course/Certainly",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: top 32 peak on ' course' x22 in 'Of course' opening a sentence, plus ' Certainly', ' true'. Probe: 'Of course there are' 0.792, 'Certainly, it was not' 0.546; mid-clause ', of course,' 0.029, 'It is true that' 0.039, golf course 0.025, cooking course 0.028, same text without the adverb 0.034.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " course",
+   " Certainly"
+  ]
+ }
+}

@@ -1,0 +1,157 @@
+{
+ "id": "2026-11-02-ChopinDavid-24bc52dd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N4655+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T08:31:06+00:00",
+ "recipe": {
+  "toolchain_commit": "141e6cd39",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N4655_pos/2026-11-02-ChopinDavid-24bc52dd.tests.json"
+ },
+ "label": "' super' in a Python method calling the parent class (res = super(Cls, self).method(...)), vs the same methods calling another object",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N4655_pos/2026-11-02-ChopinDavid-24bc52dd.tests.json",
+   "prereg_commit": "141e6cd39",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.783,
+     "peak": " super"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.674,
+     "peak": " super"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.688,
+     "peak": " super"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.863,
+     "peak": " super"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.65,
+     "peak": " super"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.79,
+     "peak": " super"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.724,
+     "peak": " super"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.755,
+     "peak": " super"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.072,
+     "peak": " rec"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": " load"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.103,
+     "peak": " render"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.077,
+     "peak": " result"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.044,
+     "peak": "Handler"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.08,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.072,
+     "peak": ".validator"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": " raw"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.74,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "141e6cd39",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Python super() call in a method",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: top 32 peak on ' super' (res = super(Class, self)) and the indentation token inside 'return {' dict literals. Probe: super(Report, self) 0.803, super() 0.803, super(Parser, self) 0.722, dict indentation 0.375; self.store.write 0.052, dict(...) 0.098, prose 'super nice' 0.005.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " super"
+  ]
+ }
+}

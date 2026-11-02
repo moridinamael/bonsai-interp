@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-80480fde",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6927+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T08:31:23+00:00",
+ "recipe": {
+  "toolchain_commit": "141e6cd39",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6927_pos/2026-11-02-ChopinDavid-80480fde.tests.json"
+ },
+ "label": "The Arabic word that commits to a following 'من' (بالقرب / بالرغم / العديد / الكثير / بدلا), vs the same sentences with a synonym that takes no 'من'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6927_pos/2026-11-02-ChopinDavid-80480fde.tests.json",
+   "prereg_commit": "141e6cd39",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.541,
+     "peak": "قرب"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.499,
+     "peak": "غم"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.116,
+     "peak": " العديد"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.012,
+     "peak": "ية"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.224,
+     "peak": "لا"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.441,
+     "peak": " الرغم"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.144,
+     "peak": " العديد"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.495,
+     "peak": "قرب"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": " الرئيسية"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " الغ"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "ية"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " الص"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": "اي"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " المباراة"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " الق"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " العامة"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.945,
+    "median_fire": 0.333,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "141e6cd39",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Arabic word predicting 'من'",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: Arabic peaks on 'قرب' in بالقرب من, 'غم' in بالرغم من, ' العديد' before من, plus mid-word pieces in Greek/Spanish/French. Probe: بالرغم 0.673, العديد 0.525, بالقرب 0.451; bare قرب (no من follows) 0.013, plain Arabic 0.004, French 'et Applications' 0.359, Greek 0.244.",
+ "selection": "random draw"
+}
