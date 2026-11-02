@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-737da950",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2633+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T14:23:31+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N2633",
+   "pole": "+",
+   "label": "The selector string passed to a DOM or HTML query in scraping and test code (.css(\".x\"), .select('.x'), find_element_by_id('x'), XPath './/x'): the opening of the selector and its class-name pieces, vs string arguments to non-DOM functions",
+   "fire": [
+    "    author = response.css(\".author-name::text\").get()\n    if author:\n        item['author'] = author",
+    "        cards = page.select('.listing-card')\n        for card in cards:\n            urls.append(card['href'])",
+    "        field = self.browser.find_element_by_id('email-input')\n        field.send_keys('test')",
+    "    rows = tree.xpath('//table[@class=\"stats\"]//tr')\n    for row in rows:\n        parse(row)",
+    "        links = soup.select('div.nav-menu a')\n        return [a['href'] for a in links]",
+    "        label = driver.find_element_by_css_selector('.error-message')\n        assert label.is_displayed()",
+    "    date = response.css(\".post-date::attr(datetime)\").get()\n    yield {'date': date}",
+    "        header = root.find('.//header')\n        self.assertIsNotNone(header)"
+   ],
+   "quiet": [
+    "    author = record.get(\"author\")\n    if author:\n        item['author'] = author",
+    "        cards = text.split(',')\n        for card in cards:\n            urls.append(card.strip())",
+    "        field = config.get('email', '')\n        field = field.lower()",
+    "    rows = open('stats.csv').readlines()\n    for row in rows:\n        parse(row)",
+    "        links = [line for line in lines if line.startswith('http')]\n        return links",
+    "        label = labels.get('error', 'unknown')\n        assert label != ''",
+    "    date = row[\"posted\"].strip()\n    yield {'date': date}",
+    "        header = lines[0].strip()\n        self.assertIsNotNone(header)"
+   ]
+  }
+ ],
+ "predictions": "The opening quote or first class-name piece of a selector argument reaches 0.5-0.9; string arguments to split, dict lookups, open() or print stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "CSS/XPath selector string in DOM query",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Card: peaks on '-name' in .css(\".product-name\"), \"('\" after find_element_by_id and .select, \"(\\\".\" before //title. Probe: .css(\".product-price\") 0.762, select('.result-row') 0.684, find_element_by_id('submit-button') 0.609, class_='page-title' 0.654, CSS rule '.article-body >' 0.655; item[\"price\"] 0.027, data.split('\\n') 0.074, prose 0.006."
+}
