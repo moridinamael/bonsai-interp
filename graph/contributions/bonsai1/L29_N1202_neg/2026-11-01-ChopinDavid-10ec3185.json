@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-01-ChopinDavid-10ec3185",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1202-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T02:30:14+00:00",
+ "recipe": {
+  "toolchain_commit": "aca005efa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1202_neg/2026-11-01-ChopinDavid-10ec3185.tests.json"
+ },
+ "label": "Hedging main verb 'appears/seems/seemed' right after a subject in news or analysis prose (the subject's state is reported as an impression, not a fact)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1202_neg/2026-11-01-ChopinDavid-10ec3185.tests.json",
+   "prereg_commit": "aca005efa",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.005,
+     "peak": " appears"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.522,
+     "peak": " seem"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.301,
+     "peak": " seems"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.504,
+     "peak": " appears"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.489,
+     "peak": " seemed"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.654,
+     "peak": " appears"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.441,
+     "peak": " seem"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.547,
+     "peak": " seemed"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": " exports"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.081,
+     "peak": " stayed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": " coach"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": " customers"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.0,
+     "peak": " smaller"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": " purchase"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " had"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.513,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "aca005efa",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "hedging seems/appears after subject",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Probe: 'the government now appears to be ready' 1.040 vs 'is now ready' 0.219 (' now'); 'investors seem worried' 0.548 vs 'are worried' 0.088; 'company seemed intent' 0.447; 'arrived in parliament on Tuesday' 0.417 (weekday after an arrival leaks, kept out of the near misses); 'Suddenly,' 0.090. Card: ' seemed/appears/seem/seems' 12 of top 32, plus ' and', ' Monday'. Suppresses ' able/ready/aware', the adjectives such a verb introduces.",
+ "selection": "random draw"
+}
