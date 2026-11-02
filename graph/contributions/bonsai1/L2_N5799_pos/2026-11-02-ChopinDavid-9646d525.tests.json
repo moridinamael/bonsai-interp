@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-9646d525",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N5799+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T15:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N5799",
+   "pole": "+",
+   "label": "Dense layer-2 unit: word-internal pieces of non-English or rare words (学 in 工学, 'asc' in antifascist, 'ам' in памяти, 'uch' in Versuch), vs English renderings of the same content",
+   "fire": [
+    "彼は大学で化学を勉強しています。",
+    "The fascist regime censored every newspaper in the country.",
+    "В памяти компьютера почти не осталось места.",
+    "Ein neuer Versuch, das Problem zu lösen, ist geplant.",
+    "経済学の授業は毎週月曜日です。",
+    "Mussolini founded the fascist party in 1919.",
+    "Это был очень важный эксперимент в лаборатории.",
+    "Many WW2 veterans gathered in the town square on Sunday."
+   ],
+   "quiet": [
+    "He studies chemistry at the university.",
+    "The military regime censored every newspaper in the country.",
+    "The computer has almost no storage space left.",
+    "A new attempt to solve the problem is planned.",
+    "Economics class is held every Monday.",
+    "Mussolini founded a political party in 1919.",
+    "It was a very important experiment in the laboratory.",
+    "Many veterans gathered in the town square on Sunday."
+   ]
+  }
+ ],
+ "predictions": "Inner pieces of CJK, Cyrillic and German words reach 0.4-0.7; plain English sentences on the same topics sit near 0.15. Density 15% makes a pass unlikely.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "word-internal foreign pieces (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: FLAG dense (15.3% of tokens over 0.1 max), peaks ' fasc', 'из', 'asc', '学', 'uch'. Probe: 電気工学 0.717, antifascist 0.638, fascism 0.582, памяти 0.549, ww2 0.525, Versuch 0.381; 'The cat slept' 0.172, apples 0.133."
+}
