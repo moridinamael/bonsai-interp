@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-5e1b3693",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N2889-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T00:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N2889",
+   "pole": "-",
+   "label": "A non-initial word piece of a split Spanish or Portuguese (mostly Latin American) place name (Pat|agon|ia, Zam|ora, P|otos|í, G|rosso), not the same pieces in English words and not place names that are single tokens",
+   "fire": [
+    "Many families from the capital spend weekends in Cuernavaca for the climate.",
+    "The tin miners of Cochabamba went on strike in the winter of 1947.",
+    "The bus to Ayacucho climbs through the Andes for almost ten hours.",
+    "Drug violence spread across Sinaloa in the early two thousands.",
+    "Oil was discovered beneath Lake Maracaibo in the 1910s.",
+    "The Roman bridge at Badajoz still carries foot traffic over the river.",
+    "The ranch lies in the dry hills outside Durango, north of the city.",
+    "Deforestation in Rondônia accelerated after the highway opened."
+   ],
+   "quiet": [
+    "Many families from the capital spend weekends in Lima for the climate.",
+    "The tin miners of Bolivia went on strike in the winter of 1947.",
+    "The bus to the coast climbs through the Andes for almost ten hours.",
+    "Drug violence spread across Mexico in the early two thousands.",
+    "Oil was discovered beneath the lake in the 1910s.",
+    "The Roman bridge at Madrid still carries foot traffic over the river.",
+    "The ranch lies in the dry hills outside the city, near the dragon statue.",
+    "Deforestation in Chile accelerated after the highway opened."
+   ]
+  }
+ ],
+ "predictions": "Inner or final pieces of split Hispanic/Lusophone place names reach 0.4-1.0. Single-token place names (Lima, Madrid, Mexico, Chile) in the same frames and English words containing similar pieces stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "inner piece of Iberian place name",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Probe: 'Mato Grosso' 1.062 ('rosso'); 'Potosí' 0.871 ('otos'); 'Patagonia' 0.760 ('agon'); 'Zamora' 0.694 ('ora'); 'Pagosa Springs' 0.682 ('osa'); but 'Antofagasta' 0.053 ('ag'), a miss; 'pentagon' 0.007 ('agon'); floors 0.008-0.010. Card: 'agon' x6 (Patagonia), 'ora' x3 (Zamora), Vila, Potosí, Pagosa, Mato Grosso (max 8.8, layer 7). Tokens checked: Cuernavaca ' Cu|ern|av|aca', Cochabamba ' Coch|ab|amba', Ayacucho ' Ay|ac|u|cho', Sinaloa ' S|inal|oa', Maracaibo ' Mar|aca|ibo', Badajoz ' Bad|aj|oz', Durango ' Dur|ango', Rondônia ' R|ond|ô|nia'; Lima, Madrid, Mexico, Chile are single tokens."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-d297443b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N7313-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T00:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N7313",
+   "pole": "-",
+   "label": "A get-prefixed accessor method name token in code (.getWidth, .getLogger, def getName): reading a value through a getter, not setters, plain attribute access, other methods, or the English word 'get'",
+   "fire": [
+    "    label = widget.getText()\n    print(label)",
+    "    h = canvas.getHeight()\n    w = canvas.getWidth()",
+    "    total = basket.getCount()\n    return total",
+    "    def getTitle(self):\n        return self._title",
+    "    color = pixel.getColor()\n    if color == RED:",
+    "    when = event.getDate()\n    print(when)",
+    "    def getSize(self):\n        return len(self.items)",
+    "    amount = field.getValue()\n    total += amount"
+   ],
+   "quiet": [
+    "    widget.setText(label)\n    print(label)",
+    "    h = canvas.height\n    w = canvas.width",
+    "    total = basket.count\n    return total",
+    "    def title(self):\n        return self._title",
+    "    pixel.setColor(RED)\n    pixel.draw()",
+    "    when = event.date\n    print(when)",
+    "    def resize(self, n):\n        self.items = self.items[:n]",
+    "Remember to get the total amount from the receipt."
+   ]
+  }
+ ],
+ "predictions": "Dotted getter tokens (.getHeight, .getText, .getValue) and ' getTitle'-style definitions reach 0.3-0.7. The same lines with .setX, plain attributes, or non-get methods stay near 0, and 'get' in prose stays under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "getter method name in code",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Probe: '.getWidth()' 0.607; 'def getName' 0.474; '.getLogger' 0.363; 'cache.get(key)' 0.182; '.getElementById' 0.145; 'def setName' 0.000; 'img.width' 0.000; prose 'get the name' 0.007. Card: '.getS', '.getImage', 'getAttribute', ' getColumn', '.getLocation', ' getDescription' (max 26.4, layer 4). Tokens checked: .getHeight, .getText, .getValue, .getColor, .getCount, .getDate, ' getTitle', ' getSize' are each one token."
+}

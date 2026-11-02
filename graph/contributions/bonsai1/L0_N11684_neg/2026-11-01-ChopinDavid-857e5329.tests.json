@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-857e5329",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N11684-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T00:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N11684",
+   "pole": "-",
+   "label": "The space-less tokens 'support' and 'schemas' as a URL subdomain right after '://' (http://support.microsoft.com, http://schemas.xmlsoap.org), not the same words in prose",
+   "fire": [
+    "For troubleshooting steps, see http://support.apple.com/kb/HT1222 first.",
+    "The SOAP envelope uses xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\".",
+    "The help article is at https://support.google.com/mail/answer/8494.",
+    "Add xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" to the root.",
+    "More information: http://support.mozilla.org/en-US/kb/clear-cache.",
+    "The manifest declares xmlns=\"http://schemas.android.com/apk/res/android\".",
+    "Contact form: https://support.zoom.us/hc/en-us/requests/new.",
+    "The schema location is http://schemas.microsoft.com/sharepoint/soap/ as before."
+   ],
+   "quiet": [
+    "For troubleshooting steps, see the Apple website first.",
+    "The SOAP envelope must follow the schemas defined by the standard.",
+    "The help article is at https://www.google.com/mail/help today.",
+    "Our volunteers support the project in many different ways.",
+    "More information: http://www.mozilla.org/en-US/firefox/new.",
+    "The manifest file lists the permissions the app needs.",
+    "Please contact our customer support team by phone.",
+    "Database schemas change slowly in mature projects."
+   ]
+  }
+ ],
+ "predictions": "URLs with support. or schemas. after :// reach 0.4-0.7. The words ' support' and ' schemas' in prose (space-initial tokens) and URLs starting with www stay under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'support'/'schemas' URL subdomain",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Probe: 'http://support.microsoft.com' 0.654 ('support'); 'http://schemas.microsoft.com' 0.656; 'will support the new initiative' 0.006; 'email the support desk' 0.063; floor 0.041. Card: 'support' x6 and 'schemas' x4 after http:// (max 0.38, layer 0, gate-closed leak 78%, so amplitudes are small and noisy).",
+ "trigger": {
+  "tokens": [
+   "support",
+   "schemas"
+  ]
+ }
+}
