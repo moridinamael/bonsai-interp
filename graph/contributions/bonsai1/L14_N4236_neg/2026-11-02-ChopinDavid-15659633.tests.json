@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-15659633",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N4236-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T17:22:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N4236",
+   "pole": "-",
+   "label": "A method or function call that opens the element expression of a Python generator or list (all(x.is_valid() for ...), [np.array(...) for ...], flatten([make_kernel(k) ...])), vs comprehensions whose element is a bare name",
+   "fire": [
+    "def ready(workers):\n    return all(w.is_alive() for w in workers)",
+    "def clean(names):\n    return [n.strip() for n in names]",
+    "def load(paths):\n    return [np.load(p) for p in paths]",
+    "def check(jobs):\n    return any(j.has_failed() for j in jobs)",
+    "def build(specs):\n    return flatten([compile_spec(s) for s in specs])",
+    "def norms(vectors):\n    return [np.linalg.norm(v) for v in vectors]",
+    "def done(tasks):\n    return all(t.is_finished() for t in tasks)",
+    "def sizes(files):\n    return [os.path.getsize(f) for f in files]"
+   ],
+   "quiet": [
+    "def ready(workers):\n    return all(w for w in workers)",
+    "def clean(names):\n    return [n for n in names]",
+    "def load(paths):\n    return [p for p in paths]",
+    "def check(jobs):\n    return any(j for j in jobs)",
+    "def build(specs):\n    return flatten([s for s in specs])",
+    "def norms(vectors):\n    return [v for v in vectors]",
+    "def done(tasks):\n    return all(t for t in tasks)",
+    "def sizes(files):\n    return [f for f in files]"
+   ]
+  }
+ ],
+ "predictions": "Comprehensions whose element starts with a call or method reach 0.25-0.7; the same comprehensions with a bare-name element stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "call inside comprehension element",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: any(not isinstance(...)), all(e.is_cellwise_constant() ...), [np.array(...)], flatten([generate_kernel(...)]), matcher.reset(). Probe: all(x.is_valid() for x in items) 0.689, [np.array(row) for row in rows] 0.319, flatten([make_kernel(k) ...]) 0.283; any(not isinstance ...) 0.025, [None] * n 0.106, plain return 0.073."
+}

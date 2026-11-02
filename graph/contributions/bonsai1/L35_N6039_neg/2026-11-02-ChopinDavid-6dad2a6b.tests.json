@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-6dad2a6b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6039-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T17:22:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6039",
+   "pole": "-",
+   "label": "The space-prefixed first byte (' \\xEx') of a Hangul syllable that the tokenizer splits into byte-fallback pieces, vs Korean text whose space-initial syllables are all whole tokens",
+   "fire": [
+    "그는 저녁에 카페로 나갔다.",
+    "그녀는 매일 쿠키를 굽고 있다.",
+    "그들은 캐나다에서 대학을 다녔다.",
+    "이 제품은 카드로 결제할 수 있습니다.",
+    "그는 아이들과 함께 캠핑을 갔다.",
+    "우리는 오후에 롯데월드를 구경했다.",
+    "그녀는 탁구를 공부하고 있다.",
+    "우리는 주말에 가족과 함께 카누를 탔다."
+   ],
+   "quiet": [
+    "그는 저녁에 시장으로 나갔다.",
+    "그녀는 매일 운동을 하고 있다.",
+    "그들은 서울에서 대학을 다녔다.",
+    "이 제품은 가격이 비싸지 않습니다.",
+    "그는 아이들과 함께 노래를 불렀다.",
+    "우리는 오후에 시내를 구경했다.",
+    "그녀는 일본어를 공부하고 있다.",
+    "우리는 주말에 가족과 함께 시간을 보냈다."
+   ]
+  }
+ ],
+ "predictions": "Korean sentences containing a space-prefixed byte-split syllable reach 0.3-0.55; Korean sentences with none stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space + byte-split Hangul",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: 23 of the top 32 peaks are ' \\ufffd' byte tokens in Korean/CJK (카, 롤, 산). Probe: 롤링스톤즈 0.534, 카이저 0.447, 카메라 0.440, 산 0.358; '가방' sentence with no byte-split space token 0.004. Every item checked with the tokenizer: fire items contain ' \\ufffd', near misses contain none."
+}

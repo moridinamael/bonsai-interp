@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-c425a58e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N1956-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T17:22:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N1956",
+   "pole": "-",
+   "label": "The ' *\\n' (or ' #\\n') token that closes a line of a box-drawn comment where the text line ends with a trailing star or hash, as in license headers, vs the same license text in comments without a trailing border",
+   "fire": [
+    "/****************************************\n* This library is free software; you can redistribute it *\n* and/or modify it under the terms of the GNU Lesser    *\n* General Public License version 2.1.                   *\n****************************************/",
+    "#########################################\n# Copyright (c) 2014 the project authors. #\n# Licensed under the MIT license; see the #\n# LICENSE file for details.               #\n#########################################",
+    "/******************************************\n* Permission is hereby granted, free of charge, *\n* to any person obtaining a copy of this     *\n* software and associated documentation.      *\n******************************************/",
+    "/*************************************\n* Main server module. It accepts *\n* connections and forwards each  *\n* request to a worker thread.    *\n*************************************/",
+    "###################################\n# Build script for the firmware.  #\n# Run it from the repository root #\n# with python 3.8 or later.       #\n###################################",
+    "/*******************************************\n* This program is distributed in the hope that *\n* it will be useful, but WITHOUT ANY WARRANTY; *\n* without even the implied warranty.            *\n*******************************************/",
+    "/*********************************\n* Utility functions for parsing *\n* dates, times and time zones   *\n* in log files.                 *\n*********************************/",
+    "#####################################\n# Settings for the staging cluster. #\n# Edit the values below before you  #\n# deploy a new release.             #\n#####################################"
+   ],
+   "quiet": [
+    "/*\n * This library is free software; you can redistribute it\n * and/or modify it under the terms of the GNU Lesser\n * General Public License version 2.1.\n */",
+    "# Copyright (c) 2014 the project authors.\n# Licensed under the MIT license; see the\n# LICENSE file for details.",
+    "/*\n * Permission is hereby granted, free of charge,\n * to any person obtaining a copy of this\n * software and associated documentation.\n */",
+    "/*\n * Main server module. It accepts\n * connections and forwards each\n * request to a worker thread.\n */",
+    "# Build script for the firmware.\n# Run it from the repository root\n# with python 3.8 or later.",
+    "/*\n * This program is distributed in the hope that\n * it will be useful, but WITHOUT ANY WARRANTY;\n * without even the implied warranty.\n */",
+    "/*\n * Utility functions for parsing\n * dates, times and time zones\n * in log files.\n */",
+    "# Settings for the staging cluster.\n# Edit the values below before you\n# deploy a new release."
+   ]
+  }
+ ],
+ "predictions": "Box comments whose lines end in ' *' or ' #' reach 0.3+ on the ' *\\n'/' #\\n' token; the same text in ordinary ' * ' or '# ' comments stays under 0.12.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "trailing border star in box comment",
+ "unit_kind": "token",
+ "confidence": "low",
+ "notes": "Card: every top example is ' *\\n' at the end of 'you can redistribute it and/or modify *' in box comments, plus ' #\\n'. Probe used ordinary leading-star comments, none of which produce the ' *\\n' token, and all stayed low (max 0.097); tokenizer confirms ' *\\n' only appears when a line ends with ' *'. Untested trigger form, so low confidence."
+}
