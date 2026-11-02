@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-095b0b75",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4902+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T23:34:14+00:00",
+ "recipe": {
+  "toolchain_commit": "f051e8b20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N4902_pos/2026-11-02-ChopinDavid-095b0b75.tests.json"
+ },
+ "label": "Opening quote token of a string literal passed as an argument in Python code (assertEqual(x, 'value'), print('...'), (\"prefix\")), vs the same code passing variables or numbers",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N4902_pos/2026-11-02-ChopinDavid-095b0b75.tests.json",
+   "prereg_commit": "f051e8b20",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.196,
+     "peak": " '"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.076,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.264,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.041,
+     "peak": ".get"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.015,
+     "peak": "logger"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.18,
+     "peak": " test"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.013,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.022,
+     "peak": "server"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.145,
+     "peak": " test"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.071,
+     "peak": " four"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": ".get"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": "logger"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.181,
+     "peak": " test"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " port"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.617,
+    "median_fire": 0.058,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f051e8b20",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "opening quote of a Python string argument",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: assertEqual(..., 'department'), convert(...), \"Opening\"), (\"processed_crash.\"), print('creating indexes'), return \"/veliquest\". Probe: quote in a comment '(\"raw.\"' 0.430, assertEqual string args 0.212, return \"/data/\" 0.102; same test with variable args 0.142, prose quotes 0.039-0.051. Separation is small, so confidence is low.",
+ "selection": "random draw"
+}

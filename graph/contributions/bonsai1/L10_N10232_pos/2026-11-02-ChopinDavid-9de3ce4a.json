@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-9de3ce4a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N10232+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T23:33:16+00:00",
+ "recipe": {
+  "toolchain_commit": "f051e8b20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N10232_pos/2026-11-02-ChopinDavid-9de3ce4a.tests.json"
+ },
+ "label": "Identifier suffix '_info' in code (connection_info, user_info), vs the same code with other identifier suffixes",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N10232_pos/2026-11-02-ChopinDavid-9de3ce4a.tests.json",
+   "prereg_commit": "f051e8b20",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.034,
+     "peak": "_info"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.036,
+     "peak": " '"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.029,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.321,
+     "peak": "_info"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.032,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.058,
+     "peak": "_info"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.126,
+     "peak": "_info"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.024,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.276,
+     "peak": " response"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.032,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": " ValueError"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.066,
+     "peak": "_stat"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.539,
+    "median_fire": 0.035,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f051e8b20",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "'_info' identifier suffix",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card flags broad (1.7% of tokens), mixed peaks: bug, Gce, RCT articles, '_info' x2, .com, Datenblatt. Probe was flat: connection_info 0.175 (the highest), bug 0.043, .com 0.040, sign 0.057, controls 0.016-0.027. Best-guess test on the only token that moved.",
+ "selection": "random draw"
+}

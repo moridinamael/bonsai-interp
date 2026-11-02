@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-17f2a22a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N6187-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T23:33:37+00:00",
+ "recipe": {
+  "toolchain_commit": "f051e8b20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N6187_neg/2026-11-02-ChopinDavid-17f2a22a.tests.json"
+ },
+ "label": "Opening square bracket fused with a quote or paren ('[ \"[ ('[) that starts literal bracketed text inside a string (regex character class, INI section header, '[document]'), vs the same code without the bracket and ordinary list literals",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N6187_neg/2026-11-02-ChopinDavid-17f2a22a.tests.json",
+   "prereg_commit": "f051e8b20",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.751,
+     "peak": "('["
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.448,
+     "peak": "(\"["
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.539,
+     "peak": "(\"["
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.155,
+     "peak": " '["
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.485,
+     "peak": "('["
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.26,
+     "peak": "('["
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.272,
+     "peak": "(\"["
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.015,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " phone"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": "for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": "\\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": "']\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": "return"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": ".write"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.36,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f051e8b20",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "'[' opening bracketed text in a string",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: \" '[document]'\", write(\"[Desktop Entry]\"), re.sub('[a-z]'), re.split('[,\\t\\n]'), wiki '[编辑]', '[CrossRef]'. Probe: \" '[document]'\" 0.687, re.sub('[a-z]') 0.585, write(\"[Desktop Entry]\") 0.546, re.split(\"[,;]\") 0.508, ' [CrossRef]' 0.293; list literal 0.014, re.sub('a') 0.006, write(\"Desktop Entry\") 0.008.",
+ "selection": "random draw"
+}

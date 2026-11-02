@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-ed10cc97",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N10173+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T23:33:49+00:00",
+ "recipe": {
+  "toolchain_commit": "f051e8b20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N10173_pos/2026-11-02-ChopinDavid-ed10cc97.tests.json"
+ },
+ "label": "'-y' adjective formed from a nature noun inside a proper place or institution name (Ston|y Brook, Mist|y Fjords, Sunnyvale, Rocky Mountains), vs place names built from the bare noun",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N10173_pos/2026-11-02-ChopinDavid-ed10cc97.tests.json",
+   "prereg_commit": "f051e8b20",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.486,
+     "peak": "y"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.795,
+     "peak": "y"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.762,
+     "peak": " Rocky"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.83,
+     "peak": " Sunny"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.443,
+     "peak": "y"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.526,
+     "peak": "y"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.854,
+     "peak": "y"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.881,
+     "peak": "y"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.044,
+     "peak": " ferry"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": " winter"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " Valley"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " nights"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " River"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": " Snow"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " Stone"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.778,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f051e8b20",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "-y nature word in a place name",
+ "unit_kind": "token/lexical",
+ "confidence": "medium",
+ "notes": "Card: Rock|y Mountain, Ston|y Brook x3, SUN|NY|VALE, st|ony, Woody, Zaryab. Probe: Stony Brook 0.864, Sunnyvale 0.763, Rocky Mountains 0.396, snowy ridge 0.342, stony road 0.223, windy/misty 0.190; muddy 0.118, no -y word 0.002-0.013. Lowercase adjectives fire weaker, so near misses use bare-noun place names.",
+ "selection": "random draw"
+}
