@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-86333d63",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N4346-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T19:20:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N4346",
+   "pole": "-",
+   "label": "The separator between items of an enumeration (the comma or 'and' after one listed item, or an item number), vs commas that separate clauses; very weak on short sentences",
+   "fire": [
+    "The pack list for the hike: boots, gloves, a hat, a headlamp, a map, a compass, water and snacks.",
+    "The board includes a lawyer, a banker, a surgeon, a teacher, a farmer, and a retired general.",
+    "The museum guide is printed in Dutch, Polish, Greek, Turkish, Arabic, Chinese and Korean.",
+    "Ingredients: flour, sugar, butter, eggs, milk, vanilla, baking powder, and a pinch of salt.",
+    "Available sizes: 1 small, 2 medium, 3 large, 4 extra large, 5 double extra large.",
+    "Topics covered: (a) budgets, (b) staffing, (c) training, (d) safety, (e) outreach.",
+    "Guests came from Lyon, Porto, Gdansk, Leeds, Bergen, Turin and Graz.",
+    "The kit contains a tent, two poles, ten pegs, a ground sheet, a repair patch, and a bag."
+   ],
+   "quiet": [
+    "When we reached the ridge, the wind picked up, so we turned back toward the hut.",
+    "The board met on Tuesday, and after a long debate, it approved the budget.",
+    "The museum guide is printed in large type, which helps older visitors.",
+    "If the dough is too dry, add a little milk, then knead it again.",
+    "Although the shop was busy, the clerk found time to help us.",
+    "After the meeting ended, the staff went back to work, and the director left.",
+    "Guests came from far away, but most of them arrived late.",
+    "Once the tent was up, we lit a fire, and soon it was dark."
+   ]
+  }
+ ],
+ "predictions": "List commas in long enumerations reach about 0.05-0.1; clause commas under 0.02. Activations are tiny on short text, so the test will probably fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "enumeration separator (weak)",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: ',' x16 and digits x8 of the top 32, all list separators (a judge, an expert; boots, base layer; Italian, English, French). Probe on short lists was near the floor: kit list 0.072, languages 0.020, members 0.014, numbered colors 0.006; clause commas 0.006-0.009."
+}

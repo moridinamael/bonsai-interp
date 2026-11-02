@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-395ea494",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N10648+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T19:20:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N10648",
+   "pole": "+",
+   "label": "Unclear broad unit; best guess: a key repeated across sibling entries of an indented YAML/config block (the second and later 'image:'), vs a block whose keys are all different",
+   "fire": [
+    "services:\n  db:\n    image: postgres\n  cache:\n    image: redis\n  app:\n    image: python",
+    "jobs:\n  lint:\n    runs-on: ubuntu-latest\n  test:\n    runs-on: ubuntu-latest\n  deploy:\n    runs-on: ubuntu-latest",
+    "users:\n  - name: ana\n    role: admin\n  - name: bo\n    role: viewer\n  - name: cy\n    role: viewer",
+    "pools:\n  small:\n    size: 2\n  medium:\n    size: 4\n  large:\n    size: 8",
+    "routes:\n  home:\n    path: /\n  about:\n    path: /about\n  blog:\n    path: /blog",
+    "volumes:\n  logs:\n    driver: local\n  data:\n    driver: local\n  media:\n    driver: local",
+    "stages:\n  build:\n    timeout: 10\n  check:\n    timeout: 20\n  ship:\n    timeout: 5",
+    "queues:\n  mail:\n    workers: 3\n  sms:\n    workers: 1\n  push:\n    workers: 2"
+   ],
+   "quiet": [
+    "service:\n  name: web\n  image: postgres\n  port: 5432\n  restart: always",
+    "job:\n  runs-on: ubuntu-latest\n  timeout: 30\n  name: lint",
+    "user:\n  name: ana\n  role: admin\n  email: ana@example.org",
+    "pool:\n  size: 4\n  timeout: 30\n  retry: true",
+    "route:\n  path: /about\n  title: About us\n  public: true",
+    "volume:\n  driver: local\n  mount: /data\n  readonly: false",
+    "stage:\n  timeout: 10\n  script: make\n  cache: true",
+    "queue:\n  workers: 3\n  retries: 5\n  delay: 60"
+   ]
+  }
+ ],
+ "predictions": "YAML blocks that repeat a key across siblings reach about 0.4; blocks with distinct keys stay lower, but the unit is broad (prose 0.2-0.35) so the test will probably fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated YAML key (unclear)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: no dominant token; top example is the third repeated 'image: nginx' in a compose file (6.75), others are scattered prose tokens (ready to, hind limbs, in abundance). Flagged broad (4.4%). Probe: repeated image keys 0.431, ordinary descriptive prose 0.25-0.36, short plain sentences 0.08-0.10."
+}
