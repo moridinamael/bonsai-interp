@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-9de3ce4a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N10232+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T23:23:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N10232",
+   "pole": "+",
+   "label": "Identifier suffix '_info' in code (connection_info, user_info), vs the same code with other identifier suffixes",
+   "fire": [
+    "def connect(self):\n    conn_info = self.driver.get_connection()\n    return conn_info",
+    "user_info = {'name': name, 'email': email}\nsave(user_info)",
+    "for item in batch:\n    meta_info = item.get('meta')\n    log(meta_info)",
+    "response = client.describe(volume_id)\ndisk_info = response['disk']\nprint(disk_info)",
+    "class Session:\n    def __init__(self, auth_info):\n        self.auth_info = auth_info",
+    "if not device_info:\n    raise ValueError('missing device')\nreturn device_info",
+    "def load(path):\n    file_info = os.stat(path)\n    return file_info.st_size",
+    "payload = build(request)\nroute_info = payload['route']\nsend(route_info)"
+   ],
+   "quiet": [
+    "def connect(self):\n    conn_id = self.driver.get_connection()\n    return conn_id",
+    "user_name = {'name': name, 'email': email}\nsave(user_name)",
+    "for item in batch:\n    meta_key = item.get('meta')\n    log(meta_key)",
+    "response = client.describe(volume_id)\ndisk_size = response['disk']\nprint(disk_size)",
+    "class Session:\n    def __init__(self, auth_token):\n        self.auth_token = auth_token",
+    "if not device_list:\n    raise ValueError('missing device')\nreturn device_list",
+    "def load(path):\n    file_stat = os.stat(path)\n    return file_stat.st_size",
+    "payload = build(request)\nroute_name = payload['route']\nsend(route_name)"
+   ]
+  }
+ ],
+ "predictions": "Weak: '_info' identifiers may reach 0.1-0.3; other suffixes stay under 0.1. Likely fails the median floor.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'_info' identifier suffix",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card flags broad (1.7% of tokens), mixed peaks: bug, Gce, RCT articles, '_info' x2, .com, Datenblatt. Probe was flat: connection_info 0.175 (the highest), bug 0.043, .com 0.040, sign 0.057, controls 0.016-0.027. Best-guess test on the only token that moved."
+}

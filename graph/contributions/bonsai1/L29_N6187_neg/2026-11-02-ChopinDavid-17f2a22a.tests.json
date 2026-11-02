@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-17f2a22a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N6187-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T23:23:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N6187",
+   "pole": "-",
+   "label": "Opening square bracket fused with a quote or paren ('[ \"[ ('[) that starts literal bracketed text inside a string (regex character class, INI section header, '[document]'), vs the same code without the bracket and ordinary list literals",
+   "fire": [
+    "import re\ncode = re.sub('[^0-9]', '', phone)\nprint(code)",
+    "words = re.findall(\"[A-Z]\\w+\", text)\nfor w in words:\n    print(w)",
+    "cfg = open('settings.ini', 'w')\ncfg.write(\"[General]\\n\")\ncfg.write(\"debug=1\\n\")",
+    "skip = ['meta', 'link', '[comment]']\nif node.name in skip:\n    continue",
+    "import re\nparts = re.split('[ ,]+', line)\nreturn parts",
+    "out.write('[Unit]\\n')\nout.write('Description=worker\\n')\nout.close()",
+    "pattern = re.compile(\"[aeiou]\")\nhits = pattern.findall(word)\nprint(len(hits))",
+    "header = \"[Section One]\"\nlines.insert(0, header)\nsave(lines)"
+   ],
+   "quiet": [
+    "import re\ncode = re.sub('-', '', phone)\nprint(code)",
+    "words = text.split()\nfor w in words:\n    print(w)",
+    "cfg = open('settings.ini', 'w')\ncfg.write(\"General\\n\")\ncfg.write(\"debug=1\\n\")",
+    "skip = ['meta', 'link', 'comment']\nif node.name in skip:\n    continue",
+    "import re\nparts = line.split(',')\nreturn parts",
+    "out.write('Unit\\n')\nout.write('Description=worker\\n')\nout.close()",
+    "sizes = [4, 8, 16]\ntotal = sum(sizes)\nprint(total)",
+    "header = \"Section One\"\nlines.insert(0, header)\nsave(lines)"
+   ]
+  }
+ ],
+ "predictions": "Quoted '[' (regex classes, [Section] headers) reaches 0.5-0.7; list literals '[1, 2]' and the same strings without brackets stay under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'[' opening bracketed text in a string",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: \" '[document]'\", write(\"[Desktop Entry]\"), re.sub('[a-z]'), re.split('[,\\t\\n]'), wiki '[编辑]', '[CrossRef]'. Probe: \" '[document]'\" 0.687, re.sub('[a-z]') 0.585, write(\"[Desktop Entry]\") 0.546, re.split(\"[,;]\") 0.508, ' [CrossRef]' 0.293; list literal 0.014, re.sub('a') 0.006, write(\"Desktop Entry\") 0.008."
+}

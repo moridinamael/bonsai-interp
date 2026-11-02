@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-8f2d510c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N3318+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T23:32:07+00:00",
+ "recipe": {
+  "toolchain_commit": "f051e8b20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N3318_pos/2026-11-02-ChopinDavid-8f2d510c.tests.json"
+ },
+ "label": "Inner word-piece of a split Japanese (East Asian) proper name, romanized or in CJK (Sumit|omo, Asah|ik|awa, Niss|in, 中|島), vs inner pieces of split European place and brand names and single-token Japanese names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N3318_pos/2026-11-02-ChopinDavid-8f2d510c.tests.json",
+   "prereg_commit": "f051e8b20",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.113,
+     "peak": "itsu"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.077,
+     "peak": "amoto"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.264,
+     "peak": "ikk"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.577,
+     "peak": "im"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.136,
+     "peak": "aky"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.101,
+     "peak": "ise"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.449,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.031,
+     "peak": "asaki"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": "ers"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.032,
+     "peak": " Schwe"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.044,
+     "peak": "alam"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.06,
+     "peak": " Yamaha"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " crowded"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " three"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.124,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f051e8b20",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "inner piece of split Japanese name",
+ "unit_kind": "token/lexical",
+ "confidence": "medium",
+ "notes": "Card: Nissin, Asahikawa, 中込, 三菱東京, 中島, Sumitomo, Nikken, 楽天ブックス, lisinopril. Probe: Asahikawa 0.940 ('ik'), Sumitomo 0.748 ('omo'), lisinopril 0.714 ('op'), 中島 0.409, Nissin 0.368, 楽天ブックス 0.271; Sapporo only 0.079; Siemens 0.009, Minnesota 0.006 (single tokens). Lisinopril shows the pole is not purely Japanese; the near misses test whether split non-Asian names fire too.",
+ "selection": "random draw"
+}
