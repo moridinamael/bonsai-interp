@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-4bdb7a04",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8166-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T09:22:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N8166",
+   "pole": "-",
+   "label": "Naming a medical condition that co-occurs with or accompanies another (comorbidities, associated disorders, symptom clusters), vs medical-setting text that names no condition",
+   "fire": [
+    "Adults with migraine are more likely to also suffer from depression and anxiety.",
+    "Celiac disease often occurs together with type 1 diabetes and thyroid disease.",
+    "Obesity is commonly linked with sleep apnea, high blood pressure, and gout.",
+    "Many children with autism also have epilepsy or chronic constipation.",
+    "Rheumatoid arthritis raises the risk of heart disease and osteoporosis.",
+    "Patients with cirrhosis frequently develop jaundice, swollen ankles, and confusion.",
+    "Down syndrome is often accompanied by heart defects and hearing loss.",
+    "People with allergies may also experience itchy eyes, sneezing, and sinusitis."
+   ],
+   "quiet": [
+    "Adults with appointments should arrive ten minutes early and bring a photo ID.",
+    "The hospital opened a new wing with forty beds and a larger pharmacy.",
+    "Nurses record each patient's weight and height at every visit.",
+    "The doctor recommended walking for thirty minutes and drinking more water.",
+    "Many children at the clinic also bring a parent or a younger sibling.",
+    "Patients in the ward frequently ask for extra blankets, books, and tea.",
+    "The insurance plan covers two dental checkups and one eye exam a year.",
+    "Visitors with passes may also use the parking garage, cafe, and library."
+   ]
+  }
+ ],
+ "predictions": "Condition names in co-occurrence lists reach 0.25-0.6; clinic logistics text stays under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "co-occurring medical conditions",
+ "unit_kind": "sparse feature",
+ "confidence": "medium",
+ "notes": "Card: top examples are lists of conditions/symptoms that go together (bleeding gums, menstrual periods, bruising; atopic dermatitis or asthma; associated with thymic hypertrophy / other birth defects). Probe: eczema->hay fever or asthma 0.529, psoriasis autoimmune 0.531, lupus associated with 0.270, bleeding symptoms 0.214, hives warning sign 0.202; tablets with water 0.001, clinic logistics 0.005, car defects list 0.043."
+}
