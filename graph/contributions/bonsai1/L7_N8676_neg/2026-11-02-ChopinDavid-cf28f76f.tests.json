@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-cf28f76f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N8676-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T11:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N8676",
+   "pole": "-",
+   "label": "A domain or file-extension suffix token ('.com', '.org', '.php', '.info') attached to a site or file name, and '=' in a key=value option, vs the same sentences naming the site or file without the suffix",
+   "fire": [
+    "I ordered the book from amazon.com and it arrived two days later.",
+    "The statement was posted on whitehouse.gov this morning.",
+    "Most of the recipes come from allrecipes.com, with small changes.",
+    "The error points to a missing semicolon in login.php near the top.",
+    "Volunteers maintain the archive at gutenberg.org for free.",
+    "Rename the template to header.html and reload the page.",
+    "She started the server with the flag port=8080 and left it running.",
+    "Donations can be made through wikimedia.org or by mail."
+   ],
+   "quiet": [
+    "I ordered the book from amazon and it arrived two days later.",
+    "The statement was posted by the White House this morning.",
+    "Most of the recipes come from my grandmother, with small changes.",
+    "The error points to a missing semicolon in the login file near the top.",
+    "Volunteers maintain the Gutenberg archive for free.",
+    "Rename the template to header and reload the page.",
+    "She started the server on port 8080 and left it running.",
+    "Donations can be made through Wikimedia or by mail."
+   ]
+  }
+ ],
+ "predictions": "The suffix token reaches 0.2-0.5; the same names without a suffix stay under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "domain/file extension suffix after a name",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Card: top 32 peak on '.com' x8, '.org' x4, '=' x4, '.php', '.info'. Probe: viewtopic.php 0.464, timeout=30 '=' 0.390, youtube.com 0.308, acig.org 0.243, example.info 0.176; same sentences without the suffix 0.011-0.032."
+}
