@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-24bc52dd",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N4655+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T08:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N4655",
+   "pole": "+",
+   "label": "' super' in a Python method calling the parent class (res = super(Cls, self).method(...)), vs the same methods calling another object",
+   "fire": [
+    "class Invoice(models.Model):\n    def create(self, vals):\n        rec = super(Invoice, self).create(vals)\n        return rec",
+    "class Loader(BaseLoader):\n    def load(self, path):\n        data = super(Loader, self).load(path)\n        return data",
+    "class Widget(Base):\n    def render(self):\n        html = super().render()\n        return html",
+    "class Cart(Model):\n    def unlink(self):\n        result = super(Cart, self).unlink()\n        return result",
+    "class Handler(BaseHandler):\n    def get(self, key):\n        value = super(Handler, self).get(key)\n        return value",
+    "class Job(Task):\n    def run(self, args):\n        out = super(Job, self).run(args)\n        return out",
+    "class Form(BaseForm):\n    def clean(self):\n        cleaned = super().clean()\n        return cleaned",
+    "class Sensor(Device):\n    def read(self):\n        raw = super(Sensor, self).read()\n        return raw"
+   ],
+   "quiet": [
+    "class Invoice(models.Model):\n    def create(self, vals):\n        rec = self.env.create(vals)\n        return rec",
+    "class Loader(BaseLoader):\n    def load(self, path):\n        data = self.reader.load(path)\n        return data",
+    "class Widget(Base):\n    def render(self):\n        html = self.template.render()\n        return html",
+    "class Cart(Model):\n    def unlink(self):\n        result = self.lines.unlink()\n        return result",
+    "class Handler(BaseHandler):\n    def get(self, key):\n        value = self.cache.get(key)\n        return value",
+    "class Job(Task):\n    def run(self, args):\n        out = self.runner.run(args)\n        return out",
+    "class Form(BaseForm):\n    def clean(self):\n        cleaned = self.validator.clean()\n        return cleaned",
+    "class Sensor(Device):\n    def read(self):\n        raw = self.port.read()\n        return raw"
+   ]
+  }
+ ],
+ "predictions": "' super' inside a Python method reaches 0.5-0.9; the same method with self.x / Base.x calls stays under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python super() call in a method",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: top 32 peak on ' super' (res = super(Class, self)) and the indentation token inside 'return {' dict literals. Probe: super(Report, self) 0.803, super() 0.803, super(Parser, self) 0.722, dict indentation 0.375; self.store.write 0.052, dict(...) 0.098, prose 'super nice' 0.005.",
+ "trigger": {
+  "tokens": [
+   " super"
+  ]
+ }
+}

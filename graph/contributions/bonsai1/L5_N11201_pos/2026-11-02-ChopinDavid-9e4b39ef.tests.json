@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-9e4b39ef",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N11201+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T08:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N11201",
+   "pole": "+",
+   "label": "Positional unit: fires on the first token of a context window (corpus window position 0), not on any content; short test sentences do not reproduce it",
+   "fire": [
+    " results obtained in the first trial.",
+    " methods used for cleaning the samples.",
+    " approach to reducing traffic in the city.",
+    " select the size you ordered last time.",
+    " measures needed to protect the coast.",
+    " options available for new customers.",
+    " steps taken to repair the old bridge.",
+    " enter the code printed on your ticket."
+   ],
+   "quiet": [
+    "The results of the first trial were promising.",
+    "She described the methods used for cleaning.",
+    "The city has a new approach to traffic.",
+    "Please choose a size before checking out.",
+    "The coast needs better protection from storms.",
+    "New customers have several options available.",
+    "Workers repaired the old bridge last month.",
+    "Your ticket has a code printed on the back."
+   ]
+  }
+ ],
+ "predictions": "All items stay near 0.01-0.02; the test is expected to fail because the unit tracks absolute window position, not text.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "positional (window position 0)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: FLAG positional, 100% of top peaks at window position 0 on arbitrary tokens (' tasks', ' strategy', ' indicate'). Probe: every sentence 0.011-0.015, including the card's own truncated openings ('tasks required in daily life.' 0.012). Fire items are lowercase mid-sentence fragments like the top examples; near misses are full sentences."
+}

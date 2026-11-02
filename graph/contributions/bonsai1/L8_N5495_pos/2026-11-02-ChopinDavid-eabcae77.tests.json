@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-eabcae77",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N5495+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T08:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N5495",
+   "pole": "+",
+   "label": "The first piece of a word split into pieces right after the article 'a' (a un|isex, a S|IR, a F|WS), vs the same split words without 'a' and 'a' before a whole-token word",
+   "fire": [
+    "The manual describes a unicellular organism found in ponds.",
+    "Researchers built a SEIR model to track the outbreak.",
+    "The sample was mixed in a uniaxial press before testing.",
+    "According to a NIOSH report, the noise level is unsafe.",
+    "The team designed a unimodal distribution for the test.",
+    "She called it a Kafkaesque situation with no way out.",
+    "Each board ships with a JTAG adapter for debugging.",
+    "The engineers proposed a unidimensional scale for the survey."
+   ],
+   "quiet": [
+    "The manual describes unicellular organisms found in ponds.",
+    "Researchers built the SEIR model to track the outbreak.",
+    "The sample was mixed in the uniaxial press before testing.",
+    "According to the NIOSH report, the noise level is unsafe.",
+    "The team designed a simple distribution for the test.",
+    "She called it a strange situation with no way out.",
+    "Each board ships with the JTAG adapter for debugging.",
+    "The engineers proposed a single scale for the survey."
+   ]
+  }
+ ],
+ "predictions": "The first piece after 'a' reaches 0.5-1.2; the same split word after 'the' or with no article, and 'a' + whole word, stay under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split word piece after article 'a'",
+ "unit_kind": "spelling-unit",
+ "confidence": "high",
+ "notes": "Card: top 32 peak on ' un', ' S', ' R', ' F', ' L', ' N' right after ' a' when the next word is split. Probe: a un|isex 1.183, a un|idirectional 1.010, a un|ifying 0.886, a S|IR 0.863, a S|isyphean 0.770, a F|WS 0.729; 'The S|IR model' 0.047, 'a fresh' 0.031. tok.py: unified/unique/unanimous/universal are single tokens."
+}
