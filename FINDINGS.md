@@ -1121,3 +1121,17 @@ windows. 7,552 were testable; **6,704 replicated (89%);** 2 of 6,881 placebo tes
   19–24% later).
 - **With compose@13 and @14:** 4,949 of 34,519 re-tested automatic assignments (14%) failed a fresh test. If an
   assignment had to replicate, the assignment-grade total would be about 32,700 (3.7% of poles) instead of 37,629.
+
+## 2026-11-02: Embedding classes cover a few hundred more poles; neighbouring tokens mostly don't (compose@16)
+
+The assignment-grade count had been flat at 37,629 since compose@12: compose@13–15 only re-tested assignments, and the
+n-gram covers were used up. compose@16 tried three new kinds of cover on every eligible unassigned pole: the next token,
+the previous token, and a class of tokens the input embedding groups together.
+
+- **Only 4,390 of 753,574 eligible poles (0.6%) had any such cover** at coverage ≥ 0.5 and precision ≥ 0.2.
+- **785 of 4,028 tested held (19%);** 0 of 4,026 placebo tests held. The total is now 38,414 (4.34%).
+- **Classes held 30%** (65% at precision ≥ 0.7), for example web formats, Russia and its neighbours, and job titles.
+- **Next and previous tokens held about 10%.** In most failures the pole stays quiet on the fire snippets: the
+  neighbouring token goes with the pole's activity without bringing it on.
+- **The remaining poles fire on many tokens in many contexts.** A fixed library of tokens and conditions doesn't
+  describe them at useful precision.

@@ -166,6 +166,7 @@ placebos, a held-out 8 + 8, and the 50% coverage rule.
 | compose@13 (docs/COMPOSE.md) | label precision: each assigned word cover against its nearest embedding tokens, with a fresh-pairs control | 19,149 poles: 14,829 sharp, 1,096 broad (categories), 3,224 unreplicated; replication falls with selection precision (4.9% fail at ≥ 0.5, 61% under 0.2) |
 | compose@14 (docs/COMPOSE.md) | replication of the pair and triple covers on fresh pairs | 6,941 of 7,818 replicated (89%); pairs 9.8% fail, triples 27%; with compose@13, 4,101 of 26,967 automatic assignments failed a fresh test |
 | compose@15 (docs/COMPOSE.md) | replication of the auto-token@2 screen assignments on fresh draws | 6,704 of 7,552 replicated (89%); lexical labels 1.3% fail, rule labels 18–39%; with compose@13–14, 4,949 of 34,519 automatic assignments failed a fresh test |
+| compose@16 (docs/COMPOSE.md) | covers by the next or previous token, and by input-embedding class | 785 of 4,028 assigned (19%): classes 30%, next 9%, prev 10%; 0 of 4,026 placebo tests held |
 
 All of it is in the atlas: lib_* columns (the best test per pole across passes, its coverage, every condition held) and
 census_flags. It shows on `play card`, `play search --kind …` and the map.

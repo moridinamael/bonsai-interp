@@ -703,3 +703,54 @@ subword", "X at a line start") fails a fresh draw 18–39% of the time, and most
 outside the rule as well. With compose@13 and @14, 34,519 automatic assignments have now been re-tested, and 4,949 (14%)
 failed a fresh test. About 3,100 assignments are still untested this way (the twin pass, compose@3–6's condition covers,
 compose@1–2, and the 408 untestable here).
+
+## Round 16 (compose@16): covers by the neighbouring token and by embedding class
+
+compose@12 ended the n-gram cover line, and the poles it left fire on many different read tokens (the commonest covers
+about 15% of a pole's sample). This round lets the read token vary and fixes something else
+(`bonsai_interp/compose/round16.py`):
+- **next:** the token after the read token is in a set of at most 8. The snippet ends before that token, so the pole
+  has to expect it.
+- **prev:** the token before the read token is in a set of at most 8 (any token after it).
+- **class:** the read token is in a class of 9–256 tokens that the model's input embedding groups together (the tokens
+  nearest the centroid of the pole's commonest read tokens), a category rather than a list.
+
+Each eligible pole not yet assignment-grade (753,574) kept its best hypothesis with coverage ≥ 0.5 and precision ≥ 0.2.
+- **next and prev tests:** the same read token, with the neighbour in the set against not.
+- **class tests:** compose@7's word test (a class token against other tokens of the same frequency and domain).
+
+| | |
+|---|---|
+| Protocol | a71dc2f3 |
+| Pre-registration | 3b7fc105 |
+| Summary | 1c444cc7 |
+
+- **4,390 poles had a hypothesis**, 0.6% of the eligible poles. 4,028 were testable.
+- **Assigned: 785 of 4,028 (19%);** 0 of 4,026 placebo tests held.
+- **By kind:**
+
+  | Kind | class | next | prev |
+  |---|---|---|---|
+  | Tested | 1,945 | 1,576 | 507 |
+  | Held | 593 (30%) | 139 (9%) | 53 (10%) |
+
+- **By precision, classes:** 19% held at 0.2–0.3, 34% at 0.3–0.5, 51% at 0.5–0.7, 65% at ≥ 0.7. Next covers: 3%, 6%,
+  20%, 40%.
+- **By depth:** L0–5 309, L6–11 60, L12–17 8, L18–23 111, L24–29 158, L30–35 139.
+- **Held classes name categories:**
+  - web formats (" URL", " HTML", " API", " HTTP", " JSON", L0);
+  - Russia and its neighbours (" Russian", " Soviet", " Ukraine", L0);
+  - titles (" director", " professor", " Minister", L0);
+  - keys and values in code (" value", " key", " table", " index", L3).
+- **Held next covers are mostly late-layer code poles** that expect an indent, a closing brace or `.append`. Held prev
+  covers include "any token after ' Sir'" (L7).
+- **How they fail:** in most failures the pole is quiet on the fire snippets (median fire under 0.20 in 1,123 of 1,352
+  class, 1,327 of 1,437 next and 416 of 454 prev failures). The neighbouring token goes with the pole's strong
+  activations but does not bring them on.
+
+### Reading
+
+The assignment-grade total rises by 785, to 38,414 (4.34% of poles). Embedding classes are the only one of the three
+kinds that works often, and they work when precise. The neighbouring token mostly co-occurs with the pole without
+causing it. What remains (about 830,000 poles, most of them firing on many tokens in many contexts) is beyond what a
+fixed token or condition library can describe at precision 0.2.
