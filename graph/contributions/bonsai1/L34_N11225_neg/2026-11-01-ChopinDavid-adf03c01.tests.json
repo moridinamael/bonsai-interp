@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-adf03c01",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11225-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T05:20:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N11225",
+   "pole": "-",
+   "label": "A lone 'c' piece opening a word right after a quote mark or hyphen ('|c|ousins', \"|c|ognitive\", -c|andy), vs quoted words that do not start with that piece",
+   "fire": [
+    "The guards treated the visitors as distant 'cousins' of the king.",
+    "Doctors use the phrase \"cognitive decline\" for this kind of memory loss.",
+    "Old gardeners called the hardy variety the 'cabbage rose' in their catalogs.",
+    "Locals still call the old mill the 'cotton house' to this day.",
+    "Engineers talk about \"cavitation\" when bubbles form near the propeller.",
+    "The new menu is pure eye-candy, but the food is bland.",
+    "Reviewers praised the memoir as 'candid' and deeply moving.",
+    "The film was shot by its actor-cinematographer on a tiny budget."
+   ],
+   "quiet": [
+    "The guards treated the visitors as distant 'friends' of the king.",
+    "Doctors use the phrase \"memory loss\" for this kind of decline.",
+    "Old gardeners called the hardy variety the 'damask rose' in their catalogs.",
+    "Locals still call the old mill the 'wool house' to this day.",
+    "Engineers talk about \"bubbling\" when bubbles form near the propeller.",
+    "The new menu is pure decoration, but the food is bland.",
+    "Reviewers praised the memoir as 'honest' and deeply moving.",
+    "The film was shot by its actor and director on a tiny budget."
+   ]
+  }
+ ],
+ "predictions": "Split 'c' after a quote reaches 0.2-0.7; quoted words without a lone 'c' piece stay under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "lone 'c' piece after a quote or hyphen",
+ "unit_kind": "spelling-unit",
+ "confidence": "medium",
+ "notes": "Probe: \"'cousins'\" 0.702, '\"cognitive' 0.426, 'eye-candy' (-c) 0.202, '\"cottage' 0.112; same sentences without the c-word 0.002-0.019. Amplitude varies a lot by word, so some fire items may land under 0.3.",
+ "trigger": {
+  "tokens": [
+   "c",
+   "-c"
+  ]
+ }
+}

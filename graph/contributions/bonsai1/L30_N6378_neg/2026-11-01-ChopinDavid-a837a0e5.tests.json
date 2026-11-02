@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-a837a0e5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N6378-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T05:20:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N6378",
+   "pole": "-",
+   "label": "The token \"'].\" that closes a pandas column subscript and chains a method or attribute (df['col'].values / .sum()), vs the same subscript with no chained access",
+   "fire": [
+    "prices = data['close'].rolling(5).mean()",
+    "counts = df['country'].value_counts()",
+    "labels = frame['label'].astype(int)",
+    "mask = df['age'].isna()",
+    "total = orders['amount'].sum()",
+    "temps = weather['temp'].values",
+    "names = table['name'].unique()",
+    "first = users['email'].iloc[0]"
+   ],
+   "quiet": [
+    "prices = data['close']",
+    "counts['country'] = 0",
+    "label = frame['label']",
+    "df['age'] = ages",
+    "total = orders['amount'] + tax",
+    "temps = weather['temp']",
+    "names = table['name']",
+    "first = users['email'][0]"
+   ]
+  }
+ ],
+ "predictions": "\"'].\" reaches 0.45-0.85; bare subscripts df['col'] stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "\"'].\" chaining a method onto a column",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Probe: \"row['SimbadName'].split\" 0.845, \"df['sid'].values\" 0.794, \"results['elevation'].values\" 0.456, '.dropna().tolist()' 0.534; bare \"row['SimbadName']\" 0.030, dict literal 0.009. A bare subscript followed by print(ids) leaked 0.465 on '(ids', so near misses avoid a following call on the variable."
+}
