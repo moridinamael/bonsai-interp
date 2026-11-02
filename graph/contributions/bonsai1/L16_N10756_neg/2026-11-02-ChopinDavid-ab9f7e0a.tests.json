@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-ab9f7e0a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N10756-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T07:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N10756",
+   "pole": "-",
+   "label": "Opening delimiter of a header or metadata value in code and command lines (-H ', AUTHOR = \", QUEUE=') vs the same lines without a quoted header value",
+   "fire": [
+    "curl -s https://api.example.org/users -H 'Accept: application/json'",
+    "curl -X POST https://example.com/upload -H 'Content-Type: text/plain'",
+    "__maintainer__ = \"Ana Silva <ana@example.org>\"",
+    "VERSION = \"2.4.1\"\nAUTHOR = \"Tom Reed\"",
+    "wget --header 'Authorization: Basic abc123' https://example.net/file",
+    "QUEUE_URL='https://sqs.example.com/123/jobs'",
+    "http --json GET example.com/items 'X-Api-Version: 2'",
+    "__email__ = \"dev@example.com\""
+   ],
+   "quiet": [
+    "curl -s https://api.example.org/users",
+    "curl -X POST https://example.com/upload --data-binary @file.txt",
+    "The maintainer is Ana Silva, who answers email quickly.",
+    "VERSION = 2\nRETRIES = 5",
+    "wget https://example.net/file",
+    "QUEUE_SIZE=100",
+    "http --json GET example.com/items",
+    "You can reach the developers by email."
+   ]
+  }
+ ],
+ "predictions": "The opening quote of a header or metadata value reaches 0.2-0.6; lines without one stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "opening quote of a header/metadata value",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: -H ' (curl), AUTHOR = \", __author__ = \", From:, DST_BUCKET='. Probe: curl -H ' 0.617, __author__ = \" 0.273, BUCKET=' 0.236, AUTHOR = \" 0.196, From: 0.175; prose author 0.033, count = 3 0.012, quoted speech 0.025."
+}
