@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-01-ChopinDavid-922dabe2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N101-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T00:27:53+00:00",
+ "recipe": {
+  "toolchain_commit": "96d0cb454",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N101_neg/2026-11-01-ChopinDavid-922dabe2.tests.json"
+ },
+ "label": "The interjection token 'Ah' opening a line of dialogue (\"Ah, there you are\"), not other interjections such as Oh, Well or Hmm",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N101_neg/2026-11-01-ChopinDavid-922dabe2.tests.json",
+   "prereg_commit": "96d0cb454",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.59,
+     "peak": "Ah"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.786,
+     "peak": "Ah"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.795,
+     "peak": "Ah"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.642,
+     "peak": "Ah"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.583,
+     "peak": "Ah"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.682,
+     "peak": "Ah"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.714,
+     "peak": "Ah"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.813,
+     "peak": "Ah"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.081,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.079,
+     "peak": " professor"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.089,
+     "peak": " my"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.069,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.145,
+     "peak": " everything"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.157,
+     "peak": "Finally"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.698,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "96d0cb454",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "interjection 'Ah'",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Probe: '\"Ah, there you are\"' 0.742; '\"Ah, I see what you mean\"' 0.578; '\"Oh, there you are\"' 0.089; '\"Well, I see\"' 0.062; ' largely' 0.337 (a second, weaker card token); ' friends' 0.086. Card: 'Ah' x10 at quote start, ' friends' x5, ' largely' x4 (max 1.02, layer 0, broad).",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "Ah",
+   " Ah"
+  ]
+ }
+}

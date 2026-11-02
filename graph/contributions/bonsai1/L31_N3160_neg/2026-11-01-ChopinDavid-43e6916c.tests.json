@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-43e6916c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N3160-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T00:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N3160",
+   "pole": "-",
+   "label": "The slot that opens a named technical mechanism or command: 'sudo' starting a shell command line, and the article right before a named firing mechanism or landing-gear type (either a flintlock, uses a tricycle undercarriage); not 'sudo' mentioned in prose and not an article before an ordinary object",
+   "fire": [
+    "Check that the daemon is installed, then reload it:\nsudo systemctl reload sshd",
+    "To install the compiler on Ubuntu, enter:\nsudo apt install build-essential",
+    "Edit the hosts file with root rights:\nsudo nano /etc/hosts",
+    "If the disk is not mounted yet, mount it manually:\nsudo mount /dev/sdb1 /mnt/data",
+    "Most pistols of the period were fired by either a percussion cap or a wheellock.",
+    "The Spitfire used a conventional tailwheel undercarriage that retracted outward.",
+    "Early colonial militias were usually armed with a flintlock musket and a bayonet.",
+    "The bomber relied on a nosewheel undercarriage to improve visibility on landing."
+   ],
+   "quiet": [
+    "Check that the daemon is installed, then reload it:\nsystemctl reload sshd",
+    "On Ubuntu you need sudo rights before you can install the compiler.",
+    "Edit the hosts file with a text editor:\nnano /etc/hosts",
+    "Ask the administrator, who can use sudo to mount the disk for you.",
+    "Most pistols of the period were carried in a leather holster on the belt.",
+    "The Spitfire used a distinctive elliptical wing that gave it a clean silhouette.",
+    "Early colonial militias were usually supplied with a wool coat and a blanket.",
+    "The bomber relied on a large crew to handle navigation and gunnery."
+   ]
+  }
+ ],
+ "predictions": "Line-initial 'sudo' in a shell command after an instruction line reaches 0.5-0.9; 'a' before a mechanism type in weapons or aircraft descriptions reaches 0.3-0.5. Command lines without sudo, 'sudo' inside a prose sentence, and 'a' before ordinary objects stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "opener of a named mechanism or command",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Probe: line-initial 'sudo systemctl restart' 0.839; 'prefix the line with sudo' in prose 0.039; 'run the command apt update' 0.003; 'either a wheellock or a flintlock' 0.464 (' a'); 'uses a bicycle type undercarriage' 0.320 (' a'); 'lever action rifle' 0.203; 'six strapped-on boosters' 0.159; 'a red bicycle and a wicker basket' 0.005. Card: 'sudo' x2 at line start, ' a' before matchlock/tricycle undercarriage, ' muzzle'loaders, ' bolt' action (max 148, layer 31, density 0.07%). Two clusters; the shared pattern is the token that opens a named device or command."
+}
