@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-134f1cd0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N11434+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T14:23:31+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N11434",
+   "pole": "+",
+   "label": "Permission status: whether someone is allowed or permitted to do something under a rule (not be allowed to drive, not permitted to enter, No access rights), vs the same rule-like sentences without permission",
+   "fire": [
+    "Passengers are not allowed to stand while the bus is moving.",
+    "Under the new rules, students will not be permitted to use phones in class.",
+    "Only members of staff are allowed to enter the storage room.",
+    "Dogs are not permitted on the beach between May and September.",
+    "Patients will not be allowed to eat anything after midnight before surgery.",
+    "Children under twelve are not allowed to swim without an adult present.",
+    "During the exam, candidates are not permitted to leave the hall.",
+    "Visitors without a badge will not be allowed past the front desk."
+   ],
+   "quiet": [
+    "Passengers usually read or sleep while the bus is moving.",
+    "Under the new rules, students will learn coding in their first year.",
+    "Only members of staff know where the storage room key is kept.",
+    "Dogs love running on the beach between May and September.",
+    "Patients will feel hungry after midnight before surgery.",
+    "Children under twelve learn to swim at the local pool.",
+    "During the exam, candidates write their answers in blue ink.",
+    "Visitors without a badge often get lost on the way to the front desk."
+   ]
+  }
+ ],
+ "predictions": "' allowed'/' permitted'/' be' in a rule about what a person may do reach 0.4-0.7; the same contexts stating an obligation-free fact or 'allowed me to' as enabling stay under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "permission under a rule",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Card: peaks on ' allowed' x8 (you will not be allowed to drive), 'No' (No creation rights), '准' (获准进入), '||No restrictions'. Probe: not be allowed to drive 0.640, not permitted to take photographs 0.597, to be allowed into backstage 0.533, PermissionError('No ...') 0.356, smoking permitted? 0.307; 'feel tired' 0.031, 'the grant allowed me to buy' 0.156 (enabling sense, weaker)."
+}
