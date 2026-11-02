@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-b769342a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10540-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T06:29:19+00:00",
+ "recipe": {
+  "toolchain_commit": "9c9df9cd0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N10540_neg/2026-11-02-ChopinDavid-b769342a.tests.json"
+ },
+ "label": "First piece of a split scientific-instrument or engineering word (mic|rometer, monoc|lonal, -c|ylinder, syn|chrotron): predicting the technical word's continuation",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N10540_neg/2026-11-02-ChopinDavid-b769342a.tests.json",
+   "prereg_commit": "9c9df9cd0",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.191,
+     "peak": " spect"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.158,
+     "peak": "illos"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.169,
+     "peak": " interfer"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.06,
+     "peak": " cycl"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.141,
+     "peak": " coll"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.106,
+     "peak": " magnet"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.45,
+     "peak": "ulti"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.332,
+     "peak": "-c"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.082,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.111,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.076,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " spo"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.113,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " electric"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.164,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c9df9cd0",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "first piece of a split technical word",
+ "unit_kind": "spelling-unit",
+ "confidence": "medium",
+ "notes": "Probe: micrometeoroid 0.812, monoclonal 0.767, two-cylinder 0.620 (peak '-c'), micrometric 0.615, synchrotron 0.320; controls robotic 0.134, 'small label' 0.168, 'a rock' 0.163. Card logit effect promotes beam/ray/particle words. Splits checked with tok.py: spect|rometer, osc|illos|cope, interfer|ometer, cycl|otron, coll|imator, magnet|ron, phot|om|ulti|plier, four-c|ylinder.",
+ "selection": "random draw"
+}

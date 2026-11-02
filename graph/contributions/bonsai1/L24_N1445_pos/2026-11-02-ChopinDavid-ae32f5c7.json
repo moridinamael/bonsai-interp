@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-ae32f5c7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1445+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T06:28:32+00:00",
+ "recipe": {
+  "toolchain_commit": "9c9df9cd0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N1445_pos/2026-11-02-ChopinDavid-ae32f5c7.tests.json"
+ },
+ "label": "The slot where 'return' / 'returning' is the expected next word ('...never to return', 'when you plan on returning'): a predictor of going back",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1445_pos/2026-11-02-ChopinDavid-ae32f5c7.tests.json",
+   "prereg_commit": "9c9df9cd0",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.261,
+     "peak": " never"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.603,
+     "peak": " never"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.092,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.311,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.221,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.383,
+     "peak": " never"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.169,
+     "peak": " car"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.25,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.064,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.03,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.073,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.156,
+     "peak": " time"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.143,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.058,
+     "peak": " car"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.256,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c9df9cd0",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "slot predicting 'return'",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card logit effect promotes ' recover', ' returning', ' return', ' back', ' revert'. Probe: 'travelled into that desert never to return' 0.775 (peak ' never'), 'when you plan on returning' 0.567 (peak ' on'); 'don't recover' 0.094, 'To get back to Windows' 0.032, 'never come out' 0.120; departure sentences with a purpose 0.001-0.052. Only the 'never to return' and 'plan on returning' frames scored high, so the test uses those frames.",
+ "selection": "random draw"
+}
