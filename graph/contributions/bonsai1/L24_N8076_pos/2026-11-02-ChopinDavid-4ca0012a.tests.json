@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-4ca0012a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N8076+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T07:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N8076",
+   "pole": "+",
+   "label": "Head noun of a user-directed object that a 'you' relative clause follows (the page you requested, the plan you select): fires on the noun when 'you ...' is expected next",
+   "fire": [
+    "Sorry, the page you are trying to reach has moved.",
+    "Error 404: the file you requested could not be found.",
+    "Please check that the address you entered is correct.",
+    "Read the label on the product you purchased before use.",
+    "Prices depend on the plan you select at checkout.",
+    "Make sure the network you join is secure.",
+    "Le produit que vous avez commandé est en rupture de stock.",
+    "The seat you reserved will be held until noon."
+   ],
+   "quiet": [
+    "Sorry, this website is down for maintenance.",
+    "Error 404: the server could not be reached.",
+    "Please check that the form is complete.",
+    "Read the label on the bottle before use.",
+    "Prices depend on the season and the location.",
+    "Make sure the connection is secure.",
+    "Ce magasin est fermé le dimanche.",
+    "The seat by the window was broken."
+   ]
+  }
+ ],
+ "predictions": "Nouns heading a 'you'-relative in service or instruction text reach 0.3-0.7; the same nouns without the relative stay under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "noun before 'you' relative (the X you ...)",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: 'the page you were looking for' 88, 'the machine you are riding', 'the room you book', French 'le vol que vous'; promotes selected/you/requested/chosen. Probe: page you requested 0.717, la page que vous 0.476 (at que), machine you are using 0.413; but 'The page was printed' 0.338 and 'The room has a window' 0.228 also fire, so the noun 'page' alone carries activation; near misses avoid 'page'."
+}

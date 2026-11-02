@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-a9e8e863",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N1990-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T07:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N1990",
+   "pole": "-",
+   "label": "A relational preposition inside a compact code identifier or spec line (test_x_with_y, _after_, '60m with case', 'vs placebo'), vs the same identifiers and specs without the preposition",
+   "fire": [
+    "def test_upload_with_empty_file(self):",
+    "def test_retry_after_timeout(self):",
+    "def test_render_without_template(self):",
+    "def test_sync_through_proxy(self):",
+    "Battery: 12h with screen on, 30h without",
+    "Range: 5km over water, 2km through walls",
+    "def test_parse_with_unicode_input(self):",
+    "Score: 4.2 vs 3.9 for the control arm, p = 0.03"
+   ],
+   "quiet": [
+    "def test_upload_empty_file(self):",
+    "def test_retry_timeout(self):",
+    "def test_render_template(self):",
+    "def test_sync_proxy(self):",
+    "Battery: 12h screen on, 30h standby",
+    "Range: 5km open, 2km indoor",
+    "def test_parse_unicode_input(self):",
+    "Score: 4.2 for the treated arm, p = 0.03"
+   ]
+  }
+ ],
+ "predictions": "'_with'/'_after'/'_without'/'_through' in test names and 'with'/'vs' in spec lines reach 0.2-0.45; the same lines without a preposition stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "preposition in test names / spec lines",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: '_with', '_through', '_after', '_if' in test names, 'dict with keys', '10m without case', 'p-value vs placebo'; gate-closed regime dominates. Probe: test_login_with 0.444, '60m with case' 0.423, test_cache_after 0.303, vs placebo 0.149, dict with keys 0.099; prose 'walked with her brother' 0.038, def test_login 0.033."
+}

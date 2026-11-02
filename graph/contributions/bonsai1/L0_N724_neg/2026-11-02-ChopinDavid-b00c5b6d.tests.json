@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-b00c5b6d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N724-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T07:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N724",
+   "pole": "-",
+   "label": "'的' closing a verb-phrase relative clause (我们采取的方案, 昨天看到的电影), vs the same events told with 了 and no 的",
+   "fire": [
+    "这是他们昨天提交的报告。",
+    "我们正在研究的课题非常复杂。",
+    "她亲手制作的蛋糕很好吃。",
+    "你刚才提到的那个人是谁？",
+    "公司去年引进的设备运行得很好。",
+    "他们去年栽种的果树已经结果了。",
+    "老师上周布置的作业还没写完。",
+    "我们昨天参观的博物馆很大。"
+   ],
+   "quiet": [
+    "他们昨天提交了一份报告。",
+    "我们正在研究这个课题。",
+    "她亲手做了一个蛋糕。",
+    "你刚才提到了那个人。",
+    "公司去年引进了新设备。",
+    "他们去年栽种了很多果树。",
+    "老师上周布置了很多作业。",
+    "我们昨天参观了博物馆。"
+   ]
+  }
+ ],
+ "predictions": "的 after a verb phrase reaches 0.4-0.7; 了-paraphrases without 的 stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "的 after a verb-phrase relative",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: top 32 all peak on '的' in long relative clauses. Probe: 采取的方案 0.637, 看到的电影 0.509, 红色的花 0.119, 我的朋友 0.015 (peak elsewhere), 了-sentences 0.004-0.015, Japanese の 0.014. Fire items were chosen so 的 is its own token (tok.py: 提出的/发布的/我的 merge into one token).",
+ "trigger": {
+  "tokens": [
+   "的"
+  ]
+ }
+}
