@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-a74c95f6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N8654+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T22:20:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N8654",
+   "pole": "+",
+   "label": "Chinese per-unit measure in a price or rate expression (每瓶, 每人, 每公升), the denominator of 'per X'; the same price sentences without a per-unit counter stay quiet",
+   "fire": [
+    "这种葡萄酒在超市里每瓶售价八十元。",
+    "参加活动的游客每人需要交五十元门票。",
+    "汽油价格今天起每公升上涨0.3元。",
+    "这家餐厅的自助餐每人一百二十元。",
+    "工厂工人每月工资大约四千元。",
+    "这种矿泉水在机场每瓶要十五元。",
+    "旅行团的费用每人三千五百元，包括住宿。",
+    "新鲜牛奶每公斤卖到九元左右。"
+   ],
+   "quiet": [
+    "这种葡萄酒在超市里卖得非常好。",
+    "参加活动的游客需要提前在网上报名。",
+    "汽油价格今天起有所上涨。",
+    "这家餐厅的自助餐种类非常丰富。",
+    "工厂工人的工资今年有所提高。",
+    "这种矿泉水在机场很受欢迎。",
+    "旅行团的费用包括住宿和早餐。",
+    "新鲜牛奶在早上的市场卖得最快。"
+   ]
+  }
+ ],
+ "predictions": "每X price or rate items reach 0.3-0.6; the same Chinese sentences with only a total amount stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "per-unit counter in rates (Chinese)",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: 瓶 after 每, 每人, 每公升, あたり, 每月, ' capita'. Probe: 每瓶 0.583, 每人 0.348, 一瓶 (no 每) 0.360, per capita 0.283, per bottle 0.144; price without unit 0.006, total income 0.039. The 一瓶 leak suggests any per-item counter in a price; near misses avoid counters."
+}

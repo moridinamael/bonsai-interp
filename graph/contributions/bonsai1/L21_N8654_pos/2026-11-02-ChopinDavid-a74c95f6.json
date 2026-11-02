@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-a74c95f6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N8654+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T22:27:35+00:00",
+ "recipe": {
+  "toolchain_commit": "0bf916ac9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N8654_pos/2026-11-02-ChopinDavid-a74c95f6.tests.json"
+ },
+ "label": "Chinese per-unit measure in a price or rate expression (每瓶, 每人, 每公升), the denominator of 'per X'; the same price sentences without a per-unit counter stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N8654_pos/2026-11-02-ChopinDavid-a74c95f6.tests.json",
+   "prereg_commit": "0bf916ac9",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.79,
+     "peak": "瓶"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.456,
+     "peak": "每人"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.921,
+     "peak": "升"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.43,
+     "peak": "每人"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.462,
+     "peak": "每月"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.897,
+     "peak": "瓶"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.44,
+     "peak": "每人"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.844,
+     "peak": "公斤"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": "提前"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": "上涨"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "的"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": "今年"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "矿泉水"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "费用"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "牛奶"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.626,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0bf916ac9",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "per-unit counter in rates (Chinese)",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: 瓶 after 每, 每人, 每公升, あたり, 每月, ' capita'. Probe: 每瓶 0.583, 每人 0.348, 一瓶 (no 每) 0.360, per capita 0.283, per bottle 0.144; price without unit 0.006, total income 0.039. The 一瓶 leak suggests any per-item counter in a price; near misses avoid counters.",
+ "selection": "random draw"
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-c4367227",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N6282-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T22:20:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N6282",
+   "pole": "-",
+   "label": "Capitalized name or title word opening a new line or entry (Paul, Microsoft, Professor), a broad positional pole that also fires on other line-initial words",
+   "fire": [
+    "The meeting ended late.\nMartin Luther King spoke to the crowd that evening.",
+    "That is all for today.\nGoogle announced a new phone this morning.",
+    "Notes from the first session.\nDoctor Patel explained the new treatment plan.",
+    "Here is the final draft.\nMarket Watch reported a small rise in prices.",
+    "Back to the main page.\nPeter Gabriel recorded the album in Bath.",
+    "We hope you enjoyed it.\nAmazon will open a new warehouse next spring.",
+    "That concludes the list.\nProject Gutenberg offers thousands of free books.",
+    "See you next time.\nMedia coverage of the event was limited."
+   ],
+   "quiet": [
+    "the meeting ended late and everyone went home quietly that evening.",
+    "that is all for today, so we will go on with the rest tomorrow.",
+    "notes from the first session were short and mostly about the budget.",
+    "here is the final draft, which still needs a few small changes.",
+    "back to the main page, where the menu lists every older post.",
+    "we hope you enjoyed it as much as we enjoyed making it for you.",
+    "that concludes the list of items we wanted to cover in this note.",
+    "see you next time, when we will look at the second half of it."
+   ]
+  }
+ ],
+ "predictions": "Line-initial capitalized names after a newline reach about 0.5; lowercase continuations inside a sentence stay lower, but sentence-initial words leak because the pole is broad.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "capitalized line-opening name",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: broad flag 5.6%, gate-closed regime, peaks on document-initial Paul/Micro/Media/Pro/Post. Probe: new-line Microsoft 0.584, Paul 0.539, Professor 0.513, Post 0.385; mid-sentence ' Paul' 0.521; sentence-initial 'The' 0.364, 'def' 0.445. Expected to fail as an 8+8: near misses still contain a first token."
+}
