@@ -1,0 +1,157 @@
+{
+ "id": "2026-11-02-moridinamael-29fb6da2",
+ "kind": "qc",
+ "neuron": "bonsai1/L33/N9603+",
+ "contributor": "moridinamael",
+ "created": "2026-11-02T22:11:24+00:00",
+ "recipe": {
+  "toolchain_commit": "695326dc1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N9603_pos/2026-11-02-moridinamael-29fb6da2.tests.json"
+ },
+ "label": "The English word 'Mexican' in any context (strongest), and weaker, other nationality adjectives only when they open a company, airline or band name inside a comma-separated list (Turkish Airlines, Swedish House Mafia); the same adjectives in plain prose (the Swedish government), Canadian/Japanese/Indian, and 'Mexico' stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N9603_pos/2026-11-02-moridinamael-29fb6da2.tests.json",
+   "prereg_commit": "695326dc1",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.946,
+     "peak": " Mexican"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.495,
+     "peak": " Mexican"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.328,
+     "peak": " Mexican"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.693,
+     "peak": "ican"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.264,
+     "peak": " Mexican"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.239,
+     "peak": " Mexican"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.613,
+     "peak": " Mexican"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.229,
+     "peak": " Mexican"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.635,
+     "peak": "г"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.204,
+     "peak": " Thai"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.204,
+     "peak": " Mexico"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.046,
+     "peak": " wing"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.091,
+     "peak": " Swedish"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.081,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.068,
+     "peak": " gray"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.554,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "second-round"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "695326dc1",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "The English word 'Mexican' (adjective or noun, any topic: food, people, government, animals), not 'Mexico', 'Mexicans', other-language forms (mexicana) or other nationality words such as Canadian, Indian or Japanese; Turkish and Spanish fire weakly, and brand names inside lists of companies (Marriott, Vivendi) also fire and are not tested here."
+ }
+}

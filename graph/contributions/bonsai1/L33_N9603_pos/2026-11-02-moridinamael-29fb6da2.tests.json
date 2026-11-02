@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-02-moridinamael-29fb6da2",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L33/N9603+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T22:11:06+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "The English word 'Mexican' (adjective or noun, any topic: food, people, government, animals), not 'Mexico', 'Mexicans', other-language forms (mexicana) or other nationality words such as Canadian, Indian or Japanese; Turkish and Spanish fire weakly, and brand names inside lists of companies (Marriott, Vivendi) also fire and are not tested here."
+ },
+ "neighbours": [
+  {
+   "unit": "L33/N9603",
+   "pole": "+",
+   "label": "The English word 'Mexican' in any context (strongest), and weaker, other nationality adjectives only when they open a company, airline or band name inside a comma-separated list (Turkish Airlines, Swedish House Mafia); the same adjectives in plain prose (the Swedish government), Canadian/Japanese/Indian, and 'Mexico' stay quiet.",
+   "fire": [
+    "We ordered Mexican food for the whole office on Friday.",
+    "Her grandmother was Mexican and taught her to make tamales from scratch.",
+    "The museum opened a new wing devoted to Mexican muralists of the 1930s.",
+    "Mexican authorities announced the new border crossing would open in spring.",
+    "He spent the afternoon listening to old Mexican ballads on the radio.",
+    "The recipe calls for a pinch of Mexican oregano, not the Mediterranean kind.",
+    "A Mexican wolf was spotted on a trail camera in the national forest.",
+    "The film won praise for its portrait of a Mexican family in Los Angeles."
+   ],
+   "quiet": [
+    "Исследователи из России, Венгрии, Германии, США, Фран",
+    "We ordered Thai food for the whole office on Friday.",
+    "Her grandmother was from Mexico and taught her to make tamales from scratch.",
+    "The museum opened a new wing devoted to Canadian painters of the 1930s.",
+    "The Swedish government announced the new border crossing would open in spring.",
+    "He spent the afternoon listening to old Japanese ballads on the radio.",
+    "The recipe calls for a pinch of dried oregano, not the fresh kind.",
+    "A gray wolf was spotted on a trail camera in the national forest."
+   ]
+  }
+ ],
+ "predictions": "Mexican fire items should all pass; the Russian country-list item in the quiet set will likely fire (~0.6) and cost a near miss; expect hold or marginal.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo"
+  ]
+ }
+}
