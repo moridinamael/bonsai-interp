@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-02-ChopinDavid-4f43477d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N3771-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T10:31:39+00:00",
+ "recipe": {
+  "toolchain_commit": "3132f1cba",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N3771_neg/2026-11-02-ChopinDavid-4f43477d.tests.json"
+ },
+ "label": "The token 'client' in any form (client, Client, _client, .client, clients), vs neighbouring role nouns such as customer, server or patient",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N3771_neg/2026-11-02-ChopinDavid-4f43477d.tests.json",
+   "prereg_commit": "3132f1cba",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.388,
+     "peak": "_client"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.82,
+     "peak": " client"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.693,
+     "peak": ".client"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.685,
+     "peak": "client"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.478,
+     "peak": " client"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.491,
+     "peak": "_client"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.165,
+     "peak": " client"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.76,
+     "peak": " Client"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.271,
+     "peak": "_conn"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.076,
+     "peak": " server"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.256,
+     "peak": "conn"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " user"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " cache"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " witness"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.148,
+     "peak": " Session"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.588,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3132f1cba",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "'client' token",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Probe: _client 0.89, Client (import) 0.76, client in networking 0.48, client in a law firm 0.33, clients 0.30; customer 0.19, patient 0.15, server 0.11. Prose 'client' is near 0.3, so most fire items use code or networking.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "client",
+   "clients"
+  ]
+ }
+}
