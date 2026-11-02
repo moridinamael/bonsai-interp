@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-111ed559",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N11684-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T03:20:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N11684",
+   "pole": "-",
+   "label": "The slot just before the second parent word, once one parent has been named (Father's name -> Mother's, get_mother -> get_father), in records and genealogy code",
+   "fire": [
+    "Applicant details:\n- Full name\n- Father's full name\n- Mother's full name",
+    "Student record:\n- Name\n- Mother's occupation\n- Father's occupation",
+    "mom_id = person.get_mother_id()\ndad_id = person.get_father_id()",
+    "f = rel.get_father()\nm = rel.get_mother()",
+    "Fields: surname, father's first name, mother's first name, birthplace.",
+    "Registry entry:\n- Child: Anna\n- Father: Karl\n- Mother: Greta",
+    "def parents(p):\n    return p.mother_handle, p.father_handle",
+    "Baptism record:\n- Father's name: Jan\n- Mother's name: Eva"
+   ],
+   "quiet": [
+    "Applicant details:\n- Full name\n- Home address\n- Email address",
+    "Student record:\n- Name\n- Grade level\n- Homeroom teacher",
+    "user_id = session.get_user_id()\nrole_id = session.get_role_id()",
+    "s = conf.get_server()\np = conf.get_port()",
+    "Fields: surname, first name, street, postal code, birthplace.",
+    "Shipping entry:\n- Item: lamp\n- Weight: 2 kg\n- Carrier: DHL",
+    "def coords(p):\n    return p.x_value, p.y_value",
+    "Order record:\n- Customer name: Jan\n- Delivery date: May 3"
+   ]
+  }
+ ],
+ "predictions": "The token before the second of mother/father in records, forms and family code reaches 0.5-0.8; the same structure with no parent fields stays under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot for the other parent",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Probe: form list '- Father's name\\n- Mother's maiden name' 0.637 on '-' vs address list 0.042; 'family.get_mother_handle() ... get_father' 0.692 on '.get' vs account/owner 0.003; prose 'succeeded his father' 0.356 = 'his rival' 0.356 (no anticipation without a first parent)."
+}
