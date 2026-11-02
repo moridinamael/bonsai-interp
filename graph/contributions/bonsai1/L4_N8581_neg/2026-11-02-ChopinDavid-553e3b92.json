@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-553e3b92",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N8581-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T09:30:39+00:00",
+ "recipe": {
+  "toolchain_commit": "c24847b3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N8581_neg/2026-11-02-ChopinDavid-553e3b92.tests.json"
+ },
+ "label": "The piece after a split-off 'Le'/'le' in German leit- words (Le|itung, le|itet, Le|it|bild, Le|iter), vs German synonyms that carry no leit- piece",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N8581_neg/2026-11-02-ChopinDavid-553e3b92.tests.json",
+   "prereg_commit": "c24847b3d",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.918,
+     "peak": "itung"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.352,
+     "peak": "itet"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.311,
+     "peak": "iter"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.575,
+     "peak": "it"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.428,
+     "peak": "it"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.614,
+     "peak": "itet"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.752,
+     "peak": "itung"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.256,
+     "peak": "iter"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": "üh"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " jun"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " ern"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.042,
+     "peak": " ne"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " Pr"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " dirig"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": "Mit"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": "nah"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.501,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c24847b3d",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "German leit- word piece",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card: peaks on 'itung', 'itet', 'it' after 'Le' in Leitung, leitet, Leitlinien, Dienstleistungen, plus 'blings' in Lieblings. Probe: Leitung 0.810, Leitlinien 0.610, leitet 0.537, Lieblingsbuch 0.372; Dienstleistungen (le|ist split) 0.025, Führung 0.027, beginnt 0.008, English 0.003.",
+ "selection": "random draw"
+}

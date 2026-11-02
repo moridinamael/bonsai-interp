@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-b234900b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N5237-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T09:22:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N5237",
+   "pole": "-",
+   "label": "The final piece of a word split into several tokens (never|mind, Xin|jiang, e|ph|ed|rine), vs sentences whose words are all single tokens",
+   "fire": [
+    "Oh, nevermind, I found the remote under the couch.",
+    "Harbin is the capital of Heilongjiang in the far northeast.",
+    "The pharmacist keeps ephedrine behind the counter.",
+    "My cousin moved to Zhejiang to teach English.",
+    "The nurse gave him amoxicillin for the ear infection.",
+    "We stopped in Kalamazoo on the drive to Chicago.",
+    "She took ibuprofen before the long flight.",
+    "Nanning is the largest city in Guangxi province."
+   ],
+   "quiet": [
+    "Oh, wait, I found the remote under the couch.",
+    "The capital is a large city in the far northeast.",
+    "The pharmacist keeps the pills behind the counter.",
+    "My cousin moved to China to teach English.",
+    "The nurse gave him medicine for the ear infection.",
+    "We stopped in Detroit on the drive to Chicago.",
+    "She took a nap before the long flight.",
+    "Boston is the largest city in the state."
+   ]
+  }
+ ],
+ "predictions": "Final pieces reach 0.3-0.75; all-single-token sentences stay under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "final piece of split word",
+ "unit_kind": "lexical",
+ "confidence": "low",
+ "notes": "Card: max only 0.47 and broad (1.8% of tokens), peaks on 'mind' (nevermind), 'jiang' (Xinjiang, Heilongjiang), 'achusetts', 'rine' (Pseudoephedrine). Probe: Pseudoephedrine 0.755, nevermind 0.710, Xinjiang 0.387; Boston-only sentences 0.126-0.128 (Massachusetts with a leading space is one token), 'Aspirin' 0.170 (in), controls 0.034-0.100."
+}

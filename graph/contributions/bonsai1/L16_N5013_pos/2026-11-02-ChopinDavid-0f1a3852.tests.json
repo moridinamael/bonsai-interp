@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-0f1a3852",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N5013+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T09:22:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N5013",
+   "pole": "+",
+   "label": "The '/' that follows 'questions' in a Stack Exchange-family URL (stackoverflow.com/questions/<id>), vs slashes in other URL paths, including other paths on the same sites",
+   "fire": [
+    "I found the fix in this answer: https://stackoverflow.com/questions/41239/merge-two-dicts and it worked.",
+    "The workaround is described at https://superuser.com/questions/8812/disable-sleep-on-lid if you need it.",
+    "Someone asked the same thing here: https://askubuntu.com/questions/30774/wifi-drops-after-update last year.",
+    "According to https://serverfault.com/questions/1209/nginx-timeout-settings the default is sixty seconds.",
+    "There is a long discussion on https://math.stackexchange.com/questions/7740/proof-of-limit about this step.",
+    "My reference was https://stackoverflow.com/questions/90311/python-sort-by-key, which explains the lambda.",
+    "Check https://unix.stackexchange.com/questions/4421/find-large-files before deleting anything.",
+    "He linked https://gis.stackexchange.com/questions/2290/reproject-shapefile in the ticket."
+   ],
+   "quiet": [
+    "I found the author's profile at https://stackoverflow.com/users/41239/jane-doe and it helped.",
+    "The workaround is described at https://github.com/acme/sleepfix/issues if you need it.",
+    "Someone posted the same thing here: https://www.reddit.com/r/Ubuntu/comments/wifi_drops last year.",
+    "According to https://nginx.org/en/docs/http/timeouts.html the default is sixty seconds.",
+    "There is a long discussion on https://math.stackexchange.com/tags/limits/info about this topic.",
+    "My reference was https://docs.python.org/3/howto/sorting.html, which explains the lambda.",
+    "Check https://www.gnu.org/software/findutils/manual before deleting anything.",
+    "He linked https://en.wikipedia.org/wiki/Shapefile in the ticket."
+   ]
+  }
+ ],
+ "predictions": "questions/ slashes reach 0.4-0.8; other URL slashes stay under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Stack Exchange questions/ URL slash",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: top 32 peak mostly on '\\n' (17) inside wrapped prose/code comments, plus '/' after stackexchange.com/questions and stackoverflow.com/questions. Probe: newline-in-sentence hypothesis failed (0.051-0.054 wrapped vs 0.054 unwrapped; code-comment wrap 0.103); stackoverflow.com/questions/ slash 0.810. Testing the one configuration that fired; the newline examples remain unexplained, so coverage will be partial at best."
+}

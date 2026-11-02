@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-3ca4cbc8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N5756+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T09:22:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N5756",
+   "pole": "+",
+   "label": "The final piece of a long compound identifier in code (snake_case or camelCase function and method names), vs short one-word identifiers in the same code",
+   "fire": [
+    "    def _validate_payment_gateway_response(self, resp):\n        return resp.ok",
+    "        self._refresh_cached_user_permissions(user)",
+    "def build_invoice_line_items(order, currency):\n    return []",
+    "    status = fetch_remote_service_status(host)",
+    "    def onRequestTimeoutExceeded(self, req):\n        pass",
+    "        items = self._load_pending_queue_entries()",
+    "    config = parseLegacyConfigFile(path)",
+    "def compute_monthly_interest_rate(balance, apr):\n    return apr / 12"
+   ],
+   "quiet": [
+    "    def validate(self, resp):\n        return resp.ok",
+    "        self.refresh(user)",
+    "def build(order, currency):\n    return []",
+    "    status = fetch(host)",
+    "    def timeout(self, req):\n        pass",
+    "        items = self.load()",
+    "    config = parse(path)",
+    "def compute(balance, apr):\n    return apr / 12"
+   ]
+  }
+ ],
+ "predictions": "Last pieces of compound identifiers reach 0.4-0.9; one-word identifiers stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "end of compound code identifier",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Card: peaks on _usage, ivity (connectivity), _reader, _guest, ignKey, _schema at the end of long Python identifiers. Probe: _check_database_connectivity 0.925, _notify_about_volume_usage 0.749, parse_message_header 0.527, find_user_in_group_list 0.428; check/ping 0.016, find(group_id) 0.003, prose 'connectivity' 0.007, 'total = price * quantity' 0.034."
+}
