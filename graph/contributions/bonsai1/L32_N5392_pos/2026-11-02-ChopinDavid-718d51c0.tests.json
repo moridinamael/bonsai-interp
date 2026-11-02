@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-718d51c0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N5392+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T12:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N5392",
+   "pole": "+",
+   "label": "A variable symbol inside a mathematical formula written in a code docstring or comment (rho*rho - rho, ||x||_2, X = B * A, Y = X + shift), vs docstrings and comments without formulas",
+   "fire": [
+    "    def energy(self, psi):\n        \"\"\"Returns E = psi^T H psi / (psi^T psi).\"\"\"",
+    "    \"\"\"The projection is computed as\n\n        P = V * V^T\n    \"\"\"",
+    "    # residual: r = b - A x\n    r = b - A @ x",
+    "    def dist(self, u, v):\n        \"\"\" returns ||u - v||_1 \"\"\"",
+    "    \"\"\"Update rule:\n\n        theta = theta - lr * grad\n    \"\"\"",
+    "    # sigmoid: s = 1 / (1 + exp(-z))\n    s = 1 / (1 + np.exp(-z))",
+    "    \"\"\"If the operator is unitary then\n\n        U*U^H - I = 0.\n    \"\"\"",
+    "    # Z = W * X + b\n    out = layer(x)"
+   ],
+   "quiet": [
+    "    def energy(self, psi):\n        \"\"\"Returns the energy of the given state.\"\"\"",
+    "    \"\"\"The projection is computed once and cached\n    for later calls.\n    \"\"\"",
+    "    # compute the residual for the solver\n    r = solver.residual()",
+    "    def dist(self, u, v):\n        \"\"\" returns the distance between two points \"\"\"",
+    "    \"\"\"Applies one step of the optimizer\n    and logs the loss.\n    \"\"\"",
+    "    # apply the activation function\n    s = activation(z)",
+    "    \"\"\"Checks whether the operator is unitary\n    and raises an error if not.\n    \"\"\"",
+    "    # run the layer on the input batch\n    out = layer(x)"
+   ]
+  }
+ ],
+ "predictions": "Variable tokens in a formula within a docstring/comment reach 0.3-0.75; docstrings and comments in words only stay under 0.1; the same symbol in prose is weaker (about 0.25).",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "math variable in a code docstring formula",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: peaks on ' rho' in 'rho*rho - rho = 0', '||' in ||x||_2, 'x' in x^2 + y^2, ' A' in 'X = B * A', ' W', 't_i', ' X' in 'Y = X + shift'. Probe: ||x||_2 0.726, rho*rho 0.701, x_new update 0.439, Y = X + shift 0.291; rho in prose 0.255; plain docstring 0.070, load comment 0.010."
+}

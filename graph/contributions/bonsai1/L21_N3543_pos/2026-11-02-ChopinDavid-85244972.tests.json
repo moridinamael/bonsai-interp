@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-85244972",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N3543+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T12:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N3543",
+   "pole": "+",
+   "label": "Unclear broad unit: best guess, a piece inside a compound configuration identifier in code (json|Cmds, logging|.config, beta|2, Libvirt|Config), vs the same code with simple one-token names",
+   "fire": [
+    "    import logging.handlers as loghandlers\n    loghandlers.RotatingFileHandler(path)",
+    "    opts.setdefault('beta1', 0.9)\n    opts.setdefault('weight_decay', 0.0)",
+    "    expected = vconfig.LibvirtConfigGuestInterface()",
+    "def run_batch(host, user, token, xmlCmds):\n    session = host",
+    "    import xml.etree.ElementTree as ET\n    tree = ET.parse(path)",
+    "    cfg = yaml_config.LoaderConfig(strict=True)",
+    "    instance.root_device_name = '/dev/vdb'",
+    "    mode = text_vectorization.MULTI_HOT"
+   ],
+   "quiet": [
+    "    import logging\n    logging.warning(path)",
+    "    opts['lr'] = 0.1\n    opts['size'] = 10",
+    "    expected = make_guest()",
+    "def run_batch(host, user, token, items):\n    session = host",
+    "    import json\n    data = json.load(f)",
+    "    cfg = load(strict=True)",
+    "    instance.name = 'server'",
+    "    mode = 'fast'"
+   ]
+  }
+ ],
+ "predictions": "Weak: identifier pieces reach 0.1-0.2; simple names stay under 0.06. Broad unit (1.5% density) and the probe never passed 0.17, so this is expected to fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (config identifier piece)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card flags broad; top peaks on 'Cmd' in jsonCmds, ' this' in 'For this recipe', '.config' in logging.config, 'beta' in 'beta2', 'Config' in LibvirtConfigGuestSerial, '/v' in '/dev/vda'. Probe: logconf(cfg) 0.170, beta2 0.105, jsonCmds 0.042, LibvirtConfig 0.056; plain names 0.004-0.061. Best-guess test only."
+}
