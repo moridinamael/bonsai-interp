@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-51b2617d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N6722+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T19:26:59+00:00",
+ "recipe": {
+  "toolchain_commit": "002259098",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N6722_pos/2026-11-02-ChopinDavid-51b2617d.tests.json"
+ },
+ "label": "A Spanish plural determiner or possessive ('los', 'sus', 'las', 'tus') opening a noun phrase mid-sentence, vs Spanish sentences with only singular determiners and the same construction in Portuguese, French or English",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N6722_pos/2026-11-02-ChopinDavid-51b2617d.tests.json",
+   "prereg_commit": "002259098",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.497,
+     "peak": " los"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.643,
+     "peak": " sus"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.316,
+     "peak": " las"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.363,
+     "peak": " sus"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.95,
+     "peak": " tus"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.493,
+     "peak": " los"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.184,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.591,
+     "peak": " sus"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.436,
+     "peak": " de"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.29,
+     "peak": " re"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.379,
+     "peak": " tienes"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.367,
+     "peak": " el"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " check"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.384,
+     "peak": " pre"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.495,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "002259098",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Spanish plural determiner los/sus",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Card: ' los' x10, ' sus' x7, ' las' x2, ' tus' x2 in Spanish political/opinion prose. Probe: 'revisar sus apuntes' 0.622, 'conocer bien los datos' 0.556, 'en los contratos' 0.448, singular 'su jardín' 0.307, 'el libro' 0.179; Portuguese suas 0.022, French 0.008, English 0.005.",
+ "selection": "random draw"
+}

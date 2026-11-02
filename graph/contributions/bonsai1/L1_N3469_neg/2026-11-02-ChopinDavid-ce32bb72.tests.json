@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-ce32bb72",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N3469-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T19:20:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N3469",
+   "pole": "-",
+   "label": "The word piece 'ach' split off inside German words (Spr|ach-, Schl|ach|t, W|ach|stum, schw|ach), vs German text without that piece; broad weak unit",
+   "fire": [
+    "Im Herbst beginnt mein neuer Sprachkurs an der Volkshochschule.",
+    "Auf dem alten Schlachtfeld steht heute ein kleines Museum.",
+    "Die Regierung hofft auf eine Phase des Wachstums nach der Krise.",
+    "Der Bericht zeigt eine Schwachstelle im System der Behörde.",
+    "Nachts machten die Nachbarn so viel Krach, dass niemand schlief.",
+    "Bei dem Sturm wurde das Dach der Scheune schwer beschädigt.",
+    "Mein Großvater spielt jeden Sonntag mit mir Schach im Park.",
+    "Seit dem Unfall ist sein linkes Bein ziemlich schwach geblieben."
+   ],
+   "quiet": [
+    "Im Herbst beginnt mein neuer Kochkurs an der Volkshochschule.",
+    "Auf dem alten Marktplatz steht heute ein kleines Museum.",
+    "Die Regierung hofft auf eine Phase der Ruhe nach der Krise.",
+    "Der Bericht zeigt einen Fehler im System der Behörde.",
+    "Nachts feierten die Nachbarn so laut, dass niemand schlief.",
+    "Bei dem Sturm wurde die Tür der Scheune schwer beschädigt.",
+    "Mein Großvater spielt jeden Sonntag mit mir Karten im Park.",
+    "Seit dem Unfall ist sein linkes Bein ziemlich steif geblieben."
+   ]
+  }
+ ],
+ "predictions": "German sentences where 'ach' is its own token reach 0.3-0.7; German sentences without it stay near 0.1, but the broad baseline (English text 0.25-0.30) may break the near-miss cap.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "German piece 'ach'",
+ "unit_kind": "spelling unit",
+ "confidence": "low",
+ "notes": "Card: 'ach' x8 in the top 32 (Wachstum, Sprachtherapie, Schlachtkühe, schwach), max only 0.60, flagged broad (3.1%). Probe: Sprachtherapie 0.642, Schlacht 0.414, schwaches Wachstum 0.280, 'Bach' sentence 0.074, Süden 0.120; but plain English 0.257-0.297, so near misses may leak from the baseline."
+}
