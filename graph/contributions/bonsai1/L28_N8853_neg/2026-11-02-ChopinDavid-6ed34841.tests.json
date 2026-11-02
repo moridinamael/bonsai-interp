@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-6ed34841",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N8853-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T13:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N8853",
+   "pole": "-",
+   "label": "A CJK character written after a space in running text, carried by the space-initial byte-fallback token ' �' (... 和 套房, 我们的 周边, designed by 岩谷徹), vs the same characters with no space before them",
+   "fire": [
+    "本店提供免费咖啡、无线网络和 停车服务。",
+    "如果你需要更多信息，请联系我们的 客服中心。",
+    "The famous puzzle game was created by 富野 at a small studio.",
+    "这家餐厅以 招牌菜闻名，每天都有很多客人。",
+    "请在下方填写您的 联系方式，我们会尽快回复。",
+    "The temple garden was designed by 夢窓 in the fourteenth century.",
+    "我们的产品包括 茶叶、咖啡和各种点心。",
+    "学校图书馆每天开放，学生可以借阅 杂志和报纸。"
+   ],
+   "quiet": [
+    "本店提供免费咖啡、无线网络和停车服务。",
+    "如果你需要更多信息，请联系我们的客服中心。",
+    "The famous puzzle game was created by Tomino at a small studio.",
+    "这家餐厅以招牌菜闻名，每天都有很多客人。",
+    "请在下方填写您的联系方式，我们会尽快回复。",
+    "The temple garden was designed by Muso in the fourteenth century.",
+    "我们的产品包括茶叶、咖啡和各种点心。",
+    "学校图书馆每天开放，学生可以借阅杂志和报纸。"
+   ]
+  }
+ ],
+ "predictions": "The ' �' byte token of a space-prefixed CJK character reaches 0.6-0.9; the identical text without the space stays near 0. A space after '。' fired only 0.108 in the probe, so fire items put the space mid-sentence.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space-prefixed CJK character (byte token ' �')",
+ "unit_kind": "spelling-unit",
+ "confidence": "high",
+ "notes": "Card: all 32 top peaks on ' �' (space-initial byte token) before Chinese/Japanese characters. Probe: ' 套' 0.705, ' 周' 0.671, ' 岩' in English text 0.894; same sentences without the space 0.006-0.007; space after '。' 0.108. tok.py: ' 委', ' 套', ' 周', ' 創', ' 岩' all split to [' �', '�', '�']."
+}

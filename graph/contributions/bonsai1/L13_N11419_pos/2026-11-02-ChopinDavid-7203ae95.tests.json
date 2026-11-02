@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-7203ae95",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N11419+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T13:20:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N11419",
+   "pole": "+",
+   "label": "A data-structure description in code comments or docstrings (X is a list of (...), Index of A to B, Mapping between ...), firing on the container word or the structure literal, vs code comments that describe actions with no container",
+   "fire": [
+    "        # SESSIONS is a list of (token, expiry) pairs\n        sessions = fetch()",
+    "        # Index of username to account record\n        self.lookup = {}",
+    "    :param dict routes: Mapping between url patterns and handler classes",
+    "    # cache is a dict of (key, timestamp) entries\n    cache = {}",
+    "        # Table of region code to server address\n        self.servers = {}",
+    "    :param list pairs: List of (source, target) node tuples",
+    "    # QUEUE holds a list of (priority, job) tuples\n    queue = []",
+    "        # Map of device id to last known status\n        self.status = {}"
+   ],
+   "quiet": [
+    "        # Sessions expire after one hour\n        sessions = fetch()",
+    "        # Look up the username before login\n        self.check()",
+    "    :param str route: Url pattern that the handler should answer",
+    "    # cache results to speed up repeated calls\n    cache.clear()",
+    "        # Connect to the nearest server first\n        self.connect()",
+    "    :param int count: Number of retries before giving up",
+    "    # QUEUE is processed every five seconds\n    process()",
+    "        # Report the device status to the server\n        self.report()"
+   ]
+  }
+ ],
+ "predictions": "Comments stating what a container holds reach 0.2-0.55; comments describing actions without a container stay under 0.15. Low amplitude (max 3.14) and broad.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "data-structure description in code comment",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: tiny max 3.14, gate-closed regime 93%; peaks on ' list', ' row', ' Index', ' Mapping', ' items', ' shard', plus ' oxide' in 'solid oxide'. Probe: 'list of (name, hashed_password)' 0.494, 'Index of hostname to instance id ... {}' 0.551, 'for row in' 0.346, Mapping docstring 0.240; 'users are stored in memory' 0.120, 'for name in names' 0.021; 'solid oxide' prose 0.617 (unexplained)."
+}
