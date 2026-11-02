@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-10ec3185",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1202-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T02:20:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N1202",
+   "pole": "-",
+   "label": "Hedging main verb 'appears/seems/seemed' right after a subject in news or analysis prose (the subject's state is reported as an impression, not a fact)",
+   "fire": [
+    "With exports slowing, Beijing now appears willing to soften its stance.",
+    "After two long years of campaigning, many voters seem tired of politics.",
+    "The new coach seems determined to rebuild the defence from scratch.",
+    "Since the merger, the bank appears to be losing younger customers.",
+    "Several of the smaller parties seemed eager to join the coalition.",
+    "For the moment, the regulator appears content to wait and watch.",
+    "Younger buyers in the city seem uninterested in large cars.",
+    "By the third week, the rebels seemed unable to hold the town."
+   ],
+   "quiet": [
+    "With exports slowing, Beijing has softened its stance on trade.",
+    "After two long years of campaigning, many voters stayed home.",
+    "The new coach plans to rebuild the defence from scratch.",
+    "Since the merger, the bank has lost many younger customers.",
+    "Several of the smaller parties agreed to join the coalition.",
+    "For the moment, the regulator will wait for more data.",
+    "Younger buyers in the city rarely purchase large cars.",
+    "By the third week, the rebels had lost control of the town."
+   ]
+  }
+ ],
+ "predictions": "'appears'/'seem(s)'/'seemed' after a subject reach 0.4-1.0; the same subjects with a plain verb or copula stay under 0.25.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "hedging seems/appears after subject",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Probe: 'the government now appears to be ready' 1.040 vs 'is now ready' 0.219 (' now'); 'investors seem worried' 0.548 vs 'are worried' 0.088; 'company seemed intent' 0.447; 'arrived in parliament on Tuesday' 0.417 (weekday after an arrival leaks, kept out of the near misses); 'Suddenly,' 0.090. Card: ' seemed/appears/seem/seems' 12 of top 32, plus ' and', ' Monday'. Suppresses ' able/ready/aware', the adjectives such a verb introduces."
+}
