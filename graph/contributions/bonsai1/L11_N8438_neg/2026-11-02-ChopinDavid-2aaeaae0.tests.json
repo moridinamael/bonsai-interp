@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-2aaeaae0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8438-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T11:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N8438",
+   "pole": "-",
+   "label": "The start of a URL value in code: the opening quote of a URL string literal assigned to a url-like name or url= argument, and '_url'/'_URL' identifier pieces, vs the same code with non-URL strings and names",
+   "fire": [
+    "import requests\n\nWEBHOOK_URL = 'https://hooks.example.com/services/T000'\nrequests.post(WEBHOOK_URL, json=payload)",
+    "def get_page(client):\n    return client.request(\n        'GET',\n        url='https://www.wikipedia.org/wiki/Python',\n    )",
+    "    token_url = 'https://auth.example.org/oauth/token'\n    data = {'grant_type': 'client_credentials'}",
+    "class Settings:\n    BASE_URL = 'http://127.0.0.1:5000'\n    DEBUG = True",
+    "    download_url = \"https://files.example.net/data.csv\"\n    df = pd.read_csv(download_url)",
+    "def ping():\n    r = httpx.get(url=\"http://status.example.com/health\", timeout=3)\n    return r.ok",
+    "    callback_url = request.args.get('next')\n    return redirect(callback_url)",
+    "config = {\n    'feed_url': 'https://news.example.com/rss',\n    'refresh': 600,\n}"
+   ],
+   "quiet": [
+    "import requests\n\nWEBHOOK_NAME = 'deploy-alerts'\nlogger.info(WEBHOOK_NAME)",
+    "def get_page(client):\n    return client.request(\n        'GET',\n        title='Python',\n    )",
+    "    token_type = 'bearer'\n    data = {'grant_type': 'client_credentials'}",
+    "class Settings:\n    APP_NAME = 'inventory'\n    DEBUG = True",
+    "    file_name = \"data.csv\"\n    df = pd.read_csv(file_name)",
+    "def ping():\n    r = check(name=\"status\", timeout=3)\n    return r.ok",
+    "    callback = request.args.get('next')\n    return render(callback)",
+    "config = {\n    'feed_title': 'Daily News',\n    'refresh': 600,\n}"
+   ]
+  }
+ ],
+ "predictions": "The quote opening a URL literal or a '_url' piece reaches 0.4-0.9; the same code with plain string values stays under 0.15; URLs in prose stay low.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "URL value slot in code",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: top 32 peak on '_url'/'_URL' and the opening quote before https:// in requests code. Probe: API_URL = ' 0.858, url=' 0.618, base_url = ' 0.475, login_url 0.408; same code with name=/API_KEY/base_name 0.076-0.116; URL in prose 0.026."
+}
