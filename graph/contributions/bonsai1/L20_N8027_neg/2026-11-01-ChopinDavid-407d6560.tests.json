@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-407d6560",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N8027-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T05:20:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N8027",
+   "pole": "-",
+   "label": "The slot where a survey response category begins in a poll statistic ('X% rated it as', 'say they are very', 'called it \"very ...\"'), vs the same judgment words from one person outside a poll",
+   "fire": [
+    "In the survey, 52% of nurses rated their workload as heavy or very heavy.",
+    "Just 12 percent of young voters say they are very satisfied with Congress.",
+    "Two in five farmers polled described the harvest as below average.",
+    "A third of employees called their manager \"very supportive\" in the poll.",
+    "Among those polled, 64% said the plan was somewhat or very likely to fail.",
+    "Only 9% of residents consider crime \"not a problem\" in their area.",
+    "The state's corn crop was rated 48 percent good to excellent this week.",
+    "Of the teachers surveyed, 30% felt extremely stressed during the year."
+   ],
+   "quiet": [
+    "The doctor described her injury as minor and sent her home.",
+    "The critic called the new restaurant \"very expensive\" in his review.",
+    "My grandmother says she is very happy in her new flat.",
+    "The inspector rated the old boiler as unsafe and shut it down.",
+    "He felt extremely tired after the long night shift.",
+    "The coach said the team was very likely to win on Sunday.",
+    "Our neighbor considers the noise a big problem at night.",
+    "The farmer described the harvest as poor after the drought."
+   ]
+  }
+ ],
+ "predictions": "Poll-statistic sentences reach 0.5-0.8 at as/very/extremely/quote; one person's judgment with the same words stays under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "response-category slot in poll statistics",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Probe: 'program was \"very helpful\"' (surveyed parents) 0.785, '41% ... economy as poor' 0.761, '30% rated the service as' 0.690, '18 percent ... extremely confident' 0.498; 'engineers described as unsafe' 0.137, 'weather was extremely cold' 0.010. Near misses keep the rating words and drop the poll."
+}

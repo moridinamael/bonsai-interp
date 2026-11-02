@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-01-ChopinDavid-0ab54501",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N8804+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T05:29:19+00:00",
+ "recipe": {
+  "toolchain_commit": "dac6002b1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N8804_pos/2026-11-01-ChopinDavid-0ab54501.tests.json"
+ },
+ "label": "The kunya Abu / أبو ('father of') opening an Arabic name, in Arabic script or transliterated (Abu, Abul, Abou, Abu'l), vs the same names without it",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N8804_pos/2026-11-01-ChopinDavid-0ab54501.tests.json",
+   "prereg_commit": "dac6002b1",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.47,
+     "peak": " Abu"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.446,
+     "peak": " Abu"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.447,
+     "peak": " أبو"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.737,
+     "peak": "ou"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.019,
+     "peak": "ul"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.431,
+     "peak": " أبو"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.474,
+     "peak": " Abu"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.488,
+     "peak": " Abu"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.046,
+     "peak": "-"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.048,
+     "peak": " Ibn"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " المس"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "ad"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " Az"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " الطب"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.08,
+     "peak": " S"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": "afe"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.472,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dac6002b1",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Abu / أبو kunya in Arabic names",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Probe: 'Abul-Haj' 0.894, 'Abou El Anein' 0.776, 'Abu al-Qasim' 0.675, Arabic 'أبو القاسم' 0.669, 'Abu'l-Fida' 0.668, 'Abu Dhabi' 0.451; same sentences without Abu 0.011-0.018. 'Lord of heaven' also 0.716: the pole may track 'father/lord of' constructions generally, not tested here. The 'Ibn Sina' near miss tests whether 'son of' also fires.",
+ "selection": "random draw"
+}

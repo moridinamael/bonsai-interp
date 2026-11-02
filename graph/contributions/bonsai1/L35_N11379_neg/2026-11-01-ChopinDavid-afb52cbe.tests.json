@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-01-ChopinDavid-afb52cbe",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11379-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T05:20:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N11379",
+   "pole": "-",
+   "label": "Positional: fires on the first token of a context window (any word); does not fire on whole sentences scored from the start of a document",
+   "fire": [
+    "characteristics that we believe suggest a habit",
+    "strategy for stopping the flood of new cases",
+    "indicate the name you used when you ordered",
+    "climate scientists met in Geneva this week",
+    "– saying it is spicy would be generous",
+    "us and jonquils in shades of white",
+    "j is not None and the loop ends",
+    "tasks that must be done each morning"
+   ],
+   "quiet": [
+    "The report lists characteristics that we believe suggest a habit.",
+    "They need a strategy for stopping the flood of new cases.",
+    "Please indicate the name you used when you ordered.",
+    "Many climate scientists met in Geneva this week.",
+    "The sauce is mild – saying it is spicy would be generous.",
+    "She planted narcissus and jonquils in shades of white.",
+    "The check passes when j is not None and the loop ends.",
+    "There are tasks that must be done each morning."
+   ]
+  }
+ ],
+ "predictions": "Expected to fail: probes scored 0.000-0.001 on every sentence, including the card's own first words, so neither set should fire.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "window position 0 (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: 100% of top peaks at window position 0, max 836, the word itself irrelevant (tasks, several, J, us). Probe: 8 sentences including 'tasks required in daily life' and 'several months after his death' all 0.000-0.001, so the trigger cannot be reached in a fresh document. Best-guess test only."
+}
