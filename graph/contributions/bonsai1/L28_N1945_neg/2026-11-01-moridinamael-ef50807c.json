@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-01-moridinamael-ef50807c",
+ "kind": "qc",
+ "neuron": "bonsai1/L28/N1945-",
+ "contributor": "moridinamael",
+ "created": "2026-11-02T04:54:42+00:00",
+ "recipe": {
+  "toolchain_commit": "dd3a406da",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N1945_neg/2026-11-01-moridinamael-ef50807c.tests.json"
+ },
+ "label": "Capitalized ' Historical' or ' Historic' opening a name or title (Historical Society, Trust for Historic Preservation), and the comma closing the date in a forum footer 'Last edited by X on <date>, edited N times in total'; lowercase 'historical' in prose is weak",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N1945_neg/2026-11-01-moridinamael-ef50807c.tests.json",
+   "prereg_commit": "dd3a406da",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.35,
+     "peak": " Historical"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.941,
+     "peak": " Historic"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.106,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.487,
+     "peak": " Historic"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.578,
+     "peak": " Historical"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.063,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.487,
+     "peak": " Historic"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.4,
+     "peak": " Historical"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.453,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " public"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.05,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.445,
+     "peak": " board"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.042,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " published"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " gre"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " at"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 1,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.532,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "bank-solo",
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "second-round"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "dd3a406da",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "the capitalized word ' Historical' or ' Historic' opening an institution or publication title (Trust for Historic Preservation, journal Historical Studies); lowercase 'historical' in prose and other capitalized title words stay quiet"
+ }
+}
