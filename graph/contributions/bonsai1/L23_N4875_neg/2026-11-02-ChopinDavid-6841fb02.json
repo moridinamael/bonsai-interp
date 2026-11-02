@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-6841fb02",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N4875-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T15:29:21+00:00",
+ "recipe": {
+  "toolchain_commit": "63c96989f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N4875_neg/2026-11-02-ChopinDavid-6841fb02.tests.json"
+ },
+ "label": "The opening quote of a message string literal that Python code prints, writes or returns (print(\"Error: ...\"), return \"Unknown\"), vs the same code printing or returning a variable",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N4875_neg/2026-11-02-ChopinDavid-6841fb02.tests.json",
+   "prereg_commit": "63c96989f",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.527,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.94,
+     "peak": " \""
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.496,
+     "peak": "('"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.28,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.715,
+     "peak": " '"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.273,
+     "peak": " \""
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.323,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.431,
+     "peak": "(\""
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.053,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.048,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": " if"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": "(result"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.512,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63c96989f",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "opening quote of printed/returned string",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Card: '(\"' x9, ' \"' x8, \" '\" x4, \"('\" x2 after print/return/Write, plus ' if' in docstrings. Probe: print(\"Error: config...\") 0.844, return \"Unknown\" 0.824, msg = \"...\" 0.238, Write('WARNING') 0.204; print(config_path) 0.041, return None 0.041, prose quote 0.027.",
+ "selection": "random draw"
+}
