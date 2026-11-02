@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-44c750f7",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N5992+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T06:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N5992",
+   "pole": "+",
+   "label": "Final piece of a non-English or compound word the tokenizer splits (종로|구, ore|ja, Wright|way, -G|elände, 안나오|냐): a weak, broad word-end pole",
+   "fire": [
+    "우리 회사는 서울 강남구 테헤란로에 있습니다.",
+    "그는 마포구 합정동에서 작은 카페를 운영한다.",
+    "어머니는 서초구 반포동에 오래 사셨다.",
+    "En el cuento, una vieja bruja vivía en el bosque.",
+    "La principal ventaja del plan es su bajo costo.",
+    "We ordered the safety gear from Brightway Supplies in March.",
+    "The new hotel on Ashway Road opens next spring.",
+    "왜 이렇게 늦게 오냐고 친구가 물었다."
+   ],
+   "quiet": [
+    "Our company has an office in a tall tower downtown.",
+    "He runs a small cafe near the river in the old town.",
+    "My mother lived for many years near the big park.",
+    "In the story, an old woman lived in the forest.",
+    "The main benefit of the plan is its low cost.",
+    "We ordered the safety gear from a local supplier in March.",
+    "The new hotel on the main road opens next spring.",
+    "My friend asked why I was so late again."
+   ]
+  }
+ ],
+ "predictions": "Split Korean district names ending in 구, Spanish words ending in a split 'ja', and compounds ending in 'way' reach 0.5-0.9; the same sentences with single-token English words stay under 0.06.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "final piece of a split word",
+ "unit_kind": "spelling-unit",
+ "confidence": "low",
+ "notes": "Card max 1.09, broad flag (2.1% of tokens), gate-closed regime 100%; the + pole is mostly echo. Probe: oreja 0.869, 종로구 0.826, 안나오냐 0.780, UNO-Gelände 0.657, Wrightway 0.577; 'Wright Products' 0.005, Norway 0.001, English control 0.009. Splits checked: 강남구, 마포구, 서초구 end in '구'; bruja = bru|ja, ventaja = vent|aja; Brightway, Ashway end in 'way'."
+}
