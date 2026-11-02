@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-85244972",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N3543+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T12:28:56+00:00",
+ "recipe": {
+  "toolchain_commit": "cacd984e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N3543_pos/2026-11-02-ChopinDavid-85244972.tests.json"
+ },
+ "label": "Unclear broad unit: best guess, a piece inside a compound configuration identifier in code (json|Cmds, logging|.config, beta|2, Libvirt|Config), vs the same code with simple one-token names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N3543_pos/2026-11-02-ChopinDavid-85244972.tests.json",
+   "prereg_commit": "cacd984e5",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.062,
+     "peak": ".handlers"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.088,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.088,
+     "peak": "Interface"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.053,
+     "peak": " user"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.036,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.038,
+     "peak": ")"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.023,
+     "peak": " instance"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.018,
+     "peak": " mode"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.062,
+     "peak": " logging"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " make"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " user"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.056,
+     "peak": ".load"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.054,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " instance"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " mode"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.656,
+    "median_fire": 0.045,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cacd984e5",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "unclear (config identifier piece)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card flags broad; top peaks on 'Cmd' in jsonCmds, ' this' in 'For this recipe', '.config' in logging.config, 'beta' in 'beta2', 'Config' in LibvirtConfigGuestSerial, '/v' in '/dev/vda'. Probe: logconf(cfg) 0.170, beta2 0.105, jsonCmds 0.042, LibvirtConfig 0.056; plain names 0.004-0.061. Best-guess test only.",
+ "selection": "random draw"
+}

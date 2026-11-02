@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-137a6860",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9145-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T12:28:03+00:00",
+ "recipe": {
+  "toolchain_commit": "cacd984e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N9145_neg/2026-11-02-ChopinDavid-137a6860.tests.json"
+ },
+ "label": "The copula or operator that introduces the computed result in a worked calculation ('so the distance is', '= ', '/2'), vs the same verbs introducing non-numeric conclusions",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N9145_neg/2026-11-02-ChopinDavid-137a6860.tests.json",
+   "prereg_commit": "cacd984e5",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.019,
+     "peak": " average"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.017,
+     "peak": " number"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.014,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.016,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.051,
+     "peak": " echo"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.012,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.013,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.017,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " owner"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " echo"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " was"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.477,
+    "median_fire": 0.017,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cacd984e5",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "slot before a computed result",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: peaks on '/' in 3,43/2, ' ' before digits in 'The Answer of 1 + 1 is 2.0', 'her 86 years', 'adds 1', '(' in AddSpacer(5). Probe: 'so the distance is 340/2' 0.682 at ' is', but 'so the distance is half the total path' also 0.682 at ' is' (the frame 'so the X is' fires before the result appears); 'answer to 3 + 4 is 7' 0.058, '86 years' 0.016, 'adds 1' 0.102. So the label is the frame that sets up a derived quantity, not the digit.",
+ "selection": "random draw"
+}
