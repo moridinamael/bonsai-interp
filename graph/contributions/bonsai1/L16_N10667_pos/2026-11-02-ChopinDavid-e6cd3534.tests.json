@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-e6cd3534",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N10667+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T10:23:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N10667",
+   "pole": "+",
+   "label": "Unclear; best guess: the index of the next stage in a repeated numbered code pattern (k3 after k1, k2)",
+   "fire": [
+    "def rk4(f, y, t, h):\n    k1 = h * f(t, y)\n    k2 = h * f(t + h/2, y + k1/2)\n    k3 = h * f(t + h/2, y + k2/2)\n    k4 = h * f(t + h, y + k3)",
+    "    a1 = g(u)\n    a2 = g(u + 0.5*a1)\n    a3 = g(u + 0.5*a2)",
+    "    s1 = step(z, dt)\n    s2 = step(z + dt*s1/2, dt)\n    s3 = step(z + dt*s2/2, dt)",
+    "    c1 = rhs(q, tau)\n    c2 = rhs(q + tau*c1, tau)\n    c3 = rhs(q + tau*c2, tau)",
+    "    m1 = deriv(v)\n    m2 = deriv(v + m1*dt/2)\n    m3 = deriv(v + m2*dt/2)",
+    "    p1 = fn(w, t0)\n    p2 = fn(w + 1./2*dt*p1, t0 + 1./2*dt)\n    p3 = fn(w + 1./2*dt*p2, t0 + 1./2*dt)",
+    "    r1 = flow(x)\n    r2 = flow(x + r1/3)\n    r3 = flow(x + r2/3)",
+    "    j1 = model(state)\n    j2 = model(state + j1*h)\n    j3 = model(state + j2*h)"
+   ],
+   "quiet": [
+    "def euler(f, y, t, h):\n    return y + h * f(t, y)",
+    "    a = g(u)\n    b = a + 1",
+    "    total = step(z, dt)\n    print(total)",
+    "    value = rhs(q, tau)\n    return value",
+    "    speed = deriv(v)\n    log(speed)",
+    "    out = fn(w, t0)\n    out.save()",
+    "    result = flow(x)\n    plot(result)",
+    "    pred = model(state)\n    loss = mse(pred, target)"
+   ]
+  }
+ ],
+ "predictions": "Weak: stage indices in Runge-Kutta style code may reach 0.2-0.3; plain prose stays under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (next stage index?)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Probe: RK k3 0.24 (corpus top is k3 at 16.9), a numeric list 0.10, 'third quarter' 0.08, semicolon/comma name lists 0.02-0.03. Card peaks on commas, '3', newlines in verse. Expected to fail."
+}

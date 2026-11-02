@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-4f43477d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N3771-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T10:23:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N3771",
+   "pole": "-",
+   "label": "The token 'client' in any form (client, Client, _client, .client, clients), vs neighbouring role nouns such as customer, server or patient",
+   "fire": [
+    "    http_client = HttpClient(base_url, timeout=5)\n    resp = http_client.get('/status')",
+    "The browser acts as the client and opens a socket to the server.",
+    "from botocore.client import Config\nimport boto3",
+    "        self._client.close()\n        self._client = None",
+    "Each client must authenticate with a token before calling the API.",
+    "    redis_client = redis.Redis(host='localhost', port=6379)",
+    "The attorney said her client would not comment on the charges.",
+    "class ClientSession:\n    def __init__(self, url):\n        self.url = url"
+   ],
+   "quiet": [
+    "    http_conn = HttpConn(base_url, timeout=5)\n    resp = http_conn.get('/status')",
+    "The browser opens a socket to the server and waits for data.",
+    "from botocore.config import Config\nimport boto3",
+    "        self._conn.close()\n        self._conn = None",
+    "Each user must authenticate with a token before calling the API.",
+    "    cache = redis.Redis(host='localhost', port=6379)",
+    "The attorney said the witness would not comment on the charges.",
+    "class Session:\n    def __init__(self, url):\n        self.url = url"
+   ]
+  }
+ ],
+ "predictions": "'client' tokens reach 0.3-0.9 (highest in code); role-noun swaps stay under 0.25.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'client' token",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Probe: _client 0.89, Client (import) 0.76, client in networking 0.48, client in a law firm 0.33, clients 0.30; customer 0.19, patient 0.15, server 0.11. Prose 'client' is near 0.3, so most fire items use code or networking.",
+ "trigger": {
+  "words": [
+   "client",
+   "clients"
+  ]
+ }
+}
