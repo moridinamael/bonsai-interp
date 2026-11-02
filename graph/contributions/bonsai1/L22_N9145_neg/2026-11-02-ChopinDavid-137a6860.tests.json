@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-137a6860",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9145-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T12:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N9145",
+   "pole": "-",
+   "label": "The copula or operator that introduces the computed result in a worked calculation ('so the distance is', '= ', '/2'), vs the same verbs introducing non-numeric conclusions",
+   "fire": [
+    "The car covers 120 km in 2 hours, so the average speed is 60 km per hour.",
+    "Each box holds 12 eggs and we have 5 boxes, so the total number of eggs is 60.",
+    "The rectangle is 4 m wide and 3 m long, so its area is 12 square meters.",
+    "Light takes 8 minutes to arrive, so the distance to the Sun is about 150 million km.",
+    "The echo returns after 2 seconds, so the depth of the well is roughly 340 m.",
+    "Half of the 30 students passed, so the number who failed is 15.",
+    "The tank loses 3 litres per hour, so after 4 hours the loss is 12 litres.",
+    "The voltage is 12 V and the resistance is 4 ohms, so the current is 3 A."
+   ],
+   "quiet": [
+    "The car is red and has leather seats, so the owner is very proud of it.",
+    "Each box was wrapped in paper and tied with string before the party.",
+    "The rectangle is a common shape in architecture and in modern furniture.",
+    "Light from the Sun warms the Earth and makes plants grow in spring.",
+    "The echo in the cave was loud, so the children shouted their names again.",
+    "Half of the students passed, and their parents were happy with the news.",
+    "The tank was painted green and stood in the corner of the farmyard.",
+    "The old radio was broken, so the repairman took it back to his shop."
+   ]
+  }
+ ],
+ "predictions": "The ' is' or operator right before a worked numeric answer reaches 0.3-0.7; ' is' before a plain description stays under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot before a computed result",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: peaks on '/' in 3,43/2, ' ' before digits in 'The Answer of 1 + 1 is 2.0', 'her 86 years', 'adds 1', '(' in AddSpacer(5). Probe: 'so the distance is 340/2' 0.682 at ' is', but 'so the distance is half the total path' also 0.682 at ' is' (the frame 'so the X is' fires before the result appears); 'answer to 3 + 4 is 7' 0.058, '86 years' 0.016, 'adds 1' 0.102. So the label is the frame that sets up a derived quantity, not the digit."
+}

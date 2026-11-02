@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-2a9e7007",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N3364+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T12:27:19+00:00",
+ "recipe": {
+  "toolchain_commit": "cacd984e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N3364_pos/2026-11-02-ChopinDavid-2a9e7007.tests.json"
+ },
+ "label": "Event-timeline narration: the token after a dated or 'on the day of' framing that introduces what happened at a scheduled event (On the day of the conference, On May 12, a treaty), vs descriptions of the same events without a timeline frame",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N3364_pos/2026-11-02-ChopinDavid-2a9e7007.tests.json",
+   "prereg_commit": "cacd984e5",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.611,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.081,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.053,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.332,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.332,
+     "peak": " On"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.141,
+     "peak": " results"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.418,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.237,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.093,
+     "peak": " Most"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.027,
+     "peak": " terms"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": "Applications"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": " The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.284,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cacd984e5",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "event timeline frame",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: peaks on ' of' in 'On the day of the conference', ' the' in 'close on April 10th and the election', ',' after 'On February 2, 1888', ' a' after 'On May 12,'. Low max (19.5) and broad (0.2% density). Probe: 'On the day of the race' 0.460, 'vote will follow' 0.303, construction administration 0.277, 'On March 3, 1902,' only 0.166; non-timeline controls 0.022-0.067.",
+ "selection": "random draw"
+}

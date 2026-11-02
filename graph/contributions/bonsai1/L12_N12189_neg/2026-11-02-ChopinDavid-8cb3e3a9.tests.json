@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-8cb3e3a9",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N12189-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T12:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N12189",
+   "pole": "-",
+   "label": "A literal separator or fragment joined into a string with + or an f-string in code (base + '.' + ext, 'https://' + host, f\"{a}.{b}\"), vs code that builds the same values without string concatenation",
+   "fire": [
+    "    out_name = stem + '.' + 'csv'\n    df.to_csv(out_name)",
+    "    endpoint = 'http://' + server + ':' + str(port)\n    conn = connect(endpoint)",
+    "    tmp_path = target + '.bak'\n    os.rename(target, tmp_path)",
+    "    full_name = first + ' ' + last\n    print(full_name)",
+    "    log_file = f\"{job_id}.log\"\n    open(log_file, 'w').close()",
+    "    key = 'user:' + str(uid)\n    redis.get(key)",
+    "    thumb = name + '_small.' + ext\n    image.save(thumb)",
+    "    String path = dir + \"/\" + file;\n    File f = new File(path);"
+   ],
+   "quiet": [
+    "    out_name = Path(stem).with_suffix('csv')\n    df.to_csv(out_name)",
+    "    endpoint = urljoin(server, path)\n    conn = connect(endpoint)",
+    "    tmp_path = os.path.join(target_dir, name)\n    os.rename(target, tmp_path)",
+    "    total_cost = price * count\n    print(total_cost)",
+    "    log_file = settings.LOG_FILE\n    open(log_file, 'w').close()",
+    "    key = lookup[uid]\n    redis.get(key)",
+    "    thumb = image.resize((64, 64))\n    thumb.save(out)",
+    "    int total = width * height;\n    System.out.println(total);"
+   ]
+  }
+ ],
+ "predictions": "The '.'/'/'/'+' or quoted fragment in a string-building expression reaches 0.3-0.9; os.path.join, numeric addition and plain prose filenames stay under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "string concatenation separator in code",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: top peaks on \" '.'\" in dbFileName + '.' + timestamp, f\".tmp\", 'ns:attr', \"+\" in url concatenation, 'Token.' + _Format. Probe: + '.' + 0.923, f\"{name}.{ext}\" 0.526, url concat 0.542, 'Item.' + str 0.315; os.path.join 0.029, numeric + 0.042, 'report.pdf' in prose 0.110; German '-chen' suffix 0.348 (unexpected leak, not used)."
+}
