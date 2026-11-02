@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-c425a58e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N1956-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-02T17:30:44+00:00",
+ "recipe": {
+  "toolchain_commit": "1bc632472",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N1956_neg/2026-11-02-ChopinDavid-c425a58e.tests.json"
+ },
+ "label": "The ' *\\n' (or ' #\\n') token that closes a line of a box-drawn comment where the text line ends with a trailing star or hash, as in license headers, vs the same license text in comments without a trailing border",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N1956_neg/2026-11-02-ChopinDavid-c425a58e.tests.json",
+   "prereg_commit": "1bc632472",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.795,
+     "peak": " *\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.452,
+     "peak": " #\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.665,
+     "peak": " *\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.232,
+     "peak": " *\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.298,
+     "peak": " #\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.738,
+     "peak": " *\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.174,
+     "peak": " *\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.387,
+     "peak": " #\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.067,
+     "peak": " software"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.026,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.032,
+     "peak": " copy"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " forwards"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.118,
+     "peak": " hope"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " release"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.419,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1bc632472",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "trailing border star in box comment",
+ "unit_kind": "token",
+ "confidence": "low",
+ "notes": "Card: every top example is ' *\\n' at the end of 'you can redistribute it and/or modify *' in box comments, plus ' #\\n'. Probe used ordinary leading-star comments, none of which produce the ' *\\n' token, and all stayed low (max 0.097); tokenizer confirms ' *\\n' only appears when a line ends with ' *'. Untested trigger form, so low confidence.",
+ "selection": "random draw"
+}
