@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-68bf33b3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N4063+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T11:31:13+00:00",
+ "recipe": {
+  "toolchain_commit": "6beb98d9a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N4063_pos/2026-11-03-ChopinDavid-68bf33b3.tests.json"
+ },
+ "label": "Egg- and dairy-based brunch dishes (quiche, frittata, yogurt, parfait, kefir), vs other breakfast and dessert foods",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N4063_pos/2026-11-03-ChopinDavid-68bf33b3.tests.json",
+   "prereg_commit": "6beb98d9a",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.873,
+     "peak": "iche"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.613,
+     "peak": " yogurt"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.798,
+     "peak": "ata"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.367,
+     "peak": " parfait"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.912,
+     "peak": "iche"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.63,
+     "peak": "h"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.933,
+     "peak": "ata"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.812,
+     "peak": " parfait"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": " roast"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " afternoon"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.059,
+     "peak": " pancakes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.178,
+     "peak": " layered"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " classic"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.045,
+     "peak": " leftover"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.102,
+     "peak": " fish"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.231,
+     "peak": " muff"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.843,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6beb98d9a",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "egg/dairy brunch dishes",
+ "unit_kind": "meaning",
+ "confidence": "medium",
+ "notes": "Card: ' yogurt' x8, qu|iche x4, yog|ur|ts, yogh|urt, parfait. Probe: quiche 1.127, frittata 0.925 (unseen on card), parfait 0.833, yogurt 0.794, kefir 0.409; oatmeal 0.359 (a leak, so not used), pancakes 0.061, chocolate cake 0.048. Pancakes and cake score low, so the pole is narrower than 'breakfast'.",
+ "selection": "random draw"
+}
