@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-06e93b79",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N10065-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T02:23:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N10065",
+   "pole": "-",
+   "label": "A metadata suffix that names what a code variable holds (_num, _name, _length, _count, _id) appended to a stem identifier, vs plain identifiers without such a suffix",
+   "fire": [
+    "    def fetch(self, page_num):\n        return self.pages[page_num]",
+    "    table_name = config.get('table')\n    cursor.execute(query)",
+    "    max_length = 128\n    tokens = tokens[:max_length]",
+    "    for i, row in enumerate(rows):\n        row_count = len(row)",
+    "def load(user_name, path):\n    with open(path) as f:\n        return f.read()",
+    "    key_length = len(key)\n    if key_length > 32:\n        raise ValueError",
+    "    file_name = os.path.basename(path)\n    print(file_name)",
+    "    seq_num = header[2]\n    packets.append(payload)"
+   ],
+   "quiet": [
+    "    def fetch(self, page):\n        return self.pages[page]",
+    "    table = config.get('table')\n    cursor.execute(query)",
+    "    limit = 128\n    tokens = tokens[:limit]",
+    "    for i, row in enumerate(rows):\n        total = sum(row)",
+    "def load(user, path):\n    with open(path) as f:\n        return f.read()",
+    "    key = key.strip()\n    if not key:\n        raise ValueError",
+    "    base = os.path.basename(path)\n    print(base)",
+    "    seq = header[2]\n    packets.append(payload)"
+   ]
+  }
+ ],
+ "predictions": "Suffix tokens reach 0.5-0.85; plain identifiers stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "metadata suffix on an identifier",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: peaks on '_num', '_name', '_length', '_class', ' for' in 'A name for the operation'. Probe: 'id_num' 0.814, '_model_name' 0.724, 'country_code_length' 0.859, 'A name for the operation' 0.534; 'idx' 0.075, '_model' 0.048, 'axis' docstring 0.070; but 'sample_class' only 0.036, so not every suffix fires."
+}

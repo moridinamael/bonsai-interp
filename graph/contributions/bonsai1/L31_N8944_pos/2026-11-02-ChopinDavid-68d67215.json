@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-68d67215",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N8944+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T02:31:10+00:00",
+ "recipe": {
+  "toolchain_commit": "a07a4ed34",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N8944_pos/2026-11-02-ChopinDavid-68d67215.tests.json"
+ },
+ "label": "' P' opening the split acronym 'PPE' (personal protective equipment) in workplace-safety or clinical text, vs the same sentences naming the equipment in words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N8944_pos/2026-11-02-ChopinDavid-68d67215.tests.json",
+   "prereg_commit": "a07a4ed34",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.196,
+     "peak": " P"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.2,
+     "peak": " P"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.109,
+     "peak": " P"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.324,
+     "peak": " P"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.019,
+     "peak": " extra"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.005,
+     "peak": " spill"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.058,
+     "peak": " without"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.277,
+     "peak": " P"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": "Under"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": "N"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.133,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " extra"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " shifts"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.152,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a07a4ed34",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "' P' of PPE",
+ "unit_kind": "token/lexical",
+ "confidence": "low",
+ "notes": "Card: top peak ' P' of 'necessary PPE' (156, almost twice the next); other tops are function words in clinical text. Probe: 'wear PPE' 0.196 on ' P'; other split acronyms PMS/TSH 0.006-0.007, 'Mr. P. Smith' 0.007, worded 'helmets' 0.071, PCR/PNG single tokens <= 0.007. Only one probe hit.",
+ "selection": "random draw"
+}
