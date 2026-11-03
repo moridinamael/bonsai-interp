@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-3549d72e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N6887+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T16:20:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N6887",
+   "pole": "+",
+   "label": "The end of the condition in a 'do X and (you) Y' conditional ('any longer than that and you risk', 'mention it to an old hacker and they'll'), the slot right before the consequence 'and'",
+   "fire": [
+    "Stir the sauce for any more than five minutes and it will start to stick to the pan.",
+    "Water the cactus more than once a week and you risk rotting its roots.",
+    "Leave the gate open for longer than an hour and the goats will wander off.",
+    "Give a toddler a cardboard box and you will see an afternoon of happy play.",
+    "Push the engine any harder than that and you could crack a cylinder.",
+    "Skip a single day of practice and you will notice it at the next lesson.",
+    "Add a pinch of salt to the caramel, and you will taste the difference at once.",
+    "Wait any later than noon and you will find every table at the cafe taken."
+   ],
+   "quiet": [
+    "If you stir the sauce too long, it will start to stick to the pan.",
+    "Cacti that are watered too often tend to rot at the roots.",
+    "When the gate is left open, the goats usually wander off.",
+    "Toddlers often play happily for hours with a cardboard box.",
+    "Running the engine too hard can crack a cylinder.",
+    "Daily practice makes a clear difference by the next lesson.",
+    "A pinch of salt makes caramel taste richer, which most cooks know.",
+    "By noon most tables at the cafe are usually taken."
+   ]
+  }
+ ],
+ "predictions": "The last word of the condition in 'X and you will Y' 0.2-0.5, highest for 'any longer/more than N and'; the same content as an if-clause or plain statement under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "condition end before 'and you'll' consequence",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card: top peaks on the word before ', and you will see', 'and you risk', 'and they're sure to', 'and you'd get'; the - pole promotes ' and'. Probe: 'any longer than ten minutes and you will burn' 0.513, 'Add a little patience to this recipe, and you will see' 0.214, 'Say his name to any old sailor and they will' 0.159, 'any two finches and you would' 0.069; if-clause and plain versions <= 0.010. 'apples and pears at the market' 0.116 (list 'and' leaks a little). Mid-strength, expect a weak hold or a fail on median."
+}

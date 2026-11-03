@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-882cbbb4",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N4192+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T16:20:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N4192",
+   "pole": "+",
+   "label": "A Python standard-library module or utility name in imports, decorators and attribute calls (abc, heapq, patch, deque, functools), vs user-defined names in the same code positions",
+   "fire": [
+    "import functools\n\n@functools.lru_cache(maxsize=None)\ndef fib(n):\n    return n if n < 2 else fib(n - 1) + fib(n - 2)",
+    "from collections import deque\n\nwindow = deque(maxlen=5)\nwindow.append(3)",
+    "import bisect\n\nscores = [10, 20, 30]\nbisect.insort(scores, 25)",
+    "from unittest import mock\n\n@mock.patch('app.send_mail')\ndef test_signup(send):\n    pass",
+    "import itertools\n\npairs = list(itertools.combinations(items, 2))",
+    "import abc\n\nclass Shape(abc.ABC):\n    @abc.abstractmethod\n    def area(self):\n        ...",
+    "import heapq\n\nsmallest = heapq.nsmallest(3, values)",
+    "from contextlib import suppress\n\nwith suppress(FileNotFoundError):\n    os.remove(path)"
+   ],
+   "quiet": [
+    "import mathutils\n\n@mathutils.memo\ndef fib(n):\n    return n if n < 2 else fib(n - 1) + fib(n - 2)",
+    "from shapes import Window\n\nwindow = Window(width=5)\nwindow.resize(3)",
+    "import grading\n\nscores = [10, 20, 30]\ngrading.insert(scores, 25)",
+    "from myapp import hooks\n\n@hooks.register('signup')\ndef on_signup(user):\n    pass",
+    "import pairing\n\npairs = list(pairing.match(items, 2))",
+    "import shapes\n\nclass Square(shapes.Base):\n    def area(self):\n        return self.side ** 2",
+    "import stats\n\nsmallest = stats.lowest(3, values)",
+    "from cleanup import quiet\n\nwith quiet(path):\n    remove_file(path)"
+   ]
+  }
+ ],
+ "predictions": "Stdlib module/utility names 0.3-0.8; the same code shapes with project-defined names under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python stdlib module name in code",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: peaks 'abc', '.patch', 'lib', 'q', 'deque' in '@abc.abstractmethod', '@patch(...)', 'heapq.heappush', 'collections.deque', 'contextlib'. Probe: abc 0.762, heapq 0.544, patch 0.527, deque 0.413, contextmanager 0.300; numpy 0.137, plain def 0.095, prose 0.018. Near misses keep the same import/decorator shape with local names."
+}
