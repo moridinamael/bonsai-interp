@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-bef0604f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N256-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T08:22:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N256",
+   "pole": "-",
+   "label": "slot where 'accurate' / 'accuracy' is the likely next word",
+   "fire": [
+    "Please check that all the details you entered are complete and accurate.",
+    "Our weather service aims to deliver the most accurate forecasts available.",
+    "We try hard to provide accurate prices, but errors can occur.",
+    "    print(f'Validation loss: {vl:.3f}, Validation accuracy: {va:.3f}')",
+    "Calibrate the scale first so that you get an accurate weight.",
+    "The study tested reading speed and accuracy in older adults.",
+    "For the most accurate results, measure your waist in the morning.",
+    "Journalists must make sure their reporting is fair and accurate."
+   ],
+   "quiet": [
+    "Please check that all the fields you entered are saved before leaving.",
+    "Our weather service aims to deliver forecasts by seven each morning.",
+    "We try hard to keep prices low, but costs sometimes rise.",
+    "    print(f'Validation loss: {vl:.3f}, elapsed time: {vt:.3f}')",
+    "Calibrate the scale first, then place the parcel on top.",
+    "The study tested reading habits and hobbies in older adults.",
+    "For the best flavour, pick the tomatoes in the morning.",
+    "Journalists must make sure their laptops are charged before travelling."
+   ]
+  }
+ ],
+ "predictions": "Fires on the token before accurate/accuracy (provide, most, and, an, a second metric label); quiet in matched sentences whose prefix sets up another word.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts accurate",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Next-token predictor: the + pole suppresses acc/accuracy. Probes: 'to provide' 0.314, 'the most' 0.307, 'speed and' 0.159, 'Train Loss..., Train' 0.501; prefix-identical controls score the same (activation reads only the prefix), far floor 0.002. Near misses remove the setup, not only the word."
+}
