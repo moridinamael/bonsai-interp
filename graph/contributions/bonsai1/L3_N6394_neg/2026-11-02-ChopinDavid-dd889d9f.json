@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-dd889d9f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N6394-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T00:29:48+00:00",
+ "recipe": {
+  "toolchain_commit": "6702cfa7a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N6394_neg/2026-11-02-ChopinDavid-dd889d9f.tests.json"
+ },
+ "label": "Broad unit on non-initial syllable pieces inside multi-token Korean (and Japanese kanji) words ('이|수', '난|감', '더디|게', '無|事'), vs short Korean sentences made only of common merged word tokens",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N6394_neg/2026-11-02-ChopinDavid-dd889d9f.tests.json",
+   "prereg_commit": "6702cfa7a",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.793,
+     "peak": "수"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.815,
+     "peak": "감"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.794,
+     "peak": "게"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.14,
+     "peak": "히"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.228,
+     "peak": "하게"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.119,
+     "peak": "에"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.068,
+     "peak": "를"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.089,
+     "peak": "��"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": "에"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " 지금"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.081,
+     "peak": " 있었다"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": "에"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "그"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": "이"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " 대한"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " 지금"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.184,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6702cfa7a",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "inner piece of split Korean word",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card flags broad (4.2% of tokens at 0.1 of max, tiny max 0.84). Probe: '이수' 0.989, '난감' 0.819, '더디게' 0.737, '無事' 0.666, ' 수' 0.352; common Korean '그는 학교에 갔다' 0.089, English 0.10-0.23.",
+ "selection": "random draw"
+}

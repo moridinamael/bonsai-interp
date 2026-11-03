@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-195e1a1a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N6154-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T00:30:20+00:00",
+ "recipe": {
+  "toolchain_commit": "6702cfa7a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N6154_neg/2026-11-02-ChopinDavid-195e1a1a.tests.json"
+ },
+ "label": "Verb that begins a Python private method name after '_' (self._setup_..., def _create_...), vs private attribute or method names that start with a noun and the same verbs in prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N6154_neg/2026-11-02-ChopinDavid-195e1a1a.tests.json",
+   "prereg_commit": "6702cfa7a",
+   "author": "ChopinDavid",
+   "n_fire": 6,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.609,
+     "peak": "()\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.753,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.22,
+     "peak": "fetch"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.379,
+     "peak": "load"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.512,
+     "peak": "parse"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.26,
+     "peak": "read"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.499,
+     "peak": "()\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.435,
+     "peak": "validate"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.173,
+     "peak": " start"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.548,
+     "peak": "query"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.099,
+     "peak": "._"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.074,
+     "peak": " reset"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.311,
+     "peak": "_names"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.063,
+     "peak": "csv"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.067,
+     "peak": " run"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.194,
+     "peak": " _"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.467,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6702cfa7a",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "verb starting a private method name",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: add, setup, create, get, establish after 'self._' or 'def _', and the comma after self in method signatures. Probe: 'self._setup_socket' 0.597, 'def _create_user(self,' 0.595, 'self._get_instance_info' 0.365; 'def _user_count' 0.193, 'self._socket = None' 0.022, prose 'add a handler and setup' 0.033, 'setupApp' 0.232.",
+ "selection": "random draw"
+}
