@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-dccfd130",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N6424-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T15:29:17+00:00",
+ "recipe": {
+  "toolchain_commit": "73d4d6d33",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N6424_neg/2026-11-03-ChopinDavid-dccfd130.tests.json"
+ },
+ "label": "A word-initial capital P (or Cyrillic П) split off as its own piece, as after a quote, bracket, pipe or line start ('“P|ogo', '|P|emb', ' П|ланету'), vs the same words as one token or in lower case",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N6424_neg/2026-11-03-ChopinDavid-dccfd130.tests.json",
+   "prereg_commit": "73d4d6d33",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.415,
+     "peak": "P"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.422,
+     "peak": " П"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.26,
+     "peak": "P"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.243,
+     "peak": "P"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.372,
+     "peak": " П"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.316,
+     "peak": "P"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.36,
+     "peak": " П"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.223,
+     "peak": "P"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": "их"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " Mia"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " Festival"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": "ш"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " кни"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.051,
+     "peak": "B"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.338,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "73d4d6d33",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "split-off capital P / П onset piece",
+ "unit_kind": "spelling unit",
+ "confidence": "medium",
+ "notes": "Card: 'P' x14, ' П' x4, 'П' x4 split from the rest of the word (P|ogo, P|embroke, П|ланету, P|atriots). Probe: “Pogo 0.659, Планету 0.525, (Papa 0.427, |Pembroke 0.269, line-initial Patriots 0.204; ' Patriots' whole token 0.024, lower-case планету 0.002, “Bozo 0.008. Pieces checked with tokcheck.",
+ "selection": "random draw"
+}
