@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-02-moridinamael-e8da36d3",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N1135+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T01:58:31+00:00",
+ "neighbours": [
+  {
+   "unit": "L25/N1135",
+   "pole": "+",
+   "label": "the English word 'Royal' / 'royal' itself, in names or idioms (Royal Society, royal blue), not other monarchy words like king, queen or crown",
+   "short": "the word 'Royal'",
+   "trigger": {"words": ["Royal", "royal"]},
+   "fire": [
+    "The Royal Society was founded in London in 1660 to promote natural science.",
+    "She painted the nursery walls a deep royal blue.",
+    "We booked tickets for a concert at the Royal Albert Hall.",
+    "The wedding was treated like a royal occasion by the whole village.",
+    "He joined the Royal Navy straight after leaving school.",
+    "Fixing that old printer turned out to be a royal pain.",
+    "The museum displayed a royal charter signed in the twelfth century.",
+    "Our cat expects the royal treatment every evening at dinnertime."
+   ],
+   "quiet": [
+    "The scientific academy was founded in London in 1660 to promote natural science.",
+    "She painted the nursery walls a deep navy blue.",
+    "We booked tickets for a concert at the old city concert hall.",
+    "The wedding was treated like a coronation by the whole village.",
+    "He joined the navy straight after leaving school.",
+    "Fixing that old printer turned out to be a real pain.",
+    "The museum displayed a charter signed by the king in the twelfth century.",
+    "Our cat expects to be treated like a queen every evening at dinnertime."
+   ]
+  }
+ ],
+ "predictions": "8/8 fire; near misses near zero. Possible leaks: none expected (king/queen/coronation were quiet in probes).",
+ "notes": "Reader chosen via play why (' royal' adjective prompt) because play step --down crashes (shape ValueError); no measured drop from bonsai1/L18/N7172+, so no roles/feeds edge claimed. Cold: labelled from own examples and probes only.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "look",
+   "probe",
+   "card",
+   "inverse-gmoo",
+   "blind-room"
+  ]
+ }
+}
