@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-de0b8102",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N4794-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T07:23:40+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N4794",
+   "pole": "-",
+   "label": "The later piece of a rare compound or brand word that the tokenizer splits (Chrome|book, pot|pour|ri, J|ython, portc|ull|is), vs the same pieces as ordinary whole words",
+   "fire": [
+    "The teacher handed every pupil a Chromebook at the start of term.",
+    "Last winter my aunt made a potpourri of orange peel and cloves.",
+    "For the plugin we used Jython to reach the old Java library.",
+    "Above the entrance, the guards lowered the portcullis at dusk.",
+    "Our district bought two hundred Chromebooks for the middle school.",
+    "On the shelf sat a bowl of lavender potpourri beside the candles.",
+    "The build server runs Jython because the tool is written in Java.",
+    "In the film, the knights rush under the portcullis before it falls."
+   ],
+   "quiet": [
+    "The teacher handed every pupil a notebook at the start of term.",
+    "Last winter my aunt made a jam of orange peel and cloves.",
+    "For the plugin we used Python to reach the old C library.",
+    "Above the entrance, the guards lowered the flag at dusk.",
+    "Our district bought two hundred laptops for the middle school.",
+    "On the shelf sat a pile of old books beside the candles.",
+    "The build server runs Python because the tool is written in it.",
+    "In the film, the knights pour water on the fire before it spreads."
+   ]
+  }
+ ],
+ "predictions": "Split-word pieces reach 0.5-1.2; the whole words books, notebook, Python, pour stay under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "later piece of split compound",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: 'ython' in jython (-9.38), 'book(s)' in Chromebook(s), 'pour' in potpourri, 'ull' in portcullis. Probe: Jython 1.244, potpourri 0.710, portcullis 0.664, Chromebook 0.600; whole words 'books' 0.013, 'notebook' 0.015, ' Python' 0.013, ' pour' 0.010. Fire items reuse these four words in new sentences, so the label is tested at word level; novel split compounds were not probed."
+}

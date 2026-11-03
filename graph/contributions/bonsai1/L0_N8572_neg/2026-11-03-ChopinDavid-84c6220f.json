@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-84c6220f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N8572-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T07:30:13+00:00",
+ "recipe": {
+  "toolchain_commit": "e1364425a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N8572_neg/2026-11-03-ChopinDavid-84c6220f.tests.json"
+ },
+ "label": "German word pieces ' Um' (Umzug, Umgebung) and 'uz' (in zu-infinitives like umzuziehen, anzuziehen), vs German sentences without them",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N8572_neg/2026-11-03-ChopinDavid-84c6220f.tests.json",
+   "prereg_commit": "e1364425a",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.807,
+     "peak": "uz"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.361,
+     "peak": " Um"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.657,
+     "peak": "uz"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.552,
+     "peak": " Um"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.66,
+     "peak": " Um"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.898,
+     "peak": "uz"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.552,
+     "peak": " Um"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.69,
+     "peak": "uz"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.148,
+     "peak": " Hamburg"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.152,
+     "peak": " Wohnung"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.294,
+     "peak": "ug"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.185,
+     "peak": "h"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.489,
+     "peak": "uf"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.264,
+     "peak": " Kinder"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.134,
+     "peak": "nder"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.127,
+     "peak": " be"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.659,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e1364425a",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "German ' Um' / 'uz' pieces",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: 'uz' in zuzuwenden/umzuziehen (-2.92, -2.66) and ' Um' x11 (Umsetzung, Umfang, sentence-initial Um). Probe: umzuziehen 'uz' 0.788, Umsetzung 0.541, Umfang 0.361; German baseline is not zero: Einführung 0.261, 'Mir gefällt' 0.253, 'zu finden' 0.179; English 'Um,' 0.088.",
+ "selection": "random draw"
+}
