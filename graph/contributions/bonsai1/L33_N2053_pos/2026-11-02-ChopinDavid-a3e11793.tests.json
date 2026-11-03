@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-a3e11793",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2053+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T01:20:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N2053",
+   "pole": "+",
+   "label": "The line break inside a code comment whose sentence continues on the next comment line, vs comment lines that end a complete sentence",
+   "fire": [
+    "def save(data):\n    # We write to a temporary file first so that\n    # a crash does not corrupt the old copy\n    pass",
+    "def parse(line):\n    # Strip the trailing whitespace because some editors\n    # add spaces at the end of each line\n    return line.strip()",
+    "for item in items:\n    # Skip items that have no price, since they\n    # cannot be added to the total\n    continue",
+    "def connect():\n    # The server sometimes takes a few seconds to\n    # accept the first connection after boot\n    return None",
+    "class Cache:\n    # Entries expire after one hour unless the\n    # caller refreshes them explicitly\n    pass",
+    "def sort_rows(rows):\n    # Python's sort is stable, which means that\n    # rows with equal keys keep their order\n    return sorted(rows)",
+    "if retries > 3:\n    # Give up after three attempts, otherwise we\n    # might loop forever on a dead host\n    raise TimeoutError()",
+    "def area(r):\n    # Use the exact value of pi here because the\n    # tests compare results to six decimal places\n    return 3.14159 * r * r"
+   ],
+   "quiet": [
+    "def save(data):\n    # Write to a temporary file first.\n    # This keeps the old copy safe.\n    pass",
+    "def parse(line):\n    # Strip the trailing whitespace.\n    # Some editors add extra spaces.\n    return line.strip()",
+    "for item in items:\n    # Skip items that have no price.\n    # They are not part of the total.\n    continue",
+    "def connect():\n    # The server can be slow at boot.\n    # Wait before the first request.\n    return None",
+    "class Cache:\n    # Entries expire after one hour.\n    # Callers may refresh them.\n    pass",
+    "def sort_rows(rows):\n    # Python's sort is stable.\n    # Equal keys keep their order.\n    return sorted(rows)",
+    "if retries > 3:\n    # Give up after three attempts.\n    # A dead host would loop forever.\n    raise TimeoutError()",
+    "def area(r):\n    # Use the exact value of pi.\n    # Tests check six decimal places.\n    return 3.14159 * r * r"
+   ]
+  }
+ ],
+ "predictions": "Mid-sentence comment breaks 0.5-0.9; complete-sentence breaks under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line break mid-sentence in a code comment",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Card: '\\n' x24, all inside Python comments that continue on the next line. Probe: 'need to figure\\n# out' 0.867, 'but it does\\n# not exist' 0.504; same comments ending in '.' 0.048 and 0.163; prose line break 0.008."
+}
