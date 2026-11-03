@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-3da62b9f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8978-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T06:25:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N8978",
+   "pole": "-",
+   "label": "the header of a Python for loop over an index (for i in range(...)), as opposed to other loops or prose uses of range",
+   "fire": [
+    "count = 0\nfor i in range(len(words)):\n    if words[i] == target:\n        count += 1",
+    "def norm(v):\n    s = 0\n    for k in range(len(v)):\n        s += v[k] ** 2\n    return s",
+    "for row in range(height):\n    for col in range(width):\n        grid[row][col] = 0",
+    "results = []\nfor n in range(1, 11):\n    results.append(n * n)",
+    "for epoch in range(num_epochs):\n    loss = train_step(model, batch)",
+    "for name in names:\n    print(name.upper())",
+    "\tfor i in range(int(X.shape[0])):\n\t\tpreds.append(model(X[i]))",
+    "for line in open('data.txt'):\n    lines.append(line.strip())"
+   ],
+   "quiet": [
+    "count = words.count(target)\nprint(count)",
+    "def norm(v):\n    return sum(x ** 2 for x in v) ** 0.5",
+    "grid = [[0] * width] * height\nprint(grid)",
+    "results = list(map(square, numbers))",
+    "loss = train_step(model, batch)\nprint(loss)",
+    "upper_names = [name.upper() for name in names]",
+    "\tpreds = model(X)\n\tscore = accuracy(preds, y)",
+    "The tool reads a wide range of file formats, including text and data files."
+   ]
+  }
+ ],
+ "predictions": "6/8 fire above 0.2; non-loop code and prose with 'range' below 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python for-loop header",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Probes: 'for item in items:' 0.329, 'for j in range(10)' 0.299, 'for i in range(len(...))' 0.212, C for loop 0.204, but a while loop leaked 0.270 and a list comprehension scored 0.077; prose 'range' 0.008-0.016. Probe magnitudes are well below the top examples (15 on ' range' after tabs). Near misses are non-loop code on the same variables."
+}
