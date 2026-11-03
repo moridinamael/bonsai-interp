@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-6f08a69f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N7920-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T02:30:55+00:00",
+ "recipe": {
+  "toolchain_commit": "a07a4ed34",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N7920_neg/2026-11-02-ChopinDavid-6f08a69f.tests.json"
+ },
+ "label": "The Japanese token 'がある' (existence 'there is / has'), vs the same sentences with other predicates ('である', 'がいる', 'が建っている')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N7920_neg/2026-11-02-ChopinDavid-6f08a69f.tests.json",
+   "prereg_commit": "a07a4ed34",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.667,
+     "peak": "がある"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.723,
+     "peak": "がある"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.652,
+     "peak": "がある"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.607,
+     "peak": "がある"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.654,
+     "peak": "がある"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.852,
+     "peak": "がある"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.919,
+     "peak": "がある"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.682,
+     "peak": "がある"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.326,
+     "peak": "っている"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.129,
+     "peak": "である"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.191,
+     "peak": "う"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.062,
+     "peak": "思"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.195,
+     "peak": "を"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.094,
+     "peak": "で"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.355,
+     "peak": "を"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.099,
+     "peak": "で"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.675,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a07a4ed34",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Japanese 'がある'",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: 20 of the top 32 peaks on 'がある'. Probe: 'がある' 0.711-0.856 in four contexts; 'がない' 0.360, 'があります' 0.305, 'である' 0.102, English 'There is' 0.082. Near misses avoid 'がない' and 'があります' (both partial).",
+ "selection": "random draw"
+}
