@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-4add368c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N10864-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T14:31:01+00:00",
+ "recipe": {
+  "toolchain_commit": "9f77d4aaf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N10864_neg/2026-11-03-ChopinDavid-4add368c.tests.json"
+ },
+ "label": "The name of a drug class or prescribed medicine in a treatment context (triptans, nitrates, insulin, bronchodilators), vs the same treatment frame with a non-drug noun",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N10864_neg/2026-11-03-ChopinDavid-4add368c.tests.json",
+   "prereg_commit": "9f77d4aaf",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.512,
+     "peak": "pt"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.537,
+     "peak": "ates"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.424,
+     "peak": " insulin"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.322,
+     "peak": "chod"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.108,
+     "peak": " morning"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.639,
+     "peak": "pt"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.052,
+     "peak": " stat"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.098,
+     "peak": "oids"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": "ologist"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.065,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.12,
+     "peak": " late"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " plan"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.373,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9f77d4aaf",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "drug class name in treatment",
+ "unit_kind": "meaning",
+ "confidence": "medium",
+ "notes": "Card: peaks on 'ipt'/'pt' in triptans, 'ates' in nitrates, 'chod' in bronchodilators, ' insulin', ' medications', ' topical'. Probe: triptan 0.990 ('pt'), nitrates 0.680, bronchodilators 0.432, insulin 0.417, topical cream 0.245, ointment 0.135; piano lesson 0.015, terminal date 0.120, beach 0.022.",
+ "selection": "random draw"
+}
