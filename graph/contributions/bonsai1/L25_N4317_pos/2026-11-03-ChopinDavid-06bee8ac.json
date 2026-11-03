@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-06bee8ac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N4317+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T09:32:11+00:00",
+ "recipe": {
+  "toolchain_commit": "b5bada2a6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N4317_pos/2026-11-03-ChopinDavid-06bee8ac.tests.json"
+ },
+ "label": "The first digit of a second multi-digit number paired with an earlier one (11 or 12, CM-721 / CM-722, 0x01 / 0x02, 11 by 17), vs single-digit pairs and lists",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N4317_pos/2026-11-03-ChopinDavid-06bee8ac.tests.json",
+   "prereg_commit": "b5bada2a6",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.144,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.289,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.964,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.007,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.023,
+     "peak": " again"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.12,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.157,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.153,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " large"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": "Standard"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " again"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": "osomes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " or"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.148,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b5bada2a6",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "digit of paired multi-digit number",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: peaks on digits like '2' in '21 or 22', '1' in '11 by 17', '0' in 0x02. Probe: 11 or 12 0.903, CM-722 0.831, 11 by 17 0.747, 0x02 0.727, 11 and 1 0.516, '12 eggs and 2' 0.405; single-digit 'at 3 and ends around 5' 0.011, 'Rows 1, 2, 3 and 4' 0.057.",
+ "selection": "random draw"
+}
