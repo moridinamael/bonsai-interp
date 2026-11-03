@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-49f16a24",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N7098-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T17:31:54+00:00",
+ "recipe": {
+  "toolchain_commit": "f9acdacde",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N7098_neg/2026-11-03-ChopinDavid-49f16a24.tests.json"
+ },
+ "label": "The national government or legislature as an actor (the federal government, Congress, governments), vs other organisations or people in the same role",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N7098_neg/2026-11-03-ChopinDavid-49f16a24.tests.json",
+   "prereg_commit": "f9acdacde",
+   "author": "ChopinDavid",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.78,
+     "peak": " government"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.113,
+     "peak": " government"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.374,
+     "peak": " Congress"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.341,
+     "peak": " government"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.537,
+     "peak": " Congress"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.823,
+     "peak": " government"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.053,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.407,
+     "peak": " governments"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " say"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " hours"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " missing"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.045,
+     "peak": " urged"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.083,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.141,
+     "peak": " bank"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " said"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": " athletes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.39,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f9acdacde",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "national government as actor",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card broad (1.2% of tokens >=0.1 max); peaks ' government' x6, ' Congress' x3, ' FDA' x3, ' governments', ' agencies', Japanese 国が. Probe: 'cost the federal government billions' 0.844, 'told Congress' 0.548, 'The FDA approved' 0.218, 'state and local governments' 0.189; 'cost the company' 0.185 (peak on ' dollars'), 'told reporters' 0.159, 'The university approved' 0.104. Near misses keep the frame and swap the actor; a weak leak around 0.15-0.2 is expected from the broad pole.",
+ "selection": "random draw"
+}
