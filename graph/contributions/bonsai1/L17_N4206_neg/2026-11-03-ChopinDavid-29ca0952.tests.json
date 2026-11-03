@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-29ca0952",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N4206-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T14:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N4206",
+   "pole": "-",
+   "label": "Unclear: a method or call token in Python byte-packing and parser code (struct.unpack, struct.pack, parser.feed), vs ordinary method calls",
+   "fire": [
+    "import struct\n\nwith open('log.bin', 'rb') as f:\n    raw = f.read(12)\n    ts, seq, size = struct.unpack('>QHH', raw)\n    print(ts, seq)",
+    "import struct\n\ndef encode(msg_type, length):\n    head = struct.pack('<BH', msg_type, length)\n    return head",
+    "def read_record(buf):\n    kind = buf[0]\n    if kind == 'A':\n        rec = struct.unpack('>IQs', buf[1:14])\n    return rec",
+    "import struct\n\npayload = struct.pack('>HHI', 1, 2, 3)\nsock.send(payload)",
+    "for chunk in chunks:\n    vals = struct.unpack('<ff', chunk)\n    out.append(vals)",
+    "def header(magic, version):\n    return [\n        struct.pack('>II', magic, version),\n    ]",
+    "import struct\n\nwidth, height = struct.unpack('>II', png[16:24])\nprint(width, height)",
+    "handler = Collector()\nreader.setContentHandler(handler)\nreader.feed(\"<root></root>\")\nreader.close()"
+   ],
+   "quiet": [
+    "import os\n\nwith open('log.txt', 'r') as f:\n    raw = f.read(12)\n    parts = raw.split(',')\n    print(parts)",
+    "import math\n\ndef encode(msg_type, length):\n    head = math.floor(length / 2)\n    return head",
+    "def read_record(buf):\n    kind = buf[0]\n    if kind == 'A':\n        rec = buf[1:14].strip()\n    return rec",
+    "import random\n\npayload = random.choice([1, 2, 3])\nprint(payload)",
+    "for chunk in chunks:\n    vals = chunk.lower()\n    out.append(vals)",
+    "def header(magic, version):\n    return [\n        str(magic), str(version),\n    ]",
+    "import json\n\nconfig = json.loads(text)\nprint(config['width'])",
+    "handler = Collector()\nitems = handler.collect()\nprint(len(items))\nhandler.reset()"
+   ]
+  }
+ ],
+ "predictions": "struct.pack/unpack lines about 0.1; other code under 0.05. Expect a failed or weak test: probe max was 0.117.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (struct pack/unpack calls)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card max 9.88 on '.unpack'/'.pack' after struct, broad (1.2% of tokens >0.1 max), no single token. Probe weak: struct.unpack 0.101, parser.feed 0.117, struct.pack 0.039, json.load 0.035, append 0.018, prose unpack 0.012."
+}

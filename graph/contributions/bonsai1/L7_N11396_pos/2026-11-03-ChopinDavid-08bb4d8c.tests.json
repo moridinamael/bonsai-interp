@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-08bb4d8c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N11396+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T14:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N11396",
+   "pole": "+",
+   "label": "The split-off 'ff' piece in French sou|ff- words (souffle, soufflé, souffrir, essouffler, gouffre), vs words where ff is fused into a larger token (coffee, buffet, Truffaut)",
+   "fire": [
+    "Le chef a préparé un soufflé au fromage pour le déjeuner.",
+    "Après la course, il avait du mal à reprendre son souffle.",
+    "Les patients souffrent souvent en silence pendant des années.",
+    "Le randonneur s'est arrêté au bord du gouffre pour admirer la vue.",
+    "Cette équipe a besoin d'un nouveau souffle après sa défaite.",
+    "Elle souffrait d'une forte migraine depuis la veille.",
+    "Le moteur commence à s'essouffler après dix ans de service.",
+    "We baked a lemon soufflé for my grandmother's birthday."
+   ],
+   "quiet": [
+    "Le chef a préparé un gratin au fromage pour le déjeuner.",
+    "Après la course, il avait du mal à reprendre ses forces.",
+    "Les patients attendent souvent en silence pendant des années.",
+    "Le randonneur s'est arrêté au bord du lac pour admirer la vue.",
+    "Cette équipe a besoin d'un nouveau buffet après sa défaite.",
+    "Elle avait une forte migraine depuis la veille.",
+    "Le moteur commence à faiblir après dix ans de service.",
+    "We baked a lemon cake and made coffee for my grandmother's birthday."
+   ]
+  }
+ ],
+ "predictions": "sou|ff-/gou|ff- words 0.5-1.0; words with ff inside a larger token under 0.15. Phone-number digits also fire this pole (probe 336 = 0.844) but are not tested here.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'ff' piece in souffle/souffrir",
+ "unit_kind": "spelling unit",
+ "confidence": "high",
+ "notes": "Card: 'ff' x19 of top 32 in soufflé/souffle/essouffler, plus '8' x7, '6' x4 digits in phone numbers. Tokenizer: sou|ff|le, sou|ff|rir, gou|ff|re, ess|ou|ff|ler; coffee, buffet one token, Tr|uff|aut. Probe: soufflé 0.990, couper le souffle 0.758, s'essouffler 0.750, souffrent 0.641, souffle d'espoir 0.638, le vent souffle 0.524; Truffaut 0.122, coffee 0.008; phone 336-747 0.844 (digit)."
+}
