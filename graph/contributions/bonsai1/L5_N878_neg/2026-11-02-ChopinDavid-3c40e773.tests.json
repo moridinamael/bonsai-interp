@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-3c40e773",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N878-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T04:23:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N878",
+   "pole": "-",
+   "label": "The Python string method token '.strip' (a whitespace-trimming call in code), vs other string methods and prose 'strip'",
+   "fire": [
+    "email = form.get('email')\nemail = email.strip()\nsave(email)",
+    "headers = [h.strip() for h in first_line.split(',')]",
+    "for line in open(path):\n    word = line.strip()\n    seen.add(word)",
+    "title = soup.find('h1').text.strip()\nprint(title)",
+    "key = input('Enter key: ').strip()\nif not key:\n    sys.exit(1)",
+    "parts = [p.strip() for p in raw.split(';') if p]",
+    "price = cell.get_text().strip()\nrows.append(price)",
+    "path = os.environ.get('HOME', '').strip('/')\nprint(path)"
+   ],
+   "quiet": [
+    "email = form.get('email')\nemail = email.lower()\nsave(email)",
+    "headers = [h.upper() for h in first_line.split(',')]",
+    "for line in open(path):\n    word = line.split()\n    seen.add(word)",
+    "title = soup.find('h1').text.replace(' ', '_')\nprint(title)",
+    "key = input('Enter key: ').lower()\nif not key:\n    sys.exit(1)",
+    "parts = [p.title() for p in raw.split(';') if p]",
+    "price = cell.get_text().replace('$', '')\nrows.append(price)",
+    "path = os.environ.get('HOME', '').upper()\nprint(path)"
+   ]
+  }
+ ],
+ "predictions": ".strip calls 0.7-0.95; .lower/.split/.replace and prose 'strip' under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'.strip' method in code",
+ "unit_kind": "token",
+ "confidence": "high",
+ "notes": "Card: '.strip' x15, 'strip' x7 in Python. Probe: name.strip() 0.907, c.strip() in a comprehension 0.793, .strip('\\n') 0.835; .split() 0.046, .lower() 0.073, prose 'strip mall' 0.171, 'stripping paint' 0.162; .rstrip 0.281 and strip_accents 0.229 are weaker, kept out of the test."
+}
