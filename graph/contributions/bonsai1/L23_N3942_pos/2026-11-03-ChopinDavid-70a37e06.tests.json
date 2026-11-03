@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-70a37e06",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N3942+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T13:23:53+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N3942",
+   "pole": "+",
+   "label": "Statements in code that handle file-system paths (os.path checks, path joins, file-name assignments), vs similar code that does arithmetic",
+   "fire": [
+    "def backup(src, dest):\n    if not os.path.isdir(dest):\n        os.mkdir(dest)\n    target = os.path.join(dest, os.path.basename(src))\n    shutil.copy(src, target)",
+    "def load_config(base):\n    cfg_path = os.path.join(base, 'config.yaml')\n    if os.path.exists(cfg_path):\n        return open(cfg_path).read()\n    return None",
+    "class Store:\n    def __init__(self, root):\n        self.root = root\n        self.index_file = self.root + '/index.json'\n        if not os.path.exists(self.root):\n            os.makedirs(self.root)",
+    "for fname in os.listdir(log_dir):\n    fpath = os.path.join(log_dir, fname)\n    if os.path.getsize(fpath) == 0:\n        os.remove(fpath)",
+    "def ensure_parent(path):\n    parent = os.path.dirname(path)\n    if parent and not os.path.exists(parent):\n        os.makedirs(parent)",
+    "out_dir = args.output\nif not os.path.isdir(out_dir):\n    os.makedirs(out_dir)\nreport_file = os.path.join(out_dir, 'report.csv')",
+    "def find_images(folder):\n    found = []\n    for name in os.listdir(folder):\n        if name.endswith('.png'):\n            found.append(os.path.join(folder, name))\n    return found",
+    "def tmp_name(self):\n    self.tmp_file = self.work_dir + '/tmp.dat'\n    if os.path.isfile(self.tmp_file):\n        os.unlink(self.tmp_file)"
+   ],
+   "quiet": [
+    "def scale(values, factor):\n    if factor == 0:\n        return []\n    scaled = [v * factor for v in values]\n    return scaled",
+    "def variance(xs):\n    mean = sum(xs) / len(xs)\n    if len(xs) < 2:\n        return 0.0\n    return sum((x - mean) ** 2 for x in xs) / (len(xs) - 1)",
+    "class Counter:\n    def __init__(self, start):\n        self.start = start\n        self.limit = self.start + 100\n        if self.start < 0:\n            self.start = 0",
+    "for n in range(limit):\n    sq = n * n\n    if sq % 7 == 0:\n        total += sq",
+    "def clamp(x, lo, hi):\n    if x < lo:\n        return lo\n    if x > hi:\n        return hi\n    return x",
+    "rate = args.rate\nif rate <= 0:\n    rate = 1.0\ninterest = principal * rate / 100",
+    "def evens(numbers):\n    found = []\n    for n in numbers:\n        if n % 2 == 0:\n            found.append(n * 2)\n    return found",
+    "def bump(self):\n    self.score = self.score + 10\n    if self.score > self.best:\n        self.best = self.score"
+   ]
+  }
+ ],
+ "predictions": "Multi-line os.path / file-path code 0.4-0.9; same-shape arithmetic code under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "file-path handling code",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card: ' if' x11, ' =' x3, '.path' x3 in os.path.exists / os.path.join / self.db_file = ... code. Probe: os.makedirs/os.path.join function 0.921, os.listdir/os.path.isfile loop 0.645, 'self.cache_file = self.cache_dir + ...' 0.421; mean() 0.074, area() 0.079, 'self.total_count = self.base_count + 10' 0.040, prose about paths 0.012-0.121."
+}
