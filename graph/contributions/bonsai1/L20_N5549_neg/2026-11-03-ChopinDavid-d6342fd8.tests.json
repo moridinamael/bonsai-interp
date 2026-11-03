@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-d6342fd8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N5549-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T21:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N5549",
+   "pole": "-",
+   "label": "Mid-sentence tokens of Chinese or Japanese text that continue a longer clause after earlier context (connectives like 兼, 如, が, （ ), vs very short single-clause Chinese or Japanese sentences",
+   "fire": [
+    "他在公司担任技术总监兼产品经理，每天的工作都非常忙碌，很少有时间休息。",
+    "如果天气允许的话，我们打算明天早上去爬山，然后在山顶吃午饭。",
+    "長く使っていると電池の持ちが悪くなり、充電する回数が増えてしまいます。",
+    "王先生（化名）告诉记者，他每个月的房租已经占了收入的一半。",
+    "このレストランは駅から近く、料理もおいしいので、週末はいつも混んでいます。",
+    "她是一名教师兼作家，业余时间写了好几本关于儿童教育的书。",
+    "最近は仕事が忙しくて、友達と会う機会が減ってしまったと感じています。",
+    "根据医生的建议，如症状持续三天以上，应及时到医院就诊。"
+   ],
+   "quiet": [
+    "他很忙。",
+    "今天下雨。",
+    "猫が好きです。",
+    "我喜欢茶。",
+    "空が青い。",
+    "她是老师。",
+    "本を読む。",
+    "天气很好。"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.25-0.6 somewhere mid-sentence; short simple sentences under 0.15 (Japanese '東京は' already leaked 0.238), so a fail is likely.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "CJK tokens mid long clause",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: 'が' x3, '（' x3, '如' x2, '与' x2, '兼', 'この' in long CJK passages; density ~1%. Probe: '如周期正常者' 0.587, '监制兼死党' 0.466, 'やり取り' 0.391, Korean '어' 0.339, '停车' 0.306, '佐藤孝子さん（仮名）' 0.268; short '这个城市很大' 0.039, English 0.018, but '東京は日本の首都です' 0.238. Best guess, low confidence."
+}

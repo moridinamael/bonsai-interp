@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-6db2aee8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N8677+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T21:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N8677",
+   "pole": "+",
+   "label": "The colon-newline that closes an 'elif' comparison against a numeric threshold in a Python if/elif chain, vs colon-newlines that close other Python headers (for, def, with, class, try)",
+   "fire": [
+    "def label(t):\n    if t < 10:\n        return 'cold'\n    elif t < 25:\n        return 'mild'",
+    "def grade(score):\n    if score >= 90:\n        return 'A'\n    elif score >= 80:\n        return 'B'",
+    "def unit(n):\n    if n < 1000:\n        return 'm'\n    elif n < 1000000:\n        return 'km'",
+    "def bucket(age):\n    if age < 13:\n        return 'child'\n    elif age < 20:\n        return 'teen'",
+    "def speed(v):\n    if v < 5:\n        s = 'slow'\n    elif v < 15:\n        s = 'fast'",
+    "def tier(spend):\n    if spend < 100:\n        return 1\n    elif spend < 500:\n        return 2",
+    "def color(delta):\n    if delta < 3600:\n        return 'green'\n    elif delta < 86400:\n        return 'amber'",
+    "def band(freq):\n    if freq < 300:\n        b = 'low'\n    elif freq < 3000:\n        b = 'mid'"
+   ],
+   "quiet": [
+    "def label(items):\n    out = []\n    for t in items:\n        out.append(str(t))",
+    "def grade(scores):\n    total = 0\n    for s in scores:\n        total += s",
+    "def unit(path):\n    with open(path) as f:\n        return f.read()",
+    "class Bucket:\n    def __init__(self, size):\n        self.size = size",
+    "def speed(v):\n    try:\n        s = float(v)\n    except ValueError:\n        s = 0.0",
+    "def tier(rows):\n    result = {}\n    for row in rows:\n        result[row.id] = row",
+    "def color(name):\n    with lock:\n        cache[name] = name.upper()",
+    "class Band:\n    def describe(self):\n        return self.name"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.3-0.6 on ':\\n' after the elif; other block headers under 0.1. Probe saw 'elif x == 0' peak only 0.118, so the threshold part may be wrong.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "colon ending an elif threshold test",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card: ':\\n' x7 (elif size < 1048576:, elif p == 2: if e == 1:, if tensor.dtype.is_integer:), ' <' in 'elif delta < 43200'. Also hedges 'at that time', 'for the moment', 'at least initially' in prose (not tested here). Probe: 'elif size < 1048576:' chain 0.545 on ':\\n'; 'if x > 0: ... elif x == 0:' 0.118; for-loop 0.013, def 0.018; prose 'at least initially' 0.450."
+}
