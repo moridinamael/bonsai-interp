@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-19353d34",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N5239+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T18:20:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N5239",
+   "pole": "+",
+   "label": "A position inside a regular repeated list pattern (bullet items, delimited code lists, dated log lines) where the next item is predictable, vs the same tokens in running prose",
+   "fire": [
+    "Fruits:\n- Apple\n- Banana\n- Cherry\n- Grape",
+    "Codes: NY · NJ · PA · OH · MI · IN · IL",
+    "- 2019-05-14 08:10\n- 2019-05-12 09:45\n- 2019-05-09 07:30",
+    "Planets:\n- Mercury\n- Venus\n- Earth\n- Mars",
+    "Airports: LAX · SFO · SEA · PDX · DEN · ORD",
+    "Colours:\n- Red\n- Orange\n- Yellow\n- Green",
+    "- 2021-11-02 14:05\n- 2021-10-30 11:20\n- 2021-10-27 16:45",
+    "Rivers:\n- Danube\n- Rhine\n- Elbe\n- Oder"
+   ],
+   "quiet": [
+    "For lunch she ate an apple and then a banana.",
+    "He moved from New York to Ohio last spring.",
+    "The meeting on May 14 started at ten past eight.",
+    "Mars is the fourth planet from the sun.",
+    "Her flight from Los Angeles landed in Seattle late.",
+    "The walls were painted a warm shade of red.",
+    "The package arrived on November 2 just after lunch.",
+    "The Danube flows through several European capitals."
+   ]
+  }
+ ],
+ "predictions": "Bulleted or delimited lists 0.3-0.7; the same items mentioned once in prose under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "item inside a repeated list pattern",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: peaks on ',', '-', digits inside sequences ([0, 1, 2], 1..9, AK · AL, dated lists, number columns). Probe: 'AK · AL · AR' 0.656, bullet country list 0.661, dated bullet lines 0.495, '1, 2, ..., 9' 0.299; numbers in prose 0.015-0.019, items[1] = code 0.063 (not reproduced)."
+}

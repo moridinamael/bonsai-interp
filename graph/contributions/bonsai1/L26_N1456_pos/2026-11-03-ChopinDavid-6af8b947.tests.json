@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-6af8b947",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N1456+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T18:20:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N1456",
+   "pole": "+",
+   "label": "A research or data noun that opens a cited-source attribution in science news ('In a study [published in]', 'according to federal data', 'The findings, reported in'), vs the same nouns used outside an attribution frame",
+   "fire": [
+    "Doctors were surprised. In a large study published last month in JAMA, aspirin showed no benefit.",
+    "Coral cover has dropped sharply, according to federal survey data.",
+    "The new analysis, reported this week in Nature Climate Change, links the heat to drought.",
+    "Teen sleep is getting shorter. In research published in Pediatrics, the decline was steepest.",
+    "Bee populations rebounded in 2023, according to state agriculture data.",
+    "The results, published online in Cell, describe a new class of antibiotics.",
+    "Scientists remain cautious. In a recent paper published in Science, the effect was small.",
+    "The findings, presented at a cardiology meeting, suggest a cheaper treatment."
+   ],
+   "quiet": [
+    "Doctors were surprised. In a large room on the third floor, the patients waited.",
+    "Coral reefs are beautiful, and divers love their bright colours.",
+    "The new analyst started this week and sits near the window.",
+    "Teen sleep is getting shorter. In the study hall, students often doze.",
+    "Bee populations rebounded in 2023, and the farmers were relieved.",
+    "The results of the bake sale were posted on the school door.",
+    "Scientists remain cautious. My cousin wrote a paper on volcanoes in school.",
+    "The finding of the lost dog made the whole street happy."
+   ]
+  }
+ ],
+ "predictions": "Attribution frames 0.25-0.5 on the noun or following comma; the same nouns in everyday non-citation use under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "source noun opening a science-news citation",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: ',' x16 after 'study/hypothesis/work' and ' study/research/findings/data' before 'published/reported'. Promotes nothing relevant on +; the pole fires on the noun before the participle, so it anticipates the attribution. Probe: 'In a new study published' 0.419 on ' study', 'according to government data' 0.355, 'The new findings, reported' 0.300, 'The latest research, published' 0.301; 'The study room' 0.073, 'did his research at the library' 0.007."
+}

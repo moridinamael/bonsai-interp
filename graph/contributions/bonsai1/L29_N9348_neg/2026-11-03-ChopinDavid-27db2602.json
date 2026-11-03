@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-27db2602",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N9348-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T18:28:49+00:00",
+ "recipe": {
+  "toolchain_commit": "9c1d4744c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N9348_neg/2026-11-03-ChopinDavid-27db2602.tests.json"
+ },
+ "label": "Unclear; best guess: the slot after an opening token in a code definition or API doc (def __init__(self, ...), 'Create a new X object'), where a parameter or type name follows",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N9348_neg/2026-11-03-ChopinDavid-27db2602.tests.json",
+   "prereg_commit": "9c1d4744c",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.002,
+     "peak": " environ"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.002,
+     "peak": ".address"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.07,
+     "peak": " given"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.053,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.009,
+     "peak": " Parser"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.017,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.035,
+     "peak": " number"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.002,
+     "peak": " size"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.0,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.0,
+     "peak": " sits"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "ips"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " film"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " careful"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " bought"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " gave"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " floor"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.93,
+    "median_fire": 0.013,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c1d4744c",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "unclear (code definition slot)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card max 159 but density only 0.010%, peaks scattered (',' in __init__(self, environ), ' have', ' a', ' new', '`'). Probe: nothing reproduced; 'class Handler ... __init__(self, request)' 0.048, 'interfaces that may have' 0.027, 'Create a new Connection object' 0.017, all prose under 0.01. Best-guess test of the card's code-definition frames.",
+ "selection": "random draw"
+}
