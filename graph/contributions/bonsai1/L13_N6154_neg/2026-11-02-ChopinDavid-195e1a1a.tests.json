@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-195e1a1a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N6154-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N6154",
+   "pole": "-",
+   "label": "Verb that begins a Python private method name after '_' (self._setup_..., def _create_...), vs private attribute or method names that start with a noun and the same verbs in prose",
+   "fire": [
+    "class Server:\n    def start(self):\n        self._open_port()\n        self._register_routes(self.app)",
+    "    def _build_query(self, table):\n        return 'SELECT * FROM ' + table",
+    "    result = self._fetch_remote_config(env)\n    return result",
+    "class Cache:\n    def reset(self):\n        self._clear_entries()\n        self._load_defaults()",
+    "    def _parse_header(self, line):\n        return line.split(':', 1)",
+    "    rows = self._read_csv_rows(path)\n    return rows",
+    "class Worker:\n    def run(self):\n        self._init_queue()\n        self._send_heartbeat()",
+    "    def _validate_token(self, token):\n        return token is not None"
+   ],
+   "quiet": [
+    "class Server:\n    def start(self):\n        self._port = 8080\n        self._routes = {}",
+    "    def _query_cache(self):\n        return self.cache",
+    "    result = self._remote_config\n    return result",
+    "class Cache:\n    def reset(self):\n        self._entries = []\n        self._defaults = None",
+    "    def _header_names(self):\n        return self.names",
+    "    rows = self._csv_rows\n    return rows",
+    "class Worker:\n    def run(self):\n        self._queue = None\n        self._heartbeat = 0",
+    "    def _token_value(self):\n        return self.token"
+   ]
+  }
+ ],
+ "predictions": "Verb-first private method names reach 0.35-0.6; noun-first private names and prose verbs stay under 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "verb starting a private method name",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: add, setup, create, get, establish after 'self._' or 'def _', and the comma after self in method signatures. Probe: 'self._setup_socket' 0.597, 'def _create_user(self,' 0.595, 'self._get_instance_info' 0.365; 'def _user_count' 0.193, 'self._socket = None' 0.022, prose 'add a handler and setup' 0.033, 'setupApp' 0.232."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-e31c810e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N11874-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N11874",
+   "pole": "-",
+   "label": "The operator or brace that joins a label string literal to a variable inside a print/log/write call (\"Label: \" + x, \"... %s\" % x, f\"{x}\"), vs string literals in calls that are not formatted with a variable",
+   "fire": [
+    "def show(rows):\n    for r in rows:\n        print(\"Row id: \" + str(r.id))\n    return len(rows)",
+    "    if verbose:\n        logger.debug(\"Loaded %d records\" % len(records))\n    return records",
+    "    for name in files:\n        out.write(f\"  file: {name}\\n\")\n    out.close()",
+    "    total = sum(prices)\n    print(\"Grand total: \" + str(total))\n    return total",
+    "    except IOError:\n        log.error(\"Could not open %s\" % filename)\n        raise",
+    "    for k, v in stats.items():\n        print(f\"{k} = {v}\")\n    print()",
+    "    status = check(host)\n    sys.stdout.write(\"Host status: \" + status + \"\\n\")\n    sys.stdout.flush()",
+    "    user = get_user(uid)\n    self.app.log(\"Current user: \" + user.name)\n    return user"
+   ],
+   "quiet": [
+    "def show(rows):\n    for r in rows:\n        print(\"Row done\")\n    return len(rows)",
+    "    if verbose:\n        logger.debug(\"Loaded all records\")\n    return records",
+    "    for name in files:\n        out.write(\"file\\n\")\n    out.close()",
+    "    total = sum(prices)\n    print(\"Computed.\")\n    return total",
+    "    except IOError:\n        log.error(\"Could not open the file\")\n        raise",
+    "    for k in keys:\n        assert k != \"id\"\n    print()",
+    "    status = check(host)\n    mode = \"strict\"\n    sys.stdout.flush()",
+    "    user = get_user(uid)\n    self.app.title(\"Users\")\n    return user"
+   ]
+  }
+ ],
+ "predictions": "Formatted print/log strings reach 0.2-0.4 on the joining '+', '%' or '{'; plain string literals in calls stay under 0.12.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "string literal joined to a variable",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: peaks on closing quotes of label strings in print/log calls before + or % formatting. Probe: '% path' in logger.info 0.368, f-string '{count}' 0.357, 'msg = \"Retrying in \" +' 0.287, 'print(\"Items processed: \" + str(n))' 0.231; plain print(\"Finished.\") 0.094, name = \"config\" 0.123, raise ValueError(\"invalid input\") 0.071, prose quote 0.065."
+}

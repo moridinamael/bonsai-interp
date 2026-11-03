@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-cd7c1489",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3362-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N3362",
+   "pole": "-",
+   "label": "Word-initial Arabic alef (' ا') split off as its own token in words the tokenizer does not merge (ا|تزان, ا|نتهى, ا|بنتها), vs the same sentences with a word that starts with another letter or with merged 'ال'",
+   "fire": [
+    "قرر المجلس انتخاب رئيس جديد في الشهر القادم.",
+    "ذهب الرجل مع ابنته إلى السوق صباحا.",
+    "يعتمد نجاح الشركة على اكتشاف أسواق جديدة.",
+    "طلب المدير اجتماعا عاجلا مع الموظفين.",
+    "تم افتتاح المكتبة الجديدة في وسط المدينة.",
+    "أعلنت الوزارة اعتماد الخطة يوم السبت.",
+    "قدم الطالب اقتراحا مفيدا للمعلم.",
+    "يجب احترام القوانين في كل مكان."
+   ],
+   "quiet": [
+    "قرر المجلس تعيين رئيس جديد في الشهر القادم.",
+    "ذهب الرجل مع صديقه إلى السوق صباحا.",
+    "يعتمد نجاح الشركة على دخول أسواق جديدة.",
+    "طلب المدير لقاء عاجلا مع الموظفين.",
+    "تم تدشين المكتبة الجديدة في وسط المدينة.",
+    "أعلنت الوزارة رفض الخطة يوم السبت.",
+    "قدم الطالب رأيا مفيدا للمعلم.",
+    "يجب تطبيق القوانين في كل مكان."
+   ]
+  }
+ ],
+ "predictions": "Sentences with a split-off ' ا' reach 0.6-0.8; matched sentences without it stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off word-initial Arabic alef",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: 31 of 32 top peaks on ' ا'. Probe: اتزان 0.747, ابنتها 0.735, انتهى 0.717, احتجاجا 0.617 (all peak ' ا'); matched words حكمة 0.065, زال 0.021, الطفلة 0.001, الكتاب 0.012."
+}

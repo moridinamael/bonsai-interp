@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-d6122d03",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N7692-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N7692",
+   "pole": "-",
+   "label": "Inflectional case ending split off an adjective stem (Russian -ому/-ого/-ых, German -em, Slovene -ih) as its own token, vs the same sentences where the adjective is absent or carries no split ending",
+   "fire": [
+    "Мы вернулись к вчерашнему разговору только вечером.",
+    "Он купил билет до Тихого моря ещё весной.",
+    "Sie antwortete mit offenem Lächeln auf die Frage.",
+    "Wir reisten mit komfortablerem Gepäck als im letzten Jahr.",
+    "Knjiga opisuje izvor slovenskih priimkov in krajev.",
+    "Мы готовились к завтрашнему экзамену всю ночь.",
+    "Er sprach mit gebrochenem Deutsch über seine Reise.",
+    "Zbirka vsebuje veliko slovenskih ljudskih pesmi."
+   ],
+   "quiet": [
+    "Мы вернулись к разговору только вечером.",
+    "Он купил билет до моря ещё весной.",
+    "Sie antwortete mit einem Lächeln auf die Frage.",
+    "Wir reisten mit weniger Gepäck als im letzten Jahr.",
+    "Knjiga opisuje izvor priimkov in krajev.",
+    "Мы готовились к экзамену всю ночь.",
+    "Er sprach auf Deutsch über seine Reise.",
+    "Zbirka vsebuje veliko pesmi."
+   ]
+  }
+ ],
+ "predictions": "Split adjective endings reach 0.4-0.8 on the ending piece; versions without the split-ending adjective stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split adjective case ending",
+ "unit_kind": "token/lexical",
+ "confidence": "medium",
+ "notes": "Card: endings у, ого, ых, ем, h after adjective stems in Russian, Slovene, German and romanized Russian. Probe: slovenskih 'h' 0.749, komfortablerem 'em' 0.683, Тихого 'ого' 0.662, offenem 'em' 0.599, сегодняшнему 'у' 0.538; without the adjective 0.008-0.023; noun ending prijateljem 'jem' 0.070."
+}
