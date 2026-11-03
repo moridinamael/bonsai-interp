@@ -1,0 +1,51 @@
+{
+ "contribution": "2026-11-03-moridinamael-998d76e4",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L15/N6513+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T16:06:25+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "unclear broad unit; best guess: the word ' prescription' (medicine that needs a doctor's order), with weaker firing on digits inside units and numbers"
+ },
+ "neighbours": [
+  {
+   "unit": "L15/N6513",
+   "pole": "+",
+   "label": "medicine and body-condition words inside patient-information health advice (e.g. 'don't need a prescription', anti-inflammatory drugs, enlarged veins), not the word alone in non-medical use",
+   "fire": [
+    "You don't need a prescription for this cream; you can buy it over the counter at most pharmacies.",
+    "Anti-inflammatory drugs such as ibuprofen may help ease the swelling, but take them with food.",
+    "Varicose veins are enlarged veins, usually in the legs, that can ache after long periods of standing.",
+    "If your symptoms get worse after three days, speak to your GP or pharmacist.",
+    "Paracetamol is usually safe during pregnancy, but check the leaflet for the correct dose.",
+    "Common side effects of this medicine include nausea, headache and mild dizziness.",
+    "People with high blood pressure should ask a doctor before taking decongestant tablets.",
+    "Apply the antifungal cream twice a day until the rash has cleared, then continue for another week."
+   ],
+   "quiet": [
+    "Phospholipid bilayers are essential components of cellular membranes.",
+    "His prescription for a happy life was long walks and good coffee.",
+    "The senator's inflammatory remarks drew sharp criticism from the opposition.",
+    "The miners finally struck a rich vein of silver deep in the mountain.",
+    "She enlarged the photo so everyone could see the faces in the back row.",
+    "Check the leaflet in the box for the assembly instructions before you start.",
+    "The pharmacy on the corner closes at six on Sundays.",
+    "The pressure in the boiler rose steadily until the valve released steam."
+   ]
+  }
+ ],
+ "predictions": "Expect a fail or a marginal hold: medical-advice text only reaches about 0.2-0.5 of max, and the solver found a non-medical leak (cell membranes) at 0.64.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "neighbors",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
