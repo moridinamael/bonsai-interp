@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-ff8718ac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2621-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T04:31:25+00:00",
+ "recipe": {
+  "toolchain_commit": "37b0037e7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N2621_neg/2026-11-02-ChopinDavid-ff8718ac.tests.json"
+ },
+ "label": "The split-off 'g' piece that opens '-gabe-' after a German prefix in a long compound (Ab|g|abe|frist, Rück|g|abe|schein, Aus|g|abe|stelle), vs compounds with the same prefixes and a different split piece (Ab|f|ahrts|zeit, Rück|f|ahr|karte)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N2621_neg/2026-11-02-ChopinDavid-ff8718ac.tests.json",
+   "prereg_commit": "37b0037e7",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.392,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.581,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.441,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.353,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.665,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.795,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.517,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.352,
+     "peak": "g"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.077,
+     "peak": " Ab"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.099,
+     "peak": "f"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.483,
+     "peak": "ing"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.367,
+     "peak": "fl"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.179,
+     "peak": " Ab"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": " Fre"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.223,
+     "peak": " Aus"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.069,
+     "peak": " ein"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.479,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "37b0037e7",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "'g' of -gabe- in German compounds",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Not probed: this pole was left out of the probe batch by mistake, and the procedure allows one batch, so the test is built from the card alone. Card: 'g' x5 and 'ge' x4: Ab|g|abetermin (-68), Rück|g|aberecht (-59.75), Auf|g|abengebiet (-57.75), Aus|g|abeposten (-57.25), Rat|ge|bers (-60.25); also ' a' in 'prune it into a whip' (-89.5). Tokenizer: the 'g' piece appears only in longer -gabe- compounds (Abgabe alone is Ab|gabe), so every fire item uses one; near misses use Ab|f|ahrt, Rück|f|ahr, Aus|fl|ug, Rück|kehr compounds.",
+ "selection": "random draw"
+}

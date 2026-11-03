@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-5aeca834",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N6151-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T04:23:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N6151",
+   "pole": "-",
+   "label": "Indented continuation token inside a Python method body (super() calls, attribute getters, indentation runs), vs comparable prose",
+   "fire": [
+    "class Panel(Frame):\n    def __init__(self, parent, **kwargs):\n        super(Panel, self).__init__(parent, **kwargs)\n        self.items = []",
+    "class OrderManager(models.Manager):\n    def get_queryset(self):\n        return super(OrderManager, self).get_queryset().filter(open=True)",
+    "def style_axis(self):\n    tick = self.plot.ax.xaxis.get_ticklabels()[0].get_color()\n    return tick",
+    "if state == 'up':\n    climb()\nelse:\n    print('Unexpected state: {}'.format(state))",
+    "for i, v in enumerate(series):\n    if v < low:\n        lows.append((i, v))\n        low = v",
+    "def pause(self):\n    \"\"\"Pauses playback. If already paused, then this does nothing.\"\"\"\n    self.paused = True",
+    "        # Refill the buffer\n        self.buf = self.read_chunk()\n        self.pos = 0",
+    "    def save(self, *args, **kwargs):\n        self.slug = slugify(self.title)\n        super().save(*args, **kwargs)"
+   ],
+   "quiet": [
+    "The panel discussion ran long, so the host thanked the speakers and closed early.",
+    "Our order manager checks the open orders every morning before the shop opens.",
+    "She changed the colour of the chart labels so they were easier to read.",
+    "If the weather turns, the climb will be cancelled and we will stay in the hut.",
+    "Over the season, the river level dropped lower and lower each week.",
+    "He pressed pause on the film because the phone was ringing in the hall.",
+    "We stopped at the station to refill the water bottles before the long walk.",
+    "She saved the essay twice before sending it to her teacher on Friday."
+   ]
+  }
+ ],
+ "predictions": "Expected to fail: every probe, code or prose, stayed at 0.009-0.015.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python method body (guess)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card peaks scattered: indentation run in a peak-finding loop (-42.75), 'ill' in '# Refill', '||', 'Unexpected' in a print, '.get' in matplotlib getters, ' super' x3. Probe flat: super().__init__ 0.012, get_label().get_color() 0.011, print('Unexpected...') 0.010, peak loop 0.012, prose 0.009-0.015. Test is a best guess to record the null result."
+}
