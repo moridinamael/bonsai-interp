@@ -1,0 +1,51 @@
+{
+ "contribution": "2026-11-03-moridinamael-8654da1a",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L0/N6204+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T15:42:32+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "Fires on chemistry nouns for a prepared mixture of substances (solution, composition, solvents, mixture) when used about chemicals; quiet on 'solution' meaning an answer to a problem and on chemistry sentences without such a noun."
+ },
+ "neighbours": [
+  {
+   "unit": "L0/N6204",
+   "pole": "+",
+   "label": "Fires on wet-chemistry word pieces ('aqueous', 'solvents', 'composition', 'mixture', 'solution', 'conditions') in chemistry or materials text, not only on mixture nouns; weaker for composition/mixture outside chemistry, and quiet on 'solution' meaning an answer.",
+   "fire": [
+    "The salt was dissolved in an aqueous phase before titration with sodium hydroxide.",
+    "Polar solvents such as methanol and acetonitrile were screened for the coupling reaction.",
+    "The elemental composition of the alloy was determined by X-ray fluorescence.",
+    "The reaction mixture was stirred at reflux for six hours under nitrogen.",
+    "A 0.1 M solution of copper sulfate was prepared in deionized water.",
+    "Under acidic conditions, the ester hydrolyzes rapidly to the carboxylic acid.",
+    "The precipitate was washed with aqueous ethanol and dried under vacuum.",
+    "Removing the solvents by rotary evaporation left a pale yellow solid."
+   ],
+   "quiet": [
+    "The salt was weighed on a balance before being sealed in a glass vial.",
+    "Several reagents such as methanol and acetonitrile were ordered for the lab.",
+    "The surface hardness of the alloy was measured with a diamond indenter.",
+    "The flask was stirred at reflux for six hours under nitrogen.",
+    "The engineers finally found a solution to the scheduling problem.",
+    "The weather was sunny when the students walked to the chemistry building.",
+    "The precipitate was collected on filter paper and dried under vacuum.",
+    "Removing the label from the bottle left a sticky residue on the glass."
+   ]
+  }
+ ],
+ "trigger": {"words": ["aqueous", "solvents", "solvent", "composition", "mixture", "solution", "conditions"]},
+ "predictions": "Expect 7/8 fire; quiet set mostly low, though 'stirred' may leak in the flask sentence.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
