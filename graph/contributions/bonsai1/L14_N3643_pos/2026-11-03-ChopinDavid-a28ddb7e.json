@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-a28ddb7e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3643+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T21:26:09+00:00",
+ "recipe": {
+  "toolchain_commit": "b5cd6559b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N3643_pos/2026-11-03-ChopinDavid-a28ddb7e.tests.json"
+ },
+ "label": "The last digit of a year written as 'in 18xx/19xx' in a historical sentence, vs other four-digit numbers (prices, counts, room numbers) in similar sentences",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N3643_pos/2026-11-03-ChopinDavid-a28ddb7e.tests.json",
+   "prereg_commit": "b5cd6559b",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.06,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.048,
+     "peak": " destroyed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.106,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.174,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.046,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.055,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.083,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.039,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.06,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.075,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.119,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.114,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.211,
+     "peak": " cost"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.08,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.163,
+     "peak": "6"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.266,
+    "median_fire": 0.057,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b5cd6559b",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "final digit of a historical year",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card is broad and mixed: ' necklace', 'olog', ',', '1' in 1816, ' role' (reST default role), '9' in 1993, ' tags', 'Axis', 'ificar'. Probe: 'in 1816 inspired Mary Shelley' 0.501 on '6', 'reST default role' 0.475, 'tecnologías' 0.195, 'necklace' 0.083; plain prose 0.016-0.06. Best guess on the year pattern, low confidence.",
+ "selection": "random draw"
+}

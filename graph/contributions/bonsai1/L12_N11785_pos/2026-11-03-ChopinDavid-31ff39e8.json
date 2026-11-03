@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-31ff39e8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N11785+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T21:25:33+00:00",
+ "recipe": {
+  "toolchain_commit": "b5cd6559b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N11785_pos/2026-11-03-ChopinDavid-31ff39e8.tests.json"
+ },
+ "label": "The sign of a quantity inside a mathematical derivation: a unary minus opening a term after '=' in multi-line numeric code, or the word 'sign' when a determinant or term flips sign, vs the same derivations without a sign operation",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N11785_pos/2026-11-03-ChopinDavid-31ff39e8.tests.json",
+   "prereg_commit": "b5cd6559b",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.587,
+     "peak": " sign"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.084,
+     "peak": " negative"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.333,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.221,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.122,
+     "peak": " -("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.416,
+     "peak": " sign"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.074,
+     "peak": " negative"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.167,
+     "peak": " -("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.032,
+     "peak": " rank"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.077,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.121,
+     "peak": " tiny"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.07,
+     "peak": " positive"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.142,
+     "peak": " *"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.194,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b5cd6559b",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "sign/minus inside a math derivation",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card: ' -' x3, ' +' x3, ' sign' x2, ' signal' x2 in long math code and lecture transcripts. Probe: 'the determinant changes sign' 0.352 on ' sign'; 'put a minus sign in front' 0.139; short code lines with -,+=, -= all under 0.09; non-math 'minus attitude' 0.011. Best guess, low confidence.",
+ "selection": "random draw"
+}

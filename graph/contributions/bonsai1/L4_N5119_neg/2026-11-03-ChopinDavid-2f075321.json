@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-2f075321",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N5119-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T21:26:41+00:00",
+ "recipe": {
+  "toolchain_commit": "b5cd6559b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N5119_neg/2026-11-03-ChopinDavid-2f075321.tests.json"
+ },
+ "label": "'scope', 'section' or 'sheet' as an identifier in code (tf.variable_scope, class Section, wb.active sheet), vs code without these names and prose uses of the words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N5119_neg/2026-11-03-ChopinDavid-2f075321.tests.json",
+   "prereg_commit": "b5cd6559b",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.504,
+     "peak": "_scope"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.473,
+     "peak": "_scope"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.664,
+     "peak": " sheet"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.174,
+     "peak": " Section"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.422,
+     "peak": "(section"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.504,
+     "peak": "_scope"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.359,
+     "peak": " Section"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.727,
+     "peak": "_sheet"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": "['"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " def"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": "():\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " counter"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " look"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": "(values"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.488,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b5cd6559b",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "scope/section/sheet in code",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card: '_scope' x14, ' Section' x3, ' section' x3, '_section' x3, ' scope' x2, ' sheet'. Probe: 'tf.variable_scope' 0.504, 'tf.name_scope' 0.473, 'wb.active sheet' 0.498, ':param dict section_names: Section' 0.430, 'class Section' 0.352; prose 'scope... section of the report' 0.070, code without them 0.006-0.022.",
+ "selection": "random draw"
+}
