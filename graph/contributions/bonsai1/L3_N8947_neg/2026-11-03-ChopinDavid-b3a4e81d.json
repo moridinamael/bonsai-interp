@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-b3a4e81d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8947-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T20:30:00+00:00",
+ "recipe": {
+  "toolchain_commit": "a5ac963d5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N8947_neg/2026-11-03-ChopinDavid-b3a4e81d.tests.json"
+ },
+ "label": "The CJK character 行 when the tokenizer leaves it as its own token (不可|行, 単|行|本, 这|行|代码), vs 行 merged into a word token (銀行, 旅行, 进行, 流行) and sentences without it",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N8947_neg/2026-11-03-ChopinDavid-b3a4e81d.tests.json",
+   "prereg_commit": "a5ac963d5",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.505,
+     "peak": "行"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.131,
+     "peak": "行"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.514,
+     "peak": "行"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.613,
+     "peak": "行"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.651,
+     "peak": "行"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.964,
+     "peak": "行"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.313,
+     "peak": "行"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.707,
+     "peak": "行"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": "道路"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": "错误"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": "，"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": "買い物"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "旅游"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.029,
+     "peak": "流行"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": "举办"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.0,
+     "peak": "都"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.564,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a5ac963d5",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "standalone 行 token",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: '行' x28 (単行本, 行善, 行淫, 東京行). Probe: 不可|行 0.462, 単|行|本 1.005; 银行/旅行 merged -0.001, 步行 0.050, 行业 0.000. Tokenizer: 单|行|道, 这|行|代码, 行|きます, 他|行|走在 are split; 进行, 流行, 执行, 举行, 运行 are single tokens.",
+ "selection": "random draw"
+}

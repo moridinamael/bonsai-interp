@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-970a6f5b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2472-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T20:23:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N2472",
+   "pole": "-",
+   "label": "A non-initial piece of a foreign loanword that the tokenizer splits inside Korean, Japanese or Russian text (쏘나|타, ホ|スト, 携|帯), vs native words in the same frames",
+   "fire": [
+    "우리 가족은 주말에 바나나와 토마토를 샀다.",
+    "ホテルのロビーでコンピュータを使った。",
+    "그는 아침마다 카페에서 샌드위치를 먹는다.",
+    "サーバーとクライアントの間でデータを送る。",
+    "Летом мы сидели на террасе и пили лимонад.",
+    "새 스마트폰은 카메라 기능이 아주 좋다.",
+    "彼はギターとピアノを弾くことができる。",
+    "Она купила новый ноутбук и принтер."
+   ],
+   "quiet": [
+    "우리 가족은 주말에 사과와 배를 샀다.",
+    "旅館の部屋で本を読んだ。",
+    "그는 아침마다 집에서 밥과 국을 먹는다.",
+    "先生と学生の間で手紙を送る。",
+    "Летом мы сидели в саду и пили чай.",
+    "새 집은 창문이 아주 크고 밝다.",
+    "彼は歌を歌うことができる。",
+    "Она купила новую книгу и тетрадь."
+   ]
+  }
+ ],
+ "predictions": "Loanword pieces 0.2-0.45; native-word frames 0.05-0.15. Broad pole, so leaks are likely.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece inside a split loanword (CJK/Korean)",
+ "unit_kind": "token/lexical",
+ "confidence": "low",
+ "notes": "Card: 来る, п|ат|ио, 쏘나|타, 宿|泊, ホ|スト, 携|帯電話, 携|帶. Probe: 쏘나타 0.456 on 타, 携帯電話 0.358, ホスト 0.298 on スト, патио 0.184; native frames 0.131 (дом), 0.149 (자동차), 0.069. Margins are small."
+}

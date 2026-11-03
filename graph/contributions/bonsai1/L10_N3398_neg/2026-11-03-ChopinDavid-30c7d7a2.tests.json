@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-30c7d7a2",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N3398-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T20:23:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N3398",
+   "pole": "-",
+   "label": "The noun or value that completes a fixed collocation ('key ingredient', 'public grounds', 'into force', 'index=True'), vs the same nouns outside a fixed phrase",
+   "fire": [
+    "The new speed limits came into force on the first of January.",
+    "    email = db.Column(db.String(120), nullable=False, index=True)",
+    "Fresh basil is the key ingredient in a good pesto sauce.",
+    "The old cemetery was kept as public grounds after the church closed.",
+    "The treaty will enter into force once ten countries have signed it.",
+    "    created = db.Column(db.DateTime, default=datetime.utcnow, index=True)",
+    "Trust is a key ingredient in any long friendship.",
+    "The castle lawns are now open as public grounds for picnics."
+   ],
+   "quiet": [
+    "The new speed cameras were painted yellow on the first of January.",
+    "    email = request.form.get('email', '').strip().lower()",
+    "Fresh basil smells wonderful when you rub it between your fingers.",
+    "The old cemetery was quiet and overgrown after the church closed.",
+    "The treaty was printed on heavy paper and signed with a silver pen.",
+    "    print('created', created, 'at', datetime.utcnow())",
+    "Trust takes years to build and seconds to break, he said.",
+    "The castle lawns were wet and muddy after the storm."
+   ]
+  }
+ ],
+ "predictions": "Collocation completions 0.3-0.8; free uses of the same nouns 0.0-0.25. Pole is broad (8.5% of tokens), so near misses will fire weakly and a fail is likely.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "word completing a fixed collocation",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: '=True', ' ingredient', ' grounds', ' force', ' collateral', digits in years; broad flag, gate-closed regime 100%. Probe: index=True 0.784, public grounds 0.550, coming into force 0.482 (on ' into'), key ingredient 0.285; controls 0.000-0.234 ('forecasters' 0.234). Low confidence."
+}
