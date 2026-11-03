@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-040f3a00",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N197+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T18:20:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N197",
+   "pole": "+",
+   "label": "Unclear (broad early-layer pole with a tiny max); best guess: the Arabic 'ذ'/'اذ' piece at the end of a split word (است|اذ, معا|ذ), vs Arabic words without that piece",
+   "fire": [
+    "شكرا جزيلا يا استاذ على الشرح الواضح",
+    "كان الاستاذ محمود يدرس الرياضيات في المدرسة",
+    "سافر معاذ مع اخيه الى القاهرة",
+    "طلب الاستاذ من الطلاب كتابة مقال قصير",
+    "هذا الطعام لذيذ جدا ونحن نحبه",
+    "لعب معاذ كرة القدم مع اصدقائه",
+    "سأل الطالب استاذه عن موعد الدرس",
+    "قرأ معاذ القصة قبل النوم"
+   ],
+   "quiet": [
+    "شكرا جزيلا يا صديقي على الشرح الواضح",
+    "كان المدرس محمود يدرس الرياضيات في المدرسة",
+    "سافر خالد مع اخيه الى القاهرة",
+    "طلب المدير من الموظفين كتابة تقرير قصير",
+    "هذا الطعام طيب جدا ونحن نحبه",
+    "لعب خالد كرة القدم مع اصدقائه",
+    "سأل الطالب معلمه عن موعد الدرس",
+    "قرأ خالد القصة قبل النوم"
+   ]
+  }
+ ],
+ "predictions": "Arabic words ending in a ذ/اذ piece 0.5-0.9; Arabic words without it 0.2-0.4 (broad pole), so the test may fail on margin.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (Arabic ذ/اذ word piece)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: max 0.19, 8% of tokens reach 0.1 of max, 95% gate-closed echo; peaks 'اذ' x5, '想要' x3, 'ذ' x3, \"'s\" x2. Probe: 'استاذ' 0.923/0.645, 'معاذ' 0.759, '想要' 0.838/0.336, \"what's\" 0.626, but control 'المعلم في المحاضرة' 0.370 and English 'bus arrived' 0.150. Low-confidence guess on the Arabic piece."
+}

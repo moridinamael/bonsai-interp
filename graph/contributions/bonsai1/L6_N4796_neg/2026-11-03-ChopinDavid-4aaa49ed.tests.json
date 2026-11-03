@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-4aaa49ed",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N4796-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T18:20:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N4796",
+   "pole": "-",
+   "label": "The role name in Sphinx/reStructuredText cross-reference markup (:class:`X`, :func:`f`, :meth:`m`, :math:`...`), vs the same docstrings with the plain name and no role",
+   "fire": [
+    "    \"\"\"Convert the input to a :class:`Table` before saving.\"\"\"",
+    "    \"\"\"Thin wrapper around :func:`os.path.join` for URLs.\"\"\"",
+    "    Use :meth:`Session.close` to release the connection.",
+    "    The energy is :math:`E = mc^2` in natural units.",
+    "    \"\"\"Raise :class:`ValueError` if the key is missing.\"\"\"",
+    "    See :func:`load_config` for the accepted keys.",
+    "    Returns a list of :class:`Point` objects sorted by x.",
+    "    Calls :meth:`Parser.feed` once per chunk of input."
+   ],
+   "quiet": [
+    "    \"\"\"Convert the input to a Table before saving.\"\"\"",
+    "    \"\"\"Thin wrapper around os.path.join for URLs.\"\"\"",
+    "    Use Session.close to release the connection.",
+    "    The energy is E = mc^2 in natural units.",
+    "    \"\"\"Raise ValueError if the key is missing.\"\"\"",
+    "    See load_config for the accepted keys.",
+    "    Returns a list of Point objects sorted by x.",
+    "    Calls Parser.feed once per chunk of input."
+   ]
+  }
+ ],
+ "predictions": "Docstrings with a :role:`...` 0.3-0.8; the same docstrings with plain names, and 'class'/'math' in ordinary prose or code, under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "reST role name (:class:`…`)",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card: 'class' x11, ':`' x5, 'term', 'math' inside :role: markup. Probe: :math: 0.807, :class: 0.453, :meth: 0.440, :func: 0.355; the same docstring without the role 0.010, 'class Frame:' code 0.015, 'math class' prose 0.016."
+}
