@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-51d0ac8b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N8043-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T19:21:47+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N8043",
+   "pole": "-",
+   "label": "unclear: the 'next' piece inside a compound code identifier (erpnext, getnext)",
+   "fire": [
+    "import json\nfrom erpnext.accounts import utils",
+    "Install the app with: bench get-app erpnext from the repository.",
+    "result = iterator.getnext()\nprint(result)",
+    "import frappe\nimport erpnext\nimport math",
+    "The erpnext module handles stock and accounting entries.",
+    "value = reader.getnext()\nwhile value:\n    value = reader.getnext()",
+    "from erpnext.stock.utils import get_stock_balance",
+    "We patched erpnext so the invoice totals are rounded correctly."
+   ],
+   "quiet": [
+    "import json\nfrom flask.helpers import utils",
+    "Install the app with: pip install requests from the index.",
+    "result = iterator.read()\nprint(result)",
+    "import frappe\nimport numpy\nimport math",
+    "The billing module handles stock and accounting entries.",
+    "value = reader.read()\nwhile value:\n    value = reader.read()",
+    "from django.db.models import get_object",
+    "We patched the plugin so the invoice totals are rounded correctly."
+   ]
+  }
+ ],
+ "predictions": "likely fails; only one probe item fired",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear ('next' piece)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Mixed code-heavy card peaks. Probe: 'import frappe, erpnext' 0.500 (peak 'next'), everything else under 0.16 (get_next() 0.042, selection_threshold 0.019, Excel/analysed 0.154). Tokenizer: ' erpnext' -> ' er','p','next'; ' getnext' -> ' get','next'."
+}
