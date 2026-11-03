@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-ac4a5a1e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N11505+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T20:30:15+00:00",
+ "recipe": {
+  "toolchain_commit": "a5ac963d5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N11505_pos/2026-11-03-ChopinDavid-ac4a5a1e.tests.json"
+ },
+ "label": "The noun tokens ' reason', ' news' and ' office' (as in 'run for office'), vs synonyms in the same frames ('cause', 'paper', 'post')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N11505_pos/2026-11-03-ChopinDavid-ac4a5a1e.tests.json",
+   "prereg_commit": "a5ac963d5",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.405,
+     "peak": " reason"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.401,
+     "peak": " news"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.772,
+     "peak": " office"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.087,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.193,
+     "peak": " news"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.51,
+     "peak": " office"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.334,
+     "peak": " reason"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.129,
+     "peak": " news"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.113,
+     "peak": " manager"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.223,
+     "peak": " grandfather"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.212,
+     "peak": " council"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.113,
+     "peak": " way"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.125,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.072,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": " village"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.368,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a5ac963d5",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "' reason' / ' news' / ' office' tokens",
+ "unit_kind": "token/lexical",
+ "confidence": "medium",
+ "notes": "Card: ' reason' x9, ' news' x9, ' office' x2, 'omed', 'ienza'; tiny max 0.47 and dense flag. Probe: 'the reason for the delay' 0.639, 'the reason why' 0.346, 'read the news' 0.301, 'run for office' 0.715; 'the cause of the delay' 0.027, 'read the paper' 0.015, code 0.105. A word-list label; no shared meaning found among the three.",
+ "selection": "random draw"
+}
