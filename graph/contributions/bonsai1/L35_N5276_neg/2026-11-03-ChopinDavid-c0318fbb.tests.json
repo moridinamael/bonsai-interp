@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-c0318fbb",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N5276-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T20:23:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N5276",
+   "pole": "-",
+   "label": "The piece 'è' (and similar vowel pieces) left isolated inside a French or Russian word that the tokenizer splits into fragments (int|è|gre, t|én|è|bres, cél|è|bre, прод|ем|он|...), vs synonyms that are single tokens",
+   "fire": [
+    "Ce peintre célèbre a vécu toute sa vie à Montmartre.",
+    "Au zoo, les enfants ont regardé un zèbre manger de l'herbe.",
+    "Cette nouvelle fonction s'intègre bien dans le reste du programme.",
+    "Le navire avançait lentement dans les ténèbres de la nuit.",
+    "Une chanson célèbre passait à la radio pendant le dîner.",
+    "Les nouveaux élèves s'intègrent vite dans la classe.",
+    "Le zèbre a des rayures noires et blanches sur tout le corps.",
+    "Le héros sortit enfin des ténèbres et vit la lumière."
+   ],
+   "quiet": [
+    "Ce peintre connu a vécu toute sa vie à Montmartre.",
+    "Au zoo, les enfants ont regardé un cheval manger de l'herbe.",
+    "Cette nouvelle fonction marche bien dans le reste du programme.",
+    "Le navire avançait lentement dans le noir de la nuit.",
+    "Une chanson connue passait à la radio pendant le dîner.",
+    "Les nouveaux élèves se font vite des amis dans la classe.",
+    "Le tigre a des rayures noires et orange sur tout le corps.",
+    "Le héros sortit enfin de la grotte et vit le soleil."
+   ]
+  }
+ ],
+ "predictions": "Isolated è pieces 0.4-0.8; the same sentences with unsplit synonyms under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "isolated è piece inside a split word",
+ "unit_kind": "token/lexical",
+ "confidence": "medium",
+ "notes": "Card: 'è' x6 (int|è|grent, tén|è|bres), 'он' x4 (прод|ем|он|стрирует), 'ス' in エクスプレス, ' Vall'. Probe: tén|è|bres 0.818, s'int|è|grent 0.693, s'int|è|gre 0.390, прод|ем|он 0.420; 'fonctionne' 0.003, 'obscurité' 0.002; エクスプレス only 0.028, so the Japanese case did not reproduce. Tokenizer: cél|è|bre, z|è|bre, int|è|gre split; système, problème, lumière, pièce are single tokens."
+}
