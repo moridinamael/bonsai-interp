@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-46303987",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N137+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T02:23:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N137",
+   "pole": "+",
+   "label": "The inner word piece right after a split-off 'ep-/ap-' opening of a learned Greek-derived word (ep|ig|one, ap|oc|rypha, epit|aph, ap|og|ee), vs Greek-derived ep-/ap- words the tokenizer keeps whole (episode, epidemic, apocalypse)",
+   "fire": [
+    "Critics called the young poet a mere epigone of the masters.",
+    "The bishop read an epistle from the apostle to the congregation.",
+    "At its apogee, the empire stretched across three continents.",
+    "The old apothecary sold herbs and tinctures on the corner.",
+    "The scholars studied the apocrypha alongside the canonical books.",
+    "His tombstone carries a short epitaph written by his daughter.",
+    "The seminar on epistemology asked how we know anything at all.",
+    "The novel ends with a brief epilogue set twenty years later."
+   ],
+   "quiet": [
+    "Critics called the young poet a pale copy of the masters.",
+    "The bishop read a letter from the elders to the congregation.",
+    "During the epidemic, the empire lost a third of its people.",
+    "The old pharmacy sold herbs and tinctures on the corner.",
+    "The scholars feared the apocalypse described in the final book.",
+    "His tombstone carries a short poem written by his daughter.",
+    "The seminar on philosophy asked how we know anything at all.",
+    "The novel ends with a brief episode set twenty years later."
+   ]
+  }
+ ],
+ "predictions": "Split ep-/ap- words reach 0.4-1.0 on the second piece; whole-token twins stay under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece after split ep-/ap- opening",
+ "unit_kind": "spelling unit",
+ "confidence": "high",
+ "notes": "Card: peaks on 'is' in ép|is|odiquement, 'pc' in E|pc|ot, 'oc' in ap|oc|ryphal, ' epit', ' apost', ' Epic'. Probe: Epcot 1.183, épisodiquement 0.816, apocryphal 0.781, apostle 0.466, epitome 0.448, epiphany 0.422 ('iph'); single-token 'episode' 0.001, 'epic' 0.242, filler 0.007. Splits checked with the tokenizer."
+}
