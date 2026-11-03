@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-90b73d1c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N7306-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T09:23:55+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N7306",
+   "pole": "-",
+   "label": "A space-separated punctuation token closing an inline citation or figure reference in scholarly prose (fig. 4 ), (1996 , 1998), 'Lee ,'), vs the same prose with no citation",
+   "fire": [
+    "The phase diagram (see fig. 3 ) shows a clear transition near 40 K.",
+    "These effects were first described by Moreau (2004 , 2009) in two papers.",
+    "As shown by Tanaka and Brooks , the protein folds within seconds.",
+    "The yield curve (see Fig. 7 ) flattens sharply after the second year.",
+    "Several authors (Kim 2011 , Patel 2015) report similar error rates.",
+    "Following Nguyen and Ortiz , we normalize each sample to unit length.",
+    "The spectrum of the star (see fig. 2 ) has a strong hydrogen line.",
+    "Earlier work (Rossi 1998 , 2003) used a much smaller cohort."
+   ],
+   "quiet": [
+    "The phase diagram shows a clear transition near 40 K.",
+    "These effects were first described in two papers on soil bacteria.",
+    "In our tests the protein folds within seconds.",
+    "The yield curve flattens sharply after the second year.",
+    "Several groups report similar error rates on the benchmark.",
+    "In this study we normalize each sample to unit length.",
+    "The spectrum of the star has a strong hydrogen line.",
+    "Earlier work used a much smaller cohort of patients."
+   ]
+  }
+ ],
+ "predictions": "Spaced ' )' and ' ,' after a reference 0.4-0.9; the same sentences without the reference under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "spaced citation punctuation",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: ' ,' x9, ' .' x5, ' Figure', ' )' in citation contexts. Probe: 'see fig. 4 )' 0.914, '(1996 , 1998)' 0.456, 'Garcia and Lee ,' 0.425, 'shown in Figure 2' 0.189, 'Bock et al. for' 0.186; the same sentences without the citation 0.024-0.049. Unspaced citation punctuation was not probed, so quiet items drop the citation."
+}

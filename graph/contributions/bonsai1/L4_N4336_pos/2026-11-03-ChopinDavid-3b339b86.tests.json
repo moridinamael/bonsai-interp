@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-3b339b86",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N4336+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T09:23:55+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N4336",
+   "pole": "+",
+   "label": "A word piece starting with or following 'ag'/'Arg' in a word the tokenizer splits (ag|gro, Arg|os, ag|uas, ag|itated), vs whole-word tokens in the same sentences",
+   "fire": [
+    "After the derby the manager complained about all the aggro in the stands.",
+    "In the old play, the king sails home to Argos after ten years of war.",
+    "Los barcos navegaban por aguas muy frías cerca de la costa.",
+    "The dog grew agitated whenever the doorbell rang.",
+    "Visitors to Argos can still see the ruins of the ancient theatre.",
+    "Honestly, I can't take any more aggro from the neighbours this week.",
+    "En verano, las aguas del lago se vuelven más cálidas.",
+    "She looked agitated as she waited for the test results."
+   ],
+   "quiet": [
+    "After the derby the manager complained about all the noise in the stands.",
+    "In the old play, the king sails home to Ithaca after ten years of war.",
+    "Los barcos navegaban por mares muy fríos cerca de la costa.",
+    "The dog grew restless whenever the doorbell rang.",
+    "Visitors to Athens can still see the ruins of the ancient theatre.",
+    "Honestly, I can't take any more noise from the neighbours this week.",
+    "En verano, el lago se vuelve más cálido por la tarde.",
+    "She looked nervous as she waited for the test results."
+   ]
+  }
+ ],
+ "predictions": "Broad, tiny pole (9.6% of tokens reach 0.1 of max). Split ag-words 0.4-0.8, controls 0.05-0.2; one or two near misses may fire weakly.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "ag-/Arg- piece of split word",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: gate-closed regime 100%, max 1.09, peaks ' ag' x11, 'os' in Arg|os, 'gr' in Cyrillic а|гр. Probe: Argos 0.809, aggro 0.739, Spanish ag|uas 0.723; whole tokens 'agony' 0.348 and 'aggressive' 0.255 fired weakly, so near misses avoid ag-words entirely; Ang 0.071, angle 0.058, floor 0.047."
+}
