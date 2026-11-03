@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-4bec2862",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N5608+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T01:20:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N5608",
+   "pole": "+",
+   "label": "The opening piece of a word split into several tokens (lip|ids, tub|ers, mon|osomy, T|ingo): the model has started a word it must still complete, vs single-token words in the same lists",
+   "fire": [
+    "The drug is packed inside liposomes, then injected into the vein.",
+    "Water passes through tubules in the kidney before it leaves the body.",
+    "Blood tests showed raised monocytes and normal pressure.",
+    "Proteins are made by ribosomes, which read the messenger RNA.",
+    "The scan revealed retinal damage and mild swelling.",
+    "You can compare prices on Kayak, Trivago or Google.",
+    "Ginger spreads through rhizomes, roots and small shoots.",
+    "The sample had more lymphocytes, water and fat than usual."
+   ],
+   "quiet": [
+    "The drug is packed inside gel, then injected into the vein.",
+    "Water passes through filters in the kidney before it leaves the body.",
+    "Blood tests showed raised sugar and normal pressure.",
+    "Proteins are made by cells, which read the messenger RNA.",
+    "The scan revealed eye damage and mild swelling.",
+    "You can compare prices on Google or Amazon.",
+    "Ginger spreads through roots and small shoots.",
+    "The sample had more blood, water and fat than usual."
+   ]
+  }
+ ],
+ "predictions": "Split-word openings 0.5-0.9; single-token versions under 0.3 (list commas may sit near 0.3).",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "opening piece of a split word",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: ' T' x6 (T|ingo), ' tub', ' mon', ' lip', ' ret'. Probe: 'tubers' 0.921, 'Tingo' 0.806, 'monosomy' 0.659, 'lipids' 0.610, 'retinas' 0.327; single-token 'fats' list 0.091, 'roots' list 0.296 (on 'and'), 'Travelocity' list without Tingo 0.376 (itself split)."
+}
