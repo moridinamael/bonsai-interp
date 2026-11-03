@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-95cf8a66",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N5921-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T05:29:14+00:00",
+ "recipe": {
+  "toolchain_commit": "2544157b4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N5921_neg/2026-11-02-ChopinDavid-95cf8a66.tests.json"
+ },
+ "label": "capitalized 'Face' inside a title or brand name ('Face Off', 'Face the Nation', FaceTime), not the ordinary noun or verb 'face'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N5921_neg/2026-11-02-ChopinDavid-95cf8a66.tests.json",
+   "prereg_commit": "2544157b4",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.723,
+     "peak": "Face"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.547,
+     "peak": " Face"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.718,
+     "peak": " Face"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.849,
+     "peak": "Face"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.795,
+     "peak": "Face"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.123,
+     "peak": " Face"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.636,
+     "peak": " Face"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.788,
+     "peak": "Face"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.047,
+     "peak": "Heat"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.193,
+     "peak": " face"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " Sunday"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.575,
+     "peak": " face"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.1,
+     "peak": " face"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.451,
+     "peak": " face"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " video"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.738,
+     "peak": " face"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.72,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2544157b4",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "'Face' in titles and brands",
+ "unit_kind": "lexical",
+ "confidence": "high",
+ "notes": "Card: peaks ' Face' x11, 'Face' x4 in titles (Face Off, Face the Nation, FaceTime, Face in the Crowd), plus ' face' x13 lower down. Probe: \"Face Off\" 0.918, \"Face the Nation\" 0.808, FaceTime 0.639; 'washed her face' 0.081, 'face the facts' 0.055, other title \"Night Shift\" 0.021.",
+ "selection": "random draw"
+}
