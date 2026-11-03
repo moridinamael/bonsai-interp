@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-cd20ec97",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N6998-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T21:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N6998",
+   "pole": "-",
+   "label": "The token ' attorney' or ' attorneys' (a lawyer acting for a client), vs the same legal sentences with 'lawyer', 'counsel' or 'solicitor'",
+   "fire": [
+    "After the hearing, the defendant's attorney spoke briefly to reporters outside.",
+    "The family hired two attorneys to challenge the will in probate court.",
+    "In the end the district attorney dropped all the charges against him.",
+    "Her attorney filed a motion to suppress the statement she gave police.",
+    "Several attorneys from the firm volunteered to help tenants facing eviction.",
+    "The state attorney said the investigation would take several more months.",
+    "During the trial the defense attorney questioned the witness for hours.",
+    "The company's attorneys argued that the contract had never been signed."
+   ],
+   "quiet": [
+    "After the hearing, the defendant's lawyer spoke briefly to reporters outside.",
+    "The family hired two solicitors to challenge the will in probate court.",
+    "In the end the prosecutor dropped all the charges against him.",
+    "Her counsel filed a motion to suppress the statement she gave police.",
+    "Several lawyers from the firm volunteered to help tenants facing eviction.",
+    "The state prosecutor said the investigation would take several more months.",
+    "During the trial the defense counsel questioned the witness for hours.",
+    "The company's lawyers argued that the contract had never been signed."
+   ]
+  }
+ ],
+ "predictions": "Fire items weak, 0.15-0.3 on ' attorney(s)'; near misses 0.05-0.15. The pole is broad and gate-closed with a tiny max, so legal context alone fires it; a fail is likely.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "the token ' attorney'",
+ "unit_kind": "word",
+ "confidence": "low",
+ "notes": "Card: ' attorney' x9, ' attorneys' x8, ' Attorney' x3, ' supra', ' decision', ' litigation'; max only 2.75, gate-closed regime 100%. Probe: 'Several attorneys for the company' 0.207 on ' attorneys'; 'The attorney argued' 0.188 (peak on ' gathered'); same sentence with 'lawyer' 0.099; non-legal 0.065."
+}

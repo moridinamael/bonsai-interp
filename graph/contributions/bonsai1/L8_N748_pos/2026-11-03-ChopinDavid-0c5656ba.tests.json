@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-0c5656ba",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N748+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T21:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N748",
+   "pole": "+",
+   "label": "The name of a dataset being loaded or listed in machine-learning code (load_iris, load_wine, 'abalone', a .csv file), vs the same words in prose and ML code that names no dataset",
+   "fire": [
+    "from sklearn.datasets import load_wine\nwine = load_wine()\nX, y = wine.data, wine.target",
+    "from sklearn.datasets import load_breast_cancer\ncancer = load_breast_cancer()\nX = cancer.data",
+    "names = ['iris', 'glass', 'yeast', 'abalone']\nfor n in names:\n    run(n)",
+    "train = pd.read_csv('data/titanic_train.csv')\ntest = pd.read_csv('data/titanic_test.csv')",
+    "from sklearn.datasets import load_digits\ndigits = load_digits()\nX = digits.images",
+    "X, y = load_iris(return_X_y=True)\nclf = SVC().fit(X, y)",
+    "boston = load_boston()\nX = boston.data\ny = boston.target",
+    "if dataset == 'abalone':\n    df = pd.read_csv('abalone.csv')"
+   ],
+   "quiet": [
+    "The wine from the valley was served with dinner on the terrace.",
+    "Breast cancer screening is offered to women over fifty in many countries.",
+    "The glass and yeast were set out on the bench for the brewing class.",
+    "The ship Titanic sank in April 1912 after hitting an iceberg.",
+    "She counted the digits on the license plate twice to be sure.",
+    "clf = SVC(kernel='rbf', C=1.0)\nclf.fit(X_train, y_train)\npred = clf.predict(X_test)",
+    "Boston is famous for its universities and its old harbour.",
+    "if verbose:\n    print('epoch', epoch, 'loss', loss)"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.5-0.8 on the dataset name or '.csv'; prose uses and dataset-free code under 0.12.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dataset name in ML code",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card: ' iris', 'iris' x2, 'abetes' (load_diabetes), '.csv' x2, 'alone' (abalone), ' example'. Probe: 'iris = load_iris()' 0.803, 'datasets = (...iris...)' 0.728, 'load_diabetes' 0.579, 'weather_underground.csv' 0.539; prose iris 0.115, diabetes prose 0.038, abalone shell 0.091, model.fit code 0.078."
+}
