@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-0e09e777",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10547-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T06:31:35+00:00",
+ "recipe": {
+  "toolchain_commit": "82a2c6d71",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N10547_neg/2026-11-03-ChopinDavid-0e09e777.tests.json"
+ },
+ "label": "a lone ' h' / ' H' token that begins a split Spanish or French word (huelga, hipermercado, hésitation, Hacienda)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N10547_neg/2026-11-03-ChopinDavid-0e09e777.tests.json",
+   "prereg_commit": "82a2c6d71",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.562,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.356,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.484,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.275,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.133,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.033,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.314,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.046,
+     "peak": " h"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " re"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.073,
+     "peak": " af"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " le"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": "Mi"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": "C"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": "inte"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": "Il"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.294,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "82a2c6d71",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "split ' h' piece in Romance word",
+ "unit_kind": "token",
+ "confidence": "high",
+ "notes": "Probes: huelga 0.791, Hacienda 0.523, hésitations 0.461, hinchazón 0.430, hielo 0.229; whole-token hospital 0.040, Economía 0.051, English hesitated 0.015, hombre 0.002. Tokenizer checked: every fire item has ' h' as its own token; quiet h-words are whole (hora, hijo, historia, hotel, hasta) or split as her|/hel|/haci|.",
+ "selection": "random draw"
+}
