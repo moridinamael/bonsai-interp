@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-010ac3e1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N1276-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T08:29:37+00:00",
+ "recipe": {
+  "toolchain_commit": "499b912a7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N1276_neg/2026-11-03-ChopinDavid-010ac3e1.tests.json"
+ },
+ "label": "word that opens an embedded question or possibility clause (how, whether, chance that) after explain/know/likelihood words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N1276_neg/2026-11-03-ChopinDavid-010ac3e1.tests.json",
+   "prereg_commit": "499b912a7",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.703,
+     "peak": " how"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.522,
+     "peak": " whether"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.25,
+     "peak": " month"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.718,
+     "peak": " how"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.689,
+     "peak": " whether"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.673,
+     "peak": " how"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.781,
+     "peak": " whether"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.553,
+     "peak": " chance"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.147,
+     "peak": " shows"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.026,
+     "peak": " treating"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.191,
+     "peak": " smell"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " describes"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.057,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.149,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.191,
+     "peak": " found"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.123,
+     "peak": " little"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.681,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "499b912a7",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "embedded how/whether",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: ' how' x10, ' whether' x9, ' chance' x5 (gate-closed regime). Probes: explains how 0.811, determine whether 0.922, good chance that 0.904, debate whether 0.791; 'explains the railways' 0.042, but 'determine the dose' 0.284 (the verb itself predicts whether) and direct 'asked him how' 0.236. Near misses avoid determine-type verbs.",
+ "selection": "random draw"
+}

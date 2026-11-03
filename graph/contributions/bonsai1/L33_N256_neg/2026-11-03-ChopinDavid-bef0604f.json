@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-bef0604f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N256-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T08:30:02+00:00",
+ "recipe": {
+  "toolchain_commit": "499b912a7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N256_neg/2026-11-03-ChopinDavid-bef0604f.tests.json"
+ },
+ "label": "slot where 'accurate' / 'accuracy' is the likely next word",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N256_neg/2026-11-03-ChopinDavid-bef0604f.tests.json",
+   "prereg_commit": "499b912a7",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.249,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.332,
+     "peak": " most"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.088,
+     "peak": " provide"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.415,
+     "peak": " Validation"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.226,
+     "peak": " an"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.077,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.131,
+     "peak": " most"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.25,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.061,
+     "peak": " entered"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.247,
+     "peak": " forecasts"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " sometimes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.147,
+     "peak": "},"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " reading"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " sure"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.237,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "499b912a7",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "predicts accurate",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Next-token predictor: the + pole suppresses acc/accuracy. Probes: 'to provide' 0.314, 'the most' 0.307, 'speed and' 0.159, 'Train Loss..., Train' 0.501; prefix-identical controls score the same (activation reads only the prefix), far floor 0.002. Near misses remove the setup, not only the word.",
+ "selection": "random draw"
+}
