@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-bcfa6269",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N117+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T08:22:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N117",
+   "pole": "+",
+   "label": "column header cell in a table header row or column-label comment",
+   "fire": [
+    "|Name||Type||Default||Brief Notes|\n|port||int||80||listen port|",
+    "|Item||Quantity||Unit Price||Remarks|\n|Pens||10||0.50||blue|",
+    "|Parameter||Value||Comments|\n|alpha||0.1||learning rate|",
+    "COLUMNS = (\n    # Field name       # Short description\n    ('id', 'int'),\n)",
+    "|Date||Speaker||Topic||Notes|\n|May 2||Lee||Soil||none|",
+    "|Option||Arguments||Description|\n|-v||none||verbose|",
+    "|Country||Capital||Population||Notes|\n|Peru||Lima||33m||-|",
+    "FIELDS = [\n    # Column       # Meaning\n    'name',\n]"
+   ],
+   "quiet": [
+    "For each port setting the manual lists a name, a type and a default value.",
+    "Each pen costs fifty cents, and the blue ones are the most popular.",
+    "We set alpha to 0.1, which worked well as a learning rate.",
+    "The id field is an integer that identifies each record.",
+    "On May 2, Lee gave a talk about soil to a small audience.",
+    "The -v option takes no argument and makes the output verbose.",
+    "Peru's capital is Lima, and the country has about 33 million people.",
+    "The name field stores the customer's full name."
+   ]
+  }
+ ],
+ "predictions": "Fires weakly on header labels in pipe-table header rows and column-label comments; quiet on the same words in prose.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "table header cell",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Broad pole (6.7% of tokens reach 0.1 of a tiny max 2.47), gate-closed. Card: header cells (Arguments, Notes, Title), '# Use' comment, Prop|ulsion. Probes: header 'Brief' 0.627, 'Notes' 0.319, '#' comment 0.536, Propulsion 0.299; data row 0.067, prose 0.039-0.175."
+}
