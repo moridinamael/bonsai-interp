@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-99a58a0d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N10841-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T15:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N10841",
+   "pole": "-",
+   "label": "Unclear, broad: a printf-style %-format specifier inside a Python string (%.2f, %s, %d) and nearby code tokens, vs f-strings and prose percent signs",
+   "fire": [
+    "print(\"epoch %d: loss %.4f, val %.4f\" % (epoch, loss, val))",
+    "log.info(\"recon: %.2f, kl: %.2f\" % (recon, kl))",
+    "print('time with inflow of %4.1f l/h' % t)",
+    "out = out + \"File: %s\\n\" % (self.path)",
+    "sys.stdout.write(\"step %d / %d\\r\" % (i, n))",
+    "print(\"mean: %.3f, std: %.3f\" % (m, s))",
+    "label = \"%(name)s : %(id)s\" % {'name': n, 'id': i}",
+    "print(\"accuracy: %.2f%%\" % (100 * acc))"
+   ],
+   "quiet": [
+    "print(f\"epoch {epoch}: loss {loss}, val {val}\")",
+    "log.info(\"recon and kl computed\")",
+    "print('time with inflow is ready')",
+    "out = out + self.path + \"\\n\"",
+    "sys.stdout.write(\"done\\n\")",
+    "The mean and the spread were both small this year.",
+    "label = name + \" : \" + str(i)",
+    "Accuracy rose by two percent after the update."
+   ]
+  }
+ ],
+ "predictions": "Lines with '%.2f'/'%s' format strings about 0.1-0.25; f-strings and prose under 0.1. Expect a failed test: probe max was 0.245.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (%-format specifiers in code)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: broad (1.8% of tokens), max 40.75, peaks on ' %.', ' %', ' :', spaces in Python print/format code. Probe: '%.3f' print 0.245, '%s/%d' 0.047, f-string 0.114, res[0].shape 0.106, 'bottom squared' prose 0.146, beach 0.057. No clean trigger found."
+}

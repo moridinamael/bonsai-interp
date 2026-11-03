@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-34ce0e91",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N10319+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T15:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N10319",
+   "pole": "+",
+   "label": "The Chinese token '有' (have/there is) when it is its own token, vs words where 有 is merged into a larger token (没有, 有的, 有很多) and other verbs",
+   "fire": [
+    "这个城市有两条河。",
+    "我家有两只小猫。",
+    "公园里有老人在下棋。",
+    "她说明天有考试。",
+    "这家店有新鲜的水果。",
+    "我们班有二十个学生。",
+    "河边有座古老的庙。",
+    "图书馆里有中文书。"
+   ],
+   "quiet": [
+    "这个城市没有河。",
+    "我家养了一只小猫。",
+    "公园里许多老人在下棋。",
+    "她说明天要考试。",
+    "这家店卖新鲜的水果。",
+    "我们班是二十个学生。",
+    "河边是一座古老的庙。",
+    "图书馆里的中文书很旧。"
+   ]
+  }
+ ],
+ "predictions": "Sentences with standalone '有' 0.7-0.9; sentences with 没有/有的/有很多 merged tokens or no 有 under 0.06.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "standalone token '有'",
+ "unit_kind": "token",
+ "confidence": "high",
+ "notes": "Card: '有' is the peak of all top 32. Tokenizer: '有' alone is one token but 没有, 有的, 有很多 merge. Probe: 学校有三个 0.861; 有很多 (merged) 0.054, 没有人 0.026, 有的人 0.017, 是 0.019. Every fire item is tokcheck-verified to keep '有' as its own token."
+}
