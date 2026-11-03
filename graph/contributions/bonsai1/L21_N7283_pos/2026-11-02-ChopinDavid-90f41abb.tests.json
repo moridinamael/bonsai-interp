@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-90f41abb",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N7283+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T05:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N7283",
+   "pole": "+",
+   "label": "a short numeric literal used as a value in code (an element in a Python list, a literal in a docstring's double backticks), not a number in prose",
+   "fire": [
+    "def build():\n    row = [['x', 'y'], 0, 0, 1]\n    return row",
+    "Notes:\n    The value (``3``) is used as the default retry count.",
+    "def init(self):\n    self.grid = [[0, 0], [0, 1]]",
+    "def reset():\n    counts = ['a', 'b', 0, 0, 0]\n    return counts",
+    "The docstring reads:\n    Use (``0``) to disable the timeout entirely.",
+    "def sample():\n    data = [['red', 'blue'], 1, 0, 0]",
+    "def fill(n):\n    cells = [0] * n\n    cells[0] = 1",
+    "Parameters:\n    level : int\n        The level (``1``) means verbose output."
+   ],
+   "quiet": [
+    "The shop had three cats, 0 dogs and one parrot last year.",
+    "Notes: the value three is used as the default retry count.",
+    "The grid on the wall shows two rows and two columns.",
+    "She counted the apples twice and got zero both times.",
+    "The manual reads: use zero to disable the timeout entirely.",
+    "The red and blue teams scored 1 goal each in the final.",
+    "He filled every cell of the tray with water.",
+    "Level one means the setting gives verbose output, the guide says."
+   ]
+  }
+ ],
+ "predictions": "4-6/8 fire around 0.3-0.45; prose numbers below 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "numeric literal in code",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: peaks '0' x8, '2', '1' as literal values in code and docstrings (``2``, [..],0,0, (0), \"0x...\"). Probe: list element 0 0.456, ``2`` 0.425, 'deployment_1' 0.229, match_rule(0) 0.154, walletlock \"0x\" 0.149; '2 dogs and 0 cats' 0.011, 'the number two' 0.051."
+}

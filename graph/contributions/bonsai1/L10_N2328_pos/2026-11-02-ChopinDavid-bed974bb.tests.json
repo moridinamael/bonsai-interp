@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-bed974bb",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N2328+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T05:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N2328",
+   "pole": "+",
+   "label": "the value after the comma in a short font specification or argument pair in code (font=('Helvetica', 30), font-family: Verdana, Geneva; Date(year, month))",
+   "fire": [
+    "title = tk.Label(root, text='Score', font=('Arial', 24))",
+    "header = Label(frame, text='Menu', font=(\"Courier\", \"16\"))",
+    "<p style=\"font-family: Georgia, Times, serif; color: gray\">Hello</p>",
+    "self.title_font.configure(family='Arial', size=14)",
+    "row = [sg.Text('Name', font=('Courier', 18), key='name')]",
+    "body { font-family: Tahoma, Verdana, sans-serif; }",
+    "var start = new Date(year, month, 1);",
+    "canvas.create_text(50, 20, text='Hi', font=('Times', 40))"
+   ],
+   "quiet": [
+    "title = tk.Label(root, text='Score', bg='white')",
+    "header = Label(frame, text='Menu', fg=\"red\")",
+    "<p style=\"color: gray; margin: 0\">Hello</p>",
+    "self.title_font.configure(weight='bold')",
+    "row = [sg.Text('Name', key='name')]",
+    "body { margin: 0; padding: 0; }",
+    "var start = new Date();",
+    "canvas.create_text(50, 20, text='Hi')"
+   ]
+  }
+ ],
+ "predictions": "6/8 fire above 0.4; same code with non-font arguments below 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "font spec value in code",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: peaks '0' in font sizes, ',' in font-family lists and Date(year, month), ' size', ' font'. Probe: font=('Helvetica', 30) 0.975, font=(\"Helvetica\", \"12\") 0.780, font-family list comma 0.765, size=9 in font config 0.622, Date(year, month) 1.065; sg.Button size=(8,1) 0.030, get_fontfamily 0.030, prose Helvetica 0.004."
+}
