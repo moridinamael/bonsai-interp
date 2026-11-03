@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-9d19ac57",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11259+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T16:28:42+00:00",
+ "recipe": {
+  "toolchain_commit": "e4d75256a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N11259_pos/2026-11-03-ChopinDavid-9d19ac57.tests.json"
+ },
+ "label": "Chinese 一 / 另一 inside a fixed expression of sudden action or contrast (脸色一沉, 心里一惊, 另一面, 满一地), vs 一 as a plain numeral count",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N11259_pos/2026-11-03-ChopinDavid-9d19ac57.tests.json",
+   "prereg_commit": "e4d75256a",
+   "author": "ChopinDavid",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.649,
+     "peak": "一"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.605,
+     "peak": "一"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.1,
+     "peak": "另一"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.625,
+     "peak": "另一"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.737,
+     "peak": "一"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.59,
+     "peak": "一"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.15,
+     "peak": "了一"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.035,
+     "peak": "从"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.139,
+     "peak": "开始"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.0,
+     "peak": "交"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.003,
+     "peak": "写着"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": "带着"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.106,
+     "peak": "了一"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.084,
+     "peak": "有一"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.002,
+     "peak": "这次"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": "了一"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.615,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4d75256a",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "一 in fixed expression, not a count",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: peaks '一' x6, '的一' x4, '另一' in 脸色一沉, 一拍即合, 如出一辙, 横七竖八倒满一地, 另一面. Probe: 另一面 0.888, 脸色一沉 0.597, 满一地 0.418, 一拍即合 0.287, 如出一辙 0.138; 一本书 sentence 0.002, 一起 0.002 (peak elsewhere). Near misses keep a numeral 一 so the token alone is controlled.",
+ "selection": "random draw"
+}
