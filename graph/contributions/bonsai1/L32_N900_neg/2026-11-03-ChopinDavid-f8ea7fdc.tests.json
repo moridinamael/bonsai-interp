@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-f8ea7fdc",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N900-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T10:20:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N900",
+   "pole": "-",
+   "label": "End of a deeply indented line in multi-line Python just before the block dedents or a closing ')' / except / elif line",
+   "fire": [
+    "class Loader:\n    def load(self, path):\n        with open(path) as fh:\n            for line in fh:\n                try:\n                    self.rows.append(\n                        parse(line),\n                    )\n                except ValueError:\n                    continue\n",
+    "class Api:\n    def call(self, req):\n        if req.ok:\n            for key in req.keys:\n                if key:\n                    self.send(\n                        key,\n                        req.body,\n                    )\n                elif req.retry:\n                    pass\n",
+    "def main():\n    while True:\n        try:\n            for job in queue:\n                if job.ready:\n                    job.handle.close()\n                    job.finish()\n        except KeyboardInterrupt:\n            break\n",
+    "class Model:\n    def forward(self, x):\n        if self.training:\n            for layer in self.layers:\n                if layer.active:\n                    x = layer(\n                        x,\n                        self.mask,\n                    )\n                else:\n                    x = x\n",
+    "class Store:\n    def save(self, item):\n        for shard in self.shards:\n            if shard.alive:\n                try:\n                    shard.writer.flush()\n                except IOError:\n                    log.warning(\"failed\")\n",
+    "class Parser:\n    def run(self):\n        for token in self.tokens:\n            if token.kind == NAME:\n                if token.value in self.seen:\n                    raise SyntaxError(\n                        f\"duplicate {token.value}\",\n                    )\n                elif token.value:\n                    self.seen.add(token.value)\n",
+    "def sync(items):\n    for group in items:\n        if group:\n            for item in group:\n                try:\n                    item.cache.clear()\n                except AttributeError:\n                    pass\n",
+    "class Job:\n    def check(self, value):\n        if value is not None:\n            for rule in self.rules:\n                if not rule(value):\n                    raise TypeError(\n                        rule.name, value\n                    )\n        return value\n"
+   ],
+   "quiet": [
+    "class Loader:\n    def load(self, path):\n        with open(path) as fh:\n            for line in fh:\n                row = parse(line)\n                row = clean(row)\n                self.rows.append(row)\n",
+    "class Api:\n    def call(self, req):\n        if req.ok:\n            for key in req.keys:\n                value = req.get(key)\n                value = value.strip()\n                self.send(key, value)\n",
+    "def main():\n    while True:\n        for job in queue:\n            job.prepare()\n            job.handle.open()\n            job.start()\n",
+    "class Model:\n    def forward(self, x):\n        for layer in self.layers:\n            x = layer(x)\n            x = self.norm(x)\n            x = self.drop(x)\n        return x\n",
+    "class Store:\n    def save(self, item):\n        for shard in self.shards:\n            shard.lock()\n            shard.writer.write(item)\n            shard.unlock()\n",
+    "class Parser:\n    def run(self):\n        for token in self.tokens:\n            name = token.value\n            kind = token.kind\n            self.seen.add(name)\n",
+    "def sync(items):\n    for group in items:\n        for item in group:\n            item.load()\n            item.cache.fill()\n            item.save()\n",
+    "class Job:\n    def check(self, value):\n        for rule in self.rules:\n            ok = rule(value)\n            self.results.append(ok)\n            self.count += 1\n"
+   ]
+  }
+ ],
+ "predictions": "Deeply indented line ends before ')' or except/elif may reach 0.2+; shallow code and prose near 0. Probe did not reproduce, so a fail is expected.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "deep-indent line end before dedent",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card: ',\\n' and ')\\n' at 16+ spaces of indent before a dedented ')' / except / elif (max 560). Probe with shallow 4-space code scored 0.001-0.014 everywhere, so the trigger likely needs deep nesting and long context; this test uses deeper indentation as a best guess."
+}

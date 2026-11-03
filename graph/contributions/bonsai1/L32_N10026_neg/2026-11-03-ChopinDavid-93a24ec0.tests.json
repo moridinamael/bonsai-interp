@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-93a24ec0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10026-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T10:20:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N10026",
+   "pole": "-",
+   "label": "A comment marker or field label in code or metadata that is followed by Chinese or Japanese text (' #' before 备注, 责任编辑：, サイズ詳細), vs the same marker before English",
+   "fire": [
+    "    name = db.Column(db.String(64))  # 姓名\n    age = db.Column(db.Integer)  # 年龄",
+    "    status = db.Column(db.Integer)  # 状态\n    updated = db.Column(db.DateTime)  # 更新时间",
+    "文章来源：[新华网]\n责任编辑：[张伟]",
+    "    price = models.FloatField()  # 价格\n    stock = models.IntegerField()  # 库存",
+    "|商品名||マグカップ|\n|カラー||ホワイト|\n|サイズ詳細||高さ9cm|",
+    "    email = db.Column(db.String(120))  # 邮箱\n    phone = db.Column(db.String(20))  # 电话",
+    "发布时间：2015年3月2日\n责任编辑：[李明]",
+    "    title = models.CharField(max_length=100)  # 标题\n    body = models.TextField()  # 内容"
+   ],
+   "quiet": [
+    "    name = db.Column(db.String(64))  # full name\n    age = db.Column(db.Integer)  # age in years",
+    "    status = db.Column(db.Integer)  # status code\n    updated = db.Column(db.DateTime)  # last update",
+    "Source: Xinhua News Agency\nEditor: Zhang Wei",
+    "    price = models.FloatField()  # unit price\n    stock = models.IntegerField()  # units in stock",
+    "|Item||Mug|\n|Color||White|\n|Size details||9 cm tall|",
+    "    email = db.Column(db.String(120))  # email address\n    phone = db.Column(db.String(20))  # phone number",
+    "Published: March 2, 2015\nEditor: Li Ming",
+    "    title = models.CharField(max_length=100)  # post title\n    body = models.TextField()  # post body"
+   ]
+  }
+ ],
+ "predictions": "Markers/labels before CJK text 0.3-0.6; the same markers before English under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comment/label before CJK text",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: ' #' before Chinese comments (max 127), 责任编辑, --备注, 活動, サイズ. Probe: サイズ詳細 table 0.513, '# 备注' 0.411, 责任编辑 0.393, '--备注' 0.149; '# remarks field' 0.036, '# set the counter' 0.003, prose 0.004-0.008."
+}

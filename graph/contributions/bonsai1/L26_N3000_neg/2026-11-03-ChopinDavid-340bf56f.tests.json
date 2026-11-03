@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-340bf56f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N3000-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T10:20:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N3000",
+   "pole": "-",
+   "label": "A digit-formatting position inside or just before a number (the space before '50 cm', zeros after a thousands comma), vs the same sentences with the quantity written in words",
+   "fire": [
+    "The roof repairs cost the school about $30,000 last summer.",
+    "Divers found the wreck at a depth of 40 m off the coast.",
+    "The village raised $12,000 for the new library roof.",
+    "The posts were sunk to a depth of 80 cm below the surface.",
+    "Last year the museum attracted 60,000 visitors from abroad.",
+    "Please submit the form by Mar 3, 2021 at the latest.",
+    "The charity received a grant of $45,000 from the city.",
+    "The bridge rises to a height of 25 m above the river."
+   ],
+   "quiet": [
+    "The roof repairs cost the school a small fortune last summer.",
+    "Divers found the wreck in deep water off the coast.",
+    "The village raised enough money for the new library roof.",
+    "The posts were sunk deep below the surface.",
+    "Last year the museum attracted many visitors from abroad.",
+    "Please submit the form as soon as you can.",
+    "The charity received a generous grant from the city.",
+    "The bridge rises high above the river."
+   ]
+  }
+ ],
+ "predictions": "Number-bearing sentences 0.5-0.7; word-only quantities under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space/zero inside numbers",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: ' ' before digits x15, '-' (utf-8), '0' in $20,000. Probe: '$20,000' 0.656, 'depth of 50 cm' 0.605, 'int = 100' 0.636, 'Jul 8, 2016' 0.599, '$5,000' 0.643, utf-8 0.673; 'a great deal of money' 0.021, 'deep into the soil' 0.025."
+}

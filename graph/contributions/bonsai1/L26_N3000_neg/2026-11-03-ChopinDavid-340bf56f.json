@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-340bf56f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N3000-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T10:28:24+00:00",
+ "recipe": {
+  "toolchain_commit": "1d67ab327",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N3000_neg/2026-11-03-ChopinDavid-340bf56f.tests.json"
+ },
+ "label": "A digit-formatting position inside or just before a number (the space before '50 cm', zeros after a thousands comma), vs the same sentences with the quantity written in words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N3000_neg/2026-11-03-ChopinDavid-340bf56f.tests.json",
+   "prereg_commit": "1d67ab327",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.621,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.602,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.65,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.612,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.565,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.645,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.659,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.6,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": "D"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": " enough"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": " below"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.646,
+     "peak": " soon"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.617,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1d67ab327",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "space/zero inside numbers",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: ' ' before digits x15, '-' (utf-8), '0' in $20,000. Probe: '$20,000' 0.656, 'depth of 50 cm' 0.605, 'int = 100' 0.636, 'Jul 8, 2016' 0.599, '$5,000' 0.643, utf-8 0.673; 'a great deal of money' 0.021, 'deep into the soil' 0.025.",
+ "selection": "random draw"
+}
