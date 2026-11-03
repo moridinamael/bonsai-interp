@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-752d5a2c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N598-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T03:20:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N598",
+   "pole": "-",
+   "label": "' in' of a Python for-loop header (for x in xs), not membership tests or indexing",
+   "fire": [
+    "results = []\nfor row in rows:\n    results.append(row)",
+    "for name in names:\n    print(name)",
+    "for key, value in config.items():\n    setattr(obj, key, value)",
+    "for job in jobs:\n    job.start()",
+    "count = 0\nfor word in words:\n    count += 1",
+    "for path in paths:\n    os.remove(path)",
+    "for user in users:\n    send(user)",
+    "for target in targets:\n    for rule in rules:\n        apply(rule, target)"
+   ],
+   "quiet": [
+    "results = []\nrow = rows[0]\nresults.append(row)",
+    "name = names[0]\nprint(name)",
+    "key = config.get('key')\nsetattr(obj, key, value)",
+    "job = jobs.pop()\njob.start()",
+    "count = 0\ncount += len(words)",
+    "path = paths[-1]\nos.remove(path)",
+    "if user in users:\n    send(user)",
+    "while queue:\n    task = queue.pop()\n    apply(task)"
+   ]
+  }
+ ],
+ "predictions": "5/8 fire; broad pole, near misses may fire weakly",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "for-loop 'in'",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card flags broad (1.0%); top examples include 'for check_type, check in', 'for task_rule in tasks', theorem, companies. Probe: for item in items 0.299, for task in tasks 0.238 (both peak ' in'), prose 'in' 0.112, prose filler 0.021-0.096."
+}
