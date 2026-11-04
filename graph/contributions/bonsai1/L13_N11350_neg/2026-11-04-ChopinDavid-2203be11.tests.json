@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-2203be11",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N11350-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T23:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N11350",
+   "pole": "-",
+   "label": "The last digit of the end number of a numeric range (1885 to 1892, leds 9 to 16), strongest when the range crosses a decade, vs the same numbers standing alone outside a range",
+   "fire": [
+    "Between 1938 and 1946 the factory made parts for aircraft engines.",
+    "He served on the city council from 1977 to 1983 before retiring.",
+    "Pins 7 to 14 carry the data signals on this connector.",
+    "The exhibit covers paintings made from 1896 to 1904 in Paris.",
+    "In the survey, questions 8 through 15 ask about household income.",
+    "She lived in Vienna from 1959 to 1962 and then moved to London.",
+    "Rows 6 to 13 of the table list the results for each school.",
+    "The magazine was published monthly from 1925 to 1931."
+   ],
+   "quiet": [
+    "In 1946 the factory made parts for aircraft engines.",
+    "He served on the city council for many years before retiring in 1983.",
+    "Pin 14 carries the ground signal on this connector.",
+    "The exhibit covers paintings made in 1904 in Paris.",
+    "In the survey, question 15 asks about household income.",
+    "She lived in Vienna until 1962 and then moved to London.",
+    "Row 13 of the table lists the results for each school.",
+    "The magazine was first published monthly in 1931."
+   ]
+  }
+ ],
+ "predictions": "Fire 0.25-0.5 on the final digit after 'to'/'through'/'-'; near misses with the same numbers outside a range under 0.05. Ranges within one decade ('14 to 18', '3 through 17') scored near 0 in probes, so fire items use decade-crossing ranges.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "range-end final digit",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: final digits of range ends (113 through 116, 5 to 12, 9 to 16, 1885 to 1892). Probe: 'From 1885 to 1892' 0.483, 'Registers 9 to 16' 0.298; 'June 14 to 18' 0.008, 'chapters 3 through 17' 0.007; single numbers 0.007-0.011."
+}
