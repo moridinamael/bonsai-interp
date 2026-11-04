@@ -1,0 +1,172 @@
+{
+ "id": "2026-11-04-moridinamael-3265c4ce",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N1160+",
+ "contributor": "moridinamael",
+ "created": "2026-11-04T16:39:09+00:00",
+ "recipe": {
+  "toolchain_commit": "2d40b3f72",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N1160_pos/2026-11-04-moridinamael-3265c4ce.tests.json"
+ },
+ "label": "the word piece 'book' / 'Book' itself, as a noun, verb or compound part (book, guidebook, MacBook, Book a table), not synonyms like novel and not Facebook",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N1160_pos/2026-11-04-moridinamael-3265c4ce.tests.json",
+   "prereg_commit": "2d40b3f72",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.573,
+     "peak": " book"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.901,
+     "peak": "Book"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.998,
+     "peak": "book"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.336,
+     "peak": " MacBook"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.479,
+     "peak": " book"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.254,
+     "peak": " notebook"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.463,
+     "peak": " textbook"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.355,
+     "peak": " cookbook"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": " novel"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " table"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.064,
+     "peak": " brochure"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": " laptop"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " fare"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": "bb"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.065,
+     "peak": " teacher"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": "ake"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.471,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "step-out"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "2d40b3f72",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "short": "the piece 'book'",
+ "roles": [
+  "feeds bonsai1/L1/N1726+"
+ ],
+ "edges": [
+  {
+   "from": "bonsai1/L0/N1160+",
+   "to": "bonsai1/L1/N1726+",
+   "kind": "feeds",
+   "weight": null,
+   "method": "attribution on top-4 corpus examples (chat feeders); play step OOM, drop unmeasured"
+  }
+ ],
+ "selection": "step-out from bonsai1/L1/N1726+",
+ "trigger": {
+  "words": [
+   "book"
+  ]
+ }
+}
