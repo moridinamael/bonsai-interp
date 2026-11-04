@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-c5bb32b0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N11906+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T16:39:36+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N11906",
+   "pole": "+",
+   "label": "A type-identity check in code (dtype membership such as x.dtype in (np.int8, ...), .is_* and inspect.is* predicates), vs the same code that uses values without checking their type",
+   "fire": [
+    "def to_bytes(a):\n    if a.dtype in (np.uint8, np.int8):\n        return a.tobytes()\n    raise TypeError(a.dtype)",
+    "for name, obj in vars(mod).items():\n    if inspect.isclass(obj):\n        classes.append(name)",
+    "def cast(t):\n    if t.dtype.is_integer:\n        t = tf.cast(t, tf.float32)\n    return t",
+    "def check(img):\n    assert img.dtype in (np.float32, np.float64)\n    return img.clip(0, 1)",
+    "if inspect.ismethod(handler) or inspect.isfunction(handler):\n    hooks.append(handler)",
+    "def norm(x):\n    if not x.dtype.is_floating:\n        x = x.astype('float32')\n    return x / x.max()",
+    "def pack(arr):\n    if arr.dtype not in (np.int16, np.int32):\n        arr = arr.astype(np.int32)\n    return arr",
+    "for attr in dir(cls):\n    member = getattr(cls, attr)\n    if inspect.isroutine(member):\n        names.add(attr)"
+   ],
+   "quiet": [
+    "def to_bytes(a):\n    data = a.tobytes()\n    return data[:16]",
+    "for name, obj in vars(mod).items():\n    if name.startswith('_'):\n        continue\n    names.append(name)",
+    "def cast(t):\n    t = t * 2.0\n    return t + 1.0",
+    "def check(img):\n    img = img / 255.0\n    return img.clip(0, 1)",
+    "if handler is not None and name not in hooks:\n    hooks.append(handler)",
+    "def norm(x):\n    total = x.sum()\n    return x / total",
+    "def pack(arr):\n    arr = arr.reshape(-1)\n    return arr[::2]",
+    "for attr in dir(cls):\n    if attr.endswith('_'):\n        names.add(attr)"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.4-0.9 on 'np', '.is' or 'Is'; near misses under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "type check in code (dtype, .is*)",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: '.is' x4, 'Is' x2, ' np' x2 in 'X.dtype in (np.uint8, np.uint16)', 'dtype.is_integer', 'inspect.isfunction', 'DataIsInteger()'. Probe: 'x.dtype in (np.int32, np.int64)' 0.923, 'dtype.is_floating' 0.785, 'inspect.isfunction' 0.434; 'np.sum(x)' 0.085, 'obj is None' 0.024, 'type=int' 0.235; also 'Brushy' 0.670 (stray trigger)."
+}

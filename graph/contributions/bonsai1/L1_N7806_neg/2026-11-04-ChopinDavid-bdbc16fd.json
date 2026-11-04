@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-04-ChopinDavid-bdbc16fd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7806-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-04T21:30:05+00:00",
+ "recipe": {
+  "toolchain_commit": "1dc5d95cd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N7806_neg/2026-11-04-ChopinDavid-bdbc16fd.tests.json"
+ },
+ "label": "The Arabic token ' الشخص' (the person, and the stem of الشخصي personal), vs the same sentences with another word for a person or individual",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N7806_neg/2026-11-04-ChopinDavid-bdbc16fd.tests.json",
+   "prereg_commit": "1dc5d95cd",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.737,
+     "peak": " الشخص"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.87,
+     "peak": " الشخص"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.745,
+     "peak": " الشخص"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.843,
+     "peak": " الشخص"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.89,
+     "peak": " الشخص"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.782,
+     "peak": " الشخص"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.887,
+     "peak": " الشخص"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.909,
+     "peak": " الشخص"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.169,
+     "peak": "ية"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.158,
+     "peak": "اح"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.237,
+     "peak": " صباح"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.107,
+     "peak": " وال"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.462,
+     "peak": " الط"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.337,
+     "peak": " العمل"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.531,
+     "peak": "طة"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.294,
+     "peak": " الص"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.857,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1dc5d95cd",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Arabic token ' الشخص'",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: ' الشخص' x9 (الشخصي, الشخصان), also ' acompañ', 'A' at document start. Probe: 'النمو الشخصي' 0.761, 'الشخص الراغب' 0.709, 'الشخصان' 0.867; same sentences with الفردي 0.291 and المواطن 0.075; Spanish 'acompañadas' 0.855 (another trigger). Tokenizer: الشخصي = ' الشخص'+'ي'; الشخصية is a single different token.",
+ "selection": "random draw"
+}
