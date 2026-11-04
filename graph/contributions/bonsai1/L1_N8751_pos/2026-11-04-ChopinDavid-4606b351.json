@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-04-ChopinDavid-4606b351",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8751+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-04T22:27:15+00:00",
+ "recipe": {
+  "toolchain_commit": "3644b08b9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N8751_pos/2026-11-04-ChopinDavid-4606b351.tests.json"
+ },
+ "label": "Dense layer-1 pole with tiny max (0.19); best guess: identifier pieces 'admin', 'my', '=wx' and the word ' benefits', vs plain text and code without them",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N8751_pos/2026-11-04-ChopinDavid-4606b351.tests.json",
+   "prereg_commit": "3644b08b9",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.852,
+     "peak": "=wx"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.625,
+     "peak": "admin"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.413,
+     "peak": " benefits"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.847,
+     "peak": "=wx"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.662,
+     "peak": "admin"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.491,
+     "peak": " benefits"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.928,
+     "peak": "=wx"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.352,
+     "peak": " benefits"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.142,
+     "peak": "(None"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.159,
+     "peak": ".urls"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.135,
+     "peak": " mood"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.105,
+     "peak": "OK"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.363,
+     "peak": "tools"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.511,
+     "peak": " perks"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.062,
+     "peak": "Settings"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": "Employees"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.643,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3644b08b9",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "dense: admin/my/wx/benefits",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: dense flag 11.6%, gate-closed regime 98%; peaks 'admin' x8, 'my' x5, '=wx' x4, ' Benefits' x3. Probe: '=wx' 0.907, 'admin' (in admin_views) 0.680, ' benefits' 0.563, 'My' 0.464, ' my' 0.381; ' admin' as a word 0.175, 'x = y + 2 * z' 0.169, plain prose 0.049.",
+ "selection": "random draw"
+}

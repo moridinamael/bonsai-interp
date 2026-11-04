@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-04-ChopinDavid-5472afb5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N7965+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-04T22:28:26+00:00",
+ "recipe": {
+  "toolchain_commit": "3644b08b9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N7965_pos/2026-11-04-ChopinDavid-5472afb5.tests.json"
+ },
+ "label": "The opening of a string literal used as a format or path template in a Python return or assignment ('{}?{}', '%s %s', '/data/'), vs code that returns or assigns without a string template",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N7965_pos/2026-11-04-ChopinDavid-5472afb5.tests.json",
+   "prereg_commit": "3644b08b9",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.457,
+     "peak": " \"{"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.222,
+     "peak": " \"%"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.261,
+     "peak": "/\""
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.427,
+     "peak": " \"{}"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.396,
+     "peak": " \""
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.197,
+     "peak": " \"%"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.358,
+     "peak": "{}\"."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.322,
+     "peak": "/\""
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.12,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": ".title"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": "]"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.079,
+     "peak": " encode"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.133,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": ".num"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.078,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.088,
+     "peak": ")"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.34,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3644b08b9",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "string template literal in code",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: '/%' x5, '?' x2, \" '\" x2, '_%' x2 in Python string formatting. Probe: 'return \"{}?{}\".format' 0.662, 'return \"%s %s\" %' 0.383, 'return \"/data/\" +' 0.330, \"'transfer-to-%s' %\" 0.134; 'return a + b' 0.036, 'return self.first' 0.080, 'url = base + path' 0.018.",
+ "selection": "random draw"
+}

@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-04-ChopinDavid-3005b333",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N11095+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-04T22:26:19+00:00",
+ "recipe": {
+  "toolchain_commit": "3644b08b9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N11095_pos/2026-11-04-ChopinDavid-3005b333.tests.json"
+ },
+ "label": "A comma separating items in a list of service or policy categories (housing, employment, health), vs commas in other kinds of lists and clauses",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N11095_pos/2026-11-04-ChopinDavid-3005b333.tests.json",
+   "prereg_commit": "3644b08b9",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.31,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.117,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.049,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.083,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.264,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.072,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.1,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.095,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " box"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.06,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.083,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.914,
+    "median_fire": 0.098,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3644b08b9",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "comma in category list",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card peaks are mixed: ',' x8 ('product, service, housing, employment'), '-', '1', ' It' (repeated 'It could'). Probe: 'covers housing, education, employment, transport and health care' 0.390 on ','; 'beaches, forests, lakes' 0.094, repeated 'It could ...' 0.122, other sentences 0.02-0.05.",
+ "selection": "random draw"
+}
