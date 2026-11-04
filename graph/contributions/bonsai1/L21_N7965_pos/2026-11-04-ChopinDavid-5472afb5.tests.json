@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-5472afb5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N7965+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T22:20:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N7965",
+   "pole": "+",
+   "label": "The opening of a string literal used as a format or path template in a Python return or assignment ('{}?{}', '%s %s', '/data/'), vs code that returns or assigns without a string template",
+   "fire": [
+    "def link(host, page):\n    return \"{}/{}\".format(host, page)",
+    "def label(self):\n    return \"%s (%s)\" % (self.title, self.year)",
+    "def path(user):\n    return \"/home/\" + user + \"/docs\"",
+    "def query(base, args):\n    return \"{}?{}\".format(base, args)",
+    "def greet(name):\n    msg = \"Hello, %s!\" % name\n    return msg",
+    "def full(self):\n    return \"%s-%s\" % (self.code, self.num)",
+    "def key(a, b):\n    return \"{}:{}\".format(a, b)",
+    "def bucket(day):\n    return \"/logs/%s/\" % day"
+   ],
+   "quiet": [
+    "def link(host, page):\n    return join(host, page)",
+    "def label(self):\n    return self.title",
+    "def path(user):\n    return home[user]",
+    "def query(base, args):\n    return encode(base, args)",
+    "def greet(name):\n    msg = make_msg(name)\n    return msg",
+    "def full(self):\n    return self.code + self.num",
+    "def key(a, b):\n    return (a, b)",
+    "def bucket(day):\n    return buckets.get(day)"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.3-0.7 on the quote/format token; near misses under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "string template literal in code",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: '/%' x5, '?' x2, \" '\" x2, '_%' x2 in Python string formatting. Probe: 'return \"{}?{}\".format' 0.662, 'return \"%s %s\" %' 0.383, 'return \"/data/\" +' 0.330, \"'transfer-to-%s' %\" 0.134; 'return a + b' 0.036, 'return self.first' 0.080, 'url = base + path' 0.018."
+}
