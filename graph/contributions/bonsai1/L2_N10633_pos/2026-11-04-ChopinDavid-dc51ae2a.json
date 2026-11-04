@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-04-ChopinDavid-dc51ae2a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N10633+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-04T21:41:43+00:00",
+ "recipe": {
+  "toolchain_commit": "50ad59ba2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N10633_pos/2026-11-04-ChopinDavid-dc51ae2a.tests.json"
+ },
+ "label": "The token ' tennis' (and the byte pieces of Japanese 択 in 選択), vs the same sentences with another sport",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N10633_pos/2026-11-04-ChopinDavid-dc51ae2a.tests.json",
+   "prereg_commit": "50ad59ba2",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.281,
+     "peak": " tennis"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.256,
+     "peak": " tennis"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.202,
+     "peak": " tennis"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.2,
+     "peak": " tennis"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.324,
+     "peak": " tennis"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.237,
+     "peak": " tennis"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.195,
+     "peak": " tennis"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.245,
+     "peak": " tennis"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.104,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.11,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.083,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.101,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.241,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "50ad59ba2",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "' tennis' token",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: byte '�' x7 (the pieces of 択 in 選択), ' tennis' x5, ' Tennis' x3; max only 1.76, gate-closed. Probe: 'plays tennis' 0.290, 'Tennis championship' 0.110, '選択' 0.146; 'plays golf' 0.094 (peak on ' the'). The test uses only the English tennis trigger.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " tennis",
+   " Tennis"
+  ]
+ }
+}
