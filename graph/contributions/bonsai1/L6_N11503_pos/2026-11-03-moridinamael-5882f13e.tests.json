@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-03-moridinamael-5882f13e",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N11503+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T00:09:31+00:00",
+ "roles": ["feeds bonsai1/L18/N7172+"],
+ "neighbours": [
+  {
+   "unit": "L6/N11503",
+   "pole": "+",
+   "label": "the keywords ' elif' and ' except' in Python code, plus ' -', ' +' or ' .' opening a continued code line",
+   "fire": [
+    "def sign(x):\n    if x > 0:\n        return 1\n    elif x < 0:\n        return -1\n    return 0",
+    "try:\n    value = int(text)\n    except ValueError:\n        value = 0",
+    "def load(path):\n    try:\n        return open(path).read()\n    except FileNotFoundError:\n        return None",
+    "for line in lines:\n    if line.startswith('#'):\n        continue\n    elif not line.strip():\n        blanks += 1",
+    "total = (price\n         + tax\n         + shipping)",
+    "balance = (income\n           - rent\n           - utilities)",
+    "query = (session.query(User)\n         .filter(User.active)\n         .order_by(User.name))",
+    "df = (raw_df\n      .dropna()\n      .reset_index(drop=True))"
+   ],
+   "quiet": [
+    "print \" - clear old auth cookies\"",
+    "def sign(x):\n    if x > 0:\n        return 1\n    if x < 0:\n        return -1\n    return 0",
+    "try:\n    value = int(text)\nfinally:\n    value = 0",
+    "def load(path):\n    with open(path) as handle:\n        return handle.read()\n    return None",
+    "for line in lines:\n    if line.startswith('#'):\n        continue\n    else:\n        blanks += 1",
+    "total = price + tax + shipping",
+    "balance = income - rent - utilities",
+    "query = session.query(User).filter(User.active).order_by(User.name)"
+   ]
+  }
+ ],
+ "predictions": "Expect fail: probes showed first-token baselines (0.2-0.4 of max) beat elif/except in short snippets. Maybe 3/8 fire above near misses.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "step-out"
+  ]
+ }
+}
