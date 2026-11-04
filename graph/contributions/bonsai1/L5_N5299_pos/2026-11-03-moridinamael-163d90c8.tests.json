@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-moridinamael-163d90c8",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N5299+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T06:24:59+00:00",
+ "roles": ["feeds bonsai1/L6/N11503+"],
+ "neighbours": [
+  {
+   "unit": "L5/N5299",
+   "pole": "+",
+   "label": "A keyword, comment mark or tag (def, try, #, <) as the first token of an indented line in code or markup",
+   "fire": [
+    "class Parser:\n    def parse(self, text):\n        self.text = text",
+    "def load(path):\n    try:\n        data = read(path)\n    except OSError:\n        data = None",
+    "def total(items):\n    # add up the prices\n    result = sum(items)",
+    "<ul>\n  <li>Apples</li>\n  <li>Pears</li>\n</ul>",
+    "for row in rows:\n    if row.empty:\n        continue",
+    "function save(user) {\n  return db.write(user);\n}",
+    "<html>\n  <head>\n    <title>Home</title>\n  </head>\n</html>",
+    "server:\n  # default port for local use\n  port: 8080"
+   ],
+   "quiet": [
+    "class Parser:\n    text = ''\n    count = 0",
+    "def load(path):\n    data = read(path)\n    size = len(data)\n    log(size)",
+    "def total(items):\n    result = sum(items)  # add up the prices",
+    "<ul><li>Apples</li><li>Pears</li></ul>",
+    "for row in rows:\n    total += row.value\n    count += 1",
+    "function save(user) {\n  db.write(user);\n}",
+    "<title>Home</title>\n<p>Welcome to the site.</p>",
+    "server:\n  port: 8080  # default port for local use"
+   ]
+  }
+ ],
+ "predictions": "Expect most fire items to reach 0.2 of max; the quiet items have indented lines starting with identifiers, so some may leak.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "step-out",
+   "blind-room"
+  ]
+ }
+}
