@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-04-moridinamael-3265c4ce",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N1160+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T16:38:38+00:00",
+ "roles": ["feeds bonsai1/L1/N1726+"],
+ "selection": "step-out from bonsai1/L1/N1726+",
+ "short": "the piece 'book'",
+ "trigger": {"words": ["book"]},
+ "neighbours": [
+  {
+   "unit": "L0/N1160",
+   "pole": "+",
+   "label": "the word piece 'book' / 'Book' itself, as a noun, verb or compound part (book, guidebook, MacBook, Book a table), not synonyms like novel and not Facebook",
+   "fire": [
+    "She left her favorite book on the train this morning.",
+    "Book a table for six before the restaurant fills up on Friday.",
+    "The guidebook recommends visiting the cathedral early in the day.",
+    "My MacBook finally stopped charging after seven years of daily use.",
+    "We need to book our flights by Tuesday to get the lower fare.",
+    "He scribbled the phone number in a small notebook he kept in his coat.",
+    "The teacher asked everyone to open their textbook to chapter nine.",
+    "Grandma's old cookbook still has flour stains on the pancake page."
+   ],
+   "quiet": [
+    "She left her favorite novel on the train this morning.",
+    "Reserve a table for six before the restaurant fills up on Friday.",
+    "The travel brochure recommends visiting the cathedral early in the day.",
+    "My laptop finally stopped charging after seven years of daily use.",
+    "We need to reserve our flights by Tuesday to get the lower fare.",
+    "He scribbled the phone number on a small scrap of paper he kept in his coat.",
+    "The teacher asked everyone to open their reader to chapter nine.",
+    "Grandma's old recipe card still has flour stains on the pancake side."
+   ]
+  }
+ ],
+ "predictions": "Expect hold: the word piece fires across noun, verb and compounds; near misses (novel, reserve, laptop) stay near 0.1. Risk: compounds like cookbook/notebook score only 0.3-0.5.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "step-out"
+  ]
+ }
+}
