@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-01a6f77a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N4819-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T23:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N4819",
+   "pole": "-",
+   "label": "A capital Cyrillic letter piece opening a quoted or new Russian word (С, Р after « or a quote mark), and quoted ellipses; a dense, broad unit",
+   "fire": [
+    "Он прочитал статью в газете «Северный вестник» утром.",
+    "В рекламе было написано: «Скидки только сегодня».",
+    "Журнал «Русская речь» выходит раз в два месяца.",
+    "assertEqual(title, 'Сводка новостей')",
+    "Она открыла сайт «Работа и карьера» на телефоне.",
+    "Как сказал автор: «Смелость города берёт».",
+    "Новый фильм «Северное сияние» получил приз.",
+    "Компания «Ростелеком» объявила о новых тарифах."
+   ],
+   "quiet": [
+    "He read the article in the Northern Herald newspaper in the morning.",
+    "The advertisement said: sales are only today.",
+    "The magazine comes out every two months.",
+    "assertEqual(title, 'News summary')",
+    "She opened the jobs website on her phone.",
+    "As the author said, courage takes cities.",
+    "The new film about the northern lights won a prize.",
+    "The phone company announced new prices."
+   ]
+  }
+ ],
+ "predictions": "Fire 0.7-1.1 on opening Cyrillic capitals; near misses (English sentences) fire 0.24-0.54 in probes, so the test is expected to fail on near-miss leaks.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "opening Cyrillic capital (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: dense flag (38.6% of tokens reach 0.1 of max), 'С' x11, '…' x4. Probe: '«Советская' 1.011, \"('Сообщения'\" 1.089, 'Специалисты' 0.743, '“…These' 0.879; English controls 0.242-0.535 ('Copyright' 0.535)."
+}

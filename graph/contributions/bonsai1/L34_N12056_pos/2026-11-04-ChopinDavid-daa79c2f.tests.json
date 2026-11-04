@@ -1,0 +1,55 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-daa79c2f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N12056+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T23:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N12056",
+   "pole": "+",
+   "label": "A capital or lowercase L that is its own token at the start of a split word or name (' L'+'anza', '.l'+'ivedoor', '_l'+'loyd'), vs whole-token words and other split letters",
+   "fire": [
+    "The police later identified the gunman as Adam Lanza of Connecticut.",
+    "We usually buy our groceries at Lidl because it is cheaper.",
+    "The storage company LSI announced a new controller chip this week.",
+    "You can read the full story at news.livedoor.com in Japanese.",
+    "The paper reported a link between the gene LTA4H and inflammation.",
+    "In the code, the helper called _lloyd_step updates the cluster centers.",
+    "The monastery sits on a hill above Lhasa, the capital of Tibet.",
+    "The singer is better known as Lizzo, though few know her real name."
+   ],
+   "quiet": [
+    "The police later identified the gunman as Adam Smith of Connecticut.",
+    "We usually buy our groceries at Aldi because it is cheaper.",
+    "The storage company Intel announced a new controller chip this week.",
+    "You can read the full story at the newspaper website in Japanese.",
+    "The paper reported a link between the gene BRCA2 and inflammation.",
+    "In the code, the helper called update_step moves the cluster centers.",
+    "The monastery sits on a hill above Kathmandu, the capital of Nepal.",
+    "The singer is better known as Adele, though few know her full name."
+   ]
+  }
+ ],
+ "predictions": "Fire 0.2-0.6 on the L piece in mid-sentence; near misses with names that tokenize whole under 0.05. Sentence-initial 'Lately' scored 0.012, so the L never opens the sentence.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-word initial L piece",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Card: ' L' x13, 'l', 'L', '_l', ' л', '.l'. Probe: 'Adam Lanza' 0.643, 'news.livedoor.com' 0.516, '_kmeans_single_lloyd' 0.188; sentence-initial 'Lately' 0.012; 'Adam Smith', 'production lines' 0.001-0.005.",
+ "trigger": {
+  "tokens": [
+   " L",
+   ".l",
+   "_l"
+  ]
+ }
+}

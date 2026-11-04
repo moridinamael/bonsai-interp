@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-3206a579",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N5072+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T23:20:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N5072",
+   "pole": "+",
+   "label": "The line break that ends a news headline or photo caption before the byline, dateline or body text of a web article, vs the same headline run on in prose",
+   "fire": [
+    "Study links gut bacteria to better sleep in older adults\nMarch 3, 2015\nResearchers at the university found",
+    "New battery design could double the range of electric cars\nBy Laura Chen, Staff Writer\nEngineers say the cells",
+    "Photo: Mark Davis | Campus News\nBOSTON, Mass. (May 2) - Students gathered",
+    "Telescope captures the birth of a distant star system\nJuly 18, 2013\nAstronomers using the observatory",
+    "Ancient seeds sprout after two thousand years in storage\nDr. Sarah Ellis, botanist, led the project.",
+    "Credit: James Hall / Science Photo Library\nOverall, the number of species has declined",
+    "Coral reefs show surprising recovery after heat wave\nOctober 4, 2016\nMarine biologists reported",
+    "Robots learn to fold laundry by watching humans\nBy Tom Reyes\nThe machines were trained"
+   ],
+   "quiet": [
+    "A study links gut bacteria to better sleep in older adults, researchers at the university found on March 3.",
+    "A new battery design could double the range of electric cars, Laura Chen writes.",
+    "Mark Davis took the photo as students gathered in Boston on May 2.",
+    "The telescope captured the birth of a distant star system, astronomers said on July 18.",
+    "Ancient seeds sprouted after two thousand years in storage, said Dr. Sarah Ellis, who led the project.",
+    "James Hall took the picture, and overall the number of species has declined.",
+    "Coral reefs showed a surprising recovery after the heat wave, marine biologists reported in October.",
+    "Robots learned to fold laundry by watching humans, Tom Reyes reports."
+   ]
+  }
+ ],
+ "predictions": "Fire 0.1-0.3 on the newline after a headline; near misses where the headline continues in the sentence under 0.1. Probes only reached 0.10-0.15, so a weak result or a fail is expected.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "newline after headline/caption",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card: '\\n' x17, '.\\n' x7, ')\\n' x5, all at the end of a headline or credit line in science-news pages. Probe: 'pointing to new treatments\\nDavid L. Wiest' 0.152, 'robotics\\nJune 10, 2012' 0.137, 'USF News\\nTAMPA' 0.099; run-on version 0.122 (on ','), prose newline 0.013, code 0.005."
+}
