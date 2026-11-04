@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-04-moridinamael-78c2ea3f",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L13/N2162-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T23:39:45+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "the 'type' field name in a Python docstring (':type x:' / '@type x:'), the slot that declares a parameter's type"
+ },
+ "neighbours": [
+  {
+   "unit": "L13/N2162",
+   "pole": "-",
+   "label": "the unit in a parenthetical conversion of a quantity already given in other units ('5 miles (8 km)', '350 °F (175 °C)'), and the 'type' in a docstring ':type x:' line that follows its ':param x:' line",
+   "fire": [
+    "The trail runs for 5 miles (8 km) along the ridge before dropping into the valley.",
+    "Preheat the oven to 350 °F (175 °C) and grease a large baking pan.",
+    "The bridge spans 1,200 feet (366 m) across the river.",
+    "Each adult male weighs about 150 pounds (68 kg) by the end of summer.",
+    "Pour in 2 cups (480 ml) of warm milk and stir gently.",
+    "The lake sits at an elevation of 6,000 ft (1,829 m) above sea level.",
+    "Roll the dough into a 12-inch (30 cm) circle.",
+    "Summer temperatures in the region often reach 40 °C (104 °F)."
+   ],
+   "quiet": [
+    "path('home/', views.index, name='home'),",
+    "Add 250 grams of flour.",
+    "The trail runs for 5 miles along the ridge before dropping into the valley.",
+    "Preheat the oven to 350 °F and grease a large baking pan.",
+    "The bridge spans 1,200 feet across the river (it opened in 1931).",
+    "Each adult male weighs about 150 pounds by the end of summer.",
+    "Pour in 2 cups of warm milk (or cream) and stir gently.",
+    "The lake sits at a high elevation (see map) above sea level."
+   ]
+  }
+ ],
+ "predictions": "Conversion units should fire (maybe 6/8); plain-unit near misses quiet; the name= kwarg leak may reach 0.3.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}
