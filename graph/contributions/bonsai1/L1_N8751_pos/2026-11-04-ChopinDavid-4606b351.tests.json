@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-4606b351",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8751+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T22:20:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N8751",
+   "pole": "+",
+   "label": "Dense layer-1 pole with tiny max (0.19); best guess: identifier pieces 'admin', 'my', '=wx' and the word ' benefits', vs plain text and code without them",
+   "fire": [
+    "frame = wx.Frame(None, style=wx.DEFAULT_FRAME_STYLE)",
+    "urlpatterns = [path('admin/', admin_site.urls)]",
+    "The benefits of regular walking include better sleep and mood.",
+    "button = wx.Button(panel, style=wx.BU_EXACTFIT)",
+    "INSTALLED_APPS = ['admin_tools', 'blog']",
+    "Our members enjoy many benefits, including free parking.",
+    "dialog = wx.Dialog(self, style=wx.RESIZE_BORDER)",
+    "Employees asked about the benefits package during the meeting."
+   ],
+   "quiet": [
+    "frame = Frame(None, title='Main window')",
+    "urlpatterns = [path('blog/', blog_site.urls)]",
+    "The habit of regular walking leads to better sleep and mood.",
+    "button = Button(panel, text='OK')",
+    "INSTALLED_APPS = ['tools', 'blog']",
+    "Our members enjoy many perks, including free parking.",
+    "dialog = Dialog(self, title='Settings')",
+    "Employees asked about the holiday schedule during the meeting."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.3-0.9 on the listed piece; near misses under 0.2, but the pole is dense (11.6% of tokens) and may fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense: admin/my/wx/benefits",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card: dense flag 11.6%, gate-closed regime 98%; peaks 'admin' x8, 'my' x5, '=wx' x4, ' Benefits' x3. Probe: '=wx' 0.907, 'admin' (in admin_views) 0.680, ' benefits' 0.563, 'My' 0.464, ' my' 0.381; ' admin' as a word 0.175, 'x = y + 2 * z' 0.169, plain prose 0.049."
+}
