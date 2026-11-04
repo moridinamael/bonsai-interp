@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-04-ChopinDavid-b581aa44",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8207+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-04T21:41:45+00:00",
+ "recipe": {
+  "toolchain_commit": "50ad59ba2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N8207_pos/2026-11-04-ChopinDavid-b581aa44.tests.json"
+ },
+ "label": "A Slavic inflectional ending split off as its own piece (-им, -ими, -ih, -im, -h of instrumental/dative/genitive plural), vs the same sentences without an inflected form carrying that ending",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N8207_pos/2026-11-04-ChopinDavid-b581aa44.tests.json",
+   "prereg_commit": "50ad59ba2",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.393,
+     "peak": "im"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.682,
+     "peak": "h"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.594,
+     "peak": "im"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.263,
+     "peak": "им"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.098,
+     "peak": " этим"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.293,
+     "peak": "ным"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.379,
+     "peak": "kim"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.332,
+     "peak": "im"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.111,
+     "peak": "ima"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.002,
+     "peak": "Kn"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.125,
+     "peak": "ima"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "У"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.085,
+     "peak": "ima"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.004,
+     "peak": " sus"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.356,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "50ad59ba2",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "Slavic -им/-ih case ending piece",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Card: 'им' x7, 'м' x4, 'х' x3, 'ним' x3, 'kh' in transliterated Russian, 'im'/'h' in Croatian and Slovene. Probe: Slovene 'slovenskih' 0.586, Croatian 'našim' 0.550, 'Этим' 0.374, 'своим' 0.355, 'с ним' 0.227, 'с ними' 0.198; same Russian sentences without the form -0.002, English 0.015. Fire items checked with the tokenizer so the ending is its own piece.",
+ "selection": "random draw"
+}
