@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-04-moridinamael-2593ce94",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L31/N1809-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T20:18:07+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "The word ' a' (or the word in that same slot: ' to' in 'a sight to', ' real' in 'a real') right where a sentence is about to state a thing's acclaim or standing ('was always a', 'has become a', 'is considered to be a', 'a sight to', 'became a National Historic Landmark'); it fires on that setup word whatever noun follows; quiet on everyday 'a' (bought a bag, is a tall man, named after a farmer). Also fires on the name piece ' Belt' in 'Atlanta BeltLine'."
+ },
+ "neighbours": [
+  {
+   "unit": "L31/N1809",
+   "pole": "-",
+   "label": "In English prose, the setup word just before a sentence delivers praise or lasting standing for a thing: ' a' in 'has become a / is regarded as a / nothing short of a', ' to' in 'a sight to' / 'to die for', ' real' in 'a real'; fires on the setup word whatever noun follows, quiet when the same frame leads to a negative or mundane noun (nightmare, threat, short walk).",
+   "fire": [
+    "Over the past two decades, the small harbor town has become a beloved destination for painters and poets.",
+    "The cathedral's restored rose window is a sight to behold at sunset.",
+    "Her debut novel is widely regarded as a masterpiece of modern American fiction.",
+    "The team's comeback in the final minutes was nothing short of a miracle.",
+    "The chocolate cake at that little bakery is to die for.",
+    "This old cast-iron skillet is a real treasure, and it cooks better than anything I own.",
+    "Since its release, the film has become a classic that families return to every winter.",
+    "The bridge is considered a triumph of nineteenth-century engineering."
+   ],
+   "quiet": [
+    "Over the past two decades, the small harbor town has become a nightmare for commuters and delivery drivers.",
+    "The cathedral's closed side entrance is a short walk from the bus stop.",
+    "Her debut novel is widely regarded as a failure of plotting and pacing.",
+    "The team's collapse in the final minutes was nothing short of a disaster.",
+    "The chocolate cake at that little bakery is too dry and overpriced.",
+    "This old cast-iron skillet is a real pain, and it rusts faster than anything I own.",
+    "Since its release, the app has become a threat to the privacy of families everywhere.",
+    "The bridge is considered a hazard by the county's road inspectors."
+   ]
+  }
+ ],
+ "predictions": "Expect about 5-6/8 fire to clear 0.20; a risk is that the model cannot see the noun yet at ' a', so negative near misses (same setup word, 'has become a', 'a real') will score close to fire items and sink AUROC.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo"
+  ]
+ }
+}
