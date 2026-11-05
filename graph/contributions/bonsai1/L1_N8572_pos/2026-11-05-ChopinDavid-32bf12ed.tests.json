@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-32bf12ed",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8572+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T16:22:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N8572",
+   "pole": "+",
+   "label": "unclear broad pole; best guess: the space-initial byte-fallback token that opens a Korean word written with a rare syllable (' 환', ' 화', ' 간'), plus scattered CJK and Cyrillic pieces",
+   "fire": [
+    "우리는 깨끗한 환경을 위해 쓰레기를 줄여야 합니다.",
+    "의사는 환자에게 충분한 휴식을 권했다.",
+    "이 약은 간접적인 효과도 있습니다.",
+    "그는 새 컴퓨터의 화면이 너무 밝다고 말했다.",
+    "공장은 폐수를 정화하는 시설을 갖추었다.",
+    "회의실의 환기 장치가 고장 났다.",
+    "그녀는 오래된 사진을 디지털로 변환했다.",
+    "학생들은 실험 결과를 간단히 정리했다."
+   ],
+   "quiet": [
+    "这家工厂为了保护环境减少了垃圾。",
+    "医生建议病人多休息。",
+    "这种药的效果很好。",
+    "他说新电脑的屏幕太亮了。",
+    "工厂安装了处理废水的设备。",
+    "会议室的空调坏了。",
+    "她把旧照片保存到电脑里。",
+    "学生们整理了实验结果。"
+   ]
+  }
+ ],
+ "predictions": "Korean sentences with a space-initial byte-split word 0.5-0.8; Chinese or Japanese without such pieces and Korean without byte splits below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space-initial Korean byte token (unclear)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card max 0.44, broad 3.9%; peaks ' 환' (byte token), 並, 间接, ' один'. Probe: ' 환원' 0.741, ' 환경' 0.600, ' 화면' 0.600 (another byte split), 间接 0.557, один 0.865; '他参与了这个项目' 0.041, English 0.029. Near misses are Chinese sentences without 间接/並, so they are not a minimal pair."
+}
