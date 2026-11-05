@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-4c66b262",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8407-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T05:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N8407",
+   "pole": "-",
+   "label": "the y half of an x/y coordinate pair in code (the '.y…'/'y…' attribute after its x counterpart)",
+   "fire": [
+    "def move(p):\n    nx = p.xpos + 1\n    ny = p.ypos + 1\n    return nx, ny",
+    "for pt in points:\n    xs.append(pt.xval)\n    ys.append(pt.yval)",
+    "    left = box.xmin\n    top = box.ymin\n    draw(left, top)",
+    "    cx = shape.xcenter\n    cy = shape.ycenter\n    plot(cx, cy)",
+    "def offset(a):\n    a.x0 += 5\n    a.y0 += 5\n    return a",
+    "    sx = sprite.xvel * dt\n    sy = sprite.yvel * dt\n    sprite.move(sx, sy)",
+    "    mx = mouse.xcoord\n    my = mouse.ycoord\n    click(mx, my)",
+    "    width = img.xsize\n    height = img.ysize\n    print(width, height)"
+   ],
+   "quiet": [
+    "def greet(p):\n    first = p.firstname\n    last = p.lastname\n    return first, last",
+    "for row in rows:\n    ids.append(row.userid)\n    tags.append(row.label)",
+    "    head = page.title\n    body = page.content\n    render(head, body)",
+    "    cost = order.price\n    qty = order.amount\n    bill(cost, qty)",
+    "def bump(a):\n    a.count += 5\n    a.total += 5\n    return a",
+    "    start = job.begin_time\n    stop = job.end_time\n    log(start, stop)",
+    "    who = msg.sender\n    when = msg.timestamp\n    store(who, when)",
+    "    name = img.filename\n    kind = img.format\n    print(name, kind)"
+   ]
+  }
+ ],
+ "predictions": "code that reads x then y coordinates fires on the y attribute; parallel code with non-coordinate field pairs stays quiet",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "y after x in coordinate code",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Probe: 'self.xcoord ... self.ycoord' peak '.y' 0.853, Vec2 x/y 0.537, point.xdata/ydata 0.436; name/email pair 0.138, sum/len 0.017, lat/lon 0.195. Max is small (7.3)."
+}
