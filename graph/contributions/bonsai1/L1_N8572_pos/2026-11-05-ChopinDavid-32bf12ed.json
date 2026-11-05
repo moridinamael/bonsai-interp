@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-32bf12ed",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8572+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T16:31:19+00:00",
+ "recipe": {
+  "toolchain_commit": "7ba1bc9a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N8572_pos/2026-11-05-ChopinDavid-32bf12ed.tests.json"
+ },
+ "label": "unclear broad pole; best guess: the space-initial byte-fallback token that opens a Korean word written with a rare syllable (' 환', ' 화', ' 간'), plus scattered CJK and Cyrillic pieces",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N8572_pos/2026-11-05-ChopinDavid-32bf12ed.tests.json",
+   "prereg_commit": "7ba1bc9a2",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.356,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.621,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.06,
+     "peak": "이"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.594,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.043,
+     "peak": "화"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.624,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.221,
+     "peak": " 오"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.055,
+     "peak": " 결과"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.064,
+     "peak": "减少了"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.096,
+     "peak": "建议"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": "很好"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.096,
+     "peak": "电脑"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.126,
+     "peak": "安装"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.158,
+     "peak": "电脑"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.102,
+     "peak": "实验"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.719,
+    "median_fire": 0.288,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7ba1bc9a2",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "space-initial Korean byte token (unclear)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card max 0.44, broad 3.9%; peaks ' 환' (byte token), 並, 间接, ' один'. Probe: ' 환원' 0.741, ' 환경' 0.600, ' 화면' 0.600 (another byte split), 间接 0.557, один 0.865; '他参与了这个项目' 0.041, English 0.029. Near misses are Chinese sentences without 间接/並, so they are not a minimal pair.",
+ "selection": "random draw"
+}

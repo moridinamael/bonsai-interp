@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-bf199927",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N1820+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T16:22:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N1820",
+   "pole": "+",
+   "label": "the ' +' that continues a repeated print('label: ' + str(x)) pattern in multi-line code, after earlier lines of the same shape",
+   "fire": [
+    "    print(\"  start: \" + str(start))\n    print(\"  end: \" + str(end))\n    print(\"  speed: \" + str(speed))\n",
+    "    lines = ['min: ' + str(lo),\n             'max: ' + str(hi),\n             'mean: ' + str(avg)]\n",
+    "    log(\"epoch: \" + str(epoch))\n    log(\"loss: \" + str(loss))\n    log(\"acc: \" + str(acc))\n",
+    "    print('rows: ' + str(n_rows))\n    print('cols: ' + str(n_cols))\n    print('cells: ' + str(n_rows * n_cols))\n",
+    "    out.write('width: ' + str(w) + '\\n')\n    out.write('height: ' + str(h) + '\\n')\n",
+    "    print(\"user: \" + str(user))\n    print(\"score: \" + str(score))\n    print(\"rank: \" + str(rank))\n",
+    "    msg = 'files: ' + str(len(files))\n    msg2 = 'dirs: ' + str(len(dirs))\n",
+    "    print(\"  hits: \" + str(hits))\n    print(\"  misses: \" + str(misses))\n"
+   ],
+   "quiet": [
+    "    print(\"  start:\", start)\n    print(\"  end:\", end)\n    print(\"  speed:\", speed)\n",
+    "    lines = [f'min: {lo}',\n             f'max: {hi}',\n             f'mean: {avg}']\n",
+    "    log(\"epoch:\", epoch)\n    log(\"loss:\", loss)\n    log(\"acc:\", acc)\n",
+    "    print('rows:', n_rows)\n    print('cols:', n_cols)\n    print('cells:', n_rows * n_cols)\n",
+    "    out.write(f'width: {w}\\n')\n    out.write(f'height: {h}\\n')\n",
+    "    print(\"user:\", user)\n    print(\"score:\", score)\n    print(\"rank:\", rank)\n",
+    "    msg = f'files: {len(files)}'\n    msg2 = f'dirs: {len(dirs)}'\n",
+    "    print(\"  hits:\", hits)\n    print(\"  misses:\", misses)\n"
+   ]
+  }
+ ],
+ "predictions": "unprobed in this form: multi-line blocks of label + str() lines 0.3-0.9 on later ' +'; blocks of comma or f-string prints below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated ' +' str() concatenation",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card: ' +' in print(\"  rate: \" + str(rate)) 93, 'nano: ' + str(self.nano) 74, all after earlier lines of the same shape. Probe used one-line snippets only and barely fired: print(\"rate: \" + str(rate)) 0.136 (peak '(\"'), 'name: ' + str 0.041, price + tax 0.017. The multi-line hypothesis is not probed."
+}
