@@ -1,0 +1,45 @@
+steer@2 summary. Model 7346, trial 18150. Query stage resumed at task 11 after the machine slept; 6 evaluations of cell 11/0 predate the resume.
+
+evaluations {'doe': 687, 'gmoo': 402, 'de': 1152, 'grid': 144}
+
+training score by method: mean of met cells, cells met of 12
+  tier 1: {'gmoo': (0.636, 12), 'de': (0.44, 12), 'grid': (0.515, 12), 'lookup': (0.547, 12)}
+  tier 2: {'gmoo': (0.781, 12), 'de': (0.562, 12), 'grid': (0.833, 12), 'lookup': (0.656, 12)}
+  tier 3: {'gmoo': (0.829, 12), 'de': (0.663, 12), 'grid': (1.069, 12), 'lookup': (0.74, 12)}
+
+gmoo against each baseline, cells won / lost / tied (a cell with no feasible point loses to one with)
+  training vs de: 30 / 6 / 0
+  training vs grid: 15 / 21 / 0
+  training vs lookup: 17 / 0 / 19
+  held-out vs de: 26 / 10 / 0
+  held-out vs grid: 10 / 26 / 0
+  held-out vs lookup: 15 / 3 / 18
+
+composition at tier 2, held-out: score labelled, score placebo, uniq, coh
+  task 0 {'up': ['weather'], 'down': []}: +1.58 +0.12 uniq 0.56 coh -1.47 pass
+  task 1 {'up': ['travel'], 'down': []}: +0.31 -0.14 uniq 0.62 coh -1.25 miss
+  task 2 {'up': ['medicine', 'animals'], 'down': []}: +1.55 +0.00 uniq 0.63 coh -1.51 pass
+  task 3 {'up': ['war', 'money'], 'down': []}: -0.49 -0.76 uniq 0.60 coh -1.48 miss
+  task 4 {'up': ['medicine', 'family'], 'down': []}: +0.95 +0.04 uniq 0.53 coh -1.42 pass
+  task 5 {'up': ['sea', 'chemistry'], 'down': []}: +0.68 +0.02 uniq 0.62 coh -1.46 pass
+  task 6 {'up': ['medicine', 'school', 'vehicles'], 'down': []}: +0.21 -0.08 uniq 0.56 coh -1.35 miss
+  task 7 {'up': ['law', 'farming', 'software'], 'down': []}: -0.20 -0.58 uniq 0.49 coh -1.31 miss
+  task 8 {'up': ['school', 'medicine', 'space'], 'down': []}: +0.54 -0.15 uniq 0.64 coh -1.33 pass
+  task 9 {'up': ['war'], 'down': ['software']}: -0.41 -0.69 uniq 0.53 coh -1.34 miss
+  task 10 {'up': ['money'], 'down': ['family']}: +0.52 -0.60 uniq 0.52 coh -1.32 pass
+  task 11 {'up': ['travel'], 'down': ['software']}: -0.01 -0.45 uniq 0.59 coh -1.49 miss
+composition: 6 of 12 (claim needs 9)
+
+Exploratory breakdown, not pre-registered:
+held-out cells, gmoo against grid and against de, won/lost, by tier and shape; tier met on held-out by each method
+  tier 1: {'grid': (4, 8), 'de': (10, 2), 'lookup': (6, 1)}  mean score {'gmoo': 0.413, 'de': 0.028, 'grid': 0.487, 'lookup': 0.224}  tier met on held-out {'gmoo': 0, 'de': 2, 'grid': 1, 'lookup': 1}
+  tier 2: {'grid': (4, 8), 'de': (9, 3), 'lookup': (6, 1)}  mean score {'gmoo': 0.435, 'de': 0.165, 'grid': 0.876, 'lookup': 0.168}  tier met on held-out {'gmoo': 6, 'de': 5, 'grid': 7, 'lookup': 9}
+  tier 3: {'grid': (2, 10), 'de': (7, 5), 'lookup': (3, 1)}  mean score {'gmoo': 0.505, 'de': 0.418, 'grid': 1.046, 'lookup': 0.381}  tier met on held-out {'gmoo': 12, 'de': 10, 'grid': 12, 'lookup': 12}
+  raise 1: mean held-out score {'gmoo': 0.976, 'de': 0.807, 'grid': 1.251, 'lookup': 0.807}
+  raise 2: mean held-out score {'gmoo': 0.713, 'de': 0.35, 'grid': 0.952, 'lookup': 0.293}
+  raise 3: mean held-out score {'gmoo': 0.14, 'de': -0.194, 'grid': 0.256, 'lookup': 0.061}
+  raise+lower: mean held-out score {'gmoo': 0.063, 'de': 0.004, 'grid': 0.853, 'lookup': 0.042}
+labelled above placebo, held-out: gmoo 36 of 36, tier 2 only 12 of 12, sign p 0.00048828125 ; grid 36 of 36; mean margins 0.669 1.045
+composition rule applied to the grid's designs at tier 2: 10 of 12
+gain size at tier 2: largest knob, L2, knobs above 0.01 {'gmoo': (0.039, 0.113, 17.1), 'de': (0.039, 0.11, 17.6), 'grid': (0.055, 0.075, 2.1)}
+base soft rates on train and held-out differ by, median log10: 0.329
