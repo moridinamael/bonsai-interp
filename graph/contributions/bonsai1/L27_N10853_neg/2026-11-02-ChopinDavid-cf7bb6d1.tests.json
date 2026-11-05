@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-cf7bb6d1",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N10853-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N10853",
+   "pole": "-",
+   "label": "The conjunction or comma in a step-by-step instruction that sets up repeating the same step on the next item ('move to the next row and [repeat]'), vs instructions where the 'and' leads to a different, finishing action",
+   "fire": [
+    "Sand the first board until smooth. Move to the next board and sand it the same way.",
+    "Plant one seed in each hole, then go to the next row and do the same.",
+    "Tie a knot at the first mark, slide down to the next mark and tie another.",
+    "Paint the top panel, wait ten minutes, then move on to the next panel and paint it too.",
+    "Check the first tire's pressure, walk to the next tire and check it as well.",
+    "Scrape the old paint off one shutter, then take down the next shutter and scrape it.",
+    "Fill the first jar to the brim, set it aside, pick up the next jar and fill it.",
+    "Stitch along the first seam, turn the fabric to the next seam and stitch again."
+   ],
+   "quiet": [
+    "Sand the first board until smooth. Wipe off the dust and apply a coat of oil.",
+    "Plant one seed in each hole, then cover the bed with soil and water it well.",
+    "Tie a knot at the end of the rope, pull it tight and trim the loose end.",
+    "Paint the top panel, wait ten minutes, then remove the tape and clean the brush.",
+    "Check the tire's pressure, close the valve cap and drive home slowly.",
+    "Scrape the old paint off the shutter, then rinse the scraper and put it away.",
+    "Fill the jar to the brim, screw on the lid and store it in the fridge.",
+    "Stitch along the seam, cut the thread and press the fabric flat."
+   ]
+  }
+ ],
+ "predictions": "'next item and' setups reach 0.5-1.2 on ' and'; finishing-step instructions stay around 0.3 or lower.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'and' before repeating a step",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Output of this pole promotes 'repeat'. Probe: 'move to the next window and do the same' 1.186, 'Move to the next strip and repeat' 0.908, 'rest for a minute, then do another set' 0.607, 'rinse and repeat' 0.540; 'Glue the first strip to the frame and let the whole frame dry' 0.333 (leak level for non-repeat instructions); narrative 'and' 0.011."
+}

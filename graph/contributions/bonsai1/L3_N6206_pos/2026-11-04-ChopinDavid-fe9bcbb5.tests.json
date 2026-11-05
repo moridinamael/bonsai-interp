@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-fe9bcbb5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N6206+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T21:33:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N6206",
+   "pole": "+",
+   "label": "An interior piece of a long word that the tokenizer splits into several pieces (especially Cyrillic and Latinate words: восприн-им-аются, ассо-ци-ации, reminis-ce), vs short words that are single tokens",
+   "fire": [
+    "Многие события детства воспринимаются взрослыми совсем иначе.",
+    "У этого запаха есть приятные ассоциации с летом.",
+    "Вечером дедушка любит предаваться воспоминаниям о войне.",
+    "Специалисты рассматривают перспективы сотрудничества.",
+    "В музее хранятся ископаемые останки древних рыб.",
+    "Эти правила распространяются на всех сотрудников.",
+    "На конференции обсуждали проблемы иерархии в компаниях.",
+    "Ребята организовали соревнования по плаванию."
+   ],
+   "quiet": [
+    "Мы видели его дома вчера днём, и он был рад.",
+    "Мама дала мне чай и хлеб, а потом мы шли в сад.",
+    "Я пошёл в лес за грибами, но их там не было.",
+    "Он сел на стул у окна и долго ждал её.",
+    "Кот спит на диване весь день, а пёс во дворе.",
+    "Мы ели суп и пили сок, а дед пил чай.",
+    "Она шла по улице домой, и шёл снег.",
+    "Дети играли в мяч во дворе до самой ночи."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.3-0.9 on a word-internal piece; near misses under 0.2. Broad pole (5% of tokens at 0.1 max), so leaks are expected.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "interior piece of long split word",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: 'ци', 'им', 'OCI', 'reminis', 'аем', 'ар', 'iz', 'ев', all inside long split words; flagged broad and gate-closed. Probe: 'воспринимаются' 0.928, 'reminisce' 0.565, 'ассоциации' 0.523, 'ископаемых' 0.306, 'integriert' 0.155; short-word Russian 0.051, 'The cat sat' 0.168."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-0b2c8008",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4722-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T21:33:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N4722",
+   "pole": "-",
+   "label": "The line break that ends a statement inside an indented Python method body (after a closing parenthesis), vs the same code written on one line or as prose",
+   "fire": [
+    "class Loader:\n    def read(self, path):\n        data = open(path).read()\n        rows = parse(data)\n        return rows\n",
+    "class Cache:\n    def get(self, key):\n        value = self.store.get(key)\n        self.hits += 1\n        return value\n",
+    "def main():\n    args = parser.parse_args()\n    config = load_config(args.path)\n    run(config)\n",
+    "class Worker:\n    def start(self):\n        self.thread = Thread(target=self.loop)\n        self.thread.start()\n",
+    "def clean(items):\n    items = sorted(set(items))\n    total = len(items)\n    return items, total\n",
+    "class Report:\n    def save(self, name):\n        text = self.render()\n        write_file(name, text)\n",
+    "def fetch(url):\n    response = session.get(url, timeout=5)\n    response.raise_for_status()\n    return response.json()\n",
+    "class Model:\n    def fit(self, X, y):\n        self.weights = solve(X, y)\n        self.trained = True\n"
+   ],
+   "quiet": [
+    "The loader reads the file at the given path, parses the data and returns the rows.",
+    "The cache looks up the key in its store, counts a hit and returns the value.",
+    "The main routine parses the arguments, loads the config from the path and runs it.",
+    "The worker creates a thread that runs its loop and then starts that thread.",
+    "The clean step sorts the unique items, counts them and returns both.",
+    "The report renders itself to text and writes the file under the given name.",
+    "The fetch helper gets the url with a timeout, checks the status and returns json.",
+    "The model solves for the weights from X and y and marks itself as trained."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.1-0.3 on the newline after ')'; near misses under 0.05. Probes were weak, so this may fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line end in indented code",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: ')\\n' x6, '\\n' x5, '\\n\\n' x3 in indented methods (max 75), plus a few sentence periods after a proper name. Probe: multi-line class '()\\n' 0.108, 'x = 5\\n' 0.109, prose period 'no movie star.' 0.220; one-line 'def f(x): return x' 0.009, prose lists 0.006. Low confidence."
+}

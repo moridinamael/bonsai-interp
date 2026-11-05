@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-de0b8102",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N4794-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T07:29:45+00:00",
+ "recipe": {
+  "toolchain_commit": "e1364425a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N4794_neg/2026-11-03-ChopinDavid-de0b8102.tests.json"
+ },
+ "label": "The later piece of a rare compound or brand word that the tokenizer splits (Chrome|book, pot|pour|ri, J|ython, portc|ull|is), vs the same pieces as ordinary whole words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N4794_neg/2026-11-03-ChopinDavid-de0b8102.tests.json",
+   "prereg_commit": "e1364425a",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.634,
+     "peak": "book"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.987,
+     "peak": "pour"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.398,
+     "peak": "ython"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.681,
+     "peak": "ull"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.559,
+     "peak": "books"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.92,
+     "peak": "pour"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.367,
+     "peak": "ython"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.622,
+     "peak": "ull"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.046,
+     "peak": " term"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " jam"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": " Python"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " lowered"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " district"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.069,
+     "peak": " Python"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " knights"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.8,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e1364425a",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "later piece of split compound",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: 'ython' in jython (-9.38), 'book(s)' in Chromebook(s), 'pour' in potpourri, 'ull' in portcullis. Probe: Jython 1.244, potpourri 0.710, portcullis 0.664, Chromebook 0.600; whole words 'books' 0.013, 'notebook' 0.015, ' Python' 0.013, ' pour' 0.010. Fire items reuse these four words in new sentences, so the label is tested at word level; novel split compounds were not probed.",
+ "selection": "random draw"
+}

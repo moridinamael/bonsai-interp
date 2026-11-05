@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-900579f6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N5548+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T04:23:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N5548",
+   "pole": "+",
+   "label": "The opening word of a new sentence or quoted line that continues a sequence ('Then', 'Visitors also', 'Before ...'), vs the same content as a single run-on clause",
+   "fire": [
+    "> First we would clean the data.\n> Then I could build a small model to test the idea.",
+    "> I would sketch the layout on paper.\n> Then we could pick the colours together.",
+    "Before entering the lab, students put on goggles. Teachers also check every bench.",
+    "Before boarding, passengers show their tickets. Children also need a seat belt.",
+    "> We would book the hall in March.\n> Then I could send the invitations to everyone.",
+    "Before cooking, chefs wash every vegetable. Kitchen staff also clean the boards.",
+    "> I would read the contract tonight.\n> Then we could sign it on Monday morning.",
+    "Before swimming, guests take a shower. Lifeguards also watch the deep end."
+   ],
+   "quiet": [
+    "We would clean the data first and build a small model to test the idea.",
+    "I would sketch the layout on paper and we could pick the colours together.",
+    "Students put on goggles before entering the lab and teachers check every bench.",
+    "Passengers show their tickets before boarding and children need a seat belt.",
+    "We would book the hall in March and send the invitations to everyone.",
+    "Chefs wash every vegetable before cooking and kitchen staff clean the boards.",
+    "I would read the contract tonight so we could sign it on Monday morning.",
+    "Guests take a shower before swimming while lifeguards watch the deep end."
+   ]
+  }
+ ],
+ "predictions": "Weak: continuation openers 0.1-0.25; run-on twins under 0.05. Likely to fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "sentence-opening continuation word (guess)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card mixes code (\"('\", 'utf', 'django', '%s') and prose ' also', ' Then', ' not'. Probe: '> Then I could make' 0.224, 'Before entering the ward' 0.169, 'The children played' 0.153 (sentence-initial The), get_model(') 0.104; django list 0.056, utf32 list 0.040, tensorflow 0.036, 'Visitors need to take steps' 0.026."
+}

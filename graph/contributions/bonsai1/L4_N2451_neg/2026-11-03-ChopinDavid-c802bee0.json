@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-c802bee0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2451-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T17:32:08+00:00",
+ "recipe": {
+  "toolchain_commit": "f9acdacde",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N2451_neg/2026-11-03-ChopinDavid-c802bee0.tests.json"
+ },
+ "label": "A short i-vowel piece ('id', 'in', 'is', 'il') completing a split foreign name (Ab|id|in, Rash|id, B|oud|in), vs single-token names and ordinary English words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N2451_neg/2026-11-03-ChopinDavid-c802bee0.tests.json",
+   "prereg_commit": "f9acdacde",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.151,
+     "peak": "id"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.09,
+     "peak": "id"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.067,
+     "peak": " O"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.058,
+     "peak": " Marc"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.732,
+     "peak": "id"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.148,
+     "peak": "id"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.1,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.044,
+     "peak": " O"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": " Smith"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.104,
+     "peak": "abo"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.081,
+     "peak": " Hassan"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.058,
+     "peak": " Marc"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.048,
+     "peak": "ba"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": " corresponding"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.072,
+     "peak": " Jay"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.034,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.773,
+    "median_fire": 0.095,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f9acdacde",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "i-vowel piece in a split foreign name",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: gate-closed regime (99%), peaks 'id' x4, 'in' x4, 'n' x4, 'i', 'ɪ' in split names (Moyse|is, Se|id|u, Beile|in, E|id, Zay|n). Probe: 'Seidu' 0.832, 'Beilein' 0.813, 'Moyseis' 0.718, IPA 'ɪ' 1.136, 'Eid' 0.376, 'Leicestershire' 'ic' 0.370, 'Zayn' 0.358; 'barked at the mailman' 0.023. Tokenizer checked: Rash|id, Ab|id|in, O|be|id, B|oud|in, Se|id|ou all carry the piece; near misses use single-token names (Jay, Grace, Hope) or splits without an i-piece (Mb|eki, D|rog|ba).",
+ "selection": "random draw"
+}

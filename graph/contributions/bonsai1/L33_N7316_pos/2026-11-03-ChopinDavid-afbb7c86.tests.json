@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-afbb7c86",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N7316+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T21:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N7316",
+   "pole": "+",
+   "label": "A lone capital ' F' or ' L' token that begins a proper name the tokenizer splits after its first letter (L|ysander, F|okker, F|arnsworth), vs proper names that are whole tokens or split elsewhere",
+   "fire": [
+    "The explorer Frobisher sailed north in search of a passage to Asia.",
+    "The inventor Farnsworth demonstrated an early electronic television.",
+    "We bought a bottle of Lysol to clean the kitchen after the party.",
+    "The old general Lysander won the final naval battle of the war.",
+    "Her grandfather flew a Fokker in the last months of the war.",
+    "The ferry from Lanzarote arrived late because of strong winds.",
+    "The university in Laramie hosted the regional chess tournament.",
+    "The critics praised Fassbinder for his bleak portraits of postwar life."
+   ],
+   "quiet": [
+    "The explorer Hudson sailed north in search of a passage to Asia.",
+    "The inventor Ferdinand demonstrated an early electronic television.",
+    "We bought a bottle of bleach to clean the kitchen after the party.",
+    "The old general Lafayette won the final battle of the war.",
+    "Her grandfather flew a Spitfire in the last months of the war.",
+    "The ferry from Lisbon arrived late because of strong winds.",
+    "The university in Luxembourg hosted the regional chess tournament.",
+    "The critics praised Fitzgerald for his bleak portraits of postwar life."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.13-0.4 on the ' F' or ' L' token; names that are whole tokens or split differently under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split initial F/L of a name",
+ "unit_kind": "token",
+ "confidence": "medium",
+ "notes": "Card: ' F' x9, ' L' x4, '-f' x4, 'F', ' the' (before institution names): L|emony, f|olic, F|DR, F|.M., L|yle, L|ardner, F|-15. Tokenizer checked: Lysander, Laramie, Lanzarote, Lysol, Fyodor, Fassbinder, Frobisher, Fokker, Farnsworth start with a lone ' L'/' F'. Probe: 'Fokker' 0.383, 'Lysander' 0.279, 'Fyodor' 0.245, 'Lanzarote' 0.207, 'Fassbinder' 0.166, 'Laramie' 0.132; 'Fitzgerald' 0.011, 'Pynchon' (lone ' P') 0.012, 'old biplane' 0.041."
+}

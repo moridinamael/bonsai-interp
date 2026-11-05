@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-02741ba3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N6773-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T00:28:56+00:00",
+ "recipe": {
+  "toolchain_commit": "6702cfa7a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N6773_neg/2026-11-02-ChopinDavid-02741ba3.tests.json"
+ },
+ "label": "Period after the year in a parenthetical author-year citation ('(Smith, J. 2014.'), vs periods in ordinary sentences that end with a year",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N6773_neg/2026-11-02-ChopinDavid-02741ba3.tests.json",
+   "prereg_commit": "6702cfa7a",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.764,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.848,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.87,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.723,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.854,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.754,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.724,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.657,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " clinic"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": " later"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": "7"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.759,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6702cfa7a",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "period after citation year",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card is mixed (copulas after long subjects, citation periods, initials, code 'and'). Probe: only '(Smith, J. 2014. Rural health ...)' fired (0.686, peak '.'); copula after 'One point that the author makes' 0.005, 'during the following decade was' 0.026, other prose under 0.03. Label rests on one probe item.",
+ "selection": "random draw"
+}

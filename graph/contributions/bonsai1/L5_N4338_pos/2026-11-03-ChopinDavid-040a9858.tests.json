@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-040a9858",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N4338+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T17:24:01+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N4338",
+   "pole": "+",
+   "label": "Unclear; best guess: a variable name at the start of an indented Python statement",
+   "fire": [
+    "for row in rows:\n    if row:\n        total = total + row[0]\n        count += 1",
+    "def merge(a, b):\n    out = []\n    while a and b:\n        out.append(a.pop(0))",
+    "for key in keys:\n    value = table.get(key)\n    seen[key] = value",
+    "if ok:\n    data = json.loads(raw)\n    items = data['items']",
+    "for node in tree:\n    depth = node.level\n    nodes.append(depth)",
+    "try:\n    conn = connect(url)\n    rows = conn.fetch()\nexcept Error:\n    rows = []",
+    "while i < n:\n    acc = acc * 2\n    i += 1",
+    "for f in files:\n    size = os.path.getsize(f)\n    sizes[f] = size"
+   ],
+   "quiet": [
+    "We counted every row in the table and added up the first column.",
+    "The two lists were merged by taking items from the front of each.",
+    "She looked up each key in the table and wrote down its value.",
+    "If the file looks fine, we read the data and list the items.",
+    "Each node in the tree has a depth that we record in a notebook.",
+    "We tried to connect to the server, but no rows came back.",
+    "The counter doubles on every step until it reaches the limit.",
+    "For each file in the folder, he noted its size on paper."
+   ]
+  }
+ ],
+ "predictions": "Expected to fail: statement-initial variable names 0.05-0.1, prose about the same things under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (code statement-initial variable)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card max 3.77, regimes mixed (57% echo); peaks on statement-initial variables (' ns', ' d', ' result', ' mat'). Probe: all items 0.016-0.100 ('for catalog in catalogs: print' 0.100, 'while y < len(mat)' 0.082, 'seismometers ... quake' 0.075, prose 'roses and tulips' 0.059). No separation; best guess on the code configuration."
+}

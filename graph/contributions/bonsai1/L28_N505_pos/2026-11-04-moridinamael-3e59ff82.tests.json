@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-moridinamael-3e59ff82",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N505+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T00:29:54+00:00",
+ "roles": ["reads bonsai1/L27/N4674-"],
+ "neighbours": [
+  {
+   "unit": "L28/N505",
+   "pole": "+",
+   "label": "a nearly always-on cell that runs highest on tokens just before a comma, period or bracket: dates, list numbers, abbreviations, 'for example'",
+   "fire": [
+    "return self.assertTrue(repeated.value_eq(x, y))",
+    "def add(a, b):\n    return a + b",
+    "The treaty was signed on March 3, 1848, after months of negotiation.",
+    "Our office closed on 14 Feb. 2019, and it reopened in the spring.",
+    "Please bring the following items: 1, 2, and 3 from the checklist.",
+    "Many mammals, for example, can sleep with only half of the brain at a time.",
+    "Dr. Lee moved to St. Louis, Mo., in the late summer.",
+    "The shipment contains apples, pears, plums, etc., and should arrive soon."
+   ],
+   "quiet": [
+    "The treaty was signed after many long months of careful negotiation between both sides",
+    "Our office closed in the winter and then it reopened again in the spring",
+    "Please bring everything on the checklist when you come to the meeting tomorrow",
+    "Many mammals can sleep with only half of the brain at any one time",
+    "The doctor moved to the city in Missouri during the late summer",
+    "The shipment contains apples and pears and plums and should arrive soon",
+    "Some metals such as copper conduct heat very well",
+    "Add the flour and sugar to the bowl before the butter melts"
+   ]
+  }
+ ],
+ "predictions": "Expect fail: the cell is dense (plain prose already ~0.5-0.6 of max), so near misses will likely exceed 0.30.",
+ "unit_kind": "dense / positional",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "look",
+   "probe",
+   "step-down",
+   "inverse-gmoo",
+   "blind-room"
+  ]
+ }
+}

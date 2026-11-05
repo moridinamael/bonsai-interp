@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-02-ChopinDavid-3136c280",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N764-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T00:28:57+00:00",
+ "recipe": {
+  "toolchain_commit": "6702cfa7a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N764_neg/2026-11-02-ChopinDavid-3136c280.tests.json"
+ },
+ "label": "Dense layer-1 unit with a tiny maximum: fires on many tokens (polite request 'ください', '_project' identifiers, ' shoes', 'Episode'); best guess is the Japanese request ending 'ください' vs other Japanese sentence endings",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N764_neg/2026-11-02-ChopinDavid-3136c280.tests.json",
+   "prereg_commit": "6702cfa7a",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.666,
+     "peak": "ください"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.657,
+     "peak": "ください"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.553,
+     "peak": "してください"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.692,
+     "peak": "してください"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.571,
+     "peak": "ください"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.463,
+     "peak": "ください"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.656,
+     "peak": "ください"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.511,
+     "peak": "ください"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.285,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.343,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.279,
+     "peak": "に"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.227,
+     "peak": "しました"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.465,
+     "peak": "に"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.304,
+     "peak": "ことが"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.358,
+     "peak": "ました"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.349,
+     "peak": "何"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.613,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6702cfa7a",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "dense; best guess 'ください'",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card flags dense (33% of tokens reach 0.1 of max, max 0.19). Probe: '_project' 0.988, 'ください' 0.815 and 0.801, ' shoes' 0.545, 'Episode' 0.552, Korean '자' 0.443; plain prose 0.16-0.21. No clean distinction; registered as dense.",
+ "selection": "random draw"
+}

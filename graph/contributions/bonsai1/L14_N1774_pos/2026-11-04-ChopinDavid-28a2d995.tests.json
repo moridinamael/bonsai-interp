@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-28a2d995",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N1774+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T00:20:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N1774",
+   "pole": "+",
+   "label": "Unclear: a long run of spaces aligning a column in console or numeric output, vs the same rows single-spaced",
+   "fire": [
+    "Node status:\n  Id   Name          State\n    1   rh-node1      Online\n    2   rh-node2      Offline",
+    "array([[ 1.,  0.,  0.],\n       [ 0.,  1.,  0.],\n       [ 0.,  0.,  1.]])",
+    "data = [ 812.,  830.,  845.,\n                         861.,  879.]",
+    "Disk usage:\n /dev/sda1         20G     15G      5G\n /dev/sdb1        100G     40G     60G",
+    "#        Name: build.py\n#     Created: 2016-03-01\n#      Author: anon",
+    "   PID USER      TIME   COMMAND\n     1 root      0:02   init\n   142 www       1:15   nginx",
+    "m = [[1, 0, 0],\n     [0, 1, 0],\n                [0, 0, 1]]",
+    "    Total            12        4         16\n    Errors            3        0          3"
+   ],
+   "quiet": [
+    "Node status: node one is online and node two is offline.",
+    "The identity matrix has ones on the diagonal and zeros elsewhere.",
+    "The readings were 812, 830, 845, 861 and 879.",
+    "The first disk is twenty gigabytes and the second is one hundred.",
+    "The build script was written in March by an anonymous author.",
+    "The init process is owned by root and nginx runs as www.",
+    "The matrix m has three rows and three columns.",
+    "There were twelve totals, four extra, and three errors in all."
+   ]
+  }
+ ],
+ "predictions": "Expected to fail: the probe found nothing above 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "column-aligning space run (unclear)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: very sparse pole (0.006% of tokens), peaks on whitespace runs inside columnar dumps (cluster status tables, numpy arrays, header comments). Probe: aligned status table 0.048, numpy rows 0.050, numeric list 0.017, single-spaced table 0.006. Best-guess test only."
+}

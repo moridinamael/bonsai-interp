@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-dd889d9f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N6394-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N6394",
+   "pole": "-",
+   "label": "Broad unit on non-initial syllable pieces inside multi-token Korean (and Japanese kanji) words ('이|수', '난|감', '더디|게', '無|事'), vs short Korean sentences made only of common merged word tokens",
+   "fire": [
+    "그는 과정을 모두 이수하고 졸업했다.",
+    "갑작스러운 질문에 그는 무척 난감했다.",
+    "회복이 생각보다 더디게 진행되었다.",
+    "여행은 무사히 끝났고 모두 돌아왔다.",
+    "그 결정은 매우 신중하게 내려졌다.",
+    "그녀는 낯선 환경에 금세 적응했다.",
+    "그는 실수를 솔직하게 인정했다.",
+    "이 약은 통증을 완화하는 데 효과적이다."
+   ],
+   "quiet": [
+    "그 사람은 오늘 집에 없다.",
+    "우리는 지금 시간이 없다.",
+    "나는 오늘 많이 있었다.",
+    "우리는 오늘 집에 있었다.",
+    "그는 지금 여기 있다.",
+    "나는 지금 시간이 있다.",
+    "그는 예산에 대한 이야기가 없다.",
+    "우리는 지금 집에 없다."
+   ]
+  }
+ ],
+ "predictions": "Korean sentences with rare split words reach 0.6-1.0; sentences of common merged tokens stay under 0.3, but the unit is broad so leaks are likely.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "inner piece of split Korean word",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card flags broad (4.2% of tokens at 0.1 of max, tiny max 0.84). Probe: '이수' 0.989, '난감' 0.819, '더디게' 0.737, '無事' 0.666, ' 수' 0.352; common Korean '그는 학교에 갔다' 0.089, English 0.10-0.23."
+}

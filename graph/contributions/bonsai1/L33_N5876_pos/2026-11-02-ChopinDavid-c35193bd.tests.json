@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-c35193bd",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N5876+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T05:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N5876",
+   "pole": "+",
+   "label": "broad: Traditional Chinese administrative and technical compounds, and template/markup value slots, versus the same content in plain English",
+   "fire": [
+    "申請人請攜帶身分證及在學證明之影本，至服務臺辦理。",
+    "本系統支援萬國碼及多國語言的介面顯示。",
+    "詳細的使用說明，請參閱線上知識庫中的技術文件。",
+    "圖書館將於週一休館，借書服務暫停一天。",
+    "<input type=\"text\" name=\"q2\" value=\"<%=answer2%>\">",
+    "{% include \"header.html\" %}\n<div class=\"main\">",
+    "請在會員登入頁面輸入電子郵件及密碼後按（確定）。",
+    "此網頁的中文譯本可能不及原文版本新。"
+   ],
+   "quiet": [
+    "Applicants should bring their ID card and a copy of their student certificate to the front desk.",
+    "This system supports Unicode and a multilingual interface.",
+    "For detailed instructions, please see the technical documents in the online knowledge base.",
+    "The library will be closed on Monday and lending will stop for one day.",
+    "Please type your second answer into the box below.",
+    "The header file is included at the top of the main page.",
+    "On the member login page, enter your email and password and press OK.",
+    "The Chinese translation of this page may be older than the original."
+   ]
+  }
+ ],
+ "predictions": "Expect most Chinese and code items to fire (0.35-1.1 on probes) and English near misses to stay low; this tests a broad language/format contrast, not a precise trigger.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Traditional Chinese / template text (broad)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: no single peak token; peaks on second characters of Traditional Chinese compounds (庫, 規, 證明, 館) and on value slots in templates ('choice1', 'base.html\"'), plus 'Af|rika'. Probe: every non-English item fired 0.363-1.096 (template value 1.096, 'Microsoft 知識庫' 0.558, 'Afrikaans' 0.496), plain English cat sentence 0.007. Near misses translate each item into English."
+}

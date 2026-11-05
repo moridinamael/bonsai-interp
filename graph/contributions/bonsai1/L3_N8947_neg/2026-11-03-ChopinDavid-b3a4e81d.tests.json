@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-b3a4e81d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8947-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T20:23:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N8947",
+   "pole": "-",
+   "label": "The CJK character 行 when the tokenizer leaves it as its own token (不可|行, 単|行|本, 这|行|代码), vs 行 merged into a word token (銀行, 旅行, 进行, 流行) and sentences without it",
+   "fire": [
+    "这里是单行道，汽车只能往一个方向开。",
+    "这行代码有一个错误，程序无法运行。",
+    "这个计划听起来不错，但是我觉得不可行。",
+    "明日は友達と一緒に京都へ行きます。",
+    "他行走在山间的小路上，看着远处的风景。",
+    "この漫画の単行本は来月発売されます。",
+    "请把第三行的文字改成红色。",
+    "老师说这个办法在农村行不通，我们得换一个。"
+   ],
+   "quiet": [
+    "这里的道路很窄，汽车只能慢慢地开。",
+    "这段代码有一个错误，需要马上修改。",
+    "这个计划听起来不错，我们需要再讨论一下。",
+    "明日は友達と一緒に京都で買い物をします。",
+    "我们暑假去云南旅游，看了很多美丽的风景。",
+    "这首歌今年非常流行，很多年轻人都会唱。",
+    "会议将在下周一举办，请大家准时参加。",
+    "他每个月都去银行存钱，从来不乱花。"
+   ]
+  }
+ ],
+ "predictions": "Standalone 行 0.4-1.0; merged 行 words and no-行 controls under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "standalone 行 token",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: '行' x28 (単行本, 行善, 行淫, 東京行). Probe: 不可|行 0.462, 単|行|本 1.005; 银行/旅行 merged -0.001, 步行 0.050, 行业 0.000. Tokenizer: 单|行|道, 这|行|代码, 行|きます, 他|行|走在 are split; 进行, 流行, 执行, 举行, 运行 are single tokens."
+}

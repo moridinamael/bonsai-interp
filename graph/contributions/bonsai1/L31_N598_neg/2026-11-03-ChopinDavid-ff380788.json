@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-ff380788",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N598-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T17:31:36+00:00",
+ "recipe": {
+  "toolchain_commit": "f9acdacde",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N598_neg/2026-11-03-ChopinDavid-ff380788.tests.json"
+ },
+ "label": "The word for a mobile or smart phone in Japanese, Chinese, Korean and Russian (the first pieces of スマートフォン, 智慧型手機, 스마트폰, мобильный телефон), vs other electronic devices in the same languages",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N598_neg/2026-11-03-ChopinDavid-ff380788.tests.json",
+   "prereg_commit": "f9acdacde",
+   "author": "ChopinDavid",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.56,
+     "peak": "フォ"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.674,
+     "peak": "フォ"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.399,
+     "peak": "智慧"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.331,
+     "peak": "트"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.185,
+     "peak": "바"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.501,
+     "peak": " мобиль"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.125,
+     "peak": " мобиль"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.599,
+     "peak": "フォ"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "を見"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": "の中"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.086,
+     "peak": "電腦"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " 컴퓨터"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "물"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " есть"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": "аг"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": "パソコン"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.45,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f9acdacde",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "smartphone/mobile phone word (CJK, Russian)",
+ "unit_kind": "token",
+ "confidence": "low",
+ "notes": "Card: peaks 'フォ', 'スマ' (スマートフォン), 'обиль' (мобильный), '智慧' (智慧型電話), '모' (모바일), ' tel' (teléfonos móviles), and English prepositions before 'your watch/phone'. Probe: 'スマートフォンでアプリを' 0.565; English 'glance at your watch' and 'glance at the door' both 0.492 (same prefix up to ' at', so the English prepositions are not separable by this test), 'alarm on your phone' = 'alarm on the oven' 0.404, 'carries a smartphone' 0.270, 'mobile phones' 0.138; farm floor 0.001. Tested only in the non-English forms; tokenizer splits checked.",
+ "selection": "random draw"
+}

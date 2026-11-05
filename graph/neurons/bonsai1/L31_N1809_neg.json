@@ -131,6 +131,128 @@
     "near_misses_at_0.3": 0
    },
    "contribution": "2026-10-23-moridinamael-1ce15dd3"
+  },
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N1809_neg/2026-11-04-moridinamael-2593ce94.tests.json",
+   "prereg_commit": "8f3af683a",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 5,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.153,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.293,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.422,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.063,
+     "peak": " minutes"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.489,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.863,
+     "peak": " real"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.805,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.14,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.141,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.07,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.422,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " disaster"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.121,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.863,
+     "peak": " real"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.276,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.142,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.703,
+    "median_fire": 0.456,
+    "near_misses_at_0.3": 2
+   },
+   "contribution": "2026-11-04-moridinamael-2593ce94"
   }
  ],
  "label_history": [
@@ -138,6 +260,11 @@
    "2026-10-23-moridinamael-1ce15dd3",
    "The word ' a' (or the word in that same slot: ' to' in 'a sight to', ' real' in 'a real') right where a sentence is about to state a thing's acclaim or standing ('was always a', 'has become a', 'is considered to be a', 'a sight to', 'became a National Historic Landmark'); it fires on that setup word whatever noun follows; quiet on everyday 'a' (bought a bag, is a tall man, named after a farmer). Also fires on the name piece ' Belt' in 'Atlanta BeltLine'.",
    "held"
+  ],
+  [
+   "2026-11-04-moridinamael-2593ce94",
+   "In English prose, the setup word just before a sentence delivers praise or lasting standing for a thing: ' a' in 'has become a / is regarded as a / nothing short of a', ' to' in 'a sight to' / 'to die for', ' real' in 'a real'; fires on the setup word whatever noun follows, quiet when the same frame leads to a negative or mundane noun (nightmare, threat, short walk).",
+   "failed"
   ]
  ],
  "examples": [],
@@ -149,12 +276,13 @@
   "moridinamael"
  ],
  "contributions": [
-  "2026-10-23-moridinamael-1ce15dd3"
+  "2026-10-23-moridinamael-1ce15dd3",
+  "2026-11-04-moridinamael-2593ce94"
  ],
  "qc": {
   "confirm": 0,
   "dispute": 0,
-  "refine": 0
+  "refine": 1
  },
  "replications": [],
  "coverage": {
@@ -163,11 +291,11 @@
   "strong": 1079
  },
  "scrutiny": {
-  "level": 1,
-  "name": "tested",
-  "test_rounds": 1,
-  "sentences": 16,
+  "level": 2,
+  "name": "re-tested",
+  "test_rounds": 2,
+  "sentences": 32,
   "contributors": 1,
-  "qc": 0
+  "qc": 1
  }
 }

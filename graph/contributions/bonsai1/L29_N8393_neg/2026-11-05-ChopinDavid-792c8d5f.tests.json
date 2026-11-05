@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-792c8d5f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8393-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T13:52:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N8393",
+   "pole": "-",
+   "label": "the entries of a small numeric matrix or vector written out row by row in brackets, inside an example in documentation or code comments",
+   "fire": [
+    "Consider the identity matrix in three dimensions:\n[1 0 0]\n[0 1 0]\n[0 0 1]\n",
+    "For instance, rotating by ninety degrees gives\n[0 -1]\n[1 0]\nas the transformation matrix.\n",
+    "  # For example, 'a' is [[2 0]\n  #                      [0 2]]\n",
+    "Here is a simple permutation matrix:\n[0 1 0]\n[1 0 0]\n[0 0 1]\n",
+    "  # The kernel is [[1 1 1]\n  #                [1 1 1]]\n",
+    "As an example, the shear matrix below\n[1 2]\n[0 1]\nmoves points along the x axis.\n",
+    "The result of the product is\n[3 0 0]\n[0 3 0]\n[0 0 3]\nwhich is three times the identity.\n",
+    "  # For example, 'm' is [[5 6]\n  #                      [7 8]]\n"
+   ],
+   "quiet": [
+    "Consider the identity matrix in three dimensions, which has ones on its diagonal.\n",
+    "For instance, rotating by ninety degrees gives a matrix with one minus sign.\n",
+    "  # For example, 'a' is a diagonal matrix with twos on the diagonal.\n",
+    "Here is a simple idea: a permutation matrix just swaps rows.\n",
+    "  # The kernel is a small block of ones used for blurring.\n",
+    "As an example, a shear matrix moves points along the x axis.\n",
+    "The result of the product is three times the identity matrix.\n",
+    "  # For example, 'm' is a small square matrix of integers.\n"
+   ]
+  }
+ ],
+ "predictions": "bracketed matrix entries in examples 0.3-0.9; the same examples with the matrix described in words near 0",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "entries of written-out matrix",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: '1', '0', 'x' as first entries of '[1 0 0]', '[x, y, z]', '[[1 2 3]' after 'For example'. Probe: '[1 0 0]' rows 0.874, '[[1 2 3]' comment 0.358, '127.0.0.1' line 0.263, '0.1 22 15' 0.174; prose 'For example, the following operation' 0.002, '[x, y, z]' in print 0.056."
+}

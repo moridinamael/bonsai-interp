@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-02-moridinamael-d1e81d99",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L5/N1675+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T01:32:29+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "two spelling pieces: 'بر' inside the Arabic word for cemetery (مقبرة) and 'ing' completing 'back|ing' in virtualization code identifiers (backing_file, backingStore), as opposed to other مق- words and whole-token ' backing' in prose"
+ },
+ "neighbours": [
+  {
+   "unit": "L5/N1675",
+   "pole": "+",
+   "label": "Three spelling pieces, in specific contexts: 'بر' inside Arabic/Persian مقبرة/مقبره (cemetery); 'ing' completing 'back|ing' in code identifiers (_create_images_and_backing, backing_file, backingStore); and ' flavor' as a variable name in OpenStack nova test code. Not English prose 'backing'/'flavor'/'race', not other مق- words, and not other languages' words for cemetery.",
+   "fire": [
+    "دفن الجد في مقبرة القرية القديمة قرب المسجد.",
+    "زرنا مقبرة الشهداء صباح يوم الجمعة.",
+    "آرامگاه او در مقبره خانوادگی در شیراز است.",
+    "على التلة تقع مقبرة صغيرة محاطة بأشجار الزيتون.",
+    "self._create_images_and_backing(context, instance, disk_info)",
+    "backing_file = os.path.join(base_dir, image_id)",
+    "this.backingStore = new Map();",
+    "if not os.path.exists(backing_path): fetch_image(ctx, backing_path)"
+   ],
+   "quiet": [
+    "دفن الجد في حديقة القرية القديمة قرب المسجد.",
+    "زرنا مقر الشركة صباح يوم الجمعة.",
+    "آرامگاه او در مقابل خانه خانوادگی در شیراز است.",
+    "The family visited the cemetery on the hill behind the church.",
+    "The senator's backing helped pass the new housing bill.",
+    "She lined the frame with a cardboard backing before hanging it.",
+    "self._create_images_and_metadata(context, instance, disk_info)",
+    "base_file = os.path.join(base_dir, image_id)"
+   ]
+  }
+ ],
+ "predictions": "Arabic cemetery and back|ing identifiers fire; the blind set has no flavor items, so that clause is untested. Expect about 6/8 fire, 0-1 near misses.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}

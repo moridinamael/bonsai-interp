@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-ac2b1b9c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N11505-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T01:20:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N11505",
+   "pole": "-",
+   "label": "The keyword ' if' opening an indented line of Python code inside a loop or block, vs indented code lines that open with another keyword or statement",
+   "fire": [
+    "for user in users:\n    if user.is_active:\n        send_email(user)",
+    "while queue:\n    node = queue.pop()\n    if node in seen:\n        continue",
+    "def check(rows):\n    for row in rows:\n        if not row:\n            return False",
+    "for path in files:\n    if path.endswith('.txt'):\n        texts.append(path)",
+    "with open(name) as f:\n    for line in f:\n        if line.startswith('#'):\n            continue",
+    "for i, x in enumerate(values):\n    if x > best:\n        best, idx = x, i",
+    "for event in events:\n    if event.type == 'click':\n        handle(event)",
+    "try:\n    for item in batch:\n        if item.id in cache:\n            hits += 1\nexcept KeyError:\n    pass"
+   ],
+   "quiet": [
+    "for user in users:\n    send_email(user)\n    count += 1",
+    "while queue:\n    node = queue.pop()\n    seen.add(node)",
+    "def check(rows):\n    for row in rows:\n        total += len(row)\n    return total",
+    "for path in files:\n    texts.append(path.lower())",
+    "with open(name) as f:\n    for line in f:\n        lines.append(line.strip())",
+    "for i, x in enumerate(values):\n    scores[i] = x * 2",
+    "for event in events:\n    handle(event)\n    log.debug(event)",
+    "try:\n    for item in batch:\n        cache[item.id] = item\nexcept KeyError:\n    pass"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.25-0.5 on ' if'; near misses under 0.12.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "indented code-line ' if'",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card peaks ' if' x17, mostly at the start of indented lines. Probe: loop-body ' if' 0.350 and 0.398, comprehension continuation 0.270, inline comprehension 0.127, prose 'If' 0.156, prose ' if' 0.005, loop body without if 0.097."
+}

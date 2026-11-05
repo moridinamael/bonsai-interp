@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-071f9861",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7976+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7976",
+   "pole": "+",
+   "label": "Space-initial byte-fallback token (' �') where a space precedes a Korean or Japanese character the tokenizer has no merged space-token for, vs the same sentences where every space-initial syllable is a merged token or no space precedes the character",
+   "fire": [
+    "그 녀석은 어제도 집에 있었다.",
+    "회의에서 예산에 대한 논의가 있었다.",
+    "우리 집 근처에 시장이 있다.",
+    "example.com ドメインを買った。",
+    "그는 귀 뒤에 연필을 두었다.",
+    "학교 근처에서 사람을 만났다.",
+    "지금 그 문제에 대한 논의가 없다.",
+    "このサイトの ドメインを変えた。"
+   ],
+   "quiet": [
+    "그 사람은 어제도 집에 있었다.",
+    "회의에서 예산에 대한 이야기가 있었다.",
+    "우리 집 앞에 시장이 있다.",
+    "example.comのドメインを買った。",
+    "그는 책상 위에 연필을 두었다.",
+    "학교 앞에서 사람을 만났다.",
+    "지금 그 문제에 대한 이야기가 없다.",
+    "このサイトのドメインを変えた。"
+   ]
+  }
+ ],
+ "predictions": "Sentences with a space-initial byte token reach 0.3-0.8; versions without one stay near 0.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space + byte-split CJK character",
+ "unit_kind": "token/lexical",
+ "confidence": "high",
+ "notes": "Card: 27 of 32 top peaks on ' �' in Korean/Japanese. Probe: ' 녀석' 0.760, ' ドメイン' 0.502, ' 논의' 0.446, ' 귀' 0.436, ' 근처' 0.308; same sentences with ' 사람' or without the byte-split word 0.000, 'のドメイン' without space 0.007."
+}

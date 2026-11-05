@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-0c095fa6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N1298+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T02:23:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N1298",
+   "pole": "+",
+   "label": "The token ' ア' that a preceding space splits off the start of a katakana loanword (' アクセス', ' アイテム'), vs the same loanwords written without the space",
+   "fire": [
+    "このホテルでは無料の アクセス ポイントが使えます。",
+    "夏休みに アウトドア 用品を買いに行った。",
+    "ゲームで新しい アイテム を手に入れた。",
+    "まず新しい アカウント を作成してください。",
+    "先輩から仕事の アドバイス をもらった。",
+    "授業の後で アンケート に答えてください。",
+    "会議で面白い アイデア が出た。",
+    "昨夜スマホの アップデート が始まった。"
+   ],
+   "quiet": [
+    "このホテルでは無料のアクセスポイントが使えます。",
+    "夏休みにアウトドア用品を買いに行った。",
+    "ゲームで新しいアイテムを手に入れた。",
+    "まず新しいアカウントを作成してください。",
+    "先輩から仕事のアドバイスをもらった。",
+    "授業の後でアンケートに答えてください。",
+    "会議で面白いアイデアが出た。",
+    "昨夜スマホのアップデートが始まった。"
+   ]
+  }
+ ],
+ "predictions": "Space + ア items reach 0.15-0.55; unspaced twins stay under 0.08.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space-split ' ア' in katakana",
+ "unit_kind": "spelling unit",
+ "confidence": "medium",
+ "notes": "Card: 5 of the top 32 peak on ' ア' (アクセス, アウトレット); others are split pieces in capitalized Cyrillic/Latin. Probe: ' アクセス' 0.443, ' アウトレット' 0.516, ' アプリ' 0.145; unspaced アクセス 0.035, アプリ 0.054; ' イベント' 0.023 (other katakana start does not fire); 'ВЕЛИ|КО' 0.710 (a second trigger, not tested). Splits checked with the tokenizer."
+}

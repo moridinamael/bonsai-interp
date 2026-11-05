@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-5bfeb2a2",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N2984+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T14:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N2984",
+   "pole": "+",
+   "label": "The closing triple quote that ends a Python docstring after its text (\"\"\" or ''' on its own line), vs opening quotes, unclosed docstrings and other triple-quoted strings",
+   "fire": [
+    "class Cache:\n    def get(self, key):\n        \"\"\"\n        Return the cached value for key.\n        \"\"\"\n        return self.store.get(key)",
+    "def parse_args():\n    \"\"\"\n    Parse the command line options.\n    \"\"\"\n    parser = argparse.ArgumentParser()",
+    "def save(self, path):\n    '''\n    Write the results to disk as CSV.\n    '''\n    with open(path, 'w') as f:\n        f.write(self.csv)",
+    "def area(r):\n    \"\"\"Compute the area of a circle of radius r.\n    \"\"\"\n    return 3.14159 * r * r",
+    "class Model:\n    def train(self, data):\n        \"\"\"\n        Fit the model on the training data.\n\n        :param data: list of samples\n        \"\"\"\n        self.fit(data)",
+    "def connect():\n    \"\"\"\n    Open a connection to the database.\n    \"\"\"\n    conn = sqlite3.connect('app.db')\n    return conn",
+    "def validate(self):\n    '''\n    Check that every field is filled in.\n    '''\n    for name in self.fields:\n        check(name)",
+    "def reset(self):\n    \"\"\"\n    Clear all counters.\n    \"\"\"\n    self.count = 0"
+   ],
+   "quiet": [
+    "class Cache:\n    def get(self, key):\n        # Return the cached value for key.\n        return self.store.get(key)",
+    "def parse_args():\n    \"\"\"\n    Parse the command line options.",
+    "def save(self, path):\n    # Write the results to disk as CSV.\n    with open(path, 'w') as f:\n        f.write(self.csv)",
+    "def area(r):\n    # Compute the area of a circle of radius r.\n    return 3.14159 * r * r",
+    "query = \"\"\"\nSELECT name FROM users\n\"\"\"\ncursor.execute(query)",
+    "def connect():\n    # Open a connection to the database.\n    conn = sqlite3.connect('app.db')\n    return conn",
+    "message = '''\nThanks for signing up!\n'''\nsend(message)",
+    "def reset(self):\n    # Clear all counters.\n    self.count = 0"
+   ]
+  }
+ ],
+ "predictions": "Functions whose docstring closes on its own line 0.5-0.8; unclosed docstrings, comments and non-docstring triple-quoted strings under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "closing docstring quote",
+ "unit_kind": "token",
+ "confidence": "high",
+ "notes": "Card: ' \"\"\"\\n' x30 of top 32, all closing docstrings before the body. Probe: closing ''' 0.772, closing \"\"\" after one-line text 0.680, closing \"\"\" 0.640; same docstring unclosed 0.058, comment instead 0.055, string-literal close 0.033, prose 0.041."
+}

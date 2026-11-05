@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-7a730708",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4801+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T15:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N4801",
+   "pole": "+",
+   "label": "The start of the second operand in an 'and'/'or' condition, especially an object re-mentioned before an attribute check in code ('hasattr(o, ...) and o.id', 'not x or x.title') and 'or' joining two failure conditions in prose",
+   "fire": [
+    "def ok(user):\n    return hasattr(user, 'email') and user.email and '@' in user.email",
+    "if not item.label or item.label.strip() == '':\n    item.label = 'none'",
+    "When the kidneys do not filter enough salt, or the body holds too much water, pressure rises.",
+    "def has_owner(p):\n    return p is not None and p.owner is not None",
+    "if node.left is None or node.left.value < 0:\n    return False",
+    "If the plant gets too little light, or the soil stays wet, the leaves turn yellow.",
+    "def valid(cfg):\n    return hasattr(cfg, 'port') and cfg.port > 0",
+    "if not row.name or row.name == 'unknown':\n    skip(row)"
+   ],
+   "quiet": [
+    "def ok(user):\n    return user.email",
+    "item.label = 'none'\nprint(item.label)",
+    "When the kidneys filter salt, the body keeps a steady balance.",
+    "def has_owner(p):\n    owner = p.owner\n    return owner",
+    "value = node.left.value\nprint(value)",
+    "If the plant gets enough light, the leaves stay green.",
+    "def valid(cfg):\n    port = cfg.port\n    return port",
+    "name = row.name\nskip(row)"
+   ]
+  }
+ ],
+ "predictions": "Code conditions 'a and a.attr', 'not a.x or a.x' and prose 'does not X, or Y' 0.15-0.7; code without a compound condition and plain prose under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "second operand of and/or condition",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card: peaks ' instance' x3, ' or' x3 and object names before '.attr' in boolean conditions ('hasattr(o, 'id') and o.id', 'not instance.acronym or instance.acronym'); prose 'does not make enough insulin, or the body'. Probe: prose 'insulin, or it cannot use it' 0.722, 'and o.name' 0.486, 'or instance.title' 0.142, df.index 0.166; 'return o is not None' 0.020, compute 0.005."
+}

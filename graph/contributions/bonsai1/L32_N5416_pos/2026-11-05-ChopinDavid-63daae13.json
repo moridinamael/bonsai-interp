@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-63daae13",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N5416+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T08:28:22+00:00",
+ "recipe": {
+  "toolchain_commit": "1d8af0496",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N5416_pos/2026-11-05-ChopinDavid-63daae13.tests.json"
+ },
+ "label": "the split piece ' re' at the start of reign, rear and reap (re|igned, re|ared, re|aping), where the tokenizer cuts off 're'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N5416_pos/2026-11-05-ChopinDavid-63daae13.tests.json",
+   "prereg_commit": "1d8af0496",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.323,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.319,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.168,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.174,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.238,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.112,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.841,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.336,
+     "peak": " re"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.136,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": " harvest"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " raising"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "In"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.068,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " c"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.234,
+     "peak": " kindness"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.075,
+     "peak": " child"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.278,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1d8af0496",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "split ' re' in reigned/reared/reaping",
+ "unit_kind": "word",
+ "confidence": 0.75,
+ "notes": "Card: ' re' x22, '-re' x5 in reigned/reared/child-rearing. Probe: 're|aping' 0.619, 'Child-re|aring' 0.375, 're|igned' 0.310, 're|ared' 0.169; 'ruled' 0.019, 'raised' 0.008, 'rebuilt' 0.001, 'reading' 0.003. Splits checked with the tokenizer.",
+ "selection": "random draw"
+}

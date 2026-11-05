@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-1b4c5621",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9161+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T11:22:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9161",
+   "pole": "+",
+   "label": "The Arabic 'وال' (and-the) piece that adds a second noun to a list, and kanji nouns inside Japanese sentences, vs the same Arabic and Japanese text without them",
+   "fire": [
+    "تهتم الوزارة بتطوير المدارس والجامعات في كل المدن.",
+    "يدرس الطلاب العلوم والرياضيات في السنة الأولى.",
+    "تبيع السوق الخضروات واللحوم كل صباح.",
+    "ناقش المؤتمر الاقتصاد والتجارة بين البلدين.",
+    "電車の窓から富士山が見えた。",
+    "この部品は工場で作られています。",
+    "会議室の机の上に資料があります。",
+    "駅の近くに新しい図書館ができました。"
+   ],
+   "quiet": [
+    "تهتم الوزارة بتطوير المدارس في كل المدن.",
+    "يدرس الطلاب كثيرا في السنة الأولى.",
+    "تبيع السوق أشياء كثيرة كل صباح.",
+    "ناقش المؤتمر قضايا مهمة بين البلدين.",
+    "でんしゃのまどからふじさんがみえた。",
+    "このぶひんはこうじょうでつくられています。",
+    "かいぎしつのつくえのうえにしりょうがあります。",
+    "えきのちかくにあたらしいとしょかんができました。"
+   ]
+  }
+ ],
+ "predictions": "Arabic 'X والY' pairs and Japanese kanji nouns 0.3-0.7; Arabic sentences without وال near or below 0, kana-only Japanese versions under 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Arabic wa-al list piece / Japanese kanji noun",
+ "unit_kind": "token",
+ "confidence": "low",
+ "notes": "Card: ' وال' x3, ' لل', Japanese kanji/katakana pieces (窓, 機能, パーツ). Probe: 'الأنظمة والقوانين' 0.634, '飛行機の窓' 0.545, '新しい機能' 0.101, 'الأفراد والجماعات' only 0.042; Arabic without وال -0.450 and -1.524. Inconsistent across وال items, low confidence."
+}

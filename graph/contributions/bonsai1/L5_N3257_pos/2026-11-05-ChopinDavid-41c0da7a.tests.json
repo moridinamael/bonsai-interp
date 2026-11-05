@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-41c0da7a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3257+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T07:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N3257",
+   "pole": "+",
+   "label": "the first token of an indented assignment inside a Python class or test body ('    response = ...', '    context_object_name = ...')",
+   "fire": [
+    "class DetailView(View):\n    model = Article\n    slug_field = 'slug'\n    context_object_name = 'article'",
+    "class AdminTests(TestCase):\n    def test_list(self):\n        response = self.client.get('/admin/list/')",
+    "class BoolTests(ValueTestCase):\n    encoder = staticmethod(encode_bool)\n    decoder = staticmethod(decode_bool)",
+    "class FeedView(ListView):\n    paginate_by = 20\n    queryset_name = 'posts'",
+    "    def test_post(self):\n        url = '/api/items/'\n        response = self.client.post(url, data)",
+    "class UserForm(ModelForm):\n    field_order = ['name', 'email']\n    template_name = 'form.html'",
+    "    def test_defaults(self):\n        instance = Widget.objects.create()\n        self.assertTrue(instance.active)",
+    "class Config:\n    batch_size = 32\n    learning_rate = 0.001"
+   ],
+   "quiet": [
+    "The detail view shows each article with its slug and a short summary.",
+    "The admin tests check that the list page loads for staff users.",
+    "The encoder turns a boolean into a single byte before it is sent.",
+    "The feed view shows twenty posts per page, newest first.",
+    "After posting the form, the server returns the new item as JSON.",
+    "The user form asks for a name and an email address before saving.",
+    "By default, every new widget is created in the active state.",
+    "The batch size was set to thirty-two and the learning rate kept small."
+   ]
+  }
+ ],
+ "predictions": "probes did not reproduce the card; expect most items near 0.02-0.12 and a likely fail",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "indented assignment target in Python",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card top examples all sit on the name that starts an indented assignment in Python test or view classes ('encoder =', 'context_object_name =', 'response = self.client.get'). Probe: only 'context_object_name' in a class body reached 0.117; 'response = self.client.get' 0.026, other code 0.014-0.035. The card's peaks (max 8.3) were not reproduced in short snippets; best-guess test, low confidence."
+}

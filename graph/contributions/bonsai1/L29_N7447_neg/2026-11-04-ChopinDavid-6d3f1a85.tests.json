@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-6d3f1a85",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N7447-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T16:39:36+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N7447",
+   "pole": "-",
+   "label": "Tokens of Python source code (assignments, attribute calls such as os.path.dirname), vs the same operations written as maths, SQL or prose",
+   "fire": [
+    "import os\n\nhere = os.path.dirname(os.path.realpath(__file__))\ndata_dir = os.path.join(here, 'data')",
+    "import numpy as np\n\nx = np.linspace(0, 1, 50)\ny = np.sin(x)\nerr = np.abs(y - x).max()",
+    "import sys\n\nargs = sys.argv[1:]\nverbose = '-v' in args\nname = args[0]",
+    "from sklearn.svm import SVC\n\nclf = SVC(kernel='rbf')\nclf.fit(X_train, y_train)\nacc = clf.score(X_test, y_test)",
+    "import json\n\nwith open('cfg.json') as f:\n    cfg = json.load(f)\nport = cfg['port']",
+    "class Comment(models.Model):\n    body = models.TextField()\n    author = models.ForeignKey(User, on_delete=models.CASCADE)",
+    "import os\n\nroot = os.path.abspath(os.path.dirname(__file__))\nlog_file = os.path.join(root, 'run.log')",
+    "import torch\n\nnet = torch.nn.Linear(4, 2)\nopt = torch.optim.SGD(net.parameters(), lr=0.1)"
+   ],
+   "quiet": [
+    "To find the folder, take the directory that contains the current file and add 'data' to it.",
+    "If y equals the sine of x, then the error is the largest absolute difference between y and x.",
+    "SELECT id, name FROM accounts WHERE active = 1 ORDER BY name;",
+    "The classifier was trained on the training split and scored on the held-out test set.",
+    "In the equation F = ma, the force equals the mass times the acceleration.",
+    "Each comment has a body of text and an author who wrote it.",
+    "The log file lives in the root folder of the project, next to the README.",
+    "The network has four inputs and two outputs and is trained with a learning rate of 0.1."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.15-0.55 on '=', '.dirname' or similar; near misses under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python source code tokens",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: ' =' x17, '.dirname' x3, '.abspath' x2 in Python scripts. Probe: os.path script 0.535, numpy script 0.272, Django model 0.162, JS 0.138; maths prose 'E = mc^2' 0.008, 'Let x = 3' 0.005, SQL 0.000, prose 0.003."
+}

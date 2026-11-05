@@ -1,0 +1,50 @@
+{
+ "contribution": "2026-11-03-moridinamael-c6245b35",
+ "contributor": "moridinamael",
+ "kind": "qc",
+ "neuron": "bonsai1/L15/N6513+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T18:06:42+00:00",
+ "qc": {
+  "verdict": "refine",
+  "label_under_test": "medicine and body-condition words inside patient-information health advice (e.g. 'don't need a prescription', anti-inflammatory drugs, enlarged veins), not the word alone in non-medical use"
+ },
+ "neighbours": [
+  {
+   "unit": "L15/N6513",
+   "pole": "+",
+   "label": "the words 'prescription', 'over-the-counter', 'anti-inflammatory drugs' and enlarged 'veins' in health or pharmacy text (any framing, not only patient advice); weak on other drug names like antibiotics or supplements, and on non-medical uses",
+   "fire": [
+    "Ask your pharmacist before combining this prescription with any other medication.",
+    "Over-the-counter pain relievers such as ibuprofen are sold without a doctor's note.",
+    "Long-term use of anti-inflammatory drugs can irritate the stomach lining.",
+    "Standing for many hours can lead to swollen, enlarged veins in the legs.",
+    "The clinic renewed her prescription for blood pressure tablets last week.",
+    "Sales of over-the-counter cold remedies rose sharply during the winter months.",
+    "Patients with ulcers are usually advised to avoid non-steroidal anti-inflammatory drugs.",
+    "Varicose veins are enlarged veins that bulge just beneath the skin."
+   ],
+   "quiet": [
+    "They should also not be fed with liquid feed or other non-protein nitrogen supplements.",
+    "Phospholipid bilayers are essential components of cellular membranes.",
+    "Ask your pharmacist before combining this tablet with any other medication.",
+    "Pain relievers such as ibuprofen are sold in most corner shops.",
+    "Long-term use of spicy food can irritate the stomach lining.",
+    "Standing for many hours can lead to tired, aching muscles in the legs.",
+    "The clinic checked her blood pressure during the visit last week.",
+    "Sales of warm scarves and gloves rose sharply during the winter months."
+   ]
+  }
+ ],
+ "predictions": "Expect most fire sentences to reach 0.2+ (prescription/over-the-counter strongest); the membranes leak may reach ~0.15; pass is plausible but the neuron is broad.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "neighbors",
+   "inverse-gmoo"
+  ]
+ }
+}

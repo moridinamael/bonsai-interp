@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-14061fbd",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N4470-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T22:20:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N4470",
+   "pole": "-",
+   "label": "The first code token of an example line inside a docstring (after 'Usage::' or '>>>'), vs the same code written as ordinary module code",
+   "fire": [
+    "def connect():\n    \"\"\"Open a session.\n\n    Usage::\n\n        from mylib import connect\n        conn = connect()\n    \"\"\"",
+    "def plot(data):\n    \"\"\"Plot the data.\n\n    Example::\n\n        from plotting import plot\n        plot([1, 2, 3])\n    \"\"\"",
+    "def parse(text):\n    \"\"\"Parse text.\n\n    Examples\n    --------\n    >>> from parser import parse\n    >>> parse('a b')\n    \"\"\"",
+    "class Cache:\n    \"\"\"A small cache.\n\n    Usage::\n\n        from cache import Cache\n        c = Cache(size=10)\n    \"\"\"",
+    "def load(path):\n    \"\"\"Load a file.\n\n    Example::\n\n        import json\n        load('config.json')\n    \"\"\"",
+    "def fetch(url):\n    \"\"\"Fetch a page.\n\n    Examples\n    --------\n    >>> import requests\n    >>> fetch('http://example.com')\n    \"\"\"",
+    "def start():\n    \"\"\"Start the server.\n\n    Usage::\n\n        from server import start\n        start(port=8080)\n    \"\"\"",
+    "def mean(xs):\n    \"\"\"Average.\n\n    Examples\n    --------\n    >>> from stats import mean\n    >>> mean([1, 2])\n    \"\"\""
+   ],
+   "quiet": [
+    "from mylib import connect\n\n\ndef main():\n    conn = connect()\n    return conn",
+    "from plotting import plot\n\n\ndef main():\n    plot([1, 2, 3])",
+    "from parser import parse\n\nresult = parse('a b')\nprint(result)",
+    "from cache import Cache\n\n\ndef build():\n    c = Cache(size=10)\n    return c",
+    "import json\n\n\ndef read(path):\n    with open(path) as f:\n        return json.load(f)",
+    "import requests\n\n\ndef get(url):\n    return requests.get(url).text",
+    "from server import start\n\nif __name__ == '__main__':\n    start(port=8080)",
+    "from stats import mean\n\nvalues = [1, 2]\nprint(mean(values))"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.2-0.5 on the indent or first token of the example line; near misses under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code line in a docstring example",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Card: indentation runs '   ' x6, ' from', 'import', ' async' inside docstring Examples/Usage blocks and doctests. Probe: 'Usage:: from datetime import' 0.482, numpy-style Examples '>>> import' 0.241, doctest lines 0.179; plain module imports 0.042, plain function body 0.106, main guard 0.128."
+}

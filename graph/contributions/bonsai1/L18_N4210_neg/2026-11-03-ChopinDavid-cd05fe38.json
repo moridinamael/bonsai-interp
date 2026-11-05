@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-cd05fe38",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4210-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T07:31:15+00:00",
+ "recipe": {
+  "toolchain_commit": "e1364425a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N4210_neg/2026-11-03-ChopinDavid-cd05fe38.tests.json"
+ },
+ "label": "Category noun opening a list of examples in health or nutrition text (citrus fruits, stomach infections), vs list items in everyday non-health text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N4210_neg/2026-11-03-ChopinDavid-cd05fe38.tests.json",
+   "prereg_commit": "e1364425a",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.243,
+     "peak": " citrus"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.15,
+     "peak": " infections"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.09,
+     "peak": " fruits"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.065,
+     "peak": " after"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.134,
+     "peak": " beans"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.078,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.326,
+     "peak": " citrus"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.232,
+     "peak": " infections"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " toys"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.085,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": "Teachers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.066,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.099,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.102,
+     "peak": " knitting"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.199,
+     "peak": " games"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.142,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e1364425a",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "health list category noun (guess)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: comma x22 after disease and condition items (Stomach infections, lupus, iodine deficiency), ' fruits' in citrus fruits. Probe: 'citrus fruits' 0.505 (peak on ' citrus'), 'stomach infections,' 0.236, 'heavy loads,' 0.121; 'lupus,' 0.043, 'pituitary gland,' 0.057; shop and travel lists 0.026-0.047. The comma itself did not reproduce.",
+ "selection": "random draw"
+}

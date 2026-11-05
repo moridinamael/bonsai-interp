@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-cae46f36",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N7459+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T18:20:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N7459",
+   "pole": "+",
+   "label": "The analyte name in a clinical blood-test measurement, right before 'levels' (serum ferritin levels, vitamin D levels), vs medical sentences that mention blood tests without a measured analyte level",
+   "fire": [
+    "The nurse ordered a test to check her serum magnesium levels.",
+    "Patients with anaemia often have low plasma ferritin levels.",
+    "High homocysteine levels have been linked to stroke.",
+    "The doctor said his blood urea levels were slightly raised.",
+    "Researchers measured serum calcium levels in every volunteer.",
+    "Low vitamin B12 levels can cause tingling in the hands.",
+    "The trial tracked plasma cortisol levels before and after exercise.",
+    "Her thyroid hormone levels returned to normal within a month."
+   ],
+   "quiet": [
+    "The nurse ordered a test to check her heart rhythm overnight.",
+    "Patients with anaemia often feel tired and short of breath.",
+    "High blood pressure has been linked to stroke.",
+    "The doctor said his kidney scan looked slightly unusual.",
+    "Researchers measured the height and weight of every volunteer.",
+    "Low back pain can cause trouble sleeping at night.",
+    "The trial tracked heart rate before and after exercise.",
+    "Her thyroid gland returned to its normal size within a month."
+   ]
+  }
+ ],
+ "predictions": "'serum/plasma/blood <analyte> levels' 0.25-0.5 on the analyte; matched medical sentences without an analyte-level phrase under 0.12.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "analyte before 'levels' in lab tests",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: peaks on analyte pieces before ' levels' (homocyste|ine, triglycer|ide, sodium, B1|2, ure|a) and 'less than' before a count. Probe: 'serum ferrit|in levels' 0.400, 'Low vitamin D levels' 0.321, 'High cholesterol levels' 0.114, 'blood sugar was high' 0.136; 'elevated levels of potassium' only 0.053 (analyte after 'levels'), 'Water levels' 0.033, 'difficulty levels' 0.001. Fire items put the analyte right before 'levels'."
+}

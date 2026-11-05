@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-c9f6bb61",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N4033+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T11:29:48+00:00",
+ "recipe": {
+  "toolchain_commit": "6beb98d9a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N4033_pos/2026-11-03-ChopinDavid-c9f6bb61.tests.json"
+ },
+ "label": "The first word piece of a camelCase identifier in a code signature (' word' in wordDict), vs plain lowercase parameter names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N4033_pos/2026-11-03-ChopinDavid-c9f6bb61.tests.json",
+   "prereg_commit": "6beb98d9a",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.235,
+     "peak": " word"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.154,
+     "peak": "Node"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.058,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.068,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.103,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.053,
+     "peak": " render"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.05,
+     "peak": "def"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.048,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.059,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.07,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.064,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.058,
+     "peak": " train"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.104,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.06,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": "(self"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.586,
+    "median_fire": 0.063,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6beb98d9a",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "first piece of camelCase identifier",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card top: ' word' in 'def wordBreak(self, s, wordDict)' 4.53, then math variables near 2.5. Probe: wordDict signature 0.659 (peak ' word'), point x = (x1 0.271, x to the minus n 0.179; vx/vy/vz 0.103, prose 0.05-0.08. Low confidence.",
+ "selection": "random draw"
+}

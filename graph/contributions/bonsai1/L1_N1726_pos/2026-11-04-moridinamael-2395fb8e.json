@@ -1,0 +1,175 @@
+{
+ "id": "2026-11-04-moridinamael-2395fb8e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1726+",
+ "contributor": "moridinamael",
+ "created": "2026-11-04T15:50:17+00:00",
+ "recipe": {
+  "toolchain_commit": "fa1da18e0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N1726_pos/2026-11-04-moridinamael-2395fb8e.tests.json"
+ },
+ "label": "The name 'Facebook' itself, in any case or inside a URL (not other social sites, Meta or Zuckerberg)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N1726_pos/2026-11-04-moridinamael-2395fb8e.tests.json",
+   "prereg_commit": "fa1da18e0",
+   "author": "blind:claude-sonnet-5-5 (label-only)",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.786,
+     "peak": " Facebook"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.904,
+     "peak": ".facebook"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.85,
+     "peak": "BOOK"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.701,
+     "peak": " facebook"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.964,
+     "peak": " Facebook"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.863,
+     "peak": "Facebook"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.753,
+     "peak": " Facebook"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.946,
+     "peak": " Facebook"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " aunt"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "ery"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " PAN"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " announced"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " faster"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": "mate"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.857,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "step-out"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "fa1da18e0",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "short": "the word 'Facebook'",
+ "unit_kind": "lexical",
+ "notes": "play step ran out of GPU memory, so the feeder was picked from chat feeders (attribution on top-4 examples); edge weight is unmeasured.",
+ "roles": [
+  "feeds bonsai1/L23/N11602+"
+ ],
+ "edges": [
+  {
+   "from": "bonsai1/L1/N1726+",
+   "to": "bonsai1/L23/N11602+",
+   "kind": "feeds",
+   "weight": null,
+   "method": "chat feeders attribution on top-4 examples (play step OOM; ablation drop unmeasured)"
+  }
+ ],
+ "trigger": {
+  "words": [
+   "Facebook",
+   "facebook",
+   "FACEBOOK"
+  ]
+ }
+}

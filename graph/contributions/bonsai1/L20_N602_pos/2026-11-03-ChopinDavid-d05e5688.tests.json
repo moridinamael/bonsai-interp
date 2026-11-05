@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-d05e5688",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N602+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T14:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N602",
+   "pole": "+",
+   "label": "Unclear: a technical noun or name piece inside Python code comments, docstrings and identifiers (transformation parameters, scaling, _roll), vs plain code without such technical naming",
+   "fire": [
+    "def fit(data):\n    \"\"\"\n    Returns\n    -------\n    The rotation parameters.\n    \"\"\"\n    return solve(data)",
+    "    # print \"selected threshold = \", thr\n    return thr",
+    "cfg = os.path.join(out_dir, 'CT normalization settings.cfg')\nwrite(cfg)",
+    "def feasible_shift_window(start, end):\n    return end - start",
+    "    params : dict\n        The interpolation coefficients.\n\n    Returns\n    -------",
+    "custom_tokenization = text_ops.split\nencoder = build(custom_tokenization)",
+    "# Theoretical draining time [h]\nt_drain = volume / rate",
+    "def placement_graph(spec):\n    # turn the chip description into a placement-style graph\n    return Graph(spec)"
+   ],
+   "quiet": [
+    "def fit(data):\n    x = data[0]\n    return x",
+    "    print(thr)\n    return thr",
+    "cfg = os.path.join(out_dir, 'a.txt')\nwrite(cfg)",
+    "def add(a, b):\n    return a + b",
+    "    a = 1\n    b = 2\n    c = a + b",
+    "items = [1, 2, 3]\ntotal = sum(items)",
+    "# loop over items\nfor i in items:\n    print(i)",
+    "def main():\n    # run it\n    return run()"
+   ]
+  }
+ ],
+ "predictions": "Code with docstring/identifier technical nouns about 0.1-0.2; plain code and prose under 0.06. Expect a failed or weak test: probe max 0.208.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (technical name in code)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card max 12.75, no single token: 'chosen', 'oning', ' transformation', '_roll', 'ization' in code comments/identifiers. Probe weak: docstring 'transformation parameters' 0.208, 'MRI scaling' 0.169, 'chosen index' comment 0.138, allowable_roll 0.109; prose transformation 0.028, prose chose 0.036, x+y code 0.056."
+}

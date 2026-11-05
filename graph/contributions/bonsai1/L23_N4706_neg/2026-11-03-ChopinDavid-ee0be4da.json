@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-ee0be4da",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N4706-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T16:28:17+00:00",
+ "recipe": {
+  "toolchain_commit": "e4d75256a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N4706_neg/2026-11-03-ChopinDavid-ee0be4da.tests.json"
+ },
+ "label": "The 'ol' / 'ол' piece of a split surname or proper name after a consonant onset (St|ol|berg, Sm|ol|ensky, В|ол|ков, ' Gol'|ub), vs names without that piece",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N4706_neg/2026-11-03-ChopinDavid-ee0be4da.tests.json",
+   "prereg_commit": "e4d75256a",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.792,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.575,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.716,
+     "peak": "ол"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.969,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.606,
+     "peak": " Gol"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.936,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.899,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.564,
+     "peak": " Kol"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " Karl"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " Anton"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": " извест"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.057,
+     "peak": "los"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " earlier"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.754,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4d75256a",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "'ol' piece in a split name",
+ "unit_kind": "token",
+ "confidence": "high",
+ "notes": "Card: peaks 'ol' x13, 'ол' x8, ' Kol' x6 in Folstein, Zolotov, Stolnitz, Scholastic, Yolanda, Nolte. Probe: Nolte 0.908, Stolnitz 0.875, Yolanda 0.741, Golson ' Gol' 0.698, Scholastic 0.696, Molina ' Mol' 0.435, Holst ' Hol' 0.203; Weber 0.003. The bare 'ol' piece is strongest. Every fire name tokenizer-checked.",
+ "selection": "random draw"
+}

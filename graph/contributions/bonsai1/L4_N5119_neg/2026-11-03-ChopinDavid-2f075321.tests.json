@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-2f075321",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N5119-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T21:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N5119",
+   "pole": "-",
+   "label": "'scope', 'section' or 'sheet' as an identifier in code (tf.variable_scope, class Section, wb.active sheet), vs code without these names and prose uses of the words",
+   "fire": [
+    "    with tf.variable_scope('decoder'):\n        logits = dense(h, vocab)",
+    "    with tf.name_scope('metrics'):\n        acc = tf.reduce_mean(hits)",
+    "    book = openpyxl.load_workbook(name)\n    sheet = book['Summary']",
+    "class Section(object):\n    def __init__(self, title):\n        self.title = title",
+    "    for section in config.sections():\n        print(section)",
+    "    with tf.variable_scope('critic', reuse=True):\n        q = mlp(s)",
+    "    :param str section: Section header to look up.\n    :return: dict",
+    "    ws = wb.active\n    sheet = wb.create_sheet('Totals')"
+   ],
+   "quiet": [
+    "    with torch.no_grad():\n        logits = model(h)",
+    "    with open(name) as fh:\n        rows = fh.readlines()",
+    "    book = json.load(fh)\n    title = book['name']",
+    "class Point(object):\n    def __init__(self, x):\n        self.x = x",
+    "    for item in config.items():\n        print(item)",
+    "    with lock:\n        counter += 1",
+    "    :param str name: Name of the user to look up.\n    :return: dict",
+    "    total = sum(values)\n    mean = total / len(values)"
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.35-0.5 on '_scope', ' section', ' Section' or ' sheet'; other code and prose under 0.08.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "scope/section/sheet in code",
+ "unit_kind": "context",
+ "confidence": "high",
+ "notes": "Card: '_scope' x14, ' Section' x3, ' section' x3, '_section' x3, ' scope' x2, ' sheet'. Probe: 'tf.variable_scope' 0.504, 'tf.name_scope' 0.473, 'wb.active sheet' 0.498, ':param dict section_names: Section' 0.430, 'class Section' 0.352; prose 'scope... section of the report' 0.070, code without them 0.006-0.022."
+}

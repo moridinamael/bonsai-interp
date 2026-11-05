@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-e9155903",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N7507-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T04:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N7507",
+   "pole": "-",
+   "label": "the column count or second dimension of a two-dimensional grid (rows of 28 columns, b[4, 0], nrows, ncols)",
+   "fire": [
+    "The stadium seats were arranged in forty rows of 36 seats each.",
+    "Each tray holds six rows of 12 eggs, so a case carries plenty.",
+    "The orchard was planted in nine rows of 24 trees along the slope.",
+    "The parking lot has eight rows of 45 spaces painted in white.",
+    "The chessboard-style floor had ten rows of 10 tiles in black and white.",
+    "The display case held five rows of 18 rings under bright glass.",
+    "The auditorium had thirty rows of 26 chairs facing the stage.",
+    "The quilt was sewn as seven rows of 14 squares in faded cotton."
+   ],
+   "quiet": [
+    "The stadium seats were arranged in a long curve facing the field.",
+    "Each tray holds 72 eggs, so a case carries plenty.",
+    "The orchard was planted with 216 trees along the slope.",
+    "The parking lot has 360 spaces painted in white.",
+    "The chessboard-style floor had 100 tiles in black and white.",
+    "The display case held 90 rings under bright glass.",
+    "The auditorium had 780 chairs facing the stage.",
+    "The quilt was sewn from 98 squares of faded cotton."
+   ]
+  }
+ ],
+ "predictions": "Fires on the token giving a grid's second dimension (column count, second index, inner loop) after the first has been stated; single-dimension sizes and code without a second index stay lower.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "second dimension of a 2-D grid",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Probe: 'twelve rows of 28 columns' 0.583 (peak on the '8'), 'b[4, 0]' comma 0.202, nested list comprehension 0.150, 'nrows, ncols' 0.104, nested for loop 0.063; single loop 0.011, prose 0.010. Card top examples are code with nested indices. Low confidence."
+}

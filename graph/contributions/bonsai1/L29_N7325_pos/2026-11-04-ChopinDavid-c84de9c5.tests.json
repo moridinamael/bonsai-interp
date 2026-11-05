@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-c84de9c5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N7325+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T21:33:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N7325",
+   "pole": "+",
+   "label": "A slot inside a list of animal or plant species names (taxon lists, often common names built from a habitat word like swamp, meadow, marsh, Antarctic), vs lists of non-living items or habitat words used as places",
+   "fire": [
+    "Birds seen at the reserve included reed warbler, marsh harrier, bittern, and water rail.",
+    "The pond garden mixes marsh marigold, swamp iris, water mint, and sedge.",
+    "Dinosaurs of the formation include Allosaurus, Stegosaurus, Camptosaurus, and Diplodocus.",
+    "The survey recorded meadow vole, field mouse, common shrew, and harvest mouse.",
+    "Fish caught in the river were chub, dace, roach, barbel, and grayling.",
+    "The guide lists prairie smoke, meadow rue, swamp rose, and wild bergamot.",
+    "Penguins on the island include Adélie, chinstrap, gentoo, and emperor penguins.",
+    "Common frogs of the region are wood frog, marsh frog, and spring peeper."
+   ],
+   "quiet": [
+    "Items packed for the trip included tent, stove, rope, and water filter.",
+    "The kitchen drawer holds spoons, forks, a ladle, a whisk, and some tongs.",
+    "Courses in the program include algebra, chemistry, history, and drawing.",
+    "We drove past the marsh, the meadow, and the old mill on our way home.",
+    "Tools in the shed were a rake, a hoe, a shovel, a saw, and pliers.",
+    "The shop sells candles, soap, notebooks, mugs, and greeting cards.",
+    "Cities on the tour include Paris, Lyon, Bordeaux, and Marseille.",
+    "Parts of the engine are the piston, crankshaft, and spark plug."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.4-0.9 on a name or comma in the species list; near misses under 0.3 (habitat words alone leak somewhat).",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot in a species-name list",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: commas and names in species lists ('Pakicetus, Basilosaurus', 'swamp milkweed', 'meadow pipit', 'Marsh and Willow Tits', 'Antarctic cod'). Probe: whale list comma 0.945, 'Tahoe sucker' 0.638, 'swamp milkweed' 0.634, 'meadow pipit' 0.634; 'walked through the swamp' 0.292, 'Antarctic fur seal' sentence 0.281, menu list 0.005, invoice list 0.002."
+}

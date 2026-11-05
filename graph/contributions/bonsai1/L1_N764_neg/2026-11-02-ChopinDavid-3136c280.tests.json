@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-3136c280",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N764-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T00:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N764",
+   "pole": "-",
+   "label": "Dense layer-1 unit with a tiny maximum: fires on many tokens (polite request 'ください', '_project' identifiers, ' shoes', 'Episode'); best guess is the Japanese request ending 'ください' vs other Japanese sentence endings",
+   "fire": [
+    "明日の会議の資料を送ってください。",
+    "こちらの用紙に名前を書いてください。",
+    "駅に着いたら電話してください。",
+    "使い方をもう一度説明してください。",
+    "ここに荷物を置いてください。",
+    "分からないことがあれば聞いてください。",
+    "ドアを静かに閉めてください。",
+    "写真を何枚か撮ってください。"
+   ],
+   "quiet": [
+    "明日の会議の資料を送りました。",
+    "こちらの用紙に名前を書きました。",
+    "駅に着いたら電話しました。",
+    "使い方をもう一度説明しました。",
+    "ここに荷物を置きました。",
+    "分からないことがあれば聞きます。",
+    "ドアを静かに閉めました。",
+    "写真を何枚か撮りました。"
+   ]
+  }
+ ],
+ "predictions": "'ください' sentences reach about 0.8; other Japanese endings may still fire 0.2-0.5 because the unit is dense, so the test will probably fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; best guess 'ください'",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card flags dense (33% of tokens reach 0.1 of max, max 0.19). Probe: '_project' 0.988, 'ください' 0.815 and 0.801, ' shoes' 0.545, 'Episode' 0.552, Korean '자' 0.443; plain prose 0.16-0.21. No clean distinction; registered as dense."
+}

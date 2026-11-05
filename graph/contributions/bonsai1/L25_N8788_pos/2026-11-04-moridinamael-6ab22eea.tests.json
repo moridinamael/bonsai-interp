@@ -1,0 +1,51 @@
+{
+ "contribution": "2026-11-04-moridinamael-6ab22eea",
+ "contributor": "moridinamael",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N8788+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T22:24:51+00:00",
+ "neighbours": [
+  {
+   "unit": "L25/N8788",
+   "pole": "+",
+   "label": "'from' right after a statement, letter or message noun, naming who sent it (not 'from' of physical origin)",
+   "fire": [
+    "The company issued a statement from its chief executive on Tuesday morning.",
+    "I found a letter from my grandmother tucked inside the old cookbook.",
+    "She read the message from her manager twice before replying.",
+    "According to a statement from the police, the road will reopen tonight.",
+    "A note from the principal went home with every student on Friday.",
+    "He kept every email from his brother in a separate folder.",
+    "The mayor received a letter from a group of concerned residents.",
+    "There was a voicemail from the dentist's office waiting when I got home."
+   ],
+   "quiet": [
+    "Our family owes him dearly.",
+    "如一年仍未受孕，可到醫院就診，查找原因。",
+    "The company's chief executive issued a statement on Tuesday morning.",
+    "I found a letter my grandmother wrote tucked inside the old cookbook.",
+    "She read her manager's message twice before replying.",
+    "According to a police statement, the road will reopen tonight.",
+    "The principal sent a note home with every student on Friday.",
+    "He kept all of his brother's emails in a separate folder."
+   ]
+  }
+ ],
+ "predictions": "Fire sentences should mostly pass 0.20 of max; the two solver leak texts (owes, Chinese) in the near misses may reach 0.2-0.35, so one near miss may cross 0.30.",
+ "short": "'from' after a message noun (who sent it)",
+ "roles": ["reads bonsai1/L24/N1643+"],
+ "confidence": "low",
+ "notes": "Step-in reader of L24/N1643+ (ablation drop 0.02, tiny). Feeders-first: top feeders mostly unlabeled. Known leaks: 'owes' and 'beg leave' fire without a message noun; the - pole is passive 'by' + institution.",
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "step-down",
+   "inverse-gmoo",
+   "bank-solo"
+  ]
+ }
+}

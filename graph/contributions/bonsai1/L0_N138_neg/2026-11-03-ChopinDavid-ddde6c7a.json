@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-ddde6c7a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N138-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T14:31:45+00:00",
+ "recipe": {
+  "toolchain_commit": "9f77d4aaf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N138_neg/2026-11-03-ChopinDavid-ddde6c7a.tests.json"
+ },
+ "label": "The vowel piece split off after a g/г onset (G|oud|a, g|ulf, заг|ор, пог|ор), vs the same words or neighbors written as one token (Gulf, город, cheddar)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N138_neg/2026-11-03-ChopinDavid-ddde6c7a.tests.json",
+   "prereg_commit": "9f77d4aaf",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.03,
+     "peak": "oud"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.843,
+     "peak": "ulf"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.918,
+     "peak": "ор"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.841,
+     "peak": "oud"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.887,
+     "peak": "ор"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.837,
+     "peak": "ор"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.793,
+     "peak": "ulf"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.767,
+     "peak": "oud"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " smoked"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " wide"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.1,
+     "peak": "у"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " signed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.087,
+     "peak": "нач"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.058,
+     "peak": "ер"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.065,
+     "peak": " difference"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": "am"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.842,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9f77d4aaf",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "vowel piece after g onset",
+ "unit_kind": "spelling unit",
+ "confidence": "high",
+ "notes": "Card: 'ор' x6 (заг|ор, облаг|ор, пог|ор), 'oud' x3 (Gouda, Goudhurst), 'ulf' x4 (gulf), 'us' x4 (bogus). Tokenizer: g|oud|a, G|oud|reau, g|ulf, заг|ор|ать; Gulf, гор-, город single tokens. Probe: Goudhurst 0.903, Gouda 0.873, погорячился 0.836, gulf 0.784, загородном 0.781; cheddar 0.019, distance 0.013, городском 0.036.",
+ "selection": "random draw"
+}

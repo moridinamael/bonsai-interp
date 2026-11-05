@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-5b43d3b6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3536+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T06:30:33+00:00",
+ "recipe": {
+  "toolchain_commit": "a328872a6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N3536_pos/2026-11-05-ChopinDavid-5b43d3b6.tests.json"
+ },
+ "label": "a dense layer-0 pole whose strongest peaks sit on a handful of specific word tokens (' creditors', ' slippery', ' Diabetes', ' follower', ' CRC') rather than on their meanings",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N3536_pos/2026-11-05-ChopinDavid-5b43d3b6.tests.json",
+   "prereg_commit": "a328872a6",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 8,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.553,
+     "peak": " creditors"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.748,
+     "peak": " slippery"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.536,
+     "peak": " Diabetes"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.662,
+     "peak": " CRC"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.663,
+     "peak": " follower"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.661,
+     "peak": " creditors"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.694,
+     "peak": " slippery"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.512,
+     "peak": " Diabetes"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.358,
+     "peak": " bankruptcy"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.344,
+     "peak": " slowed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.456,
+     "peak": " grandmother"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.366,
+     "peak": " damaged"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.393,
+     "peak": " savings"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.456,
+     "peak": " autumn"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.404,
+     "peak": " sliding"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.306,
+     "peak": " twice"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.661,
+    "near_misses_at_0.3": 8
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a328872a6",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "' creditors'/' slippery'/' Diabetes' tokens",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags dense (26% of tokens at 0.1 of max). Probe: ' creditors' 0.685, ' slippery' 0.709, ' Diabetes' 0.722, ' CRC' 0.621, ' follower' 0.642; synonym swaps ' lenders' 0.358, 'wet and dangerous' 0.354; filler 0.24-0.26. A word list, not a distinction: kept as a list.",
+ "selection": "random draw"
+}

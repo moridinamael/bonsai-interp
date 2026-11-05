@@ -1,0 +1,165 @@
+{
+ "id": "2026-11-03-moridinamael-3ae2ae1e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N239+",
+ "contributor": "moridinamael",
+ "created": "2026-11-03T16:53:29+00:00",
+ "recipe": {
+  "toolchain_commit": "6d11fb5d7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N239_pos/2026-11-03-moridinamael-3ae2ae1e.tests.json"
+ },
+ "label": "the middle pieces of long, rare medical terms split into several tokens (embol-, somatost-, neuroendocr-), not common medical words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N239_pos/2026-11-03-moridinamael-3ae2ae1e.tests.json",
+   "prereg_commit": "6d11fb5d7",
+   "author": "blind:claude-opus-5-5 (label-only)",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.818,
+     "peak": "ost"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.039,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.006,
+     "peak": "ologist"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.191,
+     "peak": "yt"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.779,
+     "peak": "ost"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.009,
+     "peak": " pointed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.01,
+     "peak": " hyp"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.009,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.208,
+     "peak": " much"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.056,
+     "peak": " block"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " disorder"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " pointed"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": " stomach"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.516,
+    "median_fire": 0.025,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-sonnet-5-5 (letsplay stream)",
+  "screens": [
+   "card",
+   "inverse-gmoo",
+   "look",
+   "probe",
+   "quick-test",
+   "step-out"
+  ],
+  "detected": [
+   "bank-solo",
+   "look"
+  ],
+  "toolchain_commit": "6d11fb5d7",
+  "minutes": 0,
+  "batch_size": 1
+ },
+ "roles": [
+  "feeds bonsai1/L15/N6513+"
+ ],
+ "edges": [
+  {
+   "from": "bonsai1/L10/N239+",
+   "to": "bonsai1/L15/N6513+",
+   "kind": "feeds",
+   "weight": null,
+   "method": "attribution ranking on top-4 examples (chat feeders); play step OOM, ablation drop unmeasured"
+  }
+ ]
+}

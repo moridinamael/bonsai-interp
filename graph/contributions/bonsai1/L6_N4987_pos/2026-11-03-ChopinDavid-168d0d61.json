@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-03-ChopinDavid-168d0d61",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N4987+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-03T20:31:30+00:00",
+ "recipe": {
+  "toolchain_commit": "a5ac963d5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N4987_pos/2026-11-03-ChopinDavid-168d0d61.tests.json"
+ },
+ "label": "The field or institution noun in a named discipline whose modifier is a group of people ('child psychology', 'Human Relations', 'Women's Studies', 'Hunter College'), vs the same nouns after a non-person modifier and the person word before a non-field noun",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N4987_pos/2026-11-03-ChopinDavid-168d0d61.tests.json",
+   "prereg_commit": "a5ac963d5",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.407,
+     "peak": " studies"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.556,
+     "peak": " psychology"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.144,
+     "peak": " psychology"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.013,
+     "peak": " drew"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.007,
+     "peak": " studies"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.462,
+     "peak": " Relations"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.06,
+     "peak": " College"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " history"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " works"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " chemistry"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " organic"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " London"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " English"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.102,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a5ac963d5",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "field noun after a person-group modifier",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: ' psychology' x8 after 'child', ' College' x4 (Hunter College), ' Relations' (Human Relations), ' Studies' (Women's Studies), 'child study', 'Child Rights', 'kid club'. Probe: 'child psychology' 0.617, 'Human Relations' 0.856, 'Hunter College' 0.799; 'developmental psychology' 0.011, bare 'Psychology' 0.031, 'toy for the child' 0.008. So the modifier matters, not the field word.",
+ "selection": "random draw"
+}

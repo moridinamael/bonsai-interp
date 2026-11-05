@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-0e09e777",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10547-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T06:25:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N10547",
+   "pole": "-",
+   "label": "a lone ' h' / ' H' token that begins a split Spanish or French word (huelga, hipermercado, hésitation, Hacienda)",
+   "fire": [
+    "Los maestros convocaron dos huelgas durante el último curso escolar.",
+    "Compramos la comida de la semana en un hipermercado a las afueras.",
+    "Elle a répondu sans la moindre hésitation devant le jury.",
+    "Tenía el tobillo hinchado después de la caída en la escalera.",
+    "Mi abuela cosía los botones con un hilo de color azul.",
+    "Cet hiver a été particulièrement froid dans les Alpes.",
+    "Metimos el pan en el horno durante unos veinte minutos.",
+    "Il hésite encore entre deux offres d'emploi à Lyon."
+   ],
+   "quiet": [
+    "Los maestros llegaron con una hora de retraso al último curso escolar.",
+    "Compramos la comida de la semana con mi hijo a las afueras.",
+    "Elle a raconté toute son histoire devant le jury.",
+    "Tenía el tobillo herido después de la caída en la escalera.",
+    "Mi abuela compró un helado de color azul para mi hermano.",
+    "Cet été a été particulièrement chaud dans les Alpes.",
+    "Esperamos en el hotel durante unos veinte minutos.",
+    "Il attend encore une réponse jusqu'à demain à Lyon."
+   ]
+  }
+ ],
+ "predictions": "7/8 fire above 0.3; Spanish/French sentences whose h-words are whole tokens or split differently stay below 0.1.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split ' h' piece in Romance word",
+ "unit_kind": "token",
+ "confidence": "high",
+ "notes": "Probes: huelga 0.791, Hacienda 0.523, hésitations 0.461, hinchazón 0.430, hielo 0.229; whole-token hospital 0.040, Economía 0.051, English hesitated 0.015, hombre 0.002. Tokenizer checked: every fire item has ' h' as its own token; quiet h-words are whole (hora, hijo, historia, hotel, hasta) or split as her|/hel|/haci|."
+}

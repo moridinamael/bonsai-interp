@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-03-ChopinDavid-31ff39e8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N11785+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-03T21:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N11785",
+   "pole": "+",
+   "label": "The sign of a quantity inside a mathematical derivation: a unary minus opening a term after '=' in multi-line numeric code, or the word 'sign' when a determinant or term flips sign, vs the same derivations without a sign operation",
+   "fire": [
+    "Swapping two rows of a matrix multiplies its determinant by minus one, so here the determinant changes sign.",
+    "When we cross the asymptote the function changes sign, going from positive to negative values.",
+    "Moving the term to the other side of the equation, remember that it changes sign as well.",
+    "    t1 = (1.+xi)**(a-1.)*(p-a)\n    t2 = -((1.+xi)**(a-2.))*(p-a+1.)\n    t3 = -((1.-xi)**(p-a))",
+    "    r1 = (x - mu)**2 / s**2\n    r2 = -(x - mu)**3 / s**3\n    r3 = -(r1 * r2)",
+    "Since the cosine is negative in the second quadrant, the whole expression flips sign there.",
+    "Multiplying both sides by a negative number reverses the inequality and changes the sign of each term.",
+    "    a1 = (k + 1.)*(n - k)\n    a2 = -((k + 2.)*(n - k - 1.))\n    a3 = -(a1 * a2)"
+   ],
+   "quiet": [
+    "Swapping two rows of a matrix is an elementary operation, so here the rank stays the same.",
+    "When we cross the asymptote the function grows very quickly towards large values.",
+    "Moving the term to the other side of the equation, remember to simplify it as well.",
+    "    t1 = (1.+xi)**(a-1.)*(p-a)\n    t2 = ((1.+xi)**(a-2.))*(p-a+1.)\n    t3 = ((1.-xi)**(p-a))",
+    "    r1 = (x * mu)**2 / s**2\n    r2 = (x * mu)**3 / s**3\n    r3 = (r1 * r2)",
+    "Since the cosine is small in the second quadrant, the whole expression is tiny there.",
+    "Multiplying both sides by a positive number keeps the inequality and scales each term.",
+    "    a1 = (k + 1.)*(n * k)\n    a2 = ((k + 2.)*(n * k * 1.))\n    a3 = (a1 * a2)"
+   ]
+  }
+ ],
+ "predictions": "Fire items weak, 0.1-0.35; near misses under 0.1. Probe evidence is thin (most code minus probes scored under 0.1), so a fail is likely.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "sign/minus inside a math derivation",
+ "unit_kind": "context",
+ "confidence": "low",
+ "notes": "Card: ' -' x3, ' +' x3, ' sign' x2, ' signal' x2 in long math code and lecture transcripts. Probe: 'the determinant changes sign' 0.352 on ' sign'; 'put a minus sign in front' 0.139; short code lines with -,+=, -= all under 0.09; non-math 'minus attitude' 0.011. Best guess, low confidence."
+}

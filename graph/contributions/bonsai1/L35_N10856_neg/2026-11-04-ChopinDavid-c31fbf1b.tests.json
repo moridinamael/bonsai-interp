@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-c31fbf1b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10856-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T04:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N10856",
+   "pole": "-",
+   "label": "the word-initial piece ' cr' when it is split off as its own token (cr|ise, cr|aters, cr|ème, cr|anes)",
+   "fire": [
+    "On the hill above town, three tall cranes lifted steel beams all morning.",
+    "Le médecin a examiné le crâne du patient après la chute.",
+    "For dessert the café served thin crêpes with lemon and sugar.",
+    "Sous le microscope, les cristaux de sel brillaient comme du verre.",
+    "Le gouvernement a promis de sortir le pays de la crise avant l'été.",
+    "Astronomers mapped dozens of craters near the lunar south pole.",
+    "Mélangez le sucre avec la crème jusqu'à obtenir une texture lisse.",
+    "The pastry was so crumbly that it fell apart in my hands."
+   ],
+   "quiet": [
+    "On the hill above town, three tall trucks lifted steel beams all morning.",
+    "Le médecin a examiné le bras du patient après la chute.",
+    "For dessert the café served thick cream with lemon and sugar.",
+    "Under the microscope, the crystal of salt glittered like glass.",
+    "The government promised to lift the country out of crisis before summer.",
+    "Astronomers mapped a single crater near the lunar south pole.",
+    "The chef mixed the sugar with the cream until it was smooth.",
+    "The pastry was so crisp that it cracked in my hands."
+   ]
+  }
+ ],
+ "predictions": "Fires on ' cr' only where the tokenizer splits it off as its own piece; whole-token cr- words (crisis, crowd, create, cream, crime) stay near zero.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off word-initial ' cr' piece",
+ "unit_kind": "spelling unit",
+ "confidence": "high",
+ "notes": "Probe: ' cr' pieces 0.442 (crise), 0.606 (craters), 0.488 (crème), 0.519 (crimen), 0.572 (crumbly); single-token 'crisis' 0.002, 'create' 0.001, 'crowd' 0.002. Tokenizer checked: crâne, crêpes, cranes, cristaux split as ' cr'+...; crater, crises, cream, crime, crash, crude are whole tokens."
+}

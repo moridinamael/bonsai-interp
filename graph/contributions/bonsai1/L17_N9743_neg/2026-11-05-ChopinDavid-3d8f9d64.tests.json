@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-3d8f9d64",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N9743-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T06:23:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N9743",
+   "pole": "-",
+   "label": "an identifier or attribute piece on the left side of a comparison inside a nested Python conditional (if vw_dist < dist[w]), as against assignments and prose",
+   "fire": [
+    "for v in graph:\n    if v in seen:\n        if new_cost < cost[v]:\n            cost[v] = new_cost\n",
+    "for p in points:\n    if p.valid:\n        if p_dist < best_dist:\n            best = p\n",
+    "for row in rows:\n    if row:\n        if row_total > limit:\n            flagged.append(row)\n",
+    "for e in edges:\n    if e.active:\n        if edge_weight < min_weight:\n            min_weight = edge_weight\n",
+    "for k in keys:\n    if k in cache:\n        if k_age > max_age:\n            del cache[k]\n",
+    "for node in tree:\n    if node.children:\n        if node_depth >= max_depth:\n            break\n",
+    "for item in items:\n    if item.price:\n        if item_score < threshold:\n            continue\n",
+    "for c in cells:\n    if c.alive:\n        if c_energy <= 0:\n            c.alive = False\n"
+   ],
+   "quiet": [
+    "for v in graph:\n    seen.add(v)\n    cost[v] = 0\n",
+    "for p in points:\n    best = p\n    print(best)\n",
+    "for row in rows:\n    flagged.append(row)\n",
+    "for e in edges:\n    weights.append(1)\n",
+    "The cache keeps keys until they grow too old to be useful.",
+    "Each node in the tree may have several children of its own.",
+    "The shop lowered the price of every item in the window.",
+    "Living cells need a steady supply of energy to survive."
+   ]
+  }
+ ],
+ "predictions": "split identifiers in nested 'if x_dist < y:' lines 0.3-0.6; assignments, imports and prose below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "left operand of a nested code comparison",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card peaks in code: 'vw|_dist <', 'distance|_scalar <', 'if| product >=', '.lower()==', 'retry_counter += 1'. Probe: nested 'if vw_dist < dist[w]' 0.575 (peak ' dist'), 'self.status = WAITING' 0.221, 'retry_counter += 1' 0.150, single-level '.lower() ==' 0.034; imports/prose 0.02-0.04. Weak and narrow."
+}

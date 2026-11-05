@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-02-ChopinDavid-1f5d00cb",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N6427-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-02T23:23:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N6427",
+   "pole": "-",
+   "label": "Digit or separator inside a run of machine-formatted numbers (timestamps, split times, coordinate columns, dotted dates), vs the same quantities written in running prose",
+   "fire": [
+    "Lap times: 1 Garcia 02:14 2 Novak 02:17 3 Ito 02:21 4 Mensah 02:26",
+    "2021-06-11 03:30:00 17.2\n2021-06-11 03:45:00 17.5\n2021-06-11 04:00:00 17.9",
+    "Station log: 08:15:02 OK 08:15:07 OK 08:15:12 WARN 08:15:17 OK",
+    "481203.775 3907415.102 481207.330 3907419.648 481211.904 3907423.017",
+    "Splits: 00:52.31, 01:47.06, 02:43.88, 03:39.12, 04:35.70",
+    "7/02/2020 9:14:00 AM Price: $312,500\n7/03/2020 9:20:00 AM Price: $314,000",
+    "Finish order: 1 Kaur 03:58 2 Hill 04:02 3 Diaz 04:05 4 Park 04:11",
+    "Build times: 2015.03.09, 2015.04.14, 2015.05.20, 2015.06.25"
+   ],
+   "quiet": [
+    "Garcia finished the lap first, a few seconds ahead of Novak and Ito.",
+    "The temperature crept up slowly through the early hours of the morning.",
+    "The station reported no problems apart from one brief warning.",
+    "The survey team marked several points along the edge of the field.",
+    "She swam each length a little faster than the one before.",
+    "The house sold for slightly more than its neighbour a day later.",
+    "Kaur won the race, while Hill and Diaz were close behind her.",
+    "We released new builds roughly once a month that spring."
+   ]
+  }
+ ],
+ "predictions": "Timestamp lists, race times and coordinate columns reach 0.2-0.5; the same facts in prose (with words or a single number) stay under 0.05.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "digits in tabular numeric runs",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Card: coordinate column '1258|0|37.06862', timestamps '02:00:00', '1:58:00 PM', race split times '01:45', dotted dates '2012.11.12'. Probe: split times 0.533, timestamp rows 0.376, coordinate column 0.310, '1:58:00 PM' rows 0.206, dotted dates 0.131; prose times 0.006, prose prices 0.003, race order in words 0.011."
+}

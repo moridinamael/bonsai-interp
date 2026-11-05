@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-acf7c9d4",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N7966-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-04T16:39:36+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N7966",
+   "pole": "-",
+   "label": "The indentation that opens an item of a list inside a code docstring or comment, right after a line ending in a colon, vs indented docstring lines that continue prose and lists outside code",
+   "fire": [
+    "def parse(line):\n    \"\"\"Parse one log line.\n\n    The returned dict contains these entries:\n\n        - level: the log level\n        - message: the text\n    \"\"\"",
+    "class Cache:\n    \"\"\"A small LRU cache.\n\n    It supports three operations:\n\n      1. get: read a value\n      2. put: store a value\n    \"\"\"",
+    "def resize(img, size):\n    \"\"\"Resize an image.\n\n    Two modes are available:\n\n        * crop: cut the edges\n        * pad: add borders\n    \"\"\"",
+    "class Order:\n    \"\"\"A customer order.\n\n    Every order stores the following data:\n\n      1. sku: the product code\n      2. qty: the quantity\n    \"\"\"",
+    "def connect(url):\n    \"\"\"Open a connection.\n\n    The URL may use one of these schemes:\n\n        - http: plain text\n        - https: encrypted\n    \"\"\"",
+    "def score(run):\n    \"\"\"Score a finished run.\n\n    The score depends on:\n\n      * speed: time taken\n      * accuracy: errors made\n    \"\"\"",
+    "class Sensor:\n    \"\"\"A temperature sensor.\n\n    Each reading carries two values:\n\n        1. t: the timestamp\n        2. c: degrees Celsius\n    \"\"\"",
+    "def merge(a, b):\n    \"\"\"Merge two tables.\n\n    The merge follows these rules:\n\n      - keys: must match\n      - values: right side wins\n    \"\"\""
+   ],
+   "quiet": [
+    "def parse(line):\n    \"\"\"Parse one log line.\n\n    The returned dict contains the level and the message text,\n    both as plain strings.\n    \"\"\"",
+    "class Cache:\n    \"\"\"A small LRU cache.\n\n    It supports reading and storing values and evicts the\n    oldest entry when full.\n    \"\"\"",
+    "def resize(img, size):\n    \"\"\"Resize an image by cropping or padding it.\"\"\"\n    w, h = size\n    return img.resize((w, h))",
+    "Every order stores a product code and a quantity, which the warehouse reads each morning.",
+    "Notes for the meeting:\n- review the budget\n- plan the launch",
+    "def score(run):\n    total = run.speed + run.accuracy\n    if total > 10:\n        return 10\n    return total",
+    "class Sensor:\n    def __init__(self, t, c):\n        self.t = t\n        self.c = c",
+    "The merge follows two rules: keys must match, and values from the right side win."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.4-0.7 on the indentation before the first item; near misses under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "indent opening a docstring list item",
+ "unit_kind": "context",
+ "confidence": "medium",
+ "notes": "Card: whitespace tokens after 'following rules:\\n\\n' and 'pieces of data associated with it:\\n\\n' in docstrings, ':\\n\\n' x3. Probe: docstring '- name:' list 0.552, '1. id:' list 0.688; plain-text indented list 0.026, shopping list 0.059, docstring without list 0.074, plain code 0.030."
+}
