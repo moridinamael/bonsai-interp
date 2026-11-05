@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-90e8fef4",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N7465+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T14:22:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N7465",
+   "pole": "+",
+   "label": "instructions addressed to the user of a program or game: usage lines, 'please specify', 'press enter', 'think of a number'",
+   "fire": [
+    "def main():\n    print(\"Usage: python resize.py <image> <width>\")\n    sys.exit(1)\n",
+    "def ask():\n    reply = input('Type your name and press enter: ')\n    return reply\n",
+    "def start():\n    print(\"Please choose a level between 1 and 5.\")\n    level = read()\n",
+    "Tell the audience: pick any card, look at it, and put it back in the deck.",
+    "def setup():\n    # the player is asked to enter a nickname\n    nick = input()\n",
+    "def run():\n    print(\"Error: please provide a config file with -c\")\n    sys.exit(2)\n",
+    "For this trick, ask a volunteer to think of a number between one and twenty.",
+    "def menu():\n    print(\"Enter 1 to start or 2 to quit\")\n    choice = input()\n"
+   ],
+   "quiet": [
+    "def main():\n    print(\"Resized 40 images in 3 seconds.\")\n    return 0\n",
+    "def ask():\n    reply = cache.get('name')\n    return reply\n",
+    "def start():\n    print(\"Level 3 loaded.\")\n    level = 3\n",
+    "The audience cheered when the magician pulled a rabbit out of the hat.",
+    "def setup():\n    # the nickname is saved to the profile table\n    save(nick)\n",
+    "def run():\n    print(\"Config loaded from settings.ini\")\n    return cfg\n",
+    "For this trick, the magician spent years practising in front of a mirror.",
+    "def menu():\n    print(\"Main menu ready\")\n    return items\n"
+   ]
+  }
+ ],
+ "predictions": "usage/prompt instructions 0.4-1.1; status messages and storage comments near 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "instructions to the user",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: 'Usage: Run as', 'Please specify', 'prompted to enter', 'Press enter', 'Think of any number'. Probe: usage line 1.171, 'Press enter' 1.036, 'think of any card' 1.009, 'Please specify' 0.594, 'prompted to enter' 0.438; status print after args check 0.230, password hash comment 0.007. Caveat: 'argv < 2' check alone scored 0.516."
+}
