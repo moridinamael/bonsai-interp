@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-65a4b0fa",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2636-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T15:19:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N2636",
+   "pole": "-",
+   "label": "numeric or constant factor multiplied into a symbolic formula in code (the 2 in 2*mu, the 2*I*pi term), vs the same formulas without the factor and numbers in prose",
+   "fire": [
+    "    nu = lam/(2*(lam + mu))\n    return nu",
+    "    E = mu*(3*lam + 2*mu)/(lam + mu)\n    return E",
+    "assert g(z*exp_polar(2*I*pi)) == g(z) - 2*I*pi",
+    "    k = lam + 2*mu/3\n    return k",
+    "    G = E/(2*(1 + nu))\n    return G",
+    "    omega = 2*pi*freq\n    return omega/(2*mu)",
+    "assert h(x).rewrite(exp) == (exp(I*x) - exp(-I*x))/(2*I)",
+    "    c = sqrt((lam + 2*mu)/rho)\n    return c"
+   ],
+   "quiet": [
+    "    nu = lam/(lam + mu)\n    return nu",
+    "    E = mu*(lam + mu)/(lam - mu)\n    return E",
+    "assert g(z) == g(z)",
+    "    k = lam + mu\n    return k",
+    "    G = E/(1 + nu)\n    return G",
+    "    omega = freq\n    return omega/mu",
+    "The recipe needs 2 cups of flour and 3 eggs for a single loaf.",
+    "The bus leaves at 2 and arrives about 40 minutes later."
+   ]
+  }
+ ],
+ "predictions": "factor '2' (or *I/*pi) inside nested code formulas 0.3-0.8; same formulas without the factor and prose numbers below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "numeric factor in code formulas",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: '2' x9, '0' x6 as factors ('lam + ⟦2⟧*mu', '2*I⟦*pi⟧', '10⟦0⟧*max_frac_diff') (max 200). Probe: '(lam + 2*mu)' 0.795, '2*I*pi' 0.412, but '0.5 * base' 0.053 and '[2*hidden_size' 0.046; factorless 'lam*mu/(lam + mu)' 0.237 at 'lam'; prose numbers 0.004-0.006. Fire items keep the factor inside a denominator or nested term."
+}

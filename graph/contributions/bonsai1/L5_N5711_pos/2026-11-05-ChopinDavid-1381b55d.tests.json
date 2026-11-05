@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-1381b55d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N5711+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T15:19:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N5711",
+   "pole": "+",
+   "label": "write/set accessor pieces in code identifiers (os.write, fh.write, F_SETFL, _set_): the call that puts data into a resource, vs other method names",
+   "fire": [
+    "import os\n\ndef dump(fd, payload):\n    n = os.write(fd, payload)\n    return n",
+    "log = open('run.log', 'a')\nfor line in lines:\n    log.write(line + '\\n')\nlog.close()",
+    "import fcntl\nflags = fcntl.fcntl(sock, fcntl.F_GETFL)\nfcntl.fcntl(sock, fcntl.F_SETFL, flags | os.O_NONBLOCK)",
+    "def save(self):\n    out = open(self.path, 'wb')\n    out.write(self.blob)\n    out.close()",
+    "    def flush_buffer(self):\n        self.stream.write(self.buf)\n        self.buf = b''",
+    "rc = spi_write(dev, tx, len(tx))\nif rc != 0:\n    print('spi error')",
+    "import sys\nsys.stdout.write('loading...')\nsys.stdout.flush()",
+    "def update(fd):\n    attrs = termios.tcgetattr(fd)\n    termios.tcsetattr(fd, termios.TCSANOW, attrs)"
+   ],
+   "quiet": [
+    "import os\n\ndef finish(fd):\n    os.close(fd)\n    return True",
+    "log = open('run.log', 'a')\nfor line in lines:\n    count += 1\nlog.close()",
+    "import fcntl\nflags = 0\nprint('sock flags', flags | os.O_NONBLOCK)",
+    "def remove(self):\n    os.remove(self.path)\n    self.blob = None",
+    "    def reset_buffer(self):\n        self.stream.flush()\n        self.buf = b''",
+    "rc = spi_open(dev, speed)\nif rc != 0:\n    print('spi error')",
+    "import sys\nargs = sys.argv[1:]\nprint(len(args))",
+    "In the evening she sat down to write a long letter to her old teacher."
+   ]
+  }
+ ],
+ "predictions": "'.write'/'_write'/'_SET' in code 0.3-0.8; other method calls on the same objects (close, flush, open, get) below 0.2; prose 'write' near 0",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "write/set piece in code calls",
+ "unit_kind": "token",
+ "confidence": 0.45,
+ "notes": "Card: '.write' x5, '_SET' x3, '_write' x2 (max 2.89). Probe: F_SETFD 0.769, os.write 0.657, fh.write 0.446, device_write 0.208; os.read 0.240 and fh.read 0.183 (read also fires weakly, so no read in near misses); prose 'write a letter' 0.005; widget.SetValue 0.040."
+}
