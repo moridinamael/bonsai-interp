@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-8a152651",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N10225+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T03:23:53+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N10225",
+   "pole": "+",
+   "label": "unclear: identifiers and brackets inside Python subscript/swap expressions and docstring notation",
+   "fire": [
+    "for i in range(n):\n    to_swap[0], to_swap[i] = to_swap[i], to_swap[0]",
+    "buf = [1, 2, 3]\nbuf[0], buf[2] = buf[2], buf[0]\nprint(buf)",
+    "def norm1(self, x):\n    \"\"\" returns ||x||_1 \"\"\"\n    raise NotImplementedError()",
+    "The pattern is: [Head Noun] of [Modifier Noun], as in cup of tea.",
+    "queue_out[j], queue_out[k] = queue_out[k], queue_out[j]",
+    "def dist(self, a, b):\n    \"\"\" returns ||a - b||_2 \"\"\"\n    return 0",
+    "The template reads: [First Name] [Last Name], [City].",
+    "pairs[i][0], pairs[i][1] = pairs[i][1], pairs[i][0]"
+   ],
+   "quiet": [
+    "for i in range(n):\n    total = total + i\nprint(total)",
+    "buf = [1, 2, 3]\nbuf.append(4)\nprint(buf)",
+    "def norm1(self, x):\n    return sum(abs(v) for v in x)",
+    "The pattern is simple, as in a cup of tea or a slice of cake.",
+    "count = count + 1\nif count > 10:\n    break",
+    "def dist(self, a, b):\n    return abs(a - b)",
+    "The template asks for your name and your city.",
+    "name = 'pairs'\nprint(name.upper())"
+   ]
+  }
+ ],
+ "predictions": "3/8 fire; expected to fail",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code subscript (unclear)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Probe: swap 'to_send[0], to_send[i] = ...' 0.411 on '_send', bracket notation '[Main Noun]' in prose 0.357, docstring '||x||_2' 0.240; other subscripts 0.034-0.111; plain arithmetic code 0.021. No single token or context explains the card."
+}
