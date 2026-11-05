@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-4f8f64d3",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N11388-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T23:24:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N11388",
+   "pole": "-",
+   "label": "the first piece of a word split by the tokenizer when that piece is a bare ' H' (Homs, Hama, Hodeidah, Hightower) or ' y' (yolk) in running text; place names that are a single token do not fire",
+   "fire": [
+    "Shelling resumed overnight in the besieged districts of Homs, activists said.",
+    "Government troops pushed north from Hama toward the rebel-held towns.",
+    "Aid ships were unable to dock at the port of Hodeidah because of the blockade.",
+    "Whisk the egg yolk with sugar until the mixture turns pale.",
+    "The ruling family of House Hightower controls the city of Oldtown.",
+    "Protesters gathered again in the central square of Homs after Friday prayers.",
+    "The recipe calls for one yolk, a pinch of salt and cold butter.",
+    "The convoy reached the outskirts of Hama before turning back."
+   ],
+   "quiet": [
+    "Shelling resumed overnight in the besieged districts of Aleppo, activists said.",
+    "Government troops pushed north from Damascus toward the rebel-held towns.",
+    "Aid ships were unable to dock at the port of Aden because of the blockade.",
+    "Whisk the egg with sugar until the mixture turns pale.",
+    "The ruling family of House Lannister controls the city of Lannisport.",
+    "Protesters gathered again in the central square of Mosul after Friday prayers.",
+    "The recipe calls for one egg, a pinch of salt and cold butter.",
+    "The convoy reached the outskirts of Raqqa before turning back."
+   ]
+  }
+ ],
+ "predictions": "sentences with ' H'+rest names or ' y'+olk 0.2-0.55; single-token names (Aleppo, Mosul, Tokyo) below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-word initial ' H'/' y'",
+ "unit_kind": "word",
+ "confidence": 0.35,
+ "notes": "Card: ' H' x10, 'h' x4, 'H' x2, -h(usbands), y(olk), yog-h-urt. Probe: Homs 0.546, egg yolk 0.534, Hodeidah 0.380, Hanoi 0.186; Aleppo 0.003, Tokyo 0.007; but sentence-early 'Many Hmong' 0.006 and Huxley peaked on '3' (0.217), so not every split H fires."
+}
