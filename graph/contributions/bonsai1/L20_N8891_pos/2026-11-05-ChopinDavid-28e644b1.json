@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-28e644b1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N8891+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T21:28:54+00:00",
+ "recipe": {
+  "toolchain_commit": "83ff7cc8a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N8891_pos/2026-11-05-ChopinDavid-28e644b1.tests.json"
+ },
+ "label": "code tokens that fuse an opening quote with a following underscore or format character inside brackets or after '=' (['_ , ='_ , (\"(% , \"p:o), i.e. a string literal starting with '_' or a format marker",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N8891_pos/2026-11-05-ChopinDavid-28e644b1.tests.json",
+   "prereg_commit": "83ff7cc8a",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.876,
+     "peak": "['_"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.719,
+     "peak": "='_"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.624,
+     "peak": "['_"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.52,
+     "peak": "='_"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.703,
+     "peak": "['_"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.49,
+     "peak": "['_"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.612,
+     "peak": "['_"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.251,
+     "peak": "='_"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": "['"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.027,
+     "peak": "=True"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.057,
+     "peak": "['"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": "='"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.037,
+     "peak": "(token"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " def"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": "index"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.055,
+     "peak": "='"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.618,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "83ff7cc8a",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "opening quote fused with '_' in code",
+ "unit_kind": "word",
+ "confidence": 0.6,
+ "notes": "Card: ['_ x2, ='_ x2, (\"(%, [\"_, :o. Probe: session['_user_id'] 0.686, compute='_compute_status' 0.717, cluster['_id'] 0.622, getopt \"p:o\" 0.659, log.debug(\"(%s) 0.469; session['user_id'] 0.018, plain arithmetic 0.026.",
+ "selection": "random draw"
+}

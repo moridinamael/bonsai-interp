@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-28e644b1",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N8891+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T21:20:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N8891",
+   "pole": "+",
+   "label": "code tokens that fuse an opening quote with a following underscore or format character inside brackets or after '=' (['_ , ='_ , (\"(% , \"p:o), i.e. a string literal starting with '_' or a format marker",
+   "fire": [
+    "def load(config):\n    path = config['_path']\n    return open(path)",
+    "    total = fields.Float(compute='_compute_total', store=True)\n",
+    "item = record['_source']\nprint(item['title'])",
+    "class Order(models.Model):\n    amount = fields.Monetary(compute='_amount_all')\n",
+    "token = request.headers['_csrf']\nverify(token)",
+    "    def save(self):\n        self.data['_rev'] = self.rev\n        return self.data",
+    "doc_id = hit['_id']\nindex = hit['_index']",
+    "    name = fields.Char(default='_new', required=True)\n"
+   ],
+   "quiet": [
+    "def load(config):\n    path = config['path']\n    return open(path)",
+    "    total = fields.Float(compute='compute_total', store=True)\n",
+    "item = record['source']\nprint(item['title'])",
+    "class Order(models.Model):\n    amount = fields.Monetary(string='Amount')\n",
+    "token = request.headers['csrf']\nverify(token)",
+    "    def save(self):\n        self.data['rev'] = self.rev\n        return self.data",
+    "doc_id = hit['id']\nindex = hit['index']",
+    "    name = fields.Char(default='new', required=True)\n"
+   ]
+  }
+ ],
+ "predictions": "['_ and ='_ style string openings 0.5-0.7; the same code with plain keys without the underscore near 0",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "opening quote fused with '_' in code",
+ "unit_kind": "word",
+ "confidence": 0.6,
+ "notes": "Card: ['_ x2, ='_ x2, (\"(%, [\"_, :o. Probe: session['_user_id'] 0.686, compute='_compute_status' 0.717, cluster['_id'] 0.622, getopt \"p:o\" 0.659, log.debug(\"(%s) 0.469; session['user_id'] 0.018, plain arithmetic 0.026."
+}
