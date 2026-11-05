@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-961d29d0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N2868+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T01:20:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N2868",
+   "pole": "+",
+   "label": "Value, key or operator tokens inside code and configuration text (YAML values, dict keys, assignments), vs the same kind of content written as plain prose",
+   "fire": [
+    "volumes:\n  - ./data:/var/lib/db\nenvironment:\n  DEBUG: false\n  VERBOSE: true",
+    "if 'user' in session and 'token' in session:\n    login(session['user'])",
+    "settings = {'timeout': 30, 'retries': 5}\nclient = Client(**settings)",
+    "jobs:\n  build:\n    runs-on: ubuntu-latest\n    continue-on-error: true",
+    "params = {'k': 3, 'tol': 1e-6}\nn_iter, n_init = 50, 10\nfit(params)",
+    "for key in ('min', 'max'):\n    if key in limits:\n        bounds[key] = limits[key]",
+    "logging:\n  level: info\n  colorize: true\n  json: false",
+    "print('Read count:', count, file=sys.stderr)\nif args.out == '-':\n    out = sys.stdout"
+   ],
+   "quiet": [
+    "The container keeps its data in a local folder, and the debug mode is turned off.",
+    "If a user and a token are both present, the site logs the person in.",
+    "The client waits thirty seconds and tries again up to five times.",
+    "Our build runs on a recent Ubuntu machine and keeps going after errors.",
+    "We ran the method fifty times with ten random starting points each.",
+    "For both the lowest and the highest value, the limits are copied over.",
+    "The log shows only general information, in color rather than plain text.",
+    "The program reports how many reads it found and writes the output to the screen."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.2-0.7 on a value, quote or operator token; near misses under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "value slot in code/config text",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Broad pole (1% of tokens over 0.1 max), card mixes YAML 'true', code ');', docstrings. Probe: YAML 'tty: true' 0.679, \"'width' in options\" 0.470, dict config 0.267, docstring 0.254; prose speaker 0.073, river walk 0.023, Spanish 0.066. Bike-tool list 0.337 and 'extracted' 0.321 show prose leaks."
+}
