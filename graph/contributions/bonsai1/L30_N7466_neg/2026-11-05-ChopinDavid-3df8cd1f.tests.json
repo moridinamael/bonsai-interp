@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-3df8cd1f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N7466-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T07:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N7466",
+   "pole": "-",
+   "label": "the digits of a number inside a parenthesised unit conversion ('220 km (1[4]0 mi)'), and the '[' of a shape index ('X.shape[0]')",
+   "fire": [
+    "The summit stands at about 3,500 m (11,480 ft) above sea level.",
+    "The lake is roughly 60 km (37 mi) long and very deep.",
+    "Snowfall in the valley averages 250 mm (9.84 in) each winter.",
+    "The tower rises 180 m (590 ft) over the old harbour.",
+    "The storm brought gusts of 120 km/h (75 mph) along the coast.",
+    "The town lies 45 km (28 mi) south of the capital.",
+    "    rows = data.shape[0]\n    cols = data.shape[1]",
+    "    n_items = embeddings.shape[0]"
+   ],
+   "quiet": [
+    "The summit stands high above the valley and is often covered in cloud.",
+    "The lake is long and very deep, and its water stays cold all summer.",
+    "Snowfall in the valley was heavy this winter and the roads closed twice.",
+    "The tower rises over the old harbour and can be seen from the ferry.",
+    "The storm brought strong gusts along the coast and knocked down trees.",
+    "The town lies south of the capital, past two rivers and a forest.",
+    "    first_row = rows[0]\n    last_row = rows[-1]",
+    "    label = item['label']"
+   ]
+  }
+ ],
+ "predictions": "parenthesised conversions near 0.5-0.75, shape[ near 0.3; plain numbers and other subscripts near 0.0-0.01",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "digits inside a unit conversion; shape '['",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Probe: '220 km (140 mi)' 0.745 on '4', '150 mm (5.91 in)' 0.639 on '.', 'tf.shape(inputs)[0]' 0.340, 'X.shape[0]' 0.284; 'items[0]' 0.004, \"record['name']\" 0.004, 'matrix[i][j]' 0.004, the same distance without the conversion 0.006. The + pole suppresses '0' and ' zero'. Fire items are mostly conversions (the stronger case)."
+}

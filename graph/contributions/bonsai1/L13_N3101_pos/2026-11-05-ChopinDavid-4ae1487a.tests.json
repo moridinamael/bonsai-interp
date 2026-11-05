@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-4ae1487a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N3101+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T07:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N3101",
+   "pole": "+",
+   "label": "an interior piece of a proper name split into several tokens ('Hanna-Bar|ber|a', 'H|acket|t', 'E|tc|eter|a')",
+   "fire": [
+    "The film starred Arnold Schwarzenegger as a robot from the future.",
+    "Reporters waited outside the courthouse during the Kaczynski trial.",
+    "Her cousin drives a delivery truck in Waukegan every weekend.",
+    "The ferry from Szczecin arrived two hours late because of fog.",
+    "Our flight to Ouagadougou was delayed until the next morning.",
+    "Coach Bronco Mendenhall praised the defense after the game.",
+    "The orchestra closed the evening with a suite by Tchaikovsky.",
+    "They camped for a week in the Shenandoah valley last autumn."
+   ],
+   "quiet": [
+    "The film starred a famous actor as a robot from the future.",
+    "Reporters waited outside the courthouse during the long trial.",
+    "Her cousin drives a delivery truck in Chicago every weekend.",
+    "The ferry from the port arrived two hours late because of fog.",
+    "Our flight to Paris was delayed until the next morning.",
+    "The coach praised the defense after the game on Saturday.",
+    "The orchestra closed the evening with a suite by Mozart.",
+    "They camped for a week in the green valley last autumn."
+   ]
+  }
+ ],
+ "predictions": "names split into 3+ pieces near 0.5-0.9; single-token names and plain words near 0.0-0.03",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "interior piece of a split name",
+ "unit_kind": "token",
+ "confidence": 0.55,
+ "notes": "Card flags broad (1.7% of tokens at 0.1 of max). Probe: 'Hanna-Barbera' 0.914 on 'ber', 'Etcetera' 0.860 on 'eter', 'Hackett' 0.741 on 'acket', 'free-flowing' 0.583 on '-flow'; same sentences without the split name 0.006-0.026; 'goats and sheep' 0.017. Fire names checked with tok.py: Schwarzenegger, Kaczynski, Waukegan, Szczecin, Ouagadougou, Mendenhall, Tchaikovsky, Shenandoah all split into 3+ pieces."
+}

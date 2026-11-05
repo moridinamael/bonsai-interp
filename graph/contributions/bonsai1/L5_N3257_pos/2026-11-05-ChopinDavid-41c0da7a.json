@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-41c0da7a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3257+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T07:30:59+00:00",
+ "recipe": {
+  "toolchain_commit": "315805008",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N3257_pos/2026-11-05-ChopinDavid-41c0da7a.tests.json"
+ },
+ "label": "the first token of an indented assignment inside a Python class or test body ('    response = ...', '    context_object_name = ...')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N3257_pos/2026-11-05-ChopinDavid-41c0da7a.tests.json",
+   "prereg_commit": "315805008",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.068,
+     "peak": "slug"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.032,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.018,
+     "peak": "(de"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.032,
+     "peak": " Feed"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.044,
+     "peak": " response"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.035,
+     "peak": "email"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.051,
+     "peak": ".objects"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.013,
+     "peak": " learning"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": " article"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": " check"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " turns"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": " feed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " returns"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " email"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " set"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.695,
+    "median_fire": 0.034,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "315805008",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "indented assignment target in Python",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card top examples all sit on the name that starts an indented assignment in Python test or view classes ('encoder =', 'context_object_name =', 'response = self.client.get'). Probe: only 'context_object_name' in a class body reached 0.117; 'response = self.client.get' 0.026, other code 0.014-0.035. The card's peaks (max 8.3) were not reproduced in short snippets; best-guess test, low confidence.",
+ "selection": "random draw"
+}

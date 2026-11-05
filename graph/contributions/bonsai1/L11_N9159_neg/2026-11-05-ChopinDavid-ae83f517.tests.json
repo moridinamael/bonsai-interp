@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-ae83f517",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N9159-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T07:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N9159",
+   "pole": "-",
+   "label": "digits and hex digits inside numeric literals in code (bit masks, powers, format widths)",
+   "fire": [
+    "    low_byte = word & 0x00FF\n    high_byte = (word >> 8) & 0x00FF",
+    "    if value > 32767:\n        value -= 65536",
+    "    color = '#%06x' % rgb_int",
+    "    flags = flags | 0x8000",
+    "for code in range(0x0400, 0x04FF):\n    chars.append(chr(code))",
+    "    crc = (crc << 1) ^ 0x1021",
+    "    while 10 ** digits <= n:\n        digits += 1",
+    "    seconds = ms // 1000 % 60"
+   ],
+   "quiet": [
+    "    low_byte = word.lower()\n    high_byte = word.upper()",
+    "    if value is None:\n        value = default",
+    "    color = palette.get(name)",
+    "    flags = flags or default_flags",
+    "for code in codes:\n    chars.append(chr(code))",
+    "The bridge is 1021 metres long and opened in 1965.",
+    "    while node.next:\n        node = node.next",
+    "The meeting lasted 60 minutes and ended at 1000 hours."
+   ]
+  }
+ ],
+ "predictions": "code lines with hex masks or numeric constants near 0.3-0.9; code without literals and prose numbers near 0.01-0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "digits in code numeric literals",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Probe: '& 0xFFFF' 0.969, '%02x' % (255' 0.424, '65536' 0.403, 'range(0x1F600' 0.369, 'year < 100' 0.214; code with no numbers 0.015, prose '100 rooms', '1995' 0.010-0.020, 'log10(n)' 0.032. Near misses keep code style and drop the literal, or keep numbers in prose."
+}
