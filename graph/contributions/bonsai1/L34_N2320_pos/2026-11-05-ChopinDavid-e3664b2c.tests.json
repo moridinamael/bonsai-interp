@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-e3664b2c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2320+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T22:24:31+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N2320",
+   "pole": "+",
+   "label": "a French word-initial stem token whose word continues with é/è (esp|ère, consid|érer, lib|ération, gén|érer), against French words that are single tokens or split elsewhere",
+   "fire": [
+    "Le directeur espère que les travaux seront finis avant l'hiver.",
+    "Il faut considérer tous les risques avant de signer le contrat.",
+    "La libération de la ville a eu lieu en août 1944.",
+    "Les sauveteurs ont pu récupérer trois personnes dans la rivière.",
+    "Le chirurgien doit opérer le patient demain matin.",
+    "Ce logiciel peut générer des rapports en quelques secondes.",
+    "Les enfants ne doivent pas tolérer les moqueries à l'école.",
+    "Après dix ans de prison, il a été libéré le mois dernier."
+   ],
+   "quiet": [
+    "Le directeur pense que les travaux seront finis avant l'hiver.",
+    "Il faut lire tous les documents avant de signer le contrat.",
+    "La fête de la ville a eu lieu en août dernier.",
+    "Les sauveteurs ont pu trouver trois personnes dans la rivière.",
+    "Le médecin doit voir le patient demain matin.",
+    "Ce logiciel peut écrire des rapports en quelques secondes.",
+    "Les enfants ne doivent pas courir dans les couloirs de l'école.",
+    "Après dix ans de travail, il a pris sa retraite le mois dernier."
+   ]
+  }
+ ],
+ "predictions": "French sentences with an esp/consid/lib/récup/op/gén/tol stem 0.3-0.9; similar French sentences without such a split below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "French stem before é/è",
+ "unit_kind": "word",
+ "confidence": 0.55,
+ "notes": "Card: esp, num, consid, osph, lib, récup, vamp (all before é/è or a suffix). Probe: esp|érons 0.829, consid|ère 0.657, lib|érer 0.611, récup|érer 0.510, num|éros 0.492, vamp|iros 0.450; plain French 0.068 and 0.017, English 0.001. Splits checked with the tokenizer."
+}
