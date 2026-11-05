@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-5ae980a4",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N12054-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T05:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N12054",
+   "pole": "-",
+   "label": "the opening fragment of a rare proper name (usually a small place name) that the tokenizer splits into pieces",
+   "fire": [
+    "The letter was postmarked in Swarthmore, Pennsylvania, on a Monday.",
+    "A farmer from Avonmore told reporters about the flood.",
+    "Their wedding took place at a chapel in Swaffham last June.",
+    "After the war he settled in Gaillac and opened a bakery.",
+    "The old railway once ran from Avebury to the coast.",
+    "My cousin teaches at a primary school near Swadlincote.",
+    "The regiment camped outside Vicenza for two weeks.",
+    "She grew up on a sheep farm close to Gaiman in Patagonia."
+   ],
+   "quiet": [
+    "The letter was postmarked in Philadelphia, Pennsylvania, on a Monday.",
+    "A farmer from Ohio told reporters about the flood.",
+    "Their wedding took place at a chapel in London last June.",
+    "After the war he settled in Paris and opened a bakery.",
+    "The old railway once ran from Berlin to the coast.",
+    "My cousin teaches at a primary school near Manchester.",
+    "The regiment camped outside Rome for two weeks.",
+    "She grew up on a sheep farm close to Sydney in Australia."
+   ]
+  }
+ ],
+ "predictions": "split rare place names fire on the first piece; single-token common city names stay quiet",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "first piece of a split place name",
+ "unit_kind": "token/spelling",
+ "confidence": "medium",
+ "notes": "Probe: ' Sw'arraton 0.976, ' Av'ondale 0.786, ' Ga'ithersburg 0.392, ' V'icksburg 0.400; single-token Boston 0.047, Chicago 0.035. Leaks: 'Av'ocados 0.393, ' sw'ans 0.467, so the piece itself carries some activation; near misses use single-token cities."
+}

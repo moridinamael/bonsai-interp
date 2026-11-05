@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-fafc1b48",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N3113+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T05:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N3113",
+   "pole": "+",
+   "label": "dense / positional: fires on tokens at the very start of a window; no lexical trigger found",
+   "fire": [
+    " just in case the train is late tonight.",
+    " put your coat on the hook by the door.",
+    " indicate which size you would like to order.",
+    " just for fun, try the puzzle without a pencil.",
+    " put a little salt in the boiling water.",
+    " just keep walking until you see the church.",
+    " indicate the date on the top of the form.",
+    " just ask the driver where to get off."
+   ],
+   "quiet": [
+    "Bring an umbrella in case the train is late tonight.",
+    "Hang your coat on the hook by the door.",
+    "Tell us which size you would like to order.",
+    "For fun, try the puzzle without a pencil.",
+    "Add a little salt to the boiling water.",
+    "Keep walking until you see the church.",
+    "Write the date on the top of the form.",
+    "Ask the driver where to get off."
+   ]
+  }
+ ],
+ "predictions": "expected to fail: fragments that begin mid-sentence with ' just'/' put' should fire more than full sentences, but probes showed no difference",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "window-start positional",
+ "unit_kind": "dense / positional",
+ "confidence": "low",
+ "notes": "Card flags positional (100% of top peaks at window position 0) and gate-closed regime. Probe: fragments ' just have to' 0.090, ' put the box' 0.193 vs full sentences 'We just have to' 0.102, 'Please put the box' 0.192: no difference; every peak landed on ' the' at 0.1-0.2. Best-guess test kept for the record."
+}
