@@ -161,6 +161,8 @@ def gmoo(a):
     lab.problem.scales = np.maximum(inv.doe_y.std(0), 1e-3)
     base = lab.base()
     for ti, task in enumerate(lab.p["tasks"]):
+        if ti < a.start:
+            continue
         for tr, tier in enumerate(TIERS):
             lab.tag = f"gmoo/{ti}/{tr}"
             n0 = len(lab.problem.history)
@@ -274,5 +276,6 @@ def report(a):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["protocol", "train", "gmoo", "baselines", "heldout", "report"])
+    ap.add_argument("--start", type=int, default=0, help="gmoo: resume at this task, after an interruption")
     a = ap.parse_args()
     {"protocol": protocol, "train": train, "gmoo": gmoo, "baselines": baselines, "heldout": heldout, "report": report}[a.cmd](a)
