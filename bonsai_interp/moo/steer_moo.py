@@ -30,9 +30,9 @@ from bonsai_interp.moo import steer as T
 
 OUT = ct.ROOT / "data" / "moo"
 PROTOCOL = Path(__file__).parent / "steer_protocol.json"
-EVALS = OUT / "steer.evals.jsonl"
-META = OUT / "steer.model.json"
-BOX, NEW, BATCH, FLOOR = 0.12, 24, 2, 1e-5
+EVALS = OUT / "steer2.evals.jsonl"
+META = OUT / "steer2.model.json"
+BOX, NEW, BATCH, FLOOR = 0.04, 24, 2, 1e-5
 TRAIN = ["The thing I remember most about that day is", "After lunch we walked down to the", "The most important thing to know about this is",
          "He looked at the results and said", "When I got home that evening,", "She opened the letter and", "It was the first time anyone had",
          "What surprised me most was", "In the years that followed,", "According to the people who were there,", "We spent most of the morning",
@@ -42,8 +42,8 @@ HELD = ["On the way back I stopped to", "My neighbour told me about the", "For a
         "They asked me what I thought about the", "If you look closely you will see", "Later that night he wrote that", "The old man smiled and told us",
         "Everyone in the room agreed that", "I never did find out why", "Sooner or later you have to", "That summer we finally decided to"]
 TIERS = [{"uniq": 0.68, "coh": -1.40}, {"uniq": 0.58, "coh": -1.70}, {"uniq": 0.45, "coh": -2.20}]
-LEVELS = (8, 25)  # query targets, as fold changes against zero gain; a lowered concept aims at a third of it
-QUERY_ITER, DE_MAXITER, GRID = 15, 5, tuple(round(.01 * i, 2) for i in range(1, 13))
+LEVELS = (8, 15, 25)  # query target per tier, as a fold change against zero gain; a lowered concept aims at a third of it
+QUERY_ITER, DE_MAXITER, GRID = 12, 3, tuple(round(.01 * i, 2) for i in range(1, 13))  # the grid may leave the box
 
 
 def protocol(a):
@@ -59,7 +59,7 @@ def protocol(a):
         tasks.append({"up": d[:1], "down": d[1:]})
     B, _ = T.bundles(explore.tokenizer(), R3._assigned())
     sha = hashlib.sha256(json.dumps({c: sorted(B[c]) for c in names}).encode()).hexdigest()
-    json.dump({"name": "steer@1", "box": BOX, "new_tokens": NEW, "tasks": tasks, "tiers": TIERS, "levels": LEVELS, "query_iter": QUERY_ITER,
+    json.dump({"name": "steer@2", "supersedes": "steer@1, stopped after task 0: only the zero-gain design of 687 met any tier, because random gains on all 24 knobs at +-0.12 collapse the text; a pilot of six scalings on training prompts chose this box", "box": BOX, "new_tokens": NEW, "tasks": tasks, "tiers": TIERS, "levels": LEVELS, "query_iter": QUERY_ITER,
                "de_maxiter": DE_MAXITER, "grid": GRID, "train_prompts": TRAIN, "heldout_prompts": HELD, "bundles_sha256": sha,
                "claims": {"composition": "at tier 2, on the held-out prompts, at least 9 of 12 tasks reach a score of log10(3) with labelled bundles while the same gains on placebo bundles stay below it",
                           "model": "over the 36 task-tier cells, globalMOO beats each baseline in more cells than it loses, on training and on held-out prompts; reported whichever way it falls"}},
@@ -149,7 +149,7 @@ def train(a):
     t = time.time()
     y0 = lab.base()
     print("base", np.round(y0[-2:], 3), f"{time.time() - t:.1f} s", flush=True)
-    inv = S.GmooInverse(lab.problem, "mono-steer")
+    inv = S.GmooInverse(lab.problem, "mono-steer2")
     json.dump({"model_id": inv.model_id, "trial_id": inv.trial.id, "project_id": inv.project_id, "doe_evals": inv.doe_evals, "doe_seconds": inv.doe_seconds}, open(META, "w"))
     print(f"trained: model {inv.model_id}, trial {inv.trial.id}, {inv.doe_evals} design points in {inv.doe_seconds:.0f} s", flush=True)
 
@@ -162,11 +162,10 @@ def gmoo(a):
     base = lab.base()
     for ti, task in enumerate(lab.p["tasks"]):
         for tr, tier in enumerate(TIERS):
-            for fold in LEVELS:
-                lab.tag = f"gmoo/{ti}/{tr}/{fold}"
-                n0 = len(lab.problem.history)
-                res = inv.query(goals_for(lab, task, tier, fold, base), max_iter=QUERY_ITER)
-                print(lab.tag, res.satisfied, res.extra.get("stopped"), len(lab.problem.history) - n0, "evals", flush=True)
+            lab.tag = f"gmoo/{ti}/{tr}"
+            n0 = len(lab.problem.history)
+            res = inv.query(goals_for(lab, task, tier, LEVELS[tr], base), max_iter=QUERY_ITER)
+            print(lab.tag, res.satisfied, res.extra.get("stopped"), len(lab.problem.history) - n0, "evals", flush=True)
 
 
 def baselines(a):
