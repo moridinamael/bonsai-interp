@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-448f6966",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N4877+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T17:19:48+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N4877",
+   "pole": "+",
+   "label": "the name of a Python dunder method right after '__' (__init__, __gt__, __unicode__), strongest when the code before makes it predictable (a parent __init__ call, a run of comparison methods)",
+   "fire": [
+    "class Version:\n    def __lt__(self, other):\n        return self.parts < other.parts\n\n    def __le__(self, other):\n        return self.parts <= other.parts\n\n    def __gt__(self, other):\n        return self.parts > other.parts",
+    "class Board(Device):\n    def __init__(self):\n        Device.__init__(self)\n        self.pins = 40",
+    "class Item(models.Model):\n    name = models.CharField(max_length=50)\n\n    def __unicode__(self):\n        return self.name",
+    "class Vec:\n    def __add__(self, other):\n        return Vec(self.x + other.x)\n\n    def __sub__(self, other):\n        return Vec(self.x - other.x)",
+    "class Stack(list):\n    def __init__(self, *args):\n        list.__init__(self, *args)\n        self.top = None",
+    "class Grid:\n    def __getitem__(self, idx):\n        return self.cells[idx]\n\n    def __setitem__(self, idx, val):\n        self.cells[idx] = val",
+    "class Sensor(Base):\n    def __init__(self, port):\n        Base.__init__(self)\n        self.port = port",
+    "class Money:\n    def __eq__(self, other):\n        return self.cents == other.cents\n\n    def __ne__(self, other):\n        return self.cents != other.cents"
+   ],
+   "quiet": [
+    "class Version:\n    def less(self, other):\n        return self.parts < other.parts\n\n    def less_equal(self, other):\n        return self.parts <= other.parts\n\n    def greater(self, other):\n        return self.parts > other.parts",
+    "class Board(Device):\n    def setup(self):\n        Device.setup(self)\n        self.pins = 40",
+    "class Item(models.Model):\n    name = models.CharField(max_length=50)\n\n    def label(self):\n        return self.name",
+    "class Vec:\n    def plus(self, other):\n        return Vec(self.x + other.x)\n\n    def minus(self, other):\n        return Vec(self.x - other.x)",
+    "class Stack(list):\n    def build(self, *args):\n        list.extend(self, args)\n        self.top = None",
+    "class Grid:\n    def get_cell(self, idx):\n        return self.cells[idx]\n\n    def set_cell(self, idx, val):\n        self.cells[idx] = val",
+    "class Sensor(Base):\n    def connect(self, port):\n        Base.connect(self)\n        self.port = port",
+    "class Money:\n    def equals(self, other):\n        return self.cents == other.cents\n\n    def differs(self, other):\n        return self.cents != other.cents"
+   ]
+  }
+ ],
+ "predictions": "dunder name pieces 0.1-0.5 in multi-method classes; same classes with ordinary method names near 0",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python dunder method name after '__'",
+ "unit_kind": "context",
+ "confidence": 0.25,
+ "notes": "Card: __gt__ after __le__ 174 of 174, Target.__init__ after def __init__ 157, __unicode__ 118. Probe (short snippets) weak: Base.__init__ 0.062, __eq__ 0.087, __repr__ 0.032; initialize/init_weights 0.005. Writing longer multi-method passages, per the code-pole tip; may fail on strength."
+}
