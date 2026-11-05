@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-4e853c4a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N12172+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T04:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N12172",
+   "pole": "+",
+   "label": "the digit after a leading zero in a date or time field (0|2 Feb, 0|3-07, 0|9:30)",
+   "fire": [
+    "The invoice is dated 04 March 2019 and lists three items.",
+    "The train leaves at 07:15 from platform two every weekday.",
+    "Our records show the visit on 05/06/2018 in the morning.",
+    "The alarm went off at 06:45 and woke the whole house.",
+    "The notice was posted on 08 Oct. 2011 near the gate.",
+    "The server rebooted at 03:12 after the power cut.",
+    "Her passport was issued on 01-09-2015 in Madrid.",
+    "The shop opens at 08:00 and closes at noon on Sundays."
+   ],
+   "quiet": [
+    "The invoice lists 4 items and was paid last March.",
+    "The train leaves platform two seven times every weekday.",
+    "Our records show 56 visits in the morning last year.",
+    "The alarm went off six times and woke the whole house.",
+    "The notice was posted near gate 8 last October.",
+    "The server rebooted 3 times after the power cut.",
+    "Her passport has 19 stamps from trips to Madrid.",
+    "The shop sells 80 kinds of bread and closes at noon on Sundays."
+   ]
+  }
+ ],
+ "predictions": "Fires on the second digit of a zero-padded date or time field; the same digits in plain counts or non-padded numbers stay lower.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "digit after a leading zero in a date/time",
+ "unit_kind": "token-in-context",
+ "confidence": "low",
+ "notes": "Card flags positional (59% of peaks in the first 16 tokens). Probe: '02 Feb' 0.226, '03-07-2005' 0.223, '09:30' 0.323; but non-padded '19:30' 0.199, '12 Feb' 0.087, 'Room 207' 0.128, 'score 0 to 2' 0.000. Separation is weak; low confidence."
+}

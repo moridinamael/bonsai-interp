@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-957f2e08",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N6956-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T04:20:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N6956",
+   "pole": "-",
+   "label": "the operand of a code assignment that is about to have something subtracted from it (elapsed = time.time() - start, last = len(x) - 1)",
+   "fire": [
+    "duration = time.time() - t0\nprint(duration)",
+    "remaining = deadline - time.time()\nif remaining < 0: stop()",
+    "idx = len(values) - 1\nwhile idx >= 0: idx -= 1",
+    "delta = datetime.now() - self.started_at",
+    "tail = buffer[len(buffer) - 4:]",
+    "upper = (2**15) - 1\nlower = -(2**15)",
+    "age = current_year - birth_year",
+    "gap = end_index - start_index + 1"
+   ],
+   "quiet": [
+    "t0 = time.time()\nprint(t0)",
+    "deadline = time.time()\nif ready: stop()",
+    "count = len(values)\nwhile count: count -= 0",
+    "self.started_at = datetime.now()",
+    "head = buffer[:4]",
+    "upper = 2**15\nlower = 0",
+    "year = current_year",
+    "size = start_index + 1"
+   ]
+  }
+ ],
+ "predictions": "Fires on the operand token (e.g. '.time', ')', '1') in an assignment whose name sets up a difference; the same call assigned on its own, or followed by addition, stays near zero.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "operand about to be subtracted from",
+ "unit_kind": "next-token predictor",
+ "confidence": "medium",
+ "notes": "Predictive: in 'elapsed = time.time() - start' the peak is on '.time' (0.194) before the minus appears, while 'start = time.time()' gives 0.006. 'items[len(items) - 1]' 0.155, '(2**31) - 1' 0.182; 'len(items) + offset' 0.002, 'print(len(items))' 0.004. Logit effect promotes subtraction/minus tokens."
+}
