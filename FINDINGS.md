@@ -1178,7 +1178,7 @@ each pole's max at every position. Placebo bundles are random assigned poles fro
 | -0.15 | 0.0003 | not run | 0.56 | not run |
 
 - At +0.06 the text stays readable and drifts to the concept: "went to the temple", "cinema", "airport", "library".
-- At +0.15 all 24 concepts repeat their own words. Past that, the text collapses into noise under any push.
+- At +0.15 nearly all 24 concepts repeat their own words. Past that, the text collapses into noise under any push.
 - This is the first direct test that labels compose into control. Placebos did nothing at any gain.
 
 **steer@1 was stopped after task 0.** Random gains on all 24 knobs at +-0.12 collapse the text: only the zero-gain design of 687
@@ -1205,6 +1205,6 @@ log10 fold change over a task's concepts.
 - **Held-out is harder than training.** Base rates differ by a median of 0.33 log10 between the prompt sets.
 
 For this problem a model over all 24 knobs is the wrong shape: the useful designs are sparse, and a dense box can't reach them
-without collapsing. globalMOO did find two-concept designs quickly (7 of 36 queries met their targets, in 8 to 11 evaluations)
+without collapsing. globalMOO did meet multi-target goals quickly (7 of 36 queries, in 4 to 12 evaluations)
 and it beat DE, so the method works here. A model of only a task's knobs would be a 2- or 3-input problem, where a sweep suffices.
 The value this round found is in the labels, not the solver.
