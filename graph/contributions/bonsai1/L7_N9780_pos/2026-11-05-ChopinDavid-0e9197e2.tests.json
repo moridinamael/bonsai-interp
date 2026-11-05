@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-0e9197e2",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N9780+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T17:19:48+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N9780",
+   "pole": "+",
+   "label": "the closing piece of a surname or title that the tokenizer splits into several pieces (Weiss|m|ull|er, Weisen|m|iller, Sp|angled), not single-token names",
+   "fire": [
+    "The film starred the swimmer Anton Weinmiller as a jungle hero.",
+    "Councilwoman Greta Feldmiller opened the hearing on Tuesday.",
+    "Our coach, Mr. Bachmiller, ran the team like a drill sergeant.",
+    "Historian Klaus Lindenmuller wrote about the Bavarian railways.",
+    "The new bakery is owned by Hans Hoffenmiller and his wife.",
+    "Dr. Rosenmüller published the first study of the disease.",
+    "Senator Ruth Stoltzmiller voted against the bill.",
+    "The young pitcher Eddie Schwarzmuller threw a perfect game."
+   ],
+   "quiet": [
+    "The film starred the swimmer Anton Miller as a jungle hero.",
+    "Councilwoman Greta Smith opened the hearing on Tuesday.",
+    "Our coach, Mr. Brown, ran the team like a drill sergeant.",
+    "Historian Klaus Wagner wrote about the Bavarian railways.",
+    "The new bakery is owned by Hans Fischer and his wife.",
+    "Dr. Schmidt published the first study of the disease.",
+    "Senator Ruth Taylor voted against the bill.",
+    "The young pitcher Eddie Jones threw a perfect game."
+   ]
+  }
+ ],
+ "predictions": "split -miller/-muller surnames 0.4-0.9 at the last piece; single-token surnames near 0",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "last piece of a multi-piece surname",
+ "unit_kind": "word",
+ "confidence": 0.45,
+ "notes": "Card (gate-closed 74%, max 3.83): Weissmull|er, Weisenm|iller, Sp|angled, Shovel Knight, Swill|ing. Probe: Weissmuller 0.864, Weisenmiller 0.819, Spangled 0.603, Shovel Knight 0.544; 'Johnny Smith' 0.054, 'The knight' 0.016. Quiet names checked to be single tokens where possible."
+}
