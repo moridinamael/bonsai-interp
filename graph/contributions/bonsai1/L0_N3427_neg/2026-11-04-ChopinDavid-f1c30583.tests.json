@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-04-ChopinDavid-f1c30583",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3427-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T01:20:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N3427",
+   "pole": "-",
+   "label": "The word piece 'ert' (and accented 'è') at the end of a split word, mainly German -iert participles (porträtiert, gummiert), vs the same sentences with verbs that do not split into such a piece",
+   "fire": [
+    "Der Maler porträtiert in seinem neuesten Bild eine alte Fischerin aus Kiel.",
+    "Das Papier ist an der Rückseite gummiert und klebt deshalb sofort.",
+    "Die Hochzeitstorte wurde mit frischen Blumen dekoriert und sah wunderbar aus.",
+    "Im Artikel wird ein bekannter Physiker aus München mehrfach zitiert.",
+    "Unser Fotograf hat die ganze Feier fotografiert und die Bilder geschickt.",
+    "Das Schnitzel wird paniert und dann in heißem Öl gebraten.",
+    "Die Kinder haben sich über den Clown im Zirkus sehr amüsiert.",
+    "Das alte Kinderbuch ist mit schönen Zeichnungen illustriert worden."
+   ],
+   "quiet": [
+    "Der Maler zeigt in seinem neuesten Bild eine alte Fischerin aus Kiel.",
+    "Das Papier ist an der Rückseite klebrig und hält deshalb sofort.",
+    "Die Hochzeitstorte wurde mit frischen Blumen geschmückt und sah wunderbar aus.",
+    "Im Artikel wird ein bekannter Physiker aus München mehrfach genannt.",
+    "Unser Fotograf hat die ganze Feier begleitet und die Bilder geschickt.",
+    "Das Schnitzel wird gewürzt und dann in heißem Öl gebraten.",
+    "Die Kinder haben sich über den Clown im Zirkus sehr gefreut.",
+    "Das alte Kinderbuch ist mit schönen Zeichnungen versehen worden."
+   ]
+  }
+ ],
+ "predictions": "Fire items 0.3-0.9 on 'ert'; near misses under 0.15.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'ert' piece of German -iert verbs",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Card peaks 'ert' x6, 'è' x4, 'ер' x2. Probe: 'porträtiert' 0.888, 'gummiert' 0.611, 'premièred' 0.552 (on 'è'), 'hielt' 0.454 (on 'elt'); 'großen' sentence 0.064, English 0.014. Tokenizer: most -iert verbs end in one 'iert' token (installiert, importiert), so fire items use only verbs that split as ...|ert (porträt|i|ert, gum|mi|ert, dek|ori|ert, z|iti|ert, fot|ogra|fi|ert, p|ani|ert, am|ü|si|ert, illust|ri|ert)."
+}
