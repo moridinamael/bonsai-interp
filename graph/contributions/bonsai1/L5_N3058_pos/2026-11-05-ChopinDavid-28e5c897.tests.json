@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-28e5c897",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3058+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T08:20:54+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N3058",
+   "pole": "+",
+   "label": "the split piece ' e' that begins a German word such as e|ingerichtet, e|ingesetzt, e|hemalige or e|ignet, where the tokenizer cuts off the initial e",
+   "fire": [
+    "Das Zimmer im Hotel war gemütlich und schön eingerichtet.",
+    "Die neue Software wird in vielen Schulen eingesetzt.",
+    "Gestern sprach die ehemalige Ministerin im Rathaus.",
+    "Dieser Stoff eignet sich gut für warme Sommerkleider.",
+    "Wegen des Sturms war der Zugverkehr stark eingeschränkt.",
+    "Im Museum trafen wir einen ehemaligen Lehrer von mir.",
+    "Die Küche ist modern eingerichtet und hat viel Licht.",
+    "Für die Arbeit wurden zwei neue Pfleger eingesetzt."
+   ],
+   "quiet": [
+    "Das Zimmer im Hotel war gemütlich und schön dekoriert.",
+    "Die neue Software wird in vielen Schulen genutzt.",
+    "Gestern sprach die frühere Ministerin im Rathaus.",
+    "Dieser Stoff passt gut für warme Sommerkleider.",
+    "Wegen des Sturms war der Zugverkehr stark gestört.",
+    "Im Museum trafen wir einen alten Lehrer von mir.",
+    "Die Küche ist modern gestaltet und hat viel Licht.",
+    "Für die Arbeit wurden zwei neue Pfleger angestellt."
+   ]
+  }
+ ],
+ "predictions": "the ' e' piece 0.4-0.7; the same sentences with a synonym not split this way below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split ' e' piece in German words",
+ "unit_kind": "word",
+ "confidence": 0.8,
+ "notes": "Card: ' e' x32, all German e-initial words split as ' e'+rest. Probe: 'e|ingesetzt' 0.684, 'e|ingerichtet' 0.541, 'e|ignet' 0.472, 'e|hemalige' 0.425; 'gestaltet' 0.074, 'frühere' 0.042, 'eigentlich' (one token) 0.031, English 'e-mail' 0.004. Splits checked with the tokenizer."
+}
