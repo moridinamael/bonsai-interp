@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-12131bba",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N3661+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T06:32:03+00:00",
+ "recipe": {
+  "toolchain_commit": "a328872a6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N3661_pos/2026-11-05-ChopinDavid-12131bba.tests.json"
+ },
+ "label": "a dense layer-4 pole; best guess: the word piece 'od' inside split words such as Rh|od|amine and rh|od|opsin",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N3661_pos/2026-11-05-ChopinDavid-12131bba.tests.json",
+   "prereg_commit": "a328872a6",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.011,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.001,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.987,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.934,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.066,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.02,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.99,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.966,
+     "peak": "od"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.381,
+     "peak": " iod"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.236,
+     "peak": " follow"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.239,
+     "peak": " covered"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.358,
+     "peak": " green"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.411,
+     "peak": " made"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.416,
+     "peak": " rely"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.353,
+     "peak": " planted"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.245,
+     "peak": " as"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.995,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a328872a6",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "split piece 'od' (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags dense (39% of tokens at 0.1 of max). Peaks 'od' x8 (rhodopsin, Rhodamine), ' mop'(idy), 're|ward'. Probe: 'Rhodamine' 'od' 0.977, 'Rhodopsin' 'od' 0.977, ' mop' 0.598, 'reward' 0.746, 'Disinfectants' 0.555; floor ' board' 0.418, ' walked' 0.305, ' cells' 0.259.",
+ "selection": "random draw"
+}
