@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-533ceab1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N2325+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T16:31:18+00:00",
+ "recipe": {
+  "toolchain_commit": "7ba1bc9a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N2325_pos/2026-11-05-ChopinDavid-533ceab1.tests.json"
+ },
+ "label": "the 'ung' piece of German 'Meinung' (opinion, split Mein|ung), not '-ung' in other German nouns",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N2325_pos/2026-11-05-ChopinDavid-533ceab1.tests.json",
+   "prereg_commit": "7ba1bc9a2",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.84,
+     "peak": "ung"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.78,
+     "peak": "ung"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.772,
+     "peak": "ung"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.828,
+     "peak": "ung"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.936,
+     "peak": "ung"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.78,
+     "peak": "ung"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.719,
+     "peak": "ung"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.763,
+     "peak": "ung"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.035,
+     "peak": " er"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.075,
+     "peak": "ung"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.032,
+     "peak": " gesch"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.657,
+     "peak": "ung"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.513,
+     "peak": "ung"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.364,
+     "peak": " ihrer"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.3,
+     "peak": "ung"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.506,
+     "peak": "ung"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.78,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7ba1bc9a2",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "'ung' of 'Meinung'",
+ "unit_kind": "word",
+ "confidence": 0.55,
+ "notes": "Card: Mein|ung x8 of the top 32 at 0.38-0.42 of 0.42 (tiny max, broad 2.4%); also Rom|o and Russian -ой. Probe: 'meiner Meinung' 0.825, 'Deine Meinung' 0.699; Zeitung 0.097, Wohnung 0.049, Hoffnung 0.042. Rom|o 1.033 and высок|ой 0.712 also fire, so the pole is not only Meinung; this test covers the Meinung part.",
+ "selection": "random draw"
+}
