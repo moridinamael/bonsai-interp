@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-04-ChopinDavid-961d29d0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N2868+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T01:28:26+00:00",
+ "recipe": {
+  "toolchain_commit": "b83476361",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N2868_pos/2026-11-04-ChopinDavid-961d29d0.tests.json"
+ },
+ "label": "Value, key or operator tokens inside code and configuration text (YAML values, dict keys, assignments), vs the same kind of content written as plain prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N2868_pos/2026-11-04-ChopinDavid-961d29d0.tests.json",
+   "prereg_commit": "b83476361",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.063,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.133,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.17,
+     "peak": "':"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.076,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.142,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.278,
+     "peak": "]"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.123,
+     "peak": " true"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.544,
+     "peak": ":',"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.05,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.086,
+     "peak": " present"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " tries"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": " keeps"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.15,
+     "peak": " copied"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.071,
+     "peak": " information"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.077,
+     "peak": " many"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.138,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b83476361",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "value slot in code/config text",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "Broad pole (1% of tokens over 0.1 max), card mixes YAML 'true', code ');', docstrings. Probe: YAML 'tty: true' 0.679, \"'width' in options\" 0.470, dict config 0.267, docstring 0.254; prose speaker 0.073, river walk 0.023, Spanish 0.066. Bike-tool list 0.337 and 'extracted' 0.321 show prose leaks.",
+ "selection": "random draw"
+}

@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-04-ChopinDavid-f1c30583",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3427-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T01:28:41+00:00",
+ "recipe": {
+  "toolchain_commit": "b83476361",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N3427_neg/2026-11-04-ChopinDavid-f1c30583.tests.json"
+ },
+ "label": "The word piece 'ert' (and accented 'è') at the end of a split word, mainly German -iert participles (porträtiert, gummiert), vs the same sentences with verbs that do not split into such a piece",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N3427_neg/2026-11-04-ChopinDavid-f1c30583.tests.json",
+   "prereg_commit": "b83476361",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.824,
+     "peak": "ert"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.666,
+     "peak": "ert"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.58,
+     "peak": "ert"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.531,
+     "peak": "ert"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.425,
+     "peak": "ert"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.491,
+     "peak": "ert"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.612,
+     "peak": "ert"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.536,
+     "peak": "ert"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.033,
+     "peak": "in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.067,
+     "peak": " sofort"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": "m"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": "annt"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.067,
+     "peak": "ser"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": "zt"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.048,
+     "peak": " gef"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": "buch"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.558,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b83476361",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "'ert' piece of German -iert verbs",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Card peaks 'ert' x6, 'è' x4, 'ер' x2. Probe: 'porträtiert' 0.888, 'gummiert' 0.611, 'premièred' 0.552 (on 'è'), 'hielt' 0.454 (on 'elt'); 'großen' sentence 0.064, English 0.014. Tokenizer: most -iert verbs end in one 'iert' token (installiert, importiert), so fire items use only verbs that split as ...|ert (porträt|i|ert, gum|mi|ert, dek|ori|ert, z|iti|ert, fot|ogra|fi|ert, p|ani|ert, am|ü|si|ert, illust|ri|ert).",
+ "selection": "random draw"
+}
