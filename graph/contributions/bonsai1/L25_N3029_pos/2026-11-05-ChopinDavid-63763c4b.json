@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-63763c4b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N3029+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T20:27:33+00:00",
+ "recipe": {
+  "toolchain_commit": "55c503b87",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N3029_pos/2026-11-05-ChopinDavid-63763c4b.tests.json"
+ },
+ "label": "an arithmetic division in progress: tokens inside or just after an a / b division expression (or 'divided by') that anticipate the quotient",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N3029_pos/2026-11-05-ChopinDavid-63763c4b.tests.json",
+   "prereg_commit": "55c503b87",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.282,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.784,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.512,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.719,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.165,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.581,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.097,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.211,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.04,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": "8"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.397,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "55c503b87",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "division expression awaiting its quotient",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: '52 / 7 is', 'return a / b', np.divide, '1/2 means 1 divided by'; promotes fraction/division/rounding. Probe: safe_div return 0.699, '52 / 7 is' 0.675, '3/4 means 3 divided by 4' 0.497, split cookies among 4 0.244, np.divide 0.206; + versions 0.002, product of 6 and 7 0.011.",
+ "selection": "random draw"
+}
