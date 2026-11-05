@@ -115,7 +115,7 @@ def dual_annealing(p: InverseProblem, goals, maxfun=300, seed=0):
 def _gmoo():
     load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
     from globalmoo.client import Client
-    return Client()
+    return Client(timeout=600.0)  # training on 100 outputs outlasts the default 30 s
 
 
 def _benign(exc):
@@ -130,6 +130,7 @@ class GmooInverse:
 
     FREE_SPANS = 10.0  # untargeted outputs: absolute band of this many DOE spans
     ASPIRATION_SPANS = 1.0   # min/max aim this many DOE spans past the observed range
+    INPUT = {"float": "float", "int": "integer", "bool": "boolean"}
 
     def __init__(self, p: InverseProblem, name: str):
         from globalmoo.request.create_model import CreateModel
@@ -143,7 +144,7 @@ class GmooInverse:
             model_id=model.id, name=f"{name}-project", input_count=len(p.vars),
             minimums=[float(v.lo) if v.kind == "float" else int(v.lo) for v in p.vars],
             maximums=[float(v.hi) if v.kind == "float" else int(v.hi) for v in p.vars],
-            input_types=[v.kind for v in p.vars], categories=[]))
+            input_types=[self.INPUT[v.kind] for v in p.vars], categories=[]))
         X = np.array(project.input_cases, float)
         Y = p.evaluate(X)
         if p.scales is None:
@@ -215,7 +216,7 @@ class GmooInverse:
         else:  # neutral centre of the input box: the learned inverse must do the work
             x0 = (p.lo + p.hi) / 2
             y0 = p.evaluate(x0[None])[0]
-        self.init_x = [int(round(v)) if var.kind == "int" else float(v) for v, var in zip(x0, p.vars)]
+        self.init_x = [float(v) if var.kind == "float" else int(round(v)) for v, var in zip(x0, p.vars)]
         self.init_y = [float(v) for v in y0]
         obj = self.client.execute_request(LoadObjectives(
             trial_id=self.trial.id, objectives=vals, objective_types=types,
