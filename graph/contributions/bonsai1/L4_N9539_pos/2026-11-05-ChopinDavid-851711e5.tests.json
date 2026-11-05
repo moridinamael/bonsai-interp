@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-851711e5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9539+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T06:23:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N9539",
+   "pole": "+",
+   "label": "a dense layer-4 pole with a gate-closed regime; best guess: discourse connectives that mark inference or emphasis (' hence', ' indeed', ' thus')",
+   "fire": [
+    "The pipes were old and hence prone to sudden leaks in winter.",
+    "Prices rose sharply that year and thus many families moved away.",
+    "The rumours were, indeed, true: the factory closed in May.",
+    "His notes were incomplete and hence of little use to the court.",
+    "The road was flooded and thus the bus took a longer route.",
+    "The second test was, indeed, harder than the first one.",
+    "The soil is sandy and hence drains quickly after storms.",
+    "Her plan was simple and thus easy for the team to follow."
+   ],
+   "quiet": [
+    "The pipes were old and often prone to sudden leaks in winter.",
+    "Prices rose sharply that year and many families moved away.",
+    "The rumours were, sadly, true: the factory closed in May.",
+    "His notes were incomplete and of little use to the court.",
+    "The road was flooded and the bus took a longer route.",
+    "The second test was, overall, harder than the first one.",
+    "The soil is sandy and drains quickly after storms.",
+    "Her plan was simple and easy for the team to follow."
+   ]
+  }
+ ],
+ "predictions": "connectives near 0.6-0.8, but the dense floor (0.5 on ordinary words) is expected to sink the test",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "inference/emphasis connectives (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags dense (44% of tokens at 0.1 of max) and 100% echo regime. Probe: ' hence' 0.761, ' Should' 0.686, ' indeed' 0.626, '越' 0.659; but sentence-initial 'She' 0.521, ' spans' 0.543, 'And' 0.504; ' and' 0.283. Expected to fail."
+}
