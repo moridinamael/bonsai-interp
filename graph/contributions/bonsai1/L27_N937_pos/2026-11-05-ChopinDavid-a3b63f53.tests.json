@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-a3b63f53",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N937+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T15:19:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N937",
+   "pole": "+",
+   "label": "the block-opening newline (':\\n', ' {\\n') in code written with two-space indentation, where the next line indents by two; same code at four-space indentation is weaker",
+   "fire": [
+    "def scan(items):\n  total = 0\n  for item in items:\n    if item.ok:\n      total += 1\n  return total",
+    "class Cache(object):\n  def __init__(self):\n    self.data = {}\n  def get(self, key):\n    if key in self.data:\n      return self.data[key]",
+    "  def run(self):\n    res = self.fetch()\n    if not res['OK']:\n      return res\n    for row in res['Value']:\n      self.add(row)",
+    "def walk(root):\n  for name in os.listdir(root):\n    path = os.path.join(root, name)\n    if os.path.isdir(path):\n      walk(path)",
+    "  def test_missing(self):\n    with self.assertRaises(KeyError):\n      lookup('none')\n    with self.assertRaises(ValueError):\n      lookup('')",
+    "def parse(lines):\n  out = []\n  for line in lines:\n    if line.startswith('#'):\n      continue\n    out.append(line)",
+    "  try:\n    conn = connect(host)\n  except IOError:\n    conn = None\n  if conn is None:\n    print('offline')",
+    "  def close(self):\n    if self.handle:\n      self.handle.close()\n    else:\n      log('nothing to close')"
+   ],
+   "quiet": [
+    "def tally(rows):\n    count = 0\n    for row in rows:\n        if row.valid:\n            count += 1\n    return count",
+    "class Store(object):\n    def __init__(self):\n        self.items = {}\n    def fetch(self, name):\n        if name in self.items:\n            return self.items[name]",
+    "res = fetch(); ok = res['OK']; rows = res['Value']; add_all(rows); print(ok)",
+    "paths = [os.path.join(root, n) for n in os.listdir(root)]\nprint(len(paths))",
+    "Note: the test for missing keys was skipped.\nPlease rerun it on Monday.",
+    "out = [line for line in lines if not line.startswith('#')]\nprint(out)",
+    "conn = connect(host) or None\nprint('offline' if conn is None else 'online')",
+    "The handle is closed when the program exits, so no cleanup is needed here."
+   ]
+  }
+ ],
+ "predictions": "':\\n' in 2-space-indented code with earlier context 0.3+; same blocks in 4-space style or one-line forms lower",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "block-opener newline in 2-space code",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card: ':\\n' x22 '):\\n' x4 (max 183); every top example is followed by a line indented two spaces deeper (e.g. 'else:⏎          self', '{⏎          \"href\"'). Probe with 4-space code was low: 'def check' 0.046, 'for item' 0.014, 'class Point' 0.025; JSON ' {\\n' 0.119, XML '>\\n' 0.059; prose 0.001-0.003. Hypothesis of 2-space indentation not probed (risky)."
+}

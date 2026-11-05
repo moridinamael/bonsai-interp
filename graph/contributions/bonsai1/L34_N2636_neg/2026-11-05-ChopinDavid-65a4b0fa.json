@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-65a4b0fa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2636-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T15:28:35+00:00",
+ "recipe": {
+  "toolchain_commit": "09b06f5b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N2636_neg/2026-11-05-ChopinDavid-65a4b0fa.tests.json"
+ },
+ "label": "numeric or constant factor multiplied into a symbolic formula in code (the 2 in 2*mu, the 2*I*pi term), vs the same formulas without the factor and numbers in prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N2636_neg/2026-11-05-ChopinDavid-65a4b0fa.tests.json",
+   "prereg_commit": "09b06f5b7",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.175,
+     "peak": "lam"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.511,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.1,
+     "peak": "(z"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.288,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.141,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.195,
+     "peak": "mu"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.298,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.391,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.11,
+     "peak": "lam"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.469,
+     "peak": "lam"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.107,
+     "peak": " mu"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.26,
+     "peak": " nu"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " freq"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.241,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "09b06f5b7",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "numeric factor in code formulas",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: '2' x9, '0' x6 as factors ('lam + ⟦2⟧*mu', '2*I⟦*pi⟧', '10⟦0⟧*max_frac_diff') (max 200). Probe: '(lam + 2*mu)' 0.795, '2*I*pi' 0.412, but '0.5 * base' 0.053 and '[2*hidden_size' 0.046; factorless 'lam*mu/(lam + mu)' 0.237 at 'lam'; prose numbers 0.004-0.006. Fire items keep the factor inside a denominator or nested term.",
+ "selection": "random draw"
+}
