@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-c0ae6055",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N6444+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-05T14:01:16+00:00",
+ "recipe": {
+  "toolchain_commit": "95d8fb5a0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N6444_pos/2026-11-05-ChopinDavid-c0ae6055.tests.json"
+ },
+ "label": "the capital piece 'St' or 'Ste' (also 'Bo') that opens a word or name the tokenizer splits (St|ad|tkurs, Ste|ad|fast, St|i)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N6444_pos/2026-11-05-ChopinDavid-c0ae6055.tests.json",
+   "prereg_commit": "95d8fb5a0",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.762,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.128,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.847,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.029,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.176,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.246,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.441,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.076,
+     "peak": " St"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.305,
+     "peak": " Ham"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " Cold"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " B"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " Norway"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " striker"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": "Im"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " Bergen"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.049,
+     "peak": " Stone"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.898,
+    "median_fire": 0.211,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "95d8fb5a0",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "split capital 'St' word start",
+ "unit_kind": "word",
+ "confidence": 0.7,
+ "notes": "Card: ' St' x8, 'St' x4, ' Ste' x4, 'Bo' x3, all opening split words. Probe: 'Sti' 0.778, 'Stadtkurs' 0.437, 'Steadfast' 0.403, 'Stammzellen' 0.281, 'Boyd' 0.446; whole-token ' Stone'/' Street' 0.024, ' Stadt' 0.006, Amazon 0.003.",
+ "selection": "random draw"
+}

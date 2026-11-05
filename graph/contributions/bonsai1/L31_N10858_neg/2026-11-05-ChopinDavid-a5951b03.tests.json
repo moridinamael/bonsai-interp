@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-a5951b03",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N10858-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T13:52:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N10858",
+   "pole": "-",
+   "label": "a word just before a hard line break that cuts a phrase in two inside a wrapped docstring or comment",
+   "fire": [
+    "def parse(value):\n    \"\"\"Turn the text form of the flag into an\n    actual boolean value before it is stored.\"\"\"\n",
+    "def cache(seconds):\n    \"\"\"Pass a positive number of seconds to keep entries or\n    0 to switch caching off completely.\"\"\"\n",
+    "# This helper converts every timestamp in the list to a\n# plain integer so the plotting code can read it.\n",
+    "def load(path):\n    \"\"\"Read the file at the given path and return the\n    parsed rows as a list of dictionaries.\"\"\"\n",
+    "def scale(x):\n    \"\"\"Multiply the input by the factor that was chosen\n    during training and return the result.\"\"\"\n",
+    "# The function below is slow because it checks each\n# item twice; rewrite it when there is time.\n",
+    "def send(msg):\n    \"\"\"Send the message to the server and wait for a\n    reply for at most ten seconds.\"\"\"\n",
+    "def clean(rows):\n    \"\"\"Remove the empty rows from the table and then\n    sort the rest by date.\"\"\"\n"
+   ],
+   "quiet": [
+    "def parse(value):\n    \"\"\"Turn the text form of the flag into a boolean.\"\"\"\n    return value == 'yes'\n",
+    "def cache(seconds):\n    \"\"\"Keep entries for the given number of seconds.\"\"\"\n    return seconds\n",
+    "# This helper converts timestamps to integers.\n# Plotting code needs them.\n",
+    "def load(path):\n    \"\"\"Read the file and return the rows.\"\"\"\n    return open(path).readlines()\n",
+    "def scale(x):\n    \"\"\"Multiply the input by the factor.\"\"\"\n    return x * 2\n",
+    "# The function below is slow.\n# Rewrite it later.\n",
+    "def send(msg):\n    \"\"\"Send the message to the server.\"\"\"\n    return msg\n",
+    "def clean(rows):\n    \"\"\"Remove empty rows and sort by date.\"\"\"\n    return rows\n"
+   ]
+  }
+ ],
+ "predictions": "mid-phrase wraps in docstrings weakly above control; unwrapped versions lower",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "word before mid-phrase line wrap",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card peaks are mixed (' before' before a wrap, ' an' before a wrap, ' or' 0, dict keys, GRUCell); the + pole promotes newline tokens, so the - pole may mark line continuation. Probe: every code configuration scored below 0.09 (dict keys 0.071, axis= 0.088, docstring 0.008), prose 0.012-0.017. No probe tested wrapped text; this test is a guess and is expected to fail."
+}
