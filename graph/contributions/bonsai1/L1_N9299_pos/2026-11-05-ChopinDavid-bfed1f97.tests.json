@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-bfed1f97",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9299+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T23:24:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N9299",
+   "pole": "+",
+   "label": "dense layer-1 pole with a tiny max (0.18): fires broadly on mid-sentence word starts, strongest on Arabic al- word pieces split by the tokenizer (السابعة, الآخرين, العراقية); no clean trigger",
+   "fire": [
+    "وأعلنت الوزارة أن المدارس ستفتح أبوابها في الساعة السابعة صباحا.",
+    "وأكد المسؤول أن الحكومة العراقية ماضية في تنفيذ الإصلاحات.",
+    "ينبغي أن نستمع إلى آراء الآخرين قبل اتخاذ القرار.",
+    "وبسبب الظروف الحالية قررت الشركة تأجيل المشروع.",
+    "وجاء اللاعب في المرتبة السابعة في السباق.",
+    "وتحدث الوزير عن العلاقات العراقية التركية خلال المؤتمر.",
+    "علينا أن نحترم مشاعر الآخرين في كل الأوقات.",
+    "وفي المادة السابعة من القانون تفاصيل إضافية."
+   ],
+   "quiet": [
+    "وأعلنت الوزارة أن المدارس ستفتح أبوابها صباح الغد.",
+    "وأكد المسؤول أن الحكومة ماضية في تنفيذ الإصلاحات.",
+    "ينبغي أن نستمع إلى الجميع قبل اتخاذ القرار.",
+    "وبسبب الأوضاع قررت الشركة تأجيل المشروع.",
+    "وجاء اللاعب في مرتبة متقدمة في السباق.",
+    "وتحدث الوزير عن العلاقات بين البلدين خلال المؤتمر.",
+    "The company decided to postpone the project because of the weather.",
+    "The minister spoke about trade relations at the conference."
+   ]
+  }
+ ],
+ "predictions": "fire items with split Arabic al- words 0.6-0.9, but near misses also fire 0.4-0.6, so the test is expected to fail",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense: Arabic al- pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card FLAG dense (16.5% of tokens reach 0.1 of max), gate-closed regime 99%. Probe: السابعة 0.876, Korean 본 0.921, cinquante-deux 'ux' 0.842, الآخرين 0.774, overflowX 0.637; the 'without trigger' Arabic control still 0.508 and English filler 0.463."
+}

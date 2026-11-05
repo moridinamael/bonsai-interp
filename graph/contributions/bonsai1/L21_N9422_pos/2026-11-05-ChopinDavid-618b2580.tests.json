@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-618b2580",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N9422+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T23:24:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N9422",
+   "pole": "+",
+   "label": "the topic marker (Korean 은/는 after a noun, Japanese は) that marks what the sentence is about, as opposed to the subject marker 이/가 or the object marker 을/를",
+   "fire": [
+    "새 제품이 출시되었습니다. 이 서비스는 모든 고객에게 무료로 제공됩니다.",
+    "어제 회의가 길어졌습니다. 그 문제는 다음 주에 다시 논의할 예정입니다.",
+    "지난달 공사가 시작되었습니다. 새 시장은 내년 봄에 문을 엽니다.",
+    "우리 동네에 도서관이 생겼다. 그 책은 아이들에게 인기가 많다.",
+    "여러 의견이 나왔다. 정부는 이 제안을 검토하겠다고 밝혔다.",
+    "공지사항을 확인해 주세요. 새 계획은 월요일부터 적용됩니다.",
+    "昨日は雨だった。この店は朝八時に開く。",
+    "会議が終わった。その問題は来週また話し合う。"
+   ],
+   "quiet": [
+    "새 제품이 출시되었습니다. 이 서비스가 모든 고객에게 무료로 제공됩니다.",
+    "어제 회의가 길어졌습니다. 그 문제가 다음 주에 다시 논의될 예정입니다.",
+    "지난달 공사가 시작되었습니다. 새 시장이 내년 봄에 문을 엽니다.",
+    "우리 동네에 도서관이 생겼다. 아이들이 그 책을 많이 빌린다.",
+    "여러 의견이 나왔다. 정부가 이 제안을 검토하겠다고 밝혔다.",
+    "공지사항을 확인해 주세요. 새 계획이 월요일부터 적용됩니다.",
+    "昨日も雨だった。この店が朝八時に開く。",
+    "会議が終わった。その問題を来週また話し合う。"
+   ]
+  }
+ ],
+ "predictions": "noun + 은/는 (own token) as sentence topic 0.4-0.7; the same nouns with 이/가 or 을/를 below 0.25",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "topic marker 은/는/は",
+ "unit_kind": "context",
+ "confidence": 0.7,
+ "notes": "Card: 은 x15, 는 x12, は x2 of top 32, all after a noun opening a clause. Probe: 지점은 0.643, 위치는 0.544, 책은 0.455, 정책은 0.440, Japanese 計画は 0.633; same with subject marker 지점이 0.226, 정책이 0.153, object 책을 0.108; English 0.012."
+}
