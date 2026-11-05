@@ -18,7 +18,7 @@ class Var:
     name: str
     lo: float
     hi: float
-    kind: str = "float"  # "float" | "int"
+    kind: str = "float"  # "float" | "int" | "bool"
 
 
 @dataclass
@@ -52,7 +52,7 @@ class InverseProblem:
 
     @property
     def integrality(self):
-        return np.array([v.kind == "int" for v in self.vars])
+        return np.array([v.kind != "float" for v in self.vars])
 
     def out_index(self, name):
         return self.outputs.index(name)

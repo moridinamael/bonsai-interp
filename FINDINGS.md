@@ -1135,3 +1135,76 @@ the previous token, and a class of tokens the input embedding groups together.
   neighbouring token goes with the pole's activity without bringing it on.
 - **The remaining poles fire on many tokens in many contexts.** A fixed library of tokens and conditions doesn't
   describe them at useful precision.
+
+
+## 2026-11-04: L9/N3688 is a gate crossed with a second factor; the force label failed blind
+
+A feeder trace of the nerve neuron over 353 corpus sites, then a scan of its two factors over 6,000 windows. The neuron is
+`a = silu(g) * u`, and reading g and u apart explains what the attribution alone did not.
+
+- **Both poles share one gate.** 98% of strong activations on either pole sit where silu(g) > 1, which is 0.48% of positions.
+  The gate's tokens are nerve, sensation, inflammation, pain, discomfort, hurt, react, swelling.
+- **The sign of u picks the pole.** Inside the gate, u is negative on pain and touch and positive on strong, shot, injured,
+  powerful, trigger. The negative pole's label, somatosensory physiology, is the gate with u below zero.
+- **That is why one word list never fit.** Quiet "strong" keeps u and loses the gate (silu(g) 0.26 to 0.77, against 1.67 firing).
+  Quiet "nerve" keeps the gate and loses u (-0.58, against +1.39 firing).
+- **Coded senses agree.** The stream's coded uses of " strong" separate physical from abstract on the gate (AUROC 0.68,
+  p 7e-9), not on u (0.48).
+- **No shared feeder.** Cross-ablation is branch-specific: L8/N7756+ takes 69% of the nerve branch and under 2% of the others;
+  L8/N9260+ takes 21% of strong and 7% of feel. Most of these act through g, so several word-specific feeders converge on one gate.
+- **The blind label failed.** "Force or intensity physically acting on a body" scored AUROC 0.453 and median fire 0.073 on 16
+  sentences written by an agent with no activations (PR 1713). Afterwards, the gate had opened on 5 of the 8 fire sentences and
+  stayed low on "hit by shrapnel", "impact" and "force of the explosion". u was low on "jolt" and "powerful".
+
+So the gate is one computation. The positive pole is that gate crossed with a u we cannot yet name as one thing: outside the gate
+u is lexically mixed (KIND, WARRANTY, throat, heart, hit). Polysemanticity may survive in u.
+
+The 2026-10-17 gate test found that pain context closes this pole. Pain drives u negative with the gate open, so that result may
+be a sign flip and not a closed gate. This has not been tested.
+
+## 2026-11-05: Labelled poles steer generation; globalMOO lost to a plain gain sweep (steer@2)
+
+A knob is a bundle of assignment-grade poles whose trigger is a word of one concept, 24 concepts in all. A gain adds that share of
+each pole's max at every position. Placebo bundles are random assigned poles from the same layers.
+
+**The scan, one knob at a time, 16 prompts, 24 new tokens (base soft rate 0.0014, distinct-token ratio 0.78):**
+
+| gain | labelled soft rate | placebo soft rate | labelled distinct-token ratio | placebo ratio |
+|---|---|---|---|---|
+| +0.04 | 0.0045 | 0.0015 | 0.74 | 0.77 |
+| +0.06 | 0.0163 | 0.0012 | 0.71 | 0.76 |
+| +0.08 | 0.0342 | 0.0013 | 0.61 | 0.74 |
+| +0.15 | 0.2260 | 0.0014 | 0.17 | 0.66 |
+| -0.15 | 0.0003 | not run | 0.56 | not run |
+
+- At +0.06 the text stays readable and drifts to the concept: "went to the temple", "cinema", "airport", "library".
+- At +0.15 nearly all 24 concepts repeat their own words. Past that, the text collapses into noise under any push.
+- This is the first direct test that labels compose into control. Placebos did nothing at any gain.
+
+**steer@1 was stopped after task 0.** Random gains on all 24 knobs at +-0.12 collapse the text: only the zero-gain design of 687
+met any tier. A pilot on training prompts chose +-0.04, and steer@2 replaced it with the same tasks, tiers and held-out prompts.
+
+**steer@2:** 12 tasks (raise 1, 2 or 3 concepts, or raise one and lower another) at 3 tiers of text quality. Score is the smallest
+log10 fold change over a task's concepts.
+
+| held-out cells, globalMOO won / lost / tied | |
+|---|---|
+| against differential evolution | 26 / 10 / 0 |
+| against design lookup | 15 / 3 / 18 |
+| against the gain sweep on target knobs | 10 / 26 / 0 |
+
+- **Composition claim failed as registered.** The report read it on globalMOO's designs: 6 of 12 at tier 2, against 9 needed.
+- **Labels beat placebo everywhere.** Labelled designs beat placebos at the same gains in all 36 held-out cells for both globalMOO
+  and the sweep. The sweep's designs would pass the rule on 10 of 12. Both readings are exploratory.
+- **Model claim failed against the sweep.** It needed a win over each baseline. The sweep used 144 evaluations against 1,089 for
+  globalMOO (687 design, 402 queries) and 1,152 for DE.
+- **The sweep could leave the box**, up to 0.12 per knob against 0.04. The model cannot, because a wider box collapses its design.
+- **Steering is sparse, and that is the reason.** At tier 2 the sweep's designs use 2.1 knobs at total gain 0.075. globalMOO's
+  use 17.1 knobs at 0.113, and DE's use 17.6 at 0.110. Extra knobs spend the text-quality budget without helping the targets.
+- **Lowering barely worked through the model:** mean held-out score 0.06 for raise-and-lower tasks, against 0.85 for the sweep.
+- **Held-out is harder than training.** Base rates differ by a median of 0.33 log10 between the prompt sets.
+
+For this problem a model over all 24 knobs is the wrong shape: the useful designs are sparse, and a dense box can't reach them
+without collapsing. globalMOO did meet multi-target goals quickly (7 of 36 queries, in 4 to 12 evaluations)
+and it beat DE, so the method works here. A model of only a task's knobs would be a 2- or 3-input problem, where a sweep suffices.
+The value this round found is in the labels, not the solver.
