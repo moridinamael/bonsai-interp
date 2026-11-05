@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-7dda65ef",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9001-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T07:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N9001",
+   "pole": "-",
+   "label": "the word-start piece ' co' (or '-co') when a word is split there ('co|ffer', 'co|habitation', 're|-co|ated')",
+   "fire": [
+    "The two communities have a long history of peaceful coexistence.",
+    "Many young couples now cohabit for several years before marrying.",
+    "The college became coed in 1972 after decades as a men's school.",
+    "The farmer cleaned out the chicken coops before the winter.",
+    "The treasure was locked in an iron coffer beneath the altar.",
+    "The old fence was sanded and re-coated with a dark stain.",
+    "Squatters were prosecuted for illegal cohabitation of the estate.",
+    "Wolves and bears can coexist in the same forest if prey is plentiful."
+   ],
+   "quiet": [
+    "The two communities have a long history of peaceful trade.",
+    "Many young couples now live together for years before marrying.",
+    "The college became mixed in 1972 after decades as a men's school.",
+    "The farmer cleaned out the chicken sheds before the winter.",
+    "The treasure was locked in an iron chest beneath the altar.",
+    "The old fence was sanded and painted with a dark stain.",
+    "Squatters were prosecuted for illegal occupation of the estate.",
+    "Wolves and bears can share the same forest if prey is plentiful."
+   ]
+  }
+ ],
+ "predictions": "split ' co' items near 0.25-0.85; unsplit co-words and paraphrases near 0.0-0.06",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split ' co' word piece",
+ "unit_kind": "token",
+ "confidence": 0.6,
+ "notes": "Probe: 're-coated' 0.841 on '-co', 'cohabitation' 0.675, 'coffer' 0.564, 'coexist' 0.241 (all ' co' pieces); unsplit ' coat' 0.007, ' couple' 0.012, 'live peacefully' -0.001. A second trigger appeared: 'cashier's check or certified check' 0.847 on ' certified' (also in the card); kept out of both sides. Fire splits checked with tok.py: coexistence, cohabit, coed, coops, cojones split as ' co' + rest."
+}

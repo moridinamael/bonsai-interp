@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-3b98e995",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2869-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T07:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N2869",
+   "pole": "-",
+   "label": "adjusting sound loudness: turning a TV, radio or music up or down, keeping the volume low (predicting 'volume')",
+   "fire": [
+    "Could you turn the stereo down a little? I'm on the phone.",
+    "She lowered the TV until it was barely a whisper in the background.",
+    "My neighbour blasts his speakers so loud that the windows rattle.",
+    "Turn the radio up, this is my favourite song!",
+    "Please keep the music quiet after ten so the kids can sleep.",
+    "He pressed the remote again and again to make the television louder.",
+    "The headphones were up so high that everyone on the bus could hear them.",
+    "Dad always mutes the television during the adverts."
+   ],
+   "quiet": [
+    "Could you pass the salt a little closer? I can't reach it.",
+    "She washed the TV screen with a soft cloth and a little water.",
+    "My neighbour repaired his speakers and sold them at the market.",
+    "The radio station moved to a new building near the park.",
+    "Please keep the kitchen tidy after ten so breakfast is easy.",
+    "He pressed the remote's battery cover until it clicked shut.",
+    "The headphones came in a small box with a spare cable.",
+    "Dad always reads the newspaper during his breakfast."
+   ]
+  }
+ ],
+ "predictions": "loudness adjustments near 0.3-0.45; volume-as-capacity and non-audio adjustments near 0.02-0.2 (some leak expected)",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "turning sound up/down (volume)",
+ "unit_kind": "meaning",
+ "confidence": 0.45,
+ "notes": "Probe: 'turn the TV down' 0.438, 'turned the radio down' 0.375, 'Keep the volume at a reasonable level' 0.322, 'plays music too loudly' 0.196, 'adjust the volume' 0.178; non-audio leaks 'Keep your spending at a reasonable level' 0.156 and 'turned the page' 0.229; 'volume of the tank' 0.016, 'cooks dinner too late' 0.014. The + pole suppresses every ' volume' form. Near misses avoid turn/keep-level frames where possible."
+}
