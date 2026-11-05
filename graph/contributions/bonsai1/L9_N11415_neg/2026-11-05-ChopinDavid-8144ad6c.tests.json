@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-8144ad6c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N11415-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T20:20:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N11415",
+   "pole": "-",
+   "label": "unclear broad code pole; strongest on later lines of a run of near-identical assignment lines (x[n] = '' repeated)",
+   "fire": [
+    "config[101] = ''\nconfig[102] = ''\nconfig[103] = ''\nconfig[104] = ''",
+    "names[0] = None\nnames[1] = None\nnames[2] = None\nnames[3] = None",
+    "label_a = 'x'\nlabel_b = 'x'\nlabel_c = 'x'\nlabel_d = 'x'",
+    "row[10] = 0\nrow[11] = 0\nrow[12] = 0\nrow[13] = 0",
+    "errors[3001] = ''\nerrors[3002] = ''\nerrors[3004] = ''\nerrors[3005] = ''",
+    "flags['x'] = False\nflags['y'] = False\nflags['z'] = False\nflags['w'] = False",
+    "grid[0][0] = 1\ngrid[0][1] = 1\ngrid[0][2] = 1\ngrid[0][3] = 1",
+    "text[7] = ''\ntext[8] = ''\ntext[9] = ''\ntext[10] = ''"
+   ],
+   "quiet": [
+    "config[101] = load_value(path)",
+    "names = [None] * 4",
+    "label = 'x'",
+    "row = [0, 0, 0, 0]",
+    "errors = {}",
+    "flags = dict(x=False, y=False, z=False)",
+    "grid = make_grid(4)",
+    "text = read_lines(path)"
+   ]
+  }
+ ],
+ "predictions": "runs of 3+ identical-RHS assignments 0.3-0.7; single assignments around 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated identical assignment lines",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: broad (7.0% of tokens), code tokens str/float/_column/' ='. Probe: message[2000x] = '' x3 0.697; other code 0.09-0.23; prose 0.06-0.15. Best guess only."
+}

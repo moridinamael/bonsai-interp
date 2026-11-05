@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-63763c4b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N3029+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-05T20:20:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N3029",
+   "pole": "+",
+   "label": "an arithmetic division in progress: tokens inside or just after an a / b division expression (or 'divided by') that anticipate the quotient",
+   "fire": [
+    "Quick check: 144 / 12 is 12, so the boxes hold a dozen each.",
+    "def ratio(x, y):\n    return x / y if y else 0.0",
+    "In the worksheet, 5/8 means 5 divided by 8, which equals 0.625.",
+    "If 100 is divided by 7, the result is roughly 14.29.",
+    "Next, the answer of 81 / 9 is 9, and the answer of 64 / 8 is 8.",
+    "def average(total, count):\n    return total / count",
+    "To get the rate, compute 300 / 60 = 5 metres per second.",
+    "The quotient of 56 divided by 8 is 7."
+   ],
+   "quiet": [
+    "Quick check: 144 + 12 is 156, so the boxes hold that many.",
+    "def combine(x, y):\n    return x + y if y else 0.0",
+    "In the worksheet, 5 and 8 are added together to make 13.",
+    "If 100 is multiplied by 7, the result is exactly 700.",
+    "Next, the answer of 81 - 9 is 72, and the answer of 64 - 8 is 56.",
+    "def total(price, count):\n    return price * count",
+    "To get the distance, compute 300 * 60 = 18000 metres.",
+    "The product of 56 and 8 is 448."
+   ]
+  }
+ ],
+ "predictions": "division sentences and code 0.3-0.7; the same with +, -, * near 0",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "division expression awaiting its quotient",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: '52 / 7 is', 'return a / b', np.divide, '1/2 means 1 divided by'; promotes fraction/division/rounding. Probe: safe_div return 0.699, '52 / 7 is' 0.675, '3/4 means 3 divided by 4' 0.497, split cookies among 4 0.244, np.divide 0.206; + versions 0.002, product of 6 and 7 0.011."
+}
