@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-70c30ea5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1032+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:04:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N1032",
+   "pole": "+",
+   "label": "newline ending a statement inside a Python loop body, where the loop may end",
+   "fire": [
+    "def checksum(path):\n    sha = hashlib.sha1()\n    while True:\n        chunk = path.read(1024)\n        if not chunk:\n            break\n        sha.update(chunk)\n",
+    "def walk(tree, keys):\n    cur = tree\n    for key in keys:\n        if key not in cur.kids:\n            return None\n        cur = cur.kids[key]\n",
+    "for line in lines:\n    for word in line:\n        count = count + word.size\n",
+    "def span(items):\n    lo, hi = 0, 0\n    for it in items:\n        lo = min(it.start, lo)\n        hi = max(it.end, hi)\n",
+    "while queue:\n    job = queue.pop()\n    if job.done:\n        continue\n    results.append(job.run())\n",
+    "def scan(cells):\n    found = []\n    for cell in cells:\n        if cell.live:\n            found.append(cell)\n",
+    "i = 0\nwhile i < len(mat):\n    row.append(mat[i][i])\n    i = i + 1\n",
+    "def read_all(sock):\n    buf = b''\n    while True:\n        part = sock.recv(512)\n        if not part:\n            break\n        buf += part\n"
+   ],
+   "quiet": [
+    "def checksum(path):\n    sha = hashlib.sha1()\n    return sha.hexdigest()\n",
+    "def walk(tree, keys):\n    cur = tree.root\n    name = keys.first\n",
+    "line = lines.first\nword = line.head\ncount = word.size\n",
+    "def span(item):\n    lo = item.start\n    hi = item.end\n",
+    "job = queue.pop()\nstatus = job.status\nlabel = job.name\n",
+    "def scan(cell):\n    found = []\n    found.append(cell)\n",
+    "i = 0\nrow = mat[i]\nsize = len(row)\n",
+    "def read_one(sock):\n    buf = b''\n    part = sock.recv(512)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "newline in loop body",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Peak tokens are line-ending tokens. Probes: flat code without a loop stays near 0, the last line of a loop reads high. Near misses are the same statements with no loop."
+}
