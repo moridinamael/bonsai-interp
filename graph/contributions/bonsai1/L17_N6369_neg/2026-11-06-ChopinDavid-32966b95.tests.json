@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-32966b95",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N6369-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T22:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N6369",
+   "pole": "-",
+   "label": "the line-ending '()\\n' / '))\\n' of an unindented top-level call statement in a Python script (main(), print(Solution().f(x))); the same call indented inside a function body stays low",
+   "fire": [
+    "def greet():\n    print('hello')\n\ngreet()\nprint('finished')\n",
+    "class Solver:\n    def run(self, n):\n        return n * 2\n\nprint(Solver().run(5))\n\n\n",
+    "import sys\n\ndef setup():\n    pass\n\nsetup()\nmain()\n",
+    "def build():\n    return [1, 2]\n\nresult = build()\nprint(len(result))\n",
+    "import time\nprint(time.time())\n",
+    "class Graph:\n    def size(self):\n        return 0\n\nprint(Graph().size())\n\n\n",
+    "def train():\n    pass\n\ntrain()\nevaluate()\n",
+    "import platform\nprint(platform.system())\n"
+   ],
+   "quiet": [
+    "def greet():\n    print('hello')\n    log('finished')\n    return None",
+    "class Solver:\n    def run(self, n):\n        print(self.check(n))\n        return n * 2",
+    "import sys\n\ndef setup():\n    configure()\n    load()\n    return True",
+    "def build():\n    result = make()\n    print(len(result))\n    return result",
+    "def stamp():\n    now = time.time()\n    return now",
+    "class Graph:\n    def size(self):\n        nodes = self.collect()\n        return len(nodes)",
+    "def train():\n    prepare()\n    fit()\n    return model",
+    "def info():\n    name = platform.system()\n    return name"
+   ]
+  }
+ ],
+ "predictions": "top-level calls 0.3-0.6; indented calls below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "end of top-level script call line",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: '()\\n' x10 after main() at script end, '))\\n\\n\\n' after print(...) at file end, '#' after a top-level call. Probe: unindented 'main()\\nprint(...)' 0.544, 'print(Solution().f(3))' at end 0.536, 'print(os.getcwd())' 0.327, indented main() under if __name__ 0.261, indented 'run(sys.argv)' 0.044, indented 'main_loop()' inside def 0.062."
+}
