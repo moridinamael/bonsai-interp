@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-b73b1ab7",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2727+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T16:24:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N2727",
+   "pole": "+",
+   "label": "unclear: an identifier piece naming a configuration or data source in code (_config, xml), with scattered prose commas and nouns",
+   "fire": [
+    "    settings = load_value_from_configfile('timeout')\n    save_value_to_configfile('timeout', 30)",
+    "    if read_from_configfile('debug') == '1':\n        enable_debug()",
+    "    data = parse_from_xml(path)\n    print 'loaded from xml', len(data)",
+    "    hutil.write_to_configfile('retries', '5')",
+    "    user = self.user_from_xml(node)\n    print 'user read from xml', user",
+    "    port = get_setting_from_configfile('port')\n    connect(port)",
+    "    self.items = items_from_xml(doc)\n    print 'parsed from xml', self.items",
+    "    old = fetch_value_from_configfile('level')\n    put_value_to_configfile('level', old)"
+   ],
+   "quiet": [
+    "    settings = load_value_from_cache('timeout')\n    save_value_to_cache('timeout', 30)",
+    "    if read_flag('debug') == '1':\n        enable_debug()",
+    "    data = parse_lines(path)\n    print 'loaded lines', len(data)",
+    "    hutil.write_counter('retries', '5')",
+    "    user = self.user_by_id(node)\n    print 'user read by id', user",
+    "    port = get_free_port()\n    connect(port)",
+    "    self.items = sorted(doc)\n    print 'sorted items', self.items",
+    "    old = fetch_value_from_queue('level')\n    put_value_to_queue('level', old)"
+   ]
+  }
+ ],
+ "predictions": "config-file identifiers 0.4-0.9; other code identifiers below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "config/data-source identifier in code",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card mixes _config, _models, xml, _str with prose ',' and ' folk'. Probe: value_to_configfile 0.854, 'got from xml' 0.472, marketing folk 0.275, register_models_multi 0.106, err_str_segment 0.057."
+}
