@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-31cc7f56",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N5603+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T00:28:25+00:00",
+ "recipe": {
+  "toolchain_commit": "82dd5bb3b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N5603_pos/2026-11-05-ChopinDavid-31cc7f56.tests.json"
+ },
+ "label": "a rare word-internal piece 'yn' or Arabic 'ين' (or 'école') split off inside a longer name or word, as opposed to the same sentence with a common fully-tokenized word",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N5603_pos/2026-11-05-ChopinDavid-31cc7f56.tests.json",
+   "prereg_commit": "82dd5bb3b",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.802,
+     "peak": "yn"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.89,
+     "peak": "yn"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.691,
+     "peak": "ين"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.839,
+     "peak": "école"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.005,
+     "peak": "yn"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.797,
+     "peak": "ين"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.141,
+     "peak": "yn"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.749,
+     "peak": "yn"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.13,
+     "peak": "fen"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " Tom"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": "cles"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.11,
+     "peak": " swelling"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.0,
+     "peak": "letes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.132,
+     "peak": " album"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": "ol"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.821,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "82dd5bb3b",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "rare split piece 'yn' / 'ين'",
+ "unit_kind": "token",
+ "confidence": 0.5,
+ "notes": "Card (tiny max 0.22, broad 3%): yn x6, ين x4, s, école. Probe: Askynazzo 0.935, haute-école 0.869, Naprosyn 0.781, البروتينات 0.649, AOPs 0.336; aspirin 0.033, plain controls -0.073 to 0.019. Splits checked with tokcheck.",
+ "selection": "random draw"
+}

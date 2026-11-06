@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-690fa519",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N4827-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T00:28:19+00:00",
+ "recipe": {
+  "toolchain_commit": "82dd5bb3b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N4827_neg/2026-11-05-ChopinDavid-690fa519.tests.json"
+ },
+ "label": "software-testing identifiers in Python code (unittest, testtools, .TestCase, a .tests package), as opposed to non-test identifiers in the same code shape",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N4827_neg/2026-11-05-ChopinDavid-690fa519.tests.json",
+   "prereg_commit": "82dd5bb3b",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.823,
+     "peak": ".TestCase"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.894,
+     "peak": ".tests"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.854,
+     "peak": ".TestCase"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.015,
+     "peak": ".TestCase"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.689,
+     "peak": ".tests"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.752,
+     "peak": ".TestCase"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.162,
+     "peak": ".tests"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.896,
+     "peak": ".TestCase"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.075,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.113,
+     "peak": ".helpers"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.08,
+     "peak": "import"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": ".Base"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.072,
+     "peak": " settings"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.301,
+     "peak": " logging"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "\n\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.874,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "82dd5bb3b",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "test-framework identifiers in code",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: .TestCase x17, tests x5, .tests x2. Probe: testtools 0.967, .tests 0.862, .TestCase 0.752; 'import unittest' then a non-test class still 0.523 (peak ' unittest'), so the import itself fires; .utils 0.110; prose 'Run the tests' 0.100, school test 0.003; GitHub bug sentence 0.505 (so near misses avoid bug/issue talk).",
+ "selection": "random draw"
+}
