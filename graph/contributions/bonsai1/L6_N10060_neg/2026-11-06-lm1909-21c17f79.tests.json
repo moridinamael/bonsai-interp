@@ -1,0 +1,60 @@
+{
+ "contribution": "2026-11-06-lm1909-21c17f79",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10060-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N10060",
+   "pole": "-",
+   "label": "an opening bracket fused with what follows ('(mode', '(username', '([[') at the start of a Python call's arguments",
+   "fire": [
+    "net = vgg.VGG(mode, num_classes, depth)\n",
+    "user = db.get_user(username, password)\n",
+    "f = io.open(fname, encoding)\n",
+    "account = models.User(username, email)\n",
+    "reader = loaders.Reader(fname, delimiter)\n",
+    "weights = np.array([[1.0, 0.5], [0.5, 1.0]])\n",
+    "rot = sp.Matrix([[c, s], [s, c]])\n",
+    "layer = blocks.Dense(mode, units, dropout)\n"
+   ],
+   "quiet": [
+    "net = vgg.default_model\n",
+    "user = db.current_user\n",
+    "f = io.stdout\n",
+    "account = models.anonymous\n",
+    "reader = loaders.default_reader\n",
+    "weights = np.eye\n",
+    "rot = sp.pi + theta\n",
+    "layer = blocks.last.units\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "fused call-opening bracket",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: '(mode' 0.37-0.39 and '([[' 0.23; plain '(' tokens are weak or absent, and prose brackets stay quiet. Many probed calls stayed under 0.2, so a low median is the risk.",
+ "trigger": {
+  "tokens": [
+   "(mode",
+   "(username",
+   "(fname",
+   "([[",
+   " {'",
+   " {\"",
+   "('",
+   " ("
+  ]
+ }
+}

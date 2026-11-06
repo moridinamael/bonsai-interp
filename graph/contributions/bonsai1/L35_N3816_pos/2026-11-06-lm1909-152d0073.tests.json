@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-152d0073",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3816+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N3816",
+   "pole": "+",
+   "label": "the model expects 'work' next: in code, the position before a repeated workflow/workspace name",
+   "fire": [
+    "class B:\n    def setup(self, **opts):\n        self.workflow = opts.pop('workflow')\n",
+    "def run(workflow_id):\n    params = {'workflow_id': workflow_id, 'workflow': None}\n",
+    "def load(self, **kw):\n    self.workspace = kw.get('workspace')\n    return self.workspace\n",
+    "if name in workspace_list:\n    errors[\"InputWorkspace\"] = 'missing'\n",
+    "wf = engine.start(workflow_name)\nself.workflow_name = config.get('workflow_name')\n",
+    "mtd.remove(workspace)\nmtd.addOrReplace(workspace, out)\n",
+    "def save(self, *a, **kw):\n    self.worker = kw.pop('worker')\n",
+    "for wf in workflows:\n    status = client.get_status(workflow=wf, workflow_id=wf.id)\n"
+   ],
+   "quiet": [
+    "class B:\n    def setup(self, **opts):\n        self.session = opts.pop('session')\n",
+    "def run(user_id):\n    params = {'user_id': user_id, 'user': None}\n",
+    "def load(self, **kw):\n    self.config = kw.get('config')\n    return self.config\n",
+    "if name in table_list:\n    errors[\"InputTable\"] = 'missing'\n",
+    "db = engine.start(table_name)\nself.table_name = config.get('table_name')\n",
+    "mtd.remove(table)\nmtd.addOrReplace(table, out)\n",
+    "def save(self, *a, **kw):\n    self.owner = kw.pop('owner')\n",
+    "for job in jobs:\n    status = client.get_status(job=job, job_id=job.id)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "next token is 'work'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Logit effect suppresses work/workflow/workspace, and top peaks sit just before them (워|크플로우, ネット|ワーク, pop('|workflow'). Probes: pop(' after self.workflow 0.67, and the same code with 'request' 0.006."
+}

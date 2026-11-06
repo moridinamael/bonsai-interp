@@ -1,0 +1,59 @@
+{
+ "contribution": "2026-11-06-lm1909-bc05bc25",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N190+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N190",
+   "pole": "+",
+   "label": "a binary division or comparison operator inside a numeric code expression, strongest on ' /' after a number or closing bracket",
+   "fire": [
+    "volume = (4.0 / 3.0) * pi * r ** 3\n",
+    "half = (lo + hi) / 2\n",
+    "ratio = float(total) / count\n",
+    "if abs(a - b) < 0.001:\n    done = True\n",
+    "while len(queue) > 0:\n    queue.pop()\n",
+    "if x.shape[0] == 3:\n    x = x.mean(0)\n",
+    "mean = sum(vals) / len(vals)\n",
+    "assert math.floor(n) == n\n"
+   ],
+   "quiet": [
+    "volume = compute_volume(radius, height)\n",
+    "half = midpoint(lo, hi)\n",
+    "ratio = float(total)\n",
+    "done = math.isclose(a, b)\n",
+    "while queue:\n    queue.pop()\n",
+    "x = x.mean(0)\nshape = x.shape\n",
+    "mean = statistics.mean(vals)\n",
+    "assert math.isfinite(n)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "code math operator",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Probes: ' /' in code 1.1 (above the card max), ' ==', ' >', ' <' 0.32-0.42; prose 'half / half' and '3 / 4' under 0.04; assignments and commas quiet.",
+ "trigger": {
+  "tokens": [
+   " /",
+   "/",
+   " ==",
+   " >",
+   " <",
+   ")/(",
+   " -"
+  ]
+ }
+}
