@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-06-lm1909-ca4cf33b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N5481-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:25:27+00:00",
+ "recipe": {
+  "toolchain_commit": "5cf117caa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N5481_neg/2026-11-06-lm1909-ca4cf33b.tests.json"
+ },
+ "label": "the token Penn, as a name or the start of Pennsylvania; other states and schools, and pen or penny, stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N5481_neg/2026-11-06-lm1909-ca4cf33b.tests.json",
+   "prereg_commit": "5cf117caa",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.67,
+     "peak": " Penn"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.077,
+     "peak": " Pennsylvania"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.341,
+     "peak": " Penn"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.131,
+     "peak": " Penn"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.773,
+     "peak": " Penn"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.016,
+     "peak": " Pennsylvania"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.132,
+     "peak": " Pennsylvania"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.618,
+     "peak": " Penn"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.07,
+     "peak": " Purdue"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " Virginia"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " England"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "ery"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " Yale"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " Richmond"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " Kansas"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " pen"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.237,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5cf117caa",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "the token Penn",
+ "unit_kind": "lexical",
+ "confidence": 0.9,
+ "notes": "Card: ' Penn' and 'Penn' take 31 of the top 32. Fires across the state, the university and surnames, so the label is the token and not a meaning. Pen and penny reach about 0.2-0.25.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " Penn",
+   "Penn",
+   " penn"
+  ]
+ }
+}
