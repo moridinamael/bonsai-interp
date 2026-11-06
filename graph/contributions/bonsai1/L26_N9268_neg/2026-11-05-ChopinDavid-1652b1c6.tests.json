@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-1652b1c6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N9268-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T00:20:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N9268",
+   "pole": "-",
+   "label": "tokens in a person's professional or educational biography (is a graduate of, holds a degree, served as), the setup for a credential or job; the + pole promotes job and profession words",
+   "fire": [
+    "Dr. Patel is a graduate of the University of Toronto medical school.",
+    "Before joining the board, she served as chief financial officer at a bank.",
+    "A graduate of Ohio State, Miller teaches physics at the high school.",
+    "He holds a master's degree in public health from Emory.",
+    "Our new director is a graduate of the Juilliard School.",
+    "She earned her law degree at Georgetown and clerked for a judge.",
+    "Gomez is a graduate of the police academy in Denver.",
+    "Kim has a Bachelor of Science in nursing from Duke."
+   ],
+   "quiet": [
+    "The University of Toronto medical school opened a new library.",
+    "The bank's board approved the budget in a short meeting.",
+    "Ohio State's campus has a large physics building near the stadium.",
+    "Emory's public health school sits on a hill above the road.",
+    "The Juilliard School stands near Lincoln Center in Manhattan.",
+    "Georgetown's law campus is a short walk from the Capitol.",
+    "The police academy in Denver repaved its parking lot.",
+    "Duke's nursing building was renovated last summer."
+   ]
+  }
+ ],
+ "predictions": "bio sentences with credentials 0.25-0.45; sentences about the same places or objects without a person's career below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "professional bio slot",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: be a graduate x3, due to their relation, I'm good at, more qualified, Laurie has a Bachelor, He is the Founder. Probe: 'A graduate of' 0.432, 'is a graduate of' 0.239-0.281, 'due to their relation' 0.146; but bio-shaped near misses also fired ('moved to Amherst as a child' 0.316, 'joined the firm in 2010 and works' 0.329), so the pole reads biography, not the word graduate. Near misses here drop the person."
+}

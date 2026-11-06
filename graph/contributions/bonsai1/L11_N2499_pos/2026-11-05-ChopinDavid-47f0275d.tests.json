@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-47f0275d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N2499+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T00:20:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N2499",
+   "pole": "+",
+   "label": "a metadata or descriptor field name (metadata, _meta, demographic, headers) naming data about the data, as opposed to the primary content field",
+   "fire": [
+    "    file_metadata = storage.read_metadata(path)",
+    "    print(volume.metadata['owner'])",
+    "The clinic records demographic details for every new patient.",
+    "    disk_meta = utils.get_disk_meta(node)",
+    "    if photo.metadata.get('camera'):\n        tag(photo)",
+    "Researchers collected demographic information from each participant.",
+    "    user_meta = profile.load_meta(user_id)",
+    "    assert record.metadata.version == 2"
+   ],
+   "quiet": [
+    "    file_contents = storage.read_contents(path)",
+    "    print(volume.size['owner'])",
+    "The clinic records blood pressure for every new patient.",
+    "    disk_size = utils.get_disk_size(node)",
+    "    if photo.pixels.get('camera'):\n        tag(photo)",
+    "Researchers collected blood samples from each participant.",
+    "    user_name = profile.load_name(user_id)",
+    "    assert record.value.version == 2"
+   ]
+  }
+ ],
+ "predictions": "metadata/_meta/demographic tokens 0.2-0.5; the same lines with data/name/content fields below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "metadata field name",
+ "unit_kind": "meaning",
+ "confidence": 0.4,
+ "notes": "Card: _meta x15, .metadata x3, _metadata x2, headers x2, demographic. Probe: patient demographic 0.487, service.metadata 0.357, system_meta 0.256, image_meta 0.117 (peak shifted to ['), headers 0.062; image_data 0.086, system_name 0.021, names and phone numbers 0.018."
+}
