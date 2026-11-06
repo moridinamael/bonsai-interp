@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-414900c4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4419+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:09:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N4419",
+   "pole": "+",
+   "label": "opening an element that is about to take attributes: an HTML tag name such as font, meta, link or img, its attribute quotes, and the widget constructor's comma before text=",
+   "fire": [
+    "<html>\n<head>\n<title>Shop</title>\n<meta name=\"keywords\" content=\"shoes\">\n</head>\n",
+    "row = '<font color=\"blue\">%s</font><font color=\"gray\">%s</font>' % (a, b)\n",
+    "<head><link rel=\"icon\" href=\"f.ico\"><meta charset=\"utf-8\"></head>",
+    "out.write('<img width=\"20\" src=\"%s\" alt=\"\" />\\n' % icon)\n",
+    "<body><font face=\"Arial\" size=\"2\">Welcome</font></body>",
+    "lines.append('<link href=\"%s\" type=\"text/css\" />' % sheet)\n",
+    "<meta http-equiv=\"refresh\" content=\"5\"><title>Status</title>",
+    "self.lbl = ttk.Label(parent, text='Name:', width=12)\nself.lbl.grid(column=0)\n"
+   ],
+   "quiet": [
+    "The page has a title, a heading and some keywords about shoes.\n",
+    "row = '%s and %s' % (a, b)\nprint(row)\n",
+    "Choose a favicon and set the charset of the document in the settings.",
+    "out.write('%s\\n' % icon)\nout.close()\n",
+    "Welcome to our site, where the font is Arial and the size is small.",
+    "lines.append(sheet)\nlines.sort()\n",
+    "</title></head></html>",
+    "self.name = get_name(parent)\nself.size = 12\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "markup tag opening for attributes",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "The negative pole fires on self and .set in GUI code. Closing tags and prose about fonts stayed near zero in probes; bare div and span were weak, so the test uses the card's tags."
+}

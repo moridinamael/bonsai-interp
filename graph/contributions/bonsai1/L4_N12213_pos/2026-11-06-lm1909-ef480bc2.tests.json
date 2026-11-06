@@ -1,0 +1,60 @@
+{
+ "contribution": "2026-11-06-lm1909-ef480bc2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N12213+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:09:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N12213",
+   "pole": "+",
+   "label": "a word piece carrying a u-/up- onset: 'unicode', ' ups', 'utter' in un-utter-able, 'ping' in up-ping, and Cyrillic ' у' + 'п'",
+   "fire": [
+    "class Article(models.Model):\n    title = models.CharField(max_length=50)\n\n    def __unicode__(self):\n        return self.title\n",
+    "Through all the ups and downs of her career, she never complained.",
+    "His sorrow was unutterably deep and no one dared to speak.",
+    "The team kept upping the tempo after the break, and the crowd roared.",
+    "Моя сестра споткнулась и упала на лестнице.",
+    "Каждое утро он делает упражнения дома.",
+    "Convert the bytes to unicode before you write the file.",
+    "The company upped the price twice last year."
+   ],
+   "quiet": [
+    "class Article(models.Model):\n    title = models.CharField(max_length=50)\n\n    def __str__(self):\n        return self.title\n",
+    "Through all the highs and lows of her career, she never complained.",
+    "His sorrow was terribly deep and no one dared to speak.",
+    "The team kept raising the tempo after the break, and the crowd roared.",
+    "Моя сестра споткнулась и лежала на лестнице.",
+    "Каждый вечер он делает задания дома.",
+    "Convert the bytes to text before you write the file.",
+    "The company raised the price twice last year."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "u-/up- onset word pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Early-layer spelling unit; splits were checked with the tokenizer. 'ped' in up-ped was not probed and is a new case for the pattern. The card flags the gate-closed regime as dominant for this pole.",
+ "trigger": {
+  "tokens": [
+   "unicode",
+   " unicode",
+   " ups",
+   "utter",
+   "ping",
+   "ped",
+   " у",
+   "п"
+  ]
+ }
+}
