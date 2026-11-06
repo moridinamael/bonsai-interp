@@ -1,0 +1,173 @@
+{
+ "id": "2026-11-06-lm1909-aa9381cf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N1325+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:44+00:00",
+ "recipe": {
+  "toolchain_commit": "246ee984e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N1325_pos/2026-11-06-lm1909-aa9381cf.tests.json"
+ },
+ "label": "a token that needs its completion next: a contraction stem (' wasn', ' couldn' before 't), ' according' before 'to', ' well' in 'as well as', a bare space before a digit",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N1325_pos/2026-11-06-lm1909-aa9381cf.tests.json",
+   "prereg_commit": "246ee984e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.387,
+     "peak": " weren"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.405,
+     "peak": " wouldn"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.496,
+     "peak": " according"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.44,
+     "peak": " well"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.515,
+     "peak": " aren"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.43,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.383,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.444,
+     "peak": " shouldn"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.004,
+     "peak": " car"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.004,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "adders"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.437,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": "]\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.435,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "246ee984e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token awaiting its completion",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Not every fixed phrase fires: ' of' in 'because of' and 'in spite of' stayed quiet in probes, so the shared pattern may be narrower than the label says.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " according",
+   " According",
+   "According",
+   " well",
+   " wasn",
+   " isn",
+   " didn",
+   " doesn",
+   " couldn",
+   " hasn",
+   " weren",
+   " wouldn",
+   " aren",
+   " shouldn",
+   " "
+  ]
+ }
+}
