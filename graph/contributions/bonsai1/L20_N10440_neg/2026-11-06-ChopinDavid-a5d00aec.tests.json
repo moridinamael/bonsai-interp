@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-a5d00aec",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10440-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T06:27:47+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N10440",
+   "pole": "-",
+   "label": "the ')\\n' closing a Qt layout method call line in Python GUI code",
+   "fire": [
+    "    def setup(self):\n        self.mainLayout.addWidget(self.buttonSave)\n        self.mainLayout.addStretch()",
+    "        self.gridLayout.addLayout(self.horizontalLayoutTools)\n        spacerItem3 = None",
+    "        self.vbox.addWidget(self.labelStatus)\n        self.vbox.addWidget(self.progress)",
+    "        self.toolbarLayout.addLayout(self.searchBox)\n        self.setLayout(self.toolbarLayout)",
+    "        self.formLayout.addRow(self.labelName, self.editName)\n        self.formLayout.addRow(self.labelAge, self.editAge)",
+    "        self.horizontalLayout_3.addWidget(self.comboUnits)\n        self.retranslateUi(Dialog)",
+    "        self.panelLayout.addLayout(self.verticalLayoutFilters)\n        spacerItem7 = None",
+    "        self.splitter.addWidget(self.treeView)\n        self.splitter.addWidget(self.textEdit)"
+   ],
+   "quiet": [
+    "    def setup(self):\n        self.title = 'Save'\n        self.count = 0",
+    "        self.toolsVisible = True\n        spacerItem3 = None",
+    "        self.statusText = 'ready'\n        self.progressValue = 0",
+    "        self.searchTerm = ''\n        self.maxResults = 50",
+    "        self.name = name\n        self.age = age",
+    "        self.units = 'metric'\n        self.dialogOpen = False",
+    "        self.filtersEnabled = False\n        spacerItem7 = None",
+    "        self.treeExpanded = True\n        self.textDirty = False"
+   ]
+  }
+ ],
+ "predictions": "fires on ')\\n' ending addLayout/addWidget lines; plain assignment lines in the same code stay low",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "')\\n' after Qt layout call",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Probe: addLayout(self.verticalLayoutProfile)\\n 0.35, addLayout(layout)\\n 0.20; identifier-piece hypotheses (_hull, _model, _subscription) 0.07-0.13. Broad pole; weak, low confidence."
+}
