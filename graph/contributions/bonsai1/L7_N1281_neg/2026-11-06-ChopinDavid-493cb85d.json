@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-493cb85d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N1281-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T10:26:05+00:00",
+ "recipe": {
+  "toolchain_commit": "4ce7ec050",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N1281_neg/2026-11-06-ChopinDavid-493cb85d.tests.json"
+ },
+ "label": "the word right after a misspelled or garbled word ('Unted States', 'Noth Carolina', 'menatl health', 'resent years'): the unit reacts to a broken spelling by firing on the next intact word; the same phrases spelled correctly stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N1281_neg/2026-11-06-ChopinDavid-493cb85d.tests.json",
+   "prereg_commit": "4ce7ec050",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.084,
+     "peak": " Africa"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.876,
+     "peak": " York"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.375,
+     "peak": " Nations"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.203,
+     "peak": " health"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.065,
+     "peak": "ian"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.127,
+     "peak": " change"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.065,
+     "peak": " Mountains"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.765,
+     "peak": " school"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " museum"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " studied"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " spent"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " new"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.165,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4ce7ec050",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "word after a misspelling",
+ "unit_kind": "context",
+ "confidence": 0.65,
+ "notes": "Card: 'Noth American', 'Fnited States', 'Nat Mountain', 'menatl health', 'resent years', 'hereOld of', OCR text. Probe: 'Unted States' 0.882, 'Noth Carolina' 0.716, 'menatl health ... resent years' 0.800, 'creative Common' 0.259; correct spellings 0.037, 0.029, 0.016; a sentence of all-misspelled words 0.031 (peak ' br'), so it wants a misspelling followed by a correct word.",
+ "selection": "random draw"
+}

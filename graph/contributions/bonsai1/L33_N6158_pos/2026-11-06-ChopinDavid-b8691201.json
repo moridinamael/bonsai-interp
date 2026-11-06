@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-b8691201",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6158+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T10:25:41+00:00",
+ "recipe": {
+  "toolchain_commit": "4ce7ec050",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N6158_pos/2026-11-06-ChopinDavid-b8691201.tests.json"
+ },
+ "label": "a modifier slot that sets up a nuisance or harm noun (pest, disease, noise, error) as the next word, as in 'weed and pest free', 'drought- and disease-resistant', 'high noise'; the same frames heading to a neutral word stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N6158_pos/2026-11-06-ChopinDavid-b8691201.tests.json",
+   "prereg_commit": "4ce7ec050",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.284,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.498,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.395,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.138,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.078,
+     "peak": " very"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.057,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.542,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.004,
+     "peak": "Many"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " spr"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": "-growing"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.396,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " very"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": "Keeping"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.211,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4ce7ec050",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "slot before a harm noun",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card: 'weed and disease free', 'disease- and pest-resistant', 'incidence of pests', 'high noise'; promotes nothing obvious but the - pole suppresses disease/noise/pain/error. Probe: 'weed and pest free' 0.415, 'drought- and disease-resistant' 0.360, 'incidence of pests' 0.297, 'high noise settings' 0.349, 'tedious and error-prone' 0.320; 'slow and costly' 0.069, 'green and bright' 0.017. Fire amplitudes are modest.",
+ "selection": "random draw"
+}
