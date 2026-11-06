@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-1c909fac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N918-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:39+00:00",
+ "recipe": {
+  "toolchain_commit": "54d5ebef9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N918_neg/2026-11-06-lm1909-1c909fac.tests.json"
+ },
+ "label": "a determiner or possessive opening the next parallel noun phrase after a comma, 'and' or 'or' (the X and the Y; her A, her B)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N918_neg/2026-11-06-lm1909-1c909fac.tests.json",
+   "prereg_commit": "54d5ebef9",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.351,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.428,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.119,
+     "peak": " our"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.258,
+     "peak": " any"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.679,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.105,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.061,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.366,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.08,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.151,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.126,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.067,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.041,
+     "peak": " finds"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.304,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54d5ebef9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "determiner opening a parallel phrase",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card peaks ' the' x18 with ' a', ' our', ' her', ' any' after a coordinator or comma. Determiners elsewhere stay under 0.1 in probes. Near misses keep the same determiners in non-parallel positions.",
+ "selection": "random draw"
+}
