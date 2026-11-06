@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-06-lm1909-b611e033",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N10747+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:54:24+00:00",
+ "recipe": {
+  "toolchain_commit": "eabc5f7b3",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N10747_pos/2026-11-06-lm1909-b611e033.tests.json"
+ },
+ "label": "the spelling 'ext' meaning extension: '.ext', 'splitext', ' extension(s)'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N10747_pos/2026-11-06-lm1909-b611e033.tests.json",
+   "prereg_commit": "eabc5f7b3",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.717,
+     "peak": ".ext"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.685,
+     "peak": ".ext"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.446,
+     "peak": " ext"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.415,
+     "peak": " extension"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.349,
+     "peak": " extensions"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.428,
+     "peak": " extension"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.524,
+     "peak": "ext"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.472,
+     "peak": ".ext"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.001,
+     "peak": "from"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": ".utils"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": ".path"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.0,
+     "peak": " add"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.001,
+     "peak": " editor"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.001,
+     "peak": "This"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.002,
+     "peak": "[code"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": ".util"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.459,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eabc5f7b3",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "ext / extension",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: '.ext' x10, ' ext', 'EXT', 'extension', '_ext'. Probes: 0.4-0.7 with the trigger, about 0 without. ' extended' also reached 0.31, so the piece may matter more than the meaning.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "ext",
+   "extension",
+   "extensions"
+  ]
+ }
+}

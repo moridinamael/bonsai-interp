@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-06-lm1909-79dd61ad",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N9112-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:54:14+00:00",
+ "recipe": {
+  "toolchain_commit": "eabc5f7b3",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N9112_neg/2026-11-06-lm1909-79dd61ad.tests.json"
+ },
+ "label": "' per' as a rate word after a measured quantity ('60 calories per tablespoon')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N9112_neg/2026-11-06-lm1909-79dd61ad.tests.json",
+   "prereg_commit": "eabc5f7b3",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.086,
+     "peak": " per"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.608,
+     "peak": " per"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.022,
+     "peak": " day"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.121,
+     "peak": " per"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.112,
+     "peak": " hour"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.103,
+     "peak": " per"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.056,
+     "peak": " second"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.022,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": " syrup"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.052,
+     "peak": " panel"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " day"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.051,
+     "peak": " cereal"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " hour"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": "Each"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.058,
+     "peak": " second"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "0"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.095,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eabc5f7b3",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rate word ' per'",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Card: ' per' x7 at the top, ' %' x4. Probes were weak and uneven: 0.21 for 'calories per', about 0.03-0.05 for most other rates, so this may miss the 0.20 median.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " per"
+  ]
+ }
+}
