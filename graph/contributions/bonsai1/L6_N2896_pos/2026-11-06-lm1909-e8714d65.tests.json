@@ -1,0 +1,56 @@
+{
+ "contribution": "2026-11-06-lm1909-e8714d65",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N2896+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:07:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N2896",
+   "pole": "+",
+   "label": "the part-of-day word (night, evening, morning) right after a weekday name ('Saturday night')",
+   "fire": [
+    "We were stuck at home on a Tuesday night with nothing to do.",
+    "Bands play at the pub every Thursday night in summer.",
+    "Bored on a Wednesday evening, I started painting.",
+    "The show aired each Sunday night for nine years.",
+    "The council meets on Monday evening at the town hall.",
+    "Traffic was awful on Friday morning near the bridge.",
+    "Dinner is served on Saturday night at eight.",
+    "My flight leaves early on Sunday morning from Leeds."
+   ],
+   "quiet": [
+    "We were stuck at home on a Tuesday with nothing to do.",
+    "Bands play at the pub every week in summer.",
+    "Bored at home, I started painting in the garage.",
+    "The show aired each week for nine years.",
+    "The council meets on Monday at the town hall.",
+    "Traffic was awful on Friday near the bridge.",
+    "Dinner is served on Saturday at eight.",
+    "My flight leaves early on Sunday from Leeds."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "part of day after a weekday",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "The card flags the pole broad (1.2%), and its max is small (2.27). 'Friday night', 'Sunday evening', 'Monday morning' fire; 'at night', 'Last night' and the weekday alone stay low. 'good night' also fires, as do ' reaction' and the 'v' in Negev, so this is likely partial.",
+ "trigger": {
+  "tokens": [
+   " night",
+   " Night",
+   " evening",
+   " morning"
+  ]
+ }
+}

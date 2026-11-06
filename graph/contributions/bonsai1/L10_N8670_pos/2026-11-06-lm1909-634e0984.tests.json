@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-06-lm1909-634e0984",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8670+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:07:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N8670",
+   "pole": "+",
+   "label": "the ' ·' separator right after a month-and-day date, as in a search-snippet dateline ('May 20, · This was')",
+   "fire": [
+    "Updated Sep 9, · This blender was a poor choice for soup.",
+    "Reviewed on Feb 17, · My daughter loved this story.",
+    "Oct 5, · Learn how to bake sourdough at home.",
+    "Apr 28, · The hotel was clean and the staff were kind.",
+    "Last edited Jul 21, · I returned these shoes after a week.",
+    "Dec 12, · Follow these steps to repair a flat tire.",
+    "Published Jan 30, · This guide explains how to file taxes.",
+    "By admin on Mar 8, · Our team tested five laptops."
+   ],
+   "quiet": [
+    "Updated Sep 9, this blender was a poor choice for soup.",
+    "Reviewed on Feb 17: My daughter loved this story.",
+    "Oct 5 - Learn how to bake sourdough at home.",
+    "Hotel, pool · spa · gym: the staff were kind.",
+    "Last edited Jul 21. I returned these shoes after a week.",
+    "Step one · follow these steps to repair a flat tire.",
+    "Published in January, this guide explains how to file taxes.",
+    "By admin on Mar 8 | Our team tested five laptops."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "' ·' after a date",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "The ' ·' is reproducible across dates and quiet in a plain list; with a year before it, it drops. The rest of the card (sentence ends in spun essay-mill text) did not reproduce in my probes even with imitated text, so this is probably a sub-trigger. Trigger declared so coverage measures that.",
+ "trigger": {
+  "tokens": [
+   " ·"
+  ]
+ }
+}
