@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-b72d9d1f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10843+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T08:27:05+00:00",
+ "recipe": {
+  "toolchain_commit": "9e2e90322",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N10843_pos/2026-11-06-ChopinDavid-b72d9d1f.tests.json"
+ },
+ "label": "the first piece of a French word that the tokenizer splits (l|arme, l|ueur, cru|auté, po|itrine), in French narrative prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N10843_pos/2026-11-06-ChopinDavid-b72d9d1f.tests.json",
+   "prereg_commit": "9e2e90322",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.412,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.713,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.391,
+     "peak": " po"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.439,
+     "peak": " cru"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.403,
+     "peak": " ma"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.442,
+     "peak": "'es"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.441,
+     "peak": " po"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.828,
+     "peak": " l"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.278,
+     "peak": " sa"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.199,
+     "peak": " ph"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.256,
+     "peak": " son"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.105,
+     "peak": " gard"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.151,
+     "peak": " son"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.146,
+     "peak": " en"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.236,
+     "peak": "'"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.235,
+     "peak": " g"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.442,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9e2e90322",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "first piece of split French word",
+ "unit_kind": "token",
+ "confidence": 0.55,
+ "notes": "Card: ' ma'|ître, ' l'|ueur, ' l'|arme, ' cru'|auté, Méd|iterr|anée, also ' une', ' cette' in French literary prose. Probe: lueur 0.810, larme 0.677, poitrine 0.529 (peak ' po'), maître 0.407, cruauté 0.335, colère 0.319; fenêtre 0.111, heures 0.129; English translation 0.002. Near misses use words that are single tokens; tokcheck run.",
+ "selection": "random draw"
+}
