@@ -1,0 +1,57 @@
+{
+ "contribution": "2026-11-06-lm1909-212606da",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4830-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N4830",
+   "pole": "-",
+   "label": "the bare opening piece ' l' of a word split by the tokenizer (l|ilies, l|ough|s, l|ich|ens, l|ago|ons), most strongly for words from nature. Other plant and landscape words stay quiet",
+   "fire": [
+    "Deep in the marsh we found wild lilies and pale lupins.",
+    "The bay has cold loughs and small lagoons behind it.",
+    "Old walls there are thick with lichens and ferns.",
+    "Visitors to Ireland admire its many loughs in the rain.",
+    "Her dress was the colour of tiger lilies in June.",
+    "The meadow was bright with lilies and buttercups.",
+    "We sailed through lagoons near the edge of the reef.",
+    "Frost killed the lichens and mosses by the gate."
+   ],
+   "quiet": [
+    "Deep in the marsh we found wild roses and pale grasses.",
+    "The bay has cold pools and small inlets behind it.",
+    "Old walls there are thick with moss and ferns.",
+    "Visitors to Ireland admire its many castles in the rain.",
+    "Her dress was the colour of tiger stripes in June.",
+    "The meadow was bright with daisies and buttercups.",
+    "We sailed through channels near the edge of the reef.",
+    "Frost killed the ferns and mosses by the gate."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.8, near misses below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "' l' opening piece",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' l' x13, ' L' x5, '_L' x3, 'l' x2. Probes: 'glacier lilies' 0.790, 'tiger lilies' 0.757, 'loughs' 0.710, 'lupins and lichens' 0.586 (' lup' is a whole piece, so ' l' here is lichens), 'lochs and lagoons' 0.297, 'lily pads' 0.305; 'l2 norm' only 0.029 although the card shows ' l3_plugin', and whole-token ' lake', ' lamp' stay low, so the code use is not covered here. ' Lake' varies (0.596 and 0.094), so it is not in the test.",
+ "trigger": {
+  "tokens": [
+   " l",
+   " L",
+   "l",
+   "_L"
+  ]
+ }
+}

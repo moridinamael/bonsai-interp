@@ -1,0 +1,57 @@
+{
+ "contribution": "2026-11-06-lm1909-9d389f08",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N10622-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N10622",
+   "pole": "-",
+   "label": "the word-opening pieces ' al' and ' cere' (al|cohols, al|gal, al|batross, cere|brospinal, ALMA, Al + name), where a word starts with this piece and the rest follows as a separate token",
+   "fire": [
+    "Fermenting sugars produces alcohols and carbon dioxide in the tank.",
+    "Warm water feeds algal mats on the shallow lake bed.",
+    "A leak of cerebrospinal fluid can cause severe headaches.",
+    "The surgeon checked the cerebrospinal pressure during the operation.",
+    "Sailors once feared killing an albatross at sea.",
+    "The researchers compared ALMA data with older radio surveys.",
+    "In class we read about Al Capone and his gang in Chicago.",
+    "Farmers in Peru keep alpacas for their soft wool."
+   ],
+   "quiet": [
+    "Fermenting sugars produces acids and carbon dioxide in the tank.",
+    "Warm water feeds bacterial mats on the shallow lake bed.",
+    "A leak of joint fluid can cause severe swelling.",
+    "The surgeon checked the arterial pressure during the operation.",
+    "Sailors once feared killing a seagull at sea.",
+    "The researchers compared Hubble data with older radio surveys.",
+    "In class we read about John Dillinger and his gang in Chicago.",
+    "Farmers in Peru keep sheep for their soft wool."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.8, near misses mostly below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "' al' / ' cere' opening pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' al' x9, ' Al' x4, ' cere' x3. Probes: algal 0.608, cerebrospinal 0.798, alcohols 0.469, ALMA 0.329, Al Gore 0.393; whole-token cerebral only 0.081, so the piece matters and not the meaning. Other tissue fluids can leak ('synovial' 0.318 on 'ov').",
+ "trigger": {
+  "tokens": [
+   " al",
+   " Al",
+   " AL",
+   " cere"
+  ]
+ }
+}
