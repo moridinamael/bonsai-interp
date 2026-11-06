@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-852a595a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11715-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T10:19:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N11715",
+   "pole": "-",
+   "label": "a condition clause inside a code comment or docstring: 'if', 'unless' or 'while' and the clause it opens, describing when a piece of code acts; the same words in everyday prose stay quiet",
+   "fire": [
+    "def flush(buf):\n    # Write the buffer to disk if it is full\n    if len(buf) >= LIMIT:\n        save(buf)",
+    "    # Return early if the user is not logged in\n    if user is None:\n        return None",
+    "def close(self):\n    \"\"\"Closes the socket if it is still open.\"\"\"\n    if self.sock:\n        self.sock.close()",
+    "    # Retry the request unless the server sent a fatal error\n    if code != 500:\n        retry()",
+    "def load(path):\n    # Create the cache folder if it does not exist yet\n    os.makedirs(path, exist_ok=True)",
+    "    # Only print the warning if verbose mode is on\n    if args.verbose:\n        print(msg)",
+    "def stop(self):\n    \"\"\"Kills the child process if it is still alive.\"\"\"\n    self.proc.kill()",
+    "    # Drop the row if the price field is missing\n    if row.get('price') is None:\n        continue"
+   ],
+   "quiet": [
+    "def flush(buf):\n    # Write the buffer to disk and clear it\n    save(buf)\n    buf.clear()",
+    "    # Return the name of the current user\n    name = user.name\n    return name",
+    "def close(self):\n    \"\"\"Closes the socket and frees the port.\"\"\"\n    self.sock.close()",
+    "    # Send the request to the backup server\n    resp = send(backup_url)\n    retry()",
+    "def load(path):\n    # Read every line of the cache file\n    return open(path).readlines()",
+    "    # Print the warning to standard error\n    print(msg, file=sys.stderr)",
+    "def stop(self):\n    \"\"\"Kills the child process and logs the time.\"\"\"\n    self.proc.kill()",
+    "    # Drop the first row of the price table\n    rows = rows[1:]"
+   ]
+  }
+ ],
+ "predictions": "if/unless clauses in code comments and docstrings 0.2-0.7; code comments without a condition and prose 'if/because' below 0.08",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "condition clause in code comment",
+ "unit_kind": "context",
+ "confidence": 0.45,
+ "notes": "Card: '# If the line doesn't start', 'Stops the replay server if currently active', '## change this if ...', 'unless'. Probe: '# Skip the header if the file is empty' 0.756 (peak ' is'), 'Stops the background worker if it is currently running' 0.287, 'unless you know what you are doing' 0.221; '# Skip the header line and the empty rows' 0.043, 'and frees the memory' 0.020, prose 'because the weather' 0.024, 'if the weather was good' 0.054."
+}
