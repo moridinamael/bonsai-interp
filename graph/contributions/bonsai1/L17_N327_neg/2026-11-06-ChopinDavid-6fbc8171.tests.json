@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-6fbc8171",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N327-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T21:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N327",
+   "pole": "-",
+   "label": "the separator between rows of a nested array or table ('[' opening the next inner list in [[...], [...]], '|' between table cells); flat calls and prose versions stay low",
+   "fire": [
+    "    grid = [[0, 1, 0], [1, 1, 1], [0, 1, 0]]\n    show(grid)",
+    "    pairs = [[3, 7], [2, 9], [4, 4], [8, 1]]\n    print(pairs)",
+    "    want = [[10, 20], [30, 40], [50, 60]]\n    self.assertEqual(got, want)",
+    "    pads = [[1, 1], [2, 2]]\n    y = np.pad(x, pads)",
+    "    coords = np.array([[0.5], [1.5], [2.5], [3.5]])\n    fit(coords)",
+    "    batch = [[5, 6, 7, 8], [8, 7, 6, 5]]\n    run(batch)",
+    "| Day | Mon | Tue | Wed |\n|:--|:--:|:--:|:--:|\n| Temp | 12 | 14 | 9 |",
+    "| Team | W | L | D |\n|:--|:--:|:--:|:--:|\n| Reds | 10 | 3 | 2 |"
+   ],
+   "quiet": [
+    "    grid = make_grid(3, 3)\n    show(grid)",
+    "    pairs = load_pairs(path)\n    print(pairs)",
+    "    want = compute(got)\n    self.assertEqual(got, want)",
+    "    pads = 2\n    y = np.pad(x, pads)",
+    "    coords = np.array(points)\n    fit(coords)",
+    "    batch = load_batch(path)\n    run(batch)",
+    "The forecast for Monday is 12 degrees, Tuesday 14 and Wednesday 9.",
+    "The Reds won 10 games, lost 3 and drew 2 this season."
+   ]
+  }
+ ],
+ "predictions": "nested-list rows and table cells 0.3-0.5; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "separator between rows of nested arrays/tables",
+ "unit_kind": "context",
+ "confidence": 0.4,
+ "notes": "Card peaks on ' [' x8 in nested lists, ',' in column_sizes lists, '|' in markdown tables, '×' in dimensions. Probe: nested expected list 0.492, markdown table 0.414, flat list 0.167, dimensions 0.115, no list 0.031. Near misses remove the nested structure (flat lists would leak around 0.17)."
+}
