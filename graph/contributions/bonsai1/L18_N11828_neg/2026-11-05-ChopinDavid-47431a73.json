@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-47431a73",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N11828-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T00:28:03+00:00",
+ "recipe": {
+  "toolchain_commit": "82dd5bb3b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N11828_neg/2026-11-05-ChopinDavid-47431a73.tests.json"
+ },
+ "label": "unclear: the card mixes comparatives ('the higher the temperature,', 'more than', 'higher than 30') and a degree substitution; probes fired only on 'a master's degree could substitute for', so the best guess is a modal in a 'credential could substitute for requirement' clause",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N11828_neg/2026-11-05-ChopinDavid-47431a73.tests.json",
+   "prereg_commit": "82dd5bb3b",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.333,
+     "peak": " may"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.012,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.011,
+     "peak": " years"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.015,
+     "peak": " requirement"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.013,
+     "peak": " substitute"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.01,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.013,
+     "peak": " year"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.027,
+     "peak": " requirement"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": "ate"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " certification"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " three"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.664,
+    "median_fire": 0.013,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "82dd5bb3b",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "unclear (credential substitution?)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: comma in 'The higher the temperature,' (max), Master's degree, higher latitudes, more than x2, over 50 years, BMI higher than 30. Probe: comparative items all 0.035-0.053; 'a master's degree could substitute for experience' 0.672 (peak ' could'). One hit, so low confidence.",
+ "selection": "random draw"
+}

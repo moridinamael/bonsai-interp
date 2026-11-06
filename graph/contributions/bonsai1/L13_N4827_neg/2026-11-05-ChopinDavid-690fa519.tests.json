@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-690fa519",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N4827-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T00:20:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N4827",
+   "pole": "-",
+   "label": "software-testing identifiers in Python code (unittest, testtools, .TestCase, a .tests package), as opposed to non-test identifiers in the same code shape",
+   "fire": [
+    "import os\n\nclass TestLoader(unittest.TestCase):\n    def setUp(self):\n        self.path = os.getcwd()",
+    "from app import models\nimport app.tests.helpers as H",
+    "import sys\nimport unittest\n\nclass CacheTest(unittest.TestCase):\n    pass",
+    "from mylib import core\n\nclass CoreTest(testtools.TestCase):\n    pass",
+    "import json\nfrom server.tests import fixtures",
+    "import math\n\nclass TestGeometry(unittest.TestCase):\n    def test_area(self):\n        pass",
+    "import logging\nimport project.tests.factories as F",
+    "from shop import cart\n\nclass CartTests(unittest.TestCase):\n    pass"
+   ],
+   "quiet": [
+    "import os\n\nclass Loader(object):\n    def setup(self):\n        self.path = os.getcwd()",
+    "from app import models\nimport app.views.helpers as H",
+    "import sys\nimport json\n\nclass Cache(dict):\n    pass",
+    "from mylib import core\n\nclass Core(core.Base):\n    pass",
+    "import json\nfrom server.config import settings",
+    "import math\n\nclass Geometry(object):\n    def area(self):\n        pass",
+    "import logging\nimport project.models.factories as F",
+    "from shop import cart\n\nclass Cart(list):\n    pass"
+   ]
+  }
+ ],
+ "predictions": "test identifiers in code 0.5-0.95; the same code with non-test classes and packages below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "test-framework identifiers in code",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: .TestCase x17, tests x5, .tests x2. Probe: testtools 0.967, .tests 0.862, .TestCase 0.752; 'import unittest' then a non-test class still 0.523 (peak ' unittest'), so the import itself fires; .utils 0.110; prose 'Run the tests' 0.100, school test 0.003; GitHub bug sentence 0.505 (so near misses avoid bug/issue talk)."
+}
