@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-79c22d8b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N3076+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:05:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N3076",
+   "pole": "+",
+   "label": "' =' before the next number in a repeated table of numeric assignments, strongest with age-band keys (x[\"30-34\"] = 19.0)",
+   "fire": [
+    "count[\"20-24\"] = 14250.0\ncount[\"25-29\"] = 15120.0\ncount[\"30-34\"] = 16310.0\ncount[\"35-39\"] = 14980.0\n",
+    "deaths[\"55-59\"] = 31.5e-5\ndeaths[\"60-64\"] = 44.2e-5\ndeaths[\"65-69\"] = 61.7e-5\ndeaths[\"70-74\"] = 88.1e-5\n",
+    "male[\"0-4\"] = 1021.0\nmale[\"5-9\"] = 1103.0\nmale[\"10-14\"] = 998.0\nmale[\"15-19\"] = 1250.0\n",
+    "hiv_rate[\"40-44\"] = 7.4e-5\nhiv_rate[\"45-49\"] = 6.1e-5\nhiv_rate[\"50-54\"] = 3.9e-5\nhiv_rate[\"55-59\"] = 2.2e-5\n",
+    "B[0] = 0.125\nB[1] = -0.75\nB[2] = 1.25\nB[3] = -0.5\nB[4] = 0.125\n",
+    "coef[\"a1\"] = 0.31\ncoef[\"a2\"] = 0.27\ncoef[\"a3\"] = 0.19\ncoef[\"a4\"] = 0.12\n",
+    "female[\"60-64\"] = 20331.0\nfemale[\"65-69\"] = 18412.0\nfemale[\"70-74\"] = 15007.0\nfemale[\"75-79\"] = 11290.0\n",
+    "flu[\"20-29\"] = 2.5e-4\nflu[\"30-39\"] = 1.8e-4\nflu[\"40-49\"] = 1.1e-4\nflu[\"50-59\"] = 0.9e-4\n"
+   ],
+   "quiet": [
+    "count[\"20-24\"] = load(\"a\")\ncount[\"25-29\"] = load(\"b\")\ncount[\"30-34\"] = load(\"c\")\n",
+    "deaths[\"55-59\"] = \"low\"\ndeaths[\"60-64\"] = \"mid\"\ndeaths[\"65-69\"] = \"high\"\n",
+    "first = get_first()\nsecond = get_second()\nthird = first + second\n",
+    "male = read_table(path)\nfemale = read_table(other)\ntotal = male + female\n",
+    "print(\"age 20-24\")\nprint(\"age 25-29\")\nprint(\"age 30-34\")\n",
+    "The count for ages 20 to 24 rose to 14250 last year, and it fell again after.",
+    "names[\"a1\"] = \"anna\"\nnames[\"a2\"] = \"bob\"\nnames[\"a3\"] = \"carl\"\n",
+    "if flu > 0:\n    report(flu)\nelse:\n    skip(flu)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'=' in numeric table",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Written as multi-line passages. The card's other peaks (numbers in '||' tables, coordinate lists) are not covered."
+}
