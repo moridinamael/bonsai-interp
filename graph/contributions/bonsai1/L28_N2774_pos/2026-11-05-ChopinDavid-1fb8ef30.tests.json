@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-1fb8ef30",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2774+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T05:19:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N2774",
+   "pole": "+",
+   "label": "the line break ending an indented code comment that describes the next statement",
+   "fire": [
+    "class Report:\n    def build(self):\n        # collect the rows from every source\n        rows = self.fetch()\n        return rows",
+    "    def save(self, path):\n        # write the cache to disk before exiting\n        with open(path, 'w') as f:\n            f.write(self.data)",
+    "        for item in items:\n            # skip entries without a name\n            if not item.name:\n                continue",
+    "    def test_order(self):\n        # Sort by price ascending, then by id\n        result = self.client.get('/items?sort=price')",
+    "        if user.is_admin:\n            # admins can see every project\n            projects = Project.all()",
+    "    def run(self):\n        # same as above, but retry on timeout\n        return self._call(retries=3)",
+    "        # open the connection lazily, like the other adapters do\n        if self.conn is None:\n            self.conn = connect()",
+    "    def parse(self, text):\n        # strip comments before tokenizing\n        text = text.split('#')[0]"
+   ],
+   "quiet": [
+    "class Report:\n    def build(self):\n        rows = self.fetch()\n        return rows",
+    "    def save(self, path):\n        with open(path, 'w') as f:\n            f.write(self.data)",
+    "        for item in items:\n            if not item.name:\n                continue",
+    "    def test_order(self):\n        result = self.client.get('/items?sort=price')",
+    "        if user.is_admin:\n            projects = Project.all()",
+    "    def run(self):\n        return self._call(retries=3)",
+    "        if self.conn is None:\n            self.conn = connect()",
+    "    def parse(self, text):\n        text = text.split('|')[0]"
+   ]
+  }
+ ],
+ "predictions": "indented comment lines above 0.1; the same code without the comment below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "newline after code comment",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card peaks mix newlines ending '#' comments inside methods, commas closing a fronted clause, and ' and'/' differ'. Probe is weak: indented comment newline 0.185, 'x = 5' 0.117, 'mild, moderate and' 0.104, unindented def comment 0.040, TODO 0.011. This test is a guess; expect a fail."
+}
