@@ -1,0 +1,165 @@
+{
+ "id": "2026-11-06-lm1909-48c7079f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N2885-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:12+00:00",
+ "recipe": {
+  "toolchain_commit": "9f9874b96",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N2885_neg/2026-11-06-lm1909-48c7079f.tests.json"
+ },
+ "label": "relieving an ailment: a verb or noun of relief ('reduce', 'alleviate', 'relief from', 'ease the') where a symptom is about to be named",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N2885_neg/2026-11-06-lm1909-48c7079f.tests.json",
+   "prereg_commit": "9f9874b96",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.587,
+     "peak": " alleviate"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.382,
+     "peak": " reduce"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.677,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.686,
+     "peak": " ease"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.826,
+     "peak": " relieve"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.667,
+     "peak": " reduce"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.884,
+     "peak": " alleviate"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.338,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": " dinner"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.045,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.062,
+     "peak": " reduce"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": " night"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "G"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.044,
+     "peak": " ease"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.05,
+     "peak": " arthritis"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.672,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9f9874b96",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "relief, symptom coming",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Output direction of this pole promotes ' symptoms'. Probes: the same verbs in non-medical sentences fire far less (traffic 0.11, tax relief 0.01).",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "reduce",
+   "reduced",
+   "relieve",
+   "ease",
+   "alleviate",
+   "alleviating",
+   "relief"
+  ]
+ }
+}
