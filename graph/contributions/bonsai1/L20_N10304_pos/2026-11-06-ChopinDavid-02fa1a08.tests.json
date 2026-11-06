@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-02fa1a08",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10304+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T13:28:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N10304",
+   "pole": "+",
+   "label": "an author's initials right after the surname in a reference-list entry ('Perera M, Whitehead M'), after a citation lead-in; the same surnames in running prose stay quiet",
+   "fire": [
+    "The study was published last spring.\nCitation: Fernando K, Silva R, Patel D. Malaria in coastal towns. Lancet. 2014.",
+    "For more detail see the original paper.\nReference: Larsen P, Holm J. Sleep and memory. Nature. 2009.",
+    "These figures come from a large trial.\nSource: Okafor C, Mensah A, Diallo B. Child nutrition. BMJ. 2016.",
+    "How to cite this article:\nGupta R, Sharma V, Rao N. Asthma in adolescents. Indian J Med. 2011.",
+    "Further reading:\n- Brennan T, Walsh M. Heart failure in the elderly. JAMA. 2008.",
+    "Data were adapted with permission.\nAdapted from: Nakamura H, Sato Y. Diet and stroke. Stroke. 2012.",
+    "The authors thanked the nurses for their help.\nCitation: Moreau L, Petit A. Hospital hygiene. Paris: Masson; 2005.",
+    "See also the earlier review.\nReference: Kowalski J, Nowak E, Wisniewski P. Lung cancer screening. Chest. 2013."
+   ],
+   "quiet": [
+    "The study was published last spring by Fernando, Silva and Patel, who work in coastal towns.",
+    "For more detail see the original paper by Larsen and Holm on sleep and memory.",
+    "These figures come from a large trial led by Dr. Okafor in Ghana.",
+    "How to cite this article: list the authors, title, journal and year.",
+    "Further reading: the book by Brennan on heart failure in the elderly.",
+    "Data were adapted with permission from Professor Nakamura's team in Osaka.",
+    "The authors thanked the nurses for their help at the Paris hospital.",
+    "See also the earlier review by Kowalski, which covers lung cancer screening."
+   ]
+  }
+ ],
+ "predictions": "initials 0.3-0.7 when a lead-in precedes; prose surnames below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "author initials in a citation",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: all top examples are initials after surnames ('Kumar M, Goyal N', 'Walker AS') in reference lists, each with earlier context. Probe: 'Citation: Perera M' 0.710, 'Walker AS' 0.147, but 'Kumar M' as the first tokens only 0.045, so every fire item puts a lead-in line first; prose surnames 0.017-0.035."
+}

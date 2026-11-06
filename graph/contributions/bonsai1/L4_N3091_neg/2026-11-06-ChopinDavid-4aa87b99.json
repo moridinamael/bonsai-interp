@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-4aa87b99",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N3091-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T13:39:16+00:00",
+ "recipe": {
+  "toolchain_commit": "95245def6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N3091_neg/2026-11-06-ChopinDavid-4aa87b99.tests.json"
+ },
+ "label": "single letters and short pieces inside base64-encoded strings (auth tokens, keys, certificates, encoded payloads); readable identifiers and words inside code strings stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N3091_neg/2026-11-06-ChopinDavid-4aa87b99.tests.json",
+   "prereg_commit": "95245def6",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.709,
+     "peak": "j"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.809,
+     "peak": "J"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.1,
+     "peak": "CB"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.582,
+     "peak": "P"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.597,
+     "peak": "v"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.626,
+     "peak": "AB"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.644,
+     "peak": "J"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.399,
+     "peak": "p"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": "auth"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "_al"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": "msg"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": "ssh"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.006,
+     "peak": "Remember"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": "img"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.006,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " maint"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.635,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "95245def6",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "piece of a base64 string",
+ "unit_kind": "context",
+ "confidence": 0.65,
+ "notes": "Card: all top examples are letters inside base64 blobs (JWTs, b64decode arguments, PEM certificates). Probe: JWT 0.882, b64decode argument 0.882, certificate 0.590, hex colour 0.424, hex hash 0.240; readable token string 0.011, filename 0.004, letters d, f, j in prose 0.004.",
+ "selection": "random draw"
+}
