@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-96d179d4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N10512+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T22:28:29+00:00",
+ "recipe": {
+  "toolchain_commit": "ddae4ad3a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N10512_pos/2026-11-06-ChopinDavid-96d179d4.tests.json"
+ },
+ "label": "the final piece 'stein' of a rare surname split into three or more tokens (Wall+er+stein, L+ichten+stein); two-piece or single-token -stein names (Gold+stein, Bernstein) and the word 'stein' stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N10512_pos/2026-11-06-ChopinDavid-96d179d4.tests.json",
+   "prereg_commit": "ddae4ad3a",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.051,
+     "peak": "stein"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.022,
+     "peak": "stein"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.16,
+     "peak": "stein"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.006,
+     "peak": " lobby"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.063,
+     "peak": "stein"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.003,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.127,
+     "peak": "stein"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.285,
+     "peak": "stein"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " attorney"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " Epstein"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " Norman"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.727,
+    "median_fire": 0.036,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ddae4ad3a",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "'stein' ending a rare multi-piece surname",
+ "unit_kind": "token/lexical",
+ "confidence": 0.35,
+ "notes": "Card: top peak 'stein' of Wallerstein (18.0), also Sharfstein, plus verse digits (James 1:13) and pieces of rare names (Ohtani 'ani'). Probe: Wallerstein 0.972, Sharfstein 0.426, Goldstein (Gold+stein) 0.010, Einstein 0.007, beer stein 0.002/-0.001, Ohtani 0.318, James 1:13 0.361. Fire items use names that split into three pieces ending in 'stein' (checked with the tokenizer); near misses use two-piece or one-token -stein names.",
+ "selection": "random draw"
+}

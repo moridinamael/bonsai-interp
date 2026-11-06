@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-32966b95",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N6369-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T22:29:13+00:00",
+ "recipe": {
+  "toolchain_commit": "ddae4ad3a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N6369_neg/2026-11-06-ChopinDavid-32966b95.tests.json"
+ },
+ "label": "the line-ending '()\\n' / '))\\n' of an unindented top-level call statement in a Python script (main(), print(Solution().f(x))); the same call indented inside a function body stays low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N6369_neg/2026-11-06-ChopinDavid-32966b95.tests.json",
+   "prereg_commit": "ddae4ad3a",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.504,
+     "peak": "()\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.764,
+     "peak": "))\n\n\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.268,
+     "peak": "()\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.325,
+     "peak": "))\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.364,
+     "peak": "())\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.679,
+     "peak": "())\n\n\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.137,
+     "peak": "()\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.271,
+     "peak": "())\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.082,
+     "peak": "')\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": ".check"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.104,
+     "peak": "\n\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.126,
+     "peak": "))\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.054,
+     "peak": " platform"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.345,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ddae4ad3a",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "end of top-level script call line",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: '()\\n' x10 after main() at script end, '))\\n\\n\\n' after print(...) at file end, '#' after a top-level call. Probe: unindented 'main()\\nprint(...)' 0.544, 'print(Solution().f(3))' at end 0.536, 'print(os.getcwd())' 0.327, indented main() under if __name__ 0.261, indented 'run(sys.argv)' 0.044, indented 'main_loop()' inside def 0.062.",
+ "selection": "random draw"
+}
