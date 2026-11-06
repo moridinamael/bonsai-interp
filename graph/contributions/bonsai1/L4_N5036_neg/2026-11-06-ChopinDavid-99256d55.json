@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-99256d55",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N5036-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T17:27:40+00:00",
+ "recipe": {
+  "toolchain_commit": "99c318f81",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N5036_neg/2026-11-06-ChopinDavid-99256d55.tests.json"
+ },
+ "label": "dense weak pole; best guess: the whole-word tokens ' radiant', ' residential' and the piece ' orn' (ornamental/ornate); plain synonyms (bright, housing, decorative) in the same sentences stay lower",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N5036_neg/2026-11-06-ChopinDavid-99256d55.tests.json",
+   "prereg_commit": "99c318f81",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.778,
+     "peak": " radiant"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.472,
+     "peak": " radiant"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.708,
+     "peak": " residential"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.802,
+     "peak": " residential"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.706,
+     "peak": " orn"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.653,
+     "peak": " orn"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.825,
+     "peak": " radiant"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.757,
+     "peak": " residential"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.428,
+     "peak": " electric"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.266,
+     "peak": " young"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.268,
+     "peak": " council"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.562,
+     "peak": " rose"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.542,
+     "peak": " purple"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.385,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.193,
+     "peak": "str"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.287,
+     "peak": "oned"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.732,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "99c318f81",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "radiant / residential / orn- (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card: flagged dense (34.5% of tokens reach 0.1 of a tiny max 0.20); peaks ' radiant' x2, ' residential' x2, ' orn' x2, Japanese 住宅/音. Probe: meteor radiant 0.827, radiant floor heating 0.825, radiant bride 0.789, ornamental 0.747, residential 0.696, comprehend 0.691, but 'sound track' 0.484 and filler 0.27-0.28.",
+ "selection": "random draw"
+}
