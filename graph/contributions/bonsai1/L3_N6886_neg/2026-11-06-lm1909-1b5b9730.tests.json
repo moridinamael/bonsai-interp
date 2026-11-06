@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-1b5b9730",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N6886-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:04:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N6886",
+   "pole": "-",
+   "label": "dense pole, best guess: identifiers and string arguments in source code, more than in prose",
+   "fire": [
+    "win = tk.Label(frame, text='Name', font=('Arial', 11), anchor='w')",
+    "def parse_header_fields(raw_bytes):\n    return raw_bytes.split(b':')",
+    "config.set_option('retry_limit', 5)\nconfig.set_option('verbose', True)",
+    "class TestEscapeRules:\n    def test_unicode_input(self):\n        assert clean('x') == 'x'",
+    "items = sorted(records, key=lambda row: row['created_at'], reverse=True)",
+    "np.savetxt('output_matrix.csv', result_grid, delimiter=',', fmt='%d')",
+    "import logging\nlogger = logging.getLogger('worker_pool')\nlogger.setLevel(10)",
+    "response = session.get(base_url + '/status', timeout=timeout_seconds)"
+   ],
+   "quiet": [
+    "The label on the jar was written in a neat hand by my grandmother.",
+    "We split the bill evenly and walked home along the river after dinner.",
+    "The instructions tell you to try again five times and then call for help.",
+    "My teacher checked the essay carefully and gave it back on Thursday morning.",
+    "She sorted the old photographs by year and put the newest ones on top.",
+    "The farmer saved a small part of the grain for planting in the spring.",
+    "A tired clerk wrote the names of the workers in a long paper ledger.",
+    "He asked the neighbours about the road and waited a while for an answer."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; code identifiers",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense (46.8% of tokens reach 0.1 of max) and a gate-closed leak regime in every top example. Prose also fired at 0.32 in a probe, so this will probably fail; it records the density."
+}
