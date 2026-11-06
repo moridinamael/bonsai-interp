@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-fef510a9",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N6613-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T13:28:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N6613",
+   "pole": "-",
+   "label": "the newline or indentation that opens the next line inside a code, config or signed-text block; prose describing the same code stays quiet",
+   "fire": [
+    "Save the following as settings.xml:\n\n    <?xml version=\"1.0\"?>\n    <settings>\n      <debug>true</debug>",
+    "-----BEGIN PGP MESSAGE-----\nVersion: GnuPG v1.4.11 (Darwin)\n\nhQEMA3kZx8p2QvN1AQf",
+    "import sys\n\ndef run():\n    args = sys.argv[1:]\n    print(args)",
+    "cfg = configparser.ConfigParser()\ncfg.read('app.ini')\nport = cfg.get('server', 'port')",
+    "The query looks like this:\n\nmysql>\nSELECT name, email FROM users WHERE id = 3;",
+    "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y",
+    "Add these lines to your .bashrc:\n\n    export PATH=$HOME/bin:$PATH\n    alias ll='ls -la'",
+    "with open('data.csv') as f:\n    rows = f.readlines()\n    print(len(rows))"
+   ],
+   "quiet": [
+    "Save the following settings in the XML file and turn on debugging.",
+    "The message was signed with GnuPG version 1.4 on a Mac.",
+    "The run function reads the command-line arguments and prints them.",
+    "The config parser reads the app file and gets the server port.",
+    "The query selects the name and email of the user whose id is three.",
+    "The Point class stores an x and a y coordinate for each point.",
+    "Add a bin folder to your path and an alias for listing files.",
+    "The script opens the data file, reads the rows and prints how many there are."
+   ]
+  }
+ ],
+ "predictions": "multi-line code items 0.35-0.65 at newline/indent tokens; one-line prose below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line break inside a code block",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: indentation and ')\\n'/'-----\\n' tokens at line starts in XML samples, PGP blocks and Python. Probe: argparse two-liner 0.649, indented XML sample 0.610, Python def 0.402, PGP block 0.378; recipe ingredient lines 0.164; prose about the config or parser 0.023-0.034."
+}

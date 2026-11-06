@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-4aa87b99",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N3091-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T13:28:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N3091",
+   "pole": "-",
+   "label": "single letters and short pieces inside base64-encoded strings (auth tokens, keys, certificates, encoded payloads); readable identifiers and words inside code strings stay quiet",
+   "fire": [
+    "auth = 'Basic dXNlcm5hbWU6cGFzc3dvcmQxMjM0NTY='",
+    "payload = 'eyJ1c2VyIjoiYWxpY2UiLCJyb2xlIjoiYWRtaW4ifQ=='",
+    "msg = base64.b64decode('VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcw==')",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7kXqP9sZ user@host",
+    "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEq3Xv9mT2",
+    "img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB'",
+    "secret = 'c2VjcmV0X2tleV9mb3JfdGVzdGluZ19vbmx5'",
+    "\"signature\": \"MEUCIQDf2kT8zQ1vYbN3aR7sLp0WmX4cE\""
+   ],
+   "quiet": [
+    "auth = 'Basic username_and_password_here'",
+    "payload = 'user_alice_role_admin_profile'",
+    "msg = open('the_quick_brown_fox.txt').read()",
+    "ssh user@host -p 2222 -i ~/.ssh/id_rsa",
+    "-----BEGIN NOTES-----\nRemember to rotate the keys every month.",
+    "img = 'images/profile_picture_large.png'",
+    "secret = 'secret_key_for_testing_only'",
+    "\"signature\": \"Signed by the project maintainer\""
+   ]
+  }
+ ],
+ "predictions": "base64 items 0.4-0.9; readable code strings below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece of a base64 string",
+ "unit_kind": "context",
+ "confidence": 0.65,
+ "notes": "Card: all top examples are letters inside base64 blobs (JWTs, b64decode arguments, PEM certificates). Probe: JWT 0.882, b64decode argument 0.882, certificate 0.590, hex colour 0.424, hex hash 0.240; readable token string 0.011, filename 0.004, letters d, f, j in prose 0.004."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-d398ebfe",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10112-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T13:28:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N10112",
+   "pole": "-",
+   "label": "the word-initial ' tr' or ' ch' piece of a word the tokenizer splits (tr|ams, ch|utes, ch|asm, ch|ancel), strongest for transport and conveyance words; whole-token words in the same slot stay quiet",
+   "fire": [
+    "Visitors can ride the old trams along the seafront in summer.",
+    "Coal slid down the steel chutes into the waiting wagons.",
+    "A narrow chasm opened between the two cliffs after the quake.",
+    "The choir gathered in the chancel before the evening service.",
+    "Fishermen unloaded the trawler at dawn on the quay.",
+    "The bishop raised the silver chalice during the mass.",
+    "Passengers boarded Island Line Trains at the pier station.",
+    "The carpenter sharpened his chisel before carving the door."
+   ],
+   "quiet": [
+    "Visitors can ride the old buses along the seafront in summer.",
+    "Coal slid down the steel ramps into the waiting wagons.",
+    "A narrow gap opened between the two cliffs after the quake.",
+    "The choir gathered in the church before the evening service.",
+    "Fishermen unloaded the boat at dawn on the quay.",
+    "The bishop raised the silver cup during the mass.",
+    "Passengers boarded the ferry at the pier station.",
+    "The carpenter sharpened his knife before carving the door."
+   ]
+  }
+ ],
+ "predictions": "' tr'/' ch' pieces 0.3-1.1; whole-token replacements below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-word ' tr'/' ch' onset",
+ "unit_kind": "spelling unit",
+ "confidence": 0.5,
+ "notes": "Card: ' ch'/' tr'/' Ch'/' Tr' onsets of split words (trams, Trains, Chine, chancel, chutes, Trunk). Probe: tr|ams 1.115, ch|utes 0.750, ch|asm 0.459, ch|ancel 0.387; but tr|uss only 0.060, so not every split onset fires; whole-token buses/altar/pipes 0.001-0.129. Fire words checked to split as ' tr'/' ch' + rest."
+}
