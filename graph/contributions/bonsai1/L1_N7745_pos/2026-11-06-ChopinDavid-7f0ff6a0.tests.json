@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-7f0ff6a0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7745+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T21:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N7745",
+   "pole": "+",
+   "label": "the identifier piece '_json' (and '_password') in code, plus ' patent'; other identifier suffixes such as _data stay low or negative",
+   "fire": [
+    "    payload = request.get_json()\n    save(payload)",
+    "    body = load_json(path)\n    print(body)",
+    "    resp = self.client.post_json('/api/items', data)\n    check(resp)",
+    "    cfg = read_config_json(fname)\n    apply(cfg)",
+    "    out = dump_json(record)\n    write(out)",
+    "    if check_password(user, pwd):\n        login(user)",
+    "    reset_password(account)\n    notify(account)",
+    "    tree = parse_json(text)\n    walk(tree)"
+   ],
+   "quiet": [
+    "    payload = request.get_data()\n    save(payload)",
+    "    body = load_file(path)\n    print(body)",
+    "    resp = self.client.post('/api/items', data)\n    check(resp)",
+    "    cfg = read_config(fname)\n    apply(cfg)",
+    "    out = dump_record(record)\n    write(out)",
+    "    if check_user(user, pwd):\n        login(user)",
+    "    reset_account(account)\n    notify(account)",
+    "    tree = parse_text(text)\n    walk(tree)"
+   ]
+  }
+ ],
+ "predictions": "_json and _password 0.6-0.75; near misses below 0.1 (tiny magnitude, gate-closed regime)",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'_json' identifier piece",
+ "unit_kind": "spelling unit",
+ "confidence": 0.4,
+ "notes": "Card max 0.14, broad 2.25%, gate-closed regime; peaks '_json' x17, '_password' x3, ' patent' x3. Probe: ret_json 0.726, get_items_json 0.662, is_dummy_password 0.653, patent 0.691; _data -0.006 and no suffix -0.142, but the river floor scored 0.253, so the gap is not clean for prose."
+}

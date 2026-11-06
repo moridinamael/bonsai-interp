@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-2a0dede0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2340-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T21:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N2340",
+   "pole": "-",
+   "label": "the key inside a dict subscript nested in a conversion call (float/str/len) when the same key was already subscripted just before, as in is_number(row[\"Ymag\"]) and not isnan(float(row[\"Ymag\"])); a key used once, or a plain variable, stays low",
+   "fire": [
+    "for r in rows:\n    if is_number(r[\"Jmag\"]) and not isnan(float(r[\"Jmag\"])):\n        add_photometry(name, r)",
+    "for r in rows:\n    if is_number(r[\"W2\"]) and not isnan(float(r[\"W2\"])):\n        add_photometry(name, r)",
+    "    opts['tag'] = 'v2'\n    label = str(versions['apt'][opts['tag']])\n    print(label)",
+    "    photo['date'] = row[3]\n    mjd = str(to_mjd(Decimal(photo['date'])))\n    out.append(mjd)",
+    "    counts['hits'] += 1\n    rate = float(counts['hits']) / float(totals['hits'])\n    print(rate)",
+    "for entry in catalog:\n    if is_number(entry[\"Kmag\"]) and not isnan(float(entry[\"Kmag\"])):\n        mags.append(entry)",
+    "    n = len(table['segment_run'])\n    for i in range(len(table['segment_run'])):\n        print(i)",
+    "for obj in objs:\n    if is_number(obj[\"gmag\"]) and not isnan(float(obj[\"gmag\"])):\n        keep.append(obj)"
+   ],
+   "quiet": [
+    "for r in rows:\n    if is_number(jmag) and not isnan(float(jmag)):\n        add_photometry(name, r)",
+    "for r in rows:\n    if r[\"W2\"] is not None:\n        add_photometry(name, r)",
+    "    opts['tag'] = 'v2'\n    label = str(versions['apt'])\n    print(label)",
+    "    photo['date'] = row[3]\n    mjd = str(to_mjd(Decimal(row[3])))\n    out.append(mjd)",
+    "    counts['hits'] += 1\n    rate = float(hits) / float(total)\n    print(rate)",
+    "for entry in catalog:\n    if entry is not None and not isnan(kmag):\n        mags.append(entry)",
+    "    n = len(segments)\n    for i in range(len(segments)):\n        print(i)",
+    "for obj in objs:\n    if is_number(gmag) and not isnan(float(gmag)):\n        keep.append(obj)"
+   ]
+  }
+ ],
+ "predictions": "repeated-key photometry lines 0.3-0.6; other repeated keys 0.05-0.3; near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated dict key inside float()/str()",
+ "unit_kind": "context",
+ "confidence": 0.25,
+ "notes": "Card peaks on 'mag'/'1' in float(row[\"Ymag\"]) after is_number(row[\"Ymag\"]) (460), and on keys like options['tag'], photo['time'] that recur. Probe: repeated Bmag line 0.458, repeated table['segment_id'] 0.103, single-use float(item['price']) 0.001, same line without subscripts 0.001. Repetition hypothesis is a guess from the card; the photometry form is the only strong configuration."
+}

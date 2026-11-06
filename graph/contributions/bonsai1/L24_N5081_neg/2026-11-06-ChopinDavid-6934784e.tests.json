@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-6934784e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N5081-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T21:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N5081",
+   "pole": "-",
+   "label": "an opening parenthesis that ends a line of code, starting a multi-line argument list (Foo(\\n    a=..., b=...)); the same call written on one line stays low",
+   "fire": [
+    "    optimizer = torch.optim.Adam(\n        params,\n        lr=1e-3,\n    )",
+    "    loader = DataLoader(\n        dataset,\n        batch_size=32,\n        shuffle=True,\n    )",
+    "    fig = plt.figure(\n        figsize=(8, 6),\n        dpi=100,\n    )",
+    "    report = build_report(\n        rows=rows,\n        title=title,\n    )",
+    "    conv = nn.Conv2d(\n        in_channels=3,\n        out_channels=16,\n    )",
+    "    session = requests.Session(\n    )\n    session.headers.update(h)",
+    "    parser.add_argument(\n        \"--epochs\",\n        type=int,\n    )",
+    "    return Response(\n        status=200,\n        body=payload,\n    )"
+   ],
+   "quiet": [
+    "    optimizer = torch.optim.Adam(params, lr=1e-3)\n    step = 0",
+    "    loader = DataLoader(dataset, batch_size=32, shuffle=True)\n    it = iter(loader)",
+    "    fig = plt.figure(figsize=(8, 6), dpi=100)\n    ax = fig.gca()",
+    "    report = build_report(rows=rows, title=title)\n    save(report)",
+    "    conv = nn.Conv2d(in_channels=3, out_channels=16)\n    act = nn.ReLU()",
+    "    session = requests.Session()\n    session.headers.update(h)",
+    "    parser.add_argument(\"--epochs\", type=int)\n    args = parser.parse_args()",
+    "    return Response(status=200, body=payload)\n\napp.run()"
+   ]
+  }
+ ],
+ "predictions": "line-ending '(' 0.3-0.6; one-line calls below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line-ending '(' opening a multi-line call",
+ "unit_kind": "token/lexical",
+ "confidence": 0.45,
+ "notes": "Card: '(\\n' x18 and '):\\n' x12 of the top 32, all Python. Probe: Sequential(\\n 0.422, compute_scores(\\n 0.507, def ...):\\n 0.154; the one-line forms 0.193 (peak on ' name') and 0.033. Near misses keep the same call on one line; one-liners may leak around 0.2."
+}
