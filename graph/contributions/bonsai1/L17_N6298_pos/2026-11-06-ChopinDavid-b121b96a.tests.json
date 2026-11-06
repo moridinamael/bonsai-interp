@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-b121b96a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N6298+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T19:22:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N6298",
+   "pole": "+",
+   "label": "words marking that actions overlap in time or are already in progress (simultaneously, at once in parallel, already running, continuous); sequential wording stays low",
+   "fire": [
+    "At the concert, both screens lit up simultaneously above the stage.",
+    "The program checks whether the server is already running before it starts.",
+    "In the lab, the three samples were heated simultaneously in one oven.",
+    "If the download has already started, closing the window will not stop it.",
+    "The nurse kept a continuous infusion going for the whole operation.",
+    "Our two kitchens prepare the meals simultaneously every evening.",
+    "When the update is already in progress, the button is greyed out.",
+    "Each chip runs four threads simultaneously to speed up rendering."
+   ],
+   "quiet": [
+    "At the concert, the two screens lit up one by one above the stage.",
+    "The program checks whether the server is installed before it starts.",
+    "In the lab, the three samples were heated in turn in one oven.",
+    "If the download has finished, closing the window will not delete it.",
+    "The nurse gave a single injection at the start of the operation.",
+    "Our two kitchens prepare the meals separately every evening.",
+    "When the update is finished, the button turns green again.",
+    "Each chip runs four threads in sequence to save power."
+   ]
+  }
+ ],
+ "predictions": "fire 0.2-0.4; near misses below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "concurrent / already-in-progress",
+ "unit_kind": "meaning/topic",
+ "confidence": 0.45,
+ "notes": "Card peaks: simultaneously, already started, running, continuous, in parallel, InProgress; - pole suppresses simultaneous/concurrent. Probe: 'turn on simultaneously' 0.392, 'already running,' 0.383, continuous drip 0.215, while heating 0.147, in parallel 0.134; sequential 'one after the other' 0.103, 'and then started' 0.016."
+}
