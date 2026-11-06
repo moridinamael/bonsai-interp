@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-a5566747",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6337+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T14:20:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6337",
+   "pole": "+",
+   "label": "a word piece after which the model predicts a 'g'-initial continuation inside the same word (ver|fü|gen, ries|go, bel|ga, Beitr|ä|gen, Vort|rä|gen); pieces whose continuation does not start with g stay low",
+   "fire": [
+    "Die Mitarbeiter verfügen über langjährige Erfahrung in der Pflege.",
+    "El médico explicó el riesgo de la operación con mucha calma.",
+    "Mi vecina es belga y cocina unos gofres deliciosos.",
+    "Wir verfügen jetzt über genug Platz für alle Gäste.",
+    "Ese puente tiene un riesgo alto de derrumbe durante las lluvias.",
+    "In den Vorträgen ging es um erneuerbare Energie.",
+    "Die Zeitschrift sammelt Beiträgen von Lesern aus ganz Europa.",
+    "Der Arzt gab ihr ein paar Ratschläge für den Winter."
+   ],
+   "quiet": [
+    "Die Mitarbeiter vergessen manchmal die Pausen in der Pflege.",
+    "El médico explicó la cueva de la montaña con mucha calma.",
+    "Mi vecina vive en Belgique y cocina unos gofres deliciosos.",
+    "Wir haben jetzt genug Platz für alle Hinweise der Gäste.",
+    "Ese puente tiene caminos largos para cruzar durante las lluvias.",
+    "In den Kursen ging es um erneuerbare Energie.",
+    "Die Zeitschrift sammelt Fotos von Lesern aus ganz Europa.",
+    "Der Arzt gab ihr ein paar Tabletten für den Winter."
+   ]
+  }
+ ],
+ "predictions": "pieces before g 0.3-0.8; pieces before other continuations below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece before a 'g' continuation",
+ "unit_kind": "spelling unit",
+ "confidence": 0.4,
+ "notes": "Card: bel|ges, ries|gos, ver|fü|gt, prot|è|gent, ausgepr|ä|gt, м|оз|ге; logit effect promotes 'g', 'ged', 'ge', 'ges'. Probe: verfügt 0.747, riesgos 0.719, belges 0.339, fuegos 0.146, mögen 0.064; vergessen 0.025, Augen 0.196 (peak on Sie), caminos 0.000. Fire items rely on the splits checked with the tokenizer."
+}
