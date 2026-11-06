@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-22de81c8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2881-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:10:37+00:00",
+ "recipe": {
+  "toolchain_commit": "c71288a9f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N2881_neg/2026-11-06-lm1909-22de81c8.tests.json"
+ },
+ "label": "the physical scene of clinical care: staff, garments and rooms on the ward (scrubs, gown, emergency room, gurney)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N2881_neg/2026-11-06-lm1909-22de81c8.tests.json",
+   "prereg_commit": "c71288a9f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.863,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.696,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.52,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.755,
+     "peak": " surgical"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.933,
+     "peak": " bright"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.619,
+     "peak": " blue"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.218,
+     "peak": "ained"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.245,
+     "peak": " white"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " infection"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.104,
+     "peak": " medical"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " usually"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.138,
+     "peak": " neuro"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.35,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.295,
+     "peak": " blue"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.334,
+     "peak": " black"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.809,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c71288a9f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "hands-on clinical scene",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Output direction reversed promotes scr, chart, resident, OR, rounds. The + pole is institutional medicine (accreditation, citations), so near misses are medical but not a scene, or a scene outside medicine.",
+ "selection": "random draw"
+}
