@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-4e17b5bf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N12215-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T16:31:26+00:00",
+ "recipe": {
+  "toolchain_commit": "9f7113671",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N12215_neg/2026-11-06-ChopinDavid-4e17b5bf.tests.json"
+ },
+ "label": "the Chinese character 新 ('new') in running Chinese text; dense pole that idles around 0.15-0.35 on most text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N12215_neg/2026-11-06-ChopinDavid-4e17b5bf.tests.json",
+   "prereg_commit": "9f7113671",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.679,
+     "peak": "新"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.572,
+     "peak": "新"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.638,
+     "peak": "新"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.578,
+     "peak": "新"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.682,
+     "peak": "新"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.575,
+     "peak": "新"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.578,
+     "peak": "新"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.673,
+     "peak": "新"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.317,
+     "peak": "就能"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.262,
+     "peak": "教"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.173,
+     "peak": "好了"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.235,
+     "peak": "换了"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.192,
+     "peak": "进"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.147,
+     "peak": "非常"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.347,
+     "peak": "个月"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.298,
+     "peak": "件"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.608,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9f7113671",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "Chinese 新 'new'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags dense (12.4% >0.1 max), peaks on 新/的新. Probe: 新书 0.652, 新家 0.581 vs same sentence without 新 0.184; but 新产品 sentence only 0.177 (peak elsewhere) and an English floor reached 0.366, so the baseline is high.",
+ "selection": "random draw"
+}
