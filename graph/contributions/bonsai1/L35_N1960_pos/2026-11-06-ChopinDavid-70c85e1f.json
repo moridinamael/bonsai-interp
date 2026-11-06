@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-70c85e1f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1960+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T07:29:37+00:00",
+ "recipe": {
+  "toolchain_commit": "c16789b4e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N1960_pos/2026-11-06-ChopinDavid-70c85e1f.tests.json"
+ },
+ "label": "a middle piece of a French or Spanish word that the tokenizer splits into several pieces (dés|acc|ord, enth|ous|iasme, ent|us|iasmo, fid|él|ité), as opposed to English text where the cognate is one token",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N1960_pos/2026-11-06-ChopinDavid-70c85e1f.tests.json",
+   "prereg_commit": "c16789b4e",
+   "author": "ChopinDavid",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.603,
+     "peak": "acc"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.161,
+     "peak": " prof"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.686,
+     "peak": " enth"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.242,
+     "peak": "é"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.399,
+     "peak": "us"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.602,
+     "peak": "acc"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.351,
+     "peak": "ous"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.513,
+     "peak": "ar"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " overflowing"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " audience"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " still"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " detective"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.456,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c16789b4e",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "inner piece of split Romance word",
+ "unit_kind": "word",
+ "confidence": 0.55,
+ "notes": "Card: dés|acc|ord x3, fi|é|vreux, fid|élité, enth|ousiasme, ent|us|iasmo, scand|ale, Arabic letters, Cape Bre|ton. Probe: désaccord 0.740, enthousiasme/fidélité 0.642, entusiasmo 0.455, Cape Breton 0.420; English disagreement 0.006, enthusiasm 0.003; scandale 0.094 (two-piece split, weak); a French control with canapé 0.190. Tokenizer: dés|es|po|ir, dés|ar|roi, enth|ous|i|aste, dés|ob|é|issance, ent|usi|asta.",
+ "selection": "random draw"
+}

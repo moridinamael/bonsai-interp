@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-8f09230a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N0-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T07:19:41+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N0",
+   "pole": "-",
+   "label": "an '-al' stem that the tokenizer splits off before a Romance suffix (final|mente, potential|ités, normal|mente, mental|ité), as opposed to the same stem standing alone",
+   "fire": [
+    "Tras varios intentos, el equipo finalmente ganó el campeonato.",
+    "Por las mañanas normalmente desayuno pan con tomate antes de ir al trabajo.",
+    "La ciudad actualmente cuenta con tres líneas de metro.",
+    "Le roman décrit la mentalité des paysans au siècle dernier.",
+    "Il progetto è stato finalmente approvato dal consiglio comunale.",
+    "La finalidad del programa es reducir el abandono escolar.",
+    "El niño reaccionó naturalmente al ver a su abuela.",
+    "Le rapport examine la totalité des dépenses publiques."
+   ],
+   "quiet": [
+    "Tras varios intentos, el equipo ganó el campeonato al fin.",
+    "Por las mañanas casi siempre desayuno pan con tomate antes de ir al trabajo.",
+    "La ciudad hoy cuenta con tres líneas de metro.",
+    "Le roman décrit la vie des paysans au siècle dernier.",
+    "Il progetto è stato approvato dal consiglio comunale.",
+    "El objetivo del programa es reducir el abandono escolar.",
+    "El niño sonrió al ver a su abuela.",
+    "Le rapport examine l'ensemble des dépenses publiques."
+   ]
+  }
+ ],
+ "predictions": "split '-al'+suffix words 0.6-0.9; standalone English 'final' near 0.2; Romance sentences without such a split below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'-al' stem before Romance suffix",
+ "unit_kind": "word",
+ "confidence": 0.65,
+ "notes": "Card: 'Final'/' final' x13 in Finalmente/finalités, Mort|al, n|atal|ensis, function|al_runs, potential|ités. Probe: finalmente (es) 0.815, finalmente (it) 0.769, finalités 0.869, potentialités 0.808; English 'The final match' 0.208, 'finally' 0.005, French control 0.002. Tokenizer: normal|mente, natural|mente, actual|mente, final|idad, final|izar, total|ité, mental|ité all split after the stem."
+}

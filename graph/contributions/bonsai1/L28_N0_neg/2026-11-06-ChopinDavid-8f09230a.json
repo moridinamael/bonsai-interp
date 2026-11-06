@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-8f09230a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N0-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T07:29:05+00:00",
+ "recipe": {
+  "toolchain_commit": "c16789b4e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N0_neg/2026-11-06-ChopinDavid-8f09230a.tests.json"
+ },
+ "label": "an '-al' stem that the tokenizer splits off before a Romance suffix (final|mente, potential|ités, normal|mente, mental|ité), as opposed to the same stem standing alone",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N0_neg/2026-11-06-ChopinDavid-8f09230a.tests.json",
+   "prereg_commit": "c16789b4e",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.438,
+     "peak": " final"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.563,
+     "peak": " normal"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.189,
+     "peak": " actual"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.556,
+     "peak": " mental"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.725,
+     "peak": " final"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.637,
+     "peak": " final"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.563,
+     "peak": " natural"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.3,
+     "peak": " total"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " fin"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " siempre"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " de"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.052,
+     "peak": " roman"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.106,
+     "peak": "ale"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.078,
+     "peak": "ar"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " ver"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " des"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.559,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c16789b4e",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "'-al' stem before Romance suffix",
+ "unit_kind": "word",
+ "confidence": 0.65,
+ "notes": "Card: 'Final'/' final' x13 in Finalmente/finalités, Mort|al, n|atal|ensis, function|al_runs, potential|ités. Probe: finalmente (es) 0.815, finalmente (it) 0.769, finalités 0.869, potentialités 0.808; English 'The final match' 0.208, 'finally' 0.005, French control 0.002. Tokenizer: normal|mente, natural|mente, actual|mente, final|idad, final|izar, total|ité, mental|ité all split after the stem.",
+ "selection": "random draw"
+}

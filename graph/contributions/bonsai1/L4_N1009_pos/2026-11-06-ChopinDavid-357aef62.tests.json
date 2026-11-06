@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-357aef62",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N1009+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T07:19:41+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N1009",
+   "pole": "+",
+   "label": "a line break that cuts a sentence in the middle of a clause (hard-wrapped text), as opposed to a newline at a sentence or paragraph end",
+   "fire": [
+    "The farmers gathered in the square\nto hear the news from the capital.",
+    "Most of the soldiers who crossed\nthe river that night never returned.",
+    "Researchers found that children who\nread before bed sleep more soundly.",
+    "The committee agreed to postpone\nthe vote until the following spring.",
+    "Her grandfather had built the house\nwith timber from his own forest.",
+    "Travellers are advised to carry\nwater and a map at all times.",
+    "The bishop refused to consecrate\nthe new chapel without royal consent.",
+    "Small boats sheltered in the harbour\nwhile the storm passed overhead."
+   ],
+   "quiet": [
+    "The farmers gathered in the square.\nThey heard the news from the capital.",
+    "Most of the soldiers crossed the river that night.\nFew of them returned.",
+    "Researchers studied children who read before bed.\nThey slept more soundly.",
+    "The committee agreed to postpone the vote.\nIt will meet again in spring.",
+    "Her grandfather had built the house.\nThe timber came from his own forest.",
+    "Travellers are advised to carry water.\nA map is also useful.",
+    "The bishop refused to consecrate the new chapel.\nHe wanted royal consent first.",
+    "Small boats sheltered in the harbour.\nThe storm passed overhead."
+   ]
+  }
+ ],
+ "predictions": "mid-clause newlines 0.08-0.2; the same sentences unwrapped or broken at sentence ends below 0.03",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "mid-clause line break",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: '\\n' x25, all wrapping lines mid-sentence (Guru Angad followed|the daily routine). Probe: 'walked slowly\\nacross' 0.102, 'patients\\nwith' 0.164, 'fine-grained\\nsoil' 0.117, 'and\\nread' 0.097; unwrapped 0.017; newline after a full stop 0.017; paragraph break 0.009; code 0.020. Weak absolute scale (max 9)."
+}
