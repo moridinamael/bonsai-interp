@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-a3da7dd1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N6507+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:58:24+00:00",
+ "recipe": {
+  "toolchain_commit": "665086f4a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N6507_pos/2026-11-06-lm1909-a3da7dd1.tests.json"
+ },
+ "label": "best guess: the completion of a narrowly predictable phrase (peddled their wares, drawn from a vein, likely breed)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N6507_pos/2026-11-06-lm1909-a3da7dd1.tests.json",
+   "prereg_commit": "665086f4a",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.222,
+     "peak": " vein"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.039,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.044,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.039,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.027,
+     "peak": " cr"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.053,
+     "peak": " breed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.037,
+     "peak": " every"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.192,
+     "peak": " vein"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.037,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " south"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.041,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": " desk"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.758,
+    "median_fire": 0.041,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665086f4a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predictable phrase completion?",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "No visible shared trigger: prose and code tokens mix in the top examples, and nearly all probes stayed under 0.1 of max. The only probe above that was ' vein' at 0.39. Expected to fail.",
+ "selection": "random draw"
+}

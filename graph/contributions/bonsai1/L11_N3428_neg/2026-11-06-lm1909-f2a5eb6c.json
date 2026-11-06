@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-f2a5eb6c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N3428-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:57:55+00:00",
+ "recipe": {
+  "toolchain_commit": "665086f4a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N3428_neg/2026-11-06-lm1909-f2a5eb6c.tests.json"
+ },
+ "label": "digits of a number that pairs with an earlier number (slash splits, unit conversions, lists), against a number standing alone in prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N3428_neg/2026-11-06-lm1909-f2a5eb6c.tests.json",
+   "prereg_commit": "665086f4a",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.426,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.594,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.868,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.493,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.599,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.009,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.034,
+     "peak": "Report"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.041,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": " tall"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.08,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": " noon"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.038,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": "7"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.46,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665086f4a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "number paired with earlier number",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top examples peak mostly on '3', but probes fired on other digits in the same setting, so the context is the claim. Bare '3 dogs' stayed quiet.",
+ "selection": "random draw"
+}

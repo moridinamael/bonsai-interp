@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-4bdb68e0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N6537-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:58:28+00:00",
+ "recipe": {
+  "toolchain_commit": "665086f4a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N6537_neg/2026-11-06-lm1909-4bdb68e0.tests.json"
+ },
+ "label": "spelling-level tokens ' taste', ' casual' and 'mo' in Spanish 'sarcasmo'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N6537_neg/2026-11-06-lm1909-4bdb68e0.tests.json",
+   "prereg_commit": "665086f4a",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.389,
+     "peak": " taste"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.141,
+     "peak": " taste"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.255,
+     "peak": " taste"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.301,
+     "peak": " casual"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.243,
+     "peak": " casual"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.25,
+     "peak": " casual"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.424,
+     "peak": "mo"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.401,
+     "peak": "mo"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.101,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.125,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": " chat"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.135,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.071,
+     "peak": "Su"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.278,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665086f4a",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "taste / casual / sarcasmo tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Very low magnitude (max 0.62) and broad. This keeps the list because no shared pattern held: an '-asm' reading failed in probing (plasma, chasm and English sarcasm stayed quiet on those tokens).",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "taste",
+   "casual",
+   "sarcasmo"
+  ]
+ }
+}

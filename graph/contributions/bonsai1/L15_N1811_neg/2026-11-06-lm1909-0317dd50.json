@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-0317dd50",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N1811-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:58:39+00:00",
+ "recipe": {
+  "toolchain_commit": "665086f4a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N1811_neg/2026-11-06-lm1909-0317dd50.tests.json"
+ },
+ "label": "a person's injury or death putting them out of action (out with a torn muscle, who died), against the same person in ordinary news",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N1811_neg/2026-11-06-lm1909-0317dd50.tests.json",
+   "prereg_commit": "665086f4a",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.131,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.344,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.168,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.426,
+     "peak": " died"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.41,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.145,
+     "peak": " he"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.104,
+     "peak": " sit"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.401,
+     "peak": " died"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.052,
+     "peak": " this"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.032,
+     "peak": " coach"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.09,
+     "peak": " start"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " fine"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.054,
+     "peak": " "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.256,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665086f4a",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "person injured or dead",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Peaks tend to fall on the token after the harm mention, and they are scattered. A non-injury 'out for a month with his family' also fired at 0.51 in probing, so this may be weak on absence alone.",
+ "selection": "random draw"
+}
