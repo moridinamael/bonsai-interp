@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-982dffb1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N7213+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:10+00:00",
+ "recipe": {
+  "toolchain_commit": "39cda759c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N7213_pos/2026-11-06-lm1909-982dffb1.tests.json"
+ },
+ "label": "dense low-amplitude unit (max 0.26, mostly gate-closed echo): best guess, rare word tokens such as ' Flake' and non-Latin word pieces",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N7213_pos/2026-11-06-lm1909-982dffb1.tests.json",
+   "prereg_commit": "39cda759c",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.789,
+     "peak": " Flake"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.823,
+     "peak": " Flake"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.097,
+     "peak": " м"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.649,
+     "peak": " изготовлен"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.553,
+     "peak": "ホール"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.504,
+     "peak": "稼"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.756,
+     "peak": "ارات"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.008,
+     "peak": "껍"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.091,
+     "peak": " Brown"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.173,
+     "peak": " Clark"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.088,
+     "peak": " м"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.199,
+     "peak": "ан"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.073,
+     "peak": "近く"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.139,
+     "peak": "彼"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.115,
+     "peak": " إلى"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.156,
+     "peak": " �"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.703,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39cda759c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense, rare tokens",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags broad and gate-closed. Layer 0, so this reflects the token rather than context. This test records the density and a best guess; the - pole (' dance', the character for dance) is the sharper side of this neuron.",
+ "selection": "random draw"
+}

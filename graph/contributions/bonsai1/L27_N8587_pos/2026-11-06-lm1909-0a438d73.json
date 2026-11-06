@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-0a438d73",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N8587+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:10+00:00",
+ "recipe": {
+  "toolchain_commit": "39cda759c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N8587_pos/2026-11-06-lm1909-0a438d73.tests.json"
+ },
+ "label": "a noun or brand naming a business as an entity (' company', ' firm', ' manufacturer', Samsung), as opposed to a person or thing",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N8587_pos/2026-11-06-lm1909-0a438d73.tests.json",
+   "prereg_commit": "39cda759c",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.426,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.617,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.388,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.374,
+     "peak": " firm"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.56,
+     "peak": " manufacturer"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.282,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.439,
+     "peak": " Samsung"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.665,
+     "peak": " company"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " Friday"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.001,
+     "peak": " sales"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.0,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " for"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.432,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39cda759c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "a business as entity",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "' company' dominates the card; the output promotes possessives, ' website', ' products'. Probe: other institutions (school, hospital, museum) also fire at 0.3-0.45, so the real distinction may be organisation rather than business. Near misses use people and things, not institutions.",
+ "selection": "random draw"
+}

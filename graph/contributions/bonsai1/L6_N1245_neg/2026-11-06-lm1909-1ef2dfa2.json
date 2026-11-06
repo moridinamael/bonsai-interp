@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-1ef2dfa2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N1245-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:02+00:00",
+ "recipe": {
+  "toolchain_commit": "39cda759c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N1245_neg/2026-11-06-lm1909-1ef2dfa2.tests.json"
+ },
+ "label": "the head after a colour word when it names a person's body or clothing (-eyed, -skinned, -faced, -shirt), as against coloured objects",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N1245_neg/2026-11-06-lm1909-1ef2dfa2.tests.json",
+   "prereg_commit": "39cda759c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.597,
+     "peak": "-eyed"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.052,
+     "peak": "inned"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.327,
+     "peak": "-faced"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.656,
+     "peak": "-faced"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.838,
+     "peak": "shirt"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.82,
+     "peak": " shirts"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.744,
+     "peak": "inned"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.831,
+     "peak": "shirt"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.173,
+     "peak": " cart"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.065,
+     "peak": " bridge"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " wall"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.2,
+     "peak": " card"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.081,
+     "peak": " stand"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.133,
+     "peak": " ring"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " chart"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.782,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39cda759c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "colour + body or clothing",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: 'green-skinned' 1.06, 'red-faced' 0.87, 'red shirt' 0.61, 'blue door' 0.14, 'black car' 0.07, but hyphenated object compounds leak ('blue-painted' 0.29, '-tinted' 0.27, '-brick' 0.25), so near misses are mostly unhyphenated. The + pole fires on red/green compounds naming things (redshift, red phosphorus, Red Dwarf), which looks like the other side of the distinction.",
+ "selection": "random draw"
+}

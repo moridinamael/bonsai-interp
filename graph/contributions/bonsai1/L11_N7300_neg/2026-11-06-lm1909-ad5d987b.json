@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-ad5d987b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N7300-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:41+00:00",
+ "recipe": {
+  "toolchain_commit": "39cda759c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N7300_neg/2026-11-06-lm1909-ad5d987b.tests.json"
+ },
+ "label": "'brush' as a cooking instruction: coating dough or food with butter, milk, egg or oil (not teeth, paint or scrubland)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N7300_neg/2026-11-06-lm1909-ad5d987b.tests.json",
+   "prereg_commit": "39cda759c",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.513,
+     "peak": " brush"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.797,
+     "peak": " brush"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.487,
+     "peak": " brush"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.675,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.584,
+     "peak": " brush"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.739,
+     "peak": " brush"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.715,
+     "peak": " brush"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.113,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": "Place"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.075,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "ay"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.135,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.124,
+     "peak": " thin"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " brush"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.213,
+     "peak": " brush"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " creek"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.629,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39cda759c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "brush in a recipe",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Probe: 'then brush with egg wash' 0.97 against 'brush my teeth' 0.02 and 'dry brush' 0.02. ' butter' also fires at 0.2-0.5, so a butter-related coating sense is the likely common ground; near misses avoid butter.",
+ "selection": "random draw"
+}
