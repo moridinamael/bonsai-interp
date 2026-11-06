@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-e3e8fa25",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2878-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T15:32:42+00:00",
+ "recipe": {
+  "toolchain_commit": "051bf4038",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N2878_neg/2026-11-06-ChopinDavid-e3e8fa25.tests.json"
+ },
+ "label": "dense / positional pole: fires on the first tokens of a context window (91% of top peaks at window position 0); best guess for a test: a lowercase content word opening a mid-sentence text fragment, versus the same text as a full sentence with a lead-in",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N2878_neg/2026-11-06-ChopinDavid-e3e8fa25.tests.json",
+   "prereg_commit": "051bf4038",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.081,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.08,
+     "peak": " open"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.132,
+     "peak": " uploaded"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.053,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.103,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.048,
+     "peak": "strategy"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.041,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.032,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.071,
+     "peak": " routes"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.097,
+     "peak": " open"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.116,
+     "peak": " uploaded"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.056,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.097,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.045,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": " website"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " given"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.516,
+    "median_fire": 0.067,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "051bf4038",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "window-initial token (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card: flagged broad (2.0%) and positional (91% at window position 0); peaks are fragment-initial ' information', ' just', ' tasks'. Probe: fragment-initial 'information' 0.100, 'just' 0.068, 'tasks' 0.048 vs full sentences 0.06-0.08; no separation. Test is a best guess and likely fails.",
+ "selection": "random draw"
+}
