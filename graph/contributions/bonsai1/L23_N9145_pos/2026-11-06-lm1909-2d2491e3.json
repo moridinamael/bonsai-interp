@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-2d2491e3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N9145+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:11+00:00",
+ "recipe": {
+  "toolchain_commit": "1e5b86ca4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N9145_pos/2026-11-06-lm1909-2d2491e3.tests.json"
+ },
+ "label": "The newline token closing a Python top-level statement or function body, just before the blank lines and the next def",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N9145_pos/2026-11-06-lm1909-2d2491e3.tests.json",
+   "prereg_commit": "1e5b86ca4",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.31,
+     "peak": " print"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.508,
+     "peak": " {}\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.295,
+     "peak": " {}\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.667,
+     "peak": " {}\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.388,
+     "peak": " []\n\n\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.502,
+     "peak": ")\n\n\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.278,
+     "peak": "\")\n\n\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.282,
+     "peak": " {}\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.148,
+     "peak": "print"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.105,
+     "peak": "print"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.099,
+     "peak": "print"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.165,
+     "peak": "print"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.072,
+     "peak": "static"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.064,
+     "peak": "static"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.173,
+     "peak": "(\""
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.113,
+     "peak": " [];\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.349,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1e5b86ca4",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "end of Python top-level block",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Written as multi-line passages. Probes: 0.54-0.55 in module-level code with defs, under 0.1 on C. Near misses are flat Python scripts and C or JavaScript with no blank-line block ends.",
+ "selection": "random draw"
+}
