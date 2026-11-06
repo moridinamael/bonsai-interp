@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-1fb8ef30",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2774+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T05:28:03+00:00",
+ "recipe": {
+  "toolchain_commit": "bf4f79850",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N2774_pos/2026-11-05-ChopinDavid-1fb8ef30.tests.json"
+ },
+ "label": "the line break ending an indented code comment that describes the next statement",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N2774_pos/2026-11-05-ChopinDavid-1fb8ef30.tests.json",
+   "prereg_commit": "bf4f79850",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.011,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.053,
+     "peak": "(path"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.063,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.117,
+     "peak": " price"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.098,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.101,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.138,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.188,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.043,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": "w"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": ".name"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.051,
+     "peak": "price"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": "           "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "('|"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.1,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bf4f79850",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "newline after code comment",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card peaks mix newlines ending '#' comments inside methods, commas closing a fronted clause, and ' and'/' differ'. Probe is weak: indented comment newline 0.185, 'x = 5' 0.117, 'mild, moderate and' 0.104, unindented def comment 0.040, TODO 0.011. This test is a guess; expect a fail.",
+ "selection": "random draw"
+}

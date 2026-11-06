@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-c1012125",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N106-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T05:26:50+00:00",
+ "recipe": {
+  "toolchain_commit": "bf4f79850",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N106_neg/2026-11-05-ChopinDavid-c1012125.tests.json"
+ },
+ "label": "the slot where 'Korea' or 'South Korea' is the predicted next word (after Korean city names and in Korean contexts)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N106_neg/2026-11-05-ChopinDavid-c1012125.tests.json",
+   "prereg_commit": "bf4f79850",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.6,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.346,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.516,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.55,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.488,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.574,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.418,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.593,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " launched"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": "De"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.1,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " film"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.033,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " festival"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.533,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bf4f79850",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "slot predicting Korea",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card peaks sit on the token before 'South Korea'/'Korea' (', ' after INCHEON, 'capital of', 'and'); the + pole suppresses 'South'. Probe: 'Seoul, the capital of South Korea' 0.657 at ',', 'Busan, Korea' 0.628 at ','; 'United States and South Korea' 0.117; Lima/Lyon controls 0.001 and 0.010. Fire items give a Korean city then 'Korea'.",
+ "selection": "random draw"
+}

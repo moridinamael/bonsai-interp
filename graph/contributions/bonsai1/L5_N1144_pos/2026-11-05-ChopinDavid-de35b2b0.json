@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-de35b2b0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N1144+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T05:25:43+00:00",
+ "recipe": {
+  "toolchain_commit": "bf4f79850",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N1144_pos/2026-11-05-ChopinDavid-de35b2b0.tests.json"
+ },
+ "label": "the period of a page or paragraph abbreviation (p., para.) in a citation, just before the page number",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N1144_pos/2026-11-05-ChopinDavid-de35b2b0.tests.json",
+   "prereg_commit": "bf4f79850",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.039,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.034,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.609,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.085,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.44,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.053,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.02,
+     "peak": " table"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " chapter"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": " Lind"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.046,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bf4f79850",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "'.' of p. in page citation",
+ "unit_kind": "token",
+ "confidence": 0.45,
+ "notes": "Card peaks split between ' of' in 'N out of M' scores and '.' in 'p. 59' references. Probe: 'p. 42 and p. 87' scored 0.516, but out-of scores only 0.083 and 0.038, pin 0.025, NGC 0.036. Label narrowed to the citation period; coverage of the out-of share of the pole is left open.",
+ "selection": "random draw"
+}
