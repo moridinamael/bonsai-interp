@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-6107ed21",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N3204+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:59:14+00:00",
+ "recipe": {
+  "toolchain_commit": "a06c06e79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N3204_pos/2026-11-06-lm1909-6107ed21.tests.json"
+ },
+ "label": "the negated or 'going to' clause in 'but if we don't / can't / 're going to ...' after a concession: a condition that must be met",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N3204_pos/2026-11-06-lm1909-6107ed21.tests.json",
+   "prereg_commit": "a06c06e79",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.807,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.582,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.202,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.235,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.199,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.27,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.278,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.612,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " boat"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " covered"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": " raise"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": "Sm"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " coach"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " is"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.274,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a06c06e79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'but if we don't'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: fires 0.37-0.67 only with a concession sentence before it; one-line versions stay near 0.1. 'unless' and 'permitted' from the card stayed weak (0.07-0.12), so they are not in the test.",
+ "selection": "random draw"
+}

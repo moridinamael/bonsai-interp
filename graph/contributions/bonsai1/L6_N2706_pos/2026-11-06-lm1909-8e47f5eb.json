@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-8e47f5eb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N2706+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:59:29+00:00",
+ "recipe": {
+  "toolchain_commit": "a06c06e79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N2706_pos/2026-11-06-lm1909-8e47f5eb.tests.json"
+ },
+ "label": "a term restarting abruptly after a finished noun phrase with no punctuation between them (a run-on boundary, often the same term again)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N2706_pos/2026-11-06-lm1909-8e47f5eb.tests.json",
+   "prereg_commit": "a06c06e79",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.424,
+     "peak": " Ac"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.944,
+     "peak": " Cloud"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.823,
+     "peak": " magnesium"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.899,
+     "peak": " GRE"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.281,
+     "peak": " Bus"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.828,
+     "peak": " Housing"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.015,
+     "peak": " Digital"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.138,
+     "peak": " Latin"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": "Doctors"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " firm"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " labs"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "Practice"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " tourist"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " all"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " marketing"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": "olars"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.825,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a06c06e79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "unpunctuated term restart",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "A shared pattern for the card's list (' Chronic', ' AP', ' Intelligent', ' sodium'). Probes: 0.42-1.48 at the boundary, under 0.06 in normal prose; a new term without a repeat also fired (' H' 0.74). Plain stem repeats in prose stayed weak ('singer sang' 0.15). Two near misses keep the same words with a full stop, to test the boundary itself.",
+ "selection": "random draw"
+}
