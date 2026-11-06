@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-1cf1d2ea",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N8004+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T09:19:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N8004",
+   "pole": "+",
+   "label": "unclear: card peaks on keyword-argument values in Python calls ('value=value', '=self._x') and on ' you' after 'because', but the probe fired on nothing (all items 0.05-0.08); best guess is the value slot after '=' in a keyword argument",
+   "fire": [
+    "    layer = Conv2D(filters=filters, kernel_size=kernel_size)",
+    "    opt = Adam(learning_rate=self.learning_rate, beta=self.beta)",
+    "    plot(x=x, y=y, color=color, label=label)",
+    "    return Config(path=path, mode=self.mode)",
+    "    client = Client(host=host, port=port, timeout=timeout)",
+    "    out = resize(image=image, size=self.size)",
+    "    job = Task(name=name, priority=priority)",
+    "    model.fit(data=data, epochs=self.epochs)"
+   ],
+   "quiet": [
+    "    layer = Conv2D(filters, kernel_size)",
+    "    opt = Adam(self.learning_rate, self.beta)",
+    "    plot(x, y, color, label)",
+    "    return Config(path, self.mode)",
+    "    client = Client(host, port, timeout)",
+    "    out = resize(image, self.size)",
+    "    job = Task(name, priority)",
+    "    model.fit(data, self.epochs)"
+   ]
+  }
+ ],
+ "predictions": "best guess: keyword-argument value slots 0.2+; positional arguments below 0.1. Expected to fail",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (kwarg value?)",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: density 0.69%, regimes 66/34, peaks '=value', '=self', 'initializer=', ' you' after because, ' B' in Ruth Bader. Probe: every item 0.049-0.084, including 'build(name=name, value=value, scale=scale)' 0.084 and the positional control 0.059. Registered as unclear."
+}

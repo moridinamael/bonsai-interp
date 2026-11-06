@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-b0993293",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N4387+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T09:25:50+00:00",
+ "recipe": {
+  "toolchain_commit": "2c7e326a0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N4387_pos/2026-11-06-ChopinDavid-b0993293.tests.json"
+ },
+ "label": "unclear: the joint between two parallel members of a fixed enumeration (' and' in 'Senators and Representatives', the newline between ingredient lines, the comma in a dtype tuple); ordinary 'and' between clauses stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N4387_pos/2026-11-06-ChopinDavid-b0993293.tests.json",
+   "prereg_commit": "2c7e326a0",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.318,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.24,
+     "peak": " sugar"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.489,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.022,
+     "peak": " after"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.181,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.416,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.171,
+     "peak": " grade"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.213,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.205,
+     "peak": " vanilla"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.122,
+     "peak": " finely"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " None"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.04,
+     "peak": " tablets"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " chambers"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.226,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c7e326a0",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "joint in enumeration (unclear)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: density 0.76%; ' and' in Senators and Representatives, newline between recipe lines, '2s 2p', 'np.uint8, np.uint16', Cook, Lake. Probe: 'Senators and Representatives' 0.710, ingredient list 0.439 (peak ' salt'), dtype tuple 0.366, '5th and 9th' 0.202, 'Chile and one in Germany' 0.214; 'Cook, Lake, and DuPage counties' 0.020, clause 'and bought milk' 0.008. Uneven; low confidence.",
+ "selection": "random draw"
+}

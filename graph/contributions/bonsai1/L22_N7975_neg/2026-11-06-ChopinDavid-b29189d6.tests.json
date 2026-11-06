@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-b29189d6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N7975-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T09:19:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N7975",
+   "pole": "-",
+   "label": "unclear: card peaks on library namespaces after '=' or 'return' in Python ('= np.', 'os.path', 'return itertools', 'tf.'), but the probe fired on nothing except 'tf.reduce_sum' (0.182); best guess is the library namespace token in an assignment",
+   "fire": [
+    "    mean = tf.reduce_mean(values)",
+    "    path = os.path.join(root, name)",
+    "    grid = np.zeros((n, n))",
+    "    loss = tf.reduce_max(errors)",
+    "    folder = os.path.dirname(path)",
+    "    weights = np.ones(n) / n",
+    "    pairs = itertools.product(a, b)",
+    "    total = tf.reduce_prod(scales)"
+   ],
+   "quiet": [
+    "    mean = average(values)",
+    "    path = join(root, name)",
+    "    grid = make_grid(n)",
+    "    loss = max(errors)",
+    "    folder = parent_of(path)",
+    "    weights = [1 / n] * n",
+    "    pairs = list(zip(a, b))",
+    "    total = product(scales)"
+   ]
+  }
+ ],
+ "predictions": "best guess: namespaced calls 0.2+; bare calls below 0.1. Expected to fail",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (namespace after '=')",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: '.path' x12, ' np' x5, ' itertools', ' tf', ' =' in 'a + b = b + a'. Probe: 'np.array' 0.038 vs bare 'array' 0.037, 'os.path.basename' 0.045 vs 'basename' 0.045, 'itertools.chain' 0.038, 'tf.reduce_sum' 0.182 (peak '_sum'). Registered as unclear."
+}

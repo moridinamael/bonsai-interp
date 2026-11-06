@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-1291c625",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3710+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T09:26:17+00:00",
+ "recipe": {
+  "toolchain_commit": "2c7e326a0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N3710_pos/2026-11-06-ChopinDavid-1291c625.tests.json"
+ },
+ "label": "the first token of a new top-level section after a block ends: a line-initial 'Part II'/roman numeral heading after a chapter, or the module-level 'if __name__' after an indented test block; the same words mid-line stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N3710_pos/2026-11-06-ChopinDavid-1291c625.tests.json",
+   "prereg_commit": "2c7e326a0",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.434,
+     "peak": "if"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.394,
+     "peak": " III"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.323,
+     "peak": "if"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.168,
+     "peak": "Conclusion"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.315,
+     "peak": "if"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.099,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.135,
+     "peak": " II"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.359,
+     "peak": "if"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " if"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": " III"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " run"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " services"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": " if"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": " part"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": "       "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.319,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c7e326a0",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "line-start of new top section",
+ "unit_kind": "context",
+ "confidence": 0.25,
+ "notes": "Card: line-initial 'Part' II/IV, 'if __name__' after test code x9, 'II.', ' CHAPTER' VIII, '4.0'. Probe: 'if __name__' after assertTrue 0.257, newline 'Part II Methods' 0.188, newline 'II. The Bible' 0.101, '5.0' 0.094; inline 'Part II covers' 0.055, 'part two of the lecture' 0.013, indented 'if x > 0' 0.009. Weak; low confidence.",
+ "selection": "random draw"
+}
