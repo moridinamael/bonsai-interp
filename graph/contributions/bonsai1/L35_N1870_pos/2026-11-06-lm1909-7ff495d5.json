@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-7ff495d5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1870+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:28+00:00",
+ "recipe": {
+  "toolchain_commit": "789069d62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N1870_pos/2026-11-06-lm1909-7ff495d5.tests.json"
+ },
+ "label": "the partial-byte piece of a less common Korean syllable mid-sentence, at the start of a word like 충고 or 격려",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N1870_pos/2026-11-06-lm1909-7ff495d5.tests.json",
+   "prereg_commit": "789069d62",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.388,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.19,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.415,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.194,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.129,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.094,
+     "peak": " 교"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.236,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.07,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " 사"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.109,
+     "peak": " 저"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.169,
+     "peak": " 공"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.0,
+     "peak": " 일"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.124,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " 사"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.033,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": "�"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.192,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "789069d62",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare Korean syllable piece",
+ "unit_kind": "sparse feature",
+ "confidence": 0.3,
+ "notes": "Top peaks are mostly the '�' byte piece, across Korean, Chinese and Arabic. Probes: 충고 0.77, 격려 0.28, but also a common Korean word at 0.24, and Chinese was uneven. Korean near misses may misfire.",
+ "selection": "random draw"
+}

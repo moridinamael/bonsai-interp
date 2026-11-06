@@ -1,0 +1,164 @@
+{
+ "id": "2026-11-06-lm1909-9df1e668",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N11198+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:44+00:00",
+ "recipe": {
+  "toolchain_commit": "789069d62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N11198_pos/2026-11-06-lm1909-9df1e668.tests.json"
+ },
+ "label": "a word about to name a recurring calendar period: an ordinal before 'quarter' in a business report, or 'each' before 'month'; ordinals counting other things stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N11198_pos/2026-11-06-lm1909-9df1e668.tests.json",
+   "prereg_commit": "789069d62",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.87,
+     "peak": " third"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.731,
+     "peak": " second"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.916,
+     "peak": " fourth"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.705,
+     "peak": " first"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.912,
+     "peak": " third"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.853,
+     "peak": " fourth"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.657,
+     "peak": " first"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.485,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": "ed"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.122,
+     "peak": " third"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.564,
+     "peak": " fourth"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.148,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": " second"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.792,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "789069d62",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "ordinal before 'quarter'",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Output promotes quarter/quarters directly. Probes: 0.49-0.98 before 'quarter', 0.36-0.40 on 'each month'; 'third floor' and 'finished third' 0; sports periods partly fire (second half 0.48, fourth inning 0.31).",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " third",
+   " fourth",
+   " second",
+   " first",
+   " each",
+   "第四"
+  ]
+ }
+}

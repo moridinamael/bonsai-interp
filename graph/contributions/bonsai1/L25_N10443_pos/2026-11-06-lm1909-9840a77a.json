@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-06-lm1909-9840a77a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N10443+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:51+00:00",
+ "recipe": {
+  "toolchain_commit": "789069d62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N10443_pos/2026-11-06-lm1909-9840a77a.tests.json"
+ },
+ "label": "changing membership in a group: the verb 'join/joined', and the slot before the group in 'part of', 'pulled out of'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N10443_pos/2026-11-06-lm1909-9840a77a.tests.json",
+   "prereg_commit": "789069d62",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.553,
+     "peak": " join"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.377,
+     "peak": " joined"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.536,
+     "peak": " join"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.399,
+     "peak": " join"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.418,
+     "peak": " joined"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.503,
+     "peak": " join"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.442,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.36,
+     "peak": " part"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " decided"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": "Three"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.179,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": " graduation"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " year"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.43,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "789069d62",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "joining a group",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: join/joined are 17 of the top 32. Probes: 'joined the two wires' also fires (0.49), so the word fires without the membership meaning; 'sign up to' is weak.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "join",
+   "joined"
+  ]
+ }
+}

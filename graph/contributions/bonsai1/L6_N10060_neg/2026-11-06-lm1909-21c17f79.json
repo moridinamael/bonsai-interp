@@ -1,0 +1,166 @@
+{
+ "id": "2026-11-06-lm1909-21c17f79",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10060-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:15+00:00",
+ "recipe": {
+  "toolchain_commit": "789069d62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N10060_neg/2026-11-06-lm1909-21c17f79.tests.json"
+ },
+ "label": "an opening bracket fused with what follows ('(mode', '(username', '([[') at the start of a Python call's arguments",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N10060_neg/2026-11-06-lm1909-21c17f79.tests.json",
+   "prereg_commit": "789069d62",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.022,
+     "peak": "_classes"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.048,
+     "peak": " db"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.029,
+     "peak": " io"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.027,
+     "peak": " models"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.051,
+     "peak": " loaders"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.025,
+     "peak": "([["
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.043,
+     "peak": " sp"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.025,
+     "peak": " dropout"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": "gg"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.048,
+     "peak": " db"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " io"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " models"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": " loaders"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " np"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.041,
+     "peak": " sp"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": ".last"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.57,
+    "median_fire": 0.028,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "789069d62",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fused call-opening bracket",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: '(mode' 0.37-0.39 and '([[' 0.23; plain '(' tokens are weak or absent, and prose brackets stay quiet. Many probed calls stayed under 0.2, so a low median is the risk.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "(mode",
+   "(username",
+   "(fname",
+   "([[",
+   " {'",
+   " {\"",
+   "('",
+   " ("
+  ]
+ }
+}
