@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-06-lm1909-3724c5d9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N1763-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:19+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N1763_neg/2026-11-06-lm1909-3724c5d9.tests.json"
+ },
+ "label": "two tokens: the piece 'existing' bound to 'pre' (preexisting, pre-existing), and the noun ' address' for where something is located. Free ' existing' and the speech sense of 'address' are weak or quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N1763_neg/2026-11-06-lm1909-3724c5d9.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.7,
+     "peak": "existing"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.335,
+     "peak": "-existing"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.539,
+     "peak": "existing"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.391,
+     "peak": "-existing"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.193,
+     "peak": " server"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.345,
+     "peak": " address"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.181,
+     "peak": " packet"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.133,
+     "peak": " address"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.114,
+     "peak": " often"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.169,
+     "peak": " refuse"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.128,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.072,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.143,
+     "peak": " server"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.158,
+     "peak": " Friday"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.186,
+     "peak": " packet"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.097,
+     "peak": " Monday"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.34,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pre|existing; noun ' address'",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: ' address' x6, ' read' x3, ' READ', 'pre|existing', ' compile'; flagged broad (6% of tokens over 0.1) and mostly the gate-closed regime. Probes: 'preexisting' 0.778, '-existing' 0.454, ' existing' 0.064, 'the address of the second node' 0.245, 'home address' 0.255; 'street address' below 0.069 and 'keynote address' below 0.107, so the noun is not uniform. ' READ' 0.135, ' read' under 0.11, so I leave them out of the test.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "existing",
+   "-existing",
+   " address",
+   " addresses"
+  ]
+ }
+}

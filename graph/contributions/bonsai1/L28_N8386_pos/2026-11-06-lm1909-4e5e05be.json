@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-4e5e05be",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N8386+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:28+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N8386_pos/2026-11-06-lm1909-4e5e05be.tests.json"
+ },
+ "label": "the moment a judgement of merit is about to be spoken: the pole fires just before 'worth / merit / deserve' on German -enswert stems (sehens|wert, lesens|wert, bemerk|enswert) and on 'so X as to hardly' + merit. The same adverbs and sentence frames leading to another adjective stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N8386_pos/2026-11-06-lm1909-4e5e05be.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.644,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.466,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.837,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.911,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.829,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.448,
+     "peak": " hardly"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.688,
+     "peak": " hardly"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.4,
+     "peak": " hardly"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.108,
+     "peak": " wirklich"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.075,
+     "peak": " besonders"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.262,
+     "peak": "aus"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.0,
+     "peak": " schw"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": "e"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.199,
+     "peak": " saw"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.118,
+     "peak": " they"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.088,
+     "peak": " hardly"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.666,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "just before 'worth / merit'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Output direction promotes ' worth', ' worthy', ' deserve', ' merit', ' warrant'. Card: 'bem|erk|enswerten', 'it also worth mentioning', 'as to hardly merit', 'note|able', 'seh|ens|würdig', 'well worth a look'. Probes: 'bemerkenswerte' 1.125, 'sehenswert' 0.709, 'as to hardly merit' 0.615; 'wirklich groß' 0.122, 'hardly slept' 0.003. ' well', ' also' and ' definitely' read the same whichever word follows (0.235, 0.287, 0.240), because they fire before they can see it, and they are left out of the test.",
+ "selection": "random draw"
+}

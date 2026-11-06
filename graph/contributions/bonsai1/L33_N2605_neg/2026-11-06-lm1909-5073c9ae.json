@@ -1,0 +1,163 @@
+{
+ "id": "2026-11-06-lm1909-5073c9ae",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2605-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:40+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N2605_neg/2026-11-06-lm1909-5073c9ae.tests.json"
+ },
+ "label": "a word stem left waiting for the piece '-ice' or '-ace' to complete it: precip|ice, poult|ice, coward|ice, POL|ICY, pol|ice, pal|atial. The word is cut mid-way and this pole predicts the ending; complete words in the same slot stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N2605_neg/2026-11-06-lm1909-5073c9ae.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.713,
+     "peak": " precip"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.519,
+     "peak": "lt"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.451,
+     "peak": " coward"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.778,
+     "peak": " POL"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.821,
+     "peak": " precip"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.464,
+     "peak": "lt"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.453,
+     "peak": " pal"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.241,
+     "peak": " pol"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.053,
+     "peak": " cliff"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.046,
+     "peak": " plaster"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.045,
+     "peak": " LAND"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " charcoal"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " sea"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " officers"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.492,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stem awaiting '-ice'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "The direction read from the - pole promotes 'ice', 'ce', 'icing', 'ices', ' ice', 'ace'. Card: ' pol' x5, ' precip' x5, 'pol' x3, ' POL' x3, 'lt' x2 (poultices), ' pal' x2. Probes: 'precipice' 0.782, 'poultice' 0.504, 'pol. ice' 0.506, ' POL' 0.438, 'palatial' 0.450, 'cowardice' 0.349; whole tokens stay low: ' police' 0.059, ' polym' 0.084. Against it: 'chalice' 0.019, 'lattice' 0.003, 'licorice' 0.071, 'jaundice' 0.176. Also 'precipitation' reads very low, which the tokenizer may explain.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " pol",
+   "pol",
+   " POL",
+   " precip",
+   " pal"
+  ]
+ }
+}

@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-a363c46e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N651+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:22+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N651_pos/2026-11-06-lm1909-a363c46e.tests.json"
+ },
+ "label": "the digit 9 as the third digit of a four-digit code (course numbers, tariff headings, item codes); other digits in that place are much weaker, and 9 in years, prices and sums barely fires",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N651_pos/2026-11-06-lm1909-a363c46e.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.535,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.28,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.218,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.3,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.296,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.326,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.513,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.161,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.071,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": "licants"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.097,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "Export"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.057,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.066,
+     "peak": "6"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.298,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digit 9, third place of a code",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: '9' x25, in 04|9|0, GEOG 24|9|0, US57|9|3606, plus 'nrf518|22' 8s. Probes: 'BIOL 3190' 0.441, 'HIST 2490' 0.389, 'heading 8491' 0.280, 'part 4593' 0.212; with another digit 'HIST 2450' 0.104, 'BIOL 3120' 0.183, 'heading 8471' 0.047. Weak on second place '3917' 0.037, route '196' 0.091, money '1290 pounds' 0.052, year '1995' 0.082. 'nrf51822' 0.534 and 'nrf51622' 0.248 show the pole has more than this.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "9"
+  ]
+ }
+}

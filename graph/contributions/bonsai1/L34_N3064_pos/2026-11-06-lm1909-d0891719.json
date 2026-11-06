@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-d0891719",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N3064+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:50+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N3064_pos/2026-11-06-lm1909-d0891719.tests.json"
+ },
+ "label": "talk about sexuality and sexual health as a subject (same-sex relations, gender identity, queer theory, venereal disease), in any language; a context the pole builds up over the passage, not one word. The same style about class, law or other medicine stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N3064_pos/2026-11-06-lm1909-d0891719.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.163,
+     "peak": " love"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.241,
+     "peak": " cons"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.81,
+     "peak": "я"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.856,
+     "peak": "ить"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.407,
+     "peak": " مثل"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.007,
+     "peak": " changed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.078,
+     "peak": " gay"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.101,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " against"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.043,
+     "peak": " д"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": "ить"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": "رب"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " how"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " young"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.93,
+    "median_fire": 0.202,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sexuality / sexual health discourse",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card top examples: Russian dermatovenereology, Arabic sexually transmitted disease, queer theory, gay marriage polls; output suppresses ' sexual', ' gay', ' LGBTQ'. Probes: 'врач-дерматовенеролог' 0.362, homosexuality/queer theorists 0.243, sexual orientation passage 0.266, while matching passages about labour and other medicine stay below 0.01. Erectile dysfunction passage only 0.009, so not everything sexual fires. Peaks land on function words inside the passage.",
+ "selection": "random draw"
+}

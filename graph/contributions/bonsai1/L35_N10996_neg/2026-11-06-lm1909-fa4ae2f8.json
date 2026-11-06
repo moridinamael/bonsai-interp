@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-fa4ae2f8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10996-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:21:14+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N10996_neg/2026-11-06-lm1909-fa4ae2f8.tests.json"
+ },
+ "label": "the bare opening piece ' ch' or ' Ch' of a word split by the tokenizer (ch|ipped, ch|itin, Ch|andra, ch|ainer, French ch|aise). Whole-token words and other opening pieces stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N10996_neg/2026-11-06-lm1909-fa4ae2f8.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.534,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.486,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.449,
+     "peak": " Ch"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.353,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.187,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.306,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.359,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.374,
+     "peak": " Ch"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": " dans"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.048,
+     "peak": " H"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": " torch"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " tul"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " salle"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.097,
+     "peak": " observ"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.366,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' ch' / ' Ch' opening piece",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' ch' x8, ' Ch' x8, 'Ch' x2; top single example is ' S' of SNE, and '.s', ' V', 'J' occur, so ' ch' is only part of the pole. Probes: 'Chandra' 0.636, 'chaise' 0.507, 'chainer' 0.469, 'chitin' 0.397, 'chipped' 0.380; 'Chilean and Chinese' 0.031 (whole tokens), 'shale' 0.006, 'Hubble' 0.081.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " ch",
+   " Ch",
+   "Ch"
+  ]
+ }
+}
