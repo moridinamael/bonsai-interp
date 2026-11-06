@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-aac2c775",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N3036-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T08:26:30+00:00",
+ "recipe": {
+  "toolchain_commit": "9e2e90322",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N3036_neg/2026-11-06-ChopinDavid-aac2c775.tests.json"
+ },
+ "label": "the leading byte token of Korean loanword syllables 센/섹 (센터 'center', 섹션 'section', 센서 'sensor'), written with byte-fallback tokens",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N3036_neg/2026-11-06-ChopinDavid-aac2c775.tests.json",
+   "prereg_commit": "9e2e90322",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.378,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.133,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.993,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.474,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.182,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.168,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.407,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.263,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": "이"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": "도"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": " 두"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.032,
+     "peak": " 수"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": "쪽"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.029,
+     "peak": " 하"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.043,
+     "peak": "는"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.062,
+     "peak": " 새"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.392,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9e2e90322",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "Korean 센/섹 byte token",
+ "unit_kind": "token",
+ "confidence": 0.35,
+ "notes": "Card: weak gate-closed pole (max 2.9) peaking on 섹션, 센터, 섹시 and 'e' in Siamese. Probe: 섹션 0.877, 섹시 0.803, 센터 0.771, German gesenkt 0.622, Siamese 0.365; English 'business center' 0.015, Korean 날씨 sentence 0.080. Unsure whether other byte-split Korean syllables fire too; near misses use ordinary Korean.",
+ "selection": "random draw"
+}

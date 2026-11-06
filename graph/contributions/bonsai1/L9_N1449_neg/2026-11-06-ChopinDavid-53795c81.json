@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-53795c81",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N1449-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T08:26:27+00:00",
+ "recipe": {
+  "toolchain_commit": "9e2e90322",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N1449_neg/2026-11-06-ChopinDavid-53795c81.tests.json"
+ },
+ "label": "' at' in legal writing: the pinpoint 'at' of a case or treatise citation (U.S. at 495, supra, at 210) and 'at' naming the court where something was filed",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N1449_neg/2026-11-06-ChopinDavid-53795c81.tests.json",
+   "prereg_commit": "9e2e90322",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.663,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.656,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.243,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.537,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.712,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.442,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.591,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.604,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.174,
+     "peak": " relies"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " framed"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.296,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " tort"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.597,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9e2e90322",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "legal ' at' (pin cites, filed at)",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: ' at' x14, all citation pin cites (457 U.S. at 972, supra, at 776, id. at 4). Probe: 'id. at 112' 0.678, 'supra note 4, at 210' 0.671, 'U.S. at 495' 0.463, 'filed a brief at the circuit court' 0.946; everyday 'met at the station' -0.001, 'good at chess' 0.007, 'at 200 degrees' -0.002. Leaks to avoid: 'record' 0.316, 'amicably' 0.275, so near misses avoid those words.",
+ "selection": "random draw"
+}
