@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-06-lm1909-a1db3618",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N11314+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:24:52+00:00",
+ "recipe": {
+  "toolchain_commit": "0a0e40d5e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N11314_pos/2026-11-06-lm1909-a1db3618.tests.json"
+ },
+ "label": "the verb ' arisen' / ' arose' when a problem or dispute comes up ('disputes have arisen')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N11314_pos/2026-11-06-lm1909-a1db3618.tests.json",
+   "prereg_commit": "0a0e40d5e",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.72,
+     "peak": " arisen"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.531,
+     "peak": " arisen"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.13,
+     "peak": " arisen"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.294,
+     "peak": " arisen"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.591,
+     "peak": " arisen"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.311,
+     "peak": " arose"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.127,
+     "peak": " arose"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.407,
+     "peak": " arose"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.108,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.357,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.043,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.13,
+     "peak": " reviewed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.169,
+     "peak": " dry"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.112,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " official"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.093,
+     "peak": " hearing"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.359,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a0e40d5e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' arisen' / ' arose'",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "The card flags the pole broad (1.1%), and its top tokens range widely (.fit, pull, viewership, arisen). The arisen family was the most reproducible; 'pull' on a dog's leash and '.fit' also fire, and 'occurred' fires less reliably. I found no pattern that unites them, so this is at best a sub-trigger.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " arisen",
+   " arose"
+  ]
+ }
+}

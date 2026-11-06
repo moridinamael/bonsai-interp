@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-634e0984",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8670+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:24:44+00:00",
+ "recipe": {
+  "toolchain_commit": "0a0e40d5e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N8670_pos/2026-11-06-lm1909-634e0984.tests.json"
+ },
+ "label": "the ' ·' separator right after a month-and-day date, as in a search-snippet dateline ('May 20, · This was')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N8670_pos/2026-11-06-lm1909-634e0984.tests.json",
+   "prereg_commit": "0a0e40d5e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.729,
+     "peak": " ·"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.707,
+     "peak": " ·"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.933,
+     "peak": " ·"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.889,
+     "peak": " ·"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.605,
+     "peak": " ·"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.89,
+     "peak": " ·"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.558,
+     "peak": " ·"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.487,
+     "peak": " ·"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " -"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.003,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " tire"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.002,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.718,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a0e40d5e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' ·' after a date",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "The ' ·' is reproducible across dates and quiet in a plain list; with a year before it, it drops. The rest of the card (sentence ends in spun essay-mill text) did not reproduce in my probes even with imitated text, so this is probably a sub-trigger. Trigger declared so coverage measures that.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " ·"
+  ]
+ }
+}

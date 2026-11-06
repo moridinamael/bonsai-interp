@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-cdbdf7fc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N6364+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:25:12+00:00",
+ "recipe": {
+  "toolchain_commit": "0a0e40d5e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N6364_pos/2026-11-06-lm1909-cdbdf7fc.tests.json"
+ },
+ "label": "the 'for' that gives the reason a text was altered ('edited for clarity', 'shortened for brevity')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N6364_pos/2026-11-06-lm1909-cdbdf7fc.tests.json",
+   "prereg_commit": "0a0e40d5e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.552,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.508,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.845,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.677,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.506,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.667,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.861,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.48,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.22,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " lightly"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.055,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.61,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a0e40d5e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'for' after edited",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "' for' is the most common peak token. Passive editing verbs fire it strongly; 'for' after other verbs (paid for, left for, a gift for) stays near zero, and even active 'edited a book for her publisher' stays quiet. Weaker fire on 'for the sake of' suggests a wider 'for a purpose' reading that this test does not cover.",
+ "selection": "random draw"
+}

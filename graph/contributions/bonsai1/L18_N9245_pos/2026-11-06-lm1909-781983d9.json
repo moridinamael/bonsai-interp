@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-781983d9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N9245+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:25:21+00:00",
+ "recipe": {
+  "toolchain_commit": "0a0e40d5e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N9245_pos/2026-11-06-lm1909-781983d9.tests.json"
+ },
+ "label": "copying a function, term or number already written: the token that repeats it in the next step ('log2(N) = log', '90,000 hours. That's 90,000')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N9245_pos/2026-11-06-lm1909-781983d9.tests.json",
+   "prereg_commit": "0a0e40d5e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.628,
+     "peak": " exp"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.686,
+     "peak": " log"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.403,
+     "peak": " ln"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.318,
+     "peak": " sqrt"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.34,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.033,
+     "peak": " integral"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.305,
+     "peak": "/"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.352,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.035,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.03,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " Now"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": "bles"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": "8"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.346,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a0e40d5e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "repeating an earlier expression",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "The top tokens look unrelated (integral, 0, 2, g, nels, /) but all repeat something written just before. Probes: 'exp(t) = exp', 'log2(N) = log', 'That's 90,000' fire; '2 + 3 = 5' and non-repeating math stay quiet. 'sin(x) = sin' was weak, so not every function fires.",
+ "selection": "random draw"
+}
