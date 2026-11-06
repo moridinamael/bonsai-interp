@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-f35d8c91",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N5866-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T15:33:34+00:00",
+ "recipe": {
+  "toolchain_commit": "051bf4038",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N5866_neg/2026-11-06-ChopinDavid-f35d8c91.tests.json"
+ },
+ "label": "the function name 'eval' (and literal_eval) in program code; the English word evaluate/evaluation, 'eval' in prose, and other code functions stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N5866_neg/2026-11-06-ChopinDavid-f35d8c91.tests.json",
+   "prereg_commit": "051bf4038",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.043,
+     "peak": " eval"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.631,
+     "peak": "_eval"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.895,
+     "peak": " eval"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.816,
+     "peak": " eval"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.672,
+     "peak": "_eval"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.382,
+     "peak": "(eval"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.843,
+     "peak": " eval"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.768,
+     "peak": " eval"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": "value"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.001,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": "port"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " expressions"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " response"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "formula"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " options"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.792,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "051bf4038",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "eval() in code",
+ "unit_kind": "word",
+ "confidence": 0.65,
+ "notes": "Card: data = eval(the_data), ast.literal_eval, return eval(response.text), cmd = \"eval ...\". Probe: config = eval(data) 0.744, ast.literal_eval 0.672; json.loads 0.005, exec(code) 0.005, 'evaluate each essay' 0.030, 'a fair eval of the model' 0.075.",
+ "selection": "random draw"
+}

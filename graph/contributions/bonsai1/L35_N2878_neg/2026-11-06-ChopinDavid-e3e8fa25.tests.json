@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-e3e8fa25",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2878-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T15:24:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N2878",
+   "pole": "-",
+   "label": "dense / positional pole: fires on the first tokens of a context window (91% of top peaks at window position 0); best guess for a test: a lowercase content word opening a mid-sentence text fragment, versus the same text as a full sentence with a lead-in",
+   "fire": [
+    "information on bus routes and fares is printed on the back.",
+    "just two days after the storm the roads were open again.",
+    "data from the sensors is uploaded every hour.",
+    "tasks such as filing and copying are done by interns.",
+    "records of the hearing are kept in the county office.",
+    "strategy for the new season was agreed in June.",
+    "details about the event can be found on the website.",
+    "advice on planting bulbs is given by the garden centre."
+   ],
+   "quiet": [
+    "The leaflet says information on bus routes and fares is printed on the back.",
+    "Locals said that just two days after the storm the roads were open again.",
+    "In our lab, data from the sensors is uploaded every hour.",
+    "At the firm, tasks such as filing and copying are done by interns.",
+    "According to the clerk, records of the hearing are kept in the county office.",
+    "The coach said the strategy for the new season was agreed in June.",
+    "As the flyer notes, details about the event can be found on the website.",
+    "Each spring, advice on planting bulbs is given by the garden centre."
+   ]
+  }
+ ],
+ "predictions": "expected to fail: probe sentences all scored 0.03-0.10 regardless of position",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "window-initial token (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card: flagged broad (2.0%) and positional (91% at window position 0); peaks are fragment-initial ' information', ' just', ' tasks'. Probe: fragment-initial 'information' 0.100, 'just' 0.068, 'tasks' 0.048 vs full sentences 0.06-0.08; no separation. Test is a best guess and likely fails."
+}
