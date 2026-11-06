@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-a3c0b801",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N4979-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:27+00:00",
+ "recipe": {
+  "toolchain_commit": "573861afd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N4979_neg/2026-11-06-lm1909-a3c0b801.tests.json"
+ },
+ "label": "' with' or ' has' linking a child or dependent adult to a disability or developmental condition ('children with', 'who has')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N4979_neg/2026-11-06-lm1909-a3c0b801.tests.json",
+   "prereg_commit": "573861afd",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.495,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.364,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.524,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.107,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.444,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.485,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.618,
+     "peak": " has"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.579,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " pupils"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.068,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " adults"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": "ores"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.49,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "573861afd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "person with condition",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Fires on the linking word, before the condition is named, so a person noun plus ' has' fires whatever follows (seen in probing). The logit effect of this pole promotes ' autism', ' Down', ' cerebral'.",
+ "selection": "random draw"
+}

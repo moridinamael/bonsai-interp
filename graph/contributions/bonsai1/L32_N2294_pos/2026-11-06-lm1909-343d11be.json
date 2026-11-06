@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-343d11be",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N2294+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:33+00:00",
+ "recipe": {
+  "toolchain_commit": "573861afd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N2294_pos/2026-11-06-lm1909-343d11be.tests.json"
+ },
+ "label": "the piece ' de' as its own token at the start of a word or Latin phrase ('de|acon', 'de facto', 'de novo')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N2294_pos/2026-11-06-lm1909-343d11be.tests.json",
+   "prereg_commit": "573861afd",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.675,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.523,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.65,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.387,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.707,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.27,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.11,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.227,
+     "peak": " de"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.086,
+     "peak": " di"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " gathered"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " sick"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " committee"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " again"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "Seg"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.455,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "573861afd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "the piece ' de'",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Whole-token words such as ' dean' and ' decades' stayed quiet in probing, so this is about the piece, not about church offices. The 'trigger' is declared so that coverage is measured.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   " de",
+   "de",
+   "-de"
+  ]
+ }
+}

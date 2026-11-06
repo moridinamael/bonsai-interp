@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-6bb9dd7c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N2769-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:50+00:00",
+ "recipe": {
+  "toolchain_commit": "573861afd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N2769_neg/2026-11-06-lm1909-6bb9dd7c.tests.json"
+ },
+ "label": "the first token of the next item in a list of parallel lines (numbered clauses, constants, class entries, self.x assignments)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N2769_neg/2026-11-06-lm1909-6bb9dd7c.tests.json",
+   "prereg_commit": "573861afd",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.262,
+     "peak": "PAGE"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.549,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.69,
+     "peak": "Grade"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.335,
+     "peak": " self"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.473,
+     "peak": "Rule"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.322,
+     "peak": "@@"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.997,
+     "peak": "Type"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.347,
+     "peak": "RED"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " limit"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "uce"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " set"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " open"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " flat"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " blue"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.41,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "573861afd",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "next parallel line starts",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Same content written as running prose stayed near 0.02 in probing. An inline semicolon list reached 0.22, so the line break may not be the whole story.",
+ "selection": "random draw"
+}
