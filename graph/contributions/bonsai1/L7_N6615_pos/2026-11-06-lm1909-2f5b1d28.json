@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-06-lm1909-2f5b1d28",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N6615+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:08+00:00",
+ "recipe": {
+  "toolchain_commit": "e11c7cfae",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N6615_pos/2026-11-06-lm1909-2f5b1d28.tests.json"
+ },
+ "label": "a word announcing an enumeration of allowed values in code or docs ('one of', 'possible values', 'choices', 'options')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N6615_pos/2026-11-06-lm1909-2f5b1d28.tests.json",
+   "prereg_commit": "e11c7cfae",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.916,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.973,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.93,
+     "peak": " values"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.648,
+     "peak": " choices"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.431,
+     "peak": " values"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.348,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.204,
+     "peak": " '"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.061,
+     "peak": " values"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.03,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.208,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": "):"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.056,
+     "peak": " type"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " bytes"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " level"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " output"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.055,
+     "peak": "):"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.782,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e11c7cfae",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "announces allowed values",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Probes: 0.49-1.16 in code and docstrings. 'One of the best students' 0.04 and 'values of the houses' 0.08. ' be' in 'must be a string' reached 0.29, so near misses mostly avoid 'must be'. The - pole is mostly gate-closed leak on word pieces and not a distinction I can see.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " of",
+   " values",
+   " choices",
+   " options"
+  ]
+ }
+}

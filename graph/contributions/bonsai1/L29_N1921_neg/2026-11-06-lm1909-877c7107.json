@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-877c7107",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1921-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:17:09+00:00",
+ "recipe": {
+  "toolchain_commit": "e11c7cfae",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1921_neg/2026-11-06-lm1909-877c7107.tests.json"
+ },
+ "label": "a CJK clause opening after a bare break, where the predicate is about to follow: Chinese connectives after a space used as punctuation (' 就是', ' 而是', ' 就像'), and 'reason / point' nouns (이유, 점은, 理由) opening a sentence",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1921_neg/2026-11-06-lm1909-877c7107.tests.json",
+   "prereg_commit": "e11c7cfae",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.715,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.658,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.574,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.581,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.42,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.624,
+     "peak": " 이유"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.265,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.706,
+     "peak": "理由"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": "很简单"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "情况"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": "了一"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": "就好"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.049,
+     "peak": "顺便"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.199,
+     "peak": " 방법"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.108,
+     "peak": "시"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.171,
+     "peak": "費用"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.603,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e11c7cfae",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "CJK clause after bare break",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Probes: the same Chinese connective after a comma stays under 0.08, after a bare space 0.46-0.85. The pole's output promotes '是'. Peaks often land on a partial-character token.",
+ "selection": "random draw"
+}

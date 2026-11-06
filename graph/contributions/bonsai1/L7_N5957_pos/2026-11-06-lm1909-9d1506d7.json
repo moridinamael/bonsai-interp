@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-9d1506d7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N5957+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:16:58+00:00",
+ "recipe": {
+  "toolchain_commit": "e11c7cfae",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N5957_pos/2026-11-06-lm1909-9d1506d7.tests.json"
+ },
+ "label": "the dots of a spaced ellipsis ' . . .' marking a trailing-off hesitation (strongest on the last dot)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N5957_pos/2026-11-06-lm1909-9d1506d7.tests.json",
+   "prereg_commit": "e11c7cfae",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.642,
+     "peak": " ."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.852,
+     "peak": " ."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.627,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.78,
+     "peak": " ."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.672,
+     "peak": " ."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.791,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.778,
+     "peak": " ."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.699,
+     "peak": " ."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.048,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " hours"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " me"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.198,
+     "peak": "..."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.042,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.568,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " end"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.192,
+     "peak": " was"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.738,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e11c7cfae",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "spaced ellipsis dots",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: ' .' is 16 of the top 32, with some em-dash interruptions. Probe: unspaced '...' reached 0.21 and '—er—' 0.28, spaced dots 0.56-0.99. Near misses include unspaced ellipses.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " ."
+  ]
+ }
+}

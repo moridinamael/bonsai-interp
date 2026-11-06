@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-62944b3d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N1785+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:05+00:00",
+ "recipe": {
+  "toolchain_commit": "e11c7cfae",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N1785_pos/2026-11-06-lm1909-62944b3d.tests.json"
+ },
+ "label": "a word naming the specific place or population a claim is scoped to (Australian, northern Canada, London, human, mouse)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N1785_pos/2026-11-06-lm1909-62944b3d.tests.json",
+   "prereg_commit": "e11c7cfae",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.122,
+     "peak": " were"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.041,
+     "peak": " general"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.182,
+     "peak": " southern"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.033,
+     "peak": " has"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.322,
+     "peak": " Japanese"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.14,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.182,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.107,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.082,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.09,
+     "peak": " younger"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.083,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.086,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.062,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.13,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.105,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.734,
+    "median_fire": 0.131,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e11c7cfae",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "scoping place or population",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Fairly dense (0.77% of tokens reach 0.1 of max) with no dominant token. Probes sat at 0.12-0.21, right at the median-fire threshold, so this may fail. It is my best guess at what the mixed top examples share.",
+ "selection": "random draw"
+}
