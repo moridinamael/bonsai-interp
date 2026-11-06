@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-f495a6ab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N2629+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:27:55+00:00",
+ "recipe": {
+  "toolchain_commit": "57497b7db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N2629_pos/2026-11-06-lm1909-f495a6ab.tests.json"
+ },
+ "label": "A token that joins a first part to what follows: a prefix hyphen in a compound, or a Korean or Japanese joiner (과, 、)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N2629_pos/2026-11-06-lm1909-f495a6ab.tests.json",
+   "prereg_commit": "57497b7db",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.183,
+     "peak": "-f"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.271,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.084,
+     "peak": "-t"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.119,
+     "peak": "-sp"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.451,
+     "peak": "과"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.297,
+     "peak": " 연"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.086,
+     "peak": "、"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.361,
+     "peak": "、"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": "lon"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.075,
+     "peak": " 전"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.05,
+     "peak": " 연"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.025,
+     "peak": "ください"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "社"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.227,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "57497b7db",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "joins first part to next",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "The other side of the neuron is a comma after a finished hyphenated modifier. Probed readings for hyphen pieces sit near 0.2, so the median threshold is at risk.",
+ "selection": "random draw"
+}
