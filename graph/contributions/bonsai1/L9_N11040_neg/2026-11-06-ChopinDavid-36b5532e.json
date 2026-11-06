@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-36b5532e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N11040-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T09:26:46+00:00",
+ "recipe": {
+  "toolchain_commit": "2c7e326a0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N11040_neg/2026-11-06-ChopinDavid-36b5532e.tests.json"
+ },
+ "label": "post-Hartree-Fock quantum chemistry: names of correlated electronic-structure methods (coupled cluster, CASSCF/MCSCF) in prose and in pyscf code; other scientific code and general chemistry stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N11040_neg/2026-11-06-ChopinDavid-36b5532e.tests.json",
+   "prereg_commit": "2c7e326a0",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.043,
+     "peak": ".mc"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.008,
+     "peak": " cluster"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.172,
+     "peak": " cluster"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.923,
+     "peak": "ASS"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.89,
+     "peak": " cluster"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.933,
+     "peak": ".mc"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.62,
+     "peak": " cluster"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.58,
+     "peak": " cluster"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " compared"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": "clf"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": ".db"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": "urate"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.971,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c7e326a0",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "correlated quantum-chem methods",
+ "unit_kind": "topic",
+ "confidence": 0.35,
+ "notes": "Card: pyscf code ('ci0', 'run_ccsd', 'pyscf.mcscf', 'DMOL3', Pulay mixing). Probe: 'from pyscf.mcscf import casscf' 0.998 (peak '.mc'), 'The coupled cluster method' 0.715 (peak ' cluster'); 'ci0 = numpy...' 0.049, 'run_cisd, run_ccsd' 0.011, flask imports 0.009. Narrow: fires on the method names, not on all quantum-chemistry code.",
+ "selection": "random draw"
+}
