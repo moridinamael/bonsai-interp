@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-cd129ecd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N9571-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:21:25+00:00",
+ "recipe": {
+  "toolchain_commit": "35d62dd35",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N9571_neg/2026-11-06-lm1909-cd129ecd.tests.json"
+ },
+ "label": "relative ' that' after a plural counted noun ('two awards that', 'several operations that')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N9571_neg/2026-11-06-lm1909-cd129ecd.tests.json",
+   "prereg_commit": "35d62dd35",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.347,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.13,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.282,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.45,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.192,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.098,
+     "peak": " genes"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.232,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.087,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.043,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.045,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.062,
+     "peak": " failure"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.093,
+     "peak": " proposals"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.099,
+     "peak": " job"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.113,
+     "peak": " genes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.058,
+     "peak": " investors"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.212,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "35d62dd35",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "relative that after plurals",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "The card flags this pole as broad (3.2% of tokens reach 0.1 of max) with a low max, and its top examples have no single token. This is a best guess from one strong probe; a repeated-word suffix idea did not generalise in probes.",
+ "selection": "random draw"
+}
