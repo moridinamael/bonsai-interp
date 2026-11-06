@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-13721cba",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N12051-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:09:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N12051",
+   "pole": "-",
+   "label": "unclear; best guess: the token that closes a complete clause (often its sentence-final period or the object noun) when another sentence continues the account",
+   "fire": [
+    "The ferry was delayed by the wind for two hours. Most passengers waited in the café.",
+    "When the guards opened the van, they found its load and called the police.",
+    "The museum has finally reopened after repairs. It is the best place to see Roman coins.",
+    "Two servers are writing to the same table. Suppose that both commit at once.",
+    "The farmers sold their whole harvest at the fair. Prices were higher than last year.",
+    "The pilot checked the weather and the fuel gauge. Then she started the engines.",
+    "My neighbour finally repainted his fence last week. It looks much better now.",
+    "The council approved the plan for a new park. Work will begin in spring."
+   ],
+   "quiet": [
+    "Sadly the ferry was delayed by the wind for two hours",
+    "When the guards opened the van they found nothing",
+    "The museum has finally reopened after repairs and",
+    "Two servers are writing to the same table while",
+    "The farmers sold their whole harvest at the fair and then",
+    "The pilot checked the weather and the fuel gauge before",
+    "My neighbour finally repainted his fence last week but",
+    "The council approved the plan for a new park after"
+   ]
+  }
+ ],
+ "predictions": "best guess: the closing token 0.2-0.3; the same opening clause cut off before it closes below 0.1; the probe gave no item above 0.26, so this is expected to fail",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear: clause-closing token",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: '.' x11 ending a sentence before a follow-up ('...for Ontario birders. It's the best place'), ' cargo', ' factor'; broad (0.6% at 0.1 max). Probe never cleared 0.3: 'seized its cargo and arrested' 0.253 at ' cargo', 'dark mode.' 0.173, 'said Paris. True enough' 0.173; fragments 'She bought bread, eggs and milk' 0.070, 'and the' 0.006."
+}

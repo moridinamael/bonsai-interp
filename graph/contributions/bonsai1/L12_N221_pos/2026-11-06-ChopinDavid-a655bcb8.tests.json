@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-a655bcb8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N221+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:09:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N221",
+   "pole": "+",
+   "label": "a molecular-structure object (geometry, atoms, molecule) named in computational chemistry code or comments; the same code shape about non-chemical objects stays quiet",
+   "fire": [
+    "    # Write the optimized geometry to an xyz file\n    write_xyz(geometry, path)",
+    "    # Build the ORCA input geometry from the atom list\n    geom = build_geom(atoms)",
+    "    # get atoms within 3 angstrom of the ligand\n    near = select_atoms(mol, 3.0)",
+    "    # read the molecule geometry from the Gaussian log\n    coords = parse_log(logfile)",
+    "    # Center the molecule geometry at the origin\n    mol.center()",
+    "    # Create the crystal structure and add atoms\n    cell = Crystal(lattice)",
+    "    # set up the initial geometry for the water dimer\n    geom = dimer_geometry()",
+    "    # convert the SMILES string into a molecule object\n    mol = from_smiles(smi)"
+   ],
+   "quiet": [
+    "    # Write the monthly report to a csv file\n    write_csv(report, path)",
+    "    # Build the email body from the template list\n    body = build_body(parts)",
+    "    # get users within 3 km of the store\n    near = select_users(store, 3.0)",
+    "    # read the page title from the server log\n    title = parse_log(logfile)",
+    "    # Center the window on the screen\n    win.center()",
+    "    # Create the invoice and add line items\n    inv = Invoice(customer)",
+    "    # set up the initial layout for the dashboard\n    layout = dashboard_layout()",
+    "    # convert the date string into a datetime object\n    dt = from_iso(s)"
+   ]
+  }
+ ],
+ "predictions": "' geometry' / ' atoms' / ' mol' in chemistry code 0.25-0.85; matching code about users, files or pages below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "molecule structure in chem code",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card: '# Create Psi4 geometry string' 26.4 far above the rest (atoms, mol, states, crystal, topologies at 11-15), plus 'sacred-texts'. Probe: Psi4 geometry comment 0.853, MolFromSmiles 0.263, mol.atom list 0.230, topologies 0.110; HTML header comment 0.010, user/posts code 0.009, prose about water atoms 0.087. Most chem code items were under 0.3, so the test leans on geometry/atoms named in comments."
+}
