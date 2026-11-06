@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-90a6ddc8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N12261+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T01:33:26+00:00",
+ "recipe": {
+  "toolchain_commit": "fd50ced5a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N12261_pos/2026-11-05-ChopinDavid-90a6ddc8.tests.json"
+ },
+ "label": "French verb-stem pieces for putting/placing: 'pos' after 'im' (imposer, imposant) and ' plac' (placé), as opposed to synonyms (mettre, fixer, demander) in the same French sentences",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N12261_pos/2026-11-05-ChopinDavid-90a6ddc8.tests.json",
+   "prereg_commit": "fd50ced5a",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.688,
+     "peak": "pos"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.042,
+     "peak": "pos"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.025,
+     "peak": "pos"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.621,
+     "peak": " plac"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.969,
+     "peak": "pos"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.598,
+     "peak": " plac"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.021,
+     "peak": " plac"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.884,
+     "peak": "pos"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.287,
+     "peak": " port"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": "nement"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.121,
+     "peak": " grande"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.387,
+     "peak": " fen"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.091,
+     "peak": " budget"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.2,
+     "peak": " porte"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.112,
+     "peak": " align"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.19,
+     "peak": " an"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.926,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fd50ced5a",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "French im-pos / plac stems",
+ "unit_kind": "spelling",
+ "confidence": 0.55,
+ "notes": "Card: 'pos' x6 (imposant, imposés, imposera), ' plac' x5 (placés, placé). Probe: imposera 0.869, imposante 0.769, placés 0.633; déposants ('dé'+'pos') 0.192, composant 0.187, English 'imposing' 0.203; synonym controls 'élevée' 0.297, 'mis' 0.337 (French baseline), parc 0.043. Splits checked with tok.py: imposent/imposera/imposant carry 'pos', placés/placée carry ' plac'; imposé does not.",
+ "selection": "random draw"
+}

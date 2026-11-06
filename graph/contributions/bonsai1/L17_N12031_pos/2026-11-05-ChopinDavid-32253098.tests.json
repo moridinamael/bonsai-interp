@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-32253098",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N12031+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T01:24:36+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N12031",
+   "pole": "+",
+   "label": "a digit or separator inside a formatted number (thousands groups, IP addresses, citation years), as opposed to the same quantities written out in words; broad pole",
+   "fire": [
+    "More than 15,000 fans filled the stadium for the final.",
+    "The router can be reached at 192.168.1.1 from any laptop.",
+    "The town has a population of roughly 45,000 people.",
+    "Prior work found the same pattern (Garcia and Patel, 2009).",
+    "Set the host to 10.0.0.5 and restart the service.",
+    "The prize was worth 50,000 dollars to the winner.",
+    "Similar results appear in a later review (Brown et al., 2015).",
+    "About 30,000 copies of the book were sold in its first week."
+   ],
+   "quiet": [
+    "More than fifteen thousand fans filled the stadium for the final.",
+    "The router can be reached from any laptop in the house.",
+    "The town has a population of roughly forty-five thousand people.",
+    "Prior work found the same pattern in several countries.",
+    "Set the host name to the local server and restart the service.",
+    "The prize was worth fifty thousand dollars to the winner.",
+    "Similar results appear in a later review of the literature.",
+    "About thirty thousand copies of the book were sold in its first week."
+   ]
+  }
+ ],
+ "predictions": "formatted-number items 0.3-0.6; word-number versions near 0.1-0.25 (broad baseline)",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "digit inside formatted number",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: '2' x12 (citation years), '0' in 10,000, '.' in 0.0.0.0; broad flag 4.3%. Probe: '20,000 runners' 0.621, '127.0.0.1' 0.449, '(Smith and Jones, 2004)' 0.354, '(2011)' 0.287, prose years 1205/1632 0.283 (peak on 'The'); citation without year 0.103, 'Figure 3' 0.115, no-number control 0.117, but 'loaves of bread' 0.285. Broad baseline makes a fail likely."
+}
