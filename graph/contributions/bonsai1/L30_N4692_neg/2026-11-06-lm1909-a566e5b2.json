@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-a566e5b2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N4692-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:16:23+00:00",
+ "recipe": {
+  "toolchain_commit": "1967068b6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N4692_neg/2026-11-06-lm1909-a566e5b2.tests.json"
+ },
+ "label": "a competitor's finishing rank in a contest (second, third, top three), about to be followed by place or finish",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N4692_neg/2026-11-06-lm1909-a566e5b2.tests.json",
+   "prereg_commit": "1967068b6",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.849,
+     "peak": "-place"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.606,
+     "peak": " place"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.652,
+     "peak": " three"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.276,
+     "peak": " fourth"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.728,
+     "peak": " place"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.937,
+     "peak": " fourth"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.363,
+     "peak": " third"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.288,
+     "peak": " second"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.264,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": "et"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " cyclist"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.163,
+     "peak": " squad"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " teams"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.053,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": " second"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.629,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1967068b6",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "finishing rank",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "The output direction of this pole promotes finish and place tokens. Probes: ranks in races and elections 0.37-0.47; a third chapter 0.001; a place by the lake 0.011. Near misses keep contests and ordinals but drop the rank.",
+ "selection": "random draw"
+}
