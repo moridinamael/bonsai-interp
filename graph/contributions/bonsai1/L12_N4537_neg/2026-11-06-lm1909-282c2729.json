@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-282c2729",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N4537-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:59+00:00",
+ "recipe": {
+  "toolchain_commit": "13a65ac03",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N4537_neg/2026-11-06-lm1909-282c2729.tests.json"
+ },
+ "label": "the word for an urban municipality as a place: ' city', ' town' and translations such as ' ciudad'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N4537_neg/2026-11-06-lm1909-282c2729.tests.json",
+   "prereg_commit": "13a65ac03",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.709,
+     "peak": " city"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.419,
+     "peak": " city"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.094,
+     "peak": " town"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.343,
+     "peak": " quarry"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.384,
+     "peak": " city"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.414,
+     "peak": " ciudad"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.135,
+     "peak": " City"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.284,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.137,
+     "peak": " valley"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.433,
+     "peak": " harbor"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.347,
+     "peak": " quarry"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.298,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.043,
+     "peak": "Las"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.036,
+     "peak": " river"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.75,
+    "median_fire": 0.364,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "13a65ac03",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "the word city / town",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "The + pole fires on 'outside' and 'in front of'. Near misses use other place nouns (valley, county, island) in the same frames.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "city",
+   "town",
+   "ciudad",
+   "المدينة"
+  ]
+ }
+}

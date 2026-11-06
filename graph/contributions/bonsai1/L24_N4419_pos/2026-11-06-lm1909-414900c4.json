@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-414900c4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4419+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:21:33+00:00",
+ "recipe": {
+  "toolchain_commit": "13a65ac03",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N4419_pos/2026-11-06-lm1909-414900c4.tests.json"
+ },
+ "label": "opening an element that is about to take attributes: an HTML tag name such as font, meta, link or img, its attribute quotes, and the widget constructor's comma before text=",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N4419_pos/2026-11-06-lm1909-414900c4.tests.json",
+   "prereg_commit": "13a65ac03",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.821,
+     "peak": "<meta"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.778,
+     "peak": "gray"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.923,
+     "peak": "meta"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.174,
+     "peak": "img"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.277,
+     "peak": "font"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.186,
+     "peak": "=\""
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.553,
+     "peak": "<meta"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.241,
+     "peak": " text"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " shoes"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " '%"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.108,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "out"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.081,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.064,
+     "peak": "title"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": "(parent"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.415,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "13a65ac03",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "markup tag opening for attributes",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "The negative pole fires on self and .set in GUI code. Closing tags and prose about fonts stayed near zero in probes; bare div and span were weak, so the test uses the card's tags.",
+ "selection": "random draw"
+}
