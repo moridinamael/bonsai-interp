@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-fdfcff88",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N166-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T02:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N166",
+   "pole": "-",
+   "label": "byte-fallback first byte of a split kanji in Japanese text, chiefly the 発 of 発言/発現/発症, as opposed to Japanese sentences whose kanji are whole tokens or kana",
+   "fire": [
+    "会議では、彼の不用意な発言が問題になりました。",
+    "この遺伝子の発現は、ストレスによって高まります。",
+    "高齢者は肺炎を発症しやすいと言われています。",
+    "社長の発言を受けて、株価が大きく動きました。",
+    "細胞内でのたんぱく質の発現を調べました。",
+    "風邪をひいた後に、ぜんそくを発症する人もいます。",
+    "彼女は会議で一度も発言しませんでした。",
+    "この病気は、子どものころに発症することが多いです。"
+   ],
+   "quiet": [
+    "会議では、彼の意見が問題になりました。",
+    "この方法は、多くの人に使われています。",
+    "お年寄りは寒さに弱いと言われています。",
+    "社長の話を聞いて、みんなが笑いました。",
+    "細胞の中を詳しく見ました。",
+    "風邪をひいた後は、ゆっくり休みましょう。",
+    "彼女は会議で一度も話しませんでした。",
+    "この本は、子どものころに読みました。"
+   ]
+  }
+ ],
+ "predictions": "発-compound sentences 0.1-0.25; whole-token Japanese under 0.05; weak overall",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "byte-split kanji (発) in Japanese",
+ "unit_kind": "token",
+ "confidence": 0.2,
+ "notes": "Card: space-initial and plain byte tokens 28 of top 32, 発 in three of the top ten. Probe was weak: '発言' sentence 0.234, '綿' 0.088, 遅延 0.016, Korean 0.035, Chinese 0.024."
+}

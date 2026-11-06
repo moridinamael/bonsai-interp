@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-680c1af0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N7830+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T02:20:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N7830",
+   "pole": "+",
+   "label": "Python control and function-object constructs: 'True' in 'while True:', 'lambda' and '@contextmanager', as opposed to ordinary statements in the same code",
+   "fire": [
+    "import queue\n\ndef worker(q):\n    while True:\n        job = q.get()\n        job.run()",
+    "names = ['b', 'a']\nnames = sorted(names, key=lambda s: s.lower())\nprint(names)",
+    "import contextlib\n\n@contextlib.contextmanager\ndef timer():\n    start = now()\n    yield",
+    "def serve(conn):\n    while True:\n        msg = conn.read()\n        handle(msg)",
+    "button.bind('<Click>', lambda e: self.close())",
+    "pairs = [(1, 'x'), (0, 'y')]\npairs.sort(key=lambda p: p[0])",
+    "from contextlib import contextmanager\n\n@contextmanager\ndef cd(path):\n    old = os.getcwd()\n    yield",
+    "def tail(f):\n    while True:\n        line = f.readline()\n        print(line)"
+   ],
+   "quiet": [
+    "import queue\n\ndef worker(q):\n    job = q.get()\n    job.run()\n    return job",
+    "names = ['b', 'a']\nnames = [s.lower() for s in names]\nprint(names)",
+    "import contextlib\n\ndef timer():\n    start = now()\n    return start",
+    "def serve(conn):\n    msg = conn.read()\n    handle(msg)\n    return msg",
+    "button.config(text='Close', width=10)",
+    "pairs = [(1, 'x'), (0, 'y')]\nfirst = pairs[0]",
+    "import os\n\ndef cd(path):\n    old = os.getcwd()\n    return old",
+    "def tail(f):\n    line = f.readline()\n    print(line)"
+   ]
+  }
+ ],
+ "predictions": "while True / lambda / contextmanager tokens 0.3-0.7; same code without them under 0.1, though plain loops may leak",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python while True / lambda",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Probe: 'manager' of @contextmanager 0.653, 'while True' 0.648, '=lambda' 0.432, '(lambda' 0.399; same code with sort(reverse=True) 0.031, prose 'True ... lambda variant' 0.022. Leak: a 'for i in range' loop scored 0.421 (peak ' i'), so near misses avoid loops."
+}
