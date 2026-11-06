@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-d79f5254",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N2515+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T20:22:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N2515",
+   "pole": "+",
+   "label": "the token just before an expected 'symptoms' in medical text (a next-token predictor for 'symptoms': 'flu-like', 'treat the', 'cause similar')",
+   "fire": [
+    "Food poisoning usually causes cold-like symptoms such as chills and nausea.",
+    "Antihistamines can relieve the symptoms of hay fever within an hour.",
+    "Patients may not show any symptoms until the infection is advanced.",
+    "A thyroid problem can produce similar symptoms, so the doctor ordered tests.",
+    "Most people with the virus develop mild symptoms like a sore throat.",
+    "There is no cure, but doctors can manage the symptoms with medication.",
+    "Children often exhibit symptoms of anemia when iron levels drop.",
+    "Call your clinic if the symptoms of the rash get worse."
+   ],
+   "quiet": [
+    "The old mill usually produces flour that is coarse and grey.",
+    "Antique dealers can restore the frames of old paintings within a week.",
+    "The tourists may not show any interest until the tour is advanced.",
+    "A different engine can produce similar speeds, so the team ran tests.",
+    "Most people at the fair buy small gifts like candles and soap.",
+    "There is no map, but hikers can manage the trail with a compass.",
+    "Children often exhibit drawings at the school fair in June.",
+    "Call your landlord if the leaks in the roof get worse."
+   ]
+  }
+ ],
+ "predictions": "medical setups that predict 'symptoms' 0.35-0.85; the same frames in non-medical text below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts 'symptoms'",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: peaks on tokens before 'symptoms' (treat, similar, -like, Sym, exhibit); logit effect of the - pole promotes ' symptoms'. Probe: flu-like 0.828, treat the symptoms 0.697 (but 'treat the patient' also 0.697 at 'the': the setup fires), cause similar symptoms 0.370, before signs appear 0.387; similar engines 0.007, rules of chess 0.017, weather 0.007. Near misses therefore remove the medical setup, not just the word."
+}

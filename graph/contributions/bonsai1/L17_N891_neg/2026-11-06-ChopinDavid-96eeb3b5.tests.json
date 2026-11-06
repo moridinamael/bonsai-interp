@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-96eeb3b5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N891-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T20:22:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N891",
+   "pole": "-",
+   "label": "the '||' cell separator in wiki-style table rows (empty-joined cells), not single pipes or prose lists",
+   "fire": [
+    "Results\n|City||Rainfall||Sunshine|\n|Oslo||760 mm||1600 h|\n|Rome||800 mm||2500 h|",
+    "Infobox\n|Capital||Lima|\n|Language||Spanish|\n|Currency||Sol|",
+    "Battle summary\n|Strength||40 ships||52 ships|\n|Losses||3 ships||9 ships|",
+    "Schedule\n|Monday||Swimming||Piano|\n|Tuesday||Chess||Art|",
+    "Specifications\n|Weight||2.1 kg|\n|Battery||10 hours|\n|Screen||14 inch|",
+    "Cast list\n|Hamlet||Tom Reed|\n|Ophelia||Ana Cruz|",
+    "Economy\n|GDP (nominal)||2019 estimate||$41 billion|",
+    "Scores\n|Round 1||7||5|\n|Round 2||6||8|"
+   ],
+   "quiet": [
+    "Results\n|City|Rainfall|Sunshine|\n|Oslo|760 mm|1600 h|\n|Rome|800 mm|2500 h|",
+    "Infobox: the capital is Lima, the language is Spanish and the currency is the sol.",
+    "Battle summary: forty ships against fifty-two, with three and nine lost.",
+    "Schedule\n- Monday: swimming, piano\n- Tuesday: chess, art",
+    "Specifications: weight 2.1 kg, battery 10 hours, screen 14 inch.",
+    "Cast list\nHamlet - Tom Reed\nOphelia - Ana Cruz",
+    "Run ps aux | sort -k3 to list processes by CPU.",
+    "Scores\nRound 1: 7 to 5\nRound 2: 6 to 8"
+   ]
+  }
+ ],
+ "predictions": "'||' rows 0.15-0.25; single-pipe tables, shell pipes and prose lists below 0.09",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'||' table cell separator",
+ "unit_kind": "token",
+ "confidence": 0.35,
+ "notes": "Card: '||' x6 plus ',' and ' and' in lists; top examples wiki infobox rows. Probe: |Team||Wins||Losses| 0.179, Population||2012 estimate 0.211, Ships||79 ships 0.088; single-pipe table 0.054, shell pipe 0.085, prose 0.038-0.077."
+}
