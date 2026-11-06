@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-06-lm1909-ffc3474a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11086-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N11086",
+   "pole": "-",
+   "label": "Picking out a subset of rows, columns or items: 'select' or 'chosen' in code comments and table captions, as opposed to doing something else to them",
+   "fire": [
+    "# select the last five columns\nc = df.iloc[:, -5:]",
+    "# select every other sample\nx = data[::2]",
+    "# select only the valid entries\nv = arr[mask]",
+    "idx = np.random.choice(m, size=3)\n# these are the chosen indices\ny = x[idx]",
+    "The chosen columns are marked in blue in the second table.",
+    "The selected samples are listed in bold in the next table.",
+    "# keep the chosen items and drop others\nkept = [a[i] for i in picks]",
+    "The subset of genes to keep: a list of indices such as [2, 7, 9]."
+   ],
+   "quiet": [
+    "# print the last five columns\nprint(df.columns)",
+    "# sort every other sample\nx = sorted(data)",
+    "# count only the valid entries\nn = len(arr)",
+    "val = np.random.normal(m, size=3)\n# these are the noisy values\ny = x + val",
+    "The wide columns are marked in blue in the second table.",
+    "The frozen samples are listed in bold in the next table.",
+    "# write the items and close the file\nf.write(str(a))",
+    "The number of genes to keep: a value such as 2 or 7 or 9."
+   ]
+  }
+ ],
+ "predictions": "Uncertain; may fail on median fire.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "picking out a subset",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "The output direction's opposite end promotes ' selected', ' chosen', ' picked'. Probes were uneven: ' select' in a code comment 0.45 and 0.24, 'chosen rows' 0.22, but ' choose' and prose 'randomly chosen' near zero. The card's strongest peaks are in code near indices."
+}

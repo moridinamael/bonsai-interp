@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-06-lm1909-a2f31c31",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N296-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N296",
+   "pole": "-",
+   "label": "The first word of a news article's body, right after a byline block (headline, 'By X', correspondent line)",
+   "fire": [
+    "Floods hit the coast again.\nBy Helen Marsh\nBBC News Online science correspondent\nThey warn that the next storm could be worse.",
+    "Power cuts spread across the north.\nBy Jim Cole\nBBC News Online energy correspondent\nThe outages began late on Sunday.",
+    "Farm prices drop for a third year.\nBy Ruth Dean\nBBC News Online rural affairs correspondent\nThey fell again in the spring.",
+    "Whales return to the bay.\nBy Owen Hart\nOnline nature correspondent\nThey were last seen here decades ago.",
+    "Rail strike talks collapse.\nBy Priya Nair\nBBC News Online transport correspondent\nThe union said it would not back down.",
+    "Schools face a budget squeeze.\nBy Carl Voss\nBBC News Online education correspondent\nThey say class sizes will grow.",
+    "A new dig opens in Peru.\nBy Lena Fox\nArts reporter\nIn the hills above the valley, teams have found a temple.",
+    "Glaciers shrink faster than expected.\nBy Ian Moss\nOnline environment correspondent\nThe ice has thinned by a metre."
+   ],
+   "quiet": [
+    "Floods hit the coast again last week, and officials warned that they might come back before the next storm.",
+    "Power cuts spread across the north. The outages began late on Sunday, and they lasted until noon.",
+    "Farm prices dropped for a third year. They fell again in the spring, according to the ministry.",
+    "Whales returned to the bay this month. They were last seen here decades ago by local fishermen.",
+    "Rail strike talks collapsed on Friday. The union said it would not back down on pay.",
+    "Schools face a budget squeeze this term. They say class sizes will grow by next autumn.",
+    "A new dig opened in Peru last year. In the hills above the valley, teams have found a temple.",
+    "Glaciers are shrinking faster than expected. The ice has thinned by a metre in a decade."
+   ]
+  }
+ ],
+ "predictions": "Borderline: AUROC may hold while the median fire is close to 0.2.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "article body opener",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probes were uneven: 'They'/'The' after a 'BBC News Online ... correspondent' line 0.35-0.54, other bylines 0.09-0.21, and mid-article sentence openers 0.04-0.07. Sentence-final '.' reaches about 0.15-0.2 in the same text, so the near misses are not silent."
+}
