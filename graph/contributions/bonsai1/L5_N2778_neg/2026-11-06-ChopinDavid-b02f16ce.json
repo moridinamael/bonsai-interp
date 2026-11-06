@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-b02f16ce",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N2778-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T13:39:31+00:00",
+ "recipe": {
+  "toolchain_commit": "95245def6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N2778_neg/2026-11-06-ChopinDavid-b02f16ce.tests.json"
+ },
+ "label": "the vowel-initial second piece of a name the tokenizer splits after a two-letter onset (Ne|ah, Pe|avy, Ke|asha, Se|aton); names kept as one token stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N2778_neg/2026-11-06-ChopinDavid-b02f16ce.tests.json",
+   "prereg_commit": "95245def6",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.047,
+     "peak": "ah"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.642,
+     "peak": "asha"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.193,
+     "peak": "ague"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.485,
+     "peak": "avy"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.141,
+     "peak": "aton"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.372,
+     "peak": "ab"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.015,
+     "peak": "ander"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.015,
+     "peak": "avis"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " travels"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " Mike"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "In"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " harbour"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " Morgan"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.062,
+     "peak": " Leah"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " Sam"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.282,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "95245def6",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "a-piece after two-letter name onset",
+ "unit_kind": "spelling unit",
+ "confidence": 0.45,
+ "notes": "Card: 'ah' dominates (Ne|ah-Kah-Nie, se|ah|orse, Shev|ah, le|ah), with Pe|avy, Ke|asha, Ke|zh. Probe: Ne|ah 1.102, se|ah|orse 0.608, Pe|avy 0.461; but Mic|ah 0.017 and che|et|ah 0.072, so 'ah' after a longer piece is weak and the onset seems to matter; single-token Hannah/Utah 0.005. All fire names checked to split as two-letter onset + a-initial piece.",
+ "selection": "random draw"
+}

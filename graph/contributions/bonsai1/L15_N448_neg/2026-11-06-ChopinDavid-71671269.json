@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-71671269",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N448-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T13:40:39+00:00",
+ "recipe": {
+  "toolchain_commit": "95245def6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N448_neg/2026-11-06-ChopinDavid-71671269.tests.json"
+ },
+ "label": "an interviewer's question or remark addressed to the interviewee as 'you' in a Q&A transcript; the same content told about the interviewee in third person stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N448_neg/2026-11-06-ChopinDavid-71671269.tests.json",
+   "prereg_commit": "95245def6",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.456,
+     "peak": " you"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.565,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.913,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.609,
+     "peak": " about"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.448,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.558,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.923,
+     "peak": "'ve"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.305,
+     "peak": "?"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": " season"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": " started"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.126,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.126,
+     "peak": " set"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.078,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.121,
+     "peak": " said"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.073,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.561,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "95245def6",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "interviewer addressing 'you'",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: ' you'/' have'/' about' in interview turns ('HitFix: You have such...', 'Tell us a little about'). Probe: 'HitFix: You have' 0.962, 'Interviewer: ... you have gone' 0.784, 'Tell us a little about' 0.637, 'Q: When you are writing' 0.429; third-person versions 0.064 and 0.108; 'You have to preheat' 0.125; reported 'that you were coming' 0.400, so second-person address outside interviews also fires and no near miss uses 'you'.",
+ "selection": "random draw"
+}
