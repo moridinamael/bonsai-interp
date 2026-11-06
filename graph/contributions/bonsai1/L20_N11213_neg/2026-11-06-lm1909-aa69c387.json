@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-aa69c387",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N11213-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:26:19+00:00",
+ "recipe": {
+  "toolchain_commit": "54706afd6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N11213_neg/2026-11-06-lm1909-aa69c387.tests.json"
+ },
+ "label": "weak and mixed; best guess: the 'self._attr' accessor inside a Python class body, with plain functions staying quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N11213_neg/2026-11-06-lm1909-aa69c387.tests.json",
+   "prereg_commit": "54706afd6",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.067,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.16,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.099,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.066,
+     "peak": "._"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.13,
+     "peak": "hour"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.146,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.057,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.051,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " total"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.036,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " h"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.036,
+     "peak": " total"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.083,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54706afd6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "self._attr accessor (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: max 11.12 rests on one ' else'; the rest are at most 0.57 of max and very mixed (' is', ' self', 'example', ' in', ' that'). Probe: class with property '._' 0.221, 'transform like' 0.229, 'must be in' 0.054-0.128, nested else 0.072, plain code 0.005. Recorded as a best guess, not a confident label.",
+ "selection": "random draw"
+}

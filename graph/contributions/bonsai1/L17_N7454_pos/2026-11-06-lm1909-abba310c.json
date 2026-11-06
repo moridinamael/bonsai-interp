@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-abba310c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N7454+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:25:48+00:00",
+ "recipe": {
+  "toolchain_commit": "54706afd6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N7454_pos/2026-11-06-lm1909-abba310c.tests.json"
+ },
+ "label": "weak, broad pole, mostly the echo of the strong - pole; best guess: the start of new material after a headword, 'at:' or a date ('(' after a dictionary headword, 'https', a date line)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N7454_pos/2026-11-06-lm1909-abba310c.tests.json",
+   "prereg_commit": "54706afd6",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.304,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.364,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.125,
+     "peak": "example"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.108,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.07,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.347,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.117,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.025,
+     "peak": " Exercise"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.062,
+     "peak": "Photos"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.056,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.063,
+     "peak": " other"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.044,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.081,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " Exercise"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.121,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54706afd6",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "broad weak echo",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags broad (8.6% of tokens >0.1 max) and gate-closed (-x- echo 98%); max only 2.03 against 23.88 on the - pole. Top examples show no single token. Probe: headword ' (' 0.563, URL 0.165, prose 0.054. Test records the density; it is not a claim of meaning.",
+ "selection": "random draw"
+}
