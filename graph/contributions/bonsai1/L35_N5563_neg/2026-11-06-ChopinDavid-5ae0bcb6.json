@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-5ae0bcb6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N5563-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T14:29:22+00:00",
+ "recipe": {
+  "toolchain_commit": "d9c87ec51",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N5563_neg/2026-11-06-ChopinDavid-5ae0bcb6.tests.json"
+ },
+ "label": "unclear; best guess: the lone onset piece ' c' when a word is split as ' c' + remainder (cazar -> ' c'|'azar', cleft -> ' c'|'left', cower -> ' c'|'ower'); words that tokenize as one piece or split after a longer onset stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N5563_neg/2026-11-06-ChopinDavid-5ae0bcb6.tests.json",
+   "prereg_commit": "d9c87ec51",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.349,
+     "peak": " c"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.423,
+     "peak": " c"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.136,
+     "peak": " c"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.263,
+     "peak": " c"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.071,
+     "peak": " c"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.317,
+     "peak": " c"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.002,
+     "peak": " thunder"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.006,
+     "peak": " guards"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.0,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " los"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.06,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " del"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " thunder"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.2,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d9c87ec51",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "lone ' c' onset of a split word",
+ "unit_kind": "spelling unit",
+ "confidence": 0.25,
+ "notes": "Card: ' c'|azar, '/c'|anyoneer, '_c'|data, ' C'|ATCH, '(c'|oro. Probe: 'c azar' 0.441, narrow cleft 0.202; cabaña (' c'|aba) only 0.038 and cuchara 0.032, so the onset alone is not enough; caminar 0.073, CATCH 0.025, canyon (one token) 0.095. Activation is causal on the onset, so the split pattern is a weak guess.",
+ "selection": "random draw"
+}
