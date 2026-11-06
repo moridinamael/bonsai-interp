@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-06-lm1909-3af2eb1b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N4210+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N4210",
+   "pole": "+",
+   "label": "digits and separators of a number inside a parenthesis that restates a value, usually a unit conversion ('1,041 m (3,415 ft)'); the same numbers outside such a parenthesis stay quiet",
+   "fire": [
+    "The summit stands at 2,310 metres (7,579 feet) above sea level.",
+    "The canal runs for 64 kilometres (40 miles) through the plain.",
+    "The highest point is 885 m (2,904 ft) near the border.",
+    "The boots weigh 612 grams (21.6 oz) per pair.",
+    "The lake covers 120 square kilometres (46 square miles) in spring.",
+    "The bridge spans 1,280 meters (4,199 feet) across the strait.",
+    "The tower is 96 m (315 ft) tall at its spire.",
+    "The island lies 340 km (211 mi) east of the coast."
+   ],
+   "quiet": [
+    "The summit stands at 7,579 feet above sea level and is often snowy.",
+    "The canal runs for 40 miles through the plain and past the mill.",
+    "The highest point is 2,904 ft near the border of the park.",
+    "The boots cost 21 dollars per pair and come in two colours.",
+    "The lake holds 46 species of fish and many water birds.",
+    "The bridge carried 4,199 cars on its first day of opening.",
+    "The tower has 315 steps up to its spire.",
+    "The island has 211 residents and one small school."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-1.0, some digit-dependent lows; near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "digits in unit conversion",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: top tokens are digits, ',' and '.', mostly in conversions; the - pole fires on other digits of the same numbers, and the output promotes '7', '6', so some digit dependence is likely. Probe: '(3,415 feet)' 1.067, '(54 miles)' 0.734, '(19.3 oz)' 0.414, '(30.6%)' 0.570, '(15.0 ft)' 0.007; '3,415 feet above' 0.003, '3,415 cars' 0.007."
+}

@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-06-lm1909-3f074fe1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N5675+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N5675",
+   "pole": "+",
+   "label": "the separator between fields of a date, timestamp or identifier ('06.06.2016', '2018-01-01 00:00:00', a doi): structured fields, against the decimal point of the - pole; decimals, ratios and bare clock times stay quiet",
+   "fire": [
+    "The orchid was recorded on 14.05.2019 near the lake.",
+    "The sample was collected on 23.08.2017 by the team.",
+    "The first row reads 2021-03-15 08:30:00 in the file.",
+    "The server logged 2019-11-02 14:05:33 before it crashed.",
+    "The paper has doi:10.1007/s00442.2014.08.021 on its cover.",
+    "Kernel message at 2020-07-09 23:11:47 was lost.",
+    "Opening night is 30.09.2022 at the town hall.",
+    "The next entry, 2017-06-21 19:45:10, shows the restart."
+   ],
+   "quiet": [
+    "The rod measured 4.5 inches when wet.",
+    "The box weighs 2.7 pounds when empty.",
+    "The ratio was 5:2 in favour of the home side.",
+    "Python 3.8 runs fine on this laptop.",
+    "The bus leaves at 11:15 from the square.",
+    "He ran the mile in 4:12 flat.",
+    "Note the following points: cost and weight.",
+    "The orchid was recorded near the lake. It was rare."
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-0.8; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "separator in dates and timestamps",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Distinction: the - pole is '.' x32 as a decimal point ('3.5 hours'); this pole is '.' and ':' between structured fields. Probe: '06.06.2016' 0.751, doi 0.575, full timestamp 0.424; '3.5 inches' 0.049, '3:1' 0.026, 'Linux 2.6' 0.045, '3:41 flat' 0.026, '01:41 PM' 0.027 (so bare clock times do not count, though the card has one such example)."
+}
