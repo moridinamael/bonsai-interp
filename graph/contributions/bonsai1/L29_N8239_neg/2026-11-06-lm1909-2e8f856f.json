@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-2e8f856f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8239-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:27:01+00:00",
+ "recipe": {
+  "toolchain_commit": "3eba96b13",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N8239_neg/2026-11-06-lm1909-2e8f856f.tests.json"
+ },
+ "label": "The next token is a hyphen inside a slug, identifier or hyphen-numbered list, not in prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N8239_neg/2026-11-06-lm1909-2e8f856f.tests.json",
+   "prereg_commit": "3eba96b13",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.586,
+     "peak": "keep"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.338,
+     "peak": "-way"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.522,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.815,
+     "peak": "_set"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.011,
+     "peak": "all"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.193,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.053,
+     "peak": "-app"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.053,
+     "peak": "-md"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " asked"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": "See"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.236,
+     "peak": "order"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " pods"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " well"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "/my"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": "></"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.266,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3eba96b13",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slug or list hyphen coming",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Peaks sit just before the hyphen (attribute|error-, _set-, 4-, -with-) and the output direction on this side promotes '-' tokens. Prose compounds (well-known) stayed quiet in probing, so one near miss tests that.",
+ "selection": "random draw"
+}

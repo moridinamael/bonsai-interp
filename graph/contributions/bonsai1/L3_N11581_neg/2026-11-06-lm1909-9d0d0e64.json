@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-9d0d0e64",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N11581-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:27:10+00:00",
+ "recipe": {
+  "toolchain_commit": "3eba96b13",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N11581_neg/2026-11-06-lm1909-9d0d0e64.tests.json"
+ },
+ "label": "The piece وص in the Arabic word خصوصا (especially)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N11581_neg/2026-11-06-lm1909-9d0d0e64.tests.json",
+   "prereg_commit": "3eba96b13",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.699,
+     "peak": "وص"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.817,
+     "peak": "وص"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.716,
+     "peak": "وص"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.797,
+     "peak": "وص"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.748,
+     "peak": "وص"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.792,
+     "peak": "وص"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.903,
+     "peak": "وص"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.758,
+     "peak": "وص"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "حب"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": "باح"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " والف"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": "طل"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": "صح"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " وال"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "بال"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "رب"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.775,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3eba96b13",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "وص of خصوصا",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "وص is 23 of the top 32 peaks, nearly all خص|وص|ا. Probing: النصوص and whole-token خصوص were much weaker, so the label is limited to this word. Two near misses open on the letters وص as a different word (وصل, وصف).",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "وص"
+  ]
+ }
+}
