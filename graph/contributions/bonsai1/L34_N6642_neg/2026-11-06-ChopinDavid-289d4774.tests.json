@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-289d4774",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N6642-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T22:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N6642",
+   "pole": "-",
+   "label": "the word-start piece ' ex' of a Spanish word split as ' ex'+... (exige, exentos, expropiar, exótico); Spanish ex-words tokenised differently (exp, exhib, extra, existe) stay lower",
+   "fire": [
+    "La nueva ley exige un permiso para cada obra.",
+    "Las cooperativas quedarán exentas del impuesto durante dos años.",
+    "El ministro anunció la expropiación de tres fincas abandonadas.",
+    "Compramos un perfume exótico en un mercado de Marruecos.",
+    "El presupuesto excedía con mucho lo que podíamos pagar.",
+    "Su abuelo vivió exiliado en México durante veinte años.",
+    "La profesora pidió a cada alumno exponer su proyecto.",
+    "El cliente exigió una disculpa por escrito."
+   ],
+   "quiet": [
+    "La nueva ley pide un permiso para cada obra.",
+    "Las cooperativas pagarán menos impuestos durante dos años.",
+    "El ministro anunció una exhibición de arte moderno.",
+    "Compramos un perfume extraño en un mercado de Marruecos.",
+    "El presupuesto superaba con mucho lo que podíamos pagar.",
+    "Su abuelo vivió muchos años en México.",
+    "La profesora pidió a cada alumno explicar su proyecto.",
+    "El cliente quería una respuesta exacta por escrito."
+   ]
+  }
+ ],
+ "predictions": "' ex' pieces 0.5-0.85; near misses below 0.3",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Spanish ' ex' word-start piece",
+ "unit_kind": "token/lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' ex' x11 in Spanish (exige, exentas, exotérico, expropiar, excedía), plus ' el', ' pre', ' del'. Probe: 'exige' 0.537, 'exentos' 0.704, 'expropiar' 0.814, ' el' in 'en el campo' 0.374, 'existe' (one token) 0.174, English 'ex-president' 0.219, 'explain' 0.004. Near misses keep Spanish but use ex-words whose split is not ' ex' (exp, exhib, extra, exact, existe); they contain ' el'/' de' which may leak weakly."
+}

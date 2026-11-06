@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-d8546a78",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N10037-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T22:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N10037",
+   "pole": "-",
+   "label": "the line-start token that opens a closing or 'raises' line in code: the ')' before ENGINE= that closes a SQL CREATE TABLE, and the ' :' or indent opening a ':raises'/':rtype' field after earlier docstring fields; a predictor of 'raises/throws'",
+   "fire": [
+    "CREATE TABLE users (\n    id INT NOT NULL,\n    name VARCHAR(64),\n    PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+    "CREATE TABLE orders (\n    order_id INT,\n    total DECIMAL(10,2),\n    PRIMARY KEY (`order_id`)\n) ENGINE=MyISAM;",
+    "CREATE TABLE tags (\n    tag_id INT,\n    label TEXT COMMENT 'tag text',\n    PRIMARY KEY (`tag_id`)\n) ENGINE=InnoDB;",
+    "CREATE TABLE logs (\n    log_id BIGINT,\n    msg TEXT,\n    PRIMARY KEY (`log_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=latin1;",
+    "def connect(host):\n    \"\"\"Open a connection.\n\n    :param host: the server name\n    :return: a socket\n    :raises OSError: if the host is unreachable\n    \"\"\"",
+    "def load(path):\n    \"\"\"Load settings.\n\n    :param path: the settings file\n    :return: a dict of settings\n    :rtype: dict\n    \"\"\"",
+    "def parse(text):\n    \"\"\"Parse a record.\n\n    :param text: the raw line\n    :raises ValueError: if the line is malformed\n    \"\"\"",
+    "def fetch(url):\n    \"\"\"Download a page.\n\n    :param url: the address\n    :return: the body\n    :rtype: bytes\n    \"\"\""
+   ],
+   "quiet": [
+    "CREATE TABLE users (id INT NOT NULL, name VARCHAR(64), PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+    "SELECT order_id, total\nFROM orders\nWHERE total > 100\nORDER BY total;",
+    "INSERT INTO tags (tag_id, label)\nVALUES (1, 'news'),\n       (2, 'sport');",
+    "UPDATE logs\nSET msg = 'archived'\nWHERE log_id < 500;",
+    "def connect(host):\n    \"\"\"Open a connection to the given host and return a socket.\"\"\"",
+    "def load(path):\n    \"\"\"Load settings.\n\n    :param path: the settings file\n    \"\"\"",
+    "Note: the parser expects the ratio as 4 : 3 and the scale as 1 : 50.",
+    "The fetch function downloads a page and raises an error when the address is wrong."
+   ]
+  }
+ ],
+ "predictions": "SQL closers 0.5-0.9, docstring raises lines 0.25-0.4; near misses below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line-start before ':raises' / SQL ') ENGINE'",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card: top peak ')' closing CREATE TABLE before ENGINE (-143), then ' :' before raises/rtype in docstrings (-64 to -88) and indentation before 'Raises:'; the + pole suppresses throws/thrown. Probe: CREATE TABLE ')' 0.814; docstring ':raises' after :param 0.273, ':rtype' after :return 0.348, Google 'Raises:' 0.180; docstring with only ':param' 0.064; '3 : 2' prose 0.005. A plain indented comment line scored 0.341, so near misses avoid indented code lines after a def where possible."
+}

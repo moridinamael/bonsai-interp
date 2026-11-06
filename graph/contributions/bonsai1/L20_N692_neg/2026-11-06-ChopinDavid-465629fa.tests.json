@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-465629fa",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N692-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T22:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N692",
+   "pole": "-",
+   "label": "unclear: a key or value token inside a literal checked by an assertion in Python test code (assertEqual([\"tags: ...\"]), assert resp.json == {'title': ...})",
+   "fire": [
+    "    def test_filter(self):\n        self.assertEqual(result, [\"tags: -bar\", \"tags: foo\"])",
+    "    def test_create(self):\n        assert resp.json == {'title': 'Draft', 'body': ''}",
+    "    def test_page(self):\n        self.assertIn('http://www.site.org', html)",
+    "    def test_frame(self):\n        expected = DataFrame({'x': [1, None], 'y': [2, 3]})",
+    "    def test_get(self):\n        assert sorted(ids) == sorted(model.keys())",
+    "    def test_update(self):\n        self.assertEqual(obj.data, {'size': 3, 'kind': 'box'})",
+    "    def test_bump(self):\n        assert bump('1.2.3') == '2.0.0'",
+    "    def test_names(self):\n        self.assertEqual(names, ['ann', 'bob'])"
+   ],
+   "quiet": [
+    "    def filter_tags(self):\n        result = [\"tags: -bar\", \"tags: foo\"]",
+    "    def create(self):\n        payload = {'title': 'Draft', 'body': ''}",
+    "    def page(self):\n        url = 'http://www.site.org'",
+    "    def frame(self):\n        data = DataFrame({'x': [1, None], 'y': [2, 3]})",
+    "    def get(self):\n        ids = sorted(model.keys())",
+    "    def update(self):\n        obj.data = {'size': 3, 'kind': 'box'}",
+    "    def bump(self):\n        version = '2.0.0'",
+    "    def names(self):\n        names = ['ann', 'bob']"
+   ]
+  }
+ ],
+ "predictions": "uncertain; probably all below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear: literal inside test assertion",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: peaks on 'tags', 'www', \"':\", 'a' inside literals compared in assertEqual / assert == lines, plus ' were' in 'Earnings per share were'. Probe: every item below 0.05 (assertEqual dict 0.027, assert resp.json 0.020, same dict outside a test 0.026). Best-guess test of the assertion context; expected to fail."
+}
