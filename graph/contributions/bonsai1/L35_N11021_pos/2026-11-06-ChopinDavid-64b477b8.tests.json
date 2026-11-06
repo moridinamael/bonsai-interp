@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-64b477b8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11021+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T23:19:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N11021",
+   "pole": "+",
+   "label": "the module or package name before a dot in multi-line Python code (models.FloatField, tf.reshape, QtCore.QRect, np.mean); local variables, self attributes and the same names in prose stay low",
+   "fire": [
+    "class Book(models.Model):\n    title = models.CharField(max_length=200)\n    pages = models.IntegerField()",
+    "import torch\nw = torch.ones(4, 4)\nz = torch.matmul(w, w)",
+    "button = QtWidgets.QPushButton(self.window)\nbutton.resize(QtCore.QSize(80, 24))",
+    "import pandas as pd\ndf = pd.read_csv('data.csv')\ntotal = pd.concat([df, df])",
+    "import os\npath = os.path.join(root, name)\nif os.path.exists(path):\n    print(path)",
+    "import numpy as np\nm = np.ones((2, 2))\nv = np.linalg.inv(m)",
+    "class Order(models.Model):\n    date = models.DateField()\n    paid = models.BooleanField(default=False)",
+    "import tensorflow as tf\nh = tf.ones([2, 8])\nh = tf.nn.relu(h)"
+   ],
+   "quiet": [
+    "class Book:\n    def __init__(self, title, pages):\n        self.title = title\n        self.pages = pages",
+    "w = 4\nz = w * w\nprint(z)",
+    "count = 0\nfor item in items:\n    count += 1",
+    "total = 0\nfor row in rows:\n    total = total + row[1]",
+    "name = input()\nif name:\n    print(name)",
+    "a = [1, 2, 3]\nb = sorted(a)\nc = len(b)",
+    "def paid(order):\n    return order['paid'] is True",
+    "h = [2, 8]\nh = max(h)\nreturn h"
+   ]
+  }
+ ],
+ "predictions": "module prefixes 0.3-0.8; near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "module name before '.' in Python code",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: peaks on ' models', '(QtCore', ' tf', ' QtWidgets', '.Qt', '.fields', 'validators', 'array_ops'. Probe: Django models.FloatField 0.789, QtCore.QRect 0.649, tf.reshape 0.376, np.mean 0.309; plain arithmetic code 0.013, self attributes 0.010, 'The models in the exhibit' 0.002, 'the QtCore library' in prose 0.011."
+}
