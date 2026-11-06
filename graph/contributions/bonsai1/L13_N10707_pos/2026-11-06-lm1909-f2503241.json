@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-f2503241",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N10707+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:56:00+00:00",
+ "recipe": {
+  "toolchain_commit": "412605334",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N10707_pos/2026-11-06-lm1909-f2503241.tests.json"
+ },
+ "label": "spatial preposition right after a physical-event verb: where a thing was done to something (buried near, hanged beside, shot behind)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N10707_pos/2026-11-06-lm1909-f2503241.tests.json",
+   "prereg_commit": "412605334",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.473,
+     "peak": " beside"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.158,
+     "peak": " jar"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.468,
+     "peak": " near"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.384,
+     "peak": " behind"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.155,
+     "peak": " old"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.472,
+     "peak": " outside"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.479,
+     "peak": " beside"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.284,
+     "peak": " behind"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.3,
+     "peak": " there"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.036,
+     "peak": " spider"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " trait"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": " thief"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.11,
+     "peak": " feast"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.118,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.151,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.426,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "412605334",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "place after event verb",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: beside 0.68, behind 0.61, near 0.52, inside 0.40; static descriptions under 0.04. ' later' reached only 0.07 and ' during' 0.19, so temporal adjuncts are weaker. Near misses keep the verb and swap the place for time, agent or manner.",
+ "selection": "random draw"
+}

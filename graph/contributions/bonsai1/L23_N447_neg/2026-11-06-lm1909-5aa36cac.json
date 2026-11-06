@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-5aa36cac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N447-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:56:23+00:00",
+ "recipe": {
+  "toolchain_commit": "412605334",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N447_neg/2026-11-06-lm1909-5aa36cac.tests.json"
+ },
+ "label": "clause expecting a process to carry on: 'must', 'if' or 'will need' before something ongoing",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N447_neg/2026-11-06-lm1909-5aa36cac.tests.json",
+   "prereg_commit": "412605334",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.032,
+     "peak": " must"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.336,
+     "peak": " falling"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.166,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.463,
+     "peak": " If"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.035,
+     "peak": " drought"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.17,
+     "peak": " goes"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.057,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.232,
+     "peak": " if"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " treaty"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " month"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": "Arch"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " drove"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " half"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " deal"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.168,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "412605334",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "expected continuation",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Logit effect of this pole promotes ' continue', ' further', ' ongoing'. Probes reached only 0.11-0.17 on such clauses against about 0.02 on finished-fact versions, so the 0.20 median is at risk.",
+ "selection": "random draw"
+}
