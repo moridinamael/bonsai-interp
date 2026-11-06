@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-3fd0cb55",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N9089+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T03:19:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N9089",
+   "pole": "+",
+   "label": "the star marker of a variadic parameter (*args, *items) in a Python def signature, as opposed to ordinary named parameters in the same signature",
+   "fire": [
+    "class Logger:\n    def log(self, *messages):\n        for m in messages:\n            print(m)",
+    "def merge(first, *others):\n    result = dict(first)\n    for o in others:\n        result.update(o)\n    return result",
+    "class Shape:\n    def __init__(self, *points):\n        self.points = list(points)",
+    "def call_later(func, *args, **kwargs):\n    queue.append((func, args, kwargs))",
+    "def maximum(*values):\n    return max(values)",
+    "class Router:\n    def add(self, path, *handlers):\n        self.routes[path] = handlers",
+    "def concat(sep, *parts):\n    return sep.join(parts)",
+    "class Mixer:\n    def blend(self, *colors, weight=1.0):\n        return average(colors)"
+   ],
+   "quiet": [
+    "class Logger:\n    def log(self, messages):\n        for m in messages:\n            print(m)",
+    "def merge(first, others):\n    result = dict(first)\n    for o in others:\n        result.update(o)\n    return result",
+    "class Shape:\n    def __init__(self, points):\n        self.points = list(points)",
+    "def call_later(func, delay=0):\n    queue.append((func, delay))",
+    "def maximum(values):\n    return max(values)",
+    "class Router:\n    def add(self, path, handler):\n        self.routes[path] = handler",
+    "def concat(sep, parts):\n    return sep.join(parts)",
+    "class Mixer:\n    def blend(self, colors, weight=1.0):\n        return average(colors)"
+   ]
+  }
+ ],
+ "predictions": "def signatures with a starred parameter 0.25-0.45; the same defs with plain parameters below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "*args star in a def signature",
+ "unit_kind": "token",
+ "confidence": 0.45,
+ "notes": "Card: ' *' x9 in def __init__(self, *args, **kwargs), ' (' x11 in 'for i, (a, b)' unpacking, one docstring 'Given an integer'. Probe: 'def wrap(self, *items)' 0.389, 'def run(cmd, *args' 0.369; tuple unpacking 'for i, (key, value)' only 0.117-0.191; docstring 'Given a radius' 0.277 (peak ' a'); plain 'for key, value in' 0.017. Tested on the star, the strongest replicable configuration."
+}

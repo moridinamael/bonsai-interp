@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-5faa2e9d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N4371-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T03:19:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N4371",
+   "pole": "-",
+   "label": "the hyphen-attached opening piece of a split word inside a compound modifier (-con|tract, -fe|ver, -br|anded, -del|ivered), as opposed to the same modifiers written without a hyphen compound",
+   "fire": [
+    "The engineers built a space-constrained version of the pump.",
+    "Each record in the file is a comma-delimited list of fields.",
+    "The chef keeps a store-branded olive oil for everyday cooking.",
+    "Mosquitoes spread yellow-fever outbreaks in the colonial ports.",
+    "She bought a stiff-bristled brush to scrub the patio.",
+    "The firm switched to completed-contract reporting last year.",
+    "Bring a white-feathered hat for the costume parade.",
+    "Our hotel offered a room-delivered breakfast every morning."
+   ],
+   "quiet": [
+    "The engineers built a smaller version of the pump for tight spaces.",
+    "Each record in the file is a list of fields with commas between them.",
+    "The chef keeps a cheap olive oil from the store for everyday cooking.",
+    "Mosquitoes spread outbreaks of fever in the colonial ports.",
+    "She bought a stiff brush to scrub the patio.",
+    "The firm switched to reporting each contract when it finished.",
+    "Bring a white hat with feathers for the costume parade.",
+    "Our hotel brought breakfast to the room every morning."
+   ]
+  }
+ ],
+ "predictions": "hyphenated compounds whose second word splits as '-xx'+rest 0.4-0.75; unhyphenated paraphrases below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "hyphen + opening piece of split compound word",
+ "unit_kind": "token",
+ "confidence": 0.55,
+ "notes": "Card: '-f' x3, '-b' x2, '-con', '-del', '-br', '-m', '-fe' in completed-contract, TV-delivered, Kirkland-branded, full-bore, yellow-fever. Probe: completed-contract 0.758, yellow-fever 0.519, Kirkland-branded 0.406; one-letter '-f'/'-s' pieces weaker (honey-dipped/sun-fried 0.107, locally-sourced 0.157); unhyphenated paraphrases 0.016-0.036. Tokenizer: '-con|strained', '-del|imited', '-br|acketed', '-fe|athered', '-br|istled', '-del|uxe', '-de|pleted'."
+}

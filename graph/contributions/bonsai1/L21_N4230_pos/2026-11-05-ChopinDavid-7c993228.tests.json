@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-7c993228",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N4230+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T03:19:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N4230",
+   "pole": "+",
+   "label": "the '=' that opens a numerical expression assigned in code (x1 = sin(...), rho = mass / volume), as opposed to the same formulas written in prose",
+   "fire": [
+    "import math\n\nlat = 0.5\nlon = 1.2\nz1 = math.cos(lat) * math.sin(lon)",
+    "def kinetic(m, v):\n    energy = 0.5 * m * v ** 2\n    return energy",
+    "    dx = x2 - x1\n    dy = y2 - y1\n    dist = math.sqrt(dx * dx + dy * dy)",
+    "rho = mass / volume\nprint(rho)",
+    "    theta = math.atan2(dy, dx)\n    r = math.hypot(dx, dy)",
+    "def area(r):\n    a = math.pi * r ** 2\n    return a",
+    "for t in times:\n    y = amplitude * math.sin(omega * t + phase)\n    ys.append(y)",
+    "    shear = young / (2.0 * (1.0 + poisson))\n    return shear"
+   ],
+   "quiet": [
+    "To find the third coordinate, multiply the cosine of the latitude by the sine of the longitude.",
+    "Kinetic energy is one half of the mass times the square of the velocity.",
+    "The distance is the square root of the sum of the squared differences.",
+    "Density is simply the mass divided by the volume of the sample.",
+    "The angle comes from the arctangent of the rise over the run.",
+    "The area of a circle is pi times the radius squared.",
+    "The height of the wave follows a sine curve over time.",
+    "The shear modulus depends on Young's modulus and Poisson's ratio."
+   ]
+  }
+ ],
+ "predictions": "math assignments in code 0.25-0.45 on ' ='; the same formulas described in prose below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'=' opening a math assignment in code",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: code value openers: ' >>>', ' \"', '=' in 'y1 = sin(...)', \"('\" in mock.patch, '\\\\' in registry paths. Probe: 'x1 = sin(lat) * cos(lon)' 0.448, \"@mock.patch('\" 0.238; string assignment 'name = \"object...\"' 0.058, doctest 0.044, unquoted 'name = object' 0.004, prose 0.003-0.017. Tested on math assignments, the strongest configuration."
+}
