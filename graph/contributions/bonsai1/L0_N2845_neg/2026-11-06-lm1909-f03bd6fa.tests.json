@@ -1,0 +1,52 @@
+{
+ "contribution": "2026-11-06-lm1909-f03bd6fa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N2845-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:44:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N2845",
+   "pole": "-",
+   "label": "the newline token ending an unpunctuated source, credit or date line",
+   "fire": [
+    "Diario Regional nº 45 (Enero-Febrero 2015)\n2015-01-10\nFUENTE: ELNORTE.COM\nLos pescadores protestan en el puerto",
+    "Credit: AP Video Duration: 03:21 Published\nMiners marched through the capital on Monday",
+    "Bridge plan approved by county: Morning Herald\n- Old mill turned into flats: Morning Herald\n- School wins science prize",
+    "Source: BBC News Updated: 14:05 Posted\nVoters queued early at polling stations",
+    "FUENTE: RADIOSUR.COM\nEl alcalde inauguró la nueva plaza del pueblo",
+    "Ancient tomb opened in Cairo: The Guardian\n- New species of frog found: The Guardian\n- Dam repairs begin",
+    "Courtesy: Getty Images Length: 00:58 Uploaded\nFirefighters rescued a horse from a canal",
+    "Boletín Cultural nº 7 (Mayo 2018)\n2018-04-22\nAgenda de la semana\nConciertos en el teatro"
+   ],
+   "quiet": [
+    "Diario Regional (enero de 2015) informa de que los pescadores protestan en el puerto.",
+    "The video from AP shows miners who marched through the capital on Monday.",
+    "The county approved the bridge plan, the old mill became flats, and a school won a science prize.",
+    "According to BBC News, voters queued early at polling stations this morning.",
+    "Según Radio Sur, el alcalde inauguró la nueva plaza del pueblo.",
+    "An ancient tomb was opened in Cairo and a new species of frog was found.",
+    "Photos from Getty Images show firefighters who rescued a horse from a canal.",
+    "El Boletín Cultural de mayo de 2018 anuncia conciertos en el teatro de la ciudad."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "newline after a source line",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: newline tokens fill all of the top 32; the card flags it broad. Probes: 0.33-0.40 after source and credit lines, but only 0.06-0.11 after plain short lines, so the newline alone is not enough.",
+ "trigger": {
+  "tokens": [
+   "\n"
+  ]
+ }
+}
