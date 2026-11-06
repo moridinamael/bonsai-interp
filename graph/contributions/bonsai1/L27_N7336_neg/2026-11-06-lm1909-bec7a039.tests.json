@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-bec7a039",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N7336-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:08:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N7336",
+   "pole": "-",
+   "label": "a chemical or isotope token just before the hyphen of a technical compound name (14C-, COOH-), where a hyphen is expected next",
+   "fire": [
+    "Subjects received a single dose of 14C-labelled caffeine by mouth.",
+    "Self-assembled films with COOH-terminated chains were grown on silver.",
+    "The tracer 13C-acetate was infused over a period of two hours.",
+    "Binding was measured on COOH-functionalised beads in a salt buffer.",
+    "Rats were fed 14C-glucose and their breath was then sampled.",
+    "A solution of 13C-enriched urea was added to each of the wells.",
+    "The team coated the plate with a COOH-rich polymer before washing.",
+    "Liver uptake of 14C-acetate was far higher in the treated group."
+   ],
+   "quiet": [
+    "Subjects received a single dose of plain caffeine by mouth.",
+    "Self-assembled films with long carbon chains were grown on silver.",
+    "The tracer was infused slowly over a period of two hours.",
+    "Binding was measured on coated plastic beads in a salt buffer.",
+    "Rats were fed ordinary glucose and their breath was then sampled.",
+    "A solution of purified urea was added to each of the wells.",
+    "The team coated the plate with a thin polymer before washing.",
+    "Liver uptake of the tracer was far higher in the treated group."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "token before a technical hyphen",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Output direction: the + pole suppresses hyphen tokens, so this pole promotes them. Also fires on ' York' in 'New York at ...' and on code namespaces like 'members:', which this label leaves out. Fe-S and C-terminal did not fire."
+}
