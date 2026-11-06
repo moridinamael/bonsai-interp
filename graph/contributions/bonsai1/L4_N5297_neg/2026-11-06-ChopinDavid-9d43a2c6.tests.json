@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-9d43a2c6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N5297-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T23:19:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N5297",
+   "pole": "-",
+   "label": "a word-final piece of a verb split by the tokenizer ('dis|eng|aged', 'ret|ires', 'eng|ag|ées'); a weak, broad pole; whole-token verbs stay lower",
+   "fire": [
+    "After the ceasefire, the battalion slowly disengaged from the border towns.",
+    "Every spring the electrician rewires the old barn for the fair.",
+    "The young pianist admires her teacher more than anyone else.",
+    "Les bénévoles se sont engagés à nettoyer la plage chaque mois.",
+    "Once the clutch disengages, the wheels spin freely downhill.",
+    "My neighbour rewires lamps he finds at the flea market.",
+    "The critic openly admires the novel's quiet ending.",
+    "Les deux pays se sont engagés à réduire leurs émissions."
+   ],
+   "quiet": [
+    "After the ceasefire, the battalion slowly moved away from the border towns.",
+    "Every spring the electrician checks the old barn for the fair.",
+    "The young pianist likes her teacher more than anyone else.",
+    "Les bénévoles nettoient la plage chaque mois depuis des années.",
+    "Once the clutch is released, the wheels spin freely downhill.",
+    "My neighbour fixes lamps he finds at the flea market.",
+    "The critic openly praised the novel's quiet ending.",
+    "Les deux pays veulent réduire leurs émissions."
+   ]
+  }
+ ],
+ "predictions": "split-verb endings 0.3-0.6; whole-token near misses below 0.25 (broad pole, some leak expected)",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "word-final piece of split verb",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: max only 1.55, broad (4.7% of tokens above 0.1 max), gate-closed regime; peaks on 'aged' (disengaged), 'ag' (engagées), 'ires' (retires), 'icious', 'iant'. Probe: 'disengaged' 0.652, 'retires' 0.441, ' delicious' 0.380, 'engagées' 0.358; but 'look good' leaked 0.244, 'repairs' 0.145. Tokenizer: ' admires' -> ' adm','ires'; ' rewires' -> ' rew','ires'; ' requires', ' engaged', ' retired' are whole tokens."
+}
