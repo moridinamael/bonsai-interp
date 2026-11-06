@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-8abfa4a6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N633-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T04:26:49+00:00",
+ "recipe": {
+  "toolchain_commit": "9995da426",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N633_neg/2026-11-05-ChopinDavid-8abfa4a6.tests.json"
+ },
+ "label": "the token ' Sand' as the opening piece of a longer proper name split by the tokenizer (Sand|ro, Sand|erson, Sand|berg), as opposed to names that are single tokens or the common noun sand",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N633_neg/2026-11-05-ChopinDavid-8abfa4a6.tests.json",
+   "prereg_commit": "9995da426",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.795,
+     "peak": " Sand"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.904,
+     "peak": " Sand"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.74,
+     "peak": " Sand"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.891,
+     "peak": " Sand"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.725,
+     "peak": " Sand"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.82,
+     "peak": " Sand"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.701,
+     "peak": " Sand"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.867,
+     "peak": " Sand"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " Anderson"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " Professor"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " Sanders"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " Sanchez"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " spent"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.421,
+     "peak": " Sandra"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " Johnson"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.807,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9995da426",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "' Sand' opening a split name",
+ "unit_kind": "token",
+ "confidence": 0.65,
+ "notes": "Card: ' Sand' x19 + 'Sand' x3, all name-initial pieces (Sandro, Sanderson, Sandhill, Sandburg); 'Nic' x4 secondary. Probe: Sandro 0.951, Sanderson 0.959, Sandburg 0.680, Sandhill 0.667; Henderson 0.002; the noun 'sand' 0.252; 'nicely' 0.054. Splits checked: Sandberg, Sandell, Sandwell, Sandino, Sandringham split after ' Sand'; Sanders, Sandra, Sanchez, Anderson are single tokens.",
+ "selection": "random draw"
+}
