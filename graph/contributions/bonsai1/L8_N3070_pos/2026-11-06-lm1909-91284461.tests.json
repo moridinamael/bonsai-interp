@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-91284461",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N3070+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N3070",
+   "pole": "+",
+   "label": "the decimal point after a leading 0 inside a bracketed list of numbers in code ('[0.5, 1]')",
+   "fire": [
+    "weights = [0.2, 0.8, 0.5]",
+    "self.setAnchor([0.5, 0], [0.5, 1])",
+    "color = (0.3, 0.6, 0.9)",
+    "self.addHandle([0.25, 1], [0.75, 0])",
+    "probs = np.array([0.4, 0.4, 0.2])",
+    "view.setRange([0.1, 0.7], [0.2, 0.6])",
+    "rules = ('FORWARD', '-d 0.0.0.0/0 -j DROP')",
+    "scale = [0.9, 1.1, 0.9]"
+   ],
+   "quiet": [
+    "weights = [2, 8, 5]",
+    "self.setAnchor([5, 0], [5, 1])",
+    "color = (30, 60, 90)",
+    "self.addHandle([25, 1], [75, 0])",
+    "probs = np.array([4, 4, 2])",
+    "view.setRange([1, 7], [2, 6])",
+    "rules = ('FORWARD', '-d eth0 -j DROP')",
+    "scale = width / height"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "'0.' in code lists",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Probes: '[0.1, 0.9, 0.3]' 0.67, '[0.5, 1]' 0.45, '-s 0.0.0.0/0' 0.80; a bare 'margin = 0.75' 0.01, prose decimals 0.004, integer lists 0.03."
+}
