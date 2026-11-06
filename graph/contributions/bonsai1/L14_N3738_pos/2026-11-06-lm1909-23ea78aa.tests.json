@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-23ea78aa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3738+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:41+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N3738",
+   "pole": "+",
+   "label": "The opening of a string that holds code or a shell command to be executed (run('...'), eval(\"...\"), -c \"...\")",
+   "fire": [
+    "def clean():\n    run('rm -rf build')\n    local('git status')\n",
+    "You can launch it from a terminal with:\npython -c \"print(1)\"\n",
+    "js = browser.execute_script(\"return document.body\")\n",
+    "def setup():\n    sudo('apt-get update')\n    run('service nginx restart')\n",
+    "version = root.tk.eval('info tclversion')\n",
+    "At the prompt, type this line:\nnvim -c \"PlugInstall\" -c \"qa\"\n",
+    "result = page.evaluate(\"window.innerWidth\")\n",
+    "with settings(warn_only=True):\n    local('tar xzf site.tgz')\n"
+   ],
+   "quiet": [
+    "def clean():\n    print('removing build')\n    log('git status')\n",
+    "You can read the manual in a terminal with:\npython --help\n",
+    "title = browser.get_title(\"main\")\n",
+    "def setup():\n    print('apt-get update')\n    notify('service restarted')\n",
+    "version = config.get('tclversion')\n",
+    "At the prompt, type your name and press Enter:\nlogin: anna\n",
+    "width = settings.get(\"window.innerWidth\")\n",
+    "with open('site.txt') as fh:\n    data = fh.read()\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "opening of executed-code string",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "The same '(' + quote token stays quiet for print() and open(), so the distinction is whether the string will be executed."
+}

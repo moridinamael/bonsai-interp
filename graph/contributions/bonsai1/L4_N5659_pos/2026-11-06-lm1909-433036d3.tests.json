@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-433036d3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N5659+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:41+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N5659",
+   "pole": "+",
+   "label": "Best guess: the first piece of a word the tokenizer splits (' enf', ' Gesch', ' disb'), in a dense echo regime",
+   "fire": [
+    "Mein Onkel führt seit Jahren ein kleines Geschäft am Markt.",
+    "Cet enfant joue dans le jardin de sa tante.",
+    "Die Geschichte der alten Burg ist sehr lang.",
+    "La chambre des enfants donne sur la cour.",
+    "Funds will be disbursed to the schools next month.",
+    "Der Geschäftsführer sprach lange mit den Gästen.",
+    "Les enfants chantent une chanson à la fête.",
+    "The grant money was disbursed by the county in June."
+   ],
+   "quiet": [
+    "Mein Onkel wohnt seit Jahren in einem Dorf am Meer.",
+    "Cette fille joue dans le jardin de sa tante.",
+    "Die Mauer der alten Burg ist sehr hoch.",
+    "La chambre des parents donne sur la cour.",
+    "Funds will be sent to the schools next month.",
+    "Der Bürgermeister sprach lange mit den Gästen.",
+    "Les voisins chantent une chanson à la fête.",
+    "The grant money was spent by the county in June."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "split-word first piece, dense",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags dense: 17.5% of tokens reach 0.1 of max, and all of the regime is gate-closed echo. Whole words such as ' groß' also fired in probing, so this test records the density and may well fail."
+}
