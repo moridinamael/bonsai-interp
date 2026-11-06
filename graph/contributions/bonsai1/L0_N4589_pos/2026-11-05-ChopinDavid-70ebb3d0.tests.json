@@ -1,0 +1,55 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-70ebb3d0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N4589+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T03:19:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N4589",
+   "pole": "+",
+   "label": "a small set of individual tokens: the piece 'HC' (MHC, SVHC), the piece 'Pas' (Pasadena, Pascal) and the word ' good', as opposed to the same sentences without them (a layer-0 token detector, weak and broad)",
+   "fire": [
+    "T cells recognise peptides bound to MHC molecules on other cells.",
+    "My cousin studies how MHC genes shape the immune response.",
+    "Regular walks are good for older dogs and their owners.",
+    "The supplier must report any SVHC above the legal threshold.",
+    "The rose parade in our town draws a good crowd every January.",
+    "Soup on a cold night is always good for the soul.",
+    "Genes in the MHC region vary widely between people.",
+    "Fresh bread from that bakery is really good with butter."
+   ],
+   "quiet": [
+    "T cells recognise peptides bound to proteins on other cells.",
+    "My cousin studies how certain genes shape the immune response.",
+    "Regular walks are healthy for older dogs and their owners.",
+    "The supplier must report any toxin above the legal threshold.",
+    "The rose parade in our town draws a large crowd every January.",
+    "Soup on a cold night always warms the soul.",
+    "Genes in this region vary widely between people.",
+    "Fresh bread from that bakery is lovely with butter."
+   ]
+  }
+ ],
+ "predictions": "sentences containing 'HC', 'Pas' or ' good' 0.5-0.6; the same sentences without them below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "tokens 'HC', 'Pas', ' good'",
+ "unit_kind": "token",
+ "confidence": 0.4,
+ "notes": "Card FLAG broad: max 0.44, 1.9% of tokens reach 0.1 of max; peak tokens 'HC' x8, 'pc' x4, ' good' x4, 'Pas' x3. Fire items use 'HC' and ' good' only, because ' Pasadena' mid-sentence is one whole token. Probe: ' good' 0.604, 'HC' (self-MHC) 0.584, 'HC' (SVHC) 0.556, 'Pas' (Pasadena) 0.529; ' cell' 0.092, ' npc' 0.025; baseline sentences 0.013-0.107.",
+ "trigger": {
+  "words": [
+   "HC",
+   "Pas",
+   " good"
+  ]
+ }
+}

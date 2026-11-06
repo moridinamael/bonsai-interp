@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-ca0928b0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N11137+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T03:19:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N11137",
+   "pole": "+",
+   "label": "the word-initial piece ' s' when the tokenizer splits an s-word into ' s' + rest (s|ponges, s|putum, s|ultanate, s|ardines): a spelling unit, as opposed to s-words that are whole tokens or split differently",
+   "fire": [
+    "Fresh sardines were grilled over charcoal on the beach.",
+    "The vet sent a sample of sputum from the sick horse to the lab.",
+    "An old sultan built the palace beside the harbour.",
+    "Several sponges were growing on the sunken ship's hull.",
+    "The painter worked in the shade of a wide sycamore by the lake.",
+    "Back pain from spondylolisthesis can make walking hard.",
+    "In the cave, sponges and small crabs covered the rocks.",
+    "Grandma packed sardines, bread and olives for the trip."
+   ],
+   "quiet": [
+    "Fresh squid was grilled over charcoal on the beach.",
+    "The vet sent a sample of blood from the sick horse to the lab.",
+    "An old king built the palace beside the harbour.",
+    "Several barnacles were growing on the sunken ship's hull.",
+    "The painter worked in the shade of a wide oak by the lake.",
+    "Back pain from arthritis can make walking hard.",
+    "In the cave, mussels and small crabs covered the rocks.",
+    "Grandma packed sushi, bread and olives for the trip."
+   ]
+  }
+ ],
+ "predictions": "sentences with an ' s'+rest split word 0.6-0.9; the same sentences with a whole-token word below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off word-initial ' s' piece",
+ "unit_kind": "token",
+ "confidence": 0.75,
+ "notes": "Card: ' s' x32, all as the first piece of a split word (sultanate, sputum, sponges, sump, sarpullido). Probe: sputum 0.909, sardines 0.906, sponges 0.838, sycamore 0.745, sultanate 0.662; whole-token 'sushi' 0.013, 'blood' 0.001, 'corals' 0.008. Tokenizer: ' sultan', ' sardines', ' sycamore', ' sputum', ' sponges', ' spondylolisthesis', ' sphenophylla' split as ' s'+rest; ' squid', ' sushi', ' syrup', ' sesame', ' sauna' are whole tokens."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-f8b1d5c3",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8416-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T03:19:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N8416",
+   "pole": "-",
+   "label": "the near-certain completion token of a fixed frame: 'self' right after 'def method(', 'age' in 'at the age of', 'hand' in 'on the other hand', as opposed to the same words outside the fixed frame",
+   "fire": [
+    "class Timer:\n    def start(self, label):\n        self.label = label",
+    "Her grandfather learned to swim at the age of seventy.",
+    "class Queue:\n    def push(self, value):\n        self.data.append(value)",
+    "The composer wrote his first symphony at the age of twelve.",
+    "class Door:\n    def open(self, force=False):\n        self.is_open = True",
+    "My aunt retired from teaching at the age of sixty-two.",
+    "class Account:\n    def deposit(self, amount):\n        self.balance += amount",
+    "The poet published a final collection at the age of eighty."
+   ],
+   "quiet": [
+    "def start(timer, label):\n    timer.label = label\n    return timer",
+    "Her grandfather never told anyone his real age.",
+    "def push(queue, value):\n    queue.data.append(value)\n    return queue",
+    "The composer wrote his first symphony while still at school.",
+    "self_check = True\nprint('running self tests')",
+    "My aunt retired from teaching after a long career.",
+    "def deposit(account, amount):\n    account.balance += amount",
+    "The poet published a final collection in her old house."
+   ]
+  }
+ ],
+ "predictions": "fixed-frame completions 0.12-0.25; the same words outside the frame below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "completion of a fixed frame (def m(self, at the age)",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card: 'self' x4 and '(self' x3 after def, ' age' x4 in 'at the age of', 'other hand', 'labour, capital, and'. Probe weak: 'at the age of 94' 0.217, 'def add(self' 0.160, Oxford comma list 0.122, 'other hand' 0.058; 'his age' 0.004, 'def add(cart' 0.006, def __len__ peak elsewhere 0.002. A weak, mixed pole; tested on self-in-def and at-the-age-of."
+}

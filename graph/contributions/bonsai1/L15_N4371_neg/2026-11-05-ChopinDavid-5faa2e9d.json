@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-5faa2e9d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N4371-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T03:28:35+00:00",
+ "recipe": {
+  "toolchain_commit": "87cfece86",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N4371_neg/2026-11-05-ChopinDavid-5faa2e9d.tests.json"
+ },
+ "label": "the hyphen-attached opening piece of a split word inside a compound modifier (-con|tract, -fe|ver, -br|anded, -del|ivered), as opposed to the same modifiers written without a hyphen compound",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N4371_neg/2026-11-05-ChopinDavid-5faa2e9d.tests.json",
+   "prereg_commit": "87cfece86",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.137,
+     "peak": " space"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.259,
+     "peak": "-del"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.058,
+     "peak": " oil"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.244,
+     "peak": "-fe"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.351,
+     "peak": "-br"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.791,
+     "peak": "-con"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.329,
+     "peak": "-fe"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.213,
+     "peak": "-del"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " spaces"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " record"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.032,
+     "peak": " brush"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " reporting"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " hat"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " room"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.252,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "87cfece86",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "hyphen + opening piece of split compound word",
+ "unit_kind": "token",
+ "confidence": 0.55,
+ "notes": "Card: '-f' x3, '-b' x2, '-con', '-del', '-br', '-m', '-fe' in completed-contract, TV-delivered, Kirkland-branded, full-bore, yellow-fever. Probe: completed-contract 0.758, yellow-fever 0.519, Kirkland-branded 0.406; one-letter '-f'/'-s' pieces weaker (honey-dipped/sun-fried 0.107, locally-sourced 0.157); unhyphenated paraphrases 0.016-0.036. Tokenizer: '-con|strained', '-del|imited', '-br|acketed', '-fe|athered', '-br|istled', '-del|uxe', '-de|pleted'.",
+ "selection": "random draw"
+}

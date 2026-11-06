@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-05-ChopinDavid-c3658011",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N10431-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-06T03:27:57+00:00",
+ "recipe": {
+  "toolchain_commit": "87cfece86",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N10431_neg/2026-11-05-ChopinDavid-c3658011.tests.json"
+ },
+ "label": "the split-off initial consonant piece (' K', ' X') of a romanized Vietnamese or Chinese given name (K|iet, X|uyen, X|iang), as opposed to Western names in the same sentence",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N10431_neg/2026-11-05-ChopinDavid-c3658011.tests.json",
+   "prereg_commit": "87cfece86",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.201,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.017,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.833,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.009,
+     "peak": " paper"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.561,
+     "peak": " X"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.068,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.059,
+     "peak": " class"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.948,
+     "peak": " K"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " Thomas"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.048,
+     "peak": " Anna"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " Peter"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " boat"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.697,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "87cfece86",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "initial piece of romanized Vietnamese/Chinese given name",
+ "unit_kind": "token",
+ "confidence": 0.5,
+ "notes": "Card: ' K' x6, 'ō' x3, '（' x2 inside East Asian names (Nguyễn Đăng K|ỉnh, Lau Ai X|uan, Min K|young). Probe: 'Nguyễn Đăng Khoa' 0.941 (peak ' K'), 'Lau Ai Xuan' 0.727 (' X'); Japanese reading paren 0.217, 'Kim Young Soo' 0.197, 'Minamoto' 0.223; Western names 0.005-0.013. Tokenizer: ' Kiet', ' Kieu', ' Kha', ' Xuyen', ' Xiang', ' Xue', ' Xinyi' split as ' K'/' X' + rest.",
+ "selection": "random draw"
+}
