@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-acdcb13f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N9404+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T04:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N9404",
+   "pole": "+",
+   "label": "multiplication and trigonometric products in numeric code (a * b, sin(x) * cos(y), repeated doubling), as opposed to the same code shapes using addition, strings or printing",
+   "fire": [
+    "def area(r):\n    return 3.14159 * r * r",
+    "    # Multiply each weight by the rate\n    for i in range(n):\n        w[i] = w[i] * rate",
+    "z = r * cos(theta)\nx = r * sin(theta) * cos(phi)",
+    "    dx = speed * np.cos(angle)\n    dy = speed * np.sin(angle)",
+    "def power(b, e):\n    result = 1\n    for _ in range(e):\n        result = result * b\n    return result",
+    "    while n < limit:\n        n = n * 3\n        steps += 1",
+    "grad = 2 * np.cos(x) * np.sin(x) * dx",
+    "    volume = length * width * height\n    mass = volume * density"
+   ],
+   "quiet": [
+    "def label(name):\n    return \"Hello, \" + name + \"!\"",
+    "    # Add each weight to the total\n    for i in range(n):\n        total = total + w[i]",
+    "name = first + \" \" + last\ntitle = name.upper()",
+    "    print(\"angle:\", angle)\n    print(\"speed:\", speed)",
+    "def join(parts):\n    out = \"\"\n    for p in parts:\n        out = out + p\n    return out",
+    "    while n < limit:\n        n = n + 3\n        steps += 1",
+    "items = sorted(items, key=len)\nitems.reverse()",
+    "    path = folder + \"/\" + filename\n    log.info(path)"
+   ]
+  }
+ ],
+ "predictions": "code with * products or cos/sin 0.3-0.8; matched code with + or string ops below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "multiplication/trig in code",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: max 7.44, gate-closed regime 73% (weak positive side); peaks on ' Multiply' comment, 'cos' x5, '* 2', indentation inside arithmetic loops. Probe: '# Multiply N' loop 0.825 (peak indentation), np.sin*np.cos 0.613, sin*cos 0.371, 's = s * 2' 0.163; addition/string concat 0.037, print 0.042, prose 'same size' 0.020."
+}

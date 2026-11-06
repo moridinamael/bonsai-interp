@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-05-ChopinDavid-ad76dfb7",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1028+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T04:19:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N1028",
+   "pole": "+",
+   "label": "Sphinx/reStructuredText field and role markup inside a Python docstring (:param x:, :return:, :class:`X`, :meth:`y`), at the indentation or word before the colon-role, as opposed to the same docstrings written without role markup",
+   "fire": [
+    "def save(obj, path):\n    \"\"\"Save an object.\n\n    :param obj: the object to save\n    :param path: where to write it\n    :returns: the number of bytes written\n    \"\"\"",
+    "class Shape:\n    \"\"\"A shape. Subclasses like :class:`Circle` and\n    :class:`Square` add their own fields.\n    \"\"\"",
+    "def connect(host, port):\n    \"\"\"Open a connection.\n\n    :param host: server name\n    :param port: server port\n    :raises ConnectionError: if it fails\n    \"\"\"",
+    "class Cache:\n    def clear(self):\n        \"\"\"Empty the cache. See also :meth:`get` and\n        :meth:`put` for access.\n        \"\"\"",
+    "def parse(text):\n    \"\"\"Parse the text.\n\n    :param text: input string\n    :type text: str\n    :rtype: list\n    \"\"\"",
+    "class Player:\n    \"\"\"Wraps a :class:`Track` list.\n\n    :ivar tracks: the queued tracks\n    \"\"\"",
+    "def resize(img, w, h):\n    \"\"\"Resize an image.\n\n    :param img: a :class:`Image`\n    :param w: new width\n    :param h: new height\n    \"\"\"",
+    "def find(key):\n    \"\"\"Look up a key.\n\n    :param key: the lookup key\n    :return: the value or None\n    \"\"\""
+   ],
+   "quiet": [
+    "def save(obj, path):\n    \"\"\"Save an object.\n\n    Args:\n        obj: the object to save\n        path: where to write it\n    \"\"\"",
+    "class Shape:\n    \"\"\"A shape. Subclasses like Circle and\n    Square add their own fields.\n    \"\"\"",
+    "def connect(host, port):\n    \"\"\"Open a connection to host on port.\n\n    Raises ConnectionError if it fails.\n    \"\"\"",
+    "class Cache:\n    def clear(self):\n        \"\"\"Empty the cache. See also get and\n        put for access.\n        \"\"\"",
+    "def parse(text):\n    # Parse the input string into a list.\n    return text.split()",
+    "class Player:\n    \"\"\"Wraps a list of tracks.\n\n    The queued tracks live in self.tracks.\n    \"\"\"",
+    "def resize(img, w, h):\n    \"\"\"Resize an image to the new width and height.\"\"\"\n    return img.scale(w, h)",
+    "def find(key):\n    \"\"\"Look up a key and return the value or None.\"\"\"\n    return table.get(key)"
+   ]
+  }
+ ],
+ "predictions": "docstrings with :param/:class:/:meth: roles 0.3-0.9; plain-prose or Google-style docstrings below 0.12",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "reST roles in docstrings",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: peaks on indentation '   ' x8 before ':param'/':class:'/':meth:', and ' or'/' of' before ':class:'. Probe: :param docstring 0.526, two :class: lines 0.869, ':meth:`run` and :meth:' 0.369, ':nodes or :relationships' 0.325; same docstring without roles 0.106, comment version 0.003."
+}
