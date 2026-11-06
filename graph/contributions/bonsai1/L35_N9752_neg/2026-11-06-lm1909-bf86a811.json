@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-bf86a811",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9752-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:16:32+00:00",
+ "recipe": {
+  "toolchain_commit": "b4625a99e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N9752_neg/2026-11-06-lm1909-bf86a811.tests.json"
+ },
+ "label": "a word-opening O or T sound in a capitalised name, across scripts: Т/О in Cyrillic, 토/오 in Hangul, .O in code",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N9752_neg/2026-11-06-lm1909-bf86a811.tests.json",
+   "prereg_commit": "b4625a99e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.634,
+     "peak": "Т"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.66,
+     "peak": "Т"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.454,
+     "peak": " Т"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.417,
+     "peak": "О"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.319,
+     "peak": " 오�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.46,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.624,
+     "peak": ".O"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.525,
+     "peak": ".O"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.098,
+     "peak": "Д"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.254,
+     "peak": "О"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.254,
+     "peak": "О"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.12,
+     "peak": "С"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": "드"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.403,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": "(key"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": ".Basic"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.493,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b4625a99e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "name-opening O/T",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Same-position names with another initial letter are the near misses. '.T' and 'OPATH' were weak in probes, so the code part may be limited to OAuth.",
+ "selection": "random draw"
+}
