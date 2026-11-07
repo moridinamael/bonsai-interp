@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-902d9081",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9368+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T06:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N9368",
+   "pole": "+",
+   "label": "a word-initial ' g' / ' G' that the tokenizer splits off as its own piece (g|anging, g|rotto, G|UILTY, g|awk); g-words that are single tokens stay quiet",
+   "fire": [
+    "Critics argued that the big chains were ganging up on local shops.",
+    "The verdict read GUILTY, and the courtroom went silent.",
+    "Kayakers paddled into a shallow grotto at the base of the cliff.",
+    "Passengers leaned over the rail, gawking at the passing whales.",
+    "Neighbors began ganging together to fight the new highway plan.",
+    "In bold letters the headline said GUILTY above his photograph.",
+    "Hikers found the hidden grottoes after a long climb up the ravine.",
+    "He let out a loud guffaw when the punchline finally landed."
+   ],
+   "quiet": [
+    "Critics argued that the big chains were unfair to local shops.",
+    "The verdict read innocent, and the courtroom went silent.",
+    "Kayakers paddled into a shallow cave at the base of the cliff.",
+    "Passengers leaned over the rail, staring at the passing whales.",
+    "Neighbors began working together to fight the new highway plan.",
+    "In bold letters the headline said CLEARED above his photograph.",
+    "Hikers found the hidden canyons after a long climb up the ravine.",
+    "He let out a loud laugh when the punchline finally landed."
+   ]
+  }
+ ],
+ "predictions": "fire 0.1-0.7 on the split ' g'; whole-token g-words below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split word-initial ' g' piece",
+ "unit_kind": "token",
+ "confidence": 0.4,
+ "notes": "Card: ' g' x13, '-g' x4, ' G' x3 of top 32 (G|UILTY, g|oces, g|rieve, g|anging). Probe: 'ganging up' 0.707, GUILTY 0.351, grotto 0.276, gawk 0.115, gleaning 0.041, but 'grieve' 0.004 (inconsistent), whole-token 'gorgeous' 0.001. Fire uses split words; near misses swap in single-token g-words or synonyms."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-3016a8aa",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8544-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T06:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N8544",
+   "pole": "-",
+   "label": "a country, state or city proper name in running prose (Egypt, Mexico, Atlanta, Canada); generic place nouns (the region, the coast, the capital) stay low",
+   "fire": [
+    "Health officials reported a rise in measles cases in Turkey this winter.",
+    "After college she moved to Denver to work for a small startup.",
+    "Exports from Ireland grew strongly during the last decade.",
+    "The festival draws thousands of visitors to Portugal every summer.",
+    "Heavy rains caused flooding across parts of Kenya last month.",
+    "My cousin spent two years teaching English in Vietnam.",
+    "Prices for housing in Toronto have doubled since 2010.",
+    "The company opened a new factory outside Houston in March."
+   ],
+   "quiet": [
+    "Health officials reported a rise in measles cases in the area this winter.",
+    "After college she moved to the city to work for a small startup.",
+    "Exports from the island grew strongly during the last decade.",
+    "The festival draws thousands of visitors to the valley every summer.",
+    "Heavy rains caused flooding across parts of the province last month.",
+    "My cousin spent two years teaching English in a village school.",
+    "Prices for housing in the suburbs have doubled since 2010.",
+    "The company opened a new factory outside town in March."
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-0.8 on the place name; generic place nouns below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "country or city name",
+ "unit_kind": "token",
+ "confidence": 0.6,
+ "notes": "Card: Ireland x3, Egypt x2, Mexico x2, Turkey x2, Canada, Oklahoma, Atlanta, plus year digits. Probe: Egypt 0.738, Mexico's 0.640, Atlanta 0.563, Canada 0.452, Russian capital 0.262; 'the region' 0.021, 'the coast' 0.119, 'the capital' 0.008. Near misses replace the name with a generic place noun."
+}

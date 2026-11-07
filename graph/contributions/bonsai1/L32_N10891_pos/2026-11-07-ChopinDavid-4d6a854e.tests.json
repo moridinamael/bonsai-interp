@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-4d6a854e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10891+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T06:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N10891",
+   "pole": "+",
+   "label": "the split word piece ' cor' at the start of a word the tokenizer breaks after 'cor' (cor|set, cor|ollary, cor|vid, cor|iander, cor|ona); cor-words that are single tokens stay quiet",
+   "fire": [
+    "The museum displayed Victorian corsets made of whalebone and silk.",
+    "Two useful corollaries follow directly from the main lemma.",
+    "Crows, ravens and other corvids are famously clever birds.",
+    "Each stone corbel under the balcony was carved into a face.",
+    "She sprinkled chopped coriander over the bowl of soup.",
+    "Bright light from the solar corona was visible during the eclipse.",
+    "At the costume fitting, her tight corset made it hard to breathe.",
+    "The flower's corolla is made of five fused purple petals."
+   ],
+   "quiet": [
+    "The museum displayed Victorian dresses made of velvet and silk.",
+    "Two useful results follow directly from the cornerstone lemma.",
+    "Crows, ravens and other songbirds are famously clever birds.",
+    "Each stone bracket in the corridor was carved into a face.",
+    "She sprinkled chopped parsley over the bowl of soup.",
+    "Bright light from the solar cortex model was shown in the lecture.",
+    "At the costume fitting, her tight bodice made it hard to breathe.",
+    "The flower's center is made of five fused purple petals."
+   ]
+  }
+ ],
+ "predictions": "fire 0.2-0.7 on ' cor'; single-token cor-words below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split ' cor' piece",
+ "unit_kind": "token",
+ "confidence": 0.6,
+ "notes": "Card: ' cor' x7, ' Cor' x2 of top 32 (correlator, corbels, corollary, error-correction). Probe: '-cor' 0.685, corset 0.577, corollary 0.465, corbels 0.405, corvid 0.405, corral 0.175; corridor (single token) 0.077, barn 0.020. Tokenizer checked: corsets, corollaries, corvids, corbel, coriander, corona split as ' cor'+rest; corridor, cornerstone, coronary, cortex, corpus are single tokens."
+}
