@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-2e7ebf39",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N11918+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:21:33+00:00",
+ "recipe": {
+  "toolchain_commit": "35d62dd35",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N11918_pos/2026-11-06-lm1909-2e7ebf39.tests.json"
+ },
+ "label": "an acronym re-mentioning a name spelled out just before it (North Dakota State University ... NDSU)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N11918_pos/2026-11-06-lm1909-2e7ebf39.tests.json",
+   "prereg_commit": "35d62dd35",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.081,
+     "peak": " OS"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.04,
+     "peak": " KS"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.193,
+     "peak": "U"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.059,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.137,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.162,
+     "peak": " NFL"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.015,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.27,
+     "peak": "U"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " sponsoring"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " opened"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " served"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " met"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " vein"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " run"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.109,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "35d62dd35",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "acronym re-mention",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Low confidence: the top examples are mixed. Probes gave 0.55 for NDSU but 0.15 for MSU, and other short re-mentions stayed quiet. Expected to be close or to fail.",
+ "selection": "random draw"
+}
