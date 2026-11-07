@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-8ebab59e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7358-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N7358",
+   "pole": "-",
+   "label": "the first fragment of a verb the tokenizer splits, starting with a prefix (' resc', 'res' in disrespect, ' disse', Russian ' ос', ' рем'), as opposed to whole-token verbs",
+   "fire": [
+    "The board voted to rescind the policy last week.",
+    "The new law rescinded the earlier ban on fishing.",
+    "Рабочие начали ремонтировать старый мост.",
+    "Суд решил осудить бывшего министра.",
+    "Епископ приехал освятить новый храм.",
+    "Teenagers who disrespect their elders get detention.",
+    "The agency tried to disseminate false reports.",
+    "His critics disrespected him in public."
+   ],
+   "quiet": [
+    "The board voted to cancel the policy last week.",
+    "The new law removed the earlier ban on fishing.",
+    "Рабочие начали красить старый мост.",
+    "Суд решил отпустить бывшего министра.",
+    "Епископ приехал посетить новый храм.",
+    "Teenagers who insult their elders get detention.",
+    "The agency tried to publish false reports.",
+    "His critics mocked him in public."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split prefixed verb fragment",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "The + pole fires on the bare prefixes (' re', ' ré', ' sup', ' bl'), and its output suppresses ' re', ' reg'. So this pole may be the 'prefix plus more letters' side of a 'bare prefix' distinction. Not all fragments fire (' refurb' 0.09, ' rew' 0.16)."
+}

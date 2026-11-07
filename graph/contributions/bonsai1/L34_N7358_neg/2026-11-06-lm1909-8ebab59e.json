@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-8ebab59e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7358-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:48+00:00",
+ "recipe": {
+  "toolchain_commit": "39cda759c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N7358_neg/2026-11-06-lm1909-8ebab59e.tests.json"
+ },
+ "label": "the first fragment of a verb the tokenizer splits, starting with a prefix (' resc', 'res' in disrespect, ' disse', Russian ' ос', ' рем'), as opposed to whole-token verbs",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N7358_neg/2026-11-06-lm1909-8ebab59e.tests.json",
+   "prereg_commit": "39cda759c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.745,
+     "peak": " resc"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.44,
+     "peak": " resc"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.257,
+     "peak": " рем"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.852,
+     "peak": " ос"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.535,
+     "peak": " ос"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.003,
+     "peak": " get"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.119,
+     "peak": " disse"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.552,
+     "peak": "res"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " ban"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " крас"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.116,
+     "peak": " от"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": "коп"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "Teen"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " false"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.898,
+    "median_fire": 0.488,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39cda759c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split prefixed verb fragment",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "The + pole fires on the bare prefixes (' re', ' ré', ' sup', ' bl'), and its output suppresses ' re', ' reg'. So this pole may be the 'prefix plus more letters' side of a 'bare prefix' distinction. Not all fragments fire (' refurb' 0.09, ' rew' 0.16).",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-cbe3baeb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N5439-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:00+00:00",
+ "recipe": {
+  "toolchain_commit": "39cda759c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N5439_neg/2026-11-06-lm1909-cbe3baeb.tests.json"
+ },
+ "label": "North American team-sport reporting (baseball, basketball, hockey, NFL), the other side of a sport distinction whose + pole is soccer",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N5439_neg/2026-11-06-lm1909-cbe3baeb.tests.json",
+   "prereg_commit": "39cda759c",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.655,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.94,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.527,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.907,
+     "peak": " out"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.695,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.211,
+     "peak": " one"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.465,
+     "peak": " road"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.248,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.044,
+     "peak": "Bay"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": "Ju"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": "Bar"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.062,
+     "peak": " fell"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": " centre"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.004,
+     "peak": "City"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.591,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39cda759c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "US team sports, not soccer",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "The + output promotes ' midfielder', ' striker', ' goalkeeper', and + fires on soccer names. Probe: same-style soccer recaps read 0.01-0.02, US recaps 0.4-0.9. The near misses are soccer recaps in the same style; they are not simply off-topic.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-75f4ed84",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N10378+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:03+00:00",
+ "recipe": {
+  "toolchain_commit": "39cda759c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N10378_pos/2026-11-06-lm1909-75f4ed84.tests.json"
+ },
+ "label": "broad low-amplitude unit (max 0.82): best guess, the token ' out' when followed by 'of' or a tried-out object, as against other prepositions",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N10378_pos/2026-11-06-lm1909-75f4ed84.tests.json",
+   "prereg_commit": "39cda759c",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.511,
+     "peak": " out"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.321,
+     "peak": " out"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.023,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.072,
+     "peak": " out"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.043,
+     "peak": " filed"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.075,
+     "peak": " spr"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.11,
+     "peak": " out"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.026,
+     "peak": " carved"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.038,
+     "peak": " filed"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.075,
+     "peak": " spr"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " carved"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.758,
+    "median_fire": 0.073,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39cda759c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "broad, token out",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags broad and gate-closed for both poles. ' out' dominates the top 32 but readings vary (0.06-0.69 across uses in the probe), and ' behind' reads 0.19. This test records the density and the best guess.",
+ "selection": "random draw"
+}
