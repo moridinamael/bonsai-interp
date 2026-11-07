@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-b1322c58",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N9305+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:16:13+00:00",
+ "recipe": {
+  "toolchain_commit": "1967068b6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N9305_pos/2026-11-06-lm1909-b1322c58.tests.json"
+ },
+ "label": "the word completing an emphatic set phrase: brand new, absolutely sure, half a dozen",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N9305_pos/2026-11-06-lm1909-b1322c58.tests.json",
+   "prereg_commit": "1967068b6",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.561,
+     "peak": " new"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.499,
+     "peak": " new"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.525,
+     "peak": "-new"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.068,
+     "peak": " new"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.164,
+     "peak": " sure"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.044,
+     "peak": " sure"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.45,
+     "peak": " dozen"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.21,
+     "peak": " dozen"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " far"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": " spring"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " console"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " ran"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.094,
+     "peak": " careful"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.141,
+     "peak": " informed"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " lying"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.093,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.33,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1967068b6",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "emphatic set phrases",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: 'brand new' 0.24 against plain 'new' 0.006; 'absolutely sure' 0.39 against 'not sure' 0.14; 'half a dozen' 0.44. Other fixed phrases ('as a matter of fact', 'all of a sudden') stayed low, so this is not fixed phrases in general.",
+ "selection": "random draw"
+}

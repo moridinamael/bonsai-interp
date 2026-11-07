@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-ed36188f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N3981+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:04:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N3981",
+   "pole": "+",
+   "label": "a filler token wedged into a phrase that would read fine without it: an expletive inside a noun phrase, or padding whitespace in code",
+   "fire": [
+    "We spent the whole damn weekend trying to fix that leak under the sink.",
+    "My brother has been telling the same damn story at dinner for twenty years.",
+    "It took a very long damn time before anyone at the office called me back.",
+    "She said that was the best freaking pizza she had eaten in all her years.",
+    "That is one big bloody mess you left behind in the garage this morning.",
+    "Nobody here wants to read every single damn page of that awful report tonight.",
+    "\"\"\"\n    Remove a user\n\n    @param     user: the account which should be removed\n    \"\"\"",
+    "print('Elapsed time\\t\\t: {0:d}'.format(seconds))\nprint('Total files\\t\\t: {0:d}'.format(count))"
+   ],
+   "quiet": [
+    "We spent the whole weekend trying to fix that leak under the sink.",
+    "My brother has been telling the same story at dinner for twenty years.",
+    "It took a very long time before anyone at the office called me back.",
+    "She said that was the best pizza she had eaten in all her years.",
+    "That is one big mess you left behind in the garage this morning.",
+    "Nobody here wants to read every single page of that awful report tonight.",
+    "\"\"\"\n    Remove a user\n\n    @param user: the account which should be removed\n    \"\"\"",
+    "print('Elapsed time: {0:d}'.format(seconds))\nprint('Total files: {0:d}'.format(count))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "wedged-in filler",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: 'a long damn while' 0.88 against 'a long while' 0.04; tab and space padding 0.41-0.62; 'so damn good' only 0.20 and 'the hell' 0.12. Fire items test new expletive placements and two padding cases."
+}
