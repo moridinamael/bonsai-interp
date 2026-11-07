@@ -6,6 +6,7 @@
   python -m bonsai_interp.moo.steer3 baselines  # uniform line, band lines, the additive model, differential evolution
   python -m bonsai_interp.moo.steer3 heldout    # each method's best designs on the held-out prompts
   python -m bonsai_interp.moo.steer3 report
+  python -m bonsai_interp.moo.steer3 protocol3b / requery / heldout / report3b   # steer@3b, below
 
 steer@2's 24 concept knobs added up: in its design an additive fit predicted every output as well as a quadratic one, so a plain
 gain line found the sparse answers. Here each concept's bundle is split by depth. Pilots on the training prompts showed the bands
@@ -275,7 +276,9 @@ def best_points():
         pools = {"lookup": doe, "gmoo": doe + [r for r in rows if r["tag"].startswith(f"gmoo/{ti}/")],
                  "additive": [r for r in rows if r["tag"] == "band" or r["tag"].startswith(f"additive/{ti}/")],
                  "band": [r for r in rows if r["tag"] == "band"], "line": [r for r in rows if r["tag"] == f"line/{ti}"],
-                 "de": [r for r in rows if r["tag"] == f"de/{ti}"]}
+                 "de": [r for r in rows if r["tag"] == f"de/{ti}"],
+                 "target": doe + [r for r in rows if r["tag"].startswith(f"target/{ti}/")],
+                 "center": [r for r in rows if r["tag"].startswith(f"center/{ti}/")]}
         for m, pool in pools.items():
             for tr, tier in enumerate(M.TIERS):
                 ok = [(score(r["y"], task, base, names), r["x"]) for r in pool if meets(r["y"], tier)]
@@ -337,13 +340,93 @@ def report(a):
                 print(f"  {m:8s} {CON[t]:9s}", np.round(np.abs(np.array(u)[[knob(CON[t], b) for b in range(6)]]), 2))
 
 
+# steer@3b: steer@3's queries tied the design lookup in 23 of 24 cells; are maximize objectives the reason? Same trained model,
+# same cells, each asked for a value just past the best design point instead. "target" starts at that design point; "center"
+# starts at the zero design, so only the inverse can find a good design.
+
+PROTOCOL3B = Path(__file__).parent / "steer3b_protocol.json"
+REACH = np.log10(1.5)  # aim this far past the best design point's score
+
+
+def protocol3b(a):
+    json.dump({"name": "steer@3b", "after": "steer@3, merged in PR 1809; same model, trial, cells, tiers and prompts",
+               "reach": REACH, "query_iter": QUERY_ITER,
+               "variants": {"target": "each raised concept at least base + t, each lowered one at most base - t, where t is the cell's "
+                                      "best design-point score plus reach (log10(2) where no design point meets the cell); uniq, coh and "
+                                      "drift constraints as in steer@3; starts at the best design point",
+                            "center": "the same goals, starting at the zero design"},
+               "claims": {"target": "on training prompts, target queries beat the design lookup in at least 8 of the 24 cells",
+                          "center": "reported: cells where center queries meet the cell at all, and their score against lookup"}},
+              open(PROTOCOL3B, "w", encoding="utf-8"), indent=1)
+    print("wrote", PROTOCOL3B)
+
+
+def requery(a):
+    assert PROTOCOL3B.exists()
+    _, _, best = best_points()
+    lab = Lab()
+    m = json.load(open(META))
+    inv = S.GmooInverse.attach(lab.problem, m["model_id"], m["trial_id"])
+    lab.problem.scales = np.maximum(inv.doe_y.std(0), 1e-3)
+    z = lab.problem.evaluate(np.zeros((1, 24)))[0]
+    for v in ("target", "center"):
+        for ti, task in enumerate(TASKS):
+            for tr, tier in enumerate(M.TIERS):
+                lab.tag = f"{v}/{ti}/{tr}"
+                sc = best[("lookup", ti, tr)][0]
+                t = (np.log10(2) if sc is None else sc) + REACH
+                g = [Goal(f"s_{c}", ">=", float(z[lab.names.index(c)] + t)) for c in task["up"]]
+                g += [Goal(f"s_{c}", "<=", float(z[lab.names.index(c)] - t)) for c in task["down"]]
+                g += [Goal("uniq", ">=", tier["uniq"]), Goal("coh", ">=", tier["coh"]), Goal("drift", "<=", DRIFT)]
+                n0 = len(lab.problem.history)
+                res = inv.query(g, max_iter=QUERY_ITER, start="best" if v == "target" else "center")
+                print(lab.tag, res.extra.get("stopped"), len(lab.problem.history) - n0, "evals", flush=True)
+
+
+def report3b(a):
+    names, base, best = best_points()
+    held = {tuple(r["x"]): np.array(r["y"]) for r in map(json.loads, open(EVALS, encoding="utf-8")) if r["set"] == "held"}
+    b0 = held[tuple([0.0] * 24)]
+    rows = [json.loads(s) for s in open(EVALS, encoding="utf-8")]
+    for v in ("gmoo", "target", "center"):
+        q = [r for r in rows if r["set"] == "train" and r["tag"].startswith(v + "/")]
+        hit = sum(meets(r["y"], M.TIERS[int(r["tag"].split("/")[2])]) for r in q)
+        print(f"{v}: {len(q)} query evaluations, {hit} met their cell")
+
+    def hs(m, t, tr):
+        u = best[(m, t, tr)][1]
+        return None if u is None or tuple(u) not in held else score(held[tuple(u)], TASKS[t], b0, names)
+    print("\nwon / lost / tied against design lookup, training and held-out")
+    for v in ("gmoo", "target", "center"):
+        for nm, f in (("training", lambda m, t, tr: best[(m, t, tr)][0]), ("held-out", hs)):
+            w = l = e = 0
+            for t in range(len(TASKS)):
+                for tr in range(3):
+                    x, y = f(v, t, tr), f("lookup", t, tr)
+                    x, y = -9 if x is None else x, -9 if y is None else y
+                    w, l, e = w + (x > y + 1e-3), l + (y > x + 1e-3), e + (abs(x - y) <= 1e-3)
+            print(f"  {v} {nm}: {w} / {l} / {e}")
+    print("\ncenter queries meeting their cell:", sum(best[("center", t, tr)][0] is not None for t in range(len(TASKS)) for tr in range(3)), "of 24")
+    print("held-out, target vs additive:", end=" ")
+    w = l = 0
+    for t in range(len(TASKS)):
+        for tr in range(3):
+            x, y = hs("target", t, tr), hs("additive", t, tr)
+            x, y = -9 if x is None else x, -9 if y is None else y
+            w, l = w + (x > y + 1e-3), l + (y > x + 1e-3)
+    print(f"{w} / {l}")
+    target_wins = sum((best[("target", t, tr)][0] or -9) > (best[("lookup", t, tr)][0] or -9) + 1e-3 for t in range(len(TASKS)) for tr in range(3))
+    print(f"target claim: {target_wins} of 24 training cells beat lookup (needs 8)")
+
+
 def _f(v):
     return "  -  " if v is None else f"{v:+.2f}"
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["protocol", "train", "gmoo", "baselines", "heldout", "report"])
+    ap.add_argument("cmd", choices=["protocol", "train", "gmoo", "baselines", "heldout", "report", "protocol3b", "requery", "report3b"])
     ap.add_argument("--start", type=int, default=0, help="gmoo: resume at this task, after an interruption")
     a = ap.parse_args()
-    {"protocol": protocol, "train": train, "gmoo": gmoo, "baselines": baselines, "heldout": heldout, "report": report}[a.cmd](a)
+    {"protocol": protocol, "train": train, "gmoo": gmoo, "baselines": baselines, "heldout": heldout, "report": report,
+     "protocol3b": protocol3b, "requery": requery, "report3b": report3b}[a.cmd](a)
