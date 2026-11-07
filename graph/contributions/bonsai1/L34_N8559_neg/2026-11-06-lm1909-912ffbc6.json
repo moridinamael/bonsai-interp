@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-912ffbc6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8559-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:25+00:00",
+ "recipe": {
+  "toolchain_commit": "9f9874b96",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N8559_neg/2026-11-06-lm1909-912ffbc6.tests.json"
+ },
+ "label": "a space-led piece starting a new word in spaced katakana names (' エ', ' シ'), and '-S' in English day ranges: a word beginning right after a separator in a list-like name",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N8559_neg/2026-11-06-lm1909-912ffbc6.tests.json",
+   "prereg_commit": "9f9874b96",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.593,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.656,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.578,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.504,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.572,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.764,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.689,
+     "peak": "-S"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.554,
+     "peak": "-S"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": "十分"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": "町"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": "いて"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": ".m"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " Sunday"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": "母"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.585,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9f9874b96",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "spaced katakana word start",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: spaced katakana names 0.46-0.73, 'Mon-Sat' / 'Tue-Sun' 0.60-0.62, ordinary Japanese 0.006-0.02, 'Sunday' 0.007. The two trigger families share only the form, so this may turn out to be a list of two things.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-75fe044d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N7169+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:34+00:00",
+ "recipe": {
+  "toolchain_commit": "9f9874b96",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N7169_pos/2026-11-06-lm1909-75fe044d.tests.json"
+ },
+ "label": "punctuation and digits inside a journal citation's volume, page or DOI numbers",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N7169_pos/2026-11-06-lm1909-75fe044d.tests.json",
+   "prereg_commit": "9f9874b96",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.449,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.484,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.449,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.343,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.651,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.198,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.209,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.937,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.042,
+     "peak": " platform"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.204,
+     "peak": "-"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.071,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": "0"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.467,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9f9874b96",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "citation / DOI numbers",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probes: citation strings 0.37-0.47; a dated meeting 0.01; a price 0.005. Peak tokens are '.', '-', '0', '(' but only in the citation context.",
+ "selection": "random draw"
+}
