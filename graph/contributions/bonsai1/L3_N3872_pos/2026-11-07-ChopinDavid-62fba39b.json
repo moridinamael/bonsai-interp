@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-62fba39b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N3872+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T10:32:30+00:00",
+ "recipe": {
+  "toolchain_commit": "92c412954",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N3872_pos/2026-11-07-ChopinDavid-62fba39b.tests.json"
+ },
+ "label": "tiny code unit (max 2.9, gate mostly closed): the fused operator-plus-parenthesis tokens '**(' and '*(' written without spaces in code or regexes; the same expressions with spaces, or '%(' format keys, stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N3872_pos/2026-11-07-ChopinDavid-62fba39b.tests.json",
+   "prereg_commit": "92c412954",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.385,
+     "peak": "**("
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.014,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.012,
+     "peak": " +"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.659,
+     "peak": "**("
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.63,
+     "peak": "*("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.015,
+     "peak": " +"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.474,
+     "peak": "**("
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.097,
+     "peak": "*("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " reg"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " /"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.006,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.002,
+     "peak": "energy"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.93,
+    "median_fire": 0.241,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "92c412954",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "fused '**(' / '*(' token in code",
+ "unit_kind": "word",
+ "confidence": 0.4,
+ "notes": "Card: peak tokens ' %(' x6, '*(' x3, '**(' x2, '/(' x2. Probe: 'x**(n - 1)' 0.910, regex '\\s*(\\w+)' 0.729, 'total/(count + 1)' 0.206, ')|(' 0.123; spaced 'x ** (n - 1)' 0.008, '%(name)s' 0.008, prose parenthesis 0.061. Tokenizer: 'a**(b' -> '**(', 'w*(y' -> '*('.",
+ "selection": "random draw"
+}
