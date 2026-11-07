@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-fd025507",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N6147-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:49+00:00",
+ "recipe": {
+  "toolchain_commit": "789069d62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N6147_neg/2026-11-06-lm1909-fd025507.tests.json"
+ },
+ "label": "the first piece of a place name after a location cue, when the name is not finished yet ('in Cov|ina', 'in Green| Bay'), as against a place name complete in one token",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N6147_neg/2026-11-06-lm1909-fd025507.tests.json",
+   "prereg_commit": "789069d62",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.025,
+     "peak": " Ken"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.044,
+     "peak": " Yok"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.001,
+     "peak": " work"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.068,
+     "peak": " Tall"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.121,
+     "peak": " She"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.006,
+     "peak": " festival"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.1,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.008,
+     "peak": "osa"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " bakery"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " stopped"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " work"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.099,
+     "peak": " Dallas"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " festival"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " through"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.727,
+    "median_fire": 0.035,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "789069d62",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "unfinished place name",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probes: 0.38-0.98 on the opening piece (As, Cov, Cast, Ho, L, Green in 'Green Bay'); London 0.05, 'Mr. Green' 0.17. Whether a given fire name really splits into tokens was not checked for the new names.",
+ "selection": "random draw"
+}

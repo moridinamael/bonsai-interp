@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-60450c5c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N445-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:24:05+00:00",
+ "recipe": {
+  "toolchain_commit": "789069d62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N445_neg/2026-11-06-lm1909-60450c5c.tests.json"
+ },
+ "label": "a word-opening fragment ending in 't', after a hyphen or slash or as 'unt-' ('-t|imed', '/t|ub', ' unt|ouchable'): the word continues from the t",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N445_neg/2026-11-06-lm1909-60450c5c.tests.json",
+   "prereg_commit": "789069d62",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.148,
+     "peak": "-t"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.011,
+     "peak": "-to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.002,
+     "peak": "tem"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.001,
+     "peak": "-tier"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.62,
+     "peak": "-t"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.006,
+     "peak": "-to"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.034,
+     "peak": "trust"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.305,
+     "peak": "/t"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": "-c"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "urn"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " hand"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " set"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.022,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "789069d62",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fragment ending in -t",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: '-t' is 17 of the top 32. Probes: '-t' 0.85-1.12, '/t' 0.56, ' unt' 0.52; '-faced', '-sealed', '/b' and ' unbeatable' under 0.01. Whether each new word splits to a '-t' token was not checked.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "-t",
+   "/t",
+   " unt"
+  ]
+ }
+}
