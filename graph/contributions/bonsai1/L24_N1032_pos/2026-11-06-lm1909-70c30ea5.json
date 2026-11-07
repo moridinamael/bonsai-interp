@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-70c30ea5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1032+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:16:10+00:00",
+ "recipe": {
+  "toolchain_commit": "b4625a99e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N1032_pos/2026-11-06-lm1909-70c30ea5.tests.json"
+ },
+ "label": "newline ending a statement inside a Python loop body, where the loop may end",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1032_pos/2026-11-06-lm1909-70c30ea5.tests.json",
+   "prereg_commit": "b4625a99e",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.477,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.285,
+     "peak": "]\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.279,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.171,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.284,
+     "peak": "())\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.411,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.267,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.591,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " keys"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.029,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "]\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " part"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.284,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b4625a99e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "newline in loop body",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Peak tokens are line-ending tokens. Probes: flat code without a loop stays near 0, the last line of a loop reads high. Near misses are the same statements with no loop.",
+ "selection": "random draw"
+}

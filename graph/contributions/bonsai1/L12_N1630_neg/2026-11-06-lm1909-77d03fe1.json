@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-77d03fe1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N1630-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:17:08+00:00",
+ "recipe": {
+  "toolchain_commit": "b4625a99e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N1630_neg/2026-11-06-lm1909-77d03fe1.tests.json"
+ },
+ "label": "how much a person or place matters: prominence, importance, or its lack ('a nobody', 'never heard of')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N1630_neg/2026-11-06-lm1909-77d03fe1.tests.json",
+   "prereg_commit": "b4625a99e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.83,
+     "peak": " importance"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.051,
+     "peak": " important"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.164,
+     "peak": " nobody"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.669,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.276,
+     "peak": " significance"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.898,
+     "peak": " importance"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.453,
+     "peak": " important"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.312,
+     "peak": " importante"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.162,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.742,
+     "peak": " somebody"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.148,
+     "peak": " seen"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.048,
+     "peak": " know"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.146,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.04,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " pueblo"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.75,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b4625a99e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "prominence of someone",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Fires on ' importance', ' important', ' nobody' and 'never heard of', but not on 'It is important to' (0.008), so the pole is about standing rather than the word. The test includes cases that lack the word.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-04324dbc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N7307-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:16:52+00:00",
+ "recipe": {
+  "toolchain_commit": "b4625a99e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N7307_neg/2026-11-06-lm1909-04324dbc.tests.json"
+ },
+ "label": "wording that frames a claim or its defender as partisan: 'purporting', 'purportedly', 'apologist'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N7307_neg/2026-11-06-lm1909-04324dbc.tests.json",
+   "prereg_commit": "b4625a99e",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.424,
+     "peak": "port"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.32,
+     "peak": "port"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.196,
+     "peak": "port"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.106,
+     "peak": " online"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.21,
+     "peak": " purported"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.339,
+     "peak": "ologist"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.206,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.24,
+     "peak": "port"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.208,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " thanking"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " quotes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.214,
+     "peak": " claim"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " institute"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.108,
+     "peak": " evaluating"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.225,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b4625a99e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "purported claims",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Weak pole (max 8.9), no single token on the card. 'so-called' and 'allegedly' stayed quiet in probes, so the label is narrow. The + pole is ' prove'.",
+ "selection": "random draw"
+}
