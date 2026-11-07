@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-6d5156a9",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N6782-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T09:25:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N6782",
+   "pole": "-",
+   "label": "the slot in a storage or exposure warning where an environmental hazard (heat, light, moisture) comes next: the token after 'away from' / 'exposed to' / a listed hazard, predicting heat; 'away from' an ordinary object or place stays low",
+   "fire": [
+    "Close the jar after each use and keep it away from heat and humidity.",
+    "This adhesive can fail if the tube is exposed to heat for a long time.",
+    "Candles should be stored in a cool cupboard, away from heat and light.",
+    "Do not leave the batteries in a car, where they are exposed to heat all day.",
+    "Keep the vaccine refrigerated and away from light, heat and freezing.",
+    "Store the seeds in a dark tin, away from heat, moisture and pests.",
+    "The label warns that the spray can may burst if exposed to high heat.",
+    "For best results, keep the film away from heat, damp and strong sunlight."
+   ],
+   "quiet": [
+    "Close the gate after each visit and keep the goats away from the garden.",
+    "The new intern was exposed to a lot of paperwork during her first week.",
+    "Candles were placed on the table, away from the children's chairs.",
+    "Do not park the car near the school gate during drop-off hours.",
+    "Keep the receipts in a folder, away from the other tax papers.",
+    "The boat drifted slowly away from the harbour wall at dawn.",
+    "The label explains that the shirt was made from organic cotton.",
+    "For best results, keep the photos away from the front of the album."
+   ]
+  }
+ ],
+ "predictions": "fire 0.5-1.0 on from/to/and before the hazard; near misses below 0.3",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts heat/light/moisture in storage warning",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: top examples all storage/exposure warnings ('away from heat', 'exposure to heat, light'); + pole suppresses heat/hot/temperature, so - pole promotes heat. Probe: 'away from heat and open flames' 0.974, 'away from direct sunlight and moisture' 0.910, 'exposed to heat' 0.784; 'away from the dog' 0.237, 'away from the walkway' 0.269, 'exposure to sunlight' (fade) 0.149, 'walked away from the old house' 0.002."
+}

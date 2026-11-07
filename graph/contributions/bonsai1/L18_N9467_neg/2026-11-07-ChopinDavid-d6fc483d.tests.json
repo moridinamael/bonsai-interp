@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-d6fc483d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N9467-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T09:25:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N9467",
+   "pole": "-",
+   "label": "unclear tiny unit (max 9.75); best guess: the start of a 'Returns' section or a 'new/modified' result in code documentation, describing what a function hands back",
+   "fire": [
+    "def scale(img):\n    \"\"\"Scale an image.\n\n    Returns\n    -------\n    The resized image.\n    \"\"\"\n",
+    "def fit(self, X):\n    \"\"\"Fit the model.\n\n    Returns the fitted estimator.\n    \"\"\"\n",
+    "def update(row):\n    \"\"\"Update a row.\n\n    Returns\n    -------\n    None.\n    \"\"\"\n",
+    "def trim(s):\n    \"\"\"Trim whitespace.\n\n    Returns the modified string.\n    \"\"\"\n",
+    "def merge(a, b):\n    \"\"\"Merge two dicts.\n\n    Returns\n    -------\n    dict\n    \"\"\"\n",
+    "def clean(df):\n    \"\"\"Drop empty rows.\n\n    Returns the modified frame.\n    \"\"\"\n",
+    "def rotate(p):\n    \"\"\"Rotate a point.\n\n    Returns\n    -------\n    tuple\n    \"\"\"\n",
+    "def reset(self):\n    \"\"\"Reset state.\n\n    Returns the modified object.\n    \"\"\"\n"
+   ],
+   "quiet": [
+    "def scale(img):\n    # scale an image by two\n    return img.resize((2, 2))\n",
+    "def fit(self, X):\n    # fit the model on X\n    self.w = X.mean()\n",
+    "The old fence was taken down and a wooden one put up in its place.",
+    "He trimmed the hedge in the morning and mowed the lawn after lunch.",
+    "def merge(a, b):\n    # merge two dicts\n    a.update(b)\n",
+    "She cleaned the kitchen and then went out for a walk.",
+    "The farmer rotated the crops every spring to rest the soil.",
+    "The teacher reset the clock and started the lesson again."
+   ]
+  }
+ ],
+ "predictions": "probably fails: probes all scored below 0.06",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (Returns / modified result)",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: max 9.75, peaks on newline after 'Returns' in a docstring, ' modified' instance, ' new' growth/rotation speed. Probe: all nine sentences 0.013-0.057 (new bridge, new manager, modified record, new period). No probe configuration fired; test records the docstring guess."
+}
