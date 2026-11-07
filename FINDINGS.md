@@ -1255,3 +1255,39 @@ The model claim held, but the round's setup didn't let the queries add to it:
 Two steering rounds now agree: bundle steering is nearly additive, which is an easy shape for a separable baseline and leaves a
 learned inverse little structure to exploit. Here the design of experiments carried globalMOO's result, and the query setup is
 under test in steer@3b.
+
+## 2026-11-07: Asked for values instead of a maximum, globalMOO beats every baseline (steer@3b)
+
+steer@3's queries stayed at their start points. steer@3b re-asked the same trained model (7349) about the same 24 cells. Each
+raised concept was asked to reach at least the best design point's score plus log10(1.5), and each lowered one at most the
+mirror of that; the uniq, coh and drift constraints were unchanged. Protocol `bonsai_interp/moo/steer3b_protocol.json`, report
+`steer3b_summary.txt`. No new design of experiments: 229 query evaluations in all.
+
+**Registered claim: held, 17 of 24** training cells beat the design lookup (8 needed). In steer@3, with maximize objectives, it
+was 1 of 24.
+
+- **It reached cells the design never met.** Money at tier 1, and money with travel at all three tiers, had no feasible point
+  among the 687 design points. The value-target queries found feasible designs for all four.
+- **Most cells moved by 1.6× to 2.1×** (0.21 to 0.33 log10) past the best design point.
+
+**Against every baseline, won / lost (reported, not registered):**
+
+| target queries against | training | held-out |
+|---|---|---|
+| design lookup | 17 / 0 | 11 / 6 |
+| additive model of the bands | 14 / 10 | 18 / 6 |
+| steer@2's uniform line | 22 / 2 | 17 / 7 |
+| best single band | 17 / 7 | 20 / 4 |
+| differential evolution | 24 / 0 | 21 / 3 |
+
+Mean held-out score was 0.78 log10 (6.0×) for the target queries, against 0.51 (3.2×) for the additive model.
+
+**The from-zero variant could not be tested as designed.** Its trajectories matched the target queries' exactly, cell for cell:
+the platform's suggestions for a goal set didn't depend on the start point passed in. Every evaluation was a cache hit of a
+target evaluation, so none was logged under its own tag. Its report line (0 of 24) is an artifact of that. A from-zero test
+needs a separate trial.
+
+**What this settles:** in steer@3 the queries' objective type held globalMOO back, not the problem or the model. Maximize
+objectives with an aspiration past the observed range left every query at its start. Value targets just beyond the best known
+point climbed in most cells, and on held-out prompts beat the additive model 18 to 6. For this panel, a globalMOO query should
+name a target value and raise it round by round.
