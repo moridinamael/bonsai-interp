@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-2bddd91c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2246-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T13:00:53+00:00",
+ "recipe": {
+  "toolchain_commit": "e20623fb9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N2246_neg/2026-11-06-lm1909-2bddd91c.tests.json"
+ },
+ "label": "The name of a book's back-matter section (index, glossary, appendix) listed as a section of the book, versus front matter and other senses of 'index'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N2246_neg/2026-11-06-lm1909-2bddd91c.tests.json",
+   "prereg_commit": "e20623fb9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.855,
+     "peak": " Index"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.348,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.399,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.742,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.029,
+     "peak": " Index"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.226,
+     "peak": " Index"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.876,
+     "peak": "Index"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.756,
+     "peak": " append"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.161,
+     "peak": " Methods"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " fee"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.066,
+     "peak": "ii"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.402,
+     "peak": " Ack"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " One"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": "See"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.805,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e20623fb9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "book back-matter sections",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "index",
+   "glossary",
+   "appendix",
+   "appendices"
+  ]
+ }
+}
