@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-dfebeae4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N6887+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T18:27:34+00:00",
+ "recipe": {
+  "toolchain_commit": "63e20ea31",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N6887_pos/2026-11-07-ChopinDavid-dfebeae4.tests.json"
+ },
+ "label": "the word piece 'am'/'ome' that completes a split word (German ges|am|t-, English -s|ome as in fears|ome); synonyms without that piece stay silent",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N6887_pos/2026-11-07-ChopinDavid-dfebeae4.tests.json",
+   "prereg_commit": "63e20ea31",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.67,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.815,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.742,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.749,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.327,
+     "peak": "ome"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.56,
+     "peak": "ome"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.668,
+     "peak": "ome"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.822,
+     "peak": "ome"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " zurück"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": "Un"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": " der"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "ge"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "y"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " lonely"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.706,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63e20ea31",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "'am'/'ome' piece in ges-am-t / -s-ome",
+ "unit_kind": "token/lexical",
+ "confidence": 0.7,
+ "notes": "Card: 'am' x17 (gesamt), 'ome' x9 (wearisome, tiresome). Probe: Gesamtkosten 0.788, gesamte 0.719, lonesome 0.726, tiresome 0.468, insgesamt ('amt') 0.315, awesome (one token) 0.004, 'whole' 0.002. Tokenizer checked: gesamte, gesamten, Gesamtwert, Gesamtergebnis split ges|am; burdensome, fearsome, meddlesome, lonesome split -s|ome.",
+ "selection": "random draw"
+}

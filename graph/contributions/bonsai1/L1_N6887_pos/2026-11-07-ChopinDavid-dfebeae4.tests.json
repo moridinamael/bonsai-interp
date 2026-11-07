@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-dfebeae4",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N6887+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T18:20:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N6887",
+   "pole": "+",
+   "label": "the word piece 'am'/'ome' that completes a split word (German ges|am|t-, English -s|ome as in fears|ome); synonyms without that piece stay silent",
+   "fire": [
+    "Der gesamte Vorstand trat nach dem Skandal zurück.",
+    "Unsere Firma hat den Gesamtwert der Aktien neu berechnet.",
+    "Das Gesamtergebnis der Wahl wurde gestern verkündet.",
+    "Wir haben die gesamten Unterlagen schon abgegeben.",
+    "The new reporting rules proved burdensome for small firms.",
+    "The general was a fearsome figure on the battlefield.",
+    "Her meddlesome neighbour kept asking about the guests.",
+    "After the long drive the old dog seemed lonesome without us."
+   ],
+   "quiet": [
+    "Der ganze Vorstand trat nach dem Skandal zurück.",
+    "Unsere Firma hat den Wert der Aktien neu berechnet.",
+    "Das Ergebnis der Wahl wurde gestern verkündet.",
+    "Wir haben die ganzen Unterlagen schon abgegeben.",
+    "The new reporting rules proved costly for small firms.",
+    "The general was a feared figure on the battlefield.",
+    "Her nosy neighbour kept asking about the guests.",
+    "After the long drive the old dog seemed lonely without us."
+   ]
+  }
+ ],
+ "predictions": "ges|am and -s|ome items 0.3-0.8; synonyms (ganze, lonely, costly) below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'am'/'ome' piece in ges-am-t / -s-ome",
+ "unit_kind": "token/lexical",
+ "confidence": 0.7,
+ "notes": "Card: 'am' x17 (gesamt), 'ome' x9 (wearisome, tiresome). Probe: Gesamtkosten 0.788, gesamte 0.719, lonesome 0.726, tiresome 0.468, insgesamt ('amt') 0.315, awesome (one token) 0.004, 'whole' 0.002. Tokenizer checked: gesamte, gesamten, Gesamtwert, Gesamtergebnis split ges|am; burdensome, fearsome, meddlesome, lonesome split -s|ome."
+}

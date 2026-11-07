@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-003f5de1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N8460+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T18:27:19+00:00",
+ "recipe": {
+  "toolchain_commit": "63e20ea31",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N8460_pos/2026-11-07-ChopinDavid-003f5de1.tests.json"
+ },
+ "label": "a provenance tag appended after a document or image: a version suffix in a file name (_final, _original) or the 'Credit' of a photo caption; the same URLs and captions without the tag stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N8460_pos/2026-11-07-ChopinDavid-003f5de1.tests.json",
+   "prereg_commit": "63e20ea31",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.595,
+     "peak": "_final"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.609,
+     "peak": "ides"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.36,
+     "peak": "vised"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.51,
+     "peak": "_final"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.771,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.67,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.562,
+     "peak": " Credit"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.601,
+     "peak": " credit"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.128,
+     "peak": "/docs"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.155,
+     "peak": "note"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.079,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.208,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.444,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " wing"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.206,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.257,
+     "peak": "A"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.598,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63e20ea31",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "provenance tag: file-name suffix or photo credit",
+ "unit_kind": "context",
+ "confidence": 0.45,
+ "notes": "Card peaks on '_original', '_WP', 'submission' in PDF names and ' (' before Photo Credit or attribution dashes. Probe: annual_review_final.pdf 0.789, (Photo Credit: ...) 0.631, '-- Name' after quote 0.237, '– Name' after quote 0.099, mid-sentence parentheses 0.03-0.25. Attribution dashes were weak, so the test uses file suffixes and credit captions only.",
+ "selection": "random draw"
+}
