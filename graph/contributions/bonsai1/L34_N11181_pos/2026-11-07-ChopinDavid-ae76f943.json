@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-ae76f943",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11181+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T10:32:58+00:00",
+ "recipe": {
+  "toolchain_commit": "92c412954",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N11181_pos/2026-11-07-ChopinDavid-ae76f943.tests.json"
+ },
+ "label": "a lone capital ' A' token that begins a proper name split by the tokenizer (company, product or place names such as Avid, Amdahl, Aegon, Ahold, Afton); names kept whole (Adobe, Apple) and the letter A used on its own (grade A, vitamin A) stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N11181_pos/2026-11-07-ChopinDavid-ae76f943.tests.json",
+   "prereg_commit": "92c412954",
+   "author": "ChopinDavid",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.41,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.244,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.876,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.286,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.59,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.183,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.311,
+     "peak": " A"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.437,
+     "peak": " A"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " insurer"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " Ald"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " Apple"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": "frames"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " Apache"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " McKin"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " vitamin"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.36,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "92c412954",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "' A' starting a split proper name",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: ' A' x14 (A.T. Kearney, AFS, Amdahl, Avid, Afton, Aprelium), ' O' x4. Tokenizer: ' Aegon' -> ' A','eg','on', ' Ahold' -> ' A','hold', ' Aprelium' -> ' A','pre'..; ' Adobe', ' Apple', ' Audi', ' Airbus' single tokens. Probe: 'from Avid' 0.654, 'AFS Trinity' 0.632, 'Afton Down' 0.357, 'Amdahl' 0.332; 'from Adobe' 0.018, 'Akamai' (' Ak') 0.036, 'an A on his exam' 0.083, 'Vitamin A' 0.015.",
+ "selection": "random draw"
+}

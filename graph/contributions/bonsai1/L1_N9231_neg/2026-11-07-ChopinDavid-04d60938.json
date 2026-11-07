@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-04d60938",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9231-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T10:32:42+00:00",
+ "recipe": {
+  "toolchain_commit": "92c412954",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N9231_neg/2026-11-07-ChopinDavid-04d60938.tests.json"
+ },
+ "label": "the word piece 'est' after ' Bund' in German Bundestag and its compounds (Bundestages, Bundestagswahl); Bundes- words that the tokenizer keeps as ' Bundes' (Bundesregierung, Bundesamt, Bundesliga) stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N9231_neg/2026-11-07-ChopinDavid-04d60938.tests.json",
+   "prereg_commit": "92c412954",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.776,
+     "peak": "est"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.772,
+     "peak": "est"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.581,
+     "peak": "est"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.982,
+     "peak": "est"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.786,
+     "peak": "est"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.743,
+     "peak": "est"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.233,
+     "peak": "est"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.573,
+     "peak": "est"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.051,
+     "peak": " Plan"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.09,
+     "peak": "tes"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.05,
+     "peak": "start"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": " Land"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.079,
+     "peak": "tr"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": " ber"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.055,
+     "peak": " die"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.078,
+     "peak": " Land"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.774,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "92c412954",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "'est' piece in Bundestag",
+ "unit_kind": "word",
+ "confidence": 0.55,
+ "notes": "Card: top examples 'Bund|es|präsident', 'Bund|est|ag' (gate-closed regime 99%). Tokenizer: ' Bundestag' -> ' Bund','est','ag', ' Bundestagswahl' -> ' Bund','est','ags', but ' Bundesregierung' -> ' Bundes', ' Bundesamt' -> ' Bundes', ' Bundesliga' single token. Probe: 'im Bundestag' 0.669, 'des Bundestages' 0.911; 'Bundesregierung' 0.087, 'Bundesamt' 0.096, 'Bundesliga' 0.017, 'tremendous' 0.293.",
+ "selection": "random draw"
+}
