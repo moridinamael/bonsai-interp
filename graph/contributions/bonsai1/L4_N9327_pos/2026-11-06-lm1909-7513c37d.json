@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-7513c37d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9327+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:10+00:00",
+ "recipe": {
+  "toolchain_commit": "e11c7cfae",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N9327_pos/2026-11-06-lm1909-7513c37d.tests.json"
+ },
+ "label": "components that sense or move a machine: sensors and actuators on devices and robots (accelerometer, gyroscope, servo, ultrasonic, lidar)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N9327_pos/2026-11-06-lm1909-7513c37d.tests.json",
+   "prereg_commit": "e11c7cfae",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.71,
+     "peak": " accelerometer"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.319,
+     "peak": "pper"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.406,
+     "peak": "asonic"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.162,
+     "peak": "ar"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.19,
+     "peak": "uator"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.321,
+     "peak": "ometer"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.191,
+     "peak": " encoder"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.835,
+     "peak": " humidity"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " daily"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " booth"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " delivery"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " during"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " fan"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.255,
+     "peak": " data"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.32,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e11c7cfae",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sensors and actuators",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "New cases in probes: lidar 0.30, stepper motor 0.21, solenoid 0.20, potentiometer 0.13, against under 0.09 for screens and batteries. Fire is expected near the threshold for less common parts. The scan's - pole is dense and gate-closed.",
+ "selection": "random draw"
+}

@@ -1,0 +1,163 @@
+{
+ "id": "2026-11-06-lm1909-ae233ffe",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N11898+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:17:38+00:00",
+ "recipe": {
+  "toolchain_commit": "e11c7cfae",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N11898_pos/2026-11-06-lm1909-ae233ffe.tests.json"
+ },
+ "label": "the piece after 'Ho' spelling 'oar' in Hoare, Hoar, hoary and hoarfrost (not hoarse or hoard)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N11898_pos/2026-11-06-lm1909-ae233ffe.tests.json",
+   "prereg_commit": "e11c7cfae",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.002,
+     "peak": "are"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.763,
+     "peak": "are"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.601,
+     "peak": "ar"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.485,
+     "peak": "ary"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.535,
+     "peak": "ary"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.321,
+     "peak": "arf"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.392,
+     "peak": "ary"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.808,
+     "peak": "are"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "C"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": " analyst"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " oak"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.001,
+     "peak": " lawyers"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": "arse"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": "ard"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": "ne"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.568,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e11c7cfae",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'-are/-ary' after Ho",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Very sparse: only 7 scan tokens reach 0.3 of max, nearly all of them Hoare or hoary. In probes, hoarse and hoard stayed under 0.03. Weak activations spread to other name pieces (iot, ERO, uer) and other scripts.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "are",
+   "ARE",
+   "ar",
+   "ary",
+   "arf"
+  ]
+ }
+}

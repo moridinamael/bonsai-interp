@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-3ece8bfd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N10025+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:17:03+00:00",
+ "recipe": {
+  "toolchain_commit": "e11c7cfae",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N10025_pos/2026-11-06-lm1909-3ece8bfd.tests.json"
+ },
+ "label": "a function word in civic context just before a word for one's nation or state ('across the', 'of this', 'into our' + country/nation): the slot where the country is expected",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N10025_pos/2026-11-06-lm1909-3ece8bfd.tests.json",
+   "prereg_commit": "e11c7cfae",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.435,
+     "peak": " across"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.067,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.307,
+     "peak": " our"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.723,
+     "peak": " across"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.257,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.448,
+     "peak": " great"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.28,
+     "peak": " across"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.235,
+     "peak": " neighboring"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": " teachers"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " clerk"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " our"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " farmer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.293,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e11c7cfae",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'the nation/country'",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Fires on the token before the noun; the output promotes ' nation', ' republic', ' Union'. The same words in a local setting ('across the street', 'this book') stay near zero in probes.",
+ "selection": "random draw"
+}
