@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-82eca69e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N11226+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:24:15+00:00",
+ "recipe": {
+  "toolchain_commit": "a12dd88ba",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N11226_pos/2026-11-06-lm1909-82eca69e.tests.json"
+ },
+ "label": "A savings or investment product word in a life insurer's offer ('life insurance and savings plan'): finance that is not insurance, inside an insurance context",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N11226_pos/2026-11-06-lm1909-82eca69e.tests.json",
+   "prereg_commit": "a12dd88ba",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.749,
+     "peak": " investment"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.209,
+     "peak": " retirement"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.257,
+     "peak": "u"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.896,
+     "peak": " investment"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.235,
+     "peak": " combines"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.426,
+     "peak": " investment"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.037,
+     "peak": " pensions"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.599,
+     "peak": " investment"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.156,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.326,
+     "peak": " disability"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.043,
+     "peak": " also"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.509,
+     "peak": " disability"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": " combines"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.069,
+     "peak": " agent"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "Av"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": "Mass"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.342,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12dd88ba",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "savings/investment at insurer",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "The - pole is insurance itself. The card flags a gate-closed regime for this pole.",
+ "selection": "random draw"
+}

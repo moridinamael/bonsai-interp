@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-8ca5813c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3049+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:42+00:00",
+ "recipe": {
+  "toolchain_commit": "a12dd88ba",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N3049_pos/2026-11-06-lm1909-8ca5813c.tests.json"
+ },
+ "label": "Mid-phrase token of a stock recipe or nutrition phrase whose completion is nearly fixed ('packed light brown [sugar]', 'the antioxidant lycopene'), not recipe or nutrition text as such",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N3049_pos/2026-11-06-lm1909-8ca5813c.tests.json",
+   "prereg_commit": "a12dd88ba",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.549,
+     "peak": " brown"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.265,
+     "peak": " brown"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.18,
+     "peak": "ipo"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.064,
+     "peak": " source"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.632,
+     "peak": "ute"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.105,
+     "peak": " natural"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.087,
+     "peak": "alted"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.066,
+     "peak": " called"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.154,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " large"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.048,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.208,
+     "peak": " le"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " swim"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " morning"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": "berries"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.142,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12dd88ba",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stock food-phrase completion",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Probes: ' brown' after 'packed light' 0.60, '-car' after 'the antioxidant beta' 0.38, plain food sentences near 0. The card also shows non-food peaks (' was' in John 1:1, ' resisting' in a quotation), which this label does not explain.",
+ "selection": "random draw"
+}
