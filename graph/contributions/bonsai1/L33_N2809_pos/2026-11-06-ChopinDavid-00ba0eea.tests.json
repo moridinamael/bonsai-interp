@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-00ba0eea",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2809+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T03:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N2809",
+   "pole": "+",
+   "label": "removing extraneous spacing or clutter from text or code (strip trailing/unnecessary/blank), predicting 'whitespace'",
+   "fire": [
+    "def tidy(text):\n    # remove trailing spaces from every line\n    return '\\n'.join(l.rstrip() for l in text.splitlines())",
+    "Before committing, the editor deletes trailing whitespace at the end of each line.",
+    "The parser ignores unnecessary spaces between tokens and collapses blank lines.",
+    "Use the strip method to drop leading and trailing spaces from the user input.",
+    "The minifier removes unnecessary whitespace and line breaks from the stylesheet.",
+    "Set the option to trim trailing blanks so that diffs stay small and readable.",
+    "Our linter warns about trailing whitespace and lines that contain only spaces.",
+    "The script reads each record, stripping extra spaces and empty lines first."
+   ],
+   "quiet": [
+    "def tidy(text):\n    # count the words on every line\n    return [len(l.split()) for l in text.splitlines()]",
+    "Before committing, the editor checks spelling in the comments of each file.",
+    "The parser reads the tokens in order and builds a syntax tree from them.",
+    "Use the upper method to convert the user input to capital letters.",
+    "The bundler combines the stylesheets into one file for the browser.",
+    "Set the option to show line numbers so that diffs are easier to discuss.",
+    "Our linter warns about variable names that are too short or unclear.",
+    "The script reads each record and writes its fields to a new spreadsheet."
+   ]
+  }
+ ],
+ "predictions": "fire items 0.5-0.9 at trailing/unnecessary/strip; text operations that do not remove anything below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "strip whitespace",
+ "unit_kind": "contextual",
+ "confidence": "medium",
+ "notes": "Probe: '# strip trailing spaces' 0.919, 'unnecessary spaces are removed' 0.900, 'stripping unnecessary blank lines' 0.770, 'removes trailing whitespace and normalizes' 0.733, NORMALIZE_WHITESPACE 0.503; '# convert to lowercase' 0.145, 'Paint the fence white' 0.002. Leak: 'removes unused imports' 0.481, so the pole covers removing clutter in code too; near misses avoid removal."
+}

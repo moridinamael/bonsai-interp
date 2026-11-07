@@ -1,0 +1,55 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-c1b118eb",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N8091+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T03:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N8091",
+   "pole": "+",
+   "label": "the adverbs ' almost' and ' actually' (and imperative ' See'): a hedge or emphasis word before the thing it qualifies",
+   "fire": [
+    "By the end of the race the runners had covered almost forty kilometers.",
+    "Our neighbor told us that the old oak tree is actually hollow inside.",
+    "The ticket price went up to almost double what it cost last year.",
+    "If you look closely, the painting is actually signed in the corner.",
+    "Questions about delivery are common. See the shipping page for details.",
+    "The museum guide said the statue was actually carved from a single stone.",
+    "The temperature dropped to almost zero on the first night of camping.",
+    "Many people assume the spider is dangerous, but it is actually harmless."
+   ],
+   "quiet": [
+    "By the end of the race the runners had covered nearly forty kilometers.",
+    "Our neighbor told us that the old oak tree is hollow inside.",
+    "The ticket price went up to roughly double what it cost last year.",
+    "If you look closely, the painting is signed in the corner by the artist.",
+    "Questions about delivery are common. Visit the shipping page for details.",
+    "The museum guide said the statue was carved from a single block of granite.",
+    "The temperature dropped to around zero on the first night of camping.",
+    "Many people assume the spider is dangerous, but it is really harmless."
+   ]
+  }
+ ],
+ "predictions": "fire items 0.3-0.8 at the trigger token; near misses using nearly/really/indeed below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "almost / actually",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Probe: 'rose to almost three meters' 0.783, 'can actually reach' 0.615, 'below. See the full schedule' 0.681; 'nearly full' 0.087, 'in fact' 0.302 (peak on ' most', so near misses avoid most/both: 'both' 0.235). Pole is broad and gate-closed dominated, max tiny.",
+ "trigger": {
+  "tokens": [
+   " almost",
+   " actually",
+   " See"
+  ]
+ }
+}
