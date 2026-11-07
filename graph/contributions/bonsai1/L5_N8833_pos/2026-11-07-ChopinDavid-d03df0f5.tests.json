@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-d03df0f5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N8833+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T19:24:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N8833",
+   "pole": "+",
+   "label": "the symbol READ in Lisp code (read, read-line, top-level read-eval-print); 'read' in Python method calls and in prose stays low",
+   "fire": [
+    "(let ((x (read))) (print (* x x)))",
+    "(defun ask () (format t \"Name? \") (read-line))",
+    "(loop for form = (read stream nil) while form do (eval form))",
+    "(setq input (read *standard-input*))",
+    "(print (eval (read-from-string \"(+ 1 2)\")))",
+    "(with-open-file (s path) (read s))",
+    "; the classic REPL\n(loop (print (eval (read))))",
+    "(defvar *line* (read-line))"
+   ],
+   "quiet": [
+    "(let ((x 7)) (print (* x x)))",
+    "(defun greet () (format t \"Hello~%\"))",
+    "(loop for item in items do (print item))",
+    "line = sys.stdin.readline()",
+    "(print (eval '(+ 1 2)))",
+    "with open(path) as fh:\n    data = fh.read()",
+    "She likes to read mystery novels in bed.",
+    "(defvar *count* 0)"
+   ]
+  }
+ ],
+ "predictions": "Lisp read 0.4-2.0; Python read calls below 0.1; prose below 0.03",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Lisp READ symbol",
+ "unit_kind": "context",
+ "confidence": 0.4,
+ "notes": "Card: TOP-LEVEL-READ-EVAL-PRINT-LOOP, cons, Reader errors, read_ functions. Probe: (eval (read)) 2.149, read_raw_fif 0.367, f.read() 0.061, pd.read_csv 0.011, prose read 0.008-0.017. Near misses use non-Lisp read and Lisp without read."
+}

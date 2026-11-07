@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-d38452b9",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2762+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T19:24:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N2762",
+   "pole": "+",
+   "label": "best guess: the start of the next item in a comma-separated record or code literal (u'...', b\"...\", list entries); weak and broad, ordinary prose also fires a little",
+   "fire": [
+    "config = {u'host': u'db1', u'port': u'5432', u'user': u'admin'}",
+    "tokens = [b\"red\", b\"green\", b\"blue\", b\"black\"]",
+    "langs = [u'en', u'fr', u'de', u'it', u'es']",
+    "row = (b\"id\", b\"name\", b\"email\", b\"phone\")",
+    "tags = {u'a': u'one', u'b': u'two', u'c': u'three'}",
+    "keys = [b\"alpha\", b\"beta\", b\"gamma\"]",
+    "meta = {u'title': u'Notes', u'author': u'Ann', u'year': u'2009'}",
+    "parts = [u'wheel', u'axle', u'frame', u'seat']"
+   ],
+   "quiet": [
+    "The host machine runs the database for the admin team.",
+    "The flag is red, green and blue with a black stripe.",
+    "She speaks English and French, and a little German.",
+    "Each record has an id and a name for the contact.",
+    "The first tag reads one and the second reads two.",
+    "The Greek alphabet begins with alpha and beta.",
+    "Ann wrote the notes in a small notebook in 2009.",
+    "The bike needs a new wheel and a softer seat."
+   ]
+  }
+ ],
+ "predictions": "record items 0.15-0.25; prose 0.05-0.15; may fail",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "next item in comma list (broad)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Broad (3.9% of tokens) and 89% gate-closed. Probe: u'...' dict 0.220, b\"...\" list 0.172, date comma 0.228, 'two different' 0.231, prose cat sentence 0.145, citation 0.126. Little separation between record and prose; registered as a best guess."
+}
