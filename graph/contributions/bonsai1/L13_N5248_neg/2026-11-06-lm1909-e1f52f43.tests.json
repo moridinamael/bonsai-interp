@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-e1f52f43",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N5248-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:42:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N5248",
+   "pole": "-",
+   "label": "file-existence predicate in code: '.exists', '.isfile', '.isdir'",
+   "fire": [
+    "for name in names:\n    if os.path.exists(name):\n        load(name)",
+    "target = Path(out)\nif not target.exists():\n    target.mkdir()",
+    "if os.path.isdir(folder):\n    shutil.rmtree(folder)",
+    "assert os.path.exists(config_file), 'missing config'",
+    "return os.path.isfile(filename) and filename.endswith('.py')",
+    "while not lock.exists():\n    time.sleep(1)",
+    "if fs.exists(key):\n    fs.delete(key)",
+    "if not os.path.isfile(src):\n    raise ValueError(src)"
+   ],
+   "quiet": [
+    "for name in names:\n    full = os.path.join(base, name)\n    load(full)",
+    "target = Path(out)\ntarget.mkdir()\nprint(target.name)",
+    "folder = os.path.dirname(path)\nshutil.rmtree(folder)",
+    "assert len(config_file) > 0, 'empty config'",
+    "return os.path.basename(filename).upper()",
+    "while not done:\n    time.sleep(1)",
+    "fs.delete(key)\nfs.write(key, data)",
+    "if len(src) == 0:\n    raise ValueError(src)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "path exists check",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Probes peaked near 0.30 on these tokens; the prose word ' exists' stayed at 0.01, so this is the code method and not the word."
+}
