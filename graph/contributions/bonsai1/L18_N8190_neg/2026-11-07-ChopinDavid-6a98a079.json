@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-6a98a079",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8190-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T06:31:33+00:00",
+ "recipe": {
+  "toolchain_commit": "d70e84845",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N8190_neg/2026-11-07-ChopinDavid-6a98a079.tests.json"
+ },
+ "label": "digits and symbols inside machine-style numeric data: geographic coordinates with degree signs, GML coordinate pairs, Julian dates and timestamps in code; numbers in ordinary prose stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N8190_neg/2026-11-07-ChopinDavid-6a98a079.tests.json",
+   "prereg_commit": "d70e84845",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.395,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.45,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.828,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.399,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.762,
+     "peak": "°"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.091,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.552,
+     "peak": "°"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.455,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " friends"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.058,
+     "peak": " still"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.453,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d70e84845",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "numbers in coordinates / numeric data",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: 'JD' x3, digits and spaces in coordinates, '°' in '56°N 98°E', date digits in pandas output. Probe: '56°N 98°E' 1.011, '29°01' N' 0.636, GML corner 0.668, JD arithmetic 0.625, MJD column 0.474, pandas timestamp 0.386; prose without coordinates 0.014, 'third of March' 0.043, '12 apples' 0.019. Near misses keep similar sentences with numbers used as plain prose quantities.",
+ "selection": "random draw"
+}
