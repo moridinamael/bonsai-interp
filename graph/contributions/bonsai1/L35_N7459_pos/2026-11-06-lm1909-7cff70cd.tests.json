@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-7cff70cd",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7459+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7459",
+   "pole": "+",
+   "label": "A Korean word opening on a rarer syllable the tokenizer splits into raw bytes, such as 옷, 넣 or 넓: the pole peaks on the byte-piece token",
+   "fire": [
+    "이번 겨울에는 따뜻한 옷을 많이 준비해서 여행 가방에 차곡차곡 챙겼습니다.",
+    "요리를 시작하기 전에 냄비에 물을 넣고 소금을 조금 뿌려 주세요.",
+    "새로 이사한 아파트는 거실이 넓고 창문이 커서 햇빛이 잘 들어옵니다.",
+    "아이들은 체육 시간이 끝나자 땀에 젖은 옷을 갈아입으러 교실로 뛰어갔다.",
+    "그녀는 편지를 봉투에 넣어 우체통 앞에서 한참을 망설였다.",
+    "이 공원은 잔디밭이 넓어 주말마다 가족 단위 방문객으로 붐빕니다.",
+    "세탁기를 돌리기 전에 옷을 넣고 주머니에 동전이 있는지 확인하세요.",
+    "우리 회사는 더 넓은 시장을 찾아 해외 진출을 계획하고 있습니다."
+   ],
+   "quiet": [
+    "올해 여름에는 시원한 모자를 몇 개 사서 여행 때 쓰려고 합니다.",
+    "요리를 시작하기 전에 손을 깨끗이 씻고 앞치마를 둘러 주세요.",
+    "새로 이사한 아파트는 학교와 가깝고 지하철역도 바로 앞에 있습니다.",
+    "아이들은 체육 시간이 끝나자 물을 마시러 식당으로 뛰어갔다.",
+    "그녀는 편지를 다 읽고 창가에 앉아 한참을 생각했다.",
+    "이 공원은 나무가 많아 주말마다 가족 단위 방문객으로 붐빕니다.",
+    "세탁기를 돌리기 전에 설명서를 다시 한번 확인하세요.",
+    "우리 회사는 새로운 제품을 만들어 내년에 출시할 계획입니다."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "Korean byte-split syllable",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card peaks are mostly partial-character tokens on Hangul syllables (넓, 넣, 옷, 온), plus one on spaced Chinese. Probing showed common split syllables stay near zero, so the test is limited to 옷, 넣 and 넓 and does not claim all byte pieces."
+}

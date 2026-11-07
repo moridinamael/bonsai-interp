@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-97d761f3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8700-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:27:11+00:00",
+ "recipe": {
+  "toolchain_commit": "3eba96b13",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N8700_neg/2026-11-06-lm1909-97d761f3.tests.json"
+ },
+ "label": "A list of spelling pieces with no shared meaning: crash and ash, _VAR, バリ, 방",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N8700_neg/2026-11-06-lm1909-97d761f3.tests.json",
+   "prereg_commit": "3eba96b13",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.261,
+     "peak": " crashed"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.972,
+     "peak": "_VAR"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.795,
+     "peak": "バリ"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.584,
+     "peak": "バリ"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.381,
+     "peak": " 방"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.344,
+     "peak": " 방"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.421,
+     "peak": "ash"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.637,
+     "peak": "バリ"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.032,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.373,
+     "peak": "_NAME"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.034,
+     "peak": "グ"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": "ぶ"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.116,
+     "peak": " 회"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.087,
+     "peak": "리는"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.1,
+     "peak": " server"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.049,
+     "peak": "チーム"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.502,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3eba96b13",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pieces: crash, _VAR, バリ, 방",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "The card flags this pole as broad and weak (max 1.11). I found no shared pattern across scripts, so this stays a plain token list and is not claimed as a distinction.",
+ "selection": "random draw"
+}

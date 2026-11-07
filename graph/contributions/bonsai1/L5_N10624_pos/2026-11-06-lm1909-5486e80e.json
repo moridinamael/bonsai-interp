@@ -1,0 +1,165 @@
+{
+ "id": "2026-11-06-lm1909-5486e80e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N10624+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:26:43+00:00",
+ "recipe": {
+  "toolchain_commit": "3eba96b13",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N10624_pos/2026-11-06-lm1909-5486e80e.tests.json"
+ },
+ "label": "Syria, in any language or script",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N10624_pos/2026-11-06-lm1909-5486e80e.tests.json",
+   "prereg_commit": "3eba96b13",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.395,
+     "peak": " Syria"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.536,
+     "peak": " Syrian"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.528,
+     "peak": " Syria"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.912,
+     "peak": "ri"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.714,
+     "peak": "ри"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.519,
+     "peak": " سوريا"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.418,
+     "peak": " Syrians"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.845,
+     "peak": "rie"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " Armenia"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "om"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.042,
+     "peak": " Iraq"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " studies"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.044,
+     "peak": "рак"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": " مصر"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " gu"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.532,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3eba96b13",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Syria, any script",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Peaks on Syrian, Sy|ria, Russian Си|ри|и and Arabic سور|يا: the meaning crosses scripts, unlike a token unit. Near misses name other countries of the region.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "Syria",
+   "Syrian",
+   "Syrians",
+   "Syriac",
+   "Сирии",
+   "سوريا",
+   "Syrie"
+  ]
+ }
+}

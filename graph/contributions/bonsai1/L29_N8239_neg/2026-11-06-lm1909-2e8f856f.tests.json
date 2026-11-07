@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-2e8f856f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8239-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N8239",
+   "pole": "-",
+   "label": "The next token is a hyphen inside a slug, identifier or hyphen-numbered list, not in prose",
+   "fire": [
+    "https://superuser.com/questions/48213/why-does-my-laptop-fan-keep-running-after-shutdown",
+    "See also https://www.example.org/blog/2014/05/best-way-to-cook-rice-without-a-steamer for details.",
+    "1-Paris 2-Madrid 3-Berlin 4-Vienna 5-Prague",
+    "'order_set-TOTAL_FORMS': '2',\n'order_set-INITIAL_FORMS': '0',\n'order_set-MAX_NUM_FORMS': '',",
+    "kubectl get pods --all-namespaces --field-selector=status.phase=Running",
+    "docker run --rm my-cool-web-app-image-latest",
+    "the file is at /var/log/my-app-server-error-log-backup.txt",
+    "<div class=\"col-md-6 text-center nav-item-active-link\">"
+   ],
+   "quiet": [
+    "On the forum people asked why their laptop fan keeps running after shutdown.",
+    "See also our blog post from May 2014 on the best way to cook rice without a steamer.",
+    "Paris, Madrid, Berlin, Vienna and Prague",
+    "order_total = 2\norder_initial = 0\norder_max = None",
+    "We listed all the pods and then counted how many were still running.",
+    "It was a well-known short-term fix for the three-year-old system.",
+    "the file is at /var/log/myapp/server/backup.txt",
+    "<div class=\"header\"><span>Home</span></div>"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "slug or list hyphen coming",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Peaks sit just before the hyphen (attribute|error-, _set-, 4-, -with-) and the output direction on this side promotes '-' tokens. Prose compounds (well-known) stayed quiet in probing, so one near miss tests that."
+}
