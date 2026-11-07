@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-443f59f8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2143-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:21:39+00:00",
+ "recipe": {
+  "toolchain_commit": "13a65ac03",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N2143_neg/2026-11-06-lm1909-443f59f8.tests.json"
+ },
+ "label": "alcohol or drug use as the subject of the passage: fires on ordinary words inside text about drinking, drugs and addiction, not only on the substance names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N2143_neg/2026-11-06-lm1909-443f59f8.tests.json",
+   "prereg_commit": "13a65ac03",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.113,
+     "peak": " alcohol"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.004,
+     "peak": " clinic"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.113,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.403,
+     "peak": " other"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.031,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.505,
+     "peak": " drug"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.422,
+     "peak": " after"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.298,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " them"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " clinic"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.359,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " la"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.205,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "13a65ac03",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "alcohol and drug use topic",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "The - pole peaks on function words (' other', ' they', ' by') in addiction text. The + pole promotes withdrawal, detox and quitting.",
+ "selection": "random draw"
+}

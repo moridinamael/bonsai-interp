@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-cdf5decb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N3021+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:21:06+00:00",
+ "recipe": {
+  "toolchain_commit": "13a65ac03",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N3021_pos/2026-11-06-lm1909-cdf5decb.tests.json"
+ },
+ "label": "the compared operand in a Python identity or equality test ('if x is y', 'x == y'): the token that completes the test of whether two names are the same object",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N3021_pos/2026-11-06-lm1909-cdf5decb.tests.json",
+   "prereg_commit": "13a65ac03",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.681,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.221,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.904,
+     "peak": " value"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.581,
+     "peak": " widget"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.134,
+     "peak": " object"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.599,
+     "peak": " =="
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.989,
+     "peak": "]:\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.582,
+     "peak": " captain"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.262,
+     "peak": "(conn"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.67,
+     "peak": "(child"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.057,
+     "peak": "(key"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " widget"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " total"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": "_mode"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": ".fields"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " s"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.64,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "13a65ac03",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python identity-test operand",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "'is' tests peaked highest in probes (0.47, 0.82); 'in' was inconsistent, so it is left out of the label. The - pole also fires in code comparisons, so the two poles may split operand position rather than topic.",
+ "selection": "random draw"
+}

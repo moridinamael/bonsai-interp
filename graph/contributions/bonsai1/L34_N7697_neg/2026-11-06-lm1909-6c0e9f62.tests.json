@@ -1,0 +1,60 @@
+{
+ "contribution": "2026-11-06-lm1909-6c0e9f62",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7697-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:09:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N7697",
+   "pole": "-",
+   "label": "a lone capital letter as the first piece of a word the tokenizer splits (C|id, B|efragt, S|ollten, L|uego): a word has started but is not yet known",
+   "fire": [
+    "His teacher admired the composer Lalo and his operas.",
+    "Reviewers praised the new edition of Cervantes for its notes.",
+    "She played a quartet by Boccherini at the festival.",
+    "Wir danken dir. Solltet ihr Fragen haben, ruft uns an.",
+    "Alle Teilnehmer wurden anonym gefragt. Befragt wurden rund 200 Personen.",
+    "Puedes guardar tus rutas. Crea una cuenta y empieza hoy.",
+    "The orchestra closed the evening with a tone poem by Sibelius.",
+    "Puedes viajar sin coche. Luego visita el museo de la ciudad."
+   ],
+   "quiet": [
+    "His teacher admired the composer Mozart and his operas.",
+    "Reviewers praised the new edition of Wagner for its notes.",
+    "She played a quartet by Haydn at the festival.",
+    "Wir danken dir. Wenn ihr Fragen habt, ruft uns an.",
+    "Alle Teilnehmer wurden anonym gefragt. Insgesamt waren es rund 200 Personen.",
+    "Puedes guardar tus rutas. Abre una cuenta y empieza hoy.",
+    "The orchestra closed the evening with a tone poem by Verdi.",
+    "Puedes viajar sin coche. Después visita el museo de la ciudad."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "lone capital starting a split word",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Splits were checked with the tokenizer. Near misses use whole-word tokens or multi-letter first pieces (Hay|dn, Ver|di) in the same frames.",
+ "trigger": {
+  "tokens": [
+   " C",
+   "C",
+   " B",
+   "B",
+   " L",
+   "L",
+   " S",
+   "S"
+  ]
+ }
+}

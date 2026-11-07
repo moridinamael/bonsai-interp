@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-cdf5decb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N3021+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:09:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N3021",
+   "pole": "+",
+   "label": "the compared operand in a Python identity or equality test ('if x is y', 'x == y'): the token that completes the test of whether two names are the same object",
+   "fire": [
+    "class Pool:\n    def release(self, conn):\n        if self.active.get(conn.id) is conn:\n            del self.active[conn.id]\n",
+    "def same_parent(tree, child, parent):\n    if tree.parent_of(child) is parent:\n        return True\n    return False\n",
+    "def drop(cache, key, value):\n    if cache.get(key) is value:\n        cache.pop(key)\n",
+    "class Scene:\n    def on_click(self, widget):\n        if self.focused is widget:\n            self.focused = None\n",
+    "def identical(left, right):\n    if left is right:\n        return 'same object'\n",
+    "def reuse(self, other_opts, other_mode):\n    if self._opts == other_opts and self._mode == other_mode:\n        return\n",
+    "def update(self, field, base):\n    if base is self.fields[field]:\n        return\n",
+    "def owned_ships(ships, captain):\n    return [s for s in ships if s.owner is captain]\n"
+   ],
+   "quiet": [
+    "class Pool:\n    def release(self, conn):\n        found = self.active.get(conn.id)\n        del self.active[conn.id]\n",
+    "def get_parent(tree, child, parent):\n    found = tree.parent_of(child)\n    print(found, parent)\n    return found\n",
+    "def drop(cache, key, limit):\n    if cache.size(key) > limit:\n        cache.pop(key)\n",
+    "class Scene:\n    def on_click(self, widget):\n        self.focused = widget\n        self.redraw()\n",
+    "def total(left, right):\n    result = left + right\n    return result\n",
+    "def reuse(self, other_opts, other_mode):\n    self._opts = other_opts\n    self._mode = other_mode\n    return\n",
+    "def update(self, field, base):\n    self.fields[field] = base\n    return\n",
+    "def owned_names(ships, captain):\n    return [s.name for s in ships if s.speed > captain.speed]\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python identity-test operand",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "'is' tests peaked highest in probes (0.47, 0.82); 'in' was inconsistent, so it is left out of the label. The - pole also fires in code comparisons, so the two poles may split operand position rather than topic."
+}
