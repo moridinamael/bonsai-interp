@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-ee1f79ea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N7624-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:29+00:00",
+ "recipe": {
+  "toolchain_commit": "54d5ebef9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N7624_neg/2026-11-06-lm1909-ee1f79ea.tests.json"
+ },
+ "label": "a noun inside a capitalised business or product name, used as a modifier of the noun that comes next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N7624_neg/2026-11-06-lm1909-ee1f79ea.tests.json",
+   "prereg_commit": "54d5ebef9",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.713,
+     "peak": "shield"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.105,
+     "peak": " Wall"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.261,
+     "peak": " Network"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.402,
+     "peak": "ling"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.648,
+     "peak": "shield"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.224,
+     "peak": " Network"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.06,
+     "peak": " Wall"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.399,
+     "peak": "ling"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.145,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": " property"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.2,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.175,
+     "peak": " garden"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.13,
+     "peak": " driveway"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": " company"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.049,
+     "peak": " door"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.159,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.33,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54d5ebef9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "noun modifier in a trade name",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad. 'shield' and 'Network' are strong, others weaker; ordinary prose stays under 0.1. The Korean genitive 의 on the card suggests 'expects a head noun', which this test does not cover.",
+ "selection": "random draw"
+}

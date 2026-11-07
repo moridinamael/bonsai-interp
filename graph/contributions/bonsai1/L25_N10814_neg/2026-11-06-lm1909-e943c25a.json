@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-e943c25a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N10814-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:09+00:00",
+ "recipe": {
+  "toolchain_commit": "54d5ebef9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N10814_neg/2026-11-06-lm1909-e943c25a.tests.json"
+ },
+ "label": "an inner piece of a rare multi-token name, partway through spelling out a drug, place or character name",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N10814_neg/2026-11-06-lm1909-e943c25a.tests.json",
+   "prereg_commit": "54d5ebef9",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.02,
+     "peak": " doctor"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.098,
+     "peak": "id"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.05,
+     "peak": "isa"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.05,
+     "peak": "til"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.362,
+     "peak": "isc"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.023,
+     "peak": " Zh"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.542,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.009,
+     "peak": " village"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " doctor"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " cases"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " along"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": " Dover"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " works"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " adult"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " village"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.05,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54d5ebef9",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inner piece of rare name",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Fires on the second or third token of names like imipramine, Tisza, Whimsicott, Isyak. Common names of the same kinds stay quiet. The + pole is a separate lexical 'Dig' unit.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-fc7cd038",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N4035+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:19+00:00",
+ "recipe": {
+  "toolchain_commit": "54d5ebef9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N4035_pos/2026-11-06-lm1909-fc7cd038.tests.json"
+ },
+ "label": "(best guess, low confidence) the line break after a long paragraph and the first token of the next paragraph",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N4035_pos/2026-11-06-lm1909-fc7cd038.tests.json",
+   "prereg_commit": "54d5ebef9",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.017,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.017,
+     "peak": " plains"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.023,
+     "peak": ".\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.018,
+     "peak": "U"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.021,
+     "peak": " four"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.015,
+     "peak": " entering"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.017,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.016,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " plains"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " length"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " four"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " began"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " takes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.695,
+    "median_fire": 0.017,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54d5ebef9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "paragraph boundary (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card peaks are newlines and paragraph-initial tokens ('According'), but my multi-paragraph probes reached only 0.06 of max against 0.02 without the break. The real driver seems to need much longer context. Expected to fail.",
+ "selection": "random draw"
+}
