@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-8b0fa0fb",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N11667+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T02:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N11667",
+   "pole": "+",
+   "label": "a Chinese character that is its own token and begins a compound noun naming a material or object (木 in 木屋, 金 in 金项链, 绳 in 绳圈); the same sentences with a noun that is a single multi-character token stay low",
+   "fire": [
+    "院子里放着一张木桌，几个老人在那里下棋。",
+    "村口有一座石桥，已经有几百年的历史了。",
+    "他推开那扇铁门，走进了安静的院子。",
+    "奶奶提着一个竹篮去市场买菜。",
+    "厨房里挂着一口铜锅，擦得闪闪发亮。",
+    "她从布袋里拿出几个苹果分给孩子们。",
+    "公园的湖边有几张石凳，供游客休息。",
+    "他给女儿买了一条金手链作为生日礼物。"
+   ],
+   "quiet": [
+    "院子里放着一张桌子，几个老人在那里下棋。",
+    "村口有一座房子，已经有几百年的历史了。",
+    "他推开那扇门，走进了安静的院子。",
+    "奶奶提着一个包去市场买菜。",
+    "厨房里挂着一些东西，擦得闪闪发亮。",
+    "她从口袋里拿出几个苹果分给孩子们。",
+    "公园的湖边有几把椅子，供游客休息。",
+    "他给女儿买了一个礼物作为生日惊喜。"
+   ]
+  }
+ ],
+ "predictions": "fire items 0.4-0.9; near misses below 0.06",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "first CJK char of a material+object compound",
+ "unit_kind": "token",
+ "confidence": 0.5,
+ "notes": "Card: top 32 peak on single CJK characters starting nouns: '木' x6, '石' x3, '賓', '里', '金', '绳'. Probe: '许多木屋' 0.878, '金项链' 0.712, '绳圈' 0.675, '賓客' 0.457; '盟友' 0.130, verb '砌' 0.154; '许多房子' (房子 is one token) 0.022, everyday sentence 0.015. Tokenizer check: 木桌, 石桥, 铁门, 竹篮, 铜锅, 布袋 split into two single-char tokens; 桌子, 椅子, 房子 are single tokens."
+}

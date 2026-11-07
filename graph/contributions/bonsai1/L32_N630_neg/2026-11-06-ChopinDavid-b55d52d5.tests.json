@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-b55d52d5",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N630-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T02:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N630",
+   "pole": "-",
+   "label": "the token ('a', 'of') right before an expected letter grade or rating, where the context sets up a grade (GPA rules, report cards, infrastructure ratings); 'a' in contexts that do not set up a grade stays low",
+   "fire": [
+    "To graduate with honors, students need at least a 3.5 average in their major.",
+    "The state's roads were given a C minus by the civil engineers' report card.",
+    "Applicants must have earned at least a B in introductory chemistry.",
+    "The final exam counts for half, and anyone below a D must retake the course.",
+    "Each assignment is marked out of ten, and you need at least a six to pass.",
+    "The watchdog group rated the city's ethics office a D for weak enforcement.",
+    "If you skip the lab reports, your grade will drop to a failing mark.",
+    "She was proud to receive a grade of A minus on her thesis."
+   ],
+   "quiet": [
+    "To graduate on time, students need at least a full year of language study.",
+    "The state's roads were given a new coat of paint by the county crews.",
+    "Applicants must have earned at least a little experience in a laboratory.",
+    "The final exam is in May, and anyone who is ill must contact the office.",
+    "Each assignment is printed on paper, and you need at least a pen to start.",
+    "The watchdog group sent the city's ethics office a letter about enforcement.",
+    "If you skip the lab reports, your teacher will send a note home.",
+    "She was proud to receive a letter from the dean about her thesis."
+   ]
+  }
+ ],
+ "predictions": "fire items 0.4-0.75; near misses below 0.08",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot before an expected grade/rating",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: top examples peak on ' a' in 'at least a 2.0 GPA', 'change to a grade of f', 'rated a D', 'a \"D-\"'; the + pole promotes ' A'. Probe: 'at least a C' 0.723 and 'at least a passing score' also 0.723 (the setup, not the letter, drives it), 'at least a 3.0 GPA' 0.481, 'rated a D' 0.457, 'a grade of A' 0.434; 'received a B from the inspectors' 0.041 (no setup before 'a'), 'bought a new bicycle' 0.005. Near misses keep 'a' but remove the grading setup."
+}
