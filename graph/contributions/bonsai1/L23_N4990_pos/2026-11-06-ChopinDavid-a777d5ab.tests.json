@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-a777d5ab",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N4990+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T02:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N4990",
+   "pole": "+",
+   "label": "the standalone space token that the tokenizer splits off before a digit string (' 2013' -> ' ' + digits), in dates, code and prose alike; text where no space precedes a digit stays low",
+   "fire": [
+    "The festival was first held in the town square on May 9, 1987, and has run every year since.",
+    "According to the census, the village had 312 residents and two schools.",
+    "    for i in range(n):\n        if scores[i] > 50:\n            passed += 1",
+    "The bridge, completed in 1932, still carries most of the traffic into the city.",
+    "She ran the marathon in just under 3 hours and finished in the top ten.",
+    "The library received a donation of 850 books from a retired professor.",
+    "Le musée a ouvert ses portes le 12 mars 2004 après des années de travaux.",
+    "The recipe serves 6 people and takes about an hour to prepare."
+   ],
+   "quiet": [
+    "The festival was first held in the town square in late spring and has run every year since.",
+    "According to the census, the village had several hundred residents and two schools.",
+    "    for item in items:\n        if item.valid:\n            passed.append(item)",
+    "The bridge, completed long ago, still carries most of the traffic into the city.",
+    "She ran the marathon in just under three hours and finished in the top ten.",
+    "The library received a large donation of books from a retired professor.",
+    "Le musée a ouvert ses portes au printemps après des années de travaux.",
+    "The recipe serves a family of six and takes about an hour to prepare."
+   ]
+  }
+ ],
+ "predictions": "fire items 0.15-0.25; near misses below 0.06",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space token before a number",
+ "unit_kind": "token",
+ "confidence": 0.6,
+ "notes": "Card: 16 of the top 32 peak on the bare ' ' token before a year or number. Probe: the space before a digit fired 0.174-0.206 in dates ('June 3, 2015' 0.176), code ('>= 0' 0.174, '[1.0, ...' 0.206), prose ('bought 2013 shares' 0.189, '45 people' 0.194) and French ('4 juillet 1998' 0.187); a sentence with no digits 0.046. Near misses write numbers as words or attach digits to brackets/hyphens so no ' ' token precedes them."
+}
