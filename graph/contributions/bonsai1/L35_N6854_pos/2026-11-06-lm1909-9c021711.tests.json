@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-06-lm1909-9c021711",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6854+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:43:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6854",
+   "pole": "+",
+   "label": "the piece ' fl' opening a word that the tokenizer splits (flub, flunk), as against words without it",
+   "fire": [
+    "The senator made one embarrassing flub at the debate.",
+    "That was the worst flub of the night for the anchor.",
+    "Many students will flunk the course this year.",
+    "If you flunk again, you must repeat the class.",
+    "He likes to flout every rule in the building.",
+    "They continued to flog the horse up the hill.",
+    "The critic had no wish to fleece his readers.",
+    "She tried hard not to flummox the new hires."
+   ],
+   "quiet": [
+    "The senator made one embarrassing error at the debate.",
+    "That was the worst mistake of the night for the anchor.",
+    "Many students will fail the course this year.",
+    "If you fail again, you must repeat the class.",
+    "He likes to break every rule in the building.",
+    "They continued to whip the horse up the hill.",
+    "The critic had no wish to cheat his readers.",
+    "She tried hard not to confuse the new hires."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off ' fl'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' fl' x6, ' Fl' x2, plus broken-byte and ' б' pieces. The - pole is other onsets (' sl', ' y', ' cl'), so this may be a next-token distinction between word beginnings. Probes: 'flub' 0.55-0.68, 'flunk' 0.46, but 'flubbed' 0.07. Flout, flog, fleece and flummox were not probed.",
+ "trigger": {
+  "tokens": [
+   " fl",
+   " Fl"
+  ]
+ }
+}

@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-9c021711",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6854+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:54:38+00:00",
+ "recipe": {
+  "toolchain_commit": "eabc5f7b3",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6854_pos/2026-11-06-lm1909-9c021711.tests.json"
+ },
+ "label": "the piece ' fl' opening a word that the tokenizer splits (flub, flunk), as against words without it",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6854_pos/2026-11-06-lm1909-9c021711.tests.json",
+   "prereg_commit": "eabc5f7b3",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.727,
+     "peak": " fl"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.525,
+     "peak": " fl"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.42,
+     "peak": " fl"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.37,
+     "peak": " fl"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.477,
+     "peak": " fl"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.059,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.047,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.413,
+     "peak": " fl"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.059,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.047,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.055,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.416,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eabc5f7b3",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off ' fl'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' fl' x6, ' Fl' x2, plus broken-byte and ' б' pieces. The - pole is other onsets (' sl', ' y', ' cl'), so this may be a next-token distinction between word beginnings. Probes: 'flub' 0.55-0.68, 'flunk' 0.46, but 'flubbed' 0.07. Flout, flog, fleece and flummox were not probed.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " fl",
+   " Fl"
+  ]
+ }
+}

@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-b4c851f1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6635-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:53:28+00:00",
+ "recipe": {
+  "toolchain_commit": "eabc5f7b3",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N6635_neg/2026-11-06-lm1909-b4c851f1.tests.json"
+ },
+ "label": "a quantity word that sets up a measure of something: ' amount', ' half', ' twice', ' lot'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N6635_neg/2026-11-06-lm1909-b4c851f1.tests.json",
+   "prereg_commit": "eabc5f7b3",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.496,
+     "peak": " half"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.281,
+     "peak": " amount"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.235,
+     "peak": " twice"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.183,
+     "peak": " amount"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.542,
+     "peak": " twice"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.001,
+     "peak": " apples"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.212,
+     "peak": " half"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.372,
+     "peak": " amount"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " crop"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.049,
+     "peak": " fuel"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.06,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " oil"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " apples"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.243,
+     "peak": " mass"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.258,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eabc5f7b3",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "amount / half / twice",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' amount' x15 of the top 32. Probes: the same sentences without the quantity word stay near 0.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "amount",
+   "half",
+   "twice",
+   "lot"
+  ]
+ }
+}

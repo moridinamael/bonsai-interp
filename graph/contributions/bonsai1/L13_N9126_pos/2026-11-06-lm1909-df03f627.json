@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-df03f627",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N9126+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:54:17+00:00",
+ "recipe": {
+  "toolchain_commit": "eabc5f7b3",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N9126_pos/2026-11-06-lm1909-df03f627.tests.json"
+ },
+ "label": "the token that opens a given name or quoted phrase after a naming verb or noun ('was called New ...', 'the phrase “...')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N9126_pos/2026-11-06-lm1909-df03f627.tests.json",
+   "prereg_commit": "eabc5f7b3",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.468,
+     "peak": " New"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.535,
+     "peak": " New"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.105,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.35,
+     "peak": " “"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.273,
+     "peak": " New"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.091,
+     "peak": "jà"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.16,
+     "peak": " New"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.051,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.111,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.062,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.05,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": "Crit"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.039,
+     "peak": " popular"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.126,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.117,
+     "peak": " rich"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.05,
+     "peak": " it"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.217,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eabc5f7b3",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "opens a given name",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags broad and mostly gate-closed. Probes: ' New' after called or named 0.6-0.8, ' “' after 'phrase' 0.3, but 'called Acme' 0.07 and 'renamed Port Royal' 0.10, so this may be narrower than the label.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-759a4cc5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10635-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:54:02+00:00",
+ "recipe": {
+  "toolchain_commit": "eabc5f7b3",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N10635_neg/2026-11-06-lm1909-759a4cc5.tests.json"
+ },
+ "label": "come, came or drawing when an activity is about to end ('came to a halt', 'drawing to a close')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N10635_neg/2026-11-06-lm1909-759a4cc5.tests.json",
+   "prereg_commit": "eabc5f7b3",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.542,
+     "peak": " drawing"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.335,
+     "peak": " came"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.136,
+     "peak": " came"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.149,
+     "peak": " came"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.436,
+     "peak": " coming"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.095,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.589,
+     "peak": " come"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.549,
+     "peak": " drawing"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " workers"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "De"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "ists"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " visit"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " come"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " engineer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.034,
+     "peak": " drawing"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.439,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eabc5f7b3",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "coming to an end",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Same verbs as the near misses: literal arrival stays near 0, which is the distinction. The pole fires on the verb itself, before 'to a halt' is seen, so the subject must set it up. Output promotes ' end', ' stop'.",
+ "selection": "random draw"
+}
