@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-06-lm1909-8d044b0d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N6526+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:02:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N6526",
+   "pole": "+",
+   "label": "the token '):\\n' closing a Python method header that takes arguments, in a longer class body",
+   "fire": [
+    "class OrderHandler(BaseHandler):\n\n    def create(self, request, order_id, amount):\n        return self.store.add(order_id, amount)\n\n    def refund(self, request, order_id, reason):\n        return self.store.undo(order_id, reason)\n\n    def cancel(self, request, order_id, notify):\n        return self.store.drop(order_id)\n",
+    "class TestParser(unittest.TestCase):\n\n    def check_tokens(self, text, expected):\n        self.assertEqual(split(text), expected)\n\n    def check_error(self, text, message):\n        self.assertRaises(message, split, text)\n\n    def check_empty(self, text, default):\n        self.assertEqual(split(text), default)\n",
+    "class CsvWriter(Writer):\n\n    def write_row(self, row, delimiter):\n        self.out.write(delimiter.join(row))\n\n    def write_rows(self, rows, delimiter):\n        self.out.write(len(rows))\n\n    def flush_buffer(self, size, timeout):\n        self.out.flush()\n",
+    "class UserAdmin(admin.ModelAdmin):\n\n    def get_queryset(self, request, queryset):\n        return queryset.filter(active=True)\n\n    def save_model(self, request, obj, form, change):\n        obj.save()\n\n    def delete_model(self, request, obj):\n        obj.delete()\n",
+    "class GridLayer(nn.Module):\n\n    def forward(self, inputs, mask, state):\n        return self.net(inputs, mask)\n\n    def reset(self, size, value):\n        self.state = value\n\n    def project(self, points, axis):\n        return points.sum(axis)\n",
+    "class CacheClient(Client):\n\n    def get_value(self, key, default, ttl):\n        return self.data.get(key, default)\n\n    def set_value(self, key, value, ttl):\n        self.data[key] = value\n\n    def drop_value(self, key, *args, **kwargs):\n        self.data.pop(key)\n",
+    "class MailQueue(Queue):\n\n    def push_message(self, sender, target, body):\n        self.items.append(body)\n\n    def pop_message(self, target, limit):\n        return self.items.pop()\n\n    def count_messages(self, target, unread):\n        return len(self.items)\n",
+    "class MapRenderer(Renderer):\n\n    def draw_tile(self, canvas, x, y):\n        canvas.fill(x, y)\n\n    def draw_label(self, canvas, text, size):\n        canvas.text(text, size)\n\n    def clear_area(self, canvas, width, height):\n        canvas.wipe(width, height)\n"
+   ],
+   "quiet": [
+    "handler = BaseHandler()\n\norder_id = request.args[0]\namount = request.args[1]\nreason = request.args[2]\nnotify = request.args[3]\norder = handler.store.add(order_id, amount)\nhandler.store.undo(order_id, reason)\nhandler.store.drop(order_id)\n",
+    "import unittest\n\ntext = 'a b c'\nexpected = ['a', 'b', 'c']\nmessage = 'bad input'\ndefault = []\ntokens = split(text)\nassert tokens == expected\nassert split('') == default\nprint(message)\n",
+    "writer = Writer()\n\nrows = load_rows(path)\ndelimiter = ','\nsize = 1024\ntimeout = 30\nwriter.out.write(delimiter.join(rows[0]))\nwriter.out.write(len(rows))\nwriter.out.flush()\n",
+    "from django.contrib import admin\n\nqueryset = User.objects.all()\nactive = queryset.filter(active=True)\nobj = active.first()\nobj.name = 'new'\nobj.save()\nobj.delete()\nadmin.site.register(User)\n",
+    "import torch.nn as nn\n\nnet = nn.Linear(4, 2)\ninputs = load_inputs(path)\nmask = inputs > 0\noutput = net(inputs)\nstate = output.detach()\ntotal = output.sum(axis)\nprint(total)\n",
+    "client = Client()\n\nkey = 'session'\nvalue = client.data.get(key, None)\nttl = 60\nclient.data[key] = value\nclient.data.pop(key)\ncount = len(client.data)\nprint(count)\n",
+    "queue = Queue()\n\nsender = 'ann'\ntarget = 'bob'\nbody = 'hello'\nlimit = 10\nqueue.items.append(body)\nlast = queue.items.pop()\ncount = len(queue.items)\nprint(count)\n",
+    "renderer = Renderer()\n\ncanvas = renderer.canvas\nwidth = 640\nheight = 480\nsize = 12\ncanvas.fill(width, height)\ncanvas.text('map', size)\ncanvas.wipe(width, height)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "'):\\n' closing a def",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: 16 of the top 32 peaks are this token. Probes reached only 0.12-0.22 on similar code, so this may fail on the median. ' Sections' also fires and is not covered.",
+ "trigger": {
+  "tokens": [
+   "):\n"
+  ]
+ }
+}

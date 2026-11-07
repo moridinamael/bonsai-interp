@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-8d044b0d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N6526+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:19:34+00:00",
+ "recipe": {
+  "toolchain_commit": "246ee984e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N6526_pos/2026-11-06-lm1909-8d044b0d.tests.json"
+ },
+ "label": "the token '):\\n' closing a Python method header that takes arguments, in a longer class body",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N6526_pos/2026-11-06-lm1909-8d044b0d.tests.json",
+   "prereg_commit": "246ee984e",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.122,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.316,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.246,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.33,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.282,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.133,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.149,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.128,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": " tokens"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": "["
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": ".site"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.089,
+     "peak": " >"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.059,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": "8"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.198,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "246ee984e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'):\\n' closing a def",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: 16 of the top 32 peaks are this token. Probes reached only 0.12-0.22 on similar code, so this may fail on the median. ' Sections' also fires and is not covered.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "):\n"
+  ]
+ }
+}

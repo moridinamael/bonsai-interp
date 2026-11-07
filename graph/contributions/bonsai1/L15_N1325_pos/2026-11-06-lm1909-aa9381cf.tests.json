@@ -1,0 +1,67 @@
+{
+ "contribution": "2026-11-06-lm1909-aa9381cf",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N1325+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:02:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N1325",
+   "pole": "+",
+   "label": "a token that needs its completion next: a contraction stem (' wasn', ' couldn' before 't), ' according' before 'to', ' well' in 'as well as', a bare space before a digit",
+   "fire": [
+    "We looked everywhere, but the keys weren't in the drawer.",
+    "My brother wouldn't lend me the car on Saturday.",
+    "The price will change, according to a spokesman for the airline.",
+    "The store sells paint, brushes, as well as a few small ladders.",
+    "Honestly, they aren't ready for the inspection this week.",
+    "Meeting starts at 14:30 and tickets cost 12 euros.",
+    "df = table.iloc[:, [1, 3]]\nn = len(df) % 4 == 0",
+    "You shouldn't leave the oven on overnight, my uncle said."
+   ],
+   "quiet": [
+    "We looked everywhere, but the keys were not in the drawer.",
+    "My brother would not lend me the car on Saturday.",
+    "The price will change, said a spokesman for the airline.",
+    "The store sells paint, brushes, and a few small ladders.",
+    "Honestly, they are not ready for the inspection this week.",
+    "Meeting starts at noon and tickets cost twelve euros.",
+    "df = table.iloc[:, cols]\nn = len(df) % width == start",
+    "You should not leave the oven on overnight, my uncle said."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "token awaiting its completion",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Not every fixed phrase fires: ' of' in 'because of' and 'in spite of' stayed quiet in probes, so the shared pattern may be narrower than the label says.",
+ "trigger": {
+  "tokens": [
+   " according",
+   " According",
+   "According",
+   " well",
+   " wasn",
+   " isn",
+   " didn",
+   " doesn",
+   " couldn",
+   " hasn",
+   " weren",
+   " wouldn",
+   " aren",
+   " shouldn",
+   " "
+  ]
+ }
+}

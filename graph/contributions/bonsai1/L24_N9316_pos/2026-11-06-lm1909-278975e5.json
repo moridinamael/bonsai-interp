@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-278975e5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9316+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:07+00:00",
+ "recipe": {
+  "toolchain_commit": "246ee984e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N9316_pos/2026-11-06-lm1909-278975e5.tests.json"
+ },
+ "label": "the first piece of a split surname right after the given name Matt or Matthew ('Matthew Mc|Conaughey'); the same surname after another given name stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N9316_pos/2026-11-06-lm1909-278975e5.tests.json",
+   "prereg_commit": "246ee984e",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.438,
+     "peak": " Mc"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.364,
+     "peak": " Mod"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.484,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.038,
+     "peak": " Matt"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.108,
+     "peak": " Hass"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.416,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.2,
+     "peak": " Ga"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.222,
+     "peak": " Matthew"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.066,
+     "peak": "Con"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " bi"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " sitcom"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " drama"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " quarterback"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " Le"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " interviewed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.293,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "246ee984e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "surname after Matt/Matthew",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Surnames that are one token ('Matt Lucas') stayed quiet in probes.",
+ "selection": "random draw"
+}
