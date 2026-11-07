@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-ccee7da7",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N11739-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T01:24:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N11739",
+   "pole": "-",
+   "label": "the gettext translation-call token _(\" / _(' that wraps a user-facing string in code; the same string passed without _( stays low",
+   "fire": [
+    "        messages.error(request, _(\"Your session has expired.\"))",
+    "    help_text=_('Required. 150 characters or fewer.'),",
+    "            raise ValidationError(_(\"Enter a valid email address.\"))",
+    "    title = _(\"Account Settings\")",
+    "        button.set_label(_(\"Open File\"))",
+    "    verbose_name=_('date joined'),",
+    "            msg = _(\"Disk quota exceeded\")",
+    "        LOG.warning(_(\"Volume %s not found\"), vol_id)"
+   ],
+   "quiet": [
+    "        messages.error(request, \"Your session has expired.\")",
+    "    help_text='Required. 150 characters or fewer.',",
+    "            raise ValidationError(\"Enter a valid email address.\")",
+    "    title = \"Account Settings\"",
+    "        button.set_label(\"Open File\")",
+    "    verbose_name='date joined',",
+    "            msg = \"Disk quota exceeded\"",
+    "        LOG.warning(\"Volume %s not found\", vol_id)"
+   ]
+  }
+ ],
+ "predictions": "fire items 0.7-1.0; near misses below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "gettext _(\" call",
+ "unit_kind": "word",
+ "confidence": 0.7,
+ "notes": "Card: 32/32 top peaks on '(_(\"', ' _(\"', \"=_('\", \" _('\". Probe: four _(\" forms 0.835-0.910; the same strings without _( 0.009-0.185 (plain '(\"' 0.185, 'str(\"' 0.107); prose about gettext 0.008."
+}

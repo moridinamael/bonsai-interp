@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-1eb56b95",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N5187+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T01:33:29+00:00",
+ "recipe": {
+  "toolchain_commit": "cd04a485f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N5187_pos/2026-11-06-ChopinDavid-1eb56b95.tests.json"
+ },
+ "label": "unclear tiny pole (max 2.2, gate-closed regime); best guess: the character 紅 'red' as the first part of a Chinese compound like 紅酒 or 紅茶; other colour characters stay lower",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N5187_pos/2026-11-06-ChopinDavid-1eb56b95.tests.json",
+   "prereg_commit": "cd04a485f",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.187,
+     "peak": "紅"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.186,
+     "peak": "紅"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.089,
+     "peak": "紅"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.127,
+     "peak": "紅"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.112,
+     "peak": "紅"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.174,
+     "peak": "紅"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.051,
+     "peak": "紅"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.44,
+     "peak": "紅"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.096,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.074,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": "店"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.049,
+     "peak": "盒"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": "上"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.162,
+     "peak": "牛奶"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": "了很多"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.091,
+     "peak": "咖啡"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.15,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd04a485f",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "unclear; 紅 in compounds",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card: max only 2.20, 100% gate-closed echo; peaks on '紅' x4 (紅酒杯, 紅色, 紅茶), 'ow', 'hab', ' Aurora', 'frog'. Probe: '紅酒杯' 0.212, '紅茶' 0.215, '紅色的花' 0.062, '白酒杯' 0.096, ' Aurora' 0.174, 'leapfrogging' 0.049, rainbow 0.010. Effects are small; expect a weak or failed test.",
+ "selection": "random draw"
+}

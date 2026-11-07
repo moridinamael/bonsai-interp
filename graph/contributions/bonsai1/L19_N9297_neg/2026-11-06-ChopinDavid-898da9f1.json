@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-898da9f1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N9297-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T01:31:36+00:00",
+ "recipe": {
+  "toolchain_commit": "cd04a485f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N9297_neg/2026-11-06-ChopinDavid-898da9f1.tests.json"
+ },
+ "label": "debugging scaffolding in Python code: the exception variable in 'except ... as e' and commented-out print statements; live print calls, bare except clauses and prose 'print' stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N9297_neg/2026-11-06-ChopinDavid-898da9f1.tests.json",
+   "prereg_commit": "cd04a485f",
+   "author": "ChopinDavid",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.544,
+     "peak": " e"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.381,
+     "peak": "print"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.218,
+     "peak": " e"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.389,
+     "peak": " print"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.326,
+     "peak": "print"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.228,
+     "peak": " e"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.488,
+     "peak": "print"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.4,
+     "peak": " e"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " connect"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": " show"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " pass"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " meeting"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.385,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd04a485f",
+  "minutes": 0,
+  "batch_size": 16
+ },
+ "short": "except-as-e / commented-out print",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: top examples peak on ' e' in 'except Exception as e' (x13) and on ' print' in '#print(...)' (x12); the + pole suppresses debug/trace. Probe: 'except Exception as e:' 0.470, '#print(total)' 0.314, '# print for debugging purposes' 0.284; live 'print(a)' in a function 0.019, 'except ValueError: pass' 0.022, prose 'print the document' 0.010.",
+ "selection": "random draw"
+}
