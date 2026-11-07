@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-ad19ded8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2179+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T03:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N2179",
+   "pole": "+",
+   "label": "marking that only one option or explanation is possible: 'can only', 'no other', 'no alternative', 'nowhere else'",
+   "fire": [
+    "After the bridge collapsed, the villagers had no other way to reach the town.",
+    "Such a sudden drop in sales can only be explained by the new competitor.",
+    "Once the dam was built, the fish had nowhere else to spawn.",
+    "With the budget frozen, the school had no alternative but to close the library.",
+    "The fingerprints on the glass could only have come from the gardener.",
+    "Stranded in the storm, the hikers saw no other option than to wait.",
+    "This kind of damage can only be caused by a very strong earthquake.",
+    "When the shop closed, the elderly residents had nowhere else to buy bread."
+   ],
+   "quiet": [
+    "After the bridge was repaired, the villagers had a quicker way to reach the town.",
+    "Such a sudden drop in sales might be explained by several different factors.",
+    "Once the dam was built, the fish moved upstream to spawn in spring.",
+    "With the budget increased, the school decided to expand the library.",
+    "The fingerprints on the glass were sent to the lab for analysis.",
+    "Stranded in the storm, the hikers checked their maps and waited.",
+    "The museum has only three paintings by this artist in its collection.",
+    "When the shop reopened, the elderly residents bought bread there every day."
+   ]
+  }
+ ],
+ "predictions": "fire items 0.4-0.75 at only/other/else/alternative; near misses with the option left open, or 'only' as a plain quantity restrictor, below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "only possible option",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "Probe: 'nowhere else to go' 0.734, 'no alternative but' 0.617, 'no other choice than' 0.544, 'can only be described as' 0.520, 'could only have been achieved' 0.450; 'can be described as a partial success' 0.031, 'a good choice of buyers' 0.014, sentence-initial 'Only three students' 0.013. Near misses include mid-sentence quantity 'only' to test the distinction (not probed mid-sentence)."
+}
