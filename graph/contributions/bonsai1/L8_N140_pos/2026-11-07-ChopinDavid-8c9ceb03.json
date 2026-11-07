@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-8c9ceb03",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N140+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T16:28:00+00:00",
+ "recipe": {
+  "toolchain_commit": "bd3851921",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N140_pos/2026-11-07-ChopinDavid-8c9ceb03.tests.json"
+ },
+ "label": "the word for 'month' as a calendar unit across languages (this month, Awareness Month, mois de / mes de before a month name, شهر); the same sentences with week or year stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N140_pos/2026-11-07-ChopinDavid-8c9ceb03.tests.json",
+   "prereg_commit": "bd3851921",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.502,
+     "peak": " month"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.68,
+     "peak": " Month"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.784,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.925,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.764,
+     "peak": " شهر"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.407,
+     "peak": " month"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.609,
+     "peak": " Month"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.238,
+     "peak": " month"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.148,
+     "peak": " pro"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " المسلم"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.096,
+     "peak": " bill"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " founding"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.032,
+     "peak": " rent"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.645,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bd3851921",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "'month' (calendar unit, multilingual)",
+ "unit_kind": "token",
+ "confidence": 0.6,
+ "notes": "Card: ' de' after mois/mes, ' Month', ' month', ' شهر'. Probe: National Poetry Month 0.864, this month 0.723, mois de 0.723, شهر 0.631, mes de 0.570; this week 0.063, mois removed 0.007. 'April is a rainy season' 0.415 (month name lead-in predicts Month), so near misses avoid month names before the slot.",
+ "selection": "random draw"
+}
