@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-eae701a4",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N6201+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T08:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N6201",
+   "pole": "+",
+   "label": "a setup that predicts an environmental nuisance (dust, noise, fumes, smoke, pollution): exposure, protection or complaint framing, as against neutral or pleasant descriptions of the same place",
+   "fire": [
+    "Residents near the cement plant have long complained of dust and noise.",
+    "The roadworks filled the street with clouds of dust for weeks.",
+    "Wear a respirator to avoid breathing paint fumes in the garage.",
+    "Children living near busy roads are exposed to exhaust fumes every day.",
+    "The sawmill workers suffered from the constant noise and sawdust.",
+    "Close the windows to keep the smoke out when the fields are burning.",
+    "Years of inhaling factory smoke left him with a chronic cough.",
+    "The neighbours protested the late-night noise and diesel fumes from the depot."
+   ],
+   "quiet": [
+    "Residents near the cement plant have long enjoyed the riverside walk.",
+    "The roadworks finished early and the street reopened in June.",
+    "Wear an apron to keep your shirt clean while baking in the kitchen.",
+    "Children living near the park can walk to school every day.",
+    "The sawmill workers celebrated the end of the season with a picnic.",
+    "Open the windows to let the sunshine in when the fields are green.",
+    "Years of hiking mountain trails left him fit and cheerful.",
+    "The neighbours praised the new bakery and the flower boxes on the depot."
+   ]
+  }
+ ],
+ "predictions": "fire 0.6-1.1 on the words before or at the nuisance in exposure/complaint contexts; neutral or pleasant descriptions below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts dust/noise nuisance",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card peaks on the token before dust/noise/pollution ('constant', 'and', 'of', 'keep'); the other pole's output promotes dust, noise, smoke, smell. Probe: masks from constant dust 0.984, noise and fumes 1.169, traffic pollution and smoke 0.773, inhaling coal dust 0.652; but 'complained about the rent and parking' 0.799 and 'gloves ... sharp edges' 0.446 (the setup alone fires); fresh mountain air 0.112. Near misses therefore drop the complaint/exposure setup, not only the word."
+}

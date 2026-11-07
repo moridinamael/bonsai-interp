@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-42019d55",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N10858+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T08:28:12+00:00",
+ "recipe": {
+  "toolchain_commit": "4ed0ec7f6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N10858_pos/2026-11-07-ChopinDavid-42019d55.tests.json"
+ },
+ "label": "a '1' leading a multi-digit or dotted number (1.000.000, log base 10) and the ordinal period of German '1.'/'2.' (1. FC, 2. Bundesliga), as against single-digit counts and numbers that start with other digits",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N10858_pos/2026-11-07-ChopinDavid-42019d55.tests.json",
+   "prereg_commit": "4ed0ec7f6",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.717,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.267,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.269,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.39,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.747,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.313,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.024,
+     "peak": " findet"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.043,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.072,
+     "peak": " N"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": " Vere"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.054,
+     "peak": "h"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.147,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.121,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.075,
+     "peak": " drei"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": " findet"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.291,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4ed0ec7f6",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "leading '1' / German ordinal dot",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card peaks: '1' x12, '.' x6 (German '1. FC', '2. Bundesliga', '01.01.'), 'log base 10'; max only 3.95. Probe: '1.000.000' 1.204, '1. FC Köln' 0.819, 'log base 10 of 1000' 0.648, '2. Bundesliga' 0.349; 'I bought 1 apple' 0.031, 'gegen Köln' 0.031.",
+ "selection": "random draw"
+}
