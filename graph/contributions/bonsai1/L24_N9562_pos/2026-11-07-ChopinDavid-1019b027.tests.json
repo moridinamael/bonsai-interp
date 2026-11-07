@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-1019b027",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9562+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T12:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N9562",
+   "pole": "+",
+   "label": "element expression of a Python list/generator comprehension inside longer code (the token that opens the expression before ' for x in'); the same logic written as an explicit for-loop stays low",
+   "fire": [
+    "import os\n\nclass Loader:\n    def __init__(self, root):\n        self.root = root\n\n    def files(self, names):\n        return [os.path.join(self.root, name) for name in names]\n",
+    "def is_public(path):\n    \"\"\"Return True if the path is publicly accessible.\"\"\"\n    return any(path.startswith(prefix) for prefix in PUBLIC_PREFIXES)\n",
+    "    def symbols(self, count):\n        self.ids = [\n            'sym' + str(n) for n in range(count)\n        ]\n        return self.ids\n",
+    "def scan(self, hosts, timeout=2):\n    results = [self.check_host(host, timeout)\n               for host in hosts]\n    return results\n",
+    "    team_colors = [palette[x] for x in (a, b, c)]\n\n    banned = [banned_teams[i] for i in range(len(teams))]\n",
+    "def render(mapping):\n    lines = \", \".join(\"%s=%s\" % (k, v) for (k, v) in mapping.items())\n    return lines\n",
+    "if args.out is not None:\n    paths = [os.path.join(args.out, fname) for fname in outputs]\n    save(paths)\n",
+    "def centroid(points):\n    xs = [p.x for p in points]\n    ys = [p.y for p in points]\n    return sum(xs) / len(xs), sum(ys) / len(ys)\n"
+   ],
+   "quiet": [
+    "import os\n\nclass Loader:\n    def __init__(self, root):\n        self.root = root\n\n    def files(self, names):\n        out = []\n        for name in names:\n            out.append(os.path.join(self.root, name))\n        return out\n",
+    "def is_public(path):\n    \"\"\"Return True if the path is publicly accessible.\"\"\"\n    return path.startswith(PUBLIC_PREFIX)\n",
+    "    def symbols(self, count):\n        self.ids = []\n        self.count = count\n        return self.ids\n",
+    "def scan(self, host, timeout=2):\n    result = self.check_host(host, timeout)\n    return result\n",
+    "    team_color = palette[a]\n\n    banned = load_banned(teams)\n",
+    "def render(mapping):\n    lines = str(mapping)\n    return lines\n",
+    "if args.out is not None:\n    path = os.path.join(args.out, fname)\n    save(path)\n",
+    "def centroid(a, b):\n    x = (a.x + b.x) / 2\n    y = (a.y + b.y) / 2\n    return x, y\n"
+   ]
+  }
+ ],
+ "predictions": "fire 0.1-0.3 if any; near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python comprehension element",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card: every top example is the element expression of a comprehension in multi-line Python ('[quad_teams_banned[i] for i in', 'any(path.startswith(prefix) for prefix', \"'s' + str(n) for n\"). Probe: short one-line comprehensions all below 0.03 (max 'squares = [x * x for x in range(10)]' 0.020), for-loop controls 0.003-0.004. The pole may need long code context; low confidence, fire items are multi-line passages."
+}
