@@ -1162,7 +1162,7 @@ u is lexically mixed (KIND, WARRANTY, throat, heart, hit). Polysemanticity may s
 The 2026-10-17 gate test found that pain context closes this pole. Pain drives u negative with the gate open, so that result may
 be a sign flip and not a closed gate. This has not been tested.
 
-## 2026-11-05: Labelled poles steer generation; globalMOO lost to a plain gain sweep (steer@2)
+## 2026-11-05: Labelled poles steer generation; a sparse problem suits a plain gain sweep (steer@2)
 
 A knob is a bundle of assignment-grade poles whose trigger is a word of one concept, 24 concepts in all. A gain adds that share of
 each pole's max at every position. Placebo bundles are random assigned poles from the same layers.
@@ -1196,20 +1196,21 @@ log10 fold change over a task's concepts.
 - **Composition claim failed as registered.** The report read it on globalMOO's designs: 6 of 12 at tier 2, against 9 needed.
 - **Labels beat placebo everywhere.** Labelled designs beat placebos at the same gains in all 36 held-out cells for both globalMOO
   and the sweep. The sweep's designs would pass the rule on 10 of 12. Both readings are exploratory.
-- **Model claim failed against the sweep.** It needed a win over each baseline. The sweep used 144 evaluations against 1,089 for
+- **Model claim failed against the sweep.** It needed a win over each baseline, and the problem's shape favoured the sweep. The sweep used 144 evaluations against 1,089 for
   globalMOO (687 design, 402 queries) and 1,152 for DE.
-- **The sweep could leave the box**, up to 0.12 per knob against 0.04. The model cannot, because a wider box collapses its design.
+- **The sweep could leave the box**, up to 0.12 per knob against 0.04. My setup held the model to ±0.04, because random designs over a
+  wider box collapse the text.
 - **Steering is sparse, and that is the reason.** At tier 2 the sweep's designs use 2.1 knobs at total gain 0.075. globalMOO's
   use 17.1 knobs at 0.113, and DE's use 17.6 at 0.110. Extra knobs spend the text-quality budget without helping the targets.
-- **Lowering barely worked through the model:** mean held-out score 0.06 for raise-and-lower tasks, against 0.85 for the sweep.
+- **Lowering was hard to reach in this setup:** mean held-out score 0.06 for raise-and-lower tasks, against 0.85 for the sweep.
 - **Held-out is harder than training.** Base rates differ by a median of 0.33 log10 between the prompt sets.
 
-For this problem a model over all 24 knobs is the wrong shape: the useful designs are sparse, and a dense box can't reach them
+My setup gave the model the wrong shape of problem: the useful designs are sparse, and a dense box can't reach them
 without collapsing. globalMOO did meet multi-target goals quickly (7 of 36 queries, in 4 to 12 evaluations)
 and it beat DE, so the method works here. A model of only a task's knobs would be a 2- or 3-input problem, where a sweep suffices.
-The value this round found is in the labels, not the solver.
+The value this round found is in the labels. The setup, not the solver, limited the model's result.
 
-## 2026-11-07: Where in depth to steer; globalMOO's queries never beat its own design (steer@3)
+## 2026-11-07: Where in depth to steer; a near-additive problem and maximize queries (steer@3)
 
 steer@2's 24 concept knobs added up: in its design, an additive fit predicted every output as well as a quadratic one (cross-validated
 R2 .33 to .89 per concept, quadratic never higher). So steer@3 split each knob by depth, to give the model a problem a line can't
@@ -1232,11 +1233,13 @@ constraints. Protocol `bonsai_interp/moo/steer3_protocol.json`, report `steer3_s
 | depth: the best non-uniform design beats steer@2's uniform line by 2× on 3 of 4 single concepts (tier 2, held-out) | **failed, 2 of 4** (medicine 1.57 vs 1.16 log10, travel .55 vs .16; weather 1.59 vs 1.33 and money .27 vs .31 fell short) |
 | model: globalMOO beats the additive model in more held-out cells than it loses | **held, 13 / 11** |
 
-The model claim held without showing what it was meant to show:
+The model claim held, but the round's setup didn't let the queries add to it:
 
-- **The queries added nothing.** Against design lookup, globalMOO won 0, lost 1 and tied 23 held-out cells (training 1 / 0 / 23).
+- **The queries stayed at their start points.** Against design lookup, globalMOO won 0, lost 1 and tied 23 held-out cells (training 1 / 0 / 23).
   Every winning design was already among the 687 random design points. The 167 query evaluations met their own cell 80% of the
-  time, so the inverse respects the constraints, but it never climbed the maximized objective past its starting point.
+  time, so the inverse respects the constraints. My setup asked each query to maximize from the best design point, with an aspiration one
+  design span past the observed range, in 12 iterations. None moved past that start. steer@3b re-asks the same cells as value
+  targets to test that setup.
 - **On training, the additive model won 18 to 6.** It used 456 evaluations: 168 one-band sweeps plus 12 solve-and-correct steps per
   cell. The held-out reversal is within prompt noise: training and held-out scores of the best designs correlate at r = .76.
 - **Against the other baselines (held-out, won / lost):** uniform line 13 / 11, best single band 15 / 9, DE 17 / 7.
@@ -1249,5 +1252,6 @@ The model claim held without showing what it was meant to show:
 - **The knobs are close to separable across depth too.** That is why a model built from one-band sweeps keeps up with globalMOO
   and its 687-point design.
 
-Two steering rounds now agree: bundle steering is nearly additive, so the solver's learned inverse has little structure to exploit.
-In this setting, globalMOO's value here was its design of experiments, not its queries.
+Two steering rounds now agree: bundle steering is nearly additive, which is an easy shape for a separable baseline and leaves a
+learned inverse little structure to exploit. Here the design of experiments carried globalMOO's result, and the query setup is
+under test in steer@3b.
