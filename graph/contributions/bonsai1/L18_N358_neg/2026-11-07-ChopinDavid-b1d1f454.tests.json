@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-b1d1f454",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N358-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T14:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N358",
+   "pole": "-",
+   "label": "seeding a random number generator in code ('random.seed(...)', 'np.random.seed(0)', 'seed=0', 'random_state=7'); other random calls, other integer arguments and 'seed' in its gardening sense stay low",
+   "fire": [
+    "import random\n\nrandom.seed(1234)\nsample = random.sample(population, 5)",
+    "import numpy as np\nnp.random.seed(2024)\nnoise = np.random.normal(size=100)",
+    "def make_rng(seed=17):\n    return random.Random(seed)",
+    "model = KMeans(n_clusters=3, random_state=11)",
+    "torch.manual_seed(5)\nx = torch.rand(3, 3)",
+    "rng = np.random.default_rng(seed=99)\nvals = rng.integers(0, 10, 5)",
+    "def shuffle_deck(cards, seed=3):\n    random.seed(seed)\n    random.shuffle(cards)",
+    "train, test = train_test_split(X, test_size=0.2, random_state=21)"
+   ],
+   "quiet": [
+    "import random\n\nsample = random.sample(population, 5)\nprint(sample)",
+    "import numpy as np\nnoise = np.zeros(100)\nprint(noise.mean())",
+    "def make_list(length=17):\n    return [0] * length",
+    "model = KMeans(n_clusters=3, max_iter=11)",
+    "x = torch.ones(3, 3)\nprint(x.sum())",
+    "arr = np.arange(0, 10, 2)\nvals = arr * 5",
+    "def deal_cards(cards, count=3):\n    return cards[:count]",
+    "train, test = train_test_split(X, test_size=0.2, shuffle=False)"
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-0.9; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "random seed in code",
+ "unit_kind": "contextual",
+ "confidence": "high",
+ "notes": "probe: 'random.seed(42)' 0.922, 'np.random.seed(0)' 0.703, 'seed=0' default 0.645, 'random_state=7' 0.511; 'random.choice' 0.073, 'size=0' 0.016, planting a seed 0.009, prose 'fixed seed ... reproducible' 0.198"
+}

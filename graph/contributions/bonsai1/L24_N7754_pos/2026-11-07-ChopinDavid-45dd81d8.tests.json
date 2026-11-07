@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-45dd81d8",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7754+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T14:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N7754",
+   "pole": "+",
+   "label": "computing an end position or deadline from a start value in code ('end_pos = pos_map[offset + length - 1]', 'start_time + timeout', 'end = start + count'); code with no start/end offset arithmetic stays low",
+   "fire": [
+    "first_idx = index_map[begin]\nlast_idx = index_map[begin + size - 1]",
+    "begin = text.find(tag)\nfinish = begin + len(tag)\nsnippet = text[begin:finish]",
+    "deadline = datetime.now() + timedelta(hours=2)\nwhile datetime.now() < deadline:\n    check()",
+    "t0 = time.monotonic()\nwhile t0 + max_wait > time.monotonic():\n    time.sleep(1)",
+    "start_line = line_map[pos]\nend_line = line_map[pos + span - 1]",
+    "offset = buf.tell()\nstop = offset + chunk_size\ndata = buf.read(stop - offset)",
+    "start_ts = event['start']\nend_ts = start_ts + event['duration']",
+    "lo = bounds[i]\nhi = lo + width\nsegment = values[lo:hi]"
+   ],
+   "quiet": [
+    "first_name = record['first']\nlast_name = record['last']",
+    "tag = text.lower()\nwords = tag.split()\nprint(words)",
+    "now = datetime.now()\nprint(now.strftime('%Y-%m-%d'))",
+    "t0 = time.monotonic()\nprint('started')\nlog.info('ready')",
+    "lines = open(path).readlines()\ncount = len(lines)",
+    "data = buf.read()\nbuf.close()\nprint(len(data))",
+    "event_name = event['name']\nevent_city = event['city']",
+    "colour = palette[i]\nlabel = names[i]\nplot(colour, label)"
+   ]
+  }
+ ],
+ "predictions": "fire 0.1-0.5; near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "start-to-end offset arithmetic",
+ "unit_kind": "contextual",
+ "confidence": "low",
+ "notes": "probe: 'start_pos = pos_map[offset]\\nend_pos = pos_map[...]' 0.529, utcnow()+timedelta 0.173, 'start_time + timeout' 0.163, 'end = start + count' 0.130; 'name = user.name' 0.014, 'total = price * quantity' 0.001, prose deadlines 0.028-0.033. Weak separation for most forms"
+}
