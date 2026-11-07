@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-898da9f1",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N9297-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T01:24:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N9297",
+   "pole": "-",
+   "label": "debugging scaffolding in Python code: the exception variable in 'except ... as e' and commented-out print statements; live print calls, bare except clauses and prose 'print' stay low",
+   "fire": [
+    "def parse(text):\n    try:\n        return json.loads(text)\n    except Exception as e:\n        logger.warning(e)\n        return None",
+    "for item in queue:\n    result = handle(item)\n    #print(result)\n    done.append(result)",
+    "conn = connect(url)\ntry:\n    rows = conn.fetch()\nexcept IOError as e:\n    print('failed', e)",
+    "def step(state):\n    state.tick += 1\n    # print(state.tick)\n    return state",
+    "while running:\n    frame = cam.read()\n    #print 'frame read'\n    show(frame)",
+    "try:\n    os.remove(tmp_path)\nexcept OSError as e:\n    sys.stderr.write(str(e))",
+    "def merge(a, b):\n    out = sorted(a + b)\n    #print('merged', len(out))\n    return out",
+    "with open(cfg) as fh:\n    try:\n        opts = yaml.safe_load(fh)\n    except Exception as e:\n        raise ConfigError(e)"
+   ],
+   "quiet": [
+    "def parse(text):\n    if not text:\n        return None\n    return json.loads(text)",
+    "for item in queue:\n    result = handle(item)\n    done.append(result)",
+    "conn = connect(url)\ntry:\n    rows = conn.fetch()\nfinally:\n    conn.close()",
+    "def step(state):\n    state.tick += 1\n    return state",
+    "while running:\n    frame = cam.read()\n    show(frame)",
+    "try:\n    os.remove(tmp_path)\nexcept OSError:\n    pass",
+    "def merge(a, b):\n    out = sorted(a + b)\n    return out",
+    "The office printer jammed again, so we could not print the agenda for the meeting."
+   ]
+  }
+ ],
+ "predictions": "fire items 0.25-0.6; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "except-as-e / commented-out print",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: top examples peak on ' e' in 'except Exception as e' (x13) and on ' print' in '#print(...)' (x12); the + pole suppresses debug/trace. Probe: 'except Exception as e:' 0.470, '#print(total)' 0.314, '# print for debugging purposes' 0.284; live 'print(a)' in a function 0.019, 'except ValueError: pass' 0.022, prose 'print the document' 0.010."
+}
