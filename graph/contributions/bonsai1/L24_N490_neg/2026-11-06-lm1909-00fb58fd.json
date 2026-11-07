@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-00fb58fd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N490-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:37+00:00",
+ "recipe": {
+  "toolchain_commit": "85d53cd62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N490_neg/2026-11-06-lm1909-00fb58fd.tests.json"
+ },
+ "label": "comma after a named park or town, just before the name of its region (a place name is due next)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N490_neg/2026-11-06-lm1909-00fb58fd.tests.json",
+   "prereg_commit": "85d53cd62",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.161,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.325,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.352,
+     "peak": " Ud"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.273,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.393,
+     "peak": " M"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.066,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.378,
+     "peak": " Sab"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.184,
+     "peak": "ach"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.205,
+     "peak": " large"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.172,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.218,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.056,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.126,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.299,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "85d53cd62",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "comma before region name",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (1.2%). Top examples also include first names and 'Governor', so even a hold will not cover the whole pole.",
+ "selection": "random draw"
+}

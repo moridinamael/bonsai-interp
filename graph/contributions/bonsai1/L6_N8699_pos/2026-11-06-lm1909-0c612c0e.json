@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-0c612c0e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N8699+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:22:44+00:00",
+ "recipe": {
+  "toolchain_commit": "85d53cd62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N8699_pos/2026-11-06-lm1909-0c612c0e.tests.json"
+ },
+ "label": "' ein' right after 'mit' in German, the separable 'mit ein-' prefix ('mit einbezogen', 'mit ein')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N8699_pos/2026-11-06-lm1909-0c612c0e.tests.json",
+   "prereg_commit": "85d53cd62",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.597,
+     "peak": " ein"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.531,
+     "peak": " ein"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.195,
+     "peak": " die"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.101,
+     "peak": "et"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.403,
+     "peak": " ein"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.649,
+     "peak": " ein"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.645,
+     "peak": " ein"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.669,
+     "peak": " ein"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "ung"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.153,
+     "peak": " das"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " ne"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "trag"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " Chef"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.112,
+     "peak": " die"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.159,
+     "peak": " viel"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": " den"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.564,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "85d53cd62",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German 'mit ein-'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "The pole also fires on Russian adjective endings (-ые, -ое), weakly in probes (under 0.2). This label does not claim them.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " ein"
+  ]
+ }
+}

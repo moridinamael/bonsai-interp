@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-1c0616c5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N9919-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:40+00:00",
+ "recipe": {
+  "toolchain_commit": "85d53cd62",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N9919_neg/2026-11-06-lm1909-1c0616c5.tests.json"
+ },
+ "label": "official civic acts and units: an electoral district, its redrawing, or a proclamation",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N9919_neg/2026-11-06-lm1909-1c0616c5.tests.json",
+   "prereg_commit": "85d53cd62",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.594,
+     "peak": " proclamation"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.293,
+     "peak": " districts"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.661,
+     "peak": " District"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.542,
+     "peak": "portion"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.841,
+     "peak": " proclamation"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.451,
+     "peak": " district"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.748,
+     "peak": " districts"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.57,
+     "peak": "ations"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.102,
+     "peak": " mayor"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.095,
+     "peak": " repair"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.3,
+     "peak": " thanking"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.053,
+     "peak": " close"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.112,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.069,
+     "peak": " holiday"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.627,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "85d53cd62",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "districts and proclamations",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "This stays a list: I found no shared pattern tighter than 'official civic act or unit'. A school or theater district was quiet in probes, so near misses include a shopping district.",
+ "selection": "random draw"
+}
