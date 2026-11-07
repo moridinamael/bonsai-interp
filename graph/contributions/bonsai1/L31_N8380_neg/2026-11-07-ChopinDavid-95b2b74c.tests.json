@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-95b2b74c",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N8380-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T07:20:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N8380",
+   "pole": "-",
+   "label": "the token right before 'plan(s)' or 'package(s)' when a subscription, coverage or pricing tier is coming ('covered under your', 'comes with 2', 'standardized health'); 'plan' in its ordinary sense and other product nouns stay quiet",
+   "fire": [
+    "Check whether your therapy sessions are covered under your plan this year.",
+    "The streaming service offers 3 plans, from a basic tier to a family tier.",
+    "Our gym has several membership plans, including a student option.",
+    "Most employers let workers choose between two dental plans every fall.",
+    "Mobile carriers sell unlimited data plans at a range of prices.",
+    "Medicare beneficiaries can compare prescription drug plans online each autumn.",
+    "The hosting company sells 4 packages, and the cheapest one has no email.",
+    "Ask the clinic whether the vaccine is included in your plan."
+   ],
+   "quiet": [
+    "Check whether your therapy sessions are scheduled for Monday this year.",
+    "The streaming service offers 3 shows about cooking, gardening and travel.",
+    "Our gym has several weight machines, including a rowing machine.",
+    "Most employers let workers choose between two parking lots every fall.",
+    "Mobile carriers sell new phones in a range of colors.",
+    "Medicare beneficiaries can read about healthy eating online each autumn.",
+    "The hosting company has 4 offices, and the smallest one has no windows.",
+    "Ask the clinic whether the doctor is in the office today."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.5 on the setup token; near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts subscription/coverage 'plan'",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: peaks on 'your', '2', 'health', 'drug', 'Data', 'marketplace' right before plan(s)/packages; the + pole's logit effect suppresses plan/plans. Probe: 'comes with 2 [plans]' 0.457, 'covered under your [plan]' 0.414, 'variety of [packages]' 0.360, 'health [plans]' 0.296; 'covered by your [insurance]' also 0.449 (the setup fires before the word), trip plan 0.000, floor plan 0.032, '2 manuals' 0.017. Near misses remove the coverage/pricing setup."
+}
