@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-05f5ab0f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N2912-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T11:28:11+00:00",
+ "recipe": {
+  "toolchain_commit": "af35aeea9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N2912_neg/2026-11-07-ChopinDavid-05f5ab0f.tests.json"
+ },
+ "label": "the CJK character 名 / Korean 명 ('name', 'person') when it is its own token, mostly the second half of a compound (題名, 社名, 担当者名, 혁명); CJK text without it stays low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N2912_neg/2026-11-07-ChopinDavid-05f5ab0f.tests.json",
+   "prereg_commit": "af35aeea9",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.408,
+     "peak": "名"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.498,
+     "peak": "名"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.157,
+     "peak": "名"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.484,
+     "peak": "名"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.991,
+     "peak": "名"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.66,
+     "peak": "명"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.482,
+     "peak": "名"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.487,
+     "peak": "名"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.152,
+     "peak": "電話"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.093,
+     "peak": "を"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.137,
+     "peak": "議"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.155,
+     "peak": "文"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.301,
+     "peak": "画"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.13,
+     "peak": "그"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.149,
+     "peak": "本"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.107,
+     "peak": "表彰"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.485,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "af35aeea9",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "名 / 명 as its own token",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags dense (13.7% of tokens over 0.1 of a tiny max 0.18) but the top 32 peak on '名' x12 and '명' x4. Probe: 'メールの題名' 0.971, '担当者名と会社名' 0.664, '店の名前' 0.584, '혁명' 0.672; Chinese '名称' (one token) 0.059, Japanese without 名 0.070, Chinese without 0.137, English 'name' 0.158. Marked dense per card flag; the token itself looked clean in probes.",
+ "selection": "random draw"
+}

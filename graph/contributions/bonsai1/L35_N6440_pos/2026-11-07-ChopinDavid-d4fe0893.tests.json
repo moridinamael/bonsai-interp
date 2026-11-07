@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-d4fe0893",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6440+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T11:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6440",
+   "pole": "+",
+   "label": "a word piece that stops just before an accented continuation in a Romance-language word (' conna'|'ître', ' para'|'ître', 'F'|'ís', ' decis'|'ões'): the pole fires on the piece whose next piece starts with an accented letter; the same languages with unsplit words stay near the 0.2 French baseline",
+   "fire": [
+    "Ce problème peut paraître simple, mais il cache plusieurs pièges.",
+    "Les symptômes vont disparaître après quelques jours de repos.",
+    "Il faut bien connaître les règles avant de commencer la partie.",
+    "Elle a étudié la Física teórica na universidade de Coimbra.",
+    "As decisões do conselho foram publicadas ontem à tarde.",
+    "Le nom du gagnant va apparaître sur l'écran dans un instant.",
+    "Pour mieux connaître la ville, prenez la visite guidée du matin.",
+    "On voit les jeunes pousses croître rapidement au printemps."
+   ],
+   "quiet": [
+    "Ce problème peut sembler simple, mais il cache plusieurs pièges.",
+    "Les symptômes vont diminuer après quelques jours de repos.",
+    "Il faut bien comprendre les règles avant de commencer la partie.",
+    "Ela estudou a teoria moderna na universidade de Coimbra.",
+    "As informações do conselho foram enviadas ontem à tarde.",
+    "Le nom du gagnant sera affiché sur l'écran dans un instant.",
+    "Pour mieux visiter la ville, prenez le bus guidé du matin.",
+    "On voit les jeunes pousses grandir rapidement au printemps."
+   ]
+  }
+ ],
+ "predictions": "fire 0.5-1.0; near misses below 0.25",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece before accented split (conna|ître, F|ísica)",
+ "unit_kind": "token/lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' conna'(ître) x5, ' fran'(çaise), ' na'(ître), ' posi'(ções), Astro'f'(ísica), recon'na'(ître). Probe: 'voulons connaître' 1.072, 'reconnaître' 0.843, 'Astrofísica' 0.778 (peak 'f'), 'naître' 0.566, 'posições' 0.350; 'voulons savoir' 0.218 (French baseline), English 0.004. Tokenizer: paraître -> ' para'|'ître', disparaître -> 'para'|'ître', apparaître -> 'ara'|'ître', Física -> ' F'|'ís', decisões -> ' decis'|'ões', informações is one token."
+}

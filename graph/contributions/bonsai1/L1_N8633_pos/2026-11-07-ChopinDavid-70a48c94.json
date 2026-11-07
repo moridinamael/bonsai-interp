@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-70a48c94",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8633+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T11:28:27+00:00",
+ "recipe": {
+  "toolchain_commit": "af35aeea9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N8633_pos/2026-11-07-ChopinDavid-70a48c94.tests.json"
+ },
+ "label": "Russian adjective endings split off as their own piece, chiefly plural '-ые' / '-ные' / '-альные' (талантлив|ые, специ|альные): a spelling-unit pole; Russian text whose adjectives are whole tokens or absent stays lower",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N8633_pos/2026-11-07-ChopinDavid-70a48c94.tests.json",
+   "prereg_commit": "af35aeea9",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 6,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.475,
+     "peak": "ые"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.656,
+     "peak": "ей"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.303,
+     "peak": "ек"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.516,
+     "peak": "ные"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.483,
+     "peak": "ост"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.417,
+     "peak": "ой"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.514,
+     "peak": "ты"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.621,
+     "peak": "ые"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.277,
+     "peak": " каждый"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.673,
+     "peak": "ей"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.307,
+     "peak": "ек"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.418,
+     "peak": "ог"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.329,
+     "peak": "ост"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.28,
+     "peak": "рес"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.318,
+     "peak": "ик"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.321,
+     "peak": "ра"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.498,
+    "near_misses_at_0.3": 6
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "af35aeea9",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "Russian plural adjective ending piece (-ые)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "Card flags dense (34% of tokens over 0.1 of a tiny max 0.20) but the top examples peak on 'ые' x7, 'альные' x5, 'ой' x3. Probe: 'талантливые музыканты' 0.864, 'уютные, тёплые и чистые' 0.805, 'Специальные теплицы' 0.762, 'бесплатные программы' 0.401 (peak elsewhere); 'Он купил новый дом' 0.292, 'Она читала книгу весь вечер' 0.192, Korean 0.403, English 'Talented' 0.319. Broad floor around 0.2-0.4 makes near misses risky.",
+ "selection": "random draw"
+}
