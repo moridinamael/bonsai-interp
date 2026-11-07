@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-4caf36f3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N5815-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T08:27:22+00:00",
+ "recipe": {
+  "toolchain_commit": "4ed0ec7f6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N5815_neg/2026-11-07-ChopinDavid-4caf36f3.tests.json"
+ },
+ "label": "the colon-newline closing a section header (Args:, Returns:, Raises:) inside a Python docstring, as against colons that end code lines or prose headers outside a docstring",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N5815_neg/2026-11-07-ChopinDavid-4caf36f3.tests.json",
+   "prereg_commit": "4ed0ec7f6",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.729,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.821,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.795,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.664,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.803,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.81,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.828,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.757,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": ".\"\"\"\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": "_socket"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": ".\"\"\"\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": " quarter"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.036,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " with"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.799,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4ed0ec7f6",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "docstring 'Args:' header",
+ "unit_kind": "context",
+ "confidence": 0.7,
+ "notes": "Card: ':\\n' x30, all 'Args:' in Google-style docstrings; max 79. Probe: Args 0.733, Returns 0.747, Raises 0.781; 'Parameters:' 0.191 (peak not on the colon); prose 'Args:' outside code 0.008, for-loop 0.041, recipe list colon 0.006. Fire items are multi-line docstrings.",
+ "selection": "random draw"
+}
