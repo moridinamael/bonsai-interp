@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-c300e9b7",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N9212+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T00:24:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N9212",
+   "pole": "+",
+   "label": "the start of the next element in an enumerated list or array (a quoted item after a comma in a list of strings, a lettered option); prose lists stay low",
+   "fire": [
+    "columns = ['user_id', 'created_at', \"last_login\", \"email\"]",
+    "for name in ['alpha', 'beta', \"gamma\", \"delta\"]:",
+    "(a) only one\n(b) only two\n(c) both\n(d) neither\n(e) all of the above",
+    "fields = [\"title\", \"author\", \"year\", \"publisher\"]",
+    "keys = ('min_size', 'max_size', \"step_size\")",
+    "(a) red\n(b) blue\n(c) green\n(d) red and blue",
+    "allowed = ['jpg', 'png', \"gif\", \"webp\"]",
+    "for metric in ['precision', 'recall', \"f1_score\"]:"
+   ],
+   "quiet": [
+    "The table has columns for the user, the creation date, the last login and the email.",
+    "We named the four test servers alpha, beta, gamma and delta.",
+    "Only one of the options was correct, and nobody chose it.",
+    "Each book record stores the title, author, year and publisher.",
+    "You can set the minimum size, the maximum size and the step.",
+    "The flag was red and blue with a green stripe.",
+    "The site accepts images in the usual formats.",
+    "We report precision, recall and the F1 score for each model."
+   ]
+  }
+ ],
+ "predictions": "list-element items 0.2-0.45; prose near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "next element in a code/option list",
+ "unit_kind": "context",
+ "confidence": 0.15,
+ "notes": "Card: peaks on ' \"' in a list of quoted keys, '(e' option, '(11)', '5.', ' |' continuation, ' [' in a nested array. Probe: \"['split_gain', 'internal_value', \\\"internal_count\\\"]\" 0.435, '(c)...(d)...(e)' 0.273; numbered '3. 4. 5.' 0.032, '(10).(11).' 0.014, prose lists 0.019-0.023. Weak; low confidence."
+}
