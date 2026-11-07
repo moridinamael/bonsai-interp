@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-48b17364",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8271-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T09:25:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N8271",
+   "pole": "-",
+   "label": "tiny broad unit (max 0.93, 2.5% of tokens); best guess: a word piece glued without a space onto a preceding piece (http://|new|taiwan, super|family, Doping|mittel); plain space-separated words stay low",
+   "fire": [
+    "The archive moved to http://newlibrary.example.org/ last year.",
+    "Read the guide at http://newcomers.example.com/start today.",
+    "These enzymes form a large superfamily found in every plant.",
+    "Wolves and dogs belong to the same subfamily of mammals.",
+    "Das Waschmittel steht im Schrank neben der Tür.",
+    "Viele Lebensmittel enthalten zu viel Zucker.",
+    "Download the files from http://newdata.example.net/files now.",
+    "The beetle belongs to a small superfamily of wood borers."
+   ],
+   "quiet": [
+    "The archive moved to a new library building last year.",
+    "Read the guide for new comers before you start today.",
+    "These enzymes are found in every plant and animal.",
+    "Wolves and dogs are both mammals that live in packs.",
+    "Die Seife steht im Schrank neben der Tür.",
+    "Viele Kuchen enthalten zu viel Zucker.",
+    "Download the new files from the shared folder now.",
+    "The beetle bores into dead wood in the forest."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.7 on the glued piece; near misses below 0.2; may fail (broad)",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (glued word piece)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card FLAG broad 2.5%, max 0.93; peaks 'new' in a URL, 'ッション', 'family' in superfamily, 'mittel' in Dopingmittel, 'ج' in Arabic. Probe: 'http://newtaiwan' 0.734, 'superfamily' 0.450, 'Dopingmittel' 0.286, 'valves' 0.286, ' family' 0.234; cat/station controls 0.086-0.116."
+}

@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-6d5156a9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N6782-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T09:32:38+00:00",
+ "recipe": {
+  "toolchain_commit": "2428d8351",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N6782_neg/2026-11-07-ChopinDavid-6d5156a9.tests.json"
+ },
+ "label": "the slot in a storage or exposure warning where an environmental hazard (heat, light, moisture) comes next: the token after 'away from' / 'exposed to' / a listed hazard, predicting heat; 'away from' an ordinary object or place stays low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N6782_neg/2026-11-07-ChopinDavid-6d5156a9.tests.json",
+   "prereg_commit": "2428d8351",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.925,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.91,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.981,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.703,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.503,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.728,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.277,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.009,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.077,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.429,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.103,
+     "peak": " car"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.232,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " cotton"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.488,
+     "peak": " from"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.917,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2428d8351",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "predicts heat/light/moisture in storage warning",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: top examples all storage/exposure warnings ('away from heat', 'exposure to heat, light'); + pole suppresses heat/hot/temperature, so - pole promotes heat. Probe: 'away from heat and open flames' 0.974, 'away from direct sunlight and moisture' 0.910, 'exposed to heat' 0.784; 'away from the dog' 0.237, 'away from the walkway' 0.269, 'exposure to sunlight' (fade) 0.149, 'walked away from the old house' 0.002.",
+ "selection": "random draw"
+}

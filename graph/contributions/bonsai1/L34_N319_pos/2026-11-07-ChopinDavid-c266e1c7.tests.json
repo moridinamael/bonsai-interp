@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-c266e1c7",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N319+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T09:25:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N319",
+   "pole": "+",
+   "label": "a capital ' T' that the tokenizer splits off as its own piece at the start of a word or name (T|ums, T|inkerbell, T-bone, T. S.), predicting the rest of the word; capital-T words that tokenize as larger pieces (Ty|lenol, Tab|asco, Tesla) stay low",
+   "fire": [
+    "After the spicy dinner he chewed a couple of Tums before bed.",
+    "My niece dressed up as Tinkerbell for the school play.",
+    "Use a pan with a Teflon coating so the eggs don't stick.",
+    "The orchestra closed the concert with a symphony by Tchaikovsky.",
+    "He ordered a thick T-bone steak with fries on the side.",
+    "The virus attacks a type of T-cell in the immune system.",
+    "Every student read a poem by T. S. Eliot in the spring term.",
+    "At the T-junction, turn left and follow the river road."
+   ],
+   "quiet": [
+    "After the spicy dinner he took a couple of Tylenol before bed.",
+    "My niece dressed up as a fairy for the school play.",
+    "Use a pan with a ceramic coating so the eggs don't stick.",
+    "The orchestra closed the concert with a symphony by Mahler.",
+    "He ordered a thick rib steak with fries on the side.",
+    "The virus attacks a type of white blood cell in the immune system.",
+    "Every student read a poem by Robert Frost in the spring term.",
+    "At the crossroads, turn left and follow the river road."
+   ]
+  }
+ ],
+ "predictions": "fire 0.2-0.8 on ' T'; near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split word-initial ' T' piece",
+ "unit_kind": "word",
+ "confidence": 0.6,
+ "notes": "Card: ' T' x12, ' t' x6 (Tupperware, T. rex, T-shaped, TCU, Tahaan). Probe: 'Tupperware' 0.797, 'T. rex' 0.698, 'T-shaped' 0.166, 'TCU' 0.151, 't-shirt' 0.132; 'plastic box' 0.011, 'Tennessee' (not split) 0.009. Tokenizer: Tums, Tinkerbell, Teflon, Tchaikovsky, T-bone, T-cell all start with ' T'; Tylenol, Tabasco, Tesla, Tetris do not."
+}
