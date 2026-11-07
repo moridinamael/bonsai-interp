@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-003f5de1",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N8460+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T18:20:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N8460",
+   "pole": "+",
+   "label": "a provenance tag appended after a document or image: a version suffix in a file name (_final, _original) or the 'Credit' of a photo caption; the same URLs and captions without the tag stay low",
+   "fire": [
+    "The guidelines are online at http://www.health.gov/docs/screening_guidelines_final.pdf for anyone who asks.",
+    "Download the slides from https://conf.example.net/2019/keynote_slides_original.pdf before the session.",
+    "The agency posted http://www.water.org/uploads/drought_plan_revised.pdf on its site last week.",
+    "See the full text at http://www.city.gov/files/budget_summary_final.pdf for the details.",
+    "Volunteers cleared the trail after the storm. (Photo Credit: Ben Carter, Forest Service)",
+    "Two panels make up each solar wing of the probe. (Photo Credit: NASA/JPL)",
+    "The old mill still stands beside the creek. (Image Credit: Historical Society)",
+    "A heron waits patiently in the shallows. (Photo credit: Sara Kim)"
+   ],
+   "quiet": [
+    "The guidelines are online at http://www.health.gov/docs/screening.pdf for anyone who asks.",
+    "Download the slides from https://conf.example.net/2019/keynote.pdf before the session.",
+    "The agency posted its drought plan on its website last week.",
+    "See the full budget text on the city website for the details.",
+    "Volunteers cleared the trail after the storm (it took them two days).",
+    "Two panels make up each solar wing of the probe, according to engineers.",
+    "The old mill still stands beside the creek (it was built in 1820).",
+    "A heron waits patiently in the shallows for a passing fish."
+   ]
+  }
+ ],
+ "predictions": "suffixed file names and (Photo Credit: ...) captions 0.3-0.8; plain file names and captions without credit below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "provenance tag: file-name suffix or photo credit",
+ "unit_kind": "context",
+ "confidence": 0.45,
+ "notes": "Card peaks on '_original', '_WP', 'submission' in PDF names and ' (' before Photo Credit or attribution dashes. Probe: annual_review_final.pdf 0.789, (Photo Credit: ...) 0.631, '-- Name' after quote 0.237, '– Name' after quote 0.099, mid-sentence parentheses 0.03-0.25. Attribution dashes were weak, so the test uses file suffixes and credit captions only."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-3cef5b85",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2848+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T18:20:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N2848",
+   "pole": "+",
+   "label": "the bare space token before a number in a postal address (street number or ZIP code); the same addresses written without numbers stay low",
+   "fire": [
+    "Send your forms to the office at 40 Elm Road, Hartford CT 06103 by Friday.",
+    "The clinic is located at 9 Bay Street, Portland ME 04101, near the ferry.",
+    "Our shop moved to 210 Oak Avenue, Denver CO 80203 in June.",
+    "Write to PO Box 77, Salem OR 97301 for a free catalogue.",
+    "Visitors can find the museum at 5 River Lane, Boulder CO 80302.",
+    "Please mail entries to 18 Pine Court, Austin TX 78701 before May.",
+    "The library is at 300 Main Street, Albany NY 12207, across from the park.",
+    "Contact the county office, 1 Court Plaza, Trenton NJ 08608, for permits."
+   ],
+   "quiet": [
+    "Send your forms to the office on Elm Road in Hartford by Friday.",
+    "The clinic is located on Bay Street in Portland, near the ferry.",
+    "Our shop moved to Oak Avenue in Denver in June.",
+    "Write to the main post office in Salem for a free catalogue.",
+    "Visitors can find the museum on River Lane in Boulder.",
+    "Please mail entries to the Pine Court office in Austin before May.",
+    "The library is on Main Street in Albany, across from the park.",
+    "Contact the county office in Trenton for permits."
+   ]
+  }
+ ],
+ "predictions": "addresses with street numbers and ZIP codes 0.4-0.8; same addresses without digits below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space before an address number",
+ "unit_kind": "token/lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' ' is 29 of the top 32 peaks, before postcodes, ages, page numbers, phone numbers. Probe: 'Springfield 01105' 0.693, 'aged 7' 0.163 (peak elsewhere), DB port 0.052, '30 km/h' 0.116, '9 October' 0.025, '$300' 0.077. Tokenizer: ' 02770' splits ' ', '0', ... so every spaced number has the bare space."
+}
