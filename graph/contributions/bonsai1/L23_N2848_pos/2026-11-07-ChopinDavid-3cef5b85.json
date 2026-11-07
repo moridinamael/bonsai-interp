@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-3cef5b85",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2848+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T18:28:22+00:00",
+ "recipe": {
+  "toolchain_commit": "63e20ea31",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N2848_pos/2026-11-07-ChopinDavid-3cef5b85.tests.json"
+ },
+ "label": "the bare space token before a number in a postal address (street number or ZIP code); the same addresses written without numbers stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N2848_pos/2026-11-07-ChopinDavid-3cef5b85.tests.json",
+   "prereg_commit": "63e20ea31",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.613,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.639,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.62,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.729,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.593,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.632,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.559,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.523,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.044,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " June"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " across"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.617,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63e20ea31",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "space before an address number",
+ "unit_kind": "token/lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' ' is 29 of the top 32 peaks, before postcodes, ages, page numbers, phone numbers. Probe: 'Springfield 01105' 0.693, 'aged 7' 0.163 (peak elsewhere), DB port 0.052, '30 km/h' 0.116, '9 October' 0.025, '$300' 0.077. Tokenizer: ' 02770' splits ' ', '0', ... so every spaced number has the bare space.",
+ "selection": "random draw"
+}
