@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-7a6017ce",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N587-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:25:51+00:00",
+ "recipe": {
+  "toolchain_commit": "5cf117caa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N587_neg/2026-11-06-lm1909-7a6017ce.tests.json"
+ },
+ "label": "the word right after a day-part noun (night before, morning after, night sky): before, after or sky, with the same words quiet after other lead-ins",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N587_neg/2026-11-06-lm1909-7a6017ce.tests.json",
+   "prereg_commit": "5cf117caa",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.652,
+     "peak": " before"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.931,
+     "peak": " after"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.831,
+     "peak": " sky"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.732,
+     "peak": " after"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.641,
+     "peak": " before"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.348,
+     "peak": " sky"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.706,
+     "peak": " before"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.594,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.056,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " sky"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " trip"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " sky"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.088,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": " before"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.679,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5cf117caa",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word after a day-part noun",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "A shared pattern behind the card's before, after and sky: they peak when they follow night, day, morning or evening. Probing: 'an hour before' and 'blue sky' were low. Exception not explained: 'Tokyo Institute' fires strongly, so coverage is probably partial.",
+ "selection": "random draw"
+}

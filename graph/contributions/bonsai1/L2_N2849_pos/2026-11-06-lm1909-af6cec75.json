@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-06-lm1909-af6cec75",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N2849+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:25:49+00:00",
+ "recipe": {
+  "toolchain_commit": "5cf117caa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N2849_pos/2026-11-06-lm1909-af6cec75.tests.json"
+ },
+ "label": "the token behavior / behaviour",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N2849_pos/2026-11-06-lm1909-af6cec75.tests.json",
+   "prereg_commit": "5cf117caa",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.172,
+     "peak": " behavior"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.277,
+     "peak": " behaviour"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.173,
+     "peak": " behavior"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.145,
+     "peak": " behavior"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.396,
+     "peak": " behaviour"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.451,
+     "peak": " behavior"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.029,
+     "peak": "keys"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.033,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.095,
+     "peak": " ants"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.17,
+     "peak": " son"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.062,
+     "peak": " sharply"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.08,
+     "peak": " marks"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " noise"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.032,
+     "peak": "keys"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.812,
+    "median_fire": 0.172,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5cf117caa",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "behavior token",
+ "unit_kind": "dense / positional",
+ "confidence": 0.5,
+ "notes": "Card flags this pole as broad (3.0% of tokens reach 0.1 of max, very small max 0.65) and gate-closed (79%), so it is recorded as dense. ' behavior' and ' behaviour' are the commonest top peak, and they were clearly above synonyms in probing.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " behavior",
+   " behaviour"
+  ]
+ }
+}
