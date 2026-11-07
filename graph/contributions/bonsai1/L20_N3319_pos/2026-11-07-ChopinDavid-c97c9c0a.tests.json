@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-c97c9c0a",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N3319+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T19:24:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N3319",
+   "pole": "+",
+   "label": "the line break that ends a question line in a Q&A or FAQ layout (the slot before the answer); statements ending a line and inline questions stay low",
+   "fire": [
+    "Frequently asked questions\nDo you ship to Canada?\nYes, we ship to all provinces.",
+    "FAQ\nCan I change my order after paying?\nOnly within the first hour.",
+    "Help centre\nHow do I reset my password?\nUse the link on the login page.",
+    "Q&A\nIs parking available at the venue?\nYes, there is a free car park.",
+    "FAQ\nWhat sizes do the shirts come in?\nSmall to extra large.",
+    "Common questions\nAre pets allowed in the cabins?\nSmall dogs are welcome.",
+    "FAQ\nWhen does the pool open?\nAt seven every morning.",
+    "Support\nWhy is my parcel late?\nHoliday volumes slow deliveries."
+   ],
+   "quiet": [
+    "Shipping information\nWe ship to all provinces.\nDelivery takes about a week.",
+    "Order policy\nOrders can be changed within the first hour.\nAfter that they are final.",
+    "Help centre\nPasswords can be reset from the login page.\nIt only takes a minute.",
+    "Venue details\nParking is available next to the hall.\nIt is free for guests.",
+    "Sizing\nThe shirts come in small to extra large.\nThey run slightly big.",
+    "Cabin rules\nSmall dogs are welcome in the cabins.\nCats are not allowed.",
+    "Opening hours\nThe pool opens at seven every morning.\nIt closes at nine.",
+    "Delivery news\nHoliday volumes slow some parcels.\nWe thank you for your patience."
+   ]
+  }
+ ],
+ "predictions": "question line breaks 0.1-0.4; statement line breaks below 0.08",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line break after FAQ question",
+ "unit_kind": "context",
+ "confidence": 0.25,
+ "notes": "Card peaks on '?\\n' in FAQ/interview text before an answer; 77% of activations sit in the gate-closed regime. Probe: FAQ shipping question 0.398, Q: ... Yes 0.225, museum question 0.164, interview 0.113, cats purr 0.046; statement line break 0.050, inline question 0.085. Weak; median may miss 0.20."
+}

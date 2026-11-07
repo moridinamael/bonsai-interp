@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-b9f9cdf6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N5504+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T19:24:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N5504",
+   "pole": "+",
+   "label": "the clause-joining comma in Russian step-by-step instructions (first do X, а then Y); Russian instructions written as a single clause stay low",
+   "fire": [
+    "Сначала промойте рис холодной водой, а затем залейте его кипятком.",
+    "Нанесите клей на края, а потом плотно прижмите детали.",
+    "Сначала снимите старую краску, а затем покройте доску грунтом.",
+    "Взбейте яйца с сахаром, а потом добавьте муку.",
+    "Сначала замочите семена на ночь, а утром посадите их в горшок.",
+    "Нагрейте масло на сковороде, а затем выложите лук.",
+    "Сначала отключите питание, а потом снимите крышку прибора.",
+    "Смочите ткань водой, а затем аккуратно протрите экран."
+   ],
+   "quiet": [
+    "Тщательно промойте рис в холодной воде.",
+    "Плотно прижмите детали друг к другу.",
+    "Покройте старую доску тонким слоем грунта.",
+    "Добавьте муку в миску с яйцами и сахаром.",
+    "Посадите замоченные семена в небольшой горшок.",
+    "Выложите нарезанный лук на горячую сковороду.",
+    "Снимите крышку прибора отвёрткой.",
+    "Аккуратно протрите экран влажной тканью."
+   ]
+  }
+ ],
+ "predictions": "clause comma 0.25-1.5; single-clause Russian below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comma joining Russian instruction steps",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: commas in Russian how-to text before 'а'/next step (179 max). Probe: 'на кожу, а затем' 1.486, 'два года, а потом' 0.243, 'на кожу. Затем' (period) 0.469 leaked, English comma 0.074, German comma 0.004, plain Russian 0.012. Near misses are single-clause Russian instructions with no internal boundary."
+}

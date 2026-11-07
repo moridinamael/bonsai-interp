@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-d38452b9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2762+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T19:34:07+00:00",
+ "recipe": {
+  "toolchain_commit": "bcada98cd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N2762_pos/2026-11-07-ChopinDavid-d38452b9.tests.json"
+ },
+ "label": "best guess: the start of the next item in a comma-separated record or code literal (u'...', b\"...\", list entries); weak and broad, ordinary prose also fires a little",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N2762_pos/2026-11-07-ChopinDavid-d38452b9.tests.json",
+   "prereg_commit": "bcada98cd",
+   "author": "ChopinDavid",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.138,
+     "peak": " u"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.061,
+     "peak": "tokens"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.041,
+     "peak": "'"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.109,
+     "peak": " b"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.179,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.066,
+     "peak": " b"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.171,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.04,
+     "peak": "ax"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.102,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.102,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.063,
+     "peak": " speaks"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.078,
+     "peak": " contact"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.109,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.103,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.072,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.103,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.508,
+    "median_fire": 0.087,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bcada98cd",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "next item in comma list (broad)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Broad (3.9% of tokens) and 89% gate-closed. Probe: u'...' dict 0.220, b\"...\" list 0.172, date comma 0.228, 'two different' 0.231, prose cat sentence 0.145, citation 0.126. Little separation between record and prose; registered as a best guess.",
+ "selection": "random draw"
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-6f4fc57b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N7215-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T19:24:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N7215",
+   "pole": "-",
+   "label": "the loop variable of a Python list comprehension (the name after 'for' inside [x for x in ...]); explicit for-loops and prose 'for' stay low",
+   "fire": [
+    "evens = [x for x in values if x % 2 == 0]\nprint(evens)",
+    "def clean(words):\n    return [w for w in words if w.strip()]",
+    "ids = [u for u in users if u.active]\nlog(len(ids))",
+    "paths = [p for p in os.listdir(root) if p.endswith('.txt')]",
+    "colors = ['red', 'blue']\nupper = [c for c in colors]",
+    "scores = load()\ngood = [s for s in scores if s > 50]",
+    "rows = fetch()\nnames = [r for r in rows if r]",
+    "import math\nroots = [t for t in nums if t >= 0]"
+   ],
+   "quiet": [
+    "evens = []\nfor value in values:\n    if value % 2 == 0:\n        evens.append(value)",
+    "def clean(words):\n    return list(filter(str.strip, words))",
+    "ids = filter(lambda u: u.active, users)\nlog(len(list(ids)))",
+    "paths = glob.glob(os.path.join(root, '*.txt'))",
+    "colors = ['red', 'blue']\nupper = list(map(str.upper, colors))",
+    "scores = load()\ngood = np.where(scores > 50)[0]",
+    "rows = fetch()\nwhile rows:\n    rows.pop()",
+    "import math\nroots = math.sqrt(abs(total))"
+   ]
+  }
+ ],
+ "predictions": "comprehension variables 0.2-0.4; for-loop variables below 0.1; prose below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "list-comprehension loop variable",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card peaks on ' n' / ' x' in [n for n in ...], [x for x in Colors] and a for-loop variable. Probe: [n for n in people] 0.275, dict comprehension 0.065, for i in range 0.085, for row in rows 0.043, prose 'for' 0.009. Near misses rewrite the same logic as explicit loops."
+}
