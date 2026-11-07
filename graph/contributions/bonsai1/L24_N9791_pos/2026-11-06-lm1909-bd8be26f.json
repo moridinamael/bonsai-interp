@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-06-lm1909-bd8be26f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9791+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:41+00:00",
+ "recipe": {
+  "toolchain_commit": "573861afd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N9791_pos/2026-11-06-lm1909-bd8be26f.tests.json"
+ },
+ "label": "the token ' Le' opening a French-style name or title (Le Guin, Le Monde, Jean Le Bris)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N9791_pos/2026-11-06-lm1909-bd8be26f.tests.json",
+   "prereg_commit": "573861afd",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.751,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.537,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.524,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.521,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.541,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.644,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.568,
+     "peak": " Le"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.653,
+     "peak": " Le"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " praised"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.554,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "573861afd",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "the name-opener ' Le'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "' La' also read 0.41 in one probe, so this may be a wider French-article unit, but ' Le' dominates the top examples and ' De' stayed at 0.02. ' La' is left out of both sides of this test.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " Le",
+   "Le"
+  ]
+ }
+}

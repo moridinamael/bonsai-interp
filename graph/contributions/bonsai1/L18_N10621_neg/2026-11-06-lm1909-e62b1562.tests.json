@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-e62b1562",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N10621-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T11:59:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N10621",
+   "pole": "-",
+   "label": "entries of a one-line code list of flags or signs: the ' -' of a -1 in a list of signs, or a yes/on style string",
+   "fire": [
+    "dx = [-1, 1, 0, 0, -1, 1, -1, 1]\ndy = [0, 0, -1, 1, -1, -1, 1, 1]",
+    "if answer.lower() in ['y', 'yes', 'on', 'true', '1']:\n    enable()",
+    "steps = [-1, 0, 1, -1, 0, 1, -1, 0, 1]\nsigns = [1, -1, 1, -1, 1, -1, 1, -1]",
+    "TRUTHY = ['t', 'true', 'y', 'yes', 'on', 'enabled']\nFALSY = ['f', 'false', 'n', 'no', 'off']",
+    "offsets = [-1, -1, -1, 0, 0, 1, 1, 1]\nkernel = [-1, 0, 1, -2, 0, 2, -1, 0, 1]",
+    "return flag.strip() in ['on', 'yes', 'ok', 'y', 'enable']",
+    "neighbors = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1]]",
+    "accepted = ('yes', 'y', 'on', 'true')\nif text in ['yes', 'on']:\n    start()"
+   ],
+   "quiet": [
+    "ids = [2, 4, 6, 8, 10, 12, 14, 16]\nages = [20, 30, 40, 50, 60, 70, 80, 90]",
+    "if city.lower() in ['paris', 'rome', 'oslo', 'lima', 'kyoto']:\n    travel()",
+    "sizes = [3, 5, 7, 9, 11, 13, 15, 17]\nweights = [10, 20, 30, 40, 50, 60, 70, 80]",
+    "FRUITS = ['apple', 'pear', 'plum', 'peach', 'mango']\nNUTS = ['almond', 'cashew', 'walnut', 'pecan']",
+    "years = [1990, 1995, 2000, 2005, 2010, 2015, 2020]\nprices = [12, 15, 18, 21, 24, 27, 30]",
+    "return name.strip() in ['tom', 'ann', 'lee', 'kim', 'joe']",
+    "corners = [[10, 20], [30, 40], [50, 60], [70, 80], [90, 100]]",
+    "pets = ('cat', 'dog', 'fish', 'bird')\nif animal in ['cat', 'dog']:\n    feed()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "code list of flags/signs",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Plain code lists ([0, 1, 2], colour names) stayed near 0.03 in probing, while sign arrays reached 0.68 and yes/on lists 0.46. The near misses are plain code lists, so this is a hard test."
+}

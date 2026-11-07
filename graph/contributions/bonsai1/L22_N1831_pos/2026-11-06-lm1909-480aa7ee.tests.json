@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-480aa7ee",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N1831+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T11:59:43+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N1831",
+   "pole": "+",
+   "label": "the token closing a Python %-format placeholder inside a string: the 's' of '%s', or the key of '%(key)s'",
+   "fire": [
+    "sql = 'name = \"%s\" AND owner = \"%s\"' % (name, owner)\nflag = 'HOME=\"%s\" ' % home",
+    "env = 'PATH=\"%s\" LANG=\"%s\"' % (path, lang)\ncall(env)\nnote = 'NODE=\"%s\" ' % node",
+    "shell = \"cd %s ; rm -rf %s ; mkdir %s\" % (root, tmp, tmp)\nrun(shell)",
+    "logger.warning('Failed to save invoice for [%s] to DB. Status was [%s]' % (order, status))\nlogger.warning('Failed to send mail for [%s]' % order)",
+    "logging.info('setting volume %(volume)s of speaker %(speaker)s to %(level)s' % {\n    'volume': volume,\n    'speaker': speaker,\n})",
+    "file_name = \"%s_%s_%s.tar\" % (app, version, arch)\ncmd = \"cp %s %s/%s\" % (file_name, out, file_name)",
+    "url = 'host = \"%s\" AND port = \"%s\"' % (host, port)\nsearch(url)",
+    "msg = 'user \"%s\" in group \"%s\"' % (user, group)\nprint(msg)\nmsg = 'role \"%s\"' % role"
+   ],
+   "quiet": [
+    "sql = 'name = \"' + name + '\" AND owner = \"' + owner + '\"'\nflag = 'HOME=\"' + home + '\" '",
+    "env = f'PATH=\"{path}\" LANG=\"{lang}\"'\ncall(env)\nnote = f'NODE=\"{node}\" '",
+    "shell = \"cd {} ; rm -rf {} ; mkdir {}\".format(root, tmp, tmp)\nrun(shell)",
+    "logger.warning('Failed to save invoice for [{}] to DB. Status was [{}]'.format(order, status))\nlogger.warning('Failed to send mail for [{}]'.format(order))",
+    "logging.info('setting volume', volume, 'of speaker', speaker, 'to', level)\nsettings = {\n    'volume': volume,\n}",
+    "file_name = \"_\".join([app, version, arch])\ncmd = \" \".join([\"cp\", file_name, out])",
+    "url = 'host = ' + host + ' AND port = ' + port\nsearch(url)",
+    "msg = 'user ' + user + ' in group ' + group\nprint(msg)\nmsg = 'role ' + role"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "%s placeholder",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Readings varied in probing: ' =\"%s\"' reached 1.0, 'cd %s' 0.22, while '[%s]' peaked below 0.1 in one short snippet even though it tops the card. Fire items are multi-line code."
+}
