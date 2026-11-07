@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-205af730",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N11872+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T04:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N11872",
+   "pole": "+",
+   "label": "the position just before a predicted 'complete', 'completeness' or 'exhaustive' (No trip to X is | ..., accuracy or | completeness, by no means | exhaustive); it fires on the setup, whatever word follows",
+   "fire": [
+    "No holiday in Kyoto is complete without a walk through the bamboo grove.",
+    "We cannot vouch for the accuracy or completeness of third-party data.",
+    "The examples below are by no means exhaustive.",
+    "No visit to Lisbon is complete without a ride on the old tram.",
+    "The publisher makes no warranty regarding the reliability or completeness of the maps.",
+    "This catalogue of species is by no means complete.",
+    "No weekend in Paris is complete without fresh croissants.",
+    "Neither the author nor the editor guarantees the correctness or completeness of the figures."
+   ],
+   "quiet": [
+    "Our holiday in Kyoto started with a walk through the bamboo grove.",
+    "We downloaded the third-party data on Tuesday evening.",
+    "The examples below were written by students last year.",
+    "My visit to Lisbon began with a ride on the old tram.",
+    "The publisher printed the maps on heavy paper this year.",
+    "This catalogue of species was printed in three volumes.",
+    "Last weekend in Paris we ate fresh croissants every morning.",
+    "Both the author and the editor checked the figures before printing."
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-0.8 at ' is' / ' or' / ' means' in completeness frames; frames that do not set up completeness below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts 'complete/exhaustive'",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' is' in 'No trip to Mandurah is complete', ' or' in 'accuracy or completeness', ' means' in 'by no means exhaustive'; the - pole promotes 'complete' words. Probe: 'No visit to Rome is complete' 0.787, 'by no means exhaustive' 0.646 and 'by no means short' also 0.646 (fires before the word), 'accuracy or completeness' 0.487; 'Any visit to Rome is expensive' leaked 0.373 at ' is', 'accuracy of' 0.035. Near misses remove the setup entirely."
+}

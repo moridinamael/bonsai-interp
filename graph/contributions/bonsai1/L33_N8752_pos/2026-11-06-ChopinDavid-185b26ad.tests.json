@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-185b26ad",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N8752+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T04:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N8752",
+   "pole": "+",
+   "label": "the word-start piece ' sl' when a word is split into ' sl' + rest (sludge, slurry, slugs, slush, slither); 'sl' words that are a single token stay low",
+   "fire": [
+    "Workers spent the morning scraping thick sludge out of the old tank.",
+    "In wet years the cabbages are covered in slugs every evening.",
+    "The plant mixes cement and water into a grey slurry for the forms.",
+    "By noon the fresh snow had turned to brown slush along the curb.",
+    "A thin sliver of glass was stuck in the sole of his boot.",
+    "She watched the snake slither under the porch steps.",
+    "The skier missed a gate halfway down the slalom course.",
+    "The boys used a homemade slingshot to knock cans off the fence."
+   ],
+   "quiet": [
+    "Workers spent the morning scraping thick grease out of the old tank.",
+    "In wet years the cabbages are covered in green slime every evening.",
+    "The plant pours cement and water into a grey slab for the forms.",
+    "By noon the fresh snow had turned to brown water along the curb.",
+    "A thin piece of glass was stuck in the sole of his boot.",
+    "She watched the snake disappear under the porch steps.",
+    "The skier missed a gate halfway down the steep course.",
+    "The boys took up the slack in the rope by the fence."
+   ]
+  }
+ ],
+ "predictions": "fire 0.6-1.0 on the split ' sl'; single-token sl words and replacements below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split word-start ' sl' piece",
+ "unit_kind": "spelling unit",
+ "confidence": 0.6,
+ "notes": "Card: ' sl' x14, ' Sl' x7, ' gl' x2 of top 32. Probe: sludge 0.850, slugs 1.009, slurry 0.710, slouch (verb) 0.229; gravel 0.102, snails 0.054, sleep 0.024, slate/slowly 0.062. tok.py: sludge, slugs, slurry, slush, slither, sliver, slalom split as ' sl'+rest; slime, slab, slack, slender, slog, slug are single tokens."
+}

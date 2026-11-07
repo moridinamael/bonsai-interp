@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-5b9fc6d3",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7664+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T04:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N7664",
+   "pole": "+",
+   "label": "the word ' famous', strongest in 'one of the most famous X'; a dense early unit with a floor near 0.2 on any text",
+   "fire": [
+    "The Mona Lisa is perhaps the most famous painting in the whole world.",
+    "Among his many songs, this remains his most famous ballad.",
+    "We visited the most famous bakery in the old quarter of Vienna.",
+    "Her most famous experiment showed that light bends near the sun.",
+    "The bridge is one of the most famous landmarks in the country.",
+    "That speech became one of the most famous moments of the campaign.",
+    "Locals say the most famous dish here is grilled river fish.",
+    "He wrote two plays, but the second is by far the more famous one."
+   ],
+   "quiet": [
+    "The Mona Lisa is perhaps the most fragile painting in the whole museum.",
+    "Among his many songs, this remains his longest ballad.",
+    "We visited the oldest bakery in the old quarter of Vienna.",
+    "Her most careful experiment showed that light bends near the sun.",
+    "The bridge is one of the oldest landmarks in the country.",
+    "That speech became one of the most tense moments of the campaign.",
+    "Locals say the cheapest dish here is grilled river fish.",
+    "He wrote two plays, but the second is by far the longer one."
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-0.9 on ' famous'; near misses with other superlative adjectives about 0.2-0.3",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' famous' (most famous)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "Card: dense (35% of tokens reach 0.1 max), ' famous' x14 of top 32, mostly after 'most'. Probe: 'most famous' 0.876, 'is famous for' 0.450, 'the famous chef' 0.338, 'most popular' 0.521 (a synonym leaks), 'most celebrated' 0.206, unrelated text 0.201 floor. Near misses use non-fame superlatives; the dense floor may sink the test."
+}

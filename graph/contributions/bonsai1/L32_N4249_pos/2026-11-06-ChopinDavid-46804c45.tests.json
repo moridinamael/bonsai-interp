@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-46804c45",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N4249+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T04:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N4249",
+   "pole": "+",
+   "label": "the first letter of a name split off as its own token, usually fused to punctuation with no space before it (packed.Jane, Freni,Domingo, :Terry)",
+   "fire": [
+    "Fast delivery and the steaks were tender.Karen M. - Dallas, TX",
+    "Arrived well wrapped and right on schedule.John P. - Salem, OR",
+    "Great product, will order again.Linda S. - Tampa, FL",
+    "Thanks again to everyone who pitched in,Greg",
+    "The soloists that night were Callas,Tebaldi and Simionato.",
+    "Source: personal interview with User:TerryH on 3 June 2011.",
+    "Works exactly as described.Robert K. - Denver, CO",
+    "Tasted just like homemade.Susan T. - Boise, ID"
+   ],
+   "quiet": [
+    "Quick shipping and the steaks were tender. Karen M. from Dallas",
+    "It arrived well wrapped and right on schedule, said John from Salem.",
+    "Great product, we will order again next month for the whole office.",
+    "Thanks again to everyone who pitched in at the bake sale.",
+    "The soloists that night were famous singers from Milan and Rome.",
+    "Source: a personal interview with the author on 3 June 2011.",
+    "Works exactly as described and the battery lasts all day.",
+    "It tasted just like homemade.The kids asked for seconds."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.7 on '.J' / ',D' style tokens; same text with a normal space below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split name initial after glued punctuation",
+ "unit_kind": "spelling unit",
+ "confidence": 0.4,
+ "notes": "Card: peaks on '.J'ames, ',R'uggero, ':T'erryH, ',C'raig, 'E'gonu. Probe: 'packed.James' 0.722, 'Freni,Domingo' 0.337, 'User:MarkB' 0.118, 'friends,Michael' 0.001 (whole name kept), 'late.The' 0.007, spaced review 0.181. Weak, uneven on which names split; tokcheck used to keep only items where the initial is split."
+}

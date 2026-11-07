@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-1ac2c92e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N798+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T04:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N798",
+   "pole": "+",
+   "label": "unclear: statements about code behaviour, in Python source and in prose about it (comments, truthiness, string and return values); everyday prose stays low",
+   "fire": [
+    "In Python, a zero or an empty list also counts as False in an if test.",
+    "def is_empty(s):\n    # None and '' both count as empty here\n    return not s",
+    "In Bash, a command that exits with 0 counts as success in a conditional.",
+    "name = data.get('name') or 'unknown'\nprint(name.upper())",
+    "    # a blank line counts as the end of the header block\n    if not line.strip():",
+    "In JavaScript, the number 0 and NaN are treated as falsy values.",
+    "    total = sum(scores) or 0\n    return total",
+    "A function without a return statement returns None by default in Python."
+   ],
+   "quiet": [
+    "In tennis, a ball that lands on the line also counts as in.",
+    "The recipe says a pinch of salt counts as about a quarter teaspoon.",
+    "In chess, a game that ends in stalemate counts as a draw.",
+    "Her name was written on the label in bright red ink.",
+    "A blank page at the end of the notebook was left for notes.",
+    "In football, a goal from a direct free kick counts the same as any other.",
+    "The total of all the votes was announced at midnight.",
+    "A letter without a stamp is returned to the sender by the post office."
+   ]
+  }
+ ],
+ "predictions": "fire 0.2-0.5 in code or prose about code semantics; everyday prose below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear code-behaviour context",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: peaks on string ends, comment words and ' with', ' equal' in Python files; no single token. Probe: prose 'an empty string counts as False' 0.523, code comment 'empty string counts as False' 0.338, 'roll = random.randint' 0.311, 'headers.get or ''' 0.310, '# Lines starting with the hash' 0.155, prose about comments 0.079, garden 0.016. Best-guess test."
+}
