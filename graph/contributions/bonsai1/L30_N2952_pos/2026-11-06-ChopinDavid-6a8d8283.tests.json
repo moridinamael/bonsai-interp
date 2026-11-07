@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-6a8d8283",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N2952+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T05:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N2952",
+   "pole": "+",
+   "label": "the first piece of a split short identifier in code (' h' of hps), where the rest of the name is predictable from earlier lines",
+   "fire": [
+    "hps = load_hparams()\nfor k in range(hps.num_layers):\n    layers.append(block(hps, k))\n",
+    "hps = get_config()\nif hps.batch_size > 64:\n    lr = hps.learning_rate * 2\n",
+    "def build(hps):\n    for i in range(hps.n_dim):\n        for j in range(i + 1, hps.n_dim):\n            pairs.append((i, j))\n",
+    "hps = parse()\nmodel = Model(hps)\nfor step in range(hps.steps):\n    model.train(hps.lr)\n",
+    "def encoder(x, hps):\n    h = dense(x, hps.width)\n    return dense(h, hps.width)\n",
+    "hps = defaults()\nprint(hps.seed)\nnp.random.seed(hps.seed)\n",
+    "def decoder(z, hps):\n    if hps.use_bias:\n        z = z + hps.bias\n    return z\n",
+    "hps = load()\nsize = hps.size\nfor i in range(hps.repeats):\n    run(size)\n"
+   ],
+   "quiet": [
+    "cfg = load_hparams()\nfor k in range(cfg.num_layers):\n    layers.append(block(cfg, k))\n",
+    "cfg = get_config()\nif cfg.batch_size > 64:\n    lr = cfg.learning_rate * 2\n",
+    "def build(cfg):\n    for i in range(cfg.n_dim):\n        for j in range(i + 1, cfg.n_dim):\n            pairs.append((i, j))\n",
+    "cfg = parse()\nmodel = Model(cfg)\nfor step in range(cfg.steps):\n    model.train(cfg.lr)\n",
+    "def encoder(x, cfg):\n    out = dense(x, cfg.width)\n    return dense(out, cfg.width)\n",
+    "cfg = defaults()\nprint(cfg.seed)\nnp.random.seed(cfg.seed)\n",
+    "def decoder(z, cfg):\n    if cfg.use_bias:\n        z = z + cfg.bias\n    return z\n",
+    "cfg = load()\nsize = cfg.size\nfor i in range(cfg.repeats):\n    run(size)\n"
+   ]
+  }
+ ],
+ "predictions": "fire items 0.1-0.3 on ' h' of a repeated hps; near misses with single-token names below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "first piece of split code identifier",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Broad pole (1.0%). Probe weak: 'range(hps.co_dim)' 0.195 at ' h', 'if hps.co_dim' 0.022, 'file_paths' 0.037, 'node_elements' 0.034; single-token variants 0.003-0.010. Card peaks are first pieces of identifiers in long code (' h'ps, ' file'_paths, ' N'ell, ' _'str). Fire items repeat hps so the second piece is predictable."
+}

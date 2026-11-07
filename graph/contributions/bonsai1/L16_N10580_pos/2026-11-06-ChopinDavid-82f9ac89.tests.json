@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-82f9ac89",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N10580+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T05:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N10580",
+   "pole": "+",
+   "label": "a keyword argument in a Python call: the parameter name and '=' in f(name=value)",
+   "fire": [
+    "user = User.objects.create(username=name, email=email)\n",
+    "response = client.post(url, data=payload, timeout=30)\n",
+    "plot.scatter(xs, ys, color=colors, alpha=alpha)\n",
+    "logger = Logger(level=level, stream=sys.stdout)\n",
+    "posts = Post.objects.filter(author=request.user)\n",
+    "conn = connect(host=host, port=port)\n",
+    "thread = Thread(target=worker, args=(queue,))\n",
+    "session = Session(config=config, verbose=verbose)\n"
+   ],
+   "quiet": [
+    "user = User.objects.create(name, email)\n",
+    "response = client.post(url, payload, 30)\n",
+    "plot.scatter(xs, ys, colors, alpha)\n",
+    "logger = Logger(level, sys.stdout)\n",
+    "posts = Post.objects.all()\nprint(len(posts))\n",
+    "conn = connect(host, port)\n",
+    "thread = Thread(worker, queue)\n",
+    "session = Session(config, verbose)\n"
+   ]
+  }
+ ],
+ "predictions": "fire items 0.1-0.35 at '=' of the keyword argument; positional-argument near misses below 0.05 (a '(name' token may fire either way)",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python keyword argument",
+ "unit_kind": "syntax",
+ "confidence": "low",
+ "notes": "Probe: 'ContentHandler(callback=callback_fn' 0.325 vs positional 0.021, 'Context(oracle = oracle)' 0.177, 'filter(question=' 0.113 vs positional 0.032; 'get(user=' and 'get(user_detail)' both 0.238 at '(user', so a glued '(name' token fires without a keyword; near misses avoid '(name' tokens."
+}
