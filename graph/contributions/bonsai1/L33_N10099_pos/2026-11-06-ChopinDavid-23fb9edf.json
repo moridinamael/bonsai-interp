@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-23fb9edf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N10099+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T01:31:56+00:00",
+ "recipe": {
+  "toolchain_commit": "cd04a485f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N10099_pos/2026-11-06-ChopinDavid-23fb9edf.tests.json"
+ },
+ "label": "pieces of all-caps words that the tokenizer splits into several tokens (shouted headings, banners, Cyrillic caps); the same words in lower or title case stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N10099_pos/2026-11-06-ChopinDavid-23fb9edf.tests.json",
+   "prereg_commit": "cd04a485f",
+   "author": "ChopinDavid",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.454,
+     "peak": " SUM"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.135,
+     "peak": "UL"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.25,
+     "peak": "IE"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.111,
+     "peak": "SH"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.252,
+     "peak": "РО"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.117,
+     "peak": " AUTH"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.313,
+     "peak": " VIS"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.08,
+     "peak": "ER"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " announced"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " earned"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " т"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " require"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " visitors"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " refresh"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.193,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd04a485f",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "piece of a split ALL-CAPS word",
+ "unit_kind": "word",
+ "confidence": 0.5,
+ "notes": "Card: peaks on 'Ю' in ДЕБЮТ, 'COM' in OVERCOMES, 'PRI' in SURPRISES, '.PRO' in PROPERTIES, 'OUR' in COURSES, 'CAM' in CAMERON, 'バイ'. Probe: ДЕБЮТ caps 0.838, SURPRISES caps 0.629, PROBLEMS caps 0.574, PROPERTIES caps 0.570, CAMERON 0.357, 'CLASSIC BRANDS' 0.154; same sentences in lower case 0.010-0.011.",
+ "selection": "random draw"
+}
