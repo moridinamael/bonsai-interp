@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-b6b6f902",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N6063+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:24:49+00:00",
+ "recipe": {
+  "toolchain_commit": "0a0e40d5e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N6063_pos/2026-11-06-lm1909-b6b6f902.tests.json"
+ },
+ "label": "' be' restarting an echoed imperative after 'Be X;' ('Be afraid; be very afraid')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N6063_pos/2026-11-06-lm1909-b6b6f902.tests.json",
+   "prereg_commit": "0a0e40d5e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.345,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.247,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.649,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.538,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.157,
+     "peak": " me"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.483,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.326,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.478,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.076,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " always"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.678,
+     "peak": " ready"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.097,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.17,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.105,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.113,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.146,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.411,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a0e40d5e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' be' in 'Be X; be'",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "The card flags the pole broad (2.7% of tokens reach 0.1 of max) and its top tokens share nothing obvious. This is the only trigger I could reproduce strongly, so even if it holds it is a tiny sub-trigger of a broad unit. Other parallel repeats ('Run away; run', 'train_x, test_x') stay weak.",
+ "selection": "random draw"
+}

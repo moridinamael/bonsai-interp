@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-2b9a0995",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N8775-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:24:35+00:00",
+ "recipe": {
+  "toolchain_commit": "0a0e40d5e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N8775_neg/2026-11-06-lm1909-2b9a0995.tests.json"
+ },
+ "label": "the count or article right after a scoring verb in an American-football report (scored two / score a / kicked three), where a tally of touchdowns or points comes next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N8775_neg/2026-11-06-lm1909-2b9a0995.tests.json",
+   "prereg_commit": "0a0e40d5e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.085,
+     "peak": " two"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.087,
+     "peak": " four"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.845,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.401,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.168,
+     "peak": " three"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.682,
+     "peak": " five"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.484,
+     "peak": " two"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.782,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " rest"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.059,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": " signed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.094,
+     "peak": " straight"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " Ohio"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " h"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.338,
+     "peak": "5"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.814,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a0e40d5e",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "count after 'scored' (football)",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card's top example is 'scored three touchdowns'. Probes: 'scored 21' and 'kicked three' fire, 'bought three apples' and 'scored three points on the math test' do not. The card's non-sports examples (': Allen & Unwin', 'the classical') did not reproduce, so this may be partial.",
+ "selection": "random draw"
+}
