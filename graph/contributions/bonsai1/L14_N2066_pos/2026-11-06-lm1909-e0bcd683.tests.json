@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-06-lm1909-e0bcd683",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N2066+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N2066",
+   "pole": "+",
+   "label": "the comma or closing bracket right after the date in a parenthetical citation: 'Mohr, J. (2007,' and 'Hill, M. (2020, January 18)'; years and brackets in prose stay quiet",
+   "fire": [
+    "Smith, R. (2011, March 4). Growing tomatoes indoors.",
+    "Cite This Article (2015, 08). Causes of the war.",
+    "Jones, T. L. (2018, June 12) Rivers of Europe.",
+    "Retrieved from Brown, A. (2009, May 2). Coal and steel.",
+    "Cite This Paper (2012, 03). Supply chains in Asia.",
+    "Lee, K. (2016, October 9) Urban gardens.",
+    "Garcia, M. (2004, rev. ed.). Teaching young readers.",
+    "Nature Reviews (May 12, 2003). Gene therapy."
+   ],
+   "quiet": [
+    "In 2011, we started growing tomatoes indoors.",
+    "By August 2015, the causes of the war were known.",
+    "In June 2018, he wrote about the rivers of Europe.",
+    "Coal and steel (both heavy, both dirty) drove the economy.",
+    "Supply chains in Asia (mostly by sea) were disrupted.",
+    "Urban gardens, as of October 2016, grew quickly.",
+    "Teaching young readers, she said, takes patience.",
+    "Gene therapy began in 2003, after many delays."
+   ]
+  }
+ ],
+ "predictions": "fire 0.2-0.7; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "comma after citation year",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card flags gate-closed for the bulk of the pole (-x- echo 97%), but the strong activations (>0.3 max) are all +x+ and led by citation dates. Probe: '(2007, 11)' 0.704, '(2020, January 18)' 0.349, '(2007, August 1)' 0.196; 'In 2007,' 0.027, 'April 2016' 0.026. Other top examples (' messages', ' ability') are not covered."
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-8fe1f52f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N482-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:26:30+00:00",
+ "recipe": {
+  "toolchain_commit": "54706afd6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N482_neg/2026-11-06-lm1909-8fe1f52f.tests.json"
+ },
+ "label": "a word that sets up a list or collection to come: 'organize your …', 'on a temporary list', and the '.' of 'for x in tree.'; the same frames with no collection stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N482_neg/2026-11-06-lm1909-8fe1f52f.tests.json",
+   "prereg_commit": "54706afd6",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.34,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.137,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.177,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.358,
+     "peak": " organize"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.377,
+     "peak": "(a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.298,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.317,
+     "peak": " sort"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.107,
+     "peak": " list"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.0,
+     "peak": " sunny"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": "Members"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.065,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": "With"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.191,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " high"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.307,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54706afd6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sets up a collection",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Low confidence. The + pole (max 472) is the token before '.items()' and promotes ' item(s)'; this weak side has mixed top tokens. Probe: 'temporary list for now' 0.775 but 'a temporary' alone 0.104-0.167, ' organize' 0.212-0.478, 'for x in self.' 0.225; 'sell your' 0.014, 'a permanent' 0.026, 'shopping' 0.019.",
+ "selection": "random draw"
+}

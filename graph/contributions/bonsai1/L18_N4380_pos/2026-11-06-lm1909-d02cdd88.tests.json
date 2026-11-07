@@ -1,0 +1,58 @@
+{
+ "contribution": "2026-11-06-lm1909-d02cdd88",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4380+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N4380",
+   "pole": "+",
+   "label": "a word setting a numeric cutoff, right before the number: 'younger than', 'under', 'top', and the slice '[:'; comparisons and locations with no number coming stay quiet",
+   "fire": [
+    "Tickets are half price for children younger than 12.",
+    "The vaccine is not approved for patients older than 65.",
+    "The league invites only schools ranked in the top 20.",
+    "The film is unsuitable for anyone under 16 years old.",
+    "Applicants with fewer than 3 references will be rejected.",
+    "To grab the prefix, write code = serial[:4] on one line.",
+    "The survey covered towns with less than 500 residents.",
+    "Bonuses go to the top 10 salespeople each quarter."
+   ],
+   "quiet": [
+    "The new engine is louder than the old diesel model.",
+    "She would sooner walk home than wait for the bus.",
+    "The cat is hiding under the sofa in the hallway.",
+    "The jar sits on top of the fridge in the kitchen.",
+    "To grab the prefix, write code = serial.strip() on one line.",
+    "The survey covered towns along the northern river valley.",
+    "Tickets are half price for children with a school card.",
+    "The film is unsuitable for anyone afraid of the dark."
+   ]
+  }
+ ],
+ "predictions": "cutoff words 0.2-0.6; 'than' comparing qualities and spatial 'under'/'top' below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "numeric cutoff before a count",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: '[:' x13, ' than' x12, ' under', ' top'; output promotes ' five', ' dozen', ' three', ' few'. Probe: 'younger than' 0.456, 'kids under' 0.530, 'word[:' 0.449, 'among the top' 0.277; 'stronger than' 0.034, 'rather stay home than' 0.003, 'on top of the shelf under the' 0.011.",
+ "trigger": {
+  "tokens": [
+   " than",
+   " under",
+   " top",
+   "[:",
+   " :"
+  ]
+ }
+}

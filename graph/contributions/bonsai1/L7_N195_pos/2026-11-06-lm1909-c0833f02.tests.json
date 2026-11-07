@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-06-lm1909-c0833f02",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N195+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N195",
+   "pole": "+",
+   "label": "the noun right after a bare first word at the very start of a text (two-word names: 'Space Systems', 'Student resources'), and the '8' of a 'coding: utf-8' header; the same nouns later or after a determiner stay quiet",
+   "fire": [
+    "Data Systems is a small firm.",
+    "Student services are listed here.",
+    "Mind Touch sells photographs.",
+    "Teacher resources are free online.",
+    "Aero Systems builds satellites in Ohio.",
+    "Parent activities start on Monday.",
+    "# coding: utf-8\nimport json",
+    "Health Systems opened a new clinic."
+   ],
+   "quiet": [
+    "The data systems were replaced last year in Ohio.",
+    "All student services are listed here.",
+    "Her gentle touch calmed the horse.",
+    "Our teacher has free resources online.",
+    "Many aero systems are built in Ohio.",
+    "Every parent joined in the activities on Monday.",
+    "# this file has no header\nimport json",
+    "The health of the clinic staff improved."
+   ]
+  }
+ ],
+ "predictions": "fire 0.25-0.8, with some misses; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "second word of a text",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card flags gate-closed (-x- echo 76%); max only 2.62. Top examples are '8' in 'coding: utf-8' and text-initial two-word names, several straight after <|endoftext|>. Probe: 'Space Systems' 0.779, 'Life Touch' 0.673, 'Student resources' 0.445-0.787, 'coding: utf-8' 0.475; 'The systems' 0.037, 'Our Company' 0.034, 'many resources' 0.027, 'Human resources' 0.114."
+}

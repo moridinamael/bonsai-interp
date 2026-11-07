@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-06-lm1909-aa69c387",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N11213-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:10:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N11213",
+   "pole": "-",
+   "label": "weak and mixed; best guess: the 'self._attr' accessor inside a Python class body, with plain functions staying quiet",
+   "fire": [
+    "class Box:\n    def __init__(self, w):\n        self._width = w\n\n    @property\n    def width(self):\n        return self._width\n",
+    "class Lamp:\n    def __init__(self, c):\n        self._color = c\n\n    @property\n    def color(self):\n        return self._color\n",
+    "class Meter:\n    def __init__(self, r):\n        self._reading = r\n\n    @property\n    def reading(self):\n        return self._reading\n",
+    "class Door:\n    def __init__(self, h):\n        self._height = h\n\n    @property\n    def height(self):\n        return self._height\n",
+    "class Clock:\n    def __init__(self, n):\n        self._hour = n\n\n    @property\n    def hour(self):\n        return self._hour\n",
+    "class Tank:\n    def __init__(self, v):\n        self._level = v\n\n    @property\n    def level(self):\n        return self._level\n",
+    "class Train:\n    def __init__(self, s):\n        self._speed = s\n\n    @property\n    def speed(self):\n        return self._speed\n",
+    "class Shelf:\n    def __init__(self, d):\n        self._depth = d\n\n    @property\n    def depth(self):\n        return self._depth\n"
+   ],
+   "quiet": [
+    "def add(a, b):\n    total = a + b\n    print(total)\n    return total\n",
+    "def scale(x, k):\n    total = x * k\n    print(total)\n    return total\n",
+    "def diff(p, q):\n    total = p - q\n    print(total)\n    return total\n",
+    "def ratio(u, t):\n    total = u / t\n    print(total)\n    return total\n",
+    "def area(w, h):\n    total = w * h\n    print(total)\n    return total\n",
+    "def total(m, n):\n    total = m + n\n    print(total)\n    return total\n",
+    "def gap(r, s):\n    total = r - s\n    print(total)\n    return total\n",
+    "def mean(c, d):\n    total = c + d\n    print(total)\n    return total\n"
+   ]
+  }
+ ],
+ "predictions": "probably fails: fire 0.05-0.25, near misses below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "self._attr accessor (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: max 11.12 rests on one ' else'; the rest are at most 0.57 of max and very mixed (' is', ' self', 'example', ' in', ' that'). Probe: class with property '._' 0.221, 'transform like' 0.229, 'must be in' 0.054-0.128, nested else 0.072, plain code 0.005. Recorded as a best guess, not a confident label."
+}
