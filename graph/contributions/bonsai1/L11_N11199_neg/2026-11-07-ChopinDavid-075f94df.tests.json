@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-075f94df",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N11199-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T14:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N11199",
+   "pole": "-",
+   "label": "unclear; best guess: the first token of a new line in a structured block (a line-initial 'from' in a Python import block, a '-' bullet, an indented 'self') rather than in running prose",
+   "fire": [
+    "import json\nimport logging\nfrom pathlib import Path\nfrom typing import List",
+    "import numpy as np\nfrom scipy import stats\nfrom matplotlib import pyplot as plt",
+    "import re\nimport time\nfrom datetime import datetime\nfrom app.models import User",
+    "import os\nfrom flask import Flask\nfrom flask import request\napp = Flask(__name__)",
+    "import torch\nimport torch.nn as nn\nfrom torch.utils.data import DataLoader",
+    "import argparse\nfrom glob import glob\nfrom tqdm import tqdm",
+    "import unittest\nfrom unittest import mock\nfrom service import client",
+    "import csv\nimport math\nfrom random import shuffle\nfrom statistics import mean"
+   ],
+   "quiet": [
+    "We ordered the chairs from a shop in Lyon and the tables from Milan.",
+    "The letters came from her aunt, who lived far from the city.",
+    "Water dripped from the roof all night after the storm.",
+    "He borrowed the book from the library and returned it late.",
+    "The train from Leeds was delayed by twenty minutes.",
+    "She learned a lot from her first job at the bakery.",
+    "The smell of bread came from the kitchen downstairs.",
+    "Apart from the rain, the holiday was very relaxing."
+   ]
+  }
+ ],
+ "predictions": "fire weakly, 0.05-0.2; near misses below 0.03. Probe maxima were tiny, so a fail is expected",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear line-initial token",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "probe: every sentence below 0.09 (import block 'from' 0.087, indented 'self' 0.031, bullets 0.021-0.025); card peaks are line-initial '-', 'from', ' self'. Written as a best-guess test"
+}
