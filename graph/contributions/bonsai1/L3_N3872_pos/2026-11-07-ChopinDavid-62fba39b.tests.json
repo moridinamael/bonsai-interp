@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-62fba39b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N3872+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T10:24:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N3872",
+   "pole": "+",
+   "label": "tiny code unit (max 2.9, gate mostly closed): the fused operator-plus-parenthesis tokens '**(' and '*(' written without spaces in code or regexes; the same expressions with spaces, or '%(' format keys, stay low",
+   "fire": [
+    "z = a**(b + c) / 2",
+    "loss = w*(y - p) + reg",
+    "val = 2*(x + 1) - offset",
+    "decay = rate**(step / period)",
+    "tokens = re.findall(r'\\s*(\\d+)', line)",
+    "area = 0.5*(base + top) * height",
+    "growth = base**(years) - 1",
+    "energy = m*(c * c)"
+   ],
+   "quiet": [
+    "z = a ** (b + c) / 2",
+    "loss = w * (y - p) + reg",
+    "val = 2 * (x + 1) - offset",
+    "decay = rate ** (step / period)",
+    "tokens = line.split(',')",
+    "area = 0.5 * (base + top) * height",
+    "growth = pow(1 + r, years) - 1",
+    "energy = m * (c * c)"
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-0.9; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "fused '**(' / '*(' token in code",
+ "unit_kind": "word",
+ "confidence": 0.4,
+ "notes": "Card: peak tokens ' %(' x6, '*(' x3, '**(' x2, '/(' x2. Probe: 'x**(n - 1)' 0.910, regex '\\s*(\\w+)' 0.729, 'total/(count + 1)' 0.206, ')|(' 0.123; spaced 'x ** (n - 1)' 0.008, '%(name)s' 0.008, prose parenthesis 0.061. Tokenizer: 'a**(b' -> '**(', 'w*(y' -> '*('."
+}

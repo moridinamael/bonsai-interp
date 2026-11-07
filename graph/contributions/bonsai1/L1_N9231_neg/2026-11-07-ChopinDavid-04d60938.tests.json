@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-04d60938",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9231-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T10:24:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N9231",
+   "pole": "-",
+   "label": "the word piece 'est' after ' Bund' in German Bundestag and its compounds (Bundestages, Bundestagswahl); Bundes- words that the tokenizer keeps as ' Bundes' (Bundesregierung, Bundesamt, Bundesliga) stay low",
+   "fire": [
+    "Nach langer Debatte stimmte der Bundestag dem Gesetz zu.",
+    "Die Abgeordneten des Bundestages trafen sich am Mittwoch.",
+    "Vor der Bundestagswahl veröffentlichten alle Parteien ihre Programme.",
+    "Im Bundestag wurde lange über die Rente gestritten.",
+    "Der Haushalt muss noch vom Bundestag beschlossen werden.",
+    "Mehrere Ausschüsse des Bundestages berieten den Entwurf.",
+    "Viele Bürger verfolgten die Rede im Bundestag live im Fernsehen.",
+    "Die Ergebnisse der Bundestagswahl wurden spät in der Nacht bekannt."
+   ],
+   "quiet": [
+    "Nach langer Debatte stimmte die Bundesregierung dem Plan zu.",
+    "Die Mitarbeiter des Bundesamtes trafen sich am Mittwoch.",
+    "Vor dem Saisonstart veröffentlichten alle Vereine der Bundesliga ihre Kader.",
+    "Im Landtag wurde lange über die Rente gestritten.",
+    "Der Haushalt muss noch vom Stadtrat beschlossen werden.",
+    "Mehrere Ministerien der Bundesregierung berieten den Entwurf.",
+    "Viele Bürger verfolgten die Rede im Rathaus live im Fernsehen.",
+    "Die Ergebnisse der Landtagswahl wurden spät in der Nacht bekannt."
+   ]
+  }
+ ],
+ "predictions": "fire 0.5-0.9; near misses below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'est' piece in Bundestag",
+ "unit_kind": "word",
+ "confidence": 0.55,
+ "notes": "Card: top examples 'Bund|es|präsident', 'Bund|est|ag' (gate-closed regime 99%). Tokenizer: ' Bundestag' -> ' Bund','est','ag', ' Bundestagswahl' -> ' Bund','est','ags', but ' Bundesregierung' -> ' Bundes', ' Bundesamt' -> ' Bundes', ' Bundesliga' single token. Probe: 'im Bundestag' 0.669, 'des Bundestages' 0.911; 'Bundesregierung' 0.087, 'Bundesamt' 0.096, 'Bundesliga' 0.017, 'tremendous' 0.293."
+}

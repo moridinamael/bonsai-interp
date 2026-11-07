@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-ae76f943",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11181+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T10:24:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N11181",
+   "pole": "+",
+   "label": "a lone capital ' A' token that begins a proper name split by the tokenizer (company, product or place names such as Avid, Amdahl, Aegon, Ahold, Afton); names kept whole (Adobe, Apple) and the letter A used on its own (grade A, vitamin A) stay low",
+   "fire": [
+    "The Dutch insurer Aegon reported higher profits this quarter.",
+    "Shares of the grocery group Ahold rose after the merger news.",
+    "The film was edited on an Avid workstation in a small studio.",
+    "Early mainframes from Amdahl competed directly with IBM.",
+    "The web server was developed by a small firm called Aprelium.",
+    "Walkers often climb from the village up onto Afton Down.",
+    "The consultants from A.T. Kearney presented their findings.",
+    "Analysts expect Aegon to sell part of its American business."
+   ],
+   "quiet": [
+    "The Dutch insurer Allianz reported higher profits this quarter.",
+    "Shares of the grocery group Aldi rose after the merger news.",
+    "The film was edited on an Apple workstation in a small studio.",
+    "Early mainframes from IBM dominated the market for years.",
+    "The web server was developed by a small firm called Apache.",
+    "Students who score an A in every subject receive a prize.",
+    "The consultants from McKinsey presented their findings.",
+    "Carrots are a good source of vitamin A and fibre."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.7; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' A' starting a split proper name",
+ "unit_kind": "context",
+ "confidence": 0.55,
+ "notes": "Card: ' A' x14 (A.T. Kearney, AFS, Amdahl, Avid, Afton, Aprelium), ' O' x4. Tokenizer: ' Aegon' -> ' A','eg','on', ' Ahold' -> ' A','hold', ' Aprelium' -> ' A','pre'..; ' Adobe', ' Apple', ' Audi', ' Airbus' single tokens. Probe: 'from Avid' 0.654, 'AFS Trinity' 0.632, 'Afton Down' 0.357, 'Amdahl' 0.332; 'from Adobe' 0.018, 'Akamai' (' Ak') 0.036, 'an A on his exam' 0.083, 'Vitamin A' 0.015."
+}
