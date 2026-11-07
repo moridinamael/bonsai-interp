@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-06-lm1909-6e9a3649",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N8775-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:27:48+00:00",
+ "recipe": {
+  "toolchain_commit": "57497b7db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N8775_neg/2026-11-06-lm1909-6e9a3649.tests.json"
+ },
+ "label": "The word 'digital', 'silicon', 'steam' or 'oil' as a modifier naming a technology or industry",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N8775_neg/2026-11-06-lm1909-6e9a3649.tests.json",
+   "prereg_commit": "57497b7db",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.518,
+     "peak": " digital"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.592,
+     "peak": " silicon"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.786,
+     "peak": " steam"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.12,
+     "peak": " oil"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.16,
+     "peak": " Digital"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.661,
+     "peak": " silicon"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.582,
+     "peak": " steam"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.095,
+     "peak": " digital"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.128,
+     "peak": " office"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.097,
+     "peak": "Engine"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.061,
+     "peak": " water"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " wheat"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " office"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.18,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.045,
+     "peak": " printed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.587,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "57497b7db",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digital / silicon / steam / oil",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "A list, and I kept it as a list: 'coal' and 'electronic' stayed quiet in probing, so 'era-defining technology' did not hold as a shared pattern. The + pole of this neuron is 'electronic'.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "digital",
+   "silicon",
+   "steam",
+   "oil"
+  ]
+ }
+}

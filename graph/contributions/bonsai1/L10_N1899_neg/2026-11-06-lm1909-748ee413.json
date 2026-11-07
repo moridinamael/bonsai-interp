@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-748ee413",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N1899-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:27:58+00:00",
+ "recipe": {
+  "toolchain_commit": "57497b7db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N1899_neg/2026-11-06-lm1909-748ee413.tests.json"
+ },
+ "label": "A slot inside a stock catchphrase formula (poor man's X, A Tale of Two X, rent-a-X, minimum viable X, the ultimate X, death by X)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N1899_neg/2026-11-06-lm1909-748ee413.tests.json",
+   "prereg_commit": "57497b7db",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.96,
+     "peak": "'s"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.668,
+     "peak": " Two"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.866,
+     "peak": "-a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.326,
+     "peak": " viable"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.241,
+     "peak": " ultimate"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.636,
+     "peak": "'s"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.6,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.843,
+     "peak": "'s"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " thriller"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": "ors"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " describe"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " lime"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " at"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.652,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "57497b7db",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stock catchphrase slot",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "The pattern is a fixed formula waiting for its filler. Literal 'died by drowning' and 'two brothers' stayed quiet in probing; literal 'the poor man's hat' still fired, so the label is partly lexical.",
+ "selection": "random draw"
+}

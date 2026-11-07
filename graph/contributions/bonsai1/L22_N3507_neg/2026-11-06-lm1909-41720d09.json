@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-41720d09",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N3507-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:27:37+00:00",
+ "recipe": {
+  "toolchain_commit": "57497b7db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N3507_neg/2026-11-06-lm1909-41720d09.tests.json"
+ },
+ "label": "Chinese clause break in reflective reasoning, where a stated condition or cause is about to yield its consequence",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N3507_neg/2026-11-06-lm1909-41720d09.tests.json",
+   "prereg_commit": "57497b7db",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.243,
+     "peak": "，"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.494,
+     "peak": "，"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.224,
+     "peak": "自然"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.634,
+     "peak": "，"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.25,
+     "peak": "，"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.364,
+     "peak": "，"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.316,
+     "peak": "，"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.275,
+     "peak": "轻松"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.05,
+     "peak": "，"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": "他"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": "，"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.094,
+     "peak": "，"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": "公里"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.204,
+     "peak": "，"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.168,
+     "peak": "，"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": "，"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.295,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "57497b7db",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Chinese cause-to-consequence break",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Peaks on the comma or on the words opening the consequence. Commas in factual description stayed quiet in probing, so the comma alone is not the trigger.",
+ "selection": "random draw"
+}
