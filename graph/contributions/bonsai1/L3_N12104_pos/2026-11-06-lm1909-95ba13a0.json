@@ -1,0 +1,163 @@
+{
+ "id": "2026-11-06-lm1909-95ba13a0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N12104+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:47+00:00",
+ "recipe": {
+  "toolchain_commit": "a471a0f99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N12104_pos/2026-11-06-lm1909-95ba13a0.tests.json"
+ },
+ "label": "The token ' Q' or ' Qu': a word-initial capital Q in a name or initial",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N12104_pos/2026-11-06-lm1909-95ba13a0.tests.json",
+   "prereg_commit": "a471a0f99",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.932,
+     "peak": " Q"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.834,
+     "peak": " Qu"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.85,
+     "peak": " Q"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.85,
+     "peak": " Q"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.958,
+     "peak": " Qu"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.495,
+     "peak": " Qatar"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.908,
+     "peak": " Q"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.614,
+     "peak": " Qu"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " critic"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.062,
+     "peak": " Emirates"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.172,
+     "peak": " courthouse"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " Zhang"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": " often"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": "arkin"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " Gallagher"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.85,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a471a0f99",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token ' Q' / ' Qu'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "The card flags this pole broad, and its top activations are in the gate-closed (-x-) regime.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " Q",
+   " Qu",
+   "Q",
+   "-Q",
+   " q",
+   "q"
+  ]
+ }
+}
