@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-70a05f8d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N11567-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T17:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N11567",
+   "pole": "-",
+   "label": "Python code that parses or deserializes data it has just read (json.loads, from_ical, decoding, regex match on input), at the assignment that receives the parsed value; code that serializes data or does plain arithmetic stays low",
+   "fire": [
+    "import json\n\ndef load_config(path):\n    with open(path) as fh:\n        text = fh.read()\n    config = json.loads(text)\n    return config",
+    "import yaml\n\ndef load_settings(path):\n    with open(path) as fh:\n        raw = fh.read()\n    settings = yaml.safe_load(raw)\n    return settings",
+    "import json\n\ndef handle(response):\n    body = response.read()\n    payload = json.loads(body)\n    return payload[\"items\"]",
+    "import base64\n\ndef unpack(token):\n    encoded = token.split(\".\")[1]\n    decoded = base64.urlsafe_b64decode(encoded)\n    return decoded",
+    "import csv\n\ndef read_rows(path):\n    with open(path) as fh:\n        reader = csv.reader(fh)\n        rows = list(reader)\n    return rows",
+    "import xml.etree.ElementTree as ET\n\ndef parse(path):\n    data = open(path).read()\n    root = ET.fromstring(data)\n    return root",
+    "import json\n\ndef from_cache(cache, key):\n    blob = cache.get(key)\n    obj = json.loads(blob)\n    return obj",
+    "import pickle\n\ndef restore(path):\n    with open(path, \"rb\") as fh:\n        state = pickle.load(fh)\n    return state"
+   ],
+   "quiet": [
+    "import json\n\ndef save_config(path, config):\n    text = json.dumps(config)\n    with open(path, \"w\") as fh:\n        fh.write(text)",
+    "import yaml\n\ndef save_settings(path, settings):\n    raw = yaml.safe_dump(settings)\n    with open(path, \"w\") as fh:\n        fh.write(raw)",
+    "def handle(items):\n    count = len(items)\n    total = count * 2\n    return total",
+    "import base64\n\ndef pack(data):\n    encoded = base64.urlsafe_b64encode(data)\n    return encoded",
+    "import csv\n\ndef write_rows(path, rows):\n    with open(path, \"w\") as fh:\n        writer = csv.writer(fh)\n        writer.writerows(rows)",
+    "def scale(width, height, factor):\n    width = width * factor\n    height = height * factor\n    return width, height",
+    "import json\n\ndef to_cache(cache, key, obj):\n    blob = json.dumps(obj)\n    cache.set(key, blob)",
+    "import pickle\n\ndef store(path, state):\n    with open(path, \"wb\") as fh:\n        pickle.dump(state, fh)"
+   ]
+  }
+ ],
+ "predictions": "parse/deserialize snippets 0.35-0.8; serialize (dumps) and arithmetic snippets below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code parsing/deserializing loaded data",
+ "unit_kind": "context",
+ "confidence": 0.4,
+ "notes": "Card peaks on 'encoded', 'json', '=', 'datetime' in decoding code; the + pole promotes export/serialize and the - side is the parse/interpret side. Probe: json.loads after read 0.767, cal.from_ical 0.700, b64decode 0.367, datetime_re.match 0.240; json.dumps write 0.175, pickle.dumps 0.007, area arithmetic 0.162, loop counter 0.030."
+}

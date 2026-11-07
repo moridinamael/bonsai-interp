@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-4ec2b2ee",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N6137-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T17:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N6137",
+   "pole": "-",
+   "label": "the -ius ending of Latin and Greek personal names when it is its own token (Pont|ius, Phot|ius, Lucret|ius) and the matching Russian name ending -ий (Паис|ий); names ending in a fused -us token and common nouns like radius stay low",
+   "fire": [
+    "The poet Lucretius wrote a long poem on the nature of things.",
+    "Gaius Cassius was one of the men who killed Caesar.",
+    "Much of what we know comes from the historian Suetonius.",
+    "The architect Vitruvius wrote ten books on building.",
+    "The saint was buried near the tomb of Pontius in the old church.",
+    "Летопись упоминает, что Григорий стал игуменом монастыря.",
+    "В монастыре жил старец Аркадий, известный своей мудростью.",
+    "The pope Felix sent his letter to the patriarch Photius in Constantinople."
+   ],
+   "quiet": [
+    "The poet Virgil wrote a long poem on the founding of Rome.",
+    "Marcus Brutus was one of the men who killed Caesar.",
+    "Much of what we know comes from the historian Tacitus.",
+    "The architect Hadrian rebuilt the temple of all the gods.",
+    "The saint was buried near the tomb of Peter in the old church.",
+    "Летопись упоминает, что Иван стал игуменом монастыря.",
+    "В монастыре жил старец Иван, известный своей мудростью.",
+    "The engineer measured the radius of the dome in Constantinople."
+   ]
+  }
+ ],
+ "predictions": "split -ius / -ий names 0.4-0.8; Augustus, Marcus, radius, genius and other names below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "-ius / -ий personal-name ending",
+ "unit_kind": "token",
+ "confidence": 0.5,
+ "notes": "Card peaks on 'ius' (x15) in Manius, Pontius, Photius and 'ий' in Russian monastic names. Probe: Manius 0.752, Pontius 0.792, Photius 0.711, Hesychius 0.603, Паисий 0.643, Tiberius 0.209 (weaker); Augustus 0.006, radius 0.003. Token splits checked."
+}
