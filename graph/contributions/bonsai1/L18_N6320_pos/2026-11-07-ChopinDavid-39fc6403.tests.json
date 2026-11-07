@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-39fc6403",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N6320+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T16:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N6320",
+   "pole": "+",
+   "label": "the binary minus that computes a net amount in accounting or financial code (gross - discount, debit - credit, value - depreciation); plus signs, hyphens in prose and negative numbers stay low",
+   "fire": [
+    "invoice_total = net_amount = gross_total - rebate_amount - withholding_tax",
+    "profit = revenue_total - cost_of_goods_sold - operating_expenses",
+    "outstanding = invoice.grand_total - invoice.paid_amount - invoice.write_off",
+    "book_value = asset.purchase_cost - accumulated_depreciation - impairment_loss",
+    "net_pay = gross_salary - income_tax - pension_contribution",
+    "balance_due = order_amount - deposit_amount - credit_note_amount",
+    "taxable_income = total_income - allowable_deductions - personal_allowance",
+    "closing_balance = opening_balance + receipts - payments - bank_charges"
+   ],
+   "quiet": [
+    "invoice_total = net_amount = gross_total + rebate_amount + withholding_tax",
+    "profit = revenue_total + cost_of_goods_sold + operating_expenses",
+    "outstanding = invoice.grand_total + invoice.paid_amount + invoice.write_off",
+    "book_value = asset.purchase_cost * depreciation_rate * impairment_factor",
+    "net_pay = gross_salary + overtime_pay + holiday_bonus",
+    "balance_due = order_amount + shipping_amount + gift_wrap_amount",
+    "The tax-free allowance is well-known to self-employed workers.",
+    "closing_balance = opening_balance + receipts + interest_earned"
+   ]
+  }
+ ],
+ "predictions": "accounting subtraction lines 0.1-0.35; additions and prose dashes below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "minus computing a net amount in code",
+ "unit_kind": "context",
+ "confidence": 0.25,
+ "notes": "Card: 'value_after_depreciation - d.get(...)', 'debit - credit', 'pos - self._pos_com_b'. Probe weak: net_amount = gross - discount - tax 0.344, credit - debit 0.092 (peak elsewhere), end_pos - start_pos 0.046, budget - spent 0.094; prose dash 0.028, -5 degrees 0.029. Low confidence."
+}
