@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-cf2c4b1d",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N7676-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T08:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N7676",
+   "pole": "-",
+   "label": "unclear: the token right after a bare name in code or prose (a method call after a variable, 'is' after a band name), as against the same sentences without a bare-name subject",
+   "fire": [
+    "    rows = load_rows(path)\n    totals.append(rows)",
+    "Formed in Leeds, Harbour is a three piece band led by two sisters.",
+    "    score = float(line)\n    scores.append(score)",
+    "Based in Austin, Velvet is a five piece band with a horn section.",
+    "    item = queue.get()\n    seen.append(item)",
+    "Formed in Glasgow, Copper is a punk band that tours every summer.",
+    "    name = row[0]\n    names.append(name)",
+    "Started in Lisbon, Orchard is a folk band of four friends."
+   ],
+   "quiet": [
+    "    rows = load_rows(path)\n    print(len(rows))",
+    "Formed in Leeds, the group plays small venues led by two sisters.",
+    "    score = float(line)\n    print(score + 1)",
+    "Based in Austin, the musicians play jazz with a horn section.",
+    "    item = queue.get()\n    print(item)",
+    "Formed in Glasgow, they play punk and tour every summer.",
+    "    name = row[0]\n    print(name.upper())",
+    "Started in Lisbon, the four friends play folk music."
+   ]
+  }
+ ],
+ "predictions": "weak: fire 0.15-0.3 on '.append' after a variable and ' is' after a band name; controls below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear: after bare name",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card mixed: 'as Church writes', 'Malartic,', 'posweight.append', 'localcsv =', 'Panama is a five piece band', figure reference numbers. Probe all low: '.append' 0.258, 'Lantern is a four piece band' 0.218; 'as Smith writes' 0.034, 'as the critic Jones said' 0.025. Best guess only, expected weak."
+}

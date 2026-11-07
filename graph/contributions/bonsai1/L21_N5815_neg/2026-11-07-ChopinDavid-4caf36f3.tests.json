@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-4caf36f3",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N5815-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T08:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N5815",
+   "pole": "-",
+   "label": "the colon-newline closing a section header (Args:, Returns:, Raises:) inside a Python docstring, as against colons that end code lines or prose headers outside a docstring",
+   "fire": [
+    "def scale(x, k):\n    \"\"\"Scale a value.\n\n    Args:\n      x: the input number.\n      k: the factor.\n    \"\"\"\n    return x * k",
+    "def parse(text):\n    \"\"\"Parse a config string.\n\n    Returns:\n      A dict of settings.\n    \"\"\"\n    return dict()",
+    "def connect(host):\n    \"\"\"Open a socket.\n\n    Raises:\n      ConnectionError: if the host is down.\n    \"\"\"\n    pass",
+    "class Cache:\n    def get(self, key):\n        \"\"\"Fetch a cached item.\n\n        Args:\n          key: the lookup key.\n        \"\"\"\n        return self.d[key]",
+    "def resize(img, size):\n    \"\"\"Resize an image.\n\n    Args:\n      img: a PIL image.\n      size: target width and height.\n    \"\"\"\n    return img",
+    "def mean(xs):\n    \"\"\"Average of a list.\n\n    Returns:\n      The arithmetic mean as a float.\n    \"\"\"\n    return sum(xs) / len(xs)",
+    "def train(model, data):\n    \"\"\"Fit the model.\n\n    Args:\n      model: a Keras model.\n      data: training batches.\n    \"\"\"\n    model.fit(data)",
+    "def read(path):\n    \"\"\"Read bytes from disk.\n\n    Raises:\n      FileNotFoundError: if absent.\n    \"\"\"\n    return open(path).read()"
+   ],
+   "quiet": [
+    "def scale(x, k):\n    # multiply the input number by the factor\n    if k == 0:\n        return 0\n    return x * k",
+    "def parse(text):\n    \"\"\"Parse a config string into a dict of settings.\"\"\"\n    return dict()",
+    "def connect(host):\n    try:\n        sock = open_socket(host)\n    except ConnectionError:\n        pass",
+    "class Cache:\n    def get(self, key):\n        \"\"\"Fetch a cached item by its lookup key.\"\"\"\n        return self.d[key]",
+    "Meeting agenda\n\nArgs:\n  budget review and hiring plan for next quarter.",
+    "def mean(xs):\n    total = 0\n    for x in xs:\n        total += x\n    return total / len(xs)",
+    "The workshop covers three topics:\nmodels, data and training loops.",
+    "def read(path):\n    with open(path) as f:\n        return f.read()"
+   ]
+  }
+ ],
+ "predictions": "fire 0.6-0.8 on ':\\n' after Args/Returns/Raises in a docstring; def/for/if colons and prose 'Args:' below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring 'Args:' header",
+ "unit_kind": "context",
+ "confidence": 0.7,
+ "notes": "Card: ':\\n' x30, all 'Args:' in Google-style docstrings; max 79. Probe: Args 0.733, Returns 0.747, Raises 0.781; 'Parameters:' 0.191 (peak not on the colon); prose 'Args:' outside code 0.008, for-loop 0.041, recipe list colon 0.006. Fire items are multi-line docstrings."
+}
