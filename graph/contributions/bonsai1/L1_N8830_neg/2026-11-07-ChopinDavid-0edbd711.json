@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-0edbd711",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8830-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T17:28:42+00:00",
+ "recipe": {
+  "toolchain_commit": "b0ffcc671",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N8830_neg/2026-11-07-ChopinDavid-0edbd711.tests.json"
+ },
+ "label": "the Chinese character 破 (break) when the tokenizer keeps it as its own token (破天荒, 破除, 破案, 破例); words where 破 is merged into one token (破产, 打破, 突破, 破坏) stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N8830_neg/2026-11-07-ChopinDavid-0edbd711.tests.json",
+   "prereg_commit": "b0ffcc671",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.422,
+     "peak": "破"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.629,
+     "peak": "破"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.658,
+     "peak": "破"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.499,
+     "peak": "破"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.39,
+     "peak": "破"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.491,
+     "peak": "破"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.585,
+     "peak": "破"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.376,
+     "peak": "破"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.224,
+     "peak": "突破"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.104,
+     "peak": "了"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": "打破了"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.259,
+     "peak": "大"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.087,
+     "peak": "，"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.031,
+     "peak": "的学生"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.198,
+     "peak": "的"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.042,
+     "peak": "演唱会"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.495,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b0ffcc671",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "standalone 破 token",
+ "unit_kind": "token",
+ "confidence": 0.25,
+ "notes": "Layer 1, tiny max (0.94), broad flag (4% of tokens over 0.1 of max). Card peaks on 破 (x7), also English ' limitations'. Probe: 破天荒 0.731, 破除 0.549 (both split 破 off); 破产 (one merged token) 0.136, other Chinese 0.10-0.18; ' limitations' 0.566 (not tested here). Token splits checked.",
+ "selection": "random draw"
+}
