@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-70a48c94",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8633+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T11:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N8633",
+   "pole": "+",
+   "label": "Russian adjective endings split off as their own piece, chiefly plural '-ые' / '-ные' / '-альные' (талантлив|ые, специ|альные): a spelling-unit pole; Russian text whose adjectives are whole tokens or absent stays lower",
+   "fire": [
+    "На рынке продают красивые старые вазы и деревянные ложки.",
+    "В парке стоят удобные скамейки и зелёные фонари.",
+    "Эти интересные книги можно взять в библиотеке.",
+    "Повар приготовил вкусные горячие пироги к обеду.",
+    "Туристам понравились старые улицы и красивые мосты.",
+    "Мы купили удобные кресла для гостиной.",
+    "Учёные провели интересные опыты в лаборатории.",
+    "Дети собрали спелые красные яблоки в саду."
+   ],
+   "quiet": [
+    "На рынке продают вазу и ложку каждый день.",
+    "В парке стоит скамейка возле фонаря.",
+    "Эту книгу можно взять в библиотеке.",
+    "Повар приготовил пирог к обеду.",
+    "Туристам понравился город и мост.",
+    "Мы купили кресло для дачи.",
+    "Химик провёл опыт в лаборатории.",
+    "Дети собрали яблоки в саду."
+   ]
+  }
+ ],
+ "predictions": "fire 0.5-0.9; near misses below 0.3",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Russian plural adjective ending piece (-ые)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "Card flags dense (34% of tokens over 0.1 of a tiny max 0.20) but the top examples peak on 'ые' x7, 'альные' x5, 'ой' x3. Probe: 'талантливые музыканты' 0.864, 'уютные, тёплые и чистые' 0.805, 'Специальные теплицы' 0.762, 'бесплатные программы' 0.401 (peak elsewhere); 'Он купил новый дом' 0.292, 'Она читала книгу весь вечер' 0.192, Korean 0.403, English 'Talented' 0.319. Broad floor around 0.2-0.4 makes near misses risky."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-05f5ab0f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N2912-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T11:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N2912",
+   "pole": "-",
+   "label": "the CJK character 名 / Korean 명 ('name', 'person') when it is its own token, mostly the second half of a compound (題名, 社名, 担当者名, 혁명); CJK text without it stays low",
+   "fire": [
+    "申込書には氏名と住所を必ずご記入ください。",
+    "このファイルの名前を変更してから保存してください。",
+    "会議には部長を含めて十名が参加しました。",
+    "商品名と数量を確認してから注文してください。",
+    "この映画の題名はまだ決まっていません。",
+    "그 혁명은 나라의 많은 것을 바꾸었다.",
+    "作者名が書かれていない本もあります。",
+    "受賞者三名が表彰されました。"
+   ],
+   "quiet": [
+    "申込書には電話番号と住所を必ずご記入ください。",
+    "このファイルの内容を変更してから保存してください。",
+    "会議には部長を含めて多くの人が参加しました。",
+    "商品の色と数量を確認してから注文してください。",
+    "この映画の公開日はまだ決まっていません。",
+    "그 전쟁은 나라의 많은 것을 바꾸었다.",
+    "表紙が破れている本もあります。",
+    "受賞者たちが表彰されました。"
+   ]
+  }
+ ],
+ "predictions": "fire 0.5-1.0; near misses below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "名 / 명 as its own token",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags dense (13.7% of tokens over 0.1 of a tiny max 0.18) but the top 32 peak on '名' x12 and '명' x4. Probe: 'メールの題名' 0.971, '担当者名と会社名' 0.664, '店の名前' 0.584, '혁명' 0.672; Chinese '名称' (one token) 0.059, Japanese without 名 0.070, Chinese without 0.137, English 'name' 0.158. Marked dense per card flag; the token itself looked clean in probes."
+}
