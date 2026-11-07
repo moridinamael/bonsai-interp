@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-7f9bdbf9",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1386+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T13:19:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N1386",
+   "pole": "+",
+   "label": "keeping things from affecting each other: isolation / non-interference predicates ('cannot interfere with each other', 'won't affect the other', 'isolated from'); statements that parts cooperate or share stay low",
+   "fire": [
+    "Every test gets a fresh database so that one test cannot interfere with another.",
+    "The two labs keep their samples apart so contamination in one won't affect the other.",
+    "Each tenant's virtual machine is isolated from its neighbours on the host.",
+    "We run the plugins in separate processes, so a crash in one does not affect the rest.",
+    "The judge kept the jurors apart so their opinions would not influence each other.",
+    "A bulkhead divides the hull so flooding in one compartment stays contained there.",
+    "Use separate accounts for business and personal spending so they never get mixed up.",
+    "The modules are decoupled, so changes to the parser don't affect the renderer."
+   ],
+   "quiet": [
+    "Every test gets a fresh database and finishes in under a second.",
+    "The two labs swap their samples each week to compare results.",
+    "Each tenant's virtual machine is backed up every night on the host.",
+    "We run the plugins in one process so they can share data easily.",
+    "The judge asked the jurors to discuss the evidence together.",
+    "A bulkhead runs across the hull just behind the engine room.",
+    "Use one account for business spending and check it every month.",
+    "The modules work together, so the parser hands its output to the renderer."
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-1.3; near misses below 0.25",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "isolation / non-interference",
+ "unit_kind": "meaning",
+ "confidence": 0.5,
+ "notes": "Card top: 'shouldn't interact in any way', 'prevent the messages ... matching', 'interfere with each other', 'separated from official property', 'only affect a single partition'; promotes ' isolation', ' unrelated', ' isolate'. Probe: 'cannot interfere with each other' 1.309, 'don't affect the other' 1.190, 'isolates the guest network from' 0.769, 'will not spread to the others' 0.577, 'share memory so they can communicate' 0.046, sandbox without isolation clause 0.191. Leak: 'work and family life balanced' 0.704 (peak ' life'), so near misses avoid that phrasing."
+}

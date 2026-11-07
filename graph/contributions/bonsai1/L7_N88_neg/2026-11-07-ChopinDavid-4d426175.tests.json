@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-4d426175",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N88-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T13:19:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N88",
+   "pole": "-",
+   "label": "the last digit of a three-digit number that starts with 8 (850, 825, 870): digit-level reading of an 8xx number; the same position in 1xx-4xx numbers stays low",
+   "fire": [
+    "For bookings, ring our office at (850) 312-7714 any weekday.",
+    "The turbine is rated at 860 kilowatts in strong wind.",
+    "Our hotel room on the top floor was number 825.",
+    "Tickets for the show cost 850 rupees at the door.",
+    "The pass climbs to 870 metres before dropping into the valley.",
+    "Their new sedan has a range of about 840 kilometres per tank.",
+    "Please dial (850) 224-9031 to reach the help desk.",
+    "The library holds roughly 830 rare maps from the colonial era."
+   ],
+   "quiet": [
+    "For bookings, ring our office at (350) 312-7714 any weekday.",
+    "The turbine is rated at 260 kilowatts in strong wind.",
+    "Our hotel room on the top floor was number 125.",
+    "Tickets for the show cost 450 rupees at the door.",
+    "The pass climbs to 370 metres before dropping into the valley.",
+    "Their new sedan has a range of about 440 kilometres per tank.",
+    "Please dial (250) 224-9031 to reach the help desk.",
+    "The library holds roughly 130 rare maps from the colonial era."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.9; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "last digit of an 8xx number",
+ "unit_kind": "token/lexical",
+ "confidence": 0.5,
+ "notes": "Card: top peaks on '0'/'5' ending '(850)', '850 MW', '925', '820-2865', '825 calibre'. Digits tokenize singly. Probe: '(850) 452' 0.938, '825 horsepower' 0.626, '920 dollars' 0.359, '850 MW' 0.285; '(350)' 0.058, '450 MW' 0.031, '85 people' 0.004. 9xx may also fire, so near misses use 1xx-4xx."
+}
