@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-63670b3d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4377+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T04:28:52+00:00",
+ "recipe": {
+  "toolchain_commit": "8f30ced11",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N4377_pos/2026-11-06-ChopinDavid-63670b3d.tests.json"
+ },
+ "label": "a list number that skips the expected next value in a numbered sequence (07, 09 with 08 missing; Week 12, Week 14); a list that continues in order stays low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N4377_pos/2026-11-06-ChopinDavid-63670b3d.tests.json",
+   "prereg_commit": "8f30ced11",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.764,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.671,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.714,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.528,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.741,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.457,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.602,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.469,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " Song"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " flour"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.048,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": "anks"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.637,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8f30ced11",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "number that skips a step in a sequence",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card: every top example is a list number one step ahead of the expected one: '0[9]' after 07, '1[0]' after 8, '[7]' after 5, 'Week 1[4]' after 12, '1[8]' after 16, '3[0]' after 28, '[9]' after 7. My probes used in-order lists and all stayed below 0.06 (track list 0.014, recipes 0.056, weeks 0.007), consistent with the gap hypothesis, which was not probed directly.",
+ "selection": "random draw"
+}

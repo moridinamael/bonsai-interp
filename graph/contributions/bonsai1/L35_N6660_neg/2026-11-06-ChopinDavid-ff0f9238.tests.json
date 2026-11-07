@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-ff0f9238",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6660-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T04:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6660",
+   "pole": "-",
+   "label": "a stand-alone apostrophe or hyphen token inside a French word junction (d'acier, Champs-Élysées), where the next piece starts the following word",
+   "fire": [
+    "Elle portait une bague d'argent offerte par sa mère.",
+    "Il a rapporté une cuillère d'ivoire du marché de Dakar.",
+    "Nous avons visité le musée d'Orsay hier après-midi.",
+    "Le roman raconte les aventures d'Artagnan à Paris.",
+    "Le dernier train pour Saint-Étienne part à huit heures.",
+    "Ils ont dîné près des Champs-Élysées avant le concert.",
+    "Mon grand-père a trouvé une boîte d'acier dans le grenier.",
+    "Au salon, il y avait une table d'acajou très ancienne."
+   ],
+   "quiet": [
+    "Elle portait une bague de cuivre offerte par sa mère.",
+    "Il a rapporté une cuillère de bois du marché de Dakar.",
+    "Nous avons visité le musée du Louvre hier après-midi.",
+    "Le roman raconte les aventures de Robin à Londres.",
+    "Le dernier train pour Lyon part à huit heures.",
+    "Ils ont dîné près de la tour Eiffel avant le concert.",
+    "Mon oncle a trouvé une boîte de fer dans le grenier.",
+    "Au salon, il y avait une table de chêne très ancienne."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.6 on the separate ' or - token; French without elision and English contractions below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split French elision apostrophe / hyphen",
+ "unit_kind": "spelling unit",
+ "confidence": 0.25,
+ "notes": "Card: peaks on Arabic أ after ال, French d'/d’ apostrophes (d’entre, d’acier, d’œil), '-' in Champs-Élysées. Probe: 'miroir d'acier' 0.571, 'Champs-Élysées' 0.470, 'd'entre eux' 0.124, 'verre d'eau' 0.009 (apostrophe fused into 'eau'), 'de vin' 0.015, English contractions 0.005. Uneven: tokcheck keeps only items where the apostrophe is its own token."
+}
