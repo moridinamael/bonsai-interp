@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-92fe639d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N11978-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:11:03+00:00",
+ "recipe": {
+  "toolchain_commit": "c71288a9f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N11978_neg/2026-11-06-lm1909-92fe639d.tests.json"
+ },
+ "label": "'but' in the legal formula 'including but not limited to', in either case",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N11978_neg/2026-11-06-lm1909-92fe639d.tests.json",
+   "prereg_commit": "c71288a9f",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.761,
+     "peak": " BUT"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.535,
+     "peak": " BUT"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.227,
+     "peak": " but"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.167,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.256,
+     "peak": " but"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.406,
+     "peak": " but"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.456,
+     "peak": " BUT"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.128,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.053,
+     "peak": " SOFTWARE"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.249,
+     "peak": " FOR"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.051,
+     "peak": " flood"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": "LE"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.036,
+     "peak": " generous"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.331,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c71288a9f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "including but not limited",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "' BUT' x14 and ' but' x4 of the top 32. An ordinary contrastive but stayed quiet. The pole also has a separate trigger on title colons, not claimed here, so coverage may be partial.",
+ "selection": "random draw"
+}

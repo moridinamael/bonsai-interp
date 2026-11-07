@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-59b488b7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N2269-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:11:07+00:00",
+ "recipe": {
+  "toolchain_commit": "c71288a9f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N2269_neg/2026-11-06-lm1909-59b488b7.tests.json"
+ },
+ "label": "question or sentence end that sets up what follows, especially full-width ？ in Japanese and rule text ending before an instruction",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N2269_neg/2026-11-06-lm1909-59b488b7.tests.json",
+   "prereg_commit": "c71288a9f",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.056,
+     "peak": "？"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.131,
+     "peak": "？"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.165,
+     "peak": "だ"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.028,
+     "peak": "？"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.038,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.091,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.125,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.034,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": "書いて"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.117,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.058,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": "店"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " works"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " pilot"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.073,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c71288a9f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "boundary before a follow-up",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Weak pole (max 5.25). English and French questions were near zero in probes; Japanese ？ and one game-rule full stop fired. Label is a best guess and may not hold.",
+ "selection": "random draw"
+}
