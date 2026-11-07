@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-af4a71d6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N10861+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:44:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N10861",
+   "pole": "+",
+   "label": "the French and Spanish token just before a rear or backward word (' ar' of arrière, ' hacia' before atrás, ' parte' before trasera or de atrás)",
+   "fire": [
+    "Le cycliste a touché le feu arrière de la camionnette.",
+    "Elle a jeté un coup d'œil en arrière avant de partir.",
+    "La roue arrière du vélo était crevée.",
+    "Retrocedió un paso y miró hacia atrás con miedo.",
+    "El niño se inclinó hacia atrás en la silla.",
+    "La maleta está en la parte de atrás de la furgoneta.",
+    "Hay una puerta en la parte trasera de la tienda.",
+    "Hay un jardín en la parte trasera de la casa."
+   ],
+   "quiet": [
+    "Le cycliste a touché le feu rouge de la camionnette.",
+    "Elle a jeté un coup d'œil sur la table avant de partir.",
+    "La roue avant du vélo était crevée.",
+    "Retrocedió un paso y caminó hacia la puerta con miedo.",
+    "El niño se sentó en la silla de su padre.",
+    "La maleta está en la casa de su abuela.",
+    "Esta tienda forma parte de una cadena grande.",
+    "Hay un jardín en el centro de la casa."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "token before back/rear word",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Output promotes ' behind', ' rear', ' backward', '后'. English contexts stayed quiet. The pole cannot separate parte trasera from parte delantera at ' parte', so delantera is not used as a near miss."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-bc8b6ef4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N6805-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:44:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N6805",
+   "pole": "-",
+   "label": "a short punctuation token that extends a run of the same mark (fill-in underscores, '—-', long '-' or '=' lines)",
+   "fire": [
+    "City: ______________ State: ___________",
+    "Phone: ________________ Email: _____________",
+    "Age: _______________ Height: _________",
+    "She said—-and she meant it—-that they were done.",
+    "He left—-or so we thought—-before dawn.",
+    "The note—-written in red—-was gone by morning.",
+    "print \"=======================\"",
+    "print \"---------------------------------\""
+   ],
+   "quiet": [
+    "City: Boston State: Ohio",
+    "Phone: 555 0100 Email: none",
+    "Age: forty Height: tall",
+    "She said, and she meant it, that they were done.",
+    "He left, or so we thought, before dawn.",
+    "The note, written in red, was gone by morning.",
+    "print \"hello world\"",
+    "print \"done with the job\""
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "extending a punctuation run",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Depends on how the tokenizer splits a run: dot runs became one token and stayed quiet in probing, so they are not tested."
+}
