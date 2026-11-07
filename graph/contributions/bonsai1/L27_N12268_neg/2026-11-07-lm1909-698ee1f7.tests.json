@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-lm1909-698ee1f7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N12268-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T12:10:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N12268",
+   "pole": "-",
+   "label": "Python code that constructs or uses a ConfigParser object to read and manipulate configuration settings.",
+   "fire": [
+    "import configparser\noptions = configparser.ConfigParser()\noptions.read('application.ini')\nmode = options.get('display', 'mode')\n",
+    "from configparser import ConfigParser\npreferences = ConfigParser()\npreferences.add_section('layout')\npreferences.set('layout', 'theme', 'light')\n",
+    "import ConfigParser\nconfiguration = ConfigParser.RawConfigParser()\nconfiguration.read('editor.ini')\nwidth = configuration.getint('window', 'width')\n",
+    "import configparser\nparser = configparser.ConfigParser()\nparser.read_string('[audio]\\nlevel=4')\nlevel = parser.getint('audio', 'level')\n",
+    "import ConfigParser\nprefs = ConfigParser.SafeConfigParser()\nprefs.read('viewer.ini')\nsections = prefs.sections()\n",
+    "import configparser\nsettings_reader = configparser.ConfigParser()\nsettings_reader.read('printer.ini')\nready = settings_reader.has_section('paper')\n",
+    "from configparser import RawConfigParser\nconfig_reader = RawConfigParser()\nconfig_reader.add_section('cache')\nconfig_reader.set('cache', 'size', '64')\n",
+    "import configparser\nini = configparser.ConfigParser()\nini.read('display.ini')\nif ini.has_option('screen', 'scale'):\n    scale = ini.getfloat('screen', 'scale')\n"
+   ],
+   "quiet": [
+    "import json\nwith open('application.json') as stream:\n    options = json.load(stream)\nmode = options['display']['mode']\n",
+    "preferences = {'layout': {}}\npreferences['layout']['theme'] = 'light'\nprint(preferences['layout'])\n",
+    "import tomllib\nwith open('editor.toml', 'rb') as stream:\n    configuration = tomllib.load(stream)\nwidth = configuration['window']['width']\n",
+    "import yaml\nparser_output = yaml.safe_load('audio: {level: 4}')\nlevel = int(parser_output['audio']['level'])\nprint(level)\n",
+    "import json\nprefs = json.loads(document)\nsections = list(prefs)\nprint(sections)\n",
+    "import yaml\nwith open('printer.yaml') as source:\n    settings = yaml.safe_load(source)\nready = 'paper' in settings\n",
+    "config_values = {}\nconfig_values['cache'] = {'size': 64}\ncache_size = config_values['cache']['size']\nprint(cache_size)\n",
+    "import tomllib\nwith open('display.toml', 'rb') as source:\n    display = tomllib.load(source)\nscale = float(display['screen']['scale'])\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "ConfigParser settings code",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "ConfigParser use was a repeatable subpattern among mixed corpus examples that also include names and philosophical definitions. Its name in ordinary prose was quiet. This narrow contextual label may account for only part of the pole; it is not a general configuration-topic label."
+}
