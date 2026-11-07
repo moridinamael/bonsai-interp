@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-0edbd711",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8830-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T17:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N8830",
+   "pole": "-",
+   "label": "the Chinese character 破 (break) when the tokenizer keeps it as its own token (破天荒, 破除, 破案, 破例); words where 破 is merged into one token (破产, 打破, 突破, 破坏) stay low",
+   "fire": [
+    "警方用了三天时间就把这个案子破案了。",
+    "这家公司今年破例给所有员工发了奖金。",
+    "工程队昨天在城东正式破土动工。",
+    "老人住在一间破旧的小屋里，生活很简单。",
+    "天快破晓的时候，渔船已经出海了。",
+    "学校决定破格录取这位有天赋的学生。",
+    "新政府下决心破除官僚主义的旧作风。",
+    "这位歌手破天荒地在小镇上开了演唱会。"
+   ],
+   "quiet": [
+    "经过三年的努力，他终于突破了自己的纪录。",
+    "这家公司今年因为经营不善而破产了。",
+    "工程队昨天在城东打破了施工纪录。",
+    "大风破坏了村里好几座房子的屋顶。",
+    "天快亮的时候，渔船已经出海了。",
+    "学校决定特别录取这位有天赋的学生。",
+    "新政府下决心改变官僚主义的旧作风。",
+    "这位歌手第一次在小镇上开了演唱会。"
+   ]
+  }
+ ],
+ "predictions": "standalone 破 0.4-0.8; merged 破 words and other Chinese text below 0.2",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "standalone 破 token",
+ "unit_kind": "token",
+ "confidence": 0.25,
+ "notes": "Layer 1, tiny max (0.94), broad flag (4% of tokens over 0.1 of max). Card peaks on 破 (x7), also English ' limitations'. Probe: 破天荒 0.731, 破除 0.549 (both split 破 off); 破产 (one merged token) 0.136, other Chinese 0.10-0.18; ' limitations' 0.566 (not tested here). Token splits checked."
+}

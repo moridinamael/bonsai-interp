@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-894268c0",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N7785-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T17:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N7785",
+   "pole": "-",
+   "label": "the indentation token that opens the body of an if/elif/else block in Python; the indentation opening a for, with, def or class body stays lower",
+   "fire": [
+    "def send(msg, user):\n    if user is None:\n        return False\n    queue.append(msg)\n    return True",
+    "def clean(text):\n    text = text.strip()\n    if not text:\n        text = \"empty\"\n    return text",
+    "def grade(score):\n    if score >= 90:\n        letter = \"A\"\n    elif score >= 80:\n        letter = \"B\"\n    return letter",
+    "def connect(host):\n    if host == \"localhost\":\n        port = 8000\n    return port",
+    "def update(cfg):\n    if \"debug\" in cfg:\n        level = 10\n    return level",
+    "def pick(items):\n    if len(items) > 3:\n        items = items[:3]\n    return items",
+    "def sign(n):\n    if n < 0:\n        s = -1\n    else:\n        s = 1\n    return s",
+    "def open_db(path):\n    if os.path.exists(path):\n        db = sqlite3.connect(path)\n    return db"
+   ],
+   "quiet": [
+    "def send(msgs, user):\n    for msg in msgs:\n        queue.append(msg)\n    return True",
+    "def clean(lines):\n    while lines:\n        lines.pop()\n    return lines",
+    "def grade(scores):\n    for score in scores:\n        total += score\n    return total",
+    "def connect(host):\n    with socket.create_connection(host) as s:\n        s.send(b\"hi\")\n    return host",
+    "class Config:\n    def __init__(self):\n        self.level = 10",
+    "def pick(items):\n    try:\n        first = items[0]\n    except IndexError:\n        first = None\n    return first",
+    "def sign(nums):\n    for n in nums:\n        print(n)\n    return nums",
+    "def open_db(path):\n    with open(path) as fh:\n        db = fh.read()\n    return db"
+   ]
+  }
+ ],
+ "predictions": "first indent after an if/elif/else line 0.2-0.4; first indent after for/with/def lines below 0.12",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "indent opening an if-block body",
+ "unit_kind": "context",
+ "confidence": 0.3,
+ "notes": "Card peaks on indentation runs right after 'if ...:' lines. Probe: indent after if lines 0.233/0.245/0.250, bare 'if ready:' 0.188; after for line 0.097, after with line 0.097, class/def 0.134, plain statements 0.028. Weak (about 0.25 of max) but separated."
+}
