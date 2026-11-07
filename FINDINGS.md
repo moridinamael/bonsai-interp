@@ -1208,3 +1208,46 @@ For this problem a model over all 24 knobs is the wrong shape: the useful design
 without collapsing. globalMOO did meet multi-target goals quickly (7 of 36 queries, in 4 to 12 evaluations)
 and it beat DE, so the method works here. A model of only a task's knobs would be a 2- or 3-input problem, where a sweep suffices.
 The value this round found is in the labels, not the solver.
+
+## 2026-11-07: Where in depth to steer; globalMOO's queries never beat its own design (steer@3)
+
+steer@2's 24 concept knobs added up: in its design, an additive fit predicted every output as well as a quadratic one (cross-validated
+R2 .33 to .89 per concept, quadratic never higher). So steer@3 split each knob by depth, to give the model a problem a line can't
+solve. It used 4 concepts (medicine, weather, money, travel) × 6 bands (L0-2, 3-5, 6-8, 9-11, 12-23, 24-35) = 24 inputs. The 27
+outputs were all 24 concepts, distinct-token ratio, coherence, and drift (mean absolute log10 change of the 20 concepts outside
+the panel). Each of the 24 cells is one task (raise one or two concepts, or raise one and lower another) at one of steer@2's text
+tiers, with drift at most 0.20. globalMOO asks it as one query: maximize or minimize the task's concepts under the three
+constraints. Protocol `bonsai_interp/moo/steer3_protocol.json`, report `steer3_summary.txt`.
+
+**Pilots, training prompts only:** depth changes the price of steering by an order of magnitude.
+
+- Medicine at L12-23 alone, gain 0.4: 23× with the text intact (distinct-token ratio .75, coherence -1.28). The equal-gain knob
+  needs 0.06 to reach a similar rise, and costs more text quality.
+- L0-2 breaks the text near 0.15. L9-11 barely moves anything below 1.6. Most responses rise and then fall.
+
+**Registered claims:**
+
+| claim | result |
+|---|---|
+| depth: the best non-uniform design beats steer@2's uniform line by 2× on 3 of 4 single concepts (tier 2, held-out) | **failed, 2 of 4** (medicine 1.57 vs 1.16 log10, travel .55 vs .16; weather 1.59 vs 1.33 and money .27 vs .31 fell short) |
+| model: globalMOO beats the additive model in more held-out cells than it loses | **held, 13 / 11** |
+
+The model claim held without showing what it was meant to show:
+
+- **The queries added nothing.** Against design lookup, globalMOO won 0, lost 1 and tied 23 held-out cells (training 1 / 0 / 23).
+  Every winning design was already among the 687 random design points. The 167 query evaluations met their own cell 80% of the
+  time, so the inverse respects the constraints, but it never climbed the maximized objective past its starting point.
+- **On training, the additive model won 18 to 6.** It used 456 evaluations: 168 one-band sweeps plus 12 solve-and-correct steps per
+  cell. The held-out reversal is within prompt noise: training and held-out scores of the best designs correlate at r = .76.
+- **Against the other baselines (held-out, won / lost):** uniform line 13 / 11, best single band 15 / 9, DE 17 / 7.
+
+**What the round says about steering:**
+
+- **Mid-depth carries the cheap steering.** The additive model's tier-2 designs put most gain in L12-23 (weather .93 of the band's
+  range, medicine .78, with some L0-2 for medicine) and L6-8 for travel.
+- **Money could not be steered within the drift limit by any method** (best held-out .31 log10, about 2×).
+- **The knobs are close to separable across depth too.** That is why a model built from one-band sweeps keeps up with globalMOO
+  and its 687-point design.
+
+Two steering rounds now agree: bundle steering is nearly additive, so the solver's learned inverse has little structure to exploit.
+In this setting, globalMOO's value here was its design of experiments, not its queries.

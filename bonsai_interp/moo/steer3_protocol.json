@@ -1,0 +1,192 @@
+{
+ "name": "steer@3",
+ "concepts": [
+  "medicine",
+  "weather",
+  "money",
+  "travel"
+ ],
+ "bands": [
+  [
+   0,
+   3
+  ],
+  [
+   3,
+   6
+  ],
+  [
+   6,
+   9
+  ],
+  [
+   9,
+   12
+  ],
+  [
+   12,
+   24
+  ],
+  [
+   24,
+   36
+  ]
+ ],
+ "hi": [
+  0.15,
+  0.15,
+  0.6,
+  1.6,
+  1.0,
+  0.5
+ ],
+ "scale": 0.6,
+ "power": 3,
+ "new_tokens": 24,
+ "drift_max": 0.2,
+ "tasks": [
+  {
+   "up": [
+    "medicine"
+   ],
+   "down": []
+  },
+  {
+   "up": [
+    "weather"
+   ],
+   "down": []
+  },
+  {
+   "up": [
+    "money"
+   ],
+   "down": []
+  },
+  {
+   "up": [
+    "travel"
+   ],
+   "down": []
+  },
+  {
+   "up": [
+    "medicine",
+    "weather"
+   ],
+   "down": []
+  },
+  {
+   "up": [
+    "money",
+    "travel"
+   ],
+   "down": []
+  },
+  {
+   "up": [
+    "weather"
+   ],
+   "down": [
+    "medicine"
+   ]
+  },
+  {
+   "up": [
+    "travel"
+   ],
+   "down": [
+    "money"
+   ]
+  }
+ ],
+ "tiers": [
+  {
+   "uniq": 0.68,
+   "coh": -1.4
+  },
+  {
+   "uniq": 0.58,
+   "coh": -1.7
+  },
+  {
+   "uniq": 0.45,
+   "coh": -2.2
+  }
+ ],
+ "query_iter": 12,
+ "de_maxiter": 3,
+ "line": [
+  0.01,
+  0.02,
+  0.03,
+  0.04,
+  0.05,
+  0.06,
+  0.07,
+  0.08,
+  0.09,
+  0.1,
+  0.11,
+  0.12
+ ],
+ "band_u": [
+  -1,
+  -0.6,
+  0.2,
+  0.4,
+  0.6,
+  0.8,
+  1
+ ],
+ "train_prompts": [
+  "The thing I remember most about that day is",
+  "After lunch we walked down to the",
+  "The most important thing to know about this is",
+  "He looked at the results and said",
+  "When I got home that evening,",
+  "She opened the letter and",
+  "It was the first time anyone had",
+  "What surprised me most was",
+  "In the years that followed,",
+  "According to the people who were there,",
+  "We spent most of the morning",
+  "There are a few reasons why",
+  "I have always believed that",
+  "The next step is to",
+  "Nobody expected that",
+  "Most people don't realize that"
+ ],
+ "heldout_prompts": [
+  "On the way back I stopped to",
+  "My neighbour told me about the",
+  "For a long time there was nothing but",
+  "The letter said only that",
+  "As soon as the door opened,",
+  "Her first thought was that",
+  "By the end of the week we had",
+  "One of the strangest things about it was",
+  "They asked me what I thought about the",
+  "If you look closely you will see",
+  "Later that night he wrote that",
+  "The old man smiled and told us",
+  "Everyone in the room agreed that",
+  "I never did find out why",
+  "Sooner or later you have to",
+  "That summer we finally decided to"
+ ],
+ "bundles_sha256": "4291e575fc6af9bcf3ba94961529e6f16afb6c9350e963b880d20bdf03111461",
+ "pilots": "training prompts only: per-band gain ladders for the 4 concepts set HI; five box scalings on 24 random designs each chose SCALE .6 with a cube (uniq 5/50/95 .48/.62/.72; tiers met 4, 13, 23 of 24)",
+ "methods": {
+  "gmoo": "design of experiments, one model, then each cell as one query: maximize each raised concept, minimize each lowered one, uniq and coh at least the tier, drift at most drift_max; query_iter evaluations",
+  "additive": "the band lines give each output as base plus a sum of one-band curves (linear interpolation in u); each cell is solved on that model by differential evolution on the baselines' loss, the answer evaluated, the model shifted by the observed residual and solved again, query_iter evaluations per cell",
+  "line": "steer@2's knob: one raw gain on every band of the task's concepts (negative for a lowered one), the line grid per task",
+  "band": "the best band-line point, one band of one concept at a time",
+  "de": "differential evolution on the cell at tier 2 (the baselines' loss: minus the score plus a steep penalty outside the cell), de_maxiter generations of 24, per task",
+  "lookup": "the best point of the design of experiments"
+ },
+ "claims": {
+  "depth": "at tier 2, on the held-out prompts, for at least 3 of the 4 single-concept tasks the best of the other methods' designs beats the uniform line's best design by at least log10(2)",
+  "model": "over the 24 task-tier cells on the held-out prompts, globalMOO beats the additive model in more cells than it loses; the same count against line, band, de and lookup is reported whichever way it falls"
+ }
+}
