@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-08eb26f9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N5111+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:08+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N5111_pos/2026-11-06-lm1909-08eb26f9.tests.json"
+ },
+ "label": "a kind-sorting adjective that says what class a thing belongs to, usually in a list: scent families (woody, musky, smoky), disease forms (cutaneous, ocular), levels of analysis (genetic and functional). Adjectives of size, strength or plain quality in the same lists stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N5111_pos/2026-11-06-lm1909-08eb26f9.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.451,
+     "peak": "oky"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.461,
+     "peak": "ky"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.187,
+     "peak": "aneous"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.35,
+     "peak": "aneous"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.161,
+     "peak": " functional"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.196,
+     "peak": " functional"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.157,
+     "peak": "oky"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.18,
+     "peak": " functional"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.071,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.154,
+     "peak": " clean"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.056,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.059,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.067,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.079,
+     "peak": " ties"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.106,
+     "peak": " sweet"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.042,
+     "peak": " big"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.192,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "kind-sorting adjective in a list",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: 'sympt|omatic', 'structural and functional', 'procedural', 'BLV associated form', 'wo|ody floral'. This is my attempt at the shared pattern behind that list. Probes: 'genetic and functional' 0.526, 'structural and functional' 0.510, 'smoky' 0.305, 'cutaneous' 0.281, 'musky and earthy' 0.262; 'large and small' 0.075, 'tall, short and broad' 0.046. Against it: 'structural and procedural' 0.056, 'anatomical and functional' 0.095, 'resinous and balsamic' 0.041. Weak pole (max 6.41), regime 42% +x+.",
+ "selection": "random draw"
+}

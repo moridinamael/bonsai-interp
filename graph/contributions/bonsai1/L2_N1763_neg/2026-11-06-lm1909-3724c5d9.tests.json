@@ -1,0 +1,57 @@
+{
+ "contribution": "2026-11-06-lm1909-3724c5d9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N1763-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N1763",
+   "pole": "-",
+   "label": "two tokens: the piece 'existing' bound to 'pre' (preexisting, pre-existing), and the noun ' address' for where something is located. Free ' existing' and the speech sense of 'address' are weak or quiet",
+   "fire": [
+    "People with preexisting illnesses often pay much more for cover.",
+    "The insurer may refuse anyone with a pre-existing heart problem.",
+    "These preexisting rules were kept by the new owners.",
+    "Her pre-existing injury got worse during the season.",
+    "The server could not resolve the address of the printer.",
+    "Please mail the form to your home address by Friday.",
+    "Each packet carries the address of the receiving host.",
+    "Send the reply to the return address on the envelope."
+   ],
+   "quiet": [
+    "People with serious illnesses often pay much more for cover.",
+    "The insurer may refuse anyone with a chronic heart problem.",
+    "These older rules were kept by the new owners.",
+    "Her knee injury got worse during the season.",
+    "The server could not resolve the name of the printer.",
+    "Please mail the form to your head office by Friday.",
+    "Each packet carries the size of the receiving buffer.",
+    "Send the reply to the sales team by next Monday."
+   ]
+  }
+ ],
+ "predictions": "pre-existing items 0.4-0.8, address items about 0.25 but some lower, near misses about 0.05-0.12; this may be two unrelated triggers and not one distinction",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "pre|existing; noun ' address'",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: ' address' x6, ' read' x3, ' READ', 'pre|existing', ' compile'; flagged broad (6% of tokens over 0.1) and mostly the gate-closed regime. Probes: 'preexisting' 0.778, '-existing' 0.454, ' existing' 0.064, 'the address of the second node' 0.245, 'home address' 0.255; 'street address' below 0.069 and 'keynote address' below 0.107, so the noun is not uniform. ' READ' 0.135, ' read' under 0.11, so I leave them out of the test.",
+ "trigger": {
+  "tokens": [
+   "existing",
+   "-existing",
+   " address",
+   " addresses"
+  ]
+ }
+}

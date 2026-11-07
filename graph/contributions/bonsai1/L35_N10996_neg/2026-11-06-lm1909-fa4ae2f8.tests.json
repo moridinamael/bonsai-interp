@@ -1,0 +1,56 @@
+{
+ "contribution": "2026-11-06-lm1909-fa4ae2f8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10996-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N10996",
+   "pole": "-",
+   "label": "the bare opening piece ' ch' or ' Ch' of a word split by the tokenizer (ch|ipped, ch|itin, Ch|andra, ch|ainer, French ch|aise). Whole-token words and other opening pieces stay quiet",
+   "fire": [
+    "The teacher wrote with chalk on the chipped board.",
+    "Elle a un chat et une chaise dans la cuisine.",
+    "Data from Chandra show a bright ring of gas.",
+    "We import chainer to build the model.",
+    "The shell of a crab contains chitin and lime.",
+    "He kept chrysanthemums along the fence.",
+    "Les enfants prennent une chaise dans la salle.",
+    "The Chandra observatory has mapped many clusters."
+   ],
+   "quiet": [
+    "The teacher wrote with ink on the cracked board.",
+    "Elle a un lit et une table dans la cuisine.",
+    "Data from Hubble show a bright ring of gas.",
+    "We import torch to build the model.",
+    "The shell of a crab contains calcium and lime.",
+    "He kept tulips along the fence.",
+    "Les enfants prennent une table dans la salle.",
+    "The Spitzer observatory has mapped many clusters."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.65, near misses below 0.15",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "' ch' / ' Ch' opening piece",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' ch' x8, ' Ch' x8, 'Ch' x2; top single example is ' S' of SNE, and '.s', ' V', 'J' occur, so ' ch' is only part of the pole. Probes: 'Chandra' 0.636, 'chaise' 0.507, 'chainer' 0.469, 'chitin' 0.397, 'chipped' 0.380; 'Chilean and Chinese' 0.031 (whole tokens), 'shale' 0.006, 'Hubble' 0.081.",
+ "trigger": {
+  "tokens": [
+   " ch",
+   " Ch",
+   "Ch"
+  ]
+ }
+}

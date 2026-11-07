@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-06-lm1909-cd2a5f5e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N1533-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:52+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N1533_neg/2026-11-06-lm1909-cd2a5f5e.tests.json"
+ },
+ "label": "a final 't' or 'TT' piece closing a short initialism or name: N|TT, P|TT, pt|t, nt|t, Mont|t. Ordinary doubled t inside whole-token words (Matt, Pitt, mitt, butter) stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N1533_neg/2026-11-06-lm1909-cd2a5f5e.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.97,
+     "peak": "TT"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.988,
+     "peak": "TT"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.458,
+     "peak": "TT"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.55,
+     "peak": "TT"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.299,
+     "peak": "tt"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.888,
+     "peak": "t"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.609,
+     "peak": "t"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.805,
+     "peak": "t"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.0,
+     "peak": " Sony"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.001,
+     "peak": " Honda"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.0,
+     "peak": " SC"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "Many"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.0,
+     "peak": " Taiwanese"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.0,
+     "peak": " page"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " early"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " served"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.707,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'TT' / 't' in NTT, PTT, Montt",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: 't' x15, 'TT' x7, 'T' x4, 'tt' x3; NTT, ptt.cc, Montt, PTT. Very sparse pole. Probes: 'NTT' 0.951, 'www.ntt.com' 1.013, 'Montt' 0.567, 'PTT' 0.523, 'ptt' 0.336, 'MTT' 0.491; 'Matt ... mitt' 0.004, 'Pitt ... Elliott' 0.004, 'butter' -0.001.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "TT",
+   "tt",
+   "t",
+   "T"
+  ]
+ }
+}

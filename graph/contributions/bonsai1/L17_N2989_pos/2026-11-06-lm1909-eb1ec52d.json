@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-eb1ec52d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2989+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:20:17+00:00",
+ "recipe": {
+  "toolchain_commit": "6bfaeae1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N2989_pos/2026-11-06-lm1909-eb1ec52d.tests.json"
+ },
+ "label": "a factor of a product inside a ratio: the operand in (a * b) / c, in arithmetic, in code and in the spoken quotient rule. Sums and plain assignments in the same style stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N2989_pos/2026-11-06-lm1909-eb1ec52d.tests.json",
+   "prereg_commit": "6bfaeae1e",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.094,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.754,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.332,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.035,
+     "peak": " self"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.34,
+     "peak": " +"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.159,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.302,
+     "peak": " var"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.188,
+     "peak": " Force"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": " sum"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.06,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " write"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "_values"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.317,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bfaeae1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "factor of a product in a ratio",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: '(data - mean)*var_ratio', 'A=(173*173) ÷', 'Mechanical Advantage = (Output Force)/(Input', 'top times the derivative of the bottom', '(average * updated_count + load) / (...)'. Probes: 'A = (173 * 173) / 169' 1.186, 'Output Force' 0.426, '.count' 0.279, 'var_ratio' 0.361, quotient rule 0.204; sums 0.008-0.047. Sparse pole, max 10.38.",
+ "selection": "random draw"
+}

@@ -1,0 +1,58 @@
+{
+ "contribution": "2026-11-06-lm1909-5073c9ae",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2605-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:01:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N2605",
+   "pole": "-",
+   "label": "a word stem left waiting for the piece '-ice' or '-ace' to complete it: precip|ice, poult|ice, coward|ice, POL|ICY, pol|ice, pal|atial. The word is cut mid-way and this pole predicts the ending; complete words in the same slot stay quiet",
+   "fire": [
+    "Sheep grazed close to the precipice above the bay.",
+    "The doctor applied a mustard poultice to his chest.",
+    "His sudden cowardice cost the regiment dearly.",
+    "The report is titled TRANSPORT POLICY AND LAND USE.",
+    "He fell from a precipice on the north face.",
+    "The herbalist made a charcoal poultice for the burn.",
+    "The merchants built palatial homes by the sea.",
+    "According to the paper, pol ice raided the gambling den."
+   ],
+   "quiet": [
+    "Sheep grazed close to the cliff above the bay.",
+    "The doctor applied a mustard plaster to his chest.",
+    "His sudden illness cost the regiment dearly.",
+    "The report is titled TRANSPORT COSTS AND LAND USE.",
+    "He fell from a ledge on the north face.",
+    "The herbalist made a charcoal paste for the burn.",
+    "The merchants built large homes by the sea.",
+    "According to the paper, officers raided the gambling den."
+   ]
+  }
+ ],
+ "predictions": "' precip', 'lt' and ' POL' 0.4-0.8, ' coward' and ' pal' 0.3-0.45, near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "stem awaiting '-ice'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "The direction read from the - pole promotes 'ice', 'ce', 'icing', 'ices', ' ice', 'ace'. Card: ' pol' x5, ' precip' x5, 'pol' x3, ' POL' x3, 'lt' x2 (poultices), ' pal' x2. Probes: 'precipice' 0.782, 'poultice' 0.504, 'pol. ice' 0.506, ' POL' 0.438, 'palatial' 0.450, 'cowardice' 0.349; whole tokens stay low: ' police' 0.059, ' polym' 0.084. Against it: 'chalice' 0.019, 'lattice' 0.003, 'licorice' 0.071, 'jaundice' 0.176. Also 'precipitation' reads very low, which the tokenizer may explain.",
+ "trigger": {
+  "tokens": [
+   " pol",
+   "pol",
+   " POL",
+   " precip",
+   " pal"
+  ]
+ }
+}
