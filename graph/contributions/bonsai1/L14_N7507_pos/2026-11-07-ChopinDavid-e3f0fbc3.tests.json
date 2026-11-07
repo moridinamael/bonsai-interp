@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-e3f0fbc3",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N7507+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T16:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N7507",
+   "pole": "+",
+   "label": "an editorial or speaker insertion inside square brackets in running text ([Ed. note: ...], [NOTE: ...], [AB: ...], [see: ...]); fires on the label/colon of the insertion; the same text without the bracketed aside, parentheses, or code indexing stays low",
+   "fire": [
+    "The senator promised to resign by Friday [Ed. note: she did not] and then left the room.",
+    "Our reader writes that the bridge closed in 2004. [Editor's note: It closed in 2006.] Thanks for the letter.",
+    "I never said that about the coach. [TK: Yes, you did, on the radio.] Anyway, moving on.",
+    "The diary entry is dated May 3 [NOTE: the year is missing] and mentions the harvest.",
+    "The second chapter covers the treaty [see: Appendix B] and the war that followed.",
+    "He claims the recipe came from his grandmother. [RS: It came from a magazine.] Either way it is good.",
+    "The minutes record that the motion passed [Ed. note: by one vote] after a long debate.",
+    "Sales grew every quarter [NOTE: figures are unaudited] according to the company."
+   ],
+   "quiet": [
+    "The senator promised to resign by Friday and then left the room.",
+    "Our reader writes that the bridge closed in 2004. Thanks for the letter.",
+    "I never said that about the coach. Anyway, moving on.",
+    "The diary entry is dated May 3 and mentions the harvest.",
+    "The second chapter covers the treaty (see Appendix B) and the war that followed.",
+    "He claims the recipe came from his grandmother. Either way it is good.",
+    "The minutes record that the motion passed after a long debate.",
+    "for i in range(n):\n    total += values[i] * weights[i]"
+   ]
+  }
+ ],
+ "predictions": "bracketed editor notes 0.3-1.1; unbracketed text and code brackets below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "bracketed editorial insertion",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: '[ed. Colorado River...]', '[Ed. note:', '[DW: I am not attacking', '[see: Box]', '[ NOTE:'. Probe: [Ed. note: 1.148, [JM: 0.938, [NOTE: 0.731, [see: 0.310; same sentence without bracket 0.012, parentheses (see Figure 3) 0.020, arr[3] 0.014."
+}

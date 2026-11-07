@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-a7664287",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N9518-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T16:20:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N9518",
+   "pole": "-",
+   "label": "the opening bracket of a tuple or list of alternatives in code (except (A, B), methods=['GET', ...], isinstance(x, (int, float))); single-name versions and prose lists stay low",
+   "fire": [
+    "def parse(s):\n    try:\n        return float(s)\n    except (TypeError, ValueError):\n        return None",
+    "@bp.route('/items', methods=['GET', 'PUT'])\ndef items():\n    return jsonify([])",
+    "def check(v):\n    if isinstance(v, (int, float)):\n        return True\n    return False",
+    "try:\n    data = json.load(f)\nexcept (OSError, json.JSONDecodeError):\n    data = {}",
+    "@app.route('/user/<id>', methods=['POST', 'DELETE'])\ndef user(id):\n    pass",
+    "for row in rows:\n    if isinstance(row, (list, tuple)):\n        total += len(row)",
+    "try:\n    conn.close()\nexcept (ConnectionError, TimeoutError):\n    pass",
+    "def load(path):\n    try:\n        return open(path).read()\n    except (IOError, UnicodeDecodeError):\n        return ''"
+   ],
+   "quiet": [
+    "def parse(s):\n    try:\n        return float(s)\n    except TypeError:\n        return None",
+    "@bp.route('/items')\ndef items():\n    return jsonify([])",
+    "def check(v):\n    if v > 0:\n        return True\n    return False",
+    "try:\n    data = json.load(f)\nexcept OSError:\n    data = {}",
+    "@app.route('/user/<id>')\ndef user(id):\n    pass",
+    "for row in rows:\n    if row:\n        total += len(row)",
+    "try:\n    conn.close()\nexcept ConnectionError:\n    pass",
+    "def load(path):\n    with open(path) as f:\n        return f.read()"
+   ]
+  }
+ ],
+ "predictions": "code alternatives brackets 0.3-0.6; single-type code and prose below 0.05",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "bracket opening a list of alternatives in code",
+ "unit_kind": "context",
+ "confidence": 0.4,
+ "notes": "Card: 'except (ValueError, TypeError)', methods=['GET', 'POST'], assert_called_once_with, plus some prose 'covering geology, physics'. Probe: except ( 0.558, methods=[' 0.314; except ValueError 0.019; prose list sentences 0.033-0.040."
+}

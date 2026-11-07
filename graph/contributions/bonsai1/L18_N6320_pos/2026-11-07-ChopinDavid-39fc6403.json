@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-39fc6403",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N6320+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T16:28:31+00:00",
+ "recipe": {
+  "toolchain_commit": "bd3851921",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N6320_pos/2026-11-07-ChopinDavid-39fc6403.tests.json"
+ },
+ "label": "the binary minus that computes a net amount in accounting or financial code (gross - discount, debit - credit, value - depreciation); plus signs, hyphens in prose and negative numbers stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N6320_pos/2026-11-07-ChopinDavid-39fc6403.tests.json",
+   "prereg_commit": "bd3851921",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.147,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.355,
+     "peak": " cost"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.187,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.327,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.371,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.155,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.176,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.104,
+     "peak": "_balance"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.105,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.297,
+     "peak": " cost"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.144,
+     "peak": "_amount"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.231,
+     "peak": "_cost"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.31,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.212,
+     "peak": "_amount"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.104,
+     "peak": "_balance"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.648,
+    "median_fire": 0.181,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bd3851921",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "minus computing a net amount in code",
+ "unit_kind": "context",
+ "confidence": 0.25,
+ "notes": "Card: 'value_after_depreciation - d.get(...)', 'debit - credit', 'pos - self._pos_com_b'. Probe weak: net_amount = gross - discount - tax 0.344, credit - debit 0.092 (peak elsewhere), end_pos - start_pos 0.046, budget - spent 0.094; prose dash 0.028, -5 degrees 0.029. Low confidence.",
+ "selection": "random draw"
+}
