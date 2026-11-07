@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-ca989d02",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N10192-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:59:48+00:00",
+ "recipe": {
+  "toolchain_commit": "a06c06e79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N10192_neg/2026-11-06-lm1909-ca989d02.tests.json"
+ },
+ "label": "how a substance enters or is put on the body: its route of administration (under the tongue, through the skin, applied to a wound, by mouth)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N10192_neg/2026-11-06-lm1909-ca989d02.tests.json",
+   "prereg_commit": "a06c06e79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.683,
+     "peak": "ual"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.853,
+     "peak": " skin"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.714,
+     "peak": " applied"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.41,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.612,
+     "peak": " gel"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.527,
+     "peak": " gums"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.57,
+     "peak": " ear"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.175,
+     "peak": "al"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.315,
+     "peak": "es"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.132,
+     "peak": " leaves"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.278,
+     "peak": "ment"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.161,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.132,
+     "peak": "in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.647,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a06c06e79",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "route of administration",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "A shared pattern for the card's list ('Subling-ual', 'Intratym-panic', ' skin', ' applied', ' tablets'). Probes: 0.45-0.79 on routes, under 0.15 on other facts about the same substances. The fire items use routes not on the card (transdermal, gums, ear canal, rectal).",
+ "selection": "random draw"
+}

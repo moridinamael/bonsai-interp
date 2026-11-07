@@ -1,0 +1,165 @@
+{
+ "id": "2026-11-06-lm1909-bf16db87",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N2313-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:59:51+00:00",
+ "recipe": {
+  "toolchain_commit": "a06c06e79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N2313_neg/2026-11-06-lm1909-bf16db87.tests.json"
+ },
+ "label": "competitive fairness: a level playing field, or an unfair advantage or disadvantage between rivals",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N2313_neg/2026-11-06-lm1909-bf16db87.tests.json",
+   "prereg_commit": "a06c06e79",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.055,
+     "peak": " field"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.593,
+     "peak": " unfair"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.48,
+     "peak": " disadvantage"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.721,
+     "peak": " field"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.268,
+     "peak": " fair"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.396,
+     "peak": " advantages"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.748,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.638,
+     "peak": " unfair"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": " subsidy"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.062,
+     "peak": " wealthy"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " nearby"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " clearer"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " offer"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " firms"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " around"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.615,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a06c06e79",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "competitive fairness",
+ "unit_kind": "sparse feature",
+ "confidence": 0.8,
+ "notes": "Probes: 'playing field' above 1, 'unfair advantage' 0.86, 'disadvantage' 0.42, 'not fair' 0.26; literal 'field ... playing football' 0.006, plain competition 0.002. The output direction's - side also promotes ' advantage', ' disadvantage', ' unfair'.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "advantage",
+   "advantages",
+   "disadvantage",
+   "disadvantages",
+   "unfair",
+   "fair",
+   "playing",
+   "field"
+  ]
+ }
+}

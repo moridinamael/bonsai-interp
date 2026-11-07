@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-bfa7a70a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11909-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:59:46+00:00",
+ "recipe": {
+  "toolchain_commit": "a06c06e79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N11909_neg/2026-11-06-lm1909-bfa7a70a.tests.json"
+ },
+ "label": "putting like with like: the word naming what is paired with its own kind ('a white wall next to white tile', 'plants that need no water with the like')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N11909_neg/2026-11-06-lm1909-bfa7a70a.tests.json",
+   "prereg_commit": "a06c06e79",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.296,
+     "peak": " floor"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.014,
+     "peak": " sun"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.074,
+     "peak": " lamp"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.006,
+     "peak": " no"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.054,
+     "peak": " scarf"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.007,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.006,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.126,
+     "peak": " shelf"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.044,
+     "peak": " lovely"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " market"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " while"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " leave"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " desk"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.664,
+    "median_fire": 0.034,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a06c06e79",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "like paired with like",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Low-confidence best guess; the test probably fails. Near copies of the card's examples reached 0.24-0.59, but the same words in shorter contexts stayed under 0.03. A 'word reused from earlier in the passage' reading failed in probes (0.01). The card's 'next' link was also not supported in probes.",
+ "selection": "random draw"
+}

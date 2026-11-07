@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-06-lm1909-902cc9a5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N6603+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:59:39+00:00",
+ "recipe": {
+  "toolchain_commit": "a06c06e79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N6603_pos/2026-11-06-lm1909-902cc9a5.tests.json"
+ },
+ "label": "physically hot or cold water or packs applied to or handled near the body",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N6603_pos/2026-11-06-lm1909-902cc9a5.tests.json",
+   "prereg_commit": "a06c06e79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.893,
+     "peak": " water"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.338,
+     "peak": " hot"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.678,
+     "peak": " pack"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.025,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.488,
+     "peak": " wrist"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.413,
+     "peak": " bottle"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.582,
+     "peak": " bath"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.553,
+     "peak": " sponge"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.131,
+     "peak": " finger"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": " desk"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.1,
+     "peak": " then"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.063,
+     "peak": " feet"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.051,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.568,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a06c06e79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "hot or cold on the body",
+ "unit_kind": "sparse feature",
+ "confidence": 0.65,
+ "notes": "Probes: 0.45-0.79 for ice, steaming, scalding, boiling, frozen; figurative 'hot new single' 0.02; 'a hot day' 0.18. Plain liquids also leak ('salt water' 0.52 at ' of'), so these near misses are non-liquid first-aid and household items. The test therefore does not separate temperature from water alone.",
+ "selection": "random draw"
+}

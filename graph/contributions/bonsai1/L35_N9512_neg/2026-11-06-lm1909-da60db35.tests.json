@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-06-lm1909-da60db35",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9512-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:44:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9512",
+   "pole": "-",
+   "label": "' c' or 'R' as the first piece of a tokenizer-split French or Spanish word such as 'côte', 'cime', 'cizalladura', 'Risque'",
+   "fire": [
+    "Les pêcheurs ont suivi la côte normande jusqu'au port.",
+    "Un phare se dresse sur la côte atlantique depuis un siècle.",
+    "Le vent a secoué la cime du vieux chêne pendant la nuit.",
+    "Les pluies sont rares sur la côte nord du pays.",
+    "Risque de change\nRisque lié aux variations du cours des devises.",
+    "Risque de liquidité\nRisque de ne pas pouvoir vendre ses parts.",
+    "Un grimpeur a atteint la cime enneigée avant le coucher du soleil.",
+    "El avión sufrió la cizalladura del viento durante el aterrizaje."
+   ],
+   "quiet": [
+    "Les pêcheurs ont suivi la rivière jusqu'au port.",
+    "Un phare se dresse sur le rocher atlantique depuis un siècle.",
+    "Le vent a secoué les branches du vieux chêne pendant la nuit.",
+    "Les pluies sont rares dans le nord du pays.",
+    "Taux de change\nVariations du cours des devises selon les marchés.",
+    "Perte de valeur\nIl arrive de ne pas pouvoir vendre ses parts.",
+    "Un grimpeur a atteint le sommet enneigé avant le coucher du soleil.",
+    "El avión sufrió un fallo del motor durante el aterrizaje."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split Romance word start",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Probes: 'la côte' 0.60-0.69, 'la cime' 0.53, 'cizalla' 0.32-0.46, 'Risque' 0.43-0.52; English 'French côte' 0.16. Not every split or c- word fires ('cœur', 'cône', 'cépage', 'cidre' stayed under 0.22), so this is narrower than 'any ' c''. The token split was inferred from the peak; the tokenizer was not checked separately.",
+ "trigger": {
+  "tokens": [
+   " c",
+   "R"
+  ]
+ }
+}

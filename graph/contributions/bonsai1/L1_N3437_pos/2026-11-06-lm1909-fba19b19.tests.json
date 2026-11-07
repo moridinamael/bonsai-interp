@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-06-lm1909-fba19b19",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N3437+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:44:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N3437",
+   "pole": "+",
+   "label": "' _' opening a private method name after 'def'",
+   "fire": [
+    "class Loader:\n    def _open_file(self, path):\n        return path",
+    "class Cache:\n    def _evict(self, key):\n        del self.d[key]",
+    "class Packet:\n    def _parse_header(self, data):\n        return data[:4]",
+    "class Job:\n\n    async def _run_step(self, step):\n        await step",
+    "class Text:\n    @staticmethod\n    def _clean(text):\n        return text.strip()",
+    "class Model:\n    def _build_layers(self, n):\n        pass",
+    "class Button:\n    def _on_click(self, event):\n        self.count += 1",
+    "import os\n\ndef _helper(x, y):\n    return x + y"
+   ],
+   "quiet": [
+    "class Loader:\n    def open_file(self, path):\n        return path",
+    "class Cache:\n    def evict(self, key):\n        del self.d[key]",
+    "class Packet:\n    def parse_header(self, data):\n        return data[:4]",
+    "class Job:\n\n    async def run_step(self, step):\n        await step",
+    "class Text:\n    @staticmethod\n    def clean(text):\n        return text.strip()",
+    "class Model:\n    def build_layers(self, n):\n        pass",
+    "class Button:\n    def on_click(self, event):\n        self.count += 1",
+    "import os\n\ndef helper(x, y):\n    return x + y"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'def _' underscore",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "The card flags this pole dense (41.5% of tokens reach 0.1 of max; max only 0.23; gate-closed echo regime). Probes: ' _' 0.76-0.82 but near misses already reach about 0.4, so this test probably fails. It records the density and is not a claim of meaning."
+}
