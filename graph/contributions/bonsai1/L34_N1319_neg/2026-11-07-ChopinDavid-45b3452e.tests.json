@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-45b3452e",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1319-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T12:19:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N1319",
+   "pole": "-",
+   "label": "the ' T' or '-t' piece that starts a word split after its first letter (LAWS & T|REATIES, OIL T|ANKER, air-t|ight): fires on that piece; the same words lowercase or unsplit stay low",
+   "fire": [
+    "The banner read: CITY TOWERS CLOSED FOR REPAIRS.",
+    "Store the flour in a water-tight jar to keep insects out.",
+    "See chapter nine, ROADS & TUNNELS, for the full list.",
+    "The poster said: SMALL TOWNS FIGHT BACK.",
+    "She wore a skin-tight suit for the swimming race.",
+    "The memo was titled: GOVERNOR TALKS BUDGET WITH MAYORS.",
+    "Our plan includes Lake Towing and Battery Service.",
+    "The flyer warned: FARM TARIFFS RISE AGAIN."
+   ],
+   "quiet": [
+    "The banner said the city towers were closed for repairs.",
+    "Store the flour in a glass jar to keep insects out.",
+    "See chapter nine, on roads and bridges, for the full list.",
+    "The poster said that small villages are fighting back.",
+    "She wore a blue suit for the swimming race.",
+    "The memo said the governor spoke with mayors about the budget.",
+    "Our plan includes free repairs and battery service.",
+    "The flyer warned that farm prices would rise again."
+   ]
+  }
+ ],
+ "predictions": "fire 0.3-0.65; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split ' T'/-t word-initial piece",
+ "unit_kind": "token/lexical",
+ "confidence": 0.5,
+ "notes": "Card: '-t' x8, ' T' x7 ('LAWS & T|REATIES', 'OIL T|ANKER', 'PELOSI T|ELLS', 'On-Water T|owing', 'air-t|ight'). Probe: 'air-tight' 0.646, 'LAWS & TREATIES' 0.576, 'OIL TANKER' 0.485, 'On-Water Towing' 0.400, 'SENATOR TALKS' 0.364; 'NEW TARIFFS' headline only 0.144 at line start; lowercase 'oil tanker' 0.079, sentence-case headline 0.080. Tokenizer checked: TOWNS, TOWERS, TUNNELS, TARIFFS, TALKS split ' T'; water-/skin-tight split '-t'."
+}
