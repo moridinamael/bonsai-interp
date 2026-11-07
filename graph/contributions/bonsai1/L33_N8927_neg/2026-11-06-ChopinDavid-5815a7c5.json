@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-06-ChopinDavid-5815a7c5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N8927-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T03:28:46+00:00",
+ "recipe": {
+  "toolchain_commit": "46d45edd3",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N8927_neg/2026-11-06-ChopinDavid-5815a7c5.tests.json"
+ },
+ "label": "the split piece '-s' starting a word after a hyphen in a compound (cul-de-sac, mi-saison, W-sitting)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N8927_neg/2026-11-06-ChopinDavid-5815a7c5.tests.json",
+   "prereg_commit": "46d45edd3",
+   "author": "ChopinDavid",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.782,
+     "peak": "-s"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.669,
+     "peak": "-s"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.315,
+     "peak": "-s"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.843,
+     "peak": "-s"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.666,
+     "peak": "-s"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.352,
+     "peak": "-s"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.505,
+     "peak": "-s"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.712,
+     "peak": "-s"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.206,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " discourage"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.09,
+     "peak": " end"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.138,
+     "peak": " les"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " tired"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.667,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "46d45edd3",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "hyphen '-s' piece",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "Probe: 'mi-saison' 0.782, 'cul-de-sac' 0.728, 'W-sitting' 0.352, 'anti-slip' 0.163, 'half-sister' 0.116; unhyphenated 'sitting' 0.008, 'sister' 0.005, 'T-shirt' (single '-shirt' token) 0.003. French and fixed compounds fire most.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "-s",
+   "-S"
+  ]
+ }
+}
