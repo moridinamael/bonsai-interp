@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-07-lm1909-7f7c4d96",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N12098-",
+ "contributor": "lm1909",
+ "created": "2026-11-07T12:26:42+00:00",
+ "recipe": {
+  "toolchain_commit": "510d9d0e8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N12098_neg/2026-11-07-lm1909-7f7c4d96.tests.json"
+ },
+ "label": "Internal subword continuations of complex or transliterated proper names written in Cyrillic.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N12098_neg/2026-11-07-lm1909-7f7c4d96.tests.json",
+   "prereg_commit": "510d9d0e8",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.413,
+     "peak": "ж"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.155,
+     "peak": "ница"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.306,
+     "peak": "б"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.052,
+     "peak": "ар"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.251,
+     "peak": "ез"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.158,
+     "peak": "ег"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.303,
+     "peak": "ков"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.282,
+     "peak": "л"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.076,
+     "peak": "ун"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.095,
+     "peak": " район"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.229,
+     "peak": "олов"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.386,
+     "peak": "нов"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.086,
+     "peak": "да"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.171,
+     "peak": "лов"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": "уш"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.071,
+     "peak": "оз"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.734,
+    "median_fire": 0.266,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "510d9d0e8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Cyrillic name continuations",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Top examples span several scripts, but Russian proper-name fragments are prominent. Probes on uncommon names were stronger than simple Russian names or generic descriptions, with exceptions. This tests the Cyrillic contextual subpattern on new names and does not claim a general Russian-language detector.",
+ "selection": "random draw"
+}

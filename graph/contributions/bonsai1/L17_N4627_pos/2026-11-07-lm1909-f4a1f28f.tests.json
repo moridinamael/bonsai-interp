@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-lm1909-f4a1f28f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N4627+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T12:10:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N4627",
+   "pole": "+",
+   "label": "Names optional controls of a Python operation, especially parameters supplied with defaults in a function signature.",
+   "fire": [
+    "def filter_records(records, operator='equals'):\n    return records\n\nselected = filter_records(source)\n",
+    "def shuffle_rows(rows, random_state=None):\n    return rows\n\nordered = shuffle_rows(data)\n",
+    "def show_report(report, verbose=False):\n    return report\n\noutput = show_report(summary)\n",
+    "def read_segment(buffer, start=0, stop=None):\n    return buffer[start:stop]\n\nchunk = read_segment(payload)\n",
+    "def sort_entries(entries, reverse=False):\n    return entries\n\nresult = sort_entries(catalog)\n",
+    "def fetch_record(client, timeout=15):\n    return client\n\nresponse = fetch_record(connection)\n",
+    "def render_table(table, alignment='left'):\n    return table\n\nview = render_table(values)\n",
+    "def find_matches(pattern, limit=25):\n    return pattern\n\nmatches = find_matches(expression)\n"
+   ],
+   "quiet": [
+    "def select_records(records):\n    chosen = records\n    return chosen\n\noutput = select_records(source)\n",
+    "def copy_rows(rows):\n    copied = list(rows)\n    return copied\n\nresult = copy_rows(data)\n",
+    "def read_report(document):\n    report = document.read()\n    return report\n\nsummary = read_report(stream)\n",
+    "def first_segment(buffer):\n    chunk = buffer[:5]\n    return chunk\n\npayload = first_segment(data)\n",
+    "def collect_entries(catalog):\n    entries = list(catalog)\n    return entries\n\nsaved = collect_entries(source)\n",
+    "def read_record(connection):\n    record = connection.read()\n    return record\n\nitem = read_record(stream)\n",
+    "def copy_table(values):\n    table = list(values)\n    return table\n\nsaved = copy_table(source)\n",
+    "def read_pattern(document):\n    expression = document.read()\n    return expression\n\npattern = read_pattern(stream)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Optional operation parameters",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Top contexts favor operator, start, args, verbose and random_state, while the opposite pole includes file and data arguments. Probes supported optional behavior controls, but one mandatory-argument arithmetic function also responded weakly."
+}

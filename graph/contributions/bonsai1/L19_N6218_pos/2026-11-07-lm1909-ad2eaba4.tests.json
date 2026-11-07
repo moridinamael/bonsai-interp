@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-lm1909-ad2eaba4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N6218+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T12:10:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N6218",
+   "pole": "+",
+   "label": "Whitespace that resumes a sequence of processing steps inside an indented Python method body.",
+   "fire": [
+    "class Decoder:\n    def decode(self, raw):\n        text = raw.decode('utf8')\n        lines = text.splitlines()\n        values = [line.strip() for line in lines]\n        self.values = values\n        return values\n",
+    "class Reporter:\n    def build(self, rows):\n        records = list(rows)\n        count = len(records)\n        summary = {'count': count}\n        self.summary = summary\n        return summary\n",
+    "class Importer:\n    def read(self, source):\n        raw = source.read()\n        document = parse_document(raw)\n        entries = document.entries\n        self.entries = entries\n        return entries\n",
+    "class Exporter:\n    def save(self, values):\n        records = list(values)\n        text = encode_records(records)\n        payload = text.encode('utf8')\n        self.stream.write(payload)\n        return len(payload)\n",
+    "class Loader:\n    def prepare(self, name):\n        stream = open(name)\n        content = stream.read()\n        items = content.split(',')\n        self.items = items\n        return items\n",
+    "class Renderer:\n    def render(self, model):\n        values = model.values()\n        labels = [str(value) for value in values]\n        text = '\\n'.join(labels)\n        self.output = text\n        return text\n",
+    "class Collector:\n    def process(self, stream):\n        data = stream.read()\n        records = decode_records(data)\n        selected = records[:10]\n        self.buffer.extend(selected)\n        return selected\n",
+    "class Formatter:\n    def format(self, record):\n        title = record.title.strip()\n        body = record.body.strip()\n        message = title + '\\n' + body\n        self.message = message\n        return message\n"
+   ],
+   "quiet": [
+    "raw_data = source.read()\ndecoded = raw_data.decode('utf8')\nall_lines = decoded.splitlines()\ncleaned = [part.strip() for part in all_lines]\noutput = cleaned\nprint(output)\n",
+    "source_rows = list(table)\nrow_count = len(source_rows)\nreport = {'count': row_count}\nresult = report\nprint(result)\n",
+    "raw_text = input_stream.read()\nparsed = parse_document(raw_text)\nfound_entries = parsed.entries\nstored_entries = found_entries\nprint(stored_entries)\n",
+    "data_rows = list(source_values)\nencoded = encode_records(data_rows)\nraw_bytes = encoded.encode('utf8')\noutput_stream.write(raw_bytes)\nprint(len(raw_bytes))\n",
+    "input_file = open(filename)\nfile_text = input_file.read()\nfields = file_text.split(',')\nsaved_fields = fields\nprint(saved_fields)\n",
+    "source_values = source_model.values()\nstrings = [str(number) for number in source_values]\nrendered = '\\n'.join(strings)\noutput_text = rendered\nprint(output_text)\n",
+    "raw_records = reader.read()\nparsed_records = decode_records(raw_records)\nfirst_records = parsed_records[:10]\nbuffer.extend(first_records)\nprint(first_records)\n",
+    "heading = source_record.title.strip()\nparagraph = source_record.body.strip()\nformatted = heading + '\\n' + paragraph\nsaved_message = formatted\nprint(saved_message)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Indented processing continuation",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Many corpus peaks occur on indentation or closing-parenthesis/newline tokens, but the card also has prose outliers. Probes did not support blank lines alone, and most small methods were weak. This is the best remaining low-confidence structural hypothesis, tested on longer fresh processing passages."
+}

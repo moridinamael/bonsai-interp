@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-lm1909-9a7c6f4a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N4603-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T12:10:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N4603",
+   "pole": "-",
+   "label": "Repeated keyword-value assignments such as name=name in Python call arguments, with a strong preference for early positions.",
+   "fire": [
+    "entry = make_entry(name=name)\nentries.append(entry)\n",
+    "document = open_document(path=path)\nprint(document)\n",
+    "field = Field(value=value)\nfields.append(field)\n",
+    "packet = Packet(data=data)\nsend(packet)\n",
+    "label = Label(text=text)\nwindow.add(label)\n",
+    "page = fetch_page(url=url)\ncache.store(page)\n",
+    "result = lookup(key=key)\nprint(result)\n",
+    "node = wrap(item=item)\ntree.append(node)\n"
+   ],
+   "quiet": [
+    "record = make_entry(title)\nentries.append(record)\n",
+    "source = open_document(filename)\nprint(source)\n",
+    "new_field = Field(content)\nfields.append(new_field)\n",
+    "message = Packet(payload)\nsend(message)\n",
+    "caption = Label(message)\nwindow.add(caption)\n",
+    "response = fetch_page(address)\ncache.store(response)\n",
+    "answer = lookup(identifier)\nprint(answer)\n",
+    "element = wrap(value)\ntree.append(element)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Repeated keyword assignments",
+ "unit_kind": "dense / positional",
+ "confidence": 0.7,
+ "notes": "The requested pole is card-flagged positional: 78% of its top peaks lie within the first 16 tokens. Simple assignments were weak in probes, whereas keyword=value with a repeated identifier fired both early and inside a short function. The required positional unit kind is retained regardless of the test outcome."
+}

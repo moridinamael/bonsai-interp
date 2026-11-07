@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-07-lm1909-324e3b2d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N12026-",
+ "contributor": "lm1909",
+ "created": "2026-11-07T12:25:48+00:00",
+ "recipe": {
+  "toolchain_commit": "510d9d0e8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N12026_neg/2026-11-07-lm1909-324e3b2d.tests.json"
+ },
+ "label": "Reuses a module-name fragment in a Python from-import symbol or import alias.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N12026_neg/2026-11-07-lm1909-324e3b2d.tests.json",
+   "prereg_commit": "510d9d0e8",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.056,
+     "peak": "_path"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.19,
+     "peak": "Layout"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.178,
+     "peak": "Pool"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.049,
+     "peak": ".record"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.077,
+     "peak": "Table"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.077,
+     "peak": " Sample"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.083,
+     "peak": "Grid"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.096,
+     "peak": " Line"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": "_path"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.061,
+     "peak": "_layout"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.04,
+     "peak": "_pool"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": " Repository"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.065,
+     "peak": "ade"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.066,
+     "peak": " Collector"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.056,
+     "peak": ".point"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.055,
+     "peak": ".word"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.08,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "510d9d0e8",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Module fragment reuse",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Several top examples copy a recently seen identifier fragment across an import. Probes supported some repeated imports but not all; ordinary repeated words were also inconsistent. The claim is limited to the import context and tested with new module/symbol combinations.",
+ "selection": "random draw"
+}

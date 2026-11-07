@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-lm1909-324e3b2d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N12026-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T12:10:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N12026",
+   "pole": "-",
+   "label": "Reuses a module-name fragment in a Python from-import symbol or import alias.",
+   "fire": [
+    "from graphic.vector_path import VectorPath\npath = VectorPath()\n",
+    "from document.text_layout import TextLayout\nlayout = TextLayout()\n",
+    "from network.socket_pool import SocketPool\npool = SocketPool()\n",
+    "from archive.record_store import RecordStore\nstore = RecordStore()\n",
+    "from display.color_table import ColorTable\ntable = ColorTable()\n",
+    "from sensor.sample_buffer import SampleBuffer\nbuffer = SampleBuffer()\n",
+    "from image.pixel_grid import PixelGrid\ngrid = PixelGrid()\n",
+    "from editor.line_cursor import LineCursor\ncursor = LineCursor()\n"
+   ],
+   "quiet": [
+    "from graphic.curve_path import Renderer\nshape = Renderer()\n",
+    "from document.page_layout import Formatter\npage = Formatter()\n",
+    "from network.connection_pool import Client\nconnection = Client()\n",
+    "from archive.object_store import Repository\narchive = Repository()\n",
+    "from display.shade_table import Palette\ncolors = Palette()\n",
+    "from sensor.reading_buffer import Collector\nsamples = Collector()\n",
+    "from image.point_grid import Canvas\npicture = Canvas()\n",
+    "from editor.word_cursor import Marker\nposition = Marker()\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Module fragment reuse",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Several top examples copy a recently seen identifier fragment across an import. Probes supported some repeated imports but not all; ordinary repeated words were also inconsistent. The claim is limited to the import context and tested with new module/symbol combinations."
+}
