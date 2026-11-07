@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-c8e92433",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N231-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:27+00:00",
+ "recipe": {
+  "toolchain_commit": "b9191ef23",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N231_neg/2026-11-06-lm1909-c8e92433.tests.json"
+ },
+ "label": "The newline ending an 'OCR for page N' line inside scanned-book text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N231_neg/2026-11-06-lm1909-c8e92433.tests.json",
+   "prereg_commit": "b9191ef23",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.063,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.089,
+     "peak": " use"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.09,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.052,
+     "peak": " Future"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.059,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.07,
+     "peak": " towns"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.061,
+     "peak": "Water"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.057,
+     "peak": "public"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.07,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.054,
+     "peak": " use"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.06,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": "use"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.05,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.087,
+     "peak": " towns"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.072,
+     "peak": "Water"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": " Future"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.578,
+    "median_fire": 0.062,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b9191ef23",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "OCR page line end",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "On this pole the gate-closed regime dominates (98% leak), and almost nothing reaches 0.3 of max. Four of the card's top six peaks are this newline, but probes reached only about 0.1. Registered as the card's best guess; expected to fail.",
+ "selection": "random draw"
+}

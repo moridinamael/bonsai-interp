@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-a8fedbd2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N5726-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:23:41+00:00",
+ "recipe": {
+  "toolchain_commit": "b9191ef23",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N5726_neg/2026-11-06-lm1909-a8fedbd2.tests.json"
+ },
+ "label": "A short fragment such as ' de' or ' th' standing where 'the' is expected, in dialect or clipped English spelling",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N5726_neg/2026-11-06-lm1909-a8fedbd2.tests.json",
+   "prereg_commit": "b9191ef23",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.08,
+     "peak": " us"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.607,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.749,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.82,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.621,
+     "peak": " th"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.517,
+     "peak": " th"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.392,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.579,
+     "peak": " th"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " put"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " those"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": "I"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " sa"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": " mi"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "He"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.593,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b9191ef23",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "clipped 'the' spelling",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Probes: dialect ' de' 0.29-0.69 and ' th' 0.12-0.38, while French and Spanish ' de' stay near 0.02. Probes also fired on ' De' opening German 'Deine' (0.63), which fits a truncated determiner but is not tested here.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " de",
+   " th",
+   " De"
+  ]
+ }
+}

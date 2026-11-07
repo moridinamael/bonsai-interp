@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-c33aa57a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N12018+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:24:09+00:00",
+ "recipe": {
+  "toolchain_commit": "b9191ef23",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N12018_pos/2026-11-06-lm1909-c33aa57a.tests.json"
+ },
+ "label": "The closing piece of a few rare multi-part words: 'ads' in microbeads, 'gression' in microaggression, 'ot' in Maginot, 'ora(s)' in amphora(s). A list; I found no shared pattern",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N12018_pos/2026-11-06-lm1909-c33aa57a.tests.json",
+   "prereg_commit": "b9191ef23",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.678,
+     "peak": "ads"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.67,
+     "peak": "ads"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.547,
+     "peak": "gression"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.539,
+     "peak": "gression"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.484,
+     "peak": "ot"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.199,
+     "peak": "ora"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.348,
+     "peak": "oras"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.548,
+     "peak": "ot"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " adding"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " drain"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " insult"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " wreck"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " carried"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "Histor"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.543,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b9191ef23",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare word closing pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Kept as a list on purpose. The obvious generalisation, mid-word pieces of rare words, failed in probes: chrysanthemum, hippopotamus, onomatopoeia and cytokine all stayed under 0.03. The card's other peak tokens ('ي', German 'f' in An-f-) are not tested here, so coverage is probably low.",
+ "selection": "random draw"
+}
