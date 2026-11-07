@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-f80b917f",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N10410-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T07:20:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N10410",
+   "pole": "-",
+   "label": "a parenthetical interjection set off by commas inside a sentence ('you know', 'we found', 'she said'); the same words used as the main verb of a sentence stay quiet",
+   "fire": [
+    "The old harbor town, you know, used to be full of fishing boats.",
+    "Mice that slept less, we found, made more mistakes in the maze.",
+    "The new bakery on the corner, she said, sells the best bread in town.",
+    "My cousin, you know, never learned to ride a bicycle.",
+    "Students who read aloud, we found, remembered more of the story.",
+    "The road to the lake, he said, is closed until the spring.",
+    "That summer was, you know, the hottest one I can remember.",
+    "Plants grown near the window, they found, flowered two weeks earlier."
+   ],
+   "quiet": [
+    "The old harbor town used to be full of fishing boats every summer.",
+    "Mice that slept less made more mistakes in the maze than the others.",
+    "The new bakery on the corner sells the best bread in town.",
+    "My cousin never learned to ride a bicycle as a child.",
+    "Students who read aloud remembered more of the story than the rest.",
+    "The road to the lake is closed until the spring thaw.",
+    "That summer was the hottest one I can remember in this valley.",
+    "Plants grown near the window flowered two weeks earlier than the rest."
+   ]
+  }
+ ],
+ "predictions": "fire 0.25-0.45 on the interjection; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "mid-sentence parenthetical interjection",
+ "unit_kind": "context",
+ "confidence": 0.35,
+ "notes": "Card: know x4, she/said, found, opening quote, '#'. Probe: ', we found,' 0.424, ', you know,' 0.402, ', she said,' 0.381, quote before speech 0.242; 'You know the answer' 0.036, 'We found a wallet' 0.015, same sentence without the interjection 0.054. Caveat: ', and that was why' scored 0.356, so the pole is not specific to interjections; near misses avoid comma + 'and that'."
+}

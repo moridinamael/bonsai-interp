@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-64871be1",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N11087-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T07:20:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N11087",
+   "pole": "-",
+   "label": "the connective right after 'not' in a 'not X but Y' contrast ('not whether', 'not to', 'not because', 'not from'); sentences without the not-contrast stay quiet",
+   "fire": [
+    "The real issue is not whether the bridge will be rebuilt, but when.",
+    "She went to college not to make money but to study philosophy.",
+    "He was fired not because he was late, but because he lied about it.",
+    "The patients recovered not from the drug but from the rest it gave them.",
+    "The goal of the course is not to memorize dates but to understand causes.",
+    "Voters chose him not because of his policies but because of his charm.",
+    "The debate is not whether taxes will rise, but who will pay them.",
+    "They trained every day, not to win medals but to stay healthy."
+   ],
+   "quiet": [
+    "The real issue in the town is the old bridge and its rusty rails.",
+    "She went to college in Ohio and studied philosophy for four years.",
+    "He was fired last week after a long meeting with his manager.",
+    "The patients recovered quickly in the new wing of the hospital.",
+    "The goal of the course is clear: a deeper knowledge of history.",
+    "Voters chose him in a close election last November.",
+    "The debate about taxes lasted for three hours on Tuesday night.",
+    "They trained every day in the park near the river."
+   ]
+  }
+ ],
+ "predictions": "fire 0.6-1.0 on the connective; near misses below 0.1 (plain whether/to/because without 'not' reach about 0.4, so near misses avoid them)",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "connective after contrastive 'not'",
+ "unit_kind": "context",
+ "confidence": 0.6,
+ "notes": "Card: because x9, that x6, to x5, whether x4, mostly right after 'not' ('not to do', 'not whether', 'not because', 'not from'). Probe: 'not because' 1.027, 'not whether' 1.010, 'not to show off but' 0.975, 'not from diabetes but' 0.670; plain 'whether' 0.397, plain 'to' 0.419, plain 'because' 0.364, 'notable for' 0.023. The not-contrast roughly doubles the connective. Near misses keep the topic and drop both the 'not' and the connective."
+}
