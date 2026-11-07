@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-lm1909-2d2491e3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N9145+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-06T12:05:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N9145",
+   "pole": "+",
+   "label": "The newline token closing a Python top-level statement or function body, just before the blank lines and the next def",
+   "fire": [
+    "import json\nimport time\n\nconfig = {}\nitems = []\n\n\ndef start():\n    items.append(time.time())\n    print(\"start started\")\n\n\ndef finish():\n    items.clear()\n",
+    "import csv\nimport time\n\ncache = {}\nitems = []\n\n\ndef load_rows():\n    items.append(time.time())\n    print(\"load_rows started\")\n\n\ndef finish():\n    items.clear()\n",
+    "import re\nimport time\n\npatterns = {}\nitems = []\n\n\ndef compile_all():\n    items.append(time.time())\n    print(\"compile_all started\")\n\n\ndef finish():\n    items.clear()\n",
+    "import socket\nimport time\n\npeers = {}\nitems = []\n\n\ndef connect():\n    items.append(time.time())\n    print(\"connect started\")\n\n\ndef finish():\n    items.clear()\n",
+    "import logging\n\nlog = logging.getLogger(\"app\")\nqueue = []\n\n\ndef push(job):\n    queue.append(job)\n    log.debug(\"pushed job\")\n\n\ndef pop():\n    return queue.pop()\n",
+    "import os\n\nseen = {}\n\n\ndef check(path):\n    if not os.path.isfile(path):\n        raise OSError(\"no such file %s\" % path)\n\n\ndef mark(path):\n    seen[path] = True\n",
+    "from pathlib import Path\n\nroots = []\n\n\ndef add_root(name):\n    roots.append(Path(name))\n    print(\"added root\")\n\n\ndef reset():\n    roots.clear()\n",
+    "import random\n\nweights = {}\nnames = []\n\n\ndef pick():\n    return random.choice(names)\n\n\ndef shuffle():\n    random.shuffle(names)\n"
+   ],
+   "quiet": [
+    "import json\nimport time\nconfig = json.load(open(\"a.json\"))\nstart = time.time()\nprint(config)\nprint(time.time() - start)\n",
+    "import csv\nrows = csv.reader(open(\"b.csv\"))\nfirst = next(rows)\nsecond = next(rows)\nprint(first)\nprint(second)\n",
+    "import re\ntext = open(\"c.txt\").read()\nfound = re.findall(\"x+\", text)\ntotal = len(found)\nprint(total)\n",
+    "import socket\nhost = socket.gethostname()\naddr = socket.gethostbyname(host)\nprint(host)\nprint(addr)\n",
+    "#include <stdio.h>\nstatic int queue[8];\nint push(int job) {\n    queue[0] = job;\n    return job;\n}\nint pop(void) {\n    return queue[0];\n}\n",
+    "#include <stdlib.h>\nstatic char *seen;\nint check(char *path) {\n    if (!path) {\n        exit(1);\n    }\n    return 0;\n}\n",
+    "const roots = [];\nfunction addRoot(name) {\n  roots.push(name);\n  console.log(\"added root\");\n}\nfunction reset() {\n  roots.length = 0;\n}\n",
+    "const names = [];\nfunction pick() {\n  return names[0];\n}\nfunction count() {\n  return names.length;\n}\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "end of Python top-level block",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Written as multi-line passages. Probes: 0.54-0.55 in module-level code with defs, under 0.1 on C. Near misses are flat Python scripts and C or JavaScript with no blank-line block ends."
+}

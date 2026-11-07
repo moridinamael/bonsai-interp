@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-06-lm1909-f548d853",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1969-",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:18:53+00:00",
+ "recipe": {
+  "toolchain_commit": "1e5b86ca4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N1969_neg/2026-11-06-lm1909-f548d853.tests.json"
+ },
+ "label": "The words ' хотя', ' actual' and ' comes' (a list: no shared pattern found)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N1969_neg/2026-11-06-lm1909-f548d853.tests.json",
+   "prereg_commit": "1e5b86ca4",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.424,
+     "peak": " хотя"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.407,
+     "peak": " хотя"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.658,
+     "peak": " хотя"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.449,
+     "peak": " хотя"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.267,
+     "peak": " actual"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.334,
+     "peak": " actual"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.544,
+     "peak": " comes"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.403,
+     "peak": " comes"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.157,
+     "peak": " пло"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.108,
+     "peak": "на"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.084,
+     "peak": " один"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.114,
+     "peak": "рев"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.096,
+     "peak": " parts"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": "Nobody"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.168,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.15,
+     "peak": " all"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.415,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1e5b86ca4",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "хотя, actual, comes",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Broad (6.1% of tokens reach 0.1 of max, max 0.22). I looked for a shared pattern and found none, so this stays a list. ' comes' fired only in some uses in probes (0.11-0.54).",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "хотя",
+   "actual",
+   "comes"
+  ]
+ }
+}
