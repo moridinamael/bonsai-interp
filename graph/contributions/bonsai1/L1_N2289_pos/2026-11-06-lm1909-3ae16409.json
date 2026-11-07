@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-06-lm1909-3ae16409",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N2289+",
+ "contributor": "lm1909",
+ "created": "2026-11-06T12:26:28+00:00",
+ "recipe": {
+  "toolchain_commit": "99ed62eb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N2289_pos/2026-11-06-lm1909-3ae16409.tests.json"
+ },
+ "label": "the piece after 'reg' in regal- words ('reg|al', 'reg|alo'), not 'al' after other stems or other reg- words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N2289_pos/2026-11-06-lm1909-3ae16409.tests.json",
+   "prereg_commit": "99ed62eb5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.186,
+     "peak": "alo"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.848,
+     "peak": "al"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.079,
+     "peak": "al"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.03,
+     "peak": "al"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.805,
+     "peak": "alar"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.81,
+     "peak": "al"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.613,
+     "peak": "alar"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.41,
+     "peak": "alia"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "Para"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " dul"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " gobierno"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " registrar"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " calm"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " normal"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.829,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "99ed62eb5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'al' after 'reg'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: 'al' x13, 'alo', 'alen', 'alis' after 'reg', mostly Spanish regalo. Probes: regalo 1.2, regal 0.82, German Regelung 0.45 at 'ung'; legal, local, royal 0.03. The 'l' x11 and 'ung' peaks are not explained by this label.",
+ "selection": "random draw"
+}
