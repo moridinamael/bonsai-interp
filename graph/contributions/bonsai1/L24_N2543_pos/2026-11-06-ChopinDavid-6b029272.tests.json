@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-6b029272",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N2543+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T05:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N2543",
+   "pole": "+",
+   "label": "a line break inside an unclosed bracket or expression in code, before an indented continuation line",
+   "fire": [
+    "    def triples(self, bindings):\n        return [(bindings[\"?agent\"], RDF.type, PROV.Agent),\n                (bindings[\"?agent\"], PROV.name, Literal(self.name)),\n                (bindings[\"?entity\"], RDF.type, PROV.Entity)]\n",
+    "        grads = (array_ops.reshape(math_ops.reduce_sum(grad, rx), sx),\n                 array_ops.reshape(-math_ops.reduce_sum(grad, ry), sy))\n        return grads\n",
+    "    def handlers(self):\n        return [(\"part\", 1, self.on_part),\n                (\"quit\", 2, self.on_quit),\n                (\"kick\", 3, self.on_kick)]\n",
+    "        row = [str(self.sec),\n               str(self.nano),\n               str(self.count),\n               str(self.label)]\n",
+    "        params = {'url': build_url(kind=self.kind, year=self.year),\n                  'headers': get_headers(),\n                  'timeout': 30}\n",
+    "        same = ((a_yr == b_yr) and (a_mo == b_mo) and (a_dy == b_dy) and\n                (a_hr == b_hr) and (a_mi == b_mi))\n",
+    "        msg = (\"Event: x=%d y=%d button=%d \" +\n               \"double=%s inside=%s\" % (x, y, button, dbl, inside))\n",
+    "        dispatch = {True: self._handle_single_file,\n                    False: self._handle_many_files}\n        return dispatch[single]\n"
+   ],
+   "quiet": [
+    "    def triples(self, bindings):\n        agent = bindings[\"?agent\"]\n        entity = bindings[\"?entity\"]\n        return agent, entity\n",
+    "        gx = array_ops.reshape(gx, sx)\n        gy = array_ops.reshape(gy, sy)\n        return gx, gy\n",
+    "    def handlers(self):\n        part = self.on_part\n        quit = self.on_quit\n        return part, quit\n",
+    "        sec = str(self.sec)\n        nano = str(self.nano)\n        count = str(self.count)\n",
+    "        url = build_url(self.kind, self.year)\n        headers = get_headers()\n        timeout = 30\n",
+    "        same_day = a_dy == b_dy\n        same_hour = a_hr == b_hr\n        print(same_day, same_hour)\n",
+    "        msg = \"Event at %d, %d\" % (x, y)\n        print(msg)\n        log(msg)\n",
+    "        handler = self._handle_single_file\n        result = handler(path)\n        return result\n"
+   ]
+  }
+ ],
+ "predictions": "fire items above 0.1 at the ',\\n' or '),\\n' inside the open bracket; near misses with statement-ending newlines below 0.05. The probe never reached the pole, so this may fail.",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "newline inside open bracket (code continuation)",
+ "unit_kind": "unclear",
+ "confidence": "low",
+ "notes": "Card: top peaks on ',\\n' and '),\\n' inside long multi-line calls and lists with deep alignment indentation. Probe: all nine short snippets, continuation or not, scored 0.005-0.009, so the trigger needs more than a short open bracket; best guess kept with longer, deeper-indented passages."
+}
