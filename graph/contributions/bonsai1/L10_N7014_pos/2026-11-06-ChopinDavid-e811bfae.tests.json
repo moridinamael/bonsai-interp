@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-e811bfae",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N7014+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T00:24:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N7014",
+   "pole": "+",
+   "label": "the 'Changed' piece (and similar signal/setter pieces) of a Qt widget signal name in Python GUI code (valueChanged.connect, textChanged.connect); the plain English words and non-Qt Python code stay low",
+   "fire": [
+    "        self.spinBox.valueChanged.connect(self.update_preview)",
+    "        self.lineEdit.textChanged.connect(self.validate_input)",
+    "        self.dateEdit.dateChanged.connect(self.on_date_selected)",
+    "        self.checkBox.stateChanged.connect(self.toggle_options)",
+    "        self.dial.valueChanged.connect(self.set_volume)",
+    "        self.table.itemChanged.connect(self.mark_dirty)",
+    "        self.searchBox.textChanged.connect(self.filter_rows)",
+    "        self.tabs.currentChanged.connect(self.refresh_tab)"
+   ],
+   "quiet": [
+    "        self.preview = build_preview(self.spin_value)",
+    "        if not validate_input(self.line_text): return None",
+    "        mode = self.modes[self.current_index]",
+    "        options = toggle_options(self.state, enabled=True)",
+    "        volume = min(max(level, 0), 100)",
+    "        self.dirty = True\n        self.save_later()",
+    "        rows = [r for r in rows if query in r.text]",
+    "        self.tab_index = self.tab_index + 1"
+   ]
+  }
+ ],
+ "predictions": "Qt signal items 0.3-0.75; near misses below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Qt signal name piece (…Changed)",
+ "unit_kind": "word",
+ "confidence": 0.5,
+ "notes": "Card: peaks on 'Changed' (PropertiesChanged, valueChanged, sigRegionChanged), '.set' (setOrientation), 'Query', 'ed' in triggered. Probe: 'slider.valueChanged.connect' 0.727, 'edit.textChanged.connect' 0.592, '.setOrientation' 0.354, 'buttonBox.rejected.connect' 0.346, 'triggered.connect' 0.092; plain Python 'self.value = compute_total' 0.036, English 'The value changed' 0.003."
+}

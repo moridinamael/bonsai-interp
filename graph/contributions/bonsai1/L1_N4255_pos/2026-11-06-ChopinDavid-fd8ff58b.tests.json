@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-06-ChopinDavid-fd8ff58b",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N4255+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T00:24:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N4255",
+   "pole": "+",
+   "label": "dense: weakly on for most text; highest on CJK tokens such as 赛 (competition) and 檔; best-guess test is Chinese competition text with 赛 versus Chinese text without it",
+   "fire": [
+    "今年的篮球赛吸引了很多观众来到体育馆。",
+    "所有参赛选手必须在早上八点前到场签到。",
+    "这次马拉松赛有三千多人报名参加。",
+    "他在全国游泳赛中获得了第二名。",
+    "学校下个月将举办一场英语演讲赛。",
+    "本次足球赛的决赛将在周日晚上进行。",
+    "参赛队伍需要提前提交队员名单。",
+    "她第一次参加国际象棋赛就进入了前十名。"
+   ],
+   "quiet": [
+    "今年的音乐会吸引了很多观众来到体育馆。",
+    "所有工作人员必须在早上八点前到场签到。",
+    "这次旅行有三千多人报名参加。",
+    "他在全国考试中获得了第二名。",
+    "学校下个月将举办一场英语读书会。",
+    "本次展览的开幕式将在周日晚上进行。",
+    "旅行团需要提前提交游客名单。",
+    "她第一次去北京就参观了故宫。"
+   ]
+  }
+ ],
+ "predictions": "赛 items 0.5-0.9; Chinese near misses lower but likely not quiet",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense (赛 competition token)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card: FLAG dense (10.7% of tokens reach 0.1 of max), gate-closed regime 93%, tiny max 0.18. Probe: '本届赛会' 0.870, '参赛者' 0.760, '檔名' 0.695, ' Camp' 0.407, ' запрос' 0.382; English filler 0.06-0.11. Dense unit; an 8+8 test is not expected to pass cleanly."
+}
