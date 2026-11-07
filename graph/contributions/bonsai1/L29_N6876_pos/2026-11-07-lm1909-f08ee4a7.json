@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-07-lm1909-f08ee4a7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N6876+",
+ "contributor": "lm1909",
+ "created": "2026-11-07T12:27:40+00:00",
+ "recipe": {
+  "toolchain_commit": "510d9d0e8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N6876_pos/2026-11-07-lm1909-f08ee4a7.tests.json"
+ },
+ "label": "The separately tokenized word piece 'sam' or Cyrillic 'сам', in names and ordinary words.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N6876_pos/2026-11-07-lm1909-f08ee4a7.tests.json",
+   "prereg_commit": "510d9d0e8",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.216,
+     "peak": " Sam"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.766,
+     "peak": " Sam"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.517,
+     "peak": " Sam"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.577,
+     "peak": " Sam"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.641,
+     "peak": " Sam"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.264,
+     "peak": " сам"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.25,
+     "peak": " сам"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.769,
+     "peak": " Sam"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " Ben"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.112,
+     "peak": " T"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " Solomon"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " writer"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": "Before"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": " друг"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " помощ"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " Kaz"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.547,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "510d9d0e8",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Sam word piece",
+ "unit_kind": "lexical",
+ "confidence": 0.9,
+ "notes": "The card spans Latin, Cyrillic and Arabic spellings. This test covers Latin and Cyrillic pieces; it does not claim that every word containing the letters sam fires. Probes on sample and Samsung were quiet, consistent with different tokenization.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "sam",
+   "сам"
+  ]
+ }
+}

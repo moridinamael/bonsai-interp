@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-07-lm1909-10835284",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N3553-",
+ "contributor": "lm1909",
+ "created": "2026-11-07T12:27:43+00:00",
+ "recipe": {
+  "toolchain_commit": "510d9d0e8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N3553_neg/2026-11-07-lm1909-10835284.tests.json"
+ },
+ "label": "Introduces an unfamiliar Latin or Greek source form while explaining a word's etymology.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N3553_neg/2026-11-07-lm1909-10835284.tests.json",
+   "prereg_commit": "510d9d0e8",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.315,
+     "peak": " fol"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.142,
+     "peak": " kh"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.407,
+     "peak": " luc"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.357,
+     "peak": " grap"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.183,
+     "peak": " noct"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.058,
+     "peak": " lith"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.242,
+     "peak": " sil"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.111,
+     "peak": " therm"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": " amount"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " surface"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.011,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.005,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.212,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "510d9d0e8",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Etymological source forms",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "This pole has a small corpus max (1.34) and 99% gate-closed leak among activations over 0.1 of max. The opposite pole, not this pole, is dense. Cooper and a code identifier did not replicate in probes; etymological source forms were more promising but variable. This low-confidence hypothesis is registered without forcing a name-token label.",
+ "selection": "random draw"
+}

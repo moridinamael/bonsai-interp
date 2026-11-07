@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-07-lm1909-ad2eaba4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N6218+",
+ "contributor": "lm1909",
+ "created": "2026-11-07T12:26:25+00:00",
+ "recipe": {
+  "toolchain_commit": "510d9d0e8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N6218_pos/2026-11-07-lm1909-ad2eaba4.tests.json"
+ },
+ "label": "Whitespace that resumes a sequence of processing steps inside an indented Python method body.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N6218_pos/2026-11-07-lm1909-ad2eaba4.tests.json",
+   "prereg_commit": "510d9d0e8",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.097,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.072,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.259,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.299,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.119,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.213,
+     "peak": "]\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.287,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.149,
+     "peak": ".message"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.286,
+     "peak": "')\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.169,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.419,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.399,
+     "peak": "')\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.163,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.343,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.344,
+     "peak": "_records"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.345,
+     "peak": "\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.156,
+    "median_fire": 0.181,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "codex gpt-6",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "510d9d0e8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Indented processing continuation",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Many corpus peaks occur on indentation or closing-parenthesis/newline tokens, but the card also has prose outliers. Probes did not support blank lines alone, and most small methods were weak. This is the best remaining low-confidence structural hypothesis, tested on longer fresh processing passages.",
+ "selection": "random draw"
+}
