@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-c1f4d0e6",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N5364-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T06:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N5364",
+   "pole": "-",
+   "label": "unclear: the card peaks on the first piece of a compound identifier in code (r|_exp, min|_delta, rh|_headers, dry|_run), but short probe snippets did not reproduce it",
+   "fire": [
+    "def check(label, r, r_exp):\n    print('{}: got={} want={}'.format(label, r, r_exp))\n    return r == r_exp",
+    "for step in range(n):\n    delta = update(x)\n    if not max_delta_ok:\n        break",
+    "headers = dict(resp.headers)\nfor key in expected:\n    assert key.lower() in req_headers",
+    "def run(tasks, dry=False):\n    suffix = dry_run_suffix if dry else ''\n    return [t + suffix for t in tasks]",
+    "for item in items:\n    if item in list_two_skip:\n        continue\n    out.append(item)",
+    "best = None\nfor m in minima:\n    old2new[m.id] = m_new\n    best = m_new",
+    "x = tf.zeros([4])\nidx = tf.constant(2)\nsl = tf.slice(x, time_idx, [1])",
+    "ann = load(fname)\nann_read = load(tmp)\n_assert_equal(ann, ann_read)"
+   ],
+   "quiet": [
+    "def check(label, result, expected):\n    print('{}: got={} want={}'.format(label, result, expected))\n    return result == expected",
+    "for step in range(n):\n    delta = update(x)\n    if not converged:\n        break",
+    "headers = dict(resp.headers)\nfor key in expected:\n    assert key.lower() in headers",
+    "def run(tasks, dry=False):\n    suffix = '.dry' if dry else ''\n    return [t + suffix for t in tasks]",
+    "for item in items:\n    if item in skipped:\n        continue\n    out.append(item)",
+    "best = None\nfor m in minima:\n    mapping[m.id] = m\n    best = m",
+    "x = tf.zeros([4])\nidx = tf.constant(2)\nsl = tf.slice(x, idx, [1])",
+    "ann = load(fname)\nother = load(tmp)\nassert ann == other"
+   ]
+  }
+ ],
+ "predictions": "probably fails: all probes below 0.03",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unclear (first piece of compound identifier)",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: max 159 on ' r' in 'r_exp', '_delta', ' rh' in rh_headers, ' m' in mnew, '_run'. Probe: every snippet including near copies of the card lines scored 0.005-0.029. Fire items are longer multi-line passages with compound identifiers; near misses use the same code with single-word names. A best-guess test."
+}

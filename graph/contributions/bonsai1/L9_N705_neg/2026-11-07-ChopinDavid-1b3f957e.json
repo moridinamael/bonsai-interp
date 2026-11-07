@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-1b3f957e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N705-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T06:31:00+00:00",
+ "recipe": {
+  "toolchain_commit": "d70e84845",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N705_neg/2026-11-07-ChopinDavid-1b3f957e.tests.json"
+ },
+ "label": "banking-instrument vocabulary of payments between banks: a cheque 'drawn on' an account, bills of exchange, drawee, clearing, beneficiary of a letter of credit",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N705_neg/2026-11-07-ChopinDavid-1b3f957e.tests.json",
+   "prereg_commit": "d70e84845",
+   "author": "ChopinDavid",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.773,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.393,
+     "peak": " exchange"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.351,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.335,
+     "peak": " clearing"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.548,
+     "peak": " beneficiary"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.255,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.422,
+     "peak": "ings"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.629,
+     "peak": " exchange"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.07,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " exchange"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": " accepted"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " clearing"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.062,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " moved"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " storms"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.407,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d70e84845",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "interbank payment instruments (cheques, bills, clearing)",
+ "unit_kind": "meaning",
+ "confidence": 0.65,
+ "notes": "Card: 'check drawn on' 25.1 x2, clearing x2, payments x2, beneficiary, drawee x2, 'bill of exchange'. Probe: 'check drawn on' 0.768, 'bill of exchange' 0.746, letter-of-credit beneficiary 0.476, clearing 0.450, international payments 0.386; insurance beneficiary 0.050, 'drew a portrait' 0.000, ordinary bank branch 0.015. Near misses reuse the words in non-payment senses.",
+ "selection": "random draw"
+}

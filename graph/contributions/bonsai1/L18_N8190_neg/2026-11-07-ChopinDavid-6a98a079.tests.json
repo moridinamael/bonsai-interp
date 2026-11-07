@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-6a98a079",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8190-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T06:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N8190",
+   "pole": "-",
+   "label": "digits and symbols inside machine-style numeric data: geographic coordinates with degree signs, GML coordinate pairs, Julian dates and timestamps in code; numbers in ordinary prose stay low",
+   "fire": [
+    "The weather station sits at 47°33'N 8°34'E on a small hill.",
+    "We anchored the boat at 12°45' S, 45°10' E for the night.",
+    "<gml:upperCorner>2685120.250000 1295410.750000</gml:upperCorner>",
+    "    jd = 2459215.5 + row['day_offset']",
+    "The survey marker reads 34°03'N 118°15'W near the old road.",
+    "    df.loc['2021-03-15 06:00:00', 'temp'] = 12.4",
+    "Our camp was set at 61°10' N, 149°53' W beside the river.",
+    "<gml:pos>2600512.84 1199830.27</gml:pos>"
+   ],
+   "quiet": [
+    "The weather station sits on a small hill near the village school.",
+    "We anchored the boat in a quiet bay for the night with 4 friends.",
+    "She planted 14 tulips and 6 roses along the garden fence.",
+    "The museum has 230 paintings and about 40 sculptures.",
+    "The survey marker stands near the old road by the bridge.",
+    "My grandmother turned 87 last spring and still bakes bread.",
+    "Our camp was set beside the river after 3 long days of hiking.",
+    "The team scored 2 goals in the final 10 minutes of the match."
+   ]
+  }
+ ],
+ "predictions": "fire 0.4-1.0 on the degree sign or digits in coordinates and data; prose counts and dates below 0.1",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "numbers in coordinates / numeric data",
+ "unit_kind": "context",
+ "confidence": 0.5,
+ "notes": "Card: 'JD' x3, digits and spaces in coordinates, '°' in '56°N 98°E', date digits in pandas output. Probe: '56°N 98°E' 1.011, '29°01' N' 0.636, GML corner 0.668, JD arithmetic 0.625, MJD column 0.474, pandas timestamp 0.386; prose without coordinates 0.014, 'third of March' 0.043, '12 apples' 0.019. Near misses keep similar sentences with numbers used as plain prose quantities."
+}

@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-3016a8aa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8544-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T06:31:38+00:00",
+ "recipe": {
+  "toolchain_commit": "d70e84845",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N8544_neg/2026-11-07-ChopinDavid-3016a8aa.tests.json"
+ },
+ "label": "a country, state or city proper name in running prose (Egypt, Mexico, Atlanta, Canada); generic place nouns (the region, the coast, the capital) stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N8544_neg/2026-11-07-ChopinDavid-3016a8aa.tests.json",
+   "prereg_commit": "d70e84845",
+   "author": "ChopinDavid",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.379,
+     "peak": " Turkey"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.588,
+     "peak": " Denver"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.45,
+     "peak": " Ireland"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.382,
+     "peak": " Portugal"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.304,
+     "peak": " Kenya"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.151,
+     "peak": " Vietnam"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.294,
+     "peak": " Toronto"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.409,
+     "peak": " Houston"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.064,
+     "peak": "Health"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.071,
+     "peak": " summer"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.043,
+     "peak": " province"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.089,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " March"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.381,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d70e84845",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "country or city name",
+ "unit_kind": "token",
+ "confidence": 0.6,
+ "notes": "Card: Ireland x3, Egypt x2, Mexico x2, Turkey x2, Canada, Oklahoma, Atlanta, plus year digits. Probe: Egypt 0.738, Mexico's 0.640, Atlanta 0.563, Canada 0.452, Russian capital 0.262; 'the region' 0.021, 'the coast' 0.119, 'the capital' 0.008. Near misses replace the name with a generic place noun.",
+ "selection": "random draw"
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-07-ChopinDavid-9b77ace1",
+ "contributor": "ChopinDavid",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N6399-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-07T06:20:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N6399",
+   "pole": "-",
+   "label": "the Korean syllable 관 (as in 객관, 관리, 주관), on top of weak broad firing across Korean and other CJK text; English stays at zero",
+   "fire": [
+    "회의에서 그녀는 객관적인 자료를 제시했다.",
+    "이 건물은 시설 관리 팀이 맡고 있습니다.",
+    "선생님은 학생들의 주관적인 감상을 들었다.",
+    "그 회사는 고객 관리 시스템을 새로 도입했다.",
+    "우리는 보다 객관적으로 상황을 보려고 노력했다.",
+    "아파트 관리 사무소에서 공지를 보냈다.",
+    "평가는 최대한 객관성을 유지해야 한다.",
+    "그는 재고 관리 업무를 담당하고 있다."
+   ],
+   "quiet": [
+    "회의에서 그녀는 새로운 자료를 제시했다.",
+    "이 건물은 청소 담당 팀이 맡고 있습니다.",
+    "선생님은 학생들의 솔직한 감상을 들었다.",
+    "그 회사는 고객 상담 시스템을 새로 도입했다.",
+    "우리는 보다 차분하게 상황을 보려고 노력했다.",
+    "아파트 경비실에서 공지를 보냈다.",
+    "평가는 최대한 공정성을 유지해야 한다.",
+    "그는 재고 정리 업무를 담당하고 있다."
+   ]
+  }
+ ],
+ "predictions": "fire 0.5-0.9 on 관; Korean sentences without 관 about 0.2-0.4; may fail on the broad floor",
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Korean syllable 관",
+ "unit_kind": "token",
+ "confidence": 0.25,
+ "notes": "Card: tiny max 0.16, broad (7.2% of tokens), 관 x8 of top 32, plus 褒, 송, 'ard'. Probe: 객관적 0.880, 관리자 0.672, 주관적 0.577, 褒 0.615, Gérard 0.769, Korean without 관 0.211-0.336, 박물관 sentence 0.387 (peak on a byte, not 관), English -0.020. Near misses are matched Korean sentences without 관; the broad floor makes this a hard test."
+}
