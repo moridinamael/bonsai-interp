@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-07-ChopinDavid-62183a74",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N11181+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T14:27:38+00:00",
+ "recipe": {
+  "toolchain_commit": "d4fc9ce16",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N11181_pos/2026-11-07-ChopinDavid-62183a74.tests.json"
+ },
+ "label": "interior word piece of a rare long name that the tokenizer splits into several pieces (drug names, Latin binomials, ancient authors, foreign place names: 'Os|elt|amivir', 'Oz|ot|oc|eros', 'Zos|imus'); common names that are one token stay low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N11181_pos/2026-11-07-ChopinDavid-62183a74.tests.json",
+   "prereg_commit": "d4fc9ce16",
+   "author": "ChopinDavid",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.267,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.053,
+     "peak": "doc"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.037,
+     "peak": "iod"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.266,
+     "peak": "rh"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.094,
+     "peak": "ag"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.028,
+     "peak": " sea"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.086,
+     "peak": "go"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.484,
+     "peak": "emp"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": "kill"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " white"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " writers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": "apy"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " flight"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " sea"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " Romans"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " after"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.992,
+    "median_fire": 0.09,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d4fc9ce16",
+  "minutes": 1,
+  "batch_size": 16
+ },
+ "short": "rare split-name interior piece",
+ "unit_kind": "lexical",
+ "confidence": "medium",
+ "notes": "probe: Ozotoceros 1.120, Zosimus/Sozomen 1.053, oseltamivir 0.920, Ozymandias 0.855, Södertälje 0.749, Olotels 0.567; aspirin 0.009, Tacitus/Livy 0.014. Many card hits start with O/Oz/Os/Z; fire items mix O- and other initials to test generality",
+ "selection": "random draw"
+}
