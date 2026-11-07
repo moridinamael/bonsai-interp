@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-ff0f9238",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6660-",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T04:28:39+00:00",
+ "recipe": {
+  "toolchain_commit": "8f30ced11",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6660_neg/2026-11-06-ChopinDavid-ff0f9238.tests.json"
+ },
+ "label": "a stand-alone apostrophe or hyphen token inside a French word junction (d'acier, Champs-Élysées), where the next piece starts the following word",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6660_neg/2026-11-06-ChopinDavid-ff0f9238.tests.json",
+   "prereg_commit": "8f30ced11",
+   "author": "ChopinDavid",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.205,
+     "peak": "'"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.578,
+     "peak": "'"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.202,
+     "peak": "'"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.074,
+     "peak": "'"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.012,
+     "peak": "ienne"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.518,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.156,
+     "peak": "'"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.323,
+     "peak": "'"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " par"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": "ère"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": "-m"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": "res"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " pour"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " avant"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " bo"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "ienne"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.204,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8f30ced11",
+  "minutes": 2,
+  "batch_size": 16
+ },
+ "short": "split French elision apostrophe / hyphen",
+ "unit_kind": "spelling unit",
+ "confidence": 0.25,
+ "notes": "Card: peaks on Arabic أ after ال, French d'/d’ apostrophes (d’entre, d’acier, d’œil), '-' in Champs-Élysées. Probe: 'miroir d'acier' 0.571, 'Champs-Élysées' 0.470, 'd'entre eux' 0.124, 'verre d'eau' 0.009 (apostrophe fused into 'eau'), 'de vin' 0.015, English contractions 0.005. Uneven: tokcheck keeps only items where the apostrophe is its own token.",
+ "selection": "random draw"
+}

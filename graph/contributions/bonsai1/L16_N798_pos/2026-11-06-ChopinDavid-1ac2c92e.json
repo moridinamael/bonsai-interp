@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-06-ChopinDavid-1ac2c92e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N798+",
+ "contributor": "ChopinDavid",
+ "created": "2026-11-07T04:29:27+00:00",
+ "recipe": {
+  "toolchain_commit": "8f30ced11",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N798_pos/2026-11-06-ChopinDavid-1ac2c92e.tests.json"
+ },
+ "label": "unclear: statements about code behaviour, in Python source and in prose about it (comments, truthiness, string and return values); everyday prose stays low",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N798_pos/2026-11-06-ChopinDavid-1ac2c92e.tests.json",
+   "prereg_commit": "8f30ced11",
+   "author": "ChopinDavid",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.456,
+     "peak": " counts"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.543,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.498,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.017,
+     "peak": ".get"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.3,
+     "peak": ".strip"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.248,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.022,
+     "peak": "(scores"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.013,
+     "peak": " Python"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.08,
+     "peak": " counts"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " says"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " notebook"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " counts"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " is"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.274,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8f30ced11",
+  "minutes": 3,
+  "batch_size": 16
+ },
+ "short": "unclear code-behaviour context",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: peaks on string ends, comment words and ' with', ' equal' in Python files; no single token. Probe: prose 'an empty string counts as False' 0.523, code comment 'empty string counts as False' 0.338, 'roll = random.randint' 0.311, 'headers.get or ''' 0.310, '# Lines starting with the hash' 0.155, prose about comments 0.079, garden 0.016. Best-guess test.",
+ "selection": "random draw"
+}
