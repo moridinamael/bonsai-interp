@@ -153,7 +153,7 @@ def baselines(a):
                 y = lab.problem.evaluate(u[None])[0]
                 add.shift += y - add(u)[0]
         lab.tag = f"pde/{pi}"
-        _de(lab.problem.evaluate, prof, M.TIERS[1], add.z, names, pi, DE_MAXITER, 1)
+        _de(lab.problem.evaluate, prof, M.TIERS[len(M.TIERS) // 2], add.z, names, pi, DE_MAXITER, 1)
         print("profile", pi, "done", round(time_since(lab)), "s", flush=True)
 
 
@@ -174,6 +174,10 @@ def heldout(a):
     lab.problem.evaluate(np.array(X))
 
 
+def CELLS():
+    return [(p, tr) for p in range(len(PROFILES)) for tr in range(len(M.TIERS))]
+
+
 def report(a):
     names, base, best = best_points()
     rows = [json.loads(s) for s in open(S3.EVALS, encoding="utf-8")]
@@ -187,7 +191,7 @@ def report(a):
         return None if u is None else -miss(held[tuple(u)], PROFILES[p], b0, names)
     print("\nworst miss by cell (log10), training / held-out")
     for p, prof in enumerate(PROFILES):
-        for tr in range(3):
+        for tr in range(len(M.TIERS)):
             print(f"  profile {p} {prof} tier {tr + 1}: " + "  ".join(
                 f"{m} {S3._f(None if best[(m, p, tr)][0] is None else -best[(m, p, tr)][0])}/{S3._f(None if hs(m, p, tr) is None else -hs(m, p, tr))}"
                 for m in METHODS))
@@ -196,17 +200,17 @@ def report(a):
         for m in METHODS[1:]:
             w = l = e = 0
             for p in range(len(PROFILES)):
-                for tr in range(3):
+                for tr in range(len(M.TIERS)):
                     x, y = f("gmoo", p, tr), f(m, p, tr)
                     x, y = -9 if x is None else x, -9 if y is None else y
                     w, l, e = w + (x > y + 1e-3), l + (y > x + 1e-3), e + (abs(x - y) <= 1e-3)
             print(f"  {nm} vs {m}: {w} / {l} / {e}")
     for nm, f in (("training", lambda m, p, tr: best[(m, p, tr)][0]), ("held-out", hs)):
         print(f"cells within log10(1.5) on every concept, {nm}:",
-              {m: sum((f(m, p, tr) or -9) >= -PRECISE for p in range(8) for tr in range(3)) for m in METHODS})
-    print("mean held-out worst miss:", {m: round(float(np.mean([-(hs(m, p, tr) or -2) for p in range(8) for tr in range(3)])), 3) for m in METHODS})
-    prec = sum((best[("gmoo", p, tr)][0] or -9) >= -PRECISE for p in range(8) for tr in range(3))
-    print(f"precision claim: {prec} of 24 training cells (needs 12)")
+              {m: int(sum((f(m, p, tr) or -9) >= -PRECISE for p, tr in CELLS())) for m in METHODS})
+    print("mean held-out worst miss:", {m: round(float(np.mean([-(hs(m, p, tr) or -2) for p, tr in CELLS()])), 3) for m in METHODS})
+    prec = sum((best[("gmoo", p, tr)][0] or -9) >= -PRECISE for p, tr in CELLS())
+    print(f"precision claim: {prec} of {len(CELLS())} training cells")
 
 
 if __name__ == "__main__":
