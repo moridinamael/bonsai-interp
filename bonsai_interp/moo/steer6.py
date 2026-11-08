@@ -53,6 +53,7 @@ def miss(y, prof, base, names):
 def protocol(a):
     json.dump({"name": "steer@6", "after": "steer@5 (PR 1813): its model 7351, design, band lines, 32 training prompts, held-out prompts, "
                                           "bands, box, tiers and drift limit",
+               "bundles_sha256": json.load(open(Path(__file__).parent / "steer5_protocol.json", encoding="utf-8"))["bundles_sha256"],
                "concepts": S3.CON, "profiles": PROFILES, "levels": LEVELS, "tiers": M.TIERS, "drift_max": S3.DRIFT, "budget": BUDGET,
                "start_tol": START_TOL, "tighten": TIGHTEN, "de_maxiter": DE_MAXITER,
                "score": "minus the largest absolute log10 change error over the four concepts, against the zero design on the same prompts",
