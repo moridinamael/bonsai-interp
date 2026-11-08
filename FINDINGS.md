@@ -1291,3 +1291,39 @@ needs a separate trial.
 objectives with an aspiration past the observed range left every query at its start. Value targets just beyond the best known
 point climbed in most cells, and on held-out prompts beat the additive model 18 to 6. For this panel, a globalMOO query should
 name a target value and raise it round by round.
+
+## 2026-11-07: Value-target queries replicate on four new concepts (steer@4)
+
+steer@4 repeated steer@3b's method on four new concepts (school, software, war, family), with a fresh globalMOO model (7350, a
+687-point design). Everything else came from steer@3: bands, box, tiers, drift limit, prompts and baselines. A 48-design pilot on
+the training prompts kept the box (tiers met 8, 17 and 39 of 48). Each cell was one value-target query: past the best design
+point's score by log10(1.5), in 12 evaluations. Protocol `bonsai_interp/moo/steer4_protocol.json`, report `steer4_summary.txt`.
+
+**Both registered claims held:**
+
+| claim | result |
+|---|---|
+| model: beats the additive model in more held-out cells than it loses | **held, 21 / 3** |
+| climb: beats the design lookup in at least 8 of 24 training cells | **held, 12 of 24** |
+
+**Against the other baselines (won / lost):**
+
+| target queries against | training | held-out |
+|---|---|---|
+| steer@2's uniform line | 24 / 0 | 17 / 7 |
+| best single band | 18 / 6 | 21 / 3 |
+| differential evolution | 20 / 4 | 14 / 10 |
+| design lookup | 12 / 0 | 4 / 8 |
+
+Mean held-out score was 0.24 log10 for the target queries, -0.34 for the additive model, -0.09 for the line and -0.01 for DE.
+
+- **These concepts are harder to steer on held-out prompts.** Many training gains reversed on the held-out set, for every method.
+  The additive model's designs reversed most: its one-band curves came from 16 training prompts and didn't carry over.
+- **The climb above the design point mostly didn't carry to held-out** (4 / 8 against lookup). Twelve training prompts' worth of
+  query evaluations can fit the training set's noise, so the next step is more training prompts or a held-out check inside the
+  query loop.
+- **DE did best on the raise-and-lower tasks** (software up with school down, war up with family down), where its broad search on
+  768 evaluations found designs that held up on held-out prompts.
+
+Across steer@3b and steer@4, value-target queries beat the additive model on held-out prompts in 39 of 48 cells, on 8 concepts and
+two independent models. On this steering panel, globalMOO with value targets is the method to use.
