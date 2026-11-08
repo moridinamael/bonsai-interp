@@ -1327,3 +1327,42 @@ Mean held-out score was 0.24 log10 for the target queries, -0.34 for the additiv
 
 Across steer@3b and steer@4, value-target queries beat the additive model on held-out prompts in 39 of 48 cells, on 8 concepts and
 two independent models. On this steering panel, globalMOO with value targets is the method to use.
+
+## 2026-11-08: With 32 training prompts, globalMOO's gains carry to unseen prompts (steer@5)
+
+In steer@4, the queries' gains over their design points mostly reversed on the held-out prompts (4 kept, 8 reversed), because 16
+training prompts are noisy. steer@5 kept steer@4's concepts, tasks, box, tiers, drift limit, held-out prompts and baselines. It
+doubled the training prompts to 32 and trained a new model (7351). Each cell had 24 evaluations: a value-target query whose target
+rose by log10(1.5) every time a query met it. Protocol `bonsai_interp/moo/steer5_protocol.json`, report `steer5_summary.txt`.
+The run paused overnight at a batch boundary during the baselines and resumed from the evaluation cache in the morning. The
+resumed additive solves went 154 evaluations past steer@4's 288, which only gave that baseline more designs to choose from.
+
+**Both registered claims held:**
+
+| claim | result |
+|---|---|
+| transfer: beats the design lookup on held-out prompts in more cells than it loses | **held, 18 / 3 / 3 tied** (steer@4: 4 / 8) |
+| model: beats the additive model on held-out prompts in more cells than it loses | **held, 21 / 3** |
+
+| target queries against | training | held-out |
+|---|---|---|
+| additive model of the bands | 18 / 6 | 21 / 3 |
+| steer@2's uniform line | 21 / 3 | 15 / 9 |
+| best single band | 24 / 0 | 24 / 0 |
+| differential evolution | 22 / 2 | 18 / 6 |
+| design lookup | 21 / 0 | 18 / 3 |
+
+Mean held-out score was 0.20 log10 for the target queries, against 0.09 for the line, -0.06 for DE and the lookup, and -0.23
+for the additive model.
+
+- **The training-set size was what limited transfer.** With 32 prompts, the climb past the design held on unseen prompts in 18
+  cells, against 4 with 16 prompts.
+- **Rising targets used the budget well.** Several cells met one target and went on to a higher one within 24 evaluations.
+- **The concepts in this panel stay hard to steer on unseen prompts.** Every method's held-out scores are small, and the uniform
+  line kept 9 cells, mostly on raise-and-lower tasks.
+
+Over steer@3b, @4 and @5, value-target queries beat the additive model on held-out prompts in 60 of 72 cells: 3 models,
+8 concepts. The recipe for this panel is:
+- a design of experiments sized to the panel;
+- training prompts enough to average out prompt noise;
+- each query as a value target just past the best known point, raised whenever met.
