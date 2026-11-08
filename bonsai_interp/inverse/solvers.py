@@ -200,6 +200,10 @@ class GmooInverse:
                 vals.append(float(g.value)); types.append(OT.PERCENT)
                 mins.append(-100 * g.tol); maxs.append(100 * g.tol)
                 continue
+            elif g.op == "=":  # an absolute band, as for the free outputs above
+                vals.append(float(g.value)); types.append(OT.VALUE)
+                mins.append(-g.tol); maxs.append(g.tol)
+                continue
             mins.append(0.0); maxs.append(0.0)
         return vals, types, mins, maxs
 

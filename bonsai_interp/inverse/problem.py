@@ -23,7 +23,7 @@ class Var:
 
 @dataclass
 class Goal:
-    """op: '>=', '<=', '~=' (within tol, relative), 'max', 'min'."""
+    """op: '>=', '<=', '~=' (within tol, relative), '=' (within tol, absolute), 'max', 'min'."""
     output: str
     op: str
     value: float = 0.0
@@ -90,6 +90,8 @@ def goal_terms(goals, outputs, y, scales, xp=np):
         elif g.op == "~=":
             band = abs(g.value) * g.tol
             t = xp.maximum(abs(v - g.value) - band, 0 * v) / s
+        elif g.op == "=":
+            t = xp.maximum(abs(v - g.value) - g.tol, 0 * v) / s
         elif g.op == "max":
             t = -v / s
         elif g.op == "min":
@@ -117,6 +119,8 @@ def satisfied(goals, outputs, y):
             ok &= v <= g.value
         elif g.op == "~=":
             ok &= abs(v - g.value) <= abs(g.value) * g.tol
+        elif g.op == "=":
+            ok &= abs(v - g.value) <= g.tol
     return bool(ok)
 
 

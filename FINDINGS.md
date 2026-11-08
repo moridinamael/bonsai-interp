@@ -1366,3 +1366,41 @@ Over steer@3b, @4 and @5, value-target queries beat the additive model on held-o
 - a design of experiments sized to the panel;
 - training prompts enough to average out prompt noise;
 - each query as a value target just past the best known point, raised whenever met.
+
+## 2026-11-08: Whole profiles are out of the panel's reach, and globalMOO still misses them least on unseen prompts (steer@6)
+
+steer@6 asked for whole profiles: all four of steer@5's concepts (school, software, war, family) at their own targets at once. The
+targets were drawn from -0.3, 0, +0.3 and +0.6 log10, with at least two moving, and each profile also had the three text-quality
+and drift constraints: seven objectives per query. It reused steer@5's trained model, design, band lines and prompts, so the
+model never saw these goals. globalMOO asked for every concept inside an absolute band (a new `=` goal mapped to globalMOO's
+value objective), tightened by 0.75 each time a query met it, within 24 evaluations per cell. The additive model had the same 24
+evaluations per cell. Score is the worst miss: the largest log10 error over the four concepts. Protocol
+`bonsai_interp/moo/steer6_protocol.json`, report `steer6_summary.txt`. The first launch stopped in the bundle check before
+evaluating anything; an amendment committed alone carried steer@5's bundle hash.
+
+| claim | result |
+|---|---|
+| model: smaller worst miss than the additive model on held-out prompts in more cells than not | **held, 18 / 6** |
+| precision: every concept within log10(1.5) in at least 12 of 24 training cells | **failed, 0 of 24 for every method** |
+
+| globalMOO against | training | held-out |
+|---|---|---|
+| additive model | 9 / 15 | 18 / 6 |
+| differential evolution | 24 / 0 | 24 / 0 |
+| design lookup | 15 / 0 | 12 / 3 |
+
+Mean held-out worst miss: globalMOO 0.69 log10, lookup 0.70, additive 0.95, DE 1.55.
+
+- **These profiles are beyond what the panel can do under the constraints.** No method got all four concepts within 1.5× in any
+  cell. The best training designs still missed one concept by 0.19 to 0.54 log10 (1.5× to 3.5×). I set targets the bundles can't
+  reach together without breaking the text or moving other topics; the precision threshold was mine, not the panel's.
+- **The tiers didn't bind.** Each method's best design was the same at all three tiers, so the round has 8 independent profiles
+  rather than 24 cells. By profile, globalMOO's held-out worst miss beat the additive model's on 6 and lost on 2 (one by 0.01).
+- **The additive model fit the training prompts closely and transferred worst** (0.95 held-out). A sum of one-band curves
+  predicts each concept separately, so it misses interactions that matter when all four move together.
+- **globalMOO's designs transferred best but stayed close to the lookup.** It improved on the design point in 15 training cells,
+  and held-out its mean worst miss matched the lookup's (0.69 against 0.70).
+- **DE met the constraints in only 3 of 8 profiles**, with 96 evaluations at tier 2.
+
+Next for profiles: targets drawn from what the design shows is jointly reachable, so the test measures precision rather than
+reach.

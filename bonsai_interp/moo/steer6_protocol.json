@@ -1,0 +1,97 @@
+{
+ "name": "steer@6",
+ "after": "steer@5 (PR 1813): its model 7351, design, band lines, 32 training prompts, held-out prompts, bands, box, tiers and drift limit",
+ "bundles_sha256": "596645f80d75f47752a0f742ce6bc6b2f40c087a4993f3bd43afd84a5fa4ddc8",
+ "concepts": [
+  "school",
+  "software",
+  "war",
+  "family"
+ ],
+ "profiles": [
+  [
+   0.0,
+   0.0,
+   0.6,
+   0.6
+  ],
+  [
+   0.0,
+   0.3,
+   0.3,
+   0.3
+  ],
+  [
+   -0.3,
+   0.0,
+   0.6,
+   0.6
+  ],
+  [
+   0.3,
+   0.6,
+   0.0,
+   0.6
+  ],
+  [
+   0.6,
+   -0.3,
+   -0.3,
+   0.3
+  ],
+  [
+   0.6,
+   0.3,
+   0.3,
+   0.3
+  ],
+  [
+   0.3,
+   0.3,
+   -0.3,
+   0.3
+  ],
+  [
+   0.6,
+   -0.3,
+   0.3,
+   0.0
+  ]
+ ],
+ "levels": [
+  -0.3,
+  0.0,
+  0.3,
+  0.6
+ ],
+ "tiers": [
+  {
+   "uniq": 0.68,
+   "coh": -1.4
+  },
+  {
+   "uniq": 0.58,
+   "coh": -1.7
+  },
+  {
+   "uniq": 0.45,
+   "coh": -2.2
+  }
+ ],
+ "drift_max": 0.2,
+ "budget": 24,
+ "start_tol": 0.3,
+ "tighten": 0.75,
+ "de_maxiter": 3,
+ "score": "minus the largest absolute log10 change error over the four concepts, against the zero design on the same prompts",
+ "methods": {
+  "gmoo": "each cell as globalMOO queries on steer@5's trained model: every concept within tol of its target (an absolute band), uniq and coh at least the tier, drift at most drift_max; tol starts at the smaller of start_tol and tighten x the best design point's miss, and is multiplied by tighten whenever a query meets it, until the cell has used budget evaluations or a query ends without meeting it",
+  "additive": "steer@3's additive model from steer@5's band lines; each cell solved on the model by differential evolution on minus the score plus a steep penalty outside the cell, the answer evaluated, the model shifted by the residual and solved again, budget evaluations per cell",
+  "de": "differential evolution on the same loss at tier 2, de_maxiter generations of 24, per profile",
+  "lookup": "the best point of steer@5's design of experiments"
+ },
+ "claims": {
+  "model": "over the 24 profile-tier cells on the held-out prompts, globalMOO beats the additive model in more cells than it loses; the same count against de and lookup is reported whichever way it falls",
+  "precision": "on the training prompts, globalMOO's best design meets the cell with every concept within log10(1.5) of its target in at least 12 of the 24 cells"
+ }
+}
