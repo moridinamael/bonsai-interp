@@ -1537,3 +1537,43 @@ Protocol `bonsai_interp/moo/steer10_protocol.json`, report `steer10_summary.txt`
 
 Next: steer@11 repeats steer@8's profile round with geo outputs (a new model and design), where 1.5× precision on unseen prompts
 is now within the measure's resolution.
+
+## 2026-11-09: Scored per prompt, steering profiles hold on unseen prompts, and the panel is close to additive (steer@11)
+
+steer@11 is steer@8's whole-profile round with steer@10's per-prompt measure (geo) as the output: 64 training prompts, a new
+687-point design and globalMOO model, 16 four-concept profiles drawn by steer@7's rule from this round's design, tier 2, the same
+four methods and budgets. The drift limit is 0.08 (geo drift runs at 0.41 of the old measure's), the held-out set is steer@9's 64
+fresh prompts, and globalMOO's band starts at the design lookup's own miss. 35 design points meet tier 2 (78 in steer@8).
+Protocol `bonsai_interp/moo/steer11_protocol.json`, report `steer11_summary.txt`.
+
+| claim | result |
+|---|---|
+| precision_heldout: globalMOO within 1.5x on every concept in at least 8 of 16 held-out profiles | **not held, 7 of 16** |
+| model: globalMOO's held-out worst miss smaller than the additive model's in more profiles than not | **not held, 0 of 16** |
+
+| | globalMOO | additive | DE | lookup |
+|---|---|---|---|---|
+| mean worst miss, training (log10) | 0.125 | 0.043 | 0.183 | 0.131 |
+| mean worst miss, held-out | 0.205 | 0.119 | 0.251 | 0.214 |
+| profiles within 1.5x on every concept, training | 15 | 16 | 10 | 14 |
+| profiles within 1.5x on every concept, held-out | 7 | 14 | 4 | 5 |
+| the same, steer@8 (old measure, 16 held-out prompts) | 0 | 0 | 0 | 0 |
+
+- **The measure was the obstacle to held-out precision.** In steer@8 no method kept one profile within 1.5x on unseen prompts and
+  the mean worst misses were 0.45 to 0.58. Here every method's held-out miss is less than half of that, and the additive model
+  holds 14 of 16 profiles on 64 prompts it never saw. Whole-profile steering transfers once each prompt counts alike.
+- **Per prompt, the panel is close to additive.** The additive model (24 band sweeps, then solve and correct) reaches a training
+  miss of 0.04 and loses only 0.08 on fresh prompts. Its wins in every earlier held-out comparison went to globalMOO
+  (steer@3 to @9) because the old measure's prompt-weighting made the response interact; with that removed, a model that spends
+  its evaluations on one line per band matches the structure of the problem, and a general inverse model has nothing extra to find.
+- **globalMOO's queries were set too loose to improve on its own design.** I started each band at the lookup's miss (0.07 to
+  0.17), which asks for a design about as good as the best of the 35 feasible design points. 13 of 16 queries ended on that point
+  (tied with lookup, training and held-out); the three that met the band (profiles 6, 8, 14) are the ones where it moved, and
+  profile 8 went from 0.32 to 0.17 held-out. The additive model shows 0.04 is attainable on these profiles, so the band should
+  start there. The design also put only 35 of 687 points inside tier 2 under the tighter drift limit, so the model saw little of
+  the feasible region. Both are choices of this setup, not limits of the optimizer.
+- globalMOO still beats DE on the live model (held-out 11 / 5) with a fifth of DE's evaluations.
+
+Next: the same profiles and measure with globalMOO's band started at 0.05 and a design drawn inside the feasible box, and
+profiles that ask for what an additive model cannot give (concept pairs whose bands interact, or the joint text-quality limits
+as targets), which is where a multi-objective inverse should earn its evaluations.
