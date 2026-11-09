@@ -1437,3 +1437,40 @@ Across steer@3b to @7, globalMOO's designs beat the additive model's on held-out
 11/4. The additive model often fits the training prompts as well or better, but its designs transfer worse. For precise whole
 profiles on new text, the open problem is the prompt dependence itself: the next step is training on more varied prompts, or
 scoring profiles relative to each prompt.
+
+## 2026-11-09: With 64 training prompts, globalMOO's profile designs miss less on unseen prompts (steer@8)
+
+steer@7 hit reachable profiles on its training prompts, but no method kept them within 1.5× on unseen prompts. steer@8 repeats
+steer@7 with 64 training prompts (steer@5's 32 plus 32 new) and a newly trained model (mono-steer8, 687 design points). Its 16
+profiles were drawn by steer@7's rule and seed from this round's own design, after training. Methods, budget, tier 2 and the
+held-out prompts are steer@7's. Protocol `bonsai_interp/moo/steer8_protocol.json`, report `steer8_summary.txt` (its "tier 1"
+is the one tier in the run, steer@3's tier 2).
+
+| claim | result |
+|---|---|
+| precision_heldout: globalMOO's mean held-out worst miss below steer@7's 0.49 log10 | **held, 0.445** |
+| model: smaller held-out worst miss than the additive model in more profiles than not | **held, 11 / 5** |
+| precision (reported): profiles within log10(1.5) on every concept | training: globalMOO 10, additive 16, lookup 6, DE 1; held-out: 0 for every method |
+
+| globalMOO against | training | held-out |
+|---|---|---|
+| additive model | 4 / 11 / 1 tied | 11 / 5 |
+| differential evolution | 16 / 0 | 11 / 5 |
+| design lookup | 6 / 0 / 10 tied | 3 / 3 / 10 tied |
+
+Mean held-out worst miss: globalMOO 0.445 log10, lookup 0.467, DE 0.541, additive 0.576.
+
+- **More prompts lowered every method's held-out miss** (steer@7: globalMOO 0.49, additive 0.59, lookup 0.63, DE 1.20), and
+  globalMOO's stayed the lowest. Most of that gain shows in the lookup too: on 64 prompts the design itself transfers better.
+- **The profiles were harder to improve on here.** 78 of this round's design points meet tier 2 (steer@7 had 26), so the midpoints
+  sit close to the design and the lookup starts near the target (worst miss 0.09 to 0.27 on training). Each query's band starts at
+  0.75× the lookup's miss, so it started tight. 13 of 16 queries spent the whole budget without meeting that band, and globalMOO
+  improved on the lookup in 6 profiles. The difficulty rose with the starting point, from the setup, not from the profiles.
+- **The additive model again fit training best and transferred worst.** Its held-out miss reached 1.23 log10 in profile 9, where
+  globalMOO's was 0.37. Across steer@3b to @8, globalMOO's designs beat the additive model's on held-out prompts in every round.
+- **Prompt dependence still bounds precision.** No method held a four-concept profile within 1.5× on the held-out prompts. Scoring
+  each profile relative to each prompt, rather than on the mean over prompts, is the next lever.
+
+The first launch ran out of GPU memory at 64 prompts × 6 designs per batch before any design point was scored; it was relaunched at
+3 designs per batch (code commit before anything was scored). The PC slept overnight partway through the baselines; the process
+paused and resumed on wake, and no evaluation was lost.

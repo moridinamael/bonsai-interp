@@ -1,0 +1,35 @@
+{
+ "name": "steer@8",
+ "after": "steer@7 (PR 1815): its rule for profiles, methods, budget, tier 2 and held-out prompts; 64 training prompts (steer@5's 32 plus 32 new); a new model; the profiles are drawn by steer@7's rule and seed from this round's design after training",
+ "bundles_sha256": "596645f80d75f47752a0f742ce6bc6b2f40c087a4993f3bd43afd84a5fa4ddc8",
+ "concepts": [
+  "school",
+  "software",
+  "war",
+  "family"
+ ],
+ "profiles": "drawn after training: the midpoint of two design points that meet tier 2, steer@7's seed 71, 16 profiles",
+ "tiers": [
+  {
+   "uniq": 0.58,
+   "coh": -1.7
+  }
+ ],
+ "drift_max": 0.2,
+ "budget": 24,
+ "start_tol": 0.3,
+ "tighten": 0.75,
+ "de_maxiter": 3,
+ "score": "minus the largest absolute log10 change error over the four concepts, against the zero design on the same prompts",
+ "methods": {
+  "gmoo": "each cell as globalMOO queries on steer@5's trained model: every concept within tol of its target (an absolute band), uniq and coh at least the tier, drift at most drift_max; tol starts at the smaller of start_tol and tighten x the best design point's miss, and is multiplied by tighten whenever a query meets it, until the cell has used budget evaluations or a query ends without meeting it",
+  "additive": "steer@3's additive model from steer@5's band lines; each cell solved on the model by differential evolution on minus the score plus a steep penalty outside the cell, the answer evaluated, the model shifted by the residual and solved again, budget evaluations per cell",
+  "de": "differential evolution on the same loss at tier 2, de_maxiter generations of 24, per profile",
+  "lookup": "the best point of steer@5's design of experiments"
+ },
+ "claims": {
+  "precision_heldout": "on the held-out prompts, globalMOO's mean worst miss over the 16 profiles is below steer@7's 0.49 log10",
+  "model": "over the 16 profiles on the held-out prompts, globalMOO's worst miss is smaller than the additive model's in more profiles than it is larger; de and lookup are reported whichever way they fall",
+  "precision": "reported: profiles within log10(1.5) on every concept, training and held-out, for every method"
+ }
+}
