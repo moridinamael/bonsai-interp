@@ -1538,7 +1538,7 @@ Protocol `bonsai_interp/moo/steer10_protocol.json`, report `steer10_summary.txt`
 Next: steer@11 repeats steer@8's profile round with geo outputs (a new model and design), where 1.5× precision on unseen prompts
 is now within the measure's resolution.
 
-## 2026-11-09: Scored per prompt, steering profiles hold on unseen prompts, and the panel is close to additive (steer@11)
+## 2026-11-09: Scored per prompt, steering profiles hold on unseen prompts; the usable region is a small part of the box (steer@11)
 
 steer@11 is steer@8's whole-profile round with steer@10's per-prompt measure (geo) as the output: 64 training prompts, a new
 687-point design and globalMOO model, 16 four-concept profiles drawn by steer@7's rule from this round's design, tier 2, the same
@@ -1562,18 +1562,20 @@ Protocol `bonsai_interp/moo/steer11_protocol.json`, report `steer11_summary.txt`
 - **The measure was the obstacle to held-out precision.** In steer@8 no method kept one profile within 1.5x on unseen prompts and
   the mean worst misses were 0.45 to 0.58. Here every method's held-out miss is less than half of that, and the additive model
   holds 14 of 16 profiles on 64 prompts it never saw. Whole-profile steering transfers once each prompt counts alike.
-- **Per prompt, the panel is close to additive.** The additive model (24 band sweeps, then solve and correct) reaches a training
-  miss of 0.04 and loses only 0.08 on fresh prompts. Its wins in every earlier held-out comparison went to globalMOO
-  (steer@3 to @9) because the old measure's prompt-weighting made the response interact; with that removed, a model that spends
-  its evaluations on one line per band matches the structure of the problem, and a general inverse model has nothing extra to find.
+- **The additive model wins by correcting itself inside the usable region, not because the panel is additive.** (Corrected
+  the same day: this bullet first said the panel is close to additive. It is not.) Uncorrected, the sum of band curves misses
+  the design points by 0.5 log10 rms over the concepts, and its own solutions by 0.2. Its solve-and-correct loop spends 24
+  evaluations per profile shifting the model by the last residual, and its solutions stay small (rms u 0.28), where 97% of them
+  meet tier 2. It reaches a training miss of 0.04 and loses only 0.08 on fresh prompts.
+- **The design covered the box, and the usable region is about 5% of it.** 95% of the 687 design points fail the drift limit of
+  0.08, so globalMOO's model was trained mostly where no profile can be met, and its query points then stayed near the zero
+  design (rms u 0.12).
 - **globalMOO's queries were set too loose to improve on its own design.** I started each band at the lookup's miss (0.07 to
   0.17), which asks for a design about as good as the best of the 35 feasible design points. 13 of 16 queries ended on that point
   (tied with lookup, training and held-out). It moved off that point in profiles 2, 8 and 14: held-out, profile 8 went from
   0.32 to 0.17 and profile 2 from 0.21 to 0.15, and profile 14 from 0.19 to 0.24. The additive model shows 0.04 is attainable on these profiles, so the band should
-  start there. The design also put only 35 of 687 points inside tier 2 under the tighter drift limit, so the model saw little of
-  the feasible region. Both are choices of this setup, not limits of the optimizer.
+  start there. Both this and the box are choices of this setup, not limits of the optimizer.
 - globalMOO still beats DE on the live model (held-out 11 / 5) with a fifth of DE's evaluations.
 
-Next: the same profiles and measure with globalMOO's band started at 0.05 and a design drawn inside the feasible box, and
-profiles that ask for what an additive model cannot give (concept pairs whose bands interact, or the joint text-quality limits
-as targets), which is where a multi-objective inverse should earn its evaluations.
+Next (steer@12): the same measure with a box shrunk so the design sits inside the usable region, new profiles drawn from that
+design, and globalMOO's band started at 0.05.

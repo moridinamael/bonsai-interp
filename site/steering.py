@@ -69,7 +69,7 @@ CLAIMS = [
     ("steer@11", 1820, "Scored per prompt: every topic within 1.5× in at least 8 of 16 profiles on 64 unseen prompts", False,
      "7 of 16, where no method had held one before"),
     ("steer@11", 1820, "A smaller held-out worst miss than the additive model in more profiles than not", False,
-     "0 of 16: per prompt the panel is nearly additive, and the query bands were set too loose"),
+     "0 of 16: few design points lay in the usable region, and the query bands were set too loose"),
 ]
 
 
@@ -389,10 +389,11 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
     target for 7 (globalMOO), 14 (additive model), 5 (best design point) and 4 (differential evolution). Under the old
     measure the count was 0 for all four.</p>
     <p>Both registered claims fell short: globalMOO needed 8 profiles and had 7, and the additive model had the smaller
-    miss in all 16. Two things explain it. Scored per prompt, the panel responds almost additively, so a model built from
-    one sweep per band already matches the problem. And each query's tolerance was set to the best design point's own
+    miss in all 16. Two things explain it. Only 35 of globalMOO's 687 design points lay in the small region where
+    the text stays fluent and on topic, while the additive model spends 24 corrective evaluations per profile inside it.
+    And each query's tolerance was set to the best design point's own
     miss, which asks for a design that good and no better; 13 of 16 queries ended on that point. The additive model shows
-    a miss of 0.04 is reachable, so the next round starts the band there and adds goals that interact.</p>
+    a miss of 0.04 is reachable, so the next round starts the band there and draws the design inside that region.</p>
   </div>
   <div class="tscroll"><table>
     <thead><tr><th>profiles within 1.5× on unseen prompts, of 16</th><th class="n">globalMOO</th><th class="n">additive</th><th class="n">design point</th><th class="n">DE</th></tr></thead>
@@ -420,8 +421,8 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
     within 1.5× on unseen prompts, one short of the 8 registered, with query bands that were set too loose. A round with
     tight bands has not been run yet.</p>
     <p><strong>Training fit.</strong> The additive model usually matches the training prompts as closely as globalMOO, or
-    more closely, and per prompt its designs also carry over best. Whether globalMOO pulls ahead on goals that interact
-    is the next round's question.</p>
+    more closely, and per prompt its designs also carry over best. Whether globalMOO pulls ahead once its design sits
+    inside the usable region is the next round's question.</p>
     <p><strong>Scope.</strong> One model (Bonsai-8B), eight topics, 24 generated tokens per prompt. A topic's rate is the
     probability the model gives its tokens while writing, not a human judgment of the text.</p>
     <p><strong>Margins.</strong> On steer@9's fresh prompts globalMOO's lead over the additive model was narrow (0.423
