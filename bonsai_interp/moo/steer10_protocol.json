@@ -1,0 +1,21 @@
+{
+ "name": "steer@10",
+ "after": "steer@9 (PR 1817): steer@8's 52 held-out designs and the zero design; steer@8's 64 training prompts and steer@9's two halves of 32 fresh prompts",
+ "bundles_sha256": "596645f80d75f47752a0f742ce6bc6b2f40c087a4993f3bd43afd84a5fa4ddc8",
+ "designs": 52,
+ "sets": {
+  "train": 64,
+  "a": 32,
+  "b": 32
+ },
+ "measures": {
+  "arith": "log10 of the mean over prompts of the soft rate, plus the floor (every round so far)",
+  "geo": "the mean over prompts of log10 of the prompt's soft rate plus the floor"
+ },
+ "change": "a design's change on a concept is its measure minus the zero design's, on the same prompts",
+ "claims": {
+  "reliability": "for at least 3 of the 4 panel concepts, the correlation across the 52 designs between their changes on half a and on half b is higher under geo than under arith",
+  "transfer": "for at least 3 of the 4 panel concepts, the correlation across the designs between their changes on the training prompts and on the 64 fresh prompts is higher under geo than under arith",
+  "reported": "both measures' median worst-concept gaps (half a - half b, training - fresh), slopes and offsets from training to fresh, the spread of the changes across designs, and the arith figures beside steer@9's (the same designs and prompts, read again)"
+ }
+}
