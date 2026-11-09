@@ -35,6 +35,7 @@ S3.PROTOCOL = Path(__file__).parent / "steer8_protocol.json"
 S3.EVALS = S3.OUT / "steer8.evals.jsonl"
 S3.META = S3.OUT / "steer8.model.json"
 S6.SOURCE = S3.EVALS  # profiles come from this round's own design
+S3.BATCH = 3  # 64 prompts x 6 designs ran out of GPU memory at the first design batch; 3 keeps steer@5's 192 sequences per batch
 
 
 def _profiles():
