@@ -31,6 +31,7 @@ ROUNDS = [
     ("steer@7", 1815, "reachable profiles", (11, 4, 1), (12, 4, 0)),
     ("steer@8", 1816, "64 training prompts", (11, 5, 0), (11, 5, 0)),
     ("steer@9", 1817, "steer@8's designs · 64 fresh prompts", (9, 6, 1), (12, 4, 0)),
+    ("steer@11", 1820, "scored per prompt · query bands set loose", (0, 16, 0), (11, 5, 0)),
 ]
 
 # Whole profiles: mean worst miss on unseen prompts, log10 (lower is better). gmoo, lookup, additive, de.
@@ -39,6 +40,7 @@ PROFILES = [
     ("steer@7", "targets the design shows are reachable", (0.49, 0.63, 0.59, 1.20)),
     ("steer@8", "64 training prompts", (0.445, 0.467, 0.576, 0.541)),
     ("steer@9", "steer@8's designs on 64 fresh prompts", (0.423, 0.480, 0.431, 0.537)),
+    ("steer@11", "scored per prompt, 64 unseen prompts", (0.205, 0.214, 0.119, 0.251)),
 ]
 METHODS = ("globalMOO", "best design point", "additive model", "differential evolution")
 PMAX = 1.6
@@ -64,6 +66,10 @@ CLAIMS = [
     ("steer@9", 1817, "The gap from training to fresh prompts is below the gap to the 16 held-out prompts", True, "0.414 against 0.428, narrowly"),
     ("steer@10", 1818, "Scored per prompt, two halves of the fresh prompts agree better, in at least 3 of 4 topics", True, "4 of 4"),
     ("steer@10", 1818, "Scored per prompt, training and fresh prompts agree better, in at least 3 of 4 topics", True, "4 of 4"),
+    ("steer@11", 1820, "Scored per prompt: every topic within 1.5× in at least 8 of 16 profiles on 64 unseen prompts", False,
+     "7 of 16, where no method had held one before"),
+    ("steer@11", 1820, "A smaller held-out worst miss than the additive model in more profiles than not", False,
+     "0 of 16: per prompt the panel is nearly additive, and the query bands were set too loose"),
 ]
 
 
@@ -284,12 +290,12 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
   <h1>Steering with globalMOO</h1>
   <p class="lede">The survey says what each neuron does. This page uses those labels. Bundles of labelled neurons become
   24 knobs on the model's writing, and <strong>globalMOO</strong>, a multiobjective inverse solver, is asked for a whole
-  behaviour in one request: raise these topics, hold those, keep the text fluent, leave everything else alone. Nine rounds,
+  behaviour in one request: raise these topics, hold those, keep the text fluent, leave everything else alone. Ten rounds,
   each with its claims committed before anything was scored.</p>
   <ul class="stats">
-    <li><b>8 of 8</b><span>rounds where globalMOO's designs beat the additive model's on prompts neither had seen</span></li>
+    <li><b>8 of 8</b><span>rounds under the first measure where globalMOO's designs beat the additive model's on prompts neither had seen</span></li>
     <li><b>7 goals</b><span>in a single query: four topic targets, two text-quality floors and one drift limit</span></li>
-    <li><b>15 of 17</b><span>registered claims held; the two that did not are in the ledger below</span></li>
+    <li><b>15 of 19</b><span>registered claims held; the four that did not are in the ledger below</span></li>
   </ul>
 </header>
 
@@ -322,12 +328,13 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
 </section>
 
 <section id="scoreboard">
-  <div class="sec-head"><span class="num">02</span><h2>On unseen prompts, globalMOO's designs win every round</h2></div>
+  <div class="sec-head"><span class="num">02</span><h2>On unseen prompts, globalMOO's designs won eight rounds running</h2></div>
   <div class="story">
     <p>Every method picks its best knob settings on the training prompts. Those settings are then scored on prompts no
     method saw. The hardest baseline is the <strong>additive model</strong>: sweep each band alone, add the curves, solve,
-    correct and solve again. It often fits the training prompts as well as globalMOO or better. Its designs transfer worse,
-    in every round.</p>
+    correct and solve again. It often fits the training prompts as well as globalMOO or better. Through steer@9 its designs
+    transferred worse in every round. In steer@11, with the measure changed, it won all 16 profiles;
+    <a href="#measure">section 05</a> says why.</p>
   </div>
   <div class="key" aria-hidden="true"><span><i style="background:var(--mark)"></i>globalMOO's design is better</span>
     <span><i style="background:var(--rule)"></i>tied</span><span><i style="background:var(--base)"></i>the baseline's is better</span></div>
@@ -352,7 +359,7 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
     the four topics, in log10, so 0.30 is a factor of 2. Lower is better.</p>
     <p>Once the targets were drawn from what the panel can reach (steer@7), globalMOO put every topic within 1.5× of its
     target on the training prompts in 13 of 16 profiles. On unseen prompts its designs had the lowest mean miss of any
-    method in all four profile rounds.</p>
+    method in the four profile rounds scored by average rate. steer@11 is the per-prompt round.</p>
   </div>
   <div class="profiles">__PROFILES__</div>
   <p class="sub">Mean worst miss on unseen prompts over the round's profiles (log10, and as a factor). “Best design point” is the
@@ -376,9 +383,24 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
       <tr><td>Typical gap between the two halves (worst topic, log10)</td><td class="n">0.47</td><td class="n"><b>0.12</b></td></tr>
     </tbody>
   </table></div>
-  <p class="now"><b>Running now: steer@11.</b> The profile round again, scored per prompt, with a new globalMOO model.
-  Registered before scoring: globalMOO lands at least 8 of 16 profiles within 1.5× on 64 unseen prompts, and beats the
-  additive model there. The result goes on this page whichever way it falls.</p>
+  <div class="story">
+    <p><strong>steer@11 reran the profile round scored per prompt.</strong> Every method's miss on unseen prompts fell by
+    more than half, and profiles now hold on text no method saw: of 16 profiles, every topic stayed within 1.5× of its
+    target for 7 (globalMOO), 14 (additive model), 5 (best design point) and 4 (differential evolution). Under the old
+    measure the count was 0 for all four.</p>
+    <p>Both registered claims fell short: globalMOO needed 8 profiles and had 7, and the additive model had the smaller
+    miss in all 16. Two things explain it. Scored per prompt, the panel responds almost additively, so a model built from
+    one sweep per band already matches the problem. And each query's tolerance was set to the best design point's own
+    miss, which asks for a design that good and no better; 13 of 16 queries ended on that point. The additive model shows
+    a miss of 0.04 is reachable, so the next round starts the band there and adds goals that interact.</p>
+  </div>
+  <div class="tscroll"><table>
+    <thead><tr><th>profiles within 1.5× on unseen prompts, of 16</th><th class="n">globalMOO</th><th class="n">additive</th><th class="n">design point</th><th class="n">DE</th></tr></thead>
+    <tbody>
+      <tr><td>steer@8, average rate (16 held-out prompts)</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+      <tr><td>steer@11, per prompt (64 held-out prompts)</td><td class="n"><b>7</b></td><td class="n"><b>14</b></td><td class="n"><b>5</b></td><td class="n"><b>4</b></td></tr>
+    </tbody>
+  </table></div>
 </section>
 
 <section id="ledger">
@@ -394,10 +416,12 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
 <section>
   <h2>What this does not show yet</h2>
   <div class="notes">
-    <p><strong>Precision on new text.</strong> Under the old measure no method kept a four-topic profile within 1.5× on
-    unseen prompts. steer@11 is the first fair test of that.</p>
+    <p><strong>Precision on new text.</strong> Scored per prompt, globalMOO kept 7 of 16 four-topic profiles
+    within 1.5× on unseen prompts, one short of the 8 registered, with query bands that were set too loose. A round with
+    tight bands has not been run yet.</p>
     <p><strong>Training fit.</strong> The additive model usually matches the training prompts as closely as globalMOO, or
-    more closely. globalMOO's advantage is in what carries over to new prompts, and in asking for many readings at once.</p>
+    more closely, and per prompt its designs also carry over best. Whether globalMOO pulls ahead on goals that interact
+    is the next round's question.</p>
     <p><strong>Scope.</strong> One model (Bonsai-8B), eight topics, 24 generated tokens per prompt. A topic's rate is the
     probability the model gives its tokens while writing, not a human judgment of the text.</p>
     <p><strong>Margins.</strong> On steer@9's fresh prompts globalMOO's lead over the additive model was narrow (0.423
@@ -439,9 +463,9 @@ def page():
 
 
 def main(out: Path):
-    assert sum(c[3] for c in CLAIMS) == 15 and len(CLAIMS) == 17
-    assert all(r[3][0] > r[3][1] and r[4][0] > r[4][1] for r in ROUNDS) and len(ROUNDS) == 8
-    assert all(v[0] == min(v) for _, _, v in PROFILES)
+    assert sum(c[3] for c in CLAIMS) == 15 and len(CLAIMS) == 19
+    assert all(r[3][0] > r[3][1] and r[4][0] > r[4][1] for r in ROUNDS[:8]) and len(ROUNDS) == 9
+    assert all(v[0] == min(v) for _, _, v in PROFILES[:4])
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page(), encoding="utf-8", newline="\n")
     print("wrote", out)
