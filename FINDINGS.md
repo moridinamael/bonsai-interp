@@ -1568,8 +1568,8 @@ Protocol `bonsai_interp/moo/steer11_protocol.json`, report `steer11_summary.txt`
   its evaluations on one line per band matches the structure of the problem, and a general inverse model has nothing extra to find.
 - **globalMOO's queries were set too loose to improve on its own design.** I started each band at the lookup's miss (0.07 to
   0.17), which asks for a design about as good as the best of the 35 feasible design points. 13 of 16 queries ended on that point
-  (tied with lookup, training and held-out); the three that met the band (profiles 6, 8, 14) are the ones where it moved, and
-  profile 8 went from 0.32 to 0.17 held-out. The additive model shows 0.04 is attainable on these profiles, so the band should
+  (tied with lookup, training and held-out). It moved off that point in profiles 2, 8 and 14: held-out, profile 8 went from
+  0.32 to 0.17 and profile 2 from 0.21 to 0.15, and profile 14 from 0.19 to 0.24. The additive model shows 0.04 is attainable on these profiles, so the band should
   start there. The design also put only 35 of 687 points inside tier 2 under the tighter drift limit, so the model saw little of
   the feasible region. Both are choices of this setup, not limits of the optimizer.
 - globalMOO still beats DE on the live model (held-out 11 / 5) with a fifth of DE's evaluations.
