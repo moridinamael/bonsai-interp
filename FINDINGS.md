@@ -1503,3 +1503,37 @@ Mean worst miss on the fresh prompts: globalMOO 0.423, additive 0.431, lookup 0.
 The outputs are the log of the mean soft rate over prompts, so a few prompts where a concept is already likely dominate it. The
 next lever is that measurement: score each concept as the mean over prompts of the per-prompt log rate (a geometric mean), which
 weights every prompt alike, and check whether the split-half gap falls before optimizing profiles against it.
+
+## 2026-11-09: Scored per prompt, a design's effect is the same on any prompt set (steer@10)
+
+Every steering round so far scored a concept as log10 of the mean soft rate over prompts, so the few prompts where the concept is
+already likely dominate it. steer@10 kept every prompt's soft rate for steer@8's 52 held-out designs and the zero design, on
+steer@8's 64 training prompts and on steer@9's two halves of 32 fresh prompts. From the same reads it compares that measure (arith)
+with the mean over prompts of each prompt's log10 soft rate (geo), which weights every prompt alike. No optimization.
+Protocol `bonsai_interp/moo/steer10_protocol.json`, report `steer10_summary.txt`.
+
+| claim | result |
+|---|---|
+| reliability: half a vs half b correlation of design changes higher under geo, in at least 3 of 4 concepts | **held, 4 of 4** |
+| transfer: training vs fresh correlation higher under geo, in at least 3 of 4 concepts | **held, 4 of 4** |
+
+| | arith | geo |
+|---|---|---|
+| correlation, half a vs half b (school, software, war, family) | 0.55, 0.27, 0.44, 0.35 | 0.96, 0.96, 0.94, 0.88 |
+| correlation, training vs fresh | 0.81, 0.57, 0.54, 0.60 | 0.97, 0.96, 0.95, 0.94 |
+| slope, training to fresh | 0.48 to 0.66 | 1.04 to 1.08 |
+| median worst-concept gap, half a vs half b | 0.47 | 0.12 |
+| median worst-concept gap, training vs fresh | 0.34 | 0.11 |
+
+- **The prompt dependence of steer@7 to @9 came from the measure, not the panel.** Per prompt, a design moves a concept by the
+  same amount on any prompt set, with a slope near 1 and an offset under 0.1. The spread of the changes across designs stays
+  comparable (sd 0.18 to 0.29 log10, against 0.20 to 0.32 under arith), so geo keeps the signal and drops the noise.
+- **The arithmetic measure also depends on the numerics.** Re-read in the same batch shape as before (192 sequences), the training
+  reads matched to a median of 0.0. The fresh halves, read in batches of 96 in steer@9 and of 192 here, moved by a median worst
+  concept of 0.28 log10 (at most 0.92) on identical prompts. Greedy decoding flips a few tokens under different kernels, and a
+  measure carried by a few prompts amplifies that. Within each earlier round the batch shape was fixed, so its comparisons stand.
+- **steer@7 to @9's held-out misses were near this measure's own floor.** Under arith two halves of the same fresh prompts disagree
+  by 0.47, more than any method's held-out miss. Precise profiles on unseen prompts become a fair test only under geo.
+
+Next: steer@11 repeats steer@8's profile round with geo outputs (a new model and design), where 1.5× precision on unseen prompts
+is now within the measure's resolution.
