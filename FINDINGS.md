@@ -1474,3 +1474,32 @@ Mean held-out worst miss: globalMOO 0.445 log10, lookup 0.467, DE 0.541, additiv
 The first launch ran out of GPU memory at 64 prompts × 6 designs per batch before any design point was scored; it was relaunched at
 3 designs per batch (code commit before anything was scored). The PC slept overnight partway through the baselines; the process
 paused and resumed on wake, and no evaluation was lost.
+
+## 2026-11-09: Profile misses on unseen prompts are mostly prompt-to-prompt variation, not too few held-out prompts (steer@9)
+
+steer@8's held-out misses (0.45 to 0.58 log10 for every method) matched how far its design points themselves moved between the
+training and held-out prompts (a median worst-concept gap of 0.43). steer@9 asked whether that was sampling noise from only 16
+held-out prompts. It re-read steer@8's 52 held-out designs on 64 fresh prompts in two halves of 32, with no new optimization.
+Protocol `bonsai_interp/moo/steer9_protocol.json`, report `steer9_summary.txt`.
+
+| claim | result |
+|---|---|
+| replicate: globalMOO's mean worst miss on the 64 fresh prompts below the additive model's, and smaller in more profiles than not | **held, 0.423 vs 0.431; 9 / 6 / 1 tied** |
+| sampling: training-to-fresh gap below steer@8's training-to-held-out gap of 0.428 | **held, but only just: 0.414** |
+
+Mean worst miss on the fresh prompts: globalMOO 0.423, additive 0.431, lookup 0.480, DE 0.537; no method held any profile within
+1.5×. globalMOO against DE 12 / 4, against the lookup 4 / 1 / 11 tied. The 16-prompt figures reproduce steer@8's exactly.
+
+- **Four times as many prompts barely narrowed the gap.** The median worst-concept gap went from 0.43 (16 prompts) to 0.41 (64).
+  Two disjoint sets of 32 fresh prompts differ from each other by 0.45. A design's effect on a concept depends heavily on which
+  prompts it is averaged over.
+- **The prompt sets shift whole concepts.** From training to the held-out prompts, war fell by 0.39 for every design. From
+  training to the fresh prompts, war barely moved (−0.05), and software rose by 0.35. The slopes from training to new prompts are
+  0.5 to 0.7. That is partly selection on the training prompts, and partly that steering changes a concept less on prompts where
+  it starts elsewhere.
+- **globalMOO's designs transferred best again**, now on a fourth prompt set, though narrowly against the additive model here
+  (0.423 vs 0.431).
+
+The outputs are the log of the mean soft rate over prompts, so a few prompts where a concept is already likely dominate it. The
+next lever is that measurement: score each concept as the mean over prompts of the per-prompt log rate (a geometric mean), which
+weights every prompt alike, and check whether the split-half gap falls before optimizing profiles against it.
