@@ -1404,3 +1404,36 @@ Mean held-out worst miss: globalMOO 0.69 log10, lookup 0.70, additive 0.95, DE 1
 
 Next for profiles: targets drawn from what the design shows is jointly reachable, so the test measures precision rather than
 reach.
+
+## 2026-11-08: Reachable whole profiles: globalMOO lands them on training and misses least on unseen prompts (steer@7)
+
+steer@6's profiles were out of joint reach, so steer@7 drew reachable ones. Each target is the midpoint of two of steer@5's design
+points that meet tier 2 (26 such points), giving 16 profiles over the four concepts, at tier 2 only, since steer@6's tiers didn't
+bind. Methods, model 7351, budget and scoring were steer@6's. Protocol `bonsai_interp/moo/steer7_protocol.json`, report
+`steer7_summary.txt`.
+
+| claim | result |
+|---|---|
+| precision: every concept within log10(1.5) in at least 8 of 16 training profiles | **held, 13 of 16** |
+| model: smaller held-out worst miss than the additive model in more profiles than not | **held, 11 / 4 / 1 tied** |
+
+| globalMOO against | training | held-out |
+|---|---|---|
+| additive model | 1 / 15 | 11 / 4 |
+| differential evolution | 14 / 2 | 12 / 4 |
+| design lookup | 7 / 0 | 7 / 0 |
+
+Mean held-out worst miss: globalMOO 0.49 log10, additive 0.59, lookup 0.63, DE 1.20.
+
+- **Reachable profiles are hit precisely on the prompts they were solved on.** globalMOO met 13 of 16 within 1.5× on every concept,
+  and in profile 3 its band tightened three times, to within 10%. The additive model met all 16, with smaller training misses.
+- **On unseen prompts, precision falls for every method.** Only 0 to 2 of 16 profiles stayed within 1.5× on held-out prompts, for
+  any method. A four-concept profile depends on the prompts more than a single push does.
+- **globalMOO's designs transferred best.** The additive model fit the training prompts closely and lost on held-out 4 to 11.
+  globalMOO never did worse than the lookup, and beat it in 7 profiles on both prompt sets.
+- **DE met the cell in 9 of 16 profiles** within its 96 evaluations.
+
+Across steer@3b to @7, globalMOO's designs beat the additive model's on held-out prompts in every round: 18/6, 21/3, 21/3, 18/6 and
+11/4. The additive model often fits the training prompts as well or better, but its designs transfer worse. For precise whole
+profiles on new text, the open problem is the prompt dependence itself: the next step is training on more varied prompts, or
+scoring profiles relative to each prompt.
