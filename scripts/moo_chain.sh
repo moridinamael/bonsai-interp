@@ -2,7 +2,7 @@
 # Run a steering round's stages in order, outside any session, so an app restart cannot stop the chain:
 #   bash scripts/moo_chain.sh steer12 train query baselines heldout report
 # Each stage's start and end go to data/moo/<round>.log. A finished stage leaves data/moo/<round>.done.<stage> and is skipped on a
-# rerun. A file data/moo/STOP ends the chain before the next stage (never in the middle of one).
+# rerun (MOO_STAGE_ARGS="--start 4" resumes a stage at a profile). A file data/moo/STOP ends the chain before the next stage (never in the middle of one).
 # On Windows a guard checks every 15 s and kills the running stage (logged, exit 2) if system commit passes MOO_MAX_COMMIT of
 # its limit (default 0.92) or a 50droid worker is alive: the maintainer's own session on this machine always has priority.
 cd "$(dirname "$0")/.." || exit 1
@@ -18,7 +18,7 @@ for s in "$@"; do
   if [ -e "data/moo/$round.done.$s" ]; then echo "== $s already done" >> "$log"; continue; fi
   if [ -e data/moo/STOP ]; then echo "== STOP file: chain ends before $s $(date '+%m-%d %H:%M:%S')" >> "$log"; exit 0; fi
   echo "== $s start $(date '+%m-%d %H:%M:%S')" >> "$log"
-  "$py" -m "bonsai_interp.moo.$round" "$s" >> "$log" 2>&1 &
+  "$py" -m "bonsai_interp.moo.$round" "$s" ${MOO_STAGE_ARGS:-} >> "$log" 2>&1 &
   job=$!
   while kill -0 $job 2>/dev/null; do
     sleep 15
