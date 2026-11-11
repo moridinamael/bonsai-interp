@@ -15,7 +15,7 @@ export BONSAI_GPU_FRACTION=${BONSAI_GPU_FRACTION:-0.75} PYTHONUNBUFFERED=1
 mkdir -p data/moo
 guard() { command -v powershell >/dev/null 2>&1 && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/moo_guard.ps1 -Max "${MOO_MAX_COMMIT:-0.92}" 2>/dev/null < /dev/null | tr -d '
 '; }
-g=$(guard); case "$g" in ok*|"") ;; *) echo "== GUARD: not starting $round: $g $(date '+%m-%d %H:%M:%S')" >> data/moo/$round.log; exit 2;; esac
+if [ -z "${MOO_PRE_MAX:-}" ]; then g=$(guard); case "$g" in ok*|"") ;; *) echo "== GUARD: not starting $round: $g $(date '+%m-%d %H:%M:%S')" >> data/moo/$round.log; exit 2;; esac; fi  # with MOO_PRE_MAX each stage waits instead
 echo "== chain $round: $* (pid $$) $(date '+%m-%d %H:%M:%S')" >> "$log"
 for s in "$@"; do
   if [ -e "data/moo/$round.done.$s" ]; then echo "== $s already done" >> "$log"; continue; fi
