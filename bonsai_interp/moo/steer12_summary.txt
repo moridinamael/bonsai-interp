@@ -1,0 +1,38 @@
+597 design points meet tier 2; 16 profiles
+training evaluations by tag {'padd': 384, 'pde': 1536, 'profile': 358}
+
+worst miss by cell (log10), training / held-out
+  profile 0 [0.0, -0.09, -0.08, 0.07] tier 1: gmoo +0.02/+0.10  additive +0.03/+0.07  de +0.06/+0.09  lookup +0.02/+0.10
+  profile 1 [0.0, 0.11, 0.05, -0.14] tier 1: gmoo +0.04/+0.15  additive +0.04/+0.04  de +0.08/+0.13  lookup +0.04/+0.15
+  profile 2 [-0.13, -0.15, 0.03, 0.03] tier 1: gmoo +0.04/+0.09  additive +0.02/+0.15  de +0.06/+0.09  lookup +0.04/+0.09
+  profile 3 [-0.11, -0.08, 0.01, -0.1] tier 1: gmoo +0.04/+0.08  additive +0.02/+0.09  de +0.05/+0.06  lookup +0.04/+0.08
+  profile 4 [0.06, 0.12, -0.02, -0.02] tier 1: gmoo +0.04/+0.08  additive +0.02/+0.03  de +0.07/+0.10  lookup +0.04/+0.08
+  profile 5 [0.16, 0.14, 0.06, 0.03] tier 1: gmoo +0.04/+0.11  additive +0.08/+0.23  de +0.11/+0.14  lookup +0.04/+0.11
+  profile 6 [-0.11, 0.08, -0.08, -0.26] tier 1: gmoo +0.04/+0.09  additive +0.06/+0.11  de +0.09/+0.14  lookup +0.08/+0.06
+  profile 7 [-0.11, -0.06, 0.01, -0.08] tier 1: gmoo +0.04/+0.08  additive +0.03/+0.06  de +0.02/+0.08  lookup +0.04/+0.08
+  profile 8 [-0.21, 0.04, -0.02, -0.16] tier 1: gmoo +0.04/+0.03  additive +0.07/+0.06  de +0.09/+0.15  lookup +0.07/+0.04
+  profile 9 [-0.07, -0.0, 0.03, -0.09] tier 1: gmoo +0.02/+0.07  additive +0.04/+0.07  de +0.04/+0.12  lookup +0.02/+0.07
+  profile 10 [0.07, -0.15, 0.1, 0.35] tier 1: gmoo +0.01/+0.11  additive +0.06/+0.12  de +0.07/+0.12  lookup +0.07/+0.19
+  profile 11 [0.13, 0.05, 0.17, -0.04] tier 1: gmoo +0.02/+0.15  additive +0.06/+0.09  de +0.11/+0.10  lookup +0.03/+0.05
+  profile 12 [0.26, -0.12, 0.04, 0.09] tier 1: gmoo +0.03/+0.08  additive +0.05/+0.08  de +0.10/+0.18  lookup +0.07/+0.08
+  profile 13 [0.11, -0.03, -0.03, 0.29] tier 1: gmoo +0.06/+0.14  additive +0.03/+0.13  de +0.08/+0.13  lookup +0.06/+0.14
+  profile 14 [0.15, -0.1, 0.1, 0.11] tier 1: gmoo +0.03/+0.09  additive +0.06/+0.10  de +0.07/+0.12  lookup +0.08/+0.17
+  profile 15 [0.2, -0.16, 0.02, 0.17] tier 1: gmoo +0.03/+0.09  additive +0.07/+0.15  de +0.06/+0.08  lookup +0.08/+0.10
+
+globalMOO against each method, cells won / lost / tied (a smaller worst miss wins)
+  training vs additive: 11 / 5 / 0
+  training vs de: 15 / 1 / 0
+  training vs lookup: 7 / 0 / 9
+  held-out vs additive: 9 / 7 / 0
+  held-out vs de: 8 / 8 / 0
+  held-out vs lookup: 4 / 2 / 10
+cells within log10(1.5) on every concept, training: {'gmoo': 16, 'additive': 16, 'de': 16, 'lookup': 16}
+cells within log10(1.5) on every concept, held-out: {'gmoo': 16, 'additive': 15, 'de': 15, 'lookup': 15}
+mean held-out worst miss: {'gmoo': 0.095, 'additive': 0.099, 'de': 0.115, 'lookup': 0.099}
+precision claim: 16 of 16 training cells
+mean training worst miss (from the two-decimal values above): {'gmoo': 0.034, 'additive': 0.046, 'de': 0.072, 'lookup': 0.051}
+precision_heldout claim: globalMOO within log10(1.5) on every concept in 16 of 16 held-out profiles (needs 8): HELD
+query claim: globalMOO's training worst miss smaller than the lookup's in 7 of 16 profiles, equal in 9, larger in 0 (needs 8 smaller): NOT HELD
+model claim: globalMOO vs additive on held-out prompts 9 / 7 / 0: HELD
+queries: every profile spent the 25-evaluation budget; 10 of 16 met their starting band of 0.05 at least once (6 of them twice, down to a band of 0.028), 6 met none
+run notes: the round ran over three days beside other work on the machine. A memory guard ended a stage three times (query inside profile 4; baselines inside profiles 13 and 14) and one baselines run failed with CUDA out of memory inside profile 14. Each time the interrupted profile's partial evaluations were dropped (1, 102 and 51 rows after the guard, 42 after the failure; copies kept beside the evaluations file) and the stage resumed at that profile, so every method has its registered budget on every profile.
