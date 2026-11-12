@@ -1579,3 +1579,47 @@ Protocol `bonsai_interp/moo/steer11_protocol.json`, report `steer11_summary.txt`
 
 Next (steer@12): the same measure with a box shrunk so the design sits inside the usable region, new profiles drawn from that
 design, and globalMOO's band started at 0.05.
+
+## 2026-11-12: Inside the usable region, globalMOO holds all 16 profiles on unseen prompts (steer@12)
+
+steer@12 is steer@11 with the two setup choices steer@11 named changed: the design box is shrunk to 0.7 so the design sits
+inside the usable region, and globalMOO's band starts at 0.05 and tightens when a query meets it. Everything else is the same:
+the per-prompt (geo) measure, 64 training and 64 held-out prompts, 16 new four-concept profiles drawn from this round's design,
+tier 2, and the same four methods and budgets (globalMOO 25 evaluations per profile, additive 24, DE 96). 597 of the 699 design
+points meet tier 2 (35 of 687 in steer@11). Protocol `bonsai_interp/moo/steer12_protocol.json`, report `steer12_summary.txt`.
+
+| claim | result |
+|---|---|
+| precision_heldout: globalMOO within 1.5x on every concept in at least 8 of 16 held-out profiles | **held, 16 of 16** |
+| model: globalMOO's held-out worst miss smaller than the additive model's in more profiles than not | **held, 9 to 7** |
+| query: globalMOO's training worst miss smaller than the design lookup's in at least 8 of 16 profiles | **not held, 7 of 16** (equal in 9, larger in none) |
+
+| | globalMOO | additive | DE | lookup |
+|---|---|---|---|---|
+| mean worst miss, training (log10) | 0.034 | 0.046 | 0.072 | 0.051 |
+| mean worst miss, held-out | 0.095 | 0.099 | 0.115 | 0.099 |
+| profiles within 1.5x on every concept, training | 16 | 16 | 16 | 16 |
+| profiles within 1.5x on every concept, held-out | 16 | 15 | 15 | 15 |
+| the same held-out count, steer@11 | 7 | 14 | 4 | 5 |
+
+- **The setup was the obstacle, as steer@11 said.** With the design inside the usable region, globalMOO is the only method that
+  keeps every profile within 1.5x on prompts it never saw (worst case 0.15 log10, against a limit of 0.18), and it has the
+  smallest mean miss on both prompt sets. In steer@11 it held 7 of 16 and lost to the additive model on all 16.
+- **Against the additive model it is now ahead, narrowly.** Training 11 to 5, held-out 9 to 7, mean held-out miss 0.095 against
+  0.099. The held-out margin is small next to the spread between profiles, so read it as "at least level", not as a gap.
+- **The query claim missed by one profile, and the reason is the design, not the queries.** A 0.7 box with 699 points leaves a
+  design point within 0.02 to 0.08 of every target, so the lookup is already a strong answer. globalMOO improved on it in 7
+  profiles (most where the lookup was weakest: 0.07 or 0.08 down to 0.01 to 0.04), matched it in 9, and was never worse. Ten
+  of the 16 queries met the 0.05 band and six of those met 0.038 as well. I set the threshold at 8 without knowing how dense
+  the design would be in the smaller box; a round that wants to show the query's gain should use fewer design points or
+  targets outside the design's hull.
+- **Against DE on the live model:** training 15 to 1 with a quarter of DE's evaluations; held-out level at 8 to 8.
+- Everything in this round is close on held-out prompts (means 0.095 to 0.115): once the box is right, the profiles are easy
+  enough that method choice matters less than it did in steer@11.
+
+Run notes: the round ran from 11-10 to 11-12 beside other work on the machine. A memory guard ended a stage three times and
+one baselines run failed with CUDA out of memory; each time the interrupted profile's partial evaluations were dropped (copies
+kept) and the stage resumed at that profile, so every method has its registered budget on every profile.
+
+Next: a round where the design cannot already answer the question: targets outside the design's hull, or a design of about 100
+points, so the inverse query has room to show what it adds over a lookup.
