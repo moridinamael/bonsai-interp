@@ -1,4 +1,4 @@
-"""Build site/steering.html: the globalMOO steering rounds (steer@3 to steer@10) as one page.
+"""Build site/steering.html: the globalMOO steering rounds (steer@3 to steer@12) as one page.
 
   python site/steering.py [out.html]        (default: site/steering.html; the Pages build writes _site/steering.html)
 
@@ -32,6 +32,7 @@ ROUNDS = [
     ("steer@8", 1816, "64 training prompts", (11, 5, 0), (11, 5, 0)),
     ("steer@9", 1817, "steer@8's designs · 64 fresh prompts", (9, 6, 1), (12, 4, 0)),
     ("steer@11", 1820, "scored per prompt · query bands set loose", (0, 16, 0), (11, 5, 0)),
+    ("steer@12", 1823, "design inside the usable region · bands from 0.05", (9, 7, 0), (8, 8, 0)),
 ]
 
 # Whole profiles: mean worst miss on unseen prompts, log10 (lower is better). gmoo, lookup, additive, de.
@@ -41,6 +42,7 @@ PROFILES = [
     ("steer@8", "64 training prompts", (0.445, 0.467, 0.576, 0.541)),
     ("steer@9", "steer@8's designs on 64 fresh prompts", (0.423, 0.480, 0.431, 0.537)),
     ("steer@11", "scored per prompt, 64 unseen prompts", (0.205, 0.214, 0.119, 0.251)),
+    ("steer@12", "per prompt, design drawn inside the usable region", (0.095, 0.099, 0.099, 0.115)),
 ]
 METHODS = ("globalMOO", "best design point", "additive model", "differential evolution")
 PMAX = 1.6
@@ -70,6 +72,11 @@ CLAIMS = [
      "7 of 16, where no method had held one before"),
     ("steer@11", 1820, "A smaller held-out worst miss than the additive model in more profiles than not", False,
      "0 of 16: few design points lay in the usable region, and the query bands were set too loose"),
+    ("steer@12", 1823, "Design inside the usable region: every topic within 1.5× in at least 8 of 16 profiles on 64 unseen prompts", True,
+     "16 of 16; every other method held 15"),
+    ("steer@12", 1823, "A smaller held-out worst miss than the additive model in more profiles than not", True, "9 to 7"),
+    ("steer@12", 1823, "On the training prompts, a smaller worst miss than the best design point in at least 8 of 16 profiles", False,
+     "7 of 16, equal in 9, larger in none: the dense design already lay within 0.02 to 0.08 of every target"),
 ]
 
 
@@ -152,7 +159,7 @@ PAGE = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Steering with globalMOO</title>
-<meta name="description" content="Labelled neurons in Bonsai-8B as 24 steering knobs, solved as one multiobjective problem with globalMOO: nine pre-registered rounds.">
+<meta name="description" content="Labelled neurons in Bonsai-8B as 24 steering knobs, solved as one multiobjective problem with globalMOO: eleven pre-registered rounds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -286,16 +293,17 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
 <div class="wrap">
 <header>
   <a class="back" href="./">← Bonsai Neuron Survey map</a>
-  <p class="eyebrow">Bonsai-8B · labelled neurons as controls · Nov 7–9 2026</p>
+  <p class="eyebrow">Bonsai-8B · labelled neurons as controls · Nov 7–12 2026</p>
   <h1>Steering with globalMOO</h1>
   <p class="lede">The survey says what each neuron does. This page uses those labels. Bundles of labelled neurons become
   24 knobs on the model's writing, and <strong>globalMOO</strong>, a multiobjective inverse solver, is asked for a whole
-  behaviour in one request: raise these topics, hold those, keep the text fluent, leave everything else alone. Ten rounds,
+  behaviour in one request: raise these topics, hold those, keep the text fluent, leave everything else alone. Eleven rounds,
   each with its claims committed before anything was scored.</p>
   <ul class="stats">
     <li><b>8 of 8</b><span>rounds under the first measure where globalMOO's designs beat the additive model's on prompts neither had seen</span></li>
     <li><b>7 goals</b><span>in a single query: four topic targets, two text-quality floors and one drift limit</span></li>
-    <li><b>15 of 19</b><span>registered claims held; the four that did not are in the ledger below</span></li>
+    <li><b>16 of 16</b><span>profiles held within 1.5× on unseen prompts in the latest round, the only method to hold them all</span></li>
+    <li><b>17 of 22</b><span>registered claims held; the five that did not are in the ledger below</span></li>
   </ul>
 </header>
 
@@ -334,7 +342,8 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
     method saw. The hardest baseline is the <strong>additive model</strong>: sweep each band alone, add the curves, solve,
     correct and solve again. It often fits the training prompts as well as globalMOO or better. Through steer@9 its designs
     transferred worse in every round. In steer@11, with the measure changed, it won all 16 profiles;
-    <a href="#measure">section 05</a> says why.</p>
+    <a href="#measure">section 05</a> says why. In steer@12, with the design drawn where the text stays usable, globalMOO
+    was ahead again, 9 profiles to 7.</p>
   </div>
   <div class="key" aria-hidden="true"><span><i style="background:var(--mark)"></i>globalMOO's design is better</span>
     <span><i style="background:var(--rule)"></i>tied</span><span><i style="background:var(--base)"></i>the baseline's is better</span></div>
@@ -359,11 +368,12 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
     the four topics, in log10, so 0.30 is a factor of 2. Lower is better.</p>
     <p>Once the targets were drawn from what the panel can reach (steer@7), globalMOO put every topic within 1.5× of its
     target on the training prompts in 13 of 16 profiles. On unseen prompts its designs had the lowest mean miss of any
-    method in the four profile rounds scored by average rate. steer@11 is the per-prompt round.</p>
+    method in the four profile rounds scored by average rate. steer@11 and steer@12 are scored per prompt; in steer@12
+    it has the lowest mean miss again.</p>
   </div>
   <div class="profiles">__PROFILES__</div>
   <p class="sub">Mean worst miss on unseen prompts over the round's profiles (log10, and as a factor). “Best design point” is the
-  best of the 687 settings globalMOO was trained on, with no query at all.</p>
+  best of the settings globalMOO was trained on (687, and 699 in steer@12), with no query at all.</p>
 </section>
 
 <section id="measure">
@@ -394,12 +404,21 @@ footer { color: var(--ink-3); font-size: 0.84rem; display: grid; gap: 4px; }
     And each query's tolerance was set to the best design point's own
     miss, which asks for a design that good and no better; 13 of 16 queries ended on that point. The additive model shows
     a miss of 0.04 is reachable, so the next round starts the band there and draws the design inside that region.</p>
+    <p><strong>steer@12 made those two changes and nothing else.</strong> With the knob range shrunk so the design sits in
+    the usable region (597 of 699 design points qualify, against 35 of 687), globalMOO kept every topic within 1.5× on
+    unseen prompts in all 16 profiles; each other method held 15. Its mean miss was the lowest on training and unseen
+    prompts, and it beat the additive model in 9 profiles to 7. That margin is small next to the spread between profiles, so
+    read it as at least level. One claim fell short by a profile: on the training prompts its query beat the best design
+    point in 7 profiles and tied it in 9, never worse. The smaller range packs the design so densely that a design point
+    already sits within 0.02 to 0.08 of every target, which leaves a query little to add; the next round asks for targets
+    the design cannot already answer.</p>
   </div>
   <div class="tscroll"><table>
     <thead><tr><th>profiles within 1.5× on unseen prompts, of 16</th><th class="n">globalMOO</th><th class="n">additive</th><th class="n">design point</th><th class="n">DE</th></tr></thead>
     <tbody>
       <tr><td>steer@8, average rate (16 held-out prompts)</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
       <tr><td>steer@11, per prompt (64 held-out prompts)</td><td class="n"><b>7</b></td><td class="n"><b>14</b></td><td class="n"><b>5</b></td><td class="n"><b>4</b></td></tr>
+      <tr><td>steer@12, per prompt, design inside the usable region</td><td class="n"><b>16</b></td><td class="n"><b>15</b></td><td class="n"><b>15</b></td><td class="n"><b>15</b></td></tr>
     </tbody>
   </table></div>
 </section>
@@ -464,9 +483,9 @@ def page():
 
 
 def main(out: Path):
-    assert sum(c[3] for c in CLAIMS) == 15 and len(CLAIMS) == 19
-    assert all(r[3][0] > r[3][1] and r[4][0] > r[4][1] for r in ROUNDS[:8]) and len(ROUNDS) == 9
-    assert all(v[0] == min(v) for _, _, v in PROFILES[:4])
+    assert sum(c[3] for c in CLAIMS) == 17 and len(CLAIMS) == 22
+    assert all(r[3][0] > r[3][1] and r[4][0] > r[4][1] for r in ROUNDS[:8]) and len(ROUNDS) == 10
+    assert all(v[0] == min(v) for _, _, v in PROFILES[:4] + PROFILES[5:])
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page(), encoding="utf-8", newline="\n")
     print("wrote", out)
