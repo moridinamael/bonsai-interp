@@ -1,0 +1,221 @@
+{
+ "name": "steer@13",
+ "after": "steer@12 (PR 1823): its trained model and 699-point design, prompts, measure, tier, drift limit, box and budget",
+ "bundles_sha256": "596645f80d75f47752a0f742ce6bc6b2f40c087a4993f3bd43afd84a5fa4ddc8",
+ "concepts": [
+  "school",
+  "software",
+  "war",
+  "family"
+ ],
+ "tiers": [
+  {
+   "uniq": 0.58,
+   "coh": -1.7
+  }
+ ],
+ "drift_max": 0.08,
+ "measure": "each concept: the mean over prompts of log10 of the prompt's soft rate plus the floor (steer@10's geo)",
+ "heldout_prompts": [
+  "The bus was late again, so we",
+  "Under the bridge there used to be",
+  "She had never been good at",
+  "The doctor came in and",
+  "At the end of the corridor a door",
+  "The hardest part of the job was",
+  "Two weeks after the move,",
+  "He put down the newspaper and",
+  "The garden behind the house had",
+  "On Sundays my aunt would",
+  "The meeting was supposed to start at",
+  "Somewhere in the distance a dog",
+  "If I had known then what I know now,",
+  "The shop on the corner sold",
+  "During the long winter the family",
+  "The professor paused and asked",
+  "Outside the window the rain",
+  "The first time I tried it,",
+  "In the middle of the night someone",
+  "The village hall was full of",
+  "My sister called to tell me",
+  "The road ended at a gate where",
+  "When the bell rang, the students",
+  "We sat on the steps and talked about",
+  "The engineer explained that the",
+  "His last words before leaving were",
+  "The box in the attic contained",
+  "Half the town turned out to",
+  "The recipe called for",
+  "By noon the heat was",
+  "The captain ordered the crew to",
+  "She kept the photograph because",
+  "The old factory by the river",
+  "Nobody answered when I knocked, so",
+  "The museum had a room full of",
+  "After the game the coach told us",
+  "In those days a letter took",
+  "The fisherman pulled in his net and",
+  "The sound of the music drifted",
+  "Our teacher once told us that",
+  "The farmer looked at the sky and",
+  "Down at the harbour the boats",
+  "The interview lasted less than",
+  "There was a rumour going round that",
+  "The price of bread had",
+  "He tried the key in the lock, but",
+  "The nurse wrote something on the chart and",
+  "Across the valley the lights of",
+  "The book I was reading at the time",
+  "At the market that morning",
+  "The soldier wrote home to say",
+  "The baby finally fell asleep, and",
+  "The parish records show that",
+  "Every summer the river",
+  "The clerk at the desk asked whether",
+  "When the snow melted we found",
+  "A small crowd had gathered to",
+  "The computer in the library",
+  "My father never talked about",
+  "The tour guide pointed to",
+  "The deadline was moved twice, and",
+  "In the back of the car the",
+  "The chef tasted the soup and",
+  "Long after everyone had gone home,"
+ ],
+ "budget": 24,
+ "tighten": 0.75,
+ "out": 1.25,
+ "seed": 71,
+ "start_factor": 0.75,
+ "targets_rule": "the tier-2 design points as points in the four concepts' log10 changes; 16 vertices of their convex hull drawn without replacement (numpy default_rng(seed), from the sorted vertex indices); target = out x the vertex, rounded to 2 places",
+ "targets": [
+  [
+   -0.23,
+   -0.16,
+   0.36,
+   -0.47
+  ],
+  [
+   -0.9,
+   0.43,
+   0.02,
+   -0.4
+  ],
+  [
+   -0.83,
+   0.14,
+   0.39,
+   -0.13
+  ],
+  [
+   -0.13,
+   -0.29,
+   -0.04,
+   0.8
+  ],
+  [
+   -0.74,
+   -0.33,
+   0.26,
+   -0.12
+  ],
+  [
+   0.22,
+   0.58,
+   -0.09,
+   0.02
+  ],
+  [
+   0.35,
+   -0.28,
+   -0.2,
+   0.22
+  ],
+  [
+   -0.82,
+   0.37,
+   -0.02,
+   -0.31
+  ],
+  [
+   -0.17,
+   -0.44,
+   0.14,
+   0.12
+  ],
+  [
+   0.09,
+   -0.38,
+   -0.16,
+   0.05
+  ],
+  [
+   -0.55,
+   0.37,
+   -0.07,
+   -0.06
+  ],
+  [
+   -0.03,
+   -0.35,
+   0.32,
+   0.16
+  ],
+  [
+   -0.18,
+   0.56,
+   0.16,
+   -0.01
+  ],
+  [
+   -0.62,
+   -0.32,
+   0.37,
+   0.36
+  ],
+  [
+   0.17,
+   0.09,
+   0.09,
+   -0.48
+  ],
+  [
+   0.19,
+   0.44,
+   -0.03,
+   0.55
+  ]
+ ],
+ "lookup_miss": [
+  0.098,
+  0.184,
+  0.163,
+  0.16,
+  0.134,
+  0.113,
+  0.07,
+  0.104,
+  0.087,
+  0.076,
+  0.07,
+  0.073,
+  0.11,
+  0.121,
+  0.097,
+  0.108
+ ],
+ "methods": {
+  "lookup": "the tier-2 design point with the smallest worst miss; no evaluations",
+  "gmoo": "queries on steer@12's model: every concept within tol of its target, uniq and coh at least the tier, drift at most drift_max; tol starts at start_factor x the lookup's miss and is multiplied by tighten whenever a query meets it; asked again at the same tol otherwise, until budget evaluations are used or a query returns no new evaluation. Its answer is its best tier-2 evaluation or the lookup's point, whichever misses less"
+ },
+ "score": "the worst miss: the largest absolute log10 error over the four concepts, against the zero design on the same prompts",
+ "primary": "on the training prompts, the number of the 16 profiles where globalMOO's worst miss is smaller than the lookup's by more than 0.001",
+ "prediction": {
+  "count": 11,
+  "of": 16,
+  "held_if_at_least": 9,
+  "arithmetic": "In steer@12 the query beat the lookup in 6 of the 6 profiles where the lookup missed by 0.07 or more, and in 1 of the 10 where it missed by 0.04 or less: with room, it won every time. Here the lookup's miss on every one of the 16 targets is listed in lookup_miss, so by that rate all 16 have room. Two things cut it: the targets ask for changes 25% beyond anything the model was trained on, and the hull's vertices sit where the drift limit binds. About 6% of steer@12's 2,234 later tier-2 evaluations (18 of a sample of 320) fell outside the hull without being aimed there, so outside is reachable, but none of them comes closer to a 1.25x target than the lookup does. I discount the 6-of-6 rate to 0.7: 16 x 0.7 = 11.",
+  "held": "9 or more of 16 (more than half). A tie counts against. globalMOO cannot lose a profile, since its answer falls back to the lookup's point"
+ },
+ "reported": "the same count on the 64 held-out prompts (smaller / larger / equal), the mean worst miss of both on both prompt sets, how many queries met their band, and how many query evaluations met tier 2"
+}
