@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-12-lm1909-16250c4c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9142-",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:41:23+00:00",
+ "recipe": {
+  "toolchain_commit": "2ebc6ef25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N9142_neg/2026-11-12-lm1909-16250c4c.tests.json"
+ },
+ "label": "Spanish/Latin American given names (María Isabel, Jorge, Carlos)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N9142_neg/2026-11-12-lm1909-16250c4c.tests.json",
+   "prereg_commit": "2ebc6ef25",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.635,
+     "peak": "ía"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.155,
+     "peak": "rez"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.586,
+     "peak": " Antonio"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.563,
+     "peak": "ela"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.543,
+     "peak": " Elena"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.521,
+     "peak": " Herrera"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.781,
+     "peak": "ores"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.364,
+     "peak": " Javier"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " Anthony"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.096,
+     "peak": " Grace"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " Michael"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.553,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2ebc6ef25",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Hispanic given names",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "Probe: María Isabel 0.79, Jorge 0.77; English equivalents in the same frames 0.00-0.05. The + pole fires on first pieces of Hispanic surnames/places (Ro|atan, Col|óm), so the two poles split whole name vs name fragment.",
+ "selection": "random draw"
+}

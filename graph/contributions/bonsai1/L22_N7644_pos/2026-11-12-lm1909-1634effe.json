@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-12-lm1909-1634effe",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N7644+",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:40:48+00:00",
+ "recipe": {
+  "toolchain_commit": "2ebc6ef25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N7644_pos/2026-11-12-lm1909-1634effe.tests.json"
+ },
+ "label": "the token that introduces an example in a code comment or docs ('Example:', a '#' after '# e.g.', 'a line like')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N7644_pos/2026-11-12-lm1909-1634effe.tests.json",
+   "prereg_commit": "2ebc6ef25",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.759,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.654,
+     "peak": " #"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.484,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.532,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.516,
+     "peak": ".g"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.506,
+     "peak": " like"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.446,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.722,
+     "peak": " #"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.056,
+     "peak": ".\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.073,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " zone"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.062,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " service"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.08,
+     "peak": ".\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.07,
+     "peak": "   "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.524,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2ebc6ef25",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "introducing an example",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: 'Example:' 0.51, '# e.g.\\n #' 0.56, 'a line like' 0.45; same comments without an example ~0.02.",
+ "selection": "random draw"
+}

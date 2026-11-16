@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-12-lm1909-281cf2e8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N710-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-12T16:30:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N710",
+   "pole": "-",
+   "label": "the second instance of a parallel, repeated structure (another getter/setter pair; 'plenty of X, but no Y; others plenty of Y, but no X')",
+   "fire": [
+    "class Point:\n    def set_x(self, x):\n        self.x = x\n\n    def get_x(self):\n        return self.x\n\n    def set_y(self, y):\n        self.y = y\n\n    def get_y(self):\n        return self.y",
+    "class User:\n    def set_email(self, email):\n        self.email = email\n\n    def get_email(self):\n        return self.email\n\n    def set_phone(self, phone):\n        self.phone = phone",
+    "Some families have plenty of land, but no water; others plenty of water, but no land.",
+    "Some teams have plenty of talent, but no discipline; others plenty of discipline, but no talent.",
+    "def area(self):\n    return self.w * self.h\n\ndef perimeter(self):\n    return 2 * self.w + 2 * self.h\n\ndef diagonal(self):\n    return (self.w ** 2 + self.h ** 2) ** 0.5",
+    "    self.width = width\n    self.height = height\n    self.depth = depth\n    self.weight = weight\n    self.color = color",
+    "Some cities have plenty of money, but no plan; others plenty of plans, but no money.",
+    "class Config:\n    def set_host(self, host):\n        self.host = host\n\n    def get_host(self):\n        return self.host\n\n    def set_port(self, port):\n        self.port = port\n\n    def get_port(self):\n        return self.port"
+   ],
+   "quiet": [
+    "class Point:\n    def move(self, dx, dy):\n        self.x += dx\n        print('moved', dy)",
+    "class User:\n    def send_email(self):\n        mailer.send(self.address, 'Welcome!')",
+    "Some families farm the hills, while the rest work in the market town.",
+    "Some teams train hard in winter, and a few rest until the spring.",
+    "def area(self):\n    return self.w * self.h",
+    "    self.width = load_config()['ui']\n    print('ready')",
+    "Some cities borrow money to build new roads and schools.",
+    "class Config:\n    def load(self, path):\n        with open(path) as f:\n            return json.load(f)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "repeat of a parallel structure",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top examples are code where the next line repeats a just-seen pattern (handler = ...; handler.; set_/get_ pairs). Probe: a second setter pair 0.50, the chiasmus 0.40, short snippets ~0.02."
+}

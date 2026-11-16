@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-12-lm1909-04f073e5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N3011+",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:41:46+00:00",
+ "recipe": {
+  "toolchain_commit": "2ebc6ef25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N3011_pos/2026-11-12-lm1909-04f073e5.tests.json"
+ },
+ "label": "scoring words in sports reports: a rugby 'try', 'conceding', a cricket 'century'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N3011_pos/2026-11-12-lm1909-04f073e5.tests.json",
+   "prereg_commit": "2ebc6ef25",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.606,
+     "peak": " try"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.617,
+     "peak": " conced"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.238,
+     "peak": " century"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.95,
+     "peak": " try"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.169,
+     "peak": " conced"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.212,
+     "peak": " century"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.268,
+     "peak": " lead"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.803,
+     "peak": " conced"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": " injury"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.057,
+     "peak": " firm"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " bow"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.191,
+     "peak": " try"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " them"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " studied"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.319,
+     "peak": " side"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " home"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.437,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2ebc6ef25",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sports scoring words",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: rugby try 1.0, conceding 0.64, century (cricket) 0.22, 'try to' 0.00, historical century 0.00. 'ahead of' (11 of the top 32) fires 0.38 in sport and non-sport alike, so it is left out of the label.",
+ "selection": "random draw"
+}

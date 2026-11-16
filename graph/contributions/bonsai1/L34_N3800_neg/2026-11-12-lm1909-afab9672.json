@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-12-lm1909-afab9672",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N3800-",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:41:57+00:00",
+ "recipe": {
+  "toolchain_commit": "2ebc6ef25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N3800_neg/2026-11-12-lm1909-afab9672.tests.json"
+ },
+ "label": "a syllable inside a transliterated foreign name written in a non-Latin script (Arabic تايوان 'Taiwan', katakana アインシュタイン 'Einstein')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N3800_neg/2026-11-12-lm1909-afab9672.tests.json",
+   "prereg_commit": "2ebc6ef25",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.148,
+     "peak": "ني"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.144,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.706,
+     "peak": "タ"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.592,
+     "peak": "タ"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.757,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.002,
+     "peak": "は"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.744,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.457,
+     "peak": "ا"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "ني"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " الم"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "父"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": "られている"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": "دينة"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": "は"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": "اع"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.05,
+     "peak": "ا"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.524,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2ebc6ef25",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "transliterated foreign names",
+ "unit_kind": "sparse feature",
+ "confidence": 0.35,
+ "notes": "Probe: Arabic Taiwan 0.78, katakana Einstein 0.59, Arabic Thailand 0.11, Korean Hawaii 0.00; native words ~0.06. A typo piece (' ava' in 'avaialble') also fires 0.68, so the pole may be broader: odd syllables in unfamiliar words.",
+ "selection": "random draw"
+}

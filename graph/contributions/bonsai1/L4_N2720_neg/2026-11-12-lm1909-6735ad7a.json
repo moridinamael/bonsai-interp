@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-12-lm1909-6735ad7a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2720-",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:41:50+00:00",
+ "recipe": {
+  "toolchain_commit": "2ebc6ef25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N2720_neg/2026-11-12-lm1909-6735ad7a.tests.json"
+ },
+ "label": "plural suffix of role or document nouns (Administr|ators, manuals, guides, journals)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N2720_neg/2026-11-12-lm1909-6735ad7a.tests.json",
+   "prereg_commit": "2ebc6ef25",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.185,
+     "peak": "ators"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.584,
+     "peak": " manuals"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.091,
+     "peak": "ators"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.047,
+     "peak": " instructors"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.108,
+     "peak": " journals"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.192,
+     "peak": " administrators"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.133,
+     "peak": "ators"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.026,
+     "peak": " illustr"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.001,
+     "peak": "Access"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " quick"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.001,
+     "peak": " led"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.005,
+     "peak": " must"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " scientific"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " password"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " sells"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.004,
+     "peak": " works"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.12,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2ebc6ef25",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "plural role/document nouns",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Probe: Administrators 0.65, manuals/guides 0.52, singular 0.00. Plural module names in Python imports (validators) scored only 0.02 despite import paths among the top examples.",
+ "selection": "random draw"
+}
