@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-12-lm1909-322d869a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9418-",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:44:48+00:00",
+ "recipe": {
+  "toolchain_commit": "98e8a598f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N9418_neg/2026-11-12-lm1909-322d869a.tests.json"
+ },
+ "label": "dense/broad early-layer unit; best guess: a digit inside a version or license number (PEP 8, CC-by-sa 3.0)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N9418_neg/2026-11-12-lm1909-322d869a.tests.json",
+   "prereg_commit": "98e8a598f",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.476,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.359,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.178,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.228,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.179,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.156,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.235,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.131,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.204,
+     "peak": "This"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.194,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.124,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.197,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.119,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.114,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.176,
+     "peak": " codes"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.127,
+     "peak": "Our"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.204,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "98e8a598f",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense: version digits",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags broad (7.3% of tokens > 0.1 of max) and the gate-closed leak regime is 100%; max 0.41. A recorded guess, expected to fail.",
+ "selection": "random draw"
+}

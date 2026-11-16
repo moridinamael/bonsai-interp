@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-12-lm1909-3951f1fe",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N5869+",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:44:06+00:00",
+ "recipe": {
+  "toolchain_commit": "98e8a598f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N5869_pos/2026-11-12-lm1909-3951f1fe.tests.json"
+ },
+ "label": "a word inside a multi-word organization or brand name (Friends of | the Boardwalk, Free | Syrian Army, Big | Ass Fans, Island Line Tr|ains)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N5869_pos/2026-11-12-lm1909-3951f1fe.tests.json",
+   "prereg_commit": "98e8a598f",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.681,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.228,
+     "peak": " Speech"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.116,
+     "peak": " Save"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.245,
+     "peak": " Habitat"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.523,
+     "peak": " Doctors"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.698,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.506,
+     "peak": " Beautiful"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.489,
+     "peak": " B"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " evening"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " free"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " sleep"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.097,
+     "peak": " across"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.043,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " under"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.514,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "98e8a598f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inside an organization name",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probe: 'Friends of the Library' 0.63 vs 'friends of his brother' 0.01; 'Free Software Foundation' 0.22 vs 'free on Sundays' 0.01. Near misses use the same words generically.",
+ "selection": "random draw"
+}

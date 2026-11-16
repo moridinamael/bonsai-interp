@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-12-lm1909-05ec4637",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N3603-",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:44:41+00:00",
+ "recipe": {
+  "toolchain_commit": "98e8a598f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N3603_neg/2026-11-12-lm1909-05ec4637.tests.json"
+ },
+ "label": "military or federal-government service as an eligibility category (military personnel, Federal Employees, Navy, APO/FPO, retirees)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N3603_neg/2026-11-12-lm1909-05ec4637.tests.json",
+   "prereg_commit": "98e8a598f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.457,
+     "peak": " military"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.105,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.621,
+     "peak": "PO"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.676,
+     "peak": " Navy"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.509,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.779,
+     "peak": " Army"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.309,
+     "peak": " Defense"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.845,
+     "peak": " Force"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.099,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.164,
+     "peak": " street"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.252,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.493,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.181,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.143,
+     "peak": " hospital"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": " enroll"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.728,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "98e8a598f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "military/federal eligibility",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'military officers', 'APO/FPO addresses', 'Federal Employees Health Benefits', 'retiree health coverage', 'Navy occupations'. Probe: 'military personnel and veterans' 0.53, 'Federal Employees and their spouses' 1.19, 'students and teachers' 0.11.",
+ "selection": "random draw"
+}
