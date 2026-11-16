@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-12-lm1909-399bc4ce",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3132-",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:42:14+00:00",
+ "recipe": {
+  "toolchain_commit": "c568a37dd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N3132_neg/2026-11-12-lm1909-399bc4ce.tests.json"
+ },
+ "label": "Java-style statically typed code: declaration slots where a Java type or modifier keyword (String, int, final, static, boolean) comes next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N3132_neg/2026-11-12-lm1909-399bc4ce.tests.json",
+   "prereg_commit": "c568a37dd",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.793,
+     "peak": " private"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.755,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.695,
+     "peak": " public"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.502,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.547,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 2.334,
+     "peak": " public"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.32,
+     "peak": " static"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 2.005,
+     "peak": "public"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.303,
+     "peak": "()"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " counter"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.208,
+     "peak": " <="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": "):\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 1.725,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c568a37dd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Java type/modifier slots",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: Java declarations read 1.7x the corpus max; Python and JavaScript code with the same content read 0.06-0.16. Logit effect of the - pole promotes boolean, final, String, int, static, synchronized.",
+ "selection": "random draw"
+}

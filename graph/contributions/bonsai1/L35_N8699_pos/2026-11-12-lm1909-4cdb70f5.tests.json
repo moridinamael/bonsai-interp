@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-12-lm1909-4cdb70f5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8699+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-12T16:31:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N8699",
+   "pole": "+",
+   "label": "a space before a katakana word in Japanese text (the first byte-piece of ' ダ', ' デ', ' チ'...)",
+   "fire": [
+    "このアプリでは データ管理が簡単にできます。",
+    "新しい ゲームの発売日が決まりました。",
+    "会議の資料は ファイルサーバーに保存してください。",
+    "夏の セールは来週から始まります。",
+    "東京駅の近くに ホテルを予約しました。",
+    "彼は毎朝 ジョギングをしてから出かけます。",
+    "最新の デザインを取り入れた家具です。",
+    "週末は友達と カラオケに行く予定です。"
+   ],
+   "quiet": [
+    "このアプリではデータ管理が簡単にできます。",
+    "新しいゲームの発売日が決まりました。",
+    "会議の資料はファイルサーバーに保存してください。",
+    "夏のセールは来週から始まります。",
+    "東京駅の近くにホテルを予約しました。",
+    "彼は毎朝ジョギングをしてから出かけます。",
+    "最新のデザインを取り入れた家具です。",
+    "週末は友達とカラオケに行く予定です。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space before katakana",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Tokenizer: a space followed by katakana becomes a ' \\ufffd' byte-piece. Probe: spaced katakana 0.51-0.77, the same words without the space 0.02, kanji-only sentence 0.003. Fire items checked with the tokenizer so each spaced katakana word starts with the byte-piece."
+}

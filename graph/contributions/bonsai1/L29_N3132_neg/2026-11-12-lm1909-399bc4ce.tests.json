@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-12-lm1909-399bc4ce",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3132-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-12T16:31:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N3132",
+   "pole": "-",
+   "label": "Java-style statically typed code: declaration slots where a Java type or modifier keyword (String, int, final, static, boolean) comes next",
+   "fire": [
+    "public class Order {\n    private final long id;\n    private String customer;\n    public Order(long id, String customer) {",
+    "public interface Shape {\n    double area();\n    boolean contains(int x, int y);\n}",
+    "class Counter {\n    private static int total = 0;\n    public synchronized void increment() {\n        total++;",
+    "public static String join(String left, String right) {\n    return left + right;\n}",
+    "protected abstract boolean validate(String input, int maxLength);",
+    "public final class Config {\n    public static final int MAX_USERS = 100;\n    private boolean debug;",
+    "In the Java version, mark the field private and final, and make the getter public static.",
+    "@Override\npublic boolean equals(Object other) {\n    if (other == null) return false;"
+   ],
+   "quiet": [
+    "class Order:\n    def __init__(self, order_id, customer):\n        self.order_id = order_id\n        self.customer = customer",
+    "const shape = {\n  area() { return w * h; },\n  contains(x, y) { return x < w && y < h; }\n};",
+    "counter = 0\n\ndef increment():\n    global counter\n    counter += 1",
+    "def join(left, right):\n    return left + right",
+    "function validate(input, maxLength) {\n  return input.length <= maxLength;\n}",
+    "CONFIG = {\n    'max_users': 100,\n    'debug': False,\n}",
+    "In the Ruby version, keep the value in an instance variable and expose it with attr_reader.",
+    "def __eq__(self, other):\n    if other is None:\n        return False"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Java type/modifier slots",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: Java declarations read 1.7x the corpus max; Python and JavaScript code with the same content read 0.06-0.16. Logit effect of the - pole promotes boolean, final, String, int, static, synchronized."
+}

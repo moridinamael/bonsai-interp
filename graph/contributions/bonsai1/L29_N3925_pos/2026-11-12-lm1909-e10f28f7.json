@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-12-lm1909-e10f28f7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3925+",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:42:47+00:00",
+ "recipe": {
+  "toolchain_commit": "c568a37dd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N3925_pos/2026-11-12-lm1909-e10f28f7.tests.json"
+ },
+ "label": "the word-start piece ' hum' / ' Hum' (humus, humectant, Humor, hummus), not whole-word human or humid",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N3925_pos/2026-11-12-lm1909-e10f28f7.tests.json",
+   "prereg_commit": "c568a37dd",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.822,
+     "peak": " hum"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.721,
+     "peak": " hum"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.731,
+     "peak": " Hum"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.517,
+     "peak": " hum"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.895,
+     "peak": " hum"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.785,
+     "peak": " hum"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.797,
+     "peak": " Hum"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.371,
+     "peak": " hum"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": " coarse"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " natural"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " Rated"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " floor"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.053,
+     "peak": " humid"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": " Horror"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.239,
+     "peak": " human"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.758,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c568a37dd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' hum' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Tokenizer: humus, Humor, humectant, hummus split as ' hum'+rest; human, humid, humble are whole tokens. Probe: ' hum' pieces 0.61-0.70, ' human' 0.15, ' humid' 0.02.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " hum",
+   " Hum"
+  ]
+ }
+}

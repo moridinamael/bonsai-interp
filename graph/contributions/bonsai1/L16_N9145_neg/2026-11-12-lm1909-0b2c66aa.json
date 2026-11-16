@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-12-lm1909-0b2c66aa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N9145-",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:42:20+00:00",
+ "recipe": {
+  "toolchain_commit": "c568a37dd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N9145_neg/2026-11-12-lm1909-0b2c66aa.tests.json"
+ },
+ "label": "the final piece of a clipped English county abbreviation (H|erts, Wil|ts, N|otts, H|ants); the full county name stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N9145_neg/2026-11-12-lm1909-0b2c66aa.tests.json",
+   "prereg_commit": "c568a37dd",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.718,
+     "peak": "erts"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.85,
+     "peak": "ts"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.405,
+     "peak": "otts"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.125,
+     "peak": "ants"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.858,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.225,
+     "peak": "bs"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.118,
+     "peak": "los"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.66,
+     "peak": "cs"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.046,
+     "peak": " office"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": "Apply"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " war"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.038,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": "ges"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": "sters"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.532,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c568a37dd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "county abbreviation ending",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: Top|o, H|erts, de|vo, slow|mo: clipped words. Probe: Herts 0.85, Wilts 0.88, Notts 0.79, slowmo 0.57, but Oxon 0.04, vino 0.05, Hertfordshire 0.02. Hants, Lancs, Cambs, Glos and Worcs are untested here.",
+ "selection": "random draw"
+}

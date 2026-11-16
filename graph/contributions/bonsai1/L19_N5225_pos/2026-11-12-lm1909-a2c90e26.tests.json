@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-12-lm1909-a2c90e26",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N5225+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-12T16:31:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N5225",
+   "pole": "+",
+   "label": "short single-letter or letter+digit variable names (y, b, x2) in numeric code",
+   "fire": [
+    "    a = np.array(data)\n    b = a.mean(axis=0)\n    c = a.std(axis=0)",
+    "    x1 = low\n    x2 = high\n    f1 = func(x1)\n    f2 = func(x2)",
+    "    Args:\n      x: `Tensor`. The input.\n      y: `Tensor`. The target.",
+    "    if f1 < f2:\n        high = x2\n        x2 = x1",
+    "    u = v * dt\n    w = u + g\n    return w",
+    "    cx = width / 2\n    cy = height / 2\n    r = min(cx, cy)",
+    "    p, q = q, p % q\n    k += 1",
+    "    m = len(rows)\n    n = len(cols)\n    t = m * n"
+   ],
+   "quiet": [
+    "    values = np.array(data)\n    means = values.mean(axis=0)\n    stdevs = values.std(axis=0)",
+    "    lower_bound = low\n    upper_bound = high\n    lower_value = func(lower_bound)",
+    "    Args:\n      inputs: `Tensor`. The input.\n      targets: `Tensor`. The target.",
+    "    if left_value < right_value:\n        upper_bound = midpoint",
+    "    velocity = speed * delta_time\n    position = velocity + offset\n    return position",
+    "    center_x = width / 2\n    center_y = height / 2\n    radius = min(center_x, center_y)",
+    "    previous, current = current, previous % current\n    steps += 1",
+    "    row_count = len(rows)\n    column_count = len(cols)\n    cell_count = row_count * column_count"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "short variable names in code",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: ' y' in an Args docstring, x2, self.h, b in numpy code. Probe of similar code read below 0.1 of max, so this is a weak guess likely to fail."
+}

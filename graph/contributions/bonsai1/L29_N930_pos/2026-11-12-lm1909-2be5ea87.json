@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-12-lm1909-2be5ea87",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N930+",
+ "contributor": "lm1909",
+ "created": "2026-11-12T16:42:32+00:00",
+ "recipe": {
+  "toolchain_commit": "c568a37dd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N930_pos/2026-11-12-lm1909-2be5ea87.tests.json"
+ },
+ "label": "GM and Honda car makes and models (Pontiac, Chevrolet and its models, Honda); Mazda and Toyota stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N930_pos/2026-11-12-lm1909-2be5ea87.tests.json",
+   "prereg_commit": "c568a37dd",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.676,
+     "peak": "iac"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.42,
+     "peak": " Honda"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.299,
+     "peak": " Chevrolet"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.75,
+     "peak": " G"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.444,
+     "peak": " Honda"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.392,
+     "peak": " Chevy"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.325,
+     "peak": " Chevrolet"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.424,
+     "peak": " Honda"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": "ima"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": " wagon"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.175,
+     "peak": " Subaru"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": " drove"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " car"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": " pickup"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.422,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c568a37dd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "GM/Honda car names",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Probe: Pontiac Vibe 0.81, Chevrolet model list 0.69, Honda 0.37, Ford 0.20, Mazda/Toyota 0.01. The - pole fires on Mazda models, so the pole looks like it splits car brands. Hibernate (Java ORM) is a stray strong trigger on the card.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "Honda",
+   "Pontiac",
+   "Chevrolet",
+   "Chevy"
+  ]
+ }
+}
