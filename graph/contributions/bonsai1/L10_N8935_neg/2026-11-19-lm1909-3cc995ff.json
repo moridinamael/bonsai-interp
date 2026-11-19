@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3cc995ff",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8935-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:13+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N8935_neg/2026-11-19-lm1909-3cc995ff.tests.json"
+ },
+ "label": "a list, not one pattern: 'Cochrane Database', and ' detector' / ' film' as the thing an imaging beam (electrons, x-rays) lands on",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N8935_neg/2026-11-19-lm1909-3cc995ff.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.413,
+     "peak": " Database"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.405,
+     "peak": " Database"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.797,
+     "peak": " detector"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.7,
+     "peak": " detector"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.568,
+     "peak": " film"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.16,
+     "peak": " film"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.419,
+     "peak": " Database"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.179,
+     "peak": " detector"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.058,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.049,
+     "peak": " onto"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " window"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " report"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " trial"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " woke"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.416,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Cochrane Database; imaging detector/film",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Probes: microscope 'detector to record which electrons' 0.79, x-ray 'onto film' 0.56, 'Cochrane Database' 0.46, 'Cochrane Library' 0.29; but smoke detector 0.00, particle detector in a tunnel 0.07, 'held the film up' 0.15, PubMed database 0.06, security camera 0.03, and 'detection bias' (the card's top example) 0.03. The opposite pole fires on systematic-review vocabulary (meta-analysis, randomized), so both poles live in the evidence-review register; I could not name what joins the imaging items to it.",
+ "selection": "random draw"
+}

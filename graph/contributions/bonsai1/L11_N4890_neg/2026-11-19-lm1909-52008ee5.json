@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-52008ee5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N4890-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:35+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N4890_neg/2026-11-19-lm1909-52008ee5.tests.json"
+ },
+ "label": "unclear list: the GPL notice 'you can redistribute it and/or modify', digits of a temperature in kelvin, and a comma before an '-ing' or 'usually' continuation",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N4890_neg/2026-11-19-lm1909-52008ee5.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.696,
+     "peak": " GNU"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.657,
+     "peak": " modify"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.77,
+     "peak": " modify"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.423,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.21,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.315,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.293,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.414,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "//"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": "obar"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.237,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.076,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.116,
+     "peak": "as"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.418,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "GPL 'and/or modify'; kelvin digits; commas",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Weak pole (max 4.97). Probes: GPL 'redistribute it and/or modify' 0.75 (a reworded 'distribute and/or modify this document' 0.06, plain 'modify the plan' 0.01), '373K' 0.57, '1538 degrees' 0.40, comma in 'calcium, hardening bones' 0.59 and 'loss of weight, lowering' 0.22; 'in any medium' (a card peak) 0.05, '273 square feet' 0.03. I found no single pattern; the test checks the list. I expect it may fail.",
+ "selection": "random draw"
+}

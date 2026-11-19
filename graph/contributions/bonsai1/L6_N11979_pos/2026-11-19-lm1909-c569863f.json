@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c569863f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N11979+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:58+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N11979_pos/2026-11-19-lm1909-c569863f.tests.json"
+ },
+ "label": "the token ' just' directly after a coordinating 'and' or 'or' ('…, or just sit', '… and just being there'), not ' just' elsewhere",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N11979_pos/2026-11-19-lm1909-c569863f.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.447,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.327,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.431,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.334,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.624,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.346,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.488,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.258,
+     "peak": " just"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.062,
+     "peak": " just"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " just"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.063,
+     "peak": " just"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.103,
+     "peak": " only"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.185,
+     "peak": " just"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.072,
+     "peak": "Just"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " just"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.388,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' just' after and/or",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: all 32 top examples peak on ' just', each after 'and'/'or'. Probes: 'or just'/'and just' 0.46-0.58; 'had just arrived' 0.02, 'was just a' 0.06, sentence-initial 'Just' 0.07. 'and simply' also scored 0.39, so the pole may be about a restrictive adverb opening a conjunct, not the word alone; the 'or only' near miss checks that.",
+ "selection": "random draw"
+}

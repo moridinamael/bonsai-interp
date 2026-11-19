@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-95b572f4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N8537+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:06+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N8537_pos/2026-11-19-lm1909-95b572f4.tests.json"
+ },
+ "label": "the inner 'am'/'im'/'em' piece of a few specific transliterated names: Muammar/Moammar (Gaddafi), Zossimov, Zarahemla",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N8537_pos/2026-11-19-lm1909-95b572f4.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.854,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.781,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.757,
+     "peak": "im"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.705,
+     "peak": "im"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.862,
+     "peak": "em"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.792,
+     "peak": "em"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.923,
+     "peak": "am"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.896,
+     "peak": "am"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.069,
+     "peak": "ub"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.257,
+     "peak": "ikh"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.208,
+     "peak": "f"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.122,
+     "peak": "ma"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " F"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " uprising"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.823,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'am/im/em' inside Muammar, Zossimov, Zarahemla",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Probes: Muammar 0.93, Zossimov 0.91, Zarahemla 0.96, al-Mamun 0.42; other names with a vowel+m piece did not fire (Karamazov 0.12, Tutankhamun 0.11, Ibrahimovic 0.09, Maimonides 0.19, Shamil 0.02, Suleiman 0.02), nor did 'jam'/'ham' or capital 'AND' (0.01). So this is a list of names, not a general 'mid-name am' rule. The card also shows an Arabic-script piece that I did not test.",
+ "selection": "random draw"
+}

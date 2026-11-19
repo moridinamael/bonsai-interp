@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4a6e7f3a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3056+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:47+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N3056_pos/2026-11-19-lm1909-4a6e7f3a.tests.json"
+ },
+ "label": "the word 'More' opening a new line (a link or heading such as 'More papers in…', 'More >>')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N3056_pos/2026-11-19-lm1909-4a6e7f3a.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.291,
+     "peak": "More"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.26,
+     "peak": "More"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.154,
+     "peak": "More"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.466,
+     "peak": "More"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.361,
+     "peak": "More"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.234,
+     "peak": "More"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.201,
+     "peak": "More"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.178,
+     "peak": "More"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.033,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": "Other"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.104,
+     "peak": "Download"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.059,
+     "peak": "See"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.033,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": " news"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.247,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "line-initial 'More'",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (1.1% of tokens reach 0.1 of max) and weak (max 2.23). Probes: line-initial 'More' scored 0.15-0.36, line-initial 'Other'/'Most' under 0.10, mid-sentence ' more' 0.08. The median fire may fall short of 0.20.",
+ "selection": "random draw"
+}
