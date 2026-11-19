@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-fd32dddd",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8592-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:20:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N8592",
+   "pole": "-",
+   "label": "the break right after a short lead-in line (a title, heading or code comment) before the body it introduces begins; the same words run on as ordinary prose are weaker",
+   "fire": [
+    "Rivers of the North\nMost of the northern rivers rise in the high moors and run east.",
+    "def load(path):\n    # open the file\n    handle = open(path)\n    return handle",
+    "Women in Early Science\nThere were more women working in laboratories than the records suggest.",
+    "for row in rows:\n    # skip empty rows\n    if not row:\n        continue",
+    "A Short History of Tea\nTea reached Europe by sea in the early seventeenth century.",
+    "def total(items):\n    # add up the prices\n    result = sum(i.price for i in items)\n    return result",
+    "Caring for Your Bicycle\nA clean chain lasts twice as long as a dirty one.",
+    "while queue:\n    # take the next job\n    job = queue.pop()\n    job.run()"
+   ],
+   "quiet": [
+    "Most of the northern rivers rise in the high moors and run east toward the sea.",
+    "The function opens the file at the given path and returns the handle to the caller.",
+    "There were more women working in laboratories than the records suggest, historians now say.",
+    "The loop walks over the rows and simply skips any row that turns out to be empty.",
+    "Tea reached Europe by sea in the early seventeenth century and soon became fashionable.",
+    "The function adds up the prices of all the items and returns the result to you.",
+    "A clean chain lasts twice as long as a dirty one, so wipe it down every week.",
+    "The worker takes the next job from the queue and runs it until the queue is empty."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "break after lead-in line",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (4.3% of tokens above 0.1 of max). Top examples peak on ',' after 'states'/'stated' before a quotation, on '\\n' after a heading ('Mary in The Quran') or a code comment ('# normalize attrs', '# then'). Probes: comment line then code 0.47, title line then body 0.41-0.43; quotation lead-ins weaker (writes, 0.34; stated, 0.18); running prose 0.16-0.20. The margin over ordinary prose is small, so this may well fail."
+}
