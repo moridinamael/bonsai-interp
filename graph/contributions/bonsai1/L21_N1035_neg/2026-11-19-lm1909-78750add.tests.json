@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-78750add",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N1035-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:13:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N1035",
+   "pole": "-",
+   "label": "Deeply indented code inside nested conditionals, at a comparison against a stored value or the raise that follows it; best guess, weak",
+   "fire": [
+    "\t\t\tif u in best:\n\t\t\t\tif total < best[u]:\n\t\t\t\t\traise ValueError('Contradictory costs found')\n",
+    "\t\t\t\tif key in cache:\n\t\t\t\t\tif stamp < cache[key]:\n\t\t\t\t\t\traise RuntimeError('Stale entry written')\n",
+    "\t\tif node in depth:\n\t\t\tif level < depth[node]:\n\t\t\t\traise ValueError('Inconsistent depth found')\n",
+    "\t\t\tif name in sizes:\n\t\t\t\tif nbytes < sizes[name]:\n\t\t\t\t\traise IOError('File shrank while reading')\n",
+    "\t\t\t\tif w in dist:\n\t\t\t\t\tif alt < dist[w]:\n\t\t\t\t\t\traise ValueError('Negative cycle detected')\n",
+    "\t\t\tif user in quota:\n\t\t\t\tif used > quota[user]:\n\t\t\t\t\traise PermissionError('Quota exceeded')\n",
+    "\t\tif pid in started:\n\t\t\tif now < started[pid]:\n\t\t\t\traise ValueError('Clock moved backwards')\n",
+    "\t\t\tif tag in counts:\n\t\t\t\tif seen > counts[tag]:\n\t\t\t\t\traise KeyError('Unexpected extra tag')\n"
+   ],
+   "quiet": [
+    "best = {}\ntotal = 0\nprint('No costs recorded yet')\n",
+    "cache = load_cache()\nstamp = time.time()\nsave(cache, stamp)\n",
+    "depth = {root: 0}\nlevel = 1\nqueue = [root]\n",
+    "sizes = {}\nnbytes = os.path.getsize(name)\nsizes[name] = nbytes\n",
+    "dist = {source: 0}\nalt = 0\nheap = [(0, source)]\n",
+    "quota = read_quota()\nused = 0\nprint('Quota loaded')\n",
+    "started = {}\nnow = time.time()\nstarted[pid] = now\n",
+    "counts = Counter(tags)\nseen = 0\nprint(counts)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "nested-if code check",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: no shared token (')\\n' x3, indentation x3, ' dist' x2, ' to' x2, ' in' x2); the top two examples are the same tab-indented 'if vw_dist < dist[w]: raise ValueError' code, the rest are prose (attach the same database, take the drug for, wish to obtain). Probes: a tab-indented nested-if with raise 0.38 (peak on the raise line's end), the same idea with spaces 0.08, prose paraphrases 0.01-0.15. The + pole (already, existing, previously, closed) is about a prior state; I could not confirm what this side marks. Expect a fail."
+}

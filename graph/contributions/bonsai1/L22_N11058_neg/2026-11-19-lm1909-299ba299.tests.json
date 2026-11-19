@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-299ba299",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11058-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:13:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N11058",
+   "pole": "-",
+   "label": "Deep inside a long, machine-like list whose rows repeat one template with small changes (rows of near-identical tuples, quoted items or price lines); best guess, weak",
+   "fire": [
+    "    (\"latin1\", \"latin1_german_ci\", False),  # 30\n    (\"latin1\", \"latin1_swedish_ci\", False),  # 31\n    (\"latin1\", \"latin1_danish_ci\", False),  # 32\n    (\"latin1\", \"latin1_spanish_ci\", False),  # 33\n    (\"latin1\", \"latin1_general_ci\", False),  # 34\n    (\"latin1\", \"latin1_general_cs\", False),  # 35\n    (\"latin1\", \"latin1_bin\", False),  # 36\n    (\"latin2\", \"latin2_czech_cs\", False),  # 37\n    (\"latin2\", \"latin2_general_ci\", False),  # 38\n",
+    "    (\"ucs2\", \"ucs2_latvian_ci\", False),  # 130\n    (\"ucs2\", \"ucs2_romanian_ci\", False),  # 131\n    (\"ucs2\", \"ucs2_slovenian_ci\", False),  # 132\n    (\"ucs2\", \"ucs2_polish_ci\", False),  # 133\n    (\"ucs2\", \"ucs2_estonian_ci\", False),  # 134\n    (\"ucs2\", \"ucs2_spanish_ci\", False),  # 135\n    (\"ucs2\", \"ucs2_swedish_ci\", False),  # 136\n    (\"ucs2\", \"ucs2_turkish_ci\", False),  # 137\n",
+    "DYES = ['Plain red wool', 'Plain blue wool', 'Plain green wool', 'Plain yellow wool', 'Plain pink wool', 'Plain grey wool', 'Plain white wool', 'Plain black wool', 'Plain brown wool', 'Plain purple wool', 'Plain orange wool', 'Plain cyan wool', 'Plain lime wool', 'Plain magenta wool', 'Plain silver wool', 'Plain maroon wool']",
+    "Fees per semester:\n3,250.00 Accounting\n3,250.00 Marketing\n3,400.00 Pharmacy\n3,250.00 History\n3,250.00 Geography\n3,400.00 Dentistry\n3,250.00 Philosophy\n3,250.00 Economics\n3,250.00 Sociology\n3,400.00 Biology\n3,250.00 Chemistry\n",
+    "fmt = \"epoch,%d, step,%d, loss,%.3f,%.3f, acc,%.3f,%.3f, prec,%.3f,%.3f, rec,%.3f,%.3f, f1,%.3f,%.3f, lr,%.6f\"\n",
+    "    ('big5', 'big5_chinese_ci', True),  # 1\n    ('big5', 'big5_bin', False),  # 2\n    ('cp1250', 'cp1250_general_ci', True),  # 3\n    ('cp1250', 'cp1250_czech_cs', False),  # 4\n    ('cp1250', 'cp1250_croatian_ci', False),  # 5\n    ('cp1250', 'cp1250_bin', False),  # 6\n    ('cp1250', 'cp1250_polish_ci', False),  # 7\n    ('cp1251', 'cp1251_bulgarian_ci', False),  # 8\n",
+    "- Direct flights from Riga to: Tallinn, Vilnius, Warsaw, Minsk, Kiev, Helsinki, Stockholm, Copenhagen, Hamburg, Munich, Zurich, Milan, Tbilisi, Tashkent, Almaty, Istanbul.",
+    "ORES = ['Rough iron ore', 'Rough copper ore', 'Rough tin ore', 'Rough lead ore', 'Rough zinc ore', 'Rough silver ore', 'Rough gold ore', 'Rough nickel ore', 'Rough cobalt ore', 'Rough chrome ore', 'Rough tungsten ore', 'Rough platinum ore', 'Rough titanium ore']"
+   ],
+   "quiet": [
+    "    charset = \"latin1\"\n    collation = lookup_default(charset)\n    if collation is None:\n        raise KeyError(charset)\n    return collation\n",
+    "    def is_binary(self, name):\n        entry = self._table.get(name)\n        return bool(entry and entry.binary)\n",
+    "wool = Wool(colour='red')\nwool.dye('blue')\nprint(wool.describe())\n",
+    "Fees for the accounting course are due in September, and late payment adds a small charge.",
+    "log.info(\"finished epoch %d with loss %.3f\", epoch, loss)\n",
+    "    code = find_collation('cp1250')\n    if code.is_default:\n        apply(code)\n",
+    "There are direct flights from Riga to Tallinn every morning, and the trip takes under an hour.",
+    "ore = Ore('iron')\nif ore.is_rough():\n    smelter.add(ore)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "long repetitive list rows",
+ "unit_kind": "contextual",
+ "confidence": 0.25,
+ "notes": "Card: peaks on \" '\" x6, spaces, digits and commas inside long repetitive lists ('Fine lavender cloth', 'Fine light green cloth', ...; utf32 collation tuples; price lines). Probes reached only 0.26 (seven collation tuples), 0.11-0.13 (price lines) and 0.04 (a 14-item quoted list), so list length or exact format matters more than I could reproduce. Expect a fail on median fire; the test records that."
+}
