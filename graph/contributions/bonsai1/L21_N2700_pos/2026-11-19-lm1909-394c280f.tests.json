@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-394c280f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2700+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N2700",
+   "pole": "+",
+   "label": "layout whitespace at a blank-line break between blocks of code, strongest on the indent before the next method's 'def' after a blank line in a Python class",
+   "fire": [
+    "class Counter(object):\n    def __init__(self, start):\n        self.value = start\n        self.steps = 0\n\n    def increment(self):\n        self.value += 1\n        self.steps += 1\n        return self.value\n\n    def reset(self):\n        self.value = 0\n        return self.value\n\n    def __repr__(self):\n        return 'Counter(%d)' % self.value\n",
+    "class Inbox:\n    def __init__(self, owner):\n        self.owner = owner\n        self.messages = []\n\n    def receive(self, message):\n        self.messages.append(message)\n        return len(self.messages)\n\n    def unread(self):\n        return [m for m in self.messages if not m.seen]\n\n    def clear(self):\n        self.messages = []\n",
+    "class Thermostat(Device):\n    def __init__(self, target):\n        self.target = target\n        self.current = None\n\n    def read(self, sensor):\n        self.current = sensor.value()\n        return self.current\n\n    def too_cold(self):\n        return self.current < self.target\n\n    def _log(self, text):\n        print(text)\n",
+    "class Playlist:\n    def __init__(self, title):\n        self.title = title\n        self.tracks = []\n\n    def add(self, track):\n        self.tracks.append(track)\n\n    def duration(self):\n        return sum(t.length for t in self.tracks)\n\n    def shuffle(self):\n        random.shuffle(self.tracks)\n        return self.tracks\n",
+    "class Ledger(object):\n    def __init__(self):\n        self.entries = []\n        self.closed = False\n\n    def post(self, amount, memo):\n        self.entries.append((amount, memo))\n\n    def balance(self):\n        return sum(a for a, _ in self.entries)\n\n    def close(self):\n        self.closed = True\n        return self.balance()\n",
+    "class Robot(Machine):\n    def __init__(self, name):\n        self.name = name\n        self.x = 0\n        self.y = 0\n\n    def move(self, dx, dy):\n        self.x += dx\n        self.y += dy\n\n    def position(self):\n        return (self.x, self.y)\n\n    def _home(self):\n        self.x = 0\n        self.y = 0\n",
+    "class Cache:\n    def __init__(self, limit):\n        self.limit = limit\n        self.store = {}\n\n    def get(self, key):\n        return self.store.get(key)\n\n    def put(self, key, value):\n        if len(self.store) < self.limit:\n            self.store[key] = value\n\n    def flush(self):\n        self.store.clear()\n",
+    "class Timer(object):\n    def __init__(self):\n        self.started = None\n        self.laps = []\n\n    def start(self):\n        self.started = time.time()\n\n    def lap(self):\n        self.laps.append(time.time() - self.started)\n        return self.laps[-1]\n\n    def stop(self):\n        self.started = None\n"
+   ],
+   "quiet": [
+    "class Basket:\n    def __init__(self, shopper):\n        self.shopper = shopper\n        self.lines = []\n    def add(self, item, qty):\n        self.lines.append((item, qty))\n    def total(self):\n        return sum(i.price * q for i, q in self.lines)\n    def empty(self):\n        self.lines = []\n",
+    "class Sensor(Device):\n    def __init__(self, pin):\n        self.pin = pin\n        self.last = 0.0\n    def sample(self):\n        self.last = read_pin(self.pin)\n        return self.last\n    def is_high(self):\n        return self.last > 0.5\n    def _zero(self):\n        self.last = 0.0\n",
+    "class Deck(object):\n    def __init__(self):\n        self.cards = list(range(52))\n        self.dealt = 0\n    def deal(self):\n        self.dealt += 1\n        return self.cards.pop()\n    def remaining(self):\n        return len(self.cards)\n    def __len__(self):\n        return len(self.cards)\n",
+    "class Journal:\n    def __init__(self, path):\n        self.path = path\n        self.lines = []\n    def write(self, text):\n        self.lines.append(text)\n    def save(self):\n        with open(self.path, 'w') as f:\n            f.write('\\n'.join(self.lines))\n    def size(self):\n        return len(self.lines)\n",
+    "class Elevator(Machine):\n    def __init__(self, floors):\n        self.floors = floors\n        self.level = 0\n    def up(self):\n        if self.level < self.floors:\n            self.level += 1\n    def down(self):\n        if self.level > 0:\n            self.level -= 1\n    def where(self):\n        return self.level\n",
+    "class Roster:\n    def __init__(self, team):\n        self.team = team\n        self.players = []\n    def sign(self, player):\n        self.players.append(player)\n        return len(self.players)\n    def release(self, player):\n        self.players.remove(player)\n    def names(self):\n        return [p.name for p in self.players]\n",
+    "class Meter(object):\n    def __init__(self, unit):\n        self.unit = unit\n        self.reading = 0\n    def tick(self, amount):\n        self.reading += amount\n        return self.reading\n    def bill(self, rate):\n        return self.reading * rate\n    def _clear(self):\n        self.reading = 0\n",
+    "class Garden:\n    def __init__(self, rows):\n        self.rows = rows\n        self.plants = {}\n    def sow(self, row, seed):\n        self.plants[row] = seed\n    def harvest(self, row):\n        return self.plants.pop(row)\n    def count(self):\n        return len(self.plants)\n"
+   ]
+  }
+ ],
+ "predictions": "fire around 0.3 of max, but code without blank lines may sit near 0.2 as well; likely fail on separation",
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "blank-line break before def",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad (1.0% of tokens reach 0.1 of max). Probes: a Python class with blank lines between methods 0.31 and 0.33 (peak on the indent before def), top-level functions 0.27, a script with blank lines 0.21 and 0.30, JavaScript with blank lines 0.27. Near misses here are the same kind of class written without blank lines between the methods."
+}

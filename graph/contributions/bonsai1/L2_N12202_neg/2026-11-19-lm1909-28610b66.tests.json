@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-28610b66",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N12202-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N12202",
+   "pole": "-",
+   "label": "line-break tokens that contain a carriage return (Windows CRLF line endings, '\\r\\n'), in code or prose; the same text with plain '\\n' line breaks stays quiet",
+   "fire": [
+    "def area(width, height):\r\n    return width * height\r\n\r\n\r\nprint(area(3, 4))\r\n",
+    "colors = [\r\n    'red',\r\n    'green',\r\n    'blue',\r\n]\r\n\r\nfor c in colors:\r\n    print(c)\r\n",
+    "Hello Peter,\r\n\r\nThe meeting is moved to Thursday.\r\n\r\nRegards,\r\nMaria\r\n",
+    "import os\r\n\r\npath = os.getcwd()\r\nprint(path)\r\n",
+    "class Point:\r\n\r\n    def __init__(self, x, y):\r\n        self.x = x\r\n        self.y = y\r\n",
+    "[server]\r\nhost = localhost\r\nport = 8080\r\n\r\n[logging]\r\nlevel = info\r\n",
+    "try:\r\n    value = int(text)\r\nexcept ValueError:\r\n    value = 0\r\n\r\nprint(value)\r\n",
+    "Shopping list:\r\n\r\nbread\r\nbutter\r\ntwo lemons\r\n\r\nDon't forget the keys.\r\n"
+   ],
+   "quiet": [
+    "def volume(width, height, depth):\n    return width * height * depth\n\n\nprint(volume(3, 4, 5))\n",
+    "shapes = [\n    'circle',\n    'square',\n    'star',\n]\n\nfor s in shapes:\n    print(s)\n",
+    "Hello Laura,\n\nThe workshop is moved to Monday.\n\nRegards,\nJonas\n",
+    "import sys\n\nargs = sys.argv\nprint(args)\n",
+    "class Size:\n\n    def __init__(self, w, h):\n        self.w = w\n        self.h = h\n",
+    "[client]\nname = desktop\nretries = 3\n\n[cache]\nmode = memory\n",
+    "try:\n    ratio = float(text)\nexcept ValueError:\n    ratio = 1.0\n\nprint(ratio)\n",
+    "Packing list:\n\nsocks\ntowel\ntwo books\n\nDon't forget the tickets.\n"
+   ]
+  }
+ ],
+ "predictions": "8/8 fire, 0 near misses",
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "CRLF line breaks",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Fire sentences use \\r\\n line endings, near misses plain \\n. Card flags the pole broad and gate-closed (-g +u leak 100%), max only 1.88. Probes: CRLF code 0.70 and 1.06, a CRLF letter 0.77; the same code with LF 0.20 and 0.16. The + pole of the same unit also peaks on '\\r\\n' tokens in the scan."
+}

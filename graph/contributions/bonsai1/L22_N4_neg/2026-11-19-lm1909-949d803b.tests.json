@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-949d803b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N4-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N4",
+   "pole": "-",
+   "label": "in code, the last word-piece of a run-together function name inside a longer identifier when that whole identifier is written a second time (mock_getsize ... mock_getsize); a single mention stays quiet",
+   "fire": [
+    "    mock_getmtime.return_value = 1500\n    return (mock_getmtime, mock_reader)\n",
+    "    fake_makedirs.return_value = None\n    return (fake_makedirs, fake_remove)\n",
+    "    stub_isdir.return_value = True\n    return (stub_isdir, stub_open)\n",
+    "    mock_getpid.return_value = 4242\n    return (mock_getpid, mock_kill)\n",
+    "    os_chdir = os.chdir\n    saved = (os_chdir, workdir)\n",
+    "    fake_getenv.return_value = 'prod'\n    return (fake_getenv, fake_exit)\n",
+    "    mock_urlopen.return_value = page\n    return (mock_urlopen, mock_parse)\n",
+    "    stub_readline.return_value = 'yes'\n    return (stub_readline, stub_write)\n"
+   ],
+   "quiet": [
+    "    mock_getatime.return_value = 1500\n    return (mock_reader, mock_writer)\n",
+    "    fake_rmdir.return_value = None\n    return (fake_remove, fake_copy)\n",
+    "    stub_isfile.return_value = True\n    return (stub_open, stub_close)\n",
+    "    mock_getuid.return_value = 4242\n    return (mock_kill, mock_wait)\n",
+    "    old_umask = os.umask\n    saved = (workdir, homedir)\n",
+    "    fake_putenv.return_value = 'prod'\n    return (fake_exit, fake_sleep)\n",
+    "    mock_urlencode.return_value = page\n    return (mock_parse, mock_fetch)\n",
+    "    stub_readlines.return_value = 'yes'\n    return (stub_write, stub_flush)\n"
+   ]
+  }
+ ],
+ "predictions": "about half fire; median may fall under 0.20",
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated fused identifier piece",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Low confidence. Probes: 'mock_getsize ... (mock_getsize' 0.64 (peak 'size'), 'fake_listdir ... (fake_listdir' 0.44 (peak 'dir'), 'os_getcwd ... (os_getcwd' 0.28; but repeats of other shapes were weak: 'registered_schema ... registration_count' 0.12, 'max_width ... max_width' 0.03, prose repeat of 'mobility' 0.11. The probe did not show whether the first or the second mention carries the activation, so the near misses (one mention only) test exactly that."
+}
