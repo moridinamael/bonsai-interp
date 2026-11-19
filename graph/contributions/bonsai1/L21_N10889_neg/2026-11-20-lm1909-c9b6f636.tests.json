@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-c9b6f636",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10889-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:09:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N10889",
+   "pole": "-",
+   "label": "' def' starting an indented (nested or method) function definition inside Python code",
+   "fire": [
+    "import os\n\ndef make_handler(config):\n    def handler(event):\n        return config[event]\n    return handler",
+    "def build_parser():\n    def add_flags(p):\n        p.add_argument('-v')\n    parser = Parser()\n    add_flags(parser)\n    return parser",
+    "    return value\n\n\ndef retry(times):\n    def decorator(fn):\n        return fn\n    return decorator",
+    "class Cache:\n    def __init__(self):\n        self.data = {}\n\n    def get(self, key):\n        return self.data.get(key)",
+    "import sys\n\ndef main(args):\n    def usage():\n        print('usage: run FILE')\n    if not args:\n        usage()",
+    "def counter():\n    count = 0\n    def step():\n        nonlocal count\n        count += 1\n        return count\n    return step",
+    "def apply_all(items):\n    def double(x):\n        return 2 * x\n    return [double(i) for i in items]",
+    "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def norm(self):\n        return (self.x ** 2 + self.y ** 2) ** 0.5"
+   ],
+   "quiet": [
+    "import os\n\ndef make_handler(config):\n    handler = config.get('default')\n    return handler",
+    "def build_parser():\n    parser = Parser()\n    parser.add_argument('-v')\n    return parser",
+    "    return value\n\n\ndef retry(times):\n    for i in range(times):\n        print(i)\n    return times",
+    "cache = {}\n\nkey = 'name'\nif key in cache:\n    value = cache[key]\nelse:\n    value = None",
+    "import sys\n\ndef main(args):\n    if not args:\n        print('usage: run FILE')\n        sys.exit(1)",
+    "def counter(items):\n    count = 0\n    for item in items:\n        count += 1\n    return count",
+    "def apply_all(items):\n    result = [2 * i for i in items]\n    return result",
+    "x = 3\ny = 4\nnorm = (x ** 2 + y ** 2) ** 0.5\nprint(norm)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "indented def",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "card: ' def' x18 of top 32, mostly a nested def right after an outer def line. probe on short snippets only 0.09-0.14, so this may fail on median."
+}

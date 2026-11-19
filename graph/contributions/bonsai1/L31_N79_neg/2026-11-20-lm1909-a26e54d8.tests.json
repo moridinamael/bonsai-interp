@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a26e54d8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N79-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:09:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N79",
+   "pole": "-",
+   "label": "the start of an explanation of how code works: the opening '\"\"\"' of a Python docstring, and ' by' + gerund in command-line how-tos",
+   "fire": [
+    "def load(path):\n    \"\"\"Load a config file and return a dict.\"\"\"\n    with open(path) as f:\n        return parse(f)",
+    "def area(r):\n    \"\"\"Compute the area of a circle.\"\"\"\n    return 3.14159 * r * r",
+    "class Queue:\n    def pop(self):\n        \"\"\"Remove and return the first item.\"\"\"\n        return self.items.pop(0)",
+    "def connect(host, port=22, timeout=10,\n            retries=3):\n    \"\"\"Open an SSH connection to the host.\"\"\"\n    pass",
+    "def is_even(n):\n    \"\"\"Check whether n can be divided by two.\"\"\"\n    return n % 2 == 0",
+    "You can see which programs are running by typing ps in the terminal.",
+    "In the shell, you can copy a whole folder by adding the -r flag to cp.",
+    "Columns can be renamed by writing ALTER TABLE followed by the new name."
+   ],
+   "quiet": [
+    "def load(path):\n    # Load a config file and return a dict.\n    with open(path) as f:\n        return parse(f)",
+    "def area(r):\n    return 3.14159 * r * r",
+    "class Queue:\n    def pop(self):\n        return self.items.pop(0)",
+    "def connect(host, port=22, timeout=10,\n            retries=3):\n    pass",
+    "def is_even(n):\n    # check divisibility\n    return n % 2 == 0",
+    "The programs that are running are listed when ps finishes in the terminal.",
+    "In the shell, cp copies a whole folder when the -r flag is given.",
+    "Columns get new names with ALTER TABLE followed by the new name."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring / how-to 'by'",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card: ' \"\"\"' x12 and ' by' x4 (view a folder by specifying its path; done by writing cast()). probe: docstring 0.24-0.37, 'list files by typing ls' 0.47, 'fixed by restarting' 0.08, passive 'written by' 0.01."
+}
