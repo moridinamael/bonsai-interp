@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-31e34cda",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N6604-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:47+00:00",
+ "recipe": {
+  "toolchain_commit": "a8ce26e57",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N6604_neg/2026-11-19-lm1909-31e34cda.tests.json"
+ },
+ "label": "the token ' Te' / ' te' as the first piece of a longer word (Te·al, Te·ak, Te·es, te·eming), not whole words such as ' Ted', ' tea', ' Tan'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N6604_neg/2026-11-19-lm1909-31e34cda.tests.json",
+   "prereg_commit": "a8ce26e57",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.932,
+     "peak": " Te"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.813,
+     "peak": " Te"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.58,
+     "peak": " te"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.492,
+     "peak": " Te"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.868,
+     "peak": " Te"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.646,
+     "peak": " Te"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.654,
+     "peak": " te"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.625,
+     "peak": " Te"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " Must"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " var"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " reg"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": " Ted"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.11,
+     "peak": " Tur"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " blue"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " tea"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " Tops"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.65,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a8ce26e57",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word-start piece ' Te'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: ' te' x20 and ' Te' x12 of the top 32. Probes: Teal 0.91, Teak 0.82, teeming 0.55, Tees 0.54; ' Ted' 0.05, ' Tan' 0.01, television/telescope 0.00, tearing/tedious 0.01.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " Te",
+   " te"
+  ]
+ }
+}

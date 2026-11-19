@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-cab8e4ad",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N916-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:26+00:00",
+ "recipe": {
+  "toolchain_commit": "a8ce26e57",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N916_neg/2026-11-19-lm1909-cab8e4ad.tests.json"
+ },
+ "label": "the tokens just after a stated capability or enablement (\"can … this way,\", \"allowing for a\", \"we could all\"): the continuation once an ability has been expressed; the + pole is the copula/verb before \"able\"",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N916_neg/2026-11-19-lm1909-cab8e4ad.tests.json",
+   "prereg_commit": "a8ce26e57",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.569,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.361,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.379,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.6,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.157,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.492,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.466,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.803,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": " card"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " man"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " telescope"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " room"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " went"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.479,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a8ce26e57",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after stated ability",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks ',' ' a' ' could' ' you' in can/could/allowing-for contexts; output direction reversed suppresses ' able'/' can'. Probes: 0.83 / 0.61 / 0.30 / 0.30 on ability sentences, 0.25 / 0.18 / 0.01 on the same events told as plain past. Fairly broad pole (0.7% of tokens reach 0.1 of max), so near misses may fire weakly.",
+ "selection": "random draw"
+}

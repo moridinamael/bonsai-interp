@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c2282839",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N8532-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:31+00:00",
+ "recipe": {
+  "toolchain_commit": "a8ce26e57",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N8532_neg/2026-11-19-lm1909-c2282839.tests.json"
+ },
+ "label": "the start of a capitalised name that directly follows a qualifying name: the authority surname after a Latin binomial/genus (Lamia Fabricius, Dasyatis thetidis Ogilby), and more weakly the class name after `import` in Python",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N8532_neg/2026-11-19-lm1909-c2282839.tests.json",
+   "prereg_commit": "a8ce26e57",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.209,
+     "peak": " Lin"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.505,
+     "peak": " Fowler"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.242,
+     "peak": " Lin"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.351,
+     "peak": " Hack"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.293,
+     "peak": " Curtis"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.231,
+     "peak": " Raf"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.306,
+     "peak": " Order"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.486,
+     "peak": " Dal"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " spotted"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": "ates"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": "import"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": " editor"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.299,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a8ce26e57",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "taxon authority name",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on authority/epithet pieces (T. B. Patterson, Phytoecia Dejean, Ogilby, Hayata) and on class names after import (RequestContext, SellingController). Probes: authority after genus 0.70 and 0.60, class after import 0.38 and 0.39; a binomial without authority 0.02, plain 'import os' 0.02, 'by J. Reichard' in prose 0.04–0.07.",
+ "selection": "random draw"
+}
