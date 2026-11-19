@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-efb9300e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N10358+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:07+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N10358_pos/2026-11-19-lm1909-efb9300e.tests.json"
+ },
+ "label": "In Python code, the name of a well-known package or module (unittest, asyncio, django, logging) where it is used as a qualifier",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N10358_pos/2026-11-19-lm1909-efb9300e.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.723,
+     "peak": " unittest"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.716,
+     "peak": " asyncio"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.501,
+     "peak": "django"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.365,
+     "peak": " asyncio"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.352,
+     "peak": " unittest"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.414,
+     "peak": " django"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.643,
+     "peak": "conda"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.22,
+     "peak": " unittest"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.176,
+     "peak": "Tests"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": "(url"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.103,
+     "peak": ".getLogger"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": ".pool"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.024,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.191,
+     "peak": "_config"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.095,
+     "peak": ".logs"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": ".builder"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.458,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "known Python module name",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad (1.2% of tokens reach 0.1 of max) and the top examples mix module names (asyncio, anaconda, unittest, .debian) with Arabic and Russian proper names. Probes: unittest 0.51, 'django' 0.55, asyncio 0.34, .debian 0.31, user-defined attribute chains 0.02; but ' Carolina' 0.46 and ' Eastern' 0.34 in multi-word place names also fire, so a module-name label covers only part of it.",
+ "selection": "random draw"
+}

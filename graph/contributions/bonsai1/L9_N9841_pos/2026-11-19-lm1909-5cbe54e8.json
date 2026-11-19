@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5cbe54e8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N9841+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:44+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N9841_pos/2026-11-19-lm1909-5cbe54e8.tests.json"
+ },
+ "label": "A diagnostic test or work-up being ordered or listed in a medical text (doctor may order ⟦an⟧ MRI, ⟦serial⟧ ECG, ⟦complete⟧ blood count, initial ⟦investigations⟧)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N9841_pos/2026-11-19-lm1909-5cbe54e8.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.644,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.73,
+     "peak": " level"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.431,
+     "peak": " ultrasound"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.603,
+     "peak": " panel"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.648,
+     "peak": " an"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.713,
+     "peak": " an"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.453,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.52,
+     "peak": " blood"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.227,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.059,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.137,
+     "peak": " blood"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.065,
+     "peak": "Routine"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.105,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.183,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.08,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.11,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.623,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "medical test being ordered",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: ' an' after 'your doctor may also order', ' serial' ECG, ' investigations', ' tests', ' complete' blood count. Probes: order an X-ray 0.63, radiograph / serial troponins / complete blood count 0.79, a urinalysis and an ultrasound 0.56, investigations / further tests 0.41; prescribe an antibiotic 0.11, a manager ordering a shipment 0.23, school tests 0.01. So it is the diagnostic work-up, not 'order an' and not 'tests' alone.",
+ "selection": "random draw"
+}

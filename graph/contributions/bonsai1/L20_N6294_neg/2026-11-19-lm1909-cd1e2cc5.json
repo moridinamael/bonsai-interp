@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-cd1e2cc5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N6294-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:04+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N6294_neg/2026-11-19-lm1909-cd1e2cc5.tests.json"
+ },
+ "label": "The verb in the second half of a parallel construction that echoes the first half: 'the more people X, the more people ⟦rely⟧ on it', '..., or to ⟦attempt⟧ to do so'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N6294_neg/2026-11-19-lm1909-cd1e2cc5.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.422,
+     "peak": " rely"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.287,
+     "peak": " so"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.158,
+     "peak": " rely"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.228,
+     "peak": " attempt"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.047,
+     "peak": " children"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.269,
+     "peak": " attempt"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.034,
+     "peak": " grow"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.214,
+     "peak": " so"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": "ers"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": " hospital"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.045,
+     "peak": " enter"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " keep"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": " attempt"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " large"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.221,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "echoed verb, parallel clause",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card top examples are mixed (Awards, a link, approval, logic, attempt, rely); max is only 9.3. Probes: 'or to attempt to do so' 0.43 and 'the more we rely on it' 0.41, while 'an attempt to fix', 'tries to attempt', 'added a link to', 'approval for' all stayed under 0.07. The parallel-clause reading is a guess from those two hits.",
+ "selection": "random draw"
+}

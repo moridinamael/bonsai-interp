@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9a8b3f8d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N800-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:41+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N800_neg/2026-11-19-lm1909-9a8b3f8d.tests.json"
+ },
+ "label": "Electric current as a quantity: ' current' in the electrical sense and the amp unit 'A' after a number; not the temporal or water sense of 'current'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N800_neg/2026-11-19-lm1909-9a8b3f8d.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.738,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.788,
+     "peak": "A"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.385,
+     "peak": " current"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.467,
+     "peak": " current"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.223,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.357,
+     "peak": " current"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.487,
+     "peak": " current"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.772,
+     "peak": " current"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " startup"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": " cm"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.214,
+     "peak": " current"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.048,
+     "peak": " humidity"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "Each"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " actor"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " fought"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.477,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "electric current / amps",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: ' current' x8 (electrical), 'A' in '5V 1A', then ' flow', ' volume', ' power'; the + pole has voltage / height and its output promotes ' height'. Probes: draw more current 0.61, '2A' 0.72, 'resistance, current' 0.38, flow of water 0.28; 'current president / current events' 0.01, river's current 0.01, voltage sentence 0.04. Flow-like quantities fire weakly, so the wider reading may be 'amount flowing' against the + pole's 'level / potential'; this test claims only the electrical case.",
+ "selection": "random draw"
+}

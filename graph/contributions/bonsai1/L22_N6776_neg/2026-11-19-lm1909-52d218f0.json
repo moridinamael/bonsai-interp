@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-52d218f0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N6776-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:07:54+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N6776_neg/2026-11-19-lm1909-52d218f0.tests.json"
+ },
+ "label": "A noun naming a lack or open problem (gaps, uncertainties, doubts, delays) as the thing that exists or remains, read at the noun or its verb",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N6776_neg/2026-11-19-lm1909-52d218f0.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.369,
+     "peak": " uncertainties"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.158,
+     "peak": " gaps"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.338,
+     "peak": " doubts"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.102,
+     "peak": " been"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.138,
+     "peak": " gaps"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.569,
+     "peak": " uncertainties"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.382,
+     "peak": " questions"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.197,
+     "peak": "falls"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " detail"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " running"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " involved"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " estimates"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": " summer"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.268,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "lack / open-problem noun",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card top examples are mixed (gaps, Uncertainties, Darkness, a firstPacket=True flag, Japanese が). Probes: 'Uncertainties remain' 0.35, 'Doubts remain' 0.29, 'has gaps' 0.24, 'Delays have been' 0.22; growth sentences 0.01-0.08. It also fired 0.6-0.7 on `isFirst = True` / `firstPacket = True` flags, which this label does not cover. Weak guess.",
+ "selection": "random draw"
+}

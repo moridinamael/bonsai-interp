@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-fbfde997",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4090-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:07+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N4090_neg/2026-11-19-lm1909-fbfde997.tests.json"
+ },
+ "label": "The German piece ' W' / 'w' / 'ew' that opens -wagen or -wanne (unter dem W|agen, Kranken|w|agen, Bad|ew|anne)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N4090_neg/2026-11-19-lm1909-fbfde997.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.8,
+     "peak": "ew"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.451,
+     "peak": "w"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.636,
+     "peak": "w"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.827,
+     "peak": "ew"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.257,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.228,
+     "peak": "ew"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.006,
+     "peak": "ew"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.008,
+     "peak": " Super"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.168,
+     "peak": "us"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": "Der"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.111,
+     "peak": "rr"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": "ster"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.103,
+     "peak": " Bau"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": " Lok"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.043,
+     "peak": " dem"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.085,
+     "peak": " Park"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.543,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German W of Wagen / Wanne",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' W' in Wagen, 'ew' in Badewanne, 'w' / 'fw' in -wagen compounds, plus Russian ' под' (под землей) and 'ные'. Probes: Badewanne 0.87, Krankenwagen / Kinderwagen 0.64, 'unter dem Wagen' 0.40, Güterwagen 0.30, 'in die Wanne' 0.27, Leiterwagen 0.22; Wein / Woche 0.04, Wasser / Wald 0.02, Wand / Waage 0.03, English wagon 0.04. Russian ' под' reached 0.18-0.26 and is not covered by this label; a plural 'Die Wagen' at the start of a clause only 0.11.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8c84193c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N9268-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:38+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N9268_neg/2026-11-19-lm1909-8c84193c.tests.json"
+ },
+ "label": "A neck or trunk location on the body (neck, throat, chest, waist) where a garment, strap or sensation sits; the + pole takes the limbs",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N9268_neg/2026-11-19-lm1909-8c84193c.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.463,
+     "peak": " back"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.417,
+     "peak": " chest"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.309,
+     "peak": " waist"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.263,
+     "peak": " neck"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.511,
+     "peak": " throat"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.243,
+     "peak": " waist"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.179,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.214,
+     "peak": " neck"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.339,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.177,
+     "peak": " tight"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " loop"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " thin"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.045,
+     "peak": " band"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.056,
+     "peak": " hung"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.036,
+     "peak": " shirt"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.286,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "neck / trunk of the body",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' body', ' neck', ' around' (my neck), ' waist', ' chest', neckline, French 'col'; the + pole peaks on limb contexts (amputate, cuffs, legs, wheel) and its output promotes ' leg', ' limbs', ' ankles'. So the neuron seems to split trunk from limbs. Probes: neck 1.10 and 0.74, chest 0.68, throat 0.49, waist 0.43; cuffs / elbows 0.07, ankle / knee 0.00, fingers / wrists / shins 0.03. ' body' as a general noun was weak (0.05-0.13) and shoulders / back 0.05.",
+ "selection": "random draw"
+}
