@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-8b5a15f8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N4013+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N4013",
+   "pole": "+",
+   "label": "a 'processing' / 'logger' / 'chain' piece in the middle of a compound code identifier (processingInstruction, get_x_logger, getblockchaininfo)",
+   "fire": [
+    "    def characters(self, content):\n        pass\n\n    def processingInstruction(self, target, data):\n        self._out.write(data)",
+    "    writer = XMLGenerator(stream)\n    writer.startDocument()\n    writer.processingInstruction('xml-stylesheet', 'type=\"text/css\"')",
+    "    def _GetProcessingState(self, job):\n        return job.state\n\n    def _FormatProcessingTime(self, seconds):\n        return '%d s' % seconds",
+    "    session = requests.Session()\n    log = cluster.utils.get_cluster_logger()\n    log.debug('connected')",
+    "        self.log = helpers.get_module_logger(__name__)\n        self.log.info('worker ready')",
+    "        tip = self.nodes[1].getblockchaininfo()\n        assert_equal(tip['blocks'], 200)",
+    "    def check_height(self, node):\n        height = node.getblockchaininfo()['headers']\n        return height",
+    "        report = self._BuildProcessingReport(items)\n        self.total = self._SumProcessingCosts(report)"
+   ],
+   "quiet": [
+    "    def characters(self, content):\n        pass\n\n    def ignorableWhitespace(self, content):\n        self._out.write(content)",
+    "    writer = XMLGenerator(stream)\n    writer.startDocument()\n    writer.endElement('stylesheet')",
+    "    def _GetElapsedState(self, job):\n        return job.state\n\n    def _FormatElapsedTime(self, seconds):\n        return '%d s' % seconds",
+    "    session = requests.Session()\n    cfg = cluster.utils.get_cluster_config()\n    cfg.update(defaults)",
+    "        self.cache = helpers.get_module_cache(__name__)\n        self.cache.clear()",
+    "        tip = self.nodes[1].getbestblockhash()\n        assert_equal(len(tip), 64)",
+    "    def check_height(self, node):\n        height = node.getpeerinfo()[0]['startingheight']\n        return height",
+    "        report = self._BuildSummaryReport(items)\n        self.total = self._SumShippingCosts(report)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "mid-identifier processing/logger/chain",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card top examples and two probe rounds: fires on Processing/_logger/chain/_idx pieces inside longer identifiers in code; other identifier pieces (UserProfile, Elapsed, skippedEntity) stay quiet; the plain English word 'processing' in prose is quiet. A list of pieces, not a shared pattern I could name."
+}
