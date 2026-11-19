@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4c37eae8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N7772+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:43+00:00",
+ "recipe": {
+  "toolchain_commit": "da74f485e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N7772_pos/2026-11-19-lm1909-4c37eae8.tests.json"
+ },
+ "label": "the final digit of the year in a full date in 1805 or 1825 ('September of 1805', 'February 15, 1805', 'June 1825'); other years in the same frame (1845, 1855, 1905) are weak. The pole also fires on unrelated pieces (' Harper', 'if' of 'classif', a '5' in an ISBN), so this is one facet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N7772_pos/2026-11-19-lm1909-4c37eae8.tests.json",
+   "prereg_commit": "da74f485e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.657,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.789,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.535,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.685,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.37,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.95,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.469,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.778,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.069,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.128,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": " parish"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": "th"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " ledger"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.032,
+     "peak": " council"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.671,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "da74f485e",
+  "minutes": 11,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'5' of 1805/1825 in a date",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card: '5' x9 of top 32, low max 6.06. Probes: 'September of 1805' 0.91, 'March 3, 1805' 0.66, 'June 1825' 0.58, '1803' 0.39, '1815' 0.17, '1845' 0.06, '1855' 0.08, '1905' 0.03; also ' Harper' 0.74-1.29, 'classif' 0.78, ISBN '5' 0.87, ' Color' 0.48, ' Relations' 0.43. Looks polysemantic; the year facet is the one tested.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-ed9cf66c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N9815-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:20+00:00",
+ "recipe": {
+  "toolchain_commit": "da74f485e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N9815_neg/2026-11-19-lm1909-ed9cf66c.tests.json"
+ },
+ "label": "broad, low-amplitude leak-regime pole; best guess: word pieces inside codes, identifiers and citation surnames (the '5' of 'cp1251', 'y' of 'affy', 'it' of 'Offit')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N9815_neg/2026-11-19-lm1909-ed9cf66c.tests.json",
+   "prereg_commit": "da74f485e",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.684,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.038,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.81,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.241,
+     "peak": "it"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.143,
+     "peak": ")."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.151,
+     "peak": "y"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.867,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.462,
+     "peak": "it"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.113,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.059,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": " right"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": " vaccines"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.108,
+     "peak": " lions"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.107,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.043,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": " newspaper"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.573,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "da74f485e",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pieces inside codes/citations",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags: broad (4.6% of tokens reach 0.1 of max) and gate-closed regime 98%; max only 1.87. Probes: 'cp1251' 0.71, 'Trites' 0.26, 'Offit' 0.20, plain prose 0.07-0.14. Test records the density; a hold is not expected.",
+ "selection": "random draw"
+}
