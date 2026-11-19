@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-fce3bf2b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7953-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:57:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7953",
+   "pole": "-",
+   "label": "the token ' �' (a space plus the first byte of a Hangul or katakana character that has no space-prefixed token of its own), i.e. the start of a space-separated Korean or Japanese word",
+   "fire": [
+    "이 병원은 암 치료로 유명하다.",
+    "그 가게에서 새 패션 잡지를 샀다.",
+    "先週 ソファを 買いました。",
+    "동생은 매주 태권도 수업에 간다.",
+    "明日 テストが あります。",
+    "生日那天 我们吃了 ケーキ。",
+    "창문에 파란 커튼을 달았다.",
+    "彼は 毎朝 ニュースを 読みます。"
+   ],
+   "quiet": [
+    "先週ソファを買いました。",
+    "明日テストがあります。",
+    "彼は毎朝ニュースを読みます。",
+    "우리 회사는 오늘 새로운 프로그램을 만들었다.",
+    "오늘 우리 컴퓨터가 아주 좋다.",
+    "生日那天我们吃了蛋糕。",
+    "昨日友達とケーキを食べました。",
+    "来週新しいソフトウェアが出ます。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "token ' �' (word-start byte)",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: top-32 peak ' �' x31 before Korean syllables (치, 애, 패, 네, 야) and spaced katakana (ソ). Probes: 치료 0.78, 패스워드 0.57, ' ソフトウェア' 0.53, ' ニュース' 0.49 with spaces but 0.00 for the same Japanese without spaces; Korean made only of common syllables (우리 회사는 새로운 컴퓨터 ...) 0.09; Chinese and English ~0."
+}
