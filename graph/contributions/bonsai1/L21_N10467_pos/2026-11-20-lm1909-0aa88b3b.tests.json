@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-0aa88b3b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10467+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:29:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N10467",
+   "pole": "+",
+   "label": "leading indentation whitespace at the start of a line inside a Python class or function body (after a decorator, docstring header or blank line)",
+   "fire": [
+    "class Sampler:\n    \"\"\"Draw random rows.\n\n    Parameters\n    ----------\n    seed : int\n        Random seed.\n    \"\"\"\n\n    @property\n    def size(self):\n        return self._size",
+    "def load(path):\n    \"\"\"Read a file.\n\n    :param str path: where the file lives\n    :param bool strict: raise on errors\n    \"\"\"\n    with open(path) as f:\n        return f.read()",
+    "class Account:\n    def __init__(self, owner):\n        self.owner = owner\n\n    @property\n    def balance(self) -> float:\n        return self._balance",
+    "def resize(image, width):\n    \"\"\"Resize an image.\n\n    Returns\n    -------\n    PIL.Image\n        The resized copy.\n    \"\"\"\n    return image.resize((width, width))",
+    "class Node:\n    \"\"\"A tree node.\"\"\"\n\n    @staticmethod\n    def leaf(value):\n        return Node(value)\n\n    @property\n    def depth(self):\n        return 0",
+    "def connect(host, port):\n    \"\"\"Open a socket.\n\n    :param host: server name\n    :param port: server port\n    :returns: the socket\n    \"\"\"\n    return socket.create_connection((host, port))",
+    "class Config(dict):\n\n    @classmethod\n    def from_env(cls):\n        return cls(os.environ)\n\n    @property\n    def debug(self) -> bool:\n        return self.get('DEBUG') == '1'",
+    "def merge(left, right):\n    \"\"\"Merge two sorted lists.\n\n    Parameters\n    ----------\n    left : list\n    right : list\n    \"\"\"\n    out = []\n    return out"
+   ],
+   "quiet": [
+    "import os\nimport sys\nfrom pathlib import Path\nROOT = Path(__file__).parent\nDEBUG = os.environ.get('DEBUG') == '1'\nprint(ROOT, DEBUG)",
+    "The load function takes a path and a strict flag, opens the file and returns its contents as a single string.",
+    "x = 3\ny = x * 2\nz = y + 1\nresult = [x, y, z]\nprint(result)",
+    "The Account class stores its owner in the constructor and exposes the balance as a read-only property.",
+    "values = sorted(data)\ntotal = sum(values)\nmean = total / len(values)\nprint(f'mean: {mean:.2f}')",
+    "To resize an image, pass the width you want; the function returns a resized copy of the original picture.",
+    "from collections import Counter\nwords = open('book.txt').read().split()\ncounts = Counter(words)\nprint(counts.most_common(10))",
+    "A tree node has a value and a depth, and a leaf is simply a node created without any children attached to it."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python line indentation",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags it broad (1.5% of tokens >0.1 max); top examples are the indent token before ':param', '----------' and 'def' after '@property'. Near misses are the same code content without indentation (top-level statements) or flattened into prose."
+}
