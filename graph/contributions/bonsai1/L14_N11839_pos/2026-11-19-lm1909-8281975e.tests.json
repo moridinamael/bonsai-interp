@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-8281975e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N11839+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:33:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N11839",
+   "pole": "+",
+   "label": "separator ('|' or ';') between links in a website navigation menu (Home | About | … | Contact Us), strongest late in the menu; not pipes in tables or code",
+   "fire": [
+    "Home | About Us | Programs | Events | Donate | Contact",
+    "HOME; ABOUT US; ADMISSIONS; ACADEMICS; ATHLETICS; ALUMNI; CONTACT",
+    "Welcome to the museum.\nHome | Visit | Exhibitions | Collections | Shop | Membership",
+    "News | Sports | Weather | Opinion | Obituaries | Classifieds | Subscribe",
+    "FAQ | Shipping | Returns | Track Order | Gift Cards | Store Locator",
+    "SERVICES; PORTFOLIO; PRICING; TESTIMONIALS; BLOG; CAREERS; GET IN TOUCH",
+    "Copyright 2014 Lakeside Dental.\nHome | Our Team | Services | New Patients | Contact Us | Site Map",
+    "Main Page | Recent Changes | Random Article | Help | Log In | Search"
+   ],
+   "quiet": [
+    "| Program | Start | Seats |\n| Painting | May | 12 |\n| Pottery | June | 8 |",
+    "The school has offices for admissions, academics, athletics and alumni relations.",
+    "Welcome to the museum. You can visit the exhibitions, see the collections and stop at the shop.",
+    "cat news.txt | grep sports | sort | uniq | wc -l",
+    "flags = READ | WRITE | APPEND | CREATE",
+    "She offers design services; her portfolio is online; pricing depends on the job.",
+    "Copyright 2014 Lakeside Dental. Our team welcomes new patients and offers a full range of services.",
+    "Main Page > Help > Accounts > Logging In > Password Reset"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "nav-menu link separators",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' |' x6, ';' x2, ' Map', ' Search', ' About' in footer/header link rows. Probes: Home | Products | … 0.62, ABOUT; NEWS; … 0.84, Privacy Policy | … | Site Map 0.40; markdown table 0.11, 'a | b | c' code 0.14, breadcrumb with '>' 0.16, prose list of pages 0.25. The - pole is flagged dense (28% of tokens) and is not tested here."
+}

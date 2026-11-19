@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-3bd8eb1e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10503+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:33:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N10503",
+   "pole": "+",
+   "label": "best guess: the loop header ('for … in enumerate(…)') that follows a run of variable initialisations inside a long Python function",
+   "fire": [
+    "import json\n\ndef read_scores(path):\n    scores = {}\n    current = scores\n    rows = open(path).read().splitlines()\n    for number, row in enumerate(rows):\n        name, points = row.split(',')\n        current[name] = int(points)\n    return scores",
+    "def count_words(text):\n    counts = {}\n    longest = ''\n    words = text.split()\n    position = -1\n    for position, word in enumerate(words):\n        counts[word] = counts.get(word, 0) + 1\n    return counts",
+    "def build_index(pages):\n    index = {}\n    current_page = None\n    total = 0\n    for page_number, page in enumerate(pages):\n        index[page.title] = page_number\n        total += 1\n    return index",
+    "class Report(object):\n    def summarize(self, entries):\n        summary = []\n        last_date = ''\n        skipped = 0\n        for i, entry in enumerate(entries):\n            summary.append(entry.title)\n        return summary",
+    "def parse_header(raw):\n    fields = {}\n    order = []\n    parts = raw.strip().split(';')\n    for offset, part in enumerate(parts):\n        key, value = part.split(':')\n        fields[key] = value\n    return fields",
+    "def merge_tables(left, right):\n    merged = {}\n    missing = []\n    keys = sorted(left.keys())\n    for rank, key in enumerate(keys):\n        merged[key] = (left[key], right.get(key))\n    return merged",
+    "def tally_votes(ballots):\n    tally = {}\n    spoiled = 0\n    current = tally\n    for seat, ballot in enumerate(ballots):\n        current[ballot] = current.get(ballot, 0) + 1\n    return tally",
+    "def number_lines(source):\n    numbered = []\n    width = 4\n    lines = source.splitlines()\n    for lineno, text in enumerate(lines):\n        numbered.append(str(lineno).rjust(width) + ' ' + text)\n    return numbered"
+   ],
+   "quiet": [
+    "import json\n\ndef read_scores(path):\n    scores = {}\n    current = scores\n    rows = open(path).read().splitlines()\n    current['rows'] = len(rows)\n    current['path'] = path\n    return scores",
+    "def count_words(text):\n    counts = {}\n    longest = ''\n    words = text.split()\n    position = -1\n    counts['total'] = len(words)\n    return counts",
+    "def build_index(pages):\n    index = {}\n    current_page = None\n    total = 0\n    index['first'] = pages[0].title\n    total += 1\n    return index",
+    "class Report(object):\n    def summarize(self, entries):\n        summary = []\n        last_date = ''\n        skipped = 0\n        summary.append(entries[0].title)\n        return summary",
+    "def parse_header(raw):\n    fields = {}\n    order = []\n    parts = raw.strip().split(';')\n    fields['count'] = len(parts)\n    fields['raw'] = raw\n    return fields",
+    "def merge_tables(left, right):\n    merged = {}\n    missing = []\n    keys = sorted(left.keys())\n    merged['keys'] = keys\n    merged['size'] = len(keys)\n    return merged",
+    "def tally_votes(ballots):\n    tally = {}\n    spoiled = 0\n    current = tally\n    current['ballots'] = len(ballots)\n    current['spoiled'] = spoiled\n    return tally",
+    "def number_lines(source):\n    numbered = []\n    width = 4\n    lines = source.splitlines()\n    numbered.append(str(len(lines)).rjust(width))\n    return numbered"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "loop after setup lines (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: no single token; top examples are ' for' opening a loop after several assignment lines, an indented comment, and one prose ' the' after 'division of'. Probes were weak: short loops 0.05-0.10, a longer two-function file 0.39 (peak ' enumerate'), a prose passage about a treaty's 'partition of the realm' 0.54. No clear trigger found; this test records the code guess and will probably fail."
+}
