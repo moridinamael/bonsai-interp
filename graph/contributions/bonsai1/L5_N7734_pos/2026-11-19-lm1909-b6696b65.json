@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-b6696b65",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N7734+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:31:00+00:00",
+ "recipe": {
+  "toolchain_commit": "5c0953dcf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N7734_pos/2026-11-19-lm1909-b6696b65.tests.json"
+ },
+ "label": "The last digit of a three- or four-digit number in a catalogue-style code after uppercase letters: course numbers (MATH 100, CHEM 201) and model numbers (DX100); plain quantities and years stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N7734_pos/2026-11-19-lm1909-b6696b65.tests.json",
+   "prereg_commit": "5c0953dcf",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.983,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.498,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.65,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.796,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.776,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.8,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.805,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.331,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " paper"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " must"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": " drew"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " album"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": "Next"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.786,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5c0953dcf",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digit of a course/model code",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'MATH 100' 0.87, 'CHEM 201 or BIO 110' 0.73, 'Yamaha DX100' 0.85, 'PSY 310 and ECON 205' 0.59, 'P1102' 0.26; '100 people ... in 2006' 0.01, '300 people' 0.00, '250 grams' 0.05, years 0.01. One exception: '3,127 ft ... 1,104 miles' 0.55, so some comma-grouped quantities fire as well.",
+ "selection": "random draw"
+}

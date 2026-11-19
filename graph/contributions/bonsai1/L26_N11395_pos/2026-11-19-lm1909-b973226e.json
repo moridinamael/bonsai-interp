@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-b973226e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N11395+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:19+00:00",
+ "recipe": {
+  "toolchain_commit": "5c0953dcf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N11395_pos/2026-11-19-lm1909-b973226e.tests.json"
+ },
+ "label": "Word of mouth: telling, recommending or sharing something with friends and family; fires at or just before the telling word (output promotes ' share', ' tell', ' recommend', ' spread')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N11395_pos/2026-11-19-lm1909-b973226e.tests.json",
+   "prereg_commit": "5c0953dcf",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.874,
+     "peak": " already"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.398,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.759,
+     "peak": " telling"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.357,
+     "peak": " referring"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.54,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.412,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.473,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.71,
+     "peak": " telling"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " haircut"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.1,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": "Members"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.0,
+     "peak": " left"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " view"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " before"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.506,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5c0953dcf",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "telling friends / recommending",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Probes: recommending/telling sentences 0.53-0.90; plain product descriptions 0.00; a complaint 0.08. A satisfied review followed by 'I have already booked a table' also scored 0.83 at ' already': the pole fires in anticipation of the recommending word after praise, so praise-only near misses would leak.",
+ "selection": "random draw"
+}

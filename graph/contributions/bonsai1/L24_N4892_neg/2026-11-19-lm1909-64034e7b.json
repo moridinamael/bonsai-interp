@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-64034e7b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4892-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:59+00:00",
+ "recipe": {
+  "toolchain_commit": "5c0953dcf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N4892_neg/2026-11-19-lm1909-64034e7b.tests.json"
+ },
+ "label": "Engineering and electrical design vocabulary in technical or standards text: fires on ' engineering', ' electrical', ' design' and nearby words when the passage is about engineered equipment or structures",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N4892_neg/2026-11-19-lm1909-64034e7b.tests.json",
+   "prereg_commit": "5c0953dcf",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.621,
+     "peak": " electrical"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.642,
+     "peak": " electrical"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.591,
+     "peak": " steel"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.372,
+     "peak": " design"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.387,
+     "peak": " IEEE"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.27,
+     "peak": " design"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.274,
+     "peak": " load"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.314,
+     "peak": "gear"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " payroll"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " locally"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": " reading"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " show"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " completed"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " music"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.38,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5c0953dcf",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "engineering / electrical design",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'structural engineering and electrical design services' 0.51, 'IEEE and UL standards for electrical equipment' 0.63, 'mechanical design and careful load analysis' 0.21; tax-advice and novel versions 0.02-0.03. The + pole fires on the names of engineers and inventors and its output promotes ' engineer', ' engineering'.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-299e5691",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N3647-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:46+00:00",
+ "recipe": {
+  "toolchain_commit": "5c0953dcf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N3647_neg/2026-11-19-lm1909-299e5691.tests.json"
+ },
+ "label": "The first name ' Susan' directly before a surname (weaker on ' Suzanne'; a bare 'Susan' as a sentence subject is weak). A second trigger, ' of' in 'School of <field>', is not tested here",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N3647_neg/2026-11-19-lm1909-299e5691.tests.json",
+   "prereg_commit": "5c0953dcf",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.736,
+     "peak": " Susan"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.35,
+     "peak": " Susan"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.59,
+     "peak": " Susan"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.829,
+     "peak": " Susan"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.758,
+     "peak": " Susan"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.437,
+     "peak": " Susan"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.439,
+     "peak": " Susan"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.488,
+     "peak": " Susan"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.093,
+     "peak": " Linda"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": " Karen"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.044,
+     "peak": " Nancy"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": " looks"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.158,
+     "peak": " Laura"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": " Carol"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " Diane"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.539,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5c0953dcf",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' Susan' + surname",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Probes: 'Senator Susan Collins' 0.77, 'Susan Miller' 0.80, 'Suzanne Miller' 0.40, 'Sarah Miller' 0.14, 'Karen drove home' 0.01; bare 'Susan drove home' only 0.14. 'School of Medicine' 0.58 and 'School of Law' 0.57 (peak ' of'): 13 of the card's top 32 peak on ' of', so ' Susan' is about half the pole.",
+ "selection": "random draw"
+}

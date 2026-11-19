@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-f84b3f7d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N7114-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:29:40+00:00",
+ "recipe": {
+  "toolchain_commit": "5c0953dcf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N7114_neg/2026-11-19-lm1909-f84b3f7d.tests.json"
+ },
+ "label": "The inner or final piece of a multi-token foreign surname (Italian '-ini', '-etti', '-zi', Polish '-icz', '-ski') after a given name; the word ' such' is a second, unrelated trigger",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N7114_neg/2026-11-19-lm1909-f84b3f7d.tests.json",
+   "prereg_commit": "5c0953dcf",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.138,
+     "peak": "ini"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.54,
+     "peak": "van"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.214,
+     "peak": "lli"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.462,
+     "peak": "ork"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.151,
+     "peak": "azzi"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.287,
+     "peak": "ski"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.388,
+     "peak": "ini"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.609,
+     "peak": "cki"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " Grant"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.034,
+     "peak": " came"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " Friday"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " Victor"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": " Mills"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.175,
+     "peak": " several"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " during"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.338,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5c0953dcf",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "foreign surname ending piece",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Probes: Bertolini/Kowalewicz 0.32, Castellini 0.22, Wisniewski 0.28, Marchetti 0.47; Brown/Smith 0.03, Marsh 0.00. But ' such'/'Such' also fires (0.34-0.50), so the surname label does not cover the whole pole.",
+ "selection": "random draw"
+}
