@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-732663b6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8148+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N8148",
+   "pole": "+",
+   "label": "subword pieces 'if', 'iffer' or 'pher' inside split words (scient|if|iques, P|fe|iffer, s|pher|oid)",
+   "fire": [
+    "Les revues spécifiques publient ces travaux chaque mois.",
+    "Ce résultat a été démontré scientifiquement en 2010.",
+    "His back felt stiffer after the long flight.",
+    "The airport sniffer dog found the hidden package.",
+    "The reporter interviewed Professor Schiffer about the dig.",
+    "The spy wrote his letters in a simple cypher.",
+    "The planet is a slightly flattened spheroid.",
+    "Spheroidal graphite iron is used for heavy pipes."
+   ],
+   "quiet": [
+    "Les revues médicales publient ces travaux chaque mois.",
+    "Ce résultat a été démontré clairement en 2010.",
+    "His back felt worse after the long flight.",
+    "The airport security dog found the hidden package.",
+    "The reporter interviewed Professor Griffin about the dig.",
+    "The spy tried to decipher the letters in a code.",
+    "The planet is a slightly flattened sphere.",
+    "Spherical graphite particles are used for heavy pipes."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split 'if'/'iffer'/'pher' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Spelling unit. Card: 'if' x8, 'pher' x6, 'iff' x4, 'iffer' x2. Probe: scientifiques 0.92, spheroidal 0.92, Pfeiffer 0.82; whole-token ' scientific' 0.05. Fire words chosen so the piece is its own token; near misses use single-token words (spherical, hemisphere, scientific, differ, Griffin, Christopher, decipher, amplifier)."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-7e45a992",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N4667-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N4667",
+   "pole": "-",
+   "label": "handler-type token in Python logging handlers (logging.FileHandler / logging.StreamHandler)",
+   "fire": [
+    "import logging\n\nlog = logging.getLogger('worker')\nfile_handler = logging.FileHandler('worker.log')\nlog.addHandler(file_handler)",
+    "def setup():\n    root = logging.getLogger()\n    sh = logging.StreamHandler()\n    root.addHandler(sh)",
+    "if args.logfile:\n    h = logging.FileHandler(args.logfile, mode='w')\n    h.setLevel(logging.DEBUG)\n    logger.addHandler(h)",
+    "    console = logging.StreamHandler(sys.stdout)\n    console.setFormatter(fmt)\n    logger.addHandler(console)",
+    "logger = logging.getLogger(__name__)\nhandler = logging.FileHandler(os.path.join(out_dir, 'run.log'))\nlogger.addHandler(handler)",
+    "        stream = logging.StreamHandler()\n        stream.setLevel(logging.WARNING)\n        self.log.addHandler(stream)",
+    "LOG = logging.getLogger('train')\nfh = logging.FileHandler('train.log')\nfh.setFormatter(formatter)\nLOG.addHandler(fh)",
+    "def get_logger(name):\n    lg = logging.getLogger(name)\n    ch = logging.StreamHandler()\n    lg.addHandler(ch)\n    return lg"
+   ],
+   "quiet": [
+    "import logging\n\nlog = logging.getLogger('worker')\nlogging.basicConfig(filename='worker.log')\nlog.info('started')",
+    "def setup():\n    root = logging.getLogger()\n    root.setLevel(logging.INFO)\n    root.info('ready')",
+    "if args.logfile:\n    out = open(args.logfile, mode='w')\n    out.write('start\\n')\n    out.close()",
+    "    fmt = logging.Formatter('%(message)s')\n    logger.setLevel(logging.INFO)\n    logger.debug('formatter set')",
+    "logger = logging.getLogger(__name__)\npath = os.path.join(out_dir, 'run.log')\nlogger.warning('writing to %s', path)",
+    "        level = logging.WARNING\n        self.log.setLevel(level)\n        self.log.warning('low disk')",
+    "LOG = logging.getLogger('train')\nformatter = logging.Formatter('%(asctime)s')\nLOG.setLevel(logging.DEBUG)",
+    "def get_logger(name):\n    lg = logging.getLogger(name)\n    lg.propagate = False\n    return lg"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "logging File/Stream handler",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card top: type='network' in libvirt XML, logging.FileHandler, logging.StreamHandler, ' Media' Access Control, ear' buds'. Probe: '.File' 0.55, '.Stream' 0.31, libvirt network only 0.08. Testing the logging-handler part only."
+}

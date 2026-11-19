@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-cc3b4993",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N3090+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N3090",
+   "pole": "+",
+   "label": "separator right after an entry's name in compact lists (Laos 541 km, 'Skill', blank=True)",
+   "fire": [
+    "Land boundaries: total 3,100 km; Bolivia 750 km, Brazil 1,290 km, Argentina 1,060 km.",
+    "Border countries: Austria 784 km, Belgium 167 km, Denmark 68 km.",
+    "    tags = models.ManyToManyField('Tag', blank=True)",
+    "    owner = models.ForeignKey('Owner', on_delete=models.CASCADE)",
+    "Land boundaries: Kenya 933 km, Somalia 1,600 km, Sudan 1,606 km.",
+    "    groups = models.ManyToManyField('Group', related_name='members')",
+    "Border countries: Cambodia 1,137 km, China 1,281 km, Laos 2,130 km.",
+    "    author = models.ForeignKey('Author', null=True, blank=True)"
+   ],
+   "quiet": [
+    "Bolivia, Brazil and Argentina all share long land borders with Paraguay.",
+    "Austria, Belgium and Denmark are among the countries that border Germany.",
+    "    tags = []\n    blank = True",
+    "    owner = None  # set on save",
+    "Kenya, Somalia and Sudan all share land borders with Ethiopia.",
+    "    groups = set()  # filled later",
+    "Cambodia, China and Laos all share land borders with Vietnam.",
+    "    author = request.user"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "list entry separator",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: one strong top example (' –' after Sierra Nevada, 24) then a mixed set of separators (space before a border length, ',' after a model name in ManyToManyField, Japanese へ). Probes weak (0.06-0.30); best 0.30 on a country-border list. Best guess, expected to fail."
+}
