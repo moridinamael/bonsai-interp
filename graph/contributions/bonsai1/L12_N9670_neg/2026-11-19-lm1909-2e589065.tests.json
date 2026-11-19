@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-2e589065",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N9670-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:14:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N9670",
+   "pole": "-",
+   "label": "the token right after a spot where expected content has been dropped from the text: a missing number before its unit noun ('covers  acres', 'around , hectares') or a missing name before the next list line; quiet when the content is present",
+   "fire": [
+    "The school enrols roughly  pupils and employs  teachers.",
+    "The reservoir holds about , litres of water when full.",
+    "The province borders\nto the east, Lyon\nto the west,\nto the north and\nto the south.",
+    "The new plant will produce  tonnes of steel a year and create  jobs.",
+    "The island has a population of  people living in  villages.",
+    "The bridge is  metres long and cost  million dollars.",
+    "Attendance reached nearly , spectators on the final day.",
+    "The orchard contains  apple trees spread over  hectares."
+   ],
+   "quiet": [
+    "The school enrols roughly 640 pupils and employs 45 teachers.",
+    "The reservoir holds about 90,000 litres of water when full.",
+    "The province borders Savoy\nto the east, Lyon\nto the west, Dijon\nto the north and Nice\nto the south.",
+    "The new plant will produce 800 tonnes of steel a year and create 300 jobs.",
+    "The island has a population of 2,100 people living in six villages.",
+    "The bridge is 420 metres long and cost 12 million dollars.",
+    "Attendance reached nearly 18,000 spectators on the final day.",
+    "The orchard contains many apple trees spread over several hectares."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "token after dropped content",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'employs about  workers and covers  acres' 1.02, list lines with the names missing 0.90, 'around , hectares' 0.84, fused 'class.ii.' 0.64; the same sentences with the numbers present 0.03. A dangling 'through , and' did not fire (0.04), so fire items use a missing number or name before a noun or list line."
+}
