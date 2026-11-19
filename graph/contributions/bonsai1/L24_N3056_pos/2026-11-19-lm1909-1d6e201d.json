@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-1d6e201d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3056+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:31:05+00:00",
+ "recipe": {
+  "toolchain_commit": "b26a29dd9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N3056_pos/2026-11-19-lm1909-1d6e201d.tests.json"
+ },
+ "label": "the token '://' after http or https in a URL",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N3056_pos/2026-11-19-lm1909-1d6e201d.tests.json",
+   "prereg_commit": "b26a29dd9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.722,
+     "peak": "://"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.602,
+     "peak": "://"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.542,
+     "peak": "://"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.348,
+     "peak": "://"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.629,
+     "peak": "://"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.519,
+     "peak": "://"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.533,
+     "peak": "://"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.395,
+     "peak": "://"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.061,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " indicator"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.065,
+     "peak": " bugs"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " posted"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": ":"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.538,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b26a29dd9",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'://' in http(s) URLs",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: '://' x32, one token dominates. Probes: https:// 0.51, http:// 0.41; www. address without a scheme 0.01, '//' comment and '3:1' 0.01. A sentence with 'C://' and 'ftp://' scored only 0.03, so the label is limited to http(s).",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "://"
+  ]
+ }
+}

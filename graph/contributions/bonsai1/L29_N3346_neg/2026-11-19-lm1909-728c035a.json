@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-728c035a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3346-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:29:55+00:00",
+ "recipe": {
+  "toolchain_commit": "b26a29dd9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N3346_neg/2026-11-19-lm1909-728c035a.tests.json"
+ },
+ "label": "a digit inside a number whose tail is a rounded third or sixth (…33, …67, …83, …17, e.g. 0.1⟦6⟧7, 8.⟦3⟧3, 2.⟦8⟧3 GHz): the digit just before the expected next 3/6/7",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N3346_neg/2026-11-19-lm1909-728c035a.tests.json",
+   "prereg_commit": "b26a29dd9",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.486,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.688,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.422,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.072,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.084,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.774,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.514,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.474,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.048,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.331,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.479,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.231,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " foot"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.523,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.084,
+     "peak": "5"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.5,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b26a29dd9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digit in thirds/sixths decimal",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peak tokens '6','8','3' inside 0.167, 7.17, 2.83, 1.3, 2933, 15.625; the - pole's output promotes '6','7','3'. Probes: 0.833/4.17 0.72, 16.67/8.33 0.73, 2.66 0.60, 0.167 0.47; other decimals (3.14, 9.81, 0.92, 1.75) 0.01-0.09, plain integers 0.00. A list containing 0.125 gave 0.29.",
+ "selection": "random draw"
+}

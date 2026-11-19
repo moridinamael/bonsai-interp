@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a7e308cd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N10921-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:29:49+00:00",
+ "recipe": {
+  "toolchain_commit": "b26a29dd9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N10921_neg/2026-11-19-lm1909-a7e308cd.tests.json"
+ },
+ "label": "biographical or news prose naming a person's official role or honour: fires on the role/title word or the word right after it ('official', 'commentators', 'Stakes aboard', 'assisted at')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N10921_neg/2026-11-19-lm1909-a7e308cd.tests.json",
+   "prereg_commit": "b26a29dd9",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.386,
+     "peak": "akes"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.08,
+     "peak": " official"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.472,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.41,
+     "peak": " commentators"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.224,
+     "peak": " Justice"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.282,
+     "peak": " official"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.465,
+     "peak": "akes"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.777,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.068,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.04,
+     "peak": " hills"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.048,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.09,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.047,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.064,
+     "peak": " lakes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.398,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b26a29dd9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "person's official role",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Weak pole (max 6.84), no single token on the card. Probes: sentences copied from the card's pattern reached 0.37-0.75, but looser role sentences only 0.04-0.32, so this is a best guess and may fail.",
+ "selection": "random draw"
+}

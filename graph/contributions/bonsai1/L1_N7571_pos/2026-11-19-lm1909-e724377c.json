@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-e724377c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7571+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:29:56+00:00",
+ "recipe": {
+  "toolchain_commit": "b26a29dd9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N7571_pos/2026-11-19-lm1909-e724377c.tests.json"
+ },
+ "label": "the tokens 'Common' (capitalised, opening a line) and ' masse' (in 'en masse'); a token list, no shared meaning found",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N7571_pos/2026-11-19-lm1909-e724377c.tests.json",
+   "prereg_commit": "b26a29dd9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.525,
+     "peak": "Common"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.716,
+     "peak": " masse"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.71,
+     "peak": "Common"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.722,
+     "peak": " masse"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.58,
+     "peak": "Common"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.749,
+     "peak": " masse"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.677,
+     "peak": "Common"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.657,
+     "peak": " masse"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.099,
+     "peak": " wet"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.424,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.236,
+     "peak": " dry"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.071,
+     "peak": " f"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " below"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.166,
+     "peak": " heavy"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": "igrams"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.063,
+     "peak": " resigned"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.694,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b26a29dd9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Common' / ' masse' tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad (3.0% of tokens reach 0.1 of max) and lists 'も', ' times', 'Common', ' 최', ' from'. Probes: line-initial 'Common'/'Commonly' 0.53-0.77, ' masse' 0.58-0.71, ' times' 0.11-0.26, lowercase ' common' 0.27, 'も' 0.03. Only two of the card's tokens are tested, so the label is partial at best.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "Common",
+   " masse"
+  ]
+ }
+}
