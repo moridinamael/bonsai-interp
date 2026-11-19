@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a608b1c3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3995+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:48:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N3995",
+   "pole": "+",
+   "label": "the token ' return' opening a return statement in code, strongest after a blank line at the end of a function body",
+   "fire": [
+    "def parse(text):\n    parts = text.split(',')\n    values = [p.strip() for p in parts]\n    values = [v for v in values if v]\n    count = len(values)\n\n    return values",
+    "    def full_name(self):\n        first = self.first or ''\n        last = self.last or ''\n        joined = first + ' ' + last\n\n        return joined.strip()",
+    "def read_config(path):\n    with open(path) as handle:\n        raw = handle.read()\n    settings = json.loads(raw)\n    settings['path'] = path\n\n    return settings",
+    "def build_headers(token):\n    headers = {}\n    headers['Accept'] = 'text/html'\n    headers['Authorization'] = token\n    body = []\n\n    return {'headers': headers, 'data': body}",
+    "    def forward(self, inputs):\n        hidden = self.encoder(inputs)\n        hidden = self.dropout(hidden)\n        outputs = self.decoder(hidden)\n\n        return outputs",
+    "def merge(left, right):\n    merged = dict(left)\n    for key in right:\n        merged[key] = right[key]\n    merged['size'] = len(merged)\n\n    return merged",
+    "def average(numbers):\n    cleaned = [n for n in numbers if n is not None]\n    if not cleaned:\n        cleaned = [0]\n    top = sum(cleaned)\n\n    return top / len(cleaned)",
+    "    def to_json(self):\n        payload = {}\n        payload['id'] = self.id\n        payload['tags'] = list(self.tags)\n\n        return json.dumps(payload)"
+   ],
+   "quiet": [
+    "def parse(text):\n    parts = text.split(',')\n    values = [p.strip() for p in parts]\n    values = [v for v in values if v]\n    count = len(values)\n\n    print(values)",
+    "    def full_name(self):\n        first = self.first or ''\n        last = self.last or ''\n        joined = first + ' ' + last\n\n        self.label = joined.strip()",
+    "def read_config(path):\n    with open(path) as handle:\n        raw = handle.read()\n    settings = json.loads(raw)\n    settings['path'] = path\n\n    save(settings)",
+    "def build_headers(token):\n    headers = {}\n    headers['Accept'] = 'text/html'\n    headers['Authorization'] = token\n    body = []\n\n    send({'headers': headers, 'data': body})",
+    "    def forward(self, inputs):\n        hidden = self.encoder(inputs)\n        hidden = self.dropout(hidden)\n        outputs = self.decoder(hidden)\n\n        self.last = outputs",
+    "def merge(left, right):\n    merged = dict(left)\n    for key in right:\n        merged[key] = right[key]\n    merged['size'] = len(merged)\n\n    yield merged",
+    "def average(numbers):\n    cleaned = [n for n in numbers if n is not None]\n    if not cleaned:\n        cleaned = [0]\n    top = sum(cleaned)\n\n    raise ValueError(top)",
+    "    def to_json(self):\n        payload = {}\n        payload['id'] = self.id\n        payload['tags'] = list(self.tags)\n\n        log(json.dumps(payload))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' return' in code",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Peak tokens of the top 32: ' return' x25, ' Returns' x7. Probes: return after a blank line in a longer function 0.30 and 0.24, in short snippets 0.08-0.11; 'return' in prose 0.02; same code ending in print 0.03. Fire items are multi-line functions."
+}
