@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e6e82e34",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N249+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:36+00:00",
+ "recipe": {
+  "toolchain_commit": "6dc7b3c79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N249_pos/2026-11-19-lm1909-e6e82e34.tests.json"
+ },
+ "label": "the determiner or 'of' that opens a postponed object after an intervening phrase (heavy-NP shift): 'announced to Congress ⟦his⟧ goal', 'the establishment by European nations ⟦of⟧ their outposts', 'hear in a republic ⟦a⟧ motion'; quiet when the object directly follows the verb",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N249_pos/2026-11-19-lm1909-e6e82e34.tests.json",
+   "prereg_commit": "6dc7b3c79",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.286,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.212,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.664,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.365,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.537,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.046,
+     "peak": " state"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.264,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.415,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " ended"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": "Nobody"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " resign"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.088,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.326,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6dc7b3c79",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "start of a shifted (postponed) object",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card shows the same pattern in English, Spanish and French. Probes: shifted 0.82, 0.79, 0.53, 0.44, 0.44, and 'gave to the museum a collection' only 0.13; canonical order 0.003-0.007. Near misses are the same sentences in canonical order.",
+ "selection": "random draw"
+}

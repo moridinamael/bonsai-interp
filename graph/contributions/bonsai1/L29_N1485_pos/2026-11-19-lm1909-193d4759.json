@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-193d4759",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1485+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:35+00:00",
+ "recipe": {
+  "toolchain_commit": "6dc7b3c79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1485_pos/2026-11-19-lm1909-193d4759.tests.json"
+ },
+ "label": "text about a volatile or flammable substance giving off vapour (refrigerant, petrol fumes, solvents, a liquid turning to gas); fires on the words just before or around the vapour/gas mention, and its output promotes ' vapor', ' liquid', ' gas'. The - pole is the other side: inert airborne matter (air, coal dust, asbestos)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1485_pos/2026-11-19-lm1909-193d4759.tests.json",
+   "prereg_commit": "6dc7b3c79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.97,
+     "peak": "ant"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.68,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.58,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.675,
+     "peak": " highly"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.4,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.411,
+     "peak": " strong"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.34,
+     "peak": " its"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.433,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.294,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " damp"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.126,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.079,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.125,
+     "peak": " off"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.103,
+     "peak": " began"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.506,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6dc7b3c79",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "volatile / vapour-emitting substances",
+ "unit_kind": "sparse feature",
+ "confidence": 0.65,
+ "notes": "Probes: refrigerant 0.82, solvent odour 0.81, flammable 0.66, vapors 0.63, liquid-to-gas 0.45, fuel fumes 0.43; coal dust 0.004, river water 0.002. Peak token varies ('ant', ' near', ' a', ' highly'), so this is a context, not a token.",
+ "selection": "random draw"
+}
