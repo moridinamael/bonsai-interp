@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-57a5e56e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N244-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:21:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N244",
+   "pole": "-",
+   "label": "The token '._' (private attribute access, typically self._name); also a lone ' _' or member prefix m_; plain '.' attribute access stays quiet",
+   "fire": [
+    "def close(self):\n    if self._socket is not None:\n        self._socket = None",
+    "def size(self):\n    return self._width * self._height",
+    "def start(self):\n    self._timer = Timer()\n    self._running = True",
+    "def value(self):\n    if self._cache is None:\n        self._cache = self._compute()\n    return self._cache",
+    "def add(self, item):\n    self._items.append(item)\n    self._dirty = True",
+    "def title(self):\n    return self._title or self._default_title",
+    "def stop(self):\n    self._thread.join()\n    self._thread = None",
+    "def clear(self):\n    self._buffer = []\n    self._offset = 0"
+   ],
+   "quiet": [
+    "def close(self):\n    if self.socket is not None:\n        self.socket = None",
+    "def size(self):\n    return self.width * self.height",
+    "def start(self):\n    self.timer = Timer()\n    self.running = True",
+    "def value(self):\n    if self.cache is None:\n        self.cache = self.compute()\n    return self.cache",
+    "def add(self, item):\n    self.items.append(item)\n    self.dirty = True",
+    "def title(self):\n    return self.title or self.default_title",
+    "def stop(self):\n    self.thread.join()\n    self.thread = None",
+    "def clear(self):\n    self.buffer = []\n    self.offset = 0"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "token '._'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: '._' x28, ' _' x3, 'm' (m_attributes) x1. Probes: self._name 0.57, self.name 0.015, m_obj->m_attributes 0.78, ' _private_helper' 0.34."
+}

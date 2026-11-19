@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-df11876d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N28+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:21:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N28",
+   "pole": "+",
+   "label": "Opening quote or delimiter of a string value in code or markup: the ' \"' that opens a value after a key and colon, the =' of an attribute, and ?, =, | separators inside a string literal",
+   "fire": [
+    "payload = {\n    \"user-NAME\": \"anna\",\n    \"user-AGE\": \"42\",\n}",
+    "html = \"<input type='text' name='email' value='none'>\"",
+    "settings = {\n    'host': 'localhost',\n    'port': '8080',\n}",
+    "ENDPOINT = \"https://api.test.net/search?term=%s&limit=%d\" % (term, n)",
+    "row = {\n    \"id\": \"17\",\n    \"status\": \"open\",\n    \"owner\": \"li\",\n}",
+    "tag = \"<a href='index.html' class='nav' id='home'>\"",
+    "headers = {\n    'Accept': 'text/html',\n    'Cache-Control': 'no-cache',\n}",
+    "form = {\n    \"csrf-TOKEN\": \"abc\",\n    \"page-SIZE\": \"25\",\n}"
+   ],
+   "quiet": [
+    "payload = build(user, age)\nresult = send(payload)\ncount = count + 1",
+    "The label said \"fragile\" and the clerk handled the box with care.",
+    "settings = load(path)\nhost = settings.host\nport = settings.port + 1",
+    "limit = max(n, 10)\nfor k in range(limit):\n    total = total + k",
+    "row = table[17]\nowner = row.owner\nstatus = row.status",
+    "My aunt whispered \"good night\" and switched off the lamp.",
+    "headers = make_headers(request)\nreply = fetch(url, headers)\nreturn reply",
+    "while page < size:\n    page = page + 1\n    items = items + step"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "string-value opener in code",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: \" '\" x6, ' \"' x5, \"='\" x3, '=', ';', '=\"' inside code string literals. Probes: dict of quoted values 0.79, XML attributes in a string 0.63, URL query string 0.47; code without strings 0.007, prose quotation 0.03."
+}
