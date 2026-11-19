@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a45bcd23",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N5892-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:18:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N5892",
+   "pole": "-",
+   "label": "Python calls that split a path or string into parts for unpacking or indexing: 'os.path.split', '.splitext', '.partition' (weaker on str.split(sep, 1); fires on the method token)",
+   "fire": [
+    "import os\n\ndef folder_of(full_path):\n    folder, name = os.path.split(full_path)\n    return folder\n",
+    "import os\n\ndef strip_suffix(fname):\n    stem = os.path.splitext(fname)[0]\n    return stem\n",
+    "def scheme_of(url):\n    scheme, _, remainder = url.partition('://')\n    return scheme\n",
+    "import os\n\nfor entry in os.listdir(src):\n    title, suffix = os.path.splitext(entry)\n    print(title, suffix)\n",
+    "import os\n\ndef last_part(location):\n    tail = os.path.split(location)[1]\n    return tail.lower()\n",
+    "def read_option(text):\n    option, eq, setting = text.partition('=')\n    return option.strip(), setting.strip()\n",
+    "import os.path\n\ndef thumb_name(image):\n    root, extension = os.path.splitext(image)\n    return root + '_thumb' + extension\n",
+    "import os\n\ndef parent_and_leaf(target):\n    head, leaf = os.path.split(target.rstrip('/'))\n    return head, leaf\n"
+   ],
+   "quiet": [
+    "import os\n\ndef folder_of(full_path):\n    folder = os.path.dirname(full_path)\n    return folder\n",
+    "import os\n\ndef has_file(fname):\n    found = os.path.exists(fname)\n    return found\n",
+    "def scheme_of(url):\n    lowered = url.lower()\n    return lowered.startswith('https')\n",
+    "import os\n\nfor entry in os.listdir(src):\n    full = os.path.join(src, entry)\n    print(full)\n",
+    "import os\n\ndef last_part(location):\n    tail = os.path.basename(location)\n    return tail.lower()\n",
+    "def read_option(text):\n    cleaned = text.strip()\n    return cleaned.upper(), len(cleaned)\n",
+    "import os.path\n\ndef thumb_name(image):\n    absolute = os.path.abspath(image)\n    return absolute + '_thumb'\n",
+    "import os\n\ndef parent_and_leaf(target):\n    real = os.path.realpath(target)\n    return real, os.path.isdir(real)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python path/string split calls",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peak tokens '1' x6 (the maxsplit argument), '.split' x4, '.items' x4, '.splitext' x3, '.partition' x2. Probes on multi-line code: os.path.split/splitext 0.85, .partition 0.54, .split(':', 1) 0.26, .items() 0.03 (so .items did not reproduce), os.path.join/getsize 0.08, .lower/.replace 0.02."
+}

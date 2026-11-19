@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-19-lm1909-dd736819",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N9137+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:18:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N9137",
+   "pole": "+",
+   "label": "the identifier pieces '_data' and '_function' inside snake_case names (weaker on other underscore pieces such as '_config', '_public')",
+   "fire": [
+    "    rows = self.load_training_data(path)",
+    "from helpers import parse_user_data, clean_text",
+    "    def apply_loss_function(self, batch):",
+    "callback = make_wrapper_function(handler)",
+    "    cache.set(key, self.processed_data['name'])",
+    "    return run_test_function(args)",
+    "    def _read_sensor_data_file(self, name):",
+    "handlers = [log_error_function, retry_function]"
+   ],
+   "quiet": [
+    "    rows = self.loadTraining(path).data",
+    "from helpers import parseUser, cleanText",
+    "    def applyLoss(self, function, batch):",
+    "callback = makeWrapper(function=handler)",
+    "    cache.set(key, self.data['name'])",
+    "    return runTest(function, args)",
+    "    def readSensorFile(self, name, data):",
+    "handlers = [logError, retry, function]"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "'_data' / '_function' pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card flags the + pole as broad (7.7% of tokens reach 0.1 of max) and gate-closed dominated, max only 0.31, so near misses may fire weakly. Probes: '_data' 0.94, '_function' 0.80, '_config' 0.36, '_public' 0.29, code without underscore pieces 0.06-0.15. Near misses keep the words data/function but not as underscore-led pieces.",
+ "trigger": {
+  "tokens": [
+   "_data",
+   "_function"
+  ]
+ }
+}
