@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-47b11502",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N846+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:46:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N846",
+   "pole": "+",
+   "label": "a numeric slot in a row of code or a table that repeats the layout of the preceding row or bracket group (the digit/comma where the pattern recurs: '[0, 15], [⟦0⟧, 15]', '||65 W||6⟦5⟧ W|')",
+   "fire": [
+    "|Voltage||12 V||12 V|\n|Current||3.5 A||3.2 A|\n|Power||45 W||45 W|\n|Fan Speed||1800 RPM||1800 RPM|",
+    "plt.plot([0, 20], [0, 20], 'b--')\nplt.plot([0, 30], [0, 30], 'g--')",
+    "offsets = [\n    ( 2,  0),\n    ( 2, -2),\n    ( 0, -2),\n    (-2, -2),\n    (-2,  0),\n    (-2,  2),\n]",
+    "for i in range(n):\n    for j in range(m):\n        cost[i+1, j+1] = abs(a[i] - b[j])\n\nfor i in range(n):\n    for j in range(m):\n        cost[i+1, j+1] += best",
+    "|Clock Speed||2.4 GHz||2.2 GHz|\n|Boost Speed||3.1 GHz||2.9 GHz|\n|Power Draw||95 W||95 W|\n|Cores||8||8|",
+    "ax.plot([0, 50], [0, 50], 'k:')\nax.plot([0, 25], [0, 25], 'r:')\nax.plot([0, 5], [0, 5], 'b:')",
+    "corners = [\n    ( 3,  3),\n    ( 3, -3),\n    (-3, -3),\n    (-3,  3),\n    ( 3,  3),\n]",
+    "grid[r+1, c+1] = value\ngrid[r+1, c+2] = value\ngrid[r+2, c+1] = value\ngrid[r+2, c+2] = value"
+   ],
+   "quiet": [
+    "The power supply delivers 12 volts at 3.5 amps, and the fan spins at 1800 RPM.",
+    "The script draws two dashed lines, one in blue up to 20 and one in green up to 30.",
+    "offsets = compute_offsets(board, radius=2)",
+    "The loop fills a cost table and then adds the best previous cost to every cell.",
+    "The older chip runs at 2.2 GHz and draws 95 watts with all 8 cores busy.",
+    "ax.set_title('Predicted against observed')",
+    "The four corners of the square are 3 units from each axis.",
+    "value = grid.get(r, c)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated numeric slot in rows",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Weak pole (max 8.8). Probes: 'plt.plot([0, 15], [0, 15] …' twice 0.65, spec-table rows 0.44, tuple list 0.34, repeated loop body 0.25; but a second table 0.17, three set_xlim lines 0.12, one-line tuple list 0.19; prose with the same numbers 0.06, one-line code 0.05. Fire items are multi-line passages."
+}
