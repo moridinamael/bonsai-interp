@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-d6e7f22b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N5475+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:11:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N5475",
+   "pole": "+",
+   "label": "the unit or measure word right after a numeral in Chinese/Korean text (500元, 三场, 1200亩, 10만 달러); not dates",
+   "fire": [
+    "政府向每个家庭发放了800元的消费券。",
+    "这家工厂今年招聘了三百名工人。",
+    "市图书馆上周举办了四场讲座。",
+    "他用60万元买了一套小公寓。",
+    "农场主租下了1200亩土地种植小麦。",
+    "경찰은 범인에게 10만 달러의 현상금을 걸었습니다.",
+    "这次比赛共有五十名选手参加。",
+    "公司向灾区捐赠了2000箱矿泉水。"
+   ],
+   "quiet": [
+    "政府正在向每个家庭发放消费券。",
+    "这家工厂今年正在招聘工人。",
+    "市图书馆上周的讲座很受欢迎。",
+    "他贷款买了一套小公寓。",
+    "农场主租下土地种植小麦。",
+    "경찰은 범인에게 현상금을 걸었습니다.",
+    "这次比赛吸引了很多选手参加。",
+    "公司决定向灾区捐赠矿泉水。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "CJK counter after a number",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on 元, 两(场), 亩, 日, 一(連串), 달러, ドル, 명 after numbers. Probes: 500元 0.55, 三场 0.64, 달러 0.43, 万美元 0.20; a date (5月12日) 0.04, English '500 dollars' 0.07. A Chinese sentence without a number still gave 0.35 on '了', so near misses (same sentences without the quantity) may leak."
+}
