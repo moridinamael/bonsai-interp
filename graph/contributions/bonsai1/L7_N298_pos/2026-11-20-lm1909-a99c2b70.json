@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-a99c2b70",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N298+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:28:08+00:00",
+ "recipe": {
+  "toolchain_commit": "25c29f342",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N298_pos/2026-11-20-lm1909-a99c2b70.tests.json"
+ },
+ "label": "subword pieces inside uncommon proper names (Bred|enburg, M|ays, Britten-N|orman)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N298_pos/2026-11-20-lm1909-a99c2b70.tests.json",
+   "prereg_commit": "25c29f342",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.03,
+     "peak": "as"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.567,
+     "peak": "ays"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.411,
+     "peak": "orman"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.007,
+     "peak": " Neuro"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.677,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.228,
+     "peak": "eur"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.064,
+     "peak": "ube"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.012,
+     "peak": " organ"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " cited"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " songs"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " flew"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " Kant"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " rebel"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " Smith"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.146,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "25c29f342",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare-name subword",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Probes of the top-example names: 0.14-0.84.",
+ "selection": "random draw"
+}

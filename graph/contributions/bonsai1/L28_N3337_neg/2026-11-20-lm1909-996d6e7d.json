@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-996d6e7d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N3337-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:27:26+00:00",
+ "recipe": {
+  "toolchain_commit": "25c29f342",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N3337_neg/2026-11-20-lm1909-996d6e7d.tests.json"
+ },
+ "label": "the word right before a debt or bankruptcy outcome ('in' debt, 'go' broke, 'go' bankrupt)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N3337_neg/2026-11-20-lm1909-996d6e7d.tests.json",
+   "prereg_commit": "25c29f342",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.174,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.313,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.519,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.396,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.526,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.164,
+     "peak": " went"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.156,
+     "peak": " bankruptcy"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.235,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.114,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.119,
+     "peak": " could"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.156,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.081,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.164,
+     "peak": " went"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.119,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": " her"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.274,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "25c29f342",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pre-debt slot",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Fires on the token that predicts debt/bankrupt/broke; the + pole's output suppresses ' debt', ' bankruptcy', so this pole promotes them.",
+ "selection": "random draw"
+}
