@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-46aa8cdb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N101-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:11:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N101",
+   "pole": "-",
+   "label": "the line break or '#' inside a code comment section header (\"# Updates\", \"# --- Main method ---\")",
+   "fire": [
+    "import os\n\n# ------------------------\n# Configuration\n# ------------------------\nDEBUG = True",
+    "x = load()\n\n#########################\n# Data cleaning\n#########################\nx = x.dropna()",
+    "class Model:\n    pass\n\n# =======================\n# Training loop\n# =======================\nfor epoch in range(10):\n    step()",
+    "import sys\n\n#### Helper functions\n### a. string utilities\ndef strip(s):\n    return s.strip()",
+    "app = Flask(__name__)\n\n# ----------------\n# Routes\n# ----------------\n@app.route('/')\ndef index():\n    return 'hi'",
+    "y = 0\n\n# ///////////////////////\n#      Main program\n# ///////////////////////\nif __name__ == '__main__':\n    main()",
+    "import numpy as np\n\n# ---- Constants ----\nPI = 3.14159\nE = 2.71828",
+    "data = []\n\n# ========================\n# Plotting\n# ========================\nplt.plot(data)"
+   ],
+   "quiet": [
+    "import os\n\nDEBUG = True\nVERBOSE = False\nPATH = os.getcwd()",
+    "x = load()\n\nx = x.dropna()\nx = x.reset_index()\nprint(len(x))",
+    "class Model:\n    pass\n\nfor epoch in range(10):\n    step()\n    log(epoch)",
+    "import sys\n\ndef strip(s):\n    return s.strip()\n\ndef lower(s):\n    return s.lower()",
+    "app = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return 'hi'",
+    "y = 0\n\nif __name__ == '__main__':\n    y = compute()\n    main()",
+    "import numpy as np\n\nPI = 3.14159\nE = 2.71828\nTAU = 2 * PI",
+    "data = []\n\nfor v in values:\n    data.append(v)\nplt.plot(data)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code comment header break",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card: '\\n' x15 at the ends of '# Section' comment lines in code; weak (max 5.6). Probe: header block 0.39, ordinary code lines 0.22, so near misses may leak."
+}
