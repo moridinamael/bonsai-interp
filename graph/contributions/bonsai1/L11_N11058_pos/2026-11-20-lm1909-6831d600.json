@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-6831d600",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N11058+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:32:10+00:00",
+ "recipe": {
+  "toolchain_commit": "68ca366c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N11058_pos/2026-11-20-lm1909-6831d600.tests.json"
+ },
+ "label": "connective tokens inside code identifiers and error strings that describe a lookup or state rather than an action (get_new_, 'with ID', non-blocking); the - pole is destructive action verbs in code (remove, delete, power_off)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N11058_pos/2026-11-20-lm1909-6831d600.tests.json",
+   "prereg_commit": "68ca366c9",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.319,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.254,
+     "peak": "_new"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.12,
+     "peak": "blocking"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.147,
+     "peak": "ed"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.043,
+     "peak": "('"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.244,
+     "peak": "_new"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.035,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.096,
+     "peak": " offline"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.075,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " def"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " socket"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " def"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.043,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " conn"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.032,
+     "peak": " offline"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.134,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "68ca366c9",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "non-action code tokens",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Weak pole (max 7.2). Probe: _new in get_new_connection 0.14, 'with ID' 0.11. Expected to fail; recorded as the best guess.",
+ "selection": "random draw"
+}
