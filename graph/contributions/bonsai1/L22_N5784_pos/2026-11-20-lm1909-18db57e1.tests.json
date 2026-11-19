@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-18db57e1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N5784+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:24:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N5784",
+   "pole": "+",
+   "label": "' =' in a worked physics or chemistry equation (best guess; one outlier dominates the pole)",
+   "fire": [
+    "The work done on the gas is w = - (2 mol)(8.314 J/K mol)(300 K).",
+    "For the isothermal step, q = - w = n R T ln (V2/V1).",
+    "Then ΔG = ΔH - T ΔS = - 40 kJ at room temperature.",
+    "The determinant is |C| = (3)(-1)(2) = -6 for this triangular matrix.",
+    "In the second step w = - P ΔV = - (1 atm)(2 L).",
+    "The energy change is ΔU = q + w = 150 J - 60 J.",
+    "Hence 1 /V 2 = 1 /V 1 + k t for the second-order reaction.",
+    "So the pressure is P = n R T / V = (0.5)(0.082)(273)/11.2."
+   ],
+   "quiet": [
+    "The work done on the gas depends on the number of moles and the temperature.",
+    "For the isothermal step, the heat equals the work done by the gas.",
+    "Then the free energy is negative at room temperature.",
+    "The determinant of this triangular matrix is the product of its diagonal.",
+    "In the second step the gas is compressed at constant pressure.",
+    "The energy change is the sum of heat and work.",
+    "Hence the inverse volume grows linearly with time for the reaction.",
+    "So the pressure follows from the ideal gas law and the given values."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'=' in equation",
+ "unit_kind": "sparse feature",
+ "confidence": 0.1,
+ "notes": "Card max 63.25 comes from one garbled thermodynamics line; the next examples are 7.9 and below, density 0.000%. Probe of equations scored 0.01 or less. Expected to fail because the median threshold is relative to the outlier."
+}
