@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ac5fb26c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8748+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:27:02+00:00",
+ "recipe": {
+  "toolchain_commit": "8419fb4a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N8748_pos/2026-11-20-lm1909-ac5fb26c.tests.json"
+ },
+ "label": "the first subword piece of a word naming medieval chivalry (c|avaliere, /C|amelot, сред|нев|ековой, \"Kn|ights)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N8748_pos/2026-11-20-lm1909-ac5fb26c.tests.json",
+   "prereg_commit": "8419fb4a2",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.486,
+     "peak": "/G"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.268,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.263,
+     "peak": "Kn"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.35,
+     "peak": "нев"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.225,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.315,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.304,
+     "peak": " du"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.202,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": " friends"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.048,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "ена"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " studied"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " ra"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " at"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.286,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8419fb4a2",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "medieval chivalry word piece",
+ "unit_kind": "sparse feature",
+ "confidence": 0.4,
+ "notes": "output suppresses medieval/knight/castle; probes: c|avaliere 0.60, /C|amelot 0.59, нев 0.30, whole ' knight' 0.07",
+ "selection": "random draw"
+}
