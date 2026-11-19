@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-f6102ba7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N1433-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N1433",
+   "pole": "-",
+   "label": "best guess, weak: the title word in a corporate job-title bio ('… is a Marketing Manager at X where he …', 'Senior Vice President', 'Director of'); the card also shows unrelated prepositions ('responsible to him', 'dropped on Nagasaki'), so this is not a full account",
+   "fire": [
+    "Priya Nair is a Senior Product Manager at Cisco where she plans the roadmap for routers.",
+    "Daniel Ortiz is a Regional Sales Manager at Siemens where he looks after the hospital accounts.",
+    "Helen Zhou is a Technical Marketing Manager at Nvidia where she writes the launch material.",
+    "Before that, Omar Haddad was a Supply Chain Manager at Unilever where he ran two warehouses.",
+    "In a statement, Lisa Brandt (Nokia's Senior Vice President) said the merger would close in June.",
+    "Greg Tanaka is a Business Development Manager at Bosch where he negotiates supplier contracts.",
+    "Our guest today, Farah Aziz, is a Brand Manager at Nestle where she leads the coffee team.",
+    "Ian Wolfe is an Applications Engineering Manager at Analog Devices where he supports audio customers."
+   ],
+   "quiet": [
+    "Priya Nair is a second-year student at Cornell where she studies the history of routers.",
+    "Daniel Ortiz is a keen cyclist in Seville where he rides to the hospital every morning.",
+    "Helen Zhou is a freelance writer in Portland where she covers new product launches.",
+    "Before that, Omar Haddad was a volunteer at the food bank where he sorted two pallets a day.",
+    "In a statement, Lisa Brandt (Nokia's lawyer) said the merger would close in June.",
+    "Greg Tanaka is a retired teacher in Osaka where he grows vegetables behind his house.",
+    "Our guest today, Farah Aziz, is a novelist from Lahore who writes about coffee farmers.",
+    "Ian Wolfe is a jazz drummer in Dublin where he plays for small audiences."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "corporate job titles (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: ' Manager'/' manager' x6, ' Director' x2, ' of' after Director, but also ' to' and ' on' in unrelated sentences. Probes are weak and mixed: 'Strategic Marketing Manager at Intel where he' 0.35, 'Senior Vice President' 0.17-0.26, 'Director of' ~0.09; 'dropped on Nagasaki' 0.56 and 'responsible to him' 0.39 are as strong as any title. The + pole fires on political/judicial titles (Senator, Rep., Judge), so the unit may separate corporate from public office titles, but the evidence is thin. Expect a fail or a marginal result."
+}

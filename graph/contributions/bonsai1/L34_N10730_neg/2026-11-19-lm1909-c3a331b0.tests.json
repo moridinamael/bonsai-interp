@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-c3a331b0",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10730-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N10730",
+   "pole": "-",
+   "label": "the token right before an expected 'state' in a government-controlled-media or state-ownership phrase ('China's | state television', 'made Shinto the | state religion', 'run by the | government'): it fires on the country possessive / determiner, and its output promotes ' state'. A country possessive before anything else, and the word 'state' itself, stay quiet",
+   "fire": [
+    "The verdict was announced on Monday evening on Iran's state television.",
+    "According to North Korea's state news agency, the launch was a success.",
+    "Footage of the parade was shown repeatedly on Russia's state broadcaster.",
+    "The minister's resignation was first reported by Vietnam's state media.",
+    "Egypt's state newspaper printed the president's speech in full.",
+    "The interview was aired on Belarus's state radio late at night.",
+    "In a statement carried by Cuba's state press, officials denied the claim.",
+    "Turkmenistan's state channel shows the leader's speeches every evening."
+   ],
+   "quiet": [
+    "The verdict was announced on Monday evening outside Iran's highest court.",
+    "According to North Korea's neighbours, the launch was a failure.",
+    "Footage of the bears was filmed in Russia's far eastern forests.",
+    "The minister praised Vietnam's coffee farmers during his visit.",
+    "Egypt's national football team trained in the heat on Tuesday.",
+    "She drove across the state of Nevada late at night.",
+    "In a letter to Cuba's baseball federation, the players asked for new bats.",
+    "Turkmenistan's desert glows orange around the famous gas crater."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "about to say 'state' (state media)",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' the', ' by', \"'s\", ' Chinese', ' to' in news about governments and media; the direct logit effect of the - pole promotes ' state', ' State', 'state', '-state', '_state' (they are the + pole's top suppressions). Probes: \"Syria's state news agency\" 1.05 on \"'s\", \"China's state television\" 0.81, 'run by the government' 0.62, 'Shinto the state religion' 0.49; 'state-owned' / 'state-run' / 'alternatives to state media' 0.23-0.28. Near misses: \"China's pandas\" 0.06, \"Ukraine's goalkeeper\" 0.11, 'the state of Ohio' 0.003; but related wording leaks (\"Iran's official news agency\" 0.31, \"the country's newspapers and broadcasters\" 0.36), as a next-word predictor should. A prediction unit, labelled by what it expects next."
+}
