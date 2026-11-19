@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-eeb0c57d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6169-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:49+00:00",
+ "recipe": {
+  "toolchain_commit": "04ac42185",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6169_neg/2026-11-19-lm1909-eeb0c57d.tests.json"
+ },
+ "label": "the first fragment of a split, less common word, where the rest of the word is still to come (p|loy, spl|inter, ob|fuscate, inf|use, fl|inch, def|use)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6169_neg/2026-11-19-lm1909-eeb0c57d.tests.json",
+   "prereg_commit": "04ac42185",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.464,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.626,
+     "peak": " spl"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.422,
+     "peak": " ob"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.528,
+     "peak": " inf"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.259,
+     "peak": " sm"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.501,
+     "peak": " fl"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.226,
+     "peak": " def"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.068,
+     "peak": " fl"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.141,
+     "peak": " cheap"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "Law"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.044,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " move"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " voice"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.443,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "04ac42185",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-word first fragment",
+ "unit_kind": "sparse feature",
+ "confidence": 0.55,
+ "notes": "Probes: ' p'(loy) 0.94, ' spl'(inter) 0.63, ' inf'(use) 0.53, ' fl'(inch) 0.49, ' sm'(older) 0.47, ' ob'(fuscate) 0.43, ' fl'(imsy) 0.39, ' def'(use) 0.37; not every split word fires ('smirk', 'unhappiness', 'Zbigniew' near 0, 'fracture' 0.10 in my sentence although it tops the card). Layer 35, so probably tied to which continuation is predicted (the + pole's output promotes 'act').",
+ "selection": "random draw"
+}

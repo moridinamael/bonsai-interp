@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ba230330",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N1219+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:18:09+00:00",
+ "recipe": {
+  "toolchain_commit": "04ac42185",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N1219_pos/2026-11-19-lm1909-ba230330.tests.json"
+ },
+ "label": "function word (of / and / that / would) directly after a plural or collective noun, opening its complement (days of clemency, ones and zeroes, a series that, signs would)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N1219_pos/2026-11-19-lm1909-ba230330.tests.json",
+   "prereg_commit": "04ac42185",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.124,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.181,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.092,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.06,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.053,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.159,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.292,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.18,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.203,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.151,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " notice"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.159,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.063,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.085,
+     "peak": " at"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.695,
+    "median_fire": 0.142,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "04ac42185",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "function word after plural noun",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Unclear pole. Paraphrases of the card's own top examples scored 0.38-0.62, but new cases of the same pattern scored low ('years of plenty' 0.19, 'collection that' 0.12, 'fines would' 0.13, 'blacks and whites' 0.12) and a plain 'The bedroom is' gave 0.26. I expect this test to fail; it records that the syntactic reading does not generalise.",
+ "selection": "random draw"
+}

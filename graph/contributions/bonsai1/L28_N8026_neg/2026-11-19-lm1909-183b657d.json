@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-183b657d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N8026-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:35+00:00",
+ "recipe": {
+  "toolchain_commit": "04ac42185",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N8026_neg/2026-11-19-lm1909-183b657d.tests.json"
+ },
+ "label": "demonstrative 'that' (or 'the') pointing back to an event noun just named, right before the noun is repeated ('...before the Notre Dame game, sidelining him for that game')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N8026_neg/2026-11-19-lm1909-183b657d.tests.json",
+   "prereg_commit": "04ac42185",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.428,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.173,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.037,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.145,
+     "peak": " throughout"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.28,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.13,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.087,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.892,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " sick"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.056,
+     "peak": " throughout"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.063,
+     "peak": " practice"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " ill"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.041,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": "A"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.532,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "04ac42185",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'that' + repeated noun",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Probes: 'for that game' 1.25, 'for that match' 0.39, 'in the image' (after Instagram photo) 0.63, 'praised the book' (after novel) 0.24, but 'in the clip' 0.06. A second trigger was not tested here: range slots 'from economy to luxury' 0.82, 'from budget to deluxe' 0.61. The + pole fires on ' new' before 'ones' and the output promotes ' ones', so this pole may mark 'the specific noun comes next, not a pro-form'.",
+ "selection": "random draw"
+}
