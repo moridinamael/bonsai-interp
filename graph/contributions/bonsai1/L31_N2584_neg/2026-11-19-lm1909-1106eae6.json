@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1106eae6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N2584-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:22:36+00:00",
+ "recipe": {
+  "toolchain_commit": "89c564067",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N2584_neg/2026-11-19-lm1909-1106eae6.tests.json"
+ },
+ "label": "' data' when 'structure' is about to follow: the first word of 'data structure', not 'data' in general",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N2584_neg/2026-11-19-lm1909-1106eae6.tests.json",
+   "prereg_commit": "89c564067",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.925,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.121,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.813,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.43,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.197,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.536,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.579,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.945,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.033,
+     "peak": " stack"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.106,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.116,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.43,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.149,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.121,
+     "peak": " data"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.557,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89c564067",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'data' before 'structure'",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: ' data' is 20 of the top 32 peaks, nearly all in 'data structure', and the - pole's output direction promotes ' structures', ' structure', ' Structures'. Probes: 'data structure' 0.81-0.96; 'collected data', 'the data in a table', 'data types' 0.02-0.09. The corpus max (604) is an outlier above the next examples (390, 360). Near misses keep ' data' with other continuations.",
+ "selection": "random draw"
+}

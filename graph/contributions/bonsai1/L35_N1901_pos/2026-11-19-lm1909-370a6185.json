@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-370a6185",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1901+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:21:38+00:00",
+ "recipe": {
+  "toolchain_commit": "89c564067",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N1901_pos/2026-11-19-lm1909-370a6185.tests.json"
+ },
+ "label": "a word-opening fragment spelling the 'sh' sound in non-English text, with the rest of the word still to come (French ' Ch'|ine, German ' versch'|wimmt, Russian ' ш'|пионов, Turkish ' ş'|ifre)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N1901_pos/2026-11-19-lm1909-370a6185.tests.json",
+   "prereg_commit": "89c564067",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.692,
+     "peak": " Ch"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.315,
+     "peak": " versch"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.118,
+     "peak": " ш"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.405,
+     "peak": " ş"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.803,
+     "peak": "-ch"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.174,
+     "peak": " ш"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.256,
+     "peak": " versch"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.747,
+     "peak": " Ch"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.065,
+     "peak": " ren"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.089,
+     "peak": " den"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.075,
+     "peak": " д"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " seç"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.061,
+     "peak": " un"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.072,
+     "peak": "уш"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": " des"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.155,
+     "peak": " c"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.36,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89c564067",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "non-English 'sh' fragment",
+ "unit_kind": "sparse feature",
+ "confidence": 0.4,
+ "notes": "Card: peaks are CJK byte pieces (15 of 32) plus ' Ch' (Chine), ' versch', ' ш', '-ch' (sur-le-champ), Arabic sheen, Turkish ' ş'. The Latin/Cyrillic/Arabic ones all spell /sh/ at a word start that the tokenizer split. Probes: 'en Chine' 0.72, ' ш' 0.60, ' versch' 0.34, Japanese 0.36; 'en France' 0.03, English 'China' 0.00. The label does not explain the CJK examples. Near misses are the same languages with split words that have no /sh/ (' verst'|ehen, ' кни'|га, ' kit'|ap). Tokenizer splits were checked beforehand (no scoring).",
+ "selection": "random draw"
+}

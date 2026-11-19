@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-9a90bf37",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N5674+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:22:08+00:00",
+ "recipe": {
+  "toolchain_commit": "89c564067",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N5674_pos/2026-11-19-lm1909-9a90bf37.tests.json"
+ },
+ "label": "the second word of a few fixed two-part names: ' Town' after 'Cape', ' post' after 'guest', 'bad' in 'Carlsbad', ' Research' after 'Cancer' (a list; the shared pattern is 'expected completion of a known pair', and the - pole takes ' Cod' after 'Cape')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N5674_pos/2026-11-19-lm1909-9a90bf37.tests.json",
+   "prereg_commit": "89c564067",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.483,
+     "peak": " Town"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.596,
+     "peak": " post"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.59,
+     "peak": " Town"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.598,
+     "peak": "bad"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.733,
+     "peak": " post"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.435,
+     "peak": " Research"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.58,
+     "peak": " Town"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.552,
+     "peak": " post"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.127,
+     "peak": " Verde"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " Diego"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.138,
+     "peak": " speaker"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.08,
+     "peak": " research"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " Cape"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": "keeper"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.585,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89c564067",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Cape [Town], guest [post]",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks ' Town' x4, ' Research' x4, 'bad' x3, ' post' x2. Probes: Cape Town 0.60, guest post 0.64, Carlsbad 0.63, Cancer Research 0.47; 'Cape Cod' 0.05, 'small town' 0.01, 'long post' 0.01. This is a list of pairs, not a tested general pattern: I could not find a description that predicts which pairs fire. Near misses use the second word without its partner, or the first word with a different partner.",
+ "selection": "random draw"
+}
