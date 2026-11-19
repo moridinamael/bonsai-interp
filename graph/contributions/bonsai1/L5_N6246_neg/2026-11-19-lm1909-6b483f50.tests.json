@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-6b483f50",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N6246-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:52:48+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N6246",
+   "pole": "-",
+   "label": "a punctuation/markup token that closes a very short unit: ',\"' or '、' after a one-word reply or address (\"Yeah,\" / みなさん、), and an HTML entity name after '&' (amp, lt) in a string",
+   "fire": [
+    "\"Sure,\" said Marta. \"We can leave whenever you like.\"",
+    "\"Right,\" said the driver. \"Everybody back on the bus.\"",
+    "\"Maybe,\" said Paul. \"It depends on the weather tomorrow.\"",
+    "    label = html_escape(\"Marks & Spencer\")  # gives \"Marks &amp; Spencer\"",
+    "    assert quote(\"salt & pepper\") == \"salt &amp; pepper\"",
+    "    body = body.replace(\"&amp;\", \"&\")  # undo the escaping",
+    "お客様、こちらの席へどうぞ。",
+    "先生、質問があります。"
+   ],
+   "quiet": [
+    "\"Sure!\" said Marta. \"We can leave whenever you like.\"",
+    "The driver said that everybody should get back on the bus.",
+    "Paul said that it depends on the weather tomorrow.",
+    "    label = html_escape(\"Marks and Spencer\")  # gives the same text back",
+    "    assert quote(\"salt and pepper\") == \"salt and pepper\"",
+    "    body = body.replace(\"and\", \"plus\")  # undo the wording",
+    "こちらの席は空いています。",
+    "質問がある人は手を上げます。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "closing ',\"' / '、' / &amp",
+ "unit_kind": "unclear",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (1.2% of tokens reach 0.1 of max; max only 1.66; 54% leak regime at that level). A list of triggers that fired in probes (&amp 0.93, ',\"' 0.52-0.87, '、' 0.51); plain list commas (0.09) and 'Well,' (0.06) did not. The + pole is '?' ending a title or heading."
+}

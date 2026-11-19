@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-724be974",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N6836-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:52:48+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N6836",
+   "pole": "-",
+   "label": "the line end of a call statement inside a run of near-identical consecutive code lines (repeated print/write banner lines, also when commented out); varied statements and block openers stay quiet",
+   "fire": [
+    "def show_title(text):\n    print(\"*\" * 50)\n    print(text)\n    print(\"*\" * 50)\n    print(\"\")\n",
+    "def footer(out):\n    out.write(\"==========\")\n    out.write(\"END OF REPORT\")\n    out.write(\"==========\")\n    out.write(\"\")\n",
+    "# debug output\n# print \"#\" * 30\n# print result\n# print \"#\" * 30\n",
+    "def divider(self):\n    self.emit(\"--------------------\")\n    self.emit(\"SECTION\")\n    self.emit(\"--------------------\")\n    self.emit(\"next\")\n",
+    "import os\n\ndef heading():\n    print(\"-\" * 72)\n    print(\"TEST RUN\")\n    print(\"-\" * 72)\n",
+    "def box(stream):\n    stream.write(\"++++++++\")\n    stream.write(\"WARNING\")\n    stream.write(\"++++++++\")\n    stream.write(\"\\n\")\n",
+    "def stars():\n    print(\"*\" * 20)\n    print(\"*\" * 20)\n    print(\"*\" * 20)\n    print(\"done\")\n",
+    "def page_break(doc):\n    doc.add_line(\"~~~~~~~~~~~~\")\n    doc.add_line(\"PAGE\")\n    doc.add_line(\"~~~~~~~~~~~~\")\n    doc.add_line(\"\")\n"
+   ],
+   "quiet": [
+    "def show_title(text):\n    width = len(text) + 4\n    if width > 50:\n        width = 50\n    return text.center(width)\n",
+    "def footer(out):\n    total = out.count()\n    for row in out.rows:\n        total += row.size\n    return total\n",
+    "# debug output is off by default; set DEBUG to see results\nDEBUG = False\n",
+    "def divider(self):\n    if self.quiet:\n        return None\n    return self.width // 2\n",
+    "import os\n\ndef heading():\n    name = os.getcwd()\n    return name.upper()\n",
+    "def box(stream):\n    try:\n        stream.flush()\n    except IOError:\n        pass\n",
+    "def stars(n):\n    while n > 0:\n        n -= 1\n    return n\n",
+    "def page_break(doc):\n    with doc.lock:\n        doc.pages += 1\n    return doc.pages\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "newline in a run of repeated call lines",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Multi-line passages, as the stream tips advise for code poles. Probes: repeated print banner 1.02, repeated log.write banner 0.67, commented print run 0.50; parallel assignments 0.006, begin/endReset calls 0.22, try block 0.02. The + pole fires on 'try' / ':' that opens a block, so the unit may separate 'same pattern continues' from 'a new block opens'. Near misses here drop the repetition together with the print calls, so a hold would not separate the two."
+}

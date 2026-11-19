@@ -1,0 +1,57 @@
+{
+ "contribution": "2026-11-19-lm1909-b6287d56",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N5997+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:52:48+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N5997",
+   "pole": "+",
+   "label": "a lone v / w / d letter token that starts an English or Latin word the tokenizer splits, typically right after '(' , a quote or a hyphen ((w|heat, 'v|ibrissae', half-w|it, V|ertebrata)",
+   "fire": [
+    "Lampreys are placed in the same group (subphylum Vertebrata) as the bony fishes.",
+    "The stall sold candles made of cheap materials (wax, tallow and string).",
+    "Small garden birds (wrens, tits and sparrows) nest in the hedge every year.",
+    "She seasoned the fish with fresh herbs (dill, parsley and chives) and butter.",
+    "The crowd blew a plastic horn, the 'vuvuzela', throughout the match.",
+    "Only a nit-wit would leave the keys in the car overnight.",
+    "The carpenter split the log with simple tools (wedges, a maul and an axe).",
+    "At the centre of the drain a small 'vortex' formed as the water ran out."
+   ],
+   "quiet": [
+    "Lampreys are placed in the same group as the bony fishes by most authors.",
+    "The stall sold candles made of cheap materials such as tallow and string.",
+    "Small garden birds nest in the hedge every year and sing at dawn.",
+    "She seasoned the fish with fresh herbs (parsley, chives and thyme) and butter.",
+    "The crowd blew a plastic horn, the 'trumpet', throughout the match.",
+    "Only a fool would leave the keys in the car overnight.",
+    "The carpenter split the log with simple tools (hammers, a saw and an axe).",
+    "At the centre of the drain a small 'whirlpool' formed as the water ran out."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "word-initial lone v/w/d",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Token splits checked with the tokenizer only (no scoring). The - pole's top examples are the same letters starting Spanish/German words (' v|iven', ' W|iedau'); a Spanish probe did not fire the + pole. ' f|eng' probed weak (0.11), so f is left out of the test.",
+ "trigger": {
+  "tokens": [
+   "w",
+   "v",
+   "d",
+   " V",
+   "-w"
+  ]
+ }
+}
