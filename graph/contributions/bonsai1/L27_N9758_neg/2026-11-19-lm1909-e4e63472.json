@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e4e63472",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N9758-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:40:00+00:00",
+ "recipe": {
+  "toolchain_commit": "6ff7830b5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N9758_neg/2026-11-19-lm1909-e4e63472.tests.json"
+ },
+ "label": "the end of a large count (the last digit of a thousands figure, or 'million' / 'thousand') just before the unit or thing counted (acres, tons, residents, square metres)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N9758_neg/2026-11-19-lm1909-e4e63472.tests.json",
+   "prereg_commit": "6ff7830b5",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.56,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.199,
+     "peak": " million"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.338,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.433,
+     "peak": " thousand"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.435,
+     "peak": " million"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.335,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.13,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.44,
+     "peak": " million"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.123,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.084,
+     "peak": " terminal"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.09,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.094,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "6"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.386,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ff7830b5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "large count before its unit",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: '22,00[0] acres', '14 [million] tons', '132,73[1] permanent residents', Arabic 'alf' (thousand) before square metres. Probing: such counts 0.31-0.43; a year 0.06, a dollar price '$12,400' 0.00, small counts 0.03.",
+ "selection": "random draw"
+}

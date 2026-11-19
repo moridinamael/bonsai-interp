@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-84b7a983",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N5662+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:40:05+00:00",
+ "recipe": {
+  "toolchain_commit": "6ff7830b5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N5662_pos/2026-11-19-lm1909-84b7a983.tests.json"
+ },
+ "label": "the object noun of a one-line imperative docstring inside a method ('Return the name of the sensor.', 'Set the input source.'); weak",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N5662_pos/2026-11-19-lm1909-84b7a983.tests.json",
+   "prereg_commit": "6ff7830b5",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.027,
+     "peak": " light"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.024,
+     "peak": "(self"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.039,
+     "peak": " active"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.016,
+     "peak": " record"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.035,
+     "peak": " Lock"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.028,
+     "peak": " capture"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.035,
+     "peak": "(self"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.031,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " Lock"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.664,
+    "median_fire": 0.029,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ff7830b5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "docstring object noun (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card: three of the top six are the noun after 'the' / 'a' in a one-line docstring; the others are word pieces in prose. Probing (multi-line code): at most 0.16 ('name of the sensor'), 0.12 ('Create a widget'), most below 0.07; prose near zero. Expected to fail.",
+ "selection": "random draw"
+}

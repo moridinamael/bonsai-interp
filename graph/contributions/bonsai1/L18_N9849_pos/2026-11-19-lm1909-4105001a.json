@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4105001a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N9849+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:39:26+00:00",
+ "recipe": {
+  "toolchain_commit": "6ff7830b5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N9849_pos/2026-11-19-lm1909-4105001a.tests.json"
+ },
+ "label": "collective noun for a newly arrived group ('latest batch of', 'fresh crop of', 'new set of'); weak, and it also fires on code line ends",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N9849_pos/2026-11-19-lm1909-4105001a.tests.json",
+   "prereg_commit": "6ff7830b5",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.306,
+     "peak": " batch"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.179,
+     "peak": " batch"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.172,
+     "peak": " crop"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.08,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.23,
+     "peak": " crop"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.289,
+     "peak": " batch"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.198,
+     "peak": " batch"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.134,
+     "peak": " set"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " interns"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.07,
+     "peak": " vaccines"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": " war"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " app"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.065,
+     "peak": " letters"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " published"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " followed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.189,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ff7830b5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'latest batch of' collectives",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no single token (' batch', ' set', code line ends such as '():\\n', volume numbers). Probing: 'batch of' 0.22-0.24, 'crop of' 0.21, 'set of' 0.30, '.items():' 0.31; 'round of', 'wave of', 'generation of' below 0.1. The readings sit at the judge's 0.20 line, so this may well fail.",
+ "selection": "random draw"
+}
