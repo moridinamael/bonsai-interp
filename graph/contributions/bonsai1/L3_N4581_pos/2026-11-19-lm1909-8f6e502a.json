@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8f6e502a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N4581+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:29+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N4581_pos/2026-11-19-lm1909-8f6e502a.tests.json"
+ },
+ "label": "certain single-token camelCase identifiers in code: contentType, displayName, maxLength, projectId, getFile, getContext, NotImplementedError (a token list; the - pole takes other camelCase tokens such as findAll and setLevel)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N4581_pos/2026-11-19-lm1909-8f6e502a.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.849,
+     "peak": "contentType"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.415,
+     "peak": ".setText"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.39,
+     "peak": " NotImplementedError"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.745,
+     "peak": "projectId"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.447,
+     "peak": ".getContext"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.526,
+     "peak": ".getFile"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.945,
+     "peak": "maxLength"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.385,
+     "peak": ".contentType"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.0,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.001,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.037,
+     "peak": " ValueError"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.001,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.0,
+     "peak": "d"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.001,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.0,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.001,
+     "peak": " '"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.487,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "camelCase identifier tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks on getFile, displayName, NotImplementedError, getContext, contentType, maxLength, projectId. Probes: camelCase lines 0.50-0.87; the same code in snake_case and the same words in prose 0.00. Both poles of this unit take camelCase tokens, split by token, so the label is a token list.",
+ "selection": "random draw"
+}

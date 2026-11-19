@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3bd8eb1e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10503+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:16+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N10503_pos/2026-11-19-lm1909-3bd8eb1e.tests.json"
+ },
+ "label": "best guess: the loop header ('for … in enumerate(…)') that follows a run of variable initialisations inside a long Python function",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N10503_pos/2026-11-19-lm1909-3bd8eb1e.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.184,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.172,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.227,
+     "peak": " enumerate"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.364,
+     "peak": " enumerate"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.247,
+     "peak": " enumerate"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.057,
+     "peak": ".get"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.653,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.183,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.151,
+     "peak": "lines"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.101,
+     "peak": " len"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": "(pages"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.045,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.137,
+     "peak": " parts"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.071,
+     "peak": "']"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.091,
+     "peak": " len"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.098,
+     "peak": " lines"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.206,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "loop after setup lines (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: no single token; top examples are ' for' opening a loop after several assignment lines, an indented comment, and one prose ' the' after 'division of'. Probes were weak: short loops 0.05-0.10, a longer two-function file 0.39 (peak ' enumerate'), a prose passage about a treaty's 'partition of the realm' 0.54. No clear trigger found; this test records the code guess and will probably fail.",
+ "selection": "random draw"
+}

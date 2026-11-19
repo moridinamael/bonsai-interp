@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7b043890",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N746+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:47+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N746_pos/2026-11-19-lm1909-7b043890.tests.json"
+ },
+ "label": "the '.com'/'.org' ending of a placeholder e-mail address (email@example.com, firstname.lastname@example.org); weak on real-looking addresses and on web URLs",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N746_pos/2026-11-19-lm1909-7b043890.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.858,
+     "peak": ".com"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.228,
+     "peak": ".com"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.434,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.372,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.446,
+     "peak": ".com"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.39,
+     "peak": ".com"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.265,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.352,
+     "peak": ".com"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.113,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.083,
+     "peak": " go"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.068,
+     "peak": " volunteer"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.166,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.066,
+     "peak": " month"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.102,
+     "peak": "If"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.082,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.15,
+     "peak": "ega"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.381,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'.com' in @example.com",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card flags the + pole broad (6.4% of tokens reach 0.1 of max) and gate-closed (echo regime 99%), max only 1.93; 18 of the top 32 peaks are '.com'/'.org' after 'example'. Probes: firstname.lastname@example.com 0.79, email@example.org 0.48 (peak ' email'), info@example.com 0.33, www.example.com 0.24, gmail/greenfield/.edu addresses 0.13-0.14. Weak pole; near misses may fire weakly.",
+ "selection": "random draw"
+}

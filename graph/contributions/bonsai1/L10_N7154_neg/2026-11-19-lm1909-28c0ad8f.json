@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-28c0ad8f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N7154-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:45+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N7154_neg/2026-11-19-lm1909-28c0ad8f.tests.json"
+ },
+ "label": "names of service and fraternal clubs: Rotary, Kiwanis, Lions Club, Elks, Zonta (not other clubs or charities, and not 'rotary' or 'elks' in their ordinary senses)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N7154_neg/2026-11-19-lm1909-28c0ad8f.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.695,
+     "peak": " Rotary"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.876,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.543,
+     "peak": "ks"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.67,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.909,
+     "peak": "onta"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.867,
+     "peak": " Rotary"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.853,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.719,
+     "peak": " Rotary"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.097,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.06,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " hall"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.086,
+     "peak": " Scouts"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.086,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.033,
+     "peak": "Members"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.044,
+     "peak": " fire"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "it"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.786,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "service-club names (Rotary, Elks)",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "Card: ' Rotary' x4, Zonta, Elks, among Lions and Masonic Lodges. Probes: Rotary Club 0.74, Kiwanis 0.81, Elks Lodge 0.56, Zonta 0.76; chess club 0.07, Red Cross/chamber of commerce 0.10, rotary engine 0.10, 'the lions and the elks' (animals) 0.05.",
+ "selection": "random draw"
+}

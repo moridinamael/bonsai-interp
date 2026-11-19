@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8281975e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N11839+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:57+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N11839_pos/2026-11-19-lm1909-8281975e.tests.json"
+ },
+ "label": "separator ('|' or ';') between links in a website navigation menu (Home | About | … | Contact Us), strongest late in the menu; not pipes in tables or code",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N11839_pos/2026-11-19-lm1909-8281975e.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.7,
+     "peak": " |"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.658,
+     "peak": ";"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.613,
+     "peak": " |"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.592,
+     "peak": " |"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.523,
+     "peak": " |"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.491,
+     "peak": ";"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.57,
+     "peak": " Map"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.697,
+     "peak": " |"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.149,
+     "peak": " |\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.056,
+     "peak": " athletics"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " collections"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " sports"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.107,
+     "peak": "END"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " pricing"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.274,
+     "peak": " Help"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.603,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "nav-menu link separators",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' |' x6, ';' x2, ' Map', ' Search', ' About' in footer/header link rows. Probes: Home | Products | … 0.62, ABOUT; NEWS; … 0.84, Privacy Policy | … | Site Map 0.40; markdown table 0.11, 'a | b | c' code 0.14, breadcrumb with '>' 0.16, prose list of pages 0.25. The - pole is flagged dense (28% of tokens) and is not tested here.",
+ "selection": "random draw"
+}
