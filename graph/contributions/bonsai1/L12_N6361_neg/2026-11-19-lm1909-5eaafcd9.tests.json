@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-5eaafcd9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N6361-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:13:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N6361",
+   "pole": "-",
+   "label": "code: a loop bound or array index expression where an off-by-one adjustment is in play, firing on the bound/index itself (x[N-1], arr[idx], end = len(s), while i <= n) just before the possible ±1",
+   "fire": [
+    "def cumulative(w, n):\n    acc = [0] * (n + 1)\n    for k in range(1, n):\n        acc[k] = acc[k-1] + w[k-1]\n    acc[n] = acc[n-1] + w[n-1]\n    return acc",
+    "    lo = 0\n    hi = len(values)\n    while lo < hi:\n        lo += 1",
+    "    attempts = 0\n    while attempts <= 5:\n        attempts += 1",
+    "    col_index += 1\n    cell = row_cells[col_index]\n    limit = int(cell)",
+    "def edges(pos, d, M):\n    for j in range(1, M):\n        pos[j] = pos[j-1] + d[j-1]\n    pos[M] = pos[M-1] + d[M-1]\n    return pos",
+    "    first = 0\n    last = len(word)\n    while first < last:\n        last -= 1",
+    "    step = 0\n    while step <= 20:\n        step += 2",
+    "    tok_index += 1\n    tok = tokens[tok_index]\n    size = int(tok)"
+   ],
+   "quiet": [
+    "def describe(w, n):\n    text = 'weights: ' + str(w)\n    print(text)\n    return text",
+    "    title = 'values'\n    print(title.upper())\n    print('done')",
+    "    message = 'trying again'\n    logger.info(message)\n    logger.flush()",
+    "    name = user.name\n    greeting = 'Hello ' + name\n    send(greeting)",
+    "def edges(pos, d, M):\n    label = 'positions'\n    print(label, pos)\n    return None",
+    "    word = word.strip()\n    word = word.lower()\n    print(word)",
+    "    colour = 'red'\n    shape = 'circle'\n    draw(colour, shape)",
+    "    reply = ask('token?')\n    reply = reply.strip()\n    show(reply)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "index/bound before ±1",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'he[N[ell]-1]', 'len(s[)]', 'retries[<=]10', 'arg_list[arg[_index]]'; the + pole is the '- 1' itself. Probes: x[N-1] code 1.25, end = len(s) 0.85, 'while retries <= 10' 0.59, arg_list[arg_index] 0.47, items[count - 1] 0.26; code with no index/bound 0.02, prose 0.01."
+}
