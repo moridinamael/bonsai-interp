@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1460e47d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N7971+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:46:27+00:00",
+ "recipe": {
+  "toolchain_commit": "81ff5604a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N7971_pos/2026-11-19-lm1909-1460e47d.tests.json"
+ },
+ "label": "the head noun ' practices' or ' length' closing a noun-noun compound (X management practices, queue length); weak pole",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N7971_pos/2026-11-19-lm1909-1460e47d.tests.json",
+   "prereg_commit": "81ff5604a",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.611,
+     "peak": " practices"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.419,
+     "peak": " practices"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.627,
+     "peak": " practices"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.129,
+     "peak": " practices"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.204,
+     "peak": " practices"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.411,
+     "peak": " length"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.538,
+     "peak": " length"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.456,
+     "peak": " practices"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.078,
+     "peak": " fires"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " leak"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.048,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.105,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.03,
+     "peak": " rotation"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.113,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "Their"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.438,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "81ff5604a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'practices'/'length' compound head",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: max 5.1, 40% echo regime, no single token (' names', ' practices', ' supply', ' duration', ' length'). Probes: 'queue length' 0.60/0.50, 'management practices' 0.37/0.32, 'rotation practices' 0.31; 'sleep duration' 0.09, 'file names' 0.09, 'word length' 0.04, 'farming practices' 0.11, 'hiring practices' 0.09, 'length of the queue' 0.04. Narrower than the card's range of head nouns, so likely partial.",
+ "selection": "random draw"
+}

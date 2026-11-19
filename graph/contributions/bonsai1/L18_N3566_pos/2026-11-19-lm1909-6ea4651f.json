@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6ea4651f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N3566+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:46:03+00:00",
+ "recipe": {
+  "toolchain_commit": "81ff5604a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N3566_pos/2026-11-19-lm1909-6ea4651f.tests.json"
+ },
+ "label": "a quoted date/time field name ('month', 'second') inside a Python list of datetime-component strings",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N3566_pos/2026-11-19-lm1909-6ea4651f.tests.json",
+   "prereg_commit": "81ff5604a",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.454,
+     "peak": "month"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.033,
+     "peak": "hour"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.271,
+     "peak": "second"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.105,
+     "peak": "month"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.615,
+     "peak": "month"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.432,
+     "peak": "second"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.006,
+     "peak": "skip"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.09,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.197,
+     "peak": "south"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " ['"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": "height"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.09,
+     "peak": "tiny"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " ['"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.046,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "skip"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": "names"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.188,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "81ff5604a",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "quoted datetime field name",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: mixed top examples (digit of a year, ['hour', 'month', 'second', ...], Protactinium, ':'), density 0.26%. Probes: ['day','year','minute','month','hour'] 0.94 on 'month'; ['hour','month','second','year'] 0.33; ['day','week','minute','decade'] 0.04; colour-name list 0.02; years in prose 0.02; element lists 0.03-0.38. Covers only one of the card's several contexts, so likely partial.",
+ "selection": "random draw"
+}
