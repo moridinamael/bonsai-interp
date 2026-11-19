@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-3b67db7d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N4107-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N4107",
+   "pole": "-",
+   "label": "Python assignment to an attribute reached through a dotted chain (a.b.c = value): fires on the ' =' or on the last attribute links of the target",
+   "fire": [
+    "class Dialog:\n    def style(self, palette):\n        self.sidebar.title.props.color = palette.accent\n        self.sidebar.title.props.size = palette.large",
+    "class TestOrders(unittest.TestCase):\n    def test_fetch(self):\n        self.api.orders.fetch = MagicMock(return_value=[])\n        self.api.orders.cancel = MagicMock(return_value=True)",
+    "profile.options.darkMode = True\nprofile.options.showHints = False\nprofile.save()",
+    "class Player:\n    def reset(self):\n        self.state.position.x = 0\n        self.state.position.y = 0\n        self.state.score.total = 0",
+    "def configure(app):\n    app.config.cache.enabled = True\n    app.config.cache.ttl = 600\n    return app",
+    "class TestMailer(unittest.TestCase):\n    def setUp(self):\n        self.service.mail.send = MagicMock()\n        self.service.mail.queue = MagicMock(return_value=0)",
+    "invoice.customer.address.city = form['city']\ninvoice.customer.address.zip = form['zip']\ninvoice.save()",
+    "class Chart:\n    def draw(self):\n        self.figure.axes.title.text = self.name\n        self.figure.axes.legend.visible = False"
+   ],
+   "quiet": [
+    "class Dialog:\n    def style(self, palette):\n        color = palette.accent\n        size = palette.large\n        return color, size",
+    "class TestOrders(unittest.TestCase):\n    def test_fetch(self):\n        orders = self.api.orders.fetch()\n        self.assertEqual(len(orders), 0)",
+    "dark_mode = True\nshow_hints = False\nprint(dark_mode, show_hints)",
+    "class Player:\n    def where(self):\n        x = self.state.position.x\n        y = self.state.position.y\n        return x, y",
+    "def describe(app):\n    if app.config.cache.enabled:\n        return app.config.cache.ttl\n    return None",
+    "class TestMailer(unittest.TestCase):\n    def test_send(self):\n        sent = self.service.mail.send('hello')\n        self.assertTrue(sent)",
+    "city = form['city']\nzip_code = form['zip']\nprint(city, zip_code)",
+    "class Chart:\n    def title(self):\n        return self.figure.axes.title.text + ' (draft)'"
+   ]
+  }
+ ],
+ "predictions": "6/8 fire, 0-1 near misses",
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "chained attribute assignment",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: 'self.toolbar.button.props.color = theme.color' 0.63, 'self.client.jobs.list = MagicMock(...)' 0.75, 'account.settings.featuredEnabled = True' 0.67, 'self.header.icon.visible = True' 0.53; 'server.handler.on_error = lambda' only 0.12; reading the same chain 0.12-0.15; plain variable assignment 0.06-0.09; '/' in a URL path 0.20 (the card also shows URL slashes)."
+}

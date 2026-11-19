@@ -1,0 +1,57 @@
+{
+ "contribution": "2026-11-19-lm1909-9beb970a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N7985+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N7985",
+   "pole": "+",
+   "label": "word-ending pieces 'ificial', 'quate', 'ards', 'actly' when the word is split because it has no leading space (\"art|ificial\", 'inade|quate', \"stand|ards\", \"ex|actly\")",
+   "fire": [
+    "The sign on the turf read \"artificial\" in red letters.",
+    "The inspector wrote 'inadequate' across the top of the form.",
+    "Nobody could agree on what \"standards\" meant in the contract.",
+    "When I asked if that was the plan, he replied \"exactly\" and smiled.",
+    "The flavouring is listed as (artificial) on the back of the packet.",
+    "Her only comment on the funding was \"inadequate\".",
+    "Type the folder name 'standards' into the search box.",
+    "The answer came back at once: \"exactly\"."
+   ],
+   "quiet": [
+    "The sign on the turf said it was artificial grass in red letters.",
+    "The inspector wrote that the wiring was inadequate across the top of the form.",
+    "Nobody could agree on what the safety standards meant in the contract.",
+    "When I asked if that was the plan, he said it was exactly that and smiled.",
+    "The flavouring is listed as artificial on the back of the packet.",
+    "Her only comment was that the funding was inadequate.",
+    "Type the name of the standards folder into the search box.",
+    "The answer came back at once, and it was exactly right."
+   ]
+  }
+ ],
+ "predictions": "7/8 fire, 0 near misses",
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "suffix pieces ificial/quate/ards",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Layer-0 spelling-unit pole. Probes: quoted \"artificial\" 0.71, 'inadequate' 0.75, \"standards\" 0.85, \"exactly\" 0.55; the same words with a leading space (whole-word tokens) 0.02-0.03. The card lists further pieces (folios, lets, prises, itant, umed, edom, antics, axy, itat) that are not tested here.",
+ "trigger": {
+  "pieces": [
+   "ificial",
+   "quate",
+   "ards",
+   "actly"
+  ]
+ }
+}
