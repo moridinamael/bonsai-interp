@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-310fe672",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N10048-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:37:00+00:00",
+ "recipe": {
+  "toolchain_commit": "a7bf31f09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N10048_neg/2026-11-19-lm1909-310fe672.tests.json"
+ },
+ "label": "Token list: Japanese 成長 ('growth'), plus the ^^ emoticon in Korean text and Chinese 快速增长; other CJK words for increase (増加, 発展, 伸び, 增加) are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N10048_neg/2026-11-19-lm1909-310fe672.tests.json",
+   "prereg_commit": "a7bf31f09",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.402,
+     "peak": "成長"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.511,
+     "peak": "成長"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.294,
+     "peak": "成長"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.383,
+     "peak": "成長"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.61,
+     "peak": "^^"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.389,
+     "peak": "^^"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.705,
+     "peak": "快速增长"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.271,
+     "peak": "成長"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "変わり"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": "です"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": "売"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.051,
+     "peak": "監"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": "랑"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.081,
+     "peak": "增加"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "社"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.396,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a7bf31f09",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "成長 / ^^ (list)",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: '^^' x3, 增 x3, 進 x3, setUp x3, サポート, 成長; the + pole fires on increment / + / Boost, so the neuron may be about 'up / increase' with this pole taking a few CJK tokens. Probes: 成長 0.48 and 0.36, 快速增长 0.45, ^^ 0.37, setUp 0.34, サポート 0.28, 進 0.28; 増加 0.15, 增加了 0.04, 经济增长 0.01, 発展 0.01, 伸び 0.00. So a list, not the meaning 'growth'.",
+ "selection": "random draw"
+}

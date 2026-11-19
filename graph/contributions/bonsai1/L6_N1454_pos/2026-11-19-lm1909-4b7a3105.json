@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4b7a3105",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N1454+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:37:02+00:00",
+ "recipe": {
+  "toolchain_commit": "a7bf31f09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N1454_pos/2026-11-19-lm1909-4b7a3105.tests.json"
+ },
+ "label": "A real word wrongly used where a similar-looking or similar-sounding verb belongs: ' ware' for wear, ' suite' for suit, ' beings' for begins, ' where' for were; the same words used correctly are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N1454_pos/2026-11-19-lm1909-4b7a3105.tests.json",
+   "prereg_commit": "a7bf31f09",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.758,
+     "peak": " ware"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.577,
+     "peak": " suite"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.49,
+     "peak": " beings"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.116,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.358,
+     "peak": " ware"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.672,
+     "peak": " suite"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.599,
+     "peak": " beings"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.325,
+     "peak": " where"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " church"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " suit"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " school"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " lived"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " shop"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.533,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a7bf31f09",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "wrong-word verb typos",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: ware (wear), suite (suit), beings (begins), where (were), quite. Probes: ware 0.67, suite 0.65, beings 0.66, where 0.35; correct 'hotel suite' 0.01, 'human beings' 0.01, wear/suit 0.00. Partly general: brake(break) 0.23, bare(bear) 0.20, loose(lose) 0.18, but then/weather/form/desert/your/past ~0.00-0.04, so mainly these verbs.",
+ "selection": "random draw"
+}

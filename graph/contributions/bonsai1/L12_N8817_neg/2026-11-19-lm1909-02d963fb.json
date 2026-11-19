@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-02d963fb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N8817-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:47+00:00",
+ "recipe": {
+  "toolchain_commit": "a7bf31f09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N8817_neg/2026-11-19-lm1909-02d963fb.tests.json"
+ },
+ "label": "The verb ' figure'/' figured' in 'figure X out' / 'figured out' (work out a problem); not the noun 'figure' and not other 'out' verbs (inconsistent in probes)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N8817_neg/2026-11-19-lm1909-02d963fb.tests.json",
+   "prereg_commit": "a7bf31f09",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.367,
+     "peak": " figure"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.54,
+     "peak": " figured"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.651,
+     "peak": " figure"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.447,
+     "peak": " out"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.657,
+     "peak": " figure"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.449,
+     "peak": " figured"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.887,
+     "peak": " figure"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.36,
+     "peak": " figured"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " monthly"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.0,
+     "peak": " art"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.093,
+     "peak": " finish"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.178,
+     "peak": " learned"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.511,
+     "peak": " solved"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": " coming"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.305,
+     "peak": " by"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.495,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a7bf31f09",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "verb 'figure' (figure out)",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Weak pole (max 6.6); card tokens: figure, granted, early, anything. Probes: 'figure this one out' 0.90, 'figured out by now' 0.48, 'figured it out' 0.33, but 'to figure out how' 0.03, 'granted in 1520' 0.23, noun 'figure' 0.00-0.02, work/find/sort out <= 0.18.",
+ "selection": "random draw"
+}
