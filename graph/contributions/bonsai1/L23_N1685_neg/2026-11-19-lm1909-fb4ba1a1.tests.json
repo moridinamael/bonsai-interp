@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-fb4ba1a1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N1685-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:16:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N1685",
+   "pole": "-",
+   "label": "Python source: the opening words of a docstring (\"Turn a\", \"an empty\", \"if the\") and `lambda`, at the point where a data-type or argument noun (string, list, input) comes next",
+   "fire": [
+    "def slugify(title):\n    \"\"\"Convert a string into a lower-case slug.\"\"\"\n    return title.lower().replace(' ', '-')",
+    "def first_words(lines):\n    \"\"\"Return an empty list when the input has no lines.\"\"\"\n    return [l.split()[0] for l in lines if l]",
+    "def is_blank(value):\n    \"\"\"Check if the string is made only of whitespace.\"\"\"\n    return not value.strip()",
+    "users = load_users()\nusers.sort(key=lambda u: u.name)\nprint(users[0])",
+    "def to_bytes(s):\n    \"\"\"Turn a string into bytes, replacing bad characters.\"\"\"\n    return s.encode('utf-8', 'replace')",
+    "def merge(a, b):\n    \"\"\"Returns an empty dictionary if both inputs are empty.\"\"\"\n    out = dict(a)\n    out.update(b)\n    return out",
+    "with open('out.json', 'w') as f:\n    json.dump(data, f, default=lambda o: str(o))",
+    "def count_vowels(word):\n    \"\"\"Return the number of vowels in the given string.\"\"\"\n    return sum(c in 'aeiou' for c in word)"
+   ],
+   "quiet": [
+    "def perimeter(w, h):\n    return 2 * (w + h)\n\nprint(perimeter(3, 4))",
+    "total = 0\nfor n in range(10):\n    total += n * n\nprint(total)",
+    "import os\nimport sys\n\nif len(sys.argv) < 2:\n    sys.exit(1)\nos.chdir(sys.argv[1])",
+    "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y",
+    "while retries > 0:\n    retries -= 1\n    time.sleep(0.5)",
+    "He opened the drawer and found an empty envelope under the old letters.",
+    "The workshop will convert a barn into a small studio by spring.",
+    "We had to turn a corner before we could see whether the street was empty."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python docstring / lambda",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks ' lambda', ' empty', ':', 'Convert' in Python; the pole's output promotes ' input', ' string', ' bytes', ' tuple'. Probes: docstring 0.69-0.99, bare lambda 0.69, Python without docstring 0.01, JS comment 0.18, prose 'an empty basket' 0.00."
+}

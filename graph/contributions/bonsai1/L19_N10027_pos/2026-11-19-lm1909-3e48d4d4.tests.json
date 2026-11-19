@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-3e48d4d4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N10027+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:16:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N10027",
+   "pole": "+",
+   "label": "Unclear; best guess: in a Python test function, the line end right after a no-argument constructor call (`field = PasswordField()⟦⏎⟧`)",
+   "fire": [
+    "    def test_blank_value(self):\n        field = EmailAddressField()\n        self.assertFalse(field.has_changed(''))\n",
+    "    def test_default_port(self):\n        server = LocalProxyServer()\n        self.assertEqual(server.port, 8080)\n",
+    "def test_new_cart_is_empty():\n    cart = ShoppingCart()\n    assert cart.total() == 0\n",
+    "    def test_parser_rejects_tabs(self):\n        parser = IndentParser()\n        self.assertRaises(ValueError, parser.feed, '\\t')\n",
+    "def test_timer_starts_stopped():\n    timer = Stopwatch()\n    assert timer.running is False\n",
+    "    def test_widget_label(self):\n        widget = ReadOnlyTokenWidget()\n        self.assertIn('token', widget.render())\n",
+    "def test_cache_miss_returns_none():\n    cache = MemoryCache()\n    assert cache.get('missing') is None\n",
+    "    def test_registry_starts_empty(self):\n        registry = EntityRegistry()\n        self.assertEqual(len(registry), 0)\n"
+   ],
+   "quiet": [
+    "def read_settings(path):\n    with open(path) as handle:\n        return json.load(handle)\n",
+    "for name in sorted(names):\n    count = len(name)\n    print(name, count)\n",
+    "class Circle:\n    def __init__(self, radius):\n        self.radius = radius\n",
+    "def mean(values):\n    total = sum(values)\n    return total / len(values)\n",
+    "if args.verbose:\n    level = logging.DEBUG\nelse:\n    level = logging.WARNING\n",
+    "try:\n    value = int(raw)\nexcept ValueError:\n    value = 0\n",
+    "The testers checked each field of the form before the release went out.",
+    "def greet(name):\n    message = 'Hello, ' + name\n    return message\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "test-code line end (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: no single token; top example 'ad⟦vection⟧' (31.4) is isolated, the rest (19-21) are call-closing line ends in test code plus unrelated prose. Probes: test method with `PasswordField()` 0.46, another test function 0.23, a third 0.06; non-test Python 0.02-0.07; 'advection' in a new sentence only 0.18. Recorded as a weak guess."
+}
