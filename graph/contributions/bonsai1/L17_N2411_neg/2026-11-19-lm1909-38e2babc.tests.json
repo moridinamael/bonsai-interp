@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-38e2babc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2411-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N2411",
+   "pole": "-",
+   "label": "a truncation point: the continuation marker right after an ellipsis that cuts a passage off mid-thought ('could... [continues]', 'later. ...Read more')",
+   "fire": [
+    "Prices depend on many factors. The most important of these might... [continues]",
+    "The treaty was signed in 1848, and historians agree that it would... [continues]\nCite This Essay",
+    "Rest and drink fluids for a few days. ...Read more",
+    "In this paper I will argue that the novel should... [continues]",
+    "See your dentist if the pain returns. ...Read more",
+    "The causes of the war were complex, and several of them could... [continues]\nRead full essay",
+    "Ice the ankle and keep it raised tonight. ...Read more",
+    "Students who study abroad often find that they can... [continues]"
+   ],
+   "quiet": [
+    "Prices depend on many factors, and the most important is supply.",
+    "The treaty was signed in 1848, and historians agree on the date.",
+    "Rest and drink fluids for a few days until you feel better.",
+    "In this paper I will argue that the novel is unfinished.",
+    "See your dentist if the pain returns [see page 4] or gets worse.",
+    "The causes of the war were complex and are still debated.",
+    "Ice the ankle and keep it raised tonight; call us tomorrow.",
+    "Students who study abroad often find new friends [citation needed] quickly."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "cut-off ellipsis + '[continues]' / 'Read more'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags: broad (1.8% of tokens reach 0.1 of max but only 0.003% reach 0.3) and gate-closed leak regime 98%, so the strong tail is tiny. look: sentence-final periods, table '|' after a paragraph, '... [continues]', '...Read more', 'Continue reading'. Probes: '... [continues]' 0.36-0.56, ' ...Read more' 0.33; plain sentence ends 0.05-0.07, a table pipe 0.01, '[continues]' without the ellipsis 0.05. The label covers only the part I could fire; most of the pole's weak activity (sentence and paragraph boundaries) is not explained."
+}
