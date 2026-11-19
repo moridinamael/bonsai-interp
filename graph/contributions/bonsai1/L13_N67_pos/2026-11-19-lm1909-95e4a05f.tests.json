@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-95e4a05f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N67+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:28:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N67",
+   "pole": "+",
+   "label": "Dense pole (15% of tokens reach 0.1 of max, gate-closed regime). Best guess at its strongest driver: the comma after the city in a Latin American postal address (street, number, C.P., city, country)",
+   "fire": [
+    "Facultad de Ciencias, Calle Igua 4225, C.P. 11400, Montevideo, Uruguay.",
+    "Centro de Estudios Marinos, Av. Rivera 1350, C.P. 11300, Montevideo, Uruguay.",
+    "Instituto de Quimica, Calle 25 No. 455, Vedado, C.P. 10400, La Habana, Cuba.",
+    "Departamento de Geologia, Av. Colon 120, C.P. 5000, Cordoba, Argentina.",
+    "Laboratorio de Suelos, Av. Brasil 2950, C.P. 2340, Valparaiso, Chile.",
+    "Hospital Central, Calle Sucre 88, C.P. 1010, Caracas, Venezuela.",
+    "Museo de Historia Natural, Av. Arenales 1256, C.P. 15072, Lima, Peru.",
+    "Escuela de Agronomia, Av. Garzon 780, C.P. 12900, Montevideo, Uruguay."
+   ],
+   "quiet": [
+    "The science faculty in Montevideo moved to a new building near the river last year.",
+    "Marine researchers from Uruguay spent the summer counting seals along the coast.",
+    "The chemistry institute in Havana trains about two hundred students every year.",
+    "Geologists from Cordoba mapped the hills west of the city in the spring.",
+    "The soil laboratory in Valparaiso tests samples sent by farmers from the region.",
+    "The central hospital in Caracas opened a new wing for children in March.",
+    "The natural history museum in Lima displays fossils found in the desert.",
+    "Students of agronomy in Uruguay often work on cattle ranches during the holidays."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; address city comma",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags: dense (15.4% at 0.1 of max) and gate-closed regime 100%. Top examples: 'Montevideo, Uruguay', 'La Habana, Cuba', Greek postcode, ' being' after a comma. Probes: a Montevideo address 1.00, a Havana address 0.32, plain English sentences 0.14-0.15 (the dense floor). Registered mainly to record the density."
+}

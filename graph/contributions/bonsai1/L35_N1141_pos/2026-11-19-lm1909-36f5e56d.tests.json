@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-36f5e56d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1141+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:28:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N1141",
+   "pole": "+",
+   "label": "The first piece of a split identifier that is about to spell INVENTORY (or, weaker, PLAYLIST): e.g. '_IN' or '.IN' before 'VENTORY' in upper-case code constants; the output promotes the continuation 'vent' and suppresses the whole words ' inventory'/' playlist'",
+   "fire": [
+    "class Warehouse:\n    def __init__(self):\n        self.TOTAL_INVENTORY = 0\n        self.items = []\n\n    def count(self):\n        return self.TOTAL_INVENTORY",
+    "def load_settings(cfg):\n    limit = cfg.MAX_INVENTORY\n    if limit is None:\n        limit = cfg.DEFAULT_INVENTORY\n    return limit",
+    "public class Store {\n    private static final int MIN_INVENTORY = 5;\n    public boolean low(int n) {\n        return n < MIN_INVENTORY;\n    }\n}",
+    "for hero in party:\n    if len(hero.bag) > rules.HERO_INVENTORY:\n        hero.drop_last()",
+    "export const INITIAL_INVENTORY = [];\nexport function reset(state) {\n  state.items = INITIAL_INVENTORY;\n}",
+    "#define SHOP_INVENTORY 64\nstatic int slots[SHOP_INVENTORY];\nint main(void) {\n    return SHOP_INVENTORY;\n}",
+    "export const SAVED_PLAYLISTS = 'saved';\nexport function open(nav) {\n  nav.go(Routes.SAVED_PLAYLISTS);\n}",
+    "def sync(user):\n    if user.plan == Plans.FREE:\n        return limits.FREE_PLAYLISTS\n    return limits.PAID_PLAYLISTS"
+   ],
+   "quiet": [
+    "class Warehouse:\n    def __init__(self):\n        self.TOTAL_WEIGHT = 0\n        self.items = []\n\n    def count(self):\n        return self.TOTAL_WEIGHT",
+    "def load_settings(cfg):\n    limit = cfg.MAX_RETRIES\n    if limit is None:\n        limit = cfg.DEFAULT_RETRIES\n    return limit",
+    "public class Store {\n    private static final int MIN_BALANCE = 5;\n    public boolean low(int n) {\n        return n < MIN_BALANCE;\n    }\n}",
+    "for hero in party:\n    if len(hero.bag) > rules.HERO_STRENGTH:\n        hero.drop_last()",
+    "export const INITIAL_MESSAGES = [];\nexport function reset(state) {\n  state.items = INITIAL_MESSAGES;\n}",
+    "#define SHOP_WINDOWS 64\nstatic int slots[SHOP_WINDOWS];\nint main(void) {\n    return SHOP_WINDOWS;\n}",
+    "export const SAVED_SEARCHES = 'saved';\nexport function open(nav) {\n  nav.go(Routes.SAVED_SEARCHES);\n}",
+    "def sync(user):\n    if user.plan == Plans.FREE:\n        return limits.FREE_UPLOADS\n    return limits.PAID_UPLOADS"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "start of split INVENTORY/PLAYLIST",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on the first piece of Russian 'assortiment'/'inventar', Korean 'playlist', '_IN'(I), '.PL'(AYLISTS); output promotes 'vent', suppresses ' inventory', ' playlist', ' catalog'. Probes: 'self.MAX_INVENTORY' 0.82, 'player.MAX_INVENTORY_SIZE' 0.78, 'DEFAULT_PLAYLIST' 0.30, '.PLAYLISTS' 0.29; the single-token words ' inventory'/' playlist' in prose 0.18-0.27, a MAX_CAPACITY control 0.32 (so code near misses may leak)."
+}

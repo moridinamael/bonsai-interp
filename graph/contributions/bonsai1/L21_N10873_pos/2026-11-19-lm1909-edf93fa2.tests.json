@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-edf93fa2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10873+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:28:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N10873",
+   "pole": "+",
+   "label": "Best guess for a broad pole: the clause or sentence boundary (',' or '.') that closes a quantitative or explanatory statement in a worked explanation, where a consequence or next step follows",
+   "fire": [
+    "Dividing the mass of the ocean by its surface area gives a mean pressure of about 380 atmospheres. If the oceans were twice as deep, that figure would double.",
+    "The relation between the side of a square and its diagonal may not be clear at first, so we will derive it step by step.",
+    "The spacecraft released a 100-kilogram projectile on a path toward the asteroid. The projectile sent back pictures until the moment of contact.",
+    "The lake covers 82 square kilometres and has a mean depth of 40 m. If the inflow stopped, it would take decades to drain.",
+    "The link between the two formulas might not be evident right away, so let us spell it out in detail.",
+    "Light from the Sun needs about 500 seconds to reach the Earth. If the Sun vanished, we would not notice for eight minutes.",
+    "The rover dropped a small sensor package onto the floor of the crater. The package returned temperature readings for three days.",
+    "Adding the three resistances gives a total of 60 ohms. If the voltage is 12 volts, the current is therefore 0.2 amperes."
+   ],
+   "quiet": [
+    "Divide the dough into two parts and leave them under a cloth while you make the filling for the pie",
+    "My grandmother kept a square garden behind the house and grew beans there every summer of my childhood",
+    "The spacecraft and its crew of four were greeted by a cheering crowd on the deck of the recovery ship",
+    "We swam in the lake every morning and ate breakfast on the dock before the others woke up",
+    "She could not remember the formula and decided to ask her older brother for help after dinner",
+    "The Sun was already low over the hills when the riders finally reached the edge of the village",
+    "A small rover toy with six wheels sat on the shelf above his desk for many years",
+    "He found three old radios in the attic and spent the whole weekend trying to repair them"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "boundary after a stated fact (broad)",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card flags the pole broad (2.9% of tokens at 0.1 of max); top examples peak on ','/'.' after measurements or setup clauses and the output promotes ' accordingly', ' thus', ' thereby', ' also'. Nine probe sentences of this kind reached only 0.03-0.16 of max, so I expect this test to fail; it is registered to record that the card-level guess does not drive the pole in short passages."
+}
