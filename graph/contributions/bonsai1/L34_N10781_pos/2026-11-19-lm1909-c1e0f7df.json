@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c1e0f7df",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10781+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:37+00:00",
+ "recipe": {
+  "toolchain_commit": "702eaeed6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10781_pos/2026-11-19-lm1909-c1e0f7df.tests.json"
+ },
+ "label": "French running text, strongest on the token right before a verb or participle (subject pronoun or auxiliary: 'ils ont', 'il a', 'puis il', 'en' + gerund); quiet on the same sentences in English, Spanish, Italian, Portuguese or German. The - pole is the English counterpart (he / she / who before a verb)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10781_pos/2026-11-19-lm1909-c1e0f7df.tests.json",
+   "prereg_commit": "702eaeed6",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.465,
+     "peak": " ont"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.393,
+     "peak": " avons"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.281,
+     "peak": " pain"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.38,
+     "peak": " puis"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.313,
+     "peak": " en"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.27,
+     "peak": " le"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.678,
+     "peak": " ont"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.233,
+     "peak": " retard"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.093,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.43,
+     "peak": "orno"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " goes"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": "ando"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.231,
+     "peak": "ig"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.079,
+     "peak": "ago"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " left"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.347,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "702eaeed6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French, before the verb",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card flags the pole broad (1.6% of tokens reach 0.1 of max). Top examples are all French: avaient, il a, ils ont, en + gerund, puis il. Probes: French sentences 0.33-0.52, including two verbless French ones (0.33, 0.35), so the test claims French text and not the pre-verb slot; English 0.03, Spanish 0.14.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0558bf80",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N3278-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:54+00:00",
+ "recipe": {
+  "toolchain_commit": "702eaeed6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N3278_neg/2026-11-19-lm1909-0558bf80.tests.json"
+ },
+ "label": "clipped abbreviation of a longer word: a 3-4 letter stand-in such as 'Eph.', 'Phil.', 'oct', 'ARCH', 'VEX' (Bible-book, month, course-code, Latin-inscription abbreviations); quiet on the same word written out",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N3278_neg/2026-11-19-lm1909-0558bf80.tests.json",
+   "prereg_commit": "702eaeed6",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.536,
+     "peak": " Col"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.453,
+     "peak": "wed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.565,
+     "peak": " AVG"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.375,
+     "peak": " PHYS"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.272,
+     "peak": "ess"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.306,
+     "peak": " Thurs"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.535,
+     "peak": "jun"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.425,
+     "peak": "CON"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " Col"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.231,
+     "peak": "mon"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " Tuesday"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " Matthew"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " flights"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " {\""
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " biology"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.439,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "702eaeed6",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "clipped word abbreviation",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: no single token (EX, Phil, AN, oct, Eph, MAT, ARCH). Probes: abbreviated forms 0.43-0.64 of max, the same sentences with the words written out 0.01-0.09.",
+ "selection": "random draw"
+}

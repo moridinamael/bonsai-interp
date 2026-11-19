@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5dc46517",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N8021+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:03+00:00",
+ "recipe": {
+  "toolchain_commit": "702eaeed6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N8021_pos/2026-11-19-lm1909-5dc46517.tests.json"
+ },
+ "label": "unclear; best guess from the card: the first digit of a four-digit year after a month name or a document word ('March 2011', 'notification 2019', 'Between 2002')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N8021_pos/2026-11-19-lm1909-5dc46517.tests.json",
+   "prereg_commit": "702eaeed6",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.008,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.019,
+     "peak": " before"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.02,
+     "peak": " cargo"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.025,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.02,
+     "peak": " year"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.028,
+     "peak": "On"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.015,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " autumn"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " carefully"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " cargo"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " visitors"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": "On"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " figures"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.57,
+    "median_fire": 0.019,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "702eaeed6",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "year's first digit (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: '1' x6, '2' x4, '.\\n' x3, ' p' x2; low max (21). Thirteen probe sentences rebuilding the card's contexts (dates, years, 'p.m.', line-final periods) all scored under 0.05 of max, so I could not reproduce the pole. Registered as the card's best guess and expected to fail.",
+ "selection": "random draw"
+}

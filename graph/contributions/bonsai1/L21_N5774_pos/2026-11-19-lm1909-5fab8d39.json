@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5fab8d39",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N5774+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:07+00:00",
+ "recipe": {
+  "toolchain_commit": "702eaeed6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N5774_pos/2026-11-19-lm1909-5fab8d39.tests.json"
+ },
+ "label": "the noun right after a quantifying determiner (no / much / another / one) where it heads the subject of a clause ('no town had existed', 'much work remains', 'another board had yielded'); quiet when the same noun follows 'the'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N5774_pos/2026-11-19-lm1909-5fab8d39.tests.json",
+   "prereg_commit": "702eaeed6",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.667,
+     "peak": " had"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.611,
+     "peak": " research"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.252,
+     "peak": " window"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.37,
+     "peak": " one"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.575,
+     "peak": " colony"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.544,
+     "peak": " crossed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.411,
+     "peak": " damage"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.244,
+     "peak": " puppy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " time"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": "men"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " grows"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.478,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "702eaeed6",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "noun after quantifier",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card flags the pole broad (1.8% of tokens reach 0.1 of max). Top examples: no town, much work, One sperm, another board, another town. Probes: quantifier + noun 0.31-0.70, the same sentences with 'the' 0.02-0.03.",
+ "selection": "random draw"
+}

@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-1f3ab4c6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N1744+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:53:16+00:00",
+ "recipe": {
+  "toolchain_commit": "702eaeed6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N1744_pos/2026-11-19-lm1909-1f3ab4c6.tests.json"
+ },
+ "label": "the Arabic comparative word 'أكثر' (more / most), including 'الأكثر' where it splits into the piece 'كثر'; quiet on other Arabic comparatives and intensifiers. The - pole is the English side (highly, very, fully)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N1744_pos/2026-11-19-lm1909-1f3ab4c6.tests.json",
+   "prereg_commit": "702eaeed6",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.699,
+     "peak": " أكثر"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.633,
+     "peak": " أكثر"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.606,
+     "peak": " أكثر"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.739,
+     "peak": "كثر"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.66,
+     "peak": " أكثر"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.596,
+     "peak": " أكثر"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.706,
+     "peak": " أكثر"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.856,
+     "peak": " أكثر"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " أفضل"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " الم"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.116,
+     "peak": "جمل"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " تق"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.679,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "702eaeed6",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic 'أكثر' (more)",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: ' أكثر' x26, 'كثر' x2 of the top 32 (plus Chinese 有/加/受). Probes: sentences with أكثر 0.57-0.75; 'أجمل' 0.02, 'طويل' 0.01, English 'most' 0.02, Chinese 更多/更加 0.12.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " أكثر",
+   "كثر"
+  ]
+ }
+}
