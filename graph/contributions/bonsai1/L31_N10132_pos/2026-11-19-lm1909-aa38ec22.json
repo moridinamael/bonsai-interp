@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-aa38ec22",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N10132+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:54+00:00",
+ "recipe": {
+  "toolchain_commit": "79c7e838d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N10132_pos/2026-11-19-lm1909-aa38ec22.tests.json"
+ },
+ "label": "'Pope' plus the papal name that follows it (Pope John Paul II, Pope Pius XI, Pope Urban II): fires on ' Pope' and on the regnal name; kings, emperors, saints and archbishops with the same names stay weak",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N10132_pos/2026-11-19-lm1909-aa38ec22.tests.json",
+   "prereg_commit": "79c7e838d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.751,
+     "peak": " John"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.487,
+     "peak": " Pope"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.474,
+     "peak": " Pope"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.545,
+     "peak": "ius"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.592,
+     "peak": " Urban"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.341,
+     "peak": " Pope"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.525,
+     "peak": " Pope"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.375,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.404,
+     "peak": " Elizabeth"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "let"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " John"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.171,
+     "peak": " Queen"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.129,
+     "peak": " Bell"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.125,
+     "peak": " Julius"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.142,
+     "peak": " Charles"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.506,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "79c7e838d",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Pope + papal name",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' John' after 'Pope' (and 教皇/Papa), 'ius' of Pius, ' Urban'; one stray 'po' of 'poisson'. Probes: 'Pope Pius XII' 0.51, 'Pope Benedict XVI' 0.45, 'Pope John Paul II' 0.40, 'Pope Urban II' 0.36, 'Pope Innocent III' 0.35, 'Pope Francis' 0.31; 'Emperor Charles V' 0.19, 'King John' 0.17, 'Saint John Paul' 0.16, lower-case 'the pope' 0.12, 'Archbishop John Carroll' 0.09.",
+ "selection": "random draw"
+}

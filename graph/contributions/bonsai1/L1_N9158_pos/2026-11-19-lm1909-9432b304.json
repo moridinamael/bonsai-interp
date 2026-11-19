@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-9432b304",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9158+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:57+00:00",
+ "recipe": {
+  "toolchain_commit": "79c7e838d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N9158_pos/2026-11-19-lm1909-9432b304.tests.json"
+ },
+ "label": "A word-piece 'ey', 'ay', 'erry' or 'ie' that directly follows a V-initial piece (V|ey|ron, V|ay|ner, v|erry, vra|ie): the spelling continuation after 'V'/'v'; the same endings after B, K, D, P or R stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N9158_pos/2026-11-19-lm1909-9432b304.tests.json",
+   "prereg_commit": "79c7e838d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.529,
+     "peak": "ey"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.431,
+     "peak": "ey"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.641,
+     "peak": "erry"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.404,
+     "peak": "ey"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.316,
+     "peak": "ay"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.408,
+     "peak": "ie"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.386,
+     "peak": "ey"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.322,
+     "peak": "ay"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " hand"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " Mr"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " nice"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " chef"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " toute"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " Paul"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " Vance"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.406,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "79c7e838d",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'ey/ay/erry' piece after V",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: 'ie', 'ey', 'ay', 'ry' after a V/v piece; the opposite pole takes other continuations of V ('im' of vim, 'ino' of vino). Probes: 'v|erry' 0.71, 'V|erry' 0.62, 'V|ey|sey' 0.53, 'V|ey|ron' 0.53, 'V|ey' 0.47, 'vra|ie' 0.40; 'Keysey' 0.01, 'Bey/Kay/Lie' 0.01, 'VeryHigh' 0.00. Tokenizer splits of all test words checked without the model.",
+ "selection": "random draw"
+}

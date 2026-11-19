@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-2c2e35db",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8512+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:56+00:00",
+ "recipe": {
+  "toolchain_commit": "79c7e838d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N8512_pos/2026-11-19-lm1909-2c2e35db.tests.json"
+ },
+ "label": "Unclear, broad pole. Best guess: the word that opens a place, time or means adjunct directly after an object noun (flu shots ON campus, each night THIS week, an x-ray PRIOR to, cheque VIA phone)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N8512_pos/2026-11-19-lm1909-2c2e35db.tests.json",
+   "prereg_commit": "79c7e838d",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.23,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.573,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.324,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.319,
+     "peak": " prior"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.245,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.357,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.392,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.199,
+     "peak": " post"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " library"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": "We"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": "-ray"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " hospital"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " music"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": "You"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.322,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "79c7e838d",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "adjunct opener after a noun (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (1.6% of tokens reach 0.1 of max, max 8.69) with mixed tokens (Arabic adjective ending, ' on', ' The', ' prior', commas between function arguments). Probes: 'flu shots on campus' 0.72, 'each night this week' 0.60, 'f(x, t0' comma 0.42, 'prior to' 0.33 and 0.23; second round weaker: 'in town next month' 0.22, 'on site' 0.16, 'this term' 0.17; no adjunct 0.01-0.03. The label is a guess and does not cover the Arabic or code examples.",
+ "selection": "random draw"
+}

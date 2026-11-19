@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1894fff4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N4658+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:59+00:00",
+ "recipe": {
+  "toolchain_commit": "79c7e838d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N4658_pos/2026-11-19-lm1909-1894fff4.tests.json"
+ },
+ "label": "' research', ' teaching', ' scholarship' and ' service' when they are listed together as a faculty member's academic duties ('teaching and research', 'research, teaching and service'); 'market research' or 'customer service' stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N4658_pos/2026-11-19-lm1909-1894fff4.tests.json",
+   "prereg_commit": "79c7e838d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.606,
+     "peak": " service"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.457,
+     "peak": " research"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.209,
+     "peak": " teaching"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.351,
+     "peak": " service"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.628,
+     "peak": " time"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.659,
+     "peak": " scholarship"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.863,
+     "peak": " service"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.875,
+     "peak": " duties"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.061,
+     "peak": " references"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " excellence"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.149,
+     "peak": " service"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.499,
+     "peak": " time"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "'s"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 1.042,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "79c7e838d",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "academic duties: teaching and research",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: ' research'/' scholarship'/' Teaching' as the second item of 'teaching and …' at a university. Probes: 'teaching, research and service' 2.23 of max (peak ' service'), 'scholarship and service' 1.12, 'teaching and research' 0.82, 'left teaching to pursue research' 0.32; 'market research' 0.02, 'search of the building' 0.02.",
+ "selection": "random draw"
+}
