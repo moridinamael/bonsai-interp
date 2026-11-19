@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c94e8834",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11185+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:55:04+00:00",
+ "recipe": {
+  "toolchain_commit": "17518a4f4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N11185_pos/2026-11-20-lm1909-c94e8834.tests.json"
+ },
+ "label": "' and' / ' but' right after a 'one'-quantified phrase, before the counterpart (as few as one, and...; one reason and another)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N11185_pos/2026-11-20-lm1909-c94e8834.tests.json",
+   "prereg_commit": "17518a4f4",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.646,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.75,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.344,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.186,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.142,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.072,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.289,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.346,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.076,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " waited"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.042,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.046,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.249,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " online"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " time"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.317,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "17518a4f4",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'and' after 'one X'",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card top: ' and' x13, ' but' x7 after 'one'. Probe: 'as few as one, and' 0.56, 'one reason and another' 0.75, 'one side and' 0.45; 'apples and pears' 0.03; but 'between one thing and another' 0.06 and 'one by one and' 0.08, so the context is not fully pinned down. Negative pole: ' then' in successions.",
+ "selection": "random draw"
+}
