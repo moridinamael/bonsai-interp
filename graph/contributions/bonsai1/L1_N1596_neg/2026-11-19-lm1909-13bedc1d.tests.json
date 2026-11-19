@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-13bedc1d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1596-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:32:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N1596",
+   "pole": "-",
+   "label": "Dense early-layer unit with no single trigger (14.5% of tokens reach a tenth of its small max, all in the gate-closed leak regime). Best guess at what lifts it most: the tokens ' version' and ' pharmac' (and Arabic ' الإسلامية').",
+   "fire": [
+    "The printed version of the guide costs twice as much.",
+    "Her uncle worked as a pharmacist in a small town.",
+    "An updated version of the map will be posted in June.",
+    "The course is required for every pharmacist in the province.",
+    "I prefer the original version of that song.",
+    "Two pharmacists checked the prescription before filling it.",
+    "A shorter version of this talk was given in Lisbon.",
+    "The hospital hired a third pharmacist for the night shift."
+   ],
+   "quiet": [
+    "The printed guide costs twice as much as the booklet.",
+    "Her uncle worked as a baker in a small town.",
+    "An updated map will be posted in June.",
+    "The course is required for every teacher in the province.",
+    "I prefer the original recording of that song.",
+    "Two nurses checked the chart before the round.",
+    "A shorter talk on this theme was given in Lisbon.",
+    "The hospital hired a third porter for the night shift."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; ' version' / ' pharmac'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags the pole dense and gate-closed (max only 0.21). Top tokens: ' الإسلامية' x5, 'ث' x4, ' version' x3, 'اء' x3, ' pharmac' x1. Probes: ' pharmac' 0.67, ' version' 0.69, ' الإسلامية' 0.69, and an unrelated sentence still 0.19. This test records the density honestly; a fail is expected whenever ordinary tokens in the near misses drift past 0.30."
+}

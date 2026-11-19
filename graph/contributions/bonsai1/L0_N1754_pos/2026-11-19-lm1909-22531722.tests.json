@@ -1,0 +1,55 @@
+{
+ "contribution": "2026-11-19-lm1909-22531722",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N1754+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:32:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N1754",
+   "pole": "+",
+   "label": "A small set of tokens: ' VIP', ' gala', ' finer', ' elite' (the card adds Korean ' 대부분' and Russian ' состоянии'). The English four share a 'select / high-end occasion' sense, but near-synonyms (' luxury', ' exclusive') stay quiet, so this is the token list, not the meaning.",
+   "fire": [
+    "Our seats were in the VIP section, right behind the dugout.",
+    "The charity holds a gala every December to raise money for the clinic.",
+    "My grandfather taught me the finer details of pruning roses.",
+    "Only elite runners are allowed to start in the first wave.",
+    "The sponsors were given VIP passes for the whole weekend.",
+    "She wore a green dress to the gala at the opera house.",
+    "The regiment was an elite unit trained for mountain warfare.",
+    "A good editor notices the finer shades of meaning in a sentence."
+   ],
+   "quiet": [
+    "Our seats were in the upper section, right behind the dugout.",
+    "The charity holds a banquet every December to raise money for the clinic.",
+    "My grandfather taught me the small details of pruning roses.",
+    "Only experienced runners are allowed to start in the first wave.",
+    "The sponsors were given premium passes for the whole weekend.",
+    "She wore a green dress to the luxury hotel by the opera house.",
+    "The regiment was an exclusive unit trained for mountain warfare.",
+    "A good editor notices the subtle shades of meaning in a sentence."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "tokens ' VIP', ' gala', ' elite', ' finer'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card flags the pole broad (1.6% of tokens reach a tenth of max). Top 32: ' VIP' x5, ' 대부분' x5, ' gala' x4, ' состоянии' x4, ' finer' x3, ' elite' x2. Probes: ' gala' 0.88, ' finer' 0.64, ' VIP' 0.52, ' elite' 0.40; ' luxury' 0.10, ' exclusive' 0.05, plain sentences 0.015. Only the list holds, so the label is the list; the Korean and Russian tokens are not in the test. The - pole is the single token ' campaign'.",
+ "trigger": {
+  "tokens": [
+   " VIP",
+   " gala",
+   " finer",
+   " elite"
+  ]
+ }
+}
