@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-556b333d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N7344+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:37+00:00",
+ "recipe": {
+  "toolchain_commit": "1fcab7383",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N7344_pos/2026-11-19-lm1909-556b333d.tests.json"
+ },
+ "label": "abstract argumentative prose in Arabic or Russian (e.g. 'يدل على ⟦ذلك⟧', generalising statements about man, education, society), not everyday narration in the same languages",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N7344_pos/2026-11-19-lm1909-556b333d.tests.json",
+   "prereg_commit": "1fcab7383",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.602,
+     "peak": " التاريخ"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.379,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.313,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.524,
+     "peak": " الإنسان"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.854,
+     "peak": "е"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.65,
+     "peak": " человека"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.571,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.502,
+     "peak": " культуры"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " الب"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.137,
+     "peak": "اح"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.122,
+     "peak": "ك"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": "لة"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.068,
+     "peak": " м"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.184,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.183,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.221,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.547,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1fcab7383",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic/Russian abstract argument",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (2.4%). Top examples: Arabic ' ذلك' after 'يدل على' (x5), ' الإنسان', and Russian sentence punctuation in abstract essays. Probes: Arabic 'على ذلك' 0.40 and 0.37, 'وجود الإنسان' 0.53, Russian abstract sentence 0.58; Arabic everyday narration 0.01, Russian everyday 0.18, the English translation 0.09. A register-and-language context, not a token.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-66f1c88a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N8163-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:18:10+00:00",
+ "recipe": {
+  "toolchain_commit": "1fcab7383",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N8163_neg/2026-11-19-lm1909-66f1c88a.tests.json"
+ },
+ "label": "the copula right after a named subject in an emphatic ranking claim ('I tell you, John ⟦was⟧ even greater than …', 'X ⟦is⟧ the most …')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N8163_neg/2026-11-19-lm1909-66f1c88a.tests.json",
+   "prereg_commit": "1fcab7383",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.048,
+     "peak": "Was"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.279,
+     "peak": "?"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.051,
+     "peak": " w"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.215,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.14,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.111,
+     "peak": " grand"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.061,
+     "peak": " loyal"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.057,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.065,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.148,
+     "peak": " planted"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.052,
+     "peak": " kept"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.058,
+     "peak": " until"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.176,
+     "peak": " one"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.121,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " camp"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.594,
+    "median_fire": 0.086,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1fcab7383",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "copula in emphatic ranking claim",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card flags the pole broad (2.3%), weak (max 3.62), with no shared token in the top examples: 'John⟦ was⟧ even more important than a prophet', 'Game of Thrones⟦ is⟧ the most pirated', a closing quote, code pieces. Probes: 'I tell you, Peter was far greater' 0.37, 'Minecraft is the best-selling' 0.19, 'Mary was even more famous' 0.10 (peak on ' even'), other tries 0.06-0.18. I do not have a label the card supports; this is the best guess and I expect it to fail.",
+ "selection": "random draw"
+}
