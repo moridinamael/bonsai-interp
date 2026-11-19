@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e926b4b4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8526+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:34:33+00:00",
+ "recipe": {
+  "toolchain_commit": "54ec63c45",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N8526_pos/2026-11-19-lm1909-e926b4b4.tests.json"
+ },
+ "label": "function tokens inside machine-learning / data-analysis text and code (after 'a dataset that I can use', 'an unsupervised method', 'enumerate(test_data)')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N8526_pos/2026-11-19-lm1909-e926b4b4.tests.json",
+   "prereg_commit": "54ec63c45",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.137,
+     "peak": " assert"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.213,
+     "peak": " machine"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.181,
+     "peak": " two"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.666,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.069,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.355,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.268,
+     "peak": " there"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.445,
+     "peak": "Policy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.065,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.107,
+     "peak": "K"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.089,
+     "peak": "D"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.049,
+     "peak": "After"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.08,
+     "peak": " send"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.07,
+     "peak": " shelf"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.096,
+     "peak": "Contract"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.054,
+     "peak": "def"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.24,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54ec63c45",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inside ML / data-analysis text",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card and look: scattered peaks (' the', ' to', '(feature', ' you', '(test', ' in') in sklearn tests, classifier code and prose about models and statistics; the - pole fires on analysis words (algorithmically, linguistic, Impact Analysis) and promotes ' entropy', ' analytics', ' clustering'. Seven short probes of the ML-context idea all stayed under 0.15, so this is a best guess recorded honestly, written as longer passages like the top examples. Weak pole (max 6.9), 69% gate-closed echo regime.",
+ "selection": "random draw"
+}

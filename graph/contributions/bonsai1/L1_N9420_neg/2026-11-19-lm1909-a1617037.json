@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a1617037",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9420-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:59+00:00",
+ "recipe": {
+  "toolchain_commit": "54ec63c45",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N9420_neg/2026-11-19-lm1909-a1617037.tests.json"
+ },
+ "label": "colloquial Chinese interjections and sentence particles (嗯, 哦, 啥, 不然)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N9420_neg/2026-11-19-lm1909-a1617037.tests.json",
+   "prereg_commit": "54ec63c45",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.431,
+     "peak": "嗯"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.37,
+     "peak": "不然"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.589,
+     "peak": "哦"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.417,
+     "peak": "啥"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.387,
+     "peak": "嗯"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.375,
+     "peak": "不然"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.603,
+     "peak": "哦"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.433,
+     "peak": "啥"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.23,
+     "peak": "说"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.25,
+     "peak": "晚上"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.142,
+     "peak": "请"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.283,
+     "peak": "米饭"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.183,
+     "peak": "表示"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.214,
+     "peak": "然后"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.153,
+     "peak": "面条"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.191,
+     "peak": "你"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.424,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54ec63c45",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Chinese colloquial particles",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (6.7% of tokens reach 0.1 of max) and 100% gate-leak; max only 1.66. Top-32 peaks: '不然' x3, '嗯' x2, ' Nah' x2, '入' x2 and scattered word pieces (mach, Schul, wil). Probes: 哦 0.51, 嗯 0.40, 不然 0.39, 'Nah' 0.20, but also ' plants' 0.21. A token-list label for the strongest group; near misses are plain written Chinese without those particles and will probably fire weakly.",
+ "selection": "random draw"
+}

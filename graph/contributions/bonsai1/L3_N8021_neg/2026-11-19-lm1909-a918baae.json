@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a918baae",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8021-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:34:16+00:00",
+ "recipe": {
+  "toolchain_commit": "54ec63c45",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N8021_neg/2026-11-19-lm1909-a918baae.tests.json"
+ },
+ "label": "the middle pieces of Russian 'еже-' frequency words (ежедневно, еженедельный, ежегодно)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N8021_neg/2026-11-19-lm1909-a918baae.tests.json",
+   "prereg_commit": "54ec63c45",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.903,
+     "peak": "ед"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.893,
+     "peak": "жен"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.508,
+     "peak": "егод"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.653,
+     "peak": "ем"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.856,
+     "peak": "ед"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.835,
+     "peak": "жен"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.608,
+     "peak": "егод"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.884,
+     "peak": "ем"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.48,
+     "peak": "ем"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.307,
+     "peak": " вы"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.242,
+     "peak": "Ф"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.408,
+     "peak": "иль"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.214,
+     "peak": "сет"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.07,
+     "peak": "ёт"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.274,
+     "peak": " каждый"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.354,
+     "peak": "от"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.845,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54ec63c45",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Russian 'еже-' compounds",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (4.8% of tokens reach 0.1 of max) and 100% gate-leak with a tiny max (0.19); top-32 peaks are mostly non-Latin word pieces ('ед' x3, 'одерж' x2, ' —' x2) plus quote-newline. Probes: ежедневно 0.88, еженедельный 0.99, a Korean word piece 0.79, quote-newline 0.53, plain English -0.08. The label names the strongest group seen; near misses are Russian sentences that say the same with 'каждый' and will probably fire weakly, because other Cyrillic pieces also do.",
+ "selection": "random draw"
+}
