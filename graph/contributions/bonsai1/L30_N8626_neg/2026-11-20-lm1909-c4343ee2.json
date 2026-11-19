@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c4343ee2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N8626-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:32:51+00:00",
+ "recipe": {
+  "toolchain_commit": "0af4c83f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N8626_neg/2026-11-20-lm1909-c4343ee2.tests.json"
+ },
+ "label": "the word just before a beach / shore is expected (long sandy ___, washed ___, crawled onto the ___): prediction of 'beach / shore'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N8626_neg/2026-11-20-lm1909-c4343ee2.tests.json",
+   "prereg_commit": "0af4c83f8",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.767,
+     "peak": " white"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.11,
+     "peak": " washed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.521,
+     "peak": " onto"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.41,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.355,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.952,
+     "peak": " washed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.377,
+     "peak": " sandy"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.544,
+     "peak": "ly"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.494,
+     "peak": " soft"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " hundreds"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.22,
+     "peak": " found"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.152,
+     "peak": "foot"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " ridge"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.532,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0af4c83f8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "about to say beach",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card: peaks on ' sandy', ' on', ' washed', ' the' right before beach/shore/ashore; output suppresses beach/shore/sand (the + pole is the sea side: tide, wave, shark). Near misses keep the outdoor setting but lead to a non-coastal noun.",
+ "selection": "random draw"
+}
