@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-bf7431c5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N5415-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:30+00:00",
+ "recipe": {
+  "toolchain_commit": "c5e051d8c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N5415_neg/2026-11-19-lm1909-bf7431c5.tests.json"
+ },
+ "label": "the subword that continues a rare surname right after its opening 'D' / 'Dum' piece (D|amb|rot, Dum|f|ries, D|amin|eli); the same pieces after another initial stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N5415_neg/2026-11-19-lm1909-bf7431c5.tests.json",
+   "prereg_commit": "c5e051d8c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.039,
+     "peak": "amb"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.406,
+     "peak": " Dum"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.036,
+     "peak": "amb"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.836,
+     "peak": "umb"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.881,
+     "peak": "amb"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.88,
+     "peak": "amin"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.555,
+     "peak": "br"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.982,
+     "peak": "amb"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " prize"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " Professor"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "Minutes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " G"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.369,
+     "peak": " Tamb"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.0,
+     "peak": "amin"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.056,
+     "peak": "br"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.2,
+     "peak": "amb"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.881,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c5e051d8c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "surname piece after 'D'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: Dambrosio 1.01, Dumfries 0.91, Dambazau 0.88, Dumbrell 0.79; Lambrosio 0.12, 'dumbbell' 0.12, ' damage' 0.01. The + pole peaks on ' Gam' opening a surname (Gammon, Gamble), so the unit may separate surname openings by letter. Tokenization of the new names was not checked.",
+ "selection": "random draw"
+}

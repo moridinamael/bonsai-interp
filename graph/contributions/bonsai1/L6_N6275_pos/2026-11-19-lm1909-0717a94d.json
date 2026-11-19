@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0717a94d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N6275+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:26+00:00",
+ "recipe": {
+  "toolchain_commit": "c5e051d8c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N6275_pos/2026-11-19-lm1909-0717a94d.tests.json"
+ },
+ "label": "the head noun that completes a two-word compound or place name: ' cell' / ' cells' after its modifier (nerve cell), ' Island' / ' Canyon' after the proper name (Pine Island, Glen Canyon); the bare noun stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N6275_pos/2026-11-19-lm1909-0717a94d.tests.json",
+   "prereg_commit": "c5e051d8c",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.04,
+     "peak": " cell"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.021,
+     "peak": " just"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.027,
+     "peak": " rain"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.03,
+     "peak": " bone"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.048,
+     "peak": " Island"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.013,
+     "peak": " bus"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.071,
+     "peak": " Canyon"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.031,
+     "peak": " love"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " just"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " rain"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " marrow"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " arrived"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " bus"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " winds"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " love"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.03,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c5e051d8c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "compound head: X cell, X Island",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: 'nerve cell' 0.75, 'Pine Island' 0.67, 'Glen Canyon' 0.73, 'socketserver' 0.79; 'The cell was' 0.02, 'The island was' 0.03; sentence-initial 'Blood cells' only 0.12, and 'customer service' 0.01, so not every compound fires. Fire items use compounds that were not in the top examples.",
+ "selection": "random draw"
+}
