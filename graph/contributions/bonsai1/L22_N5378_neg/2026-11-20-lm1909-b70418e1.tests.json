@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-b70418e1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N5378-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:20:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N5378",
+   "pole": "-",
+   "label": "the pieces '_by' / '_from' (and 'By'/'From') inside code identifiers for lookup functions: get_id_by_uri, get_user_id_from_name, getBlockByNumber",
+   "fire": [
+    "def load(self):\n    item = self.store.get_item_by_key(key)\n    return item",
+    "    order = db.find_order_by_number(order_no)\n    if order is None:\n        return",
+    "user = repo.fetch_user_from_email(email)\nprint(user.name)",
+    "    const block = await web3.eth.getBlockByHash(hash);",
+    "    account = Account.lookup_by_name(self.username)\n    if not account:",
+    "    city = geo.get_city_from_zip(zipcode)\n    cities.append(city)",
+    "    rows = table.select_by_date(start, end)\n    for r in rows:",
+    "    node = tree.findNodeById(node_id);\n    node.expand();"
+   ],
+   "quiet": [
+    "def load(self):\n    item = self.store.get_item(key)\n    return item",
+    "    order = db.find_order(order_no)\n    if order is None:\n        return",
+    "user = repo.fetch_user(email)\nprint(user.name)",
+    "    const block = await web3.eth.getBlock(hash);",
+    "    account = Account.lookup(self.username)\n    if not account:",
+    "    city = geo.get_city(zipcode)\n    cities.append(city)",
+    "    rows = table.select_rows(start, end)\n    for r in rows:",
+    "    node = tree.findNode(node_id);\n    node.expand();"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'_by'/'_from' in code names",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: '_by' x16, '_from' x7 of top 32."
+}
