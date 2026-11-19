@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-9c5a58a9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2742-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:30+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N2742",
+   "pole": "-",
+   "label": "the comma closing a fronted 'When <someone> took office / came to the throne,' clause; also ' as' after 'quoted'",
+   "fire": [
+    "Roosevelt inherited a country in crisis. When he took office, a quarter of the workforce was unemployed.",
+    "The young queen was only eighteen. When she ascended the throne, the treasury was nearly empty.",
+    "The new manager had never run a factory. When he took charge, he found the machines in poor repair.",
+    "Thatcher led the party for four years in opposition. When she became prime minister, inflation stood at ten percent.",
+    "A senior police officer is quoted as saying that the investigation is far from over.",
+    "The general arrived in the spring. When he assumed command, he discovered that supplies were low.",
+    "In the article the coach is quoted as saying that the team needs two new defenders.",
+    "Lincoln won the election in November. By the time he was sworn in, seven states had seceded."
+   ],
+   "quiet": [
+    "Roosevelt inherited a country in crisis. A quarter of the workforce was unemployed that winter.",
+    "The young queen was only eighteen. The treasury was nearly empty and the court was divided.",
+    "The new manager had never run a factory. The machines were in poor repair and orders were late.",
+    "Thatcher led the party for four years in opposition. Inflation stood at ten percent that spring.",
+    "A senior police officer said that the investigation is far from over.",
+    "The general arrived in the spring. Supplies were low and the roads were deep in mud.",
+    "In the article the coach explains that the team needs two new defenders.",
+    "Lincoln won the election in November. Seven states had seceded before the spring."
+   ]
+  }
+ ],
+ "predictions": "expect a fail or a marginal result: 4/8 fire above 0.2, 0-1 near misses",
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "'When he took office,'",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "The top examples are mixed (clause-final commas, ' sale', ' ranges', code) and the pole is fairly dense (0.8% of tokens reach 0.1 of max). In probes 'When he took office,' reached 0.81 and 'quoted as' 0.48, but other fronted when-clauses only 0.05-0.37. This label is a list of the two best triggers I found, not a distinction."
+}
