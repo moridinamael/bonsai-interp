@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-416a7ecd",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N766+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:18:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N766",
+   "pole": "+",
+   "label": "the event that triggers a later action: a Qt signal name before .connect (clicked, timeout, currentIndexChanged), also 'dry out' before watering",
+   "fire": [
+    "        self.saveButton.clicked.connect(self.save_file)\n        self.quitButton.clicked.connect(self.close)",
+    "        self.clock = QtCore.QTimer()\n        self.clock.timeout.connect(self.tick)",
+    "        self.langBox.currentIndexChanged.connect(self.change_language)",
+    "        action = QtGui.QAction('Open', menu)\n        action.triggered.connect(self.open_dialog)",
+    "        self.nameEdit.textChanged.connect(self.validate)",
+    "        self.slider.valueChanged.connect(self.set_volume)",
+    "        self.table.itemSelectionChanged.connect(self.show_details)",
+    "        self.checkBox.stateChanged.connect(self.toggle_option)"
+   ],
+   "quiet": [
+    "        self.saveButton.setEnabled(False)\n        self.quitButton.setText('Quit')",
+    "        self.clock = QtCore.QTimer()\n        self.clock.setInterval(1000)",
+    "        self.langBox.addItems(['en', 'de', 'fr'])",
+    "        action = QtGui.QAction('Open', menu)\n        action.setShortcut('Ctrl+O')",
+    "        self.nameEdit.setPlaceholderText('Name')",
+    "        self.slider.setRange(0, 100)",
+    "        self.table.setColumnCount(3)",
+    "        self.checkBox.setChecked(True)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "triggering event (Qt signal)",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top: item.triggered.connect, currentIndexChanged.connect, timer.timeout.connect, clicked(), 'soil to dry out before'. Logit effect: + promotes then/followed, suppresses until/once; - pole fires on 'Return to classes only after', 'Don't go back home until'. Probe: signals 0.44-0.80; setText/addItem 0.04."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-47398182",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3769-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:18:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N3769",
+   "pole": "-",
+   "label": "the space-prefixed first piece of a word in Korean or spaced Japanese text (byte-fragment tokens after a space)",
+   "fire": [
+    "서울 시민들은 주말마다 한강 공원을 찾는다.",
+    "이번 전시회에는 유명한 화가의 작품이 많다.",
+    "회사는 내년에 새로운 제품을 출시할 예정이다.",
+    "ホーム | ニュース | お問い合わせ | アクセス",
+    "학생들은 도서관에서 시험 공부를 했다.",
+    "날씨가 좋아서 우리는 산책을 나갔다.",
+    "会社概要 | プライバシー | サイトマップ",
+    "그는 매일 아침 커피를 마시며 신문을 읽는다."
+   ],
+   "quiet": [
+    "首尔市民每到周末都会去汉江公园。",
+    "这次展览有很多著名画家的作品。",
+    "公司计划明年推出新的产品。",
+    "東京の天気は今日は晴れでした。",
+    "学生们在图书馆里准备考试。",
+    "天气很好所以我们出去散步了。",
+    "私は毎朝コーヒーを飲みます。",
+    "他每天早上喝咖啡看报纸。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space-initial CJK word piece",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Top 32 are ' \\ufffd' byte-fragment tokens after a space in Korean/Japanese (' サ', ' 투스', ' 워'). Probe: Korean 0.45-0.84, spaced Japanese 0.77, Chinese without spaces -0.01. Near misses are unspaced Chinese/Japanese text."
+}
