@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-400a8307",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N5005-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:55:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N5005",
+   "pole": "-",
+   "label": "Advanced analysis with special functions: gamma, zeta and Bessel functions, analytic continuation, divergent or asymptotic series (text or code)",
+   "fire": [
+    "The functional equation relates the zeta function at s to its value at 1 - s through the gamma function.",
+    "Borel summation assigns a finite value to the divergent series by analytic continuation of its transform.",
+    "For large arguments the modified Bessel function behaves like an exponential divided by a square root, times an asymptotic series.",
+    "    assert gamma(x + 1).rewrite(factorial) == factorial(x)\n    assert expint(1, x).series(x, 0, 3) == -EulerGamma - log(x) + x - x**2/4",
+    "The incomplete gamma function has an analytic continuation to the whole complex plane, apart from a branch cut.",
+    "Stirling's formula gives the leading term of the asymptotic series for the logarithm of the gamma function.",
+    "The Dirichlet L-function is defined by a series for large real part and extended by analytic continuation.",
+    "The error function erf and the exponential integral Ei are both expressed through the confluent hypergeometric function."
+   ],
+   "quiet": [
+    "The quadratic equation relates the roots of the polynomial to its coefficients through the discriminant.",
+    "The sample mean assigns an average value to the data set by dividing the total by the count.",
+    "For large samples the binomial distribution looks like a normal curve centred on the mean, with a small spread.",
+    "    assert area(3, 4) == 12\n    assert perimeter(3, 4) == 14\n    assert round(average([1, 2, 6]), 2) == 3.0",
+    "The rotation matrix has an inverse equal to its transpose, apart from a change of sign.",
+    "Pythagoras's theorem gives the length of the hypotenuse from the lengths of the other two sides.",
+    "The median is defined as the middle value of a sorted list and found by counting.",
+    "The slope and the intercept of the line are both computed from the two given points."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "special-function analysis",
+ "unit_kind": "sparse feature",
+ "confidence": 0.65,
+ "notes": "Card: very sparse (0.009% of tokens reach 0.1 of max); top examples are analytic continuation, expint/gamma/erfi tests, factorial code; the output direction of this pole promotes ' integral', ' Gamma', ' sums', 'Γ'. Probes: Riemann zeta/gamma 1.83, Bessel/gamma/divergent series 1.06, Dirichlet series 1.02, analytic continuation 0.82, factorial code 0.62; eigenvalues 0.09, probability 0.05, triangle area 0.01, derivative of sine 0.01, Euler-Maclaurin only 0.18. The peak token varies, so it is a context, not a word."
+}

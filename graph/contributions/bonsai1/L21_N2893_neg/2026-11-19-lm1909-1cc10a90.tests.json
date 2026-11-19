@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-1cc10a90",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2893-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:55:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N2893",
+   "pole": "-",
+   "label": "Python code: the name of a new local variable at the start of an assignment statement, especially one named after the object being built (stream = BitStream(...))",
+   "fire": [
+    "class PacketTest(unittest.TestCase):\n\n    def test_decode(self):\n        # Build the packet and decode it\n        packet = Packet(self.raw, 16)\n        self.assertEqual(packet.kind, 2)",
+    "    def test_labels(self):\n        # Get and set labels on a message\n        message = mailbox.MaildirMessage(_sample)\n        self.assertEqual(message.get_flags(), '')",
+    "    def format(self, patch, data):\n        buffer = ByteBuffer(data, 4)\n        return self.describe(patch, buffer)",
+    "    def test_router(self):\n        conf = mock.MagicMock()\n        conf.get.return_value = []\n\n        router = l3_router.RouterInfo(conf, self.id)\n        self.assertIsNone(router.gateway)",
+    "    def load(self, path):\n        # Open result and check\n        dataset = VectorDataset(path, 'ogr')\n        if not dataset.isValid():\n            raise IOError(path)",
+    "    def next_row(self, table):\n        row = None\n        try:\n            row = table.next()\n        except StopIteration:\n            pass\n        return row",
+    "    def test_view(self):\n        request = self.request_factory.get('/')\n        formset = self.get_formset(request, Author)\n        self.assertEqual(len(formset.forms), 2)",
+    "    def connect(self, host):\n        # Create the session and log in\n        session = Session(host, timeout=30)\n        session.login(self.user)\n        return session"
+   ],
+   "quiet": [
+    "class PacketTest(unittest.TestCase):\n\n    def test_decode(self):\n        # Check the kind of the stored packet\n        self.assertEqual(self.packet.kind, 2)\n        self.assertTrue(self.packet.valid)",
+    "    def test_labels(self):\n        # Flags of a fresh message are empty\n        self.assertEqual(self.message.get_flags(), '')\n        self.assertEqual(self.message.get_labels(), [])",
+    "    def format(self, patch, data):\n        if data is None:\n            return ''\n        return self.describe(patch, data)",
+    "    def test_router(self):\n        self.assertIsNone(self.router.gateway)\n        self.assertEqual(self.router.ports, [])\n        self.assertFalse(self.router.enabled)",
+    "    def load(self, path):\n        # Refuse paths that do not exist\n        if not os.path.exists(path):\n            raise IOError(path)\n        return True",
+    "    def shrink(self, size):\n        while size > 1024.0:\n            size /= 1024.0\n            self.steps += 1\n        return size",
+    "    def test_view(self):\n        self.assertEqual(len(self.formset.forms), 2)\n        self.assertTrue(self.formset.is_valid())",
+    "    def connect(self, host):\n        # Log in on the existing session\n        self.session.login(self.user)\n        return self.session"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "new local variable name",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: peaks on the left-hand name of fresh assignments (bit⟦stream⟧ = BitStream(, created⟦_layer⟧ = QgsVectorLayer(, ⟦ msg⟧ = mailbox.BabylMessage(). The + pole peaks on re-assignments of existing variables (os_size /= ..., subname = subname[...]), so the two poles may be new binding versus update. Probes of my own snippets only reached 0.14-0.16 for both kinds, so this will probably miss the 0.20 median."
+}
