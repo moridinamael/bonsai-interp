@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-394c280f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2700+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:58+00:00",
+ "recipe": {
+  "toolchain_commit": "63407cb20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N2700_pos/2026-11-19-lm1909-394c280f.tests.json"
+ },
+ "label": "layout whitespace at a blank-line break between blocks of code, strongest on the indent before the next method's 'def' after a blank line in a Python class",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N2700_pos/2026-11-19-lm1909-394c280f.tests.json",
+   "prereg_commit": "63407cb20",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.336,
+     "peak": "\n\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.238,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.235,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.293,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.271,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.255,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.23,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.238,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.229,
+     "peak": " __"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.247,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.231,
+     "peak": " __"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.23,
+     "peak": " __"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.27,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.229,
+     "peak": " __"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.242,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.23,
+     "peak": "   "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.246,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63407cb20",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "blank-line break before def",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad (1.0% of tokens reach 0.1 of max). Probes: a Python class with blank lines between methods 0.31 and 0.33 (peak on the indent before def), top-level functions 0.27, a script with blank lines 0.21 and 0.30, JavaScript with blank lines 0.27. Near misses here are the same kind of class written without blank lines between the methods.",
+ "selection": "random draw"
+}

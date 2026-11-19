@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a12e170c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3182-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:53:35+00:00",
+ "recipe": {
+  "toolchain_commit": "63407cb20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N3182_neg/2026-11-19-lm1909-a12e170c.tests.json"
+ },
+ "label": "a word that opens the circumstance of a habitual action: 'when' (also 'while', 'during') before the situation in which someone does something",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N3182_neg/2026-11-19-lm1909-a12e170c.tests.json",
+   "prereg_commit": "63407cb20",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.417,
+     "peak": " you"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.276,
+     "peak": " they"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.094,
+     "peak": " when"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.485,
+     "peak": " while"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.181,
+     "peak": " when"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.581,
+     "peak": " during"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.648,
+     "peak": " when"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.128,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " milk"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.749,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.19,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.331,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.145,
+     "peak": " pencils"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.184,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.451,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63407cb20",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'when' opening a circumstance",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'carry an umbrella when you walk' 0.64, 'fade in the evening' 0.38, 'during long flights' 0.31, 'while they wash the dishes' 0.27, 'as he climbs' 0.06, sentences with no circumstance clause 0.02. The + pole's output direction promotes during / when / upon, so this pole (reversed) pushes those words down once the circumstance has been opened.",
+ "selection": "random draw"
+}

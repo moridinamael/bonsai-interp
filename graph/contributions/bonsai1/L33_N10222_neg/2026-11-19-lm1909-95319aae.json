@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-95319aae",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N10222-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:45+00:00",
+ "recipe": {
+  "toolchain_commit": "63407cb20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N10222_neg/2026-11-19-lm1909-95319aae.tests.json"
+ },
+ "label": "degree adverb (highly / heavily / fully) directly before a participial adjective saying how developed a place, workforce or system is ('a highly industrialized nation'); not 'highly' elsewhere",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N10222_neg/2026-11-19-lm1909-95319aae.tests.json",
+   "prereg_commit": "63407cb20",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.585,
+     "peak": " highly"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.261,
+     "peak": " highly"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.149,
+     "peak": " highly"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.466,
+     "peak": " fully"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.452,
+     "peak": " highly"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.151,
+     "peak": " heavily"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.272,
+     "peak": " highly"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.817,
+     "peak": " highly"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.034,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.102,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.03,
+     "peak": " letter"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " are"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.362,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63407cb20",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'highly' before a participle",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "The card's output direction (reversed for this pole) promotes auto/automatic/automated, but probes showed the pole fires on the adverb whatever follows: 'a highly educated nation' 0.68, 'highly automated' 0.47, 'highly profitable' 0.47, 'heavily industrialized' 0.36, 'fully automatic' 0.38; 'spoke highly of' 0.04, 'very automated' 0.08, 'highly unlikely' 0.19. The top examples also hold name pieces (' Па', 'ala') this label does not cover.",
+ "selection": "random draw"
+}
