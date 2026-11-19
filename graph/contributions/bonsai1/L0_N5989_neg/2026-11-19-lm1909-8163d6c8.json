@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8163d6c8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N5989-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:28+00:00",
+ "recipe": {
+  "toolchain_commit": "26bdb11cd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N5989_neg/2026-11-19-lm1909-8163d6c8.tests.json"
+ },
+ "label": "best guess for a broad, positional pole: ' and' / ' to' as the second or third token of the text, joining two places or directions (Japan and, Northern and, October to)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N5989_neg/2026-11-19-lm1909-8163d6c8.tests.json",
+   "prereg_commit": "26bdb11cd",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.256,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.225,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.233,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.124,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.171,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.168,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.301,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.143,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": "Southern"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.054,
+     "peak": " signed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " rice"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": "Nor"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " differ"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.031,
+     "peak": " depends"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.081,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": "u"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.198,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "26bdb11cd",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "early ' and' (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags broad and positional (72% of top peaks within the first 16 tokens). Probes reached only 0.13-0.31 of max, so this probably fails; recorded for the density.",
+ "selection": "random draw"
+}
