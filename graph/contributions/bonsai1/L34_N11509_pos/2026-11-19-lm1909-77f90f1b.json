@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-77f90f1b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11509+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:33+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N11509_pos/2026-11-19-lm1909-77f90f1b.tests.json"
+ },
+ "label": "the degree slot just before an expected 'strong' in Russian and Arabic: Russian слишком / (не)достаточно before an adjective (strongest before сильный), and the ' ق' that opens Arabic قوي/قوية",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N11509_pos/2026-11-19-lm1909-77f90f1b.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.505,
+     "peak": " с"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.284,
+     "peak": "очно"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.151,
+     "peak": "ал"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.787,
+     "peak": " слишком"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.588,
+     "peak": "очно"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.241,
+     "peak": " достаточно"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.6,
+     "peak": " ق"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.539,
+     "peak": " ق"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.089,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": "шла"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.146,
+     "peak": " с"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.047,
+     "peak": "ы"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": "ارة"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": "س"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.522,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'strong' (ru/ar)",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top examples are Russian слишком / достаточно / самую + сильн- and Arabic ' ق' of قوية; the output direction acts on strong/Strong/强/loud tokens. Probes: 'недостаточно сильным' 1.31, Arabic 'عضلات قوية' 0.62, 'слишком горячий' 0.53 (so the degree word fires before other adjectives too), 'очень сильный' 0.20, 'очень красивый' 0.17, English 'not strong enough' 0.12, 'very strong' 0.03.",
+ "selection": "random draw"
+}

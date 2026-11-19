@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1871ff12",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N1093-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:26+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N1093_neg/2026-11-19-lm1909-1871ff12.tests.json"
+ },
+ "label": "' to' / ' for' right after an effort noun (campaign, efforts, strategy, initiative) when a fight-the-problem verb such as combat, tackle or eradicate is expected next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N1093_neg/2026-11-19-lm1909-1871ff12.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.738,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.349,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.229,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.594,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.256,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.572,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.51,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.398,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " bill"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.127,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.173,
+     "peak": " malaria"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": "Law"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " government"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.058,
+     "peak": " drug"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.075,
+     "peak": " who"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.454,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "efforts to [combat]",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peak ' to' x17 of 32, top examples 'Efforts to Combat Identity Theft', 'tool for saving', 'partner in confronting'; the + direction suppresses fight/combat, so this pole promotes them. Probes: 'campaign to eradicate polio' 0.47, 'initiative to curb gang violence' 0.24, 'strategy for tackling' 0.22; ordinary 'to' (walked to the market, wanted to learn) 0.00. English probes are well below the corpus max, so the median may land near the 0.20 line.",
+ "selection": "random draw"
+}

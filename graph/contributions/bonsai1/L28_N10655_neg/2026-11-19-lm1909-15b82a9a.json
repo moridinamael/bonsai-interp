@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-15b82a9a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N10655-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:52+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N10655_neg/2026-11-19-lm1909-15b82a9a.tests.json"
+ },
+ "label": "the number that gives an east-west coordinate: a longitude value, a right ascension, or a lon_ variable (latitude values stay quiet; the + pole predicts 'latitude')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N10655_neg/2026-11-19-lm1909-15b82a9a.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.067,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.44,
+     "peak": " marks"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.511,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.649,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.112,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.024,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.263,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.431,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.278,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.231,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " runs"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": "1"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.476,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "longitude / RA value",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: peaks on digits after 'longitude', in 'RAJ2000', 'lon_max = 71', a radiant position '01:33'; the + pole fires before 'latitude' and promotes lat/latitude tokens, so the two poles look like the two sides of one coordinate pair. Probes: 'lon_min = 67 / lon_max = 71' 0.85, right ascension '14h 29m' 0.73, 'longitude 68°W' 0.44, 'longitude 152 degrees east' 0.31; 'latitude 61 degrees north' 0.02, an oven at 180 degrees 0.01.",
+ "selection": "random draw"
+}

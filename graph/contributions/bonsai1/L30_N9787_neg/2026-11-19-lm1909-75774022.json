@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-75774022",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N9787-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:40+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N9787_neg/2026-11-19-lm1909-75774022.tests.json"
+ },
+ "label": "the word just before an expected 'look' or 'glance' noun: 'take a closer [look]', 'cast a quick [glance]' (also Russian бросил быстрый [взгляд], French jeter un [coup d'oeil]); the + pole fires on the word 'look' itself",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N9787_neg/2026-11-19-lm1909-75774022.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.463,
+     "peak": " closer"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.321,
+     "peak": " quick"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.432,
+     "peak": " closer"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.257,
+     "peak": " quick"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.358,
+     "peak": " closer"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.139,
+     "peak": " quick"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.403,
+     "peak": " closer"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.293,
+     "peak": " quick"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.265,
+     "peak": " take"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.176,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.159,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.084,
+     "peak": " taking"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.053,
+     "peak": " taking"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.102,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.34,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before expected look/glance",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks ' Gl' (at a Gl|ance) x6, ' take' x4, ' un', ' a', and Russian adjective endings before взгляд; the + direction suppresses look/glance/gaze, so this pole promotes them. Probes: 'take a closer look' 0.48 (peak ' closer'), 'cast a quick glance' 0.38 (peak ' quick'); 'take a short break' 0.15, 'threw a heavy stone' 0.12, 'at a glance' 0.08 (single-token 'glance'), 'gave her a long look' 0.03.",
+ "selection": "random draw"
+}
