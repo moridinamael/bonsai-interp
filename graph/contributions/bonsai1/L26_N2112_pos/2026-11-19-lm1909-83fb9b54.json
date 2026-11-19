@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-83fb9b54",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N2112+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:47:42+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N2112_pos/2026-11-19-lm1909-83fb9b54.tests.json"
+ },
+ "label": "Korean '에' / Japanese 'か' at the point where an 'about / regarding' postposition follows (…에 대한, …에 관한, …かについて); the output promotes ' related', ' regarding', ' about'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N2112_pos/2026-11-19-lm1909-83fb9b54.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.583,
+     "peak": "에"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.677,
+     "peak": "에"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.735,
+     "peak": "에"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.636,
+     "peak": "에"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.929,
+     "peak": "か"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.846,
+     "peak": "か"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.853,
+     "peak": "か"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.5,
+     "peak": "か"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.114,
+     "peak": "에"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.052,
+     "peak": "습니다"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": "습니다"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.092,
+     "peak": "리를"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.164,
+     "peak": "きました"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.233,
+     "peak": "ります"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.087,
+     "peak": "来て"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.065,
+     "peak": "りました"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.706,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "particle before 'about' (에 대한, かについて)",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: '에' x14 and 'か' x3 of top 32, followed by 대한 / について; logit effect promotes regarding/about/related. Probe: 방법에 대한 0.84, 영향에 관한 0.82, かについて 0.90; locative 학교에 0.12; alternative-question か 0.40; Chinese 关于…影响 0.51.",
+ "selection": "random draw"
+}

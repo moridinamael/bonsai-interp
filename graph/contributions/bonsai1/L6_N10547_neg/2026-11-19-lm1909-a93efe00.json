@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a93efe00",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10547-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:48:22+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N10547_neg/2026-11-19-lm1909-a93efe00.tests.json"
+ },
+ "label": "a lone digit token '1', '4' or '7' inside a number with more digits following (13,|7|00; 16,|4|32; 1073|7|418240); other digits in the same slot do not fire",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N10547_neg/2026-11-19-lm1909-a93efe00.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.718,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.25,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.095,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.205,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.036,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.591,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.307,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.295,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.065,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.065,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " hectares"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.961,
+    "median_fire": 0.272,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mid-number digit 1 / 4 / 7",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: peak tokens are only '7' x13, '4' x11, '1' x8, inside long integers and after a thousands comma. The + pole (held: a digit inside a long digit string) peaks on the same digits, so the two poles split the same tokens by a context I could not pin down. Probe: 10737418240 0.67, 13,700 0.74, 16,432 0.92, 1410451682 0.76; 26,832 0.01, years 1747 / 1414 0.04, DOI 10.5281 0.14.",
+ "selection": "random draw"
+}

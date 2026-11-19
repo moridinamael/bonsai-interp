@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-69f7b78a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8489-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:47:37+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N8489_neg/2026-11-19-lm1909-69f7b78a.tests.json"
+ },
+ "label": "the word-piece 'ee' right after 'st' in a split word (st|ee|ple, st|ee|pest); the whole token ' steep' does not fire",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N8489_neg/2026-11-19-lm1909-69f7b78a.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.8,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.938,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.951,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.923,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.972,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.939,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.945,
+     "peak": "ee"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.946,
+     "peak": "ee"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.125,
+     "peak": " white"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.116,
+     "peak": " twice"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": "H"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.106,
+     "peak": " steep"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.092,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.187,
+     "peak": "ath"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.213,
+     "peak": " fee"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.942,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'ee' in steeple/steepest",
+ "unit_kind": "dense / positional",
+ "confidence": 0.55,
+ "notes": "Card flags the pole broad (5.6% of tokens reach 0.1 of max, max only 1.08, gate-closed leak regime), so unit_kind is dense / positional; the test is my best lexical guess. Card: 'ee' x19 of top 32, all st|ee|ple / st|ee|pest. Probe: steeple 0.85, steepest 0.91, plain ' steep' 0.08, trustee 0.35, devotee/absentee 0.44, kickoff 0.11.",
+ "selection": "random draw"
+}

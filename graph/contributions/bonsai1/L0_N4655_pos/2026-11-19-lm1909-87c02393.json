@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-87c02393",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N4655+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:48:19+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N4655_pos/2026-11-19-lm1909-87c02393.tests.json"
+ },
+ "label": "a short list of unrelated word tokens across languages: ' occasionally', ' unos', ' этом', 'を迎え', ' الأيام', ' 언' (a layer-0 token detector on a broad, weak pole)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N4655_pos/2026-11-19-lm1909-87c02393.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.496,
+     "peak": " occasionally"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.635,
+     "peak": " unos"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.364,
+     "peak": " этом"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.563,
+     "peak": "を迎え"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.553,
+     "peak": " الأيام"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.61,
+     "peak": " occasionally"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.515,
+     "peak": " unos"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.38,
+     "peak": " этом"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.214,
+     "peak": " uncle"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.212,
+     "peak": " rar"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.253,
+     "peak": "оя"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.337,
+     "peak": "ります"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.178,
+     "peak": " الجميع"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.252,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.178,
+     "peak": " Sevilla"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.336,
+     "peak": " у"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.534,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token list (occasionally, unos, этом…)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (9.5% of tokens reach 0.1 of max, max only 0.29, 96% echo regime), so unit_kind is dense / positional. Peak tokens: ' 언' x6, ' الأيام' x6, ' этом' x4, 'を迎え' x2, ' unos' x2, ' occasionally' x2. Probe: each of five listed tokens 0.43-0.66; 'often' in place of 'occasionally' 0.08; 'los' in place of 'unos' 0.18. I see nothing the tokens share, so the label is a list.",
+ "selection": "random draw"
+}

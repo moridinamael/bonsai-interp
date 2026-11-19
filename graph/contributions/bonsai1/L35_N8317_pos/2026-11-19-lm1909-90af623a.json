@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-90af623a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8317+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:48:38+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N8317_pos/2026-11-19-lm1909-90af623a.tests.json"
+ },
+ "label": "a split word stem (mater-, soc-, partic-, financ-) whose next piece is a French-style ending (-iel, -iaux, -ule) rather than English -ial; the output suppresses 'ial' and 'ular'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N8317_pos/2026-11-19-lm1909-90af623a.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.759,
+     "peak": " mater"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.611,
+     "peak": " soc"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.46,
+     "peak": " partic"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.514,
+     "peak": " mater"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.566,
+     "peak": " soc"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.537,
+     "peak": " partic"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.21,
+     "peak": " financ"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.589,
+     "peak": " mater"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "vo"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " social"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " particle"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " treaty"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " chang"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " route"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.551,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stem before -iel / -iaux / -ule",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: 'ic' x7, ' soc' x4, 'ent' x4, ' financ' x3, ' mater' x2 before French or unusual endings (materiel, sociaux, particule); logit effect suppresses 'ial', 'ular', 'IAL'. Probe: materiel 0.74, sociaux 0.61, particule 0.50; English material 0.01, social / financial 0.01, commercials 0.00, beneficiary / fiduciary 0.01.",
+ "selection": "random draw"
+}

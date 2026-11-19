@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c0a82b89",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N1330+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:47:45+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N1330_pos/2026-11-19-lm1909-c0a82b89.tests.json"
+ },
+ "label": "three unrelated formatted-text triggers (a list, not one concept): the '0' that opens the article number after the year in a DOI (….2007.0…), the '.Add' call on a wx sizer, and the comma after 'file photo' in an AP-style caption",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N1330_pos/2026-11-19-lm1909-c0a82b89.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.151,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.558,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.732,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.92,
+     "peak": ".Add"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.759,
+     "peak": ".Add"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.019,
+     "peak": ".Add"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.795,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.742,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " website"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.133,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": "ak"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.046,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.075,
+     "peak": "(default"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " grid"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.052,
+     "peak": " Friday"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " stadium"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.75,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "DOI '.year.0', sizer '.Add', 'file photo,'",
+ "unit_kind": "unclear",
+ "confidence": 0.45,
+ "notes": "Card: '0' x10, '.Add' x5, '/' x3, ',' x2 of top 32; regimes split 56/44, max only 4.97. Probe: DOI with .2007.0 0.87, DOI without that pattern 0.05, wx sizer .Add 0.94, 'file photo,' 0.77, a bare decimal 0.077701 0.00, .append/.remove 0.05. I could not find a shared pattern, so the label is a list and says so.",
+ "selection": "random draw"
+}
