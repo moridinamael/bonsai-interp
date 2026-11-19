@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-967211f8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2358-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:02:19+00:00",
+ "recipe": {
+  "toolchain_commit": "82e4ac9eb",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N2358_neg/2026-11-19-lm1909-967211f8.tests.json"
+ },
+ "label": "The single-letter token ' D' (also ' M') opening a proper name that the tokenizer splits after its first letter: D|ada, D|nieper, Queen M|ab",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N2358_neg/2026-11-19-lm1909-967211f8.tests.json",
+   "prereg_commit": "82e4ac9eb",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.255,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.29,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.482,
+     "peak": " M"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.244,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.241,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.22,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.261,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.368,
+     "peak": " M"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.051,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": "B"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " play"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " ra"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " against"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.051,
+     "peak": " Vol"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.0,
+     "peak": " Tit"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.258,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "82e4ac9eb",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' D' opening a split name",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Top tokens: ' D' x7, ' الد' x3, ' M' x2, ' H' x2, ' Ab' x2. Probe: Dada 0.38, Dadaists 0.46, Dnieper 0.36, Queen Mab 0.47, .DATABASES 0.17, Doolittle 0.12, Habsburg 0.06, Daedalus 0.03 (splits as ' Da'), Cubist 0.06, Bourbon 0.00. A last-layer unit, so it may be about the continuation ('ada', 'ab') rather than the letter.",
+ "selection": "random draw"
+}
