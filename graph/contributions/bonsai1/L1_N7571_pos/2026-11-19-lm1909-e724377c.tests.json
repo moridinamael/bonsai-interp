@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-19-lm1909-e724377c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7571+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N7571",
+   "pole": "+",
+   "label": "the tokens 'Common' (capitalised, opening a line) and ' masse' (in 'en masse'); a token list, no shared meaning found",
+   "fire": [
+    "The plant grows in wet soil.\nCommon pests are aphids and slugs.",
+    "Workers walked out en masse when the factory announced the cuts.",
+    "Most printers fail slowly.\nCommon faults include paper jams and dry ink.",
+    "The birds migrate en masse to the coast each autumn.",
+    "See the list below.\nCommon questions are answered at the end.",
+    "Voters turned out en masse despite the heavy rain.",
+    "The drug is safe for adults.\nCommon doses range from five to ten milligrams.",
+    "The staff resigned en masse after the new owner arrived."
+   ],
+   "quiet": [
+    "The plant grows in wet soil.\nTypical pests are aphids and slugs.",
+    "Workers walked out together when the factory announced the cuts.",
+    "Most printers fail slowly.\nFrequent faults include paper jams and dry ink.",
+    "The birds migrate in flocks to the coast each autumn.",
+    "See the list below.\nUsual questions are answered at the end.",
+    "Voters turned out in droves despite the heavy rain.",
+    "The drug is safe for adults.\nNormal doses range from five to ten milligrams.",
+    "The staff resigned as a group after the new owner arrived."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'Common' / ' masse' tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad (3.0% of tokens reach 0.1 of max) and lists 'も', ' times', 'Common', ' 최', ' from'. Probes: line-initial 'Common'/'Commonly' 0.53-0.77, ' masse' 0.58-0.71, ' times' 0.11-0.26, lowercase ' common' 0.27, 'も' 0.03. Only two of the card's tokens are tested, so the label is partial at best.",
+ "trigger": {
+  "tokens": [
+   "Common",
+   " masse"
+  ]
+ }
+}

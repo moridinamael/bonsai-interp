@@ -1,0 +1,52 @@
+{
+ "contribution": "2026-11-19-lm1909-1d6e201d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3056+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N3056",
+   "pole": "+",
+   "label": "the token '://' after http or https in a URL",
+   "fire": [
+    "The full dataset can be downloaded from https://data.example.org/climate/2019.csv free of charge.",
+    "For the original paper, see http://arxiv.org/abs/1706.03762 and its appendix.",
+    "# Adapted from the tutorial at https://pytorch.org/tutorials/beginner/basics.html",
+    "Our new shop is now open at http://www.greenleaf-teas.co.uk for orders.",
+    "Source: World Bank, https://data.worldbank.org/indicator/SP.POP.TOTL (accessed May 2020).",
+    "Please report bugs at https://github.com/numpy/numpy/issues with a short example.",
+    "The recipe was first posted on http://grandmaskitchen.blogspot.com/2011/04/bread.html last spring.",
+    "Register for the webinar here: https://events.example.com/register?id=4471 before Friday."
+   ],
+   "quiet": [
+    "The full dataset can be downloaded from data.example.org/climate/2019.csv free of charge.",
+    "For the original paper, see arXiv:1706.03762 and its appendix.",
+    "# Adapted from the tutorial at pytorch.org, section beginner/basics",
+    "Our new shop is now open at www.greenleaf-teas.co.uk for orders.",
+    "Source: World Bank, indicator SP.POP.TOTL (accessed May 2020).",
+    "Please report bugs to bugs@numpy-project.example with a short example.",
+    "The recipe was first posted on the blog Grandma's Kitchen (April 2011) last spring.",
+    "Register for the webinar here: events.example.com/register?id=4471 before Friday."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'://' in http(s) URLs",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: '://' x32, one token dominates. Probes: https:// 0.51, http:// 0.41; www. address without a scheme 0.01, '//' comment and '3:1' 0.01. A sentence with 'C://' and 'ftp://' scored only 0.03, so the label is limited to http(s).",
+ "trigger": {
+  "tokens": [
+   "://"
+  ]
+ }
+}
