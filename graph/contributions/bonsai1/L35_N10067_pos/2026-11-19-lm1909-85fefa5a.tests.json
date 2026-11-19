@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-85fefa5a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10067+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:07:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N10067",
+   "pole": "+",
+   "label": "Word-start fragment of a French or Russian word that the tokenizer splits (' comp|lice', ' conf|us', ' dép|ité', ' вып|лачивается'): the pole fires where the rest of the word is still to come. French made of whole-token common words, English, and Spanish (the − pole) stay quiet",
+   "fire": [
+    "Les deux frères échangèrent un sourire complice avant de quitter la salle.",
+    "Le vieux professeur resta un moment confus devant la question de l'élève.",
+    "Elle rentra chez elle dépitée par la réponse du directeur.",
+    "Государство запрещает продажу таких товаров без лицензии.",
+    "Il jeta sur la foule un regard goguenard puis referma la porte.",
+    "Пенсия выплачивается гражданам ежемесячно через почтовые отделения.",
+    "Le voyageur, dépourvu de bagages, attendait sous la pluie.",
+    "Son frère, toujours compatissant, lui offrit un verre d'eau."
+   ],
+   "quiet": [
+    "Les deux frères ont mangé une pomme avant de quitter la salle.",
+    "Le vieux professeur a lu la question de son ami.",
+    "Elle est chez elle avec son père et sa mère.",
+    "The state forbids the sale of such goods without a licence.",
+    "Il a vu la ville puis il a pris le train.",
+    "The pension is paid to citizens every month through post offices.",
+    "Los dos hermanos tienen dificultades frecuentes con la empresa.",
+    "Son frère est dans la maison avec un ami."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split French/Russian word start",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' comp', ' вып', ' conf', ' зап', ' dép', ' ref', ' g', Arabic and Korean fragments; the − pole is the same thing in Spanish (' dific|ultades', ' añ|adidas'). Probes: complice 0.53, confus 0.54, выплачивается 0.29; simple French 0.001, English 0.002, Spanish 0.004. Depends on how the tokenizer splits each word."
+}

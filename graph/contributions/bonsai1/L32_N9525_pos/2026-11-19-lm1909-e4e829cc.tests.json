@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-e4e829cc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9525+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:07:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N9525",
+   "pole": "+",
+   "label": "Opaque letter-code strings where the next letters are predictable: mid-alphabet runs inside a string literal (…HI|JKLMNOP|QRST…) and the article-ID slug after an Oxford 10.1093 DOI journal code ('/k'fs…, '/d'k…, '/l'fr…); ordinary strings and other DOIs stay quiet",
+   "fire": [
+    "drive_letters = 'FGHIJKLMNOPQRSTUVWXYZ'\nfor letter in drive_letters:\n    check(letter)",
+    "Lee S, Park H. Arsenic exposure and liver injury. Toxicol Sci. 2013;131(2):512–20. https://doi.org/10.1093/toxsci/kfs310",
+    "chars = \"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789\"\ntoken = random.choice(chars)",
+    "Brown T. Resistance to carbapenems in hospital isolates. J Antimicrob Chemother. 2011;66(4):689–92. doi:10.1093/jac/dkq520",
+    "for usb_drive in 'HIJKLMNOPQRSTUVWXYZ':\n    path = usb_drive + ':\\\\'\n    scan(path)",
+    "Miller R. \"Ritual and Memory\". Journal of the American Academy of Religion. 79 (2): 301–330. doi:10.1093/jaarel/lfq089.",
+    "country_codes = 'EFGHIJKLMNOP'\nif code[0] not in country_codes:\n    raise ValueError(code)",
+    "Chen Y, et al. Dioxin and thyroid function. Toxicol Sci. 2014;140(1):3–15. https://doi.org/10.1093/toxsci/kfu072"
+   ],
+   "quiet": [
+    "drive_names = 'primary secondary backup'\nfor name in drive_names.split():\n    check(name)",
+    "Lee S, Park H. Arsenic exposure and liver injury. Environ Res. 2013;131(2):512–20. https://doi.org/10.1016/j.envres.2013.04.007",
+    "chars = \"0123456789 +-*/ ()[]{} .,;:!?\"\ntoken = random.choice(chars)",
+    "Brown T. Resistance to carbapenems in hospital isolates. Lancet Infect Dis. 2011;11(4):689–92. doi:10.1016/S1473-3099(11)70059-7",
+    "for usb_drive in get_mounted_drives():\n    path = usb_drive.root\n    scan(path)",
+    "Miller R. \"Ritual and Memory\". History of Religions. 49 (2): 301–330. doi:10.1086/649525.",
+    "country_names = 'France Germany Spain'\nif name not in country_names:\n    raise ValueError(name)",
+    "Chen Y, et al. Dioxin and thyroid function. PLoS One. 2014;9(1):e85716. https://doi.org/10.1371/journal.pone.0085716"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "alphabet runs, 10.1093 DOI slugs",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: 'JKLMNOP' x3, '/k' x3, '/d' x2, 'dk' x2, '/l', 'FH', 'JKLM'. Probes: 'DEFGHIJKLMNOP' 0.80, 10.1093/jxb/kru044 0.41, but the full 'ABCDEF…XYZ' right after a quote only 0.09 (tokenised differently), so the alphabet items start mid-alphabet or after a space. A list of two string kinds; I could not test a shared pattern beyond 'predictable letter code'."
+}
