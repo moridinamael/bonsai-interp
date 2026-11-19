@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a73a4bf6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N9941-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:12:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N9941",
+   "pole": "-",
+   "label": "' self' and subscript/format tokens inside Python method bodies (self.assertEqual, %s, ['key'])",
+   "fire": [
+    "class TestParser(unittest.TestCase):\n    def test_parse(self):\n        out = self.parser.parse('a=1')\n        self.assertEqual(out['a'], 1)",
+    "class Cart:\n    def add(self, item):\n        self.items[item.sku] = item\n        self.total += item.price",
+    "    def __init__(self, name, size):\n        self.name = name\n        self.size = size\n        self.cache = {}",
+    "for row in rows:\n    print \"row %s has %d cells\" % (row['id'], len(row))",
+    "    def save(self):\n        data = self.to_dict()\n        self.store[self.key] = data\n        return self.key",
+    "class TestMath(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(add(2, 3), 5)\n        self.assertTrue(add(0, 0) == 0)",
+    "    def reset(self):\n        self.count = 0\n        self.history[-1] = None\n        self.log.info(\"reset %s\" % self.name)",
+    "config = load()\nif config['mode'] == 'debug':\n    print \"debug mode for %s\" % config['user']"
+   ],
+   "quiet": [
+    "def parse_line(text):\n    key, value = text.split('=')\n    return key, int(value)",
+    "def add_item(items, item):\n    items.append(item)\n    return sum(i.price for i in items)",
+    "def make_box(name, size):\n    box = Box(name, size)\n    box.open()\n    return box",
+    "for row in rows:\n    print(row.id, len(row))",
+    "def save_data(data, path):\n    with open(path, 'w') as f:\n        json.dump(data, f)",
+    "def add(a, b):\n    return a + b\n\nassert add(2, 3) == 5",
+    "def reset_counter(counter):\n    counter.clear()\n    logging.info('counter reset')",
+    "config = load()\nif config.mode == 'debug':\n    logging.debug('debug mode on')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python self/subscript",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "card: ' self' x4, ']' x3, '.assertEqual' x2, '%s'. Probe: a test method with self 0.44, a %s print 0.17, prose 0.09. Near misses: the same logic as plain functions without self, subscripts or %-formatting."
+}

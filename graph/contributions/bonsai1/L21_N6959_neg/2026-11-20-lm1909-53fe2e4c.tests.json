@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-53fe2e4c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N6959-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:12:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N6959",
+   "pole": "-",
+   "label": "value or identifier piece inside Python code (True, _list, .join, int(Ndof))",
+   "fire": [
+    "    if os.path.exists(target_dir) and os.access(target_dir, os.W_OK):\n        dir_writable = True\n    else:\n        dir_writable = False",
+    "def build_mesh(Nel, order, Nnodes):\n    Nel = int(Nel)\n    Nnodes = int(Nnodes)\n    order = int(order)",
+    "    for worker in workers:\n        worker.terminate()\n        worker.join()\n    pool.join()",
+    "        node, result_list = parts\n        return OutputNode(result_list)",
+    "    def test_get_config_with_vnc_and_agent(self):\n        self.flags(enabled=False)",
+    "    found = False\n    for key in keys:\n        if key in table:\n            found = True\n            break",
+    "    except KeyboardInterrupt:\n        proc.terminate()\n        proc.join()\n    return elapsed",
+    "    rows = int(rows)\n    cols = int(cols)\n    grid = make_grid(rows, cols)"
+   ],
+   "quiet": [
+    "If the target folder exists and you can write to it, the script marks it as writable.",
+    "The mesh builder converts the element count, order and node count to integers first.",
+    "When the job finishes, each worker is stopped and the pool waits for all of them.",
+    "The visitor takes the node and the result list and wraps them in an output node.",
+    "This test checks the guest configuration when VNC and the agent are both enabled.",
+    "The loop walks through every key and stops as soon as it finds one in the table.",
+    "If the user presses Ctrl-C, the process is stopped and the elapsed time is returned.",
+    "The function reads the number of rows and columns and then builds the grid."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python code token",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "card: no single token; top examples are code tokens (= True, output_list, p.join(), int(Ndof)). Probe: three generic code snippets only reached 0.02-0.03, so the real trigger is narrower than 'code'; this is a best guess and likely fails."
+}
