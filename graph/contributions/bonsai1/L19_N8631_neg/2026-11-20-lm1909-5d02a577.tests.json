@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-5d02a577",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N8631-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:09:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N8631",
+   "pole": "-",
+   "label": "an inner piece of a long snake_case or dotted identifier in code (_join, _BS, _dist_gather)",
+   "fire": [
+    "    rows = self._fetch_join_columns_for_report(query)",
+    "    torch.distributed._all_gather_into_tensor(out, inp)",
+    "    value = record.sf_Account_Region__c if record else None",
+    "    cfg = settings.get_default_cache_backend_options()",
+    "    self._apply_left_join_filter_bug_workaround()",
+    "    data = api.v2._internal_batch_scatter_send(payload)",
+    "    flag = os.environ.get('APP_FEATURE_BS_ENABLED')",
+    "    out = model._case_when_projection_helper(expr)"
+   ],
+   "quiet": [
+    "    rows = self.fetch(query)",
+    "    torch.save(out, path)",
+    "    value = record.region if record else None",
+    "    cfg = settings.get(key)",
+    "    self.apply(filter)",
+    "    data = api.send(payload)",
+    "    flag = os.environ.get('DEBUG')",
+    "    out = model.run(expr)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "inner identifier pieces",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card shows no single token (identifier pieces, a citation 'The', 'work' in Coursework); probes with the card's own wording read under 0.13. Best guess, expected to fail."
+}
