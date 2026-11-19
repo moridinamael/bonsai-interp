@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-19-lm1909-5ca2934c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N4766+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:26:18+00:00",
+ "recipe": {
+  "toolchain_commit": "c87365d9d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N4766_pos/2026-11-19-lm1909-5ca2934c.tests.json"
+ },
+ "label": "the Russian preposition ' в' / ' В' (in), inside running Russian text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N4766_pos/2026-11-19-lm1909-5ca2934c.tests.json",
+   "prereg_commit": "c87365d9d",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.623,
+     "peak": " В"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.195,
+     "peak": " их"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.59,
+     "peak": " В"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.249,
+     "peak": " в"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.469,
+     "peak": " В"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.083,
+     "peak": " в"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.838,
+     "peak": " В"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.332,
+     "peak": " в"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": "ным"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.148,
+     "peak": " их"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": "Д"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": " и"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": "ос"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.045,
+     "peak": "а"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.171,
+     "peak": " более"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": " ремонт"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.4,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c87365d9d",
+  "minutes": 7,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Russian preposition в",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "In probes a short one-clause sentence with в scored only 0.16 of max, longer passages 0.5-0.8: the token needs some Russian context.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " в",
+   " В",
+   "В"
+  ]
+ }
+}
