@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-bfbab0a7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N4269+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:15:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N4269",
+   "pole": "+",
+   "label": "the 'P' of a regex named group '(?P<name>' (its output promotes '<'); other group syntax such as '(?:' or plain '(' stays quiet",
+   "fire": [
+    "import re\nDATE_RE = re.compile(r'(?P<day>\\d+)/(?P<mon>\\d+)')\n",
+    "urlpatterns = [\n    path_re(r'^users/(?P<pk>\\d+)/edit/$', views.edit),\n]\n",
+    "    m = re.search(r'v(?P<major>\\d+)\\.(?P<minor>\\d+)', tag)\n",
+    "LOG_LINE = r'^(?P<host>\\S+) \\[(?P<when>[^\\]]+)\\]'\n",
+    "    token = re.match(r'(?P<key>\\w+)=(?P<val>.*)', line)\n",
+    "import re\nEMAIL = re.compile(r'(?P<user>[^@]+)@(?P<domain>.+)')\n",
+    "    route = r'/archive/(?P<year>[0-9]{4})/'\n",
+    "    hit = re.fullmatch(r'(?P<width>\\d+)x(?P<height>\\d+)', size)\n"
+   ],
+   "quiet": [
+    "import re\nDATE_RE = re.compile(r'(\\d+)/(\\d+)')\n",
+    "urlpatterns = [\n    path_re(r'^users/(\\d+)/edit/$', views.edit),\n]\n",
+    "    m = re.search(r'v(?:\\d+)\\.(?:\\d+)', tag)\n",
+    "LOG_LINE = r'^(\\S+) \\[([^\\]]+)\\]'\n",
+    "    token = re.match(r'(\\w+)=(.*)', line)\n",
+    "import re\nEMAIL = re.compile(r'(?:[^@]+)@(?=.+)')\n",
+    "    route = r'/archive/([0-9]{4})/'\n",
+    "    hit = re.fullmatch(r'(?i)(\\d+)x(\\d+)', size)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "regex '(?P<' named group",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Probing: '(?P<year>' 0.76, Django url '(?P<slug>' 0.71, in prose 0.48; '(?:' and plain groups 0.01-0.02. An HTML '<P>...</P>' line reached 0.53 on '>\\n', so the pole is not only this trigger (the card also shows indentation tokens)."
+}

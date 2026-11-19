@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-31baf1f9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N2303-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:15:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N2303",
+   "pole": "-",
+   "label": "words of an explanatory code comment or docstring saying what the code does or should do: the imperative verb after '#' (Trap, Catch), 'also', 'an' before 'initial guess'; uncommented code and ordinary prose stay quiet",
+   "fire": [
+    "def fetch(url):\n    # Retry the request when the server drops the connection\n    return get(url)\n",
+    "    # if the user is new, also create a default profile for them\n    make_profile(user)\n",
+    "    # Use the last known offset as an initial estimate of the position\n    pos = last\n",
+    "    \"\"\"Return the group ids with the parent ids also.\"\"\"\n",
+    "    # Swallow the KeyError thrown by the lookup below\n    try:\n        v = table[k]\n",
+    "    # when running in debug mode, also dump the raw packets to disk\n",
+    "    # Intercept the signals sent by the worker threads\n    signal.signal(SIGTERM, stop)\n",
+    "    # treat the first column as an index into the lookup table\n    idx = row[0]\n"
+   ],
+   "quiet": [
+    "def fetch(url):\n    return get(url)\n",
+    "    make_profile(user)\n    user.save()\n",
+    "    pos = last\n    pos += step\n",
+    "The teacher read the group names and the parent names aloud.",
+    "    try:\n        v = table[k]\n    except KeyError:\n        v = None\n",
+    "When the storm came, the fishermen also pulled their boats ashore.",
+    "    signal.signal(SIGTERM, stop)\n    signal.signal(SIGINT, stop)\n",
+    "    idx = row[0]\n    val = table[idx]\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "explanatory code-comment words",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "No single token on the card (density 0.96% at 0.1 of max, just under the broad flag). Probing: comment lines 0.12-0.55 (trailing 'also' 0.55, '# Trap' 0.34, '# Catch' 0.31), TODO comment 0.05, prose with 'should be' 0.02-0.10. A best guess; fire level is low."
+}
