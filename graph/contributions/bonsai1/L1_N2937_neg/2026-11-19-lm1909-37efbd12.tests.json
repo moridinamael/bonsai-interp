@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-37efbd12",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N2937-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N2937",
+   "pole": "-",
+   "label": "the token ' chap' (chapel, chap., old chap) and the piece after word-initial 'ch' in chlor- / chol- words (ch|lo|rella, cholesterol)",
+   "fire": [
+    "Behind the castle stand a tiny chapel and a walled garden.",
+    "The argument is set out more fully in chap. 4 of the second volume.",
+    "Our neighbour is a cheerful chap who repairs clocks for a living.",
+    "The village has a stone chapel that dates from the twelfth century.",
+    "The pool smelled strongly of chlorine after it was cleaned.",
+    "Leaves are green because they contain chlorophyll.",
+    "Her doctor said her cholesterol was a little too high.",
+    "An outbreak of cholera closed the port for most of the summer."
+   ],
+   "quiet": [
+    "Behind the castle stand a tiny house and a walled garden.",
+    "The argument is set out more fully in part 4 of the second volume.",
+    "Our neighbour is a cheerful man who repairs clocks for a living.",
+    "The village has a stone bridge that dates from the twelfth century.",
+    "The pool smelled strongly of bleach after it was cleaned.",
+    "Leaves are green because they absorb red and blue light.",
+    "Her doctor said her blood pressure was a little too high.",
+    "An outbreak of fever closed the port for most of the summer."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' chap', chlor-/chol- pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (6.1% of tokens reach 0.1 of max and 1.5% reach 0.3, max only 2.12, 100% gate-closed leak), so unit_kind is dense / positional and near misses may well fire. Peak tokens: ' chap' x10, 'all' x3, 'чер' x2, then pieces after ch- / th- ('lo', 'old', 'ro', 'R'). Probe: chapels 0.86, chap. 0.88, old chap 0.77, chlorella 0.88, cholesterol 0.70, throat / threshold 0.39, the chapels sentence with houses instead 0.10."
+}

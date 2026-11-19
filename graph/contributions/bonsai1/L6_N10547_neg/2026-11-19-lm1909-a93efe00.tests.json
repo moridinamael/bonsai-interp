@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a93efe00",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10547-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N10547",
+   "pole": "-",
+   "label": "a lone digit token '1', '4' or '7' inside a number with more digits following (13,|7|00; 16,|4|32; 1073|7|418240); other digits in the same slot do not fire",
+   "fire": [
+    "The stadium holds 42,750 people when the upper tier is open.",
+    "Rescue teams searched 18,400 square kilometers of open sea.",
+    "The museum counted 23,150 visitors during the holiday week.",
+    "The charity collected 35,470 signatures before the deadline.",
+    "A total of 52,760 ballots were returned by mail this year.",
+    "The reservoir covers 61,430 acres at its highest level.",
+    "The bridge carries about 84,120 vehicles on a normal weekday.",
+    "Farmers in the valley planted 27,710 hectares of wheat last autumn."
+   ],
+   "quiet": [
+    "The stadium holds 42,850 people when the upper tier is open.",
+    "Rescue teams searched 18,600 square kilometers of open sea.",
+    "The museum counted 23,950 visitors during the holiday week.",
+    "The charity collected 35,290 signatures before the deadline.",
+    "A total of 52,360 ballots were returned by mail this year.",
+    "The reservoir covers 61,830 acres at its highest level.",
+    "The bridge carries about 84,520 vehicles on a normal weekday.",
+    "Farmers in the valley planted many hectares of wheat last autumn."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "mid-number digit 1 / 4 / 7",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: peak tokens are only '7' x13, '4' x11, '1' x8, inside long integers and after a thousands comma. The + pole (held: a digit inside a long digit string) peaks on the same digits, so the two poles split the same tokens by a context I could not pin down. Probe: 10737418240 0.67, 13,700 0.74, 16,432 0.92, 1410451682 0.76; 26,832 0.01, years 1747 / 1414 0.04, DOI 10.5281 0.14."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-87c02393",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N4655+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N4655",
+   "pole": "+",
+   "label": "a short list of unrelated word tokens across languages: ' occasionally', ' unos', ' этом', 'を迎え', ' الأيام', ' 언' (a layer-0 token detector on a broad, weak pole)",
+   "fire": [
+    "My uncle occasionally sends us a postcard from the coast.",
+    "Vimos unos pájaros muy raros cerca del río.",
+    "В этом городе живёт моя старшая сестра.",
+    "この店は来月、開店十周年を迎えます。",
+    "كانت الأيام الماضية صعبة على الجميع.",
+    "The printer occasionally jams when the paper is damp.",
+    "Tengo unos amigos que viven en Sevilla.",
+    "Мы долго говорили об этом после ужина."
+   ],
+   "quiet": [
+    "My uncle sometimes sends us a postcard from the coast.",
+    "Vimos muchos pájaros muy raros cerca del río.",
+    "В нашем городе живёт моя старшая сестра.",
+    "この店は来月、新しい場所に移ります。",
+    "كانت السنة الماضية صعبة على الجميع.",
+    "The printer usually jams when the paper is damp.",
+    "Tengo dos amigos que viven en Sevilla.",
+    "Мы долго говорили о погоде после ужина."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "token list (occasionally, unos, этом…)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (9.5% of tokens reach 0.1 of max, max only 0.29, 96% echo regime), so unit_kind is dense / positional. Peak tokens: ' 언' x6, ' الأيام' x6, ' этом' x4, 'を迎え' x2, ' unos' x2, ' occasionally' x2. Probe: each of five listed tokens 0.43-0.66; 'often' in place of 'occasionally' 0.08; 'los' in place of 'unos' 0.18. I see nothing the tokens share, so the label is a list."
+}

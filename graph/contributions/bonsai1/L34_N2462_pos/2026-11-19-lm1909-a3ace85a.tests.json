@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a3ace85a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2462+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N2462",
+   "pole": "+",
+   "label": "formal Spanish prose, at a word whose continuation is a complement other than 'para' (se debe → a; ha llevado, → en; citado → en); the output suppresses ' para', and the - pole fires where 'para' is about to follow",
+   "fire": [
+    "El aumento de los precios en la región se debe a la escasez de agua y de energía.",
+    "La presión de los vecinos ha llevado, en los últimos meses, a una revisión del proyecto.",
+    "Según Morales (1998, citado en Ruiz y Pardo, 2004), la memoria depende del contexto.",
+    "El fracaso de la reforma educativa se debe a la falta de acuerdo entre los partidos.",
+    "La caída de las ventas ha obligado, en la práctica, a cerrar dos de las fábricas.",
+    "En un pasaje de su informe, el ministro reconoció los errores del gobierno anterior.",
+    "Gran parte del retraso de las obras se debe a las lluvias de este invierno.",
+    "La experiencia de otros países ha conducido, en general, a resultados muy distintos."
+   ],
+   "quiet": [
+    "Traje agua y un poco de pan para los niños del barrio.",
+    "Mi hermano compró flores para la fiesta de mañana.",
+    "Esta sala es solo para los socios del club.",
+    "Guardé dos entradas para ti y para tu amiga.",
+    "Necesito una caja grande para los libros viejos.",
+    "Hay sopa caliente para todos en la cocina.",
+    "Este juguete es para el perro de mi tía.",
+    "Tengo un mensaje para usted de parte de Marta."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Spanish, next word not 'para'",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: all top examples are Spanish prose with no single token ('V' x4, 'ado' x2, ' debe' x2); logit effect suppresses every spelling of 'para'; the - pole's top examples sit right before 'para'. Probe: 'se debe a' 0.67, 'ha llevado, en' 0.69, 'diseñado para' sentence 0.40 (peak at its last token), 'Vengo a pedirte' 0.21, 'Compré un regalo para…' 0.07, English translation 0.00. Low confidence: the label is a guess at a next-word prediction feature."
+}

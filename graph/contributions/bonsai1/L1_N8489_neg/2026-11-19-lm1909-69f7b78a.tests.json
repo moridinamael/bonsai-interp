@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-69f7b78a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8489-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N8489",
+   "pole": "-",
+   "label": "the word-piece 'ee' right after 'st' in a split word (st|ee|ple, st|ee|pest); the whole token ' steep' does not fire",
+   "fire": [
+    "From the harbour you can make out the white steeple of the parish church.",
+    "Lightning struck the steeple twice during the storm last August.",
+    "Housing costs rose steepest in the cities along the coast.",
+    "The bell in the steeple has not been rung since the fire.",
+    "We took the steepest route down because it was also the shortest.",
+    "A weathervane sits on top of the steeple above the clock.",
+    "The decline in sales was steepest among the smaller shops.",
+    "Workers put scaffolding around the steeple to repair the slate roof."
+   ],
+   "quiet": [
+    "From the harbour you can make out the white tower of the parish church.",
+    "Lightning struck the chimney twice during the storm last August.",
+    "Housing costs rose fastest in the cities along the coast.",
+    "The path was steep and the stones were slippery after the rain.",
+    "We took the shortest route down because the street was closed.",
+    "A weathervane sits on top of the barn above the green door.",
+    "The employee said the fee was too high for such a small tree.",
+    "Workers put scaffolding around the spire to repair the slate roof."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'ee' in steeple/steepest",
+ "unit_kind": "dense / positional",
+ "confidence": 0.55,
+ "notes": "Card flags the pole broad (5.6% of tokens reach 0.1 of max, max only 1.08, gate-closed leak regime), so unit_kind is dense / positional; the test is my best lexical guess. Card: 'ee' x19 of top 32, all st|ee|ple / st|ee|pest. Probe: steeple 0.85, steepest 0.91, plain ' steep' 0.08, trustee 0.35, devotee/absentee 0.44, kickoff 0.11."
+}
