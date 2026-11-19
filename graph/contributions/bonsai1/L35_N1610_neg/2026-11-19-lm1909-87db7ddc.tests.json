@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-87db7ddc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1610-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:40:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N1610",
+   "pole": "-",
+   "label": "the token ' �' / '�': the first byte-fragment of a character that has no token of its own (Arabic-Indic and Persian digits, rarer Hangul syllables such as 웹 after a space)",
+   "fire": [
+    "عقدت الندوة في القاهرة بتاريخ ١٥-٦-٢٠١٣ بحضور عدد من الباحثين.",
+    "ولد الكاتب في دمشق عام ١٩٤٧ وتوفي فيها عام ٢٠٠٩ بعد مرض طويل.",
+    "يبلغ عدد سكان القرية نحو ٣٥٠٠ نسمة حسب إحصاء عام ٢٠١٠.",
+    "این پل در سال ۱۳۴۲ ساخته شد و طول آن ۳۲۰ متر است.",
+    "جمعیت این شهر در سال ۱۳۹۰ حدود ۴۸۰۰۰ نفر بوده است.",
+    "회사는 새 웹 서비스를 다음 달에 공개한다고 밝혔습니다.",
+    "모바일 웹 브라우저에서 로그인 오류가 발생했습니다.",
+    "그 웹 디자이너는 새 웹 사이트의 첫 화면을 다시 만들었다."
+   ],
+   "quiet": [
+    "عقدت الندوة في القاهرة بتاريخ 15-6-2013 بحضور عدد من الباحثين.",
+    "ولد الكاتب في دمشق وتوفي فيها بعد مرض طويل وترك ثلاث روايات.",
+    "يبلغ عدد سكان القرية نحو 3500 نسمة حسب إحصاء عام 2010.",
+    "این پل در سال 1342 ساخته شد و طول آن 320 متر است.",
+    "公司表示将在下个月公开新的网络服务。",
+    "手机浏览器登录时出现了错误，请稍后再试。",
+    "その設計者は新しいサイトの最初の画面を作り直した。",
+    "The company said it would release the new web service next month."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "leading byte-fragment token",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' �' x25 and '�' x7 of the top 32 (Korean ' 웹', rare ' 擇', Arabic-Indic digits). Last layer; the output direction promotes and suppresses other byte-fragment tokens. Probes: Arabic-Indic date .86, 웹 .58 / .63, Persian digits .40, rare CJK after a space .33; ordinary Korean .22 / .17 / .09, Devanagari digits .20, Thai digits .20, Russian .10, Chinese .00, Japanese .00, English .00. So it is not every byte fragment: strongest on particular leading bytes."
+}
