@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-0fa3be43",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N11726+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:33:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N11726",
+   "pole": "+",
+   "label": "an N directly after an M in an uppercase abbreviation: the token ' MN' (MNIST, the state MN) and 'NH' after 'AM' (AMNH); also Cyrillic 'н' after 'м'",
+   "fire": [
+    "We tested the classifier on MNIST digits before moving to harder data.",
+    "The dinosaur exhibit at the AMNH draws thousands of school groups each spring.",
+    "Her parents still live in Duluth, MN, near the lake.",
+    "A simple network reaches high accuracy on the MNIST benchmark.",
+    "Fossils collected on the trip were sent to the AMNH for study.",
+    "The company moved its headquarters to St. Paul, MN, last year.",
+    "Most tutorials start with MNIST because the images are small.",
+    "The package was shipped from Rochester, MN, on Friday."
+   ],
+   "quiet": [
+    "We tested the classifier on CIFAR images before moving to harder data.",
+    "The dinosaur exhibit at the Smithsonian draws thousands of school groups each spring.",
+    "Her parents still live in Madison, WI, near the lake.",
+    "A simple network reaches high accuracy on the ImageNet benchmark.",
+    "Fossils collected on the trip were sent to the NHM for study.",
+    "The company moved its headquarters to Santa Fe, NM, last year.",
+    "Most tutorials start with SVHN because the images are small.",
+    "The package was shipped from Rochester, NY, on Friday."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "N after M (MN, AMNH)",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: peaks 'н' x12 (after м), ' MN' x5, 'NH' x2 (AMNH). Probe: MNIST 0.91, AMNH 0.94, ', MN,' 0.41, ' мн' as one token only 0.16, CIFAR 0.00. Near misses swap in other abbreviations (NM, NHM, NY, SVHN)."
+}
