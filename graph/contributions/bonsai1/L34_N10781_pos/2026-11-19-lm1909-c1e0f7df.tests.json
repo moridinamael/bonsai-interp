@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-c1e0f7df",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10781+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:39:05+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N10781",
+   "pole": "+",
+   "label": "French running text, strongest on the token right before a verb or participle (subject pronoun or auxiliary: 'ils ont', 'il a', 'puis il', 'en' + gerund); quiet on the same sentences in English, Spanish, Italian, Portuguese or German. The - pole is the English counterpart (he / she / who before a verb)",
+   "fire": [
+    "Ce matin, les enfants ont pris le bus et ils sont arrivés en retard à l'école.",
+    "Quand la pluie a cessé, nous avons ouvert les fenêtres de la cuisine.",
+    "Le boulanger du village a vendu tout son pain avant midi.",
+    "Elle a fermé la porte, puis elle descend lentement l'escalier.",
+    "Mon frère a réussi son examen en travaillant tous les soirs.",
+    "Les ouvriers avaient terminé le toit quand l'orage a éclaté.",
+    "Pendant les vacances, ils ont visité un château et ils ont mangé au bord du lac.",
+    "Le train de Lyon est parti avec vingt minutes de retard."
+   ],
+   "quiet": [
+    "This morning the children took the bus and they arrived late at school.",
+    "Cuando cesó la lluvia, abrimos las ventanas de la cocina.",
+    "Il fornaio del paese ha venduto tutto il pane prima di mezzogiorno.",
+    "She closed the door, then she slowly goes down the stairs.",
+    "Meu irmão passou no exame estudando todas as noites.",
+    "Die Arbeiter hatten das Dach fertig, als das Gewitter losbrach.",
+    "Durante las vacaciones visitaron un castillo y comieron junto al lago.",
+    "The train from Lyon left twenty minutes late."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "French, before the verb",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card flags the pole broad (1.6% of tokens reach 0.1 of max). Top examples are all French: avaient, il a, ils ont, en + gerund, puis il. Probes: French sentences 0.33-0.52, including two verbless French ones (0.33, 0.35), so the test claims French text and not the pre-verb slot; English 0.03, Spanish 0.14."
+}
