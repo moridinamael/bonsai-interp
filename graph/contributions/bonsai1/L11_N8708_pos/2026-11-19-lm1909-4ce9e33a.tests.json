@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-4ce9e33a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8708+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N8708",
+   "pole": "+",
+   "label": "Python's os module in code: ' os' / 'os' in an import line or a call like os.system / os.getenv, and ' import' right after 'from os'",
+   "fire": [
+    "import sys\nimport re\nfrom os import listdir\n\nfor name in listdir('.'):\n    print(name)",
+    "import json\n\ndef home():\n    if os.getenv('HOME') is None:\n        return '/tmp'\n    return os.getenv('HOME')",
+    "#!/usr/bin/env python\nimport sys, os, time\n\nstart = time.time()\nprint(sys.platform)",
+    "import subprocess\n\ndef wipe():\n    os.system('rm -rf build')\n    os.system('mkdir build')",
+    "from time import sleep\nfrom os import getcwd, chdir\n\nprint(getcwd())\nsleep(2)",
+    "import logging\n\nlog = logging.getLogger(__name__)\n\ndef here():\n    return os.getcwd()",
+    "import argparse\nimport shutil\nimport os\n\nparser = argparse.ArgumentParser()\nargs = parser.parse_args()",
+    "import math\nfrom os import environ\n\ndebug = environ.get('DEBUG', '0')\nprint(math.pi)"
+   ],
+   "quiet": [
+    "import sys\nimport re\nfrom glob import glob\n\nfor name in glob('*.txt'):\n    print(name)",
+    "import json\n\ndef home():\n    if json.loads('null') is None:\n        return '/tmp'\n    return json.dumps({})",
+    "#!/usr/bin/env python\nimport sys, re, time\n\nstart = time.time()\nprint(sys.platform)",
+    "import subprocess\n\ndef wipe():\n    subprocess.run(['rm', '-rf', 'build'])\n    subprocess.run(['mkdir', 'build'])",
+    "from time import sleep\nfrom random import choice, randint\n\nprint(randint(1, 6))\nsleep(2)",
+    "import logging\n\nlog = logging.getLogger(__name__)\n\ndef here():\n    return log.name",
+    "import argparse\nimport shutil\nimport csv\n\nparser = argparse.ArgumentParser()\nargs = parser.parse_args()",
+    "import math\nfrom decimal import Decimal\n\ndebug = Decimal('0.1')\nprint(math.pi)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Python os module",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: peaks ' import' (after 'from os'), ' os', ',', '.system', 'os'. Probes: os lines 0.72-1.48; other Python imports 0.09; English 'operating system will import' 0.05. Near misses are the same style of Python with other modules."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-3cb7d2d6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N425-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N425",
+   "pole": "-",
+   "label": "the first fragment of an unusual surname that the tokenizer splits, right after a given name ('Jake [ G]yllenhaal', 'Leland [ Mel]vin', 'Domhnall [ Gle]eson'): the name is begun but not yet spelled out",
+   "fire": [
+    "The detective was played by Benedict Cumberbatch in the television adaptation.",
+    "Critics praised the villain, portrayed by Mads Mikkelsen with icy calm.",
+    "The comedy stars Zach Galifianakis as a hapless small-town mayor.",
+    "The foundation run by Bill and Melinda Gates funded the vaccine trial.",
+    "The action film made Arnold Schwarzenegger a household name in the eighties.",
+    "The young general is played by Domhnall Gleeson in the latest trilogy.",
+    "The lead role went to Chiwetel Ejiofor after a long audition process.",
+    "The office comedy made John Krasinski famous before he turned to directing."
+   ],
+   "quiet": [
+    "The detective was played by Robert Stone in the television adaptation.",
+    "Critics praised the villain, portrayed by Daniel Young with icy calm.",
+    "The comedy stars Kevin Hart as a hapless small-town mayor.",
+    "The foundation run by Bill and Mary Brown funded the vaccine trial.",
+    "The action film made Bruce Lee a household name in the seventies.",
+    "The young general is played by Adam Driver in the latest trilogy.",
+    "The lead role went to Will Smith after a long audition process.",
+    "The office comedy made Steve Martin famous before he turned to directing."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "start of split surname",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks ' G', ' Mel', ' Gle', '-G', ' T' - first pieces of multi-token names (Gaskin, Gleeson, Melchuk, Guinta, Taw), plus identifier starts in code (' mem'odict, ' sol'vers). Probes: Melvin 0.70, Taw 0.80, Gyllenhaal 0.51, Guinta 0.20; single-token surnames (Hanks, Smith) 0.11. Near misses use the same frames with one-token surnames. Tokenizer splits were checked beforehand (no scoring)."
+}

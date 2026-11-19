@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-7b6af202",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N5454+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N5454",
+   "pole": "+",
+   "label": "the first token of a statement written on the same line as its if-condition (`if (this.n > 9) [this].n = 0;`, `if x is None: [x] = 1`): the consequent begins straight after the condition closes",
+   "fire": [
+    "function tick() {\n  if (this.frame >= 60) this.frame = 0;\n  this.draw();\n}",
+    "def clamp(value):\n    if value.amount < 0: value.amount = 0\n    return value",
+    "function wrap(angle) {\n  if (angle.deg > 359) angle.deg -= 360;\n  return angle;\n}",
+    "def setup(self, name):\n    if name == 'main': self.primary = True\n    self.name = name",
+    "for (var i = 0; i < rows.length; i++) {\n  if (rows[i].hidden) rows[i].height = 0;\n}",
+    "def unwrap(obj):\n    if hasattr(obj, 'func'): obj = obj.func\n    return obj",
+    "function reset(player) {\n  if (player.lives < 1) player.score = 0;\n  player.lives = 3;\n}",
+    "def load(self, cfg):\n    if cfg.mode == 'auto': cfg.mode = 'fast'\n    self.cfg = cfg"
+   ],
+   "quiet": [
+    "function tick() {\n  if (this.frame >= 60) {\n    this.frame = 0;\n  }\n  this.draw();\n}",
+    "def clamp(value):\n    if value.amount < 0:\n        value.amount = 0\n    return value",
+    "function wrap(angle) {\n  if (angle.deg > 359) {\n    angle.deg -= 360;\n  }\n  return angle;\n}",
+    "def setup(self, name):\n    if name == 'main':\n        self.primary = True\n    self.name = name",
+    "for (var i = 0; i < rows.length; i++) {\n  if (rows[i].hidden) {\n    rows[i].height = 0;\n  }\n}",
+    "def unwrap(obj):\n    if hasattr(obj, 'func'):\n        obj = obj.func\n    return obj",
+    "function reset(player) {\n  if (player.lives < 1) {\n    player.score = 0;\n  }\n  player.lives = 3;\n}",
+    "def load(self, cfg):\n    if cfg.mode == 'auto':\n        cfg.mode = 'fast'\n    self.cfg = cfg"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "inline if-body start",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: top peaks ' log', ' obj', ' this', ' self' right after `if ...:` or `if(...)` on the same line; weaker examples start a parallel second clause in prose ('and [some] do not', 'as [against]'). Probes: one-line if bodies 0.64 and 0.99; the same Python with the body on the next line 0.04; prose parallels 0.27-0.36. Near misses are the same code with the body moved to its own line."
+}
