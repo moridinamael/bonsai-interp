@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-082e0e13",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N12268+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:20:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N12268",
+   "pole": "+",
+   "label": "a line-initial list bullet ('-' or '*' right after a newline). The pole also fires on a few unrelated tokens (possessive 's after a name, ' mastered', ' pose(s)', sentence-initial 'Meanwhile'), which this test does not cover",
+   "fire": [
+    "The clinic offers several services.\n- Vaccinations: available on weekdays without an appointment.\n- Blood tests: results are ready within two days.",
+    "Before you leave, remember:\n- Lock the back door\n- Turn off the heating\n- Feed the cat",
+    "Common causes include the following.\n- Stress: long hours and little sleep.\n- Diet: too much sugar and caffeine.",
+    "Agenda for Monday:\n- Budget review\n- Hiring update\n- Any other business",
+    "Key points from the talk are listed below.\n- Rivers are warming faster than lakes.\n- Fish are moving upstream.",
+    "The kit contains:\n- Two brushes\n- A tin of varnish\n- A pair of gloves",
+    "Her advice was simple.\n- Sleep early: aim for eight hours.\n- Walk daily: even ten minutes helps.",
+    "Ingredients:\n- Three ripe tomatoes\n- A clove of garlic\n- Fresh basil"
+   ],
+   "quiet": [
+    "The clinic offers several services, including vaccinations on weekdays and blood tests with results in two days.",
+    "Before you leave, remember to lock the back door, turn off the heating and feed the cat.",
+    "Common causes include stress from long hours and a diet with too much sugar and caffeine.",
+    "Agenda for Monday:\n1. Budget review\n2. Hiring update\n3. Any other business",
+    "The talk explained that rivers are warming faster than lakes and that fish are moving upstream.",
+    "The kit contains two brushes, a tin of varnish and a pair of gloves.",
+    "Her advice was simple: sleep early, aim for eight hours and walk daily for ten minutes.",
+    "The sauce needs three ripe tomatoes, a clove of garlic and some fresh basil."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line-initial bullet '-'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: '-' x15 of the top 32, all at line start, plus '\\n', \"'s\", ' mastered', ' pose', 'Meanwhile'. Probes: '-' bullets 0.37-0.44, '*' bullet 0.49, mid-line hyphens 0.09, numbered list 0.25 (on ':\\n'); but \"Germany's\" 0.64, ' mastered' 0.60, ' poses' 0.53, 'Meanwhile' 0.48. A list of tokens rather than one distinction; near misses avoid the other tokens."
+}
