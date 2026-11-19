@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4365789b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7133+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:53:22+00:00",
+ "recipe": {
+  "toolchain_commit": "2c0a8f17b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N7133_pos/2026-11-19-lm1909-4365789b.tests.json"
+ },
+ "label": "The Chinese character 經/经 where the tokenizer leaves it as its own token (經|典, 经|受, 經|銷, 经|手) and the token 經過/经过; silent on merged tokens that contain it (经济, 经验, 经理, 已经, 經驗)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N7133_pos/2026-11-19-lm1909-4365789b.tests.json",
+   "prereg_commit": "2c0a8f17b",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.683,
+     "peak": "經"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.359,
+     "peak": "經過"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.796,
+     "peak": "经"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.325,
+     "peak": "经过"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.768,
+     "peak": "經"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.765,
+     "peak": "經"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.045,
+     "peak": "经"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.23,
+     "peak": "經過"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "作品"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "去"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.133,
+     "peak": "多次"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "得"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": "在"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": "經驗"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": "办理"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": "下班"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.724,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c0a8f17b",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token 經/经 (standalone)",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Tokenizer-dependent, as the spelling-unit tip warns. Probes: 经|受 1.06, 經|典 0.80, 經理 (split) 0.61, 经过 0.51, 經過 0.44; merged 经典 0.01, 已經 0.01, 经济发展 0.00, 經驗 0.01, 曾經|商 0.03.",
+ "selection": "random draw"
+}
