@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-7fabd902",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N5337+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:49:47+00:00",
+ "recipe": {
+  "toolchain_commit": "95890fdf6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N5337_pos/2026-11-20-lm1909-7fabd902.tests.json"
+ },
+ "label": "the start of a second, unit-converted version of a measurement or range given in parentheses ('(between 6 and 18 mph)', '(25.4 x 30.5 cm)')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N5337_pos/2026-11-20-lm1909-7fabd902.tests.json",
+   "prereg_commit": "95890fdf6",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.12,
+     "peak": "between"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.807,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.667,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.017,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.731,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.015,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.679,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.548,
+     "peak": " x"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " inches"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " pounds"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " pounds"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " made"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.673,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "95890fdf6",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "parenthetical unit conversion",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top examples: '(between 18 and 45 miles', '(819 mm x 648 mm)', '(entre US$17 millones'. Probes: 'between' opening a converted range 0.84-0.90, '(25.4 x 30.5 cm)' 0.54, '(about 9 to 18 euros)' 0.84; a plain '2 m x 1 m' or '12 by 8 inches' without a conversion stays near 0.",
+ "selection": "random draw"
+}
