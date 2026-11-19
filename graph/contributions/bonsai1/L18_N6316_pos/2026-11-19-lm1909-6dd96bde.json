@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6dd96bde",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N6316+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:23+00:00",
+ "recipe": {
+  "toolchain_commit": "173045d64",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N6316_pos/2026-11-19-lm1909-6dd96bde.tests.json"
+ },
+ "label": "food-safety instructions to heat something enough: cook thoroughly, bring to a boil, reheat until a safe temperature is reached, at the point where the sufficient degree or duration comes next (' until', ' boil', ' cooked', ' temperatures'); cooking steps about flavour stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N6316_pos/2026-11-19-lm1909-6dd96bde.tests.json",
+   "prereg_commit": "173045d64",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.72,
+     "peak": " until"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.878,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.37,
+     "peak": " hot"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.744,
+     "peak": " temperature"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.69,
+     "peak": " until"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.708,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.518,
+     "peak": " through"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.275,
+     "peak": " until"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " patt"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " water"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "Always"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " taste"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " price"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.699,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "173045d64",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "cook / boil until safe",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: 'should reach temperatures of 165', 'is cooked thoroughly', 'bring it to a full boil for 5 minutes', 'reheat foods to an internal temperature'; output promotes ' sufficient', ' adequate', ' enough'. Probes: 'cooked until the inside reaches' 0.92, 'rolling boil for at least' 0.99, 'reheated until' 0.67, 'pork is cooked' 0.47; marinade 0.01, tea with honey 0.01.",
+ "selection": "random draw"
+}
