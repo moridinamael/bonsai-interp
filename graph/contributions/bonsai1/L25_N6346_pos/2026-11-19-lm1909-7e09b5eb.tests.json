@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-7e09b5eb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N6346+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:04:42+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N6346",
+   "pole": "+",
+   "label": "the count argument of a Python .split(sep, ⟦n⟧) call that is indexed straight away: .split(':', ⟦1⟧)[0]",
+   "fire": [
+    "def get_user(entry):\n    if '=' in entry:\n        user = entry.strip().split('=', 1)[0]\n        return user\n    return None\n",
+    "import sys\n\ndef domain(address):\n    name = address.split('@', 1)[1]\n    return name.lower()\n",
+    "def first_field(row):\n    row = row.rstrip()\n    head = row.split(',', 2)[0]\n    return head\n",
+    "    for item in items:\n        prefix = item.split('-', 1)[0]\n        groups.append(prefix)\n",
+    "def scheme(url):\n    if '://' in url:\n        proto = url.split('://', 1)[0]\n        return proto\n    return 'http'\n",
+    "    with open(path) as fh:\n        title = fh.readline().strip().split(':', 1)[1].strip()\n",
+    "def version_major(text):\n    text = text.strip()\n    major = text.split('.', 2)[0]\n    return int(major)\n",
+    "    for header in headers:\n        value = header.split(' ', 3)[1]\n        seen.add(value)\n"
+   ],
+   "quiet": [
+    "def get_user(entry):\n    if '=' in entry:\n        user = entry.strip().lower()\n        return user\n    return None\n",
+    "import sys\n\ndef domain(address):\n    parts = address.split('@')\n    return parts\n",
+    "def first_field(row):\n    row = row.rstrip()\n    head = row.upper()\n    return head\n",
+    "    for item in items:\n        prefix = item.replace('-', '_')\n        groups.append(prefix)\n",
+    "def scheme(url):\n    if '://' in url:\n        proto = url.startswith('https')\n        return proto\n    return 'http'\n",
+    "    with open(path) as fh:\n        title = fh.readline().strip()\n",
+    "def version_major(text):\n    text = text.strip()\n    major = round(float(text), 2)\n    return int(major)\n",
+    "    for header in headers:\n        value = max(len(header), 3)\n        seen.add(value)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split count before )[i]",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: the top examples are mixed ('split(folder⟧)[1]', 'split(\":\", ⟦3⟧)[0]', '_TestClass(1⟦3⟧).square()', plus nouns just before a possessive: '3名⟦女孩⟧', 'l⟦adders⟧''); the output suppresses \"'s\", \")['\", ')^', so it fires on the token just before a closing-and-continuing mark. Probes: one-line snippets scored 0.01-0.06; with context, split(':', 2)[0] 0.56 and split('@', 1)[1] 0.27; basename(folder) 0.01, Counter(12).double() 0.05, English possessives 0.08-0.10. So only the split-count case is claimed; this is a narrow slice of the pole."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-81bc9ba7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N7612+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:04:42+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N7612",
+   "pole": "+",
+   "label": "the comma between small integers in an axis-permutation argument in code (perm=[1⟦,⟧ 0], permute(0, 2⟦,⟧ 1))",
+   "fire": [
+    "import numpy as np\n\nm = np.ones((4, 5))\nflipped = np.transpose(m, axes=[1, 0])\n",
+    "import tensorflow as tf\n\nimages = tf.zeros([8, 32, 3])\nout = tf.transpose(images, perm=[0, 2, 1])\n",
+    "    # move channels last\n    frames = frames.permute(0, 2, 1)\n",
+    "import numpy as np\n\ngrid = np.zeros((3, 7))\nswapped = grid.transpose([1, 0])\n",
+    "    # rows become columns\n    table = tf.transpose(table, perm=[1, 0])\n",
+    "    weights = weights.permute(1, 0)\n    bias = bias.view(-1)\n",
+    "import torch\n\nbatch = torch.rand(2, 6, 4)\nbatch = batch.permute(0, 2, 1)\n",
+    "    # BGR to RGB\n    picture = picture[:, :, [2, 1, 0]]\n"
+   ],
+   "quiet": [
+    "import numpy as np\n\nm = np.ones((4, 5))\ntotal = np.sum(m)\n",
+    "import tensorflow as tf\n\nimages = tf.zeros([8, 32, 3])\nout = tf.identity(images)\n",
+    "    # move channels last\n    frames = frames.contiguous()\n",
+    "import numpy as np\n\ngrid = np.zeros((3, 7))\nflat = grid.ravel()\n",
+    "    # rows become columns\n    table = table.T\n",
+    "    names = ['red', 'green', 'blue']\n    count = len(names)\n",
+    "import torch\n\nbatch = torch.rand(2, 6, 4)\nbatch = batch.float()\n",
+    "    # pick three prices\n    prices = [15, 40, 75]\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comma in axis permutation",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card flags gate-closed (88% echo), weak pole (max 7.34; the - pole, ' within', is the strong side). Top: 'perm=[1⟦,⟧ 0]', 'image[[2,1⟦,⟧0]', '[5, 4⟦,⟧ 1]'. Probes with context: np.transpose axes=[1, 0] 0.75, permute(0, 2, 1) 0.68, perm=[1, 0] one-liner 0.56, [2, 1, 0] index 0.25, [3, 2, 1, 0] 0.14, [10, 20, 30] 0.07, prose commas 0.02. Near misses keep the code and the shape tuples and drop the permutation."
+}
