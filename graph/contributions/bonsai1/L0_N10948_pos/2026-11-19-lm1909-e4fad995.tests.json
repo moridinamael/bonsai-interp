@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-e4fad995",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N10948+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N10948",
+   "pole": "+",
+   "label": "dense layer-0 pole; best guess at its strongest driver: the newline token ending a code line that carries a trailing '# comment' (top examples are table rows like '(…, False),  # 173' + newline)",
+   "fire": [
+    "    (\"koi8r\", \"koi8r_general_ci\", True),  # 7\n    (\"swe7\", \"swe7_swedish_ci\", True),  # 10\n    (\"ascii\", \"ascii_general_ci\", True),  # 11\n",
+    "    'width': 640,  # pixels\n    'height': 480,  # pixels\n    'depth': 24,  # bits\n",
+    "    0x1F600: 'grinning',  # U+1F600\n    0x1F601: 'beaming',  # U+1F601\n    0x1F602: 'joy',  # U+1F602\n",
+    "    ('mon', 'Monday', False),  # 0\n    ('tue', 'Tuesday', False),  # 1\n    ('wed', 'Wednesday', False),  # 2\n",
+    "    MAX_CONN = 128,  # sockets\n    IDLE_SECS = 300,  # timeout\n    QUEUE_LEN = 64,  # pending\n",
+    "    u'janvier': u'01',  # fr\n    u'fevrier': u'02',  # fr\n    u'mars': u'03',  # fr\n",
+    "    (\"hp8\", \"hp8_english_ci\", True),  # 6\n    (\"ujis\", \"ujis_japanese_ci\", True),  # 12\n    (\"hebrew\", \"hebrew_general_ci\", True),  # 16\n",
+    "    'red': (255, 0, 0),  # primary\n    'green': (0, 255, 0),  # primary\n    'blue': (0, 0, 255),  # primary\n"
+   ],
+   "quiet": [
+    "    (\"koi8r\", \"koi8r_general_ci\", True),\n    (\"swe7\", \"swe7_swedish_ci\", True),\n    (\"ascii\", \"ascii_general_ci\", True),\n",
+    "    'width': 640,\n    'height': 480,\n    'depth': 24,\n",
+    "    0x1F600: 'grinning',\n    0x1F601: 'beaming',\n    0x1F602: 'joy',\n",
+    "    ('mon', 'Monday', False),\n    ('tue', 'Tuesday', False),\n    ('wed', 'Wednesday', False),\n",
+    "    MAX_CONN = 128,\n    IDLE_SECS = 300,\n    QUEUE_LEN = 64,\n",
+    "    u'janvier': u'01',\n    u'fevrier': u'02',\n    u'mars': u'03',\n",
+    "    (\"hp8\", \"hp8_english_ci\", True),\n    (\"ujis\", \"ujis_japanese_ci\", True),\n    (\"hebrew\", \"hebrew_general_ci\", True),\n",
+    "    'red': (255, 0, 0),\n    'green': (0, 255, 0),\n    'blue': (0, 0, 255),\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "newline after trailing code comment (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags the pole broad (3.2% of tokens reach 0.1 of max, gate-closed regime 82%), max only 0.55; top 32 peaks are all newline tokens after long code or data lines. Probes: rows with '# 41' comments 0.30, dict lines with '# seconds' 0.25; the same rows without comments 0.12, prose with newlines 0.17, prose without 0.14. Everything sits at 0.1-0.3, so I expect this test to fail; it is registered to record the density."
+}

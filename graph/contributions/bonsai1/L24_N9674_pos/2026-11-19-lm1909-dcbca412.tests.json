@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-19-lm1909-dcbca412",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9674+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:22:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N9674",
+   "pole": "+",
+   "label": "the opening triple-quote line of a Python docstring (' \"\"\"' + newline) at the start of a module, class or function body",
+   "fire": [
+    "import json\nimport time\n\n\"\"\"\nSmall helpers for timing and logging requests.\n\"\"\"\n\ndef now():\n    return time.time()\n",
+    "class Cache(object):\n\n    def get(self, key):\n        \"\"\"\n        Look up a key and return its value.\n        \"\"\"\n        return self.data[key]\n",
+    "def mean(values):\n    \"\"\"\n    Compute the arithmetic mean of a list.\n    \"\"\"\n    return sum(values) / len(values)\n",
+    "class Shape:\n    \"\"\"\n    Base class for all drawable shapes.\n    \"\"\"\n    sides = 0\n",
+    "#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\n\"\"\"\nCommand line entry point for the exporter.\n\"\"\"\n\nimport argparse\n",
+    "    def close(self):\n        \"\"\"\n        Flush the buffer and release the file handle.\n        \"\"\"\n        self.fh.close()\n",
+    "def slugify(title):\n    \"\"\"\n    Turn a title into a lowercase URL slug.\n    \"\"\"\n    return title.lower().replace(' ', '-')\n",
+    "from setuptools import setup\n\n\"\"\"\nPackaging script for the weather client.\n\"\"\"\n\nsetup(name='weather')\n"
+   ],
+   "quiet": [
+    "import json\nimport time\n\n# Small helpers for timing and logging requests.\n\ndef now():\n    return time.time()\n",
+    "class Cache(object):\n\n    def get(self, key):\n        # Look up a key and return its value.\n        return self.data[key]\n",
+    "def mean(values):\n    # Compute the arithmetic mean of a list.\n    return sum(values) / len(values)\n",
+    "class Shape:\n    # Base class for all drawable shapes.\n    sides = 0\n",
+    "#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\n# Command line entry point for the exporter.\n\nimport argparse\n",
+    "    def close(self):\n        # Flush the buffer and release the file handle.\n        self.fh.close()\n",
+    "def slugify(title):\n    note = 'Turn a title into a lowercase URL slug.'\n    return title.lower().replace(' ', '-')\n",
+    "from setuptools import setup\n\n# Packaging script for the weather client.\n\nsetup(name='weather')\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring opening \"\"\"",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: ' \"\"\"\\n' x21, '\"\"\"\\n' x6 (one token dominates). Probes: module docstring 0.74, method docstring 0.57, one-line docstring 0.41, '#' comment 0.13.",
+ "trigger": {
+  "tokens": [
+   " \"\"\"\n",
+   "\"\"\"\n"
+  ]
+ }
+}
