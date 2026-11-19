@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-a2a07f90",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N9595+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:56:36+00:00",
+ "recipe": {
+  "toolchain_commit": "2e98ee2c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N9595_pos/2026-11-20-lm1909-a2a07f90.tests.json"
+ },
+ "label": "a position where the next token is a letter label: an answer choice, an (a)/(b) item, or a citation year suffix such as 1994a",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N9595_pos/2026-11-20-lm1909-a2a07f90.tests.json",
+   "prereg_commit": "2e98ee2c0",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.361,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.855,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.255,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.285,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.243,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.715,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.339,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.398,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": "?"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " older"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.042,
+     "peak": "?"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "Quiz"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " figure"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.35,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2e98ee2c0",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicts letter label",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top: 'Answer is', citation years before a/b suffix, ' (' before (a)/(C); output promotes a/b/A/B/C/D. Probe: 1994a/b .77, (a)/(b) .35, MC answer .25, plain answer .06.",
+ "selection": "random draw"
+}

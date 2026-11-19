@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-38935e47",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N11525-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:56:53+00:00",
+ "recipe": {
+  "toolchain_commit": "2e98ee2c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N11525_neg/2026-11-20-lm1909-38935e47.tests.json"
+ },
+ "label": "a fragment token of punctuation plus a capital letter inside an identifier or filename (.R, _R, _G); the + pole takes the lowercase fragments",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N11525_neg/2026-11-20-lm1909-38935e47.tests.json",
+   "prereg_commit": "2e98ee2c0",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.567,
+     "peak": ".R"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.423,
+     "peak": "_R"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.285,
+     "peak": "_Q"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.473,
+     "peak": "_G"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.381,
+     "peak": "_K"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.338,
+     "peak": "_D"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.619,
+     "peak": ".R"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.422,
+     "peak": "_N"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": ".py"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.233,
+     "peak": "_r"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.103,
+     "peak": "_q"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.095,
+     "peak": "_g"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.286,
+     "peak": "_k"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": "_d"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "Then"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.165,
+     "peak": "_n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.422,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2e98ee2c0",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "punct+capital fragment",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card - top: .R, _R, =W, _G, ' G', (CON; + top: .b, (b, .g, _m, -l (lowercase). Probe: analysis.R .75, data_Rate _R .51, analysis.py 0. Tokenization checked: each trigger is its own token.",
+ "selection": "random draw"
+}
