@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-10cb2bfb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N3118-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:27:54+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N3118",
+   "pole": "-",
+   "label": "'days' as a duration unit in code: the variable, keyword or key 'days' (days, hours = divmod(…), timedelta(days=days), ('days', …)) and neighbouring date identifiers; prose 'days' fires only weakly here",
+   "fire": [
+    "    minutes, seconds = divmod(total, 60)\n    hours, minutes = divmod(minutes, 60)\n    days, hours = divmod(hours, 24)",
+    "    limit = (now - timedelta(days=days)).strftime(DATE_FORMAT)",
+    "CHOICES = (\n    ('hours', _('Hours')),\n    ('days', _('Days')),\n    ('months', _('Months')),\n)",
+    "    weeks, days = divmod(days, 7)\n    return weeks, days",
+    "    age = (date.today() - start).days\n    if age > max_days:\n        return None",
+    "def expires_in(days=30):\n    return datetime.now() + timedelta(days=days)",
+    "    for unit in ('seconds', 'minutes', 'hours', 'days'):\n        totals[unit] = 0",
+    "    elapsed_days = delta.days\n    remaining_days = total_days - elapsed_days"
+   ],
+   "quiet": [
+    "    minutes, seconds = divmod(total, 60)\n    hours, minutes = divmod(minutes, 60)",
+    "    limit = (now - offset).strftime(TIME_FORMAT)",
+    "CHOICES = (\n    ('small', _('Small')),\n    ('medium', _('Medium')),\n    ('large', _('Large')),\n)",
+    "    rows, cols = divmod(count, 7)\n    return rows, cols",
+    "    size = (end - start).length\n    if size > max_size:\n        return None",
+    "def retries_in(count=30):\n    return base_delay * count",
+    "    for unit in ('grams', 'litres', 'metres', 'volts'):\n        totals[unit] = 0",
+    "    elapsed_ms = delta.millis\n    remaining_ms = total_ms - elapsed_ms"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'days' identifier in code",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' days' x6, Arabic ' يوم' x3, '.today' x2, 'days', '_DATE'; the + pole is singular ' day', so the neuron separates the unit 'days' from the single 'day'. Probes: 'days, hours = divmod' 0.73, \"('days', 'Days')\" 0.26, 'date.today().year' 0.14, prose 'within 5 days' 0.12, 'next day' 0.11, hours-only prose 0.02. The card also has prose and Arabic examples that this code-only test does not cover, so a hold would be partial."
+}
