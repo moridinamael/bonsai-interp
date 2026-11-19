@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-7d067c04",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N4812+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:34:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N4812",
+   "pole": "+",
+   "label": "the two-byte token ' \\xed\\x8c' that opens a word-initial Korean syllable in the 패/팬/팝/팸 block (팬, 팝업, 패스워드, 팸플릿, 패닉), i.e. mostly loanwords starting with p+a/ae",
+   "fire": [
+    "어제 서점에서 새 패션 잡지를 샀다.",
+    "그 배우는 공항에서 많은 팬에게 둘러싸였다.",
+    "요즘 라디오에서 옛날 팝 음악이 자주 나온다.",
+    "박물관 입구에서 무료 팸플릿을 나눠 준다.",
+    "이 옷감은 꽃무늬 패턴이 아주 예쁘다.",
+    "회사에서 새 여행 패키지 상품을 내놓았다.",
+    "우리 학교 축구부는 결승전에서 아쉽게 패배했다.",
+    "토론회에는 전문가 세 명이 패널로 참석했다."
+   ],
+   "quiet": [
+    "어제 서점에서 새 요리 잡지를 샀다.",
+    "그 배우는 공항에서 많은 기자에게 둘러싸였다.",
+    "요즘 라디오에서 옛날 가요 음악이 자주 나온다.",
+    "박물관 입구에서 무료 안내서를 나눠 준다.",
+    "이 옷감은 꽃무늬 그림이 아주 예쁘다.",
+    "회사에서 새 여행 보험 상품을 내놓았다.",
+    "우리 학교 축구부는 결승전에서 아쉽게 졌다.",
+    "토론회에는 전문가 세 명이 손님으로 참석했다."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Korean word-initial 패/팬/팝 bytes",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: 22 of the top 32 peaks are the token ' \\ufffd' before 팬/팝/팸/패. The tokenizer splits these syllables into ' \\xed\\x8c' + one byte, so the first token already identifies the block. Probes: 팬 0.52, 팝업/패스워드 0.40, 팸플릿 0.51, 패닉 0.70; Korean sentences whose split syllables are from other blocks (화, 창, 승) 0.04-0.12."
+}
