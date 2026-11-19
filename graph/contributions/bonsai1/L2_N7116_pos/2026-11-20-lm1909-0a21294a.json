@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-20-lm1909-0a21294a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N7116+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:14:22+00:00",
+ "recipe": {
+  "toolchain_commit": "89644bd7c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N7116_pos/2026-11-20-lm1909-0a21294a.tests.json"
+ },
+ "label": "the tokens '.translation' (Python import paths), ' Devon' (Devonian) and the Cyrillic verb ending piece 'ил'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N7116_pos/2026-11-20-lm1909-0a21294a.tests.json",
+   "prereg_commit": "89644bd7c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.972,
+     "peak": ".translation"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.9,
+     "peak": ".translation"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.451,
+     "peak": " Devon"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.707,
+     "peak": " Devon"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.605,
+     "peak": "ил"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.679,
+     "peak": "ил"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.672,
+     "peak": " Devon"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.822,
+     "peak": ".translation"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.212,
+     "peak": "from"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " django"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.112,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "als"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.101,
+     "peak": "ом"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.076,
+     "peak": " с"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " during"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " django"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.693,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89644bd7c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'.translation', ' Devon', 'ил'",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Layer 2, low max, card flags broad and gate-closed (-x- echo 84%); a token list taken from the card's top examples.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   ".translation",
+   " Devon",
+   "ил"
+  ]
+ }
+}
