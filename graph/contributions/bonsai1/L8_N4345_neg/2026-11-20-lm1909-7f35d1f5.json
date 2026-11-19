@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-7f35d1f5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N4345-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:52:02+00:00",
+ "recipe": {
+  "toolchain_commit": "6ed53d595",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N4345_neg/2026-11-20-lm1909-7f35d1f5.tests.json"
+ },
+ "label": "word-internal piece of a split medical condition term, above all ' ul' in 'ulcers' (also d-andr-uff, bacteri-oph-ages)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N4345_neg/2026-11-20-lm1909-7f35d1f5.tests.json",
+   "prereg_commit": "6ed53d595",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.409,
+     "peak": " ul"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.469,
+     "peak": " ul"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.191,
+     "peak": "cers"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.381,
+     "peak": "cers"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.336,
+     "peak": " ul"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.429,
+     "peak": "andr"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.185,
+     "peak": "cers"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.692,
+     "peak": " ul"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.121,
+     "peak": "ches"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.216,
+     "peak": "res"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.197,
+     "peak": "isters"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.093,
+     "peak": " cuts"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " itching"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.065,
+     "peak": " wounds"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.084,
+     "peak": " rash"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.395,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ed53d595",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' ul' in ulcers",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' ul' x6 (mouth ulcers), 'andr' (dandruff), 'oph' (bacteriophages); + pole is Stre-pt-ococcus. Probe: 'mouth ulcers' 0.90, dandruff 0.32, 'mouth sores' 0.24.",
+ "selection": "random draw"
+}
