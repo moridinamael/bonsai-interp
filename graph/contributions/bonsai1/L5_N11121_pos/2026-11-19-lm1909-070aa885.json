@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-070aa885",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N11121+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:21+00:00",
+ "recipe": {
+  "toolchain_commit": "4762643e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N11121_pos/2026-11-19-lm1909-070aa885.tests.json"
+ },
+ "label": "' today' as the time tag closing a news-report event clause (\"… made a bold move today\"); not conversational 'today'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N11121_pos/2026-11-19-lm1909-070aa885.tests.json",
+   "prereg_commit": "4762643e5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.6,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.412,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.583,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.124,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.312,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.49,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.413,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.387,
+     "peak": " today"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.043,
+     "peak": " today"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.038,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " prices"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.032,
+     "peak": " stops"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.044,
+     "peak": " rates"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": "Honestly"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.069,
+     "peak": " debated"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": " today"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.412,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4762643e5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "news-lede 'today'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' today' x16 of top 32, also ' week', ' confirmed' and headline open-quotes, all in news ledes. Probes: news 'today' 0.55 / 0.41, 'I think today is' 0.02, 'doing today' 0.05, news 'last year' 0.14. Low-magnitude early-layer pole (max 4.69, 23% echo regime).",
+ "selection": "random draw"
+}

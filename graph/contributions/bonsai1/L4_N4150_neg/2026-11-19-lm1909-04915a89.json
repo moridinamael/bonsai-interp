@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-04915a89",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N4150-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:10+00:00",
+ "recipe": {
+  "toolchain_commit": "4762643e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N4150_neg/2026-11-19-lm1909-04915a89.tests.json"
+ },
+ "label": "best guess for a broad, weak, leak-regime pole: a Latin letter with a macron or double acute (ī, ō, ő) inside a romanized or Central European name (Rīga, rōmaji, kő)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N4150_neg/2026-11-19-lm1909-04915a89.tests.json",
+   "prereg_commit": "4762643e5",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.169,
+     "peak": "ī"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.443,
+     "peak": "ī"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.052,
+     "peak": "ō"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.055,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.603,
+     "peak": "ő"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.301,
+     "peak": "m"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.32,
+     "peak": "ő"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.054,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.063,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.045,
+     "peak": " Kyoto"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.053,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.098,
+     "peak": " h"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.049,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.235,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4762643e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "broad; ī / ō / ő letters",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (2.5% of tokens reach 0.1 of max, max 2.83) with the gate-closed leak regime at 100%. Top examples: 'sz', 'ő', 'ō', 'ī' in Hungarian / Latvian / romanized names, then many '),' and \"'],\" at ~0.3-0.4 of max. Probes: kő 0.57, rōmaji 0.32, Rīga 0.24, plain Riga 0.05, \"'],\" 0.23. Registered to record the density, not a meaning.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7a47ee13",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N8386-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:14+00:00",
+ "recipe": {
+  "toolchain_commit": "4762643e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N8386_neg/2026-11-19-lm1909-7a47ee13.tests.json"
+ },
+ "label": "the line-break token ('\\n' or '.\\n') that ends a short stand-alone line in web boilerplate (menu / sidebar headings, 'read more' teasers) just before an unrelated next item",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N8386_neg/2026-11-19-lm1909-7a47ee13.tests.json",
+   "prereg_commit": "4762643e5",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.24,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.363,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.205,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.105,
+     "peak": "A"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.267,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.132,
+     "peak": ".\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.336,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.184,
+     "peak": ".\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " articles"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": " said"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " subscribe"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " bookmarks"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.032,
+     "peak": " today"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.043,
+     "peak": " showed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.222,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4762643e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "line break after boilerplate line",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: every top example peaks on a newline token ('\\n' x12, '.\\n' x11) closing a boilerplate line (sidebar headings, 'Read past story …', 'No favourites yet.'), while the + pole takes conversational '?\\n' / '...\\n'. Probes were weak: sidebar heading list 0.41, news teaser 0.16, bullet list 0.08, dialogue line break 0.07, same text on one line 0.02-0.03. May well fail the 0.20 median.",
+ "selection": "random draw"
+}

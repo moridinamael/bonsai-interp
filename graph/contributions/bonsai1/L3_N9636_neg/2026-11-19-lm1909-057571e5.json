@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-057571e5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N9636-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:09+00:00",
+ "recipe": {
+  "toolchain_commit": "4762643e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N9636_neg/2026-11-19-lm1909-057571e5.tests.json"
+ },
+ "label": "best guess for a broad, weak, leak-regime pole: byte-fragment tokens of the East Asian words for hesitating / shame (Japanese 躊躇, Korean 부끄러움)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N9636_neg/2026-11-19-lm1909-057571e5.tests.json",
+   "prereg_commit": "4762643e5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.8,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.499,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.728,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.795,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.574,
+     "peak": "끄"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.515,
+     "peak": "끄"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.749,
+     "peak": "끄"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.489,
+     "peak": "끄"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.2,
+     "peak": "ながら"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.199,
+     "peak": "局"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.206,
+     "peak": "飛び"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.146,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.362,
+     "peak": "서"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.2,
+     "peak": " 너무"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.146,
+     "peak": " 고"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.353,
+     "peak": " 못"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.651,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4762643e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "broad; 躊躇 / 부끄러 fragments",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (3.4% of tokens reach 0.1 of max, max only 1.41) with the gate-closed leak regime at 100%. Top examples are byte fragments in 躊躇 and 부끄러움, plus Korean '하고'/'고' and Chinese 合并/共和. Probes: 躊躇 0.73, 부끄러움 0.81, but 合并 0.36 and a plain Korean '-고' sentence 0.37, so near misses in the same scripts will probably fire. Registered to record the density, not a meaning.",
+ "selection": "random draw"
+}
