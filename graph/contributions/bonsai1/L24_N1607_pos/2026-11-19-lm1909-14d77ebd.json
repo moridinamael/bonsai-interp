@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-14d77ebd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1607+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:31:17+00:00",
+ "recipe": {
+  "toolchain_commit": "829c9bef2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N1607_pos/2026-11-19-lm1909-14d77ebd.tests.json"
+ },
+ "label": "Arabic: the final alif of an indefinite accusative word (tanwin -an, as in رجلا، كثيرا، صيفا); broad pole",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1607_pos/2026-11-19-lm1909-14d77ebd.tests.json",
+   "prereg_commit": "829c9bef2",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.29,
+     "peak": "لا"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.231,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.25,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.205,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.285,
+     "peak": "ح"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.128,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.364,
+     "peak": "ا"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.433,
+     "peak": "ا"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.075,
+     "peak": " الرجل"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.076,
+     "peak": "يف"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": " ثم"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.056,
+     "peak": "ساء"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.053,
+     "peak": "ب"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " الم"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.061,
+     "peak": "دي"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.078,
+     "peak": "باب"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.267,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "829c9bef2",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic accusative -an ending",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card flags broad (2.5% of tokens above 0.1 of max); peaks 'ا' x7, 'لا' x5 on indefinite accusatives, also ' make' x4. Probes: sentences with رجلا / صيفا / كثيرا 0.25-0.34, بيتا جديدا 0.14, شكرا جزيلا 0.14; the same sentences made definite 0.02-0.09; English 'make a lot' 0.05, another English sentence 0.17.",
+ "selection": "random draw"
+}
