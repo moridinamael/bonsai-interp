@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e0b3d4b7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N10316+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:44:14+00:00",
+ "recipe": {
+  "toolchain_commit": "7c5f12b26",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N10316_pos/2026-11-19-lm1909-e0b3d4b7.tests.json"
+ },
+ "label": "a short n-piece ('an', 'in', 'EN', 'NE') that completes a rare proper name or acronym split by the tokenizer (Tapp-an, Clark-in, CC-NE, PT-EN)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N10316_pos/2026-11-19-lm1909-e0b3d4b7.tests.json",
+   "prereg_commit": "7c5f12b26",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.922,
+     "peak": "an"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.386,
+     "peak": "EN"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.904,
+     "peak": "NE"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.487,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.411,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.402,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.378,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.062,
+     "peak": "EN"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": "or"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " holds"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " chapter"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "-help"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " protein"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " river"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " board"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.406,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c5f12b26",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "n-piece completing a split name",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card: 'in' x8, 'an' x3, 'EN' x2, 'pan' x2, '2' x2 (SNAP-25), 'NE'; one outlier top example (Tapp-an Zee 14.25, next 10.1). Probes: Tappan 0.92, CCNE 0.74, Clarkin 0.47, SNAP-25 0.36, 'Trading Day' 0.35, Martin / Jordan (whole tokens) 0.00. The pattern is a guess at what the pieces share; the digit after SNAP and ' Day' do not fit it.",
+ "selection": "random draw"
+}

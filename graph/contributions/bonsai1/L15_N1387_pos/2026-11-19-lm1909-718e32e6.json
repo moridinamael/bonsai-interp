@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-718e32e6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N1387+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:54+00:00",
+ "recipe": {
+  "toolchain_commit": "7c5f12b26",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N1387_pos/2026-11-19-lm1909-718e32e6.tests.json"
+ },
+ "label": "sub-word pieces inside proper names (surnames, place names) in Russian Cyrillic text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N1387_pos/2026-11-19-lm1909-718e32e6.tests.json",
+   "prereg_commit": "7c5f12b26",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.538,
+     "peak": "им"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.461,
+     "peak": "ест"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.644,
+     "peak": "мат"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.5,
+     "peak": "м"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.642,
+     "peak": "ки"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.538,
+     "peak": "б"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.614,
+     "peak": "ев"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.531,
+     "peak": "К"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.077,
+     "peak": "еч"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": "аш"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.085,
+     "peak": " п"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.074,
+     "peak": "ет"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.039,
+     "peak": "еж"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.119,
+     "peak": "ек"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.145,
+     "peak": "ут"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.17,
+     "peak": "ед"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.538,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c5f12b26",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Cyrillic name pieces",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: top peaks are Cyrillic pieces ('им' x7, 'К', 'ор', 'ик', 'стан') inside names such as Цучимикадо, Тимошенко, Ефимовича, Гулистан, Итум-Кале. Probes: Russian sentences with names 0.42-0.57, without names 0.08-0.13, the same name in Latin script 0.01.",
+ "selection": "random draw"
+}

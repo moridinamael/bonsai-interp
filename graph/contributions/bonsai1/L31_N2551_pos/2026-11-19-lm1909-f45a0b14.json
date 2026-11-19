@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-f45a0b14",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N2551+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:44:00+00:00",
+ "recipe": {
+  "toolchain_commit": "7c5f12b26",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N2551_pos/2026-11-19-lm1909-f45a0b14.tests.json"
+ },
+ "label": "'Price…' as the start of an online brand name (Priceline, PriceRunner, PriceGrabber), not the common noun and not other website names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N2551_pos/2026-11-19-lm1909-f45a0b14.tests.json",
+   "prereg_commit": "7c5f12b26",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.848,
+     "peak": "ric"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.551,
+     "peak": " Price"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.873,
+     "peak": "ric"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.201,
+     "peak": "ber"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.803,
+     "peak": "ric"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.553,
+     "peak": " Price"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.698,
+     "peak": "ric"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.916,
+     "peak": " Price"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.311,
+     "peak": " Exp"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.102,
+     "peak": " Denmark"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.466,
+     "peak": " Hot"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.14,
+     "peak": " Orbit"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.125,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": " price"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.419,
+     "peak": " Shop"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.75,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c5f12b26",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Price…' web brands",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: 'ric' (P-ric-eline) is 19 of the top 32 peaks; the rest start other brand or site names (' We' Heart It, ' The' Walking Company, ' Price'Runner, ' Qu'ora). Probes: PriceRunner 0.90, Priceline 0.65, Quora 0.39, The Walking Company 0.37, 'The price of bread' 0.02, We Heart It 0.07. Near misses test both the common noun and other site names, so a wider 'start of a web brand' reading would show up as near-miss leaks.",
+ "selection": "random draw"
+}
