@@ -1,0 +1,164 @@
+{
+ "id": "2026-11-19-lm1909-9c811da4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N1247+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:47:26+00:00",
+ "recipe": {
+  "toolchain_commit": "0a54ffd1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N1247_pos/2026-11-19-lm1909-9c811da4.tests.json"
+ },
+ "label": "line-initial header token that opens a document or line: 'Q', 'Question', 'Published' (also 'Publisher', 'Download', 'View' on the card)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N1247_pos/2026-11-19-lm1909-9c811da4.tests.json",
+   "prereg_commit": "0a54ffd1e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.356,
+     "peak": "Q"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.365,
+     "peak": "Question"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.318,
+     "peak": "Q"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.356,
+     "peak": "Q"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.365,
+     "peak": "Question"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.258,
+     "peak": "Published"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.356,
+     "peak": "Q"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.232,
+     "peak": "Question"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " bread"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " fourth"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": " March"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " match"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.356,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a54ffd1e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "line-initial 'Q' / 'Question' / 'Published'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "The trigger is by nature the first token of a text or line, so six fire sentences start with it. Probes: text-initial 'Q' 0.36, 'Question' 0.37, 'Published' 0.26, 'Download' 0.20; 'Q' after a newline 0.34, 'Published' after a newline 0.15; mid-sentence ' published' / ' question' 0.01.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "Q",
+   "Question",
+   "Published",
+   "Publisher",
+   "Download",
+   "View"
+  ]
+ }
+}

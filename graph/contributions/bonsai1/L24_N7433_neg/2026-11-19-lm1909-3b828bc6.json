@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-3b828bc6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7433-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:46:34+00:00",
+ "recipe": {
+  "toolchain_commit": "0a54ffd1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N7433_neg/2026-11-19-lm1909-3b828bc6.tests.json"
+ },
+ "label": "a delete/remove confirmation prompt: 'Are you sure you want to delete ...?' (fires on 'you' and the closing question mark)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N7433_neg/2026-11-19-lm1909-3b828bc6.tests.json",
+   "prereg_commit": "0a54ffd1e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.895,
+     "peak": "?"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.644,
+     "peak": "?"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.987,
+     "peak": " you"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.791,
+     "peak": " sure"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.044,
+     "peak": "?"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.767,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.467,
+     "peak": " sure"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.075,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.184,
+     "peak": " like"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.089,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.462,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.1,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.114,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": ":"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.843,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a54ffd1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Are you sure' delete prompt",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probes: confirm-delete prompts 0.64-0.79; other yes/no questions 0.04-0.14. The output direction of this pole promotes 'confirm' tokens.",
+ "selection": "random draw"
+}
