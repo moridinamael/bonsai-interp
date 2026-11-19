@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3eeb35d7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N6012-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:59:34+00:00",
+ "recipe": {
+  "toolchain_commit": "e5fffd799",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N6012_neg/2026-11-19-lm1909-3eeb35d7.tests.json"
+ },
+ "label": "the last character before a closing bracket in a list of entries: final year digit of a parenthesised year in a reference list, or an index/suffix before ')' or ']' in code",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N6012_neg/2026-11-19-lm1909-3eeb35d7.tests.json",
+   "prereg_commit": "e5fffd799",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.309,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.223,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.388,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.289,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.474,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.338,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.361,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.373,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " Tradition"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " Thames"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": " Hopkins"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.032,
+     "peak": " SCM"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": " India"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": "on"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.112,
+     "peak": " Faith"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": "-Smith"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.35,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e5fffd799",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "last token before close bracket",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top examples: '[datetime_idx]', 'len(events_c)', 'src[8][i]', '195(5),', '(197(5))'. Probes: two-entry reference lists with '(2002)' / '1956)' 0.39-0.44; a single citation line 0.01; short code snippets 0.01-0.17. Fire items are therefore multi-line reference lists; code is left out of the fire set because short snippets did not fire.",
+ "selection": "random draw"
+}

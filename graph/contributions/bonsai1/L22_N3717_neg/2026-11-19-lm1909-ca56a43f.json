@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ca56a43f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N3717-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:59:15+00:00",
+ "recipe": {
+  "toolchain_commit": "e5fffd799",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N3717_neg/2026-11-19-lm1909-ca56a43f.tests.json"
+ },
+ "label": "calendar time expressions that date an event: a year ('in 1916'), a month after 'in', 'the following year', 'years ago'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N3717_neg/2026-11-19-lm1909-ca56a43f.tests.json",
+   "prereg_commit": "e5fffd799",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.728,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.243,
+     "peak": " May"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.711,
+     "peak": " year"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.327,
+     "peak": " ago"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.295,
+     "peak": " June"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.121,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.398,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.477,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.204,
+     "peak": "On"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.052,
+     "peak": " badly"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": "With"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.118,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.092,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.285,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.199,
+     "peak": "For"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.363,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e5fffd799",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dates: year, month, 'ago'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top examples peak on year digits, months and ' year'/' ago'; the + pole is named eras (War, Age, Renaissance). Probes: 'On this day in 1923' 0.64, 'In March' 0.43, 'Two years ago' 0.41, 'following year' 0.33; 'in 1848' only 0.12; 'In Glasgow' 0.23 and 'The next morning' 0.19 leak.",
+ "selection": "random draw"
+}
