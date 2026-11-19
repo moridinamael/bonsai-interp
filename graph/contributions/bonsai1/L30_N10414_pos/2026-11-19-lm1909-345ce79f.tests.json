@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-345ce79f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N10414+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:19:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N10414",
+   "pole": "+",
+   "label": "bond / loan repayment context at the point where 'principal' or 'maturity' is the next word (\"pay interest and → principal\", \"date of → maturity\"); a prediction pole, it fires on the token before",
+   "fire": [
+    "The issuer promises to pay bondholders interest and principal on schedule.",
+    "Investors receive the face value of the note at the date of maturity.",
+    "Each mortgage payment is split between interest and principal by the lender.",
+    "A zero-coupon bond pays nothing until its maturity, when the holder is repaid.",
+    "The company defaulted and failed to repay the principal on its debentures.",
+    "Holders of the ten-year bond get back the principal when the bond matures.",
+    "Early in the loan most of the instalment covers interest rather than principal.",
+    "The debenture carries a fixed coupon and a stated date of maturity in 2031."
+   ],
+   "quiet": [
+    "The company promises to pay shareholders a dividend on schedule.",
+    "Investors receive a statement of their holdings at the end of the quarter.",
+    "Each grocery bill is split between food and household goods by the app.",
+    "A growth stock pays nothing to its owners while profits are reinvested.",
+    "The company struggled and failed to meet the sales targets for its stores.",
+    "Holders of the airline's shares get a vote when the board meets.",
+    "Early in the year most of the budget covers salaries rather than equipment.",
+    "The insurance policy carries a fixed premium and a stated deductible for 2031."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts 'principal' / 'maturity'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Output direction promotes ' principal', ' maturity', ' face', ' matures'. Probes: 'repay the interest and' 0.67, 'redeemed at its face value on the date of' 0.90, 'reduces the' 0.41; non-debt 'and' 0.00; but 'The bond pays a coupon' 0.37, so bond context alone gives some activation. Near misses are other finance topics without debt repayment."
+}
