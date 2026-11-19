@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-b088f382",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N7083-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:38:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N7083",
+   "pole": "-",
+   "label": "the opening of a placeholder slot (' %(', ' %', ' {', \" '%\") inside a format or log message string in code",
+   "fire": [
+    "    LOG.warning('Retrying upload of %(name)s after %(delay)d seconds', {'name': name, 'delay': d})",
+    "    logger.info('Created bucket {0} in region {1}'.format(bucket, region))",
+    "    print('Copied %d files to %s' % (count, dest))",
+    "    LOG.error(_('Instance %(uuid)s failed to boot'), {'uuid': inst.uuid})",
+    "    msg = 'Timeout waiting for job {} after {} tries'.format(job_id, n)",
+    "    raise KeyError(\"Missing config key '%s'\" % key)",
+    "    log.debug('Cache hit for %s, size %d bytes', key, size)",
+    "    sys.stderr.write('Skipping file %s: not readable\\n' % fname)"
+   ],
+   "quiet": [
+    "    LOG.warning('Retrying upload after a short delay', extra=ctx)",
+    "    logger.info('Created bucket in the default region')",
+    "    print('Copied all files to ' + dest)",
+    "    LOG.error(_('Instance failed to boot'), exc_info=True)",
+    "    msg = 'Timeout waiting for job after several tries'",
+    "    raise KeyError(\"Missing config key: \" + key)",
+    "    log.debug('Cache hit for key ' + key)",
+    "    sys.stderr.write('Skipping file: not readable\\n')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "format-string placeholder",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "the card's top example is ' points' in plain prose, so coverage may be partial"
+}
