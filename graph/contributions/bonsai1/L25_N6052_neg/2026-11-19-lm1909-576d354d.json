@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-576d354d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N6052-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:18:25+00:00",
+ "recipe": {
+  "toolchain_commit": "4970b7b6f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N6052_neg/2026-11-19-lm1909-576d354d.tests.json"
+ },
+ "label": "dividing a quantity into a number of equal parts or chunks (\"split n into m chunks\", \"the number of ... per\"), strongest in code docstrings",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N6052_neg/2026-11-19-lm1909-576d354d.tests.json",
+   "prereg_commit": "4970b7b6f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.991,
+     "peak": " k"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.3,
+     "peak": " equal"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.975,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.05,
+     "peak": " into"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.696,
+     "peak": " into"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.126,
+     "peak": " m"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.272,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.847,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.098,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.067,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.082,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " ok"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.064,
+     "peak": " tree"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.06,
+     "peak": " one"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.983,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4970b7b6f",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "divide into equal parts",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Top examples are division/partition contexts in prose and code (fill the space without gaps, divide n to m chunks, number of, divided into blocks). Probes: code docstring 'Split items into k parts' 1.01; prose division sentences only 0.15-0.40, so the test uses code-shaped items. Near misses keep 'into' and the def/docstring shape without division.",
+ "selection": "random draw"
+}
