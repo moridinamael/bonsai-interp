@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-d2cdcaea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N3687+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:19:46+00:00",
+ "recipe": {
+  "toolchain_commit": "0375fe708",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N3687_pos/2026-11-20-lm1909-d2cdcaea.tests.json"
+ },
+ "label": "the letter piece 'O' / 'SO' / 'PO' inside an uppercase acronym or name",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N3687_pos/2026-11-20-lm1909-d2cdcaea.tests.json",
+   "prereg_commit": "0375fe708",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.904,
+     "peak": "SO"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.922,
+     "peak": "O"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.847,
+     "peak": "O"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.869,
+     "peak": "PO"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.918,
+     "peak": "O"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.685,
+     "peak": " ICO"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.461,
+     "peak": " NGO"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.084,
+     "peak": "OM"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " strings"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": " phone"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.048,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": "Engine"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": " drug"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " regional"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.064,
+     "peak": " loan"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.858,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0375fe708",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'O' piece in acronyms",
+ "unit_kind": "sparse feature",
+ "confidence": 0.3,
+ "notes": "Card flags broad (1.4%) and gate-closed (-x- echo 100%), max only 3.6. Peak tokens 'O' x12, 'PO' x5, 'SO' x2 inside acronyms (SASO, LSO, AMOLED, UXO). Not probed.",
+ "selection": "random draw"
+}

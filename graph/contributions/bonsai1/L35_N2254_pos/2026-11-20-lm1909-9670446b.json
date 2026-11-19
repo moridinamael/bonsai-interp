@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9670446b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2254+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:20:01+00:00",
+ "recipe": {
+  "toolchain_commit": "0375fe708",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N2254_pos/2026-11-20-lm1909-9670446b.tests.json"
+ },
+ "label": "a preposition (with/from/upon) whose object is about to be a government or state",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N2254_pos/2026-11-20-lm1909-9670446b.tests.json",
+   "prereg_commit": "0375fe708",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.224,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.498,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.267,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.246,
+     "peak": " upon"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.289,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.269,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.569,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.42,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.067,
+     "peak": " ordered"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.267,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.267,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.246,
+     "peak": " upon"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.053,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.276,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.196,
+     "peak": " from"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.279,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0375fe708",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "prep before a government",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top examples: 'rapprochement with the United States', 'action on housing from the Haitian government', 'called upon the United States'. Output suppresses ' government' (predicting it). Probe: 'negotiate with the Syrian government' 0.40, 'aid from the federal authorities' 0.48; non-political 'with'/'from' ~0.01-0.03.",
+ "selection": "random draw"
+}

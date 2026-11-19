@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-d3c8646a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N5738+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:20:31+00:00",
+ "recipe": {
+  "toolchain_commit": "0375fe708",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N5738_pos/2026-11-20-lm1909-d3c8646a.tests.json"
+ },
+ "label": "function words that continue a clause in formal expository or regulatory prose (best guess; broad)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N5738_pos/2026-11-20-lm1909-d3c8646a.tests.json",
+   "prereg_commit": "0375fe708",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.906,
+     "peak": " unless"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.311,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.316,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.335,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.074,
+     "peak": " regional"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.249,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.061,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.136,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": "!"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " ball"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " face"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": "Yes"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " I"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": "?"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.04,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "!"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.28,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0375fe708",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "function words, formal prose",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags broad (2.9% of tokens >0.1 max); peak tokens are function words (in, and, to, only, unless, or) mid-clause in formal text. No clear context; recorded as broad, expected to fail.",
+ "selection": "random draw"
+}

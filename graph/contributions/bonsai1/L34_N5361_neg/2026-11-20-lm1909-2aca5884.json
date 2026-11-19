@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2aca5884",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N5361-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:20:20+00:00",
+ "recipe": {
+  "toolchain_commit": "0375fe708",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N5361_neg/2026-11-20-lm1909-2aca5884.tests.json"
+ },
+ "label": "word-initial prefix piece (em-, dis-, un-) of a split word in French or other Romance text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N5361_neg/2026-11-20-lm1909-2aca5884.tests.json",
+   "prereg_commit": "0375fe708",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.215,
+     "peak": " em"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.255,
+     "peak": " em"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.099,
+     "peak": " gris"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.115,
+     "peak": "'em"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.132,
+     "peak": " du"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.171,
+     "peak": " son"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.333,
+     "peak": " le"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.268,
+     "peak": " nouvel"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.046,
+     "peak": "Le"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": "é"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.104,
+     "peak": " gris"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.102,
+     "peak": " le"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.121,
+     "peak": " du"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": "lu"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.28,
+     "peak": " le"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.075,
+     "peak": "ien"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.193,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0375fe708",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Romance prefix piece",
+ "unit_kind": "sparse feature",
+ "confidence": 0.35,
+ "notes": "Peak tokens ' dis' x8, ' em' x4 as first pieces of dis|minuer, em|poisonné, dis|paraître, em|prisonnement. Probe: 'emprisonnés' 0.37, 'disparaître' 0.13, plain French 0.04-0.08. Expected to be weak.",
+ "selection": "random draw"
+}
