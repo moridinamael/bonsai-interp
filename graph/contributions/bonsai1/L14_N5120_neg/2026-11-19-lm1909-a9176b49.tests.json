@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a9176b49",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N5120-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:58:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N5120",
+   "pole": "-",
+   "label": "dense unit: weakly on for almost half of all tokens in ordinary prose (card: 45% of tokens reach 0.1 of max); best guess at a driver is ' hot' before 'water' in appliance text",
+   "fire": [
+    "A solar panel on the roof gives the family hot water for most of the year.",
+    "The old boiler takes twenty minutes to deliver hot water to the upstairs bath.",
+    "Tankless units heat on demand, so you never run out of hot water in the shower.",
+    "Each cabin has a small stove and hot water from a gas heater.",
+    "The plumber said the pipe that carries hot water to the kitchen had cracked.",
+    "Guests complained that there was no hot water after eight in the morning.",
+    "A heat pump can supply hot water at a third of the usual cost.",
+    "The laundry uses hot water only for towels and bed sheets."
+   ],
+   "quiet": [
+    "A solar panel on the roof gives the family electricity for most of the year.",
+    "The old boiler takes twenty minutes to warm the upstairs bath.",
+    "Tankless units heat on demand, so you never wait long in the shower.",
+    "Each cabin has a small stove and a lamp that runs on gas.",
+    "The plumber said the pipe that carries cold water to the kitchen had cracked.",
+    "Guests complained that there was no breakfast after eight in the morning.",
+    "A heat pump can warm the house at a third of the usual cost.",
+    "The laundry uses cold water only for wool and silk."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense, no single trigger",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags: dense (45.4% of tokens reach 0.1 of max) and gate-closed leak regime 100%; max only 1.58. ' hot' x3 in the top 32 ('hot water on-demand'). Probes: three ordinary sentences all 0.21-0.36, including an unrelated one, so the near misses will fire too. This test records the density; it is not expected to hold."
+}
