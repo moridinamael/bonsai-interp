@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-82daf2f2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9551+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:32:30+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N9551",
+   "pole": "+",
+   "label": "the comma after a US city name where a state abbreviation is due next (postal addresses, affiliations)",
+   "fire": [
+    "Mail your payment to 400 Elm Avenue, Nashville, TN 37203.",
+    "Department of Biology, Emory University, Atlanta, GA.",
+    "Our office is at 77 Harbor Road, Seattle, WA 98101.",
+    "The author lives in Tucson, AZ with her two dogs.",
+    "Returns go to 9 Mill Lane, Cleveland, OH 44114.",
+    "School of Nursing, Rush University, Chicago, IL.",
+    "Write to P.O. Box 310, Houston, TX 77002 for a catalogue.",
+    "He was born in Omaha, NE and raised on a farm."
+   ],
+   "quiet": [
+    "Mail your payment before Friday, or a late fee applies.",
+    "The biology department, the library and the gym are closed.",
+    "Our office is near the harbor, the market and the station.",
+    "The author lives in Tucson with her two dogs.",
+    "Returns go to the warehouse, not to the shop.",
+    "The nursing school in Chicago admits two hundred students.",
+    "Write to the publisher, who will send a catalogue.",
+    "He was born in Omaha and raised on a farm."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "city comma before state code",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (3.3% of tokens reach 0.1 of max). ',' is 16 of the top 32 peaks, after Boston / Nashville / Elk Grove Village before MA / TN / IL; ' erad' (eradication) also peaks and is not covered. Probes: 'Portland, OR … Austin, TX' 0.48, 'Denver, CO' 0.32, 'Ann Arbor, MI' 0.07, 'London, UK' 0.03, list commas 0.16, polio eradication 0.68."
+}
