@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-9372e69f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10347+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:57+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N10347_pos/2026-11-19-lm1909-9372e69f.tests.json"
+ },
+ "label": "Python: the line end that opens a function body, the '):\\n' or '():\\n' closing a def line (also the closing '\"\"\"\\n' of its docstring), in files laid out with two blank lines between top-level definitions. Needs the file context; one short function alone scores near zero.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N10347_pos/2026-11-19-lm1909-9372e69f.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.708,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.412,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.415,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.413,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.781,
+     "peak": "():\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.391,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.453,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.749,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": "]\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.084,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": "print"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": "))\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.101,
+     "peak": "']\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.036,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.208,
+     "peak": ">'"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.05,
+     "peak": " ROW"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.434,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "def-line end opening a body",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probe: a three-function PEP 8 file 0.38 (peak '():\\n'), a class with methods 0.17, a file of assignments with the same blank-line layout 0.03, a single short function 0.00. Near misses keep imports, layout and topic but define no functions.",
+ "selection": "random draw"
+}

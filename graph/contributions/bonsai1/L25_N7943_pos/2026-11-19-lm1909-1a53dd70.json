@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1a53dd70",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N7943+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:12+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N7943_pos/2026-11-19-lm1909-1a53dd70.tests.json"
+ },
+ "label": "Best guess for an unclear pole: ' in' opening a fixed phrase right after a noun, where the phrase states a standing condition or relation ('policy in regards to', 'smartphones in hand', 'certification in progress', 'with that belief in mind'). Locative ' in' stays quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N7943_pos/2026-11-19-lm1909-1a53dd70.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.005,
+     "peak": " set"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.003,
+     "peak": " published"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.194,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.001,
+     "peak": " class"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.049,
+     "peak": " open"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.004,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": -0.0,
+     "peak": " updated"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.029,
+     "peak": " mind"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " store"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " published"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": "There"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " keeps"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " gates"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.113,
+     "peak": " keeps"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " baggage"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " worked"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.445,
+    "median_fire": 0.005,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' in' opening a fixed phrase (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Probe: 'refund policy in regards to' 0.39, but 'a phone in hand' 0.13, 'certification in progress' 0.06, 'With that goal in mind' 0.02, locative 'in' 0.07. Only the 'in regards to' case fired, so the test leans on it and may still fail on the median.",
+ "selection": "random draw"
+}

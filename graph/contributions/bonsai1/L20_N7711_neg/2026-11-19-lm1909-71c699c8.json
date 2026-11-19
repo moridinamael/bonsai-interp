@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-71c699c8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N7711-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:16+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N7711_neg/2026-11-19-lm1909-71c699c8.tests.json"
+ },
+ "label": "A program or machine being made aware of, or failing to understand, something: fires on the ' of' after 'aware' and on ' understand' when the knower is software (svn, a bot, the system), at the point where what it knows is about to be named. A person 'conscious of' or 'realizing' something stays quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N7711_neg/2026-11-19-lm1909-71c699c8.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.732,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.508,
+     "peak": " understand"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.394,
+     "peak": " aware"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.211,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.638,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.708,
+     "peak": " understand"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.196,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.401,
+     "peak": " understand"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.087,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.063,
+     "peak": " nested"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.22,
+     "peak": " covers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.119,
+     "peak": " simply"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.323,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.058,
+     "peak": " put"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " settings"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.121,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.455,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "software 'aware of' / 'understand'",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Probe: 'make the system aware of the new files' 1.05, 'The bot did not understand what' 0.70, a dotted import path 0.47; human 'conscious of the risk' 0.03, 'realized that' 0.01, 'inform the staff of' 0.13. Weak pole (max 6.1); the card's top examples are mixed (' that', ' to', ' present', ' cost'), so this covers one facet.",
+ "selection": "random draw"
+}
