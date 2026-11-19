@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9cc9f3a2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1925+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:39:58+00:00",
+ "recipe": {
+  "toolchain_commit": "ad89dbd79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N1925_pos/2026-11-19-lm1909-9cc9f3a2.tests.json"
+ },
+ "label": "the word-start piece ' D' opening a capitalised name, title or sentence (D-oodle, D-abbling, D-ervishes), with the rest of the word still to come; not other capital letters",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N1925_pos/2026-11-19-lm1909-9cc9f3a2.tests.json",
+   "prereg_commit": "ad89dbd79",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.668,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.744,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.057,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.409,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.003,
+     "peak": " almost"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.415,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.155,
+     "peak": " D"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.467,
+     "peak": " D"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.202,
+     "peak": " Word"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.162,
+     "peak": " coward"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": "illy"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " almost"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.162,
+     "peak": "ivia"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.059,
+     "peak": " Co"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.059,
+     "peak": "izards"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.758,
+    "median_fire": 0.412,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ad89dbd79",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' D' piece opening a name",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: ' D' x13, ' d', Cyrillic and Arabic d-pieces. Probes: 'Doodle Jump' 0.78, list item 'Dabbling Ducks' 0.79, sentence-initial 'Dervishes' 0.76, 'the Dwarves' 0.30, 'Dukes' 0.26; mid-sentence common words 'Dazzled' 0.10, 'Dandelions' 0.07, 'Dachshund' 0.00. So the piece alone is not enough; the name/title position seems to matter. Tokenisation of the test words checked ([' D', ...]).",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-2b5bb2fa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N5963+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:40:13+00:00",
+ "recipe": {
+  "toolchain_commit": "ad89dbd79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N5963_pos/2026-11-19-lm1909-2b5bb2fa.tests.json"
+ },
+ "label": "the punctuation or 'and' right after a spoken self-introduction 'I'm <Name>' (I'm Scott Simon. / I'm Remus, …); third-person naming and 'I'm <adjective>' stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N5963_pos/2026-11-19-lm1909-2b5bb2fa.tests.json",
+   "prereg_commit": "ad89dbd79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.892,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.728,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.98,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.57,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.744,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.504,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.956,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.578,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.069,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.155,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.163,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.342,
+     "peak": "'m"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " headlines"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.326,
+     "peak": "'m"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.138,
+     "peak": "'m"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.256,
+     "peak": "'m"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.736,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ad89dbd79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after 'I'm <Name>'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: '.' ',' ' and' after 'I'm <Name>', plus 'What are you?'. Probes: 'I'm Karen Blake.' 0.72, 'I'm Tobias,' 0.72, 'I'm Dana Whitfield, and' 0.98, 'I'm Leo Marsh.' 0.77; 'The reporter was Karen Blake.' 0.18, 'name is Karen Blake.' 0.09, 'I'm exhausted,' 0.09. Also fires on second-person identity ('You're Remy,' 0.72, 'What are you?' 0.89) and weaker on 'He's Tobias,' 0.41, so the label is the first-person core of a broader 'who someone is' pattern.",
+ "selection": "random draw"
+}

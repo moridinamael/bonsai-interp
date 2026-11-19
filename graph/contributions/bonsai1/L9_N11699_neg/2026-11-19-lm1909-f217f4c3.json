@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-f217f4c3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N11699-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:40:10+00:00",
+ "recipe": {
+  "toolchain_commit": "ad89dbd79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N11699_neg/2026-11-19-lm1909-f217f4c3.tests.json"
+ },
+ "label": "scale modifiers (' long'-term, short'-range', long'-range') in earth-, climate- and physical-science prose; the same words in business or everyday text stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N11699_neg/2026-11-19-lm1909-f217f4c3.tests.json",
+   "prereg_commit": "ad89dbd79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.059,
+     "peak": " long"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.35,
+     "peak": "-term"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.658,
+     "peak": "-range"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.091,
+     "peak": "-range"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.437,
+     "peak": " long"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.797,
+     "peak": " long"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.49,
+     "peak": "-range"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.805,
+     "peak": "-range"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.03,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": "-range"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.059,
+     "peak": " college"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.049,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "ikers"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.394,
+     "peak": "-range"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.728,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ad89dbd79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "long-/short-range in science text",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' long' x6, '-range' x2, plus 'Clim-atic', 'Meteor-ology', GSFC in atmospheric-science passages. Probes: 'long-term shifts in regional rainfall' 0.93, 'short-range interactions between water molecules' 0.58, 'meteorology' 0.39; 'a long walk' 0.03, 'long-term contract' 0.03.",
+ "selection": "random draw"
+}
