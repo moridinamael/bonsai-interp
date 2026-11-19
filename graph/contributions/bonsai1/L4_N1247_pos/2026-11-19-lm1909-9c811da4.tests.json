@@ -1,0 +1,59 @@
+{
+ "contribution": "2026-11-19-lm1909-9c811da4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N1247+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:28:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N1247",
+   "pole": "+",
+   "label": "line-initial header token that opens a document or line: 'Q', 'Question', 'Published' (also 'Publisher', 'Download', 'View' on the card)",
+   "fire": [
+    "Q: Why does my bread always come out so dense?",
+    "Question: Which planet has the most moons?",
+    "Thanks for reading our newsletter.\nQ: Can I return an item after thirty days?",
+    "Q. What time does the museum open on Sundays?",
+    "Question 4: How many sides does a hexagon have?",
+    "Published on March 12, 2015 in Local News.",
+    "Q&A with the author of the new cookbook.",
+    "The match ended without a goal.\nQuestion: Who was the referee that night?"
+   ],
+   "quiet": [
+    "My bread always comes out dense, and I wonder why.",
+    "She asked which planet has the most moons.",
+    "Thanks for reading our newsletter.\nYou can return an item within thirty days.",
+    "The museum opens at ten on Sundays.",
+    "The fourth question asked how many sides a hexagon has.",
+    "The story was published on March 12, 2015 in the local news.",
+    "An interview with the author of the new cookbook.",
+    "The match ended without a goal.\nNobody remembers who the referee was that night."
+   ]
+  }
+ ],
+ "predictions": "7/8 fire at 0.2-0.4, 0 near misses",
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "line-initial 'Q' / 'Question' / 'Published'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "The trigger is by nature the first token of a text or line, so six fire sentences start with it. Probes: text-initial 'Q' 0.36, 'Question' 0.37, 'Published' 0.26, 'Download' 0.20; 'Q' after a newline 0.34, 'Published' after a newline 0.15; mid-sentence ' published' / ' question' 0.01.",
+ "trigger": {
+  "tokens": [
+   "Q",
+   "Question",
+   "Published",
+   "Publisher",
+   "Download",
+   "View"
+  ]
+ }
+}
