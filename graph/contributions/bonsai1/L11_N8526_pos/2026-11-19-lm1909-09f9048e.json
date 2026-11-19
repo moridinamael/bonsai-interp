@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-09f9048e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8526+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:06+00:00",
+ "recipe": {
+  "toolchain_commit": "5dc39ebc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N8526_pos/2026-11-19-lm1909-09f9048e.tests.json"
+ },
+ "label": "Nickname or epithet standing in for a team or place: fires on the nickname's tokens ('the Red Devils', 'the black and white', 'the Lone Star State', 'los Diablos Rojos'), not on the official name",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N8526_pos/2026-11-19-lm1909-09f9048e.tests.json",
+   "prereg_commit": "5dc39ebc4",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.25,
+     "peak": "aries"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.665,
+     "peak": " Blues"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.201,
+     "peak": " Lady"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.325,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.619,
+     "peak": " State"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.635,
+     "peak": " Cats"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.516,
+     "peak": "ners"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.595,
+     "peak": " State"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.135,
+     "peak": " who"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.12,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.126,
+     "peak": " Tur"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.353,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.061,
+     "peak": " scored"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.13,
+     "peak": " top"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " lady"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.555,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5dc39ebc4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "team / place nicknames",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' red' (and white friends), 'Cl|aret', ' Red' Devils, 'Diab|los' Rojos, Lone Star ' State'. Probes: nicknames 0.38-0.77; 'Manchester United beat Arsenal' 0.04; literal 'red and white' fence 0.005. Near misses use official club / state names and literal colours.",
+ "selection": "random draw"
+}

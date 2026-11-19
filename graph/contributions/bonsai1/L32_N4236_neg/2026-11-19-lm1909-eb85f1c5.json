@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-eb85f1c5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N4236-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:37+00:00",
+ "recipe": {
+  "toolchain_commit": "5dc39ebc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N4236_neg/2026-11-19-lm1909-eb85f1c5.tests.json"
+ },
+ "label": "Next-word prediction of an online-service category: fires on the word just before 'streaming / dating / sharing / networking / messaging / social media …' ('a [dating] app', 'video [sharing] site', 'various [social media] platforms'); the output direction promotes exactly those words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N4236_neg/2026-11-19-lm1909-eb85f1c5.tests.json",
+   "prereg_commit": "5dc39ebc4",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.349,
+     "peak": " streaming"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.67,
+     "peak": " dating"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.626,
+     "peak": " social"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.239,
+     "peak": " video"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.457,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.354,
+     "peak": " professional"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.487,
+     "peak": " ride"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.232,
+     "peak": " sharing"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.206,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.153,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.284,
+     "peak": " several"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.321,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.457,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.239,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.123,
+     "peak": " shift"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.898,
+    "median_fire": 0.472,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5dc39ebc4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'streaming/dating/sharing' service",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' social', ' a', ' the', ' video', ' various', ' online' before 'streaming platform', 'social bookmarking service', 'video sharing websites'; the + pole's output suppresses ' messaging', ' dating', ' streaming', ' sharing', ' networking', so this pole promotes them. Probes: 0.32-0.75 on such sentences; 'on a small television' 0.15, 'through a mutual friend' 0.21 (near misses leak a little at ' a').",
+ "selection": "random draw"
+}

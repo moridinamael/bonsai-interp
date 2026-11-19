@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-86d5ca31",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N9038+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:42+00:00",
+ "recipe": {
+  "toolchain_commit": "5dc39ebc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N9038_pos/2026-11-19-lm1909-86d5ca31.tests.json"
+ },
+ "label": "Spelling unit: the word-completing piece of 'mol|asses' and 'Malth|us' (also 'Malth|ace', weaker on 'mol|us|co'); not ' us' or 'asses' elsewhere",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N9038_pos/2026-11-19-lm1909-86d5ca31.tests.json",
+   "prereg_commit": "5dc39ebc4",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.87,
+     "peak": "asses"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.779,
+     "peak": "us"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.822,
+     "peak": "asses"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.873,
+     "peak": "us"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.835,
+     "peak": "asses"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.87,
+     "peak": "us"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.871,
+     "peak": "asses"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.829,
+     "peak": "us"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": "ma"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " Keynes"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " most"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " farming"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " mustard"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.086,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " gave"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.853,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5dc39ebc4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'molasses' / 'Malthus' completion",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: 'asses' after 'mol', 'us' after 'Malth'; a weaker tail on ' for' after 'matter/problem'. Probes: molasses 0.97, Malthus 0.88, molluscs 0.11, 'a matter for' 0.27, honey / Ricardo 0.00-0.01. Near misses swap in another sweetener or economist and include other '-us' / '-asses' words.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "molasses",
+   "Malthus"
+  ]
+ }
+}
