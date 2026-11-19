@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a77a5028",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N11236+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:15:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N11236",
+   "pole": "+",
+   "label": "in Python code, an attribute that names a related object and is itself dereferenced next (self.item.name, line.product_id.policy, x[0].order): fires on the middle link of the attribute chain",
+   "fire": [
+    "class Review(models.Model):\n    book = models.ForeignKey(Book)\n\n    def __str__(self):\n        return self.book.title",
+    "class Ticket(models.Model):\n    owner = models.ForeignKey(User)\n\n    def __unicode__(self):\n        return self.owner.username",
+    "class Invoice(models.Model):\n    customer = models.ForeignKey(Customer)\n\n    def __str__(self):\n        return f'{self.customer.name} - {self.total}'",
+    "pairs = sorted(scores.items(), key=lambda p: p[1].rank)\nfor p in pairs:\n    print(p)",
+    "class Seat(models.Model):\n    flight = models.ForeignKey(Flight)\n\n    def __str__(self):\n        return self.flight.code",
+    "for move in self:\n    move.is_done = move.picking_id.state in ('done', 'cancel')",
+    "class Comment(models.Model):\n    post = models.ForeignKey(Post)\n\n    def __str__(self):\n        return self.post.slug",
+    "class Lesson(models.Model):\n    course = models.ForeignKey(Course)\n\n    def __unicode__(self):\n        return self.course.title"
+   ],
+   "quiet": [
+    "class Review(models.Model):\n    title = models.CharField(max_length=80)\n\n    def __str__(self):\n        return self.title",
+    "class Ticket(models.Model):\n    code = models.CharField(max_length=12)\n\n    def __unicode__(self):\n        return self.code",
+    "class Invoice(models.Model):\n    total = models.IntegerField()\n\n    def __str__(self):\n        return f'{self.total}'",
+    "pairs = sorted(scores.items(), key=lambda p: p[1])\nfor p in pairs:\n    print(p)",
+    "def main(args):\n    if not os.path.isfile(args.output):\n        raise ValueError('missing file')",
+    "for move in self:\n    move.is_done = state in ('done', 'cancel')",
+    "class Comment(models.Model):\n    slug = models.SlugField()\n\n    def __str__(self):\n        return self.slug",
+    "def parse(options):\n    name = options.name\n    return name.strip()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "mid-chain attribute access",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: self[.item].name, self[.card].card_name, product[_id].invoice_policy, i[.source].remote, x[0[].]order, self[.model] in hasattr. Probe: Django __str__ returning self.item.name 0.57, r[0].order 0.40, line.product.price 0.21, self.user.profile.email 0.10; single attribute self.count 0.01, args.input 0.01. The - pole is plain argument names (args, kwargs, item)."
+}
