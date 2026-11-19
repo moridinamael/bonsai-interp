@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ee43104f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N5196-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:54:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N5196",
+   "pole": "-",
+   "label": "identifiers in Python unit-test and class code (self, assert_called_once_with, cm.exception, decorators)",
+   "fire": [
+    "class TestParser(unittest.TestCase):\n    def test_empty(self):\n        with self.assertRaises(ValueError) as cm:\n            parse('')",
+    "        handler.process(event)\n        logger.warning.assert_called_once_with('dropped event')",
+    "class Session(object):\n\n    def __init__(self, user, token):\n        self.user = user",
+    "    def test_save(self):\n        self.repo.save(item)\n        self.assertTrue(self.repo.exists(item.id))",
+    "        self.assertEqual(str(cm.exception), 'missing field')",
+    "def retry_on_failure(times):\n\n    def outer_decorator(fn):\n        @wraps(fn)\n        def inner(*args):",
+    "    @mock.patch('app.client.fetch')\n    def test_fetch(self, mock_fetch):\n        mock_fetch.return_value = {}",
+    "class Cache(dict):\n    def __missing__(self, key):\n        value = self.loader(key)"
+   ],
+   "quiet": [
+    "The parser test checks that an empty string raises an error, as described in the manual.",
+    "When the handler drops an event, the logger writes a single warning line.",
+    "Each session stores the user's name and token for the length of the visit.",
+    "Saving an item to the repository should make it available immediately.",
+    "The error message should say which field is missing from the form.",
+    "A retry policy repeats the failed request a fixed number of times before giving up.",
+    "We patched the client so the test does not need a network connection.",
+    "The cache loads each value the first time a key is requested."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python test-code identifiers",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: flagged broad (1.8% of tokens >0.1 max); top examples are Python identifiers in tests/classes plus a job-posting ' Position'. Probe: a setUp/assert_called_once_with snippet 0.48, cooking prose 0.01."
+}
