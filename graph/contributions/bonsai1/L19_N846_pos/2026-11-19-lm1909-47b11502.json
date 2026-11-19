@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-47b11502",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N846+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:58:26+00:00",
+ "recipe": {
+  "toolchain_commit": "c6c5a6d5b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N846_pos/2026-11-19-lm1909-47b11502.tests.json"
+ },
+ "label": "a numeric slot in a row of code or a table that repeats the layout of the preceding row or bracket group (the digit/comma where the pattern recurs: '[0, 15], [⟦0⟧, 15]', '||65 W||6⟦5⟧ W|')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N846_pos/2026-11-19-lm1909-47b11502.tests.json",
+   "prereg_commit": "c6c5a6d5b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.215,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.652,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.233,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.333,
+     "peak": "+"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.213,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.554,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.178,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.06,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " against"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.063,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.224,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c6c5a6d5b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "repeated numeric slot in rows",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Weak pole (max 8.8). Probes: 'plt.plot([0, 15], [0, 15] …' twice 0.65, spec-table rows 0.44, tuple list 0.34, repeated loop body 0.25; but a second table 0.17, three set_xlim lines 0.12, one-line tuple list 0.19; prose with the same numbers 0.06, one-line code 0.05. Fire items are multi-line passages.",
+ "selection": "random draw"
+}

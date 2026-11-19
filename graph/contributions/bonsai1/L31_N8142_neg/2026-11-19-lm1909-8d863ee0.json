@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-8d863ee0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N8142-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:57:31+00:00",
+ "recipe": {
+  "toolchain_commit": "c6c5a6d5b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N8142_neg/2026-11-19-lm1909-8d863ee0.tests.json"
+ },
+ "label": "the token ' pro' (lowercase) as its own piece: Latin 'pro bono / pro rata / pro forma', 'pro|strate', 'a pro at'; not ' Pro', 'professional' or 'pros'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N8142_neg/2026-11-19-lm1909-8d863ee0.tests.json",
+   "prereg_commit": "c6c5a6d5b",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.335,
+     "peak": " pro"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.263,
+     "peak": " pro"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.666,
+     "peak": " pro"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.625,
+     "peak": " pro"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.497,
+     "peak": " pro"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.449,
+     "peak": " pro"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.095,
+     "peak": " pro"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.589,
+     "peak": " pro"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " chapel"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " cases"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.034,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " bowed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " supplier"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.032,
+     "peak": " pros"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.473,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c6c5a6d5b",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token ' pro'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Probes: prostrate 0.65, prostration 0.65, pro bono 0.45, pro rata 0.40, 'a pro at' 0.37, pro-democracy 0.30; 'MacBook Pro', 'professional', 'pros and cons' ~0. The card's other top examples (a digit after '(' in unit conversions, e.g. '(⟦3⟧35 km') did not reproduce in probes (<0.09), so the token label covers only part of the pole.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " pro"
+  ]
+ }
+}
