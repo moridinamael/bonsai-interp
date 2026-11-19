@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ae33f908",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6891-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:36+00:00",
+ "recipe": {
+  "toolchain_commit": "e4fd09168",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6891_neg/2026-11-19-lm1909-ae33f908.tests.json"
+ },
+ "label": "a word-piece inside a non-English word for terrorism or terrorist (Russian 'тер|рорист', Arabic 'إ|رهاب', Japanese 'テ|ロ', Chinese '反|恐'); the English word ' terrorist' does not fire it",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6891_neg/2026-11-19-lm1909-ae33f908.tests.json",
+   "prereg_commit": "e4fd09168",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.5,
+     "peak": " тер"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.215,
+     "peak": " тер"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.315,
+     "peak": " إ"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.087,
+     "peak": " ت"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.105,
+     "peak": "أ"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.736,
+     "peak": "ロ"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.589,
+     "peak": "ロ"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.167,
+     "peak": " тер"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.059,
+     "peak": "ван"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.233,
+     "peak": " о"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.223,
+     "peak": " س"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.076,
+     "peak": "حة"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.267,
+     "peak": "きた"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.192,
+     "peak": "大"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.168,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " terrorism"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.952,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4fd09168",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "non-English 'terror' word-piece",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: top examples are the first piece of terror words in Russian, Arabic, Chinese and Japanese; the output direction acts on the English terror tokens. Probes: Arabic 0.84, Japanese 0.81, Russian 0.58, Chinese 0.31, English ' terrorist' 0.04, Russian robbery 0.13.",
+ "selection": "random draw"
+}
