@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5dbee6ea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N10725-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:05+00:00",
+ "recipe": {
+  "toolchain_commit": "c4c2b6f82",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N10725_neg/2026-11-19-lm1909-5dbee6ea.tests.json"
+ },
+ "label": "The noun that closes a pointer to the present text or the point under discussion: 'this⟦ article⟧', 'this⟦ topic⟧', 'this⟦ subject⟧', 'this⟦ claim⟧', 'this blog⟦ post⟧', and 'in⟦ place⟧' after a framework has been set up. The same nouns as ordinary objects (an article cut from a paper, a fence post) stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N10725_neg/2026-11-19-lm1909-5dbee6ea.tests.json",
+   "prereg_commit": "c4c2b6f82",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.269,
+     "peak": " article"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.444,
+     "peak": " topic"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.424,
+     "peak": " subject"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.429,
+     "peak": " claim"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.393,
+     "peak": " place"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.473,
+     "peak": " topic"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.096,
+     "peak": " article"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.477,
+     "peak": " subject"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " folded"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " claim"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " set"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.081,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " this"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.426,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c4c2b6f82",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'this article / topic / claim'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' claim' x4, ' article' x2, ' topic' x2, ' suggesting' x2, ' discussion' x2, ' place' x1. Probes: 'this subject' 0.51, 'in place' 0.49, 'this article' 0.48, 'this topic' 0.48, 'this claim' 0.31-0.43, 'in hand' 0.30, 'this chapter' 0.24, 'this section' 0.21; weaker for 'this essay' 0.16, 'this issue' 0.11; 'the article' (newspaper) 0.03, 'the essay' 0.05, 'this house … this car' 0.03, fence 'post' 0.02. Moderate activations throughout, so the median may sit close to the 0.20 bar. The + pole peaks on sentence boundaries in descriptive reports (',' '.' ' There'), which does not look like the other side of this distinction.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-13bedc1d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1596-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:48+00:00",
+ "recipe": {
+  "toolchain_commit": "c4c2b6f82",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N1596_neg/2026-11-19-lm1909-13bedc1d.tests.json"
+ },
+ "label": "Dense early-layer unit with no single trigger (14.5% of tokens reach a tenth of its small max, all in the gate-closed leak regime). Best guess at what lifts it most: the tokens ' version' and ' pharmac' (and Arabic ' الإسلامية').",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N1596_neg/2026-11-19-lm1909-13bedc1d.tests.json",
+   "prereg_commit": "c4c2b6f82",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.466,
+     "peak": " version"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.229,
+     "peak": " town"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.54,
+     "peak": " version"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.14,
+     "peak": " pharmacist"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.526,
+     "peak": " version"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.432,
+     "peak": " pharmac"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.49,
+     "peak": " version"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.191,
+     "peak": " night"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.074,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.213,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.093,
+     "peak": " updated"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.313,
+     "peak": " teacher"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.194,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.183,
+     "peak": " round"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.106,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.21,
+     "peak": " night"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.449,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c4c2b6f82",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; ' version' / ' pharmac'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags the pole dense and gate-closed (max only 0.21). Top tokens: ' الإسلامية' x5, 'ث' x4, ' version' x3, 'اء' x3, ' pharmac' x1. Probes: ' pharmac' 0.67, ' version' 0.69, ' الإسلامية' 0.69, and an unrelated sentence still 0.19. This test records the density honestly; a fail is expected whenever ordinary tokens in the near misses drift past 0.30.",
+ "selection": "random draw"
+}

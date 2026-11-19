@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2442b9eb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N10341+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:00+00:00",
+ "recipe": {
+  "toolchain_commit": "c4c2b6f82",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N10341_pos/2026-11-19-lm1909-2442b9eb.tests.json"
+ },
+ "label": "' broke' / ' breaking' / ' break' in the outbreak sense: a war, fire, fight or panic that 'breaks out' or 'breaks loose'. Other senses of break (a bone, a record, a window, 'broke down', 'broke up') stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N10341_pos/2026-11-19-lm1909-2442b9eb.tests.json",
+   "prereg_commit": "c4c2b6f82",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.895,
+     "peak": " broke"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.601,
+     "peak": " broke"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.954,
+     "peak": " broke"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.149,
+     "peak": " broke"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.689,
+     "peak": " breaking"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.839,
+     "peak": " broke"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.666,
+     "peak": " break"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.845,
+     "peak": " broke"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.06,
+     "peak": " broke"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": " broke"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.07,
+     "peak": " broke"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " reporters"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.061,
+     "peak": " broke"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " broke"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " would"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " shelf"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.842,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c4c2b6f82",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'broke out' (outbreak sense)",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Card: ' broke' x15 of top 32, all 'broke out' / 'broke loose'; output promotes break/broke/erupt/burst. Probes: 'war broke out' 0.90, 'fire broke out' 0.85, 'all hell broke loose' 0.95, 'breaking out' 0.93; 'broke his wrist' 0.04, 'broke the record' 0.08, 'broke down' 0.06, 'broke into' 0.14, 'broke up' 0.06. The pole also fires weakly before the verb when an outbreak is coming ('A scuffle started' 0.30 on 'uffle', 'erupted' 0.22), so it reads as an 'outbreak' feature that peaks on break.",
+ "selection": "random draw"
+}

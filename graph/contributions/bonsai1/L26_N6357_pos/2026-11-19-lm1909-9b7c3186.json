@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9b7c3186",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N6357+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:21+00:00",
+ "recipe": {
+  "toolchain_commit": "c4c2b6f82",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N6357_pos/2026-11-19-lm1909-9b7c3186.tests.json"
+ },
+ "label": "Word-initial 'Is-' that begins a name or a longer word: ' Is' as a piece (Isabella, Isadora, Isenberg, Isfahan), ' Isaac', ' isolate' / ' isolated'. The verb 'is' stays quiet, and so do other names.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N6357_pos/2026-11-19-lm1909-9b7c3186.tests.json",
+   "prereg_commit": "c4c2b6f82",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.743,
+     "peak": " Isaac"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.544,
+     "peak": " Is"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.773,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.423,
+     "peak": " Isaac"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.689,
+     "peak": " Is"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.56,
+     "peak": " Is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.38,
+     "peak": " isolated"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.632,
+     "peak": " Is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": " Sundays"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " well"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.0,
+     "peak": " sheep"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.272,
+     "peak": " island"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.059,
+     "peak": " off"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.115,
+     "peak": " Israel"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.596,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c4c2b6f82",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word-initial 'Is-' (Isaac, Isabelle)",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' Is' x10, 'сл' x5 (Russian Исл-: Исламский, исландский), 'iso' x3, ' Isaac' x2; output promotes 'olated', 'olation', 'abella'. Probes: Isaac 0.68, Isabelle 0.65, Isenberg 0.62, Isadora 0.60, Isfahan 0.70, isolate 0.44, isolation 0.36, Islamic 0.30; verb 'is' 0.02, Israel 0.10, island 0.18, Eisenberg 0.02. Sentence-initial question 'Is it…' scored 0.36, so capital 'Is' leaks before the model knows it is the verb. The - pole peaks on mid-word 'is' / 'el' / 'en' inside surnames (Meisler, Waselkov): the same spelling piece when it is NOT word-initial.",
+ "selection": "random draw"
+}
