@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-de1aad2b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N1413-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:23:13+00:00",
+ "recipe": {
+  "toolchain_commit": "bc73a6226",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N1413_neg/2026-11-20-lm1909-de1aad2b.tests.json"
+ },
+ "label": "cold and storage contexts where 'freeze', 'frozen' or 'frost' is the likely next word (fires on the word before it)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N1413_neg/2026-11-20-lm1909-de1aad2b.tests.json",
+   "prereg_commit": "bc73a6226",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.422,
+     "peak": " spring"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.454,
+     "peak": " easily"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.99,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.184,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.719,
+     "peak": " never"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.182,
+     "peak": " overnight"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.799,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.509,
+     "peak": " first"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.195,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.126,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": " refriger"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.173,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.126,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " overnight"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.517,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.178,
+     "peak": " before"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.482,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bc73a6226",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicts freeze/frost",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: peaks on 'do not'(freeze), 'the last'(frost), '(free'zing); + pole suppresses freeze/frost; probe: 'last frost' 0.63, 'do not freeze' 0.50 but 'do not shake' also 0.48",
+ "selection": "random draw"
+}
