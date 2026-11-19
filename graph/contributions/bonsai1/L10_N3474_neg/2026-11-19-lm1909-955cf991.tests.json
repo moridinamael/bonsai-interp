@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-955cf991",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N3474-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:47:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N3474",
+   "pole": "-",
+   "label": "In code, a later word-piece of a compound variable name at the point it is assigned (rect_sc|atter =, last_failed|_position =, orig|_serv|_num =)",
+   "fire": [
+    "    bottom_h = bottom + height + 0.02\n    rect_scatter = [left, bottom, width, height]\n    rect_histy = [left_h, bottom, 0.2, height]",
+    "    for token in tokens:\n        if token is None:\n            last_failed_position = cursor\n            break",
+    "    orig_serv = [x['num'] for x in update['entries'] if x['uuid'] == net_uuid]\n    orig_serv_num = orig_serv[0]\n    new_serv_num = orig_serv_num + 1",
+    "    water = mb.load('water.mol2')\n    filled = mb.fill_box(water, n_compounds=100, density=997)\n    solvated = mb.solvate(filled, water)",
+    "    while queue:\n        item = queue.pop()\n        if item.failed:\n            first_failed_position = item.index\n            last_scanned_offset = item.offset",
+    "    left, width = 0.1, 0.65\n    rect_scatter = [left, 0.1, width, 0.65]\n    ax_scatter = plt.axes(rect_scatter)",
+    "    measured = sensor.read()\n    measured_angle = measured[0]\n    measured_position = measured[1]\n    filtered_position = smooth(measured_position)",
+    "    entries = load(path)\n    orig_serv_list = entries['services']\n    filled_serv_list = pad(orig_serv_list)"
+   ],
+   "quiet": [
+    "    i = 0\n    j = 1\n    k = i + j\n    print(k)",
+    "    for t in ts:\n        if t is None:\n            n = c\n            break",
+    "    x = [1, 2, 3]\n    y = x[0]\n    z = y + 1",
+    "The scatter plot was placed to the left of the two histograms.",
+    "    while q:\n        e = q.pop()\n        if e:\n            p = e\n            o = 0",
+    "The last failed position was written down by the operator before the restart.",
+    "    m = s.read()\n    a = m[0]\n    b = m[1]\n    f = g(b)",
+    "The original service number was increased by one after the update."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece of assigned compound name",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: six different tokens in the top six, all inside identifiers on the left of an assignment in Python. Probe: rect_scatter 0.45, fill_box/n_compounds 0.30, last_failed_position 0.27, camelCase JS 0.24, orig_count/max_retry_delay 0.11, single-letter variables 0.04, prose 0.03. Modest activations: may miss the median."
+}
