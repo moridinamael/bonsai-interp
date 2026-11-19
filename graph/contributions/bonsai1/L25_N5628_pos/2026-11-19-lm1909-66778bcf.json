@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-66778bcf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N5628+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:03:29+00:00",
+ "recipe": {
+  "toolchain_commit": "ca7c4de55",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N5628_pos/2026-11-19-lm1909-66778bcf.tests.json"
+ },
+ "label": "the comma directly after a conjunction or relative pronoun that suspends the clause for an inserted phrase ('and, to remove all doubt, …', 'who, having been …'), in long periodic sentences; short modern sentences with the same comma do not fire",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N5628_pos/2026-11-19-lm1909-66778bcf.tests.json",
+   "prereg_commit": "ca7c4de55",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.721,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.244,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.707,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.55,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.625,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.537,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.277,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.007,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.109,
+     "peak": " had"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.058,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.071,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.077,
+     "peak": " set"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.047,
+     "peak": " had"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.127,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.051,
+     "peak": " she"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.588,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ca7c4de55",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "suspending comma after and/who",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: long archaic sentences with 'and,' / 'who,' 0.87-1.01, German 'und -' 0.90, French 'sont peut-être' 0.47; the same comma in short modern sentences 0.03-0.06; long archaic sentence without it 0.12.",
+ "selection": "random draw"
+}
