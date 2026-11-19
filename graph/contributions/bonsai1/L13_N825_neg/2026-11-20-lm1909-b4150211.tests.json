@@ -1,0 +1,52 @@
+{
+ "contribution": "2026-11-20-lm1909-b4150211",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N825-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:08:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N825",
+   "pole": "-",
+   "label": "the top-level 'class' keyword opening a Python module's body after the import block and blank lines",
+   "fire": [
+    "import os\nimport sys\n\n\nclass Config(object):\n    debug = False\n",
+    "import json\nfrom pathlib import Path\n\n\nclass Loader:\n    def __init__(self, path):\n        self.path = Path(path)\n",
+    "import unittest\nfrom app.models import User\n\n\nclass UserTest(unittest.TestCase):\n    def test_name(self):\n        pass\n",
+    "from django.db import models\n\n\nclass Article(models.Model):\n    title = models.CharField(max_length=200)\n",
+    "import logging\nimport time\n\nlog = logging.getLogger(__name__)\n\n\nclass Timer:\n    pass\n",
+    "import abc\n\n\nclass Shape(abc.ABC):\n    @abc.abstractmethod\n    def area(self):\n        ...\n",
+    "from collections import deque\n\n\nclass Queue(object):\n    def __init__(self):\n        self.items = deque()\n",
+    "import numpy as np\nimport torch\n\n\nclass Encoder(torch.nn.Module):\n    pass\n"
+   ],
+   "quiet": [
+    "import os\nimport sys\nDEBUG = False\nPORT = 8080\n",
+    "import json\nfrom pathlib import Path\npath = Path('data.json')\nrows = json.loads(path.read_text())\n",
+    "The class met every Tuesday after lunch to review the unit tests.",
+    "from django.db import models\nfrom django.conf import settings\nMAX_TITLE = 200\n",
+    "import logging\nimport time\nlog = logging.getLogger(__name__)\nstart = time.time()\n",
+    "Our class wrote a short program that draws shapes and prints their area.",
+    "from collections import deque\nitems = deque()\nitems.append(1)\n",
+    "import numpy as np\nimport torch\nx = torch.zeros(3)\ny = np.ones(3)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "module-level class after imports",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'class' x13 of the top 32, mostly after two blank lines that follow imports; the triple newline and a top-level decorator also fire.",
+ "trigger": {
+  "tokens": [
+   "class"
+  ]
+ }
+}
