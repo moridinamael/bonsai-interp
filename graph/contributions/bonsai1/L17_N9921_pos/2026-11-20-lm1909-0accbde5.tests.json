@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-0accbde5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N9921+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:11:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N9921",
+   "pole": "+",
+   "label": "the string method '.replace' in code (e.g. 's = s.replace(old, new)')",
+   "fire": [
+    "def clean(text):\n    text = text.replace('\\t', ' ')\n    return text.strip()",
+    "for key, val in subs.items():\n    template = template.replace(key, val)",
+    "    name = filename.replace('.txt', '.csv')\n    print(name)",
+    "line = raw_line.rstrip('\\n')\n    line = line.replace(',', ';')",
+    "    path = path.replace('\\\\', '/')\n    return path",
+    "    html = html.replace('<br>', '\\n')\n    soup = parse(html)",
+    "safe = user_input.replace('<', '&lt;').replace('>', '&gt;')",
+    "    slug = title.lower().replace(' ', '-')\n    return slug"
+   ],
+   "quiet": [
+    "def clean(text):\n    text = text.strip('\\t')\n    return text.lower()",
+    "for key, val in subs.items():\n    template = template.format(key=val)",
+    "    name = filename.split('.')[0]\n    print(name)",
+    "line = raw_line.rstrip('\\n')\n    fields = line.split(',')",
+    "    path = path.strip('/')\n    return path",
+    "    html = html.strip()\n    soup = parse(html)",
+    "safe = user_input.encode('utf-8').decode('ascii', 'ignore')",
+    "    slug = title.lower().strip()\n    return slug"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code '.replace' call",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: '.replace' x6 + 'replace' x1 in the top 32, all Python-style string replacement. Near misses are the same code lines with other string methods (.strip, .split, .lower, .join)."
+}
