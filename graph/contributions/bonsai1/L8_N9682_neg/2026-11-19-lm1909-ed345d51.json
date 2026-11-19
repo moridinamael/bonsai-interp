@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ed345d51",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N9682-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:08+00:00",
+ "recipe": {
+  "toolchain_commit": "a12a8c33e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N9682_neg/2026-11-19-lm1909-ed345d51.tests.json"
+ },
+ "label": "an approximating or scaling word right before a number in a magnitude expression (just over/under N, roughly N, of about N, 2 to the Nth power)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N9682_neg/2026-11-19-lm1909-ed345d51.tests.json",
+   "prereg_commit": "a12a8c33e",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.466,
+     "peak": " under"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.58,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.084,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.13,
+     "peak": " roughly"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.914,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.384,
+     "peak": " about"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.442,
+     "peak": " than"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.221,
+     "peak": " under"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.066,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.289,
+     "peak": " than"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " search"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": "That"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " flight"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.08,
+     "peak": "flows"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.066,
+     "peak": " column"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.413,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12a8c33e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "approximator before a number",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (1.4% of tokens reach 0.1 of max; gate-closed regime 64%), so near misses may fire weakly. Top examples: 'factor ⟦of⟧ two', 'more ⟦than⟧', 'just ⟦over⟧ five hours', '⟦2⟧ to the 128th power'. Probes 0.24-0.63 on such phrases ('factor of ten' only 0.11), 0.03-0.13 without the number.",
+ "selection": "random draw"
+}

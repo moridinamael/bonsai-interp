@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-203368d6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N3171+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:36+00:00",
+ "recipe": {
+  "toolchain_commit": "a12a8c33e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N3171_pos/2026-11-19-lm1909-203368d6.tests.json"
+ },
+ "label": "something coming from a different place or group than the one in focus: 'from another/other/neighbouring/nearby <place or group>'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N3171_pos/2026-11-19-lm1909-203368d6.tests.json",
+   "prereg_commit": "a12a8c33e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.743,
+     "peak": " another"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.429,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.377,
+     "peak": " neighbouring"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.322,
+     "peak": " other"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.823,
+     "peak": " university"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.673,
+     "peak": " other"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.435,
+     "peak": " towns"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.481,
+     "peak": " neighbouring"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " trained"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " case"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " gather"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " must"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " lets"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " debris"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " recipe"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.458,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12a8c33e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "from another place",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' in', ' from', ' Nadu', ' систем', ' to' with no single token: 'from Emmanuel Church in Newport', 'come over from another school', 'from neighbouring areas of Tamil Nadu', 'из других игровых систем'. Probes: 'from another hospital' 0.76, 'from neighbouring districts' 0.48, 'from other game systems' 0.46, 'from a church in the next town' 0.33; 'with other organizations' 0.17, same sentences without the outside source < 0.06.",
+ "selection": "random draw"
+}

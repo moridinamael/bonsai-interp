@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-41e082b9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N9033-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:48+00:00",
+ "recipe": {
+  "toolchain_commit": "a12a8c33e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N9033_neg/2026-11-19-lm1909-41e082b9.tests.json"
+ },
+ "label": "the word just before an expected meal or menu noun: 'a healthy/nutritious ⟦⟧ lunch', 'packed ⟦⟧ lunch', 'drop-down/context ⟦⟧ menu', German 'auf dem ⟦⟧ Brot'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N9033_neg/2026-11-19-lm1909-41e082b9.tests.json",
+   "prereg_commit": "a12a8c33e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.403,
+     "peak": " healthy"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.552,
+     "peak": " nutritious"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.615,
+     "peak": " packed"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.393,
+     "peak": " healthy"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.252,
+     "peak": "-down"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.47,
+     "peak": " context"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.374,
+     "peak": "se"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.689,
+     "peak": " healthy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.096,
+     "peak": " clean"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.045,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.484,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.172,
+     "peak": " good"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.063,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " delete"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.184,
+     "peak": " am"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.151,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.436,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12a8c33e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before lunch / menu",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: fires on the token before lunch(es), 메뉴 (menu), Brot, приёме пищи. Probes: 'a healthy lunch' 0.78, 'nutritious lunch' 0.73, 'dem Brot' 0.82, 'context menu' 0.47; but 'packs a small bag' also 0.46, so the packing frame may contribute. A list-like label; the shared pattern looks like 'next word is lunch/menu/bread'.",
+ "selection": "random draw"
+}
