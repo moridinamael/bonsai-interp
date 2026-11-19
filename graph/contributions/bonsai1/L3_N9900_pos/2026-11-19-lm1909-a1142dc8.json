@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a1142dc8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N9900+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:12+00:00",
+ "recipe": {
+  "toolchain_commit": "f430414ec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N9900_pos/2026-11-19-lm1909-a1142dc8.tests.json"
+ },
+ "label": "dense unit (about 70% of tokens reach 0.1 of the pole's max, all in the gate-closed echo regime); best guess at its strongest tokens: ' missile', ' furnace', '-idal'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N9900_pos/2026-11-19-lm1909-a1142dc8.tests.json",
+   "prereg_commit": "f430414ec",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 8,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.964,
+     "peak": " missile"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.915,
+     "peak": " furnace"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.022,
+     "peak": " missile"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.985,
+     "peak": " furnace"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.678,
+     "peak": "idal"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.955,
+     "peak": " missile"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.005,
+     "peak": " furnace"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.049,
+     "peak": " missile"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.634,
+     "peak": " sailed"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.588,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.616,
+     "peak": " camp"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.501,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.424,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.519,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.452,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.516,
+     "peak": "adar"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.974,
+    "near_misses_at_0.3": 8
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f430414ec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; ' missile' / ' furnace' on top",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole dense. Probes: missile / furnace / Insecticidal sentences 0.97-1.05 of max, unrelated sentences 0.36-0.41, so near misses are expected to pass 0.30 and the test to fail; it records the density.",
+ "selection": "random draw"
+}

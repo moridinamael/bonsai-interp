@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-092f7328",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N11972+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:16+00:00",
+ "recipe": {
+  "toolchain_commit": "f430414ec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N11972_pos/2026-11-19-lm1909-092f7328.tests.json"
+ },
+ "label": "pronoun or possessive that points back to a dependent in someone's care (a child, pupil, pet, patient) inside advice to the caregiver: 'decisions concerning their education', 'see what you can do to make them better'; weak, best guess only",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N11972_pos/2026-11-19-lm1909-092f7328.tests.json",
+   "prereg_commit": "f430414ec",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.11,
+     "peak": " about"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.402,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.06,
+     "peak": " s"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.133,
+     "peak": " dog"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.138,
+     "peak": " wake"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.173,
+     "peak": " out"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.387,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.161,
+     "peak": " rabbits"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": " spot"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.068,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " against"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.039,
+     "peak": " arrived"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.15,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f430414ec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dependent-in-care reference (weak guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "No shared token in the top examples. Short probes of this guess stayed under 0.08 of max; longer passages reached 0.14-0.30. Expected to miss the 0.20 median or to fail.",
+ "selection": "random draw"
+}

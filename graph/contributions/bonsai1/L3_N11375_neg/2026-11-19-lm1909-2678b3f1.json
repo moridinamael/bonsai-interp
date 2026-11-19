@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2678b3f1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N11375-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:17+00:00",
+ "recipe": {
+  "toolchain_commit": "f430414ec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N11375_neg/2026-11-19-lm1909-2678b3f1.tests.json"
+ },
+ "label": "dense unit (11% of tokens reach 0.1 of the pole's max, all in the gate-closed leak regime); best guess at what drives it: multi-character Chinese verb / adverb tokens such as 忍不住, 透过, 接受, 享用, 激动",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N11375_neg/2026-11-19-lm1909-2678b3f1.tests.json",
+   "prereg_commit": "f430414ec",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.647,
+     "peak": "忍不住"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.812,
+     "peak": "透过"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.602,
+     "peak": "终于"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.712,
+     "peak": "享用"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.791,
+     "peak": "激动"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.739,
+     "peak": "透过"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.597,
+     "peak": "忍不住"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.54,
+     "peak": "记者"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.341,
+     "peak": "公园"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.249,
+     "peak": "三天"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.365,
+     "peak": "工人"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.329,
+     "peak": "人们"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.264,
+     "peak": "山上"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.396,
+     "peak": "老师"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.235,
+     "peak": "有一"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.267,
+     "peak": "队长"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.679,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f430414ec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; Chinese multi-char verb tokens",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole dense. Probes: sentences with these tokens 0.57-0.75 of max, but plain Chinese sentences 0.09-0.42 and an English one 0.19, so the test may fail; it records the density.",
+ "selection": "random draw"
+}
