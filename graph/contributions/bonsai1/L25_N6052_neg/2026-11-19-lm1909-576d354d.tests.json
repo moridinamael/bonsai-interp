@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-576d354d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N6052-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N6052",
+   "pole": "-",
+   "label": "dividing a quantity into a number of equal parts or chunks (\"split n into m chunks\", \"the number of ... per\"), strongest in code docstrings",
+   "fire": [
+    "def split_rows(rows, k):\n    \"\"\"Split rows into k batches.\"\"\"\n    size = len(rows) // k\n    return size",
+    "def share(total, people):\n    \"\"\"Divide total into equal shares for people.\"\"\"\n    each = total // people\n    return each",
+    "def partition(data, n):\n    \"\"\"Break data into n pieces of the same length.\"\"\"\n    step = len(data) // n\n    return step",
+    "def pages(count, per_page):\n    \"\"\"Divide count records into pages.\"\"\"\n    num = count // per_page\n    return num",
+    "def slices(seq, parts):\n    \"\"\"Cut seq into parts segments.\"\"\"\n    width = len(seq) // parts\n    return width",
+    "def buckets(values, m):\n    \"\"\"Distribute values into m buckets.\"\"\"\n    per_bucket = len(values) // m\n    return per_bucket",
+    "def tiles(area, tile):\n    \"\"\"How many tiles fit into area.\"\"\"\n    count = area // tile\n    return count",
+    "def groups(students, g):\n    \"\"\"Split students into g teams.\"\"\"\n    team_size = len(students) // g\n    return team_size"
+   ],
+   "quiet": [
+    "def join_rows(rows, sep):\n    \"\"\"Join rows into one string.\"\"\"\n    text = sep.join(rows)\n    return text",
+    "def greet(name, title):\n    \"\"\"Turn name into a greeting.\"\"\"\n    line = title + ' ' + name\n    return line",
+    "def load(path, mode):\n    \"\"\"Read the file into memory.\"\"\"\n    data = open(path, mode).read()\n    return data",
+    "def newest(items, key):\n    \"\"\"Sort items into newest-first order.\"\"\"\n    out = sorted(items, key=key)\n    return out",
+    "def encode(text, table):\n    \"\"\"Translate text into codes.\"\"\"\n    codes = [table[c] for c in text]\n    return codes",
+    "def log_in(user, password):\n    \"\"\"Log the user into the site.\"\"\"\n    ok = check(user, password)\n    return ok",
+    "def insert(tree, node):\n    \"\"\"Put node into tree.\"\"\"\n    tree.add(node)\n    return tree",
+    "def merge(left, right):\n    \"\"\"Merge two lists into one.\"\"\"\n    both = left + right\n    return both"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "divide into equal parts",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Top examples are division/partition contexts in prose and code (fill the space without gaps, divide n to m chunks, number of, divided into blocks). Probes: code docstring 'Split items into k parts' 1.01; prose division sentences only 0.15-0.40, so the test uses code-shaped items. Near misses keep 'into' and the def/docstring shape without division."
+}

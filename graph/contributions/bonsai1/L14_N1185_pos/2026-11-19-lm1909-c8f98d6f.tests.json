@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-c8f98d6f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N1185+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N1185",
+   "pole": "+",
+   "label": "dense unit; best guess: the line break that ends a short forum-style post or metadata line",
+   "fire": [
+    "Thanks so much for posting this, it really helped me out.\nGlad to hear it worked for you!\n",
+    "Posted: 3rd June 2011 18:45\nLocation: Ireland\nReplies: 12\n",
+    "Has anyone tried the new version yet?\nYes, and it runs much faster on my old laptop.\n",
+    "Love your photos, the colours are stunning!\nThank you, that means a lot.\n",
+    "Joined: 14.feb.2009 | 09:12\nPosts: 388\nStatus: offline\n",
+    "I will give this recipe a go at the weekend.\nLet us know how it turns out!\n",
+    "Sorry for the late reply, I was away all week.\nNo worries, hope you had a good trip.\n",
+    "Great write-up, bookmarked for later.\nCheers, more to come soon.\n"
+   ],
+   "quiet": [
+    "Thanks so much for posting this, because it really helped me when I was stuck on the same problem",
+    "The post was written in Ireland on the third of June and it received twelve replies from readers",
+    "Nobody had tried the new version yet, although it was said to run much faster on old laptops",
+    "She loved the photos and told the photographer that the colours were stunning and very natural",
+    "He joined the forum in February of 2009 and has since written several hundred helpful posts",
+    "I will give this recipe a go at the weekend if I can find fresh basil at the market",
+    "He apologised for the late reply and explained that he had been away for the whole week",
+    "It was a great write-up and she bookmarked it so that she could read it again later"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; line-ending newline",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags the pole dense (33% of tokens reach 0.1 of max) with a gate-closed regime (-x- echo 100%); max is only 2.75. Top 32 peak on newlines and line-final punctuation in forum posts and metadata. Probes: newline-terminated posts 0.22-0.29, but a plain sentence with no newline 0.19, so the test is expected to fail; it records the density."
+}
