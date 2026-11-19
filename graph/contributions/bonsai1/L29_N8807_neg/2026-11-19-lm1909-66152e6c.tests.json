@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-66152e6c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8807-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N8807",
+   "pole": "-",
+   "label": "the preposition of a verb/adjective + preposition phrase at the point where an object pronoun (it / them) for an already-mentioned thing is expected next ('cling to ⟨them⟩', 'got away with ⟨it⟩'); the same preposition before a fresh noun phrase stays quiet",
+   "fire": [
+    "The contract is long, but you should read it before you agree to it.",
+    "These customs are ancient, and the islanders remain deeply attached to them.",
+    "She made an awkward joke and then felt silly about it.",
+    "The children found some matches and started playing with them.",
+    "That bridge is unsafe, so nobody should walk under it.",
+    "Rumours spread quickly, though there was little truth to them.",
+    "He knew the plan was risky but went ahead with it.",
+    "The old rules were unfair, yet most workers simply put up with them."
+   ],
+   "quiet": [
+    "The islanders remain deeply attached to their ancient customs and songs.",
+    "She felt silly about the awkward joke she had made.",
+    "The children started playing with some matches they had found.",
+    "Nobody should walk under that unsafe bridge after dark.",
+    "The contract is long, but you should read it before you sign.",
+    "He knew the plan was risky but went ahead anyway.",
+    "Most workers simply put up with the old unfair rules.",
+    "There was little truth to the rumours that spread so quickly."
+   ]
+  }
+ ],
+ "predictions": "6/8 fire; 1-2 near misses may leak",
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "preposition awaiting it/them",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on to / about / in / under / with, each followed by it or them; the unit's output direction concerns ' it', ' them', ' him'. Probes: 'cling to [it]' after an antecedent 0.57, 'got away with' 0.64, 'embarrassed about' 0.34, 'abide by' 0.21; 'cling to the old tradition' with no antecedent 0.03. The unit fires on the preposition before the next word is seen, so 'got away with murder' fired equally (0.64): the near misses here remove the antecedent rather than only the pronoun."
+}
