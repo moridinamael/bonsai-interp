@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e4c15bce",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N5374+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:05+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N5374_pos/2026-11-19-lm1909-e4c15bce.tests.json"
+ },
+ "label": "the number (or 'sq') just before the second unit of a paired measurement, where the counterpart unit is due: '9 am to 6| pm', '8 km / 5| mi', '120 sq km (46 sq| mi)'; the output direction promotes ' pm'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N5374_pos/2026-11-19-lm1909-e4c15bce.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.63,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.339,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.634,
+     "peak": " sq"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.641,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.38,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.683,
+     "peak": " sq"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.502,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.589,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.078,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " village"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.254,
+     "peak": " sq"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.068,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " station"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "4"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.609,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "number before paired pm / mi",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: digits and ' sq' right before ' mi' / ' pm' in km-mi and am-pm pairs, plus '_lb ... _ub' code pairs; output promotes ' pm', '_pm'. Probes: '9 am to 6 pm' 0.58, '8 km / 5 mi' 0.48, 'sq km (46 sq mi)' 0.58; a lone '6 pm' 0.11, lone '8 km' 0.002, plain counts 0.006. A lone 'Nov 14, 6 pm' is among the card's top examples, so the pairing is not strictly required.",
+ "selection": "random draw"
+}

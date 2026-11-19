@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-37a3375b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N2553+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:14+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N2553_pos/2026-11-19-lm1909-37a3375b.tests.json"
+ },
+ "label": "the repeated organisation noun in 'every X the company/firm/bakery ...': a definite second mention of a business just introduced, as subject of a relative clause",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N2553_pos/2026-11-19-lm1909-37a3375b.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.398,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.425,
+     "peak": " firm"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.167,
+     "peak": " ships"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.268,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.432,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.361,
+     "peak": " bakery"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.323,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.188,
+     "peak": " company"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": " She"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " oak"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " hand"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.038,
+     "peak": " signs"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " hand"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.044,
+     "peak": " book"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": " van"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.342,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "repeated 'the company' (2nd mention)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Weak pole (max 13.3) with a wide low band (0.81% above 0.1) and no dominant token: ' called' x4 ('what they called'), then second mentions of an earlier noun or identifier (' company', ' patents', '_name', 'opacities'). Probes: 'every home the company builds' 0.61, 'every loaf the bakery sells' 0.26, 'what they called' 0.03-0.21, 'these patents' 0.04, 'the coach is' 0.03, repeated code identifier 0.11. The label is narrow and low-confidence.",
+ "selection": "random draw"
+}

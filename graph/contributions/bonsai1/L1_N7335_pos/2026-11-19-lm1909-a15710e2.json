@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a15710e2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7335+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:35+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N7335_pos/2026-11-19-lm1909-a15710e2.tests.json"
+ },
+ "label": "an attributive quality adjective (certified, polished, raw, traditional) right after a possessive 'our'/'their'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N7335_pos/2026-11-19-lm1909-a15710e2.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.176,
+     "peak": " certified"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.9,
+     "peak": " polished"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.513,
+     "peak": " raw"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.008,
+     "peak": " recipes"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.335,
+     "peak": " certified"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.354,
+     "peak": " polished"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.011,
+     "peak": " weddings"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.136,
+     "peak": " raw"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": "For"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " floors"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " vegetables"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " recipes"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.024,
+     "peak": " crews"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": " rings"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " that"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.805,
+    "median_fire": 0.256,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "our/their + certified/raw/polished",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Weak pole (max 2.64) that the card flags as gate-closed (-x- echo 98% of the >0.1 band). Probes: 'our certified' 0.67, 'our polished' 0.60, 'their raw' 0.48, but also 'The emergence' 0.45 and 'uncompromising' 0.46 without a possessive; the same adjectives predicative or after 'the'/'Only' scored <0.04. The label covers only the possessive pattern; ' emergence' and 'ising' are known extra triggers not in the test. The - pole is the token ' emerging'.",
+ "selection": "random draw"
+}

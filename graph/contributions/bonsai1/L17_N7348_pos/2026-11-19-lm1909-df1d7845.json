@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-df1d7845",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N7348+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:59+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N7348_pos/2026-11-19-lm1909-df1d7845.tests.json"
+ },
+ "label": "best guess for a positional, mostly gate-closed pole: the comma closing a short sentence-initial linking phrase ('For this reason,', 'In fact,') early in a passage",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N7348_pos/2026-11-19-lm1909-df1d7845.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.312,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.5,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.316,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.433,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.051,
+     "peak": " lost"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.07,
+     "peak": " twenty"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.031,
+     "peak": "ents"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.084,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.089,
+     "peak": " harvest"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.115,
+     "peak": " now"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.063,
+     "peak": "Nobody"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.062,
+     "peak": " gave"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": " visitor"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.08,
+     "peak": " twenty"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.032,
+     "peak": "ents"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.077,
+     "peak": " was"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.672,
+    "median_fire": 0.198,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "comma after fronted linker",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags: positional (56% of top peaks within the first 16 tokens of the window) and gate-closed regime dominant (-x- echo 81%); 0.96% of tokens reach 0.1 of a small max (4.56). Top peaks: commas after short fronted phrases and in lists, plus code indentation. Probes: 'For this reason,' 0.44, 'In fact,' 0.34, 'As a result,' 0.59 as first words but 0.12 after a preceding sentence; list commas <=0.25. Recorded as dense / positional; the test is a best guess and may well fail.",
+ "selection": "random draw"
+}
