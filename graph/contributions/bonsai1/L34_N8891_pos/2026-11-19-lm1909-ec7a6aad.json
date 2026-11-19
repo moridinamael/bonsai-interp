@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ec7a6aad",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8891+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:16+00:00",
+ "recipe": {
+  "toolchain_commit": "27062bf33",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N8891_pos/2026-11-19-lm1909-ec7a6aad.tests.json"
+ },
+ "label": "the 'Al' / 'al' token that begins an alkali / alkaline / alkyl- word in chemistry text, or the slot just before a predicted 'Alkaline'; strongest for capitalised 'Alkaline' as in 'Acid-Alkaline'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N8891_pos/2026-11-19-lm1909-ec7a6aad.tests.json",
+   "prereg_commit": "27062bf33",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.941,
+     "peak": "-Al"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.451,
+     "peak": "-Al"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.63,
+     "peak": " Al"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.452,
+     "peak": " Al"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.433,
+     "peak": " al"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.394,
+     "peak": " al"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.337,
+     "peak": "AL"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.156,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " books"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " blood"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.08,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " during"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": " singer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " Al"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.442,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "27062bf33",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Al' of alkali / alkaline",
+ "unit_kind": "sparse feature",
+ "confidence": 0.4,
+ "notes": "Card: peaks ' al' x8, ' Al' x3, '_AL' x3, ' mildly' x2; the top example (Acid⟦-Al⟧kaline, 1032) is far above the rest (400-612); output direction promotes ' Al', 'Al', ' al'. Probes: 'Acid-Alkaline' 1.05, 'the Alkali metals ... the Alkaline earth metals' 0.65 (peak on ' the'), alkylation 0.34, (ALP) 0.30, alkanes 0.27, 'mildly alkaline' 0.10-0.16, '- Alcohols' 0.05; 'albums ... almost' 0.00, 'Al Gore' 0.06. Because the max is set by one outlier, lower-case alk- words may fall under 0.2.",
+ "selection": "random draw"
+}

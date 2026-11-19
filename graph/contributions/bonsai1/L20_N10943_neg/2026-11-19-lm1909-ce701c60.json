@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-ce701c60",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10943-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:41:49+00:00",
+ "recipe": {
+  "toolchain_commit": "27062bf33",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N10943_neg/2026-11-19-lm1909-ce701c60.tests.json"
+ },
+ "label": "negation or dismissal word inside a scornful, condemning judgement ('is not worth', 'have no place', 'won't get you anywhere'); neutral, factual negations stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N10943_neg/2026-11-19-lm1909-ce701c60.tests.json",
+   "prereg_commit": "27062bf33",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.523,
+     "peak": " worth"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.769,
+     "peak": " no"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.299,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.728,
+     "peak": " no"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.443,
+     "peak": " fit"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.175,
+     "peak": "'t"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.547,
+     "peak": " no"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.708,
+     "peak": " attention"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.047,
+     "peak": " students"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.042,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.065,
+     "peak": " open"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.085,
+     "peak": " fit"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " sweet"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.076,
+     "peak": " great"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.535,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "27062bf33",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "scornful negation",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (1.9% of tokens reach 0.1 of max). Top examples are moralising condemnations peaking on not / won't / no / worth. Probes: 'not worth the bread he eats' 0.62, 'have no place' 0.53, 'won't make the debt disappear' 0.36; 'should not handle money' only 0.10; neutral negations 0.00-0.02.",
+ "selection": "random draw"
+}

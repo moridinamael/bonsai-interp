@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-ef881e92",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N4665+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:09+00:00",
+ "recipe": {
+  "toolchain_commit": "27062bf33",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N4665_pos/2026-11-19-lm1909-ef881e92.tests.json"
+ },
+ "label": "East Asian text (Japanese / Chinese / Korean), peaking on characters inside compound words; a weak, broad unit (max 0.89) that also fires on some Romance word endings (' Internacional', 'idé|ale')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N4665_pos/2026-11-19-lm1909-ef881e92.tests.json",
+   "prereg_commit": "27062bf33",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.247,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.486,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.771,
+     "peak": "略"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.459,
+     "peak": "網路"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.021,
+     "peak": "在全国"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.089,
+     "peak": "這"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.077,
+     "peak": " 있습니다"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.023,
+     "peak": " 새로운"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " library"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.037,
+     "peak": " University"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": " security"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.03,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.007,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.055,
+     "peak": "oth"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.092,
+     "peak": "ани"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.789,
+    "median_fire": 0.168,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "27062bf33",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "CJK compound characters",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad (1.5% of tokens reach 0.1 of max). Top examples: Japanese 運⟦営拠⟧点, 著者⟦略⟧歴, Chinese 全球⟦網路⟧, Korean 예⟦외⟧, Arabic مسل⟦سل⟧, Spanish ' Internacional', French 'idé⟦ale⟧'. Probes: Japanese 0.38, Chinese 0.35, Korean 0.27, Arabic 0.20, 'idéale' 0.90, ' Internacional' 0.48-0.66; German 0.11, Russian 0.08, plain French 0.04, English 0.04-0.05 (all-caps 'APOSTLES' 0.44). The label covers the East Asian part only; it is not simply 'non-English'.",
+ "selection": "random draw"
+}
