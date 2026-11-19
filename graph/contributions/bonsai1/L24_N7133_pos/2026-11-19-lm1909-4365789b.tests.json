@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-4365789b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7133+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:38:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N7133",
+   "pole": "+",
+   "label": "The Chinese character 經/经 where the tokenizer leaves it as its own token (經|典, 经|受, 經|銷, 经|手) and the token 經過/经过; silent on merged tokens that contain it (经济, 经验, 经理, 已经, 經驗)",
+   "fire": [
+    "這部電影是八十年代的經典作品。",
+    "我們昨天經過了一個很大的公園。",
+    "这座老桥经受了多次洪水的考验。",
+    "我每天上班都要经过这条小街。",
+    "這家公司是日本品牌在台灣的正式經銷商。",
+    "酒店附近有許多經典景點值得一看。",
+    "这些文件都是他亲自经手办理的。",
+    "火車經過山谷的時候，大家都在拍照。"
+   ],
+   "quiet": [
+    "這部電影是八十年代的有名作品。",
+    "我們昨天去了一個很大的公園。",
+    "这座老桥挺过了多次洪水的考验。",
+    "这个城市的经济发展得很快。",
+    "這家公司是日本品牌在台灣的正式代理商。",
+    "我的老師有三十年的教學經驗。",
+    "这些文件都是他亲自签字办理的。",
+    "我们的经理已经下班回家了。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "token 經/经 (standalone)",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Tokenizer-dependent, as the spelling-unit tip warns. Probes: 经|受 1.06, 經|典 0.80, 經理 (split) 0.61, 经过 0.51, 經過 0.44; merged 经典 0.01, 已經 0.01, 经济发展 0.00, 經驗 0.01, 曾經|商 0.03."
+}
