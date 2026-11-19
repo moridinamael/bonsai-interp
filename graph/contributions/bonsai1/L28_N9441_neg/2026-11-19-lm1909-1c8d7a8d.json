@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1c8d7a8d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N9441-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:42:40+00:00",
+ "recipe": {
+  "toolchain_commit": "6ab349a66",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N9441_neg/2026-11-19-lm1909-1c8d7a8d.tests.json"
+ },
+ "label": "the 'is' right before 'due' for an expected baby ('our first baby *is* due in March'). Weak on other announced arrivals ('which *is* to come', tournament seedings); rent or a report that 'is due' stays quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N9441_neg/2026-11-19-lm1909-1c8d7a8d.tests.json",
+   "prereg_commit": "6ab349a66",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.256,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.019,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.453,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.133,
+     "peak": " child"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.229,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.111,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.372,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.032,
+     "peak": " baby"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.045,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.133,
+     "peak": " child"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.127,
+     "peak": " baby"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " contract"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": " because"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.181,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ab349a66",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'is' before a baby's 'due'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Rare pole (0.078%). Top examples are copulas in news about something still to come: 'is the top seed', 'which is to come', 'she was pregnant', 'is expected to', 'my second baby is due'. Probes found only the baby case repeatable, and not strongly: 'baby is due' 0.23-0.55 in four of five sentences (0.08 in a short one), 'who is to come' 0.48 once and 0.00 once, 'is expected to' 0.02-0.05, seedings 0.13-0.14, 'report is due' 0.02, 'rent is due' 0.02. The label is the narrow case that reproduced, not an account of the pole; the median fire may fall short.",
+ "selection": "random draw"
+}

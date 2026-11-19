@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-1f56b530",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1235-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:07+00:00",
+ "recipe": {
+  "toolchain_commit": "6ab349a66",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1235_neg/2026-11-19-lm1909-1f56b530.tests.json"
+ },
+ "label": "the shebang that opens a script file: '#!/' (and the '/env' after it), read after a lead-in line. The pole's output promotes ' script' / ' scripts', and it also fires in prose where 'script(ing)' is about to be said. Ordinary comments, paths and other file openings stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1235_neg/2026-11-19-lm1909-1f56b530.tests.json",
+   "prereg_commit": "6ab349a66",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.894,
+     "peak": "#!/"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.905,
+     "peak": "#!/"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.436,
+     "peak": "#!/"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.963,
+     "peak": "#!/"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.478,
+     "peak": "bin"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.541,
+     "peak": "#!/"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.386,
+     "peak": "/sh"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.88,
+     "peak": "/env"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " these"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.293,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " first"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.048,
+     "peak": "#"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.246,
+     "peak": " /"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " from"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.711,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ab349a66",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "shebang '#!/'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: '#!/' x16 of the top 32, '/env' x5, ' /' x4; the - pole's output promotes ' script', ' scripts', '#!/'. Probes: shebang lines 0.57-0.94; a '.py' file opening with imports 0.07, a CSS colour '#333' 0.02, a '# TODO' comment 0.02. Not covered by the near misses: a plain '#' comment as the first line of a file introduced as run.sh read 0.63, and prose read 0.50-0.55 just before 'scripting' / after 'programming language' and 0.22 on 'bash script'; a quoted '\"/bin/sh\"' read 0.29. So the pole is better described as 'a script is starting / being named' than as the shebang token alone; the test only supports the shebang.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "#!/",
+   "/env"
+  ]
+ }
+}
