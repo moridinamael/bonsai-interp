@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-45d5585e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10610-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N10610",
+   "pole": "-",
+   "label": "Dutch/German text: the first piece(s) of a split adverb or determiner being spelled out (in|midd|els, inner|halb, mitt|lerweile, and|eres)",
+   "fire": [
+    "Hij heeft inmiddels een nieuwe fiets gekocht.",
+    "De winkel is inmiddels al drie jaar gesloten.",
+    "Wij wonen inmiddels in een ander dorp.",
+    "Die Lieferung erfolgt innerhalb von drei Tagen.",
+    "Das Museum liegt innerhalb des alten Schlosses.",
+    "Die Firma hat mittlerweile zwei neue Werke gebaut.",
+    "Sie möchte lieber ein anderes Kleid anprobieren.",
+    "Bitte antworten Sie innerhalb einer Woche."
+   ],
+   "quiet": [
+    "Hij heeft gisteren een nieuwe fiets gekocht.",
+    "De winkel is op zondag gesloten.",
+    "Wij wonen nu in Utrecht.",
+    "Die Lieferung kommt morgen früh.",
+    "Das Museum zeigt alte Bilder.",
+    "Die Firma baut zwei neue Werke.",
+    "Sie möchte lieber ein rotes Kleid anprobieren.",
+    "Bitte antworten Sie bald."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split Dutch/German adverb",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: all top examples German/Dutch, peaks on 'nder' (Andererseits), ' mitt', ' and', ' Twe', and clause commas. Probes: inmiddels 0.98, innerhalb 0.66, mittlerweile 0.43, anderes 0.44; English ~0; plain German sentences leak 0.05-0.28, so near misses (plain Dutch/German without these words or commas) may fire weakly."
+}
