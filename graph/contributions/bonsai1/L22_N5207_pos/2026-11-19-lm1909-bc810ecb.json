@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-bc810ecb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N5207+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:23:27+00:00",
+ "recipe": {
+  "toolchain_commit": "b7dcf9204",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N5207_pos/2026-11-19-lm1909-bc810ecb.tests.json"
+ },
+ "label": "the subject (pronoun plus its auxiliary) of a statement that someone is told or knows, directly after know/tell + person with no 'that' (knows you are there, told him she had, tell her I am); not 'why/that they should'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N5207_pos/2026-11-19-lm1909-bc810ecb.tests.json",
+   "prereg_commit": "b7dcf9204",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.684,
+     "peak": " you"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.228,
+     "peak": " he"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.633,
+     "peak": " am"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.693,
+     "peak": " interested"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.29,
+     "peak": " he"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.525,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.317,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.012,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.125,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " ended"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": "ist"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.075,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " ten"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " because"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.421,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b7dcf9204",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "subject after know/tell X",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: 'told him [she]'d been', 'so she knows [you]'re there', 'show that [we] are here', 'tell ... Shay, I['m] coming', 'the kid to know [I] can'. The - pole takes the obligation version ('why [they] should', 'tell them that [they] should') and the output suppresses ' should'. Probe: 'tell the manager I am' 0.70, 'knows you are there' 0.69, 'told him she had' 0.66, 'show that we are' 0.30, 'know that I care' 0.14; 'why they should' 0.11, 'that they should' 0.01, main-clause 'I am coming' 0.07.",
+ "selection": "random draw"
+}

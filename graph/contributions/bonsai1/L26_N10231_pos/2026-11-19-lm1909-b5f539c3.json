@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b5f539c3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N10231+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:23:44+00:00",
+ "recipe": {
+  "toolchain_commit": "b7dcf9204",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N10231_pos/2026-11-19-lm1909-b5f539c3.tests.json"
+ },
+ "label": "the word-initial piece ' Ac' / ' AC' of a longer word or name (Acupuncture, Acute, AC/DC); weak on whole words such as academic, acres, account",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N10231_pos/2026-11-19-lm1909-b5f539c3.tests.json",
+   "prereg_commit": "b7dcf9204",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.858,
+     "peak": " Ac"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.816,
+     "peak": " AC"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.821,
+     "peak": " Ac"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.805,
+     "peak": " Ac"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.685,
+     "peak": " AC"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.796,
+     "peak": " Ac"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.631,
+     "peak": " Ac"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.902,
+     "peak": " Ac"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "aines"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.026,
+     "peak": " riff"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " severe"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " course"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.065,
+     "peak": " acres"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " clinic"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " account"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.81,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b7dcf9204",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word-initial ' Ac'/' AC'",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: ' Ac' x12, 'Ac' x7, ' ac' x6, ' AC' x5; top 32 all near the max (270-288). Probe: AC/DC 0.87, Acupuncture 0.83, Acute 0.78; Academy 0.29, standalone AC 0.26, academic 0.20, acres 0.12, account 0.00. Fire words were not checked against the tokenizer; if 'Acute' or 'Acupuncture' split differently in a new context an item may miss.",
+ "selection": "random draw"
+}

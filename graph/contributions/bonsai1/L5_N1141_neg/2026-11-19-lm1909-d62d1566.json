@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d62d1566",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N1141-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:23:39+00:00",
+ "recipe": {
+  "toolchain_commit": "b7dcf9204",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N1141_neg/2026-11-19-lm1909-d62d1566.tests.json"
+ },
+ "label": "the word piece 'ada' after a lone D/d (Dada, Dadaist, dada) and 'ABA' in GABA; not Canada, Nevada or the standalone acronym ADA",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N1141_neg/2026-11-19-lm1909-d62d1566.tests.json",
+   "prereg_commit": "b7dcf9204",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.976,
+     "peak": "ada"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.628,
+     "peak": "ABA"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.856,
+     "peak": "ada"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.761,
+     "peak": "ada"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.98,
+     "peak": "ada"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.628,
+     "peak": "ABA"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.854,
+     "peak": "ada"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.827,
+     "peak": "ada"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": "ara"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "ative"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " early"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": "cel"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.182,
+     "peak": " ADA"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " winter"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " poster"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.841,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b7dcf9204",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "D|ada, G|ABA",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: 'ada' x17 (D[ada]ism, D[ada]), 'ABA' x5 (G[ABA]), 'ADA' x3. Probe: Dada 0.92, Dadaist 0.87, dada 0.78, GABA 0.57; ADA 0.14, ABBA 0.01, Canada/Nevada 0.01. The + pole is the piece after 'Str' (Strabo, Stratocaster, Strath).",
+ "selection": "random draw"
+}

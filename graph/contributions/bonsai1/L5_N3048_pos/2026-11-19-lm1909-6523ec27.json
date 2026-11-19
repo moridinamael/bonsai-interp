@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6523ec27",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3048+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:23:02+00:00",
+ "recipe": {
+  "toolchain_commit": "b7dcf9204",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N3048_pos/2026-11-19-lm1909-6523ec27.tests.json"
+ },
+ "label": "scalar and focus adverbs that set up an expectation (even / Chinese 甚至, 'not only', hardly, 'as if') and the Chinese modal 会",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N3048_pos/2026-11-19-lm1909-6523ec27.tests.json",
+   "prereg_commit": "b7dcf9204",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.322,
+     "peak": "甚至"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.36,
+     "peak": "会"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.216,
+     "peak": "甚至"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.031,
+     "peak": "会影响"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.156,
+     "peak": " if"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.181,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.153,
+     "peak": " hardly"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.185,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.103,
+     "peak": "很"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": "很快"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": "也不"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": "药"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": " stared"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " res"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.079,
+     "peak": " before"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.183,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b7dcf9204",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "focus adverbs, 甚至/会",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: peak tokens '会' x7, '甚至' x4, ' if' (as if) x2, ' matter', ' only' (not only), ' once', ' Besides', ' hardly', ' definitely'. Probe was weak in English: as if 0.17, not only 0.10, definitely 0.10, hardly 0.10, even 0.05. The label is a list and the pole is weak; the Chinese items were not probed. Expect a fail. The - pole is the token people/人们.",
+ "selection": "random draw"
+}
