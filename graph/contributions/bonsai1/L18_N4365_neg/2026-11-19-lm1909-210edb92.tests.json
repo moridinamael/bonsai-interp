@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-210edb92",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4365-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N4365",
+   "pole": "-",
+   "label": "the period that ends a long expository sentence in running prose (top examples are followed by an elaborating sentence: 'Lying along…', 'Because of…', 'Depending on…')",
+   "fire": [
+    "The old lighthouse stands on a rocky headland that is closed to visitors during the nesting season. Built of granite, it has survived two centuries of storms.",
+    "Some inherited conditions are associated with hearing loss, poor eyesight and delayed growth. Because the causes are complex, treatment varies widely.",
+    "Beekeepers use many different tools to inspect their hives and collect the honey. Depending on the season, some of these are left in the shed.",
+    "Many young bakers are trying to build a reputation and win a loyal group of customers. Because rents are high, few of them last long.",
+    "The committee shall also arrange for the upkeep of the hall and the care of its grounds. It shall report to the members each spring.",
+    "The game gives players the feeling of walking into a seaside arcade of days gone by. Around the screen, you will notice flashing bulbs.",
+    "We hired a small boat for almost nothing, so we could spend our money on eating out in the evening. The harbour gave us wonderful sunsets.",
+    "The plaster has a rough surface, and wiping it with a damp cloth does not lift the stain since the dye sinks deep into the pores. A solvent such as alcohol draws it out."
+   ],
+   "quiet": [
+    "Was the old lighthouse closed to visitors during the nesting season? Nobody at the harbour seemed to know for certain",
+    "\"It runs in the family,\" she said. \"Ask my mother.\" He nodded.",
+    "Beekeepers use many different tools to inspect their hives, and depending on the season some of these are left in the shed",
+    "Rents are high! Few young bakers last long, and fewer still win a loyal group of customers",
+    "Dr. Hall and Mr. Reed met at 3 p.m. to discuss the upkeep of the grounds with the members",
+    "Wait. Stop. Look at the screen. Do you see the flashing bulbs?",
+    "We hired a small boat for almost nothing; the harbour gave us wonderful sunsets, and we ate out every evening",
+    "Does wiping the plaster with a damp cloth lift the stain, or does the dye sink too deep into the pores?"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "period after long expository sentence",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: '.' x25 of the top 32, but only 0.09% of tokens reach 0.1 of max, so most periods do not fire. Probe never exceeded 0.15 on long expository sentences (short sentences, questions and dialogue ~0.01), so what selects these periods is not found; expected to fail on the median-fire threshold."
+}

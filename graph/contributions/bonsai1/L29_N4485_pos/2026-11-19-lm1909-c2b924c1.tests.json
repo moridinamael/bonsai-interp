@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-c2b924c1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N4485+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N4485",
+   "pole": "+",
+   "label": "Python: the comma after the iterable argument of sorted()/max()/min(), where a key= or reverse= argument comes next; quiet on the first comma of other calls (print, zip, getattr, range)",
+   "fire": [
+    "def top_scores(players):\n    ranked = sorted(players, key=lambda p: p.score)\n    return ranked[:3]\n",
+    "def newest(files):\n    latest = max(files, key=os.path.getmtime)\n    return latest\n",
+    "def by_length(words):\n    out = sorted(words, reverse=True)\n    return out\n",
+    "def cheapest(offers):\n    pick = min(offers, key=lambda o: o.price)\n    return pick\n",
+    "def rank(table):\n    rows = sorted(table.values(), key=itemgetter(1))\n    return rows\n",
+    "def tidy(names):\n    cleaned = [n.strip() for n in names]\n    return sorted(cleaned, key=str.lower)\n",
+    "def longest(lines):\n    winner = max(lines, key=len)\n    return winner\n",
+    "def schedule(tasks):\n    queue = sorted(tasks, key=attrgetter('due'))\n    return queue\n"
+   ],
+   "quiet": [
+    "def show_scores(players):\n    print(players, file=sys.stdout)\n    return players[:3]\n",
+    "def newest(files):\n    latest = os.path.join(root, files[0])\n    return latest\n",
+    "def by_length(words):\n    out = zip(words, lengths)\n    return out\n",
+    "def cheapest(offers):\n    pick = getattr(offers, 'price')\n    return pick\n",
+    "def rank(table):\n    rows = isinstance(table, dict)\n    return rows\n",
+    "def tidy(names):\n    cleaned = [n.strip() for n in names]\n    return json.dumps(cleaned, indent=2)\n",
+    "def longest(lines):\n    winner = range(0, len(lines))\n    return winner\n",
+    "def schedule(tasks):\n    queue = math.pow(tasks, 2)\n    return queue\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "comma before key= in sorted/max/min",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: ',' x16, '(),' x6, '.sort' x5, all inside sorted(...)/.sort( before key=/reverse=; output promotes '(key'. Probe: sorted 1.02/0.92/0.73, max 0.97, .sort 0.53, groupby 0.41; print(items, file=…) 0.07, sum(a, b) 0.17."
+}
