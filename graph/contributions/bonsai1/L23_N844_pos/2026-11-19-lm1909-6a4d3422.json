@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6a4d3422",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N844+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:53+00:00",
+ "recipe": {
+  "toolchain_commit": "be3802650",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N844_pos/2026-11-19-lm1909-6a4d3422.tests.json"
+ },
+ "label": "a D-initial piece that the context has already announced: the expansion of an acronym containing D ('DMV (Department …'), or a repeated d-word ('dos-à-dos')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N844_pos/2026-11-19-lm1909-6a4d3422.tests.json",
+   "prereg_commit": "be3802650",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.9,
+     "peak": "Department"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.366,
+     "peak": "Department"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.186,
+     "peak": "Department"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.953,
+     "peak": "Department"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.653,
+     "peak": "Department"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.018,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.793,
+     "peak": "Department"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.976,
+     "peak": "Department"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.032,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.026,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.065,
+     "peak": " Protection"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " engineer"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.103,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": "aut"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " with"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.93,
+    "median_fire": 0.723,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be3802650",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "announced D (acronym expansion)",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' D', 'D', '-d', ' Department', Japanese 'ド'; the output direction suppresses D tokens, so the unit fires on a D and votes against another. Probes: 'DMV (Department' 0.82, \"'--dan', help='DAN\" 0.84, 'dos-à-dos' 0.83, 'DDP (Dongdaemun Design' 0.40, 'DVD (Digital Video Disc' 0.22; plain D words (Davis, Denver, David, Diana) 0.01, the B analogue of the code example 0.03. Near misses: acronyms without D, and D words with no earlier cue.",
+ "selection": "random draw"
+}
