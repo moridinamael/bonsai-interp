@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-5d651580",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N161-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:38:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N161",
+   "pole": "-",
+   "label": "dense pole (25% of tokens reach 0.1 of max, gate-closed); its top is the CJK characters 部 (部屋) and 暴 (暴動, 暴行)",
+   "fire": [
+    "彼は広い部屋に一人で住んでいます。",
+    "政府は暴動を止めるために警察を送りました。",
+    "この部屋の窓から海が見えます。",
+    "その男は暴行の罪で逮捕されました。",
+    "ホテルの部屋はとてもきれいでした。",
+    "台風による暴風で木が倒れました。",
+    "新しい部長は来週から働きます。",
+    "市民は警察の暴力に抗議しました。"
+   ],
+   "quiet": [
+    "彼は広い家に一人で住んでいます。",
+    "政府は火事を止めるために消防を送りました。",
+    "この窓から海が見えます。",
+    "その男は盗みの罪で逮捕されました。",
+    "ホテルの食事はとてもおいしかったです。",
+    "台風による大雨で川があふれました。",
+    "新しい先生は来週から働きます。",
+    "市民は高い税金に抗議しました。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; top is 部 / 暴",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags the pole dense and gate-closed (max 0.21). Probe: 部屋 0.85, 暴動 0.90, but Japanese and Chinese sentences without either still reached 0.36-0.43, so the near misses will probably cross 0.30; the test records the density."
+}
