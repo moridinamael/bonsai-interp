@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-73920096",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3101+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:39:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N3101",
+   "pole": "+",
+   "label": "closing-quote punctuation pieces in code (\"':\", \"'),\", \"/'\")",
+   "fire": [
+    "    config = {'host': 'localhost', 'port': 8080}",
+    "    self.assertIn(find('/'), [0, 1])",
+    "    urls = {'http://example.org/ns/': 'ex'}",
+    "    rows.append(('alice', 'admin'), )",
+    "    opts = {'verbose': True, 'debug': False}",
+    "    check(split('a,b'), 2)",
+    "    mapping = {'red': 1, 'green': 2}",
+    "    assert parse('x=1'), 'empty'"
+   ],
+   "quiet": [
+    "    config = dict(host=host, port=8080)",
+    "    self.assertIn(find(sep), [0, 1])",
+    "    urls = load_namespaces(path)",
+    "    rows.append((name, role))",
+    "    opts = dict(verbose=True, debug=False)",
+    "    check(split(text), 2)",
+    "    mapping = dict(red=1, green=2)",
+    "    assert parse(line), msg"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code quote-closers",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Card: broad weak pole (max 0.48, 4.2% of tokens reach 0.1); peaks \"':\" x5, \"'),\" x5. Probes: dict key \"':\" 0.12, \"'),\" 0.15, i.e. weak. Low-confidence guess."
+}
