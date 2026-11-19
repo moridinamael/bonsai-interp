@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-50eae8c5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N7235-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:00:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N7235",
+   "pole": "-",
+   "label": "the generic second element of a local place name (Hill, Hollow, Valley, -side) inside a street, school or business name in local-news text",
+   "fire": [
+    "A memorial service is planned for 2 p.m. Saturday at Walnut Hill Baptist Church.",
+    "Deputies were called to a burglary in the 900 block of Fox Hollow Lane on Tuesday.",
+    "The spelling bee was won by a sixth grader from Green Valley Elementary School.",
+    "A car struck a mailbox in the 2200 block of North Lakeside Drive at about 9 p.m.",
+    "Graveside rites will follow at Chestnut Hill Cemetery with Pastor Dan Reed officiating.",
+    "A stolen bicycle was reported at 3:15 p.m. March 4 on Sleepy Hollow Road.",
+    "Donations may be sent to the Sun Valley Animal Shelter in her memory.",
+    "The package was delivered to 81 Woodside Terrace, Springfield, NJ 07081."
+   ],
+   "quiet": [
+    "A memorial service is planned for 2 p.m. Saturday at the family's church.",
+    "Deputies were called to a burglary at a jewelry store downtown on Tuesday.",
+    "The spelling bee was won by a sixth grader from a local elementary school.",
+    "A car struck a mailbox near the top of the hill at about 9 p.m.",
+    "Graveside rites will follow at the cemetery with her pastor officiating.",
+    "A stolen bicycle was reported at 3:15 p.m. March 4 on Fifth Avenue.",
+    "Donations may be sent to the American Cancer Society in her memory.",
+    "The package was delivered to the wrong side of the valley by mistake."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "place-name suffix word",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' Valley', 'side', 'ville', ' Hill', ' Hollow', ' Grande' in addresses and obituaries (also ' private' x4, not tested). Probes: Maple Hollow Drive 0.69, Cedar Hill Funeral Home 0.50, Sunnyside Avenue 0.40, Pine Valley Middle School 0.36; common-noun hill/valley 0.00, Willow Creek Road 0.15, 12 Elm Street 0.28. The + pole fires on state/county administrative context, so the neuron may contrast neighbourhood-scale names with state-scale ones."
+}
