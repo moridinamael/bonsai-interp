@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-273e856e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N4904-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:14:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N4904",
+   "pole": "-",
+   "label": "Unclear. Best guess: a word repeated immediately after its first mention to resume from it, most clearly a place name picked up as the start of the next leg ('… to Virginia). From ⟦Virginia⟧ we travelled…').",
+   "fire": [
+    "The convoy went from Lyon to Geneva. From Geneva it crossed the Alps into Italy.",
+    "We took a bus from Lima to Cusco. From Cusco we hiked for four days.",
+    "The letters were sent first to Boston. From Boston they were forwarded to Halifax.",
+    "Her family sailed from Naples to Malta. From Malta they continued on to Tunis.",
+    "The pipeline runs north to Edmonton. From Edmonton a branch turns west to the coast.",
+    "He cycled along the river as far as Vienna. From Vienna he took the train home.",
+    "The parcel was flown overnight to Memphis. From Memphis a truck carried it to Tulsa.",
+    "They marched through the desert to Aleppo. From Aleppo the army turned south."
+   ],
+   "quiet": [
+    "The convoy went from Lyon to Geneva. After refuelling it crossed the Alps into Italy.",
+    "We took a bus from Lima to Cusco. The next morning we hiked for four days.",
+    "The letters were sent first to Boston. A clerk later forwarded them to Halifax.",
+    "Her family sailed from Naples to Malta. In spring they continued on to Tunis.",
+    "The pipeline runs north to Edmonton. Beyond the city a branch turns west to the coast.",
+    "He cycled along the river as far as Vienna. Tired out, he took the train home.",
+    "The parcel was flown overnight to Memphis. At dawn a truck carried it to Tulsa.",
+    "They marched through the desert to Aleppo. Then the army turned south."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "resumed just-mentioned word",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no shared token; top examples all re-mention something just said (h_cfrac/l_cfrac, journal_events twice, 'germ cells … germ cells', 'Virginia). From Virginia'). Probe only supported the place-name leg (0.41); repeated 'stem cells' 0.08, repeated code call 0.08, repeated phrase 0.12. Low-confidence test of the one pattern that fired."
+}
