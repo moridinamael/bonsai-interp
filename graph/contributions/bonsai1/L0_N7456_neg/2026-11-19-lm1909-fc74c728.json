@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-fc74c728",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N7456-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:05+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N7456_neg/2026-11-19-lm1909-fc74c728.tests.json"
+ },
+ "label": "The token ' dwind' (dwindle, dwindling, dwindled)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N7456_neg/2026-11-19-lm1909-fc74c728.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.779,
+     "peak": " dwind"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.684,
+     "peak": " dwind"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.078,
+     "peak": " explor"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.664,
+     "peak": " dwind"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.736,
+     "peak": " dwind"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.773,
+     "peak": " dwind"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.695,
+     "peak": " dwind"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.619,
+     "peak": " dwind"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.248,
+     "peak": " shrinking"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.175,
+     "peak": " scandal"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.078,
+     "peak": " explor"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.088,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.139,
+     "peak": " faint"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.164,
+     "peak": " dropping"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.061,
+     "peak": " nothing"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.169,
+     "peak": " crowd"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.898,
+    "median_fire": 0.69,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token ' dwind'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "17 of the top 32 card examples peak on ' dwind'. Probes: dwindling 0.82, dwindled 0.69; the synonym 'shrinking' 0.20. The pole is broad (4.5% of tokens reach 0.1 of max, mostly gate-closed leak), and 'lessness' also fired 0.54 in a probe, so the token is the strongest English trigger rather than the whole pole (Korean ' 컸' tops the card).",
+ "selection": "random draw"
+}

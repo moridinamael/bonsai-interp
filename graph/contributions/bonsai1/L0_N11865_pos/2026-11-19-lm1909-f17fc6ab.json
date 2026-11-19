@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-f17fc6ab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N11865+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:29+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N11865_pos/2026-11-19-lm1909-f17fc6ab.tests.json"
+ },
+ "label": "The Korean token '근' as in '최근' (recent, recently)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N11865_pos/2026-11-19-lm1909-f17fc6ab.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.171,
+     "peak": "장"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.066,
+     "peak": "당"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.248,
+     "peak": "서"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.087,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.144,
+     "peak": "생"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.081,
+     "peak": "적"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.023,
+     "peak": " 최근"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.094,
+     "peak": "날"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.166,
+     "peak": "장"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.066,
+     "peak": "당"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.256,
+     "peak": "서"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.12,
+     "peak": "달"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.144,
+     "peak": "생"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.1,
+     "peak": "적"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": "에"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.094,
+     "peak": "날"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.43,
+    "median_fire": 0.09,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Korean '근' (최근)",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: flagged broad (1.9% of tokens reach 0.1 of max); peak tokens ' of' x6, '근' x4, 'い' x3, ' that' x3, with '최근' in three of the six shown examples. Probes: '최근 댓글들이 없습니다' 0.64; English ' of' 0.06, ' that' 0.07, plain sentence 0.10. Only this one token of a broad layer-0 pole is tested, so a hold would be a partial label.",
+ "selection": "random draw"
+}

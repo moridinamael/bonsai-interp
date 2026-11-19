@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-78750add",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N1035-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:45+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N1035_neg/2026-11-19-lm1909-78750add.tests.json"
+ },
+ "label": "Deeply indented code inside nested conditionals, at a comparison against a stored value or the raise that follows it; best guess, weak",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N1035_neg/2026-11-19-lm1909-78750add.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.23,
+     "peak": "')\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.483,
+     "peak": "')\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.074,
+     "peak": "')\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.149,
+     "peak": "')\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.049,
+     "peak": " dist"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.194,
+     "peak": "]:\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.059,
+     "peak": "["
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.157,
+     "peak": "')\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": "(cache"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.024,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.055,
+     "peak": "seen"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.153,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "nested-if code check",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: no shared token (')\\n' x3, indentation x3, ' dist' x2, ' to' x2, ' in' x2); the top two examples are the same tab-indented 'if vw_dist < dist[w]: raise ValueError' code, the rest are prose (attach the same database, take the drug for, wish to obtain). Probes: a tab-indented nested-if with raise 0.38 (peak on the raise line's end), the same idea with spaces 0.08, prose paraphrases 0.01-0.15. The + pole (already, existing, previously, closed) is about a prior state; I could not confirm what this side marks. Expect a fail.",
+ "selection": "random draw"
+}

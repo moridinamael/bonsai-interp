@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b94191e7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N12157-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:22+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N12157_neg/2026-11-19-lm1909-b94191e7.tests.json"
+ },
+ "label": "The token ' a' right after a verb of giving, awarding or assigning, where a rating, score or mark is expected next (given a ..., awarded it a ...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N12157_neg/2026-11-19-lm1909-b94191e7.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.999,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.57,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.611,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.449,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.669,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.803,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.514,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.701,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.65,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " roof"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.395,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.242,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.127,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.64,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' a' after give/award",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "17 of the top 32 card examples peak on ' a', after give/given, and the - pole's output promotes ' pass', ' success', ' star', ' completion'. Probes: given a rating 1.04, awarded it a score 0.91, assigned a grade 0.91, give the student a check 0.41; ' a' after 'saw' 0.01. A giving verb with an unrelated object still fired 0.37 ('give the student a sandwich'), so the verb frame carries part of it and the expected rating adds the rest; near misses here use ' a' after other verbs.",
+ "selection": "random draw"
+}
