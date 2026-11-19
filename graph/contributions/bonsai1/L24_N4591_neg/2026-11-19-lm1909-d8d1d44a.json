@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d8d1d44a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4591-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:17+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N4591_neg/2026-11-19-lm1909-d8d1d44a.tests.json"
+ },
+ "label": "the comma or ' I' that opens a speaker's hedging aside inside a parenthesis ('(the lathe, I believe)', '(or by machine, if you are in a hurry)')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N4591_neg/2026-11-19-lm1909-d8d1d44a.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.535,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.333,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.443,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.434,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.35,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.096,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.885,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.469,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.122,
+     "peak": "the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.089,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": ")"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.439,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "hedge aside inside parentheses",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on ',' and ' I' where a parenthetical turns into the writer's own comment. Probes: 0.66 and 0.53 on two such asides, but only 0.08 on '(on a Tuesday, I think)', so the trigger is not fully pinned down. Near misses keep the parentheses or the comma and drop the aside.",
+ "selection": "random draw"
+}

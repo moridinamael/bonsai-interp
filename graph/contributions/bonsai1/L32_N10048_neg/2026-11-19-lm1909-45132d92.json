@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-45132d92",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10048-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:58+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N10048_neg/2026-11-19-lm1909-45132d92.tests.json"
+ },
+ "label": "disease-outbreak case counts: the words leading into 'cases' / 'infections' in an epidemic report ('rise in [cases]', 'number of confirmed [cases]', '14,000 new [infections]')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N10048_neg/2026-11-19-lm1909-45132d92.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.526,
+     "peak": " confirmed"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.321,
+     "peak": " flu"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.429,
+     "peak": " confirmed"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.34,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.187,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.565,
+     "peak": "confirmed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.645,
+     "peak": " confirmed"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.325,
+     "peak": " daily"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.089,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.18,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " million"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.248,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.084,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.049,
+     "peak": " confirmed"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": "0"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.385,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "outbreak case-count wording",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: ' confirmed' x4, ' of', ' in', ' Covid', '0', all just before 'cases' or 'infected' in swine-flu and Covid reports. Probes: 'sharpest rise in cases' 0.42, 'confirmed cases of dengue' 0.62, 'new infections' 0.46, 'highly contagious' 0.30; 'confirmed our reservation ... rise in prices' 0.03; a detective's cases 0.00. The + pole is an unrelated baseball-postseason context.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c6da4471",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N598+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:48+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N598_pos/2026-11-19-lm1909-c6da4471.tests.json"
+ },
+ "label": "a digit embedded inside a code identifier, between letters or before an underscore (kl_cost_g0_b, html2text, l4a)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N598_pos/2026-11-19-lm1909-c6da4471.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.117,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.326,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.262,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.127,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.326,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.371,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.28,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.134,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " key"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.058,
+     "peak": "path"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "_model"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.059,
+     "peak": " f"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.032,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": "list"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.042,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": "(point"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.271,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digit inside a code identifier",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: all peaks are single digits; the code examples have the digit inside an identifier. Probes: identifier lines 0.21-0.45, the same lines without digits 0.07, counted nouns in prose 0.02, but 'mp3 / k8s / b2b' in prose 0.02 and '12 and 18 hole' 0.43, so prose numbers can fire and the code context matters. Weak pole (max 22.75).",
+ "selection": "random draw"
+}
