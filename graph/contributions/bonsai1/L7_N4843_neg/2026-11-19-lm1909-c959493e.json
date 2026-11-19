@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c959493e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N4843-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:27+00:00",
+ "recipe": {
+  "toolchain_commit": "fef43f02e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N4843_neg/2026-11-19-lm1909-c959493e.tests.json"
+ },
+ "label": "being 'on' someone's list: ' list' / ' of' in 'on my must-see list', 'on the list of ...' (membership in a list or set, not the noun list in general)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N4843_neg/2026-11-19-lm1909-c959493e.tests.json",
+   "prereg_commit": "fef43f02e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.776,
+     "peak": " list"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.377,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.417,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.631,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.519,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.533,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.523,
+     "peak": "-do"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.592,
+     "peak": " list"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " Europe"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": "arts"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " ran"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " his"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.528,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fef43f02e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'on the list (of)'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' list' x8, ' of' x5 (after 'on the list'), ' those' x4. Probes: on your must-see list 0.93, on my list of places 0.91, on the list of banned substances 0.64, required reading lists 0.67, among those who 0.64; but 'made a list of groceries' 0.07 and 'The list was long' 0.01. One leak: 'should be on your itinerary' 0.47 (peak ' your'), so 'be on your ...' already anticipates it. Near misses use the word list outside the on-the-list frame.",
+ "selection": "random draw"
+}

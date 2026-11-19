@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-19-lm1909-72e8391e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N7032+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:02+00:00",
+ "recipe": {
+  "toolchain_commit": "fef43f02e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N7032_pos/2026-11-19-lm1909-72e8391e.tests.json"
+ },
+ "label": "the tokens ' baker', 'aper' (in dr-aper, dr-aper-ies) and 'apper' (in tr-apper): tradesman-word pieces",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N7032_pos/2026-11-19-lm1909-72e8391e.tests.json",
+   "prereg_commit": "fef43f02e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.07,
+     "peak": "aper"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.545,
+     "peak": " baker"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.414,
+     "peak": "apper"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.918,
+     "peak": "aper"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.535,
+     "peak": " baker"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.927,
+     "peak": "aper"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.656,
+     "peak": " baker"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.379,
+     "peak": "apper"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " left"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": "avers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " velvet"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.06,
+     "peak": "aver"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " stands"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.601,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fef43f02e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "baker / dr-aper / tr-apper",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Layer 3, card: 'aper' x7, ' baker' x7, 'apper' x3, 'akers' x3. Probes: draper 0.88, draperies 0.91, baker 0.52, trapper 0.42; butcher 0.06, wrapper 0.01, rapper 0.03, newspaper 0.01, Quakers / shoemakers 0.01. A list of tokens, not a meaning: other trades do not fire, and the - pole is another set of -er pieces ('izer', 'iders', 'iter').",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "baker",
+   "draper",
+   "draperies",
+   "trapper",
+   "bakeries"
+  ]
+ }
+}

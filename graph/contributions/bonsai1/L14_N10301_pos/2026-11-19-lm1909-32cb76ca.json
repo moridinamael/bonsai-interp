@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-32cb76ca",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N10301+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:35:53+00:00",
+ "recipe": {
+  "toolchain_commit": "fef43f02e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N10301_pos/2026-11-19-lm1909-32cb76ca.tests.json"
+ },
+ "label": "in code, the suffix of a second identifier (_list, _task) that echoes a longer identifier with the same suffix a line earlier",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N10301_pos/2026-11-19-lm1909-32cb76ca.tests.json",
+   "prereg_commit": "fef43f02e",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.327,
+     "peak": "_items"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.224,
+     "peak": "_task"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.345,
+     "peak": "_path"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.152,
+     "peak": "_job"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.448,
+     "peak": "_list"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.236,
+     "peak": " '"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.038,
+     "peak": " import"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.011,
+     "peak": "_ids"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " line"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.07,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.001,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.23,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fef43f02e",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "echoed identifier suffix",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: no single token; top examples are second occurrences (raw_data_list ... data_list; added_remote_files_task ... folder_task; 'x@1.2::', 'x::'; train_bxtxd=train_data_bxtxd). Probes: code echo 0.59 and 0.25; repeated prose phrases 0.02-0.04; an unrepeated name_list 0.05. Near misses are the same code without the earlier longer identifier.",
+ "selection": "random draw"
+}
