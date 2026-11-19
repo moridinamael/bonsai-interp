@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5eaafcd9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N6361-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:24:19+00:00",
+ "recipe": {
+  "toolchain_commit": "c3eb774c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N6361_neg/2026-11-19-lm1909-5eaafcd9.tests.json"
+ },
+ "label": "code: a loop bound or array index expression where an off-by-one adjustment is in play, firing on the bound/index itself (x[N-1], arr[idx], end = len(s), while i <= n) just before the possible ±1",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N6361_neg/2026-11-19-lm1909-5eaafcd9.tests.json",
+   "prereg_commit": "c3eb774c0",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.626,
+     "peak": "[n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.818,
+     "peak": " len"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.906,
+     "peak": " <="
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.579,
+     "peak": "_index"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.95,
+     "peak": "[M"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.622,
+     "peak": " len"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.046,
+     "peak": " <="
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.451,
+     "peak": "_index"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " again"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": ".strip"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": ".strip"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.722,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c3eb774c0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "index/bound before ±1",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'he[N[ell]-1]', 'len(s[)]', 'retries[<=]10', 'arg_list[arg[_index]]'; the + pole is the '- 1' itself. Probes: x[N-1] code 1.25, end = len(s) 0.85, 'while retries <= 10' 0.59, arg_list[arg_index] 0.47, items[count - 1] 0.26; code with no index/bound 0.02, prose 0.01.",
+ "selection": "random draw"
+}

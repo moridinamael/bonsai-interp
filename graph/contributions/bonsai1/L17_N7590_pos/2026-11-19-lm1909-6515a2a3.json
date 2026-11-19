@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6515a2a3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N7590+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:24:01+00:00",
+ "recipe": {
+  "toolchain_commit": "c3eb774c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N7590_pos/2026-11-19-lm1909-6515a2a3.tests.json"
+ },
+ "label": "advanced age: tokens marking someone as old or ageing (the digits of an age of about 60 or more, 'greying', 'middle-aged to older', 'retirement'); young ages and the same numbers as non-ages stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N7590_pos/2026-11-19-lm1909-6515a2a3.tests.json",
+   "prereg_commit": "c3eb774c0",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.476,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.083,
+     "peak": " she"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.357,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.787,
+     "peak": " wrink"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.317,
+     "peak": " elderly"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.529,
+     "peak": " pension"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.612,
+     "peak": "thers"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.13,
+     "peak": "-year"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.062,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": "At"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.049,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": " hands"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.04,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " mostly"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.063,
+     "peak": " memorial"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.416,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c3eb774c0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "old age / ageing",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "Card: 80-year-old, '65 now', greying, hoary head, older, retirement; output promotes ' old', ' retirement', ' elderly', ' aging'. Probes: 80-year-old 0.57 vs 8-year-old 0.16; '65 now' 0.61 vs '15 now' 0.09; greying 0.52; retirement 0.49; '65 minutes ... 80 dollars' 0.04.",
+ "selection": "random draw"
+}
