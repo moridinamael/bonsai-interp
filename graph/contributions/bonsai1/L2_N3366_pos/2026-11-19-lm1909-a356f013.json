@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a356f013",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N3366+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:24:30+00:00",
+ "recipe": {
+  "toolchain_commit": "5b188aa99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N3366_pos/2026-11-19-lm1909-a356f013.tests.json"
+ },
+ "label": "the ending piece of Spanish 'desafío(s)': 'ío' / 'os' after 'desaf'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N3366_pos/2026-11-19-lm1909-a356f013.tests.json",
+   "prereg_commit": "5b188aa99",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.907,
+     "peak": "ío"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.062,
+     "peak": "os"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.035,
+     "peak": "ío"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.811,
+     "peak": "os"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.752,
+     "peak": "ío"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.154,
+     "peak": "os"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.533,
+     "peak": "ío"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.037,
+     "peak": "os"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": "El"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " año"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": "ar"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": " estaba"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.19,
+     "peak": "en"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " planes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.183,
+     "peak": " casa"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": " cargo"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.971,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5b188aa99",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "desaf|ío(s) ending",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (3% of tokens reach 0.1 of max, max only 0.95) and gate-closed. Top examples: desafío/desafíos, French d’y. Probes: desafío 0.88, desafíos 0.82, d’y 0.82, ' no' 0.43, other Spanish 0.07. Token-level label; it covers only part of a broad pole.",
+ "selection": "random draw"
+}
