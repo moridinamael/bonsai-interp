@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-84a66a7b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N4554+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:16:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N4554",
+   "pole": "+",
+   "label": "attribute/member access in code: the '.attr' or '].' token after an object (tweet.user, obj.id)",
+   "fire": [
+    "for status in timeline:\n    print(status.author.name, status.retweet_count)",
+    "user = User.objects.get(pk=1)\nuser.email = new_email\nuser.save()",
+    "rows = cursor.fetchall()\nfirst_id = rows[0].id\nprint(first_id)",
+    "for msg in channel.history(limit=50):\n    log.append(msg.content)",
+    "account = session.query(Account).first()\nprint(account.owner.username)",
+    "items = response.json()\nfor item in items:\n    names.append(item['user']['login'])",
+    "last_id = new_posts[-1].id\nposts.extend(new_posts)",
+    "profile = request.user.profile\nprofile.bio = form.cleaned_data['bio']"
+   ],
+   "quiet": [
+    "for status in timeline:\n    print(status, count)\n    count += 1",
+    "total = 0\nfor value in values:\n    total = total + value",
+    "rows = 10\ncols = 20\nprint(rows * cols)",
+    "for i in range(50):\n    log.append(i)",
+    "x = 3\ny = 4\nprint(x + y)",
+    "numbers = [1, 2, 3]\nfor n in numbers:\n    squares.append(n * n)",
+    "last = posts[-1]\nposts.extend(new_posts)",
+    "name = input('Name: ')\ngreeting = 'Hello ' + name"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code attribute access",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "card: broad, mixed top examples; strongest is 'tweet.user' in a tweepy script, also '].' before id, 'user.save()', plus chemistry tokens ('known' concentration, 'hydrogen' ions). Probe: tweepy line 0.66, chemistry sentence 0.08. Testing only the code reading; near misses are code without attribute access."
+}
