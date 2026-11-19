@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-b98ded5a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N6758-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:37:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N6758",
+   "pole": "-",
+   "label": "Python: the indented ' return' (or the indentation before it) on the line directly under an 'if' guard, i.e. the start of an early-exit branch body. Weak in short snippets.",
+   "fire": [
+    "class Cache(object):\n    def get(self, key):\n        if key in self.store:\n            return self.store[key]\n        if self.parent is None:\n            return None\n        return self.parent.get(key)\n",
+    "def parse_port(text):\n    if not text:\n        return None\n    if not text.isdigit():\n        return None\n    port = int(text)\n    if port > 65535:\n        return None\n    return port\n",
+    "class Session(object):\n    def user(self, request):\n        if request.token is None:\n            return self.anonymous()\n        if request.token in self.revoked:\n            return self.anonymous()\n        return self.lookup(request.token)\n",
+    "def find_config(paths):\n    for path in paths:\n        if os.path.isfile(path):\n            return path\n    if DEFAULT and os.path.isfile(DEFAULT):\n        return DEFAULT\n    return None\n",
+    "class View(object):\n    def render(self, page):\n        if page is None:\n            return self.error404()\n        if not page.visible:\n            return self.error403()\n        return self.template.render(page=page)\n",
+    "def safe_div(a, b):\n    if b == 0:\n        return 0.0\n    if a is None:\n        return 0.0\n    return float(a) / b\n",
+    "class Queue(object):\n    def pop(self):\n        if not self.items:\n            return None\n        if self.paused:\n            return None\n        return self.items.pop(0)\n",
+    "def message_for(code, detail):\n    if detail:\n        return ' '.join([DEFAULT_MESSAGE, detail])\n    if code in MESSAGES:\n        return MESSAGES[code]\n    return DEFAULT_MESSAGE\n"
+   ],
+   "quiet": [
+    "class Cache(object):\n    def __init__(self, parent):\n        self.store = {}\n        self.parent = parent\n        self.hits = 0\n        self.misses = 0\n",
+    "def show_port(text):\n    port = int(text)\n    label = 'port %d' % port\n    print(label)\n    print(len(label))\n",
+    "class Session(object):\n    timeout = 30\n    cookie = 'sid'\n    secure = True\n    revoked = set()\n",
+    "import os\nimport sys\n\nDEFAULT = os.path.join(os.path.expanduser('~'), '.toolrc')\nPATHS = [DEFAULT, '/etc/toolrc']\n",
+    "class View(object):\n    def setup(self, template):\n        self.template = template\n        self.pages = []\n        self.count = 0\n",
+    "def show_ratio(a, b):\n    ratio = float(a) / b\n    text = '%.2f' % ratio\n    print(text)\n",
+    "class Queue(object):\n    def push(self, item):\n        self.items.append(item)\n        self.size += 1\n        self.log.append(item)\n",
+    "DEFAULT_MESSAGE = 'Something went wrong.'\nMESSAGES = {\n    404: 'Not found.',\n    403: 'Forbidden.',\n}\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "' return' under an if guard",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probe: two guard-and-return snippets 0.19 and 0.23 (peak ' return'), straight-line code 0.04-0.05; but a prose sentence peaked 0.22 on ' value', so the median may fall just short of 0.20. Near misses are same-style Python without conditionals or returns."
+}

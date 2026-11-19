@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-1e3515a7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N6030+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:37:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N6030",
+   "pole": "+",
+   "label": "The word piece that directly follows the 'across' prefix: English 'trans' (trans|boundary, trans|ceiver, trans|mem|brane) and its Russian counterpart 'пер' (пер|ек|усить, пер|ен|ести). Whole-token trans- words (transfer, translation) and the same pieces without the prefix stay quiet.",
+   "fire": [
+    "Two countries signed an accord on transboundary air pollution last year.",
+    "Each handset contains a low-power transceiver and a small antenna.",
+    "The receptor is a transmembrane protein with seven helices.",
+    "Both states share data on the transboundary aquifer beneath the desert.",
+    "По дороге домой мы успели перекусить бутербродами.",
+    "Директор попросил перенести собрание на пятницу.",
+    "Не забудь переключить телефон на беззвучный режим.",
+    "Огонь мог перекинуться на соседний сарай."
+   ],
+   "quiet": [
+    "Two countries signed an accord on the transfer of prisoners last year.",
+    "Each handset contains a low-power receiver and a small antenna.",
+    "The receptor sits in the cell membrane and has seven helices.",
+    "Both states share data on the boundary that runs through the desert.",
+    "По дороге домой мы успели поесть бутербродов.",
+    "Директор попросил назначить собрание на пятницу.",
+    "Не забудь поставить телефон на беззвучный режим.",
+    "Огонь мог дойти до соседнего сарая."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "piece after 'trans' / 'пер'",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Probe: transboundary 0.61, transceiver 0.82, transmembrane 0.66, перекусить 0.70, перенести 0.48; 'translation … transfer' 0.00, Russian sentence without пер- 0.01. Near misses keep the sentence and swap in a whole-token trans- word, the bare piece (boundary, membrane, receiver) or a verb without пер-."
+}

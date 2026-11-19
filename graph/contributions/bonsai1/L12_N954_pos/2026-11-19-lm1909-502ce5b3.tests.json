@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-502ce5b3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N954+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:37:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N954",
+   "pole": "+",
+   "label": "The delimiter that closes a source's name: the period or comma right after an abbreviated journal title in a reference-list citation ('Hum Mol Genet.', 'J Surg Oncol'), and likewise 'import'/'as' right after a module path in a Python import line. Tested on the citation case.",
+   "fire": [
+    "Tanaka H, Mori Y. Early mobilisation after stroke. J Neurol Sci. 2011;305:20-25.",
+    "Okafor C, Wills D. Statin use and fracture risk. Am J Epidemiol. 2008;167:1-9.",
+    "Petrov A, Lind E. Gut flora in preterm infants. Acta Paediatr. 2015;104:440-446.",
+    "Novak R, et al. Airway remodelling in asthma. Eur Respir J. 2003;22:10-17.",
+    "Hughes P, Diaz L. Vitamin D and falls in the elderly. Clin Endocrinol. 2012;76:300-306.",
+    "Rossi G, Kim J. Imaging of knee cartilage. Br J Radiol. 2006;79:95-101.",
+    "Meyer T, Shah N. Renal outcomes in diabetes. Kidney Int. 2019;95:120-131.",
+    "Dubois F, Park H. Pain after dental surgery. J Oral Rehabil. 2010;37:55-62."
+   ],
+   "quiet": [
+    "Tanaka and Mori studied early mobilisation after stroke and found that it helped.",
+    "Okafor and Wills asked whether statin use changes the risk of fracture.",
+    "Petrov and Lind described the gut flora of preterm infants in their first weeks.",
+    "Novak and colleagues wrote about airway remodelling in people with asthma.",
+    "Hughes and Diaz looked at vitamin D and falls in elderly patients.",
+    "Rossi and Kim compared ways of imaging knee cartilage, and they preferred the newer one.",
+    "Meyer and Shah followed renal outcomes in adults with diabetes for ten years.",
+    "Dubois and Park measured pain after dental surgery, but the sample was small."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "delimiter after journal abbreviation",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: two reference-style citations 0.56 and 0.44 (peak on the '.' after the journal abbreviation); prose with a full journal name 0.09-0.13; import lines 0.30-0.41 (not tested here). Near misses keep authors and topic but are running prose with commas and periods."
+}
