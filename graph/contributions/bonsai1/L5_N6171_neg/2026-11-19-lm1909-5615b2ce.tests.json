@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-19-lm1909-5615b2ce",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N6171-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:29:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N6171",
+   "pole": "-",
+   "label": "capital 'H' as its own token glued to a digit, hyphen or other non-word character ('-H' flag, '4H', 'L3H…', 'xH…'), weaker for a free-standing ' H'; not the H that starts an ordinary word",
+   "fire": [
+    "curl -X POST 'https://api.example.org/login' -H 'Content-Type: text/plain'",
+    "The satellite rode a Delta 4H from the Florida coast.",
+    "Use attrib -S -H to make the folder visible again.",
+    "For shading I prefer a 6B, but for fine lines a 2H is better.",
+    "The radar was built by L3Harris for the coast guard.",
+    "The crates were marked 7H and 9H in red paint.",
+    "wget --quiet -H 'Cache-Control: no-cache' https://example.org/feed",
+    "The bond between C-H atoms is shorter than expected."
+   ],
+   "quiet": [
+    "curl -X POST 'https://api.example.org/login' -d 'user=guest'",
+    "The satellite rode a Delta 4M from the Florida coast.",
+    "Use attrib -S -R to make the folder writable again.",
+    "For shading I prefer a 6B, but for fine lines a 2B is better.",
+    "Harris built the radar for the coast guard in Houston.",
+    "The crates were marked 7K and 9K in red paint.",
+    "Helen and Hugo walked Home through Hyde Park.",
+    "The pH of the sample was checked at the NIH and the WHO."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "standalone 'H' token",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "One token dominates ('H' x26, ' H' x6). Probes: 'curl … -H' 0.97, 'L3Harris' 0.71, 'Delta 4H' 0.69, '4H' pencil 0.67, '2H, 5H' 0.57, 'attrib … -H' 0.48, 'Vitamin H' 0.65 but 'the H key' 0.14; word-initial H (Henry, Home, Hat) 0.08, 'pH … NIH' 0.01, other letters (4M, 2K) 0.00.",
+ "trigger": {
+  "tokens": [
+   "H",
+   " H"
+  ]
+ }
+}

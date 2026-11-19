@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-1f0e710b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N10341-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:29:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N10341",
+   "pole": "-",
+   "label": "line break / indentation of a continuation line after a trailing binary operator (and, or, +, *, else) inside a wrapped parenthesised Python expression",
+   "fire": [
+    "def can_edit(user):\n    return (\n        user.is_active and\n        user.is_staff and\n        user.has_token\n    )",
+    "    message = (header_text +\n               body_text +\n               footer_text)",
+    "    visible = not hidden and (\n        is_open(panel) or\n        is_pinned(panel)\n    )",
+    "    cost = (unit_price *\n            quantity *\n            tax_rate)",
+    "    if (start_date is not None and\n            end_date is not None and\n            start_date < end_date):\n        return True",
+    "    name = (given_name if given_name else\n            make_default_name())",
+    "    valid = (\n        len(password) > 8 and\n        password != username and\n        password.isalnum()\n    )",
+    "    path = (base_directory +\n            separator +\n            file_name)"
+   ],
+   "quiet": [
+    "def can_edit(user):\n    if user.is_active:\n        return True\n    return False",
+    "    names = [\n        header_text,\n        body_text,\n        footer_text,\n    ]",
+    "    cost = compute_cost(unit_price,\n                        quantity,\n                        tax_rate)",
+    "    visible = not hidden\n    pinned = is_pinned(panel)\n    opened = is_open(panel)",
+    "    if start_date < end_date:\n        return True\n    else:\n        return False",
+    "    settings = {\n        'name': given_name,\n        'path': file_name,\n    }",
+    "    for panel in panels:\n        panel.show()\n        panel.refresh()",
+    "    valid = check(password and username)\n    return valid"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "continuation after operator",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Fire items are multi-line passages because the pole peaks on the newline or the indentation that follows the operator. Probes: 0.54 / 0.46 / 0.27; continuation after a comma (argument list, list literal) 0.01-0.02. The + pole is a different thing (' (' after 'and')."
+}

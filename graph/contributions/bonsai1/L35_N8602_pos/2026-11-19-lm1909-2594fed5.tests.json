@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-2594fed5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8602+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:29:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N8602",
+   "pole": "+",
+   "label": "in Japanese text, the space-plus-first-byte token that begins a katakana word written after a space (' チェックイン', ' メンズ', ' ブーツ')",
+   "fire": [
+    "駅前の レストランで夕食を食べました。",
+    "新作の スニーカー 通販はこちら。",
+    "週末は カフェで本を読みます。",
+    "人気の バッグ ランキングを見る。",
+    "空港から タクシーで十五分です。",
+    "夏の サンダル セールが始まりました。",
+    "お得な クーポンを配布しています。",
+    "子供用の ヘルメット 一覧です。"
+   ],
+   "quiet": [
+    "駅前のレストランで夕食を食べました。",
+    "新作のスニーカー通販はこちら。",
+    "週末はカフェで本を読みます。",
+    "人気のバッグランキングを見る。",
+    "空港からタクシーで十五分です。",
+    "夏のサンダルセールが始まりました。",
+    "お得なクーポンを配布しています。",
+    "子供用のヘルメット一覧です。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "space before katakana word",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "One token dominates the top examples: ' ' plus the first byte of a kana character. Probes: 0.69-0.74 with a space before a katakana word, -0.07 for the same sentence without the space; a space before kanji gave 0.24, so the label may be wider than katakana. Near misses are the same sentences with the spaces removed."
+}
