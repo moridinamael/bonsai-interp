@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-812ee1ad",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N6481-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:25:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N6481",
+   "pole": "-",
+   "label": "Python code that takes exactly one element out of a collection: the '1' in 'len(x) == 1', the '[0]' after a filter, and ' next(' on an iterator; the + pole is the other side (whole-collection operations such as .all(), set(), union)",
+   "fire": [
+    "def find_user(users, name):\n    hits = [u for u in users if u.name == name]\n    assert len(hits) == 1\n    return hits\n",
+    "def get_default(configs):\n    selected = [c for c in configs if c.is_default][0]\n    return selected\n",
+    "def first_free_port(ports):\n    candidate = next(p for p in ports if p.free)\n    return candidate\n",
+    "def check_root(nodes):\n    roots = [n for n in nodes if n.parent is None]\n    if len(roots) != 1:\n        raise ValueError('expected a single root')\n",
+    "def latest_backup(session):\n    row = session.query(Backup).filter_by(done=True).order_by(Backup.ts).all()[0]\n    return row\n",
+    "def read_header(lines):\n    reader = iter(lines)\n    header = next(reader)\n    return header.split(',')\n",
+    "def only_child(tree):\n    children = list(tree.children)\n    assert len(children) == 1\n    return children\n",
+    "def lookup(table, key):\n    return [row for row in table if row['id'] == key][0]\n"
+   ],
+   "quiet": [
+    "def find_users(users, name):\n    hits = [u for u in users if u.name == name]\n    hits.sort(key=lambda u: u.age)\n    return hits\n",
+    "def get_defaults(configs):\n    selected = {c.name for c in configs if c.is_default}\n    return selected\n",
+    "def free_ports(ports):\n    candidates = sorted(p for p in ports if p.free)\n    return candidates\n",
+    "def check_quad(nodes):\n    corners = [n for n in nodes if n.is_corner]\n    if len(corners) != 4:\n        raise ValueError('expected a quad')\n",
+    "def newest_backup(session):\n    rows = session.query(Backup).filter_by(done=True).order_by(Backup.ts).all()\n    return rows[-1]\n",
+    "def read_lines(lines):\n    cleaned = [line.strip() for line in lines]\n    return ','.join(cleaned)\n",
+    "def count_children(tree):\n    children = list(tree.children)\n    total = sum(c.weight for c in children)\n    return total\n",
+    "def lookup_all(table, key):\n    return set(row['id'] for row in table if row['group'] == key)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code: single-element pick",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card peaks: '0' x12, '1' x9, ' next' x7, '.first'. Probes: assert len == 1 with [0] 1.00, next(iter()) 0.87, sum() 0.01. Near misses include other counts and indexes (== 4, [-1]) to test 'one/first' rather than 'a number after len'."
+}
