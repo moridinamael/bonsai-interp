@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-295efe70",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N10350+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:32+00:00",
+ "recipe": {
+  "toolchain_commit": "005ea3432",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N10350_pos/2026-11-19-lm1909-295efe70.tests.json"
+ },
+ "label": "' color' (less often ' type') used as the name of an attribute whose value is read off or asked for ('the color of X', 'from the card's color', 'Color:'); colour words used otherwise ('colorful', 'colored') and the same sentences without the attribute noun stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N10350_pos/2026-11-19-lm1909-295efe70.tests.json",
+   "prereg_commit": "005ea3432",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.277,
+     "peak": " color"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.419,
+     "peak": " color"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.14,
+     "peak": " color"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.226,
+     "peak": " Color"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.025,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.142,
+     "peak": " color"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.059,
+     "peak": " vehicle"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.052,
+     "peak": " column"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.061,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.049,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " drops"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.033,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.069,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": " all"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.141,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "005ea3432",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'color' as attribute name",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Card: weak pole (max 4.62, set by one 'subplot2grid' token; the rest <= 3.1) on ' color' / ' type' / Korean 종류 'kind' as attribute names; 57% of the >0.1 band is echo regime. Probe: 'the color tells you' 0.29, 'the type of infection' 0.05, 'a bright color' 0.02, 'shape of' 0.07, subplot2grid 0.95. May well miss the 0.20 median.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-955effc4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9048+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:47+00:00",
+ "recipe": {
+  "toolchain_commit": "005ea3432",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N9048_pos/2026-11-19-lm1909-955effc4.tests.json"
+ },
+ "label": "the opener of a step in a worked maths or physics solution: 'We' (we want to find / we use), 'Hence', 'To find', right after the problem statement or a line of working; narrative or business 'We' stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N9048_pos/2026-11-19-lm1909-955effc4.tests.json",
+   "prereg_commit": "005ea3432",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.729,
+     "peak": "We"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.316,
+     "peak": " use"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.593,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.508,
+     "peak": "We"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.573,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.507,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.383,
+     "peak": "We"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.267,
+     "peak": "We"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " weather"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.005,
+     "peak": " midnight"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.008,
+     "peak": " days"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " bakery"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " door"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.003,
+     "peak": " wings"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.006,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.54,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "005ea3432",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'We'/'Hence' opening a solution step",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: 'We wish to measure', 'We'll use that as the final velocity', 'Hence the age of…', 'To find out what your percentage'; very sparse (0.005% > 0.1 max). Probe: solution-step 'We' 0.73 and 0.93, 'Hence' 0.62, 'To find' 0.53; narrative 'We stayed home' 0.00, 'We talked' -0.01. The - pole is dense (15%) and not tested here.",
+ "selection": "random draw"
+}

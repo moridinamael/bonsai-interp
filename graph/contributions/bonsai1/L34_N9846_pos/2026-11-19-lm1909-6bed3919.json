@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6bed3919",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9846+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:46+00:00",
+ "recipe": {
+  "toolchain_commit": "005ea3432",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N9846_pos/2026-11-19-lm1909-6bed3919.tests.json"
+ },
+ "label": "the slot where the adjective 'fit' (physically fit) is the likely next word: after get / stay / keep / remarkably in an exercise or health context; exercise sentences without that slot, and the verb 'fit', stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N9846_pos/2026-11-19-lm1909-6bed3919.tests.json",
+   "prereg_commit": "005ea3432",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.69,
+     "peak": " get"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.877,
+     "peak": " keeping"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.59,
+     "peak": " remarkably"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.561,
+     "peak": " stay"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.226,
+     "peak": " extremely"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.564,
+     "peak": " get"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.729,
+     "peak": " physically"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.241,
+     "peak": " become"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.058,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": "ycling"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " cycles"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.069,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " thirty"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": " shoes"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " watched"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.577,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "005ea3432",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slot before 'fit' (in shape)",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'Lose weight and⟦ get⟧ fit', 'to be⟦ quite⟧ fit', 'a⟦ f⟧itter, trimmer lifestyle'; output promotes ' fit', ' Fit', ' fits'. Probe: 'get fit' 0.46, 'staying fit' 0.63, 'remarkably fit' 0.40; gym sentence 0.03, verb 'would fit' 0.00. It is a prediction: 'eat better and get rich' scored the same 0.46 on ' get', and 'keeps older adults healthy' 0.39.",
+ "selection": "random draw"
+}
