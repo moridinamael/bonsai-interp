@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6c937e5e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N3991+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:48+00:00",
+ "recipe": {
+  "toolchain_commit": "f81cf1bf1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N3991_pos/2026-11-19-lm1909-6c937e5e.tests.json"
+ },
+ "label": "Computing a gradient or derivative: the assignment or copula where a gradient/derivative is being given, in autodiff code ('grads = …grad(loss, …)') or in calculus prose ('its derivative is', 'dy/dx =')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N3991_pos/2026-11-19-lm1909-6c937e5e.tests.json",
+   "prereg_commit": "f81cf1bf1",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.594,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.444,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.518,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.29,
+     "peak": " d"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.293,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.495,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.52,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.574,
+     "peak": " derivative"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": "(pred"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " real"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " cost"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": "_loss"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " periodic"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " sum"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": " steep"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.519,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f81cf1bf1",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "gradient / derivative being computed",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'grads =', 'gradients =', 'derivative is', ' gradient', Jacobian; output suppresses ' gradient(s)', ' derivative'. Probes: grads = torch.autograd.grad 0.73, dy/dx = 0.65, derivative is zero 0.43, gradient of the loss 0.40; one-line tape.gradient 0.10; same code without gradients 0.01, 'steep gradient' of a road 0.04, integral 0.01.",
+ "selection": "random draw"
+}

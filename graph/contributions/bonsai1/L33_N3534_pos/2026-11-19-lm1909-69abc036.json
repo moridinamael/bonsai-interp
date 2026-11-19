@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-69abc036",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N3534+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:43+00:00",
+ "recipe": {
+  "toolchain_commit": "f81cf1bf1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N3534_pos/2026-11-19-lm1909-69abc036.tests.json"
+ },
+ "label": "Employment context where 'fire' / 'dismiss' is the expected next word: the token just before a verb of firing an employee (\"disciplining or …\", \"Can my boss …\", \"appoints and may …\")",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N3534_pos/2026-11-19-lm1909-69abc036.tests.json",
+   "prereg_commit": "f81cf1bf1",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.765,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.323,
+     "peak": " manager"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.946,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.405,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.175,
+     "peak": " directors"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.421,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.496,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.64,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.298,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.323,
+     "peak": " manager"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " mayor"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.175,
+     "peak": " directors"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.165,
+     "peak": " cannot"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.496,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.395,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.852,
+    "median_fire": 0.459,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f81cf1bf1",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "about to say 'fire' (employment)",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: 'disciplining or', 'Can My Boss', 'appoints and may', 'refuse to hire or', 'No one is to be'; output promotes ' fire', ' fired', ' firing'. Probes: 0.88, 0.67, 0.72, 0.74, board decided to sack 0.41; landlords raising or doubling rent 0.18, neighbor fence 0.05, plans to hire engineers 0.08.",
+ "selection": "random draw"
+}

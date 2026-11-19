@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d21a3cdd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N3472-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:28+00:00",
+ "recipe": {
+  "toolchain_commit": "f81cf1bf1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N3472_neg/2026-11-19-lm1909-d21a3cdd.tests.json"
+ },
+ "label": "Statements about when something is at its extreme over time (its best / lowest / peak time of year or day); fires on the extreme word or the following temporal preposition, where a time period is expected",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N3472_neg/2026-11-19-lm1909-d21a3cdd.tests.json",
+   "prereg_commit": "f81cf1bf1",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.489,
+     "peak": "arest"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.534,
+     "peak": " dropped"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.375,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.311,
+     "peak": " highest"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.455,
+     "peak": " busiest"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.556,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.601,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.451,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " row"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": " nets"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " cheese"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": " winter"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " canyon"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " village"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.472,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f81cf1bf1",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "extreme point in time",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' in', ' during', ' when' after 'minimum', 'darkest', 'best time'. Output (reversed) suppresses ' peak'/' period'. Probes: 'looks its best at this time of year' 0.60, 'reached their peak in December and fell' 0.64, plain location sentence 0.005.",
+ "selection": "random draw"
+}
