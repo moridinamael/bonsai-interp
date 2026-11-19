@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-732663b6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8148+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:45:26+00:00",
+ "recipe": {
+  "toolchain_commit": "0261800a9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N8148_pos/2026-11-20-lm1909-732663b6.tests.json"
+ },
+ "label": "subword pieces 'if', 'iffer' or 'pher' inside split words (scient|if|iques, P|fe|iffer, s|pher|oid)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N8148_pos/2026-11-20-lm1909-732663b6.tests.json",
+   "prereg_commit": "0261800a9",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.427,
+     "peak": "if"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.865,
+     "peak": "if"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.187,
+     "peak": "iffer"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.896,
+     "peak": "iffer"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.071,
+     "peak": " Professor"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.149,
+     "peak": " cy"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.809,
+     "peak": "pher"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.887,
+     "peak": "pher"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.086,
+     "peak": "les"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.171,
+     "peak": "tré"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " back"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.08,
+     "peak": " airport"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.174,
+     "peak": " Griffin"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.051,
+     "peak": " sphere"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.072,
+     "peak": " pipes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.618,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0261800a9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split 'if'/'iffer'/'pher' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Spelling unit. Card: 'if' x8, 'pher' x6, 'iff' x4, 'iffer' x2. Probe: scientifiques 0.92, spheroidal 0.92, Pfeiffer 0.82; whole-token ' scientific' 0.05. Fire words chosen so the piece is its own token; near misses use single-token words (spherical, hemisphere, scientific, differ, Griffin, Christopher, decipher, amplifier).",
+ "selection": "random draw"
+}

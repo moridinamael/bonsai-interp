@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a1d986e7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N6040+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:45:36+00:00",
+ "recipe": {
+  "toolchain_commit": "0261800a9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N6040_pos/2026-11-20-lm1909-a1d986e7.tests.json"
+ },
+ "label": "connectors and separators in formal non-English legal/administrative enumerations (Russian 'и', Chinese '、', commas)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N6040_pos/2026-11-20-lm1909-a1d986e7.tests.json",
+   "prereg_commit": "0261800a9",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.379,
+     "peak": "ила"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.148,
+     "peak": " и"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.544,
+     "peak": "本"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.326,
+     "peak": "ается"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.366,
+     "peak": "、"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.23,
+     "peak": "ом"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.224,
+     "peak": "本"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.311,
+     "peak": "тов"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " кино"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.05,
+     "peak": " собак"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": "周末"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.067,
+     "peak": "ач"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": "火锅"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": "т"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": "喜欢"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.088,
+     "peak": "ой"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.319,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0261800a9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "legal-text list connectors",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: top examples are punctuation and suffixes in Russian and Chinese legal/regulatory text, plus one '[dead link]'. Probe: Russian legal list 0.22-0.32, Chinese legal 0.12-0.20, English equivalent 0.15, casual English 0.00. Best guess, may fail.",
+ "selection": "random draw"
+}
