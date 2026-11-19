@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-854433e4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N7230+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:35:59+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N7230_pos/2026-11-19-lm1909-854433e4.tests.json"
+ },
+ "label": "an adjective of large size or importance before its noun (' major', ' large', also ' big', ' significant', ' huge'), often after a count ('two large groupings', 'the last major storm'); the other side of the distinction is small: quiet on ' small'/' minor', and the output suppresses ' small'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N7230_pos/2026-11-19-lm1909-854433e4.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.765,
+     "peak": " large"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.595,
+     "peak": " major"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.36,
+     "peak": " large"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.629,
+     "peak": " major"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.466,
+     "peak": " big"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.277,
+     "peak": " major"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.412,
+     "peak": " large"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.353,
+     "peak": " significant"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " young"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": " floor"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.031,
+     "peak": " flaw"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " estate"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " several"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.439,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "large/major (not small)",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' major' x13, ' large' x8. Probes: major 0.59, large 0.57, big 0.36, significant 0.30, huge 0.23; small 0.00, minor 0.01, 'great achievement' 0.00. Near misses keep the frame and swap in small/minor or a non-size adjective.",
+ "selection": "random draw"
+}

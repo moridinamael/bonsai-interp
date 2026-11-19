@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9d9dcdfb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N5464+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:35:42+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N5464_pos/2026-11-19-lm1909-9d9dcdfb.tests.json"
+ },
+ "label": "the preposition after a piece of software is said to be available or built (' for', ' on'), where a platform, device or programming language comes next (available for Windows, an app on your phone, bindings for Java); quiet on 'available for' with non-software",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N5464_pos/2026-11-19-lm1909-9d9dcdfb.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.628,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.23,
+     "peak": " Android"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.509,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.634,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.691,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.133,
+     "peak": " Mac"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.503,
+     "peak": " available"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.537,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " meeting"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "ing"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.086,
+     "peak": " all"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " church"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " catering"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " residents"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " popular"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " teachers"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.523,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "software for/on → platform",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' for'/' in'/' on' after applications/app; output promotes ' Python', ' Java', ' languages', ' SDK'. Probes: 'app is available for Windows' 0.57, 'client on your phone' 0.26, 'bindings for Python and Java' 0.17; tickets available for 0.05.",
+ "selection": "random draw"
+}

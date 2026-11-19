@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-812ee1ad",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N6481-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:35:32+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N6481_neg/2026-11-19-lm1909-812ee1ad.tests.json"
+ },
+ "label": "Python code that takes exactly one element out of a collection: the '1' in 'len(x) == 1', the '[0]' after a filter, and ' next(' on an iterator; the + pole is the other side (whole-collection operations such as .all(), set(), union)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N6481_neg/2026-11-19-lm1909-812ee1ad.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.937,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.67,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.646,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.838,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.403,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.355,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.581,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.602,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.127,
+     "peak": ".sort"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.062,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.135,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.273,
+     "peak": " len"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.317,
+     "peak": "[-"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.101,
+     "peak": " list"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": "']"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.624,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code: single-element pick",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card peaks: '0' x12, '1' x9, ' next' x7, '.first'. Probes: assert len == 1 with [0] 1.00, next(iter()) 0.87, sum() 0.01. Near misses include other counts and indexes (== 4, [-1]) to test 'one/first' rather than 'a number after len'.",
+ "selection": "random draw"
+}

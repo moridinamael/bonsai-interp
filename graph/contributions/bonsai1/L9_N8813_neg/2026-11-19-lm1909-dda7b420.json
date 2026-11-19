@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-dda7b420",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N8813-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:09+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N8813_neg/2026-11-19-lm1909-dda7b420.tests.json"
+ },
+ "label": "wild animals' seasonal movement and breeding cycle, especially fish and whales: salmon runs, spawning grounds, staging areas, migration; the + pole is the other side of the same animals, fish as food (fillet, seafood, fishmeal)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N8813_neg/2026-11-19-lm1909-dda7b420.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.091,
+     "peak": " spawning"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.929,
+     "peak": " whales"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.932,
+     "peak": " staging"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.77,
+     "peak": " runs"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.989,
+     "peak": " spawn"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.639,
+     "peak": " migration"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.867,
+     "peak": " spawning"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.839,
+     "peak": " grounds"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.409,
+     "peak": "eye"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.149,
+     "peak": " seals"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.555,
+     "peak": "ers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.233,
+     "peak": "head"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.202,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.206,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.247,
+     "peak": "ook"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.468,
+     "peak": "ou"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.898,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "migration & spawning (wildlife)",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "Card: ' spawning' x4, ' grounds' x3, ' staging' x2, ' migration' x2. Probes: salmon runs 0.96, whale migration 0.73, bird staging/migration 0.52; salmon fillet 0.07, lions resting 0.03. Near misses keep the animals and drop the migration/spawning sense.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b530f77b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N1945+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:35:38+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N1945_pos/2026-11-19-lm1909-b530f77b.tests.json"
+ },
+ "label": "chemistry / materials-science prose: the modifier or bracket that opens a technical compound or material term (' silicon' before nitride/dioxide, ' surface' before charge/chemistry, ' (' or ' a' before a chemical acronym or sorbent); the - pole fires on ' poly'/' of' before fatty-acid and aromatic terms",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N1945_pos/2026-11-19-lm1909-b530f77b.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.506,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.102,
+     "peak": " surface"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.473,
+     "peak": " silicon"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.174,
+     "peak": " bip"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.143,
+     "peak": " ads"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.305,
+     "peak": " meth"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.255,
+     "peak": "PF"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.16,
+     "peak": " surface"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": "Height"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": "oters"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " govern"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " birthday"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.214,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "opens a materials term (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card has no single token (',', surface, '(', silicon, a). Probes: acronym after compound name 0.40 twice, surface charge 0.31, silicon nitride 0.10-0.20, non-chemistry 0.01. Likely to land near the 0.20 median threshold.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8105cf57",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7843-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:17+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N7843_neg/2026-11-19-lm1909-8105cf57.tests.json"
+ },
+ "label": "in French text, the short first piece of a word the tokenizer splits before an accented or unusual continuation: ' po' in poivre / poignardée, ' g' in gâteau (card also shows katakana and Korean word starts); the + pole fires on other split word starts (' p'iquant, ' F'landers)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N7843_neg/2026-11-19-lm1909-8105cf57.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.56,
+     "peak": " g"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.155,
+     "peak": " aj"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.66,
+     "peak": " po"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.541,
+     "peak": " g"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.36,
+     "peak": " po"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.616,
+     "peak": " g"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.605,
+     "peak": " po"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.504,
+     "peak": " po"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.143,
+     "peak": " fr"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.328,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.118,
+     "peak": "Le"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.125,
+     "peak": " t"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.049,
+     "peak": " une"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.123,
+     "peak": " retr"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.271,
+     "peak": " re"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.55,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split word start ' po', ' g' (French)",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' po' x5, ' g' x2, ' ro' x2, katakana pieces. Probes: gâteau 0.66, poivre 0.60, poignardée 0.39, pamplemousse 0.28; English translation 0.01, katakana sentence 0.00, other French 0.12. Tested in French only; the katakana part of the card is not covered.",
+ "selection": "random draw"
+}
