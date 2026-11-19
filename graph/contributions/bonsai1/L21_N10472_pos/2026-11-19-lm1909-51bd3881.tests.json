@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-51bd3881",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10472+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N10472",
+   "pole": "+",
+   "label": "The token right after a lone '1' that turns out to start a larger quantity: '1 700 m', '1 1/2 hours', '1 out of every 3'. The - pole takes the plain 'one' / '1' (pronoun 'one', digits inside identifiers).",
+   "fire": [
+    "The silo can store roughly 1 500 tonnes of grain.",
+    "Simmer the stock for 1 1/2 hours, then strain.",
+    "Nearly 1 out of every 6 households has no car.",
+    "The pipeline runs for about 1 300 km across the plain.",
+    "Add 1 1/4 cups of flour and stir.",
+    "Around 1 out of every 10 patients reports side effects.",
+    "The stadium seats close to 1 800 spectators.",
+    "Let the dough rise for 1 3/4 hours in a warm place."
+   ],
+   "quiet": [
+    "The silo was the one building left standing on the farm.",
+    "Simmer the stock for 45 minutes, then strain.",
+    "Nearly every household on the street has no car.",
+    "The pipeline runs for about 300 km across the plain.",
+    "Add 3/4 cup of flour and stir.",
+    "No one among the patients reports side effects.",
+    "Stadium gate 1 opens before the others.",
+    "Let the dough rise for 2 hours in a warm place."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "after a '1' that continues",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: top peaks are the token after 'one'/'1' in 'one year after', '1 1/2 - 2 hours', '1 700 m', '1 out of every 3'. Probe: '1 1/2 hours' 0.41 and 0.31, '1 200 litres' 0.34, '1 700 m' 0.36, '1 out of every 4' 0.31; but 'one year after' gave 0.50 once and 0.10 in a second sentence, 'one hour', 'one ton' and 'one month' about 0.03. The unit-of-time reading did not hold, so the label is the continued-number reading."
+}

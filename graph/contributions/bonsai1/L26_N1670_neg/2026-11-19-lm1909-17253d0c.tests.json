@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-17253d0c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N1670-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N1670",
+   "pole": "-",
+   "label": "In column-aligned code, the token that ends a cell just before a run of padding spaces: a quoted value before an aligned SQL 'AS', or a list item before an aligned trailing comment. Its output promotes long whitespace runs. The same code written without alignment is much weaker.",
+   "fire": [
+    "       ,B.ACCT_NO               AS ACCT_NO \n       ,B.CURRENCY              AS CURRENCY \n       ,B.CLOSE_DATE            AS CLOSE_DATE \n       ,'ERP'                   AS SRC_SYS \n",
+    "SELECT T.ORDER_ID          AS ORDER_ID\n      ,T.CUSTOMER          AS CUSTOMER\n      ,'WEB'               AS CHANNEL\n      ,T.TOTAL             AS TOTAL\n",
+    "       ,C.REGION                AS REGION \n       ,C.MANAGER               AS MANAGER \n       ,'N/A'                   AS COMMENTS \n       ,V_DATE                  AS LOAD_DATE \n",
+    "    ,S.STORE_ID        AS STORE_ID\n    ,S.CITY            AS CITY\n    ,'OPEN'            AS STATUS\n    ,S.SALES           AS SALES\n",
+    "WEEKDAYS = [\n    'mon',           # 0 = start of week\n    'tue',           # 1 = second day\n    'wed',           # 2 = midweek\n    'thu',           # 3 = almost there\n    'fri'            # 4 = last day\n]\n",
+    "LOG_LEVELS = [\n    'debug',         # 0 = everything\n    'info',          # 1 = normal output\n    'warning',       # 2 = something odd\n    'error'          # 3 = failure\n]\n",
+    "PLANET_TYPES = [\n    'None',               # 0 = unknown\n    'rocky',              # 1 = like Earth\n    'gas',                # 2 = like Jupiter\n    'ice'                 # 3 = like Neptune\n]\n",
+    "SUITS = [\n    'clubs',         # 0 = lowest\n    'diamonds',      # 1 = second\n    'hearts',        # 2 = third\n    'spades'         # 3 = highest\n]\n"
+   ],
+   "quiet": [
+    "SELECT D.DEPT_NO AS DEPT_NO, D.BUDGET AS BUDGET, 'HR' AS UNIT, D.HEAD AS HEAD\nFROM DEPTS D\n",
+    "SELECT P.PART_ID AS PART_ID\n      ,P.SUPPLIER AS SUPPLIER\n      ,'EU' AS MARKET\n      ,P.PRICE AS PRICE\n",
+    "SELECT name, city, status FROM stores WHERE status = 'OPEN' ORDER BY city;\n",
+    "    ,R.ROUTE_ID AS ROUTE_ID\n    ,R.DEPOT AS DEPOT\n    ,'BUS' AS MODE\n    ,R.STOPS AS STOPS\n",
+    "MONTHS = [\n    'jan',\n    'feb',\n    'mar',\n    'apr',\n    'may'\n]\n",
+    "COLOURS = ['black', 'white', 'grey', 'brown']\n",
+    "MOON_TYPES = [\n    'None',\n    'icy',\n    'volcanic',\n    'captured'\n]\n",
+    "RANKS = [\n    'ace',  # high or low\n    'king',\n    'queen',\n    'jack'\n]\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "cell end before padding",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on \"'\", \"',\", '()', ':' before padded inline comments or aligned SQL columns; the - pole's output promotes long space runs. Probe: aligned SQL 0.87 and 0.37, list with aligned comments 0.49 and 0.32, the same lists unaligned 0.09; but 'self._url = url' in a plain __init__ scored 0.58, which this label does not explain, and aligned 'evt.x = y  # comment' lines only 0.16."
+}
