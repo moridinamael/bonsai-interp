@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-761fbf2b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10025+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:31+00:00",
+ "recipe": {
+  "toolchain_commit": "b119c1b09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N10025_pos/2026-11-19-lm1909-761fbf2b.tests.json"
+ },
+ "label": "the word that names or qualifies a storm right after 'Hurricane' / 'Tropical Storm' (Hurricane Gustav, Hurricane Ernesto, Tropical Storm Allison, hurricane frequency); the same name on a person stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N10025_pos/2026-11-19-lm1909-761fbf2b.tests.json",
+   "prereg_commit": "b119c1b09",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.8,
+     "peak": "av"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.928,
+     "peak": " Ernest"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.564,
+     "peak": " Allison"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.533,
+     "peak": " frequency"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.584,
+     "peak": " Isaac"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.371,
+     "peak": " Wil"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.216,
+     "peak": " Fay"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.778,
+     "peak": "olly"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.047,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.18,
+     "peak": " rose"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.071,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.156,
+     "peak": " warehouse"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": "ves"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": " ahead"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.574,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b119c1b09",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "name after 'Hurricane'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card has no single token: Hurricane Frequency, Gustav, Ernesto, but also 'purse' seine, 'lease', 'programming' package, so storm names are only part of the pole. Probes: Tropical Storm Allison 0.76, hurricane frequency 0.71, Hurricane Gustav 0.60, Ernesto 0.55, Katrina 0.42 (0.09 in another sentence); uncle Gustav 0.03; purse seine 0.72 (outside this label), a purse on the table 0.10.",
+ "selection": "random draw"
+}

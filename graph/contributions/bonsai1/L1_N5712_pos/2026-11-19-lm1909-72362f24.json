@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-72362f24",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N5712+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:30:11+00:00",
+ "recipe": {
+  "toolchain_commit": "b119c1b09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N5712_pos/2026-11-19-lm1909-72362f24.tests.json"
+ },
+ "label": "Arabic-language text in Arabic script (strongest on the piece 'فس' as in انفسهم / تفسير); text in other scripts is much weaker",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N5712_pos/2026-11-19-lm1909-72362f24.tests.json",
+   "prereg_commit": "b119c1b09",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 6,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.212,
+     "peak": " ص"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.284,
+     "peak": "دا"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.562,
+     "peak": "طب"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.427,
+     "peak": "اف"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.873,
+     "peak": "فس"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.277,
+     "peak": "ت"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.383,
+     "peak": "وا"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.754,
+     "peak": "فس"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.395,
+     "peak": " house"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.208,
+     "peak": " кни"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.478,
+     "peak": "רופ"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.358,
+     "peak": " du"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.382,
+     "peak": " τ"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.328,
+     "peak": "高的"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.316,
+     "peak": " al"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.219,
+     "peak": " Cairo"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.656,
+    "median_fire": 0.405,
+    "near_misses_at_0.3": 6
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b119c1b09",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic-script text",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags the pole DENSE (23.8% of tokens above 0.1 of max; max only 0.22; gate-closed regime 100%), so it is recorded as dense / positional. The top examples are nearly all Arabic ('فس' x8, 'ا' x6). Probes: Arabic sentences with 'فس' 0.81-0.86, Arabic without it 0.46; Hebrew 0.30, Russian 0.18, English 0.15-0.17. The background is high, as expected of a dense unit.",
+ "selection": "random draw"
+}
