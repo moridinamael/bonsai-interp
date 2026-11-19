@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-46aa8cdb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N101-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:22:17+00:00",
+ "recipe": {
+  "toolchain_commit": "2386c8929",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N101_neg/2026-11-20-lm1909-46aa8cdb.tests.json"
+ },
+ "label": "the line break or '#' inside a code comment section header (\"# Updates\", \"# --- Main method ---\")",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N101_neg/2026-11-20-lm1909-46aa8cdb.tests.json",
+   "prereg_commit": "2386c8929",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.703,
+     "peak": "#"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.438,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.782,
+     "peak": "#"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.08,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.435,
+     "peak": "#"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.027,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.756,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.532,
+     "peak": "#"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.38,
+     "peak": " True"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.132,
+     "peak": "print"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.074,
+     "peak": " log"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.33,
+     "peak": "\n\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.163,
+     "peak": "__)\n\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.234,
+     "peak": "__':\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.493,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.218,
+     "peak": "for"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.73,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2386c8929",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code comment header break",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card: '\\n' x15 at the ends of '# Section' comment lines in code; weak (max 5.6). Probe: header block 0.39, ordinary code lines 0.22, so near misses may leak.",
+ "selection": "random draw"
+}

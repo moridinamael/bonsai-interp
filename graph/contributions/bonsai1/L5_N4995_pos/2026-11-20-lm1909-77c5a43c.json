@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-77c5a43c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N4995+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:21:53+00:00",
+ "recipe": {
+  "toolchain_commit": "2386c8929",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N4995_pos/2026-11-20-lm1909-77c5a43c.tests.json"
+ },
+ "label": "the first token of the text window (positional), regardless of what the token is",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N4995_pos/2026-11-20-lm1909-77c5a43c.tests.json",
+   "prereg_commit": "2386c8929",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.046,
+     "peak": "icate"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.043,
+     "peak": " body"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.008,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.053,
+     "peak": "友"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.042,
+     "peak": " house"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.024,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.034,
+     "peak": " harder"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.057,
+     "peak": " shades"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " order"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " body"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " j"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": "友"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " house"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.041,
+     "peak": " harder"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.062,
+     "peak": " jon"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.578,
+    "median_fire": 0.042,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2386c8929",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "first token (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "card flags positional: 100% of top peaks at window position 0. Scoring pastes sentences inside a window, so this test will probably fail; it records the positional nature honestly.",
+ "selection": "random draw"
+}
