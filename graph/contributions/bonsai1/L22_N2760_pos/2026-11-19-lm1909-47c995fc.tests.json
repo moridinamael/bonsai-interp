@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-47c995fc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N2760+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:49:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N2760",
+   "pole": "+",
+   "label": "Python code: the end of a bookkeeping statement that keeps a running offset, total or count (x = x + len(y), starts.append(starts[-1] + n), n = 0); other Python statements (string handling, division, I/O) stay quiet",
+   "fire": [
+    "starts = [0]\nfor seg in segments:\n    starts.append(starts[-1] + seg.data.shape[0])\n\n# concatenate the segments\n",
+    "    losses = []\n    accs = []\n    total_loss = total_acc = 0.0\n    best_acc = None\n",
+    "for i in range(n_frames):\n    begin = i * frame_len\n    end = begin + frame_len\n",
+    "    header = tag + attrs\n    self._pos = self._pos + len(header)\n    attrs = ''\n",
+    "        total = stats['disk_total_bytes']\n        free = stats['disk_free_bytes']\n        used = total - free\n",
+    "    self.items = []\n    self.n_items = 0\n    self.n_errors = 0\n    self.min_x = None\n",
+    "count = 0\nfor row in rows:\n    count = count + len(row.cells)\n    widths.append(count)\n",
+    "    cursor = 0\n    for block in blocks:\n        cursor = cursor + block.size\n        offsets.append(cursor)\n"
+   ],
+   "quiet": [
+    "names = []\nfor seg in segments:\n    names.append(seg.title.strip().lower())\n\n# show the names\n",
+    "    if user is None:\n        raise ValueError('unknown user')\n    print(user.name)\n",
+    "for path in paths:\n    with open(path) as f:\n        text = f.read()\n",
+    "    label = tag.upper()\n    self._name = label.replace('-', '_')\n    attrs = ''\n",
+    "        ratio = width / height\n        scale = ratio / 2.0\n        half = size // 2\n",
+    "    try:\n        config = json.loads(raw)\n    except ValueError:\n        config = {}\n",
+    "def greet(name):\n    message = 'Hello, ' + name\n    return message.title()\n",
+    "class Point:\n    def __repr__(self):\n        return 'Point(%r, %r)' % (self.x, self.y)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "Python running-total statements",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: both poles sit on statement ends in Python; the + pole's top examples are offsets, totals and zero-initialisations ('X_start.append(X_start[-1]+...)', 'ev_total_cost = ... = 0.0', 'self._offset = self._offset + len(line)'), the - pole's are ratios ('1 / x', 'grid_vwidth/width'). Look: also 'join' in os.path imports. Probe: accumulators 0.37 and 0.21, zero-init 0.18, division 0.03-0.06, dict lookup 0.01. Activations are weak in short snippets, so this may miss the 0.20 median."
+}
