@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0850dde3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N9051+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:53+00:00",
+ "recipe": {
+  "toolchain_commit": "7060c1bb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N9051_pos/2026-11-19-lm1909-0850dde3.tests.json"
+ },
+ "label": "a Chinese verb at the point where a result or potential complement follows (看得出, 聽起來, 跑完, 听不清): the action reaching an outcome",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N9051_pos/2026-11-19-lm1909-0850dde3.tests.json",
+   "prereg_commit": "7060c1bb5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.412,
+     "peak": "我看"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.438,
+     "peak": "寫"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.318,
+     "peak": "聽"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.545,
+     "peak": "看得"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.648,
+     "peak": "听"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.122,
+     "peak": "氣"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.321,
+     "peak": "闻"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.331,
+     "peak": "聽"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "長"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": "工作"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": "常常"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.068,
+     "peak": "旅行"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": "什么时候"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": "中午"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": "准备"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": "了很多"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.371,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7060c1bb5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Chinese verb + result complement",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card peaks are perception/action verbs 看, 聽, 跑, 听, 研制, 处理 right before 的出/起來/完/不清/后; output promotes ' out', ' successfully', '成功', '得出', ' found'. Probes: 看的出 0.70, 聽起來 0.63, 跑完 0.59, 聽不清 0.38; 跑步 0.01, 追問 0.03, English 0.00. The − pole peaks on verbs of pursuit (追, 尋, 詢), so the neuron may contrast attaining a result with still seeking it.",
+ "selection": "random draw"
+}

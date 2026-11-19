@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-50eae8c5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N7235-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:27+00:00",
+ "recipe": {
+  "toolchain_commit": "7060c1bb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N7235_neg/2026-11-19-lm1909-50eae8c5.tests.json"
+ },
+ "label": "the generic second element of a local place name (Hill, Hollow, Valley, -side) inside a street, school or business name in local-news text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N7235_neg/2026-11-19-lm1909-50eae8c5.tests.json",
+   "prereg_commit": "7060c1bb5",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.636,
+     "peak": " Hill"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.758,
+     "peak": " Hollow"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.567,
+     "peak": " Valley"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.615,
+     "peak": "ide"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.266,
+     "peak": " Hill"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.616,
+     "peak": " Hollow"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.232,
+     "peak": " Animal"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.567,
+     "peak": "side"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.136,
+     "peak": " church"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.331,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": " car"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.129,
+     "peak": "ide"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.184,
+     "peak": " Avenue"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.172,
+     "peak": " sent"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " valley"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.591,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7060c1bb5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "place-name suffix word",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' Valley', 'side', 'ville', ' Hill', ' Hollow', ' Grande' in addresses and obituaries (also ' private' x4, not tested). Probes: Maple Hollow Drive 0.69, Cedar Hill Funeral Home 0.50, Sunnyside Avenue 0.40, Pine Valley Middle School 0.36; common-noun hill/valley 0.00, Willow Creek Road 0.15, 12 Elm Street 0.28. The + pole fires on state/county administrative context, so the neuron may contrast neighbourhood-scale names with state-scale ones.",
+ "selection": "random draw"
+}

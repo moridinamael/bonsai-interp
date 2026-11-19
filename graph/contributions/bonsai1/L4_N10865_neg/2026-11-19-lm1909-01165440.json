@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-01165440",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N10865-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:08+00:00",
+ "recipe": {
+  "toolchain_commit": "7060c1bb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N10865_neg/2026-11-19-lm1909-01165440.tests.json"
+ },
+ "label": "dense low-amplitude leak pole (48.7% of tokens reach 0.1 of max, max 0.26); best guess at its strongest driver: Japanese sentence-final conjecture 'のでしょう(か)'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N10865_neg/2026-11-19-lm1909-01165440.tests.json",
+   "prereg_commit": "7060c1bb5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 8,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.761,
+     "peak": "のでしょうか"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.023,
+     "peak": "のでしょう"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.72,
+     "peak": "のでしょうか"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.069,
+     "peak": "のでしょう"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.19,
+     "peak": "のでしょう"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.705,
+     "peak": "しょう"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.013,
+     "peak": "のでしょう"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.736,
+     "peak": "のでしょうか"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.549,
+     "peak": "予"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.523,
+     "peak": "女"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.627,
+     "peak": "今年"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.513,
+     "peak": "あの"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.453,
+     "peak": "今"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.674,
+     "peak": "ものです"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.563,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.665,
+     "peak": "と言"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.887,
+    "near_misses_at_0.3": 8
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7060c1bb5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; Japanese のでしょう",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense and gate-closed leak regime. Probes: のでしょう sentences 0.77-1.03 of max, but plain English 0.52, code 0.44, Chinese 0.59. Near misses are Japanese sentences without のでしょう; expected to fail, recorded to document density.",
+ "selection": "random draw"
+}
