@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-a6427803",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N6110+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N6110",
+   "pole": "+",
+   "label": "best guess for a dense unit: word-internal continuation pieces of long compound or non-English words (Korean, German, Spanish, hyphenated English)",
+   "fire": [
+    "그 회사는 새로운 숙박시설을 내년에 개발할 계획입니다.",
+    "Die Verhandlungen waren schwerfällig und dauerten bis Mitternacht.",
+    "El capitalismo cambió la vida de los campesinos.",
+    "The two co-authors of the report met in Geneva.",
+    "우리 학교의 도서관은 주말에도 문을 엽니다.",
+    "Der Bürgermeister sprach über die Wohnungsknappheit in der Innenstadt.",
+    "La organización publicó un informe sobre el desempleo juvenil.",
+    "The ex-president gave a speech at the co-operative."
+   ],
+   "quiet": [
+    "The cat sat by the door and waited for rain.",
+    "He went to the shop to buy some bread and milk.",
+    "We saw a big red bus at the end of the road.",
+    "The two men who wrote the book met in a park.",
+    "Our school is open on most days of the week.",
+    "The man spoke for an hour and then sat down.",
+    "The group put out a note on jobs for the young.",
+    "The old king gave a talk at the farm."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "dense; mid-word pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense: 24.2% of tokens reach 0.1 of max. Probing: non-English and hyphenated-compound sentences 0.30-0.56, but plain English 0.12-0.22 and code 0.31, so near misses leak as expected. The test records the density; I do not expect it to hold."
+}
