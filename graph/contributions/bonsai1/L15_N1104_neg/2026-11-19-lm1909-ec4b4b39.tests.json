@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-ec4b4b39",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N1104-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:21:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N1104",
+   "pole": "-",
+   "label": "Python: the ':\\n' ending a `try` that comes after an earlier try/except block (a second or nested try), not a first try or other block openers",
+   "fire": [
+    "def setup(root, cache):\n    try:\n        os.makedirs(root)\n    except OSError:\n        pass\n    try:\n        os.makedirs(cache)\n    except OSError:\n        pass\n",
+    "def stop(self):\n    try:\n        self.sock.close()\n    except Exception:\n        pass\n    try:\n        self.thread.join()\n    except Exception:\n        pass\n",
+    "def read_config(path):\n    try:\n        import yaml\n    except ImportError:\n        yaml = None\n    try:\n        fh = open(path)\n    except IOError:\n        return {}\n    return fh.read()\n",
+    "def to_number(s):\n    try:\n        return int(s)\n    except ValueError:\n        try:\n            return float(s)\n        except ValueError:\n            return 0\n",
+    "    def teardown(self):\n        try:\n            self.db.rollback()\n        except Exception:\n            pass\n        try:\n            self.db.close()\n        except Exception:\n            pass\n",
+    "try:\n    import simplejson as json\nexcept ImportError:\n    import json\ntry:\n    from cStringIO import StringIO\nexcept ImportError:\n    from io import StringIO\n",
+    "def purge(names):\n    for name in names:\n        try:\n            os.unlink(name)\n        except OSError:\n            pass\n        try:\n            os.rmdir(os.path.dirname(name))\n        except OSError:\n            pass\n",
+    "def lookup(key, env):\n    try:\n        return env[key]\n    except KeyError:\n        try:\n            return os.environ[key]\n        except KeyError:\n            return None\n"
+   ],
+   "quiet": [
+    "def setup(root, cache):\n    if not os.path.exists(root):\n        os.makedirs(root)\n    if not os.path.exists(cache):\n        os.makedirs(cache)\n",
+    "def stop(self):\n    with self.lock:\n        self.sock.close()\n    with self.guard:\n        self.thread.join()\n",
+    "def read_config(path):\n    data = {}\n    try:\n        fh = open(path)\n        data = fh.read()\n    finally:\n        log('done')\n    return data\n",
+    "def to_number(s):\n    if s.isdigit():\n        return int(s)\n    elif '.' in s:\n        return float(s)\n    else:\n        return 0\n",
+    "    def teardown(self):\n        for conn in self.pool:\n            conn.rollback()\n        while self.pool:\n            self.pool.pop().close()\n",
+    "import json\nimport sys\nfrom io import StringIO\n\ndef main():\n    buf = StringIO()\n    json.dump(sys.argv, buf)\n",
+    "function purge(names) {\n  try {\n    fs.unlinkSync(names[0]);\n  } catch (e) {\n  }\n  try {\n    fs.rmdirSync(names[1]);\n  } catch (e) {\n  }\n}\n",
+    "def lookup(key, env):\n    value = env.get(key)\n    if value is None:\n        value = os.environ.get(key)\n    return value\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated/nested try:",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: top examples are 'try:' right after an 'except:' block. Probes: second try after except 0.63-0.67, nested try 0.37; a lone first try 0.09, if/else/for/while/with <= 0.11, JS try { 0.04."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-4eea47c7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N618-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:21:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N618",
+   "pole": "-",
+   "label": "Broad pole; best guess: the comma between names in a Python import list (from x import a, b, c); commas in call arguments, dict literals and prose are quiet",
+   "fire": [
+    "from .styles import RESET_ALL, CLEAR_LINE, strip_ansi, red, underline, yellow\n",
+    "from .text import (\n    CURSOR_UP,\n    CURSOR_DOWN,\n    wrap_lines,\n    cyan,\n    dim,\n    magenta,\n)\n",
+    "from utils.helpers import MAX_RETRIES, DEFAULT_TIMEOUT, retry, backoff, sleep_ms, jitter\n",
+    "from .constants import (\n    TAB_WIDTH,\n    LINE_LIMIT,\n    pad_left,\n    pad_right,\n    center,\n    truncate,\n)\n",
+    "from os.path import join, dirname, abspath, exists, basename, splitext\n",
+    "from .terminal import BELL, ERASE_SCREEN, move_to, white, black, italic\n",
+    "from mypkg.tokens import (\n    COMMA,\n    SEMICOLON,\n    is_space,\n    is_digit,\n    is_alpha,\n    is_punct,\n)\n",
+    "from .palette import DARK_THEME, LIGHT_THEME, blend, tint, shade, invert\n"
+   ],
+   "quiet": [
+    "styles = build(RESET_ALL, CLEAR_LINE, strip_ansi, red, underline, yellow)\n",
+    "CURSOR = {\n    'up': 1,\n    'down': 2,\n    'wrap': 3,\n    'cyan': 4,\n    'dim': 5,\n}\n",
+    "import utils.helpers\n\nresult = utils.helpers.retry(utils.helpers.MAX_RETRIES)\nprint(result)\n",
+    "TAB_WIDTH = 4\nLINE_LIMIT = 80\npad = TAB_WIDTH * 2\nwidth = LINE_LIMIT - pad\n",
+    "path = join(dirname(abspath(name)), basename(name))\nif exists(path):\n    print(splitext(path))\n",
+    "The terminal can ring a bell, erase the screen, move the cursor, and print white, black or italic text.",
+    "def is_token(ch):\n    return is_space(ch) or is_digit(ch) or is_alpha(ch) or is_punct(ch)\n",
+    "The palette has a dark theme and a light theme, and it can blend, tint, shade or invert any colour."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "commas in import lists",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (1.4% of tokens reach 0.1 of max); peaks are line-end punctuation ('.\\n', ',\\n', newline) with a parenthesised import list on top. Probes: one-line import list 0.58, multi-line import list 0.42; __all__ list 0.10, dict literal 0.14, call arguments 0.06, prose with commas 0.08-0.09, plain line list 0.16. Low confidence."
+}
