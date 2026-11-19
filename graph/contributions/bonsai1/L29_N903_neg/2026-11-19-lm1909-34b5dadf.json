@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-34b5dadf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N903-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:43+00:00",
+ "recipe": {
+  "toolchain_commit": "cdffa2311",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N903_neg/2026-11-19-lm1909-34b5dadf.tests.json"
+ },
+ "label": "the word right before a due ' at <temperature / clock time>': recipe-step 'Bake', 'days of storage', a weekday after 'airs' (its output promotes ' at'; the + pole sits one step later, on the word after 'at')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N903_neg/2026-11-19-lm1909-34b5dadf.tests.json",
+   "prereg_commit": "cdffa2311",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.843,
+     "peak": " Bake"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.639,
+     "peak": " Bake"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.709,
+     "peak": " storage"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.678,
+     "peak": "days"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.738,
+     "peak": " Bake"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.544,
+     "peak": " storage"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.39,
+     "peak": "days"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.715,
+     "peak": " Bake"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.116,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.149,
+     "peak": " overnight"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.513,
+     "peak": " weeks"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " Prague"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.141,
+     "peak": " Serve"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.168,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.095,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.694,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cdffa2311",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slot before 'at <setting>'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probing: 'Bake' 0.66, 'days of storage' 0.77, 'airs ... Mondays' 0.73, 'at the' before '5% level' 0.57; 'Serve' 0.10, 'Roast ... until' 0.00, 'oven' 0.25, 'open weekdays from' 0.01.",
+ "selection": "random draw"
+}

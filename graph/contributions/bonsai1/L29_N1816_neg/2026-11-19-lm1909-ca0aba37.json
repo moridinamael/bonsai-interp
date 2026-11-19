@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ca0aba37",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1816-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:21+00:00",
+ "recipe": {
+  "toolchain_commit": "cdffa2311",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1816_neg/2026-11-19-lm1909-ca0aba37.tests.json"
+ },
+ "label": "short-stay travel entry documents: tourist visa on arrival, visa-free stays 'of up to' N days, passport/entry requirements (the + pole is the immigration side: work visas, sponsorship)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1816_neg/2026-11-19-lm1909-ca0aba37.tests.json",
+   "prereg_commit": "cdffa2311",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.613,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.533,
+     "peak": " entry"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.684,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.276,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.675,
+     "peak": " granted"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.763,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.445,
+     "peak": " arrival"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.532,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " senator"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": " according"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " science"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.092,
+     "peak": " lay"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": "Tour"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " her"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.573,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cdffa2311",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tourist visa / entry rules",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Probing: 'visa on arrival' 0.71, 'tourist stays of up to' 0.84, passport 0.28; work visas 0.08, green cards -0.01; 'rent a car on arrival' 0.34 (tourist-arrival wording leaks).",
+ "selection": "random draw"
+}
