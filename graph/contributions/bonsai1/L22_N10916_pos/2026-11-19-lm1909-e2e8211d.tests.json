@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-e2e8211d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N10916+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:05+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N10916",
+   "pole": "+",
+   "label": "A subject pronoun (he, she, they, it) that opens a new clause and takes up the person or thing just mentioned ('..., but he is out', '. She doesn't think'); the opposite pole fires on object ' it' after a verb",
+   "fire": [
+    "My neighbour sold the bakery last spring. She now teaches evening classes in town.",
+    "The old captain rarely spoke of the war. He kept his medals in a drawer.",
+    "The twins look alike in every photo. They have never dressed the same, though.",
+    "Nobody expected the mayor to win again, but he is already planning a third term.",
+    "The engineers are tired of waiting. They want an answer before the weekend.",
+    "The word sounds harsh to visitors, but it is simply how people greet each other here.",
+    "Her grandmother grew up on the island. She still remembers the old ferry.",
+    "The players lost badly on Saturday, or at least, they failed to score at all."
+   ],
+   "quiet": [
+    "My neighbour sold the bakery last spring and gave the keys to her.",
+    "The old captain kept the medals and rarely showed them to anyone.",
+    "The twins found the photo and hid it in a drawer.",
+    "Nobody expected the voters to choose him for a third term.",
+    "The engineers wrote an answer and sent it before the weekend.",
+    "The word sounds harsh, and visitors rarely use it when greeting people here.",
+    "Her grandmother kept the ferry tickets and showed them to us.",
+    "The coach blamed the players and made them train on Sunday."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "clause-opening subject pronoun",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peak tokens ' they', ' he', ' He', ' it', ' They', ' She', always the subject of a fresh clause after a comma, 'but' or a full stop; the - pole is 28/32 object ' it' ('Have it', 'got it'). Probes were weak: '. She opens' 0.29, 'yet he kept' 0.18, 'but they can' 0.17, 'but it is' 0.11; object pronouns 0.01-0.04. The contrast is clear but the level is near the 0.20 bar, so this may fail on the median."
+}

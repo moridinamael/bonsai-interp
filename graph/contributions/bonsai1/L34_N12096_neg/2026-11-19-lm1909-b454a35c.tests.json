@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-b454a35c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N12096-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:05+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N12096",
+   "pole": "-",
+   "label": "In French text, the stem piece of a word split by the tokenizer right before a past-participle ending (rempl|acées, divor|cés, équil|ibré, én|um|érées); French sentences without such split participles, and the English equivalents, stay quiet",
+   "fire": [
+    "Les vieilles fenêtres de l'école ont été remplacées pendant les vacances d'été.",
+    "Ses grands-parents étaient divorcés et ne se parlaient plus depuis longtemps.",
+    "Le repas était simple, bien équilibré et préparé avec des produits frais.",
+    "Les erreurs énumérées dans la lettre ont toutes été corrigées par l'auteur.",
+    "Les habitants les plus âgés du village ont été évacués avant la tempête.",
+    "Le discours, mal articulé et trop long, a été critiqué par les journalistes.",
+    "Les arbres déracinés par le vent seront remplacés au printemps prochain.",
+    "Les documents égarés ont été retrouvés puis numérisés par la bibliothèque."
+   ],
+   "quiet": [
+    "Les vieilles fenêtres de l'école donnent sur une cour pleine de fleurs.",
+    "Ses grands-parents habitent une petite maison près de la mer.",
+    "Le repas commence toujours par une soupe et un morceau de pain.",
+    "La lettre arrive demain matin avec le premier train.",
+    "The oldest residents of the village were evacuated before the storm.",
+    "The old school windows were replaced during the summer holidays.",
+    "Le vent souffle fort sur la plage pendant tout le mois de mars.",
+    "La bibliothèque ouvre ses portes chaque matin vers neuf heures."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "French stem before participle ending",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: all top examples are French, peaking on a mid-word stem piece just before -é/-és/-ées (énumérées, divorcés, âgés, articulé, équilibré, remplacées), at the pole's max of 664. Probes: four fresh French participle sentences 0.73-0.84; French without participles 0.02-0.07; English translation 0.00. Not checked: whether French stems before non-participle endings fire as well."
+}
