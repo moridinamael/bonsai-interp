@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-b732a6dc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N9929+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:38+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N9929_pos/2026-11-19-lm1909-b732a6dc.tests.json"
+ },
+ "label": "the word-internal piece 'ib' or 'id' that closes a name or stem (Naj·ib, Hab·ib, Yaz·id, Rash·id, Cyan·id·ation); not names without the piece, and not 'id'/'ib' inside a one-token word (did, kid, rib)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N9929_pos/2026-11-19-lm1909-b732a6dc.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.01,
+     "peak": " old"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.072,
+     "peak": "ib"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.04,
+     "peak": "id"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.021,
+     "peak": " old"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.389,
+     "peak": "id"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.025,
+     "peak": " Muj"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.018,
+     "peak": " owns"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.117,
+     "peak": "ib"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " Persian"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": " second"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " Robert"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " owns"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": "ila"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.033,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "name-final piece 'ib' / 'id'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: 'ib' x3, 'id' x2, 'idine' x2 among the top 32 peaks, alongside ' cleaning', ' turtles' and ' dock', so the piece is one sub-trigger of several and coverage will be low. Probe: Naj·ib 0.79, Yaz·id 0.85, cyan·id·ation 0.79, Zan·ib·oni 0.87; 'cleaning' 0.01, 'turtles … dock' 0.18, Charles Dickens 0.02. The tokenizer was checked: each fire name ends in the piece 'ib' or 'id'.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "ib",
+   "id"
+  ]
+ }
+}

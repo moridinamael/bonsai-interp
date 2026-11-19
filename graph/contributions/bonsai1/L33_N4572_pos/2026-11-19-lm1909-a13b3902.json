@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-a13b3902",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N4572+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:29+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N4572_pos/2026-11-19-lm1909-a13b3902.tests.json"
+ },
+ "label": "the token ' dis' split off as the start of an uncommon dis- word (dis·bar, dis·robe, dis·quiet, dis·arming); not common dis- words that are one token (discuss, dismiss)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N4572_pos/2026-11-19-lm1909-a13b3902.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.002,
+     "peak": " committee"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.005,
+     "peak": " thin"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.314,
+     "peak": " dis"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.031,
+     "peak": " earthquake"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.009,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.135,
+     "peak": " dis"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.045,
+     "peak": " dis"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.15,
+     "peak": " dis"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " suspend"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " behind"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " sense"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " earthquake"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " leaked"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " quar"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " hour"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.038,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off prefix ' dis'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' dis' is 16 of the top 32 peaks (plus ' Dis' x2); the rest are other split-off word starts (' Sm', ' St', ' Res') and one ' for'. Probe: disarming 0.43, disjunct 0.53, disaccord 0.45, 'dismayed' 0.00, 'charming' 0.00, ' St. Lucie' 0.32. The tokenizer was checked: every fire word starts with the token ' dis'.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " dis",
+   " Dis"
+  ]
+ }
+}

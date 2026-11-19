@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-8cd8fa7f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N8199+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:35:38+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N8199_pos/2026-11-19-lm1909-8cd8fa7f.tests.json"
+ },
+ "label": "Chinese prose: an attributive modifier right before the noun it describes (更详细的消息, 一身黑衣服, 表达意见的平台, 特别的经验); weak on English and on short Chinese sentences without such a modifier",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N8199_pos/2026-11-19-lm1909-8cd8fa7f.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.557,
+     "peak": "更"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.179,
+     "peak": "穿"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.326,
+     "peak": "交流"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.379,
+     "peak": "技术"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.183,
+     "peak": "更"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.218,
+     "peak": "红"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.428,
+     "peak": "展示"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.188,
+     "peak": "建筑"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.271,
+     "peak": " specific"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": " wears"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.237,
+     "peak": " unique"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.046,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": "七"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.04,
+     "peak": "明天"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "喝茶"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": "跑"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.272,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Chinese pre-noun modifier",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: top examples are almost all Chinese, peaking on 更 / 黑 / 表达 / 特别 before a noun (one French 'modes d'expression plus actuels'). Probe: four Chinese modifier sentences 0.49-0.70, English translation 0.11, '今天天气很好' 0.12. Whether the driver is the modifier slot or Chinese prose in general is what the Chinese near misses test.",
+ "selection": "random draw"
+}
