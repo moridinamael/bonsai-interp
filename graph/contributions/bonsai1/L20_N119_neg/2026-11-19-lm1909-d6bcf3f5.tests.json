@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-d6bcf3f5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N119-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:42:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N119",
+   "pole": "-",
+   "label": "The marker that opens the last member of a series: 'Finally,' closing an enumerated argument and 'else:' closing an if/elif chain",
+   "fire": [
+    "There are three reasons the plan failed. To begin with, the budget was too small. In addition, the staff were poorly trained. Finally, the deadline was moved forward twice.",
+    "Several steps are needed to restore the painting. First, the surface dirt is removed. Then the old varnish is dissolved. Finally, the losses are filled and retouched.",
+    "The report makes a number of points. It notes that rents have risen. It also shows that wages have stalled. Finally, it warns that savings are falling.",
+    "We thank many people for this book. Our editor read every draft. Our families put up with long absences. Finally, our students tested each chapter in class.",
+    "def grade(score):\n    if score >= 90:\n        return 'A'\n    elif score >= 75:\n        return 'B'\n    elif score >= 60:\n        return 'C'\n    else:\n        return 'F'",
+    "def describe(n):\n    if n < 0:\n        kind = 'negative'\n    elif n == 0:\n        kind = 'zero'\n    else:\n        kind = 'positive'\n    return kind",
+    "    if ext == '.json':\n        loader = json.load\n    elif ext == '.yaml':\n        loader = yaml.safe_load\n    else:\n        raise ValueError('unknown file type')",
+    "Critics raised several objections. Some said the sample was too small. Others doubted the method. Finally, a few questioned whether the data were real."
+   ],
+   "quiet": [
+    "There are three reasons the plan failed. To begin with, the budget was too small. In addition, the staff were poorly trained. The deadline was moved forward twice.",
+    "Several steps are needed to restore the painting. First, the surface dirt is removed. Then the old varnish is dissolved by a trained conservator.",
+    "The report makes a number of points. It notes that rents have risen. It also shows that wages have stalled and that savings are falling.",
+    "We thank many people for this book. Our editor read every draft. Our families put up with long absences while we wrote it.",
+    "def grade(score):\n    if score >= 90:\n        return 'A'\n    elif score >= 75:\n        return 'B'\n    elif score >= 60:\n        return 'C'\n    return 'F'",
+    "def describe(n):\n    kind = 'positive'\n    if n < 0:\n        kind = 'negative'\n    elif n == 0:\n        kind = 'zero'\n    return kind",
+    "    if ext == '.json':\n        loader = json.load\n    elif ext == '.yaml':\n        loader = yaml.safe_load\n    data = loader(handle)",
+    "Critics raised several objections. Some said the sample was too small. Others doubted the method, and a few questioned the data."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "last-item marker (Finally / else)",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' else' x5, 'Finally' x6 in three casings, ' and' before a last list item, ' third', ' course'. Probes: 'Finally' after 'To begin with ... In addition ...' 0.47, 'else:' after if/elif 0.45, 'and a third' 0.51; short versions much weaker ('Finally' after two short steps 0.07, two-branch else 0.03, 'X, Y and Z' 0.09-0.25). Fire items therefore carry the earlier members of the series; near misses stop before the closing marker or use a non-final one."
+}
