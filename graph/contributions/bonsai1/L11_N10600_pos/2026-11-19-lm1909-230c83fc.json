@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-230c83fc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N10600+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:56:50+00:00",
+ "recipe": {
+  "toolchain_commit": "7e6471c21",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N10600_pos/2026-11-19-lm1909-230c83fc.tests.json"
+ },
+ "label": "the document-site boilerplate 'Unformatted text preview:' (peak on ' preview' or its colon); 'preview' in ordinary use and 'Unformatted text' without 'preview' are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N10600_pos/2026-11-19-lm1909-230c83fc.tests.json",
+   "prereg_commit": "7e6471c21",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.008,
+     "peak": " preview"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.073,
+     "peak": " preview"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.333,
+     "peak": " preview"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.862,
+     "peak": " preview"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.544,
+     "peak": " preview"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.679,
+     "peak": " preview"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.89,
+     "peak": " preview"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.69,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.135,
+     "peak": " Document"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.14,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.072,
+     "peak": "Plain"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.057,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " view"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.047,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.066,
+     "peak": " issue"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.776,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7e6471c21",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Unformatted text preview:'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Weak pole (max 5.28; the - pole is ten times stronger). Probes: 'Unformatted text preview:' 0.68-1.01 with or without <|endoftext|> before it; 'Formatted text preview:' still 0.42; 'Unformatted text version:' 0.04; 'print preview:' 0.06. The scan's other top contexts (a newline after 'Related Publications', 'Read More', '[continues]') only reached 0.08-0.17 in probes and are not covered.",
+ "selection": "random draw"
+}

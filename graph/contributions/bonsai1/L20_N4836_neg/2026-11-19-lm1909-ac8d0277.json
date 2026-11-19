@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-ac8d0277",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N4836-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:57:24+00:00",
+ "recipe": {
+  "toolchain_commit": "7e6471c21",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N4836_neg/2026-11-19-lm1909-ac8d0277.tests.json"
+ },
+ "label": "a piece inside a rare word that the tokenizer breaks into fragments (transliterated or foreign names, obscure brand names, odd identifiers and command-line flags); text made of common whole-word tokens is quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N4836_neg/2026-11-19-lm1909-ac8d0277.tests.json",
+   "prereg_commit": "7e6471c21",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.211,
+     "peak": "ca"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.149,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.465,
+     "peak": "fa"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.394,
+     "peak": "on"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.273,
+     "peak": " Stud"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.274,
+     "peak": "dg"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.216,
+     "peak": " catalog"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.176,
+     "peak": "yn"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.168,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.116,
+     "peak": " proof"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.032,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.099,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.14,
+     "peak": " record"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.074,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.198,
+     "peak": " catalog"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.08,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.244,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7e6471c21",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fragment of a rare split word",
+ "unit_kind": "unclear",
+ "confidence": 0.4,
+ "notes": "The card flags the pole broad (8.0% of tokens reach 0.1 of max, 0.5% reach 0.3), with no dominant token. Probes: 'Elcaset' 0.74, '-gtr' flag 0.77, 'Nicaea' 0.51, 'Gejadze' 0.51, '.combine' 0.34; a plain sentence 0.06. This describes where it fires, not what it computes.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0a2fe988",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N10612-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:57:00+00:00",
+ "recipe": {
+  "toolchain_commit": "7e6471c21",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N10612_neg/2026-11-19-lm1909-0a2fe988.tests.json"
+ },
+ "label": "in code, the variable repeated on the right-hand side of a self-update assignment (x = x + 1, tries = tries - 1): fires on the second mention, just before the + or -; an assignment from a different variable is quiet. The + pole promotes the opposite continuation (it suppresses ' +', ' plus', ' minus')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N10612_neg/2026-11-19-lm1909-0a2fe988.tests.json",
+   "prereg_commit": "7e6471c21",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.656,
+     "peak": " i"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.587,
+     "peak": "es"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.836,
+     "peak": " lives"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.807,
+     "peak": " steps"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.585,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.936,
+     "peak": " retries"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.024,
+     "peak": " page"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.776,
+     "peak": " depth"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.192,
+     "peak": " limit"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " word"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.359,
+     "peak": " total"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.18,
+     "peak": " offset"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " base"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.193,
+     "peak": " budget"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.133,
+     "peak": " start"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.062,
+     "peak": " margin"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.792,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7e6471c21",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "x = [x] ± 1 self-update",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Probes: 'n = n - 1' 0.86, 'score = score + 1' 0.66, 'count = count + 1' 0.55; 'score = bonus + 1' 0.07, 'm = n - 1' 0.26.",
+ "selection": "random draw"
+}
