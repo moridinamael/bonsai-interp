@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e3f57ecd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N9222-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:41:03+00:00",
+ "recipe": {
+  "toolchain_commit": "f33fd372b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N9222_neg/2026-11-20-lm1909-e3f57ecd.tests.json"
+ },
+ "label": "the Russian token ' под' (prefix под- or the preposition под)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N9222_neg/2026-11-20-lm1909-e3f57ecd.tests.json",
+   "prereg_commit": "f33fd372b",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.954,
+     "peak": " под"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.552,
+     "peak": " под"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.431,
+     "peak": " под"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.809,
+     "peak": " под"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.066,
+     "peak": " сп"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.316,
+     "peak": " подпис"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.027,
+     "peak": " объ"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.625,
+     "peak": " под"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.15,
+     "peak": " указ"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": "ив"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "ст"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " про"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.066,
+     "peak": " сп"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": "суд"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.074,
+     "peak": " объ"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.084,
+     "peak": "Д"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.852,
+    "median_fire": 0.492,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f33fd372b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Russian ' под'",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Top 32: ' под' x25 (подтвердить, подниматься, под рукой, подлежащего, подразумеваются, подвергаются). Near misses are Russian sentences of the same kind with other prefixes (при-, про-, на-).",
+ "selection": "random draw"
+}

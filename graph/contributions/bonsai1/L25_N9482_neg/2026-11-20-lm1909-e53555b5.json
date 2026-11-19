@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e53555b5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N9482-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:41:40+00:00",
+ "recipe": {
+  "toolchain_commit": "f33fd372b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N9482_neg/2026-11-20-lm1909-e53555b5.tests.json"
+ },
+ "label": "the comma after a full date at the start of a dated report or log entry ('Jan. 26, 2016, Camrose' / 'May 23, 2013, 5:02 AM')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N9482_neg/2026-11-20-lm1909-e53555b5.tests.json",
+   "prereg_commit": "f33fd372b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.623,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.61,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.662,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.677,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.65,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.79,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.698,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.598,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": "Farm"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": "We"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "atoon"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": "Early"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "s"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " several"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " passed"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "Local"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.656,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f33fd372b",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "comma after dateline date",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Top 32: ',' x15; the strongest are dateline commas after a year, plus fronted-phrase commas and setting words ('back here', 'первое время'). A probe confirmed a dateline comma (0.68) and also 'back here' (0.42), so this label covers only part of the pole. Near misses keep dates but not in a dateline-plus-comma position.",
+ "selection": "random draw"
+}
