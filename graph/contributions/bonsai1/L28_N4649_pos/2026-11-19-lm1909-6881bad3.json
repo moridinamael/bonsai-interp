@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6881bad3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N4649+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:46+00:00",
+ "recipe": {
+  "toolchain_commit": "d6068c2a9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N4649_pos/2026-11-19-lm1909-6881bad3.tests.json"
+ },
+ "label": "in code, the statement that aborts the program in an error-handling branch, right after the error is reported: 'sys.exit(1)', 'exit(1)', 'os._exit(1)' (peak on '.exit' / ' exit' / '('), weaker on 'raise' and an early 'return'; quiet on branches that log and carry on and on the English word 'exit'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N4649_pos/2026-11-19-lm1909-6881bad3.tests.json",
+   "prereg_commit": "d6068c2a9",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.034,
+     "peak": ".exit"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.769,
+     "peak": ".exit"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.885,
+     "peak": " exit"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.021,
+     "peak": "("
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.84,
+     "peak": "("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.138,
+     "peak": " exit"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.215,
+     "peak": " raise"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.763,
+     "peak": ".exit"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "(path"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.081,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": " logger"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " six"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.065,
+     "peak": " -"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " parse"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.39,
+     "peak": "('"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.863,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d6068c2a9",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "exit call in an error branch",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'parser.error(...); sys.exit(2)' 0.97, C 'perror; exit(EXIT_FAILURE)' 0.92, 'log.error; exit(1)' 0.75, 'print usage; sys.exit(1)' 0.60, the same with 'return None' 0.52, 'raise ValueError' 0.40; a branch that logs and counts 0.08, makedirs 0.01, prose 'rear exit' 0.03. The - pole is code too ('.side_effect', status_code 200).",
+ "selection": "random draw"
+}
