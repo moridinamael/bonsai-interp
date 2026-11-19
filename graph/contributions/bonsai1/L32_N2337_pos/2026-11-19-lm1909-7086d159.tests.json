@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-7086d159",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N2337+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:37:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N2337",
+   "pole": "+",
+   "label": "the slot just before a personal-identifier noun ('name', 'identity', further details) when someone's identifying details are being asked for, recorded or withheld: fires on the possessive or comma before it ('did not release his', 'the driver's', 'phone number,'); possessives in everyday contexts stay quiet",
+   "fire": [
+    "The woman was taken to hospital, and police have not yet made public her name.",
+    "He chatted with me for an hour and never once asked me what my name was.",
+    "On the first line of the form, print the applicant's full name in capitals.",
+    "The caller hung up before the operator could take down his name or address.",
+    "Each luggage tag should carry the passenger's surname and a contact number.",
+    "The newspaper agreed not to print the witness's name for her own safety.",
+    "To open an account we need your date of birth, home address, and mother's maiden name.",
+    "The teacher went round the room and asked every child to say their name aloud."
+   ],
+   "quiet": [
+    "The woman was taken to hospital, and doctors have not yet set her broken arm.",
+    "He chatted with me for an hour and never once touched his cup of tea.",
+    "On the first line of the recipe, check the oven's temperature before you start.",
+    "The caller hung up before the operator could finish his sandwich or coffee.",
+    "Each luggage rack should carry the passenger's bags and a folded coat.",
+    "The newspaper agreed not to raise the paper's price for another year.",
+    "To paint a wall we need your ladder, some old sheets, and a wide brush.",
+    "The teacher went round the room and asked every child to close their book quietly."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot before 'name' / ID detail",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' and', ' your', ',', \"'s\", ' his' before '(first/last) name'; output promotes ' last', ' zip', ' full', ' hometown'. Probes: 'did not release his' 0.60, 'still don't know your' 0.43, 'phone number,' 0.41, 'driver's' 0.38, 'not disclosed his' 0.67; 'washed his car' 0.03, 'love your new haircut' 0.01. The pole fires before the noun, so the continuation does not matter; the near misses change the context that precedes the possessive."
+}

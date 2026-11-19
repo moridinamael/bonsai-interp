@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-eae71334",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N6089-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:37:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N6089",
+   "pole": "-",
+   "label": "Japanese '場' when it is the first half of 場所 (place), i.e. right before '所'; '場' in 場合, 工場, 会場 or 市場 stays quiet",
+   "fire": [
+    "待ち合わせの場所を駅の改札前に変更しました。",
+    "この町には静かに本を読める場所がほとんどありません。",
+    "荷物を置く場所がないので、棚を一つ買いました。",
+    "地図で集合の場所をもう一度確認してください。",
+    "猫は家の中でいちばん暖かい場所をよく知っています。",
+    "写真を撮った場所の名前を忘れてしまいました。",
+    "駐車できる場所を探して、三十分も走り回りました。",
+    "祖母の家は思い出がたくさん詰まった場所です。"
+   ],
+   "quiet": [
+    "待ち合わせの時間を午後三時に変更しました。",
+    "この町には大きなパン工場が二つあります。",
+    "荷物が多い場合は、タクシーを呼んでください。",
+    "コンサートの会場は駅から歩いて十分です。",
+    "猫は家の中でいちばん暖かい布団をよく知っています。",
+    "朝の市場で新鮮な魚と野菜を買いました。",
+    "熱がある場合は、学校を休んでください。",
+    "祖母の家は思い出がたくさん詰まった建物です。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "場 before 所 (場所)",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: '場' x13 of the top 32, all in 場所; the card flags the gate-closed regime (-g +u leak 99%), and the maximum 36.25 is a single Korean outlier, with the 場所 examples at about 24 (0.65 of max). The + pole's output promotes '所'. Probes: 場所 0.49, 0.39, 0.27; 場合 0.08, 工場 0.08, Chinese 场所 0.09."
+}
