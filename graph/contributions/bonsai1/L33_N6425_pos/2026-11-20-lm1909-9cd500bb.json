@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9cd500bb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6425+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:44:54+00:00",
+ "recipe": {
+  "toolchain_commit": "e4852c03f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N6425_pos/2026-11-20-lm1909-9cd500bb.tests.json"
+ },
+ "label": "a lone ' w'/' W' letter token that begins a word the tokenizer splits (w|oad, W|ren, W|AVEs, w|_namespace)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N6425_pos/2026-11-20-lm1909-9cd500bb.tests.json",
+   "prereg_commit": "e4852c03f",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.433,
+     "peak": " w"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.266,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.192,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.384,
+     "peak": " w"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.486,
+     "peak": " w"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.333,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.297,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.475,
+     "peak": " w"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.129,
+     "peak": " m"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " women"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " edge"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": "p"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.094,
+     "peak": " mustard"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": "Tour"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": "ict"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.359,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4852c03f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-word initial w/W",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: ' w' x14 and ' W' x12 of the top 32, each the first piece of a split word (woad, Wren, WAVEs, w_namespace). Near misses replace the word with one starting with another letter.",
+ "selection": "random draw"
+}

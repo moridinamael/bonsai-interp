@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9a17a51a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N247+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:44:06+00:00",
+ "recipe": {
+  "toolchain_commit": "e4852c03f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N247_pos/2026-11-20-lm1909-9a17a51a.tests.json"
+ },
+ "label": "positional / digits: the digits inside multi-digit numbers and years (12,0|0|0, 20|1|1)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N247_pos/2026-11-20-lm1909-9a17a51a.tests.json",
+   "prereg_commit": "e4852c03f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.879,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.839,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.84,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.94,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.887,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.819,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.851,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.805,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": " cost"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.027,
+     "peak": " slightly"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": " had"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.949,
+     "peak": " according"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " produced"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": " many"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " noticeable"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.845,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4852c03f",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digits inside numbers",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "Card flags positional (top peaks cluster at window position 4; 53% within the first 16 tokens); peak tokens are '0' x11 and '1' x5 inside numbers and years. Probe: a sentence with numbers 0.86, the same without numbers 0.03. Recorded as positional per the card; testing digits.",
+ "selection": "random draw"
+}

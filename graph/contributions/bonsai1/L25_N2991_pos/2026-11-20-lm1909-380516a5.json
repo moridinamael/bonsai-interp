@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-380516a5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N2991+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:44:26+00:00",
+ "recipe": {
+  "toolchain_commit": "e4852c03f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N2991_pos/2026-11-20-lm1909-380516a5.tests.json"
+ },
+ "label": "the word just before 'probability'/'chance' in statements about random events ('infected with ⟦a certain⟧ probability', 'carriers have a 25% chance')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N2991_pos/2026-11-20-lm1909-380516a5.tests.json",
+   "prereg_commit": "e4852c03f",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.364,
+     "peak": " probability"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.469,
+     "peak": " probability"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.304,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.546,
+     "peak": " probability"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.178,
+     "peak": " probability"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.271,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.689,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.448,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.223,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.451,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.297,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.481,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.131,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.19,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.689,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.166,
+     "peak": " neighbours"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.648,
+    "median_fire": 0.406,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4852c03f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'probability'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks on ' with' x7, ' have', ' occur', ' independently' right before probability/chance phrases; the output promotes 'probability', 'chance', 'likelihood', 'odds'. Probe: 'retained with probability p' 0.55 vs 'painted with a different colour' 0.25. Near misses keep the math/stats register but no probability.",
+ "selection": "random draw"
+}
