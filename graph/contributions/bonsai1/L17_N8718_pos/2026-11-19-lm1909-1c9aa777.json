@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1c9aa777",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N8718+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:38:59+00:00",
+ "recipe": {
+  "toolchain_commit": "02feef0f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N8718_pos/2026-11-19-lm1909-1c9aa777.tests.json"
+ },
+ "label": "the noun completing a phrase about native or national identity (native tongue, mother tongue, native speakers, the Polish character of a place, a Somali citizen, Irish heritage); the same nouns in other senses (bit his tongue, a strong character) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N8718_pos/2026-11-19-lm1909-1c9aa777.tests.json",
+   "prereg_commit": "02feef0f8",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.566,
+     "peak": " tongue"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.954,
+     "peak": " character"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.258,
+     "peak": " speakers"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.342,
+     "peak": " tongue"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.212,
+     "peak": " citizen"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.514,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.446,
+     "peak": " tongue"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.327,
+     "peak": " native"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.135,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " colony"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.157,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.067,
+     "peak": " still"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " census"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": " second"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.066,
+     "peak": " favourite"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.004,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.394,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "02feef0f8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "native-identity noun",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: 'citoyen som|alien', 'the German character of the land', 'skin tone', 'captive-born', 'native tongue', 'left intact'. Probes: native tongue 0.76, French/Polish character 0.49/0.48, native speakers 0.41, mother tongue 0.39, Somali citizen 0.36, captive-born 0.37, Irish heritage 0.26; bit his tongue 0.02, strong character 0.02. The card's 'left intact' and the '.'/',' peaks suggest something broader (an original state kept), which this test does not cover.",
+ "selection": "random draw"
+}
