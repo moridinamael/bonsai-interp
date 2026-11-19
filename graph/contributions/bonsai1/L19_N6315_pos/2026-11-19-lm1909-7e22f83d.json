@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7e22f83d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N6315+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:14:43+00:00",
+ "recipe": {
+  "toolchain_commit": "575e0c01e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N6315_pos/2026-11-19-lm1909-7e22f83d.tests.json"
+ },
+ "label": "the punctuation or digit right after a journal title and volume number in a bibliographic citation ('History Today 58.1 (', 'Review 50 (1976)')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N6315_pos/2026-11-19-lm1909-7e22f83d.tests.json",
+   "prereg_commit": "575e0c01e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.647,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.814,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.446,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.853,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.562,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.814,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.788,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.55,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.03,
+     "peak": " essay"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " O"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " records"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": " February"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": "astic"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.718,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "575e0c01e",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after journal + volume in citation",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' (' x10, '.', ',' after journal name + volume in citations; a second, smaller sense is ' into' ... eyes (not covered by this label). Probes: 'Journal of Ancient History 42 (1998)' 0.58, 'Machine Learning Review 12.3 (May 2015)' 0.58, \"'Nature Today, March 3, 2004\" 0.42; 'founded in 1998 and has 42 volumes' 0.02; 'into her eyes' 0.48, 'stared into the fire' 0.38.",
+ "selection": "random draw"
+}

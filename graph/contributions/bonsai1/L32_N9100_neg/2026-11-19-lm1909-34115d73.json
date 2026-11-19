@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-34115d73",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9100-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:14:16+00:00",
+ "recipe": {
+  "toolchain_commit": "575e0c01e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N9100_neg/2026-11-19-lm1909-34115d73.tests.json"
+ },
+ "label": "negation or 'more' placed right before the predicate of an advisory or capability statement (не рекомендуется, не следует, can more quickly)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N9100_neg/2026-11-19-lm1909-34115d73.tests.json",
+   "prereg_commit": "575e0c01e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.396,
+     "peak": " more"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.443,
+     "peak": " more"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.458,
+     "peak": " more"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.401,
+     "peak": " more"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.498,
+     "peak": " рек"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.548,
+     "peak": " рек"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.709,
+     "peak": " рек"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.654,
+     "peak": " рек"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " book"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " prices"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.078,
+     "peak": "ство"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.104,
+     "peak": " лю"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.102,
+     "peak": " под"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.478,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "575e0c01e",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "не / 'more' before predicate",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ' не', ' more', ' not', ' can', ' более', ' очень'. Probes are weak: 'не рекомендуется' 0.52, 'can more quickly spot' 0.51, 'can more easily solve' 0.37, 'не следует мыть' 0.29, 'bloom more readily' 0.22; 'is not raining' 0.03, 'very accurate' 0.04.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1a5b71af",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8051+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:14:51+00:00",
+ "recipe": {
+  "toolchain_commit": "575e0c01e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N8051_pos/2026-11-19-lm1909-1a5b71af.tests.json"
+ },
+ "label": "Russian word-start piece 'з' whose word is still unfinished (без-з-аботно, по з-емле), also ' под' in 'с подоконника'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N8051_pos/2026-11-19-lm1909-1a5b71af.tests.json",
+   "prereg_commit": "575e0c01e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.837,
+     "peak": "з"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.592,
+     "peak": "з"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.396,
+     "peak": " з"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.402,
+     "peak": " з"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.676,
+     "peak": "з"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.513,
+     "peak": " под"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.724,
+     "peak": "з"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.38,
+     "peak": " з"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": "ок"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.038,
+     "peak": " г"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.274,
+     "peak": "ик"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "О"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": " со"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " пр"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": "ул"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.552,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "575e0c01e",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Russian unfinished з- piece",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Card: top tokens are byte pieces, ' з', ' под', Japanese kanji pieces: a word-initial piece in non-Latin script. Probes: 'беззаботно' 0.75 and 0.54 (peak 'з'), 'с подоконника' 0.60, 'на землю' 0.33 and 0.26; 'на подоконник' 0.15, 'подошёл к заводу' 0.07, 'замерзла' 0.04, Japanese '歯医者' 0.13, English 0.00. Tokenisation of Russian words is uncertain; low confidence.",
+ "selection": "random draw"
+}
