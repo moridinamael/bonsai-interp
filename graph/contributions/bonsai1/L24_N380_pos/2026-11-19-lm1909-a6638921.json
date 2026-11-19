@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-a6638921",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N380+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:43:04+00:00",
+ "recipe": {
+  "toolchain_commit": "126c4cb3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N380_pos/2026-11-19-lm1909-a6638921.tests.json"
+ },
+ "label": "' Sean' opening a well-known person's full name (Sean Connery, Sean Paul); the pole also fires on long rule lines of dashes",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N380_pos/2026-11-19-lm1909-a6638921.tests.json",
+   "prereg_commit": "126c4cb3d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.853,
+     "peak": " Sean"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.587,
+     "peak": " Sean"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.623,
+     "peak": " Sean"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.577,
+     "peak": " Sean"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.805,
+     "peak": " Sean"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.552,
+     "peak": " Sean"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.484,
+     "peak": " Sean"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.582,
+     "peak": " Sean"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": " grieving"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": "lage"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " founded"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": "bit"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.132,
+     "peak": " Sean"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.358,
+     "peak": " Sean"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " Monday"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " year"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.585,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "126c4cb3d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Sean' + famous surname",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: a list, not one pattern: rule lines of dashes/equals/underscores (13 of the top 32), ',' x6 (in 'may not be published, broadcast'), ' Sean' x4 (Connery, Kingston). Probes: 'Sean Connery' 1.00, 'Sean Paul' 1.24, 'my cousin Sean lives' 0.17, 'Roger Moore' 0.04; an 80-dash rule line 0.64, a line of '=' 0.30, 'published, broadcast' 0.53. I test only the Sean family, so this label can cover at most part of the pole; the - pole (台 / platform / screen) is unrelated as far as I can see.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "Sean"
+  ]
+ }
+}

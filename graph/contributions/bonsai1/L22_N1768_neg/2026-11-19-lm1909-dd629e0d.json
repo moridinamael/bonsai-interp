@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-dd629e0d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N1768-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:43:42+00:00",
+ "recipe": {
+  "toolchain_commit": "126c4cb3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N1768_neg/2026-11-19-lm1909-dd629e0d.tests.json"
+ },
+ "label": "in Python code, the line start (indentation) where a statement pattern from a few lines above is about to be repeated in parallel ('hdl = family.get_father_handle() / if hdl:' ... again for mother)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N1768_neg/2026-11-19-lm1909-dd629e0d.tests.json",
+   "prereg_commit": "126c4cb3d",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.599,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.621,
+     "peak": "()\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.614,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.274,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.905,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.564,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.9,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.403,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.345,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.279,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.113,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.142,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.207,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.031,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.404,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.109,
+     "peak": "()\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.607,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "126c4cb3d",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "parallel repeat in code",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: code only: indentation '       ' x6, ' and' x3, newline, \"',\" in lines that parallel the line before (particle.scale / particle.scale_delta, cfg.devices[2].target_dev / .target_bus, a chain of == comparisons joined by ' and'); the + pole fires on parallel constructions in prose ('; among women', ' while'), so this looks like the code side of the same distinction. Probes: a get_father_handle / get_mother_handle method reached 0.62 on an indentation token; repeated attribute assignments and assertEqual lines only 0.15, short snippets 0.04-0.13. The fire items are eight new methods of that father/mother shape, so the test covers one construction only.",
+ "selection": "random draw"
+}
