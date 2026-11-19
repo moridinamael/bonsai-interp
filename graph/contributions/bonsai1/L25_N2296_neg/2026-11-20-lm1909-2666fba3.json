@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2666fba3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N2296-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:18:32+00:00",
+ "recipe": {
+  "toolchain_commit": "2a7b3e123",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N2296_neg/2026-11-20-lm1909-2666fba3.tests.json"
+ },
+ "label": "measuring and marking steps in DIY / sewing instructions, peaking on the function word after the action ('measure from the', 'mark the holes with', 'mask the surfaces with')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N2296_neg/2026-11-20-lm1909-2666fba3.tests.json",
+   "prereg_commit": "2a7b3e123",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.444,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.56,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.783,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.197,
+     "peak": " line"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.672,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.811,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.355,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.887,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.115,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.148,
+     "peak": " wood"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.144,
+     "peak": " smooth"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.193,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.323,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.383,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.127,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.214,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.616,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2a7b3e123",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "DIY measure / mark step",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' the' x7, ' with' x4, ' from' x2 in 'measure from the', 'mark ... with', 'Mask the surfaces with', 'chalk line ... 20\" from'. Probe: 'Trace around the template with' 0.37, 'Measure from the top edge' 0.35, figurative 'measured the room with her eyes' 0.31 (leak), 'covered the story with' 0.01. Near misses are DIY steps without measuring/marking.",
+ "selection": "random draw"
+}
