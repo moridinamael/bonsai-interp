@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-3280a67d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N2936+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:32:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N2936",
+   "pole": "+",
+   "label": "Numerical / scientific Python code (NumPy, SciPy, quadrature, histograms, special functions): fires on commas, ' import' and identifier pieces inside it. Ordinary Python (web, strings, file handling) with the same punctuation stays quiet.",
+   "fire": [
+    "import numpy as np\nfrom scipy.integrate import quad, dblquad\nfrom scipy.linalg import eigh, solve\n\nvalue, err = quad(np.sin, 0, np.pi)",
+    "import numpy as np\n\ndef simpson(f, a, b, n):\n    x = np.linspace(a, b, n + 1)\n    y = f(x)\n    h = (b - a) / n\n    return h / 3 * (y[0] + 4 * y[1:-1:2].sum() + 2 * y[2:-1:2].sum() + y[-1])",
+    "from scipy.special import gamma, erf, jv\nfrom scipy.optimize import brentq, minimize\nimport numpy as np\n\nroot = brentq(lambda t: jv(0, t), 2, 3)",
+    "counts, edges = np.histogram(samples, bins=50, density=True)\ncenters = 0.5 * (edges[1:] + edges[:-1])\nweights, nodes = gauss_legendre(8)",
+    "import numpy as np\nfrom numpy.fft import fft, ifft, fftfreq\n\nspectrum = fft(signal)\nfreqs = fftfreq(len(signal), dt)\npower = np.abs(spectrum) ** 2",
+    "def stiffness_matrix(nodes, elements, young):\n    K = np.zeros((len(nodes), len(nodes)))\n    for a, b in elements:\n        h = nodes[b] - nodes[a]\n        K[a, a] += young / h\n        K[a, b] -= young / h\n    return K",
+    "from scipy.interpolate import interp1d, splrep, splev\nimport numpy as np\n\ntck = splrep(xs, ys, s=0)\nfine = splev(np.linspace(0, 1, 200), tck)",
+    "import sympy as sp\nx, y = sp.symbols('x y')\nexpr = sp.integrate(sp.exp(-x**2) * sp.besselj(0, y), (x, 0, sp.oo))\nprint(sp.simplify(expr))"
+   ],
+   "quiet": [
+    "import os\nfrom flask import Flask, request, jsonify\nfrom flask_login import login_user, logout_user\n\napp = Flask(__name__)",
+    "def full_name(first, last, title):\n    parts = [title, first, last]\n    text = ' '.join(parts)\n    return text.strip()",
+    "from datetime import date, timedelta\nfrom pathlib import Path\nimport json\n\nfolder = Path('reports')",
+    "lines, errors = read_log(path, encoding='utf-8')\nfirst = lines[0]\nnames, emails = split_columns(lines)",
+    "import smtplib\nfrom email.mime.text import MIMEText\n\nmessage = MIMEText(body)\nmessage['Subject'] = subject\nserver = smtplib.SMTP(host, port)",
+    "def add_user(users, name, email):\n    record = {'name': name, 'email': email}\n    users.append(record)\n    return users",
+    "from django.shortcuts import render, redirect\nfrom django.contrib import messages\n\ndef home(request):\n    return render(request, 'home.html', {})",
+    "import argparse\nparser = argparse.ArgumentParser()\nparser.add_argument('--name', default='world')\nargs = parser.parse_args()\nprint('hello', args.name)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "scientific-Python code",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' import' x7, ',' x5, 'ature' (quadrature), 'erg' (meijerg); output promotes ' numerical', ' function', ' integration', ' method'. Probes: scipy imports 1.12, histogram2d/quadrature 1.10, trapezoid with np 0.86; django imports 0.035, a string-building function 0.03, prose 'import' 0.005."
+}

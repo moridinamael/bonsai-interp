@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-5b21fb91",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10099+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:32:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N10099",
+   "pole": "+",
+   "label": "Commas between arguments or list items in multi-line Python code, strongest on the separator before the last item of a long call or list ('self, mock_cpu, mock_test_file⟦,⟧ mock_svc'); it needs earlier code as context. Python without multi-item lists, and comma lists in prose, stay quiet.",
+   "fire": [
+    "class Stock:\n    def record(self, item, shelf, amount):\n        self.rows.append((item, shelf, amount))\n\n    def test_record(self):\n        stock = Stock()\n        stock.record(self.apple, self.top_shelf, self.dozen)\n        found = stock.find(self.apple, self.top_shelf, self.dozen)\n        self.assertEqual(found, True)",
+    "def export(path, players):\n    out = csv.writer(open(path, 'w'))\n    out.writerow(['Name', 'Team', 'Goals', 'Assists', 'Minutes'])\n    for p in players:\n        out.writerow([p.name, p.team, p.goals, p.assists, p.minutes])",
+    "def test_copy_between_folders(self):\n    src, dst = 'a\\\\b\\\\Notes1.txt', 'Notes2.txt'\n    self.assertEqual(copy(src, dst, True), 0)\n    left, right = 'c\\\\Draft1.txt', 'Draft2.txt'\n    self.assertEqual(copy(left, right, False), 0)",
+    "@mock.patch.object(storage.Client, 'upload')\n@mock.patch.object(storage.Client, 'connect')\ndef test_upload_all_pass(self, mock_connect, mock_upload, mock_clock):\n    job = make_job(self.context, self.bucket, self.payload)\n    run(job, mock_connect, mock_upload, mock_clock)",
+    "def bucket_vectors(self, vectors, num_hashes, mask):\n    if self.buckets is None:\n        self.buckets = self._hash(vectors, num_hashes, mask)\n    return self._gather(vectors, self.buckets, num_hashes, mask)",
+    "if __name__ == '__main__':\n    api_one = DrawingApi(1)\n    api_two = DrawingApi(2)\n    circle = Circle(1, 2, 4, api_one)\n    square = Square(5, 7, 11, api_two)\n    render(circle, square, api_one, api_two)",
+    "def start_workers(out_q, err_q, chunks, lock):\n    tasks = [Process(target=worker, args=(out_q, err_q, chunk, lock))\n             for chunk in chunks]\n    for task in tasks:\n        task.start()\n    return collect(out_q, err_q, tasks, lock)",
+    "def annotate(raw, onset, duration, label):\n    first = Annotations([45.], [3], 'test', None)\n    second = Annotations([2.], [3], 'BAD', None)\n    raw.set_annotations(first)\n    return merge(raw, first, second, label)"
+   ],
+   "quiet": [
+    "class Stock:\n    def record(self):\n        self.rows.append(self.item)\n\n    def test_record(self):\n        stock = Stock()\n        stock.record()\n        found = stock.find()\n        self.assertTrue(found)",
+    "def export(path):\n    out = open(path)\n    out.write('Name')\n    for p in players():\n        out.write(p.name)",
+    "def test_copy_between_folders(self):\n    src = 'Notes1.txt'\n    self.assertTrue(copy(src))\n    left = 'Draft1.txt'\n    self.assertTrue(copy(left))",
+    "def test_upload_all_pass(self):\n    job = make_job(self.context)\n    run(job)\n    self.assertTrue(job.done)",
+    "def bucket_vectors(self):\n    if self.buckets is None:\n        self.buckets = self._hash()\n    return self._gather()",
+    "if __name__ == '__main__':\n    api_one = DrawingApi()\n    circle = Circle(api_one)\n    render(circle)",
+    "The export lists each player's name, team, goals, assists and minutes, and the coach reads it every Monday.",
+    "At the fair we met a potter, a weaver, a baker, a smith and a glassblower, and each one showed us a trick."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "late commas in Python arg lists",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ',' x14 and \"',\" x2 of the top 32, nearly all in Python calls, signatures and list literals, typically before the final item. Probes: two multi-line snippets 0.34 and 0.38; one-line snippets under 0.08 (the stream's tip about code poles needing context); a prose list of names 0.02."
+}

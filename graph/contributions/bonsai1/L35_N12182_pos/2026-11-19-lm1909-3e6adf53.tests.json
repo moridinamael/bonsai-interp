@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-3e6adf53",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N12182+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:32:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N12182",
+   "pole": "+",
+   "label": "French prose: the elided ' d' right before 'un/une' (\"d'une nouvelle…\", \"d'un débiteur\") — the token just before an indefinite article; the same sentence with 'de la / du / des' stays lower. Last-layer pole with a heavy tail, so short test sentences reach only a fraction of the corpus max.",
+   "fire": [
+    "Le conseil municipal a voté hier soir la construction d'une nouvelle bibliothèque près de la gare, malgré l'opposition d'une partie des habitants.",
+    "Après plusieurs mois de travaux, la famille a enfin pu profiter d'un jardin clôturé et d'une terrasse couverte.",
+    "La réussite de ce projet dépend en grande partie de la présence d'un responsable capable de coordonner les équipes.",
+    "Elle rêvait depuis longtemps d'une petite maison au bord de la mer, loin du bruit de la ville.",
+    "Le règlement prévoit le paiement d'une amende en cas de retard dans la remise du dossier.",
+    "Les chercheurs ont observé la formation d'un nuage de poussière autour de l'étoile pendant plusieurs semaines.",
+    "Pour ouvrir un compte, il suffit de se présenter muni d'une pièce d'identité et d'un justificatif de domicile.",
+    "Le roman raconte l'histoire d'une jeune institutrice qui s'installe dans un village de montagne."
+   ],
+   "quiet": [
+    "Le conseil municipal a voté hier soir la construction de la nouvelle bibliothèque près de la gare, malgré l'opposition des habitants.",
+    "Après plusieurs mois de travaux, la famille a enfin pu profiter du jardin clôturé et de la terrasse couverte.",
+    "La réussite de ce projet dépend en grande partie de la présence du responsable chargé de coordonner les équipes.",
+    "Elle rêvait depuis longtemps de la petite maison au bord de la mer, loin du bruit de la ville.",
+    "Le règlement prévoit le paiement des amendes en cas de retard dans la remise du dossier.",
+    "Les chercheurs ont observé la formation du nuage de poussière autour de l'étoile pendant plusieurs semaines.",
+    "Pour ouvrir un compte, il suffit de se présenter muni de sa carte bancaire et de son passeport.",
+    "Le roman raconte l'histoire de la jeune institutrice qui s'installe dans ce village de montagne."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "' d' before un/une",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: ' d' x12 of the top 32, also Arabic ' من' before 'مرة', Chinese '至少' before '一', Spanish tokens before 'una'; output direction suppresses ' une'/' un'/' una'. Probes were weak (0.03-0.23 for d'une, 0.30 for a Spanish 'una' sentence), so I expect this to fail on the 0.20 median."
+}
