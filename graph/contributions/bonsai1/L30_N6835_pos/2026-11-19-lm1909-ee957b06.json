@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ee957b06",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N6835+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:23:23+00:00",
+ "recipe": {
+  "toolchain_commit": "2c9370636",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N6835_pos/2026-11-19-lm1909-ee957b06.tests.json"
+ },
+ "label": "the token '同' as its own token in Chinese/Japanese text (同住, 同居, 同款, 同室, 同様: 'same / together')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N6835_pos/2026-11-19-lm1909-ee957b06.tests.json",
+   "prereg_commit": "2c9370636",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.619,
+     "peak": "同"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.794,
+     "peak": "同"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.786,
+     "peak": "同"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.802,
+     "peak": "同"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.65,
+     "peak": "同"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.035,
+     "peak": "同"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.811,
+     "peak": "同"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.842,
+     "peak": "同"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": "毕业"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": "了"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": "跟"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "です"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "婚"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": "跟"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.088,
+     "peak": "十二"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.798,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c9370636",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token 同",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: all 32 top examples peak on 同. Probe: 同住 0.92; Japanese と同じ (merged token) 0.01; 一起 paraphrase 0.00. Near misses say 'same/together' without the 同 token.",
+ "selection": "random draw"
+}
