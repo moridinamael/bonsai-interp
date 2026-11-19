@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-2e54e38b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N12063-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N12063",
+   "pole": "-",
+   "label": "a number right after a variable where a comparison operator ('<' or '>') has been stripped from code (if(h 30 ...)",
+   "fire": [
+    "var s=this.sat;\nfor(var k=0; k255) s-=255;\nif(s 40 && c != ' ')",
+    "for(var j=0; j99; j++) {\n  if(x 15) x+=2;\n}",
+    "var t=this.temp;\nif(t 100) t=100;\nif(t 0) t=0;",
+    "while(count 50) {\n  count+=5;\n}",
+    "if(len 8 || len 64) {\n  return false;\n}",
+    "var y=this.pos;\nfor(var m=0; m720) y-=720;\nif(y 90 && ok)",
+    "do {\n  n=n*3;\n} while(n 1000);",
+    "if(age 18 && age 65) {\n  status='adult';\n}"
+   ],
+   "quiet": [
+    "var s=this.sat;\nfor(var k=0; k<255; k++) s-=1;\nif(s < 40 && c != ' ')",
+    "for(var j=0; j<99; j++) {\n  if(x < 15) x+=2;\n}",
+    "var t=this.temp;\nif(t > 100) t=100;\nif(t < 0) t=0;",
+    "while(count < 50) {\n  count+=5;\n}",
+    "if(len < 8 || len > 64) {\n  return false;\n}",
+    "var y=this.pos;\nfor(var m=0; m<720; m++) y-=1;\nif(y > 90 && ok)",
+    "do {\n  n=n*3;\n} while(n < 1000);",
+    "if(age >= 18 && age < 65) {\n  status='adult';\n}"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "stripped comparison operator",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Top example is JavaScript whose '<' signs were lost (i359, if(h 30). Probe: the stripped form fired 1.1 of max, intact code ~0.01."
+}
