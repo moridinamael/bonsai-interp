@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-c36a83d1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N11485-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:37:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N11485",
+   "pole": "-",
+   "label": "the word right before a named person in news, a title or an opponent cue ('Prime Minister', 'against', 'rookie') that predicts a name",
+   "fire": [
+    "In the second round, the defending champion lost unexpectedly against Casper Ruud in four sets.",
+    "Speaking in parliament on Tuesday, Prime Minister Mark Carney defended the new budget.",
+    "The veteran goalkeeper made three saves against rookie striker Leo Brandt in the final minutes.",
+    "Foreign Minister Penny Wong arrived in Jakarta for two days of talks.",
+    "She will face off against Iga Swiatek in the semifinal on Friday afternoon.",
+    "The decision was announced by Finance Minister Lars Klingbeil after a cabinet meeting.",
+    "Djokovic struggled early against Alexander Zverev before taking the second set.",
+    "Deputy Prime Minister Chrystia Freeland said the tariffs would be reviewed."
+   ],
+   "quiet": [
+    "In the second round, the defending champion lost unexpectedly in four long sets on clay.",
+    "Speaking in parliament on Tuesday, the government defended the new budget plan.",
+    "The veteran goalkeeper made three saves in the final minutes to keep the lead.",
+    "The foreign ministry sent a delegation to Jakarta for two days of talks.",
+    "She will play in the semifinal on Friday afternoon if the rain holds off.",
+    "The decision was announced by the finance ministry after a cabinet meeting.",
+    "Djokovic struggled early in the windy conditions before taking the second set.",
+    "The cabinet office said the tariffs would be reviewed next month."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "slot before a person's name",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on ' Minister' (Deputy/Prime Minister + name), ' against' + tennis opponent, ' rookie' + name, Russian 'премьер-министр' + name. Shared pattern: the token after which a person's name is expected. Near misses keep the topic but the slot is followed by a non-name."
+}

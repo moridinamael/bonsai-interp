@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-da8d5170",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N853-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:37:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N853",
+   "pole": "-",
+   "label": "dense: weak activation on word-continuation pieces across most text (best guess: the second piece of a split word)",
+   "fire": [
+    "Ask your pharmacist for the go-ahead before you combine these two medicines.",
+    "The protein supports self-renewal of stem cells in the culture dish.",
+    "The committee published a reappraisal of the original manuscript last spring.",
+    "Farmers struggled with fusarium wilt in their tomato fields for years.",
+    "The script calls reposync to mirror the package repository every night.",
+    "The new edition outlines the history of the region in clear chapters.",
+    "The city is close to the border and offers cheap flights from Tokyo.",
+    "Researchers reassessed the outdated estimates using fresh survey data."
+   ],
+   "quiet": [
+    "Ask your pharmacist for approval before you combine these two medicines.",
+    "The protein supports growth of stem cells in the culture dish.",
+    "The committee published a review of the original manuscript last spring.",
+    "Farmers struggled with a fungal disease in their tomato fields for years.",
+    "The script calls a tool to mirror the package repository every night.",
+    "The new edition covers the history of the region in clear chapters.",
+    "The city is close to the border and has cheap flights from Tokyo.",
+    "Researchers checked the old estimates using new survey data."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense continuation pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags dense (41.9% of tokens reach 0.1 of max) and gate-closed leak regime 100%; max 0.20. Top peaks are word pieces (-ahead, self-re|new|al, repos|ync, しており). Test records the density; expected to fail."
+}

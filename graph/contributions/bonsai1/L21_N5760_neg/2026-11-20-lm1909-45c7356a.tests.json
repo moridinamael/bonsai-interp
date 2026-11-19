@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-45c7356a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N5760-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:37:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N5760",
+   "pole": "-",
+   "label": "operands, operators and indentation inside multi-line Python code bodies (x + dx, x = x+1)",
+   "fire": [
+    "def move(px, py, vx, vy):\n    px = px + vx\n    py = py + vy\n    return px, py",
+    "for row in grid:\n    total = 0\n    for cell in row:\n        total = total + cell\n    sums.append(total)",
+    "while i < n:\n    if a[i] > best:\n        best = a[i]\n    i = i + 1",
+    "def scale(points, k):\n    out = []\n    for x, y in points:\n        out.append((x * k, y * k))\n    return out",
+    "    left, right = 0, len(arr) - 1\n    while left < right:\n        mid = (left + right) // 2\n        if arr[mid] < key:\n            left = mid + 1",
+    "def clamp(v, lo, hi):\n    if v < lo:\n        return lo\n    elif v > hi:\n        return hi\n    return v",
+    "    count = {}\n    for word in words:\n        count[word] = count.get(word, 0) + 1",
+    "def dist(a, b):\n    dx = b.x - a.x\n    dy = b.y - a.y\n    return (dx * dx + dy * dy) ** 0.5"
+   ],
+   "quiet": [
+    "To move a point, add its horizontal speed to its horizontal position and its vertical speed to its vertical position.",
+    "For every row of the grid we add up the numbers in its cells and write the total into a list of sums.",
+    "We walk through the list one item at a time and remember the largest value seen so far.",
+    "To scale the shape, multiply both coordinates of every point by the same factor and keep the results.",
+    "Binary search keeps two markers at the ends of the list and moves one of them past the middle each step.",
+    "Clamping a value means returning the lower limit if it is too small and the upper limit if it is too large.",
+    "To count words, go through the text and add one to the tally of each word every time it appears.",
+    "The distance between two points is the square root of the sum of the squared differences of their coordinates."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python statement bodies",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: no single token; peaks on ' dx', ' =', indentation runs, '_target', '.append' inside Python function bodies. Probe: a 4-line Python function 0.36 vs the same logic in prose 0.03. Near misses describe the same computation in English."
+}
