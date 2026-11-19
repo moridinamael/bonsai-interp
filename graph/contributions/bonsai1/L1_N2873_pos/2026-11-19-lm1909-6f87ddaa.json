@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-6f87ddaa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N2873+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:20+00:00",
+ "recipe": {
+  "toolchain_commit": "6efc017b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N2873_pos/2026-11-19-lm1909-6f87ddaa.tests.json"
+ },
+ "label": "Weak gate-closed echo on non-Latin-script text (Cyrillic, Arabic, Hangul, kana), strongest on Cyrillic 'й' after a word-initial 'А' (Ай…); English text stays lower",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N2873_pos/2026-11-19-lm1909-6f87ddaa.tests.json",
+   "prereg_commit": "6efc017b7",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.819,
+     "peak": "й"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.938,
+     "peak": "й"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.784,
+     "peak": "й"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.493,
+     "peak": " الشمال"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.561,
+     "peak": " الشر"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.675,
+     "peak": "웃"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.734,
+     "peak": "й"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.569,
+     "peak": "й"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.271,
+     "peak": "ig"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.047,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " Aid"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.253,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.119,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.322,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.261,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.193,
+     "peak": "isha"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.705,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6efc017b7",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "non-Latin script pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "Card: max 0.15, 100% gate-closed echo regime, broad (5.5% of tokens reach 0.1 of max). Probes: Russian 'Ай' name 0.90, Arabic 0.78, Korean 0.68, Russian without 'Ай' 0.45, Japanese 0.32, English 0.20. Near misses are English versions of the same content, so this tests script, not the 'й' token.",
+ "selection": "random draw"
+}

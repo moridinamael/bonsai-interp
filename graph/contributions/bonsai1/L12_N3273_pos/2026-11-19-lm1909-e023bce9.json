@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e023bce9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N3273+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:28+00:00",
+ "recipe": {
+  "toolchain_commit": "6efc017b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N3273_pos/2026-11-19-lm1909-e023bce9.tests.json"
+ },
+ "label": "An activity or field noun used to name someone's line of work where an agent noun could have stood (a ⟦writing⟧ instructor, ⟦brokerage⟧ firms, physical ⟦therapy⟧ assistants, off the ⟦bowling⟧ of); the other pole is the agent suffix (-ist, -er)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N3273_pos/2026-11-19-lm1909-e023bce9.tests.json",
+   "prereg_commit": "6efc017b7",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.443,
+     "peak": " therapy"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.524,
+     "peak": " bowling"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.282,
+     "peak": " painting"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.231,
+     "peak": " accounting"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.262,
+     "peak": "itian"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.061,
+     "peak": " coaching"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.054,
+     "peak": " contractors"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.214,
+     "peak": " editing"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.098,
+     "peak": " therapists"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.266,
+     "peak": "ler"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.08,
+     "peak": " painter"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.068,
+     "peak": "ants"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.223,
+     "peak": "itian"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " coach"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " within"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.09,
+     "peak": " editors"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.75,
+    "median_fire": 0.246,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6efc017b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "activity noun, not the practitioner",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' therapy', ' bowling', ' writing', 'ry' (podiat⟦ry⟧), ' brokerage'; output suppresses 'ists', 'ers', '-maker', ' providers'. Probes: writing instructor 0.70, brokerage firms 0.48, bowling of 0.46, hygiene assistants 0.32; agent-noun lists 0.02-0.20.",
+ "selection": "random draw"
+}

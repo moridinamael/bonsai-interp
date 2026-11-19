@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-6f92cbba",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7331-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:58+00:00",
+ "recipe": {
+  "toolchain_commit": "6efc017b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N7331_neg/2026-11-19-lm1909-6f92cbba.tests.json"
+ },
+ "label": "The bare word-start token ' h' when the tokenizer splits a word after its first letter ( h|ikers, h|obo, h|ound; also Arabic ' اله' and Cyrillic 'х' word starts); h-words whose first token is longer stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N7331_neg/2026-11-19-lm1909-6f92cbba.tests.json",
+   "prereg_commit": "6efc017b7",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.23,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.243,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.159,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.428,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.213,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.283,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.158,
+     "peak": " h"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.308,
+     "peak": " h"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " w"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " hipp"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " harvest"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " herald"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.05,
+     "peak": " hy"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " her"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.236,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6efc017b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split word-start ' h'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks ' h' x14, ' اله' x6, ' H' x3. Probes: h|ikers 0.50, h|obo 0.44, h|ound 0.14; hotel, harbor, hedgehog, hamster (not split after h) 0.00. Tokenisation of the test words was checked without scoring: fire words start with the token ' h', near-miss words do not.",
+ "selection": "random draw"
+}

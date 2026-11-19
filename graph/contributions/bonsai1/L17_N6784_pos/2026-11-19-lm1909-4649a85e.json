@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4649a85e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N6784+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:52+00:00",
+ "recipe": {
+  "toolchain_commit": "6efc017b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N6784_pos/2026-11-19-lm1909-4649a85e.tests.json"
+ },
+ "label": "The stand-in verb or repeated verb in the second arm of a comparison or analogy (like the retail sector ⟦did⟧, would be like ⟦asking⟧ a fish…, than there ⟦is⟧ for…, just as they ⟦had⟧), and the word right after it",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N6784_pos/2026-11-19-lm1909-4649a85e.tests.json",
+   "prereg_commit": "6efc017b7",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.971,
+     "peak": " did"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.515,
+     "peak": " expecting"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.445,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.456,
+     "peak": " during"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.538,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.212,
+     "peak": " did"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.471,
+     "peak": " an"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.396,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.056,
+     "peak": " lot"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " crisis"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " well"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " his"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.464,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6efc017b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pro-verb in a comparison's second arm",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks on ' in', ' of', ' as', ' for' just after the second arm of 'like X did', 'the same … as', 'than there is'. Probes peaked on the pro-verb itself: like … did 0.61, like asking 0.66, than there is 0.47, as they had 0.27; the same content without a comparison 0.01-0.02.",
+ "selection": "random draw"
+}
