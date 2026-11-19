@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2c092be8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10633-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:31+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N10633_neg/2026-11-19-lm1909-2c092be8.tests.json"
+ },
+ "label": "the noun naming a fitted part of a vehicle or figure, right after the modifier that names its design variant (cast turret, sliding seat, swing doors, 'this beard')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N10633_neg/2026-11-19-lm1909-2c092be8.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.333,
+     "peak": " turret"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.274,
+     "peak": " seat"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.033,
+     "peak": " doors"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.305,
+     "peak": " beard"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.303,
+     "peak": "gate"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.211,
+     "peak": " canopy"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.507,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.38,
+     "peak": " seat"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " war"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": " popular"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " kings"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " stamina"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.074,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.304,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "part noun after design-variant modifier",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ' beard', ' turret', ' doors', ' seat', ' gun' after a variant modifier. Probe was weak: sliding seat 0.32, barn doors 0.28, this beard 0.22, welded turret 0.20, 100-mm gun 0.10; unrelated sentence 0.00. The median may fall short of 0.20.",
+ "selection": "random draw"
+}

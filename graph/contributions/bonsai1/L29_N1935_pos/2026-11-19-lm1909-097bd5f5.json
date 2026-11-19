@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-097bd5f5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1935+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:53+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1935_pos/2026-11-19-lm1909-097bd5f5.tests.json"
+ },
+ "label": "a piece inside a transliterated Hebrew or Arabic name or term in Jewish or Islamic religious writing (Masse|k|het, S|enn|acherib, al|-Q|asim, k|abb|alas)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1935_pos/2026-11-19-lm1909-097bd5f5.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.245,
+     "peak": " y"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.772,
+     "peak": "-Q"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.754,
+     "peak": "enn"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.114,
+     "peak": " ket"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.306,
+     "peak": "urt"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.234,
+     "peak": "irus"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.238,
+     "peak": " Pes"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.159,
+     "peak": "n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " drew"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " front"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " explains"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": "At"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": " Martin"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.241,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "transliterated Hebrew/Arabic religious terms",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Card: Mashiach prayer, Sennacherib, Massekhet, al-Qasim, vowelled Arabic, kabbalas haTorah. Probe: Sennacherib 0.79, al-Qasim 0.73, kabbalas 0.63, Massekhet 0.50; the same frames with European names 0.01. The - pole is 'Let's / let us' opening a worked maths solution.",
+ "selection": "random draw"
+}
