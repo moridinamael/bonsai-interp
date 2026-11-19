@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2a478ba7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N1648+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:12+00:00",
+ "recipe": {
+  "toolchain_commit": "be9d2ab1c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N1648_pos/2026-11-19-lm1909-2a478ba7.tests.json"
+ },
+ "label": "the verb (makes / means / gives / raises) whose subject is 'This', 'That' or 'which' pointing back at the preceding statement",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N1648_pos/2026-11-19-lm1909-2a478ba7.tests.json",
+   "prereg_commit": "be9d2ab1c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.556,
+     "peak": " makes"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.505,
+     "peak": " means"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.446,
+     "peak": " gives"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.531,
+     "peak": " raises"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.666,
+     "peak": " makes"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.361,
+     "peak": " means"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.69,
+     "peak": " makes"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.606,
+     "peak": " gives"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " this"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " witnesses"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.13,
+     "peak": " That"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.148,
+     "peak": " why"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " spring"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " team"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.544,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be9d2ab1c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'This makes/means' consequence verb",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probes: 'This makes' 0.71, 'This raises' 0.58, 'This gives' 0.43, ', which makes' 0.43, 'That means' 0.36; the same verbs after an ordinary noun subject 0.01; 'This is' 0.19. The output direction promotes ' means', ' gives', ' makes' and suppresses ' thus', ' therefore', ' hence'.",
+ "selection": "random draw"
+}

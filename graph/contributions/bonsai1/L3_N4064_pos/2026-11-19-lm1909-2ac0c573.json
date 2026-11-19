@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-2ac0c573",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N4064+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:04+00:00",
+ "recipe": {
+  "toolchain_commit": "be9d2ab1c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N4064_pos/2026-11-19-lm1909-2ac0c573.tests.json"
+ },
+ "label": "the Arabic token ' مت' at the start of a word (متزايد، متعددة، متغيرات، متى)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N4064_pos/2026-11-19-lm1909-2ac0c573.tests.json",
+   "prereg_commit": "be9d2ab1c",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.563,
+     "peak": " مت"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.62,
+     "peak": " مت"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.343,
+     "peak": "ت"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.276,
+     "peak": "ت"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.0,
+     "peak": "وصل"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.589,
+     "peak": " مت"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.647,
+     "peak": " مت"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.603,
+     "peak": " مت"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.071,
+     "peak": "ت"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.001,
+     "peak": "صبح"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.343,
+     "peak": "ت"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.276,
+     "peak": "ت"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " م"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.002,
+     "peak": "رب"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " ت"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.001,
+     "peak": "غير"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.576,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be9d2ab1c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic word-initial mt-",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: ' مت' is the peak token of 30 of the top 32. Probes: 0.50-0.63 of max on five different mt- words, including the question word متى; the same sentences with another adjective read 0.00.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " مت"
+  ]
+ }
+}
