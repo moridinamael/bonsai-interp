@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-de4afbbc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N11245+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:11:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N11245",
+   "pole": "+",
+   "label": "Dense unit (76% of tokens reach 0.1 of max). Best guess at what lifts it most: adjectives of fault or burden such as ' invalid' and ' tedious'; near misses use the positive counterpart",
+   "fire": [
+    "The form was rejected because the postcode was invalid.",
+    "Copying the numbers by hand was slow and tedious work.",
+    "The judge ruled that the old contract was invalid.",
+    "Sorting the screws by size is a tedious job.",
+    "The parser stops as soon as it meets an invalid character.",
+    "The long drive across the plain was tedious for the children.",
+    "The clerk told him that his ticket was invalid.",
+    "Filling in the same details again felt tedious to her."
+   ],
+   "quiet": [
+    "The form was accepted because the postcode was correct.",
+    "Copying the numbers by hand was quick and pleasant work.",
+    "The judge ruled that the old contract was binding.",
+    "Sorting the screws by size is a simple job.",
+    "The parser continues as long as it meets a letter.",
+    "The long drive across the plain was exciting for the children.",
+    "The clerk told him that his ticket was fine.",
+    "Filling in the same details again felt easy to her."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "dense; ' invalid'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card FLAG dense, gate-closed regime 100%. Top examples peak on ' invalid' (10 of 32), ' tedious', ' tobacco'. Probes: ' invalid' 0.57, ' tedious' 0.71, but the positive control ('token was correct') still 0.31. Expected to fail; recorded to document the density."
+}

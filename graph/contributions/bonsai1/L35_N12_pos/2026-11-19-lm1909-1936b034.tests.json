@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-1936b034",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N12+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:11:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N12",
+   "pole": "+",
+   "label": "The slot right before an expected winter word (winter, January, snow, coldest): the last token of a season list that has reached autumn, of a date run that has reached the end of December, or of a cold-weather phrase. Each sentence stops at that slot. Quiet on the same frames pointing at summer or mid-year months",
+   "fire": [
+    "The valley is full of blossom in spring, busy with hikers in summer, red and gold in autumn, and deep under snow in",
+    "| December 29, 1992 | Denver |\n| December 30, 1992 | Dallas |\n| December 31, 1992 | Houston |\n|",
+    "봄에는 벚꽃이 피고, 여름에는 바다에서 수영을 하고, 가을에는 단풍 구경을 하고,",
+    "The pond is warm enough for swimming in August but it is frozen hard in",
+    "The storms began in late December and carried on into early",
+    "El hotel estará cerrado desde el 24 de diciembre de 2014 hasta el 2 de",
+    "여름에는 덥고 비가 많이 오며,",
+    "names = [\"October\", \"November\", \"December\"]\nnext_names = [\""
+   ],
+   "quiet": [
+    "The valley is deep under snow in winter, full of blossom in spring, and busy with hikers in",
+    "| June 28, 1992 | Denver |\n| June 29, 1992 | Dallas |\n| June 30, 1992 | Houston |\n|",
+    "아침에는 빵을 먹고, 점심에는 국수를 먹고, 저녁에는 친구를 만나고,",
+    "The pond is frozen hard in February but it is warm enough for swimming in",
+    "The heat began in late June and carried on into early",
+    "El hotel estará cerrado desde el 24 de junio de 2014 hasta el 2 de",
+    "아침에는 바쁘고 일이 많으며,",
+    "names = [\"April\", \"May\", \"June\"]\nnext_names = [\""
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "slot before a winter word",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: top examples in Arabic, Korean, French, Spanish, English peak one token before a winter month or season (January / kanun al-thani, winter, enero, 'jan', Schnee); the output direction suppresses ' winter', ' January', ' Jan', ' Christmas', ' December' (a late-layer unit pushing against the expected word). English probes reach only 0.16-0.25 of the corpus max (912, set by an Arabic date line): seasons list ending 'snowy in' 0.24, table after December 31 0.25, 'frozen solid in' 0.21, 'December and into early' 0.21; June frames 0.00, 'cold in March but warm in' 0.07. The median may fall short of 0.20."
+}
