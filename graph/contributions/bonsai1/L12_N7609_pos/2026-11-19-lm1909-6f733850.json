@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6f733850",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N7609+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:38:03+00:00",
+ "recipe": {
+  "toolchain_commit": "4f809b3a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N7609_pos/2026-11-19-lm1909-6f733850.tests.json"
+ },
+ "label": "the '=' (or the word 'equal') of an algebra equation being set up or solved in a maths word problem ('4/x = 8/10', '2w + 5 = 17', 'when the two angles are equal'); '=' in code assignments and 'equal' in non-maths prose stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N7609_pos/2026-11-19-lm1909-6f733850.tests.json",
+   "prereg_commit": "4f809b3a2",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.617,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.186,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.552,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.985,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.771,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.423,
+     "peak": "),"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.349,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.479,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.083,
+     "peak": " playoff"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.516,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f809b3a2",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'=' in algebra problems",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: ' =' x5, '=' x2, ' equal' x2, '=>', ' exponential' (equations), all in worked maths problems; very sparse (0.007% of tokens reach 0.1 of max). Probes: '4/x = 8/10' 0.88, '2w + 5 = 17 …' 0.73, 'angles are equal, or 3x = 60' 0.46, '3/4 = 15/g' 0.36, 'momentum to equal 2mv' 0.36, 'Solving exponential equations' 0.23; Python 'x = 5' 0.03, 'if a == b' 0.04, 'equal before the law' 0.02, prices 0.02. The peak token is sometimes the number just after the '='. The - pole is unrelated in form (Python 'else:' + newline).",
+ "selection": "random draw"
+}

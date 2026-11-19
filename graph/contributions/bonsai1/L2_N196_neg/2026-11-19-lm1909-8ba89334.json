@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8ba89334",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N196-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:27+00:00",
+ "recipe": {
+  "toolchain_commit": "4f809b3a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N196_neg/2026-11-19-lm1909-8ba89334.tests.json"
+ },
+ "label": "the piece 'ival' / 'ivalent' of French 'équivalent(e)(s)' (équ|ival|ent); English ' equivalent', and 'ival' inside festival/arrival, stay low. The card's other common token ' utf' fires weakly (~0.3) and is not tested here",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N196_neg/2026-11-19-lm1909-8ba89334.tests.json",
+   "prereg_commit": "4f809b3a2",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.565,
+     "peak": "ivalent"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.748,
+     "peak": "ivalent"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.917,
+     "peak": "ival"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.74,
+     "peak": "ival"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.822,
+     "peak": "ivalent"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.738,
+     "peak": "ivalent"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.613,
+     "peak": "ival"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.633,
+     "peak": "ival"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.098,
+     "peak": "Pour"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.08,
+     "peak": " som"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.067,
+     "peak": " médecin"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": "qu"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.546,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.142,
+     "peak": " de"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.333,
+     "peak": " equivalent"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": " par"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.739,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f809b3a2",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French équ|ival|ent",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: ' utf' x16 of the top 32 by count, but the six strongest examples are all French équ|ival|ent(e); flags: broad (1.0%), gate-closed regime 71%. Probes: 'l'équivalent' 0.83, 'équivalente' 0.74, 'équivalents' 0.71, 'équivalent à' 0.50; ' utf' 0.27-0.33, ' UV' 0.44, Spanish 'equivalentes' 0.45, English 'equivalent' 0.04-0.10, festival / revival / arrival / équipe < 0.08. Layer 2: a spelling/word-piece unit. The label covers the strongest trigger only; ' utf' and ' UV' are named in the notes, so coverage will be partial.",
+ "selection": "random draw"
+}

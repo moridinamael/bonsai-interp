@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-759ba008",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N2053+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:08+00:00",
+ "recipe": {
+  "toolchain_commit": "4f809b3a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N2053_pos/2026-11-19-lm1909-759ba008.tests.json"
+ },
+ "label": "a condiment or topping is being named in a food description, peaking on the first piece ' k' / ' ch' of ketchup, chives, cheddar, chutney (after 'with', 'in', 'of'); k/ch words outside food (kettle, chairs, chapters) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N2053_pos/2026-11-19-lm1909-759ba008.tests.json",
+   "prereg_commit": "4f809b3a2",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.39,
+     "peak": " k"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.173,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.678,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.35,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.944,
+     "peak": " k"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.471,
+     "peak": " ch"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.065,
+     "peak": " k"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.267,
+     "peak": " ch"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " clean"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " restaurant"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " technique"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " Karl"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.289,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.089,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " checked"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.43,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f809b3a2",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "ketchup / chives onset",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: 'K'/' k'/' K'/' ch' dominate the top 32, all in recipes or menus (ketchup, chile con queso, chives, Kosher salt). Probes: ketchup 0.80 and 1.19, chives 1.01, cheddar 0.86, chutney 0.39; kettle, chairs, chapters, Kevin, Kansas < 0.01. It leaks onto ' with' / ' and' / ',' in topping lists without a k/ch word (0.22-0.46), so the food near misses here avoid topping lists and the label is stated as the topping context, not the bare letter. The - pole fires on K/к starting surnames and Russian words: same letter, non-food.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-70804184",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N10708-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:44+00:00",
+ "recipe": {
+  "toolchain_commit": "4f809b3a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N10708_neg/2026-11-19-lm1909-70804184.tests.json"
+ },
+ "label": "the digit '9' of day-of-month '19' (1|9) in dates inside reference lists or tables ('Retrieved: 19 May 2013'), growing as the entries repeat; the same lists with other days stay low. Best guess: probes were modest",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N10708_neg/2026-11-19-lm1909-70804184.tests.json",
+   "prereg_commit": "4f809b3a2",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.642,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.509,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.433,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.483,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.532,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.226,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.633,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.492,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.067,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.309,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.265,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.039,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.118,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.309,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.434,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.268,
+     "peak": "0"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.5,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f809b3a2",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'9' of day 19 in citations",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: '9' x13 of the top 32, plus '.', '0', ' (', '8' in bibliographies and tables; top example 'Retrieved: 1⟦9⟧ May 2013'. Probes: three stacked 'Retrieved: 19 <Month> 2013' lines 0.66, a single such line 0.15, '03/19/17' 0.25 (0.14 in a longer line), '18 July 1998' 0.34 on '8', '19 Dic 1994' in a table 0.25; '12 March 2014' 0.04, '2009' 0.01, '29 points' 0.07, year-only APA references 0.08, 'nineteen' 0.03. The + pole fires on '0' after '2' in citation years (2|0|05): both poles read the second digit of a number in reference lists. Density 0.7%, so some weak firing on other list punctuation is expected.",
+ "selection": "random draw"
+}
