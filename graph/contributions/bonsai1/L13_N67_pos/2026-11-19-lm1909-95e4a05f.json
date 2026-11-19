@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-95e4a05f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N67+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:45+00:00",
+ "recipe": {
+  "toolchain_commit": "9ca316b0a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N67_pos/2026-11-19-lm1909-95e4a05f.tests.json"
+ },
+ "label": "Dense pole (15% of tokens reach 0.1 of max, gate-closed regime). Best guess at its strongest driver: the comma after the city in a Latin American postal address (street, number, C.P., city, country)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N67_pos/2026-11-19-lm1909-95e4a05f.tests.json",
+   "prereg_commit": "9ca316b0a",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.91,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.739,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.281,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.982,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.606,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.883,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.556,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.684,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.179,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.155,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.169,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.166,
+     "peak": " Cord"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.118,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.163,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.12,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.118,
+     "peak": "Students"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.712,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ca316b0a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; address city comma",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags: dense (15.4% at 0.1 of max) and gate-closed regime 100%. Top examples: 'Montevideo, Uruguay', 'La Habana, Cuba', Greek postcode, ' being' after a comma. Probes: a Montevideo address 1.00, a Havana address 0.32, plain English sentences 0.14-0.15 (the dense floor). Registered mainly to record the density.",
+ "selection": "random draw"
+}

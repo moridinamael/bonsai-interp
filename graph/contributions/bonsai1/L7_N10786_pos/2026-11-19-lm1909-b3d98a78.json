@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b3d98a78",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N10786+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:43:03+00:00",
+ "recipe": {
+  "toolchain_commit": "9ca316b0a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N10786_pos/2026-11-19-lm1909-b3d98a78.tests.json"
+ },
+ "label": "The second element of a compound whose first element is a count word: ' speed' after 'single', 'fuel' after 'multi-', '-tone' after 'two'. A list of specific compounds: other count compounds (three-stage, dual-mode) and the bare nouns stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N10786_pos/2026-11-19-lm1909-b3d98a78.tests.json",
+   "prereg_commit": "9ca316b0a",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.675,
+     "peak": " speed"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.842,
+     "peak": " speed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.003,
+     "peak": "uel"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.701,
+     "peak": "uel"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.691,
+     "peak": "-tone"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.745,
+     "peak": "-tone"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.735,
+     "peak": " speed"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.854,
+     "peak": "uel"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.03,
+     "peak": " frame"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " desc"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.052,
+     "peak": " fuel"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " stove"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " cabinets"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.081,
+     "peak": "-stage"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.74,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ca316b0a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "single speed / multi-fuel / two-tone",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' speed' x4 (single speed), 'uel' x2 (multi-fuel), '-tone' x2, 'peed' (multispeed), Russian odno-tip. Probes: 'single speed bike' 0.88, 'multi-fuel engine' 0.79, 'two-tone paint' 0.58; 'top speed' 0.01, 'diesel fuel' 0.08, 'three-stage ... dual-mode' 0.07. The general pattern (any count-prefix compound) did not hold in probes, so the label keeps the list.",
+ "selection": "random draw"
+}

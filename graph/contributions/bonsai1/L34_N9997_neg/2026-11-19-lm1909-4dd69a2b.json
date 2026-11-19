@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4dd69a2b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9997-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:25+00:00",
+ "recipe": {
+  "toolchain_commit": "9ca316b0a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N9997_neg/2026-11-19-lm1909-4dd69a2b.tests.json"
+ },
+ "label": "Inside a string of evaluative adjectives in review or blurb prose ('a sweeping and ...', 'a funny, ...', 'an unflinching ...'): the article, comma or 'and' where another vivid descriptive adjective is expected",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N9997_neg/2026-11-19-lm1909-4dd69a2b.tests.json",
+   "prereg_commit": "9ca316b0a",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.632,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.313,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.681,
+     "peak": "ant"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.364,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.566,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.597,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.251,
+     "peak": " provocative"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.612,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.055,
+     "peak": " early"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.047,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.089,
+     "peak": " eleven"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": " series"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " debut"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.091,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.581,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ca316b0a",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "awaiting a vivid adjective (blurb)",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (1.2% of tokens at 0.1 of max). Top examples peak on ' a'/' an'/' and'/',' before praise adjectives; the - pole's output promotes ' smooth', ' wildly', ' informal', ' structured'. Probes: blurb sentences 0.44-0.56, plain 'a car and a boat' 0.005.",
+ "selection": "random draw"
+}

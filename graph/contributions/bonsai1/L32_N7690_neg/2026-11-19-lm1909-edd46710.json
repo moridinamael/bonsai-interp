@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-edd46710",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N7690-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:16+00:00",
+ "recipe": {
+  "toolchain_commit": "9ca316b0a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N7690_neg/2026-11-19-lm1909-edd46710.tests.json"
+ },
+ "label": "In a list of school sectors (public, district, magnet ...), the slot just before a further school type is named, typically the ' and' before 'charter schools'; its output promotes ' charter'/' magnet'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N7690_neg/2026-11-19-lm1909-edd46710.tests.json",
+   "prereg_commit": "9ca316b0a",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.752,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.056,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.48,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.493,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.65,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.451,
+     "peak": "-run"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.842,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.061,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.186,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.261,
+     "peak": " physics"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.124,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.127,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " reading"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.048,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " for"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.572,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ca316b0a",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'charter' in school-type list",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on ' and'/' a' right before charter/voluntary-aided/virtual schools; - pole output promotes ' charter', ' magnet'. Probes: 'district, magnet and charter schools' 0.93, 'public schools and charter schools' 0.62; but 'math, science and art classes' 0.33 and 'public schools and private tutors' 0.42, so near misses that keep the school topic may leak.",
+ "selection": "random draw"
+}
