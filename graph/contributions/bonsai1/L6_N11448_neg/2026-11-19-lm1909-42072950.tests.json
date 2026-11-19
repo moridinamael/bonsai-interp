@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-42072950",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N11448-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:21:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N11448",
+   "pole": "-",
+   "label": "the word that completes a fixed phrase after its opener: NULL after NOT in SQL, 'if' in \"Not if …\", '-way' in \"right-of-way\", 'guilty' after 'not'; the same words without the opener do not fire",
+   "fire": [
+    "CREATE TABLE orders (order_id INTEGER PRIMARY KEY, customer VARCHAR(80) NOT NULL, total DECIMAL(10,2));",
+    "The county bought the old railroad right-of-way for a bike trail.",
+    "Can we still catch the last ferry? Not if the traffic stays like this.",
+    "ALTER TABLE products ADD COLUMN price INTEGER NOT NULL DEFAULT 0;",
+    "Pedestrians in a marked crosswalk have the right-of-way at this junction.",
+    "Is the bank going to lend them more money? Not if the auditors object.",
+    "    title TEXT NOT NULL,\n    author TEXT NOT NULL,\n    year INTEGER",
+    "After two days of deliberation the panel declared her not guilty of fraud."
+   ],
+   "quiet": [
+    "SELECT order_id, customer, total FROM orders WHERE total > 100 ORDER BY customer;",
+    "The county bought the old railroad station for a bike shop.",
+    "Can we still catch the last ferry? Only if the traffic clears soon.",
+    "The function returns null when the product has no price.",
+    "Pedestrians in a marked crosswalk must wait for the signal at this two-way junction.",
+    "Is the bank going to lend them more money? Yes, if the auditors agree.",
+    "    title = models.TextField()\n    author = models.TextField()\n    year = models.IntegerField()",
+    "After two days of deliberation the panel declared her guilty of fraud."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "NOT·NULL, Not·if, right-of·-way",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks ' if' x6 (after Not), '-way' x3 (right-of-way), null/NULL x4 (after NOT), ' guilty' x2. Probes: NOT NULL 0.90, right-of-way 0.61, 'Not if' 0.53, not guilty 0.35; null alone 0.03, guilty alone 0.01, 'one-way … if' 0.05, 'not empty … not required' 0.03."
+}
