@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5a75c5c2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N11692+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:13:11+00:00",
+ "recipe": {
+  "toolchain_commit": "152d9c49b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N11692_pos/2026-11-19-lm1909-5a75c5c2.tests.json"
+ },
+ "label": "a definite noun together with the bare participle or short relative clause that follows it ('the treatment provided', 'the language used', 'the message sent', 'the work that we do')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N11692_pos/2026-11-19-lm1909-5a75c5c2.tests.json",
+   "prereg_commit": "152d9c49b",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.225,
+     "peak": " used"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.188,
+     "peak": " presented"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.261,
+     "peak": " provided"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.146,
+     "peak": " taken"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.379,
+     "peak": " given"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.23,
+     "peak": " paid"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.129,
+     "peak": " words"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.415,
+     "peak": " type"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "Customers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " while"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.228,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "152d9c49b",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'the N' + post-nominal participle",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on the noun or the participle in 'the example chosen', 'the treatment provided', 'the message sent', 'the language used'; the output direction promotes ' presented', ' employed', ' provided', ' given'. Probes: 0.26-0.40 on such phrases, 0.01 on the same verbs used actively. Fires only at 0.3-0.4 of max in short sentences, so the median may be close to the 0.20 bar.",
+ "selection": "random draw"
+}

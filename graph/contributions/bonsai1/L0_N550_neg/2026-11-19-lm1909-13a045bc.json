@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-13a045bc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N550-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:13:21+00:00",
+ "recipe": {
+  "toolchain_commit": "152d9c49b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N550_neg/2026-11-19-lm1909-13a045bc.tests.json"
+ },
+ "label": "a word-final piece as its own token after a capitalised consonant start: 'ell' in Sm|ell, 'ift' in Dr|ift, 'ipe' in W|ipe, 'ells' in Sm|ells (not the whole-token lowercase words)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N550_neg/2026-11-19-lm1909-13a045bc.tests.json",
+   "prereg_commit": "152d9c49b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.831,
+     "peak": "ell"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.875,
+     "peak": "ell"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.927,
+     "peak": "ell"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.713,
+     "peak": "ift"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.841,
+     "peak": "ift"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.594,
+     "peak": "ipe"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.696,
+     "peak": "ipe"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.433,
+     "peak": "ells"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.395,
+     "peak": "aste"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.335,
+     "peak": "ain"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " published"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": " Shift"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.065,
+     "peak": " pass"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.061,
+     "peak": "uum"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": "ipes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.772,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "152d9c49b",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pieces Sm|ell, Dr|ift, W|ipe",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: 'ell' x7 (all 'Sm|ell'), 'ach', 'ift', 'ipe', 'its', 'els'. Tokenizer: ' Smell' -> ' Sm'+'ell', ' Drift' -> ' Dr'+'ift', ' Wipe' -> ' W'+'ipe'; lowercase ' smell' and ' Spell', ' Swipe', ' Shift' are single tokens. Probes: Sm|ell 0.88, Dr|ift 0.77, W|ipe 0.47, Sm|ells 0.38, but Qu|ell 0.21, Thr|ift 0.16, Ro|ach 0.14, Sw|ell 0.11, so the preceding piece matters. A list of piece pairs; coverage is probably low.",
+ "selection": "random draw"
+}
