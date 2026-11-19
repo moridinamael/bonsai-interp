@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-e079c2ee",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N7536-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:04:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N7536",
+   "pole": "-",
+   "label": "the blank line / line break that closes an indented shell command or code example inside prose or a docstring, where text resumes",
+   "fire": [
+    "Add the repository key first:\n\n    apt-get install curl gnupg\n\nThen update the package index and try again.",
+    "To build the docs locally, run:\n\n    pip install sphinx && make html\n\nTested on: Python 3.10 and Debian 12.",
+    "Clone the project and enter the folder:\n\n    git clone https://example.org/tool.git && cd tool\n\nNow open the README file for the next steps.",
+    "Start the database in the background:\n\n    systemctl start postgresql\n\nAfter that, create a user for the application.",
+    "You can check the installed version like this:\n\n    node --version\n\nIf the number is below 18, upgrade before you continue.",
+    "Install the compiler toolchain:\n\n    dnf install gcc make cmake\n\nThe build should then finish without warnings.",
+    "Create a virtual environment:\n\n    python -m venv .venv && source .venv/bin/activate\n\nRemember to activate it in every new shell.",
+    "Download the archive and unpack it:\n\n    tar -xzf release.tar.gz\n\nThe binaries are placed in the bin folder."
+   ],
+   "quiet": [
+    "Add the repository key first.\n\nThen update the package index and try again.",
+    "To build the docs locally, you need the documentation generator.\n\nIt was tested on a recent Debian release.",
+    "Clone the project and enter the folder.\n\nNow open the README file for the next steps.",
+    "Start the database in the background.\n\nAfter that, create a user for the application.",
+    "You can check the installed version in the settings menu.\n\nIf the number is too low, upgrade before you continue.",
+    "Install the compiler toolchain from your package manager.\n\nThe build should then finish without warnings.",
+    "Create a virtual environment for the project.\n\nRemember to activate it in every new shell.",
+    "Download the archive and unpack it.\n\nThe binaries are placed in the bin folder."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "end of code example in prose",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: blank line after an indented install command 0.64 and 0.91; ' #' comment start 0.17-0.26; docstring 'Example:' indent 0.38; plain prose paragraph break 0.10; pure code 0.16. The near misses keep the paragraph break and the instructions and drop only the code line."
+}

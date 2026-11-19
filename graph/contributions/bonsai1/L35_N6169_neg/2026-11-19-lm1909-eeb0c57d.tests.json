@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-eeb0c57d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6169-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:04:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6169",
+   "pole": "-",
+   "label": "the first fragment of a split, less common word, where the rest of the word is still to come (p|loy, spl|inter, ob|fuscate, inf|use, fl|inch, def|use)",
+   "fire": [
+    "The discount turned out to be a cheap sales ploy.",
+    "Old pine boards tend to splinter when you nail them.",
+    "Lawyers sometimes obfuscate the terms on purpose.",
+    "The chef likes to infuse the oil with garlic and thyme.",
+    "The campfire continued to smolder long after midnight.",
+    "The boxer did not flinch as the punch came in.",
+    "A calm voice can defuse an angry crowd.",
+    "The tent was held up by a flimsy aluminium pole."
+   ],
+   "quiet": [
+    "The discount turned out to be a cheap sales trick.",
+    "Old pine boards tend to break when you nail them.",
+    "Lawyers sometimes hide the terms on purpose.",
+    "The chef likes to mix the oil with garlic and thyme.",
+    "The campfire continued to burn long after midnight.",
+    "The boxer did not move as the punch came in.",
+    "A calm voice can settle an angry crowd.",
+    "The tent was held up by a thin aluminium pole."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-word first fragment",
+ "unit_kind": "sparse feature",
+ "confidence": 0.55,
+ "notes": "Probes: ' p'(loy) 0.94, ' spl'(inter) 0.63, ' inf'(use) 0.53, ' fl'(inch) 0.49, ' sm'(older) 0.47, ' ob'(fuscate) 0.43, ' fl'(imsy) 0.39, ' def'(use) 0.37; not every split word fires ('smirk', 'unhappiness', 'Zbigniew' near 0, 'fracture' 0.10 in my sentence although it tops the card). Layer 35, so probably tied to which continuation is predicted (the + pole's output promotes 'act')."
+}

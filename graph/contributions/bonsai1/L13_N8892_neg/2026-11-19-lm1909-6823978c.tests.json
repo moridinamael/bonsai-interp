@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-6823978c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N8892-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:04:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N8892",
+   "pole": "-",
+   "label": "Python ' None' in 'is not None' checks and in runs of attribute defaults set to None (also '= []' initialisers)",
+   "fire": [
+    "class Session:\n    _token = None\n    _expires = None\n    _refreshDisabled = None\n    _scopeQuery = None",
+    "def update(router, enable_nat=None):\n    if enable_nat is not None:\n        router['enable_nat'] = enable_nat",
+    "def send(payload, timeout=None, retries=None):\n    if timeout is not None:\n        payload['timeout'] = timeout",
+    "booking = BookingBase()\nbooking.isCancelled = None\nbooking.isRejected = None\nbooking.isConfirmed = None",
+    "def configure(opts, proxy=None):\n    settings = {'hosts': []}\n    if proxy is not None:\n        settings['proxy'] = proxy",
+    "class Profile:\n    _avatar = None\n    _groups = None\n    _lastLoginQuery = None\n    _disabledFlags = None",
+    "def patch(record, owner=None, label=None):\n    if owner is not None:\n        record['owner'] = owner\n    if label is not None:\n        record['label'] = label",
+    "job = JobBase()\njob.startedAt = None\njob.finishedAt = None\njob.failedReason = None"
+   ],
+   "quiet": [
+    "class Session:\n    _token = 'abc'\n    _expires = 3600\n    _refreshDisabled = True\n    _scopeQuery = 'all'",
+    "def update(router, enable_nat=True):\n    if enable_nat:\n        router['enable_nat'] = enable_nat",
+    "def send(payload, timeout=30, retries=3):\n    if timeout > 0:\n        payload['timeout'] = timeout",
+    "booking = BookingBase()\nbooking.isCancelled = False\nbooking.isRejected = False\nbooking.isConfirmed = True",
+    "def configure(opts, proxy=''):\n    settings = {'hosts': 2}\n    if proxy != '':\n        settings['proxy'] = proxy",
+    "class Profile:\n    _avatar = 'default.png'\n    _groups = 4\n    _lastLoginQuery = 'recent'\n    _disabledFlags = 0",
+    "def patch(record, owner='', label=''):\n    if owner:\n        record['owner'] = owner\n    if label:\n        record['label'] = label",
+    "job = JobBase()\njob.startedAt = 0\njob.finishedAt = 0\njob.failedReason = 'unknown'"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python None defaults/checks",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: ' None' x12 and '=None' x4 of the top 32. Probes were weak and uneven: 'is not None' 0.35, first '= []' 0.41, but '= None' in a short class 0.09, 'is None' 0.05, '= {}' / False / 0 near 0. The fire items copy the shapes of the card's top examples (long runs of '_x = None', 'if x is not None:'); I expect this may fail on the 0.20 median."
+}

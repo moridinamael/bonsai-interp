@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a62fc01d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6347-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:04:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6347",
+   "pole": "-",
+   "label": "a space-prefixed word-initial token in non-Latin script: Arabic ' الإ…' and the first byte piece of a Korean / Japanese / Chinese word that follows a space",
+   "fire": [
+    "تسعى الوزارة إلى الإصلاح الإداري وتطوير الإعلام المحلي.",
+    "يعتمد الاقتصاد على الإنتاج الصناعي وعلى الإيرادات السياحية.",
+    "أعلنت الشركة عن الإجراءات الجديدة لحماية الإنسان والبيئة.",
+    "여름에는 수영을 즐길 수 있고, 가족과 함께 즐거운 시간을 보낼 수 있습니다.",
+    "이 공원은 산책을 즐기는 사람들에게 즐거움을 주는 곳입니다.",
+    "設備 : レストラン ラウンジ 無料朝食 無料シャトル ダイニング",
+    "サービス : クリーニング 無料駐車場 ダブルルーム 無線LAN",
+    "飯店提供機場接送, 行李寄存, 健身中心, 酒吧, 無線上網。"
+   ],
+   "quiet": [
+    "这家餐厅的菜很好吃，价格也很便宜。",
+    "我们昨天去了海边，天气非常好。",
+    "ホテルの朝食はとてもおいしかったです。",
+    "駅から歩いて五分のところにあります。",
+    "The ministry is working on administrative reform and local media.",
+    "The economy depends on industrial production and tourism revenue.",
+    "In summer you can enjoy swimming and spend time with your family.",
+    "Facilities: restaurant, lounge, free breakfast, free shuttle, dining room."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space + non-Latin word start",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Probes: Arabic ' الإ' 0.43-0.48, Korean ' 즐…' first piece 0.68, Japanese ' 無料' after a space 0.55, traditional Chinese after ', ' 0.55; unspaced simplified Chinese 0.01, English 0.11. A French sentence with \"l'é\" also reached 0.37, so accented Latin starts leak; no French is in the near misses. Near misses are unspaced CJK and English renderings of the fire content."
+}
