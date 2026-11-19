@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-84b7a983",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N5662+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:22:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N5662",
+   "pole": "+",
+   "label": "the object noun of a one-line imperative docstring inside a method ('Return the name of the sensor.', 'Set the input source.'); weak",
+   "fire": [
+    "class Lamp(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def name(self):\n        \"\"\"Return the name of the light.\"\"\"\n        return self._name",
+    "class Fan(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def speed(self):\n        \"\"\"Return the speed of the fan.\"\"\"\n        return self._speed",
+    "class Receiver(Device):\n\n    def mute(self):\n        self._muted = True\n\n    def select_channel(self, channel):\n        \"\"\"Set the active channel.\"\"\"\n        self._channel = channel",
+    "@app.route('/items', methods=['POST'])\n@timed(\"api.create\")\ndef create():\n    \"\"\"Create a record.\"\"\"\n    data = request.form['data']",
+    "class Lock(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def state(self):\n        \"\"\"Return the state of the lock.\"\"\"\n        return self._state",
+    "class Camera(Device):\n\n    def start(self):\n        self._on = True\n\n    def set_mode(self, mode):\n        \"\"\"Set the capture mode.\"\"\"\n        self._mode = mode",
+    "class Valve(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def icon(self):\n        \"\"\"Return the icon of the valve.\"\"\"\n        return self._icon",
+    "class Queue(Model):\n\n    def push(self, job):\n        \"\"\"Add a job.\"\"\"\n        self._jobs.append(job)"
+   ],
+   "quiet": [
+    "class Lamp(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def name(self):\n        return self._name",
+    "class Fan(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def speed(self):\n        # speed\n        return self._speed",
+    "class Receiver(Device):\n\n    def mute(self):\n        self._muted = True\n\n    def select_channel(self, channel):\n        self._channel = channel",
+    "@app.route('/items', methods=['POST'])\n@timed(\"api.create\")\ndef create():\n    data = request.form['data']\n    return save(data)",
+    "class Lock(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def state(self):\n        return self._state",
+    "class Camera(Device):\n\n    def start(self):\n        self._on = True\n\n    def set_mode(self, mode):\n        self._mode = mode",
+    "class Valve(Entity):\n\n    def __init__(self, name):\n        self._name = name\n\n    @property\n    def icon(self):\n        # icon\n        return self._icon",
+    "class Queue(Model):\n\n    def push(self, job):\n        self._jobs.append(job)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring object noun (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card: three of the top six are the noun after 'the' / 'a' in a one-line docstring; the others are word pieces in prose. Probing (multi-line code): at most 0.16 ('name of the sensor'), 0.12 ('Create a widget'), most below 0.07; prose near zero. Expected to fail."
+}
