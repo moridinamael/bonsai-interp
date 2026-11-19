@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-c8f92d7f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9048+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:48:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N9048",
+   "pole": "+",
+   "label": "' =' in Python variable assignments (name = value lines)",
+   "fire": [
+    "def setup():\n    speed = 1.5\n    mass = 2.0\n    force = mass * speed",
+    "class Box:\n    def __init__(self):\n        self.top = 0\n        self.left = 0",
+    "radius = 3.0\narea = 3.14 * radius * radius\nprint(area)",
+    "for i in range(3):\n    total = 0\n    count = i + 1",
+    "config = {}\ntimeout = 30\nretries = 5",
+    "def reset(state):\n    state.score = 0\n    state.level = 1\n    return state",
+    "name = 'bob'\nage = 42\ncity = 'Leeds'",
+    "if ready:\n    low = 0.0\n    high = 1.0"
+   ],
+   "quiet": [
+    "def setup():\n    print(speed)\n    print(mass)\n    return force(mass, speed)",
+    "class Box:\n    def draw(self):\n        render(self.top)\n        render(self.left)",
+    "print(3.14 * radius * radius)\nlog(area)\nsave(area)",
+    "for i in range(3):\n    print(total)\n    send(i + 1)",
+    "load(config)\nwait(30)\nretry(5)",
+    "def reset(state):\n    clear(state.score)\n    bump(state.level)\n    return state",
+    "greet('bob')\ncheck(42)\nvisit('Leeds')",
+    "if ready:\n    start(0.0)\n    stop(1.0)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "assignment '='",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card top example is ' =' in a block of 'width = 0.0' assignments; other top examples are scattered (no single token). Probe: assignment blocks 0.44-0.63, prose ~0.02. Weak and broad pole; the label may cover little."
+}

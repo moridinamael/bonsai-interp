@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-a751e59f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N7447+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:48:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N7447",
+   "pole": "+",
+   "label": "method or attribute name after a dot in Python code (obj.to_xml, .transform, .decode)",
+   "fire": [
+    "    session.flush()\n    job = Job.get(job_id)\n    xml = etree.tostring(job.to_xml(), encoding='utf-8')",
+    "    raw = record['payload']\n    digest = hashlib.sha256(raw.encode('utf-8')).hexdigest()",
+    "    img = load_image(path)\n    out = pipeline.transform(img)\n    plt.imshow(out)",
+    "    parser.close()\n    return check_attrs(handler._attrs)",
+    "    rows = cursor.fetchall()\n    frame = pandas.DataFrame(rows).to_csv(index=False)",
+    "    resp = session.get(url)\n    data = resp.content.decode('latin-1')",
+    "    model = Pipeline(steps)\n    pred = model.fit(X).predict(Y)",
+    "    token = header.split()[1]\n    claims = jwt.decode(token, key)"
+   ],
+   "quiet": [
+    "    session flushed\n    the job was found by id\n    the xml was written as utf-8",
+    "    the raw record payload\n    was hashed with sha256 and printed as hex",
+    "    the image is loaded from the path\n    then transformed by the pipeline\n    and shown",
+    "    the parser is closed\n    and the handler attributes are checked",
+    "    rows are fetched from the cursor\n    and written to a csv file without index",
+    "    a request is sent to the url\n    and the content is read as latin-1 text",
+    "    the model is built from steps\n    fitted on X and used to predict Y",
+    "    the token is taken from the header\n    and its claims are read with the key"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "dotted method name",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card top: '.to' in job.to_xml(), '.transform', '.decode', '._attrs', mixed with prose tokens (Only, que, increased). Broad-ish (0.43% >0.1 max). Probe on one-line snippets scored ~0.02 everywhere, so this is a guess; multi-line passages used per AGENTS tips."
+}
