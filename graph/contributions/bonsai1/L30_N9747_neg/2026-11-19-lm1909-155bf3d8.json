@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-155bf3d8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N9747-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:44:41+00:00",
+ "recipe": {
+  "toolchain_commit": "6bebfd220",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N9747_neg/2026-11-19-lm1909-155bf3d8.tests.json"
+ },
+ "label": "next-word prediction of 'portion(s)' / 'serving(s)': fires on the token just before an expected portion or serving-size word in food and diet text (also 'Torah portion')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N9747_neg/2026-11-19-lm1909-155bf3d8.tests.json",
+   "prereg_commit": "6bebfd220",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.467,
+     "peak": " your"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.374,
+     "peak": " your"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.662,
+     "peak": " manage"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.528,
+     "peak": " your"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.234,
+     "peak": " three"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.548,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.656,
+     "peak": " Torah"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.277,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " so"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " help"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.053,
+     "peak": " restaurant"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.144,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " was"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.498,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bebfd220",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "expects 'portion/serving' next",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "The pole's output suppresses ' portion', ' portions', ' servings' on the + side, so the - pole promotes them. Probes: 'keep an eye on your serving size' 0.82, 'control your portions' 0.72, 'Torah portion' 0.63; 'A large portion of the budget' 0.00, 'four cloves of garlic' 0.06. It fires before the word, so a near miss sharing the lead-in also fired (0.82, 0.45); the near misses here use different lead-ins.",
+ "selection": "random draw"
+}

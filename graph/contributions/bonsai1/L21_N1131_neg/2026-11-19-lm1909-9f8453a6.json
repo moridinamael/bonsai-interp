@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9f8453a6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N1131-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:26+00:00",
+ "recipe": {
+  "toolchain_commit": "6bebfd220",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N1131_neg/2026-11-19-lm1909-9f8453a6.tests.json"
+ },
+ "label": "'the (total) number of X' used as a counted measure: fires on ' number' / ' of' / ' total' when a quantity is defined or tallied as a count of items (opposite pole: a person's age)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N1131_neg/2026-11-19-lm1909-9f8453a6.tests.json",
+   "prereg_commit": "6bebfd220",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.118,
+     "peak": " total"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.111,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.052,
+     "peak": "Last"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.174,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.456,
+     "peak": " total"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.102,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.049,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.215,
+     "peak": " total"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": " along"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.077,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " hopes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " thick"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " brings"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": " surprise"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.114,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bebfd220",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'the number of X' as a count",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peak tokens ' of' x7, ' the' x4, ' total' x2, ' number' x1. Probes were weak: 'brought the total number of tremors above…' 0.38, 'is the number of edges that touch it' 0.25, 'the number of indices needed' 0.21, 'sum of squared' 0.05-0.10, 'limited number of decimal places' 0.03, 'phone number' 0.03. Fire strength sits near the 0.20 bar, so this may fail on the median.",
+ "selection": "random draw"
+}

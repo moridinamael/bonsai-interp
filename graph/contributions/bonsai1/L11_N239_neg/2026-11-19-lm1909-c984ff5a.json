@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c984ff5a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N239-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:42+00:00",
+ "recipe": {
+  "toolchain_commit": "6bebfd220",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N239_neg/2026-11-19-lm1909-c984ff5a.tests.json"
+ },
+ "label": "a unit-of-measure noun right after a numeral in a size or amount description (inches, tons, days, kilometres, 'two bedroom'); the card also shows ' +' in Python string-joining code, which this label does not cover",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N239_neg/2026-11-19-lm1909-c984ff5a.tests.json",
+   "prereg_commit": "6bebfd220",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.035,
+     "peak": " inches"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.0,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.037,
+     "peak": " guided"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.228,
+     "peak": " bedroom"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.193,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.153,
+     "peak": " tons"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.253,
+     "peak": " kilometers"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.167,
+     "peak": " days"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " well"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " rusty"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": " guided"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " modest"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.065,
+     "peak": " sewing"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " machinery"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.091,
+     "peak": " calm"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.046,
+     "peak": " lodge"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.75,
+    "median_fire": 0.16,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bebfd220",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "unit noun after a numeral",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: no single token (' +' x3, ' three' x2, ' acres' x2, ' two' x2, ' bedroom', ' inches'); 31% of the pole's activations are the leak regime. Probes: '2.5 tons' 0.59, '6 or 8 inches' 0.38, '4 days' 0.35, 'two bedroom' 0.34, '1 kilometer' 0.23, but '40 acres' 0.00; code \"short + '|' + str(size)\" 0.73; 'short pieces' 0.20; '6 or 8 of them' 0.04.",
+ "selection": "random draw"
+}

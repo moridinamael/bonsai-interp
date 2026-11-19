@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-10f61a93",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N10910-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:12+00:00",
+ "recipe": {
+  "toolchain_commit": "6bebfd220",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N10910_neg/2026-11-19-lm1909-10f61a93.tests.json"
+ },
+ "label": "scalar-emphasis follow-up: the word right after a frame that marks what follows as a surprising extreme ('And that's with …', 'and this is from a man who …', 'even for …', 'and that's just …', 'hard enough for … to')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N10910_neg/2026-11-19-lm1909-10f61a93.tests.json",
+   "prereg_commit": "6bebfd220",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.84,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.949,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.45,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.563,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.466,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.945,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.725,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.446,
+     "peak": " someone"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.075,
+     "peak": " despite"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " who"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.052,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " thousand"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.056,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " spr"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " mountain"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " who"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.644,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bebfd220",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after 'and that's / even' emphasis",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peak tokens ',' x5, ' even' x3, ' with' x2, ' for' x2, ' just' x2. Probes: \"And that's with their best player\" 1.03, 'even for experienced hikers' 0.89, 'and this is from a man who' 0.80, \"and that's just for starters\" 0.58, 'hard enough for adults to' 0.47; the same content without the emphasis frame 0.01-0.23; \"I'm not even sure\" 0.18. The + pole is flagged dense (25.6%); this test is of the - pole only.",
+ "selection": "random draw"
+}

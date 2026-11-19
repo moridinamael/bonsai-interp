@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-07b2df41",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N9447-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:44:56+00:00",
+ "recipe": {
+  "toolchain_commit": "6bebfd220",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N9447_neg/2026-11-19-lm1909-07b2df41.tests.json"
+ },
+ "label": "'who' in a dismissive rhetorical question that closes a concession: '…, but who cares?' / '…, but who knows?' (weaker on other negating clauses after 'but')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N9447_neg/2026-11-19-lm1909-07b2df41.tests.json",
+   "prereg_commit": "6bebfd220",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.336,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.258,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.72,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.215,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.372,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.315,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.466,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.74,
+     "peak": " who"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.103,
+     "peak": " all"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": "Nobody"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.258,
+     "peak": " mind"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": " island"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " where"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.354,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bebfd220",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'but who cares/knows?'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peak tokens ' not' x5, ' no' x4, top example 'but who cares?'. Probes: 'but who cares?' 0.80, 'but who knows?' 0.69; negation after but/however only 0.17-0.21; 'but so what?' 0.08; sentence-initial 'Who cares about the plot?' 0.04; plain negation 0.01-0.06. The label tests the strongest cluster; the weaker negation-after-contrast part is not what the fire items test.",
+ "selection": "random draw"
+}
