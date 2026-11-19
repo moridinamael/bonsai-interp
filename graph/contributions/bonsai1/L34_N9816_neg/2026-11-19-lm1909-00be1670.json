@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-00be1670",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9816-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:19:38+00:00",
+ "recipe": {
+  "toolchain_commit": "26bdc59d8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N9816_neg/2026-11-19-lm1909-00be1670.tests.json"
+ },
+ "label": "Inside Hungarian names and words: the token just before an ö/ő/ü continuation (V|ör|ösmarty, Északi|-k|özéphegység, ' K'|őbánya); Hungarian names without those vowels, and Czech or Polish names, stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N9816_neg/2026-11-19-lm1909-00be1670.tests.json",
+   "prereg_commit": "26bdc59d8",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.199,
+     "peak": "ő"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.222,
+     "peak": "sz"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.708,
+     "peak": "-k"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.233,
+     "peak": "ö"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.408,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.26,
+     "peak": "zent"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.772,
+     "peak": "ör"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.211,
+     "peak": "et"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.144,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.168,
+     "peak": "aj"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": "ian"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.142,
+     "peak": "zent"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.255,
+     "peak": "assy"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": "atra"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " Vy"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " leaves"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.246,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "26bdc59d8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Hungarian word before ö/ő/ü",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top 4 are Hungarian ('ör', '-k' x2, ' Ü'), then ' U', ' hyper'; the − pole's output promotes raw UTF-8 lead bytes, i.e. an accented letter comes next. Probes: Vörösmarty 0.48, -középhegység 0.82, Kőbánya 0.63; Prague 0.13, UFDs 0.06. Near misses keep the Hungarian/Central-European travel topic without ö/ő/ü names.",
+ "selection": "random draw"
+}

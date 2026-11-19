@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-977a66f5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N10593+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:20:00+00:00",
+ "recipe": {
+  "toolchain_commit": "26bdc59d8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N10593_pos/2026-11-19-lm1909-977a66f5.tests.json"
+ },
+ "label": "Code: the ' :' that opens a Sphinx/reST docstring field at the start of an indented line (:param, :type, :return), i.e. where a field name is expected; docstrings in other styles and ordinary colons stay quiet. (A second, separate trigger on the card: ' you' in the licence line 'free software: you can redistribute')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N10593_pos/2026-11-19-lm1909-977a66f5.tests.json",
+   "prereg_commit": "26bdc59d8",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.443,
+     "peak": " :"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.544,
+     "peak": " :"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.458,
+     "peak": " :"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.472,
+     "peak": " :"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.353,
+     "peak": " :"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.581,
+     "peak": " :"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.379,
+     "peak": " :"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.395,
+     "peak": " :"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.32,
+     "peak": " Args"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.071,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.11,
+     "peak": " value"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.11,
+     "peak": " Returns"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": "(path"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.215,
+     "peak": " Parameters"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " crop"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " execute"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.451,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "26bdc59d8",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' :' opening :param field",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' :' x17 of the top 32, all at the start of :param/:type/:return lines; ' you' x14 in GPL headers. Probe: reST docstring 0.41, GPL line 0.44, comment-only function 0.02. The test covers only the docstring trigger. Fire items are multi-line code.",
+ "selection": "random draw"
+}

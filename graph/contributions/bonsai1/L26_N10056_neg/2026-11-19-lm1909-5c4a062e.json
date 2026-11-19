@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5c4a062e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N10056-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:18:49+00:00",
+ "recipe": {
+  "toolchain_commit": "26bdc59d8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N10056_neg/2026-11-19-lm1909-5c4a062e.tests.json"
+ },
+ "label": "French lead-in to an embedded question or topic of inquiry: the token that opens the indirect question after 'se demander', 'la question porte sur', 'savoir' (next word expected: quel/comment/la manière dont); plain French prepositions and English stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N10056_neg/2026-11-19-lm1909-5c4a062e.tests.json",
+   "prereg_commit": "26bdc59d8",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.562,
+     "peak": "er"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.706,
+     "peak": "er"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.603,
+     "peak": "er"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.403,
+     "peak": " sur"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.339,
+     "peak": " sur"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.736,
+     "peak": "er"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.721,
+     "peak": "er"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.37,
+     "peak": "er"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": " accom"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "Il"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " cherche"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " parents"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": "re"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.583,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "26bdc59d8",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French indirect-question lead-in",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' sur', ' de', 'er' (demand|er quelles), ' quant', Russian ' о' after 'вопрос'. The + pole is the English counterpart ('as to' how, no 'matter' how) and promotes how/what/why, so the − pole reads as the same distinction in French/Russian. Probes: 'se demander quelles' 0.95, 'porte sur la manière' 0.32, 'quant au' 0.17, plain 'sur le canapé' 0.003.",
+ "selection": "random draw"
+}
