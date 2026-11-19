@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b66fded7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7950-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:03:56+00:00",
+ "recipe": {
+  "toolchain_commit": "94671ca88",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N7950_neg/2026-11-19-lm1909-b66fded7.tests.json"
+ },
+ "label": "the token ' -------\\n' / ' ----------\\n': a run of dashes after whitespace that ends the line, typically the underline of a numpydoc section header (Parameters / Returns)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N7950_neg/2026-11-19-lm1909-b66fded7.tests.json",
+   "prereg_commit": "94671ca88",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.032,
+     "peak": " -------\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.877,
+     "peak": " ----------\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.938,
+     "peak": " ----------\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.03,
+     "peak": " -------\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.955,
+     "peak": " -------\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.042,
+     "peak": " -------\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.007,
+     "peak": " -------\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.864,
+     "peak": " ----------\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " \"\"\""
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " \"\"\""
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " \"\"\""
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " \"\"\""
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " \"\"\""
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " #"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " \"\"\""
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " \"\"\""
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.981,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "94671ca88",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "numpydoc dash underline",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Top 32 peaks are all ' ----------\\n' or ' -------\\n'. Probes: numpydoc docstring 1.03, 'Notes/Examples' underlines 0.93, indented dashes in a table 0.71, '# ----------' comment 0.49; Google- and Sphinx-style docstrings 0.01-0.02, tilde underline 0.29, column-0 dashes 0.51 (so near misses avoid dashes).",
+ "selection": "random draw"
+}

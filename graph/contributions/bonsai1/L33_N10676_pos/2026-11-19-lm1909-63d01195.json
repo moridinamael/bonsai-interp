@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-63d01195",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N10676+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:03+00:00",
+ "recipe": {
+  "toolchain_commit": "94671ca88",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N10676_pos/2026-11-19-lm1909-63d01195.tests.json"
+ },
+ "label": "French prose: a degree adverb opening the predicate after a copula or noun ('sont ⟦peu⟧ nombreux', 'était ⟦très⟧ fière', 'la ville la ⟦plus⟧…', 'semble ⟦assez⟧…'); weaker on French without it, quiet on the same sentence in Spanish or Italian",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N10676_pos/2026-11-19-lm1909-63d01195.tests.json",
+   "prereg_commit": "94671ca88",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.479,
+     "peak": " peu"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.227,
+     "peak": " verg"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.293,
+     "peak": " assez"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.777,
+     "peak": " peu"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.162,
+     "peak": "ères"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.428,
+     "peak": " plus"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.655,
+     "peak": " peu"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.685,
+     "peak": " assez"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.146,
+     "peak": " pa"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.15,
+     "peak": " arr"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.328,
+     "peak": " action"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.117,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.164,
+     "peak": " poco"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " più"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.139,
+     "peak": " más"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.199,
+     "peak": " poco"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.454,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "94671ca88",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French degree adverb",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Both poles are French-only. Probes: French copula + degree adverb 0.37-0.71, French action sentences 0.04-0.18 (one 0.25), Spanish 0.14, Italian 0.05, English 0.00. Near misses are four French sentences without a degree adverb and four Spanish/Italian renderings with one.",
+ "selection": "random draw"
+}
