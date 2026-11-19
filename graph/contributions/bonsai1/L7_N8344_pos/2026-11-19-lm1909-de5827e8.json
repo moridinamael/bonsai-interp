@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-de5827e8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N8344+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:22+00:00",
+ "recipe": {
+  "toolchain_commit": "20a9fe8fa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N8344_pos/2026-11-19-lm1909-de5827e8.tests.json"
+ },
+ "label": "the token 'is' completing 'tr|is' (Tris buffer, tris(…) in chemical names, trisomy); 'is' in other words (iris, crisis, Paris) and the word 'is' do not fire. The top examples also hold 'berries' / 'berry' pieces, which fired only once in probes",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N8344_pos/2026-11-19-lm1909-de5827e8.tests.json",
+   "prereg_commit": "20a9fe8fa",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.814,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.564,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.893,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.829,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.717,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.644,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.048,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.687,
+     "peak": "is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " buffer"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.35,
+     "peak": " bis"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.232,
+     "peak": "ES"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " inside"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": " copy"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " eye"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.765,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "20a9fe8fa",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'is' in Tris / trisomy",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: 'is' x16 of the top 32 (all after 'tr'/'Tr'), 'berries' x7, 'berry' x6. Probes: 'Tris buffer' 0.81, 'tris(bipyridine)' 0.86, 'Tris-acetate' 0.71, 'trisomy 21' 0.48; 'raspberries' 0.42 once but blackberries, gooseberries, cranberry, strawberry all under 0.06; iris, arthritis, crisis, Paris, 'This is' under 0.02. The berry half of the top examples is not covered by this label.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "Tris",
+   "trisomy",
+   "trisphosphate"
+  ]
+ }
+}
