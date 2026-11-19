@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-57c20334",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N7933-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:10:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N7933",
+   "pole": "-",
+   "label": "Python code that builds a dictionary or index from rows in a loop (subscript and 'each' tokens)",
+   "fire": [
+    "index = {}\nfor line_no, line in enumerate(lines):\n    for word in line.split():\n        index.setdefault(word, []).append(line_no)",
+    "lookup = {}\nfor rec in reader:\n    lookup[rec[1]] = rec[2]",
+    "counts = {}\nfor token in tokens:\n    counts[token] = counts.get(token, 0) + 1",
+    "# map each user to their roles\nroles = {}\nfor u in users:\n    roles[u.id] = u.roles",
+    "by_name = {}\nfor item in catalog:\n    by_name[item['name']] = item",
+    "result = {}\nfor k, v in pairs:\n    result[k] = v",
+    "table = {}\nfor entry in entries:\n    table[entry[0]] = entry[1:]",
+    "groups = {}\nfor p in people:\n    groups.setdefault(p.city, []).append(p)"
+   ],
+   "quiet": [
+    "total = 0\nfor line in lines:\n    total += len(line)\nprint(total)",
+    "with open(path) as fh:\n    text = fh.read()\nprint(text.upper())",
+    "def area(r):\n    return 3.14159 * r * r",
+    "names = sorted(names)\nprint(', '.join(names))",
+    "if not items:\n    raise ValueError('empty')\nreturn items[-1]",
+    "x = 0\nwhile x < 10:\n    x += 1",
+    "import os\npath = os.path.join(base, 'data.txt')",
+    "class Point:\n    def __init__(self, x, y):\n        self.x = x"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code: dict-building loop",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "card weak (max 4.5) with mixed code tokens; probe peaks <= 0.13; label is a guess, expected to fail"
+}

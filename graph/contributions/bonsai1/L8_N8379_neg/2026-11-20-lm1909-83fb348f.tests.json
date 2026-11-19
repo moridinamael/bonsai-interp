@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-83fb348f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N8379-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:10:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N8379",
+   "pole": "-",
+   "label": "indentation whitespace starting a continuation line of code after an open bracket and newline",
+   "fire": [
+    "  def build(self):\n    with tf.variable_scope(\n        self.scope_name, reuse=True):\n      pass",
+    "  loss = tf.reduce_mean(\n      tf.nn.softmax_cross_entropy_with_logits(\n          labels=y, logits=logits))",
+    "    for path in sorted(\n        glob.glob(pattern)):\n      print(path)",
+    "  def run(self):\n    result = self.client.request(\n        method, url, headers=headers)\n    return result",
+    "    self.logger.info(\n        'Epoch %d finished in %.2f s', epoch, elapsed)",
+    "  model = Sequential(\n      layers=[dense_1, dense_2],\n      name='mlp')",
+    "    values = np.concatenate(\n        [left, right], axis=0)",
+    "  parser.add_argument(\n      '--batch_size', type=int, default=32)"
+   ],
+   "quiet": [
+    "  def build(self):\n    scope = self.scope_name\n    reuse = True\n    return scope",
+    "  logits = model(x)\n  loss = tf.reduce_mean(xent)\n  return loss",
+    "    for path in sorted(paths):\n      print(path)",
+    "  def run(self):\n    result = self.client.request(method, url)\n    return result",
+    "    self.logger.info('Epoch %d finished', epoch)\n    epoch += 1",
+    "  model = Sequential(layers, name='mlp')\n  model.compile()",
+    "    values = np.concatenate([left, right], axis=0)\n    return values",
+    "  parser.add_argument('--batch_size', type=int)\n  args = parser.parse_args()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code continuation indent",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: top 32 are whitespace runs (9 spaces) right after '(\\n' in 2-space-indented Python"
+}
