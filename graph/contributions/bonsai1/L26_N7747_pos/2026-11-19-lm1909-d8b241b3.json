@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d8b241b3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N7747+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:27+00:00",
+ "recipe": {
+  "toolchain_commit": "9c45db6a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N7747_pos/2026-11-19-lm1909-d8b241b3.tests.json"
+ },
+ "label": "a word that calls for a following 'to/until' complement: German ' bis' before an end date, Chinese 牵涉/考虑 (→到), Arabic تحتاج (→إلى)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N7747_pos/2026-11-19-lm1909-d8b241b3.tests.json",
+   "prereg_commit": "9c45db6a1",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.559,
+     "peak": " bis"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.587,
+     "peak": " bis"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.736,
+     "peak": "涉"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.695,
+     "peak": "涉"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.766,
+     "peak": "涉"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.553,
+     "peak": " تحتاج"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.608,
+     "peak": " تحتاج"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.524,
+     "peak": " bis"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " Kl"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " im"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.045,
+     "peak": "有很多"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.09,
+     "peak": "了几"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "发生在"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " الخ"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "سة"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": "öff"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.597,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c45db6a1",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "words awaiting 'to/until'",
+ "unit_kind": "sparse feature",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' bis', 涉, تحتاج, يحتاج, 考慮, 想到; output promotes 到 / đến / إلى / to / до / jusqu. Probes: 牵涉 1.04, 'Vertrag bis 2019' 0.56, تحتاج 0.56, 考虑到 0.32, 'Montag bis Freitag' 0.16; sentences without these words ~0.",
+ "selection": "random draw"
+}
