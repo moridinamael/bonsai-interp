@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4de8d736",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N10138+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:40:44+00:00",
+ "recipe": {
+  "toolchain_commit": "c065070b9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N10138_pos/2026-11-19-lm1909-4de8d736.tests.json"
+ },
+ "label": "the units a larger body is partitioned into (divisions, companies of a regiment, regiments, sections, provinces, regional governments, tracts); the whole body, or one member of it, stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N10138_pos/2026-11-19-lm1909-4de8d736.tests.json",
+   "prereg_commit": "c065070b9",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.487,
+     "peak": " divisions"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.082,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.432,
+     "peak": " regional"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.294,
+     "peak": " into"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.314,
+     "peak": " provinces"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.188,
+     "peak": "roup"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.438,
+     "peak": "acts"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.708,
+     "peak": " cohorts"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " assault"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " along"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": "axes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.111,
+     "peak": " valley"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.169,
+     "peak": " hills"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " silence"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.373,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c065070b9",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "subdivisions of a whole",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: five companies of the Ninth Cavalry 0.52, three divisions 0.47, regional governments 0.35, regiments 0.31, several provinces 0.26; 'his army' 0.06, software companies 0.05. One military 'companies' sentence also stayed at 0.06, so the context matters. The - pole is the other side: per / within / individual (the single unit inside the whole).",
+ "selection": "random draw"
+}
