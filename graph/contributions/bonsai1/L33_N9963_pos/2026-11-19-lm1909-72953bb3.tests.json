@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-72953bb3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N9963+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:21:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N9963",
+   "pole": "+",
+   "label": "a word-initial fragment token (' benef', ' inf', ' D', '_D') left hanging when an uncommon word is split after it (benef|itted, inf|requent, D|ictionaries, CRIT_D|MG)",
+   "fire": [
+    "Local farmers benefitted greatly from the new irrigation canal.",
+    "Visits from the inspector were infrequent and always announced in advance.",
+    "Both Dictionaries give the same spelling for the plural form.",
+    "The table maps STAT_CRIT_DMG to the label shown in the tooltip.",
+    "Several small towns have benefitted from the reopened railway line.",
+    "Buses on that route run infrequently after nine in the evening.",
+    "She compared three Dictionaries before settling on a definition.",
+    "Each rune adds a bonus to BASE_DMG when the hero attacks."
+   ],
+   "quiet": [
+    "Local farmers welcomed the new irrigation canal with a festival.",
+    "Visits from the inspector were rare and always announced in advance.",
+    "Both books give the same spelling for the plural form.",
+    "The table maps each status code to the label shown in the tooltip.",
+    "Several small towns have grown since the railway line reopened.",
+    "Buses on that route stop running after nine in the evening.",
+    "She compared three recipes before settling on a dessert.",
+    "Each rune adds a bonus to the hero's speed when the hero attacks."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "hanging word-start fragment (benef/inf/D)",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card peaks: ' f' x5, ' Д' x3, '_D' x3, ' benef' x2, ' D' x2, '.F' x2, ' inf'. Probes: benefitted 0.74, infrequent 0.56, Dictionaries 0.48, MAX_DMG 0.38, inflexible 0.24; whole-token words beneficiary, infrared, Delaware, Figure 0.00-0.01. The opposite pole peaks on other hanging fragments (' I', '_d', ' w'), so the neuron seems to sort word-start fragments by letter. Fire items depend on how the tokenizer splits each word."
+}
