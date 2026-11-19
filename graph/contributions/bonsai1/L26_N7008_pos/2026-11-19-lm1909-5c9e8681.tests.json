@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-5c9e8681",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N7008+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:56:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N7008",
+   "pole": "+",
+   "label": "single-letter placeholder strings ('a', 'b') as quoted items in test-code literals",
+   "fire": [
+    "        self.assertEqual(sorted(['b', 'a', 'c']), ['a', 'b', 'c'])",
+    "        self.assertEqual(merge({'a': 1}, {'b': 2}), {'a': 1, 'b': 2})",
+    "        self.assertEqual(concat(['a', 'b']), 'ab')",
+    "        result = zip_keys(['a', 'b', 'c'], [1, 2, 3])\n        self.assertEqual(result['a'], 1)",
+    "        self.assertIn('a', split_items('a;b;c'))",
+    "        self.assertEqual(reverse(['a', 'b', 'c']), ['c', 'b', 'a'])",
+    "        d = {'a': 'aaa', 'b': 'bbb'}\n        self.assertEqual(lookup(d, 'a'), 'aaa')",
+    "        self.assertEqual(dedupe(['a', 'a', 'b']), ['a', 'b'])"
+   ],
+   "quiet": [
+    "        self.assertEqual(sorted(['pear', 'apple', 'plum']), ['apple', 'pear', 'plum'])",
+    "        self.assertEqual(merge({'width': 1}, {'height': 2}), {'width': 1, 'height': 2})",
+    "        self.assertEqual(concat(['north', 'south']), 'northsouth')",
+    "        result = zip_keys(['red', 'green', 'blue'], [1, 2, 3])\n        self.assertEqual(result['red'], 1)",
+    "        self.assertIn('monday', split_items('monday;tuesday;friday'))",
+    "        self.assertEqual(reverse([10, 20, 30]), [30, 20, 10])",
+    "        d = {'name': 'Alice', 'city': 'Paris'}\n        self.assertEqual(lookup(d, 'name'), 'Alice')",
+    "        self.assertEqual(dedupe([4, 4, 7]), [4, 7])"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "toy 'a'/'b' string items",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: quotes and one-letter items inside string literals in test code. Probes: join(['a','b','c']) 0.80, {'a': 1, 'b': ...} 0.64, x/y variant 0.26, real-word strings 0.03. Near misses keep the code and swap the toy letters for real words."
+}
