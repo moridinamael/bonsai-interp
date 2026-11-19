@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-87db7ddc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1610-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:36+00:00",
+ "recipe": {
+  "toolchain_commit": "dc3fc4dce",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N1610_neg/2026-11-19-lm1909-87db7ddc.tests.json"
+ },
+ "label": "the token ' �' / '�': the first byte-fragment of a character that has no token of its own (Arabic-Indic and Persian digits, rarer Hangul syllables such as 웹 after a space)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N1610_neg/2026-11-19-lm1909-87db7ddc.tests.json",
+   "prereg_commit": "dc3fc4dce",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.862,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.787,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.82,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.39,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.49,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.639,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.6,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.743,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.035,
+     "peak": " الن"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": "ولد"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " ن"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " م"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "公开"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": "登录"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "その"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " said"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.691,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dc3fc4dce",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "leading byte-fragment token",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' �' x25 and '�' x7 of the top 32 (Korean ' 웹', rare ' 擇', Arabic-Indic digits). Last layer; the output direction promotes and suppresses other byte-fragment tokens. Probes: Arabic-Indic date .86, 웹 .58 / .63, Persian digits .40, rare CJK after a space .33; ordinary Korean .22 / .17 / .09, Devanagari digits .20, Thai digits .20, Russian .10, Chinese .00, Japanese .00, English .00. So it is not every byte fragment: strongest on particular leading bytes.",
+ "selection": "random draw"
+}

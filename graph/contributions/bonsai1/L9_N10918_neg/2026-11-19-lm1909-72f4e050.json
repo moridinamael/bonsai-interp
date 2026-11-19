@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-72f4e050",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N10918-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:04+00:00",
+ "recipe": {
+  "toolchain_commit": "dc3fc4dce",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N10918_neg/2026-11-19-lm1909-72f4e050.tests.json"
+ },
+ "label": "cooking over heat: cookware and stove/oven steps in hot-kitchen instructions (hot pans, stove, lid, simmer); the + pole takes warming/temperature words instead",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N10918_neg/2026-11-19-lm1909-72f4e050.tests.json",
+   "prereg_commit": "dc3fc4dce",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.347,
+     "peak": " flame"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.406,
+     "peak": " cook"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.628,
+     "peak": " dishes"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.689,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.75,
+     "peak": " pan"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.593,
+     "peak": " lock"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.402,
+     "peak": " water"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.519,
+     "peak": " rest"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": " leave"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.059,
+     "peak": " straight"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.205,
+     "peak": " minutes"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.264,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " left"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " blanket"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.556,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dc3fc4dce",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "hot cookware / stovetop cooking",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: 'B-urning' natural gas, thermal 'blanket', oven hot 'pans', heat-'sink', close and 'lock' the lid and cook, 'apague' el fuego. Probes: hot pans from the oven .77, cook the stew on low heat .48, burner...rest .38, simmer in a covered pot .33, stove .31, oven .20; clean pans from the cupboard .05, chop onions for salad .00, global warming .01, radiator .04, blanket on the bed .03.",
+ "selection": "random draw"
+}
