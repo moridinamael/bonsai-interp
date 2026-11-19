@@ -1,0 +1,163 @@
+{
+ "id": "2026-11-19-lm1909-4049146a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10854+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:23+00:00",
+ "recipe": {
+  "toolchain_commit": "ee040c683",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N10854_pos/2026-11-19-lm1909-4049146a.tests.json"
+ },
+ "label": "the stem right after the prefix 'de' in deconstruct / decouple (tokens 'construct', 'construction', 'ou', 'ouple'); the - pole takes the stem after 'de' in other words (degauss, derealisation, DeGrasse)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N10854_pos/2026-11-19-lm1909-4049146a.tests.json",
+   "prereg_commit": "ee040c683",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.746,
+     "peak": "construct"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.628,
+     "peak": "ouple"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.554,
+     "peak": "construction"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.915,
+     "peak": "ou"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.633,
+     "peak": "ouple"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.702,
+     "peak": "constructed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.764,
+     "peak": "ou"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.797,
+     "peak": "construct"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " sets"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " service"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " decrease"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " slate"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": "pose"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.724,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ee040c683",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stem after de- (deconstruct, decouple)",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card peaks: 'construct' x6, 'construction' x4, 'ou' x3, 'ouple' x3, always after 'de'/'dec'. Probes: deconstruct 0.62, decouple 0.70, decoupling 0.84; plain construct 0.00, the couple 0.02, degaussing 0.03, decommission 0.02.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "deconstruct",
+   "deconstructed",
+   "deconstruction",
+   "decouple",
+   "decoupled",
+   "decoupling"
+  ]
+ }
+}

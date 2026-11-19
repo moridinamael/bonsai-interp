@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1ed2b728",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N11217+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:31:51+00:00",
+ "recipe": {
+  "toolchain_commit": "ee040c683",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N11217_pos/2026-11-19-lm1909-1ed2b728.tests.json"
+ },
+ "label": "the text pointing at itself: 'below', 'in this article/section/post', 'here' meaning this very document (output promotes ' below', ' here', ' above')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N11217_pos/2026-11-19-lm1909-1ed2b728.tests.json",
+   "prereg_commit": "ee040c683",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.395,
+     "peak": " box"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.424,
+     "peak": " article"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.348,
+     "peak": " list"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.284,
+     "peak": " section"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.553,
+     "peak": " form"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.283,
+     "peak": " post"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.498,
+     "peak": " summary"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.62,
+     "peak": " below"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.232,
+     "peak": " short"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " bunk"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": "As"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " number"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.409,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ee040c683",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "document self-reference (below/here)",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'enter it below', 'in this article', 'repeat them in brief here', 'our discussion below'; logit effect promotes below/here/above. Probes: write your question below 0.47, in this article 0.39, summarize them here 0.18, spatial 'shelf below the window' 0.01, 'an article about gardening' 0.01.",
+ "selection": "random draw"
+}
