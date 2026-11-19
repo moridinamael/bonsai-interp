@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-06e4b52a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N7899+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N7899",
+   "pole": "+",
+   "label": "unclear, broad pole. Best guess: a noun that names one more category or field in a series: the final item of a product list ('…, and furniture'), a field label in a key-value block or table ('Density'), a counter attribute in code ('self.counter').",
+   "fire": [
+    "The chain sells sofas, lamps, rugs, and furniture.",
+    "The warehouse stocks mattresses, bed frames, and furniture.",
+    "Area: 310 km2\nDensity: 42/km2\nTime zone: UTC+1",
+    "|• Capital||Tsumeb|\n|• Density||12/km2|",
+    "Founded: 1887\nPopulation: 9,150\nDensity: 61/km2",
+    "if finished:\n    # count the completed batches\n    self.counter['batches'] += 1",
+    "for item in queue:\n    # track how many were retried\n    self.counter['retries'] += 1",
+    "The designer, importer, and maker of garden tools, planters, and furniture, announced a recall."
+   ],
+   "quiet": [
+    "The chain opened three new shops near the station.",
+    "The warehouse closes early on public holidays.",
+    "The region is flat and has a mild climate.",
+    "The capital lies in the north of the country.",
+    "The town was founded by miners and grew slowly.",
+    "if finished:\n    # nothing left to do\n    return None",
+    "for item in queue:\n    print(item)",
+    "The designer announced a recall after two complaints."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "unclear; list/field nouns",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (1.0%) and shows no common token (' Options' x4, then furniture, templates, .counter, Loss, identity). Probes: '…, and furniture' 0.24 and 0.65, 'Density' 0.42-0.53, 'self.counter' 0.56, ' ids' 0.15-0.39; other list-final nouns ('rehabilitation', 'flavors') 0.06-0.07. The label is three observed cases, not a pattern I can state, and the test only checks those three. The near misses drop the trigger nouns rather than swap them, so they are easier than I would like."
+}
