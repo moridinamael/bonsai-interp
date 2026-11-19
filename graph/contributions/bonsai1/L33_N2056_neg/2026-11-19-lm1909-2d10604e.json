@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-2d10604e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2056-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:59+00:00",
+ "recipe": {
+  "toolchain_commit": "d56e0a5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N2056_neg/2026-11-19-lm1909-2d10604e.tests.json"
+ },
+ "label": "the first piece of a transliterated or foreign-language name or term embedded in running text (' Ap'ichatpong, ' Ap'oorva, ' K'ievan Rus, Polish 'państwo', Czech ' bez')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N2056_neg/2026-11-19-lm1909-2d10604e.tests.json",
+   "prereg_commit": "d56e0a5fe",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.359,
+     "peak": " Ap"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.422,
+     "peak": " Ap"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.214,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.441,
+     "peak": " Ap"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.906,
+     "peak": " bez"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.33,
+     "peak": " word"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.004,
+     "peak": " jury"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.197,
+     "peak": " K"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " Andrew"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.052,
+     "peak": " Stanley"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": ")."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " without"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " kingdom"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " England"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.345,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d56e0a5fe",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "foreign name's first piece",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no single token; foreign words and names in Spanish, French, Czech, Polish and transliterated Sanskrit/Thai/Hindi contexts. Probe was weak: ' Ap'ichatpong 0.39, ' K'ievan 0.22, państwo 0.10, Spanish prose 0.10, Satya 0.02. Best guess; may well fail on the median-fire threshold.",
+ "selection": "random draw"
+}

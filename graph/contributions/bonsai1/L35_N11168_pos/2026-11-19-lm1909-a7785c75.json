@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a7785c75",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11168+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:02+00:00",
+ "recipe": {
+  "toolchain_commit": "d56e0a5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N11168_pos/2026-11-19-lm1909-a7785c75.tests.json"
+ },
+ "label": "the short word-initial piece (' cir', ' dr', ' sal', ' l') that opens a multi-piece French, Spanish or Latin-binomial word, before the word is completed",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N11168_pos/2026-11-19-lm1909-a7785c75.tests.json",
+   "prereg_commit": "d56e0a5fe",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.734,
+     "peak": " cir"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.696,
+     "peak": " dr"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.239,
+     "peak": " dr"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.42,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.606,
+     "peak": " sal"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.506,
+     "peak": " cir"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.684,
+     "peak": " cir"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.392,
+     "peak": " l"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.009,
+     "peak": " dared"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.013,
+     "peak": " hall"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.013,
+     "peak": " little"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.029,
+     "peak": " plain"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " gum"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.021,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.018,
+     "peak": " puff"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.026,
+     "peak": " pace"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.556,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d56e0a5fe",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "foreign word's first piece",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top examples peak on the first sub-word of French/Spanish/Latin words (cir|constances, dr|aps, sal|ivosa, L|unda) and of rare names. Probe: French/Spanish/Latin 0.38-0.77, English translations ~0. Near misses are English renderings whose words are whole tokens.",
+ "selection": "random draw"
+}

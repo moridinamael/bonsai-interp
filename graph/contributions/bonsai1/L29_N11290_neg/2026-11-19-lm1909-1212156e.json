@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1212156e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N11290-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:15+00:00",
+ "recipe": {
+  "toolchain_commit": "d56e0a5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N11290_neg/2026-11-19-lm1909-1212156e.tests.json"
+ },
+ "label": "a word-initial piece that looks like a short common word (' go', ' dam', ' dov', ' claw') but here opens a longer, different word (go|atee, go|thic, dam|ier, dov|etails, claw|-foot); quiet when the same short word stands alone",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N11290_neg/2026-11-19-lm1909-1212156e.tests.json",
+   "prereg_commit": "d56e0a5fe",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.554,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.862,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.628,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.804,
+     "peak": " dam"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.503,
+     "peak": " dov"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.452,
+     "peak": " dov"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.519,
+     "peak": " claw"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.718,
+     "peak": " claw"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " go"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.217,
+     "peak": "ac"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.074,
+     "peak": " dam"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.039,
+     "peak": " checked"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.192,
+     "peak": " dove"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": " h"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.208,
+     "peak": " claw"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.18,
+     "peak": " bed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.591,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d56e0a5fe",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "short piece opening longer word",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' go' x5, ' Go', 'ゴ', ' dam'ier, ' claw'-foot, ' law'ns, ' dov'etails, ' saw'buck. Probe: damier 0.96, claw-foot 0.78, gothic 0.68, dovetails 0.58, goosander 0.55, goatee 0.49; plain-glue control 0.05. Not limited to craft/decor topics (goosander fired). Near misses use go/dam/dove/claw as whole words or swap in a whole-token synonym.",
+ "selection": "random draw"
+}

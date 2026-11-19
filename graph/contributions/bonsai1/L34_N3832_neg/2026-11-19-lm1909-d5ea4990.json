@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-d5ea4990",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N3832-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:49+00:00",
+ "recipe": {
+  "toolchain_commit": "d56e0a5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N3832_neg/2026-11-19-lm1909-d5ea4990.tests.json"
+ },
+ "label": "property-tax and fiscal assessment contexts (a rate per $1,000 of assessed value, a tax bill, the tax base, estimating fiscal needs); quiet on other prices, bills and rates",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N3832_neg/2026-11-19-lm1909-d5ea4990.tests.json",
+   "prereg_commit": "d56e0a5fe",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.767,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.564,
+     "peak": " property"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.36,
+     "peak": " tax"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.381,
+     "peak": " assessed"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.713,
+     "peak": " tax"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.387,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.654,
+     "peak": " tax"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.258,
+     "peak": " tax"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " roasted"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.038,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.061,
+     "peak": "'s"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.175,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.283,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.152,
+     "peak": " fair"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.475,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d56e0a5fe",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tax assessment context",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: tax-assessment examples plus programme-evaluation and life-satisfaction-measurement ones; the - pole's output promotes ' evaluate', ' assessment', ' assess'. Probe: 'of assessed value' 0.71, 'property tax bill' 0.64, but programme evaluation 0.09 and rating life satisfaction 0.23, so only the tax/fiscal facet is claimed. Broad pole (0.7% of tokens over 0.1 of max): near misses may fire weakly.",
+ "selection": "random draw"
+}
