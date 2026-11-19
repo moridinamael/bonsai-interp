@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-5615b2ce",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N6171-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:33+00:00",
+ "recipe": {
+  "toolchain_commit": "9ec3fcdcd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N6171_neg/2026-11-19-lm1909-5615b2ce.tests.json"
+ },
+ "label": "capital 'H' as its own token glued to a digit, hyphen or other non-word character ('-H' flag, '4H', 'L3H…', 'xH…'), weaker for a free-standing ' H'; not the H that starts an ordinary word",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N6171_neg/2026-11-19-lm1909-5615b2ce.tests.json",
+   "prereg_commit": "9ec3fcdcd",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.887,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.673,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.474,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.586,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.86,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.511,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.083,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.267,
+     "peak": "-H"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.05,
+     "peak": "X"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " satellite"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.077,
+     "peak": "H"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " red"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.077,
+     "peak": "H"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.629,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ec3fcdcd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "standalone 'H' token",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "One token dominates ('H' x26, ' H' x6). Probes: 'curl … -H' 0.97, 'L3Harris' 0.71, 'Delta 4H' 0.69, '4H' pencil 0.67, '2H, 5H' 0.57, 'attrib … -H' 0.48, 'Vitamin H' 0.65 but 'the H key' 0.14; word-initial H (Henry, Home, Hat) 0.08, 'pH … NIH' 0.01, other letters (4M, 2K) 0.00.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "H",
+   " H"
+  ]
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1bd27c00",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N7956+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:42:45+00:00",
+ "recipe": {
+  "toolchain_commit": "9ec3fcdcd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N7956_pos/2026-11-19-lm1909-1bd27c00.tests.json"
+ },
+ "label": "best guess for a broad pole: the noun that completes an object phrase naming something given, supplied or used (a generous donation, structural analysis, the data, the military) in expository prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N7956_pos/2026-11-19-lm1909-1bd27c00.tests.json",
+   "prereg_commit": "9ec3fcdcd",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.227,
+     "peak": " donation"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.154,
+     "peak": " analysis"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.354,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.154,
+     "peak": " campaign"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.095,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.188,
+     "peak": " provided"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.413,
+     "peak": " engineering"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.139,
+     "peak": " sum"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.061,
+     "peak": " next"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.036,
+     "peak": "atted"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.05,
+     "peak": "awn"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.045,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.048,
+     "peak": " tired"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " b"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " but"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.068,
+     "peak": " looked"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.171,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ec3fcdcd",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "given/used object noun (broad)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (2.3% over 0.1 of max) with no single token; the top examples have no obvious shared trigger. Probes reached only 0.17-0.44 on such nouns and 0.04 on plain narrative. The near misses here are narrative sentences without such a noun phrase, so they are easier than a strict near miss; a hold would support the broad reading only.",
+ "selection": "random draw"
+}

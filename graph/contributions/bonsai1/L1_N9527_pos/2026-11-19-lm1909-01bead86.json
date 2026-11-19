@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-01bead86",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9527+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:31+00:00",
+ "recipe": {
+  "toolchain_commit": "9ec3fcdcd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N9527_pos/2026-11-19-lm1909-01bead86.tests.json"
+ },
+ "label": "the token ' find' (dense pole in the gate-closed echo regime; max only 0.16)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N9527_pos/2026-11-19-lm1909-01bead86.tests.json",
+   "prereg_commit": "9ec3fcdcd",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.632,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.672,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.488,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.831,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.461,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.568,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.39,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.898,
+     "peak": " find"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.213,
+     "peak": " station"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.239,
+     "peak": " open"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.171,
+     "peak": " see"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.241,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.201,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.17,
+     "peak": " learn"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.327,
+     "peak": " readers"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.152,
+     "peak": " choose"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.6,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ec3fcdcd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' find' (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags the pole dense: 15.4% of tokens reach 0.1 of max and 1.2% reach 0.3, all in the echo regime. ' find' is the peak of 26 of the top 32 and probed at 0.80-1.02, but near misses without it reached 0.28-0.34 and ' drastic' 0.60, so the test will probably fail on near misses. Recorded as dense with ' find' as its strongest token.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " find"
+  ]
+ }
+}
