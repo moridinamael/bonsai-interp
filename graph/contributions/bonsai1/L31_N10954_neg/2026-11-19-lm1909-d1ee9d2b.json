@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d1ee9d2b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N10954-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:17+00:00",
+ "recipe": {
+  "toolchain_commit": "630308d53",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N10954_neg/2026-11-19-lm1909-d1ee9d2b.tests.json"
+ },
+ "label": "the token just before a modern century is written out as a number (the ' ' / ' the' / ' X' ahead of '19th century', '18th century', 'XIXe siecle'); strongest for the 19th century in historical prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N10954_neg/2026-11-19-lm1909-d1ee9d2b.tests.json",
+   "prereg_commit": "630308d53",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.638,
+     "peak": " X"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.998,
+     "peak": " X"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.866,
+     "peak": " X"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.255,
+     "peak": " German"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.573,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.403,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.317,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.863,
+     "peak": " X"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.035,
+     "peak": " cour"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.073,
+     "peak": " le"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " tradition"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.255,
+     "peak": " German"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.112,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.099,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.163,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.992,
+    "median_fire": 0.605,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "630308d53",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "just before '19th century'",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probe: French ' X' before 'IXe siecle' 0.81; English 'first half of the 18th century' 0.44, 'French 19th-century' 0.42, but two other English 19th-century sentences only 0.12-0.13; 12th century 0.03, years and plain numbers under 0.03 except 'end of the 1980s' 0.28. The + pole fires before artistic period names (Art Nouveau, 20th century).",
+ "selection": "random draw"
+}

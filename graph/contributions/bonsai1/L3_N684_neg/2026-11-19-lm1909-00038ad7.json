@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-00038ad7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N684-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:24+00:00",
+ "recipe": {
+  "toolchain_commit": "630308d53",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N684_neg/2026-11-19-lm1909-00038ad7.tests.json"
+ },
+ "label": "dense pole (18.9% of tokens reach 0.1 of max, gate-closed); best guess for its top: the verb 'add' / 'added'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N684_neg/2026-11-19-lm1909-00038ad7.tests.json",
+   "prereg_commit": "630308d53",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.214,
+     "peak": " add"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.241,
+     "peak": " added"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.341,
+     "peak": " will"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.171,
+     "peak": " no"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.62,
+     "peak": " add"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.254,
+     "peak": " added"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.322,
+     "peak": " add"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.223,
+     "peak": " added"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.068,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.139,
+     "peak": " architect"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.341,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.162,
+     "peak": " no"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.158,
+     "peak": "We"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.161,
+     "peak": " bridge"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.08,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.194,
+     "peak": " mayor"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.247,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "630308d53",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; top is 'add/added'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense and gate-closed (max 0.59). Probe: sentences with and without 'add/added' all scored 0.30-0.43, peaking on other tokens, so this test will probably fail; it records the density.",
+ "selection": "random draw"
+}
