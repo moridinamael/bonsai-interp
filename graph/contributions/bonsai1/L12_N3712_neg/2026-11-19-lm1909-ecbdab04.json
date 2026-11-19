@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ecbdab04",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N3712-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:01:49+00:00",
+ "recipe": {
+  "toolchain_commit": "df5aed0ad",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N3712_neg/2026-11-19-lm1909-ecbdab04.tests.json"
+ },
+ "label": "Inside a quoted spoken command: the words right after the imperative verb (said, “Close your eyes…”, “Turn around and…”); narrated actions and quoted statements stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N3712_neg/2026-11-19-lm1909-ecbdab04.tests.json",
+   "prereg_commit": "df5aed0ad",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.442,
+     "peak": " eyes"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.488,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.478,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.596,
+     "peak": " your"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.603,
+     "peak": " back"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.636,
+     "peak": " state"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.681,
+     "peak": " ear"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.607,
+     "peak": " eyes"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": " turned"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " adjusted"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.037,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.502,
+     "peak": " dawn"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.061,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.599,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "df5aed0ad",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "quoted imperative, after the verb",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: “Close your eyes and count” 0.76, “Turn around and breathe” 0.59, 'told him to ... look away' 0.31, “Put your hands” 0.22, “Come closer and listen” 0.20, “Go get your coat” 0.15; narrated 'closed his eyes' 0.04, quoted statement 0.04. Middling strength, so the median may fall short.",
+ "selection": "random draw"
+}

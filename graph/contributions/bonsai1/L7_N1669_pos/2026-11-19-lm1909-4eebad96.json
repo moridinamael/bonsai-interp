@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4eebad96",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N1669+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:01:41+00:00",
+ "recipe": {
+  "toolchain_commit": "df5aed0ad",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N1669_pos/2026-11-19-lm1909-4eebad96.tests.json"
+ },
+ "label": "An opening quotation mark that sets off a term or nickname inside a clause (after 'as', 'or', 'known as'), not one that opens reported speech",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N1669_pos/2026-11-19-lm1909-4eebad96.tests.json",
+   "prereg_commit": "df5aed0ad",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.243,
+     "peak": " \""
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.536,
+     "peak": " “"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.254,
+     "peak": " “"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.586,
+     "peak": " \""
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.725,
+     "peak": " “"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.433,
+     "peak": " \""
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.214,
+     "peak": " “"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.325,
+     "peak": " \""
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.043,
+     "peak": " doctor"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " also"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.069,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": "?”"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.18,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.17,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": "My"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.379,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "df5aed0ad",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "scare-quote opening mark",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: as \"captain\" 0.57, or “junior” 0.53, so-called “experts” 0.35; speech quote after 'She said,' 0.05. The pole also fires on unrelated word pieces (Orfeo 1.06, Orion 0.57, Transportation 0.33) that this label does not cover, so a hold would be partial. Low max (4.1), 36% echo regime.",
+ "selection": "random draw"
+}

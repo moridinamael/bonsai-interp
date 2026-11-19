@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-60144fc1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2944-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:01:58+00:00",
+ "recipe": {
+  "toolchain_commit": "df5aed0ad",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N2944_neg/2026-11-19-lm1909-60144fc1.tests.json"
+ },
+ "label": "The token ':\\n' (colon then line break) closing a prose lead-in that announces what comes next; a mid-line colon or a full stop before the line break stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N2944_neg/2026-11-19-lm1909-60144fc1.tests.json",
+   "prereg_commit": "df5aed0ad",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.448,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.574,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.32,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.21,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.332,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.183,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.372,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.292,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " takes"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.083,
+     "peak": ".\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " knew"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " It"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " sample"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.036,
+     "peak": ".\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.326,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "df5aed0ad",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "colon + newline after a lead-in",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Probes: 'adding that:\\n' 0.68, 'posting it here:\\n' 0.71, 'conclusions:\\n' 0.36, 'told us:\\n' 0.36, 'Shopping list:\\n' 0.32, 'Note:\\n' 0.25, 'following items:\\n' 0.06; mid-line colon 0.02-0.03, '.\\n' 0.03, Python 'def ...:\\n' 0.03. Stronger after a long sentence-like lead-in than after a short heading.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3e44cf21",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N8290+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:02:11+00:00",
+ "recipe": {
+  "toolchain_commit": "df5aed0ad",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N8290_pos/2026-11-19-lm1909-3e44cf21.tests.json"
+ },
+ "label": "Statements that a product or system is rolled out or fitted as it stands: 'is available in', 'can be installed', 'at the same time/visit as', 'considering adoption' (the - pole takes the other side: adding to or modifying something)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N8290_pos/2026-11-19-lm1909-3e44cf21.tests.json",
+   "prereg_commit": "df5aed0ad",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.52,
+     "peak": " adoption"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.324,
+     "peak": " same"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.263,
+     "peak": " update"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.11,
+     "peak": " today"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.037,
+     "peak": " person"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.255,
+     "peak": " implementation"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.334,
+     "peak": " same"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.029,
+     "peak": " all"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " flows"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " tired"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.042,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " slept"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.032,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.259,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "df5aed0ad",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rollout / adoption as-is",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags broad (1.3% of tokens reach 0.1 of max). Probes are weak: 'considering adoption' 0.64, 'at the same visit' 0.33, 'at the same time' 0.29, 'available in the App Store' 0.22, 'as part of the spring release' 0.20; a sentence about modification also 0.22. Output suppresses ' modified', ' modification', ' altered'. Expect a fail or a marginal result.",
+ "selection": "random draw"
+}
