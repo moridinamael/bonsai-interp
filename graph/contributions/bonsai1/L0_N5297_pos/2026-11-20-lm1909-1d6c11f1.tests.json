@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-1d6c11f1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N5297+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:15:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N5297",
+   "pole": "+",
+   "label": "the token ' self' in Python method code",
+   "fire": [
+    "class Counter:\n    def __init__(self, start):\n        self.value = start",
+    "    def reset(self):\n        self.items = []\n        self.count = 0",
+    "class Timer:\n    def start(self):\n        self.begin = time.time()",
+    "    def close(self):\n        if self.handle:\n            self.handle.close()",
+    "class Point:\n    def norm(self):\n        return math.hypot(self.x, self.y)",
+    "    def add(self, item):\n        self.queue.append(item)",
+    "class Cache:\n    def get(self, key):\n        return self.store.get(key)",
+    "    def __repr__(self):\n        return f'Node({self.name})'"
+   ],
+   "quiet": [
+    "def make_counter(start):\n    value = start\n    return value",
+    "def reset(items):\n    items.clear()\n    count = 0",
+    "def start_timer():\n    begin = time.time()\n    return begin",
+    "def close(handle):\n    if handle:\n        handle.close()",
+    "def norm(x, y):\n    return math.hypot(x, y)",
+    "def add(queue, item):\n    queue.append(item)",
+    "def get(store, key):\n    return store.get(key)",
+    "def describe(name):\n    return f'Node({name})'"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python ' self'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "card flags broad (2.3%), ' self' x9 of top-32; probe: 0.35 on a class __init__"
+}
