@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-093c8ca6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N11571+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:55:01+00:00",
+ "recipe": {
+  "toolchain_commit": "adf034ec5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N11571_pos/2026-11-19-lm1909-093c8ca6.tests.json"
+ },
+ "label": "German running prose (word-final pieces of nouns and compounds, e.g. '…stück', '…se', 'Recht'); the same sentences in English stay quiet. Other non-English prose (Spanish, Italian, French, Japanese) fires more weakly.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N11571_pos/2026-11-19-lm1909-093c8ca6.tests.json",
+   "prereg_commit": "adf034ec5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.433,
+     "peak": "ald"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.338,
+     "peak": "allen"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.343,
+     "peak": " Tage"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.571,
+     "peak": "bst"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.443,
+     "peak": " Haus"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.406,
+     "peak": "ender"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.253,
+     "peak": " befind"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.359,
+     "peak": "chaft"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": " breakfast"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " council"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.073,
+     "peak": " days"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": " yesterday"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " generations"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.06,
+     "peak": " citizen"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " apple"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.383,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "adf034ec5",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German prose",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (3.7% of tokens reach 0.1 of max). Top examples are mostly German, with some Spanish, Japanese and Korean. Probes: German 0.23-0.63, Italian 0.34, Spanish 0.32, French 0.22, Japanese 0.21, English 0.02. The near misses are English translations, so the test supports a language-level claim only.",
+ "selection": "random draw"
+}

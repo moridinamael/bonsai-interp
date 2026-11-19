@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-3280a67d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N2936+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:55:53+00:00",
+ "recipe": {
+  "toolchain_commit": "adf034ec5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N2936_pos/2026-11-19-lm1909-3280a67d.tests.json"
+ },
+ "label": "Numerical / scientific Python code (NumPy, SciPy, quadrature, histograms, special functions): fires on commas, ' import' and identifier pieces inside it. Ordinary Python (web, strings, file handling) with the same punctuation stays quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N2936_pos/2026-11-19-lm1909-3280a67d.tests.json",
+   "prereg_commit": "adf034ec5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.59,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.797,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.974,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.733,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.734,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.127,
+     "peak": "[b"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.887,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.875,
+     "peak": "),"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.117,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.045,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.179,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": "]\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.235,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.031,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.108,
+     "peak": ".shortcuts"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": ".ArgumentParser"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.836,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "adf034ec5",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "scientific-Python code",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' import' x7, ',' x5, 'ature' (quadrature), 'erg' (meijerg); output promotes ' numerical', ' function', ' integration', ' method'. Probes: scipy imports 1.12, histogram2d/quadrature 1.10, trapezoid with np 0.86; django imports 0.035, a string-building function 0.03, prose 'import' 0.005.",
+ "selection": "random draw"
+}

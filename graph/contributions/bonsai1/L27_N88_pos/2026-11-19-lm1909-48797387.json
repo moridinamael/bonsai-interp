@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-48797387",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N88+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:56:19+00:00",
+ "recipe": {
+  "toolchain_commit": "adf034ec5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N88_pos/2026-11-19-lm1909-48797387.tests.json"
+ },
+ "label": "A list with a tilt: nouns for a young person or an animal (boy, girl, rabbit, snake, ox), strongest when the noun is the first part of a compound or derived word ('boyhood', 'girlhood', 'rabbit costume', 'snake-like', 'ox cart'). The same compound frames built on other nouns ('childhood', 'pirate costume', 'stone-like') stay quiet. The - pole is ' giant'.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N88_pos/2026-11-19-lm1909-48797387.tests.json",
+   "prereg_commit": "adf034ec5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.769,
+     "peak": " boy"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.402,
+     "peak": " rabbit"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.398,
+     "peak": " snake"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.436,
+     "peak": " ox"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.615,
+     "peak": " girl"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.909,
+     "peak": " rabbit"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.443,
+     "peak": " boy"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.126,
+     "peak": " snake"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.099,
+     "peak": " sailor"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.148,
+     "peak": " clown"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": " dream"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": " hay"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.157,
+     "peak": "ly"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.057,
+     "peak": " foot"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.111,
+     "peak": " ivory"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.44,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "adf034ec5",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "boy/girl/animal noun as modifier",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' ox' x4, ' rabbit' x4, ' boy' x4, ' Boy' x2, ' sex' x2, '-boy' x2; also 'woman' in 'womanizing', 'egg-smooth', 'puppy'. Probes: rabbit costume 0.94, boyhood 0.75, girlhood 0.70, snake-like 0.56, ox cart 0.39; as plain nouns: 'The rabbit ran' 0.45, 'The boy ran' 0.30; childhood 0.03, pirate costume 0.005, stone-like 0.14, puppy eyes 0.15. I did not find one distinction that covers boy/girl, animals, 'sex' and 'egg', so this is a list. The near misses test the frame without the nouns, not the nouns outside the frame.",
+ "selection": "random draw"
+}
