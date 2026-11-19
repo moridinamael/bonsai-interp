@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-0bccef85",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N671+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:56:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N671",
+   "pole": "+",
+   "label": "the width / zero-padding digits right after '%' in a printf-style format string ('%02d', '%03d')",
+   "fire": [
+    "    label = \"%03d\" % index\n    stamp = \"%02d\" % minute",
+    "    print \"%02d-%02d\" % (month, day)",
+    "    fname = \"frame_%04d.jpg\" % n\n    tag = \"%02x\" % value",
+    "    printf(\"%02d:%02d:%02d\\n\", hrs, mins, secs);",
+    "    row = \"| %03d | %05d |\" % (rank, score)",
+    "    sprintf(buf, \"%04d-%02d\", year, month);",
+    "    out.write(\"%02d. %s\\n\" % (pos, title))",
+    "    code = \"%06d\" % serial\n    part = \"%03d\" % batch"
+   ],
+   "quiet": [
+    "    label = str(index)\n    stamp = str(minute)",
+    "    print \"%s-%s\" % (month, day)",
+    "    fname = \"frame_\" + str(n) + \".jpg\"\n    tag = hex(value)",
+    "    printf(\"%s: %s\\n\", name, value);",
+    "    row = \"| {} | {} |\".format(rank, score)",
+    "The shop took 15% off the price and then another 5% at the till.",
+    "    out.write(\"%s. %s\\n\" % (pos, title))",
+    "The crate held 24 jars: 10 of honey and 14 of jam."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "printf width digit after %",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peaks on digits, ' %' and '=%'; the code example is '%02d'. Probes: format strings 0.19-0.31; years and counts in prose 0.00-0.04 except '2030 ... 2045' 0.20. Weak and not well pinned down: the top example ('37 genes: 13') is not explained by this label. The - pole is a much stronger digit unit (212°F, 802.11, 1492: the digit before a final 2)."
+}
