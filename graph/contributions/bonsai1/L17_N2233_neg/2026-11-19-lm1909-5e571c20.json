@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5e571c20",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2233-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:30+00:00",
+ "recipe": {
+  "toolchain_commit": "ea2b990ed",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N2233_neg/2026-11-19-lm1909-5e571c20.tests.json"
+ },
+ "label": "A body or person attribute noun (skin, hair, age) used as a classifier right before 'type(s)' or 'group': 'all skin types', 'every hair type', 'this age group'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N2233_neg/2026-11-19-lm1909-5e571c20.tests.json",
+   "prereg_commit": "ea2b990ed",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.489,
+     "peak": " skin"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.059,
+     "peak": " hair"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.332,
+     "peak": " skin"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.161,
+     "peak": " hair"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.536,
+     "peak": " age"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.191,
+     "peak": " skin"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.227,
+     "peak": " hair"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.4,
+     "peak": " age"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " feeling"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " sty"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.141,
+     "peak": " file"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.467,
+     "peak": " paper"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " age"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " form"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " salon"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.28,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ea2b990ed",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "skin/hair before 'types'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: top examples 'all skin types', 'all hair types', 'cell lines'; the output direction of this pole promotes ' type'/' types'. Probes: skin types 0.60, hair type 0.56, age group 0.29, blood type 0.20, cell lines 0.13, file type 0.03; 'skin'/'cell' outside the classifier slot ~0.01. So the test uses skin, hair and age only; the wider 'any noun before type' reading did not hold in probing.",
+ "selection": "random draw"
+}

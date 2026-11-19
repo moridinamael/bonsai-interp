@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e2e8211d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N10916+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:26:39+00:00",
+ "recipe": {
+  "toolchain_commit": "ea2b990ed",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N10916_pos/2026-11-19-lm1909-e2e8211d.tests.json"
+ },
+ "label": "A subject pronoun (he, she, they, it) that opens a new clause and takes up the person or thing just mentioned ('..., but he is out', '. She doesn't think'); the opposite pole fires on object ' it' after a verb",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N10916_pos/2026-11-19-lm1909-e2e8211d.tests.json",
+   "prereg_commit": "ea2b990ed",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.058,
+     "peak": " She"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.049,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.092,
+     "peak": " They"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.359,
+     "peak": " he"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.038,
+     "peak": " They"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.097,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.07,
+     "peak": " She"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.254,
+     "peak": " they"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " spring"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": " expected"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " harsh"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " blamed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.992,
+    "median_fire": 0.081,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ea2b990ed",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "clause-opening subject pronoun",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peak tokens ' they', ' he', ' He', ' it', ' They', ' She', always the subject of a fresh clause after a comma, 'but' or a full stop; the - pole is 28/32 object ' it' ('Have it', 'got it'). Probes were weak: '. She opens' 0.29, 'yet he kept' 0.18, 'but they can' 0.17, 'but it is' 0.11; object pronouns 0.01-0.04. The contrast is clear but the level is near the 0.20 bar, so this may fail on the median.",
+ "selection": "random draw"
+}

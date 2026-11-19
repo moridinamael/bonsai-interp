@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3ceaf79c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1406-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:26:25+00:00",
+ "recipe": {
+  "toolchain_commit": "ea2b990ed",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1406_neg/2026-11-19-lm1909-3ceaf79c.tests.json"
+ },
+ "label": "The first name of a player introduced inside team-sports commentary (American football, soccer, basketball), at the name's first token; the same first names outside sport stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1406_neg/2026-11-19-lm1909-3ceaf79c.tests.json",
+   "prereg_commit": "ea2b990ed",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.336,
+     "peak": " they"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.165,
+     "peak": " missed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.063,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.4,
+     "peak": " coverage"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.349,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.17,
+     "peak": " Daniel"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.264,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.09,
+     "peak": " only"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "ist"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " trust"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.178,
+     "peak": " they"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.133,
+     "peak": " whole"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.085,
+     "peak": " only"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.217,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ea2b990ed",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "athlete first name in sports talk",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks ' Cam', ' John', ' Robert', name pieces ('Jonoth|an', 'Giov|ani') in football talk. Probes: 'trust Cam Wake' 0.83, 'needed John Harrison back' 0.64, 'running back Michael Carter' 0.49; 'my uncle Robert' 0.01, 'follows John, a quiet clerk' 0.01; a name right after a dateline scored only 0.08, so the fire items put the name after team context.",
+ "selection": "random draw"
+}

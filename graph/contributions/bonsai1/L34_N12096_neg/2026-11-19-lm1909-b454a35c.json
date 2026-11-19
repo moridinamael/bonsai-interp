@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b454a35c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N12096-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:26:52+00:00",
+ "recipe": {
+  "toolchain_commit": "ea2b990ed",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N12096_neg/2026-11-19-lm1909-b454a35c.tests.json"
+ },
+ "label": "In French text, the stem piece of a word split by the tokenizer right before a past-participle ending (rempl|acées, divor|cés, équil|ibré, én|um|érées); French sentences without such split participles, and the English equivalents, stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N12096_neg/2026-11-19-lm1909-b454a35c.tests.json",
+   "prereg_commit": "ea2b990ed",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.837,
+     "peak": " rempl"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.866,
+     "peak": " divor"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.909,
+     "peak": "quil"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.764,
+     "peak": "num"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.079,
+     "peak": "ac"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.665,
+     "peak": " crit"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.895,
+     "peak": " rempl"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.803,
+     "peak": " retr"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.11,
+     "peak": " ple"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.083,
+     "peak": " mer"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.071,
+     "peak": " pain"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.085,
+     "peak": " dem"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " evacuated"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.055,
+     "peak": "ff"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.095,
+     "peak": "oth"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.851,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ea2b990ed",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French stem before participle ending",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: all top examples are French, peaking on a mid-word stem piece just before -é/-és/-ées (énumérées, divorcés, âgés, articulé, équilibré, remplacées), at the pole's max of 664. Probes: four fresh French participle sentences 0.73-0.84; French without participles 0.02-0.07; English translation 0.00. Not checked: whether French stems before non-participle endings fire as well.",
+ "selection": "random draw"
+}

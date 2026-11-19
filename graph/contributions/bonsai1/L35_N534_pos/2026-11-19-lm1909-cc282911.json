@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-cc282911",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N534+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:03+00:00",
+ "recipe": {
+  "toolchain_commit": "ea2b990ed",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N534_pos/2026-11-19-lm1909-cc282911.tests.json"
+ },
+ "label": "In recipe instructions, the determiner or size word that opens a kitchen-vessel noun phrase ('In a large …', 'in a small …', 'in a medium …'), where a pan, bowl or pot is about to be named; the same words outside cooking stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N534_pos/2026-11-19-lm1909-cc282911.tests.json",
+   "prereg_commit": "ea2b990ed",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.344,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.592,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.389,
+     "peak": " medium"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.335,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.368,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.291,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.202,
+     "peak": " large"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.225,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " winter"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": "For"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " Stack"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.001,
+     "peak": " post"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.34,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ea2b990ed",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'in a large ___' in recipes",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: the output direction promotes ' food'/' Food'/'食品', and the top examples mix 'In a large sauté pan', 'in a large stockpot', 'In a small bowl', 'slow cooker', 'low on the food chain', 'for/of Food and Agriculture', 'coats of clear sealer', 'higher-on-the-hog'. Probes with the sentence cut at the slot: 'In a large' 0.50, 'coats of' 0.51, 'low on the' 0.44, 'in a medium' 0.38, 'in a small' 0.30; 'parked the car in a large' 0.03, 'Department of' 0.15. The recipe slot is the commonest pattern but not the whole pole ('coats of' fires as hard), so expect partial coverage.",
+ "selection": "random draw"
+}
