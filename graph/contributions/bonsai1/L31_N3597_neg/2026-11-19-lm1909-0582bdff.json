@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0582bdff",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N3597-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:12+00:00",
+ "recipe": {
+  "toolchain_commit": "3a986a91c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N3597_neg/2026-11-19-lm1909-0582bdff.tests.json"
+ },
+ "label": "the verb (come/go/enter) at the point where a law or agreement is about to 'come into force/effect'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N3597_neg/2026-11-19-lm1909-0582bdff.tests.json",
+   "prereg_commit": "3a986a91c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.866,
+     "peak": " come"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.534,
+     "peak": " enters"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.524,
+     "peak": " came"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.39,
+     "peak": " goes"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.646,
+     "peak": " come"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.438,
+     "peak": " went"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.381,
+     "peak": " entered"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.612,
+     "peak": " came"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.122,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.055,
+     "peak": " article"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.119,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.123,
+     "peak": " amendment"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.148,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.084,
+     "peak": "ice"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.088,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.091,
+     "peak": " were"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.529,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a986a91c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "verb before 'into force/effect'",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: peaks on ' come', ' went', ' enter(ed)', ' came' before 'into force/effect' for treaties and rules; the - pole promotes ' come', ' entered', ' into'. Probes: 'come into force' 0.79, 'entered into force' 0.81, 'went into effect' 0.26; 'came into the kitchen' 0.00, 'take effect' 0.11. 'The law will be enforced' gave 0.48 on ' will', so the pole anticipates the idiom; near misses use the same verbs with other subjects, or the same laws with another predicate.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8dd63a10",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N708-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:25+00:00",
+ "recipe": {
+  "toolchain_commit": "3a986a91c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N708_neg/2026-11-19-lm1909-8dd63a10.tests.json"
+ },
+ "label": "the sub-word piece that completes a glott-/gloss- word (epigl|ott|is, gl|ott|al, hypogloss|al, gloss|ol|alia)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N708_neg/2026-11-19-lm1909-8dd63a10.tests.json",
+   "prereg_commit": "3a986a91c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.898,
+     "peak": "ott"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.92,
+     "peak": "ott"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.093,
+     "peak": "al"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.394,
+     "peak": "al"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.631,
+     "peak": "ott"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.813,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.79,
+     "peak": "ott"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.178,
+     "peak": "al"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "al"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " dro"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " found"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " regarded"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " thyroid"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.855,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a986a91c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "glott-/gloss- word piece",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: top example 'ott' in epiglottis, also gloss|a; other top examples (Shof|ar, Suhot|ra, GG|T) are outside this label. Probes: epiglottis 1.00, glottal 1.16, epiglottitis 1.03, glossolalia 0.77, hypoglossal 0.45; glossary 0.04, diglossia 0.06, laryngitis 0.01. Near misses swap in another throat/anatomy word.",
+ "selection": "random draw"
+}

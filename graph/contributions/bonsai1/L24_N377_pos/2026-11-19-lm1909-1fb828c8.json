@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1fb828c8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N377+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:35+00:00",
+ "recipe": {
+  "toolchain_commit": "3a986a91c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N377_pos/2026-11-19-lm1909-1fb828c8.tests.json"
+ },
+ "label": "the boundary ('.' or ' where') after a phrase that announces something the next clause will unpack (an approach/routine about to be listed step by step, 'a condition where ...')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N377_pos/2026-11-19-lm1909-1fb828c8.tests.json",
+   "prereg_commit": "3a986a91c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.483,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.231,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.171,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.304,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.316,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.397,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.411,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.173,
+     "peak": " where"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " aunt"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " families"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.002,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " common"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.0,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.31,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a986a91c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "boundary before an elaboration",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on '.', ' where', ',' after 'a two-pronged approach', 'an organization where', 'a disorder where'. Probes: 'approach. First' 0.63, 'disorder where' 0.35, 'nonprofit where' 0.28; plain narrative periods 0.01-0.04, but '... but it takes much longer.' 0.36, so the label is loose. Near misses keep topic and punctuation, with nothing to unpack.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-46897162",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N8562-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:56+00:00",
+ "recipe": {
+  "toolchain_commit": "3a986a91c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N8562_neg/2026-11-19-lm1909-46897162.tests.json"
+ },
+ "label": "a lowercase token that starts a new line right after a sentence-ending line break (line begins without a capital)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N8562_neg/2026-11-19-lm1909-46897162.tests.json",
+   "prereg_commit": "3a986a91c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.606,
+     "peak": "open"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.455,
+     "peak": "hope"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.646,
+     "peak": "a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.556,
+     "peak": "made"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.724,
+     "peak": "p"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.44,
+     "peak": "takes"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.698,
+     "peak": "b"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.692,
+     "peak": "don"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": " again"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " hope"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.001,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.095,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.024,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " serves"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.166,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": " are"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.626,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a986a91c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "lowercase line start",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card flags the pole broad and gate-closed (100% leak regime); top examples are all single lowercase letters or short words right after '.⏎'. Probes: lowercase line starts 0.61-0.94; the same line capitalised 0.18 and 0.01; no line break 0.00. Near misses capitalise the line start or drop the break.",
+ "selection": "random draw"
+}
