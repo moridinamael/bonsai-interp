@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-67a5e072",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N7754+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:12+00:00",
+ "recipe": {
+  "toolchain_commit": "d54e0670d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N7754_pos/2026-11-19-lm1909-67a5e072.tests.json"
+ },
+ "label": "star-rating score in scraped product or review listings: 'N out of 5 stars', 'N/5 (count)', '/5(count)'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N7754_pos/2026-11-19-lm1909-67a5e072.tests.json",
+   "prereg_commit": "d54e0670d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.709,
+     "peak": " stars"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.639,
+     "peak": " stars"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.36,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.861,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.763,
+     "peak": " stars"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.413,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.995,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.342,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": "illet"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": " hood"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " arrived"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " cutting"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.188,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.048,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": " hotel"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.674,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d54e0670d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'out of 5 stars' rating",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: '5/5(3).', '!/5(31).', '5 out of 5 stars', plus listing fields ('Viewed:', 'Von:'); low max (7.2), 27% echo regime. Probes: rating strings 0.32-0.78, 'Viewed:' fields 0.24-0.29; one '5/5 (31)' after prose only 0.03; scores in prose 0.02-0.05. The - pole is the 'Was this helpful? / Report' boilerplate.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-82d7be58",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N5805-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:21+00:00",
+ "recipe": {
+  "toolchain_commit": "d54e0670d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N5805_neg/2026-11-19-lm1909-82d7be58.tests.json"
+ },
+ "label": "Russian masculine consonant-final noun in its bare (endingless) form: доктор, экран, документ, компьютер",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N5805_neg/2026-11-19-lm1909-82d7be58.tests.json",
+   "prereg_commit": "d54e0670d",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.39,
+     "peak": "ор"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.404,
+     "peak": "ор"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.461,
+     "peak": " ресторан"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.296,
+     "peak": " договор"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.141,
+     "peak": "ер"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.238,
+     "peak": " дорог"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.534,
+     "peak": " журнал"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.589,
+     "peak": " наш"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.171,
+     "peak": "ая"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.108,
+     "peak": " студент"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.154,
+     "peak": "олов"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.162,
+     "peak": "ни"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.196,
+     "peak": "ач"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.238,
+     "peak": " дорог"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.235,
+     "peak": " пол"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.596,
+     "peak": " наш"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.773,
+    "median_fire": 0.397,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d54e0670d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "bare Russian masculine noun",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on the last piece of endingless masculine nouns (доктор, канал, университет, экран, период); the - pole's output promotes endings ('s', 'es', 'ы', 'а'). Probes: masculine nouns 0.20-0.76, sentences with only feminine nouns 0.04-0.08, English 0.00; the stem 'стол' inside 'столе' also reached 0.33, so it may be the stem rather than the bare form.",
+ "selection": "random draw"
+}

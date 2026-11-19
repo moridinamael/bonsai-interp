@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8b5a15f8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N4013+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:06+00:00",
+ "recipe": {
+  "toolchain_commit": "d54e0670d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N4013_pos/2026-11-19-lm1909-8b5a15f8.tests.json"
+ },
+ "label": "a 'processing' / 'logger' / 'chain' piece in the middle of a compound code identifier (processingInstruction, get_x_logger, getblockchaininfo)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N4013_pos/2026-11-19-lm1909-8b5a15f8.tests.json",
+   "prereg_commit": "d54e0670d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.834,
+     "peak": " processing"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.877,
+     "peak": "ing"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.635,
+     "peak": "Processing"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.44,
+     "peak": "_logger"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.599,
+     "peak": "_logger"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.571,
+     "peak": "chain"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.58,
+     "peak": "chain"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.704,
+     "peak": "Processing"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.171,
+     "peak": "out"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.046,
+     "peak": "Element"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.098,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.203,
+     "peak": "_config"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.409,
+     "peak": "_module"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.067,
+     "peak": "hash"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.178,
+     "peak": "peer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.045,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.617,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d54e0670d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mid-identifier processing/logger/chain",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card top examples and two probe rounds: fires on Processing/_logger/chain/_idx pieces inside longer identifiers in code; other identifier pieces (UserProfile, Elapsed, skippedEntity) stay quiet; the plain English word 'processing' in prose is quiet. A list of pieces, not a shared pattern I could name.",
+ "selection": "random draw"
+}

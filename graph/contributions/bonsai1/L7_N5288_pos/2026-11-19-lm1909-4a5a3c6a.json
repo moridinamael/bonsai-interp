@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4a5a3c6a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N5288+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:07+00:00",
+ "recipe": {
+  "toolchain_commit": "d54e0670d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N5288_pos/2026-11-19-lm1909-4a5a3c6a.tests.json"
+ },
+ "label": "the completing word of a few specific two-part names: Viking ' Press', Fleetwood ' Mac', Dragon ' Gate', cat ' scratch' (disease / fever)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N5288_pos/2026-11-19-lm1909-4a5a3c6a.tests.json",
+   "prereg_commit": "d54e0670d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.439,
+     "peak": " Press"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.556,
+     "peak": " Mac"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.586,
+     "peak": " scratch"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.61,
+     "peak": " Gate"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.826,
+     "peak": " Press"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.711,
+     "peak": " Mac"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.578,
+     "peak": " scratch"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.529,
+     "peak": " Gate"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.097,
+     "peak": " Press"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": " tour"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": "worm"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " Wrestling"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": "Further"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.105,
+     "peak": " Mac"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": "Sw"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.096,
+     "peak": " Gate"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.582,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d54e0670d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Viking Press / Fleetwood Mac completions",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card: ' Press' (Viking Press, 24 Carrot Press, Botpress), Fleetwood ' Mac', Dragon ' Gate', cat ' scratch'. Probes: those four names 0.50-0.85 in new sentences, but the same completing words after other first words stay quiet (Beacon Press 0.10, University Press 0.07, Big Mac 0.08, Golden Gate 0.09, a scratch 0.08). A list of memorised pairs; I could not name a shared pattern.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-538cda71",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N1266-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:31+00:00",
+ "recipe": {
+  "toolchain_commit": "d54e0670d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N1266_neg/2026-11-19-lm1909-538cda71.tests.json"
+ },
+ "label": "' up' in 'of up to <amount>' (a bound on a quantity); the rest of the pole is diffuse",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N1266_neg/2026-11-19-lm1909-538cda71.tests.json",
+   "prereg_commit": "d54e0670d",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.43,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.411,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.5,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.067,
+     "peak": "Our"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.582,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.478,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.463,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.534,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.063,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.253,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.128,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": "Our"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.061,
+     "peak": "This"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.144,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.085,
+     "peak": "Each"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.095,
+     "peak": "Switch"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.471,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d54e0670d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'up' in 'up to N'",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (3.3% of tokens at 0.1 of max); top examples are tokens just before a number ('[' before 0, '(' before 2, ' up' before 'to 30%', first digit of a year). Probes: 'of up to N' 0.38-0.41, but a sentence-initial 'The' alone gives 0.25 and year / code cases 0.06-0.25. 'up to' is one strand of a broad unit.",
+ "selection": "random draw"
+}

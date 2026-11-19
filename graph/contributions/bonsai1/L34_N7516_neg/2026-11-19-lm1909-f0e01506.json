@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-f0e01506",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7516-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:03+00:00",
+ "recipe": {
+  "toolchain_commit": "d54e0670d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N7516_neg/2026-11-19-lm1909-f0e01506.tests.json"
+ },
+ "label": "Russian word-initial piece ' г' (громкость, галерея, грибы), i.e. the first token of a Russian word spelled with г that is split after it",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N7516_neg/2026-11-19-lm1909-f0e01506.tests.json",
+   "prereg_commit": "d54e0670d",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.467,
+     "peak": " г"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.266,
+     "peak": " г"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.039,
+     "peak": " г"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.063,
+     "peak": " об"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.422,
+     "peak": " г"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.256,
+     "peak": " г"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.265,
+     "peak": " г"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.216,
+     "peak": " г"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.161,
+     "peak": "ук"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " л"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": "аж"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": " об"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": "ос"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.074,
+     "peak": " п"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.045,
+     "peak": " у"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": "Н"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.261,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d54e0670d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Russian word-initial ' г'",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: ' г' is 12 of the top 32 peaks (громкости, гипертекстовые, гиперссылки), with a few ' P' / ' G' / ' g' word starts in other languages; the + pole is also G-initial pieces. Probes: ' г' words 0.33-0.68, but гипер- 0.20-0.44, whole-token г-words (город, герой) 0.00-0.05, and an unrelated 'настройках' reached 0.35-0.51, so the token is not the whole story.",
+ "selection": "random draw"
+}

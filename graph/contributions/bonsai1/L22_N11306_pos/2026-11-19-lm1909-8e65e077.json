@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8e65e077",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11306+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:11+00:00",
+ "recipe": {
+  "toolchain_commit": "d54e0670d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N11306_pos/2026-11-19-lm1909-8e65e077.tests.json"
+ },
+ "label": "Arabic 'و'-prefixed connective (ومن / وأن) that opens the next of several parallel clauses; weaker on Korean chained '-고'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N11306_pos/2026-11-19-lm1909-8e65e077.tests.json",
+   "prereg_commit": "d54e0670d",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.418,
+     "peak": " ومن"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.284,
+     "peak": " ما"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.434,
+     "peak": " وأن"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.375,
+     "peak": " ومن"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.246,
+     "peak": " ومن"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.492,
+     "peak": " وأن"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.363,
+     "peak": " ومن"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.484,
+     "peak": " وأن"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.141,
+     "peak": " في"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.16,
+     "peak": " عن"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.303,
+     "peak": " الشهر"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.241,
+     "peak": "باح"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.129,
+     "peak": "ام"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.111,
+     "peak": "دير"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.227,
+     "peak": "باح"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.164,
+     "peak": " أمس"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.396,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d54e0670d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic parallel-clause 'and'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (3.9% of tokens at 0.1 of max). Probes: Arabic ' ومن' / ' وأن' continuing a parallel series 0.33-0.62, Korean chained -고 0.31-0.36, English 'and then' 0.12-0.30, plain Arabic/Korean sentences 0.07-0.19.",
+ "selection": "random draw"
+}
