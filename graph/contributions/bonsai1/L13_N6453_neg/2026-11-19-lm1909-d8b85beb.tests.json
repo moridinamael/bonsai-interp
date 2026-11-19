@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-d8b85beb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N6453-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N6453",
+   "pole": "-",
+   "label": "the second mention of an item that was introduced earlier in the passage as one member of a list or pair (cats, dogs and rabbits ... the dogs)",
+   "fire": [
+    "The bakery sells rolls, bagels and pretzels. On Saturdays the bagels are gone before nine.",
+    "The panel included Dr. Okafor, Dr. Lindqvist and Dr. Marsh. The sharpest question came from Lindqvist near the end.",
+    "The course covers algebra, geometry and statistics. Most students find that geometry takes the longest to learn.",
+    "Tablets are sold by Lenovo, Huawei and Acer. Of the three, Huawei cut its prices most sharply this year.",
+    "The farm keeps goats, sheep and geese. In spring the sheep are moved to the upper field.",
+    "The report compares buses, trams and ferries. It concludes that trams carry the most passengers per hour.",
+    "The firm has offices in Leeds, Bristol and Cardiff. Next year the staff in Bristol will move to a new building.",
+    "The recipe needs flour, butter and walnuts. Chop the walnuts finely before you start."
+   ],
+   "quiet": [
+    "The bakery opens early every day. On Saturdays the bagels are gone before nine.",
+    "The panel met for two hours on Friday. The sharpest question came from a student near the end.",
+    "The course runs for twelve weeks in total. Most students find that geometry takes the longest to learn.",
+    "Tablet sales were flat across the region. One newcomer, Huawei, cut its prices most sharply this year.",
+    "The farm lies high above the valley. In spring the sheep are moved to the upper field.",
+    "The report was published last month. It concludes that trams carry the most passengers per hour.",
+    "The firm has grown quickly since its launch. Next year the staff in Bristol will move to a new building.",
+    "The recipe takes about an hour to make. Chop the walnuts finely before you start."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "re-mention of a listed item",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "The top examples share no token (states, requirements, Alda, cats, Google, crowns) but each repeats a noun that an earlier list or pair in the passage introduced ('state/territory ... the states', 'Alan Alda, ... by Alda', 'cat and dog ... for cats', 'Apple, Google and Samsung ... Google'). Probes: re-mentioned list item 0.77, 0.68, 0.43; the same second sentence without the earlier list 0.02-0.03. Near misses keep the second sentence and drop the list. Whether a list is needed, or any earlier mention suffices, is not tested."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-6558430e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N5053-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N5053",
+   "pole": "-",
+   "label": "identifier pieces naming disks, image formats and storage backends in virtualisation code (OpenStack nova / libvirt style: '_disk', '_format', '_backend', 'ephemeral', 'vda')",
+   "fire": [
+    "        image_meta = objects.ImageMeta.from_dict({\n            \"disk_format\": \"qcow2\",\n            \"container_format\": \"bare\"})\n        disk_info = blockinfo.get_disk_info(CONF.libvirt.virt_type, instance_ref, image_meta)",
+    "        drvr = libvirt_driver.LibvirtDriver(fake.FakeVirtAPI(), False)\n        fake_backend = mock.MagicMock()\n        drvr.image_backend = fake_backend\n        drvr._create_image(context, instance, disk_info['mapping'])",
+    "        flavor = objects.Flavor(root_gb=40, ephemeral_gb=10, swap=2048)\n        instance_ref.flavor = flavor\n        disk_mapping = blockinfo.get_disk_mapping('kvm', instance_ref, 'virtio', 'ide', image_meta)",
+    "        self.flags(virt_type='qemu', images_type='rbd', group='libvirt')\n        conn = libvirt_driver.LibvirtDriver(fake.FakeVirtAPI(), True)\n        image_backend = conn.image_backend\n        disk = image_backend.image(instance, 'disk')",
+    "              <devices>\n                <disk type='block'>\n                  <source dev='/dev/mapper/vol1'/>\n                  <target dev='vdb' bus='virtio'/>\n                </disk>\n              </devices>",
+    "        bdm = {'device_name': '/dev/vdc', 'disk_bus': 'virtio', 'source_type': 'volume', 'destination_type': 'volume'}\n        disk_info = {'bus': 'virtio', 'type': 'disk', 'dev': 'vdc'}",
+    "        stats = {'vda_read': 12288, 'vda_write': 4096, 'vda_errors': 0}\n        snapshot_meta = {'disk_format': 'raw', 'container_format': 'ami'}\n        self.assertEqual('raw', snapshot_meta['disk_format'])",
+    "        def fake_get_disk_size(path):\n            return 10 * units.Gi\n        self.stubs.Set(libvirt_driver.disk, 'get_disk_size', fake_get_disk_size)\n        backing = imagebackend.Qcow2(instance, 'disk')"
+   ],
+   "quiet": [
+    "        user_meta = objects.UserMeta.from_dict({\n            \"first_name\": \"Maria\",\n            \"last_name\": \"Keller\"})\n        page_info = pagination.get_page_info(CONF.web.page_size, request_ref, user_meta)",
+    "        view = article_views.ArticleView(fake.FakeRequest(), False)\n        fake_mailer = mock.MagicMock()\n        view.mailer = fake_mailer\n        view._send_welcome(context, account, page_info['links'])",
+    "        order = objects.Order(quantity=40, discount_pct=10, tax=2048)\n        customer_ref.order = order\n        price_table = pricing.get_price_table('eur', customer_ref, 'gross', 'net', order_meta)",
+    "        self.flags(locale='de', theme='dark', group='frontend')\n        page = article_views.ArticleView(fake.FakeRequest(), True)\n        renderer = page.renderer\n        html = renderer.render(account, 'profile')",
+    "              <table>\n                <tr class='header'>\n                  <td align='left'>Name</td>\n                  <td align='right'>Score</td>\n                </tr>\n              </table>",
+    "        row = {'player_name': 'Jonas', 'team_colour': 'green', 'match_type': 'league', 'result_type': 'draw'}\n        score_info = {'home': 'green', 'kind': 'match', 'away': 'red'}",
+    "        totals = {'goals_for': 12288, 'goals_against': 4096, 'red_cards': 0}\n        season_meta = {'league_name': 'north', 'trophy_name': 'cup'}\n        self.assertEqual('north', season_meta['league_name'])",
+    "        def fake_get_word_count(text):\n            return 10 * units.Thousand\n        self.stubs.Set(article_views.text, 'get_word_count', fake_get_word_count)\n        summary = summarizer.Short(article, 'intro')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "nova/libvirt disk identifiers",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top 20 are almost all from nova libvirt driver tests (_disk, _format, _backend, ephemeral, vda), plus ' GNU' in 'GNU/Linux'. Probes were weak: nova-style code 0.21 and 0.08, prose 'storage backend' 0.48 once but other storage prose 0.04-0.18. Low confidence; near misses are the same code shapes about web pages and sports."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-4a20d8cf",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N9603-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N9603",
+   "pole": "-",
+   "label": "Python guard conditions that test for a falsy, empty, zero or None value ('if not x:', '== 0', 'is None') and the early return / raise that follows",
+   "fire": [
+    "def send(self, payload, retries):\n    if not payload:\n        return False\n    if retries == 0:\n        raise RuntimeError('No retries left.')\n",
+    "    def lookup(self, key):\n        if self.cache is None:\n            self.cache = {}\n        if not key:\n            return None\n",
+    "def mean(values):\n    if len(values) == 0:\n        return 0\n    if not isinstance(values, list):\n        raise TypeError('No list given.')\n",
+    "    def flush(self):\n        if not self.buffer:\n            return\n        if self.fd is None:\n            raise IOError('No file is open.')\n",
+    "def parse_header(line, strict):\n    if not line:\n        # the line is empty, nothing to parse\n        return {}\n    if strict == 0:\n        return None\n",
+    "    def connect(self, host, timeout):\n        if timeout is None:\n            timeout = 0\n        if not host:\n            raise ValueError('No host specified.')\n",
+    "def trim(text, limit):\n    if limit == 0:\n        return ''\n    if not text:\n        return text\n",
+    "    def pop_job(self):\n        if self.pending == 0:\n            return None\n        if not self.workers:\n            raise RuntimeError('No workers available.')\n"
+   ],
+   "quiet": [
+    "def send(self, payload, retries):\n    packet = self.encode(payload)\n    self.socket.write(packet)\n    self.sent += 1\n    return packet\n",
+    "    def lookup(self, key):\n        value = self.cache[key]\n        self.hits += 1\n        return value\n",
+    "def mean(values):\n    total = sum(values)\n    count = len(values)\n    result = total / count\n    return result\n",
+    "    def flush(self):\n        data = ''.join(self.buffer)\n        self.fd.write(data)\n        self.buffer = [data[-1]]\n",
+    "def parse_header(line, strict):\n    name, value = line.split(':')\n    name = name.strip().lower()\n    value = value.strip()\n    return {name: value}\n",
+    "    def connect(self, host, timeout):\n        address = (host, self.port)\n        self.sock = socket.create_connection(address, timeout)\n",
+    "def trim(text, limit):\n    head = text[:limit]\n    tail = text[limit:]\n    print(len(tail))\n    return head\n",
+    "    def pop_job(self):\n        job = self.jobs.pop()\n        self.running.append(job)\n        return job\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Python falsy/empty guard checks",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top examples: 'if not path_info:' ... 'is empty', 'if not heal_interval: return', '== 0', 'if overwrite:', \"raise ValueError('No model...')\". Probes: guard functions 0.35 and 0.39, straight-line Python 0.04, English 'if the basket is empty' 0.04. Near misses are the same function signatures with straight-line bodies."
+}

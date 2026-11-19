@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-83b4f4d7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N5381+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N5381",
+   "pole": "+",
+   "label": "Korean (Hangul) text: fires on the first byte-piece of a Korean word, i.e. where the next piece of a Hangul syllable must be predicted; quiet on Japanese and Chinese",
+   "fire": [
+    "어제는 비가 많이 와서 우리는 집에서 영화를 보았습니다.",
+    "The Korean word for thank you is 감사합니다 and people say it often.",
+    "정부는 내년부터 새로운 교육 정책을 시행한다고 발표했습니다.",
+    "The sign above the door read 서울식당 in large letters.",
+    "할머니는 시장에서 신선한 채소와 과일을 사 오셨습니다.",
+    "이 프로그램은 사용자가 파일을 쉽게 관리할 수 있도록 도와줍니다.",
+    "Her favourite Korean dish is 비빔밥 with extra vegetables.",
+    "학생들은 도서관에서 늦게까지 시험 공부를 했습니다."
+   ],
+   "quiet": [
+    "昨日は雨がたくさん降ったので、私たちは家で映画を見ました。",
+    "The Japanese word for thank you is ありがとう and people say it often.",
+    "政府は来年から新しい教育政策を実施すると発表しました。",
+    "The sign above the door read 東京食堂 in large letters.",
+    "奶奶在市场上买了新鲜的蔬菜和水果回来。",
+    "这个程序可以帮助用户轻松地管理文件。",
+    "Her favourite Japanese dish is ラーメン with extra vegetables.",
+    "学生たちは図書館で遅くまで試験の勉強をしました。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Korean word-start pieces",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: all top examples are partial-byte pieces, mostly at the start of Korean words (one Chinese example); the opposite pole is Japanese katakana. Probes: Korean sentences 0.05-0.46, a Korean brand name inside English 1.09, Japanese 0.002, Chinese 0.01. Near misses are the same sentences in Japanese or Chinese."
+}
