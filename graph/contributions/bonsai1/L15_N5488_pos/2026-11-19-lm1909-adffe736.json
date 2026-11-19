@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-adffe736",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N5488+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:25:30+00:00",
+ "recipe": {
+  "toolchain_commit": "c268d9205",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N5488_pos/2026-11-19-lm1909-adffe736.tests.json"
+ },
+ "label": "final token completing a famous multi-token proper name (Sydney Opera| House, Haw|king, Virginia Wool|f, Roy Ke|ane), not the same word used generically",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N5488_pos/2026-11-19-lm1909-adffe736.tests.json",
+   "prereg_commit": "c268d9205",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.354,
+     "peak": " House"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.482,
+     "peak": "king"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.36,
+     "peak": "f"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.63,
+     "peak": "ane"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.438,
+     "peak": " House"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.593,
+     "peak": "king"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.33,
+     "peak": "f"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.029,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": "My"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.176,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": "works"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.036,
+     "peak": " follows"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": "A"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.399,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c268d9205",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "last token of a famous name",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: no single token; peaks on 'king' (Hawking), ' House' (Opera House), 'ane' (Roy Keane), 'f' (Woolf), ' Saturn' (Sega Saturn), ' Design'. Probe: Opera House 0.64, Hawking 0.52, but Sega Saturn only 0.12 and single-token surnames (Einstein) 0.04; generic 'house' 0.03.",
+ "selection": "random draw"
+}

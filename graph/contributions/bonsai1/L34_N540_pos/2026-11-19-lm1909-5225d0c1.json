@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5225d0c1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N540+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:24:59+00:00",
+ "recipe": {
+  "toolchain_commit": "c268d9205",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N540_pos/2026-11-19-lm1909-5225d0c1.tests.json"
+ },
+ "label": "word just before an expected 'herd(s)' / animal-group noun: the modifier or determiner in 'vast ___', 'their ___', 'great ___' when grazing animals gather or migrate",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N540_pos/2026-11-19-lm1909-5225d0c1.tests.json",
+   "prereg_commit": "c268d9205",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.57,
+     "peak": " vast"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.005,
+     "peak": " immense"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.627,
+     "peak": " large"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.44,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.656,
+     "peak": " small"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.291,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.878,
+     "peak": " huge"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.509,
+     "peak": " scattered"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.035,
+     "peak": " spring"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.161,
+     "peak": " lone"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.049,
+     "peak": "on"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.433,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.196,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " once"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.069,
+     "peak": " farmer"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.599,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c268d9205",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "just before expected 'herds'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks on ' their', ' the', ' great', ' whole', ' were' before herds / migration / herded; + pole promotes ' her', ' his', ' their' (her- continuations), and the - pole fires on 'h' before '-er…'. Probe: 'in enormous [herds]' 0.95, 'in great [numbers]' 0.49, 'in [close family groups]' 0.45, 'his [flock]' 0.29.",
+ "selection": "random draw"
+}
