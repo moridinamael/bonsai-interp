@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-59ecbf4b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N9502+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:20+00:00",
+ "recipe": {
+  "toolchain_commit": "b80fa2601",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N9502_pos/2026-11-19-lm1909-59ecbf4b.tests.json"
+ },
+ "label": "an identifier in program code (a variable, attribute or key name right after '(', '[', '.' or a quote), as opposed to a prose word",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N9502_pos/2026-11-19-lm1909-59ecbf4b.tests.json",
+   "prereg_commit": "b80fa2601",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.472,
+     "peak": "(rect"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.511,
+     "peak": "user"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.371,
+     "peak": "udp"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.42,
+     "peak": "[i"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.385,
+     "peak": ".parent"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.498,
+     "peak": " cache"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.467,
+     "peak": ".meta"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.211,
+     "peak": " scale"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": " width"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.074,
+     "peak": " right"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.109,
+     "peak": " along"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.063,
+     "peak": " disk"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.098,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.057,
+     "peak": " factor"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.444,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b80fa2601",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code identifiers",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad (2.4% of tokens reach 0.1 of max); peaks '.k', 'self', '(u', 'screen', '.used', '.type' in Python. The + direction suppresses word-suffix tokens ('s', 'ly'); the - pole is a verb stem awaiting -s (appoint|s). Probes: three code snippets 0.47-0.56, prose about code 0.05.",
+ "selection": "random draw"
+}

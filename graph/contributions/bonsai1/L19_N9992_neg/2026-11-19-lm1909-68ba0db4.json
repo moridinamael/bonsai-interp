@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-68ba0db4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N9992-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:34:10+00:00",
+ "recipe": {
+  "toolchain_commit": "b80fa2601",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N9992_neg/2026-11-19-lm1909-68ba0db4.tests.json"
+ },
+ "label": "best guess for a broad pole: the first fragment of an unfamiliar split name, acronym or code attribute (' D'|PO, '.d'|rvr, ' Com'|oglio, ' Pol'|izzi)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N9992_neg/2026-11-19-lm1909-68ba0db4.tests.json",
+   "prereg_commit": "b80fa2601",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.159,
+     "peak": " FA"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.201,
+     "peak": ".d"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.097,
+     "peak": " Cancer"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.149,
+     "peak": ".i"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.195,
+     "peak": " Pol"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.05,
+     "peak": "block"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.166,
+     "peak": " M"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.294,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.129,
+     "peak": "sh"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " cancer"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.091,
+     "peak": " rules"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.038,
+     "peak": " show"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.147,
+     "peak": " block"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.058,
+     "peak": " runs"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.163,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b80fa2601",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare split-word onset",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (1.8% of tokens reach 0.1 of max, max only 4.75) with no single token; top examples are first pieces of rare names, acronyms and code attributes. Probes: acronym list 0.38, self.drvr 0.31, others 0.10-0.11, plain prose 0.02. Recorded as dense; the test is a best guess and may well fail.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-ca7e0ba0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10700+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:34:19+00:00",
+ "recipe": {
+  "toolchain_commit": "b80fa2601",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N10700_pos/2026-11-19-lm1909-ca7e0ba0.tests.json"
+ },
+ "label": "' say' in a rueful aside of the form 'wish I / we could say …' (one strong trigger found on a broad pole)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N10700_pos/2026-11-19-lm1909-ca7e0ba0.tests.json",
+   "prereg_commit": "b80fa2601",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.018,
+     "peak": " say"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.71,
+     "peak": " say"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.466,
+     "peak": " say"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.811,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.673,
+     "peak": " say"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.354,
+     "peak": " say"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.34,
+     "peak": " say"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.269,
+     "peak": " say"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " flight"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.05,
+     "peak": " say"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " got"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.072,
+     "peak": " held"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.57,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b80fa2601",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'wish we could say'",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad (1.7% of tokens reach 0.1 of max) with no single token: commas, ' on', ' are', ' say' in asides and corrections. Probes: 'wish I could say the same' 1.14, 'I wish I could say that' 0.45, 'emphasis on <repeated word>' 0.32-0.33; 'can't say the same' 0.01, 'the same cannot be said' 0.02. The label covers one trigger, surely not the whole pole.",
+ "selection": "random draw"
+}
