@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-926518dd",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N12006+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N12006",
+   "pole": "+",
+   "label": "the second, order-swapped occurrence of a pair: 'b + a' after 'a + b', '[j, i]' after '[i, j]', 'BA' after 'AB' (symmetry / commutation; the output direction promotes 'symmetry', 'symmetric', 'reversed')",
+   "fire": [
+    "Addition is commutative, which means that p + q = q + p for any two integers.",
+    "        cost[a][b] = w\n        cost[b][a] = cost[a][b]\n",
+    "Multiplication of real numbers satisfies m * n = n * m, so the order does not matter.",
+    "    for r in range(size):\n        for c in range(r):\n            grid[r, c] = value\n            grid[c, r] = grid[r, c]\n",
+    "The operators commute in this case, so we may write XY = YX without any correction term.",
+    "The dot product is symmetric, so u · v = v · u for all vectors.",
+    "    sim[x][y] = score\n    sim[y][x] = sim[x][y]\n",
+    "Because the relation is symmetric, d(s, t) = d(t, s) for every pair of points."
+   ],
+   "quiet": [
+    "Addition is easy, which means that p + q = r + s can be checked for any four integers.",
+    "        cost[a][b] = w\n        total[k][m] = cost[a][b]\n",
+    "Multiplication of real numbers gives m * n = k * l only for some values, so the order matters.",
+    "    for r in range(size):\n        for c in range(r):\n            grid[r, c] = value\n            mask[r, c] = True\n",
+    "The operators act in this case, so we may write XY = ZW without any correction term.",
+    "The dot product is linear, so u · v = w · z only in special cases.",
+    "    sim[x][y] = score\n    seen[p][q] = score + 1\n",
+    "Because the relation is a metric, d(s, t) = 0 only when the points are equal."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "swapped pair (a+b = b+a)",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Probes: swapped equations and index pairs 0.56-0.83, append(v)/append(u) 0.15, non-swapped controls 0.004-0.16."
+}
