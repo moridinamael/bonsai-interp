@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-b85680e8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10176+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:17:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N10176",
+   "pole": "+",
+   "label": "in Japanese text, the token that opens a kanji after a space (space-separated names and words in credit or bibliography lines)",
+   "fire": [
+    "著者 金谷 節子 発行 医歯薬出版 定価 三千円",
+    "司会 小泉 純一郎 氏 記念 講演 会場 京都",
+    "出演 佐々木 絶子 監督 黒澤 徹 脚本 橋本 忍",
+    "編集 鈴木 節夫 翻訳 渡辺 純子 装丁 菊地 信義",
+    "講師 斎藤 絶 氏 演題 独立 研究 の 方法",
+    "作詞 阿久 悠 作曲 筒美 京平 編曲 萩田 光雄",
+    "受賞者 樋口 節子 所属 独立 行政 法人 理化学 研究所",
+    "監修 柳田 純 執筆 堀江 節 写真 篠山 紀信"
+   ],
+   "quiet": [
+    "この本の著者は有名な先生で、出版社は東京にあります。",
+    "昨日の講演会はとても面白くて、会場は満員でした。",
+    "その映画の監督は若い人で、脚本も自分で書きました。",
+    "彼は本を翻訳する仕事をしていて、毎日忙しいです。",
+    "先生の研究の方法について、学生たちが質問しました。",
+    "この歌の作曲をした人は、今も元気に活動しています。",
+    "研究所で働いている友人が、先月賞をもらいました。",
+    "写真を撮るのが好きなので、週末は山へ行きます。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "space + split kanji",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks are incomplete-byte tokens (' �', '�', 'ー�') in Japanese, Korean and spaced Chinese. Probes: spaced Japanese name lines 0.39-0.69, katakana ポーカー 0.60 but サーバー 0.07, Korean 0.07-0.32, spaced Chinese 0.29; unspaced Japanese/Chinese 0.00."
+}
