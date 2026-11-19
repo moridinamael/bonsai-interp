@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-b6956fc6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N8525+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:35:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N8525",
+   "pole": "+",
+   "label": "broad pole (3.3% of tokens above 0.1 of max): best guess is an identifier piece that continues a snake_case or dotted name in Python code (self.display_name, desktop_notifications)",
+   "fire": [
+    "class Author(models.Model):\n    def __unicode__(self):\n        return self.display_title\n",
+    "class Tag(models.Model):\n    def __unicode__(self):\n        return self.short_label\n",
+    "if stream is not None:\n    mobile_alerts_enabled = False\n",
+    "if graph_is_connected:\n    left_nodes, right_nodes = split(graph)\n",
+    "class Deck(models.Model):\n    def __str__(self):\n        return self.display_name\n",
+    "if owner is None:\n    email_reminders_enabled = True\n",
+    "for i in range(len(rows)):\n    rows[i] = rows[i].replace(old_token, new_token)\n",
+    "class Player(models.Model):\n    def __repr__(self):\n        return self.screen_name\n"
+   ],
+   "quiet": [
+    "The author of the book asked the publisher to show the full title.",
+    "Every tag in the shop carries a short label with the price.",
+    "If the stream is quiet, the mobile alerts are switched off.",
+    "When the network is connected, the nodes on the left talk to the right.",
+    "The deck of cards has a name printed on the box.",
+    "The owner asked for email reminders to be turned on.",
+    "Go through the rows and swap the old word for the new one.",
+    "Each player picks a screen name before the game starts."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "broad: code identifier pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card FLAG broad (3.3% of tokens >= 0.1 of max, max 9.6), no single token; top examples mostly Python identifiers but also 'Wizard of Oz' and Japanese 'です'. Probes: self.display_name 0.28, self.full_title 0.13, desktop_notifications 0.10, prose 0.03-0.14. Registered to record the density; expected to fail."
+}

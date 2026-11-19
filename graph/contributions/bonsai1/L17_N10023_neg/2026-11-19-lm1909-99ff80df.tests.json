@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-99ff80df",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N10023-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:35:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N10023",
+   "pole": "-",
+   "label": "in code, the subscript of the second of two parallel indexed arguments (f(a[i], b[j]) -> fires on '[j'); weak pole",
+   "fire": [
+    "for u, v in pairs:\n    acc.append(dist(first[u], second[v]))\n",
+    "for p in range(h):\n    for q in range(w):\n        table[p][q] = gap(row[p], col[q])\n",
+    "for m, n in zip(ids_a, ids_b):\n    diffs.append(compare(old[m], new[n]))\n",
+    "for s in range(len(A)):\n    for t in range(len(B)):\n        if match(A[s], B[t]):\n            hits += 1\n",
+    "for k, l in edges:\n    weight = sim(vec[k], other[l])\n    total += weight\n",
+    "for e in range(rows):\n    for g in range(cols):\n        out += overlap(top[e], side[g])\n",
+    "for i1, i2 in matches:\n    err += loss(pred[i1], truth[i2])\n",
+    "for c in range(n):\n    for d in range(n):\n        K[c, d] = kernel(X[c], Y[d])\n"
+   ],
+   "quiet": [
+    "for u in items:\n    acc.append(norm(first[u]))\n",
+    "for p in range(h):\n    table[p] = scale(row[p])\n",
+    "for m in ids_a:\n    diffs.append(clean(old[m]))\n",
+    "for s in range(len(A)):\n    if valid(A[s]):\n        hits += 1\n",
+    "for k in nodes:\n    weight = size(vec[k])\n    total += weight\n",
+    "count = 0\nfor name in names:\n    print(name)\n    count += 1\n",
+    "def loss(pred, truth):\n    return abs(pred - truth)\n",
+    "for c in range(n):\n    K.append(square(X[c]))\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "2nd paired subscript in code",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: max 4.75, no single token, 36% leak regime; top examples dist(x[i], y[j]) -> '[j', data[key][y]; the + pole is 'corresponding / correlates with'. Probes: score(left[a], right[b]) 0.51 on '[b', cost(src[r], dst[c]) 0.23, dist(a[i], b[j]) 0.18, prose 0.03-0.10. The - pole may be the second member of a pairing, where the + pole names the pairing."
+}
