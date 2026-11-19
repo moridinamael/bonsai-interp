@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-c3650d9b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N1070+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:26:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N1070",
+   "pole": "+",
+   "label": "typed Python signatures: the typing alias ' T' in annotations (-> T.Dict[str, T.Any]) and class-name pieces in type positions",
+   "fire": [
+    "def read_config(path: str) -> T.Dict[str, T.Any]:\n    with open(path) as fh:\n        return yaml.safe_load(fh)\n",
+    "import typing as T\n\ndef names(rows: T.List[Row]) -> T.Set[str]:\n    return {r.name for r in rows}\n",
+    "def find(key: str, table: T.Mapping[str, int]) -> T.Optional[int]:\n    return table.get(key)\n",
+    "class Cache:\n    def __init__(self) -> None:\n        self.items: T.Dict[str, T.Any] = {}\n",
+    "def split(text: str) -> T.Tuple[str, T.List[str]]:\n    head, *rest = text.split()\n    return head, rest\n",
+    "def walk(node: Node) -> T.Iterator[T.Any]:\n    yield node\n    for child in node.children:\n        yield from walk(child)\n",
+    "def merge(a: T.Dict[str, int], b: T.Dict[str, int]) -> T.Dict[str, int]:\n    return {**a, **b}\n",
+    "def parse(argv: T.Sequence[str]) -> T.Optional[T.Any]:\n    if not argv:\n        return None\n    return argv[0]\n"
+   ],
+   "quiet": [
+    "def read_config(path):\n    with open(path) as fh:\n        return yaml.safe_load(fh)\n",
+    "rows = load_rows()\nnames = set()\nfor r in rows:\n    names.add(r.name)\n",
+    "if key in table:\n    print(table[key])\nelse:\n    print('missing')\n",
+    "count = 0\nwhile count < 10:\n    print(count)\n    count += 1\n",
+    "text = input('words: ')\nparts = text.split()\nprint(parts[0])\n",
+    "for (int i = 0; i < len; i++) {\n    sum += data[i];\n}\nprintf(\"%d\", sum);\n",
+    "SELECT name, total FROM orders WHERE total > 100 ORDER BY total DESC;\n",
+    "echo \"starting\"\ncd /var/log\nls -la | grep error\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python type annotations",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (8.6% of tokens reach 0.1 of max) and gate-closed (echo regime 100%); max is only 3.64. Top examples are Python type positions: ' T'.FolderId, ' T'.Any, Respin'.I'vary, Qgs'Geometry', 'self'. Probes: -> T.Dict[str, T.Any] 0.88, T.Optional / T.List 0.42, QgsGeometry return type 0.40; untyped class 0.22, C loop 0.16, prose 0.07. Near misses are untyped code; being a broad pole, they may fire weakly."
+}
