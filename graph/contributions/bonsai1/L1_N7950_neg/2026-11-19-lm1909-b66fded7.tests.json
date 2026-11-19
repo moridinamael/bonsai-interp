@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-b66fded7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7950-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N7950",
+   "pole": "-",
+   "label": "the token ' -------\\n' / ' ----------\\n': a run of dashes after whitespace that ends the line, typically the underline of a numpydoc section header (Parameters / Returns)",
+   "fire": [
+    "def mean(xs):\n    \"\"\"Average of a sequence.\n\n    Parameters\n    ----------\n    xs : list of float\n        Input values.\n\n    Returns\n    -------\n    float\n        The mean.\n    \"\"\"\n    return sum(xs) / len(xs)\n",
+    "    def fit(self, X, y):\n        \"\"\"Fit the model.\n\n        Parameters\n        ----------\n        X : array, shape (n, d)\n        y : array, shape (n,)\n\n        Returns\n        -------\n        self\n        \"\"\"\n",
+    "def clip(value, lo, hi):\n    \"\"\"Limit a value to a range.\n\n    Parameters\n    ----------\n    value : int\n    lo : int\n    hi : int\n    \"\"\"\n    return max(lo, min(hi, value))\n",
+    "def load(path):\n    \"\"\"Read a table from disk.\n\n    Returns\n    -------\n    rows : list of dict\n        One dict per line.\n    \"\"\"\n    return list(read(path))\n",
+    "    def transform(self, signal):\n        \"\"\"Apply the filter.\n\n        Parameters\n        ----------\n        signal : ndarray\n            Samples to filter.\n\n        Returns\n        -------\n        ndarray\n        \"\"\"\n",
+    "def is_prime(n):\n    \"\"\"Test whether n is prime.\n\n    Parameters\n    ----------\n    n : int\n        Number to test.\n\n    Returns\n    -------\n    bool\n    \"\"\"\n",
+    "def distance(p, q):\n    \"\"\"Euclidean distance between two points.\n\n    Parameters\n    ----------\n    p, q : tuple of float\n\n    Returns\n    -------\n    float\n    \"\"\"\n",
+    "    def reset(self, seed=None):\n        \"\"\"Restart the simulation.\n\n        Parameters\n        ----------\n        seed : int, optional\n            Random seed.\n        \"\"\"\n        self.t = 0\n"
+   ],
+   "quiet": [
+    "def mean(xs):\n    \"\"\"Average of a sequence.\n\n    Args:\n        xs: input values, a list of float.\n\n    Returns:\n        The mean as a float.\n    \"\"\"\n    return sum(xs) / len(xs)\n",
+    "    def fit(self, X, y):\n        \"\"\"Fit the model.\n\n        :param X: array, shape (n, d)\n        :param y: array, shape (n,)\n        :returns: self\n        \"\"\"\n",
+    "def clip(value, lo, hi):\n    \"\"\"Limit a value to a range.\n\n    Args:\n        value: int\n        lo: int\n        hi: int\n    \"\"\"\n    return max(lo, min(hi, value))\n",
+    "def load(path):\n    \"\"\"Read a table from disk.\n\n    :returns: rows, a list of dict, one dict per line.\n    \"\"\"\n    return list(read(path))\n",
+    "    def transform(self, signal):\n        \"\"\"Apply the filter.\n\n        @param signal: samples to filter (ndarray)\n        @return: ndarray\n        \"\"\"\n",
+    "def is_prime(n):\n    # Test whether n is prime.\n    # n: int, the number to test.\n    # Returns a bool.\n    return all(n % k for k in range(2, n))\n",
+    "def distance(p, q):\n    \"\"\"Euclidean distance between two points.\n\n    Arguments: p, q (tuple of float).\n    Return value: float.\n    \"\"\"\n",
+    "    def reset(self, seed=None):\n        \"\"\"Restart the simulation.\n\n        Keyword arguments:\n        seed -- random seed (optional int)\n        \"\"\"\n        self.t = 0\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "numpydoc dash underline",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Top 32 peaks are all ' ----------\\n' or ' -------\\n'. Probes: numpydoc docstring 1.03, 'Notes/Examples' underlines 0.93, indented dashes in a table 0.71, '# ----------' comment 0.49; Google- and Sphinx-style docstrings 0.01-0.02, tilde underline 0.29, column-0 dashes 0.51 (so near misses avoid dashes)."
+}
