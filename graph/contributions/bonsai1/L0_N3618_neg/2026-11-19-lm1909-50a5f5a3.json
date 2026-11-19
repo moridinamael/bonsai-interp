@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-50a5f5a3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3618-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:30+00:00",
+ "recipe": {
+  "toolchain_commit": "89969f493",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N3618_neg/2026-11-19-lm1909-50a5f5a3.tests.json"
+ },
+ "label": "The token ' mult' (the split prefix of multi- words such as multilateral, multistep, multicomponent); not ' multiple', ' multi' or ' multiply'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N3618_neg/2026-11-19-lm1909-50a5f5a3.tests.json",
+   "prereg_commit": "89969f493",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.974,
+     "peak": " mult"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.91,
+     "peak": " mult"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.976,
+     "peak": " mult"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.927,
+     "peak": " mult"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.918,
+     "peak": " mult"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.976,
+     "peak": " mult"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.862,
+     "peak": " mult"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.931,
+     "peak": " mult"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " multiple"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": "Ex"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.049,
+     "peak": " multi"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " agreement"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " multiply"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " intermedi"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": "ipl"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": "alt"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.929,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89969f493",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token ' mult'",
+ "unit_kind": "lexical",
+ "confidence": 0.9,
+ "notes": "Card: all 32 top examples peak on ' mult'. Probes: 0.88-0.99 on ' mult'+i… words, 0.02-0.04 on ' multiple', ' multi-', ' multiply'.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ddd2a0d5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N5233+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:29+00:00",
+ "recipe": {
+  "toolchain_commit": "89969f493",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N5233_pos/2026-11-19-lm1909-ddd2a0d5.tests.json"
+ },
+ "label": "Single capital letter glued to a number as a unit or size code (33T chainring, Freq: 30T, 12V); broad and mostly gate-closed, so weak firing elsewhere is expected",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N5233_pos/2026-11-19-lm1909-ddd2a0d5.tests.json",
+   "prereg_commit": "89969f493",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.392,
+     "peak": "T"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.336,
+     "peak": "T"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.373,
+     "peak": "T"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.486,
+     "peak": "T"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.407,
+     "peak": "T"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.765,
+     "peak": "T"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.352,
+     "peak": "T"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.34,
+     "peak": "T"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.063,
+     "peak": " came"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": " ten"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " cog"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.065,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.147,
+     "peak": " kit"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.383,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89969f493",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "capital letter after number",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (3.2% of tokens at 0.1 of max) and gate-closed (78% echo); top examples have no common token (T after digits, ' Cats', 'ations', Korean). Probes: 34T 0.34, 15T 0.58, 12V 0.25, but ' Cats?' 0.73. Best guess only.",
+ "selection": "random draw"
+}

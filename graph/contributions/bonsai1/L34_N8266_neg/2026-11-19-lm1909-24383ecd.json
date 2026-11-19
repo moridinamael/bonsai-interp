@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-24383ecd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8266-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:33+00:00",
+ "recipe": {
+  "toolchain_commit": "89969f493",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N8266_neg/2026-11-19-lm1909-24383ecd.tests.json"
+ },
+ "label": "Pay or price noun used as the modifier of a compound that names a limit or adjustment: salary cap, pay cut, wage increase, price premium, signing bonus, hiring freeze (fires on the modifier, before the head noun)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N8266_neg/2026-11-19-lm1909-24383ecd.tests.json",
+   "prereg_commit": "89969f493",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.251,
+     "peak": " salary"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.236,
+     "peak": " wage"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.453,
+     "peak": " pay"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.3,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.236,
+     "peak": " signing"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.232,
+     "peak": " hiring"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.476,
+     "peak": " salary"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.302,
+     "peak": " pay"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " next"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.161,
+     "peak": " low"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " asked"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.27,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " lect"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.068,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.275,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89969f493",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pay/price compound modifier",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' salary' (cap), ' pay' (cut), ' price' (premium), ' signing', but also ' oxygen' (content), ' fitness'. Probes: salary cap 0.49, price premium 0.40, wage increase 0.39, signing bonus 0.39, hiring freeze 0.34, pay cut 0.24; 'The salary was paid' 0.26, 'price of oil' 0.13, 'oxygen content' 0.02, verb 'pay' 0.004. Partly a ' salary'-token effect.",
+ "selection": "random draw"
+}
