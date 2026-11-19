@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-66675695",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10892+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:14:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N10892",
+   "pole": "+",
+   "label": "an index or attribute expression inside an f-string placeholder in a multi-line code message (e.g. the 1 in {x.shape[-1]}, {func.__name__})",
+   "fire": [
+    "def check(tensor, expected):\n    if tensor.dim() != expected:\n        raise ValueError(\n            f\"input has {tensor.shape[-1]} features but the layer expects {expected}\"\n        )",
+    "def validate(batch):\n    if len(batch) == 0:\n        raise RuntimeError(\n            f\"empty batch: got shape {batch.shape[0]} for model {self.__class__.__name__}\"\n        )",
+    "def wrap(func):\n    def inner(*args):\n        logger.info(f\"calling {func.__name__} with {len(args)} args\")\n        return func(*args)\n    return inner",
+    "for key, item in rows.items():\n    node_label = f\"<{item.title}>\"\n    dot.node(key, node_label, shape=\"box\")",
+    "def forward(self, hidden):\n    if hidden.size(-1) != self.width:\n        raise ValueError(\n            f\"hidden width {hidden.shape[-1]} does not match configured width {self.width}\"\n        )",
+    "if not os.path.exists(cfg.path):\n    raise FileNotFoundError(\n        f\"config {cfg.path.name} not found for run {args.run_id}\"\n    )",
+    "def describe(arr):\n    return (\n        f\"array of {arr.shape[1]} columns, dtype {arr.dtype.name}\"\n    )",
+    "class Loader:\n    def load(self, idx):\n        if idx >= len(self.items):\n            raise IndexError(\n                f\"index {idx} out of range for {self.items[0].kind} list\"\n            )"
+   ],
+   "quiet": [
+    "def check(tensor, expected):\n    width = tensor.shape[-1]\n    if width != expected:\n        raise ValueError(\"input width does not match the layer\")",
+    "def validate(batch):\n    rows = batch.shape[0]\n    name = self.__class__.__name__\n    if rows == 0:\n        raise RuntimeError(\"empty batch\")",
+    "def wrap(func):\n    def inner(*args):\n        logger.info(\"calling wrapped function\")\n        return func(*args)\n    return inner",
+    "for key, item in rows.items():\n    node_label = item.title.upper()\n    dot.node(key, node_label, shape=\"box\")",
+    "def forward(self, hidden):\n    last = hidden.shape[-1]\n    out = self.proj(hidden)\n    return out.view(-1, last)",
+    "if not os.path.exists(cfg.path):\n    print(\"config file not found, using defaults\")\n    cfg = Config()",
+    "def describe(arr):\n    cols = arr.shape[1]\n    kind = arr.dtype.name\n    return cols, kind",
+    "class Loader:\n    def load(self, idx):\n        item = self.items[idx]\n        return item.kind"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "f-string placeholder expression",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probe: a short one-line f-string scored ~0; a multi-line raise ValueError(f'...{x.shape[-1]}...') scored ~1.0. Near misses use the same expressions outside an f-string."
+}

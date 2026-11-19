@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a8310e43",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N308-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:14:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N308",
+   "pole": "-",
+   "label": "Python module-level import statements (from X import Y / from __future__), and identifiers in Python code generally, as opposed to prose about the same code",
+   "fire": [
+    "# -*- coding: utf-8 -*-\nfrom __future__ import absolute_import\n\nimport json\nimport argparse",
+    "import os\nimport re\n\nfrom setuptools import setup, find_packages\n\nfrom mypkg.version import VERSION",
+    "from __future__ import division, unicode_literals\nimport numpy as np\nfrom scipy import stats",
+    "import time\nimport socket\n\nfrom twisted.internet import reactor\nfrom twisted.web import server",
+    "\"\"\"Read the settings file\"\"\"\nimport yaml\nimport pathlib\n\nfrom jinja2 import Template",
+    "from django.conf import settings\nfrom django.db import models\nfrom django.utils import timezone",
+    "#!/usr/bin/env python\nfrom __future__ import with_statement\nimport sys\nfrom glob import glob",
+    "import unittest\n\nfrom flask import Flask\nfrom flask.testing import FlaskClient"
+   ],
+   "quiet": [
+    "The script starts by declaring the file encoding and then pulls in the json and argparse modules.",
+    "The setup file needs the os and re modules, plus the setup helpers and the package version.",
+    "At the top, the notebook loads numpy for arrays and the stats helpers from scipy.",
+    "This server relies on the time and socket modules and on the reactor from Twisted.",
+    "The settings reader loads yaml and pathlib first, then the template class from Jinja2.",
+    "Our Django model file uses the project settings, the models package and the timezone helpers.",
+    "The old script ran under Python 2, so it enabled the with statement before using sys and glob.",
+    "The tests use the unittest framework together with a Flask app and its test client."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python import lines",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card flags broad (3.3% of tokens). Probe: 'from __future__' 0.49, plain imports 0.26-0.36, prose about imports 0.14. Low confidence; median may miss 0.20."
+}
