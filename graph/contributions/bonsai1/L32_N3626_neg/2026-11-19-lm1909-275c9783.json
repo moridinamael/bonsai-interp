@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-275c9783",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N3626-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:14:47+00:00",
+ "recipe": {
+  "toolchain_commit": "0b2205bc0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N3626_neg/2026-11-19-lm1909-275c9783.tests.json"
+ },
+ "label": "the token just before 'ethnic'/'ethnicity' in race-and-ethnicity pairings (\"racial or| ethnic\", \"Race/|Ethnicity\"); the output promotes ' eth'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N3626_neg/2026-11-19-lm1909-275c9783.tests.json",
+   "prereg_commit": "0b2205bc0",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.63,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.4,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.452,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.592,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.312,
+     "peak": "/E"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.641,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.151,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.614,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.045,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " personal"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.045,
+     "peak": " many"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.049,
+     "peak": " across"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.136,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.603,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0b2205bc0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "about to say 'ethnic'",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: - pole promotes eth/Eth tokens; top examples in en/es/ru. Probes: racial or| 0.67, Race/E 1.24; age or income 0.02, 'legal but not ethical' 0.15. English only tested.",
+ "selection": "random draw"
+}

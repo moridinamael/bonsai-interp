@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2931c6e1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6972-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:15:16+00:00",
+ "recipe": {
+  "toolchain_commit": "0b2205bc0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6972_neg/2026-11-19-lm1909-2931c6e1.tests.json"
+ },
+ "label": "consonant piece right after a split-off initial 'dé'/'é' in a French word (\"dé|g|uster\", \"é|cr|ivain\")",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6972_neg/2026-11-19-lm1909-2931c6e1.tests.json",
+   "prereg_commit": "0b2205bc0",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.845,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.651,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.8,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.216,
+     "peak": " un"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.474,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.574,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.88,
+     "peak": "g"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.766,
+     "peak": "g"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.171,
+     "peak": " vin"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.228,
+     "peak": " caus"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.348,
+     "peak": "-br"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.206,
+     "peak": " cam"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.2,
+     "peak": "â"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.122,
+     "peak": " lac"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.1,
+     "peak": " jardin"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.273,
+     "peak": " conduct"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.709,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0b2205bc0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "piece after French 'dé-'/'é-'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (2.4% of tokens reach 0.1 of max). Probes: déguster 0.93, dégager 0.80, écrivain 0.87; French without such a word 0.12-0.23, English 0.07. Tokenizer splits checked for the fire words.",
+ "selection": "random draw"
+}

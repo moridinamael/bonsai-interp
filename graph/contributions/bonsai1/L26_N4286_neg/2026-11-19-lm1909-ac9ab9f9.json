@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ac9ab9f9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N4286-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:16:06+00:00",
+ "recipe": {
+  "toolchain_commit": "0b2205bc0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N4286_neg/2026-11-19-lm1909-ac9ab9f9.tests.json"
+ },
+ "label": "programming text at the point where an alternative collection type is about to be named (\"instead of| arrays\", \"rather than| a list\"); the output promotes array / dictionary / hash",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N4286_neg/2026-11-19-lm1909-ac9ab9f9.tests.json",
+   "prereg_commit": "0b2205bc0",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.14,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.766,
+     "peak": " an"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.039,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.199,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.451,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.758,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.259,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.558,
+     "peak": " ordered"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " flour"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " rather"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " oat"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " function"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " instead"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.0,
+     "peak": " file"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.658,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0b2205bc0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "about to name a collection type",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probes: linked list instead of an array 1.53, sort() does not support … lists 0.79, a set rather than a list 0.53; 'while loop instead of recursion' 0.35 (leak), non-programming 'instead of' 0.01, compiler sentence 0.01.",
+ "selection": "random draw"
+}

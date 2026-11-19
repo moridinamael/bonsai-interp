@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-82d560bd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N3964-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:15:03+00:00",
+ "recipe": {
+  "toolchain_commit": "0b2205bc0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N3964_neg/2026-11-19-lm1909-82d560bd.tests.json"
+ },
+ "label": "comma between parallel labelled entries of a terse listing (\"Tel …, Fax …\"; \"Adults: 15, Children: 8\")",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N3964_neg/2026-11-19-lm1909-82d560bd.tests.json",
+   "prereg_commit": "0b2205bc0",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.155,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.034,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.297,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.087,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.189,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.063,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.392,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.137,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " mobile"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.067,
+     "peak": " followed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.091,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " included"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " kap"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " pay"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.146,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0b2205bc0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "separator in labelled listing",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ',' / ' and' / ' or' between paired items (phone, fax; Starters 99 Kr, Mains). Probes: phone, fax 0.46 and 0.23, Adults/Children/Seniors 0.46, Lunch/Dinner 0.07; 'on and off', 'rooms 12 and 14' ~0.01. Weak pole; may not reach the median threshold.",
+ "selection": "random draw"
+}
