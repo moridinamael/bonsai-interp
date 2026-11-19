@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-28353ff9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N12071-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:17:23+00:00",
+ "recipe": {
+  "toolchain_commit": "dadd8431b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N12071_neg/2026-11-20-lm1909-28353ff9.tests.json"
+ },
+ "label": "recursion: the words recursive, recursively, recursion, recurse",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N12071_neg/2026-11-20-lm1909-28353ff9.tests.json",
+   "prereg_commit": "dadd8431b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.011,
+     "peak": " recursively"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.704,
+     "peak": " recursively"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.042,
+     "peak": " recursion"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.564,
+     "peak": " recursive"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.689,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.902,
+     "peak": "ursively"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.549,
+     "peak": " recursion"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.864,
+     "peak": " recursively"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.186,
+     "peak": " until"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": " time"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.065,
+     "peak": " limit"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": "-driven"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.123,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.591,
+     "peak": "atively"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": " loops"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.136,
+     "peak": "f"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.784,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dadd8431b",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "recursion",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: top 32 are recursive x10, -ursively x4, recursively x3, recursion x2, recurse x2. Logit of the + pole suppresses recursion/recursively/recursive.",
+ "selection": "random draw"
+}

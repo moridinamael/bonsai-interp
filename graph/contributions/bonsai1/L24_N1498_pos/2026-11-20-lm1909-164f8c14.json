@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-164f8c14",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1498+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:17:09+00:00",
+ "recipe": {
+  "toolchain_commit": "dadd8431b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N1498_pos/2026-11-20-lm1909-164f8c14.tests.json"
+ },
+ "label": "pieces of Spanish and Portuguese surnames (Gutiér|rez, And|rade, de Oliveira) in names and citations",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1498_pos/2026-11-20-lm1909-164f8c14.tests.json",
+   "prereg_commit": "dadd8431b",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.466,
+     "peak": "uez"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.622,
+     "peak": "endoza"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.119,
+     "peak": "ho"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.316,
+     "peak": "ves"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.463,
+     "peak": "ánchez"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.174,
+     "peak": "quez"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.124,
+     "peak": "ández"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.64,
+     "peak": "za"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.111,
+     "peak": " Thompson"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.341,
+     "peak": "more"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " James"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.094,
+     "peak": "win"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.199,
+     "peak": "ford"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": "ley"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " Andrew"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.034,
+     "peak": "worth"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.39,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dadd8431b",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Iberian surnames",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: top 32 are Iberian surname tokens (Oliveira x4, -rez, -rade, Quirós, Álvarez, Melo). Negative pole: English given names; logit suppresses English first names.",
+ "selection": "random draw"
+}

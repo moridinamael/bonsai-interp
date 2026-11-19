@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c8979267",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N10476-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:17:56+00:00",
+ "recipe": {
+  "toolchain_commit": "dadd8431b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N10476_neg/2026-11-20-lm1909-c8979267.tests.json"
+ },
+ "label": "technology vendors and manufacturers as producers (IBM, Adobe, Mozilla, 'vendor', 'manufacturers')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N10476_neg/2026-11-20-lm1909-c8979267.tests.json",
+   "prereg_commit": "dadd8431b",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.275,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.424,
+     "peak": " vendor"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.253,
+     "peak": " manufacturers"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.48,
+     "peak": " Adobe"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.097,
+     "peak": " vendors"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.331,
+     "peak": " IBM"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.259,
+     "peak": " supplier"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.381,
+     "peak": "Mozilla"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.26,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " system"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.079,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": " later"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " disabled"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.31,
+     "peak": " older"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.117,
+     "peak": " customer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.036,
+     "peak": " old"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.303,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dadd8431b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tech vendors",
+ "unit_kind": "sparse feature",
+ "confidence": 0.55,
+ "notes": "Card: ' IBM' x10, ' vendor' x4, 'Adobe' x4, ' Mozilla' x3, ' manufacturers' x2, ' vendors' x2. Tested on new companies and producer words; near misses swap in users, customers and admins in the same tech context.",
+ "selection": "random draw"
+}

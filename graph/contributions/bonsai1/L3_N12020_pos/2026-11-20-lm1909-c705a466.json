@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c705a466",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N12020+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:17:31+00:00",
+ "recipe": {
+  "toolchain_commit": "dadd8431b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N12020_pos/2026-11-20-lm1909-c705a466.tests.json"
+ },
+ "label": "the CJK character 儿/兒/児 when it is its own token (鸟儿, 鱼兒, 鹿児島)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N12020_pos/2026-11-20-lm1909-c705a466.tests.json",
+   "prereg_commit": "dadd8431b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.529,
+     "peak": "儿"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.113,
+     "peak": "儿"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.629,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.836,
+     "peak": "儿"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.729,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.419,
+     "peak": "儿"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.812,
+     "peak": "兒"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.41,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.034,
+     "peak": "春天"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": "地上"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": "熊"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": "夜里"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": "ラ"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": "孩子们"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": "之人"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": "二人"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.679,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dadd8431b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "儿 / 児 character",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: '儿' x10, '兒' x3, '児島' (Kagoshima); flagged gate-closed regime (-x- echo). Probe: 鸟儿 0.30, 鹿児島 0.63, but 女儿 (merged into one token) 0.05.",
+ "selection": "random draw"
+}
