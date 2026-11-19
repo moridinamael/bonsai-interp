@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-20-lm1909-f0bda5a9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N12089-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:34:50+00:00",
+ "recipe": {
+  "toolchain_commit": "7ec913dc7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N12089_neg/2026-11-20-lm1909-f0bda5a9.tests.json"
+ },
+ "label": "the Korean token ' 나' starting a word (나누다, 나서다, 나열, 나타나다)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N12089_neg/2026-11-20-lm1909-f0bda5a9.tests.json",
+   "prereg_commit": "7ec913dc7",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.59,
+     "peak": " 나"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.634,
+     "peak": " 나"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.698,
+     "peak": " 나"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.798,
+     "peak": " 나"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.071,
+     "peak": "에"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.689,
+     "peak": " 나"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.737,
+     "peak": " 나"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.461,
+     "peak": " 나"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.194,
+     "peak": " 하나"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.106,
+     "peak": " 함께"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.314,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.074,
+     "peak": " 있다"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.071,
+     "peak": "에"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.585,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.146,
+     "peak": " 앞"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": "으로"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.661,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7ec913dc7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Korean token ' 나'",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: ' 나' x18 of the top 32, all word-initial in verbs such as 나누며, 나서서, 나열됩니다, plus a few Japanese kana. Probe: 나누며 0.84, 나열 0.57, 나서서 0.56; Korean sentence without 나 0.11.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "나"
+  ]
+ }
+}

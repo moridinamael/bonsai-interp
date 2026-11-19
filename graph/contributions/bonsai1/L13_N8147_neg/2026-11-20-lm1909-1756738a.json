@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-1756738a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N8147-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:35:11+00:00",
+ "recipe": {
+  "toolchain_commit": "7ec913dc7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N8147_neg/2026-11-20-lm1909-1756738a.tests.json"
+ },
+ "label": "'/' after the year or month in a dated URL path (/2011/07/...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N8147_neg/2026-11-20-lm1909-1756738a.tests.json",
+   "prereg_commit": "7ec913dc7",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.083,
+     "peak": "/"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.022,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.72,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.427,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.784,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.107,
+     "peak": "/"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.036,
+     "peak": "/"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.03,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.179,
+     "peak": "/"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": "ales"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "-middle"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.154,
+     "peak": "/"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": "/"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.056,
+     "peak": "/"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": ":"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.574,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7ec913dc7",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'/' in dated URL path",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: top examples are the '/' after '2007/05', '2007/01', '2009/03' in sciencedaily/wired/blogspot URLs, plus a few separators in code. Probe: dated URLs 0.72-0.98; undated URL path 0.10; a bare date 2011/07/10 0.02.",
+ "selection": "random draw"
+}
