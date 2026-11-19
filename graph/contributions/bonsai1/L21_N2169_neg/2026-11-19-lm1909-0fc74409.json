@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0fc74409",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2169-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:37:08+00:00",
+ "recipe": {
+  "toolchain_commit": "665aaf3db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N2169_neg/2026-11-19-lm1909-0fc74409.tests.json"
+ },
+ "label": "The last digit of the publication year inside parentheses that follows author names in a reference-list entry, e.g. 'Hirsch AT, et al. (200[6])'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N2169_neg/2026-11-19-lm1909-0fc74409.tests.json",
+   "prereg_commit": "665aaf3db",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.569,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.616,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.533,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.589,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.965,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.632,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.538,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.634,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " began"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.052,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.603,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665aaf3db",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "citation year digit",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: year digits in '(2004)', '(2014)', '(2015)' after author lists; the two strongest examples are instead the type name in a C cast '(char*)', '(BYTE*)' (probe: '(int*)' 0.96), which this test does not cover. Probes: reference years 0.58 / 0.54; '(2009)' in prose 0.03, bare year 0.01.",
+ "selection": "random draw"
+}

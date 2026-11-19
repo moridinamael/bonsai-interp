@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-10814961",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10953+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:37:42+00:00",
+ "recipe": {
+  "toolchain_commit": "665aaf3db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N10953_pos/2026-11-19-lm1909-10814961.tests.json"
+ },
+ "label": "The join between two parallel items set side by side for comparison: ' and' in 'Are X and Y the Same?'-type titles, and the second of two paired figures ('0.4 and 0.7 … respectively', two table columns)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N10953_pos/2026-11-19-lm1909-10814961.tests.json",
+   "prereg_commit": "665aaf3db",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.009,
+     "peak": " Quarterly"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.782,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.05,
+     "peak": " Same"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.44,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.029,
+     "peak": " Emp"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.304,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.117,
+     "peak": "ening"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.075,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " Quarterly"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " per"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " common"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " council"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.077,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " why"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " sold"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.096,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665aaf3db",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "join of two compared items",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ' and' x9, ',' x5, ' vs' x3, '||' x2, CJK '与'; top examples pair two like things (Nirvana and Moksha, seconds and minutes, two table columns, 0.4元及0.7元). Probes were uneven: 'Are Sin and Guilt the Same?' 0.51, '0.4 and 0.7 … respectively' 0.57 (peak on the second '.'), table columns 0.31; but 'liberty and equality' 0.01, 'weather and climate' 0.03, 'hours and days' 0.04-0.08, 'Lions vs Bears' 0.02, 'rich and poor' 0.01. So the label is a guess from few hits.",
+ "selection": "random draw"
+}

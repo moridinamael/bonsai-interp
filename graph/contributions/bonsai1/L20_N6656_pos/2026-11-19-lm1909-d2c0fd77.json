@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d2c0fd77",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N6656+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:37:37+00:00",
+ "recipe": {
+  "toolchain_commit": "665aaf3db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N6656_pos/2026-11-19-lm1909-d2c0fd77.tests.json"
+ },
+ "label": "' can' (more weakly ' as', ' to') at the point where expository text states what a thing is able to do or is used for ('They can be used to…', 'because it can…'), not personal ability or permission",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N6656_pos/2026-11-19-lm1909-d2c0fd77.tests.json",
+   "prereg_commit": "665aaf3db",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.5,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.382,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.228,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.692,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.385,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.035,
+     "peak": "ib"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.247,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.181,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": "My"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.048,
+     "peak": "itamin"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.056,
+     "peak": "Ask"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.077,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.047,
+     "peak": " They"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": "ang"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.898,
+    "median_fire": 0.315,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665aaf3db",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'can' stating a thing's function",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' can' x6, ' to' x4, ' as' x4 in statements of capability or purpose; the - pole fires on 'why do I need this / relevance / useful', so the neuron seems to separate stating a function from asking about usefulness. Weak pole (max 7.25, 43% echo regime). Probes: 'They can be used to' 0.33, 'they can break down' 0.27, 'as a way of' 0.26, 'it can move glucose' 0.22; 'ability of the eye to' 0.08, 'They can meet us' 0.03, 'She can not come' 0.03.",
+ "selection": "random draw"
+}
