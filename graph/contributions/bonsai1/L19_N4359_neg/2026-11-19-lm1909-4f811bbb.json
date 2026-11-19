@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4f811bbb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N4359-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:59+00:00",
+ "recipe": {
+  "toolchain_commit": "c13d96072",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N4359_neg/2026-11-19-lm1909-4f811bbb.tests.json"
+ },
+ "label": "a first- or second-person, present-tense statement of the speaker's or addressee's own situation, as in the set-up of a question or request ('I'm planning…', 'You're hosting…', 'My landlord is asking me…'); third-person past narrative stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N4359_neg/2026-11-19-lm1909-4f811bbb.tests.json",
+   "prereg_commit": "c13d96072",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.2,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.3,
+     "peak": " home"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.3,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.349,
+     "peak": " my"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.222,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.294,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.224,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.286,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " moved"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " tyre"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.069,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.046,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.083,
+     "peak": " anniversary"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.077,
+     "peak": " cook"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " worked"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.29,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c13d96072",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "own-situation set-up",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Top examples are the opening words of interview questions and 'Q:' set-ups; in probes the Q:/interviewer tag was not needed ('I'm planning a trip…' fired 0.50 without it, 0.57 with it), while the third-person past version scored 0.04. Broad pole (1% of tokens reach 0.1 of max), so middling scores are expected.",
+ "selection": "random draw"
+}

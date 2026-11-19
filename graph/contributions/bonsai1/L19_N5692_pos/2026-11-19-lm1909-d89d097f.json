@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-d89d097f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N5692+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:07+00:00",
+ "recipe": {
+  "toolchain_commit": "c13d96072",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N5692_pos/2026-11-19-lm1909-d89d097f.tests.json"
+ },
+ "label": "the word that opens an escalating self-correction after a comma or dash (', hell,' ', heck,' ', nay,' ', voire', 'and in particular'): the point where 'even' could come next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N5692_pos/2026-11-19-lm1909-d89d097f.tests.json",
+   "prereg_commit": "c13d96072",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.798,
+     "peak": " hell"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.611,
+     "peak": "ay"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.63,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.279,
+     "peak": " vo"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.502,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.602,
+     "peak": "ay"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.393,
+     "peak": " hell"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.466,
+     "peak": " vo"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " read"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " drove"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " heures"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " mois"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.552,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c13d96072",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "escalation opener ('nay', 'hell,')",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "The output direction promotes ' even', ' especially', ' particularly', '甚至是', ' incluso', which fits. One near miss keeps the word 'hell' without the escalation. Milder forms probed weaker: ', indeed' 0.13, ', or even' 0.13, ', if not' 0.14, ', and especially' 0.20.",
+ "selection": "random draw"
+}

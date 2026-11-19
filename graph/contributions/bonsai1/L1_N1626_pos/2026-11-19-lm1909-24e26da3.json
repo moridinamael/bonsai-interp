@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-24e26da3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1626+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:31+00:00",
+ "recipe": {
+  "toolchain_commit": "c13d96072",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N1626_pos/2026-11-19-lm1909-24e26da3.tests.json"
+ },
+ "label": "the Korean token '준' (as in 수준 'level', 알려준 'told')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N1626_pos/2026-11-19-lm1909-24e26da3.tests.json",
+   "prereg_commit": "c13d96072",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.556,
+     "peak": "준"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.535,
+     "peak": "준"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.506,
+     "peak": "준"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.863,
+     "peak": "준"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.465,
+     "peak": "준"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.315,
+     "peak": "험"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.502,
+     "peak": "준"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.57,
+     "peak": "준"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.154,
+     "peak": "족"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.243,
+     "peak": "그"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.203,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.21,
+     "peak": "이"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.122,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.315,
+     "peak": "험"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.191,
+     "peak": "생"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.243,
+     "peak": "그"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.992,
+    "median_fire": 0.52,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c13d96072",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token '준'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card flags the pole broad (7.7% of tokens reach 0.1 of max) and gate-closed (-x- echo 95%); max is only 0.36. '준' is 14 of the top 32 examples; ' small' / 'ers' also appear there and are not covered by this label.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "준"
+  ]
+ }
+}

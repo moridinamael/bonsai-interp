@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-724be974",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N6836-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:20+00:00",
+ "recipe": {
+  "toolchain_commit": "c13d96072",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N6836_neg/2026-11-19-lm1909-724be974.tests.json"
+ },
+ "label": "the line end of a call statement inside a run of near-identical consecutive code lines (repeated print/write banner lines, also when commented out); varied statements and block openers stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N6836_neg/2026-11-19-lm1909-724be974.tests.json",
+   "prereg_commit": "c13d96072",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.734,
+     "peak": " print"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.628,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.301,
+     "peak": " print"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.427,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.827,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.694,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.573,
+     "peak": "(\"*"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.434,
+     "peak": "\")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " footer"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.074,
+     "peak": "DEBUG"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " divider"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "def"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": ":\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.601,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c13d96072",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "newline in a run of repeated call lines",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Multi-line passages, as the stream tips advise for code poles. Probes: repeated print banner 1.02, repeated log.write banner 0.67, commented print run 0.50; parallel assignments 0.006, begin/endReset calls 0.22, try block 0.02. The + pole fires on 'try' / ':' that opens a block, so the unit may separate 'same pattern continues' from 'a new block opens'. Near misses here drop the repetition together with the print calls, so a hold would not separate the two.",
+ "selection": "random draw"
+}
