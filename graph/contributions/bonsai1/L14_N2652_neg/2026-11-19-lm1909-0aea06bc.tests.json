@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-0aea06bc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N2652-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:37:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N2652",
+   "pole": "-",
+   "label": "unclear; best guess: the action words of a few stock instructions ('get out of the …', 'slice and serve', 'let cool', 'be prepared')",
+   "fire": [
+    "If the fire alarm sounds, get out of the building and wait outside.",
+    "Let the tart rest for an hour, then slice and serve with custard.",
+    "Take the loaf from the oven and let cool on a wire rack.",
+    "So be prepared, because these biscuits will vanish in minutes.",
+    "If you hear the siren, get out of the water and move to high ground.",
+    "Dust with sugar and serve warm with a scoop of ice cream.",
+    "Pour the jam into jars and let cool before sealing the lids.",
+    "If the ice cracks, get out of the car and crawl to the shore."
+   ],
+   "quiet": [
+    "The fire alarm sounded, and the staff waited outside the building.",
+    "The tart was sliced an hour ago and eaten with custard.",
+    "The loaf came from the oven of a bakery on a quiet street.",
+    "These biscuits were prepared by my grandmother years ago.",
+    "We heard the siren from the water and saw the high ground.",
+    "Sugar and warm ice cream were on the menu that day.",
+    "The jam in the jars had sealed lids and paper labels.",
+    "The ice had cracked, and the car was far from the shore."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "stock instruction phrases (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Weak pole (max 5.00); the card flags that the gate-closed regime dominates (61%). Probes: 'get out of the house' 0.66, 'slice and serve' 0.55, 'let cool' 0.32, 'be prepared, because' 0.36; but a narrative 'was out of the house' also scored 0.33, and six other imperative instructions (leave the building, stir/pour/bake, stay calm, keep the wound clean) scored under 0.10. So it is not imperatives in general. The test reuses the phrases that fired, in new sentences; I expect it may fail."
+}
