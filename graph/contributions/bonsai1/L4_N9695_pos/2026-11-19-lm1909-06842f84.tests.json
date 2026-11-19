@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-19-lm1909-06842f84",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9695+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:27:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N9695",
+   "pole": "+",
+   "label": "The subword piece 'ac' / 'AC' as its own token at the end or middle of a word ('Bor|ac|ay', 'HU|AC', 'Y|AC', 'd|iac|ritical'); not the letters 'ac' inside other tokens or at a word start",
+   "fire": [
+    "The clinic prescribed Prozac after the second appointment.",
+    "Our old furnace was replaced by a modern HVAC unit last winter.",
+    "The children were taken to the cardiac ward for tests.",
+    "Her grandfather had worked on the ENIAC project in the forties.",
+    "They sailed past the cliffs of Carnac in the morning fog.",
+    "The committee known as HUAC questioned dozens of screenwriters.",
+    "He read a few pages of Balzac before falling asleep.",
+    "The geneticists stored the fragments in BAC and YAC libraries."
+   ],
+   "quiet": [
+    "The clinic prescribed aspirin after the second appointment.",
+    "Our old furnace was replaced by a modern heating unit last winter.",
+    "The children were taken to the heart ward for tests.",
+    "Her grandfather had worked on the radar project in the forties.",
+    "They sailed past the cliffs of Dover in the morning fog.",
+    "The committee took action and questioned dozens of actors.",
+    "He read a few pages of Flaubert before falling asleep.",
+    "The geneticists stored the fragments in accurate and accessible libraries."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "word-internal piece 'ac'/'AC'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: 'ac' x14, 'AC' x9, 'iac' x3. Probes: Boracay 0.85, HUAC 0.72, YAC 0.88, diacritical 0.59; 'actions account' 0.003. Fire words chosen in the hope that the tokenizer splits off 'ac' / 'AC'; I could not check the split of the new words without scoring them. Trigger declared as pieces.",
+ "trigger": {
+  "pieces": [
+   "ac",
+   "AC"
+  ]
+ }
+}
