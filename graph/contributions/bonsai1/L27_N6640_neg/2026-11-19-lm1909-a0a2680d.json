@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a0a2680d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N6640-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:04+00:00",
+ "recipe": {
+  "toolchain_commit": "4a40f80f0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N6640_neg/2026-11-19-lm1909-a0a2680d.tests.json"
+ },
+ "label": "In symptom/effect listings, the noun naming a bodily attribute right before an expected change-type noun (weight changes, appetite loss, sleep disturbances): the pole marks 'a change or problem word comes next'; quiet on plain lists of health items",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N6640_neg/2026-11-19-lm1909-a0a2680d.tests.json",
+   "prereg_commit": "4a40f80f0",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.277,
+     "peak": " weight"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.393,
+     "peak": " appetite"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.061,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.245,
+     "peak": " mood"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.38,
+     "peak": " weight"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.228,
+     "peak": " vision"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.213,
+     "peak": " memory"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.592,
+     "peak": " appetite"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.137,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.0,
+     "peak": " por"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " warm"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.084,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.174,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " pharmacy"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": " checked"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.261,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4a40f80f0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "attribute before 'changes/loss'",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' weight' (fluctuations), ' gender' (confirmation), ' eating' (disorder), ' health' (problems), ' iron' (deficiency); the - pole's output promotes ' change', ' changed', ' action'. Probes: 'weight changes' 0.43, 'appetite loss' 0.42, 'sleep disturbances' 0.35, 'blood pressure changes' 0.18, 'vitamin deficiency' 0.13; plain lists 0.00-0.03, 'anxiety disorder' 0.00. Top examples also include list commas and 'and', so this is probably part of the pole only.",
+ "selection": "random draw"
+}

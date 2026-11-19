@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e6e81368",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N9272+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:21+00:00",
+ "recipe": {
+  "toolchain_commit": "4a40f80f0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N9272_pos/2026-11-19-lm1909-e6e81368.tests.json"
+ },
+ "label": "Given items in instructional material: the abbreviated unit right after a stated quantity (mL, g, m/s) and the materials noun of a study instruction ('the following questions', 'Study Guide', 'Review Worksheets'); quiet on reporters' questions and sentences without a unit. A list of two things, kept as a list: a common pattern was not confirmed",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N9272_pos/2026-11-19-lm1909-e6e81368.tests.json",
+   "prereg_commit": "4a40f80f0",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.982,
+     "peak": " mL"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.666,
+     "peak": " g"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.269,
+     "peak": "/s"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.921,
+     "peak": " questions"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.492,
+     "peak": " Worksheets"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.711,
+     "peak": " Guide"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.922,
+     "peak": " mL"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.92,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.026,
+     "peak": " scale"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.044,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " notes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " hall"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.312,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.816,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4a40f80f0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "units after numbers; study 'questions'",
+ "unit_kind": "unclear",
+ "confidence": 0.45,
+ "notes": "Card: ' questions', ' Questions', ' Guide', ' mL', ' m', ' g', ' kilometers'. Probes: '250.0 mL' 0.77, '2.50 g sample' 0.72, 'the following questions' 0.71, 'Review Worksheets' 0.56, 'Study Guide' 0.54, '12.5 m/s' 0.45, kitchen '250 mL of milk' 0.45; reporters' questions 0.03, no-unit sentences 0.01-0.03; spelled-out 'kilometers' only 0.12-0.17.",
+ "selection": "random draw"
+}

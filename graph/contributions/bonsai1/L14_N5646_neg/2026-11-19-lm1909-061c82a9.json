@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-061c82a9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N5646-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:30:02+00:00",
+ "recipe": {
+  "toolchain_commit": "4a40f80f0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N5646_neg/2026-11-19-lm1909-061c82a9.tests.json"
+ },
+ "label": "A word-piece inside a multi-token foreign proper name (dynasty, city, surname: Habsburgs, Xiapi, Kaliningrad, Bykovsky) in a war or political-history narrative; quiet on the same narrative with common single-token names (Paris, France, London)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N5646_neg/2026-11-19-lm1909-061c82a9.tests.json",
+   "prereg_commit": "4a40f80f0",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.075,
+     "peak": " emperor"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.029,
+     "peak": " took"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.212,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.199,
+     "peak": "sky"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.163,
+     "peak": "adin"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.201,
+     "peak": " count"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.052,
+     "peak": " river"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.055,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.075,
+     "peak": " emperor"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": " hill"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.071,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " general"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.146,
+     "peak": " count"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.125,
+     "peak": " river"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.742,
+    "median_fire": 0.119,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4a40f80f0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inner piece of a foreign name",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: no single token; peaks are inner pieces of names in history text ('oles' in Españoles, 'ana' in al-Balyana, 'abs' in Habsburgs, 'ole' in Napoleonic, 'api' in Xiapi, 'ining' in Kaliningrad, 'sky' in Bykovsky); the + pole is ' British' / ' India'. Probes: Xiapi 0.45, Habsburgs 0.40, Kaliningrad 0.31, Bykovsky 0.31, Guzmán 0.24, Pressburg 0.24; Napoleonic 0.06, Samarkand 0.10; controls without such names 0.01-0.02.",
+ "selection": "random draw"
+}

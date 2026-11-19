@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1936b034",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N12+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:58+00:00",
+ "recipe": {
+  "toolchain_commit": "4a40f80f0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N12_pos/2026-11-19-lm1909-1936b034.tests.json"
+ },
+ "label": "The slot right before an expected winter word (winter, January, snow, coldest): the last token of a season list that has reached autumn, of a date run that has reached the end of December, or of a cold-weather phrase. Each sentence stops at that slot. Quiet on the same frames pointing at summer or mid-year months",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N12_pos/2026-11-19-lm1909-1936b034.tests.json",
+   "prereg_commit": "4a40f80f0",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.246,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.251,
+     "peak": "|"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.663,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.136,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.263,
+     "peak": " into"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.178,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.02,
+     "peak": " 비"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.15,
+     "peak": " [\""
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.067,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.0,
+     "peak": " June"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.051,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": " late"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " de"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": " 바"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "next"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.212,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4a40f80f0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slot before a winter word",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: top examples in Arabic, Korean, French, Spanish, English peak one token before a winter month or season (January / kanun al-thani, winter, enero, 'jan', Schnee); the output direction suppresses ' winter', ' January', ' Jan', ' Christmas', ' December' (a late-layer unit pushing against the expected word). English probes reach only 0.16-0.25 of the corpus max (912, set by an Arabic date line): seasons list ending 'snowy in' 0.24, table after December 31 0.25, 'frozen solid in' 0.21, 'December and into early' 0.21; June frames 0.00, 'cold in March but warm in' 0.07. The median may fall short of 0.20.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-79392ad8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N7157-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:10+00:00",
+ "recipe": {
+  "toolchain_commit": "4a40f80f0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N7157_neg/2026-11-19-lm1909-79392ad8.tests.json"
+ },
+ "label": "Start of the line that carries on with the next step after a finished command or statement block: 'Then' opening the line after a shell command, and the indentation or name that resumes after a completed Python statement; quiet on 'then' in mid-sentence prose and on one-line code",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N7157_neg/2026-11-19-lm1909-79392ad8.tests.json",
+   "prereg_commit": "4a40f80f0",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.126,
+     "peak": " you"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.507,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.525,
+     "peak": " Python"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.077,
+     "peak": "Then"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.128,
+     "peak": "Then"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.555,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.072,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.143,
+     "peak": ".run"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.186,
+     "peak": " then"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " script"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.063,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": " created"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " name"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": " decorator"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " Reader"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": " test"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.136,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4a40f80f0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "line start resuming next step",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Weak pole (max 8.0). Card: indentation tokens opening the statement after sess.run(...), 'Then' after a '$ chmod' line, 'return newCls'. Probes: shell passage with 'Then' 0.48 and 0.31, 'return wrapped' passage 0.29, small function body 0.21, test body 0.11-0.15; prose 'and then' 0.05. A best guess; may well fail.",
+ "selection": "random draw"
+}
