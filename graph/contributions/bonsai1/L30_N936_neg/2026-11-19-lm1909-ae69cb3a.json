@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-ae69cb3a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N936-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:35+00:00",
+ "recipe": {
+  "toolchain_commit": "ba062ef10",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N936_neg/2026-11-19-lm1909-ae69cb3a.tests.json"
+ },
+ "label": "reflexive pronoun (yourself, themselves) as the object of a preposition at the end of a longer advice passage ('stories about yourself', 'time for yourself'); a weak, context-hungry pole whose + side is 'N years [and older]'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N936_neg/2026-11-19-lm1909-ae69cb3a.tests.json",
+   "prereg_commit": "ba062ef10",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.01,
+     "peak": "Starting"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.033,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.004,
+     "peak": " so"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.061,
+     "peak": " yourself"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.113,
+     "peak": " yourself"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.016,
+     "peak": " little"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.039,
+     "peak": " fathers"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.193,
+     "peak": " themselves"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.062,
+     "peak": " family"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.034,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " so"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " letter"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " neighbors"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " little"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " fathers"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.049,
+     "peak": " for"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.562,
+    "median_fire": 0.036,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ba062ef10",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "prep + yourself in advice",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card top examples: 'about yourself and', 'for yourself and', 'by you and your', 'to Lucky and her'. Single-sentence probes all scored < 0.02; a two-sentence passage ending 'a few stories about yourself and your home town' scored 0.50, 'by you and your nurse' 0.13, 'sold the house and moved' 0.11, a proper name before 'and her' 0.02. The token cannot see the following 'and', so the label is the left context only.",
+ "selection": "random draw"
+}

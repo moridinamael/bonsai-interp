@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-fb1d04df",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N8598-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:44+00:00",
+ "recipe": {
+  "toolchain_commit": "ba062ef10",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N8598_neg/2026-11-19-lm1909-fb1d04df.tests.json"
+ },
+ "label": "the opening bracket of a colour value in code: '(' starting an RGB tuple after a colour name, or 'rgb(' in CSS (weaker on '#' hex literals); not brackets opening other tuples or lists",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N8598_neg/2026-11-19-lm1909-fb1d04df.tests.json",
+   "prereg_commit": "ba062ef10",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.744,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.452,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.301,
+     "peak": "("
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.971,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.741,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.491,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.214,
+     "peak": " rgb"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.178,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.083,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.122,
+     "peak": "':"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "_between"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.154,
+     "peak": "px"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "4"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.472,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ba062ef10",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'(' opening an RGB colour value",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks on ' (' / '(' / '=\"#' in colour definitions; the top example (158) is 'Orange = (' in a Colors enum and the rest are 50-65. Probes: named RGB tuples 0.45, CSS rgb( 0.33, hex list 0.11, np.array([[ 0.09, non-colour tuples 0.01, string list 0.00.",
+ "selection": "random draw"
+}

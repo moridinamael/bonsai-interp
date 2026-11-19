@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c381666c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N10543-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:29+00:00",
+ "recipe": {
+  "toolchain_commit": "ba062ef10",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N10543_neg/2026-11-19-lm1909-c381666c.tests.json"
+ },
+ "label": "a count of time or distance units still left before an end point (N Days Left, the last N minutes, N weeks to go): the 'remaining' side; the + pole fires at the end point itself (hits zero, surrender)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N10543_neg/2026-11-19-lm1909-c381666c.tests.json",
+   "prereg_commit": "ba062ef10",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.251,
+     "peak": " Left"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.195,
+     "peak": " minutes"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.088,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.173,
+     "peak": " Days"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.323,
+     "peak": " minutes"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.111,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.35,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.206,
+     "peak": " minutes"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " basil"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "FINAL"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.046,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " took"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " summer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.041,
+     "peak": " minutes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.201,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ba062ef10",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "units left before an end",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Weak pole (max 22.6, one outlier; most top examples are ~10). Probes: 'COUNTDOWN: 212 Days Left' 0.50, 'in the last 5 minutes' 0.28, 'only 15 days left' 0.26, 'laps remaining' 0.17, 'weeks to go' 0.16; game-clock 'with 4:31 to play' only 0.09, code 'len(x) - 1' 0.01. Expect a borderline or failed median.",
+ "selection": "random draw"
+}
