@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-bdef7984",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N5683+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:02:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N5683",
+   "pole": "+",
+   "label": "last word of an institution's proper name (… Research Institute, Institute of … Studies, … Institution)",
+   "fire": [
+    "The survey was carried out by economists at the Kiel Institute for the World Economy last spring.",
+    "She spent two years as a visiting scholar at the Institute for Advanced Studies in Vienna.",
+    "The figures were compiled by the Peterson Institute and checked by two outside reviewers.",
+    "He directs a small team at the Francis Crick Institute in central London.",
+    "The fossils were sent to the Smithsonian Institution for cleaning and dating.",
+    "Her paper appeared in a volume edited by the School of Oriental and African Studies.",
+    "The vaccine trial was run jointly with the Pasteur Institute in Paris.",
+    "The grant was awarded to the Salk Institute to continue the work on ageing."
+   ],
+   "quiet": [
+    "The survey was carried out by a few economists who met every week last spring.",
+    "She spent two years as a visiting scholar in Vienna before returning home.",
+    "The figures were compiled by hand and checked by two outside reviewers.",
+    "He directs a small team of biologists in central London.",
+    "The fossils were sent abroad for cleaning and dating.",
+    "Her paper appeared in a volume about languages spoken along the coast.",
+    "The vaccine trial was run jointly with several hospitals in Paris.",
+    "The grant was awarded to continue the work on ageing for three more years."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "institution-name head noun",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags this pole broad (6.2% of tokens reach 0.1 of max) and gate-closed (echo regime 100%, max only 0.88): ',' x6, ' Institute' x3, ' China' x2. Probes: 'Institute of Fiscal Studies' 1.0, 'Research Institute' 0.71, 'Institution' 0.42, but also generic ' laboratory' 0.39, ' family' 0.37, ',' after China 0.37, ' office' 0.21. Near misses keep the research topic with generic lower-case workplaces, so they may well leak; the test records how selective the institution-name reading is."
+}
