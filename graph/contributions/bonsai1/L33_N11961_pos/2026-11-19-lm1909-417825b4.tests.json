@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-417825b4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11961+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:18:55+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N11961",
+   "pole": "+",
+   "label": "unclear mixed feature; the part I could pin down: ' magnesium' in an ingredient list (magnesium stearate / sulfate) and the slot right before 'nutmeg' in a recipe. Mars, North (Pole) and magma also appear among the top examples but probe weakly",
+   "fire": [
+    "Each capsule also contains gelatin, rice flour, magnesium stearate and silicon dioxide.",
+    "Stir in the flour, then add half a teaspoon of nutmeg and a little salt.",
+    "Other ingredients: corn starch, magnesium stearate, titanium dioxide and purified water.",
+    "A warm bath with magnesium sulfate can ease sore legs after a long run.",
+    "Season the custard with vanilla and a generous grating of nutmeg before baking.",
+    "The coating is made from talc, magnesium stearate and a natural colouring.",
+    "Whisk the eggs with sugar, a quarter teaspoon of nutmeg and the warm milk.",
+    "Inactive ingredients include povidone, magnesium stearate and sodium starch glycolate."
+   ],
+   "quiet": [
+    "Each capsule also contains gelatin, rice flour, calcium carbonate and silicon dioxide.",
+    "Stir in the flour, then add half a teaspoon of vinegar and a little salt.",
+    "Other ingredients: corn starch, citric acid, titanium dioxide and purified water.",
+    "A warm bath with lavender oil can ease sore legs after a long run.",
+    "Season the custard with vanilla and a generous spoonful of honey before baking.",
+    "The coating is made from talc, beeswax and a natural colouring.",
+    "Whisk the eggs with sugar, a quarter teaspoon of salt and the warm milk.",
+    "Inactive ingredients include povidone, lactose and sodium starch glycolate."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "magnesium / before nutmeg (unclear)",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: no single token; top examples are Magn|esium Stearate, teaspoon [nut]meg, NASA's [Mars] rover, [North] Pole, M[agma], 'designed [by]'; the pole is fairly broad (0.43% of tokens reach 0.1 of max). I could not find the shared pattern. Probes: 'magnesium stearate' 0.68, 'a pinch of nutmeg' 0.38 (peak ' of'), 'invented by' 0.18, 'North Pole' 0.17, 'Mars rover' 0.16; unrelated sentences 0.08 and 0.01. The test covers only the two strongest sub-triggers, so a hold would be partial at best."
+}
