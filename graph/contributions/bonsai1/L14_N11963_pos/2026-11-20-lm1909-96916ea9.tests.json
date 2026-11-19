@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-96916ea9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N11963+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:29:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N11963",
+   "pole": "+",
+   "label": "field or attribute names in code, schemas and key-value listings (first_name, Id, username)",
+   "fire": [
+    "CREATE TABLE customers (customer_id INT, last_name VARCHAR(40), email VARCHAR(80));",
+    "Server Name: web03\nServer Id: 8812\nRegion: eu-west",
+    "(account, password, email) = self.load_test_account()",
+    "fields = ['order_id', 'product_name', 'unit_price', 'quantity']",
+    "SELECT employee_id, first_name, hire_date FROM staff WHERE dept = 'IT';",
+    "Device Model: X200\nDevice Id: 40017\nFirmware: 2.1.4",
+    "user = User(username='alice', display_name='Alice B', is_active=True)",
+    "INSERT INTO books (book_id, author_name, title) VALUES (1, 'Orwell', '1984');"
+   ],
+   "quiet": [
+    "Our customers can reach us by email, and we answer within two days.",
+    "The web server in the European region was restarted last night.",
+    "She logged in to her test account and changed the password.",
+    "The order arrived on time and every product was in perfect shape.",
+    "The IT department hired three new employees in the spring.",
+    "The new device ships with updated firmware and a longer battery life.",
+    "Alice set up her profile and picked a friendly display picture.",
+    "Orwell wrote the novel 1984 shortly after the Second World War."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "field names in code/schemas",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags this pole broad (1.0% of tokens reach 0.1 of max); peaks are '_name' in a SQL column list, ' Id' in 'Cluster Id:', ' username' in a tuple, ' kW' in a power spec, quoted list items. Best guess tested; quiet items are prose on the same subjects without field identifiers."
+}
