@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-01e28b5c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N2422-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:13:57+00:00",
+ "recipe": {
+  "toolchain_commit": "714f62b36",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N2422_neg/2026-11-19-lm1909-01e28b5c.tests.json"
+ },
+ "label": "the descriptive-adjective slot in a physical description of an animal's body (a short, dense coat; strong claws; sharp talons; animals with short legs); animal behaviour without a body description is quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N2422_neg/2026-11-19-lm1909-01e28b5c.tests.json",
+   "prereg_commit": "714f62b36",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.02,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.372,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.793,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.495,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.452,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.396,
+     "peak": " short"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.201,
+     "peak": " needs"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.454,
+     "peak": " strong"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.05,
+     "peak": "ky"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.152,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.119,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "on"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.073,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " rarely"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " Persian"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " day"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.453,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "714f62b36",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "animal body-part description",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: 'has a short, tight coat', 'their strong claws' x3, 'animals with elongated skulls', plus a tea-tasting list ('TASTE:'); the - pole's output promotes ' slightly', ' coarse', ' double', ' rich'. Probes: 'short, dense coat' 0.85, 'strong claws' 0.77, 'sharp talons' 0.63, 'with short legs and' 0.55; a table's 'smooth, dark surface' 0.18, tasting notes 0.18, animal behaviour 0.01-0.08.",
+ "selection": "random draw"
+}

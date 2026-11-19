@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-796db650",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N4835-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:13:45+00:00",
+ "recipe": {
+  "toolchain_commit": "714f62b36",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N4835_neg/2026-11-19-lm1909-796db650.tests.json"
+ },
+ "label": "the first digit of the chapter number in a scripture citation, right after the book name (strongest after 'Psalm' / 'Ps.' / 'Psa.'); numbers after non-scripture headings (Sonnet, Article, Chapter, room) are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N4835_neg/2026-11-19-lm1909-796db650.tests.json",
+   "prereg_commit": "714f62b36",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.947,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.844,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.842,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.833,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.837,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.878,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.866,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.422,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.17,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.124,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.134,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.3,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.047,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": "sgiving"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.109,
+     "peak": "4"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.843,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "714f62b36",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "first digit of a Psalm number",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: '1' x24 of the top 32, nearly all the first digit of a Psalm number. Probes: Psalm 121 0.89, Psalm 139 0.83, Psa. 103 0.65, Psalm 46 0.46, Proverbs 16 0.46, Isaiah/Matthew 0.48, Ps. 23 0.24, Romans 12 0.25; Sonnet 116 0.15, Article 123 0.14, Chapter 12 0.14, room 121 0.01, hymn 146 0.01.",
+ "selection": "random draw"
+}
