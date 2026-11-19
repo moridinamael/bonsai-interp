@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-dd629e0d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N1768-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:30:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N1768",
+   "pole": "-",
+   "label": "in Python code, the line start (indentation) where a statement pattern from a few lines above is about to be repeated in parallel ('hdl = family.get_father_handle() / if hdl:' ... again for mother)",
+   "fire": [
+    "    def load_pair(self, record):\n        left = right = None\n        ref = record.get_left_ref()\n        if ref:\n            left = self.store.fetch(ref)\n        ref = record.get_right_ref()\n        if ref:\n            right = self.store.fetch(ref)\n        return left, right\n",
+    "    def find_owners(self, record):\n        buyer = seller = None\n        key = record.get_buyer_key()\n        if key:\n            buyer = self.db.fetch(key)\n        key = record.get_seller_key()\n        if key:\n            seller = self.db.fetch(key)\n        return buyer, seller\n",
+    "    def get_endpoints(self, record):\n        source = target = None\n        nid = record.get_source_id()\n        if nid:\n            source = self.graph.fetch(nid)\n        nid = record.get_target_id()\n        if nid:\n            target = self.graph.fetch(nid)\n        return source, target\n",
+    "    def read_guardians(self, record):\n        sponsor = witness = None\n        hdl = record.get_sponsor_handle()\n        if hdl:\n            sponsor = self.registry.fetch(hdl)\n        hdl = record.get_witness_handle()\n        if hdl:\n            witness = self.registry.fetch(hdl)\n        return sponsor, witness\n",
+    "    def resolve_teams(self, record):\n        host = guest = None\n        tid = record.get_host_token()\n        if tid:\n            host = self.cache.fetch(tid)\n        tid = record.get_guest_token()\n        if tid:\n            guest = self.cache.fetch(tid)\n        return host, guest\n",
+    "    def fetch_images(self, record):\n        front = rear = None\n        uri = record.get_front_uri()\n        if uri:\n            front = self.loader.fetch(uri)\n        uri = record.get_rear_uri()\n        if uri:\n            rear = self.loader.fetch(uri)\n        return front, rear\n",
+    "    def lookup_accounts(self, record):\n        debit = credit = None\n        num = record.get_debit_number()\n        if num:\n            debit = self.ledger.fetch(num)\n        num = record.get_credit_number()\n        if num:\n            credit = self.ledger.fetch(num)\n        return debit, credit\n",
+    "    def open_streams(self, record):\n        reader = writer = None\n        fd = record.get_reader_descriptor()\n        if fd:\n            reader = self.pool.fetch(fd)\n        fd = record.get_writer_descriptor()\n        if fd:\n            writer = self.pool.fetch(fd)\n        return reader, writer\n"
+   ],
+   "quiet": [
+    "    def load_pair(self, record):\n        ref = record.get_left_ref()\n        with self.store.lock:\n            print('loading', ref)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n",
+    "    def find_owners(self, record):\n        key = record.get_buyer_key()\n        with self.db.lock:\n            print('loading', key)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n",
+    "    def get_endpoints(self, record):\n        nid = record.get_source_id()\n        with self.graph.lock:\n            print('loading', nid)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n",
+    "    def read_guardians(self, record):\n        hdl = record.get_sponsor_handle()\n        with self.registry.lock:\n            print('loading', hdl)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n",
+    "    def resolve_teams(self, record):\n        tid = record.get_host_token()\n        with self.cache.lock:\n            print('loading', tid)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n",
+    "    def fetch_images(self, record):\n        uri = record.get_front_uri()\n        with self.loader.lock:\n            print('loading', uri)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n",
+    "    def lookup_accounts(self, record):\n        num = record.get_debit_number()\n        with self.ledger.lock:\n            print('loading', num)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n",
+    "    def open_streams(self, record):\n        fd = record.get_reader_descriptor()\n        with self.pool.lock:\n            print('loading', fd)\n        for item in sorted(record.children):\n            yield item\n        raise StopIteration\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "parallel repeat in code",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: code only: indentation '       ' x6, ' and' x3, newline, \"',\" in lines that parallel the line before (particle.scale / particle.scale_delta, cfg.devices[2].target_dev / .target_bus, a chain of == comparisons joined by ' and'); the + pole fires on parallel constructions in prose ('; among women', ' while'), so this looks like the code side of the same distinction. Probes: a get_father_handle / get_mother_handle method reached 0.62 on an indentation token; repeated attribute assignments and assertEqual lines only 0.15, short snippets 0.04-0.13. The fire items are eight new methods of that father/mother shape, so the test covers one construction only."
+}

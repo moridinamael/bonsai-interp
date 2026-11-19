@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-ad3d13eb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N4794-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:30:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N4794",
+   "pole": "-",
+   "label": "a word with a leading space right after an opening parenthesis or quote mark that is followed by a space: '( word', '\" word'",
+   "fire": [
+    "The orchestra played two pieces ( Mozart and Haydn ) before the interval.",
+    "Add the dry ingredients ( flour, salt and sugar ) to the bowl.",
+    "Her grandmother ( born in Lisbon ) spoke four languages.",
+    "print ( total, average )",
+    "The trail passes a small lake ( Lake Anna ) after two miles.",
+    "values = sorted ( scores, reverse=True )",
+    "Critics called the film a \" masterpiece of suspense\" when it opened.",
+    "The museum is closed on Mondays ( holidays included ) all year."
+   ],
+   "quiet": [
+    "The orchestra played two pieces (Mozart and Haydn) before the interval.",
+    "Add the dry ingredients, flour, salt and sugar, to the bowl.",
+    "Her grandmother (born in Lisbon) spoke four languages.",
+    "print(total, average)",
+    "The trail passes a small lake, Lake Anna, after two miles.",
+    "values = sorted(scores, reverse=True)",
+    "Critics called the film a \"masterpiece of suspense\" when it opened.",
+    "The museum is closed on Mondays - holidays included - all year."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "word after '( ' or '\" '",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: top examples are all the space-led token after '(' or '\"' (' socket' after 'socket.socket (', ' W' after '(', ' security' after '\"'); flagged broad (1.9%) and gate-closed. Probes: '( word' 0.69-0.85, '\" word' 0.69; the same sentences with '(word' (no space) or commas 0.03-0.07. Early layer, so this is a token-pair pattern, not a meaning."
+}
