@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-d9b2e541",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N1043-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:20:40+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N1043_neg/2026-11-19-lm1909-d9b2e541.tests.json"
+ },
+ "label": "link word (by / for / to) that ties a predicate to a following verb of means or purpose: 'made up for it by staying', 'praised for developing', 'worn to protect'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N1043_neg/2026-11-19-lm1909-d9b2e541.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.368,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.293,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.063,
+     "peak": "icians"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.076,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.753,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.145,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.252,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.019,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.173,
+     "peak": " good"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " g"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.279,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": " vase"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.156,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.501,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.204,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.578,
+    "median_fire": 0.199,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "link word before means verb",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (2.4%) with a gate-closed regime for 81% of its mass; the top 32 peak on ' to' x5, ' of' x4, ' as' x2, ' by' x2, ' =='. Probes: 'by staying' 0.52, '==' in an assert 0.52, 'inventing' 0.49, 'worn to' 0.26-0.34, 'for developing' 0.25; the same prepositions before a noun 0.02-0.04, 'used to separate' 0.05. A list-like label for a low-magnitude pole; near misses keep the preposition but follow it with a noun.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1fbd9b82",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N10291-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:20:35+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N10291_neg/2026-11-19-lm1909-1fbd9b82.tests.json"
+ },
+ "label": "' and' after 'Life' in an old-style book title of the form '(Narrative of) the Life and <Noun> of <Person>'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N10291_neg/2026-11-19-lm1909-1fbd9b82.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.82,
+     "peak": " S"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.609,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.515,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.364,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.82,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.456,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.495,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.617,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.249,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.08,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.043,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " F"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.242,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.05,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.067,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.112,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.562,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Life and' in old titles",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' and' x5 of top 32, four of the six shown are 'the Life and Travels / conquests / Age / Piracies of'; the rest are ' their' / ' his' / ' own'. The card flags the pole broad (1.0% of tokens reach 0.1 of max). Probes: 'Narrative of the Life and Adventures of' 0.76, 'The Life and Times of' 0.24, 'Voyages and Discoveries of' 0.31, 'Pride and Prejudice' 0.08, lower-case 'life and times' 0.05. Covers only part of the pole.",
+ "selection": "random draw"
+}
