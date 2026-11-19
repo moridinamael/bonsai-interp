@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-47cb4c43",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N3345-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:16:20+00:00",
+ "recipe": {
+  "toolchain_commit": "07657c875",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N3345_neg/2026-11-19-lm1909-47cb4c43.tests.json"
+ },
+ "label": "Talk of something occurring as a possibility: 'what can happen', 'if that were to happen', 'worst-case scenario', 'situations that arise'. Its output promotes happen / situation / events / scenario, and it also fires just before such a word is due. Concrete things and scheduled events stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N3345_neg/2026-11-19-lm1909-47cb4c43.tests.json",
+   "prereg_commit": "07657c875",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.059,
+     "peak": " happen"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.467,
+     "peak": " scenario"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.402,
+     "peak": " situations"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.434,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.483,
+     "peak": " scenario"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.471,
+     "peak": " things"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.18,
+     "peak": " like"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.431,
+     "peak": " happen"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " sure"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.225,
+     "peak": "istic"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.031,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.129,
+     "peak": " these"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " like"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.081,
+     "peak": " what"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.432,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "07657c875",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "possible occurrence (happen, scenario)",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Card: ' happen', ' events', ' scenario', and French, Russian and Arabic words for event, situation and scenario; the - pole promotes ' situation', ' happen', ' events', ' scenarios'. Probe: 'worst that can happen' 0.61, 'situations rarely arise' 0.49, 'worst case scenario' 0.44, 'the worst that can be said' 0.38 (anticipation), 'events of that night' 0.23, 'what had occurred' 0.21, 'a ticketed event' 0.08.",
+ "selection": "random draw"
+}

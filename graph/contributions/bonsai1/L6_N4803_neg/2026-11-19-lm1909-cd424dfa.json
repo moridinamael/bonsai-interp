@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-cd424dfa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N4803-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:15:42+00:00",
+ "recipe": {
+  "toolchain_commit": "07657c875",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N4803_neg/2026-11-19-lm1909-cd424dfa.tests.json"
+ },
+ "label": "' at' linking a research actor to an institution: 'Researchers / Scientists / Investigators at <university or institute>'. Other uses of ' at' (time, place, students or workers at ...) stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N4803_neg/2026-11-19-lm1909-cd424dfa.tests.json",
+   "prereg_commit": "07657c875",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.579,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.641,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.65,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.465,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.623,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.52,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.603,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.638,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.039,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.336,
+     "peak": " say"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.094,
+     "peak": " scientists"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " watched"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " children"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.613,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "07657c875",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'at' after Researchers",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' at' x15 of the top 32, nearly all 'Researchers at'; also 'Dr', ' Scott', ' RESULTS' in science reporting. Probe: Researchers/Scientists at 0.65, Investigators at 0.43, Doctors/Engineers at 0.24, Students at 0.05, Workers at 0.02; 'researchers from' 0.33 and 'Researchers in' 0.25, so other affiliation prepositions fire weakly too.",
+ "selection": "random draw"
+}

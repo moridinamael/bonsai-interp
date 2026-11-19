@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-cf64e011",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N12095-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:15:46+00:00",
+ "recipe": {
+  "toolchain_commit": "07657c875",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N12095_neg/2026-11-19-lm1909-cf64e011.tests.json"
+ },
+ "label": "The capitalised plural noun that heads a journal or book title: Trends, Frontiers, Annals, Perspectives, Principles, Directions, Foundations, Advances ('Trends in ...', 'Frontiers of ...'). Singular heads (Journal, Handbook) and the same words as lowercase common nouns fire much less.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N12095_neg/2026-11-19-lm1909-cf64e011.tests.json",
+   "prereg_commit": "07657c875",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.65,
+     "peak": " Trends"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.96,
+     "peak": "iers"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.644,
+     "peak": "als"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.687,
+     "peak": " Perspectives"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.421,
+     "peak": " Principles"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.562,
+     "peak": " Directions"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.482,
+     "peak": " Foundations"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.39,
+     "peak": " Advances"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.088,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " spring"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.179,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " Science"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.039,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.071,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.273,
+     "peak": " trends"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.103,
+     "peak": "iers"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.603,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "07657c875",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "plural title head (Trends in)",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'als' (Annals), ' Perspectives', 'iers' (Frontiers), ' Trends', ' Principles', ' Directions', all in citations. Probe: Frontiers 0.95, Trends 0.66, Directions 0.55, Annals 0.54, Perspectives 0.51, Foundations 0.50, Principles 0.44, Advances 0.39, Elements 0.32; lowercase trends 0.27, frontiers 0.22, Handbook of 0.23, Journal 0.18, Reviews 0.10, Proceedings 0.08.",
+ "selection": "random draw"
+}
