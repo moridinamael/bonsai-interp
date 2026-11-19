@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3ab49626",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N11901-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:55:15+00:00",
+ "recipe": {
+  "toolchain_commit": "f306bb07c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N11901_neg/2026-11-19-lm1909-3ab49626.tests.json"
+ },
+ "label": "Crediting a named party in thanks: the 'for' (or the possessive after it) that follows 'thanks to / grateful to / indebted to X'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N11901_neg/2026-11-19-lm1909-3ab49626.tests.json",
+   "prereg_commit": "f306bb07c",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.408,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.433,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.418,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.408,
+     "peak": " its"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.257,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.477,
+     "peak": " drawings"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.222,
+     "peak": " life"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.328,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.25,
+     "peak": " authors"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.099,
+     "peak": "Our"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.36,
+     "peak": " my"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.193,
+     "peak": " asked"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.143,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " drawings"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.139,
+     "peak": " family"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.131,
+     "peak": " old"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.408,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f306bb07c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'for' after thanking someone",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags broad (1.1% of tokens reach 0.1 of max). Top examples: thank-you sentences peaking on 'for', 'the', 'his' after the thanked party, and contact clauses with a first-person subject ('a letter I received', 'advisors we can count on'). The + pole is about multiple authorship (written by, multiple writers). Probes: 'grateful to the council for' 0.51, 'thanks to Dr. Lee for her' 0.47, 'thank the mayor for his' 0.45, 'indebted to my editor for' 0.43, 'thank the volunteers for' 0.18, 'Thank you very much for the' 0.26; contact clauses 'a letter I received' 0.58, 'a team we trust with' 0.61. Controls were not quiet: 'a letter that arrived' 0.29, 'voted for the new budget' 0.20, 'left the volunteers for a better job' 0.17. The label covers the thanks half only.",
+ "selection": "random draw"
+}

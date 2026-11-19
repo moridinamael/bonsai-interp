@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d6bcf3f5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N119-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:31+00:00",
+ "recipe": {
+  "toolchain_commit": "f306bb07c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N119_neg/2026-11-19-lm1909-d6bcf3f5.tests.json"
+ },
+ "label": "The marker that opens the last member of a series: 'Finally,' closing an enumerated argument and 'else:' closing an if/elif chain",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N119_neg/2026-11-19-lm1909-d6bcf3f5.tests.json",
+   "prereg_commit": "f306bb07c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.221,
+     "peak": " Finally"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.227,
+     "peak": " Finally"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.685,
+     "peak": " Finally"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.848,
+     "peak": " Finally"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.558,
+     "peak": " else"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.225,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.459,
+     "peak": " else"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.486,
+     "peak": " Finally"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.181,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.145,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.145,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.223,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.352,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.672,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.062,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.131,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.473,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f306bb07c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "last-item marker (Finally / else)",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' else' x5, 'Finally' x6 in three casings, ' and' before a last list item, ' third', ' course'. Probes: 'Finally' after 'To begin with ... In addition ...' 0.47, 'else:' after if/elif 0.45, 'and a third' 0.51; short versions much weaker ('Finally' after two short steps 0.07, two-branch else 0.03, 'X, Y and Z' 0.09-0.25). Fire items therefore carry the earlier members of the series; near misses stop before the closing marker or use a non-final one.",
+ "selection": "random draw"
+}
