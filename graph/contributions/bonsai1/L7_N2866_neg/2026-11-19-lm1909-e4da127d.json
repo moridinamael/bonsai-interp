@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e4da127d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N2866-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:38+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N2866_neg/2026-11-19-lm1909-e4da127d.tests.json"
+ },
+ "label": "a plural domain noun after a quantifier: 'a wide range of fields', 'many industries', 'several occupations/subjects/disciplines' (the many-kinds side; the + pole takes singular ' industry')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N2866_neg/2026-11-19-lm1909-e4da127d.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.167,
+     "peak": " fields"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.772,
+     "peak": " fields"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.914,
+     "peak": " industries"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.744,
+     "peak": " industries"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.772,
+     "peak": " occupations"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.46,
+     "peak": " subjects"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.381,
+     "peak": " disciplines"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.636,
+     "peak": " sectors"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.08,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.113,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.071,
+     "peak": " industry"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.201,
+     "peak": " company"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.094,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " class"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": " scholars"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.22,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.758,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "plural 'fields'/'industries'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: ' fields' x11, ' industries' x4, ' products', ' occupations', ' subjects' in the top 32. Probes: fields 0.64, industries 0.63, occupations 0.55, products 0.39; singular 'field' 0.13 and 'industry' 0.21. Near misses are the singular nouns plus three concrete plurals after the same quantifiers.",
+ "selection": "random draw"
+}

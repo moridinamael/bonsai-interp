@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-cf7c2aa3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N1638-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:34+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N1638_neg/2026-11-19-lm1909-cf7c2aa3.tests.json"
+ },
+ "label": "formal statute and policy wording, strongest in Chinese environmental-law text (环境影响评价, 资源利用和环境保护, 相互尊重、互利…); also English legal provisions ('enemies to peace')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N1638_neg/2026-11-19-lm1909-cf7c2aa3.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.225,
+     "peak": "影响"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.398,
+     "peak": "环境保护"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.669,
+     "peak": "利用"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.742,
+     "peak": "利用"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.466,
+     "peak": "关系"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.27,
+     "peak": "、"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.614,
+     "peak": "影响"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.285,
+     "peak": "影响"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": "河水"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.055,
+     "peak": "附近"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.032,
+     "peak": "垃圾"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": "又能"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": "一起"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": "两个人"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.038,
+     "peak": "邻居"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "带"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.432,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Chinese statute wording",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: top examples are amendments to China's environmental protection law and diplomatic set phrases; look adds English statute lines. Probes of the Chinese set phrases reached only 0.15-0.29 of max and an everyday Chinese sentence 0.00, so the median may fall short of 0.20.",
+ "selection": "random draw"
+}

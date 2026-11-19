@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-f5fb4f89",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N10878-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:28+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N10878_neg/2026-11-19-lm1909-f5fb4f89.tests.json"
+ },
+ "label": "the first piece of a surname that is about to be repeated as the name of a firm ('William S. Hirschberg, founder … of the law firm, H|irschberg, Pettengill'); more loosely the onset of a name or identifier copied from just before; weak pole, best guess",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N10878_neg/2026-11-19-lm1909-f5fb4f89.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.913,
+     "peak": " F"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.347,
+     "peak": " Vander"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.66,
+     "peak": " Opp"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.886,
+     "peak": " Th"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.709,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.412,
+     "peak": " Brand"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.185,
+     "peak": " Lind"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.329,
+     "peak": " Cast"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " R"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.055,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " modest"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.036,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.061,
+     "peak": " E"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": "ano"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.536,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "onset of a repeated surname",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: no single token (' def' x4, '.f' x2, ' H', ' self', '.c'); look shows onsets of items repeated from the context (self.drag_start → self.drag_motion, Hirschberg → H|irschberg) and ' def' after decorators. Probes: the founder-and-firm pattern 0.79; a repeated surname elsewhere in a sentence 0.07-0.12; code 0.04-0.10. Only the firm pattern fired, so the test is that pattern with new names.",
+ "selection": "random draw"
+}

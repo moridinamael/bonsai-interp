@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-87606a03",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N9197+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:37+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N9197_pos/2026-11-19-lm1909-87606a03.tests.json"
+ },
+ "label": "Python regular-expression calls: fires on and around re.sub / re.match / re.search / re.findall and the pattern that follows (output promotes ' regex', ' pattern'); the - pole takes .replace/.split string methods",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N9197_pos/2026-11-19-lm1909-87606a03.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.615,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.762,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.506,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.592,
+     "peak": ".search"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.333,
+     "peak": " re"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.81,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.536,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.412,
+     "peak": ".sub"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.426,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.761,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.078,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.514,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.089,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.476,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.067,
+     "peak": " plain"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.564,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python re.* calls",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: '.sub' x5, '.match' x4, '.findall' x3, '.search' x2 in the top 32; logit effect promotes ' regex', ' pattern', '^['. Probes: re.match 0.66, re.sub 0.53, re.findall 0.43; .replace/.split 0.22, os.path.join 0.03.",
+ "selection": "random draw"
+}
