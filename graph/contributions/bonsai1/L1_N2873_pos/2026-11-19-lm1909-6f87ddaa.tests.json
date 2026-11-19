@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-6f87ddaa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N2873+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N2873",
+   "pole": "+",
+   "label": "Weak gate-closed echo on non-Latin-script text (Cyrillic, Arabic, Hangul, kana), strongest on Cyrillic 'й' after a word-initial 'А' (Ай…); English text stays lower",
+   "fire": [
+    "Вчера вечером Айгуль позвонила брату и рассказала о поездке.",
+    "В музее открылась выставка картин Айвазовского о море.",
+    "Мой сосед Айдар работает инженером на большом заводе.",
+    "تقع المدينة في أفريقيا الشمالية قرب ساحل البحر.",
+    "ارتفعت القوة الشرائية للمواطنين خلال السنوات الأخيرة.",
+    "호텔 체크아웃 시간은 오전 열한 시까지입니다.",
+    "На уроке учитель рассказал про айсберг и холодные моря.",
+    "Девочку звали Айша, и она любила читать книги о путешествиях."
+   ],
+   "quiet": [
+    "Last night Aigul called her brother and told him about the trip.",
+    "An exhibition of sea paintings by Aivazovsky opened at the museum.",
+    "My neighbour Aidar works as an engineer at a large factory.",
+    "The city lies in North Africa close to the sea coast.",
+    "The purchasing power of citizens has risen in recent years.",
+    "Hotel checkout time is until eleven in the morning.",
+    "In class the teacher talked about an iceberg and cold seas.",
+    "The girl was called Aisha, and she loved reading books about travel."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "non-Latin script pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "Card: max 0.15, 100% gate-closed echo regime, broad (5.5% of tokens reach 0.1 of max). Probes: Russian 'Ай' name 0.90, Arabic 0.78, Korean 0.68, Russian without 'Ай' 0.45, Japanese 0.32, English 0.20. Near misses are English versions of the same content, so this tests script, not the 'й' token."
+}

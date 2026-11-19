@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-6f92cbba",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7331-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7331",
+   "pole": "-",
+   "label": "The bare word-start token ' h' when the tokenizer splits a word after its first letter ( h|ikers, h|obo, h|ound; also Arabic ' اله' and Cyrillic 'х' word starts); h-words whose first token is longer stay quiet",
+   "fire": [
+    "The warden asked every hiker to sign the book at the hut.",
+    "Police kept the rival hooligans apart outside the stadium.",
+    "The children learned a hula dance during the holiday.",
+    "A troop of hussars rode through the town at dawn.",
+    "The farmer drove his hogs to market along the lane.",
+    "Two baying hounds followed the scent across the field.",
+    "The market was full of hagglers arguing over the price of rugs.",
+    "The ridge path is steep, and most hikers turn back at the lake."
+   ],
+   "quiet": [
+    "The warden asked every hermit to sign the book at the hut.",
+    "Police kept the rival hippies apart outside the stadium.",
+    "The children learned a harvest dance during the holiday.",
+    "A troop of heralds rode through the town at dawn.",
+    "The farmer drove his heifers to market along the lane.",
+    "Two laughing hyenas followed the scent across the field.",
+    "The market was full of hazelnuts and baskets of dried figs.",
+    "The ridge path is steep, and most herons stay down by the lake."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "split word-start ' h'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks ' h' x14, ' اله' x6, ' H' x3. Probes: h|ikers 0.50, h|obo 0.44, h|ound 0.14; hotel, harbor, hedgehog, hamster (not split after h) 0.00. Tokenisation of the test words was checked without scoring: fire words start with the token ' h', near-miss words do not."
+}

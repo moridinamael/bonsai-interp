@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-49c42ad0",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N5774+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N5774",
+   "pole": "+",
+   "label": "The placeholder token standing in for a scrubbed web or mail address: 'email' in '[email protected]' or '<email@…>', and the ' ...' that truncates a URL; the ordinary word 'email' stays quiet",
+   "fire": [
+    "To book a table for the evening, write to [email protected] before Friday.",
+    "Press enquiries should be sent to [email protected] with the subject line 'Interview'.",
+    "The full thread is at http://forum.gardeners.net/viewtopic ... hilit=roses if you want to read it.",
+    "If the link is broken, please let me know at [email protected] and I will fix it.",
+    "You can reach the editor directly: <email@example.org> or by post.",
+    "Tickets are on sale now; questions go to [email protected] or the box office.",
+    "I found the recipe here: http://www.cookingdaily.com/recipes ... lemon-tart and it worked well.",
+    "Volunteers who want to help on Saturday should message [email protected] by noon."
+   ],
+   "quiet": [
+    "To book a table for the evening, send an email to the restaurant before Friday.",
+    "Press enquiries should be sent by email with the subject line 'Interview'.",
+    "The full thread is on the gardeners' forum under roses if you want to read it.",
+    "If the link is broken, please let me know by email and I will fix it.",
+    "You can reach the editor directly by email or by post.",
+    "Tickets are on sale now; questions go to the email address on the poster or the box office.",
+    "I found the recipe on a cooking website under lemon tart and it worked well.",
+    "Volunteers who want to help on Saturday should email the organiser by noon."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "scrubbed-address placeholder",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: peaks 'email' x12 (all '[email protected]'), '...' and ' ...' in truncated URLs, ' at'/'_at' in obfuscated addresses. Probes: [email protected] 1.05, truncated URL 0.89, <email@example.com> 0.75; 'send an email to our office' 0.09."
+}
