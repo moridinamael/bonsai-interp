@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-d59e0951",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11125+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:14:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N11125",
+   "pole": "+",
+   "label": "the word-piece just before 'pt' in script / -ption words that the tokenizer splits (circuns|cri|pción, ск|ри|пт, дес|кри|птор, ス|クリ|プト, over|consum|ption); it predicts the 'pt' continuation",
+   "fire": [
+    "La transcripción de la entrevista ocupa doce páginas.",
+    "Cada circunscripción elige a tres diputados.",
+    "El médico firmó la prescripción antes de salir.",
+    "La inscripción al curso termina el viernes.",
+    "Этот скрипт запускается каждую ночь на сервере.",
+    "В каталоге каждому документу присвоены дескрипторы.",
+    "Critics blame the crisis on the overconsumption of cheap credit.",
+    "このスクリプトは毎朝自動的に実行されます。"
+   ],
+   "quiet": [
+    "La grabación de la entrevista dura doce minutos.",
+    "Cada provincia elige a tres diputados.",
+    "El médico firmó la receta antes de salir.",
+    "La matrícula del curso termina el viernes.",
+    "Эта программа запускается каждую ночь на сервере.",
+    "В каталоге каждому документу присвоены номера.",
+    "Critics blame the crisis on the overuse of cheap credit.",
+    "このプログラムは毎朝自動的に実行されます。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "piece before '-pt...'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: 'cri', 'кри', 'ри', 'クリ', 'consum', 'OR' (ABS|OR|PTION); the output promotes 'pt', 'ption', 'PTION'. Probes: Spanish -scripción words 0.83-1.00, Russian 0.84-1.03, Japanese 0.57, overconsumption 0.47; English 'description' / 'subscription' (single tokens) 0.00."
+}

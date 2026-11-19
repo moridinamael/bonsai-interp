@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-d254f69f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N8735-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:14:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N8735",
+   "pole": "-",
+   "label": "blank filler straight after a line-opening marker: empty table cells ('|' then ' ||'), a long run of spaces after '##', or the 't' of a '\\t' escape opening a string",
+   "fire": [
+    "Opening hours\n| || |\nThe library is open every weekday.",
+    "The team won twice.\n| ||In 2015, the club moved to a new ground.",
+    "####################\n##                     Database options\n####################",
+    "log.write(\"\\tDone with step one\")",
+    "Contact details\n| || |\nPlease call before you visit.",
+    "Prices rose again.\n| ||Since 2019, rents have doubled in the centre.",
+    "################\n#                     Helper functions\n################",
+    "sys.stdout.write(\"\\tSkipping empty row\")"
+   ],
+   "quiet": [
+    "Opening hours\nThe library is open every weekday.",
+    "The team won twice. In 2015, the club moved to a new ground.",
+    "# Database options\nhost = \"localhost\"",
+    "log.write(\"Done with step one\")",
+    "| City | Hours |\n| Leeds | 9-5 |\n| York | 10-4 |",
+    "Prices rose again. Since 2019, rents have doubled in the centre.",
+    "# Helper functions\ndef clean(row):\n    return row.strip()",
+    "sys.stdout.write(\"Skipping empty row\")"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "blank after line marker",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: '||' / ' ||' / ' |' after a line-initial '|', wide space runs after '##', and '\\t' at the start of a string. Probes: 0.75-0.86 on all three forms; a filled table 0.10, plain comments and strings 0.01-0.02."
+}
