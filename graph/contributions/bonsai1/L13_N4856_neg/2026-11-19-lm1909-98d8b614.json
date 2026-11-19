@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-98d8b614",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N4856-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:42+00:00",
+ "recipe": {
+  "toolchain_commit": "fd2b80e4b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N4856_neg/2026-11-19-lm1909-98d8b614.tests.json"
+ },
+ "label": "locating a place relative to another place: the locating word or place name in 'two blocks from…', 'in downtown X', 'a village outside X'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N4856_neg/2026-11-19-lm1909-98d8b614.tests.json",
+   "prereg_commit": "fd2b80e4b",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.373,
+     "peak": " blocks"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.43,
+     "peak": " Milwaukee"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.18,
+     "peak": " outside"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.262,
+     "peak": " block"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.553,
+     "peak": " downtown"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.43,
+     "peak": " blocks"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.316,
+     "peak": " Bergen"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.452,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.089,
+     "peak": " garden"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": " October"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " aunt"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.075,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": "waukee"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " treats"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": " grew"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " year"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.401,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fd2b80e4b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "located near / in downtown X",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: no single token; top examples are city names and locatives after in/at/from/outside. Probes: 'two blocks from' 0.46-0.47 (peak ' blocks'), 'in downtown Denver' 0.36, 'a village outside Nairobi' 0.35, 'college in Lisbon' 0.11, city as subject 0.03-0.15.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-7e981e0e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N3256-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:09+00:00",
+ "recipe": {
+  "toolchain_commit": "fd2b80e4b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N3256_neg/2026-11-19-lm1909-7e981e0e.tests.json"
+ },
+ "label": "unclear: scattered names and word pieces; best guess the given name ' Rodrigo' and '-backed' in bird names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N3256_neg/2026-11-19-lm1909-7e981e0e.tests.json",
+   "prereg_commit": "fd2b80e4b",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.531,
+     "peak": " Rodrigo"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.933,
+     "peak": " Rodrigo"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.073,
+     "peak": "-backed"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.949,
+     "peak": " Rodrigo"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.465,
+     "peak": "-backed"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.687,
+     "peak": " Rodrigo"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.947,
+     "peak": " Rodrigo"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.303,
+     "peak": "-backed"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": " scored"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.03,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": " dead"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.126,
+     "peak": " Pablo"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.052,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.119,
+     "peak": " Fernando"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.058,
+     "peak": " nest"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.609,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fd2b80e4b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "unclear (Rodrigo, -backed)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card and look show no common token or context (Rodrigo, UG, loop, uk, ' back', ED, -backed, ley, Arabic, Korean and Chinese pieces), pole max 2.27. Probes: ' Rodrigo' 0.77 and 0.37, '-backed' 0.41 and 0.20, ' back' 0.67 and 0.39 in two sentences but 0.00-0.04 in three others, 'Bromley' 0.61, a control sentence 0.22. Recorded as unclear, not as a meaning.",
+ "selection": "random draw"
+}
