@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-fd9d21b9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N4688+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:53:07+00:00",
+ "recipe": {
+  "toolchain_commit": "63407cb20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N4688_pos/2026-11-19-lm1909-fd9d21b9.tests.json"
+ },
+ "label": "the noun that completes 'the human ___' (eye, brain, hand, body, ear); the same nouns without 'human' stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N4688_pos/2026-11-19-lm1909-fd9d21b9.tests.json",
+   "prereg_commit": "63407cb20",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.804,
+     "peak": " eye"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.442,
+     "peak": " hand"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.294,
+     "peak": " brain"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.351,
+     "peak": " ear"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.393,
+     "peak": " body"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.284,
+     "peak": " heart"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.571,
+     "peak": " voice"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.356,
+     "peak": " hand"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.166,
+     "peak": " sand"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " clears"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": " radio"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.024,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.239,
+     "peak": " bicycle"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " owl"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " minutes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.374,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63407cb20",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "noun after 'the human'",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: 'the human eye' 0.67 and 0.56, 'the human hand' 0.47, 'the human brain' 0.42; but also 'we cannot see' 0.58, 'what is perceived' 0.41, 'first airplane' 0.39, 'first telephone' 0.30, 'beyond the mind' 0.30, so this frame is one of several things the pole does; 'Come and see' 0.01, a red bicycle 0.05.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-292d7bc2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3611+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:52:06+00:00",
+ "recipe": {
+  "toolchain_commit": "63407cb20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N3611_pos/2026-11-19-lm1909-292d7bc2.tests.json"
+ },
+ "label": "in code, a class attribute that repeats the class's own name in lower case on the first line of the class body (class Question: question = ...); a first attribute with another name stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N3611_pos/2026-11-19-lm1909-292d7bc2.tests.json",
+   "prereg_commit": "63407cb20",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.288,
+     "peak": "(models"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.323,
+     "peak": " ticket"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.134,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.124,
+     "peak": " sender"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.523,
+     "peak": " recipe"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.467,
+     "peak": " profile"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.134,
+     "peak": " comment"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.415,
+     "peak": " order"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.123,
+     "peak": "(models"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.186,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.081,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.097,
+     "peak": " None"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.11,
+     "peak": "(models"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.105,
+     "peak": " {}\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.142,
+     "peak": "(models"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.077,
+     "peak": "(tk"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.305,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63407cb20",
+  "minutes": 7,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "attribute named after its class",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (5.5% of tokens reach 0.1 of max) and gate-closed (-x- echo 99%), with max only 2.38. Probes: 'class Question(models.Model): question =' 0.72, 'class Customer(ttk.Frame): customer =' 0.67, 'def usage():' 0.50 (the name being defined), a class whose attributes have other names 0.19, prose with 'question' and 'task' 0.06.",
+ "selection": "random draw"
+}

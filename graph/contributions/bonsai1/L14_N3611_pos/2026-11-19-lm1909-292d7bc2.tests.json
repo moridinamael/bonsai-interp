@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-292d7bc2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3611+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N3611",
+   "pole": "+",
+   "label": "in code, a class attribute that repeats the class's own name in lower case on the first line of the class body (class Question: question = ...); a first attribute with another name stays quiet",
+   "fire": [
+    "class Invoice(models.Model):\n    invoice = models.CharField(max_length=40)\n    paid = models.BooleanField()\n",
+    "class Ticket(db.Model):\n    ticket = db.Column(db.String(20))\n    seat = db.Column(db.Integer)\n",
+    "class Answer(ttk.Frame):\n    answer = \"\"\n    score = 0\n",
+    "class Message(object):\n    message = None\n    sender = None\n",
+    "class Recipe(models.Model):\n    recipe = models.TextField()\n    servings = models.IntegerField()\n",
+    "class Profile(Base):\n    profile = {}\n    visits = 0\n",
+    "class Comment(models.Model):\n    comment = models.CharField(max_length=500)\n    likes = models.IntegerField()\n",
+    "class Order(tk.Frame):\n    order = \"\"\n    total_price = 0\n"
+   ],
+   "quiet": [
+    "class Payment(models.Model):\n    amount = models.CharField(max_length=40)\n    paid = models.BooleanField()\n",
+    "class Booking(db.Model):\n    seat = db.Column(db.String(20))\n    row = db.Column(db.Integer)\n",
+    "class Reply(ttk.Frame):\n    text = \"\"\n    score = 0\n",
+    "class Letter(object):\n    sender = None\n    stamp = None\n",
+    "class Dish(models.Model):\n    steps = models.TextField()\n    servings = models.IntegerField()\n",
+    "class Account(Base):\n    settings = {}\n    visits = 0\n",
+    "class Review(models.Model):\n    body = models.CharField(max_length=500)\n    likes = models.IntegerField()\n",
+    "class Purchase(tk.Frame):\n    label = \"\"\n    total_price = 0\n"
+   ]
+  }
+ ],
+ "predictions": "6/8 fire, 0-1 near misses",
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "attribute named after its class",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (5.5% of tokens reach 0.1 of max) and gate-closed (-x- echo 99%), with max only 2.38. Probes: 'class Question(models.Model): question =' 0.72, 'class Customer(ttk.Frame): customer =' 0.67, 'def usage():' 0.50 (the name being defined), a class whose attributes have other names 0.19, prose with 'question' and 'task' 0.06."
+}

@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-b4edac75",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N6295+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:53:23+00:00",
+ "recipe": {
+  "toolchain_commit": "63407cb20",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N6295_pos/2026-11-19-lm1909-b4edac75.tests.json"
+ },
+ "label": "the token ' tile' / ' tiles' (roof, floor, wall or game tiles)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N6295_pos/2026-11-19-lm1909-b4edac75.tests.json",
+   "prereg_commit": "63407cb20",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.567,
+     "peak": " tiles"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.447,
+     "peak": " tile"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.897,
+     "peak": " tiles"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.587,
+     "peak": " tiles"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.843,
+     "peak": " tiles"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.551,
+     "peak": " tile"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.454,
+     "peak": " tiles"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.534,
+     "peak": " tiles"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.059,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.071,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": " stack"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.096,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.112,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.085,
+     "peak": " several"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.084,
+     "peak": " thousands"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.559,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "63407cb20",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token ' tile(s)'",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card flags the pole broad and gate-closed (-x- echo 80%), max only 0.81. Probes: ' tiles' 0.57, ' tile' 0.56, ' Tiles' 0.90, bricks 0.01, slate 0.13; ' vitamins' also reached 0.32, and the top examples include Spanish '-os' / '-nicos' endings, so the token will not cover the whole pole.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "tile",
+   "tiles"
+  ]
+ }
+}
