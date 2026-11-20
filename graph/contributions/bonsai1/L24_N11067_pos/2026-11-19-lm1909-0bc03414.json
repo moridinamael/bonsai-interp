@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0bc03414",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N11067+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:49+00:00",
+ "recipe": {
+  "toolchain_commit": "f306bb07c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N11067_pos/2026-11-19-lm1909-0bc03414.tests.json"
+ },
+ "label": "Practising or performing music on an instrument: fires on or just after the performing verb (strumming his guitar, playing the accordion, improve her tone), not on playing sports or games",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N11067_pos/2026-11-19-lm1909-0bc03414.tests.json",
+   "prereg_commit": "f306bb07c",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.427,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.607,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.294,
+     "peak": "ming"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.504,
+     "peak": " played"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.7,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.286,
+     "peak": " playing"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.851,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.83,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.126,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " stood"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.277,
+     "peak": " played"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.16,
+     "peak": "ist"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " outside"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.327,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.555,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f306bb07c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "playing/practising an instrument",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' playing' x3, ' played' x2, ' play' x2, 演奏, ' improve' x2, ' good' x2, all about musicians. Probes: 'improve her tone' (flute) 0.88, 'strumming his guitar' 0.47, 'entertained the guests with a few folk songs' 0.42, 'good pianist' 0.33, 'playing the accordion' 0.30, 'played the cello' 0.30, 'played the violin' 0.18; 'playing football' 0.004, 'played cards' 0.15, 'selling chestnuts' 0.02. Leaks: 'improve at chess' 0.24, 'played the role' 0.27, so skill-improvement and stage performance sit just under the near-miss bar.",
+ "selection": "random draw"
+}

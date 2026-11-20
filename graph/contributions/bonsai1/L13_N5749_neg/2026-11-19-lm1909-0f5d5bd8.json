@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0f5d5bd8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N5749-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:08+00:00",
+ "recipe": {
+  "toolchain_commit": "f306bb07c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N5749_neg/2026-11-19-lm1909-0f5d5bd8.tests.json"
+ },
+ "label": "The body's handling of sugar and fluids in diabetes / dehydration text: 'use' in 'the body cannot use sugar/insulin', and thirst or electrolytes as a bodily deficit",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N5749_neg/2026-11-19-lm1909-0f5d5bd8.tests.json",
+   "prereg_commit": "f306bb07c",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.763,
+     "peak": " use"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.39,
+     "peak": " insulin"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.724,
+     "peak": " use"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.102,
+     "peak": " weak"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.441,
+     "peak": " use"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.821,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.631,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.281,
+     "peak": " lets"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " unable"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": " no"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.061,
+     "peak": " hard"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.051,
+     "peak": " hill"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": "Doctors"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.159,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.13,
+     "peak": " focus"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": " set"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.536,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f306bb07c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "body using sugar / thirst",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' use' (ability to use sugar/insulin), ' thirst', ' electroly'. Probes: 'cannot use sugar for energy' 0.58, 'ability to use insulin' 0.49, 'thirst, followed by' 0.47; 'cannot use diesel for fuel' 0.02, 'lost the ability to walk' 0.00. The + pole is supply/availability (hot water supply, enough saliva), so this pole may be the need side of that distinction. A code 'true value' example on the card is not covered.",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-3d29b4ba",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N5909-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:42:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N5909",
+   "pole": "-",
+   "label": "The 'Mixin' suffix of a Python class name in an import or a class's base list (weaker on a 'View' base class)",
+   "fire": [
+    "from rest_framework import viewsets\nfrom .mixins import AuditLogMixin\n\nclass OrderViewSet(AuditLogMixin, viewsets.ModelViewSet):\n    queryset = Order.objects.all()",
+    "from django.contrib.auth.mixins import PermissionRequiredMixin\nfrom django.shortcuts import render\n\nclass Dashboard(PermissionRequiredMixin):\n    permission_required = 'reports.view'",
+    "import logging\n\nfrom core.utils import TimestampMixin\nfrom core.db import Base\n\nclass Invoice(TimestampMixin, Base):\n    __tablename__ = 'invoices'",
+    "from sqlalchemy import Column, Integer\nfrom app.models.mixins import SoftDeleteMixin\n\nclass Customer(SoftDeleteMixin, Model):\n    id = Column(Integer, primary_key=True)",
+    "from unittest import TestCase\nfrom tests.helpers import TempDirMixin\n\nclass ExportTests(TempDirMixin, TestCase):\n    def test_writes_file(self):\n        pass",
+    "from flask_login import UserMixin\nfrom .extensions import db\n\nclass Account(UserMixin, db.Model):\n    email = db.Column(db.String(120))",
+    "from sklearn.base import BaseEstimator\nfrom sklearn.base import TransformerMixin\n\nclass Scaler(BaseEstimator, TransformerMixin):\n    def fit(self, X, y=None):\n        return self",
+    "from kivy.uix.widget import Widget\nfrom ui.behaviors import HoverMixin\n\nclass IconButton(HoverMixin, Widget):\n    icon = 'plus'"
+   ],
+   "quiet": [
+    "from rest_framework import serializers\nfrom .models import Order\n\nclass OrderSerializer(serializers.ModelSerializer):\n    total = serializers.DecimalField(max_digits=8, decimal_places=2)",
+    "from django.shortcuts import render\nfrom django.http import Http404\n\ndef dashboard(request):\n    return render(request, 'dashboard.html')",
+    "import logging\n\nfrom core.utils import utcnow\nfrom core.db import Base\n\nclass Invoice(Base):\n    __tablename__ = 'invoices'",
+    "from sqlalchemy import Column, Integer\nfrom app.models.types import Money\n\nclass Customer(Model):\n    id = Column(Integer, primary_key=True)",
+    "from unittest import TestCase\nfrom tests.helpers import make_tempdir\n\nclass ExportTests(TestCase):\n    def test_writes_file(self):\n        pass",
+    "from dataclasses import dataclass\nfrom .extensions import db\n\n@dataclass\nclass Account:\n    email: str = ''",
+    "import numpy as np\nfrom scipy import stats\n\nclass Scaler(object):\n    def fit(self, X, y=None):\n        return self",
+    "from enum import Enum\nfrom ui.colors import PALETTE\n\nclass IconSize(Enum):\n    SMALL = 16\n    LARGE = 32"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python 'Mixin' class suffix",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: 'Mixin' x7, 'View' x2 in Python imports, plus unrelated prose pieces (Metal'head', wine ' pub', bucket-car'riers', 'so it could'). Probes: 'LoginRequiredMixin' in an import and base list 0.73, 'TemplateView' base 0.40, a class with an OrderedDict base 0.02; the prose pieces did not reproduce (metalhead 0.09, pub 0.06, carriers 0.03) except 'so it may have' 0.41. The label covers the code part only."
+}

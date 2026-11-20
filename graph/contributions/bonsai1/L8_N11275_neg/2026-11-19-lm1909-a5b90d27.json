@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a5b90d27",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N11275-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:58+00:00",
+ "recipe": {
+  "toolchain_commit": "f306bb07c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N11275_neg/2026-11-19-lm1909-a5b90d27.tests.json"
+ },
+ "label": "' social' naming a sector, service or academic field (social sciences, social welfare, social assistance, social services); weaker on ' civil' used the same way",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N11275_neg/2026-11-19-lm1909-a5b90d27.tests.json",
+   "prereg_commit": "f306bb07c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.265,
+     "peak": " social"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.199,
+     "peak": " social"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.653,
+     "peak": " social"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.603,
+     "peak": " social"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.589,
+     "peak": " social"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.045,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.554,
+     "peak": " social"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.733,
+     "peak": " social"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.063,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.048,
+     "peak": " quarter"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " social"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.064,
+     "peak": " social"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.572,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f306bb07c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'social' as sector/field name",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' social' x11, ' Social' x3, ' civil'/' Civil' x5, 'hum'(aines), natural ' building' materials; the + pole is ' industrial' (x20), so the neuron separates the social/civil sector from the industrial one. Probes: 'social assistance' 0.71, 'social sciences' 0.64, 'social welfare' 0.58, 'social science' 0.37, 'social services' 0.28, 'social work' 0.16, 'civil society' 0.28, 'civil engineering' 0.16-0.24; 'a very social person' 0.02, 'social media' 0.05, 'industrial design' 0.04. Low max (3.81) and a 41% leak regime.",
+ "selection": "random draw"
+}
