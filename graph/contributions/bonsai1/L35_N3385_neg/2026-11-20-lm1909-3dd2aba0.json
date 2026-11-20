@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-3dd2aba0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3385-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:22:47+00:00",
+ "recipe": {
+  "toolchain_commit": "af64f06b5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N3385_neg/2026-11-20-lm1909-3dd2aba0.tests.json"
+ },
+ "label": "the Arabic letter seen (س) at the start of an Arabic word or word piece",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N3385_neg/2026-11-20-lm1909-3dd2aba0.tests.json",
+   "prereg_commit": "af64f06b5",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.366,
+     "peak": " الس"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.491,
+     "peak": " الس"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.105,
+     "peak": " ع"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.688,
+     "peak": "س"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.034,
+     "peak": " سي"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.006,
+     "peak": "جلس"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.006,
+     "peak": " الم"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.144,
+     "peak": "تعل"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.046,
+     "peak": "بلاغ"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.208,
+     "peak": "ئ"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.143,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " ت"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": "تر"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " ض"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " ي"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.144,
+     "peak": "تعل"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.617,
+    "median_fire": 0.124,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "af64f06b5",
+  "minutes": 9,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic letter س",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "near misses are Arabic sentences written to avoid the letter; English ' Ch' name starts also appear in top examples",
+ "selection": "random draw"
+}
