@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-1927895b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N85+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:07:32+00:00",
+ "recipe": {
+  "toolchain_commit": "18ec8c20d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N85_pos/2026-11-20-lm1909-1927895b.tests.json"
+ },
+ "label": "the ' =' when Python code reassigns an existing variable (a parameter or loop variable) to a converted/cleaned version of itself (x = str(x), X, y = np.asarray(X), ...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N85_pos/2026-11-20-lm1909-1927895b.tests.json",
+   "prereg_commit": "18ec8c20d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.372,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.364,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.448,
+     "peak": " line"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.721,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.822,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.794,
+     "peak": ".to"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.48,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.699,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.057,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.042,
+     "peak": " \"\"\""
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.055,
+     "peak": "(line"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.244,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.072,
+     "peak": "(key"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.158,
+     "peak": " parse"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": "(radius"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.589,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "18ec8c20d",
+  "minutes": 23,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python self-reassignment '='",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Top peaks are ' =' (13/32) in lines like 'i = str(i)', 'X, y = np.asarray(X)', 'device = utils.make_str(device)'; output promotes sanitize/trim/normalize. Near misses are '=' introducing a fresh variable in similar code.",
+ "selection": "random draw"
+}
