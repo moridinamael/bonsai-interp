@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2d44cdf1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N10621-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:23:39+00:00",
+ "recipe": {
+  "toolchain_commit": "f32ea27c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N10621_neg/2026-11-20-lm1909-2d44cdf1.tests.json"
+ },
+ "label": "the separate space token before a number in citations and measurements ('p. 30', 'about 2.6', 'a total of 25')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N10621_neg/2026-11-20-lm1909-2d44cdf1.tests.json",
+   "prereg_commit": "f32ea27c9",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.171,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.128,
+     "peak": " zinc"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.343,
+     "peak": " randomized"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.205,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.332,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.179,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.128,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.118,
+     "peak": " fabric"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.135,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.125,
+     "peak": " zinc"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.144,
+     "peak": " randomized"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.093,
+     "peak": "T"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.141,
+     "peak": " Jones"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.146,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.116,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.195,
+     "peak": " shirt"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.719,
+    "median_fire": 0.175,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f32ea27c9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "space before a number",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card flags broad (6.9% of tokens reach 0.1 of max) and gate-closed leak 99%; ' ' is 26 of the top 32, before numbers. Probe: every sentence 0.07-0.17 whether or not it had numbers, so the corpus peaks look like long-context effects. Expected to fail; recorded to document the pole.",
+ "selection": "random draw"
+}

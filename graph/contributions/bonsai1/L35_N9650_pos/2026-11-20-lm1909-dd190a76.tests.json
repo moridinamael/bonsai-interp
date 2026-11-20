@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-dd190a76",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9650+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:09:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9650",
+   "pole": "+",
+   "label": "pieces of ALL_CAPS snake-case constant names in code (MAX_RETRY_COUNT, settings.SHARE_THE_LOVE); all-caps words in prose belong to the opposite pole",
+   "fire": [
+    "BUFFER_SIZE = 4096\nREAD_CHUNK_LIMIT = 64\nwhile len(data) < BUFFER_SIZE:\n    data += sock.recv(READ_CHUNK_LIMIT)",
+    "if status == HTTP_STATUS_NOT_FOUND:\n    return render(PAGE_TEMPLATE_MISSING)",
+    "logger.setLevel(LOG_LEVEL_DEBUG)\nhandler = FileHandler(DEFAULT_LOG_FILE_PATH)",
+    "class Color:\n    PRIMARY_DARK_BLUE = 1\n    SECONDARY_LIGHT_GREY = 2",
+    "timeout = config.get('timeout', NETWORK_REQUEST_TIMEOUT_MS)\nretries = MAX_CONNECTION_ATTEMPTS",
+    "#define SENSOR_SAMPLE_RATE_HZ 100\n#define UART_BAUD_RATE_DEFAULT 9600",
+    "api_key = os.environ[OPENWEATHER_API_KEY_NAME]\nurl = BASE_FORECAST_ENDPOINT_URL",
+    "    if user.role in ADMIN_ROLE_CHOICES:\n        grant(PERMISSION_EDIT_ALL_POSTS)"
+   ],
+   "quiet": [
+    "buffer_size = 4096\nread_chunk_limit = 64\nwhile len(data) < buffer_size:\n    data += sock.recv(read_chunk_limit)",
+    "if status == http_status_not_found:\n    return render(page_template_missing)",
+    "logger.setLevel(log_level_debug)\nhandler = FileHandler(default_log_file_path)",
+    "class Color:\n    primary_dark_blue = 1\n    secondary_light_grey = 2",
+    "IMPORTANT NOTICE: PLEASE READ THESE TERMS CAREFULLY BEFORE ORDERING.",
+    "FREE SHIPPING ON ALL ORDERS OVER FIFTY DOLLARS THIS WEEKEND ONLY.",
+    "api_key = os.environ[openweather_api_key_name]\nurl = base_forecast_endpoint_url",
+    "WARNING: KEEP OUT OF REACH OF CHILDREN AND STORE IN A COOL PLACE."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "ALL_CAPS code constants",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card + pole: ATTR_STANDARD_DEVIATION, TRAJ_HIGHLIGHT_SCALE, TWO_STAGE_..., settings.SHARE_THE_LOVE. The - pole fires on all-caps words in prose (TIMBER FRAMED, REFUND POLICY, OCCURRENCE). Probe: constants in code 0.92 and 0.47, all-caps prose 0.04, lower-case snake names 0.00. Near misses are the same code with lower-case names plus all-caps prose."
+}

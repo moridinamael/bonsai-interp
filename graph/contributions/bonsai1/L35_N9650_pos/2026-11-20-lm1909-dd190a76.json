@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-dd190a76",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9650+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:23:49+00:00",
+ "recipe": {
+  "toolchain_commit": "f32ea27c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N9650_pos/2026-11-20-lm1909-dd190a76.tests.json"
+ },
+ "label": "pieces of ALL_CAPS snake-case constant names in code (MAX_RETRY_COUNT, settings.SHARE_THE_LOVE); all-caps words in prose belong to the opposite pole",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N9650_pos/2026-11-20-lm1909-dd190a76.tests.json",
+   "prereg_commit": "f32ea27c9",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.608,
+     "peak": "READ"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.296,
+     "peak": "_NOT"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.396,
+     "peak": "_LOG"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.831,
+     "peak": "_LIGHT"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.561,
+     "peak": "_CONNECTION"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.435,
+     "peak": " UART"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.492,
+     "peak": "_API"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.199,
+     "peak": "MISSION"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": "(page"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "(log"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": "_light"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.063,
+     "peak": "IMPORTANT"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.225,
+     "peak": "IFT"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "_api"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.147,
+     "peak": " KEEP"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.464,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f32ea27c9",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "ALL_CAPS code constants",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card + pole: ATTR_STANDARD_DEVIATION, TRAJ_HIGHLIGHT_SCALE, TWO_STAGE_..., settings.SHARE_THE_LOVE. The - pole fires on all-caps words in prose (TIMBER FRAMED, REFUND POLICY, OCCURRENCE). Probe: constants in code 0.92 and 0.47, all-caps prose 0.04, lower-case snake names 0.00. Near misses are the same code with lower-case names plus all-caps prose.",
+ "selection": "random draw"
+}

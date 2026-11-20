@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a3564834",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N10026+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:23:20+00:00",
+ "recipe": {
+  "toolchain_commit": "f32ea27c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N10026_pos/2026-11-20-lm1909-a3564834.tests.json"
+ },
+ "label": "inner word pieces of rare multi-token proper names of places and organisations (Teng-bo-che, Tuol-um-ne, Commonwealth Scientific), not common one-token names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N10026_pos/2026-11-20-lm1909-a3564834.tests.json",
+   "prereg_commit": "f32ea27c9",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.465,
+     "peak": "bo"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.06,
+     "peak": "um"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.034,
+     "peak": " guide"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.061,
+     "peak": "lac"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.107,
+     "peak": "come"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.224,
+     "peak": "u"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.152,
+     "peak": "ga"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.503,
+     "peak": "ita"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": " river"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " guide"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": " next"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " forest"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " from"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.13,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f32ea27c9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inner pieces of rare names",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on mid-name pieces (Women's Health, fumonisin, Livestock, Thangboche, Tuolumne, Commonwealth Scientific). Probe: Tengboche 0.83, Pangboche 0.53, Tuolumne 0.50, Commonwealth Scientific 0.54, NIH 0.02. Near misses are the same sentences with short familiar place names.",
+ "selection": "random draw"
+}
