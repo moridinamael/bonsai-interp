@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-5055b862",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N9648+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:43:24+00:00",
+ "recipe": {
+  "toolchain_commit": "8c24205c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N9648_pos/2026-11-20-lm1909-5055b862.tests.json"
+ },
+ "label": "a word-internal subword piece of a Spanish (or Romance) word or surname the tokenizer splits (pied|ra, pel|ig|ro, al|berg|ues, Eche|ver|ri)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N9648_pos/2026-11-20-lm1909-5055b862.tests.json",
+   "prereg_commit": "8c24205c9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.589,
+     "peak": " pied"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.582,
+     "peak": "ig"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.991,
+     "peak": "berg"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.773,
+     "peak": "ver"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.504,
+     "peak": "uir"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.759,
+     "peak": " pied"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.522,
+     "peak": "ig"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.407,
+     "peak": "che"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.153,
+     "peak": " min"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.127,
+     "peak": "r"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.263,
+     "peak": "gr"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " investig"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " firm"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " joy"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.164,
+     "peak": "pin"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.144,
+     "peak": " eleg"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.585,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8c24205c9",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Spanish mid-word piece",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Near misses replace the split word with a common single-token Spanish word or surname. Opposite pole: ' San' in Spanish surnames.",
+ "selection": "random draw"
+}
