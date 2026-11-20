@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-2d44cdf1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N10621-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:09:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N10621",
+   "pole": "-",
+   "label": "the separate space token before a number in citations and measurements ('p. 30', 'about 2.6', 'a total of 25')",
+   "fire": [
+    "The authors reported the effect size on p. 42 of the appendix.",
+    "Each tablet contains approximately 3.5 milligrams of zinc.",
+    "The review included a total of 18 randomized trials.",
+    "Tolerance for the shaft is +/- 0.05 millimetres.",
+    "As noted by Jones (2011, p. 117), the sample was small.",
+    "The learning rate was set to 3e-4 with epsilon = 1e-8.",
+    "Section §§ 240.10 of the code covers this case.",
+    "The fabric weighs about 450 grams per square metre."
+   ],
+   "quiet": [
+    "The authors reported the effect size in the appendix.",
+    "Each tablet contains a small amount of zinc.",
+    "The review included many randomized trials.",
+    "Tolerance for the shaft is very tight.",
+    "As noted by Jones in her book, the sample was small.",
+    "The learning rate was set low with a small epsilon.",
+    "A later section of the code covers this case.",
+    "The fabric is quite heavy for a summer shirt."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space before a number",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card flags broad (6.9% of tokens reach 0.1 of max) and gate-closed leak 99%; ' ' is 26 of the top 32, before numbers. Probe: every sentence 0.07-0.17 whether or not it had numbers, so the corpus peaks look like long-context effects. Expected to fail; recorded to document the pole."
+}
