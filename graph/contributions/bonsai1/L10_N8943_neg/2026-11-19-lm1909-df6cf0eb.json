@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-df6cf0eb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8943-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:21:14+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N8943_neg/2026-11-19-lm1909-df6cf0eb.tests.json"
+ },
+ "label": "geospatial 'geometry' objects in GIS code and documentation: shapely.geometry, GEOSGeometry, a geometry column, 'geometries' of spatial features (not school geometry)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N8943_neg/2026-11-19-lm1909-df6cf0eb.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.964,
+     "peak": "ely"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.881,
+     "peak": " geomet"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.848,
+     "peak": "OS"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.747,
+     "peak": " geometry"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.581,
+     "peak": " geomet"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.709,
+     "peak": "ely"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.219,
+     "peak": " geomet"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.775,
+     "peak": "ely"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": " json"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " room"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": "(name"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.171,
+     "peak": "LOB"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " learns"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " import"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": "Before"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.761,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "GIS geometry objects",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: 'ely' x5 (shap⟦ely⟧.geometry), ' geomet' x2 (geometries), '.geometry' x2, 'Point' x2, 'OS' (GE⟦OS⟧Geometry), a 'geometry BLOB' column. Probes: shapely import 0.91, 'compare geometries' 0.99, GEOSGeometry 0.87, 'geometry BLOB' 0.53; school geometry 0.01, numpy / pandas imports 0.02. Near misses are school geometry, other imports and map talk without geometry objects.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-780ef31b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2151+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:20:30+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N2151_pos/2026-11-19-lm1909-780ef31b.tests.json"
+ },
+ "label": "anatomical adjective that makes ' tract' the expected next word (gastrointestinal, respiratory, urinary, digestive, …)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N2151_pos/2026-11-19-lm1909-780ef31b.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.495,
+     "peak": " gastrointestinal"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.404,
+     "peak": " respiratory"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.316,
+     "peak": " urinary"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.531,
+     "peak": " digestive"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.568,
+     "peak": " respiratory"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.579,
+     "peak": " gastrointestinal"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.151,
+     "peak": " urinary"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.115,
+     "peak": " intestinal"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": " clot"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": " damages"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": "Women"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.0,
+     "peak": " skeletal"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.0,
+     "peak": " spreading"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.0,
+     "peak": " swelling"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": " block"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " cattle"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.45,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "adjective before 'tract'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' gastrointestinal' x5 of top 32, plus ' a' before 'tragic'; the output direction suppresses ' tract', ' trace', ' tragic', ' trunc' (tr- words). Probes: gastrointestinal 0.68, respiratory 0.68, urinary 0.42, 'a tragic hero' 0.24. The wider pattern may be 'a tr- word is expected next'; this test claims only the tract case. Near misses use body-system adjectives that take 'system', not 'tract'.",
+ "selection": "random draw"
+}

@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-0a9bd3c6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N12283-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:21:00+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N12283_neg/2026-11-19-lm1909-0a9bd3c6.tests.json"
+ },
+ "label": "the token ' COP' meaning the climate Conference of the Parties, a name that is completed by a number (COP21); the 'A' of a weapon designation such as M61A1 behaves the same way",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N12283_neg/2026-11-19-lm1909-0a9bd3c6.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.434,
+     "peak": " COP"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.418,
+     "peak": " COP"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.513,
+     "peak": " COP"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.54,
+     "peak": " COP"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.542,
+     "peak": " COP"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.41,
+     "peak": " COP"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.434,
+     "peak": " COP"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.185,
+     "peak": " COP"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " finance"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " announced"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " promised"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " l"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " emissions"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " targets"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.434,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token ' COP' (climate summit)",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: ' COP' x5, 'A' x3 (M61⟦A⟧1), '5' x2 of the top 32; the pole's output promotes digits and numerals (' III', '6', ' five', ' seven'). Probes: ' COP' 0.42-0.50 in three sentences, M61A2 0.62, M16A1 0.28, M1A2 0.08; ' cop' (police) 0.02, a climate summit without the word 0.03, PS / Apollo / Formula 0.01-0.02. The test claims only the ' COP' token, which is a minority of the top examples, so coverage will be partial.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " COP"
+  ]
+ }
+}

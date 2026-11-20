@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-bdef7984",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N5683+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:20:38+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N5683_pos/2026-11-19-lm1909-bdef7984.tests.json"
+ },
+ "label": "last word of an institution's proper name (… Research Institute, Institute of … Studies, … Institution)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N5683_pos/2026-11-19-lm1909-bdef7984.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.333,
+     "peak": " Economy"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.308,
+     "peak": " Studies"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.178,
+     "peak": " Institute"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.54,
+     "peak": " Institute"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.323,
+     "peak": " Institution"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.545,
+     "peak": " Studies"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.214,
+     "peak": " Paris"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.517,
+     "peak": " Institute"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.151,
+     "peak": " economists"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.175,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.064,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.125,
+     "peak": " London"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.09,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": " spoken"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.139,
+     "peak": " trial"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.105,
+     "peak": " years"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.328,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "institution-name head noun",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags this pole broad (6.2% of tokens reach 0.1 of max) and gate-closed (echo regime 100%, max only 0.88): ',' x6, ' Institute' x3, ' China' x2. Probes: 'Institute of Fiscal Studies' 1.0, 'Research Institute' 0.71, 'Institution' 0.42, but also generic ' laboratory' 0.39, ' family' 0.37, ',' after China 0.37, ' office' 0.21. Near misses keep the research topic with generic lower-case workplaces, so they may well leak; the test records how selective the institution-name reading is.",
+ "selection": "random draw"
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-3936b862",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8579+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:02:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N8579",
+   "pole": "+",
+   "label": "inside the body of a Python function or method: identifiers, '=' and line ends in loop / condition / assignment lines (for … in enumerate(…):, if a == b.c:, x = […])",
+   "fire": [
+    "class Queue:\n    def drain(self, limit):\n        count = 0\n        for position, job in enumerate(self.jobs):\n            if job.owner == limit.owner:\n                count = count + 1\n        allowed = ['high', 'low', None]\n        if not self.level in allowed:\n            raise KeyError(self.level)\n        return count",
+    "    def prune(self, depth, parents):\n        smallest = self.tree.width // 2\n\n        if self.leaves:\n            for n, leaf in enumerate(self.leaves):\n                if leaf.depth == depth:\n                    parents.append(leaf)\n        return smallest",
+    "def check_units(unit_name, table):\n    known_units = ['metre', 'second', None]\n    if not unit_name in known_units:\n        raise ValueError(unit_name)\n\n    factors = get_conversion_factors()\n    if factors:\n        return table[unit_name]",
+    "    def match_device(self, address, signal):\n        seen = False\n        for d in self.devices:\n            if address == d.address:\n                d.last_signal = signal\n                seen = True\n        return seen",
+    "def describe(module, fallback):\n    info = getattr(module, 'build_info', (0, 0))\n    text = '.'.join(str(part) for part in info)\n    short_text = '.'.join(str(part) for part in info[:2])\n    return short_text or fallback",
+    "    def label_cells(self, grid):\n        middle = self.midpoint(grid)\n        labels = []\n        for r, line in enumerate(grid):\n            for c, cell in enumerate(line):\n                colour = self.dark if cell < middle else self.light\n                labels.append((r, c, colour))\n        return labels",
+    "def first_index(names, wanted):\n    hits = [i for i, name in enumerate(names) if name.lower() == wanted]\n    limit = len(names) // 2\n\n    if hits:\n        return hits[0]\n    return limit",
+    "    def rank_title(self, score):\n        place = 0\n\n        for key in [k for k in self.score_needed.keys() if self.score_needed[k] <= score]:\n            place = place + 1\n        return self.titles[place]"
+   ],
+   "quiet": [
+    "SELECT owner, COUNT(*) AS jobs\nFROM queue\nWHERE level IN ('high', 'low')\n  AND owner IS NOT NULL\nGROUP BY owner\nHAVING COUNT(*) > 2\nORDER BY jobs DESC\nLIMIT 10;",
+    "<ul class=\"tree\">\n  <li class=\"leaf\">First branch</li>\n  <li class=\"leaf\">Second branch</li>\n  <li class=\"leaf\">\n    <a href=\"/parents\">Back to the parents</a>\n  </li>\n</ul>",
+    "#!/bin/sh\nfor unit in metre second kelvin; do\n  if [ -f \"tables/$unit.txt\" ]; then\n    echo \"found $unit\"\n  fi\ndone\nexit 0",
+    ".device-list {\n  margin: 0 auto;\n  padding: 4px 8px;\n  border: 1px solid #ccc;\n}\n.device-list .seen {\n  color: green;\n  font-weight: bold;\n}",
+    "{\n  \"module\": \"reports\",\n  \"build_info\": [0, 0],\n  \"fallback\": \"unknown\",\n  \"parts\": [\"major\", \"minor\"],\n  \"short\": true\n}",
+    "The grid is labelled row by row. Find the middle value first, then give every cell a colour: dark if the cell is below the middle, light if it is not. Write the labels down in order.",
+    "int first_index(char **names, int n, const char *wanted) {\n    int i;\n    for (i = 0; i < n; i++) {\n        if (strcmp(names[i], wanted) == 0) {\n            return i;\n        }\n    }\n    return n / 2;\n}",
+    "To find a player's title, count how many of the required scores are at or below the player's score. Start from zero, add one for each, and look the result up in the list of titles."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "Python function-body code",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: no single token (' =' x3, ']\\n' x2, '\\n\\n', '(s' after enumerate, ' k' after 'if mac =='); 14 of the 16 examples in play look are indented Python function bodies, two are numbers in prose. Probes are weak: Python method bodies 0.14-0.43, JavaScript 0.08, SQL 0.01, prose 0.01-0.11. A context guess, not a clean trigger; near misses are code of the same length in other languages."
+}

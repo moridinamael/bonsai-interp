@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-df6cf0eb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8943-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:02:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N8943",
+   "pole": "-",
+   "label": "geospatial 'geometry' objects in GIS code and documentation: shapely.geometry, GEOSGeometry, a geometry column, 'geometries' of spatial features (not school geometry)",
+   "fire": [
+    "import json\nfrom shapely.geometry import LineString, MultiPolygon\n\nroute = LineString([(0, 0), (4, 3)])\nprint(route.length)",
+    "PostGIS stores the geometries of parcels and roads in a dedicated column and indexes them with an R-tree.",
+    "from django.contrib.gis.geos import GEOSGeometry, Polygon\n\nlake = GEOSGeometry('POLYGON((0 0, 0 5, 5 5, 0 0))')\nprint(lake.area)",
+    "CREATE TABLE parcels (\n    parcel_id INTEGER PRIMARY KEY,\n    owner TEXT,\n    geometry BLOB\n);",
+    "A spatial join matches the geometries of two layers, for example points that fall inside polygons.",
+    "import geopandas as gpd\nfrom shapely.geometry import box\n\nframe = gpd.read_file('districts.shp')\nclip = frame[frame.geometry.intersects(box(0, 0, 10, 10))]",
+    "Before computing the overlay, the tool repairs invalid geometries such as self-intersecting polygons.",
+    "from shapely.geometry import shape, mapping\nfrom shapely.ops import unary_union\n\nmerged = unary_union([shape(f['geometry']) for f in features])"
+   ],
+   "quiet": [
+    "import json\nfrom collections import OrderedDict, defaultdict\n\nroute = OrderedDict([(0, 0), (4, 3)])\nprint(len(route))",
+    "The archive stores the letters of soldiers and nurses in a dedicated room and indexes them by year.",
+    "from django.contrib.auth.models import User, Group\n\nstaff = Group.objects.get(name='staff')\nprint(staff.user_set.count())",
+    "CREATE TABLE invoices (\n    invoice_id INTEGER PRIMARY KEY,\n    customer TEXT,\n    scan BLOB\n);",
+    "In Euclidean geometry the angles of a triangle add up to two right angles, as every pupil learns.",
+    "import pandas as pd\nfrom datetime import date\n\nframe = pd.read_csv('districts.csv')\nrecent = frame[frame.updated > str(date(2020, 1, 1))]",
+    "Before printing the atlas, the editor corrects wrong place names such as misspelled villages.",
+    "The geometry teacher drew a circle on the board and asked the class to find its area."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "GIS geometry objects",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: 'ely' x5 (shap⟦ely⟧.geometry), ' geomet' x2 (geometries), '.geometry' x2, 'Point' x2, 'OS' (GE⟦OS⟧Geometry), a 'geometry BLOB' column. Probes: shapely import 0.91, 'compare geometries' 0.99, GEOSGeometry 0.87, 'geometry BLOB' 0.53; school geometry 0.01, numpy / pandas imports 0.02. Near misses are school geometry, other imports and map talk without geometry objects."
+}

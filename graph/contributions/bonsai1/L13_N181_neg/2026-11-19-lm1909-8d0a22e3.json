@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-8d0a22e3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N181-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:21:19+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N181_neg/2026-11-19-lm1909-8d0a22e3.tests.json"
+ },
+ "label": "whether a celestial object can be seen: words of visibility and line of sight (hidden behind, through the clouds, a clear view of, invisible to the naked eye) in sky-watching text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N181_neg/2026-11-19-lm1909-8d0a22e3.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.318,
+     "peak": " hidden"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.171,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.381,
+     "peak": " horizon"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.342,
+     "peak": " invisible"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.217,
+     "peak": " evening"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.29,
+     "peak": " view"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.232,
+     "peak": " through"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.323,
+     "peak": " hidden"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " sunlight"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " single"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.117,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.096,
+     "peak": " thin"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " about"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.304,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "visibility of sky objects",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' through' x3, ' hidden' x2, ' view' x2, ' see' x2, ' invisible' x2, all about the Sun, Moon, planets or telescopes; the opposite pole is about magnification (' enlarge', ' distance', ' resolution'). The top example is 19.8 and the rest about 11. Probes: four sky-visibility sentences 0.29-0.39; keys hidden under a mat 0.02, an eclipse with no visibility word 0.00, seeing a face as shapes 0.17. Near misses split the two parts: astronomy without visibility, and hiding or seeing without the sky.",
+ "selection": "random draw"
+}

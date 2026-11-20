@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-0ab59972",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N9202+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:20:45+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N9202_pos/2026-11-19-lm1909-0ab59972.tests.json"
+ },
+ "label": "statements about how well-remembered an artist or work is over time (famous once 'but largely forgotten', 'recently enjoyed a revival'), at the word just before the reputation predicate",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N9202_pos/2026-11-19-lm1909-0ab59972.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.593,
+     "peak": " but"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.653,
+     "peak": " largely"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.701,
+     "peak": " enjoyed"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.618,
+     "peak": " largely"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.31,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.932,
+     "peak": " largely"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.733,
+     "peak": " enjoyed"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.526,
+     "peak": " largely"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " holds"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " road"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.04,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.067,
+     "peak": " but"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.226,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.033,
+     "peak": " largely"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.109,
+     "peak": " largely"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.635,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fame-then-obscurity statements",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'recognized during his time but⟦⟧ largely forgotten', 'a legend … but largely unknown', 'recently enjoyed a career renaissance', 'is often forgotten'; output promotes ' gaining', ' gained', ' cult', ' niche', ' lesser'. Probes: 'but largely forgotten now' 0.86, 'have recently enjoyed a revival' 0.67; the same words outside reputation ('largely rebuilt' 0.03, 'enjoyed a busy season' 0.15); 'rarely remembered' / 'often overlooked' only 0.09-0.12. Near misses keep 'but largely' and 'recently enjoyed' in non-reputation uses.",
+ "selection": "random draw"
+}

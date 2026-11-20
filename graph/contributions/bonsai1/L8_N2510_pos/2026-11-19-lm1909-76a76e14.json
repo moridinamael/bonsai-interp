@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-76a76e14",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N2510+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:20:48+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N2510_pos/2026-11-19-lm1909-76a76e14.tests.json"
+ },
+ "label": "mathematical-analysis vocabulary in a mathematics context: a series or sequence that 'converges', and 'real / complex analysis'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N2510_pos/2026-11-19-lm1909-76a76e14.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.774,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.498,
+     "peak": " analysis"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.513,
+     "peak": " real"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.382,
+     "peak": " analysis"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.004,
+     "peak": "ges"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.298,
+     "peak": "ges"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.281,
+     "peak": " analysis"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.747,
+     "peak": " absolutely"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " while"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " products"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " hall"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.066,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.059,
+     "peak": " played"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " handwriting"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.05,
+     "peak": " is"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.889,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "convergence in math analysis",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' series' (alternating and positive series), ' analysis' (complex analysis), ' calculus', ' real', 'Integral'; the output promotes ' convergence', ' conver', ' diver'. The top example is 13.4 and the rest about 5, so the bar of 0.20 of max is high. Probes: 'series converges' 0.93-1.07, 'real analysis, complex analysis' 0.88, 'Fourier series' 0.24, calculus 0.17; TV 'series' and election 'analysis' 0.03. Near misses reuse series, analysis and converge outside mathematics.",
+ "selection": "random draw"
+}

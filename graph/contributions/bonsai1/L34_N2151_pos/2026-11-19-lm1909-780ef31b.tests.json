@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-780ef31b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2151+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:02:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N2151",
+   "pole": "+",
+   "label": "anatomical adjective that makes ' tract' the expected next word (gastrointestinal, respiratory, urinary, digestive, …)",
+   "fire": [
+    "Doctors found a small ulcer in the lining of the patient's gastrointestinal tract during the examination.",
+    "Smoking irritates the cells that line the lower respiratory tract and makes infections more likely.",
+    "Women are more prone than men to infections of the urinary tract, especially after surgery.",
+    "Fibre passes through most of the digestive tract without being broken down by enzymes.",
+    "The virus first multiplies in the cells of the upper respiratory tract before spreading to the lungs.",
+    "Some antibiotics upset the natural bacteria of the gastrointestinal tract and cause cramps.",
+    "Kidney stones can block the flow of urine at several points along the urinary tract.",
+    "In cattle, the parasite settles in the walls of the intestinal tract and feeds on blood."
+   ],
+   "quiet": [
+    "Doctors found a small clot in one of the vessels of the patient's cardiovascular system during the examination.",
+    "Smoking damages the cells of the immune system and makes infections more likely.",
+    "Women are more prone than men to disorders of the thyroid gland, especially after pregnancy.",
+    "Calcium is stored mostly in the bones of the skeletal system and released when needed.",
+    "The virus first attacks the cells of the central nervous system before spreading to the muscles.",
+    "Some antibiotics upset the balance of the lymphatic system and cause swelling.",
+    "Blood clots can block the flow of blood at several points along the coronary arteries.",
+    "In cattle, the parasite settles in the muscles of the hind legs and feeds on tissue."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "adjective before 'tract'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' gastrointestinal' x5 of top 32, plus ' a' before 'tragic'; the output direction suppresses ' tract', ' trace', ' tragic', ' trunc' (tr- words). Probes: gastrointestinal 0.68, respiratory 0.68, urinary 0.42, 'a tragic hero' 0.24. The wider pattern may be 'a tr- word is expected next'; this test claims only the tract case. Near misses use body-system adjectives that take 'system', not 'tract'."
+}

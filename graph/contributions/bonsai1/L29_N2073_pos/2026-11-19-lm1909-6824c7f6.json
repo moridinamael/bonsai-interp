@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-6824c7f6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N2073+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:21:12+00:00",
+ "recipe": {
+  "toolchain_commit": "58d34b82f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N2073_pos/2026-11-19-lm1909-6824c7f6.tests.json"
+ },
+ "label": "the name of an ordinal-numbered military unit (121st Fighter Squadron, 5th Battalion, 18th Regiment), on the ordinal suffix and the unit words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N2073_pos/2026-11-19-lm1909-6824c7f6.tests.json",
+   "prereg_commit": "58d34b82f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.668,
+     "peak": "illery"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.702,
+     "peak": "th"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.561,
+     "peak": "oured"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.934,
+     "peak": " Highland"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.721,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.858,
+     "peak": " Air"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.505,
+     "peak": " Infantry"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.716,
+     "peak": "th"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": "rd"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " who"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": "st"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.243,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.063,
+     "peak": "nd"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.061,
+     "peak": "th"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.709,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "58d34b82f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "numbered military unit names",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: 'st' x5, ' Infantry' x4, 'rd' x2, 'th' x2 of the top 32, all inside names such as '61st Australian Infantry Battalion', '303rd Squadron', '121st Fighter Squadron'. The opposite pole fires on ' the' before 'military / armed services', i.e. the armed forces in general versus one numbered unit. Probes: 101st Airborne Division 0.75, 42nd Fighter Squadron 0.45, 7th Cavalry Regiment 0.52; '42nd floor … 5th Avenue' 0.00, '101st episode' 0.03, soldiers without a unit 0.05. Near misses are ordinals outside the military and soldiers without a numbered unit.",
+ "selection": "random draw"
+}
