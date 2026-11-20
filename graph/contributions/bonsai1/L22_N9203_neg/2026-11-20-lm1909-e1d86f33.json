@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e1d86f33",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9203-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:12:39+00:00",
+ "recipe": {
+  "toolchain_commit": "362ce6cb1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N9203_neg/2026-11-20-lm1909-e1d86f33.tests.json"
+ },
+ "label": "comma separating arguments in NumPy-style function calls (np.histogram2d(x, y, bins=...))",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N9203_neg/2026-11-20-lm1909-e1d86f33.tests.json",
+   "prereg_commit": "362ce6cb1",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.23,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.357,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.501,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.099,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.026,
+     "peak": "(m"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.404,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.045,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.044,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": "\n\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": " make"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " compute"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.049,
+     "peak": " z"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.048,
+     "peak": ".show"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.165,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "362ce6cb1",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "comma in numpy call args",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Mixed weak pole: two top examples are commas in np.histogram2d calls; probe of np.histogram(data, bins=50) gave 0.34. 'hit a plateau' gave 0.65 once but 'hit a record high' 0.08, so I test the code comma.",
+ "selection": "random draw"
+}

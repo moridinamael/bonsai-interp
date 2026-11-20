@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a85c594c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N8107-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:12:53+00:00",
+ "recipe": {
+  "toolchain_commit": "362ce6cb1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N8107_neg/2026-11-20-lm1909-a85c594c.tests.json"
+ },
+ "label": "word-initial fragment of a technical word split into subword pieces (' Pe'|ptide, ' den'|ials, ' dec'|oder)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N8107_neg/2026-11-20-lm1909-a85c594c.tests.json",
+   "prereg_commit": "362ce6cb1",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.368,
+     "peak": " Pe"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.362,
+     "peak": " den"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.095,
+     "peak": "ptide"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.243,
+     "peak": " den"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.141,
+     "peak": "ptide"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.14,
+     "peak": " den"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.27,
+     "peak": " Pe"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.355,
+     "peak": " den"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " errors"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " could"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " enforcing"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": " init"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.257,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "362ce6cb1",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-word first piece",
+ "unit_kind": "lexical",
+ "confidence": 0.2,
+ "notes": "Card: ' Pe', ' pe', ' dec', ' den', ' ли'. Probe: 'Peptide' 0.31, 'denials' 0.32; 'peptides' 0.15, 'denial', 'decoder', 'Pentagon' ~0.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-0d1e49f5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2783-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:12:46+00:00",
+ "recipe": {
+  "toolchain_commit": "362ce6cb1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N2783_neg/2026-11-20-lm1909-0d1e49f5.tests.json"
+ },
+ "label": "inner pieces of split diplomacy words: 'AMB|ASSADOR' in capitals, Arabic 'الد|بلوماسية', 'س|فارة' (predicts diplomatic)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N2783_neg/2026-11-20-lm1909-0d1e49f5.tests.json",
+   "prereg_commit": "362ce6cb1",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.756,
+     "peak": "B"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.247,
+     "peak": "وم"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.412,
+     "peak": " الد"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.6,
+     "peak": "B"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.346,
+     "peak": "وم"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.21,
+     "peak": "ارة"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.883,
+     "peak": "B"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.487,
+     "peak": " الد"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.11,
+     "peak": " TRE"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": "ر"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": "ائ"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.688,
+     "peak": " CONS"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.046,
+     "peak": " الد"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": "ري"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.146,
+     "peak": "SE"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.049,
+     "peak": " من"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.45,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "362ce6cb1",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split diplomacy words",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: Arabic diplomacy/embassy/sovereignty and 'AMB' fragments; output promotes diplomatic/ambassador. Probe: 'AMBASSADOR' 0.50, Arabic الدبلوماسية 0.40, سفارة 0.18; whole-token English 'ambassador'/'embassy' ~0.02.",
+ "selection": "random draw"
+}

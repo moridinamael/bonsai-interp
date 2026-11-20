@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-7497bb98",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N7970-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:12:21+00:00",
+ "recipe": {
+  "toolchain_commit": "362ce6cb1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N7970_neg/2026-11-20-lm1909-7497bb98.tests.json"
+ },
+ "label": "the first token of the returned expression after 'return' in repetitive Python code (return main(...), return self._x(...))",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N7970_neg/2026-11-20-lm1909-7497bb98.tests.json",
+   "prereg_commit": "362ce6cb1",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.709,
+     "peak": " run"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.505,
+     "peak": " cli"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.348,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.349,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.501,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.254,
+     "peak": "(service"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.482,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.517,
+     "peak": " export"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.17,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.171,
+     "peak": "():\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.186,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.206,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.488,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.107,
+     "peak": ".system"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.459,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.13,
+     "peak": "_file"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.491,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "362ce6cb1",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python return expression",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Only fired (0.46) inside a multi-line block of repeated 'return main(flavor=...)' functions; single-line snippets scored ~0. Weak hypothesis.",
+ "selection": "random draw"
+}
