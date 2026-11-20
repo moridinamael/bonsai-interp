@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-dd1230b0",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N2027+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:24:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N2027",
+   "pole": "+",
+   "label": "dense / positional: best guess, the line break after a trailing comma in code argument lists and dicts",
+   "fire": [
+    "settings = dict(\n    name='demo',\n    debug=True,\n    port=8080,\n)",
+    "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'blog',\n]",
+    "result = compute(\n    alpha,\n    beta,\n    gamma,\n)",
+    "config = {\n    \"host\": \"localhost\",\n    \"user\": \"admin\",\n    \"timeout\": 30,\n}",
+    "colors = (\n    'red',\n    'green',\n    'blue',\n)",
+    "self.assertEqual(\n    response.status_code,\n    200,\n)",
+    "params = {\n    'page': 1,\n    'limit': 50,\n    'sort': 'date',\n}",
+    "parser.add_argument(\n    '--verbose',\n    action='store_true',\n)"
+   ],
+   "quiet": [
+    "settings = dict(name='demo', debug=True, port=8080)",
+    "INSTALLED_APPS = ['django.contrib.admin', 'django.contrib.auth', 'blog']",
+    "result = compute(alpha, beta, gamma)",
+    "config = {\"host\": \"localhost\", \"user\": \"admin\", \"timeout\": 30}",
+    "colors = ('red', 'green', 'blue')",
+    "self.assertEqual(response.status_code, 200)",
+    "params = {'page': 1, 'limit': 50, 'sort': 'date'}",
+    "parser.add_argument('--verbose', action='store_true')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comma-newline in code",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card FLAG positional: top peaks cluster at window position 1 (78% within first 16 tokens); peak tokens ',\\n', indentation runs and footnote digits. Test records the density honestly; expected to fail."
+}

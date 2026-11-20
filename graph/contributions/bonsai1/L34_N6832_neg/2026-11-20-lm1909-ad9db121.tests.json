@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ad9db121",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N6832-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:24:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N6832",
+   "pole": "-",
+   "label": "method and attribute names in Python code (e.g. .is_valid, .index, .getNum)",
+   "fire": [
+    "def load(path):\n    if not path.is_file():\n        raise IOError(path)\n    return path.read_text()",
+    "for row in table.rows:\n    if row.is_empty():\n        continue\n    total += row.value",
+    "class Node:\n    def depth(self):\n        return self.parent.depth() + 1",
+    "def first(items):\n    if items.is_sorted():\n        return items.index(0)\n    return None",
+    "count = self.config.getNumWorkers()\nfor w in range(count):\n    self.pool.start(w)",
+    "if user.is_active and user.has_permission('edit'):\n    page.save()\nelse:\n    page.discard()",
+    "shape = tensor.get_shape()\nif not shape.is_fully_defined():\n    raise ValueError(shape)",
+    "def reset(self):\n    self.buffer.clear()\n    self.cursor.index = 0"
+   ],
+   "quiet": [
+    "def load(path):\n    data = open(path)\n    text = data\n    return text",
+    "for row in rows:\n    if not row:\n        continue\n    total += 1",
+    "def depth(n):\n    if n == 0:\n        return 0\n    return depth(n - 1) + 1",
+    "def first(items):\n    if len(items) > 0:\n        return items[0]\n    return None",
+    "count = 4\nfor w in range(count):\n    print(w)",
+    "if active and allowed:\n    save(page)\nelse:\n    discard(page)",
+    "shape = (3, 4)\nif None in shape:\n    raise ValueError(shape)",
+    "def reset(buf):\n    buf = []\n    pos = 0\n    return buf, pos"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python attribute names",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card peaks: .is_fully_defined, index, fragments_per_segment, .getNumLevels, is_valid_slug, all identifier pieces inside Python. Probe: method-call code 0.50, plain-loop code 0.10, prose 0.01. Quiet items are code without attribute access."
+}
