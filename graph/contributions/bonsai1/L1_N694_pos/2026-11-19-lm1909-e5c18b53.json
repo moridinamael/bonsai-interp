@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-e5c18b53",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N694+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:30+00:00",
+ "recipe": {
+  "toolchain_commit": "7c5f12b26",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N694_pos/2026-11-19-lm1909-e5c18b53.tests.json"
+ },
+ "label": "the word-piece 'ete' as its own token inside a word (f-ete, Fek-ete, mach-ete)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N694_pos/2026-11-19-lm1909-e5c18b53.tests.json",
+   "prereg_commit": "7c5f12b26",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.83,
+     "peak": "ete"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.472,
+     "peak": "ete"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.939,
+     "peak": "ete"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.655,
+     "peak": "ete"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.843,
+     "peak": "ete"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.679,
+     "peak": "ete"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.8,
+     "peak": "ete"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.5,
+     "peak": "ete"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.09,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.189,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.073,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.093,
+     "peak": " meeting"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.06,
+     "peak": " Rodney"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.626,
+     "peak": "te"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.255,
+     "peak": " concrete"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.74,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c5f12b26",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word-piece 'ete'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad; top peaks are e-pieces ('ete' x4, 'ce', 'e', 'BE', 'LE', 'SE'), so 'ete' is a sub-trigger of a wider 'e-piece continuing a word' pattern. Probes: 'ete' 0.83-1.0, 'LE' in capitals 0.68. Near misses keep the letters e-t-e inside whole tokens (athlete, complete, concrete, Crete).",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "ete"
+  ]
+ }
+}

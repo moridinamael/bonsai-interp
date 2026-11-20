@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-07fa6387",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N6915-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:43+00:00",
+ "recipe": {
+  "toolchain_commit": "7c5f12b26",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N6915_neg/2026-11-19-lm1909-07fa6387.tests.json"
+ },
+ "label": "an indefinite-quantity expression opening a plural noun phrase: ' of' in 'a set of' / 'a number of' / 'a series of', and ' some'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N6915_neg/2026-11-19-lm1909-07fa6387.tests.json",
+   "prereg_commit": "7c5f12b26",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.041,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.166,
+     "peak": " number"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.081,
+     "peak": " series"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.6,
+     "peak": " some"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.405,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.217,
+     "peak": " number"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.182,
+     "peak": " some"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.083,
+     "peak": " range"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " against"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " theory"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " museum"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " re"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " valley"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.001,
+     "peak": " was"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.2,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c5f12b26",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'a set of' / 'some' quantifier",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' some' x12 and ' of' x8 of the top 32, plus Chinese 一段 / 有一些 ('a stretch of', 'there are some'). Probes: 'a set of' 0.53, 'a number of' 0.30, ' some' 0.26, 'a piece of' 0.23, 'some of the' 0.14; 'the', 'three', 'many' 0.00-0.08. The + pole peaks on small counts ('a few', 'two', 'a dab of').",
+ "selection": "random draw"
+}
