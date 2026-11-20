@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-6d17e5ac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3669+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:51:16+00:00",
+ "recipe": {
+  "toolchain_commit": "1c077dc2c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N3669_pos/2026-11-20-lm1909-6d17e5ac.tests.json"
+ },
+ "label": "the fragment 'we' inside a German surname split by the tokenizer (Rosenz|we|ig, Reisen|we|ber)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N3669_pos/2026-11-20-lm1909-6d17e5ac.tests.json",
+   "prereg_commit": "1c077dc2c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.611,
+     "peak": "we"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.923,
+     "peak": "we"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.603,
+     "peak": "we"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.641,
+     "peak": "we"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.89,
+     "peak": "we"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.553,
+     "peak": "we"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.92,
+     "peak": "we"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.645,
+     "peak": "we"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " Mann"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.027,
+     "peak": " Peter"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": "bach"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": " Hans"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " Klaus"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " Berlin"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.041,
+     "peak": " patch"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.059,
+     "peak": " Hoff"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.643,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1c077dc2c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'we' inside German surnames",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: top peaks 'we' x4 inside German surnames (Rosenzweig, Reisenweber), plus other mid-word fragments in German, Korean, and place names (Selinsgrove). Probe: Rosenzweig 0.59, Reisenweber 0.92, plain English names 0.02. Fire items use surnames that tokenize with a separate 'we' piece; near misses use plain names in the same frames.",
+ "selection": "random draw"
+}

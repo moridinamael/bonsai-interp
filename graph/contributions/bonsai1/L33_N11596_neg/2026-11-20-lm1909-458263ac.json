@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-458263ac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11596-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:51:06+00:00",
+ "recipe": {
+  "toolchain_commit": "1c077dc2c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N11596_neg/2026-11-20-lm1909-458263ac.tests.json"
+ },
+ "label": "a lone ' l' or ' L' token beginning a word the tokenizer splits (' l'|acerations, ' l'|agoon, ' L'|acking)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N11596_neg/2026-11-20-lm1909-458263ac.tests.json",
+   "prereg_commit": "1c077dc2c",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.23,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.607,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.2,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.511,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.238,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.266,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.167,
+     "peak": " l"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.219,
+     "peak": " l"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": "Minor"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": " cap"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " came"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": " tall"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " bump"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.234,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1c077dc2c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off word-initial 'l'",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: top peaks ' l', ' L', Cyrillic ' л', Arabic ' ل', '-l' as the first piece of a split word. Tokenizer: ' lacerations' = ' l'+'acer'+'ations', ' lagoon' = ' l'+'agoon', ' lanky' = ' l'+'anky'. Probe: lacerations 0.55. Near misses use the same sentences with l-words that are single tokens or other words.",
+ "selection": "random draw"
+}

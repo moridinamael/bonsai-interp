@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-34ca072f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N7336-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:50:52+00:00",
+ "recipe": {
+  "toolchain_commit": "1c077dc2c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N7336_neg/2026-11-20-lm1909-34ca072f.tests.json"
+ },
+ "label": "the subword 'vid' split off inside a word ('A|vid', 'O|vid', 'Vid|ya')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N7336_neg/2026-11-20-lm1909-34ca072f.tests.json",
+   "prereg_commit": "1c077dc2c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.854,
+     "peak": "vid"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.482,
+     "peak": "vid"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.846,
+     "peak": "vid"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.457,
+     "peak": "vid"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.545,
+     "peak": " Vid"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.783,
+     "peak": "vid"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.537,
+     "peak": " Vid"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.396,
+     "peak": "vid"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " cut"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " translated"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " learned"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " praised"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " dawn"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " caught"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": "ours"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " still"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.541,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1c077dc2c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "subword 'vid'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: top peaks ' Vid', 'vid', ' vid', 'VID' (Avid, Vidyalankara). The tokenizer splits ' Avid' as ' A'+'vid', ' Ovid' as ' O'+'vid', ' Vidya' as ' Vid'+'ya'. Near misses use similar proper names without the piece.",
+ "selection": "random draw"
+}

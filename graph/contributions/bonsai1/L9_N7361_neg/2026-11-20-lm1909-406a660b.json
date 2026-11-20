@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-406a660b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N7361-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:50:32+00:00",
+ "recipe": {
+  "toolchain_commit": "1c077dc2c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N7361_neg/2026-11-20-lm1909-406a660b.tests.json"
+ },
+ "label": "tokens continuing a university's name (' at' in 'University of X at Y', ' Rankings', ' Central')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N7361_neg/2026-11-20-lm1909-406a660b.tests.json",
+   "prereg_commit": "1c077dc2c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.396,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.409,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.203,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.459,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.15,
+     "peak": " school"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.271,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.302,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.424,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " announced"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.035,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " farmers"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " Florida"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": "oa"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.057,
+     "peak": " economist"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.349,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1c077dc2c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "university-name continuation",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card top examples: 'University of North Carolina at Chapel Hill', 'Temple University Rankings', 'University of Central Florida', UNH, GMU. Probe: ' at' in a University-of-X-at-Y name 0.43, ' Rankings' 0.46, ' at' after a non-university place 0.01. Near misses keep the place names but drop the university.",
+ "selection": "random draw"
+}
