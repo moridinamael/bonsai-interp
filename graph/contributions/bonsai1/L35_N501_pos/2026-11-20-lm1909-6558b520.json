@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-6558b520",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N501+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:24:05+00:00",
+ "recipe": {
+  "toolchain_commit": "05204659d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N501_pos/2026-11-20-lm1909-6558b520.tests.json"
+ },
+ "label": "a split-off word-initial ' f' in Spanish or French words (las f|uentes, de f|umée, las f|avelas)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N501_pos/2026-11-20-lm1909-6558b520.tests.json",
+   "prereg_commit": "05204659d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.766,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.796,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.763,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.727,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.689,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.92,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.514,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.651,
+     "peak": " f"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.065,
+     "peak": " nu"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.381,
+     "peak": " f"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " com"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " dou"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": "icia"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.092,
+     "peak": " nu"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.046,
+     "peak": " co"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.745,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "05204659d",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split initial ' f'",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Tokenizer checked: ' las fuentes' -> ' las',' f','uentes'; ' fumée' -> ' f','um','ée'.",
+ "selection": "random draw"
+}
