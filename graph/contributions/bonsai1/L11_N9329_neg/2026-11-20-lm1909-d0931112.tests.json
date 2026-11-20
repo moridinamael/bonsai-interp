@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-20-lm1909-d0931112",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N9329-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:38:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N9329",
+   "pole": "-",
+   "label": "key/id identifier pieces in code ('KEY', '_KEYS', '_key', '_id')",
+   "fire": [
+    "import winreg\n\nkey = winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'Software\\\\Demo')\nvalue = winreg.QueryValueEx(key, 'Path')",
+    "REG_TYPE = 'SYSTEM'\nREG_KEYS = [\n    u'\\\\ControlSet001\\\\Services',\n]",
+    "class Distro:\n    def get_registry_key(self):\n        return self.registry_key",
+    "registry.delete_key(\n    'HKEY_LOCAL_MACHINE',\n    self.info.registry_key)",
+    "class Table:\n    def find_primary_key(self, table):\n        return table.primary_key",
+    "SECRET_KEY = os.environ['SECRET_KEY']\nAPI_KEY = config.get('api_key')",
+    "user_id = request.args.get('user_id')\nsession_key = make_key(user_id)",
+    "for row in rows:\n    order_id = row['order_id']\n    cache_key = f'order:{order_id}'"
+   ],
+   "quiet": [
+    "import winreg\n\npath = winreg.ExpandEnvironmentStrings('%TEMP%')\nprint(path)",
+    "REG_TYPE = 'SYSTEM'\nREG_NAMES = [\n    u'\\\\ControlSet001\\\\Services',\n]",
+    "class Distro:\n    def get_registry_path(self):\n        return self.registry_path",
+    "registry.delete_value(\n    'LOCAL_MACHINE',\n    self.info.registry_name)",
+    "class Table:\n    def find_primary_column(self, table):\n        return table.primary_column",
+    "SECRET_NAME = os.environ['SECRET_NAME']\nAPI_URL = config.get('api_url')",
+    "user_name = request.args.get('user_name')\nsession_data = make_data(user_name)",
+    "for row in rows:\n    order_total = row['order_total']\n    cache_label = f'order:{order_total}'"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'_key'/'_id' in code",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Top 32: '_id' x4, 'KEY'/'_KEYS'/'_key' x5 in Windows-registry code; also ' sequences', ' plates' (prose). Very sparse pole (0.05% > 0.1 max); multi-line code fire items.",
+ "trigger": {
+  "words": [
+   "key",
+   "keys",
+   "id"
+  ]
+ }
+}
