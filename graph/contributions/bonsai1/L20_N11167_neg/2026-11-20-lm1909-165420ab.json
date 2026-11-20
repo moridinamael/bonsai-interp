@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-165420ab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N11167-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:52:09+00:00",
+ "recipe": {
+  "toolchain_commit": "f7d52ed9f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N11167_neg/2026-11-20-lm1909-165420ab.tests.json"
+ },
+ "label": "dense: best guess a mid-word piece of a rare name or compound split by the tokenizer",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N11167_neg/2026-11-20-lm1909-165420ab.tests.json",
+   "prereg_commit": "f7d52ed9f",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.674,
+     "peak": " Glad"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.623,
+     "peak": " Soap"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.18,
+     "peak": "pw"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.142,
+     "peak": " Krist"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.247,
+     "peak": " sockets"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.437,
+     "peak": "d"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.572,
+     "peak": "便"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.184,
+     "peak": "av"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.105,
+     "peak": " published"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.155,
+     "peak": " resort"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.083,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.083,
+     "peak": " studied"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.121,
+     "peak": " plates"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.141,
+     "peak": " mosque"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.174,
+     "peak": "老师"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": "elfast"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.342,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f7d52ed9f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare-name word pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags broad (6.7% of tokens > 0.1 max). Top examples are scattered mid-word pieces (Glad|stone, soap|land, 便|签, Craig) in English, Chinese and Arabic. Recorded as dense; likely to fail.",
+ "selection": "random draw"
+}
