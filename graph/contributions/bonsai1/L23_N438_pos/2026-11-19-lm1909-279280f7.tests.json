@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-279280f7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N438+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:52:48+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N438",
+   "pole": "+",
+   "label": "a backslash escape fused with the preceding space or quote (' \\', \" '\\\") inside a string literal, right after prose text or a dict key (… execution. \\n', 'NoBreak;': '\\u2060')",
+   "fire": [
+    "        errors = {\n            'DISK_FULL': 'There is no space left on '\n                         'the target device. \\n',\n            'NO_ROUTE': 'The remote host could '\n                        'not be reached. \\n',\n        }",
+    "    label.setText(translate(\"About\", \"This tool mirrors your photo library to an external drive. \\n\"\n\"\\n\"\n\"It is free software.\"))",
+    "    names = {'eacute;': '\\u00e9', 'ntilde;': '\\u00f1', 'uuml;': '\\u00fc',\n             'szlig;': '\\u00df', 'oslash;': '\\u00f8'}",
+    "        dialog(\"Your copy of make is dated \" + str(year) +\n               \". \\nThis script needs a newer release.\")",
+    "    STATUS = {\n        'READY': 'All workers have started and are waiting. \\n',\n        'HALT': 'The queue was stopped by the operator. \\n',\n    }",
+    "    table = {'copy;': '\\xa9', 'reg;': '\\xae', 'deg;': '\\xb0',\n             'para;': '\\xb6', 'middot;': '\\xb7'}",
+    "    box.setText(translate(\"Help\", \"Press the button to start a full scan of the disk. \\n\"\n\"\\n\"\n\"This may take a while.\"))",
+    "        notes = {\n            'SKIPPED': 'The file was already present in '\n                       'the archive folder. \\n',\n        }"
+   ],
+   "quiet": [
+    "        errors = {\n            'DISK_FULL': 'There is no space left on '\n                         'the target device.',\n            'NO_ROUTE': 'The remote host could '\n                        'not be reached.',\n        }",
+    "    label.setText(translate(\"About\", \"This tool mirrors your photo library to an external drive.\"))",
+    "    names = {'eacute;': 'e', 'ntilde;': 'n', 'uuml;': 'u',\n             'szlig;': 'ss', 'oslash;': 'o'}",
+    "        dialog(\"Your copy of make is dated \" + str(year) +\n               \". This script needs a newer release.\")",
+    "    STATUS = {\n        'READY': 'All workers have started and are waiting.',\n        'HALT': 'The queue was stopped by the operator.',\n    }",
+    "    table = {'copy;': 169, 'reg;': 174, 'deg;': 176,\n             'para;': 182, 'middot;': 183}",
+    "    box.setText(translate(\"Help\", \"Press the button to start a full scan of the disk.\"))",
+    "        notes = {\n            'SKIPPED': 'The file was already present in '\n                       'the archive folder.',\n        }"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "fused backslash escape",
+ "unit_kind": "sparse feature",
+ "confidence": 0.1,
+ "notes": "Expected to fail. The pole is extremely sparse (90 corpus tokens reach 0.1 of max, 6 reach 0.3) and 11 probes written to this description all scored under 0.06. The label describes the top examples; I could not reproduce them. The - pole is also a backslash token (bare '\\', ';\\', '}\\'), so the unit as a whole reads backslashes; what separates the poles is not established."
+}

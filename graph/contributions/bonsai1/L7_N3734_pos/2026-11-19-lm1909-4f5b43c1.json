@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4f5b43c1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N3734+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:34+00:00",
+ "recipe": {
+  "toolchain_commit": "c13d96072",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N3734_pos/2026-11-19-lm1909-4f5b43c1.tests.json"
+ },
+ "label": "the '7' that completes '10.1007' (the Springer DOI prefix); also 'Cat' in 'WorldCat'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N3734_pos/2026-11-19-lm1909-4f5b43c1.tests.json",
+   "prereg_commit": "c13d96072",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.816,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.803,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.829,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.801,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.764,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.816,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.869,
+     "peak": "Cat"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.752,
+     "peak": "Cat"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.14,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.199,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.109,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.223,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.039,
+     "peak": ".org"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.514,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " pamph"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": "2"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.809,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c13d96072",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'7' in DOI 10.1007",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Early layer, token-in-context. In probes '10.1007' outside a DOI also fired (0.53), so the trigger is the digit string, not the DOI as such. WorldCat 'Cat' is a second, unrelated trigger (6 of the top 32).",
+ "selection": "random draw"
+}
