@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ebf3fcc1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N11857+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:27:14+00:00",
+ "recipe": {
+  "toolchain_commit": "3fa8dd4a5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N11857_pos/2026-11-20-lm1909-ebf3fcc1.tests.json"
+ },
+ "label": "a temporal clause that opens a sentence (When / After / Once + its subject), as opposed to 'when' mid-sentence on the - pole",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N11857_pos/2026-11-20-lm1909-ebf3fcc1.tests.json",
+   "prereg_commit": "3fa8dd4a5",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.251,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.249,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.091,
+     "peak": " rushed"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.161,
+     "peak": " he"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.048,
+     "peak": "heat"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.511,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.057,
+     "peak": " update"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.382,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.08,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.046,
+     "peak": " get"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " everyone"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": " but"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.03,
+     "peak": "heat"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.056,
+     "peak": "Save"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.116,
+     "peak": " down"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.205,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3fa8dd4a5",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sentence-opening when-clause",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: + peaks on 'When', ' After', 'Once he had', ' the' right after a sentence-initial temporal conjunction; the - pole peaks on ' when' x11 in the middle of a sentence. Probe: opening When/After 0.24-0.35, mid-sentence when 0.03. Near misses put the same clause after the main clause.",
+ "selection": "random draw"
+}
