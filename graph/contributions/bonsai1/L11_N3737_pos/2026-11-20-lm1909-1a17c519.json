@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-1a17c519",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N3737+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:35:06+00:00",
+ "recipe": {
+  "toolchain_commit": "7ec913dc7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N3737_pos/2026-11-20-lm1909-1a17c519.tests.json"
+ },
+ "label": "a token where garbled, machine-spun text breaks grammar (a word dropped or doubled mid-phrase)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N3737_pos/2026-11-20-lm1909-1a17c519.tests.json",
+   "prereg_commit": "7ec913dc7",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.024,
+     "peak": " list"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.145,
+     "peak": " servers"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.034,
+     "peak": " employees"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.738,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.064,
+     "peak": " must"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.105,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.132,
+     "peak": " were"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.24,
+     "peak": " ,"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " board"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " employees"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": " then"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": " General"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.914,
+    "median_fire": 0.118,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7ec913dc7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "broken grammar in spun text",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card and look: top examples are ' a', ' you', '.', ' ,', ' blood' at points where spun or OCR text drops or repeats a word ('Agency a schedule', 'blood blood pressure', 'by General , Johnston'). Probe of three short garbled snippets scored under 0.07, so this likely needs longer garbled context; low-confidence test written as longer spun-text passages.",
+ "selection": "random draw"
+}
