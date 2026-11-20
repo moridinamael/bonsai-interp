@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-71785694",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N5309+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:23:25+00:00",
+ "recipe": {
+  "toolchain_commit": "ac23b5942",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N5309_pos/2026-11-20-lm1909-71785694.tests.json"
+ },
+ "label": "The word completing a split/divide action (apart, into, parts): dividing something into pieces, as opposed to joining",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N5309_pos/2026-11-20-lm1909-71785694.tests.json",
+   "prereg_commit": "ac23b5942",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.29,
+     "peak": " into"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.093,
+     "peak": "Cut"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.091,
+     "peak": " parts"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.088,
+     "peak": " fields"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.638,
+     "peak": " several"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.454,
+     "peak": " pieces"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.535,
+     "peak": " two"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.118,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.098,
+     "peak": " groups"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " together"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.051,
+     "peak": " merges"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.038,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.042,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.062,
+     "peak": " pour"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.204,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ac23b5942",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "completion of splitting",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: 'split your payment apart', s.split(\"-\"), 'divided itself into', 'divided into four parts that', 'Split %s into %i parts'; the output suppresses separate/separation. Near misses are the joining side.",
+ "selection": "random draw"
+}

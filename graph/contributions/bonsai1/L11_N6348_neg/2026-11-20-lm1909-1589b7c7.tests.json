@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-1589b7c7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N6348-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:09:48+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N6348",
+   "pole": "-",
+   "label": "The module name in a Python import statement (import numpy, from x import ...)",
+   "fire": [
+    "import os\nimport sys\nimport numpy as np\n\ndef main():\n    pass\n",
+    "from __future__ import annotations\n\nimport json\nimport requests\nfrom flask import Flask\n",
+    "#!/usr/bin/env python\nimport argparse\nimport pandas as pd\nimport scipy.stats as st\n",
+    "import logging\nfrom datetime import datetime\nfrom myapp.core import utils_api\n",
+    "\"\"\"Helpers for tests.\"\"\"\n\nimport unittest\nimport tempfile\nimport shutil\n",
+    "import re\nimport collections\nfrom pathlib import Path\nimport yaml\n",
+    "import torch\nimport torch.nn as nn\nfrom torchvision import datasets\n",
+    "import socket\nimport threading\nfrom queue import Queue\nimport struct\n"
+   ],
+   "quiet": [
+    "def main():\n    x = np.zeros(10)\n    print(x.sum())\n    return x\n",
+    "app = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return 'ok'\n",
+    "parser = argparse.ArgumentParser()\nparser.add_argument('--n', type=int)\nargs = parser.parse_args()\n",
+    "log = logging.getLogger(__name__)\nnow = datetime.now()\nlog.info('started %s', now)\n",
+    "class TestThing(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(1 + 1, 2)\n",
+    "pattern = re.compile(r'\\d+')\ncounts = collections.Counter()\nfor m in pattern.findall(text):\n    counts[m] += 1\n",
+    "model = nn.Linear(10, 2)\nout = model(torch.randn(4, 10))\nprint(out.shape)\n",
+    "sock = socket.socket()\nsock.connect(('localhost', 8080))\nsock.sendall(b'hi')\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python import module name",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: every top example is a module-name token right after 'import' at the top of a Python file; near misses use the same modules in code bodies. The + pole is 'import *'."
+}
