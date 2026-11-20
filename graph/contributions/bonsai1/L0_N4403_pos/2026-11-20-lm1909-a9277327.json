@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a9277327",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N4403+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:51:19+00:00",
+ "recipe": {
+  "toolchain_commit": "c12cb5cc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N4403_pos/2026-11-20-lm1909-a9277327.tests.json"
+ },
+ "label": "the word pieces 'ara', 'ole', 'олод' inside transliterated place names and Russian words (Met|ah|ara, Nagar|ah|ole, х|олод)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N4403_pos/2026-11-20-lm1909-a9277327.tests.json",
+   "prereg_commit": "c12cb5cc4",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.137,
+     "peak": "ara"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.015,
+     "peak": "adel"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.019,
+     "peak": " window"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.017,
+     "peak": " very"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.179,
+     "peak": "л"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.028,
+     "peak": " было"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.017,
+     "peak": " g"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.631,
+     "peak": "ол"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " hours"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "adel"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.048,
+     "peak": "ica"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " Nairobi"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.176,
+     "peak": "л"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " было"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " g"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.075,
+     "peak": "ры"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.531,
+    "median_fire": 0.024,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12cb5cc4",
+  "minutes": 18,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'ara' / 'ole' / 'олод' pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Layer 0. Card: 'ara' x4, 'ull' x3, 'ол', 'ole', 'олод' pieces. Probe: Nagarahole 0.94, Metahara 0.89, Холодная 0.94; 'Sahara' (no 'ara' piece) 0.02. Tokenization checked: Gu|adal|aj|ara, An|k|ara, Tam|ara, As|m|ara, G|ond|ole, х|олод|ный. Near misses use names and words without those pieces.",
+ "selection": "random draw"
+}
