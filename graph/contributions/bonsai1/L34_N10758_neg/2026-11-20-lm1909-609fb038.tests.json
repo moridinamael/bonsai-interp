@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-609fb038",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10758-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:26:54+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N10758",
+   "pole": "-",
+   "label": "function words and punctuation inside Arabic and Japanese text (the demonstrative هذا, the Japanese comma 、)",
+   "fire": [
+    "قال المعلم إن هذا الدرس مهم جدا للطلاب.",
+    "لقد زرت المدينة في هذا العام مع عائلتي.",
+    "أعتقد أن هذا المشروع سيساعد الناس في القرية.",
+    "قرأت المقال كله ولم أفهم هذا الجزء منه.",
+    "この本は図書館で借りたもので、とても面白かった。",
+    "駅の近くに新しい店ができて、毎日混んでいる。",
+    "会議の資料、写真、地図をメールで送りました。",
+    "雨が降っていたので、私たちは家で映画を見た。"
+   ],
+   "quiet": [
+    "The teacher said that this lesson is very important for the students.",
+    "I visited the city this year with my family.",
+    "I think this project will help the people in the village.",
+    "I read the whole article but did not understand this part of it.",
+    "I borrowed this book from the library and it was very interesting.",
+    "A new shop opened near the station and it is crowded every day.",
+    "I sent the meeting documents, photos and map by email.",
+    "Because it was raining, we watched a movie at home."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Arabic/Japanese function tokens",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top 32 are function tokens in Arabic (هذا x3, في, ب), Japanese/Chinese (末, 、), a '#' before a Chinese comment and a Russian '!'. Probe: Arabic هذا 0.56 and 0.28, Japanese 、 0.46, 注 0.27, Chinese comment 0.17, Russian 0.03, English translations 0.01-0.08. Near misses are English versions of the same content."
+}
