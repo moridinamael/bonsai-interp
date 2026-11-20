@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ef48ecaf",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N4714-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:59:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N4714",
+   "pole": "-",
+   "label": "the word ' separator' / 'sep' naming a field delimiter in code",
+   "fire": [
+    "    delim = ','  # field separator\n    rows = line.split(delim)\n",
+    "def write_rows(rows, out, separator='\\t'):\n    for r in rows:\n        out.write(separator.join(r))\n",
+    "import pandas as pd\n\ndf = pd.read_csv(path, sep=';')\n",
+    "    # use a pipe as the record separator\n    record_sep = '|'\n",
+    "    parts = text.split(os.sep)\n    name = parts[-1]\n",
+    "print(*values, sep=', ')\n",
+    "    if fmt == 'tsv':\n        sep = '\\t'\n    else:\n        sep = ','\n",
+    "PATH_SEPARATOR = ':'\nentries = env_path.split(PATH_SEPARATOR)\n"
+   ],
+   "quiet": [
+    "    width = 12  # field width\n    rows = line.split()\n",
+    "def write_rows(rows, out, encoding='utf-8'):\n    for r in rows:\n        out.write(str(r))\n",
+    "import pandas as pd\n\ndf = pd.read_csv(path, header=None)\n",
+    "    # use a pipe as the record marker\n    record_end = '|'\n",
+    "    parts = text.split('/')\n    name = parts[-1]\n",
+    "print(*values, end='')\n",
+    "    if fmt == 'tsv':\n        ext = 'tsv'\n    else:\n        ext = 'csv'\n",
+    "PATH_PREFIX = '/usr'\nentries = env_path.split()\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "separator / sep in code",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Probe: '# column separator' 0.75; '1 in 27', '/', 'probabilities' all under 0.13 in prose despite the card. Card examples are mixed (ratios, probabilities, separators); this tests only the separator strand."
+}

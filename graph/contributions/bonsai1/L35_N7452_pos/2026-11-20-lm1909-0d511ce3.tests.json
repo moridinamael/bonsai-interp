@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-0d511ce3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7452+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:59:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7452",
+   "pole": "+",
+   "label": "the base-class piece '(models' / '(db' in Python ORM model class definitions (class X(models.Model), class Y(db.Model))",
+   "fire": [
+    "from django.db import models\n\n\nclass Author(models.Model):\n    name = models.CharField(max_length=100)\n",
+    "from django.db import models\n\nclass Ticket(models.Model):\n    title = models.CharField(max_length=200)\n    opened = models.DateTimeField()\n",
+    "    def __str__(self):\n        return self.title\n\n\nclass Comment(models.Model):\n    body = models.TextField()\n",
+    "class Recipe(models.Model):\n    \"\"\"A cooking recipe.\"\"\"\n    name = models.CharField(max_length=80)\n",
+    "db = SQLAlchemy(app)\n\n\nclass Order(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n",
+    "from app import db\n\nclass Station(db.Model):\n    code = db.Column(db.String(10))\n",
+    "class Vehicle(models.Model):\n    plate = models.CharField(max_length=12)\n    owner = models.ForeignKey(User, on_delete=models.CASCADE)\n",
+    "        return self.label\n\n\nclass Tag(models.Model):\n    label = models.SlugField()\n"
+   ],
+   "quiet": [
+    "import json\n\n\nclass Author(object):\n    def __init__(self, name):\n        self.name = name\n",
+    "class TicketError(Exception):\n    \"\"\"Raised when a ticket is invalid.\"\"\"\n    pass\n",
+    "    def __str__(self):\n        return self.title\n\n\nclass CommentParser:\n    def parse(self, body):\n        return body.strip()\n",
+    "import unittest\n\nclass RecipeTest(unittest.TestCase):\n    def test_name(self):\n        self.assertEqual(1, 1)\n",
+    "app = Flask(__name__)\n\n\n@app.route('/orders')\ndef list_orders():\n    return jsonify(orders)\n",
+    "from app import utils\n\ndef station_code(name):\n    return utils.slugify(name)[:10]\n",
+    "class Vehicle:\n    def __init__(self, plate, owner):\n        self.plate = plate\n        self.owner = owner\n",
+    "        return self.label\n\n\ndef make_tag(label):\n    return Tag(label=label.lower())\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "ORM model base class",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: Django class 0.38, db.Model 0.16, plain class 0.09. Near misses are class/def blocks with non-ORM bases."
+}
