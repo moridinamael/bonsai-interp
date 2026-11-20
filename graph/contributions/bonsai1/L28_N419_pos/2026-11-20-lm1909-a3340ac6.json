@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-a3340ac6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N419+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:15:44+00:00",
+ "recipe": {
+  "toolchain_commit": "bfbc44f2a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N419_pos/2026-11-20-lm1909-a3340ac6.tests.json"
+ },
+ "label": "a Python set expression about to take a set operation (set(x).difference / .union / .issubset, set - set)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N419_pos/2026-11-20-lm1909-a3340ac6.tests.json",
+   "prereg_commit": "bfbc44f2a",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.604,
+     "peak": ")."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.624,
+     "peak": "_tags"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.88,
+     "peak": ")."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.486,
+     "peak": ")."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.624,
+     "peak": ")"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.492,
+     "peak": ".d"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.812,
+     "peak": ")."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.516,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.471,
+     "peak": " added"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.223,
+     "peak": "_tags"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.092,
+     "peak": "(required"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.178,
+     "peak": " list"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.156,
+     "peak": "(expected"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.059,
+     "peak": " remaining"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.082,
+     "peak": ".columns"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.338,
+     "peak": ")"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.614,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bfbc44f2a",
+  "minutes": 45,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python set operation",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "card: peaks on ')' / ').' / '.d' right before difference/union/issubset after set(...); output promotes ' union', ' intersection', '∪'. Near misses keep similar code with lists.",
+ "selection": "random draw"
+}

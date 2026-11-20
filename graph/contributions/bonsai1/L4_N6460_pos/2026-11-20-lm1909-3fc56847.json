@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-3fc56847",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N6460+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:16:06+00:00",
+ "recipe": {
+  "toolchain_commit": "bfbc44f2a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N6460_pos/2026-11-20-lm1909-3fc56847.tests.json"
+ },
+ "label": "Arabic word continuation right after a split-off 'ع' or 'لل' (ع|قول, ع|ائق, لل|عمال, ع|صاب)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N6460_pos/2026-11-20-lm1909-3fc56847.tests.json",
+   "prereg_commit": "bfbc44f2a",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.525,
+     "peak": "عمال"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.245,
+     "peak": "قول"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.442,
+     "peak": "ائق"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.219,
+     "peak": "صاب"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.633,
+     "peak": "عمال"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.047,
+     "peak": " طويل"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.395,
+     "peak": "ائق"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.193,
+     "peak": "قول"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.098,
+     "peak": "ان"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": "ح"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.06,
+     "peak": "ثم"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.08,
+     "peak": "ام"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": "ال"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.069,
+     "peak": "كي"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.067,
+     "peak": " ت"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.062,
+     "peak": "ي"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.32,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bfbc44f2a",
+  "minutes": 45,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic piece after ع",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "card: 'صاب', 'عمال', 'قول', 'ائق' (the negative pole is the split-off 'ع' itself). Probe: 0.34-0.77 on these words, 0.04 on plain Arabic. Tokenization checked: عقول -> ع|قول, عائقا -> ع|ائق|ا, للعمال -> لل|عمال, الأعصاب -> الأ|ع|صاب.",
+ "selection": "random draw"
+}
