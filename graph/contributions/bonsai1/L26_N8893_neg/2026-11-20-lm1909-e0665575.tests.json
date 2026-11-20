@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-e0665575",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N8893-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:28:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N8893",
+   "pole": "-",
+   "label": "C/C++ type name in a position where a pointer or reference (*, &) follows",
+   "fire": [
+    "#include <stdio.h>\nint copy_name(const char* src, char* dst);",
+    "void process(const std::string& name, int count);",
+    "buffer = (BYTE*) malloc(size);\nmemset(buffer, 0, size);",
+    "static void handler(void *arg)\n{\n    free(arg);\n}",
+    "const value_type& front() const\n{\n    return data[0];\n}",
+    "int parse(double* out, const char* text);",
+    "std::vector<int>& get_items()\n{\n    return items;\n}",
+    "float *weights = (float*) calloc(n, sizeof(float));"
+   ],
+   "quiet": [
+    "#include <stdio.h>\nint copy_count = 0;\nint max_len = 64;",
+    "name = process(count)\nprint(name, count)",
+    "buffer_size = 1024\nprint('allocated', buffer_size)",
+    "static int counter = 0;\nint main(void) { return counter; }",
+    "def front(self):\n    return self.data[0]",
+    "result = parse(text)\nprint(result)",
+    "items = get_items()\nfor item in items: print(item)",
+    "weights = [0.0] * n\nprint(len(weights))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "C type before */&",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Output direction of this pole promotes '*' and '&'."
+}

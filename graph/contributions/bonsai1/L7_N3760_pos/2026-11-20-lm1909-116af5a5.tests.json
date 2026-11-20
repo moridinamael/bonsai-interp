@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-116af5a5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N3760+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:28:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N3760",
+   "pole": "+",
+   "label": "first token of a Python while/if condition (while len(, if 'key' in)",
+   "fire": [
+    "def read_all(sock, n):\n    buf = b''\n    while len(buf) < n:\n        buf += sock.recv(n)",
+    "def check(opts):\n    if 'verbose' in opts:\n        print('verbose on')",
+    "def wait(queue):\n    while len(queue) > 0:\n        queue.pop()",
+    "def load(cfg):\n    if \"path\" in cfg:\n        return open(cfg['path'])",
+    "def pump(f):\n    while 1:\n        data = f.read(1024)\n        if not data: break",
+    "def validate(kwargs):\n    if 'id' in kwargs:\n        return kwargs['id']",
+    "def drain(items):\n    while len(items) > 10:\n        items.pop(0)",
+    "def get_mode(env):\n    if \"mode\" in env:\n        return env['mode']"
+   ],
+   "quiet": [
+    "def read_all(sock, n):\n    buf = b''\n    size = len(buf)\n    return size",
+    "def check(opts):\n    name = 'verbose'\n    print(name, opts)",
+    "def wait(queue):\n    count = len(queue)\n    queue.pop()",
+    "def load(cfg):\n    key = \"path\"\n    return open(cfg[key])",
+    "def pump(f):\n    data = f.read(1024)\n    return data",
+    "def validate(kwargs):\n    key = 'id'\n    return kwargs[key]",
+    "def drain(items):\n    total = len(items)\n    items.pop(0)",
+    "def get_mode(env):\n    name = \"mode\"\n    return env[name]"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "start of while/if condition",
+ "unit_kind": "contextual",
+ "confidence": 0.45
+}
