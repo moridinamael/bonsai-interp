@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-6e65e772",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2524+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:00:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N2524",
+   "pole": "+",
+   "label": "a word-initial letter split off as its own token, mostly ' f'/' F' (f|altar, f|ango, F|afnir), in Spanish words and names",
+   "fire": [
+    "En la reunión de mañana no puede faltar ningún socio.",
+    "Su abuelo llegó a fallecer en el mismo hospital donde nació.",
+    "Los niños volvieron a casa cubiertos de fango hasta las rodillas.",
+    "Para la sopa necesitas un paquete de fideos y dos zanahorias.",
+    "In the old saga, the dragon Fafnir guarded a hoard of gold.",
+    "Years later, the elves followed Fëanor across the sea to Middle-earth.",
+    "Todavía faltan tres semanas para que empiecen las vacaciones.",
+    "Her cousin Fergal ran the pub in the village for years."
+   ],
+   "quiet": [
+    "En la reunión de mañana no puede estar ausente ningún socio.",
+    "Su abuelo llegó a morir en el mismo hospital donde nació.",
+    "Los niños volvieron a casa cubiertos de barro hasta las rodillas.",
+    "Para la sopa necesitas un paquete de arroz y dos zanahorias.",
+    "In the old saga, the dragon guarded a hoard of gold under the hill.",
+    "Years later, the elves followed their king across the sea to Middle-earth.",
+    "Todavía quedan tres semanas para que empiecen las vacaciones.",
+    "Her cousin Michael ran the pub in the village for years."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off initial ' f'",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card peaks ' f' x8, ' F' x6, ' D' x5, ' d' x3. Probe: 'f|altar' 0.45, ' d|udosa' 0.33, 'F|ifi' 0.18. Every fire item was tokenized to contain a ' f' or ' F' piece; near misses swap the word for one that does not split. The − pole also takes split ' D'/' د' pieces."
+}

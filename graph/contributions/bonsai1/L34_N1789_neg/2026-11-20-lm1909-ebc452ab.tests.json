@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ebc452ab",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1789-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:00:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N1789",
+   "pole": "-",
+   "label": "word-initial ' п' split off as its own token in Russian (п|анель, п|ойдет, п|исьмо)",
+   "fire": [
+    "Откройте меню и нажмите на панель задач внизу экрана.",
+    "После перезагрузки пойдет установка обновлений.",
+    "Отправьте письмо на адрес службы поддержки.",
+    "Скачайте пакет драйверов с официального сайта.",
+    "Солдаты попали в плен в первый же день боя.",
+    "Для этой работы нужна острая пила и молоток.",
+    "Раздел Помощь находится в правом углу окна.",
+    "Через минуту пойдет загрузка файла на сервер."
+   ],
+   "quiet": [
+    "Откройте меню и нажмите на кнопку внизу экрана.",
+    "После перезагрузки начнется установка обновлений.",
+    "Отправьте сообщение на адрес службы поддержки.",
+    "Скачайте набор драйверов с официального сайта.",
+    "Солдаты оказались окружены в первый же день боя.",
+    "Для этой работы нужен острый нож и молоток.",
+    "Раздел Справка находится в правом углу окна.",
+    "Через минуту начнется загрузка файла на сервер."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off Russian ' п'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Top examples peak on ' п'/'П' pieces in Russian software instructions. Every fire item was checked to contain a ' п' or ' П' piece; near misses swap the word for one that does not split that way. The + pole also peaks on ' p'/' п' pieces, so the split letter alone does not separate the poles."
+}
