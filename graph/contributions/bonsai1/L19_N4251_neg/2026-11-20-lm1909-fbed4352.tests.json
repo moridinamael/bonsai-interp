@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-fbed4352",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N4251-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:56:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N4251",
+   "pole": "-",
+   "label": "the comparison after a modulo in code ('% n == 0', '% m <')",
+   "fire": [
+    "for i in range(100):\n    if i % 3 == 0:\n        print(i)",
+    "for (int k = 0; k < n; k++) {\n    if (k % width == 0) {\n        newline();\n    }\n}",
+    "while True:\n    count += 1\n    if count % 50 == 0:\n        save()",
+    "def is_even(x):\n    return x % 2 == 0",
+    "for row in range(rows):\n    if row % columns == 0:\n        x = 0",
+    "if int(time.time()) % period < 30:\n    refresh()",
+    "for step in range(epochs):\n    train()\n    if step % log_every == 0:\n        log(step)",
+    "years = [y for y in range(1900, 2000) if y % 4 == 0]"
+   ],
+   "quiet": [
+    "for i in range(100):\n    if i > 3:\n        print(i)",
+    "for (int k = 0; k < n; k++) {\n    if (k == width) {\n        newline();\n    }\n}",
+    "while True:\n    count += 1\n    if count > 50:\n        save()",
+    "def is_positive(x):\n    return x > 0",
+    "for row in range(rows):\n    if row == columns:\n        x = 0",
+    "if int(time.time()) - start < 30:\n    refresh()",
+    "for step in range(epochs):\n    train()\n    if step == last:\n        log(step)",
+    "years = [y for y in range(1900, 2000) if y > 1950]"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "modulo comparison in code",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card mixed: indentation and '0' after '% m =='. Tested the modulo context."
+}
