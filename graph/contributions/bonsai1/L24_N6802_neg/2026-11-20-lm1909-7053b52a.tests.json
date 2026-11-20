@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-7053b52a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N6802-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:50:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N6802",
+   "pole": "-",
+   "label": "the single-dash short option token ' -' / '-' of a command-line flag (ls -la, sed -i, '-v'), as opposed to long '--' options (the + pole)",
+   "fire": [
+    "To see hidden files, open a terminal and run:\n\n    ls -la /var/log\n",
+    "result = subprocess.run(['grep', '-r', 'TODO', 'src/'], capture_output=True)",
+    "Unpack the release first:\n\n    tar -xzf release.tar.gz -C /opt/app\n",
+    "parser = argparse.ArgumentParser()\nparser.add_argument('--verbose', '-v', action='store_true')",
+    "Save your work with a short message:\n\n    git commit -m 'fix typo in readme'\n",
+    "Connect to the staging box on its custom port:\n\n    ssh -p 2222 deploy@staging\n",
+    "if os.system(\"sed -i 's/debug=1/debug=0/' app.conf\") != 0:\n    raise RuntimeError('sed failed')",
+    "Back up the database before upgrading:\n\n    pg_dump -h localhost -U admin shop > shop.sql\n"
+   ],
+   "quiet": [
+    "To see hidden files, open a terminal and run:\n\n    ls --all /var/log\n",
+    "result = subprocess.run(['grep', '--recursive', 'TODO', 'src/'], capture_output=True)",
+    "Unpack the release first:\n\n    tar --extract --file release.tar.gz\n",
+    "parser = argparse.ArgumentParser()\nparser.add_argument('--verbose', action='store_true')",
+    "Save your work with a short message:\n\n    git commit --message 'fix typo in readme'\n",
+    "Connect to the staging box as the deploy user:\n\n    ssh deploy@staging\n",
+    "if os.system(\"sed --in-place 's/debug=1/debug=0/' app.conf\") != 0:\n    raise RuntimeError('sed failed')",
+    "Back up the database before upgrading:\n\n    pg_dump --host localhost --username admin shop > shop.sql\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "single-dash CLI flag",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "the - and + poles split short '-x' flags from long '--xxx' options; near misses use the long forms"
+}
