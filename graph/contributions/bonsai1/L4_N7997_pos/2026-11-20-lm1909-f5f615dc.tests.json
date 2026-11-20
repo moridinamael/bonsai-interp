@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-f5f615dc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N7997+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:02:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N7997",
+   "pole": "+",
+   "label": "words for absent, placeholder or repeated data (missing, dummy, duplicated) in code and code comments",
+   "fire": [
+    "# Fill missing entries with the column median\ndf = df.fillna(df.median())\n",
+    "if user is None:\n    raise KeyError('missing user id in request')\n",
+    "# Create dummy inputs to warm up the model\nx = torch.zeros(1, 3)\n",
+    "rows = rows.drop_duplicates()  # remove duplicated records\n",
+    "class MissingConfigError(Exception):\n    pass\n",
+    "def make_dummy_user():\n    return User(name='test')\n",
+    "# Note: Missing timestamps are skipped during import.\n",
+    "assert not df.index.duplicated().any(), 'index has repeats'\n"
+   ],
+   "quiet": [
+    "# Fill the table with the column median\ndf = df.round(2)\n",
+    "if user is None:\n    raise KeyError('unknown user id in request')\n",
+    "# Create random inputs to warm up the model\nx = torch.rand(1, 3)\n",
+    "rows = rows.sort_values('date')  # order the records\n",
+    "class InvalidConfigError(Exception):\n    pass\n",
+    "def make_admin_user():\n    return User(name='root')\n",
+    "# Note: Valid timestamps are stored during import.\n",
+    "assert df.index.is_monotonic_increasing, 'index is unsorted'\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "missing/dummy in code",
+ "unit_kind": "lexical",
+ "confidence": 0.55
+}
