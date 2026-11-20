@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-629569d8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N11075+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:07:54+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N11075",
+   "pole": "+",
+   "label": "the word 'service' as part of a code identifier (_get_service, SERVICE_UNAVAILABLE, service.serviceSchemas)",
+   "fire": [
+    "    api = _get_service(cluster.services(), 'api')",
+    "    if response.status == HTTPStatus.SERVICE_UNAVAILABLE:\n        retry()",
+    "    client = boto3.client('ecs')\n    services = client.list_services(cluster=name)",
+    "    for service in project.services():\n        print(service.name)",
+    "    account = load_service_account(path)\n    return account",
+    "    resp = requests.get(url)\n    service_id = resp.json()['service_id']",
+    "    self.service = ServiceClient(host, port)\n    self.timeout = 30",
+    "    registry.register_service('billing', handler)"
+   ],
+   "quiet": [
+    "    api = _get_project(cluster.projects(), 'api')",
+    "    if response.status == HTTPStatus.NOT_FOUND:\n        retry()",
+    "    client = boto3.client('ecs')\n    tasks = client.list_tasks(cluster=name)",
+    "    for item in project.items():\n        print(item.name)",
+    "    account = load_user_account(path)\n    return account",
+    "    resp = requests.get(url)\n    order_id = resp.json()['order_id']",
+    "    self.socket = SocketClient(host, port)\n    self.timeout = 30",
+    "    registry.register_handler('billing', handler)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "'service' in code",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "All top examples are 'service'/'services'/'_svc' tokens inside Python code identifiers."
+}

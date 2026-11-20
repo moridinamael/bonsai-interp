@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-5a60682b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N4765-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:16:16+00:00",
+ "recipe": {
+  "toolchain_commit": "9717a60f5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N4765_neg/2026-11-20-lm1909-5a60682b.tests.json"
+ },
+ "label": "dense / positional: weak broad activation, peaking on ' asyncio' and ' python' in code imports",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N4765_neg/2026-11-20-lm1909-5a60682b.tests.json",
+   "prereg_commit": "9717a60f5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.852,
+     "peak": " asyncio"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.796,
+     "peak": " asyncio"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.64,
+     "peak": " asyncio"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.36,
+     "peak": " python"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.821,
+     "peak": " asyncio"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.394,
+     "peak": " python"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.151,
+     "peak": "(u"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.439,
+     "peak": " python"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.557,
+     "peak": " json"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.073,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.16,
+     "peak": "(task"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.233,
+     "peak": " node"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.327,
+     "peak": "import"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.111,
+     "peak": " connection"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.182,
+     "peak": "u"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.425,
+     "peak": " root"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.539,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9717a60f5",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; asyncio peak",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense (17.9% of tokens >0.1 max) and the leak regime; max only 0.23. Test of best guess, expected to fail.",
+ "selection": "random draw"
+}

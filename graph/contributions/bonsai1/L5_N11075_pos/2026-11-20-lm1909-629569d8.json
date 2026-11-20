@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-629569d8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N11075+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:16:07+00:00",
+ "recipe": {
+  "toolchain_commit": "9717a60f5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N11075_pos/2026-11-20-lm1909-629569d8.tests.json"
+ },
+ "label": "the word 'service' as part of a code identifier (_get_service, SERVICE_UNAVAILABLE, service.serviceSchemas)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N11075_pos/2026-11-20-lm1909-629569d8.tests.json",
+   "prereg_commit": "9717a60f5",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.545,
+     "peak": "_service"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.501,
+     "peak": "ERVICE"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.57,
+     "peak": "_services"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.123,
+     "peak": ".services"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.381,
+     "peak": "_service"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.282,
+     "peak": " service"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.044,
+     "peak": " Service"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.334,
+     "peak": "_service"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.063,
+     "peak": " _"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.088,
+     "peak": "_FOUND"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": "ecs"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.058,
+     "peak": "(path"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.08,
+     "peak": "(url"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.038,
+     "peak": " Socket"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": "_handler"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.358,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9717a60f5",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'service' in code",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "All top examples are 'service'/'services'/'_svc' tokens inside Python code identifiers.",
+ "selection": "random draw"
+}

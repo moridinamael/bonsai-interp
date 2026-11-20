@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-d6357c5a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N1448-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:16:32+00:00",
+ "recipe": {
+  "toolchain_commit": "9717a60f5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N1448_neg/2026-11-20-lm1909-d6357c5a.tests.json"
+ },
+ "label": "the word-piece 'bridge' at the end of a compound place name (Bem|bridge, Wal|bridge)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N1448_neg/2026-11-20-lm1909-d6357c5a.tests.json",
+   "prereg_commit": "9717a60f5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.327,
+     "peak": "bridge"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.542,
+     "peak": "bridge"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.317,
+     "peak": "bridge"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.62,
+     "peak": "bridge"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.316,
+     "peak": "bridge"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.417,
+     "peak": "bridge"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.17,
+     "peak": "bridge"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.3,
+     "peak": "bridge"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.222,
+     "peak": "ey"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.182,
+     "peak": "ilt"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.07,
+     "peak": " away"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.042,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": "Tour"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.098,
+     "peak": " grandparents"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.322,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9717a60f5",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'bridge' in place names",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card flags broad (2.2%), weak max 0.26. 'bridge' is the commonest top token. Probe: Bembridge 0.77; 'Cambridge' (one token) and the standalone word 'bridge' stay low.",
+ "selection": "random draw"
+}
