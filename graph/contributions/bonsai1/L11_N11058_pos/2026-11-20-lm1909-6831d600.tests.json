@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-6831d600",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N11058+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:24:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N11058",
+   "pole": "+",
+   "label": "connective tokens inside code identifiers and error strings that describe a lookup or state rather than an action (get_new_, 'with ID', non-blocking); the - pole is destructive action verbs in code (remove, delete, power_off)",
+   "fire": [
+    "    raise NotFound(\n        'Instance with ID %s does not exist' % iid)",
+    "    def _get_new_session(self):\n        return self.factory()",
+    "    # open a non-blocking socket\n    sock.setblocking(False)",
+    "    def getNotSyncedItems(self):\n        return self._pending",
+    "    log.error('Volume with name %s was not found', name)",
+    "    conn = self._get_new_client(timeout=5)\n    return conn",
+    "    label = \"{} (default)\".format(option)\n    return label",
+    "    msg = 'Node with UUID {} is offline'.format(uuid)"
+   ],
+   "quiet": [
+    "    raise NotFound(\n        'Instance %s does not exist' % iid)",
+    "    def _open_session(self):\n        return self.factory()",
+    "    # open a socket\n    sock.connect(addr)",
+    "    def items(self):\n        return self._pending",
+    "    log.error('Volume %s was not found', name)",
+    "    conn = self._client(timeout=5)\n    return conn",
+    "    label = \"{}\".format(option)\n    return label",
+    "    msg = 'Node {} is offline'.format(uuid)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "non-action code tokens",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Weak pole (max 7.2). Probe: _new in get_new_connection 0.14, 'with ID' 0.11. Expected to fail; recorded as the best guess."
+}

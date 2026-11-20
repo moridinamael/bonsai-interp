@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2de3cc1e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N2910+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:32:46+00:00",
+ "recipe": {
+  "toolchain_commit": "68ca366c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N2910_pos/2026-11-20-lm1909-2de3cc1e.tests.json"
+ },
+ "label": "broad pole: best guess, sex/gender words (female, 男性)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N2910_pos/2026-11-20-lm1909-2de3cc1e.tests.json",
+   "prereg_commit": "68ca366c9",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.157,
+     "peak": " female"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.224,
+     "peak": " female"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.539,
+     "peak": "男性"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.334,
+     "peak": "Female"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.305,
+     "peak": " female"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.618,
+     "peak": "男性"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.106,
+     "peak": " female"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.163,
+     "peak": " species"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.151,
+     "peak": " survey"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.141,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": "代"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.049,
+     "peak": " prize"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.145,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.087,
+     "peak": "募"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.038,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.153,
+     "peak": " species"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.265,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "68ca366c9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "gender words (broad)",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card flags broad (2.7%) and gate-closed (echo 78%); max 0.82. Top tokens mix ' female', 'Female', '男性', 'privy', CJK pieces. Probe: Female 0.33, 男性 0.32, female 0.23, privy 0.89. Expected to fail.",
+ "selection": "random draw"
+}
