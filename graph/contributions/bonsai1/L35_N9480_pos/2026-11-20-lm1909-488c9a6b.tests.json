@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-488c9a6b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9480+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:58:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9480",
+   "pole": "+",
+   "label": "a split-off 'm' that begins a medical word ('non-m|edicinal', 'non-M|edicare', 'param|édical'), predicting 'edic'",
+   "fire": [
+    "The bottle lists the medicinal and non-medicinal ingredients on the back.",
+    "Insurers tried to shift costs onto non-Medicare patients last year.",
+    "The clinic employs nurses, doctors and paramedical staff around the clock.",
+    "Each product label must name all non-medicinal ingredients and their source.",
+    "The study compared Medicare patients with non-Medicare patients in rural areas.",
+    "She trained in a paramedical field before going back to university.",
+    "Applicants must declare any non-medical reasons for the leave request.",
+    "Les professions médicales et paramédicales doivent suivre cette formation."
+   ],
+   "quiet": [
+    "The bottle lists the active and non-active ingredients on the back.",
+    "Insurers tried to shift costs onto non-union workers last year.",
+    "The clinic employs nurses, cooks and maintenance staff around the clock.",
+    "Each product label must name all non-toxic ingredients and their source.",
+    "The study compared urban patients with non-urban patients in several areas.",
+    "She trained in a para-legal field before going back to university.",
+    "Applicants must declare any non-financial reasons for the leave request.",
+    "Les professions juridiques et commerciales doivent suivre cette formation."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "'m' starting medic- word",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: top examples are '-m', '-M', ' param', Arabic ' للم' before مستشفى; output promotes 'edic' and suppresses whole ' med'/' medical' tokens. The - pole is the generic split ' m' (mule, masts, majeur), so the distinction is medical vs non-medical continuation. Near misses keep the hyphenated split-word form without medic-."
+}
