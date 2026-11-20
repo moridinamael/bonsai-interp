@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-dfaa0858",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N5788+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:29:21+00:00",
+ "recipe": {
+  "toolchain_commit": "6b5be5e4a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N5788_pos/2026-11-20-lm1909-dfaa0858.tests.json"
+ },
+ "label": "word right after a missing (stripped) formula in technical prose ('is defined as: , where is a type variable')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N5788_pos/2026-11-20-lm1909-dfaa0858.tests.json",
+   "prereg_commit": "6b5be5e4a",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.582,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.248,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.233,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.472,
+     "peak": "then"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.663,
+     "peak": " acres"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.801,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.31,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.005,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.057,
+     "peak": " R"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.107,
+     "peak": " where"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " occupies"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.095,
+     "peak": " where"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.064,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.073,
+     "peak": " x"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.391,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b5be5e4a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after stripped formula",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "top examples: ', where', '1, acres', ':\\nthen', 'a in can' — text where math/number was scraped out",
+ "selection": "random draw"
+}

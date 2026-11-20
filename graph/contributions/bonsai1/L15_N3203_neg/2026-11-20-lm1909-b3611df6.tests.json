@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-b3611df6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N3203-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N3203",
+   "pole": "-",
+   "label": "connective word inside a log, warning or error message string in code ('exists but is empty', 'X in builder not found', 'smaller than')",
+   "fire": [
+    "    if not token:\n        logger.warning('The token parameter exists but is empty')",
+    "    if count < k:\n        warnings.warn('Number of samples found smaller than the requested batch size')",
+    "    if 'imageId' not in config:\n        print_error('imageId in deploy config not found')",
+    "    if not path:\n        log.error('Output directory was given but could not be created')",
+    "    if size > limit:\n        raise ValueError('File size is larger than the allowed maximum')",
+    "    if key not in cache:\n        logger.info('Requested key in local cache is missing')",
+    "    if not user.email:\n        logger.warning('The user account exists but has no email address')",
+    "    if retries == 0:\n        raise RuntimeError('Connection was opened but closed before the handshake')"
+   ],
+   "quiet": [
+    "The house was old but the roof had been replaced last spring by a local roofer.",
+    "Her garden was smaller than the neighbours' yard, yet it grew far more tomatoes.",
+    "We found the old letters in a box in the attic after the move.",
+    "The road was narrow but the views from the pass made the drive worthwhile.",
+    "His second novel was longer than the first and took him nearly six years.",
+    "They kept the spare keys in a drawer in the kitchen for emergencies.",
+    "The café exists but is rarely open before noon on weekdays.",
+    "The museum was crowded but the guides managed to keep every group moving."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "connective in error message",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "top examples are ' but', ' in', ' than' inside logger.warning / printer.out strings"
+}

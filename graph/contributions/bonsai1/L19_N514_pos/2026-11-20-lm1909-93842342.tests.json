@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-93842342",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N514+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N514",
+   "pole": "+",
+   "label": "object or module name right after '=' in a Python assignment, just before a method call (g = cuda.elementwise, Model = pool.get)",
+   "fire": [
+    "    n_in = x.shape[1]\n    g = cuda.elementwise('T x', 'T y', 'y = x * 2')",
+    "    pool = Pool()\n    Model = pool.get(model_name)\n    return Model",
+    "    conn = connect(url)\n    rows = conn.execute(query).fetchall()",
+    "    app = Flask(__name__)\n    cfg = app.config.get('DEBUG')",
+    "    s3 = boto3.client('s3')\n    obj = s3.get_object(Bucket=b, Key=k)",
+    "    parser = make_parser()\n    args = parser.parse_args()",
+    "    session = Session()\n    user = session.query(User).first()",
+    "    loop = asyncio.get_event_loop()\n    result = loop.run_until_complete(main())"
+   ],
+   "quiet": [
+    "    n_in = x.shape[1]\n    g = 2 * n_in + 1",
+    "    pool = None\n    Model = None\n    return Model",
+    "    conn = None\n    rows = []",
+    "    debug = True\n    cfg = {'DEBUG': debug}",
+    "    bucket = 'data'\n    key = 'file.txt'",
+    "    count = 0\n    total = count + 10",
+    "    name = 'admin'\n    user = name",
+    "    retries = 3\n    timeout = retries * 30"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "object before method call",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card flags broad (1.2%); peak tokens are object names after '=' that are followed by '.'"
+}
