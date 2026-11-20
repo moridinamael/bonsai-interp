@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-61eda1ae",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8132+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:08:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N8132",
+   "pole": "+",
+   "label": "a word-initial S/s split off as its own token right after a quote mark or slash (also the Arabic future prefix س)",
+   "fire": [
+    "Their biggest hit was the ballad \"Seraphina\" in 1981.",
+    "The shop sells cheap swimsuits/sandals for the summer.",
+    "قالت المعلمة إنها ستشرح الدرس غدا.",
+    "The critics praised the film «Sirocco» for its music.",
+    "Please submit the request/signature form by Friday.",
+    "وأكد الوزير أن الحكومة ستدعم المزارعين هذا العام.",
+    "The old poster advertised \"Saltwater Taffy\" at five cents.",
+    "أعلن المدرب أن الفريق سيلعب مباراتين الأسبوع المقبل."
+   ],
+   "quiet": [
+    "Their biggest hit was the ballad \"Marigold\" in 1981.",
+    "The shop sells cheap blankets/pillows for the winter.",
+    "قالت المعلمة إنها شرحت الدرس أمس.",
+    "The critics praised the film «Tramontane» for its music.",
+    "Please submit the request/approval form by Friday.",
+    "وأكد الوزير أن الحكومة دعمت المزارعين العام الماضي.",
+    "The old poster advertised \"Peppermint Candy\" at five cents.",
+    "أعلن المدرب أن الفريق لعب مباراتين الأسبوع الماضي."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off initial S",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: Arabic ' س' x15, 'ス' x4, 'S'/'s' after « or \" or '/'. Probe: '/s' in lottery/sweepstakes 0.83, Arabic future س 0.43, quoted \"Sundown\" 0.36; ' S' with a space (Scythians) stays quiet here (that is the - pole). Near misses: same frames where the word after the quote, slash or Arabic particle does not start with S/س."
+}
