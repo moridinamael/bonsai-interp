@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-f8591fea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N6189-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:04+00:00",
+ "recipe": {
+  "toolchain_commit": "f430414ec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N6189_neg/2026-11-19-lm1909-f8591fea.tests.json"
+ },
+ "label": "modified head noun that restates a notion introduced earlier in the sentence ('organic food ... their organic choices', 'two formats ... a printable format'); weak and broad, best guess only",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N6189_neg/2026-11-19-lm1909-f8591fea.tests.json",
+   "prereg_commit": "f430414ec",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.276,
+     "peak": " choices"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.191,
+     "peak": " near"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.019,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.051,
+     "peak": " choices"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.016,
+     "peak": " maps"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.103,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.084,
+     "peak": " options"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.039,
+     "peak": " best"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.023,
+     "peak": "Sh"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.035,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": "Patients"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": " early"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.04,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": "Tr"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " school"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.758,
+    "median_fire": 0.068,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f430414ec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "restated notion (weak guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (1.5% of tokens reach 0.1 of max) with no shared token. Probes of this guess reached only 0.11-0.28 of max; unrelated sentences 0.02-0.04. Expected to miss the 0.20 median or to fail.",
+ "selection": "random draw"
+}

@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-1a04d634",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N8722-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:18+00:00",
+ "recipe": {
+  "toolchain_commit": "f430414ec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N8722_neg/2026-11-19-lm1909-1a04d634.tests.json"
+ },
+ "label": "the token '夫' (Japanese given names ending in 夫, 夫婦, の夫, 农夫)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N8722_neg/2026-11-19-lm1909-1a04d634.tests.json",
+   "prereg_commit": "f430414ec",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.682,
+     "peak": "夫"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.769,
+     "peak": "夫"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.523,
+     "peak": "夫"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.423,
+     "peak": "夫"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.524,
+     "peak": "夫"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.238,
+     "peak": "夫"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.523,
+     "peak": "夫"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.323,
+     "peak": "夫"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "王"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "农民"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": "め"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.0,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "は"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": "把"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.523,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f430414ec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token '夫'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Probes: sentences with '夫' 0.28-0.60 of max; the same sentences without it 0.00. The card also shows Korean '부', which did not fire in a probe (0.02). The near misses swap only the 夫 word.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "夫"
+  ]
+ }
+}

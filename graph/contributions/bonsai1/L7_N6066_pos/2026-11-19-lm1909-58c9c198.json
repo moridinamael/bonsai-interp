@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-58c9c198",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N6066+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:00+00:00",
+ "recipe": {
+  "toolchain_commit": "f430414ec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N6066_pos/2026-11-19-lm1909-58c9c198.tests.json"
+ },
+ "label": "' on' right after a form of 'sit' (sitting on the couch, sat on the bench, sits on the board); 'on' after other verbs or in time / dependence uses is quiet. Also fires on ' unto'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N6066_pos/2026-11-19-lm1909-58c9c198.tests.json",
+   "prereg_commit": "f430414ec",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.534,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.405,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.796,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.241,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.471,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.504,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.833,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.575,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.151,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.043,
+     "peak": " process"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": "Two"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": " cream"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " comment"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " from"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.519,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f430414ec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'on' after sit / sitting",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Probes: sitting / sit / sat / sits on 0.44-0.69; standing on 0.21, stood on 0.10, perched on 0.10, lying on 0.04, on Monday 0.03; 'sitting in' 0.12; 'do unto' 0.47. The - pole is ' along' / 'on board' after 'came' (arrival).",
+ "selection": "random draw"
+}

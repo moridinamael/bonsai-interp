@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-2678b3f1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N11375-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:49:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N11375",
+   "pole": "-",
+   "label": "dense unit (11% of tokens reach 0.1 of the pole's max, all in the gate-closed leak regime); best guess at what drives it: multi-character Chinese verb / adverb tokens such as 忍不住, 透过, 接受, 享用, 激动",
+   "fire": [
+    "孩子们忍不住大声欢呼。",
+    "我们透过窗户看到了大海。",
+    "他终于接受了这份工作。",
+    "客人们正在享用晚餐。",
+    "听到消息后她非常激动。",
+    "老师透过游戏来教数学。",
+    "看到礼物,妹妹忍不住哭了。",
+    "队长接受了记者的采访。"
+   ],
+   "quiet": [
+    "孩子们在公园里玩。",
+    "我们在海边住了三天。",
+    "他是一名工人。",
+    "客人们来了。",
+    "她的家在山上。",
+    "老师在教室里。",
+    "妹妹有一只小猫。",
+    "队长是我的哥哥。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; Chinese multi-char verb tokens",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole dense. Probes: sentences with these tokens 0.57-0.75 of max, but plain Chinese sentences 0.09-0.42 and an English one 0.19, so the test may fail; it records the density."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-cde7e182",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N7064+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:03:58+00:00",
+ "recipe": {
+  "toolchain_commit": "f430414ec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N7064_pos/2026-11-19-lm1909-cde7e182.tests.json"
+ },
+ "label": "space-prefixed CJK character: the byte-fragment token (' ' + lead byte) produced when a space directly precedes a kanji / hanzi; the same text written without spaces is weak",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N7064_pos/2026-11-19-lm1909-cde7e182.tests.json",
+   "prereg_commit": "f430414ec",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.584,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.29,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.265,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.379,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.331,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.31,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.22,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.292,
+     "peak": "个"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.142,
+     "peak": "歩"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.059,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.069,
+     "peak": "とても"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.145,
+     "peak": "喝"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.163,
+     "peak": "この"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.13,
+     "peak": "去"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.17,
+     "peak": "山"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.106,
+     "peak": "让学生"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.301,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f430414ec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "space before a CJK character",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad (4.4% of tokens reach 0.1 of max) and gate-closed. Probes: spaced CJK 0.30-0.49, the same sentences unspaced 0.09-0.19, English 0.08. The near misses are the fire sentences with the spaces removed.",
+ "selection": "random draw"
+}
