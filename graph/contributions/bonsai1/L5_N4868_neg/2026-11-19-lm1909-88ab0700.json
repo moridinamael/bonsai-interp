@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-88ab0700",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N4868-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:31:50+00:00",
+ "recipe": {
+  "toolchain_commit": "6dc7b3c79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N4868_neg/2026-11-19-lm1909-88ab0700.tests.json"
+ },
+ "label": "the second subword piece of a capitalised name whose first piece is a vowel + l/r (Or|phe|us, Ol|ken, Al|ca|zaren, Ul|ku, Alt|is|ent)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N4868_neg/2026-11-19-lm1909-88ab0700.tests.json",
+   "prereg_commit": "6dc7b3c79",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.767,
+     "peak": "phe"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.722,
+     "peak": "ken"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.776,
+     "peak": "ca"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.696,
+     "peak": "ku"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.974,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.822,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.295,
+     "peak": "c"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.046,
+     "peak": "ud"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "se"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": "ano"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": "ir"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.085,
+     "peak": "ec"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.236,
+     "peak": "us"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " that"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.744,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6dc7b3c79",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "piece after Or-/Ol-/Al-/Ul-",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks 'phe','ken','ca','ku','is' right after Or/Ol/Al/Ul/Alt. Probes: 6 such names 0.67-0.93, 'Robert Johnson' 0.01. Two fire items (Alcibiades, Olmert) and the Morpheus near miss are untried cases.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d8171d0b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N3158+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:55+00:00",
+ "recipe": {
+  "toolchain_commit": "6dc7b3c79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N3158_pos/2026-11-19-lm1909-d8171d0b.tests.json"
+ },
+ "label": "the conjunction (', but' / ', so') that follows a clause stating that something is absent ('has no official flag, but …', 'there was no local unit, so …'); the same slot as code 'else:' in the card. The - pole is the other side: 'because' / 'since' / 'or' continuing a positive clause",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N3158_pos/2026-11-19-lm1909-d8171d0b.tests.json",
+   "prereg_commit": "6dc7b3c79",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.395,
+     "peak": " but"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.343,
+     "peak": " so"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.704,
+     "peak": " but"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.166,
+     "peak": " so"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.624,
+     "peak": " so"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.112,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.562,
+     "peak": " so"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.233,
+     "peak": " but"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.075,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.164,
+     "peak": " because"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.062,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.047,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.148,
+     "peak": " because"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.055,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.369,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6dc7b3c79",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'but/so' after a 'has no X' clause",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: 'has no official flag, but' 0.96, 'was no local unit … , so' 0.61, 'did not have a ticket, so' 0.29, 'No letters …, and none' 0.19, positive clause + 'and' 0.15, 'because' 0.03. A short 'else:' snippet scored only 0.13, so I test prose only; the code branch of the card is not covered by this test.",
+ "selection": "random draw"
+}

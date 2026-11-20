@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1dfc84fa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N4802-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:21+00:00",
+ "recipe": {
+  "toolchain_commit": "6dc7b3c79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N4802_neg/2026-11-19-lm1909-1dfc84fa.tests.json"
+ },
+ "label": "formal evaluation wording in legal or regulatory guidance: 'assessment/evaluation of existing …', 'analysis of whether …', 'has to be examined', 'the court may order'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N4802_neg/2026-11-19-lm1909-1dfc84fa.tests.json",
+   "prereg_commit": "6dc7b3c79",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.357,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.336,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.09,
+     "peak": " issue"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.126,
+     "peak": "al"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.043,
+     "peak": " tunnels"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.808,
+     "peak": " assessments"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.019,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.038,
+     "peak": " evaluate"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " valley"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": " muddy"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " tunnels"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.063,
+     "peak": " photography"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " joining"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.125,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.789,
+    "median_fire": 0.108,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6dc7b3c79",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "formal assessment wording",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Weak in probes: the best were 'analysis of whether … fair.' 0.40 and 'guidance for assessment of existing bridges' 0.31; most others 0.05-0.25. I expect this to fail on the median; the pole's real trigger is probably narrower or needs longer context than a sentence.",
+ "selection": "random draw"
+}

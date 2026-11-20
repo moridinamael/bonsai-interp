@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7e942f0b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N5049-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:32+00:00",
+ "recipe": {
+  "toolchain_commit": "6dc7b3c79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N5049_neg/2026-11-19-lm1909-7e942f0b.tests.json"
+ },
+ "label": "the final suffix piece (-s, -is, -ia, -ra, -ism) that completes a multi-token technical term or proper noun (IUD|s, ureth|ra, -ias|is, Polynes|ia, Hohenzollern|s); not the plural of an ordinary one-token word",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N5049_neg/2026-11-19-lm1909-7e942f0b.tests.json",
+   "prereg_commit": "6dc7b3c79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.622,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.485,
+     "peak": "ra"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.518,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.594,
+     "peak": "ia"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.464,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.684,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.31,
+     "peak": "ism"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.478,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": " existed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.502,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6dc7b3c79",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word-final piece of a rare noun",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad (1.8% of tokens reach 0.1 of max). Probes: IUDs 0.75, urethra 0.75, Hohenzollerns 0.66, Tapeworms 0.61, -iasis 0.56, Polynesia 0.51, Hinduism 0.39; 'cats and dogs' 0.05.",
+ "selection": "random draw"
+}

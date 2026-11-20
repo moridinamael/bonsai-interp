@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9309fa3f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N5800+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:45+00:00",
+ "recipe": {
+  "toolchain_commit": "6dc7b3c79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N5800_pos/2026-11-19-lm1909-9309fa3f.tests.json"
+ },
+ "label": "the quantity being divided in a quotient or rate: the numerator before '/' in formulas and code (v/t, length/time, total / count) and 'X in Y hours, or … per hour'; not multiplication, and not '/' as a path or 'and/or'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N5800_pos/2026-11-19-lm1909-9309fa3f.tests.json",
+   "prereg_commit": "6dc7b3c79",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.195,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.921,
+     "peak": " /"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.37,
+     "peak": " mass"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.423,
+     "peak": " hours"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.724,
+     "peak": " n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.31,
+     "peak": " /"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.367,
+     "peak": " doing"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.227,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": " times"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " *"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.031,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " mv"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "'\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.211,
+     "peak": " energy"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": "0"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.368,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6dc7b3c79",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "numerator of a division / rate",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'a = v/t' 0.68, code 'total / count' 0.62, 'length/time' 0.54, 'distance / time' 0.41, '5 hours, or 60 miles per hour' 0.35; multiplication 0.01-0.03, a file path and 'and/or' 0.007, 'ratio of width to height' 0.04. One division in words-only form ('total requests / requests per host') scored 0.06, so it is not every '/'.",
+ "selection": "random draw"
+}

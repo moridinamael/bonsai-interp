@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-f4549590",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1891+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:15:47+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N1891",
+   "pole": "+",
+   "label": "positional: in the scan it fires at full strength only on the very first token of a context window, whatever the token (' –', ' information', ' thoughts', ' just', ' indicate'); best guess tested here: a text that opens mid-sentence on such a token",
+   "fire": [
+    " – in other words, the county clerk and the land registry.",
+    " – 23 years old. These people did not attend.",
+    " information about the delivery will be sent by email.",
+    " thoughts on the draft are due by the end of the week.",
+    " just let me know when the parcel arrives.",
+    " indicate the address you gave when you registered.",
+    " – that generation grew up between the two wars.",
+    " information on opening hours is posted at the gate."
+   ],
+   "quiet": [
+    "That means, in other words, the county clerk and the land registry.",
+    "They were 23 years old. These people did not attend.",
+    "More information about the delivery will be sent by email.",
+    "Your thoughts on the draft are due by the end of the week.",
+    "Please just let me know when the parcel arrives.",
+    "Please indicate the address you gave when you registered.",
+    "As a rule, that generation grew up between the two wars.",
+    "Further information on opening hours is posted at the gate."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "first token of a window (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags it positional: 100% of the top peaks at window position 0, and density >0.3·max equals density >0.1·max (all-or-nothing). Sixteen probes, including bare fragments starting with the card's own tokens, all scored 0.000-0.006, so sentence-level text does not reproduce the scan's window-start condition. I expect this test to fail; it is here to record the positional behaviour."
+}
