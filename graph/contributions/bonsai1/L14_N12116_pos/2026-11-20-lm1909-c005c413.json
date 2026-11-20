@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c005c413",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N12116+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:47:36+00:00",
+ "recipe": {
+  "toolchain_commit": "7f6e757d9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N12116_pos/2026-11-20-lm1909-c005c413.tests.json"
+ },
+ "label": "the running operand in a code accumulation, where a variable is updated from its own previous value (z = z + ..., x[i-1] + ..., s += ...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N12116_pos/2026-11-20-lm1909-c005c413.tests.json",
+   "prereg_commit": "7f6e757d9",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.343,
+     "peak": " total"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.338,
+     "peak": " acc"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.552,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.525,
+     "peak": " s"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.643,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.09,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.166,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.11,
+     "peak": " +="
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.151,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " item"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.473,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.171,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.098,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.038,
+     "peak": "(f"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.224,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.341,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7f6e757d9",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code accumulator update",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on ' +=', ' +', 'z' in 'z = z + ...', '[-1]' and 'x_el[e-1] +' inside loops.",
+ "selection": "random draw"
+}

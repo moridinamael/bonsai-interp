@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a0767f07",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N3220+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:39:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N3220",
+   "pole": "+",
+   "label": "the first token right after a '#' comment marker written without a following space (e.g. '#This', '#See') in code and licence headers",
+   "fire": [
+    "import os\nimport sys\n\n#Load the settings from disk\nconfig = read_config(path)",
+    "def main():\n    args = parse()\n    #Check the input before running\n    validate(args)",
+    "# -*- coding: utf-8 -*-\n#\n#Copyright 2019 the project authors\n#",
+    "x = compute(data)\n#Print the result for debugging\nprint(x)",
+    "class Parser:\n    #Holds the state of one parse\n    def __init__(self):\n        self.pos = 0",
+    "for row in rows:\n    #Skip empty rows\n    if not row:\n        continue",
+    "#!/usr/bin/env python\n#\n#Licensed under the MIT license\nimport json",
+    "total = 0\n#Read every line of the file\nfor line in open(name):\n    total += 1"
+   ],
+   "quiet": [
+    "import os\nimport sys\n\nconfig = read_config(path)\nlog = start_log(config)",
+    "def main():\n    args = parse()\n    validate(args)\n    run(args)",
+    "\"\"\"\nCopyright 2019 the project authors\n\"\"\"\nimport os",
+    "x = compute(data)\nprint(x)\nsave(x, 'out.txt')",
+    "class Parser:\n    \"\"\"Holds the state of one parse.\"\"\"\n    def __init__(self):\n        self.pos = 0",
+    "for row in rows:\n    if not row:\n        continue\n    handle(row)",
+    "#!/usr/bin/env python\nimport json\nimport os\nimport re",
+    "total = 0\nfor line in open(name):\n    total += 1\nprint(total)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "token after bare '#'",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on 'This', 'See', 'with' and space runs immediately after '#' in Python comments; max 6.31, very sparse."
+}
