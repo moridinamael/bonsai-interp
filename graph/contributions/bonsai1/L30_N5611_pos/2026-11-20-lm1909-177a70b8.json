@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-177a70b8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N5611+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:56:57+00:00",
+ "recipe": {
+  "toolchain_commit": "7c781ad25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N5611_pos/2026-11-20-lm1909-177a70b8.tests.json"
+ },
+ "label": "time-unit word after a number in an expression of elapsed time before the present ('N years ago / since', Korean '년 전', Japanese '年'); the - pole is the same unit in 'N years away' (future distance)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N5611_pos/2026-11-20-lm1909-177a70b8.tests.json",
+   "prereg_commit": "7c781ad25",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.263,
+     "peak": " years"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.092,
+     "peak": " years"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.195,
+     "peak": " months"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.889,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.343,
+     "peak": " years"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.023,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.344,
+     "peak": " years"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.091,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " only"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " bridge"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " region"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " forty"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " contract"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " study"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.229,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c781ad25",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "elapsed time ('years ago')",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: + pole top ' years' x7, '년' x6, '年' x6 in 'about 14,000 years ago', 'sixty-five years since', '몇 년 전'. - pole: 'a couple of years away', 'a week away'. Logit suppresses 'away'. Near misses use the same units as future distance or duration.",
+ "selection": "random draw"
+}

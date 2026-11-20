@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-9362655d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N3724-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:45:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N3724",
+   "pole": "-",
+   "label": "the token right before a word meaning 'result(s)' in non-English text, where 'results' is predicted next: Arabic ' الن' (→ النتائج), German ' Such' (→ Suchergebnis), German 'guten' (→ Erfolgen/Ergebnissen)",
+   "fire": [
+    "أعلنت وزارة التعليم النتائج النهائية لامتحانات الثانوية العامة اليوم.",
+    "قام الباحثون بمقارنة النتائج مع الدراسات السابقة في المجال.",
+    "Die Suchergebnisse zeigen auch Seiten mit ähnlichen Begriffen an.",
+    "انتظر الطلاب بفارغ الصبر ظهور النتائج على موقع الجامعة.",
+    "Die jungen Athleten kehrten mit sehr guten Ergebnissen vom Wettkampf zurück.",
+    "Das Wahlergebnis wurde erst spät in der Nacht bekannt gegeben.",
+    "ناقش المجلس النتائج الأولية للتحقيق في الحادث.",
+    "Im Suchergebnis erscheinen alle Bücher dieses Autors."
+   ],
+   "quiet": [
+    "أعلنت وزارة التعليم موعد بداية العام الدراسي الجديد اليوم.",
+    "قام الباحثون بزيارة المختبر مع زملائهم في المجال.",
+    "Die Startseite zeigt auch Nachrichten aus der Region an.",
+    "انتظر الطلاب بفارغ الصبر وصول الحافلة إلى الجامعة.",
+    "Die jungen Athleten kehrten am Sonntag mit dem Bus vom Wettkampf zurück.",
+    "Das Wahllokal wurde erst spät am Morgen geöffnet.",
+    "ناقش المجلس الميزانية الجديدة للمدينة في جلسته.",
+    "Im Regal stehen alle Bücher dieses Autors."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "before 'results' (non-English)",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ' الن' x5 (starting النتائج 'the results' and النائب), ' Such' x2 in Suchergebnis, 'sehr guten Erfolgen'. Logit of the + pole suppresses results/Result/resultado, so this pole promotes 'results'. Near misses keep Arabic and German text without a 'results' continuation."
+}

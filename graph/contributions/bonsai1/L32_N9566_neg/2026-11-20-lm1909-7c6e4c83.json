@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-7c6e4c83",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9566-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:57:46+00:00",
+ "recipe": {
+  "toolchain_commit": "7c781ad25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N9566_neg/2026-11-20-lm1909-7c6e4c83.tests.json"
+ },
+ "label": "untrue or invented stories: the word that marks a story as fabricated ('tall' tales, 'fairy' tales, 'tell a' lie, 'tells' lies)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N9566_neg/2026-11-20-lm1909-7c6e4c83.tests.json",
+   "prereg_commit": "7c781ad25",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.458,
+     "peak": " tall"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.658,
+     "peak": " fairy"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.374,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.243,
+     "peak": " spins"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.758,
+     "peak": " fairy"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.43,
+     "peak": " tell"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.882,
+     "peak": " outrageous"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.117,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.878,
+     "peak": " true"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.184,
+     "peak": " them"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.146,
+     "peak": " tell"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.084,
+     "peak": " writes"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.43,
+     "peak": " tell"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.055,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.544,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c781ad25",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fabricated stories / lies",
+ "unit_kind": "sparse feature",
+ "confidence": 0.55,
+ "notes": "Card: ' fairy' x10, ' tall' x2 (tall tales), ' telling' x2, 'tell a lie', 'a person who tells lies', Washington Irving's folktales. Logit on + pole suppresses tall/fib/yarn, so this pole promotes them. Near misses keep storytelling but the stories are true or factual.",
+ "selection": "random draw"
+}

@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-9e11d3c3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N712+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:45:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N712",
+   "pole": "+",
+   "label": "the token that opens a written number: Arabic-Indic digit zero '٠' inside a number, and the separate space token before a digit string (e.g. 'died in 1519')",
+   "fire": [
+    "حصل الفريق على نسبة ٢٠ في المئة من الأصوات في الانتخابات.",
+    "أقيم الحفل يوم الاثنين الموافق ٣٠ من الشهر الماضي في سيدني.",
+    "شارك في البرنامج ٧٥٠ متطوعاً من المجتمعات المحلية.",
+    "Leonardo da Vinci died in 1519 at the castle of Clos Lucé.",
+    "The cathedral was finished in 1880 after six centuries of work.",
+    "Dokument było zarchiwizowane 10 maja 2012 i sprawdzone później.",
+    "يبلغ عدد سكان القرية نحو ٤٠٠ نسمة فقط.",
+    "The treaty was signed in 1648 and ended the long war."
+   ],
+   "quiet": [
+    "حصل الفريق على نسبة كبيرة من الأصوات في الانتخابات.",
+    "أقيم الحفل يوم الاثنين في نهاية الشهر الماضي في سيدني.",
+    "شارك في البرنامج مئات المتطوعين من المجتمعات المحلية.",
+    "Leonardo da Vinci died in the spring at the castle of Clos Lucé.",
+    "The cathedral was finished in the late nineteenth century after six centuries of work.",
+    "Dokument było zarchiwizowane w maju i sprawdzone później.",
+    "يبلغ عدد سكان القرية بضع مئات فقط.",
+    "The treaty was signed in Westphalia and ended the long war."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "number-onset space / ٠",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Card: ' ' x21 (space token right before digits: 'died in 1519', 'мая 2012') and Arabic-Indic '٠' x6 at the top (max 516). Logit suppresses digits/eight/nine. Fire mixes Arabic-Indic numbers containing ٠ and years after a word; near misses write the same dates and quantities in words."
+}

@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-41715a29",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3720+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:56:27+00:00",
+ "recipe": {
+  "toolchain_commit": "7c781ad25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N3720_pos/2026-11-20-lm1909-41715a29.tests.json"
+ },
+ "label": "verb of consulting a source to get information ('look' up, 'read', 'find', 'check') in instructions, where the object is a reference, label or record",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N3720_pos/2026-11-20-lm1909-41715a29.tests.json",
+   "prereg_commit": "7c781ad25",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.154,
+     "peak": " look"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.376,
+     "peak": " read"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.417,
+     "peak": " find"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.461,
+     "peak": " look"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.443,
+     "peak": " read"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.07,
+     "peak": "Students"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.555,
+     "peak": " look"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.158,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.042,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.135,
+     "peak": " take"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.079,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.153,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.201,
+     "peak": " passage"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.064,
+     "peak": "Students"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.099,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " can"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.396,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c781ad25",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "look-up / consult verb",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' look' x5, ' read' x3, ' find', ' Look'; contexts are 'I need to look up the syntax', 'allows you to read the original reference', 'find your account number on your mailing label'. Logit effect suppresses records/calendars/databases/maps, the places one consults. Near misses use non-consulting verbs in the same instructional frame.",
+ "selection": "random draw"
+}
