@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-20-lm1909-25356ddb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N12264+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:11:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N12264",
+   "pole": "+",
+   "label": "'sleep' as a pause or rest, strongest in code delays like time.sleep()",
+   "fire": [
+    "while not done:\n    check_status()\n    time.sleep(2)",
+    "for attempt in range(5):\n    if ping(host):\n        break\n    time.sleep(0.5)",
+    "    # wait for the device to settle\n    time.sleep(3)\n    read_sensor()",
+    "import time\nprint('starting')\ntime.sleep(10)\nprint('done')",
+    "Most adults need about eight hours of sleep each night to feel rested.",
+    "During deep sleep the body repairs muscle and consolidates memory.",
+    "The baby finally fell into a calm sleep after midnight.",
+    "Our cat sleeps on the windowsill for most of the afternoon."
+   ],
+   "quiet": [
+    "while not done:\n    check_status()\n    time.time()",
+    "for attempt in range(5):\n    if ping(host):\n        break\n    retries += 1",
+    "    # wait for the device to settle\n    reset_device()\n    read_sensor()",
+    "import time\nprint('starting')\nstart = time.time()\nprint('done')",
+    "Most adults need about eight glasses of water each day to feel healthy.",
+    "During exercise the body burns sugar and builds muscle strength.",
+    "The baby finally stopped crying after midnight and smiled.",
+    "Our cat sits on the windowsill for most of the afternoon."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "sleep / time.sleep pauses",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: top peaks '.sleep' x6, ' sleep' x5, mostly time.sleep in polling loops; also sleep-stage prose. Near misses keep the code/rest context without the word sleep.",
+ "trigger": {
+  "words": [
+   "sleep",
+   "sleeps"
+  ]
+ }
+}

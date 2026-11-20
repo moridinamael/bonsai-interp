@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ac11eac1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11642+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:11:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N11642",
+   "pole": "+",
+   "label": "the word right before 'up' in a phrasal verb or compound (end up, catch up, close-up): predicts 'up'",
+   "fire": [
+    "No matter how we plan the trip, we always end up getting lost.",
+    "After the break she had to work late to catch up on emails.",
+    "The photographer took a close-up of the bee on the flower.",
+    "If you skip the warm-up you may end up with a sore back.",
+    "He ran faster to keep up with the other runners.",
+    "They argued all evening but decided to make up before bed.",
+    "Somehow the quietest kid in class ended up as the mayor.",
+    "Please clean up the kitchen before your parents get home."
+   ],
+   "quiet": [
+    "No matter how we plan the trip, the end is always the same.",
+    "After the break she had to work late to answer her emails.",
+    "The photographer took a picture of the bee on the flower.",
+    "If you skip the warm-up you may hurt your back.",
+    "He ran faster to stay with the other runners.",
+    "They argued all evening but decided to forgive each other before bed.",
+    "Somehow the quietest kid in class became the mayor.",
+    "Please wash the dishes before your parents get home."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "verb before 'up'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on ' end' x7, ' make', ' ended', ' close'(-up), ' catch'(up), each followed by 'up'; the output direction strongly suppresses ' up' (it fires where 'up' comes next). Near misses use the same verbs without a following 'up'."
+}

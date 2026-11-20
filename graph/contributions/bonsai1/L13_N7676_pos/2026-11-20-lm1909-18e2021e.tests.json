@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-18e2021e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N7676+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:11:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N7676",
+   "pole": "+",
+   "label": "end of a Python function header or assignment operator in code ('():\\n', ' =')",
+   "fire": [
+    "import sys\n\n\ndef run():\n    sys.exit(0)",
+    "import json\n\n\ndef load_config():\n    return json.load(open('c.json'))",
+    "import logging\nlogger = logging.getLogger('app')",
+    "class Cache:\n    def clear():\n        pass",
+    "@pytest.fixture\ndef client():\n    return Client()",
+    "from os import path\nroot = path.dirname(__file__)",
+    "def setup():\n    global state\n    state = {}",
+    "import random\n\n\ndef roll():\n    return random.randint(1, 6)"
+   ],
+   "quiet": [
+    "The script exits as soon as the run is complete.",
+    "The configuration is loaded from a small JSON file.",
+    "The application writes its messages to a log file.",
+    "The cache is cleared every night by a scheduled task.",
+    "The test suite creates a fresh client for each test.",
+    "The root folder is the one that holds the source files.",
+    "At startup the program resets its global state.",
+    "The game rolls a six-sided die on every turn."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "python def header end",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: tiny max (2.31), broad (3.4% of tokens reach 0.1 of max) and the gate-closed echo regime dominates (99%); peaks on '():\\n' x9 and ' =' x5. Probe gave 0.08-0.13 on such code, so this is a guess likely to fail."
+}
