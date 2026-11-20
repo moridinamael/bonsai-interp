@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-20-lm1909-363dbd96",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N8605-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:15:00+00:00",
+ "recipe": {
+  "toolchain_commit": "89644bd7c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N8605_neg/2026-11-20-lm1909-363dbd96.tests.json"
+ },
+ "label": "the token '杯' (cup) in Chinese text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N8605_neg/2026-11-20-lm1909-363dbd96.tests.json",
+   "prereg_commit": "89644bd7c",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.087,
+     "peak": "他"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.034,
+     "peak": "着"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.073,
+     "peak": "喝"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.095,
+     "peak": "请"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.114,
+     "peak": "冠军"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.089,
+     "peak": "。"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.081,
+     "peak": "留"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.14,
+     "peak": "给"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.087,
+     "peak": "他"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": "着"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.073,
+     "peak": "喝"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.095,
+     "peak": "请"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.114,
+     "peak": "冠军"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.08,
+     "peak": "他们"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.081,
+     "peak": "留"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.131,
+     "peak": "给"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.555,
+    "median_fire": 0.088,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89644bd7c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'杯' (cup)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card flags broad and gate-closed (-g +u leak 75%), no dominant token; probes of the other top tokens in English scored 0.07-0.14 of max. '杯' is the only repeated peak (x2); a best guess.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "杯"
+  ]
+ }
+}

@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-20-lm1909-12f03f94",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N4039-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:15:28+00:00",
+ "recipe": {
+  "toolchain_commit": "89644bd7c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N4039_neg/2026-11-20-lm1909-12f03f94.tests.json"
+ },
+ "label": "the Arabic piece ' ل' that begins words for language and wording (لغة, لغوي, لفظ), also ' الل' in اللغة/اللسان",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N4039_neg/2026-11-20-lm1909-12f03f94.tests.json",
+   "prereg_commit": "89644bd7c",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.314,
+     "peak": " ل"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.762,
+     "peak": " ل"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.009,
+     "peak": " في"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.085,
+     "peak": " في"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.169,
+     "peak": " بل"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.123,
+     "peak": "قدم"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.1,
+     "peak": " لل"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.765,
+     "peak": " ل"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "ته"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": "سل"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": "ست"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": " في"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.0,
+     "peak": "كان"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.0,
+     "peak": " من"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": " لل"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.138,
+     "peak": " كل"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.146,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89644bd7c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic ' ل' of لغة",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' ل' x16 and ' الل' x5 of the top 32, all beginning لغة/لفظ/لغوي/اللسان (language, wording); the + pole's output promotes semantic/lexical/linguistic. Some quiet items contain للأطفال/للنص where 'ل' is a preposition; that tests word vs. piece.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " ل",
+   " الل"
+  ]
+ }
+}
