@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-35c9e62a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3180-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:33:36+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N3180",
+   "pole": "-",
+   "label": "' =' (and operators like ' *') in an assignment or equation inside math-heavy code",
+   "fire": [
+    "def step(x, v, dt):\n    a = -k * x / m\n    v = v + a * dt\n    x = x + v * dt\n    return x, v",
+    "import numpy as np\ntheta = np.pi / 4\ny = np.sin(theta) * r\nz = np.cos(theta) * r",
+    "for i in range(n):\n    total += w[i] * x[i]\nmean = total / n",
+    "    dx = sinh(w) * sqrt(s) * x\n    dy = cosh(w) * dx",
+    "with torch.no_grad():\n    h = W @ x + b\n    y = torch.tanh(h)",
+    "def norm(v):\n    s = v[0] * v[0] + v[1] * v[1]\n    r = math.sqrt(s)\n    return r",
+    "    grad = 2 * (pred - target) / n\n    w -= lr * grad",
+    "k = 2 * math.pi / wavelength\nomega = c * k\nphase = k * x - omega * t"
+   ],
+   "quiet": [
+    "def step(x, v, dt):\n    return update(x, v, dt)",
+    "import numpy as np\nprint(np.sin(np.pi / 4))",
+    "for i in range(n):\n    print(w[i], x[i])",
+    "    print(sinh(w), sqrt(s))\n    print(cosh(w))",
+    "with torch.no_grad():\n    print(torch.tanh(W @ x + b))",
+    "def norm(v):\n    return math.sqrt(v[0] ** 2 + v[1] ** 2)",
+    "    print(2 * (pred - target) / n)\n    print(lr)",
+    "print(2 * math.pi / wavelength)\nprint(c, x, t)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' =' in math code",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' =' x7, ' +=' x2, ' *' in numeric Python/maths. The + pole is also ' =' and 'equal to' in maths prose; the sign may depend on context."
+}

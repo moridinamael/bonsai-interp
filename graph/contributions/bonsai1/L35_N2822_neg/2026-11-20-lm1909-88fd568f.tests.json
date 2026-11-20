@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-88fd568f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2822-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:33:36+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N2822",
+   "pole": "-",
+   "label": "a CJK character directly after a space (the byte-level ' �' token), e.g. Chinese or Japanese text with spaces between characters or words",
+   "fire": [
+    "政 府 推 出 新 的 環 保 政 策 以 減 少 空 氣 污 染",
+    "這 家 公 司 的 產 品 品 質 很 好",
+    "今天 天氣 很 好 我們 去 公園 散步",
+    "學 生 們 在 圖 書 館 讀 書",
+    "東京 観光 の 名所 を 紹介 します",
+    "我 喜 歡 喝 茶 也 喜 歡 喝 咖 啡",
+    "新 型 電 池 的 能 源 效 率 更 高",
+    "這 本 書 講 述 了 一 個 家 庭 的 故 事"
+   ],
+   "quiet": [
+    "政府推出新的環保政策以減少空氣污染",
+    "這家公司的產品品質很好",
+    "今天天氣很好我們去公園散步",
+    "學生們在圖書館讀書",
+    "東京観光の名所を紹介します",
+    "我喜歡喝茶也喜歡喝咖啡",
+    "新型電池的能源效率更高",
+    "這本書講述了一個家庭的故事"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space + CJK character",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: ' �' x32 of top 32 (space-prefixed byte fallback for CJK). The + pole is also ' �' but after Latin words inside Japanese katakana text. Near misses are the same CJK text without the spaces."
+}

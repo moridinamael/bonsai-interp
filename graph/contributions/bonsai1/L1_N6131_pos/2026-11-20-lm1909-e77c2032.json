@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e77c2032",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N6131+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:40:48+00:00",
+ "recipe": {
+  "toolchain_commit": "925ffd7b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N6131_pos/2026-11-20-lm1909-e77c2032.tests.json"
+ },
+ "label": "dense, gate-closed (-x- echo) unit; best guess: the Russian token 'ось' ending a verb (осталось) and similar verb endings",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N6131_pos/2026-11-20-lm1909-e77c2032.tests.json",
+   "prereg_commit": "925ffd7b7",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 6,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.916,
+     "peak": "ось"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.73,
+     "peak": "ось"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.876,
+     "peak": "ось"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.907,
+     "peak": "ось"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.864,
+     "peak": "ось"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.834,
+     "peak": "ось"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.871,
+     "peak": "ось"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.829,
+     "peak": "ось"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.401,
+     "peak": "ож"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.482,
+     "peak": " есть"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.37,
+     "peak": "ось"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.262,
+     "peak": "ости"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.305,
+     "peak": " команд"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.543,
+     "peak": " мы"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.214,
+     "peak": " пут"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.338,
+     "peak": " отправ"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.867,
+    "near_misses_at_0.3": 6
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "925ffd7b7",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense: Russian 'ось' verb ending",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense (42% of tokens reach 0.1 of max) and gate-closed (-x- echo 100%). Max only 0.22. Test is a guess at the top token, expected to fail.",
+ "selection": "random draw"
+}

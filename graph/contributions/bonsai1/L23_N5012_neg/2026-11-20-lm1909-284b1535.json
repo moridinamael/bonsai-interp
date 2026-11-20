@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-284b1535",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N5012-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:40:59+00:00",
+ "recipe": {
+  "toolchain_commit": "925ffd7b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N5012_neg/2026-11-20-lm1909-284b1535.tests.json"
+ },
+ "label": "function words inside an expository definition of a technical concept ('a technique that attempts to ...', 'focuses on ...', 'meaning that ...')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N5012_neg/2026-11-20-lm1909-284b1535.tests.json",
+   "prereg_commit": "925ffd7b7",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.047,
+     "peak": " management"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.044,
+     "peak": " instructions"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.034,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.134,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.095,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.088,
+     "peak": " following"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.21,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.067,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": "Yesterday"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.062,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.084,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.077,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "925ffd7b7",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "technical definition clause",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top examples are all definitional technical prose (hypertext, list reversal, HTTP/1.1, fractals, transfer learning). Probe: definition 0.81 and 0.22, casual sentence 0.00. Near misses keep the technical topic but are narrative, not definitions. The + pole is causal connectives (because of, due to, thanks to).",
+ "selection": "random draw"
+}
