@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-907bd302",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N1910-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:38:57+00:00",
+ "recipe": {
+  "toolchain_commit": "48486315a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N1910_neg/2026-11-20-lm1909-907bd302.tests.json"
+ },
+ "label": "a short separator string literal in code (' | ', ' - ') used to join fields, as against code that indexes the same fields",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N1910_neg/2026-11-20-lm1909-907bd302.tests.json",
+   "prereg_commit": "48486315a",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.121,
+     "peak": "join"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.564,
+     "peak": " |"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.148,
+     "peak": " '."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.098,
+     "peak": " '."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.288,
+     "peak": " ::"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.101,
+     "peak": "join"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.187,
+     "peak": " '."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.387,
+     "peak": " |"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.065,
+     "peak": " fields"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": " %"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.042,
+     "peak": "header"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " values"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.072,
+     "peak": " parts"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " label"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.169,
+     "peak": " str"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " cols"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.167,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "48486315a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code separator string",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card top examples mixed ('silicone to thinner', \"' |'\", '\"(\"', ' near'). Probe: ' | '.join 0.24, ratio 'to' 0.06. Best guess only.",
+ "selection": "random draw"
+}

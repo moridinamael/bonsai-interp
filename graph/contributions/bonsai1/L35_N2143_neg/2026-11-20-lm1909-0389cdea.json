@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-0389cdea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2143-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:39:07+00:00",
+ "recipe": {
+  "toolchain_commit": "48486315a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N2143_neg/2026-11-20-lm1909-0389cdea.tests.json"
+ },
+ "label": "a word-initial ' S'/' s' token split off from the rest of a rare word (S|änger, s|putum, S|apporo), as against S-words that are a single token",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N2143_neg/2026-11-20-lm1909-0389cdea.tests.json",
+   "prereg_commit": "48486315a",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.303,
+     "peak": " S"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.318,
+     "peak": " s"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.289,
+     "peak": " S"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.347,
+     "peak": " S"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.087,
+     "peak": " S"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.256,
+     "peak": " S"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.243,
+     "peak": "è"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.634,
+     "peak": " S"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " doctor"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " machinery"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " gol"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.031,
+     "peak": " drei"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " multiple"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.296,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "48486315a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off initial S",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Tokenizer checked: Sänger, sputum, Sapporo, Sverdlovsk, Sörenstam, Söhne, Sèvres, Sámi all split off ' S'/' s'; Stuttgart, sabotage, sclerosis, Sinai are one token. Probe: '-S'trauss 0.62, ' S'äfte 0.83, ' s'puttered 0.38, ' sun' 0.005.",
+ "selection": "random draw"
+}
