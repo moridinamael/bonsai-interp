@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1f334d80",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N8511+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:25+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N8511_pos/2026-11-19-lm1909-1f334d80.tests.json"
+ },
+ "label": "The ' of' in a sea-inlet name 'Gulf of …' (Gulf of California, Gulf of Mexico), peaking on ' of' before the place name; the pole also fires, less strongly, on purpose ' to' after an instrument ('a lens is used to focus'), which this test does not cover.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N8511_pos/2026-11-19-lm1909-1f334d80.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.551,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.629,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.723,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.676,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.397,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.653,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.679,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.623,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.186,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.128,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " crossed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " covers"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.066,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.076,
+     "peak": " toward"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.641,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' of' in 'Gulf of …'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probe: 'Gulf of Mexico' 0.71, 'Gulf of Guinea' 0.54, 'Bay of Biscay' 0.26, 'Gulf Stream' 0.06; instrument-purpose ' to' 0.19-0.44. The card's top-32 peak token is mostly ' to', so 'Gulf of' is one facet and a hold would likely be partial.",
+ "selection": "random draw"
+}

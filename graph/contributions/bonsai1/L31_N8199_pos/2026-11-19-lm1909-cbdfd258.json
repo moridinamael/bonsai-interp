@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-cbdfd258",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N8199+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:49+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N8199_pos/2026-11-19-lm1909-cbdfd258.tests.json"
+ },
+ "label": "' a' right after a limiting 'just' or 'only', where a small share is about to be named ('just a few of', 'only a portion', 'only a tiny fraction'); the output direction promotes ' subset', ' fraction', ' portion'. The − pole takes ' a' before an unrestricted part ('owns a majority', 'and a part of').",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N8199_pos/2026-11-19-lm1909-cbdfd258.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.922,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.743,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.887,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.63,
+     "peak": " small"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.649,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.892,
+     "peak": " tiny"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.897,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.457,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.242,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.165,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "Typ"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " reached"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.042,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.815,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' a' after just/only (small share)",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probe: 'just a few of' 0.60, 'only a portion' 0.66, 'a random subset' 0.28; 'bought a car' 0.00, 'owns a majority' 0.02. Near misses keep the sentence and an ' a' but drop the limiting just/only.",
+ "selection": "random draw"
+}

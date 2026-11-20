@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-6a1c0600",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N9316+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:17+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N9316_pos/2026-11-19-lm1909-6a1c0600.tests.json"
+ },
+ "label": "Positional unit (card: 94% of top peaks within the first 16 tokens of a window): best guess is a separator or line break right after a number at the very start of a text, as in table rows and numeric data ('0.217|', '0,11\\n').",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N9316_pos/2026-11-19-lm1909-6a1c0600.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.064,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.111,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.136,
+     "peak": "()"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.064,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.022,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.095,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.051,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.037,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " similar"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": "Each"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " four"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.064,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "number-then-separator at text start (guess)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Flagged positional by the card. Probes with number-led table starts scored under 0.1 of max, so this test is expected to fail; it records the positional character honestly.",
+ "selection": "random draw"
+}

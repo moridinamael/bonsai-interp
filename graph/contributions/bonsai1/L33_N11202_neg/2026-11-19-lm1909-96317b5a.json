@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-96317b5a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11202-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:44+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N11202_neg/2026-11-19-lm1909-96317b5a.tests.json"
+ },
+ "label": "Inside an enumeration of lesser-known wild plants or minor crops, the point where the next unfamiliar item's name is due (' y' of yarrow, the ',' or 'and'/'like' before teff, fonio, moringa). Lists of everyday items stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N11202_neg/2026-11-19-lm1909-96317b5a.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.682,
+     "peak": " y"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.418,
+     "peak": " em"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.755,
+     "peak": " y"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.489,
+     "peak": " y"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.489,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.673,
+     "peak": " y"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.121,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.421,
+     "peak": " y"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " yog"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " like"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " drawer"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " like"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.489,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "next rare plant name in a list",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probe: 'clover, vetch, plantain and yarrow' 0.61 (peak ' y'), 'grains like teff and fonio' 0.57; 'bread, milk and eggs' 0.01; but 'called sumac' 0.18 and a list of hedge shrubs 0.07, so the boundary of 'unfamiliar' is uncertain. The top examples also include non-list cases ('called isicathamiya', 'Or|ations').",
+ "selection": "random draw"
+}

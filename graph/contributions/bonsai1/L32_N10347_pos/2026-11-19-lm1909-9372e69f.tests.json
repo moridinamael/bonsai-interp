@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-9372e69f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10347+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:37:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N10347",
+   "pole": "+",
+   "label": "Python: the line end that opens a function body, the '):\\n' or '():\\n' closing a def line (also the closing '\"\"\"\\n' of its docstring), in files laid out with two blank lines between top-level definitions. Needs the file context; one short function alone scores near zero.",
+   "fire": [
+    "import sys\n\n\ndef read_lines(path):\n    with open(path) as f:\n        return f.readlines()\n\n\ndef count_words(lines):\n    total = 0\n    for line in lines:\n        total += len(line.split())\n    return total\n\n\ndef main():\n    lines = read_lines(sys.argv[1])\n    print(count_words(lines))\n",
+    "import json\n\n\ndef encode(obj):\n    return json.dumps(obj, sort_keys=True)\n\n\ndef decode(text):\n    return json.loads(text)\n\n\ndef roundtrip(obj):\n    return decode(encode(obj))\n",
+    "import time\n\n\ndef now():\n    return int(time.time())\n\n\ndef elapsed(start):\n    return now() - start\n\n\ndef report(start):\n    print('took %d s' % elapsed(start))\n",
+    "import math\n\n\ndef norm(v):\n    return math.sqrt(sum(x * x for x in v))\n\n\ndef scale(v, k):\n    return [x * k for x in v]\n\n\ndef unit(v):\n    return scale(v, 1.0 / norm(v))\n",
+    "import pytest\n\n\ndef test_empty_list():\n    assert total([]) == 0\n\n\ndef test_single_item():\n    assert total([5]) == 5\n\n\ndef test_rejects_text():\n    with pytest.raises(TypeError):\n        total('abc')\n",
+    "import random\n\n\ndef roll():\n    return random.randint(1, 6)\n\n\ndef roll_many(n):\n    return [roll() for _ in range(n)]\n\n\ndef best_of(n):\n    return max(roll_many(n))\n",
+    "import re\n\n\ndef strip_tags(html):\n    return re.sub(r'<[^>]+>', '', html)\n\n\ndef squeeze(text):\n    return re.sub(r'\\s+', ' ', text).strip()\n\n\ndef clean(html):\n    return squeeze(strip_tags(html))\n",
+    "import csv\n\n\ndef load_rows(path):\n    with open(path) as f:\n        return list(csv.reader(f))\n\n\ndef header(rows):\n    return rows[0]\n\n\ndef body(rows):\n    return rows[1:]\n"
+   ],
+   "quiet": [
+    "import sys\n\n\nPATH = sys.argv[1]\nLIMIT = 100\n\n\nLINES = open(PATH).readlines()\nTOTAL = len(LINES)\n\n\nprint(TOTAL)\nprint(LIMIT)\n",
+    "import json\n\n\nDEFAULTS = {'indent': 2, 'sort_keys': True}\n\n\nTEXT = json.dumps(DEFAULTS)\nCOPY = json.loads(TEXT)\n\n\nprint(COPY)\n",
+    "import time\n\n\nSTART = int(time.time())\nTIMEOUT = 30\n\n\nDEADLINE = START + TIMEOUT\n\n\nprint('deadline %d' % DEADLINE)\n",
+    "import math\n\n\nV = [3.0, 4.0]\nK = 2.0\n\n\nNORM = math.sqrt(sum(x * x for x in V))\nSCALED = [x * K for x in V]\n\n\nprint(NORM, SCALED)\n",
+    "import pytest\n\n\nEMPTY = []\nSINGLE = [5]\n\n\nCASES = [(EMPTY, 0), (SINGLE, 5)]\n\n\nIDS = ['empty', 'single']\n",
+    "import random\n\n\nSIDES = 6\nROLLS = 10\n\n\nRESULTS = [random.randint(1, SIDES) for _ in range(ROLLS)]\n\n\nprint(max(RESULTS))\n",
+    "import re\n\n\nTAG = re.compile(r'<[^>]+>')\nSPACE = re.compile(r'\\s+')\n\n\nSAMPLE = '<p>hello   world</p>'\n\n\nprint(SPACE.sub(' ', TAG.sub('', SAMPLE)))\n",
+    "import csv\n\n\nPATH = 'data.csv'\nROWS = list(csv.reader(open(PATH)))\n\n\nHEADER = ROWS[0]\nBODY = ROWS[1:]\n\n\nprint(HEADER)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "def-line end opening a body",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probe: a three-function PEP 8 file 0.38 (peak '():\\n'), a class with methods 0.17, a file of assignments with the same blank-line layout 0.03, a single short function 0.00. Near misses keep imports, layout and topic but define no functions."
+}

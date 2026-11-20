@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-b98ded5a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N6758-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:36+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N6758_neg/2026-11-19-lm1909-b98ded5a.tests.json"
+ },
+ "label": "Python: the indented ' return' (or the indentation before it) on the line directly under an 'if' guard, i.e. the start of an early-exit branch body. Weak in short snippets.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N6758_neg/2026-11-19-lm1909-b98ded5a.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.381,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.559,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.3,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.27,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.338,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.201,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.158,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.615,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.345,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.111,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.055,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.057,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": " def"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.211,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.325,
+     "peak": ".append"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.12,
+     "peak": ":"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.319,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' return' under an if guard",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probe: two guard-and-return snippets 0.19 and 0.23 (peak ' return'), straight-line code 0.04-0.05; but a prose sentence peaked 0.22 on ' value', so the median may fall just short of 0.20. Near misses are same-style Python without conditionals or returns.",
+ "selection": "random draw"
+}

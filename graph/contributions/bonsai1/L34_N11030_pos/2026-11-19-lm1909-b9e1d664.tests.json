@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-b9e1d664",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11030+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:37:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N11030",
+   "pole": "+",
+   "label": "The token right before a comparison operator is due: 'p' inside a statistics parenthesis ('(p < 0.05)', '(all p > 0.05)'), and in code the variable after 'if' that is about to be compared. The output direction promotes '<', '>' and '≤'. Tested on the statistics case.",
+   "fire": [
+    "Recall was higher in the training group than in controls (p < 0.01).",
+    "Blood pressure fell more with the new drug than with placebo (p = 0.03).",
+    "Scores did not differ between the two schools (all p > 0.10).",
+    "Women reported more sleep problems than men (p < 0.001).",
+    "The effect of age on reaction time was reliable (p < 0.05).",
+    "Neither dose changed heart rate compared with baseline (both p > 0.20).",
+    "Survival at five years was better in the surgery arm (p = 0.04).",
+    "Error rates rose with task difficulty in every group (all p < 0.01)."
+   ],
+   "quiet": [
+    "Recall was higher in the training group than in controls (see Table 2).",
+    "Blood pressure fell more with the new drug than with placebo (Figure 3).",
+    "Scores did not differ between the two schools (data not shown).",
+    "Women reported more sleep problems than men (see the appendix).",
+    "The effect of age on reaction time was reliable (replicated twice).",
+    "Neither dose changed heart rate compared with baseline (see Methods).",
+    "Survival at five years was better in the surgery arm (reported earlier).",
+    "Error rates rose with task difficulty in every group (as expected)."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "token before a comparison operator",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probe: text ending in '(p' 0.32, '(all p' 0.47, 'if x' 0.21; a bare ' (' before an age range 0.16; code without comparison ~0. Near misses keep the result sentence and the parenthesis but put no statistic in it."
+}

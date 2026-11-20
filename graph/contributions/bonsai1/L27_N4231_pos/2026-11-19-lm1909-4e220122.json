@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4e220122",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N4231+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:51:05+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N4231_pos/2026-11-19-lm1909-4e220122.tests.json"
+ },
+ "label": "A due time is about to be stated for something owed: fires on the ' on' / ' the' right after 'due' or after handing work in ('homework on time', 'due on the first'), in assignment, rent and payment contexts; ' on' elsewhere and 'on time' for arrivals stay low.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N4231_pos/2026-11-19-lm1909-4e220122.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.798,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.822,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.704,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.839,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.001,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.445,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.0,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.841,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.128,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.062,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.119,
+     "peak": " sources"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.201,
+     "peak": " worksheets"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.061,
+     "peak": " upper"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.369,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.115,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.831,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "due time about to be stated",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: 'hand in your essay on time' 0.76, 'Rent is due on the first' 0.86, 'after the deadline …' 0.48, 'Late work …' 0.30; 'on the table' 0.16, 'train arrived on time' 0.11. Near misses keep the school/rent topic and three keep an ' on', without any due time. The top examples also include the licence boilerplate 'distributed on an \"AS IS\" BASIS', which this label does not explain.",
+ "selection": "random draw"
+}

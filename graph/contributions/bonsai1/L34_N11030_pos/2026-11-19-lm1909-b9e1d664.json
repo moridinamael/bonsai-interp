@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-b9e1d664",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11030+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:32+00:00",
+ "recipe": {
+  "toolchain_commit": "c12e240e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N11030_pos/2026-11-19-lm1909-b9e1d664.tests.json"
+ },
+ "label": "The token right before a comparison operator is due: 'p' inside a statistics parenthesis ('(p < 0.05)', '(all p > 0.05)'), and in code the variable after 'if' that is about to be compared. The output direction promotes '<', '>' and '≤'. Tested on the statistics case.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N11030_pos/2026-11-19-lm1909-b9e1d664.tests.json",
+   "prereg_commit": "c12e240e5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.499,
+     "peak": "p"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.429,
+     "peak": "p"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.448,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.423,
+     "peak": "p"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.462,
+     "peak": "p"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.405,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.284,
+     "peak": "p"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.561,
+     "peak": " p"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.033,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": "Figure"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.064,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " reported"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.042,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.081,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.059,
+     "peak": " ("
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.439,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12e240e5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token before a comparison operator",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probe: text ending in '(p' 0.32, '(all p' 0.47, 'if x' 0.21; a bare ' (' before an age range 0.16; code without comparison ~0. Near misses keep the result sentence and the parenthesis but put no statistic in it.",
+ "selection": "random draw"
+}
