@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f0b1063e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N9170+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:18:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N9170",
+   "pole": "+",
+   "label": "the token right after a completed multi-word institution or title name (e.g. '.' after 'Royal Society of Chemistry')",
+   "fire": [
+    "Most of these guides come from the Penn State University Cooperative Extension. They are free to download.",
+    "The data was published by the National Oceanic and Atmospheric Administration. It covers ten years.",
+    "I strongly support the Campaign for Real Ale. Their pubs are excellent.",
+    "The engraving was made by Matthäus Merian the Younger. It shows the old harbor.",
+    "The report was funded by the Bill and Melinda Gates Foundation, which works on health.",
+    "She trained at the Royal Academy of Dramatic Art, which is in London.",
+    "The clustering step uses k-means++ in scikit-learn by default.",
+    "He joined the International Committee of the Red Cross, and later wrote about it."
+   ],
+   "quiet": [
+    "Most of these guides come from my neighbor, who prints them at home. They are free to take.",
+    "The data was published by a small group of volunteers. It covers ten years.",
+    "I strongly support the local brewers in town. Their pubs are excellent.",
+    "The engraving was made by an unknown artist long ago. It shows the old harbor.",
+    "The report was funded by a few generous donors, who care about health.",
+    "She trained at a small acting school, which is in London.",
+    "The clustering step uses a simple random start by default.",
+    "He joined a volunteer group in his city, and later wrote about it."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "after institution name",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "weak pole (max 8.3). Card peaks on '.'/',' right after names like 'Colorado State University Cooperative Extension', 'Plain English Campaign', 'k-means++'. Probe: '. ' after Royal Society of Chemistry 0.22, k-means++ 0.24, ordinary prose ~0.04."
+}

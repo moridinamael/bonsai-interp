@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-7c5efb1a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7516+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:18:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N7516",
+   "pole": "+",
+   "label": "' only' / ' Only' opening a code comment (# only ..., // only ...)",
+   "fire": [
+    "for item in items:\n    # only keep the active ones\n    if item.active:\n        keep.append(item)",
+    "def on_update(self, before, after):\n    if before.name == after.name: return  # Only react to renames\n    self.log(after)",
+    "def load(url, cached):\n    if not cached:  # only fetch when nothing is stored\n        data = fetch(url)",
+    "// only run this on the main thread\nif (isMainThread()) {\n    render();\n}",
+    "def first(pattern, line):\n    # Only the first match matters here\n    match = pattern.search(line)",
+    "if user.is_admin:  # only admins may delete\n    delete(record)",
+    "def connect():\n    timeout = 30  # only used for remote calls\n    retries = 3",
+    "# only import the heavy module if needed\nif args.plot:\n    import matplotlib"
+   ],
+   "quiet": [
+    "for item in items:\n    # keep the active ones\n    if item.active:\n        keep.append(item)",
+    "def on_update(self, before, after):\n    if before.name == after.name: return  # react to renames\n    self.log(after)",
+    "def load(url, cached):\n    if not cached:  # fetch when nothing is stored\n        data = fetch(url)",
+    "// run this on the main thread\nif (isMainThread()) {\n    render();\n}",
+    "def first(pattern, line):\n    # The first match matters here\n    match = pattern.search(line)",
+    "if user.is_admin:  # admins may delete\n    delete(record)",
+    "The library only reads the config file once, when the program starts.",
+    "Our team only meets on Thursdays, so plan your questions ahead."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'only' in code comment",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card top: '# only import', '# Only care about'; probe: '# only print' 0.64 vs prose 'only affects' 0.02. Card also lists ' to', ' that', ' will' peaks in prose that this label does not cover. Two near misses use prose 'only'."
+}

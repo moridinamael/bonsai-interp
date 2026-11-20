@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-a3340ac6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N419+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:18:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N419",
+   "pole": "+",
+   "label": "a Python set expression about to take a set operation (set(x).difference / .union / .issubset, set - set)",
+   "fire": [
+    "def diff(old_keys, new_keys):\n    seen = set(old_keys)\n    added = set(new_keys).difference(seen)\n    return added",
+    "for post in posts:\n    tags = set(post.tags)\n    all_tags = all_tags.union(tags)\n    count += 1",
+    "def check(required, params):\n    if set(required).issubset(params.keys()):\n        run(params)",
+    "def overlap(a_list, b_list):\n    common = set(a_list).intersection(b_list)\n    print(len(common))",
+    "def verify(expected, found):\n    missing = set(expected) - set(found)\n    if missing:\n        raise KeyError(missing)",
+    "while queue:\n    remaining = set(graph[node])\n    remaining.difference_update(visited)\n    queue.extend(remaining)",
+    "def columns(df, extra_cols):\n    names = set(df.columns).union(extra_cols)\n    return sorted(names)",
+    "def mutual(user_a, user_b):\n    shared = set(user_a.friends) & set(user_b.friends)\n    return list(shared)"
+   ],
+   "quiet": [
+    "def diff(old_keys, new_keys):\n    seen = list(old_keys)\n    added = list(new_keys).copy()\n    return added",
+    "for post in posts:\n    tags = list(post.tags)\n    all_tags = all_tags + tags\n    count += 1",
+    "def check(required, params):\n    if len(required) > 0:\n        run(params)",
+    "def overlap(a_list, b):\n    common = list(a_list).count(b)\n    print(common)",
+    "def verify(expected, found):\n    missing = len(expected) - len(found)\n    if missing:\n        raise KeyError(missing)",
+    "while queue:\n    remaining = list(graph[node])\n    remaining.sort(key=len)\n    queue.extend(remaining)",
+    "def columns(df, col):\n    names = list(df.columns).index(col)\n    return names",
+    "def mutual(user_a, user_b):\n    shared = len(user_a.friends) + len(user_b.friends)\n    return shared"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python set operation",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "card: peaks on ')' / ').' / '.d' right before difference/union/issubset after set(...); output promotes ' union', ' intersection', '∪'. Near misses keep similar code with lists."
+}
