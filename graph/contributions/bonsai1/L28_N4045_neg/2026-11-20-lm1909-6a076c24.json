@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-6a076c24",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N4045-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:42:57+00:00",
+ "recipe": {
+  "toolchain_commit": "b9abee039",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N4045_neg/2026-11-20-lm1909-6a076c24.tests.json"
+ },
+ "label": "the slot right before 'reputation' (or fame/notoriety) is predicted: the article or adjective after 'gained/earned/built' when 'reputation' comes next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N4045_neg/2026-11-20-lm1909-6a076c24.tests.json",
+   "prereg_commit": "b9abee039",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.496,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.436,
+     "peak": "ome"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.513,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.534,
+     "peak": " damaged"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.308,
+     "peak": " excellent"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.109,
+     "peak": " bad"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.053,
+     "peak": " reputation"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.407,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.496,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.313,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.513,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.478,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.308,
+     "peak": " excellent"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.051,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.062,
+     "peak": " gained"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.633,
+    "median_fire": 0.421,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b9abee039",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pre-'reputation' slot",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card: peaks on the token just before 'reputation'; output direction of + pole suppresses reputation/fame, so - pole promotes it",
+ "selection": "random draw"
+}
