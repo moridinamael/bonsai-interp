@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-68b3a155",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N12091-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:54:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N12091",
+   "pole": "-",
+   "label": "the first piece of a word split into subword tokens inside code identifiers or Arabic words ((con|ference, .ag|ainst, A|ss|ertionError, إن|قاذ)",
+   "fire": [
+    "    return dataaccess.tags_for_talks(conference=conference)\n",
+    "    with pytest.raises(AssertionError):\n        self.check_lexer()",
+    "    except exception.AggregateError:\n        save_and_reraise()",
+    "    entry = {\n        \"against\": self.against_expense_account,\n    }",
+    "    result = self.disconnect_handler(connection=conn)\n",
+    "    if self.consolidate(accumulator=acc):\n        return True",
+    "    raise exception.AuthenticationFailure(reason=msg)\n",
+    "    value = self.aggregation_strategy(con=context)\n"
+   ],
+   "quiet": [
+    "    return data.get(key=key)\n",
+    "    with open(path):\n        self.run()",
+    "    except Exception:\n        pass",
+    "    entry = {\n        \"name\": self.name,\n    }",
+    "    result = self.handle(x=y)\n",
+    "    if self.ok(a=b):\n        return True",
+    "    raise ValueError(msg)\n",
+    "    value = self.get(c=c)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "split-word first piece",
+ "unit_kind": "contextual",
+ "confidence": 0.25,
+ "notes": "card: no single token; peaks on word-initial fragments (con, ss, .ag, Ag, إن) of words the tokenizer splits; + pole is capitalised Ex/EX/Con prefixes. Near misses are similar code using short whole-token names."
+}

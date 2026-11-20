@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-143b7967",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N7081-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:54:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N7081",
+   "pole": "-",
+   "label": "attribute or method name accessed after a dot in Python code (ops.device, tree.item, l.dataProvider)",
+   "fire": [
+    "    for row in rows:\n        width = self.tree.column(row, width=120)\n        node = self.tree.item(row, 'text')",
+    "    with ops.device(worker):\n        result = model.forward(batch)\n        loss = result.mean()",
+    "    layer = iface.activeLayer()\n    provider = layer.dataProvider()\n    provider.deleteFeatures(ids)",
+    "    query = session.query(User)\n    user = query.filter(User.name == name).first()\n    print(user.email)",
+    "    frame = df.groupby(df.key)\n    total = frame.agg(sum)\n    total.to_csv(path)",
+    "    canvas = widget.figure.canvas\n    canvas.draw()\n    widget.label.setText(title)",
+    "    tensor = tensor.view(batch, -1)\n    tensor = tensor.cuda()\n    out = net.encoder(tensor)",
+    "    conn = engine.connect()\n    rows = conn.execute(stmt).fetchall()\n    conn.close()"
+   ],
+   "quiet": [
+    "    for row in rows:\n        width = column_width(row, 120)\n        node = item_text(row, 'text')",
+    "    with device_scope(worker):\n        result = forward(model, batch)\n        loss = mean(result)",
+    "    layer = active_layer(iface)\n    provider = data_provider(layer)\n    delete_features(provider, ids)",
+    "    query = make_query(User)\n    user = first(filter_by(query, name))\n    print(user)",
+    "    frame = groupby(df, 'key')\n    total = agg(frame, sum)\n    to_csv(total, path)",
+    "    canvas = get_canvas(widget)\n    draw(canvas)\n    set_text(label, title)",
+    "    tensor = view(tensor, batch, -1)\n    tensor = to_cuda(tensor)\n    out = encoder(net, tensor)",
+    "    conn = connect(engine)\n    rows = fetch_all(execute(conn, stmt))\n    close(conn)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python .attribute access",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "card: peak tokens .device/.data/.size/.item/.column in Python; + pole is return_value / field.data. Near misses are Python lines without dotted access."
+}
