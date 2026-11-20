@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-d3ce9df9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N8713-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:05:50+00:00",
+ "recipe": {
+  "toolchain_commit": "9975f0265",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N8713_neg/2026-11-20-lm1909-d3ce9df9.tests.json"
+ },
+ "label": "deserialisation/evaluation calls in Python (pickle.load, pickle.dump, ast.literal_eval)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N8713_neg/2026-11-20-lm1909-d3ce9df9.tests.json",
+   "prereg_commit": "9975f0265",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.654,
+     "peak": " pickle"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.649,
+     "peak": ".dump"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.655,
+     "peak": "_eval"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.678,
+     "peak": ".load"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.629,
+     "peak": "_eval"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.58,
+     "peak": ".dump"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.588,
+     "peak": " pickle"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.698,
+     "peak": "_eval"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " open"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.03,
+     "peak": " fh"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": "(path"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": "scores"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": " os"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.651,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9975f0265",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pickle/literal_eval call",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "probe: pickle.load 0.63, ast.literal_eval 0.77, f.read 0.02, bare eval 0.06.",
+ "selection": "random draw"
+}

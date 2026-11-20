@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-669358de",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N4794-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:05:58+00:00",
+ "recipe": {
+  "toolchain_commit": "9975f0265",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N4794_neg/2026-11-20-lm1909-669358de.tests.json"
+ },
+ "label": "the hyphen inside a Russian compound adjective (научно-технический, магнитно-резонансный)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N4794_neg/2026-11-20-lm1909-669358de.tests.json",
+   "prereg_commit": "9975f0265",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.32,
+     "peak": "ес"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.732,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.655,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.619,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.276,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.282,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.57,
+     "peak": "прав"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.096,
+     "peak": "-"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": "кры"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " наз"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": "Ст"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": "ш"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.063,
+     "peak": "ут"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " на"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": "ство"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " городе"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.445,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9975f0265",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Russian compound hyphen",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "probe: 'научно-исследовательский' hyphen 0.47; sentence-initial 'Социально-экономическое' 0.06 (so trigger kept mid-sentence); English 'object-oriented' 0.06.",
+ "selection": "random draw"
+}

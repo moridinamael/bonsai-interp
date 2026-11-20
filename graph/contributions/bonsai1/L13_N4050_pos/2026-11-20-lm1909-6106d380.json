@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-6106d380",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N4050+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:04:12+00:00",
+ "recipe": {
+  "toolchain_commit": "9975f0265",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N4050_pos/2026-11-20-lm1909-6106d380.tests.json"
+ },
+ "label": "a bound method passed as a callback in Python signal wiring (self.on_x in connect(...))",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N4050_pos/2026-11-20-lm1909-6106d380.tests.json",
+   "prereg_commit": "9975f0265",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.484,
+     "peak": ".on"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.447,
+     "peak": ".on"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.465,
+     "peak": ".on"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.873,
+     "peak": ".on"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.146,
+     "peak": ".on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.311,
+     "peak": ".on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.463,
+     "peak": ".on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.331,
+     "peak": ".on"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.097,
+     "peak": "')"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.13,
+     "peak": "')"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.091,
+     "peak": "_text"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.068,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.116,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.08,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": ")"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.455,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9975f0265",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "callback method reference",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "card flags broad (1.3% at 0.1 max) and gate-closed regime dominant (98%); max only 3.0. Probe: '.on' in a connect() call 0.54. Expected to be weak.",
+ "selection": "random draw"
+}

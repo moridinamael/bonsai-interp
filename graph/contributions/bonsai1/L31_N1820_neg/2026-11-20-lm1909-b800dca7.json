@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-b800dca7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N1820-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:05:43+00:00",
+ "recipe": {
+  "toolchain_commit": "9975f0265",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N1820_neg/2026-11-20-lm1909-b800dca7.tests.json"
+ },
+ "label": "'infected' in 'HIV-/SIV-infected' before the infected subject",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N1820_neg/2026-11-20-lm1909-b800dca7.tests.json",
+   "prereg_commit": "9975f0265",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.236,
+     "peak": " HIV"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.661,
+     "peak": "ected"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.464,
+     "peak": "ected"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.828,
+     "peak": " infected"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.126,
+     "peak": " HIV"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.247,
+     "peak": "ected"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.894,
+     "peak": "ected"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.107,
+     "peak": "ected"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.235,
+     "peak": " vaccinated"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " provide"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.047,
+     "peak": " cancer"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.309,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.356,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9975f0265",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "HIV-infected",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "probe: 'SIV-infected macaques' 0.91, 'HIV infected patients' 0.28 (peak at ' HIV'). Other top examples ('of a mouse', 'as diverse as') suggest a broader 'before the study subject' context; not tested.",
+ "selection": "random draw"
+}
