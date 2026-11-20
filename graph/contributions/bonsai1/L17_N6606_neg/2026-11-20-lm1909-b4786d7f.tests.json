@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-b4786d7f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N6606-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N6606",
+   "pole": "-",
+   "label": "wildcard import: the ' *' ending a Python 'from module import *' line",
+   "fire": [
+    "import sys\nfrom tkinter import *\nroot = Tk()",
+    "import numpy as np\nfrom pylab import *\nfrom scipy import stats",
+    "#!/usr/bin/env python\nfrom fabric.api import *\nenv.hosts = ['server1']",
+    "import unittest\nfrom mymodule.core import *\nfrom mymodule.io import read",
+    "from __future__ import print_function\nfrom ctypes import *\nlib = CDLL('libc.so.6')",
+    "import os\nimport re\nfrom constants import *\n\nDEBUG = False",
+    "from django.db import models\nfrom .choices import *\n\nclass Order(models.Model):",
+    "import pygame\nfrom pygame.locals import *\npygame.init()"
+   ],
+   "quiet": [
+    "import sys\nfrom tkinter import Tk\nroot = Tk()",
+    "import numpy as np\nfrom pylab import plot\nfrom scipy import stats",
+    "#!/usr/bin/env python\nfrom fabric.api import env\nenv.hosts = ['server1']",
+    "import unittest\nfrom mymodule.core import Engine\nfrom mymodule.io import read",
+    "from __future__ import print_function\nfrom ctypes import CDLL\nlib = CDLL('libc.so.6')",
+    "import os\nimport re\nfrom constants import MAX_SIZE\n\nDEBUG = False",
+    "from django.db import models\nfrom .choices import STATUS\n\nclass Order(models.Model):",
+    "import pygame\nfrom pygame.locals import QUIT\npygame.init()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python 'import *'",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: ' *\\n' x23 and variants, all 'from X import *'. Probe: wildcard import 0.52 vs named import 0.10."
+}

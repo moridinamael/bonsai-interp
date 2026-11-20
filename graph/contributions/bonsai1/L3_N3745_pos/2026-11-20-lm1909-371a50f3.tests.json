@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-371a50f3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N3745+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N3745",
+   "pole": "+",
+   "label": "suffix piece 'ons' or 'ated' after a split word stem (wag|ons, vac|ated, pige|ons)",
+   "fire": [
+    "Every morning the old man fed the pigeons in the square.",
+    "The surgeon repaired two torn tendons in her knee.",
+    "The governor granted pardons to three prisoners.",
+    "My daughter drew a house with her new crayons.",
+    "By evening the storm had finally abated.",
+    "After the huge dinner everyone felt sated and sleepy.",
+    "The zookeepers confirmed the two pandas had mated.",
+    "He kept a flock of racing pigeons on the roof."
+   ],
+   "quiet": [
+    "Every morning the old man fed the surgeons in the square.",
+    "The surgeon repaired two torn ligaments in her knee.",
+    "The governor handed coupons to three prisoners.",
+    "My daughter drew a house in the dungeons of the castle.",
+    "By evening the storm had finally dated.",
+    "After the huge dinner everyone felt full and sleepy.",
+    "The zookeepers confirmed the two pandas were situated nearby.",
+    "He kept a row of old cannons on the roof."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-stem -ons/-ated piece",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Spelling unit. Card: 'ons' x6, 'ated' x2 (Wag|ons, vac|ated). Probe: wagons 0.69, vacated 0.81; ' dragons' as a whole token 0.07. Fire words chosen to split (pige|ons, tend|ons, pard|ons, cray|ons, ab|ated, s|ated, m|ated); near misses use words that are single tokens (surgeons, coupons, dungeons, gallons, situated, dated, gated, cannons)."
+}

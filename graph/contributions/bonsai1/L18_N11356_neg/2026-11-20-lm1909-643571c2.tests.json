@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-643571c2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N11356-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N11356",
+   "pole": "-",
+   "label": "first word of an item in a list of required documents or parameters",
+   "fire": [
+    "Applicants must submit:\nDocumentation of income\nCopies of identity cards",
+    "Checklist for the visit:\nInsurance papers\nRegistration certificate",
+    "        request_parameters = {}\n        request_parameters['id'] = item_id",
+    "Bring the following:\nCertification of training\nEvidence of residence",
+    "        filter_parameters = {}\n        filter_parameters['name'] = name",
+    "Required for enrolment:\nDocumentation of vaccinations\nBirth certificate",
+    "Things to include:\nVerification of employment\nBank statements",
+    "        search_parameters = {}\n        search_parameters['q'] = term"
+   ],
+   "quiet": [
+    "Applicants must submit their income details and copies of identity cards.",
+    "For the visit you will need your insurance papers and your registration.",
+    "        request_id = item_id\n        return request_id",
+    "Please bring proof that you completed training and that you live here.",
+    "        name = name.strip()\n        return name",
+    "For enrolment we need your vaccination records and a birth certificate.",
+    "Please include proof that you are employed and recent bank statements.",
+    "        term = term.lower()\n        return term"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "list-item head word",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Broad pole with no dominant token (Documentation, Broad|man, Ay|meric, interactions, Girls, query). Probes all weak (0.05-0.18). Best guess, expected to fail."
+}

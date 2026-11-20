@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-af8f332c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N3081-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N3081",
+   "pole": "-",
+   "label": "plural noun naming a whole collection of records or items being listed (users, files, all the X)",
+   "fire": [
+    "Here you will find a list of all the campsites in the park.",
+    "def get_orders():\n    orders = Order.objects.all()\n    return orders",
+    "The app shows a list of all the restaurants near you.",
+    "def count_users():\n    users = User.objects.filter(is_active=True)\n    return len(users)",
+    "Below is a list of all the trains leaving today.",
+    "images = glob.glob('*.png')\nfor img in images:\n    print(img)",
+    "Click here to see a list of all the courses we offer.",
+    "def active_accounts():\n    accounts = Account.objects.filter(open=True)\n    return accounts"
+   ],
+   "quiet": [
+    "Here you will find the history of the campsite in the park.",
+    "def get_order(pk):\n    order = Order(pk)\n    return order",
+    "The app shows the name of the restaurant near you.",
+    "def count_user(user):\n    total = user.age + 1\n    return total",
+    "Below is the time of the train leaving today.",
+    "image = load('photo.png')\nprint(image.size)",
+    "Click here to see the price of the course we offer.",
+    "def active_account(account):\n    is_open = account.open\n    return is_open"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "collection-of-items noun",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: '.objects' x7 in Django ORM, len(maps), files_exist, 'a list of all the low cost flights'. Probe: '.objects' itself did not peak (peak on ' users' 0.46 with or without .objects), 'list of all the hotels' 0.48, files 0.26, len(items) 0.10. Best guess at the shared pattern."
+}

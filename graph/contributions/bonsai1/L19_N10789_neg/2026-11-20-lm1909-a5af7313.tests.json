@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a5af7313",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N10789-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:36:23+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N10789",
+   "pole": "-",
+   "label": "source term of a conversion function's name, before '_to_' (def celsius_to_…, bytes_to_str, hex_to_dec)",
+   "fire": [
+    "import math\n\ndef degrees_to_radians(d):\n    return d * math.pi / 180",
+    "from .convert import rgb_to_hex, hex_to_rgb\n\ncolor = rgb_to_hex(255, 0, 0)",
+    "def miles_to_km(miles):\n    return miles * 1.609",
+    "class Parser:\n    def tokens_to_tree(self, tokens):\n        return Tree(tokens)",
+    "def json_to_dict(text):\n    return json.loads(text)",
+    "from utils import seconds_to_hms\n\nprint(seconds_to_hms(3600))",
+    "def roman_to_int(s):\n    values = {'I': 1, 'V': 5}\n    return sum(values[c] for c in s)",
+    "def list_to_csv(rows, path):\n    with open(path, 'w') as f:\n        f.write(','.join(rows))"
+   ],
+   "quiet": [
+    "import math\n\ndef area_of_circle(r):\n    return math.pi * r * r",
+    "from .convert import normalize, clamp\n\ncolor = clamp(255, 0, 0)",
+    "def total_distance(miles):\n    return sum(miles)",
+    "class Parser:\n    def parse_tokens(self, tokens):\n        return Tree(tokens)",
+    "def load_config(text):\n    return json.loads(text)",
+    "from utils import format_time\n\nprint(format_time(3600))",
+    "def count_vowels(s):\n    vowels = set('aeiou')\n    return sum(c in vowels for c in s)",
+    "def write_rows(rows, path):\n    with open(path, 'w') as f:\n        f.write(','.join(rows))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "X in X_to_Y function name",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: def letterToNumber, hex_to_dec, key_sequence_to_..., _pose_to_transform, smiles_to_morgan, permissions_to_mask; the peak sits on the source term, predicting '_to'. Probe: celsius_to_fahrenheit 0.44, bytes_to_str import 0.43; def compute_average 0.01."
+}
