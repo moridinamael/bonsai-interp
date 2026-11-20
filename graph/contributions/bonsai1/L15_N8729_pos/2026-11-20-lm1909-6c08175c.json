@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-6c08175c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N8729+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:51:25+00:00",
+ "recipe": {
+  "toolchain_commit": "c12cb5cc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N8729_pos/2026-11-20-lm1909-6c08175c.tests.json"
+ },
+ "label": "'as' in 'such as' (and similar function words) introducing examples or means",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N8729_pos/2026-11-20-lm1909-6c08175c.tests.json",
+   "prereg_commit": "c12cb5cc4",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.354,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.129,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.068,
+     "peak": " museum"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.069,
+     "peak": " can"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.043,
+     "peak": " drills"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.072,
+     "peak": " fever"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.063,
+     "peak": " millions"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.184,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.072,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.034,
+     "peak": " C"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " museum"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.048,
+     "peak": " improve"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " drills"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.044,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " saving"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.898,
+    "median_fire": 0.071,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12cb5cc4",
+  "minutes": 18,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'such as'",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags broad (3.1% at 0.1 max) and the gate-closed regime dominates (97% echo), so near misses will likely fire weakly; top peaks ' as' (such as), ' how', ' by', ' reduce'. Probe: 'such as' 0.22, others ~0.1 or less. A best guess recorded honestly; expected to fail.",
+ "selection": "random draw"
+}

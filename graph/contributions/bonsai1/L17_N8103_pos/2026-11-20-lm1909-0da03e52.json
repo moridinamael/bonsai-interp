@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-0da03e52",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N8103+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:50:19+00:00",
+ "recipe": {
+  "toolchain_commit": "c12cb5cc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N8103_pos/2026-11-20-lm1909-0da03e52.tests.json"
+ },
+ "label": "the '1' in a complement expression '1 - p' / '(1 - x)' in a formula",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N8103_pos/2026-11-20-lm1909-0da03e52.tests.json",
+   "prereg_commit": "c12cb5cc4",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.219,
+     "peak": " probability"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.155,
+     "peak": ")"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.966,
+     "peak": " -"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.013,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.383,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.111,
+     "peak": ")"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.059,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.201,
+     "peak": " one"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " p"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.106,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.278,
+     "peak": "(p"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " value"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": " lost"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.029,
+     "peak": " G"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " first"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.178,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c12cb5cc4",
+  "minutes": 17,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'1' in (1 - p)",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: no dominant token; top is 'log[(p/(1 - p)]', others are numeric literals in code and tables. Probe: 'p/(1 - p)' 0.94; code assignments '= 0' ~0.05. Near misses keep formulas about p without a '1 -' complement. Opposite pole: numeric literals in arithmetic code.",
+ "selection": "random draw"
+}

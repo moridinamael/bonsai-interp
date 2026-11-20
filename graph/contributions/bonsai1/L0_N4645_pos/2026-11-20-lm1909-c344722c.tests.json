@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-c344722c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N4645+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:26:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N4645",
+   "pole": "+",
+   "label": "the word piece that follows an '-ick' piece: bick|ering, Nick|i, thick|ened, flick|ering",
+   "fire": [
+    "We could hear the neighbors bickering through the thin wall.",
+    "The candles kept flickering during the long dinner.",
+    "Vicki brought a cake to the office on Friday.",
+    "The gravy thickened nicely after a few minutes.",
+    "My cousin Ricki moved to Denver last spring.",
+    "The fog was thickening over the bay by noon.",
+    "Endless bickering stalled the meeting for an hour.",
+    "A flickering streetlight lit the corner of the block."
+   ],
+   "quiet": [
+    "We could hear the neighbors arguing through the thin wall.",
+    "The candles kept burning during the long dinner.",
+    "Nick brought a cake to the office on Friday.",
+    "The gravy was thick after a few minutes.",
+    "My cousin Rick moved to Denver last spring.",
+    "The fog was darkening over the bay by noon.",
+    "Endless arguing stalled the meeting for an hour.",
+    "A broken streetlight lit the corner of the block."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece after '-ick'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Layer 0. Card: 'ering' x5 (bick|ering), 'i' x4 (Nick|i), 'ened' (thick|ened), 'ickle'. Probe: 'bicker' (b|icker) also fired 0.64, so the '-ick' context seems to matter. Near misses use the stem alone or other stems with the same endings. Tokenization checked."
+}

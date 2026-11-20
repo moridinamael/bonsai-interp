@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-0da03e52",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N8103+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:26:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N8103",
+   "pole": "+",
+   "label": "the '1' in a complement expression '1 - p' / '(1 - x)' in a formula",
+   "fire": [
+    "The probability of failure is simply 1 - p when success has probability p.",
+    "Multiply the variance by (1 - r) to get the adjusted value.",
+    "The logit transform is log(p / (1 - p)) for each estimate.",
+    "With a discount factor d, each step keeps 1 - d of the old value.",
+    "The binomial variance equals n * p * (1 - p) for the sample.",
+    "If a fraction f is lost, the remaining mass is (1 - f) times the start.",
+    "The survival curve follows S(t) = (1 - q)^t in this model.",
+    "Set the weight to 1 - alpha so that both terms sum to one."
+   ],
+   "quiet": [
+    "The probability of success is simply p when each trial is independent.",
+    "Multiply the variance by r squared to get the adjusted value.",
+    "The log transform is log(p) for each estimate.",
+    "With a growth factor g, each step multiplies the old value by g.",
+    "The binomial mean equals n * p for the sample.",
+    "If a fraction f is lost, the lost mass is f times the start.",
+    "The growth curve follows G(t) = q^t in this model.",
+    "Set the weight to alpha so that the first term dominates."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'1' in (1 - p)",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: no dominant token; top is 'log[(p/(1 - p)]', others are numeric literals in code and tables. Probe: 'p/(1 - p)' 0.94; code assignments '= 0' ~0.05. Near misses keep formulas about p without a '1 -' complement. Opposite pole: numeric literals in arithmetic code."
+}
