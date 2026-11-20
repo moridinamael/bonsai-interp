@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-37149751",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N551+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:13:43+00:00",
+ "recipe": {
+  "toolchain_commit": "5b2672f6d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N551_pos/2026-11-20-lm1909-37149751.tests.json"
+ },
+ "label": "a later digit inside a multi-digit number in code or data listings (the '6' of \"456\", the '5' of [3,5])",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N551_pos/2026-11-20-lm1909-37149751.tests.json",
+   "prereg_commit": "5b2672f6d",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.136,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.084,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.056,
+     "peak": " record"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.03,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.027,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.29,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.03,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.445,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.06,
+     "peak": "xyz"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.038,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.056,
+     "peak": " record"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": "host"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.045,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.727,
+    "median_fire": 0.07,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5b2672f6d",
+  "minutes": 14,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digits in code numbers",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Card: weak pole (max 8.3) with 19% gate-closed echo; peaks on single digits inside code strings and interval lists. Near misses keep the code/list style with letters instead of numbers. Not probed.",
+ "selection": "random draw"
+}
