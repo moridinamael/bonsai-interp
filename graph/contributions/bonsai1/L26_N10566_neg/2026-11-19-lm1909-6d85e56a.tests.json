@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-6d85e56a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N10566-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:33:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N10566",
+   "pole": "-",
+   "label": "whitespace padding tokens between columns in space-aligned plain-text tables and layouts",
+   "fire": [
+    "Results follow.\nitem        qty     price\nbolts       40      2.50\nwashers     120     0.75\nbrackets    8       6.00\n",
+    "The summary is:\n              count   mean    std\ngroup_a       12      3.4     0.8\ngroup_b       15      2.9     1.1\n",
+    "Here is the matrix:\n    M_11    M_12    M_13\n    M_21    M_22    M_23\n    M_31    M_32    M_33\n",
+    "Schedule for Monday:\n09:00    Registration        Lobby\n10:00    Opening talk        Hall A\n11:30    Workshop            Room 2\n",
+    ">>> df.describe()\n            height    weight\nmin         150.0     48.0\nmax         192.0     95.0\n",
+    "Standings so far:\nteam          won   lost   points\nRovers        7     2      21\nUnited        5     4      15\n",
+    "Memory map:\n0x0000    boot      4K\n0x1000    kernel    2M\n0x8000    user      8M\n",
+    "The readings were:\nday     temp     rain\nmon     14       0.0\ntue     16       2.5\nwed     11       7.1\n"
+   ],
+   "quiet": [
+    "Results follow. We ordered forty bolts at 2.50 each, a hundred and twenty washers and eight brackets.",
+    "The summary is that group A had twelve members with a mean of 3.4, and group B had fifteen.",
+    "Here is the matrix, written out by rows: M_11, M_12, M_13, then M_21, M_22, M_23.",
+    "Schedule for Monday: registration at nine in the lobby, the opening talk at ten in Hall A.",
+    "Calling describe on the frame shows a minimum height of 150 and a maximum of 192.",
+    "Standings so far: Rovers have won seven and lost two, and United have won five.",
+    "The memory map puts the boot block at zero, the kernel at 0x1000 and user space above it.",
+    "The readings were 14 degrees on Monday, 16 on Tuesday and 11 with heavy rain on Wednesday."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "column padding spaces",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card: peak tokens are runs of spaces in aligned tables, but the top example (91, on ' pain' in a garbled two-column questionnaire) is more than twice the next (39). Probes of aligned tables reached only 0.04-0.10 of max and the questionnaire sentence 0.01. Best guess, expected to fail: the pole's scale is set by one outlier I could not reproduce."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-cb821af4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N5370-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:43:01+00:00",
+ "recipe": {
+  "toolchain_commit": "e4fd09168",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N5370_neg/2026-11-19-lm1909-cb821af4.tests.json"
+ },
+ "label": "a running sum reaching its total: ' to' in 'add(s) up to' and the verb ' totals' before an amount; weaker on line ends of accumulating statements in a code loop",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N5370_neg/2026-11-19-lm1909-cb821af4.tests.json",
+   "prereg_commit": "e4fd09168",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.001,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.812,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.537,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.31,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.632,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.185,
+     "peak": " totals"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.512,
+     "peak": " totals"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.04,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.153,
+     "peak": " finishes"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.03,
+     "peak": " than"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.182,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " cycles"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " repair"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.585,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4fd09168",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'adds up to' a total",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: top example is 'adds up to'; the rest are line ends after append/accumulate statements in Python loops. Probes: 'adds up to' 0.91, 'add up to' 0.53, 'which totals' 0.69, loop bodies 0.28-0.37, 'amount to' 0.01, 'came to' 0.01, 'works out to' 0.04, 'from..to' 0.01. Tested on the prose form only.",
+ "selection": "random draw"
+}
