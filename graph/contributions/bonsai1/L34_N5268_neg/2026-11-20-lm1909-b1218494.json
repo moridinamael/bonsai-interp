@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-b1218494",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N5268-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:49:39+00:00",
+ "recipe": {
+  "toolchain_commit": "f49a83644",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N5268_neg/2026-11-20-lm1909-b1218494.tests.json"
+ },
+ "label": "a continuation piece inside a long German or Russian word split into several tokens (Mot|oren, Mik|ro, исследов|ат|ели)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N5268_neg/2026-11-20-lm1909-b1218494.tests.json",
+   "prereg_commit": "f49a83644",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.776,
+     "peak": "ot"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.866,
+     "peak": "min"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.224,
+     "peak": "ов"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.619,
+     "peak": "ag"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.216,
+     "peak": "ro"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.392,
+     "peak": "из"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.086,
+     "peak": "rad"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.204,
+     "peak": "ат"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.197,
+     "peak": " neuen"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.316,
+     "peak": " Lehr"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.234,
+     "peak": " фак"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.175,
+     "peak": "iele"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.277,
+     "peak": " Computer"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.16,
+     "peak": "овые"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " Tank"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.113,
+     "peak": "уд"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.75,
+    "median_fire": 0.308,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f49a83644",
+  "minutes": 7,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mid-word piece (de/ru)",
+ "unit_kind": "sparse feature",
+ "confidence": 0.35,
+ "notes": "probe: Motoren 0.52, Seminare 0.33, телевизоры 0.47; short whole words ~0.01. Quiet items use short words that are likely single tokens.",
+ "selection": "random draw"
+}
