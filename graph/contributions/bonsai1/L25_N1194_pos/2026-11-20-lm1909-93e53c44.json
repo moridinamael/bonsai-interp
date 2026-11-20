@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-93e53c44",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N1194+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:21:22+00:00",
+ "recipe": {
+  "toolchain_commit": "0fee1380c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N1194_pos/2026-11-20-lm1909-93e53c44.tests.json"
+ },
+ "label": "a mid-word piece after a Bl-/Br-/Pl- onset in a rare word split by the tokenizer (Bl|etchley, plat|itudes)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N1194_pos/2026-11-20-lm1909-93e53c44.tests.json",
+   "prereg_commit": "0fee1380c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.661,
+     "peak": " plat"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.681,
+     "peak": "let"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.005,
+     "peak": " psychologist"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.258,
+     "peak": "atch"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.865,
+     "peak": "at"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.007,
+     "peak": " patience"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.615,
+     "peak": "let"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.84,
+     "peak": "att"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " dismissed"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": "During"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " psychologist"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " Thompson"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " patience"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": "er"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " described"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.945,
+    "median_fire": 0.638,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0fee1380c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Bl-/Pl- word piece",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "card top: 'at', ' plat', 'let', 'att' pieces; probe: whole-token ' blatant' 0.04, ' plate' 0.05; split 'plat|itudes' 0.61, 'B|let|chley' 0.68. Tokenization of the new names unchecked",
+ "selection": "random draw"
+}
