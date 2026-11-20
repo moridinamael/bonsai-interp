@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-e02e0e7e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4529+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:05:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N4529",
+   "pole": "+",
+   "label": "leading indentation of the first statement in a Python function body, right after the def line or docstring",
+   "fire": [
+    "import os\n\ndef read_config(path):\n    \"\"\"Read the config file.\"\"\"\n    with open(path) as f:\n        return f.read()",
+    "def connect():\n    db = sqlite3.connect('app.db')\n    return db",
+    "class Loader:\n    def load(self, name):\n        \"\"\"Load one item by name.\"\"\"\n        if name in self.cache:\n            return self.cache[name]",
+    "def main():\n    \"\"\"Entry point.\"\"\"\n    args = parse_args()\n    run(args)",
+    "@property\ndef size(self):\n    return len(self.items)",
+    "def check(result):\n    \"\"\"\n    Check whether the result passed.\n    \"\"\"\n    global passed, failed\n    if result:\n        passed += 1",
+    "def mask(poly):\n    \"\"\"Apply the polygon mask.\n\n    Returns\n    -------\n    None.\n    \"\"\"\n    if poly is None:\n        return",
+    "def reload(self, force=False):\n    if not self.ready:\n        return\n    self.data = fetch()"
+   ],
+   "quiet": [
+    "The config file is read once at start-up and its contents are cached for the rest of the session.",
+    "To connect, the app opens a local database file called app.db and returns the handle.",
+    "The loader keeps a cache of items and looks each one up by name before fetching it again.",
+    "The entry point parses the command-line arguments and then runs the main routine.",
+    "The size property simply returns the number of items currently stored in the list.",
+    "The check routine counts how many results passed and how many failed during the run.",
+    "The mask function applies a polygon mask to the image and returns nothing at all.",
+    "When reloading, the object first checks that it is ready and then fetches fresh data."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "python body indentation",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "card flags broad (7.8% of tokens at 0.1 max) and gate-closed regime 99%; recorded as dense / positional"
+}
