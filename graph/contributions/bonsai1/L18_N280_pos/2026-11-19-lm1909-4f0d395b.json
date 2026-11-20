@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4f0d395b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N280+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:24:34+00:00",
+ "recipe": {
+  "toolchain_commit": "5b188aa99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N280_pos/2026-11-19-lm1909-4f0d395b.tests.json"
+ },
+ "label": "the slot that is about to name the kind of person being addressed: 'whether/if you're a | <kind of person>', 'ideal for | <hobbyists> at any level'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N280_pos/2026-11-19-lm1909-4f0d395b.tests.json",
+   "prereg_commit": "5b188aa99",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.655,
+     "peak": "-time"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.242,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.737,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.515,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.236,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.642,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.896,
+     "peak": " all"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.939,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.533,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " north"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.229,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.084,
+     "peak": " damp"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.123,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " handbook"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.273,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.649,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5b188aa99",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "addressing a kind of person",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' a' after 'Whether you're', ' for'/' among' before astronomers, designers, enthusiasts, amateurs. Probes: you're a beginner 0.68, for gardeners at any level 0.71; 'whether it's a rainy day' 0.20, 'perfect for rainy weather' 0.19. ' among' fires 0.47 whatever follows, so it is left out of the test. Card flags the pole broad (1.2%).",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-6e799db6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2228-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N2228",
+   "pole": "-",
+   "label": "positional unit: the first token of a context window; best guess for a test is a text that opens mid-sentence with a fragment (leading dash, lower-case word)",
+   "fire": [
+    " – and that was the last we heard of him.",
+    " required for the daily work of the office.",
+    " Jensen said the team would return next week.",
+    " – nobody had told her about the meeting.",
+    " plan for reducing traffic was presented on Monday.",
+    "us and tulips in shades of yellow and red.",
+    " You can find the form on the second page.",
+    " mention the number printed on your receipt."
+   ],
+   "quiet": [
+    "That was the last we heard of him.",
+    "These skills are required for the daily work of the office.",
+    "Mr Jensen said the team would return next week.",
+    "Nobody had told her about the meeting.",
+    "A plan for reducing traffic was presented on Monday.",
+    "Crocus and tulips bloom in shades of yellow and red.",
+    "The form can be found on the second page.",
+    "Please mention the number printed on your receipt."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "positional: window start",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags the pole positional (all top peaks at window position 0, strength ~342 of 346 whatever the token) and broad. Probes that open with a fragment (' –', ' J', 'tasks', ' indicate') all scored under 0.07, so sentences cannot reach the window-start state. Registered to record the positional nature; expected to fail."
+}

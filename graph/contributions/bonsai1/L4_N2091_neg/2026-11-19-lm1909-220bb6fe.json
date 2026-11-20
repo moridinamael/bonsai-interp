@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-220bb6fe",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2091-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:24:23+00:00",
+ "recipe": {
+  "toolchain_commit": "5b188aa99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N2091_neg/2026-11-19-lm1909-220bb6fe.tests.json"
+ },
+ "label": "the word piece right after a split 'St'/'Ст' word start: 'анд' in Russian capitalised 'Ст|анд|арт…' and 'od' in English 'st|od|gy'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N2091_neg/2026-11-19-lm1909-220bb6fe.tests.json",
+   "prereg_commit": "5b188aa99",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.907,
+     "peak": "анд"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.972,
+     "peak": "анд"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.921,
+     "peak": "анд"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.895,
+     "peak": "анд"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.763,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.702,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.78,
+     "peak": "od"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.803,
+     "peak": "od"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.137,
+     "peak": " стали"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.115,
+     "peak": "е"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": "у"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.094,
+     "peak": "тар"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " served"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": "y"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " manager"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.849,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5b188aa99",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "St|od, Ст|анд pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: 'анд' after 'Ст', 'od' in 'stodgy', ' Stand'. Probes: stodgy 0.84, Стандарты 0.86, split ' Stand|ish' only 0.2-0.4, whole-token ' стандарт'/' standard'/' stand' ~0. The + pole is Sterling/Stirling.",
+ "selection": "random draw"
+}

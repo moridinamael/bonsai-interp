@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-870bafd8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N4233-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N4233",
+   "pole": "-",
+   "label": "'=\"' after `class` in an HTML tag written inside a code string literal, before a literal class name",
+   "fire": [
+    "html.append('<p class=\"intro\">' + summary + '</p>')",
+    "buf.write('<td class=\"num\">' + str(total) + '</td>')",
+    "return '<span class=\"badge\">' + label + '</span>'",
+    "page += '<h2 class=\"title\">' + heading + '</h2>'",
+    "print('<ul class=\"menu\">' + items + '</ul>')",
+    "cell = '<div class=\"box\">' + content + '</div>'",
+    "lines.append('<i class=\"icon\"></i>' + caption)",
+    "s = s + '<tr class=\"odd\">' + row + '</tr>'"
+   ],
+   "quiet": [
+    "html.append('<p>' + summary + '</p>')",
+    "buf.write('<td>' + str(total) + '</td>')",
+    "return '<a href=\"' + link + '\">' + label + '</a>'",
+    "page += '<h2 id=\"top\">' + heading + '</h2>'",
+    "print('<ul>' + items + '</ul>')",
+    "cell = {'class': 'box', 'content': content}",
+    "lines.append('<img src=\"' + path + '\">' + caption)",
+    "s = s + '<tr>' + row + '</tr>'"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "class=\" in code string",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: '=\"' x9 of the top 32, all `<span class=\"…` / `<i class=\"…` inside Python strings; the rest are digits and verse. Probes: class=\"label\" in a string 0.55-0.57, plain HTML class= 0.22, href=\" and id=\" 0.06, class=\"' + var 0.08. The + pole is CJK room/house characters, unrelated."
+}

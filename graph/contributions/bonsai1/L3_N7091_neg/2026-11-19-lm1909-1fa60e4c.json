@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1fa60e4c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N7091-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:24:48+00:00",
+ "recipe": {
+  "toolchain_commit": "5b188aa99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N7091_neg/2026-11-19-lm1909-1fa60e4c.tests.json"
+ },
+ "label": "the first piece of the Korean word starts ' 뚜렷' (distinct) and ' 뛰어' (outstanding / leaping)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N7091_neg/2026-11-19-lm1909-1fa60e4c.tests.json",
+   "prereg_commit": "5b188aa99",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.047,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.195,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.949,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.405,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.838,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.653,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.51,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.547,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.085,
+     "peak": " 집"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.087,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.127,
+     "peak": " 목"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.065,
+     "peak": "고"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.047,
+     "peak": "생"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": "메"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.054,
+     "peak": "리는"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.063,
+     "peak": "원"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.893,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5b188aa99",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Korean 뚜렷 / 뛰어",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: all top examples are Korean ' 뚜렷' / ' 뛰어'; gate-closed regime (leak 100%), max 3.42. Probes: 뚜렷 0.91-1.12, 뛰어난 0.85-0.93, 뛰어 0.71; other tense-consonant starts (또한, 떠났다, 따뜻) and synonyms (분명, 크게) under 0.06. The + pole is Russian -пуск-/-уст- pieces.",
+ "selection": "random draw"
+}

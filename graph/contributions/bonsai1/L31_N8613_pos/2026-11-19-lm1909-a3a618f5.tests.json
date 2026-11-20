@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a3a618f5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N8613+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N8613",
+   "pole": "+",
+   "label": "the copula right before an expected 'already' in a duplicate-entry message ('Sorry, that username is | already taken'); the output promotes 'already' in many languages",
+   "fire": [
+    "Sorry, that email address is already registered with us.",
+    "Sorry, that nickname is already in use by another player.",
+    "Sorry, this seat is already reserved for someone else.",
+    "Sorry, that domain name is already owned by another customer.",
+    "Cannot add contact: this phone number is already in your contacts.",
+    "Sorry, that coupon code is already redeemed.",
+    "Upload failed: a document with this title is already stored in the library.",
+    "Sorry, this table is already booked for tonight."
+   ],
+   "quiet": [
+    "Sorry, we could not find an account with those details.",
+    "Sorry, your nickname must be at least four letters long.",
+    "Sorry, please choose a seat before you continue.",
+    "Sorry, we cannot process domain orders on weekends.",
+    "Cannot add contact: please enter a phone number first.",
+    "Sorry, coupon codes cannot be combined with other offers.",
+    "Upload failed: please check your connection and try again.",
+    "Sorry, we do not take bookings by email."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts 'already'",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on is/are/ist before 'already' ('\"%s\" is already in your address book', 'Those channels are already linked'); logit effect promotes déjà/уже/già/bereits/Already. Probes: 'Sorry, that username is' 0.36 whatever follows, 'this email address is already on the list' 0.27, narrative 'had already started' 0.14, messages with no duplicate reading ~0. Weak in probes, so the median may fall short."
+}
