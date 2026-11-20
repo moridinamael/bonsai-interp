@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-fdb47b31",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8044+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:05:01+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N8044",
+   "pole": "+",
+   "label": "the hour field of a time format or timestamp ('%H', 'HH:mm', 'hh:mm:ss', '23:59:59')",
+   "fire": [
+    "now = datetime.now()\nstamp = now.strftime('%Y-%m-%d %H:%M:%S')\nprint(stamp)",
+    "const label = moment(ts).format('DD.MM.YYYY HH:mm');\nel.textContent = label;",
+    "log_format = '%(asctime)s %(message)s'\ndatefmt = '%d/%m/%Y %H:%M'",
+    "end = '%s 23:59:59' % day\nstart = '%s 00:00:00' % day",
+    "SimpleDateFormat fmt = new SimpleDateFormat(\"yyyy-MM-dd hh:mm a\");\nString s = fmt.format(d);",
+    "filename = 'backup_' + time.strftime('%Y%m%d_%H%M') + '.tar'",
+    "SELECT DATE_FORMAT(created, '%Y-%m-%d %H:%i') FROM orders;",
+    "pattern = re.compile(r'(\\d{2}):(\\d{2}):(\\d{2})')\nm = pattern.match(line)"
+   ],
+   "quiet": [
+    "now = datetime.now()\nstamp = now.strftime('%Y-%m-%d')\nprint(stamp)",
+    "const label = moment(ts).format('DD.MM.YYYY');\nel.textContent = label;",
+    "log_format = '%(levelname)s %(message)s'\ndatefmt = '%d/%m/%Y'",
+    "end = '%s-12-31' % year\nstart = '%s-01-01' % year",
+    "SimpleDateFormat fmt = new SimpleDateFormat(\"yyyy-MM-dd\");\nString s = fmt.format(d);",
+    "filename = 'backup_' + time.strftime('%Y%m%d') + '.tar'",
+    "SELECT DATE_FORMAT(created, '%Y-%m-%d') FROM orders;",
+    "pattern = re.compile(r'(\\d{4})-(\\d{2})-(\\d{2})')\nm = pattern.match(line)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "hour field in time format",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card peaks: '%H' x2, ' hh' x2, 'HH', the '3' of '23:59:59', regex '(\\d{2}):(\\d{2})'. Top-1 is a Spanish ' el' outlier. Near misses are date-only formats in the same code."
+}
