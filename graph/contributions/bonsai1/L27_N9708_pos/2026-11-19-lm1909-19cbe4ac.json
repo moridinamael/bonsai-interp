@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-19cbe4ac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N9708+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:55:12+00:00",
+ "recipe": {
+  "toolchain_commit": "6efc017b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N9708_pos/2026-11-19-lm1909-19cbe4ac.tests.json"
+ },
+ "label": "In narrative about ancient, classical or biblical history, the word right before a period or regional-era name is due (Until ⟦the⟧ nineteenth century, in ⟦southern⟧ Italy, the Ion⟦ian⟧ school); output promotes ' century', ' modern', ' Renaissance'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N9708_pos/2026-11-19-lm1909-19cbe4ac.tests.json",
+   "prereg_commit": "6efc017b7",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.642,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.577,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.473,
+     "peak": " southern"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.81,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.939,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.428,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.09,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.421,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " friends"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " keys"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.045,
+     "peak": " southern"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " buried"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " used"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " key"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.525,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6efc017b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pre-period slot in ancient history",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peaks ' the' x12, ' Southern', 'ian' in texts on the Bible, Greece and Rome; the − pole peaks on the preposition one step earlier (' of', ' in'). Probes on short sentences were weak: until the nineteenth century 0.24, southern Italy 0.18, the 1940s 0.12; modern-life versions 0.04-0.05. Fire items therefore carry more ancient-history lead-in.",
+ "selection": "random draw"
+}

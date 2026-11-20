@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c142bb25",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N6520+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:55:02+00:00",
+ "recipe": {
+  "toolchain_commit": "6efc017b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N6520_pos/2026-11-19-lm1909-c142bb25.tests.json"
+ },
+ "label": "The slot where an academic field's subject matter is named: the field word in a journal, centre or programme title (International Journal of ⟦Environmental⟧ …, Center for ⟦International⟧ Education) and the object position in 'a branch of X dealing ⟦with⟧ …'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N6520_pos/2026-11-19-lm1909-c142bb25.tests.json",
+   "prereg_commit": "6efc017b7",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.518,
+     "peak": " Agricultural"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.508,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.638,
+     "peak": " Marine"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.352,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.482,
+     "peak": " Comparative"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.628,
+     "peak": " moral"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.508,
+     "peak": " Applied"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.513,
+     "peak": " Medieval"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " editor"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " paid"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": " patient"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " Toronto"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " train"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " hall"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " directs"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.51,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6efc017b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "subject slot of a field or journal name",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks ' Environmental', ' International', 'ical', ' of', ',' in journal titles and discipline definitions. Probes: Journal of Environmental 0.74, branch of mathematics dealing with … 0.68, Center for International Education 0.66, medical specialty … treatment of 0.62; a personal journal 0.01, 'dealing with customers' 0.01.",
+ "selection": "random draw"
+}

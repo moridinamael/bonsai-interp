@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-a76738ed",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N1405+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N1405",
+   "pole": "+",
+   "label": "The last token that completes a multi-token proper name, especially a place name or surname whose final piece is its own token (Beverly⟦ Hills⟧, Diablo⟦ Canyon⟧, Alic⟦ante⟧, Balanch⟦ine⟧)",
+   "fire": [
+    "We spent two nights camping at Bryce Canyon in early June.",
+    "Her aunt retired to Palm Springs after selling the bakery.",
+    "The ferry from the mainland reaches Santorini before noon.",
+    "He studied the scores of Stravinsky during his years at the academy.",
+    "They took the cable car up from Zermatt on a clear morning.",
+    "The old walls of Dubrovnik were crowded with visitors.",
+    "A red-rock trail near Sedona was closed after the storm.",
+    "The ballet was first staged by Diaghilev for a Paris season."
+   ],
+   "quiet": [
+    "We spent two nights camping at the bottom of a canyon in early June.",
+    "Her aunt retired to a house near some hot springs after selling the bakery.",
+    "The ferry from the mainland reaches the island before noon.",
+    "He studied the scores of the composer during his years at the academy.",
+    "They took the cable car up from the village on a clear morning.",
+    "The old walls of the harbour town were crowded with visitors.",
+    "A red-rock trail near the campsite was closed after the storm.",
+    "The ballet was first staged by the impresario for a Paris season."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "final piece of a proper name",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: no single token; peaks are name-final pieces ('ante', 'cent', ' Hills', ' Canyon', 'ine'). Probes: Alicante 0.84, Balanchine 0.75, Diablo Canyon 0.66, Beverly Hills 0.62, Capitol Hill only 0.14; lower-case hills and canyon 0.03. Tokenisation of the test names was checked without scoring."
+}

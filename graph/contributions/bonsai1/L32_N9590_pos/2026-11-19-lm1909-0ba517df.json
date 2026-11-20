@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-0ba517df",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9590+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:48+00:00",
+ "recipe": {
+  "toolchain_commit": "6efc017b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N9590_pos/2026-11-19-lm1909-0ba517df.tests.json"
+ },
+ "label": "The nationality adjective or determiner right before a colonial or imperial polity noun (a ⟦British⟧ protectorate, the former ⟦Portuguese⟧ colonies, other ⟦British⟧ dominions); the same adjective before an ordinary noun stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N9590_pos/2026-11-19-lm1909-0ba517df.tests.json",
+   "prereg_commit": "6efc017b7",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.558,
+     "peak": " German"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.452,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.644,
+     "peak": " British"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.122,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.585,
+     "peak": " Belgian"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.394,
+     "peak": " former"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.122,
+     "peak": " Italian"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.281,
+     "peak": " British"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " German"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.169,
+     "peak": " British"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.381,
+     "peak": " former"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.423,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6efc017b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "nationality before colony/protectorate",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on ' British', ' the', ' former', ' independent' before protectorate, colonies, dominions, Union. Probes: British protectorate 0.67, British dominions 0.42, Portuguese colonies 0.41, 'once the Soviet Union' 0.14; 'a British actor' 0.00, same frame without the polity 0.02.",
+ "selection": "random draw"
+}
