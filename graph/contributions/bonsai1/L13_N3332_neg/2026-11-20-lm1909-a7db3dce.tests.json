@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a7db3dce",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N3332-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T03:01:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N3332",
+   "pole": "-",
+   "label": "shell variables and command arguments in command-line text, such as $USER, $HOME and sudo",
+   "fire": [
+    "To stop it, run killall -u $USER -TERM nginx in a terminal.",
+    "The script copies the file to $HOME/.config before starting.",
+    "Then type ./configure && make && sudo make install to finish.",
+    "Use chown $USER:$USER on the folder if writing fails.",
+    "Add export PATH=$PATH:$HOME/bin to your shell profile.",
+    "Run sudo systemctl restart docker after editing the file.",
+    "Check the exit code with echo $? after the command.",
+    "Log in again with su - $USER to pick up the new group."
+   ],
+   "quiet": [
+    "To stop it, close the nginx window from the task manager.",
+    "The installer copies the file to your settings folder before starting.",
+    "Then follow the installer's steps to finish the setup.",
+    "Change the folder's owner in the file browser if writing fails.",
+    "Add the bin folder to your search path in the settings app.",
+    "Restart the docker service from the system tray after editing the file.",
+    "Check whether the program reported an error in its log.",
+    "Log out and back in to pick up the new group."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "shell args",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Probe: 'as $USER' peaked on USER at 0.33; 'localhost' in a URL read 0.03. Low confidence."
+}
