@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-702f9a75",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11212+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:39:03+00:00",
+ "recipe": {
+  "toolchain_commit": "3a4561a3f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N11212_pos/2026-11-20-lm1909-702f9a75.tests.json"
+ },
+ "label": "the noun just before 'directly' in buy/sell/plug-X-directly phrasings: predicts 'directly' (its output suppresses ' directly'/' direct')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N11212_pos/2026-11-20-lm1909-702f9a75.tests.json",
+   "prereg_commit": "3a4561a3f",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.136,
+     "peak": " produce"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.152,
+     "peak": " beer"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.031,
+     "peak": " tickets"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.006,
+     "peak": " beef"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.031,
+     "peak": " cord"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.04,
+     "peak": " prints"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.291,
+     "peak": " eggs"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.002,
+     "peak": " router"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " produce"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " barrels"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " weekend"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " hills"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " away"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.08,
+     "peak": " eggs"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " router"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.036,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a4561a3f",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicts 'directly'",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "probe: 'fresh vegetables directly from growers' 0.37 at ' vegetables', power cable 0.12, frozen peas 0.02. The pole fires before seeing 'directly', so near misses change the lead-in. Expected to be weak.",
+ "selection": "random draw"
+}
