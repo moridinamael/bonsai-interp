@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-d70e3b55",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N8780+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:54:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N8780",
+   "pole": "+",
+   "label": "the shebang marker '#!' as a string literal in code (startswith(\"#!\"), '#!/bin/sh')",
+   "fire": [
+    "def has_shebang(text):\n    return text.startswith(\"#!\")",
+    "        with open(path, 'w') as fh:\n            fh.write('#!/usr/bin/env python\\n' + body)",
+    "    first = lines[0]\n    if first.startswith(\"#!\") and 'python' in first:\n        return True",
+    "script = '#!/bin/bash\\nset -e\\n' + commands",
+    "    # skip the interpreter line\n    if line.startswith('#!'):\n        continue",
+    "    header = \"#!/bin/sh\\n\"\n    out.write(header + cmd)",
+    "        elif source.startswith(\"#!\"):\n            interpreter = source[2:].split()[0]",
+    "    if not content.startswith('#!'):\n        content = '#!/usr/bin/env bash\\n' + content"
+   ],
+   "quiet": [
+    "def has_header(text):\n    return text.startswith(\"<?xml\")",
+    "        with open(path, 'w') as fh:\n            fh.write('import sys\\n' + body)",
+    "    first = lines[0]\n    if first.startswith(\"import\") and 'numpy' in first:\n        return True",
+    "script = 'echo start\\nset -e\\n' + commands",
+    "    # skip blank lines\n    if not line.strip():\n        continue",
+    "    header = \"BEGIN;\\n\"\n    out.write(header + cmd)",
+    "        elif source.startswith(\"def \"):\n            name = source[4:].split('(')[0]",
+    "    if not content.endswith('\\n'):\n        content = content + '\\n'"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "shebang string in code",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: top 2 and 5 are '(\"#' / ' '#' of a shebang check or write; others are scattered code tokens (' cast', 'bare-except', 'smartindent'). Not probed."
+}
