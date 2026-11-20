@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-eb0202d5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N11721-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:17:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N11721",
+   "pole": "-",
+   "label": "hex digit letters inside hexadecimal literals (0xff, #009c98, UUIDs)",
+   "fire": [
+    "The background uses the color #3fa9cd with white text on top.",
+    "mask = value & 0xffff  # keep only the low sixteen bits",
+    "The device id was reported as 0x4bcf in the kernel log.",
+    "Each request carries an id like 7c9e6679-7425-40de-944b-e07fc1f90ae7 in the header.",
+    "bytes = [0xde, 0xad, 0xbe, 0xef]",
+    "Set the register to 0xfc to enable all four channels.",
+    "The link text is styled with color: #e5dfaa; in the stylesheet.",
+    "checksum = crc ^ 0xedb88320"
+   ],
+   "quiet": [
+    "The background uses the color white with black text on top.",
+    "mask = value % 65536  # keep only the low sixteen bits",
+    "The device id was reported as 1934 in the kernel log.",
+    "Each request carries an id like 7342 in the header field.",
+    "bytes = [12, 45, 78, 90]",
+    "Set the register to 252 to enable all four channels.",
+    "The link text is styled with color: gray; in the stylesheet.",
+    "checksum = crc ^ 4096"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "hex digits",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Weak pole (max 3.3) with the gate-closed regime at 99%: the activation is a leak. Top tokens c, xff, d, f, FF, FFFF inside hex numbers. Near misses are decimal numbers in the same code contexts."
+}

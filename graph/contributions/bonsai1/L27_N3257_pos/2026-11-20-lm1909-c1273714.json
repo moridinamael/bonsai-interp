@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c1273714",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N3257+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:28:49+00:00",
+ "recipe": {
+  "toolchain_commit": "6eb134712",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N3257_pos/2026-11-20-lm1909-c1273714.tests.json"
+ },
+ "label": "' the' opening the defining noun phrase after a copula in a definition ('X is the plane perpendicular to…')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N3257_pos/2026-11-20-lm1909-c1273714.tests.json",
+   "prereg_commit": "6eb134712",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.94,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.259,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.03,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.115,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.683,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.038,
+     "peak": " measure"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.132,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.287,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " we"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.034,
+     "peak": " linear"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " driver"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.059,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " crossing"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": "Entropy"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.196,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6eb134712",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "definitional 'is the'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' the' x29 of top 32, after 'is', 'are', 'be', 'as' in definitions (the equatorial plane is the plane…, believed to be the sister group…). Output promotes intersection/set/subset. Probe: 'A prime number is the number…' 0.54, 'She is the director' 0.16, plain 'the' near zero. Near misses keep 'the' in the same scientific sentences but not as a predicate of a definition.",
+ "selection": "random draw"
+}
