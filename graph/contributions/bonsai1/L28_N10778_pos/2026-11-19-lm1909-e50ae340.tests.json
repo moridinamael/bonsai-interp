@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-e50ae340",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N10778+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:19:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N10778",
+   "pole": "+",
+   "label": "indentation whitespace that opens a line of Python code after a blank line, strongest before a comment or a new block (broad unit: 5.1% of tokens reach 0.1 of max)",
+   "fire": [
+    "class MainWindow(Frame):\n    def build_menu(self):\n        menu = Menu(self)\n        item = menu.add_item('Tile')\n        item.add_callback(lambda *args: self.tile_panes_cb())\n\n        # create the Options pulldown\n        options = menu.add_name('Options')",
+    "    def init_ui(self):\n        self.grid = Grid(self)\n        self.Bind(EVT_GRID_CELL_CHANGE, self.onCellEdit, self.grid)\n        self.Bind(EVT_GRID_LABEL_CLICK, self.onLabelClick, self.grid)\n\n\n        ### Make Containers ###\n        vbox = BoxSizer(VERTICAL)",
+    "def tree_view(nodes, revno):\n    rows = []\n    for node in nodes:\n        rows.append({\n            'date': format_date(node.timestamp),\n            'selected': node.revno == revno,\n        })\n\n    roots = [r for r in rows if r.get('parent') is None]\n    return roots",
+    "    def load(self, path):\n        with open(path) as handle:\n            self.data = json.load(handle)\n        self.loaded = True\n\n        # keep a copy of the original values\n        self.original = dict(self.data)",
+    "def main():\n    args = parse_args()\n    config = read_config(args.config)\n    logger = setup_logging(config)\n\n    # connect to the database\n    db = connect(config['dsn'])\n\n    # run the import\n    run_import(db, args.source)",
+    "    def test_resize(self):\n        widget = Widget(width=10, height=20)\n        widget.resize(30, 40)\n        self.assertEqual(widget.width, 30)\n\n        # the height should follow\n        self.assertEqual(widget.height, 40)",
+    "class Parser(object):\n    def __init__(self, text):\n        self.text = text\n        self.pos = 0\n        self.tokens = []\n\n    def advance(self):\n        self.pos += 1\n\n    def peek(self):\n        return self.text[self.pos]",
+    "    for name in sorted(plugins):\n        plugin = plugins[name]\n        if not plugin.enabled:\n            continue\n        plugin.setup(app)\n\n    # register the signal handlers\n    signal.signal(signal.SIGTERM, shutdown)"
+   ],
+   "quiet": [
+    "The main window builds its menu first and then adds the Options pulldown with a callback for tiling the panes.",
+    "The grid binds two events, one for editing a cell and one for clicking a label, before the containers are made.",
+    "roots = [r for r in rows if r.get('parent') is None]",
+    "The loader opens the file, reads the JSON into memory and keeps a copy of the original values.",
+    "db = connect(config['dsn']); run_import(db, args.source)",
+    "The test resizes a widget to thirty by forty and checks that the width and the height follow.",
+    "The parser class stores the text, a position and a list of tokens, and has methods to advance and to peek.",
+    "signal.signal(signal.SIGTERM, shutdown)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "code indent after blank line",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: flagged broad; top peaks are runs of spaces at the start of a code line after a blank line ('# create a Option pulldown', '### Make Containers ###', 'root = [...]'), plus ' =' and ','. Probe: two short code passages 0.19-0.26, prose 0.11, one-line code 0.10. Fire items are multi-line passages as the code tip asks; the margin is thin and the test may fail on the 0.20 median."
+}

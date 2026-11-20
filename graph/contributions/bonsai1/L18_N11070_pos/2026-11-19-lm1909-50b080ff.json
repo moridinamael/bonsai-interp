@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-50b080ff",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N11070+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:01+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N11070_pos/2026-11-19-lm1909-50b080ff.tests.json"
+ },
+ "label": "the start of a list item or coordinated clause that breaks the parallel form of the items before it (verb-phrase items then 'It is …'; '…; and was …'; nouns then 'being …'; a name list then ', and I …'); quiet when the last item keeps the pattern",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N11070_pos/2026-11-19-lm1909-50b080ff.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.741,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.032,
+     "peak": ";"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.338,
+     "peak": " feeling"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.044,
+     "peak": " week"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.338,
+     "peak": " Applicants"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.843,
+     "peak": " He"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.254,
+     "peak": " shipping"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.099,
+     "peak": " The"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.324,
+     "peak": "Red"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": ";"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": " asked"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": " week"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.111,
+     "peak": " fee"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.166,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.227,
+     "peak": " shipping"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.099,
+     "peak": " The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.727,
+    "median_fire": 0.296,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "list item breaking parallel form",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Look: in the top 16 the peak is the first word of an item that departs from the form of its siblings ('Decreases fat … It is diuretic', '; opened a home …; and was a spokesperson', 'anger, anxiety, being touched', '(b) To attract … (c) They had', '- Local advertising - As We Speak'). Probe was mixed: 'being moved' 0.31, 'It is diuretic' 0.41, '; and was' 0.17, short lists 0.03-0.05. Near misses are the same lists with a parallel last item, so they share the prefix.",
+ "selection": "random draw"
+}

@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-19-lm1909-b732a6dc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N9929+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:19:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N9929",
+   "pole": "+",
+   "label": "the word-internal piece 'ib' or 'id' that closes a name or stem (Naj·ib, Hab·ib, Yaz·id, Rash·id, Cyan·id·ation); not names without the piece, and not 'id'/'ib' inside a one-token word (did, kid, rib)",
+   "fire": [
+    "My neighbour Habib sells carpets in the old market.",
+    "The poet Ghalib wrote in both Urdu and Persian.",
+    "The striker Rashid scored twice in the second half.",
+    "Our guide Hamid met us at the gate of the old city.",
+    "The architect Zahid designed the new library.",
+    "A young clerk named Mujib kept the ledgers.",
+    "Her uncle Khalid owns a bakery near the harbour.",
+    "The singer Shakib performed at the festival."
+   ],
+   "quiet": [
+    "My neighbour Hassan sells carpets in the old market.",
+    "The poet Hafez wrote in both Persian and Arabic.",
+    "The striker Omar scored twice in the second half.",
+    "Our guide Yusuf met us at the gate of the old city.",
+    "The architect did not hide the rib vaults of the new library.",
+    "A young kid named Robert kept the ledgers.",
+    "Her uncle Karim owns a bakery near the harbour.",
+    "The singer Leila performed at the festival."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "name-final piece 'ib' / 'id'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: 'ib' x3, 'id' x2, 'idine' x2 among the top 32 peaks, alongside ' cleaning', ' turtles' and ' dock', so the piece is one sub-trigger of several and coverage will be low. Probe: Naj·ib 0.79, Yaz·id 0.85, cyan·id·ation 0.79, Zan·ib·oni 0.87; 'cleaning' 0.01, 'turtles … dock' 0.18, Charles Dickens 0.02. The tokenizer was checked: each fire name ends in the piece 'ib' or 'id'.",
+ "trigger": {
+  "pieces": [
+   "ib",
+   "id"
+  ]
+ }
+}

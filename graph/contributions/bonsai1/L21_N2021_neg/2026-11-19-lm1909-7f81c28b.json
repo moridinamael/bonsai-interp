@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-7f81c28b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2021-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:35:43+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N2021_neg/2026-11-19-lm1909-7f81c28b.tests.json"
+ },
+ "label": "punctuation or conjunction that closes a long item late in a very long sentence or list (., ; : 'and' after 40+ words of the same sentence); the same punctuation in short sentences stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N2021_neg/2026-11-19-lm1909-7f81c28b.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.097,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.102,
+     "peak": ";"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.474,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.422,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.116,
+     "peak": " textbooks"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.105,
+     "peak": " walked"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.269,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.132,
+     "peak": " dull"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.052,
+     "peak": " per"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.044,
+     "peak": "Send"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " does"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": " where"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.057,
+     "peak": " held"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " Studies"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": " willing"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.124,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "item boundary, long sentence",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card + look: peaks are '.', ',', ';', ':', ' and' at item boundaries, every one deep inside a long sentence or reference. Probe: six short sentences with the same punctuation all scored 0.04-0.06, so the test contrasts length: near misses keep topic and punctuation but are short on purpose.",
+ "selection": "random draw"
+}

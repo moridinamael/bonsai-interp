@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-638ce8a1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N4001+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:35:51+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N4001_pos/2026-11-19-lm1909-638ce8a1.tests.json"
+ },
+ "label": "loss-of-sharpness terms in photography and optics (blur, blurry, out of focus, autofocus, ghosting, low pass filter); not 'focus' or 'ghost' in non-optical senses. The - pole is the tonal side of image quality (contrast, dynamic range)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N4001_pos/2026-11-19-lm1909-638ce8a1.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.593,
+     "peak": " blur"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.401,
+     "peak": " aperture"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.216,
+     "peak": " focus"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.134,
+     "peak": " autofocus"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.017,
+     "peak": " ghost"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.422,
+     "peak": " pass"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.652,
+     "peak": " soft"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.317,
+     "peak": " fuzzy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": " cars"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.038,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.056,
+     "peak": " holiday"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.133,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " camera"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": " said"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.497,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "image blur / focus terms",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Card: peaks on ghost(ing), bl·urring, phase (detection autofocus), 焦 (focus), low pass, blurry. Probe: blurring 1.06, low pass 0.66, blurry 0.54, autofocus 0.46, ghosting 0.41; a lens sentence without sharpness 0.03, 'focus on sales' 0.03, 'ghost story' 0.06.",
+ "selection": "random draw"
+}

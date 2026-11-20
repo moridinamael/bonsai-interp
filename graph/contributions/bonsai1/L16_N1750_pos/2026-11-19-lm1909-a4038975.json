@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a4038975",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N1750+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:17+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N1750_pos/2026-11-19-lm1909-a4038975.tests.json"
+ },
+ "label": "an early-alphabet (A/B/C/D-initial) entry that opens or continues an alphabetically ordered list: sorted imports ('import absolute_import', 'import base64'), A-Z lists of names, countries, tags or glossary terms; quiet on late-alphabet stretches of the same lists and on the same words in prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N1750_pos/2026-11-19-lm1909-a4038975.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.459,
+     "peak": " absolute"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.523,
+     "peak": " base"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.869,
+     "peak": " Afghanistan"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.962,
+     "peak": " Allen"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.586,
+     "peak": "Al"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.541,
+     "peak": "caption"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.437,
+     "peak": " Avery"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.762,
+     "peak": " absolute"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.055,
+     "peak": " parsing"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": "#"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.042,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": " stone"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.051,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " say"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.564,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "early entry of A-Z list",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' absolute' is 14 of the top 32 peaks, but only in 'from __future__ import absolute_import'. Look adds 'import base64' after 'import array', '- Abkhazia' opening a country list, 'B·ando' after the A names, 'Mark Davis' after Castaldo and Crutchfield, 'caption' after 'button' in a sorted tag tuple. Probe: absolute_import 0.57, '- Abkhazia' list 1.06, 'absolute power / zero / disaster' in prose 0.01, __future__ imports without absolute_import 0.03.",
+ "selection": "random draw"
+}

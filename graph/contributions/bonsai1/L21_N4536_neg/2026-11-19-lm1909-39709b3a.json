@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-39709b3a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N4536-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:10+00:00",
+ "recipe": {
+  "toolchain_commit": "14d3a12ee",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N4536_neg/2026-11-19-lm1909-39709b3a.tests.json"
+ },
+ "label": "unclear; best guess: a continuation point inside a repeated template (matrix rows trailing into dots, table or code lines that repeat the line above, 'X, Y, etc.' / 'and the like')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N4536_neg/2026-11-19-lm1909-39709b3a.tests.json",
+   "prereg_commit": "14d3a12ee",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.211,
+     "peak": "  "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.226,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.07,
+     "peak": "row"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.124,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.031,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.116,
+     "peak": "           "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.061,
+     "peak": "xmax"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.326,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " number"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " multiply"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": "coming"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " boxes"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " top"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " be"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.12,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "14d3a12ee",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "repeated-template continuation?",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card + look show no single token or topic: ', etc.', a matrix row of dots, 'PA-25', 'sf_CreatedDate', 'and the like', mostly inside repetitive code, tables and forms. Probe: a matrix with rows of dots 0.36; ', etc.', 'and the like', 'and so on' and an engine table 0.01-0.02. Low confidence; this records a best guess, and a fail is the expected outcome.",
+ "selection": "random draw"
+}
