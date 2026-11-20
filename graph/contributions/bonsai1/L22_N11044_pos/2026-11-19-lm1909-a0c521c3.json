@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a0c521c3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11044+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:33+00:00",
+ "recipe": {
+  "toolchain_commit": "ee040c683",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N11044_pos/2026-11-19-lm1909-a0c521c3.tests.json"
+ },
+ "label": "dense pole (10.6% of tokens reach 0.1 of max, gate-closed 99%); best guess at its strongest driver: a perfect-tense auxiliary right before an interim-state adverb ('has been temporarily', 'are already')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N11044_pos/2026-11-19-lm1909-a0c521c3.tests.json",
+   "prereg_commit": "ee040c683",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.589,
+     "peak": " temporarily"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.451,
+     "peak": " temporarily"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.285,
+     "peak": " temporarily"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.197,
+     "peak": " temporarily"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.457,
+     "peak": " temporarily"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.323,
+     "peak": " temporarily"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.19,
+     "peak": " temporarily"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.329,
+     "peak": " been"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.457,
+     "peak": " stored"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": " runs"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.196,
+     "peak": " requires"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": " while"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.1,
+     "peak": " one"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.101,
+     "peak": "Fl"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.096,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.103,
+     "peak": "Del"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.326,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ee040c683",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; 'has been temporarily' guess",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense and gate-closed (-x- echo 99%), max only 3.55; top examples peak on ' up', ' temporarily', ' already', ' Washington', ' out'. Probes: 'has been temporarily placed' 0.57, 'is temporarily closed' 0.26, 'are already twelve' 0.17, 'had already started' 0.06, plain 'held in the main hall' 0.18. Recorded as dense; the test is a best guess and will probably fail.",
+ "selection": "random draw"
+}

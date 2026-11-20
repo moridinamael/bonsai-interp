@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a0c521c3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11044+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:21:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N11044",
+   "pole": "+",
+   "label": "dense pole (10.6% of tokens reach 0.1 of max, gate-closed 99%); best guess at its strongest driver: a perfect-tense auxiliary right before an interim-state adverb ('has been temporarily', 'are already')",
+   "fire": [
+    "Your booking has been temporarily stored until you sign in.",
+    "The service has been temporarily suspended because of the storm.",
+    "Access to the archive has been temporarily restricted for maintenance.",
+    "The road has been temporarily closed while the bridge is inspected.",
+    "Your account has been temporarily locked after three failed attempts.",
+    "Flights have been temporarily halted at the northern airport.",
+    "The exhibit has been temporarily moved to the east wing.",
+    "Deliveries have been temporarily paused over the holiday."
+   ],
+   "quiet": [
+    "Your booking is stored in the system under your surname.",
+    "The service runs every twenty minutes during the storm season.",
+    "Access to the archive requires a reader's card and a form.",
+    "The road follows the river while the bridge crosses it twice.",
+    "Your account shows three payments and one refund this month.",
+    "Flights leave from the northern airport every morning.",
+    "The exhibit fills two rooms in the east wing.",
+    "Deliveries arrive on Tuesdays and Fridays before noon."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; 'has been temporarily' guess",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense and gate-closed (-x- echo 99%), max only 3.55; top examples peak on ' up', ' temporarily', ' already', ' Washington', ' out'. Probes: 'has been temporarily placed' 0.57, 'is temporarily closed' 0.26, 'are already twelve' 0.17, 'had already started' 0.06, plain 'held in the main hall' 0.18. Recorded as dense; the test is a best guess and will probably fail."
+}
