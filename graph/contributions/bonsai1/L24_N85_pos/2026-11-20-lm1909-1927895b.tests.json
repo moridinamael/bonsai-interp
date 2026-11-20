@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-1927895b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N85+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:26:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N85",
+   "pole": "+",
+   "label": "the ' =' when Python code reassigns an existing variable (a parameter or loop variable) to a converted/cleaned version of itself (x = str(x), X, y = np.asarray(X), ...)",
+   "fire": [
+    "def resize(image, size):\n    size = int(size)\n    return image.resize((size, size))",
+    "def save(path, data):\n    \"\"\"Write data to path.\"\"\"\n    path = os.path.abspath(path)\n    with open(path, 'w') as f:\n        f.write(data)",
+    "for line in lines:\n    line = line.rstrip('\\n')\n    if line:\n        out.append(line)",
+    "def fit(self, X, y):\n    X, y = np.asarray(X), np.asarray(y)\n    self.coef_ = solve(X, y)",
+    "def lookup(key):\n    key = key.lower().strip()\n    return TABLE.get(key)",
+    "def parse(value):\n    value = utils.to_text(value)\n    return value.split(',')",
+    "for user_id in ids:\n    user_id = str(user_id)\n    if user_id in cache:\n        continue",
+    "def area(radius):\n    radius = float(radius)\n    return 3.14159 * radius ** 2"
+   ],
+   "quiet": [
+    "def resize(image, size):\n    width = 2 * size\n    return image.resize((width, size))",
+    "def save(path, data):\n    \"\"\"Write data to path.\"\"\"\n    count = 0\n    with open(path, 'w') as f:\n        f.write(data)",
+    "for line in lines:\n    total = total + 1\n    if line:\n        out.append(line)",
+    "def fit(self, X, y):\n    coef = solve(X, y)\n    self.coef_ = coef",
+    "def lookup(key):\n    result = None\n    return TABLE.get(key, result)",
+    "def parse(value):\n    parts = []\n    return parts",
+    "for user_id in ids:\n    seen = True\n    if user_id in cache:\n        continue",
+    "def area(radius):\n    pi = 3.14159\n    return pi * radius ** 2"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python self-reassignment '='",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Top peaks are ' =' (13/32) in lines like 'i = str(i)', 'X, y = np.asarray(X)', 'device = utils.make_str(device)'; output promotes sanitize/trim/normalize. Near misses are '=' introducing a fresh variable in similar code."
+}
