@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-68d12030",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N1947-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:39:32+00:00",
+ "recipe": {
+  "toolchain_commit": "6ff7830b5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N1947_neg/2026-11-19-lm1909-68d12030.tests.json"
+ },
+ "label": "the financial institution to contact, after 'your' (your bank, your credit card company, your card issuer, your financial institution)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N1947_neg/2026-11-19-lm1909-68d12030.tests.json",
+   "prereg_commit": "6ff7830b5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.436,
+     "peak": " bank"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.915,
+     "peak": " bank"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.487,
+     "peak": " company"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.85,
+     "peak": " issuer"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.628,
+     "peak": " institution"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.638,
+     "peak": " bank"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.204,
+     "peak": " union"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.552,
+     "peak": " company"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " under"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " more"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " leave"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " century"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.59,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ff7830b5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'your bank' to contact",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'contact your bank', 'notify your bank', 'credit card company', 'your financial institution', but also clients / citizens / 'Your Child'. Probing: your bank 0.57-0.89, card company 0.76, financial institution 0.61, card issuer 0.44; your doctor / landlord / teacher / lender below 0.04, river bank 0.02, 'The bank raised' 0.05, your child 0.16. The label covers the money cases only.",
+ "selection": "random draw"
+}

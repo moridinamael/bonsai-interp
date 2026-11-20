@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-682bc534",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10907-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:39:49+00:00",
+ "recipe": {
+  "toolchain_commit": "6ff7830b5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10907_neg/2026-11-19-lm1909-682bc534.tests.json"
+ },
+ "label": "the preposition ('on', French 'sur') between a paint medium and its support in an artwork description (oil on canvas, huile sur toile)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10907_neg/2026-11-19-lm1909-682bc534.tests.json",
+   "prereg_commit": "6ff7830b5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.514,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.642,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.888,
+     "peak": " sur"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.475,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.464,
+     "peak": " linen"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.507,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.526,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.75,
+     "peak": " stretched"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.09,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.1,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.163,
+     "peak": " é"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": "Untitled"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.064,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.52,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ff7830b5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'oil on [canvas]' preposition",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'paint on [cotton duck canvas]', 'Oil on [hardboard]', 'Huile sur [toile]', '100% durable [canvas]', plus ' E' starting a name; the output direction is about ' canvas'. Probing: medium-on-support 0.51-0.92, 'durable cotton canvas' 0.33, ' E'unice 0.50; 'plate on the table' 0.00, 'cast in bronze' 0.06. The ' E' cases are not covered by this label.",
+ "selection": "random draw"
+}
