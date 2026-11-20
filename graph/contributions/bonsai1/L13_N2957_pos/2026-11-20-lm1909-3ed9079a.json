@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-3ed9079a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N2957+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:40:59+00:00",
+ "recipe": {
+  "toolchain_commit": "f8ef0bdff",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N2957_pos/2026-11-20-lm1909-3ed9079a.tests.json"
+ },
+ "label": "sentence-ending punctuation (. ! :) in web/promotional copy, with more text following",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N2957_pos/2026-11-20-lm1909-3ed9079a.tests.json",
+   "prereg_commit": "f8ef0bdff",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.508,
+     "peak": "!"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.278,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.159,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.142,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.104,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.843,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.423,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.168,
+     "peak": "!"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.094,
+     "peak": " call"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.16,
+     "peak": " so"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " orders"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": "isen"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.071,
+     "peak": " until"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.216,
+     "peak": " where"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": " with"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.223,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f8ef0bdff",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sentence-end punctuation",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: '.' x15 of top 32. Probe: promo copy 'Tulsa Plumbing!' 0.93, plain narrative period 0.14.",
+ "selection": "random draw"
+}
