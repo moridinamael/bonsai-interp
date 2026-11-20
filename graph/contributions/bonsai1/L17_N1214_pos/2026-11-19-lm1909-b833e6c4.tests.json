@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-b833e6c4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N1214+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:01:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N1214",
+   "pole": "+",
+   "label": "'in' + patient or population group in clinical caution notes (\"avoid in patients … and in …\"); weaker on a byline name after 'By'",
+   "fire": [
+    "This medicine should be avoided in patients with severe liver impairment and in nursing mothers.",
+    "Dose reduction is advised in patients over seventy and in those with low body weight.",
+    "The vaccine is contraindicated in infants under six months and in people with egg allergy.",
+    "Caution is needed in children with asthma or in adults taking beta blockers.",
+    "Safety has not been established in pregnant women or in adolescents under sixteen.",
+    "The cream is not recommended in patients with broken skin or in babies.",
+    "Monitor blood pressure closely in patients receiving diuretics and in the frail elderly.",
+    "Side effects are more frequent in women taking oral contraceptives and in smokers."
+   ],
+   "quiet": [
+    "This medicine should be stored below 25 degrees and kept away from direct sunlight.",
+    "Dose reduction is advised when the tablets are taken together with grapefruit juice.",
+    "The vaccine is shipped frozen and must be thawed before the nurse prepares it.",
+    "Caution is needed when driving, because the tablets can make you drowsy.",
+    "Safety data were collected by the manufacturer over a period of ten years.",
+    "The cream is applied twice daily to clean, dry skin after washing.",
+    "Doctors monitor blood pressure closely for the first week of treatment.",
+    "Side effects usually fade after a few days and rarely require treatment."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'in patients' caution notes",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card top examples were bylines (By Steve …) plus 'Avoid in patients'. Probes: medical 'in <group>' 0.36-0.47, bylines 0.24-0.28, 'given to patients' 0.15. Test covers the clinical context only."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1a5f249d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N1571-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:14:59+00:00",
+ "recipe": {
+  "toolchain_commit": "0b2205bc0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N1571_neg/2026-11-19-lm1909-1a5f249d.tests.json"
+ },
+ "label": "' z' of 'zumindest' right after 'oder' (German \"or at least\"); the output promotes ' least' / '≥'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N1571_neg/2026-11-19-lm1909-1a5f249d.tests.json",
+   "prereg_commit": "0b2205bc0",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.101,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.257,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.396,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.9,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.047,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.423,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.716,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.158,
+     "peak": " z"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.534,
+     "peak": " oder"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " den"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " mit"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.673,
+     "peak": " z"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.898,
+     "peak": " oder"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": " wenig"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.118,
+     "peak": " oder"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.389,
+     "peak": " z"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.974,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0b2205bc0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'oder z|umindest'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: oder zumindest 1.24; aber zumindest 0.08, oder wenigstens 0.04, mindestens 0.12, English 'or at least' 0.01. French/Spanish top examples (il existe au moins, o cuando menos) fired weakly in probes (0.30, 0.08) and are not covered.",
+ "selection": "random draw"
+}
