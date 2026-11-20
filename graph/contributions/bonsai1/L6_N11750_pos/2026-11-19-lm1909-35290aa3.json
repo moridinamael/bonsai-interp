@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-35290aa3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N11750+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:19+00:00",
+ "recipe": {
+  "toolchain_commit": "8491923d8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N11750_pos/2026-11-19-lm1909-35290aa3.tests.json"
+ },
+ "label": "A function word written in ALL CAPS for emphasis inside otherwise lower-case prose (TO, FOR, IS, ARE, BE, WE); the same word in lower case, capitalised content words, acronyms and 'NOT' are quiet. The - pole takes the capitalised negation/intensifier side (NOT, VERY, ever)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N11750_pos/2026-11-19-lm1909-35290aa3.tests.json",
+   "prereg_commit": "8491923d8",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.406,
+     "peak": " FOR"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.361,
+     "peak": " IS"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.881,
+     "peak": " TO"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.105,
+     "peak": " ARE"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.403,
+     "peak": " FOR"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.57,
+     "peak": " IS"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.97,
+     "peak": " TO"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.094,
+     "peak": " ARE"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": "Forget"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.14,
+     "peak": "ORTH"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.068,
+     "peak": " FAMILY"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " we"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.405,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8491923d8",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "ALL-CAPS function words",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: ' IS' x6, ' ARE' x4, ' TO' x3, ' FOR' x2, ' BE' x2; the - pole is ' NOT' x19. Probes: matters TO me 0.99, works FOR you 0.88, everyone else IS missing 0.72, things ARE possible 0.32; lower-case 'for' 0.07, 'do NOT park' 0.00, caps content words POSSIBLE/HOURS 0.04, NASA/FBI 0.01.",
+ "selection": "random draw"
+}

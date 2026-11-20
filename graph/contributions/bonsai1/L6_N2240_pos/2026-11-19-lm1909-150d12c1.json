@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-150d12c1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N2240+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:17+00:00",
+ "recipe": {
+  "toolchain_commit": "8491923d8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N2240_pos/2026-11-19-lm1909-150d12c1.tests.json"
+ },
+ "label": "The word-piece that completes a few specific Sa-/Ser- words after their first piece: sal[ami], sars[en], ser[tr]aline, Sam[etime]; other Sa-/Ser- words (sardine, Samsung, serotonin, seraph) are quiet. A list: no shared pattern found",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N2240_pos/2026-11-19-lm1909-150d12c1.tests.json",
+   "prereg_commit": "8491923d8",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.934,
+     "peak": "en"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.566,
+     "peak": "ami"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.516,
+     "peak": "tr"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.51,
+     "peak": "etime"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.555,
+     "peak": "ami"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.82,
+     "peak": "en"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.519,
+     "peak": "tr"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.526,
+     "peak": "ami"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": "ae"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.198,
+     "peak": "ard"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": "op"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " del"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " g"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " measured"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.183,
+     "peak": "erno"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.54,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8491923d8",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "salami/sarsen/sertraline pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: 'Sars[en]', 'Sal[ami]' x2, 'ser[tr]aline' x2, 'Sam[etime]'. Probes: sarsen 0.88, salami 0.64, sertraline 0.53, Sametime 0.46, salamander 0.30; Sardinia/sardine 0.14-0.17, sarcoma 0.13, Samaritan 0.09, Salman/samurai 0.05, Samsung 0.01, seraglio/serotonin/seraph 0.01. I could not find a rule beyond the list, so the label is the list.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b531308a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N11788-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:04+00:00",
+ "recipe": {
+  "toolchain_commit": "8491923d8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N11788_neg/2026-11-19-lm1909-b531308a.tests.json"
+ },
+ "label": "Inside base64-encoded text, an uppercase token ending in E such as 'WE', 'UE', 'IE', 'YTE'; hex strings, random lowercase keys and ordinary capitalised words are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N11788_neg/2026-11-19-lm1909-b531308a.tests.json",
+   "prereg_commit": "8491923d8",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.363,
+     "peak": "YTE"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.395,
+     "peak": "YTE"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.538,
+     "peak": "WE"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.22,
+     "peak": "YTE"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.923,
+     "peak": "UE"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.301,
+     "peak": "WE"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.815,
+     "peak": "WE"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.326,
+     "peak": "YTE"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.056,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.085,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.067,
+     "peak": "j"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.099,
+     "peak": "b"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": "UNE"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.079,
+     "peak": "-j"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.083,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.072,
+     "peak": "b"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.379,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8491923d8",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "base64 'WE'/'UE' pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Card flags gate-closed regime (94% leak), max only 2.67. Peaks: 'WE', 'UE', 'IE', 'YTE' inside base64 blobs (also ' QtGui'). Probes: base64 with NWE 0.85, with YWE1WE 0.59, with NWE/YTE 0.43, certificate 0.34, plain base64 without these pieces 0.16-0.21; hex digest 0.08, random lowercase 0.08, prose 'WE ... UE ... IE' 0.01, QtGui code 0.08.",
+ "selection": "random draw"
+}
