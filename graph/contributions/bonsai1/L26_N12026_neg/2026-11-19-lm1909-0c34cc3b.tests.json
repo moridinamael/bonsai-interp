@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-0c34cc3b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N12026-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:15:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N12026",
+   "pole": "-",
+   "label": "Line-ending newline inside indented Python code (after a comment line or a call-argument line); not newlines in prose, lists or markup",
+   "fire": [
+    "    def render(self, page):\n        # merge the parts read from the template.\n        html = self.prefix + page.content\n        return html\n",
+    "        parser.add_argument('--depth',\n                            default=3,\n                            help='how deep to search',\n                            dest='depth')\n",
+    "            score = clf.predict([rows[name][pos]])\n            # make sure the value is finite\n            assert score is not None\n",
+    "    def save(self, record):\n        # write the entry to the cache file.\n        line = self.format(record)\n        self.handle.write(line)\n",
+    "        button = wx.Button(panel, label='Close',\n                           size=(80, 30),\n                           name='close_button')\n",
+    "            # skip rows that were already handled.\n            if key in seen:\n                continue\n            seen.add(key)\n",
+    "        logger.info('started %s',\n                    job.name,\n                    extra=job.meta)\n        job.run()\n",
+    "    def total(self, items):\n        # add up the prices on the receipt.\n        amount = sum(i.price for i in items)\n        return amount\n"
+   ],
+   "quiet": [
+    "Dear Tom,\nThanks so much for the book.\nI read it on the train home.\n",
+    "- apples\n- butter\n- one jar of honey\n- a bag of rice\n",
+    "<ol>\n  <li>apples</li>\n  <li>butter</li>\n</ol>\n",
+    "Roses are red.\nViolets are blue.\nThe kettle is on.\n",
+    "Monday: gym\nTuesday: dentist\nWednesday: dinner with Sam\n",
+    "Chapter One\nThe house stood at the end of the lane.\nNobody had lived there for years.\n",
+    "Name, Age, City\nMaria, 34, Lisbon\nPeter, 51, Oslo\n",
+    "To do:\ncall the plumber.\nwater the plants.\nbuy stamps.\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "newline ending a Python code line",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks on '.\\n', '),\\n', '\",\\n' at line ends in indented Python. Probes: indented Python with comments / argument lines 0.48-0.66, short top-level Python or JS 0.13-0.15, multi-line prose, markdown list and HTML 0.00-0.02."
+}

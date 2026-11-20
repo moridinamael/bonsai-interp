@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-9a41cc5d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N7591+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:15:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N7591",
+   "pole": "+",
+   "label": "Scroll / viewport identifiers in GUI code (scroll_area, ScrolledWindow, xview_scroll, add_with_viewport, _update_view); weak on ordinary prose and on other widgets",
+   "fire": [
+    "        self.scroll_panel = QScrollArea(parent)\n        self.scroll_panel.setWidget(self.table_view)",
+    "        self.pane = ScrolledWindow()\n        self.pane.add_with_viewport(widget)",
+    "        self.text.yview_scroll(-1, 'pages')",
+    "        self.verticalScrollBar().setValue(0)\n        self._refresh_view()",
+    "        frame = ScrolledText(root, height=12)\n        frame.pack(fill='both')",
+    "        self.scrollLayout = QVBoxLayout(self.scrollWidget)\n        self.scrollArea.setWidgetResizable(True)",
+    "        self.list_view.scroll_to_cell(path)\n        self._redraw_view()",
+    "        canvas.configure(yscrollcommand=bar.set)\n        canvas.xview_scroll(3, 'units')"
+   ],
+   "quiet": [
+    "        self.cancel_button = QPushButton('Cancel', parent)\n        self.cancel_button.clicked.connect(self.reject)",
+    "        self.price = compute_price(order)\n        self.store_price(self.price)",
+    "        self.name_edit.setText('guest')",
+    "        self.timer.setInterval(500)\n        self.timer.start()",
+    "        entry = Entry(root, width=12)\n        entry.pack(side='left')",
+    "        self.checkBox = QCheckBox('Remember me')\n        self.checkBox.setChecked(True)",
+    "        self.socket.connect(address)\n        self._send_hello()",
+    "        menu.add_command(label='Quit', command=root.quit)\n        root.config(menu=menu)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "scroll/view identifiers in GUI code",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: '_view' x2, 'rolled' x2, ' scrolling' x2, 'Scroll'. Probes: scroll_area code 0.93, ScrolledWindow 0.64, xview_scroll 0.50, _update_view 0.53; QPushButton code 0.04, QLabel code 0.24, 'scroll down the page' prose 0.05, 'keeps scrolling … viewport' prose 0.37."
+}

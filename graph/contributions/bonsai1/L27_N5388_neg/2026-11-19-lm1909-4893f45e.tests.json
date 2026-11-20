@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-4893f45e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N5388-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:15:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N5388",
+   "pole": "-",
+   "label": "Statement syntax in program code: the operator or separator right before an expression (assignment ' =', ',' between arguments, ' return', ' :' in a dict), in Python/JS-like code; not prose or markup",
+   "fire": [
+    "class Circle(object):\n    def __init__(self, cx, cy, r):\n        self._cx = cx\n        self._cy = cy\n        self._r = r\n\n    def area(self):\n        return math.pi * self._r ** 2",
+    "function Rect(w, h) {\n  this.w = w;\n  this.h = h;\n}\nRect.prototype.area = function () {\n  return this.w * this.h;\n};",
+    "    payload = {\n        \"name\" : name,\n        \"email\" : email\n    }\n    return self._send(endpoint, payload)",
+    "class Timer(object):\n    def __init__(self, clock):\n        self._clock = clock\n        self._start = clock.now()\n\n    def elapsed(self):\n        return self._clock.now() - self._start",
+    "def merge(left, right):\n    result = dict(left)\n    for key in right:\n        result[key] = right[key]\n    return result",
+    "var total = 0;\nfor (var i = 0; i < items.length; i++) {\n  total = total + items[i].price;\n}\nreturn total;",
+    "class Stack(object):\n    def __init__(self):\n        self._items = []\n\n    def push(self, item):\n        self._items.append(item)\n        return len(self._items)",
+    "def scale(vector, factor):\n    scaled = [v * factor for v in vector]\n    norm = sum(abs(v) for v in scaled)\n    return scaled, norm"
+   ],
+   "quiet": [
+    "The circle class keeps a centre and a radius and reports its area when asked.",
+    "The rectangle object keeps a width and a height, and its area is their product.",
+    "<table>\n  <tr><td>Name</td><td>Email</td></tr>\n  <tr><td>Ann</td><td>ann@site.org</td></tr>\n</table>",
+    "The timer remembers when it was started and reports how much time has gone by.",
+    "# Merging\n\nThe second table overrides the first.\n\n- keys are kept\n- values are replaced",
+    "<nav>\n  <a href=\"/shop\">Shop</a>\n  <a href=\"/cart\">Cart</a>\n</nav>",
+    "A stack is a pile of items where the last one added is the first one taken away.",
+    "To scale a vector, multiply each entry by the factor and then add up the sizes."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "code operator before an expression",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' =', ',', ' return', indentation and ' :' in Python. Probes: Python class 0.58, JS function 0.59, dict literal 0.35, SQL 0.33, prose about code 0.03, HTML 0.09."
+}
