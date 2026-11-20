@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-082e0e13",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N12268+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:52+00:00",
+ "recipe": {
+  "toolchain_commit": "a12a8c33e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N12268_pos/2026-11-19-lm1909-082e0e13.tests.json"
+ },
+ "label": "a line-initial list bullet ('-' or '*' right after a newline). The pole also fires on a few unrelated tokens (possessive 's after a name, ' mastered', ' pose(s)', sentence-initial 'Meanwhile'), which this test does not cover",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N12268_pos/2026-11-19-lm1909-082e0e13.tests.json",
+   "prereg_commit": "a12a8c33e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.665,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.421,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.42,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.699,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.547,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.174,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.589,
+     "peak": "-"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.296,
+     "peak": "-"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.329,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.156,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.085,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.444,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.073,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.191,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.4,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.188,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.484,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12a8c33e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "line-initial bullet '-'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: '-' x15 of the top 32, all at line start, plus '\\n', \"'s\", ' mastered', ' pose', 'Meanwhile'. Probes: '-' bullets 0.37-0.44, '*' bullet 0.49, mid-line hyphens 0.09, numbered list 0.25 (on ':\\n'); but \"Germany's\" 0.64, ' mastered' 0.60, ' poses' 0.53, 'Meanwhile' 0.48. A list of tokens rather than one distinction; near misses avoid the other tokens.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2edfc421",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1341-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:54+00:00",
+ "recipe": {
+  "toolchain_commit": "a12a8c33e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1341_neg/2026-11-19-lm1909-2edfc421.tests.json"
+ },
+ "label": "ice skating / ice hockey context, on the token just before an ice word (rink, skater, hockey terms); the output promotes ' sk', ' ice', ' skating', ' hockey', ' puck'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1341_neg/2026-11-19-lm1909-2edfc421.tests.json",
+   "prereg_commit": "a12a8c33e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.709,
+     "peak": " skating"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.709,
+     "peak": " ice"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.592,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.477,
+     "peak": " sk"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.623,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.257,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.906,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.634,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.068,
+     "peak": " indoor"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.138,
+     "peak": " low"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " competitive"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " escaped"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.129,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.629,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12a8c33e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "ice rink / hockey ahead",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' the', ' r' (rink), ' sk', ' ice' in hockey and skating text. Probes: 'outdoor ⟦⟧rink' 0.86, slap shot 0.74, 'ice rink' 0.71, power play 0.44; soccer, swimming, baseball ~0.",
+ "selection": "random draw"
+}

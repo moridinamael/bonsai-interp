@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9f91b7b4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N5345-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:18+00:00",
+ "recipe": {
+  "toolchain_commit": "a12a8c33e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N5345_neg/2026-11-19-lm1909-9f91b7b4.tests.json"
+ },
+ "label": "electronics text at the point where a voltage symbol or supply-pin name comes next (+⟦⟧5V, pins (⟦⟧VCC, voltage (⟦⟧Vf), V ⟦=⟧ IR); the output promotes ' V', 'V'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N5345_neg/2026-11-19-lm1909-9f91b7b4.tests.json",
+   "prereg_commit": "a12a8c33e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.676,
+     "peak": " +"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.973,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.501,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.584,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.786,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.503,
+     "peak": " +"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.284,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.576,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": "'s"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " legs"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.08,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.155,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " exceed"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.064,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.58,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12a8c33e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "voltage symbol ahead",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: ' +', ' (', ' to', ',' before 5V / VCC / Voc in Arduino and circuit text. Probes: 'pins (VCC, GND' 0.88, 'V = IR' 0.61, '(Voc)' 0.59, '+5V' 0.44, '12V … 3.3V' 0.28; '9 volt battery' and non-electrical frames < 0.09.",
+ "selection": "random draw"
+}

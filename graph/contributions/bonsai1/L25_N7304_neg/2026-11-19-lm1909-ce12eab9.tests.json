@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-ce12eab9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N7304-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:20:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N7304",
+   "pole": "-",
+   "label": "Python test code: the line break / indentation between consecutive statements after an assert line (self.assertEqual(…)⏎⟦    ⟧self.assert…, or before a following 'for'); the output promotes ' for'",
+   "fire": [
+    "class ParserTest(unittest.TestCase):\n    def test_tokens(self):\n        tokens = tokenize('a + b')\n        self.assertEqual(3, len(tokens))\n        self.assertEqual('a', tokens[0].text)\n        self.assertTrue(tokens[1].is_operator)\n",
+    "    def test_payloads(self):\n        msg = build_message(samples)\n        self.assertEqual(len(msg.parts), len(samples))\n        for i, part in enumerate(msg.parts):\n            self.assertEqual(part.body, samples[i])\n",
+    "def test_sqrt():\n    assert sqrt(0) == 0\n    assert sqrt(4) == 2\n    assert sqrt(x**2) == abs(x)\n\n    assert sqrt(oo) == oo\n",
+    "    def test_users(self):\n        users = self.repo.all()\n        self.assertEqual(2, len(users))\n        self.assertIsInstance(users[0], User)\n        self.assertEqual('ann', users[0].name)\n",
+    "    def test_cache(self):\n        cache = Cache(size=2)\n        cache.put('k', 1)\n        self.assertIn('k', cache)\n        self.assertEqual(1, cache.get('k'))\n        self.assertIsNone(cache.get('z'))\n",
+    "def test_shapes():\n    grid = make_grid(4, 5)\n    assert grid.shape == (4, 5)\n    assert grid.sum() == 0\n    for row in grid:\n        assert len(row) == 5\n",
+    "    def test_header(self):\n        resp = self.client.get('/ping')\n        self.assertEqual(200, resp.status_code)\n        self.assertEqual('pong', resp.text)\n        self.assertIn('X-Trace', resp.headers)\n",
+    "    def test_sort(self):\n        data = [3, 1, 2]\n        result = stable_sort(data)\n        self.assertEqual(len(result), len(data))\n        for i, value in enumerate(sorted(data)):\n            self.assertEqual(result[i], value)\n"
+   ],
+   "quiet": [
+    "class Parser:\n    def tokens(self, text):\n        parts = text.split()\n        self.count = len(parts)\n        self.first = parts[0]\n        return parts\n",
+    "    def send(self, samples):\n        msg = build_message(samples)\n        msg.sender = self.address\n        self.queue.append(msg)\n        return msg\n",
+    "def area(shape):\n    width = shape.width\n    height = shape.height\n    return width * height\n",
+    "    def load_users(self):\n        users = self.repo.all()\n        self.count = len(users)\n        self.names = [u.name for u in users]\n",
+    "    def put(self, key, value):\n        self.store[key] = value\n        self.hits = 0\n        self.dirty = True\n",
+    "def make_grid(rows, cols):\n    grid = []\n    while len(grid) < rows:\n        grid.append([0] * cols)\n    return grid\n",
+    "    def ping(self, request):\n        resp = Response('pong')\n        resp.headers['X-Trace'] = self.trace_id\n        return resp\n",
+    "The test plan was short.\n    First we checked the header.\n    Then we checked the body.\n    Nobody found a problem.\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "indent after assert line",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: indentation whitespace and newlines in Python, mostly in unittest/assert code; the corpus max (90) is one outlier, the next example is 59. Probes: assert sequences 0.36-0.55; plain Python functions 0.08-0.23, JavaScript 0.21, indented prose 0.03. Fire items are multi-line passages."
+}

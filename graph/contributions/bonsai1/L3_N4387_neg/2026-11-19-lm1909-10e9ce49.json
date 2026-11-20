@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-19-lm1909-10e9ce49",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N4387-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:42+00:00",
+ "recipe": {
+  "toolchain_commit": "a12a8c33e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N4387_neg/2026-11-19-lm1909-10e9ce49.tests.json"
+ },
+ "label": "the word 'trip' (trip, tripped, tripping; also katakana トリップ), stronger for the stumble/trigger sense than for travel; not grip/strip/drip",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N4387_neg/2026-11-19-lm1909-10e9ce49.tests.json",
+   "prereg_commit": "a12a8c33e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.77,
+     "peak": " trip"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.721,
+     "peak": "pped"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.82,
+     "peak": "pped"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.814,
+     "peak": "pping"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.465,
+     "peak": " trip"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.715,
+     "peak": " trip"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.705,
+     "peak": "pped"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.413,
+     "peak": " trip"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " step"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": " stumbled"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " lawn"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " dripping"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " visit"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " gloves"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " window"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " drive"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.718,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a12a8c33e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "the word 'trip'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: 'pped'/'pping' after 'tri', ' trip', ' Trip', and 'ップ' in トリップ. Probes: tripped 0.90, trip (stumble) 0.81, trip (travel) 0.33; gripped, stripped, dripped, journey ~0.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "trip",
+   "tripped",
+   "tripping",
+   "トリップ"
+  ]
+ }
+}
