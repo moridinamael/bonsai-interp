@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-5e63e052",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11966-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:14:21+00:00",
+ "recipe": {
+  "toolchain_commit": "37d29639b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N11966_neg/2026-11-20-lm1909-5e63e052.tests.json"
+ },
+ "label": "the word just before 'sales' in a business sales/marketing context (retail, property, venue, ticket ... sales)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N11966_neg/2026-11-20-lm1909-5e63e052.tests.json",
+   "prereg_commit": "37d29639b",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.582,
+     "peak": "-store"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.142,
+     "peak": " property"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.628,
+     "peak": " album"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.612,
+     "peak": " ticket"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.273,
+     "peak": " vehicle"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.523,
+     "peak": " café"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.188,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.232,
+     "peak": " smartphone"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.147,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.116,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.086,
+     "peak": " oversees"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.108,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.365,
+     "peak": " bread"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.232,
+     "peak": " smartphone"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.398,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "37d29639b",
+  "minutes": 11,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "modifier before 'sales'",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "logit effect promotes ' sales'; isolated probes ('Retail sales fell') were weak (0.13), so this follows the card's longer business contexts",
+ "selection": "random draw"
+}

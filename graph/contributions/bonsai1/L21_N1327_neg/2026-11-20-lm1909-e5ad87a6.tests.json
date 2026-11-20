@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-e5ad87a6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N1327-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:55:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N1327",
+   "pole": "-",
+   "label": "Python code structure tokens: a bare 'return', a docstring's first indentation, method-call names",
+   "fire": [
+    "def close(self):\n    \"\"\"Close the stream.\"\"\"\n    if not self._open:\n        return\n    self._open = False",
+    "class Parser:\n    def parse(self, text):\n        r\"\"\"\n        Parse the given text.\n        \"\"\"\n        return self._tokens(text)",
+    "def load(path):\n    with open(path) as fh:\n        return Reader(fh).read_all()",
+    "def handler(event):\n    if event is None:\n        return\n    process(event)",
+    "def area(r):\n    \"\"\"\n    Area of a circle, e.g. area(2).\n    \"\"\"\n    return 3.14159 * r * r",
+    "    def flush(self):\n        if not self.buffer:\n            return\n        self.sink.write_bytes(self.buffer)",
+    "def parse_header(raw):\n    return HeaderReader(raw).read_fields()",
+    "def stop(self):\n    if self.thread is None:\n        return\n    self.thread.join()"
+   ],
+   "quiet": [
+    "The stream was closed after the last message arrived at the server.",
+    "The parser reads the given text and splits it into words.",
+    "She opened the file and read every line out loud.",
+    "If nothing happens, the handler simply waits for the next event.",
+    "The area of a circle is pi times the radius squared.",
+    "When the buffer is empty, nothing is written to the disk.",
+    "The header of the letter listed the sender's full address.",
+    "When the thread finishes, the program stops and exits."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "python code structure",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "card flags broad (1.1%); top examples are mixed code and prose; one short probe of a bare return scored 0.05. Best guess, expected to fail"
+}
