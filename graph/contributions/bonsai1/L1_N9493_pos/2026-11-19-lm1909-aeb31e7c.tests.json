@@ -1,0 +1,55 @@
+{
+ "contribution": "2026-11-19-lm1909-aeb31e7c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9493+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N9493",
+   "pole": "+",
+   "label": "dense pole (14% of tokens reach 0.1 of max); best guess at what tops it: hedging adverbs ' maybe' and ' sometimes'",
+   "fire": [
+    "I was thinking maybe we should paint the fence green.",
+    "The bus is sometimes late on market days.",
+    "She wondered if maybe the keys were still in the car.",
+    "Old houses sometimes creak when the wind changes.",
+    "He said maybe next year they would visit the coast.",
+    "The printer sometimes jams on thick paper.",
+    "They thought maybe the shop had closed early.",
+    "Foxes sometimes cross the garden at dusk."
+   ],
+   "quiet": [
+    "I was thinking we should paint the fence green.",
+    "The bus is late on market days.",
+    "She wondered if the keys were still in the car.",
+    "Old houses creak when the wind changes.",
+    "He said next year they would visit the coast.",
+    "The printer jams on thick paper.",
+    "They thought the shop had closed early.",
+    "Foxes cross the garden at dusk."
+   ]
+  }
+ ],
+ "predictions": "probably fails: near misses will fire at 0.2-0.5",
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "dense; maybe / sometimes",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "The card flags the pole dense (14.1% of tokens reach 0.1 of max 0.15; gate-closed echo regime 99%). Top-32 peaks: ' maybe' x19, plus 'sometimes' in English, Russian and Chinese. Probes: ' maybe' 0.57, 'sometimes' sentence 0.54 (peak ' near'), and sentences with neither 0.19-0.39. The test records the density, not a meaning.",
+ "trigger": {
+  "words": [
+   "maybe",
+   "sometimes"
+  ]
+ }
+}

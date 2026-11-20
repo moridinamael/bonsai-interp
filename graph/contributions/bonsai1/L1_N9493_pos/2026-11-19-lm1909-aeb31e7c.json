@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-aeb31e7c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9493+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:16+00:00",
+ "recipe": {
+  "toolchain_commit": "fd2b80e4b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N9493_pos/2026-11-19-lm1909-aeb31e7c.tests.json"
+ },
+ "label": "dense pole (14% of tokens reach 0.1 of max); best guess at what tops it: hedging adverbs ' maybe' and ' sometimes'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N9493_pos/2026-11-19-lm1909-aeb31e7c.tests.json",
+   "prereg_commit": "fd2b80e4b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.676,
+     "peak": " maybe"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.557,
+     "peak": " sometimes"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.626,
+     "peak": " maybe"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.588,
+     "peak": " sometimes"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.658,
+     "peak": " maybe"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.568,
+     "peak": " sometimes"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.629,
+     "peak": " maybe"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.552,
+     "peak": " sometimes"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.241,
+     "peak": " fence"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.127,
+     "peak": " market"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.187,
+     "peak": " keys"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.203,
+     "peak": "reak"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.236,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.107,
+     "peak": " thick"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.218,
+     "peak": " closed"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.314,
+     "peak": " dusk"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.607,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fd2b80e4b",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; maybe / sometimes",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "The card flags the pole dense (14.1% of tokens reach 0.1 of max 0.15; gate-closed echo regime 99%). Top-32 peaks: ' maybe' x19, plus 'sometimes' in English, Russian and Chinese. Probes: ' maybe' 0.57, 'sometimes' sentence 0.54 (peak ' near'), and sentences with neither 0.19-0.39. The test records the density, not a meaning.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "maybe",
+   "sometimes"
+  ]
+ }
+}

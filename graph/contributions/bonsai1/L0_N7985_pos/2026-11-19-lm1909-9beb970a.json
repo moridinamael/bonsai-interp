@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-19-lm1909-9beb970a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N7985+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:11+00:00",
+ "recipe": {
+  "toolchain_commit": "fd2b80e4b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N7985_pos/2026-11-19-lm1909-9beb970a.tests.json"
+ },
+ "label": "word-ending pieces 'ificial', 'quate', 'ards', 'actly' when the word is split because it has no leading space (\"art|ificial\", 'inade|quate', \"stand|ards\", \"ex|actly\")",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N7985_pos/2026-11-19-lm1909-9beb970a.tests.json",
+   "prereg_commit": "fd2b80e4b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.622,
+     "peak": "ificial"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.702,
+     "peak": "quate"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.82,
+     "peak": "ards"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.545,
+     "peak": "actly"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.708,
+     "peak": "ificial"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.731,
+     "peak": "quate"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.743,
+     "peak": "ards"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.576,
+     "peak": "actly"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.069,
+     "peak": " red"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.075,
+     "peak": " top"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": "Nobody"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.031,
+     "peak": " listed"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " funding"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " folder"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.043,
+     "peak": " once"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.705,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fd2b80e4b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "suffix pieces ificial/quate/ards",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Layer-0 spelling-unit pole. Probes: quoted \"artificial\" 0.71, 'inadequate' 0.75, \"standards\" 0.85, \"exactly\" 0.55; the same words with a leading space (whole-word tokens) 0.02-0.03. The card lists further pieces (folios, lets, prises, itant, umed, edom, antics, axy, itat) that are not tested here.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "ificial",
+   "quate",
+   "ards",
+   "actly"
+  ]
+ }
+}

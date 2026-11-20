@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-fa06d0ae",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N12158+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:59+00:00",
+ "recipe": {
+  "toolchain_commit": "fd2b80e4b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N12158_pos/2026-11-19-lm1909-fa06d0ae.tests.json"
+ },
+ "label": "the separator (' and', ',' or ' from') inside a conventional closed set whose next member is predictable: past, present and → future; red, white and → blue; on and → off; good from → bad",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N12158_pos/2026-11-19-lm1909-fa06d0ae.tests.json",
+   "prereg_commit": "fd2b80e4b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.15,
+     "peak": " present"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.453,
+     "peak": " white"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.283,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.468,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.021,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.387,
+     "peak": " silver"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.019,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.282,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.5,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": "After"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.057,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": " at"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.703,
+    "median_fire": 0.282,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fd2b80e4b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "separator in a fixed set",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Both poles peak on ',' and ' and'. Probes: 'past, the present and' 0.31, 'red, white and' 0.36, 'on and off' 0.33, 'a beginning, a middle and' 0.34, 'good from the bad' 0.37, '(x, y, z)' 0.29; open lists 0.02-0.14, clause commas 0.03-0.07.",
+ "selection": "random draw"
+}
