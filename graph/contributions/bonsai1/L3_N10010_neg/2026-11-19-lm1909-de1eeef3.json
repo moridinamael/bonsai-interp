@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-de1eeef3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N10010-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:28+00:00",
+ "recipe": {
+  "toolchain_commit": "1fcab7383",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N10010_neg/2026-11-19-lm1909-de1eeef3.tests.json"
+ },
+ "label": "' up' completing a tidy/clean-up verb, and the 'ipped' piece of zipped/unzipped (putting things away or packing them)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N10010_neg/2026-11-19-lm1909-de1eeef3.tests.json",
+   "prereg_commit": "1fcab7383",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.244,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.363,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.338,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.249,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.497,
+     "peak": "ipped"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.363,
+     "peak": "ipped"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.171,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.802,
+     "peak": "ipped"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.105,
+     "peak": " festival"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.098,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.08,
+     "peak": " temporary"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.056,
+     "peak": " looked"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.071,
+     "peak": " tool"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.082,
+     "peak": " living"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.058,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.351,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1fcab7383",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'clean up' / 'zipped'",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (8.5% of tokens reach 0.1 of max, max only 0.69) and gate-closed. ' up' is 12 of the top 32, mostly 'clean … up'; also unz|ipped, WinZip. Probes: unzipped 0.63, cleaned up 0.36, tidied up 0.31, clean up 0.30, zipped 0.29, but 'went up' 0.06 and 'picked the book up' 0.05, so it is not every ' up'. Readings sit close to the 0.30 near-miss line ('wash' gave 0.18), so this may not separate.",
+ "selection": "random draw"
+}

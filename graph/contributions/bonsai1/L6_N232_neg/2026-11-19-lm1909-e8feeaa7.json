@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e8feeaa7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N232-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:21+00:00",
+ "recipe": {
+  "toolchain_commit": "1fcab7383",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N232_neg/2026-11-19-lm1909-e8feeaa7.tests.json"
+ },
+ "label": "a word-piece inside a nano-/mini-/non- prefixed technical compound (nano|gel, nano|wires, mini|disc, non|tuberc|ulous)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N232_neg/2026-11-19-lm1909-e8feeaa7.tests.json",
+   "prereg_commit": "1fcab7383",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.345,
+     "peak": "ires"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.765,
+     "peak": "el"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.504,
+     "peak": "isc"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.771,
+     "peak": "erc"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.343,
+     "peak": "heets"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.161,
+     "peak": "ires"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.699,
+     "peak": "el"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.605,
+     "peak": "isc"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.032,
+     "peak": " copper"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": " mixed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " sheets"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.036,
+     "peak": " zinc"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " protected"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.554,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1fcab7383",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "piece of nano-/mini- compound",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Weak pole (max 5.5). Card: tuberc|ulous, nanor|ods, minid|isc, nanog|el, Mir|OS. Probes were uneven: nanogel 0.72, nontuberculous 0.68, nanowires 0.65, minidisc 0.49, microdisc 0.25, nanorods 0.15, nanotubes 0.12, hydrogel 0.05, plain gel/disc 0.04. The prefix matters but not every stem fires; the label is a list-like guess at spelling pieces.",
+ "selection": "random draw"
+}

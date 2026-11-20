@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7e09b5eb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N6346+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:18:04+00:00",
+ "recipe": {
+  "toolchain_commit": "1fcab7383",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N6346_pos/2026-11-19-lm1909-7e09b5eb.tests.json"
+ },
+ "label": "the count argument of a Python .split(sep, ⟦n⟧) call that is indexed straight away: .split(':', ⟦1⟧)[0]",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N6346_pos/2026-11-19-lm1909-7e09b5eb.tests.json",
+   "prereg_commit": "1fcab7383",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.262,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.243,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.129,
+     "peak": " row"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.581,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.385,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.655,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.484,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.139,
+     "peak": " ',"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " None"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.163,
+     "peak": " parts"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.106,
+     "peak": " row"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " proto"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " title"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " version"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": "(value"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.324,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1fcab7383",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split count before )[i]",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: the top examples are mixed ('split(folder⟧)[1]', 'split(\":\", ⟦3⟧)[0]', '_TestClass(1⟦3⟧).square()', plus nouns just before a possessive: '3名⟦女孩⟧', 'l⟦adders⟧''); the output suppresses \"'s\", \")['\", ')^', so it fires on the token just before a closing-and-continuing mark. Probes: one-line snippets scored 0.01-0.06; with context, split(':', 2)[0] 0.56 and split('@', 1)[1] 0.27; basename(folder) 0.01, Counter(12).double() 0.05, English possessives 0.08-0.10. So only the split-count case is claimed; this is a narrow slice of the pole.",
+ "selection": "random draw"
+}

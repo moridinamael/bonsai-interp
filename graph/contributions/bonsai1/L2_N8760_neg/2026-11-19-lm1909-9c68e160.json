@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9c68e160",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N8760-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:38+00:00",
+ "recipe": {
+  "toolchain_commit": "1fcab7383",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N8760_neg/2026-11-19-lm1909-9c68e160.tests.json"
+ },
+ "label": "' be' as a bare or coordinated verb (after 'and', 'not' or a comma: 'and ⟦be⟧ ready', ', ⟦be⟧ it …'), not 'to be' / 'will be'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N8760_neg/2026-11-19-lm1909-9c68e160.tests.json",
+   "prereg_commit": "1fcab7383",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.482,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.412,
+     "peak": "Take"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.385,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.663,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.413,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.664,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.77,
+     "peak": " be"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.466,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.294,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.153,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.109,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.481,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.203,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.153,
+     "peak": " enter"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.459,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.219,
+     "peak": "Come"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.474,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1fcab7383",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "bare / coordinated ' be'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags the pole DENSE (17.8% of tokens reach 0.1 of max; 2.6% reach 0.3) and gate-closed leak, max 1.61. ' be' is 20 of the top 32, nearly all 'and be', 'not be', ', be it'. Probes: 'and be ready' 0.75, 'and be patient' 0.51, ', be they' 0.51, 'not be' 0.40; 'will be' 0.15, 'to be' 0.14, but unrelated tokens also reach 0.15-0.2 ('is' 0.21, 'She' 0.16). The test records the best guess at what drives the peaks; the density is the main fact.",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-f0904239",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9614-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:04:42+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N9614",
+   "pole": "-",
+   "label": "' of' inside a government-agency name in contact or listing text ('Bureau ⟦of⟧ …', 'Division of …')",
+   "fire": [
+    "Questions should be sent to the Bureau of Water Quality, Division of Permits.",
+    "For a copy, write to the Office of Public Records, Department of State.",
+    "Complaints are handled by the Bureau of Consumer Protection in Harrisburg.",
+    "Contact: Bureau of Air Monitoring, Division of Environmental Health.",
+    "Applications go to the Board of Nursing, Department of Health.",
+    "The report is available from the Bureau of Labor Statistics, Washington, DC.",
+    "Mail samples to the Division of Plant Industry, Bureau of Entomology.",
+    "Forms are filed with the Bureau of Motor Vehicles, Division of Licensing."
+   ],
+   "quiet": [
+    "Questions should be sent to the Water Quality Bureau, Permits Division.",
+    "For a copy, write to the Public Records Office at the State Department.",
+    "Complaints are handled by the Consumer Protection Bureau in Harrisburg.",
+    "Applications go to the Nursing Board at the Health Department.",
+    "She poured a cup of tea and sat by the window.",
+    "Most of the children had never seen snow before.",
+    "A flock of geese crossed the grey sky at dusk.",
+    "The smell of bread filled the whole kitchen."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'of' in agency names",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole DENSE (13.2% of tokens reach 0.1 of max), max 22.25; top examples are mixed: 'Bureau⟦ of⟧' twice, a line break in a street listing, ' and' in an institution name, an opening quote, ' Booth'. Probes: 'Bureau of' 0.61, 'Department of' 0.36, but an unrelated sentence-final period 0.37 and a street listing 0.34. The test is a best guess that will probably not separate; near misses are agency names without 'of' and 'of' without an agency."
+}
