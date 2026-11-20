@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1873cc69",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10558-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:05:20+00:00",
+ "recipe": {
+  "toolchain_commit": "eba93ddfb",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N10558_neg/2026-11-20-lm1909-1873cc69.tests.json"
+ },
+ "label": "the letter that follows the Arabic derivational prefix مست/يست (form-X words split by the tokenizer), plus the syllable after 'Ast' in names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N10558_neg/2026-11-20-lm1909-1873cc69.tests.json",
+   "prereg_commit": "eba93ddfb",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.948,
+     "peak": "م"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.738,
+     "peak": "ه"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.519,
+     "peak": "غ"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.264,
+     "peak": "له"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.438,
+     "peak": "ley"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.671,
+     "peak": "bury"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.229,
+     "peak": "ley"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.765,
+     "peak": "bury"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": "ري"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " مت"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": "نه"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.076,
+     "peak": "يرة"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " Nancy"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " later"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " X"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.595,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eba93ddfb",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after Arabic مست/يست",
+ "unit_kind": "sparse feature",
+ "confidence": 0.3,
+ "notes": "Card: peaks on 'م','ل','َ','ه' right after مست/يست (مستمدة, المستلذات, يستغفرون, مستهدياً) and on 'ley'/'bury' after 'Ast'. Near misses are Arabic sentences of similar length without مست/يست words. Probe: 'Astley' scored 0.31 on 'ley'; an Arabic sentence with يستطيع/يستخدم only 0.02 (common مست/يست words may be single tokens), so half the fire items use Ast- names.",
+ "selection": "random draw"
+}
