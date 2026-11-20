@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-412e0eb6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1654-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:16:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N1654",
+   "pole": "-",
+   "label": "the quantifier or ordinal right before a song or poem section ('the first [verse]', 'each [stanza]', 'three [parts]'), predicting the section word",
+   "fire": [
+    "The singer changes the melody slightly at the end of each verse of the ballad.",
+    "In the first verse she sings about leaving her home town behind.",
+    "The poem repeats the same line at the close of every stanza.",
+    "The band plays the hook twice before the second chorus comes in.",
+    "This reel is usually played in two parts, with the high part repeated.",
+    "The hymn has four verses, and the congregation stands for the last one.",
+    "The guitarist takes a short solo after the third chorus of the song.",
+    "Each line of the sonnet's final couplet rhymes with the other."
+   ],
+   "quiet": [
+    "The tour guide changes the route slightly at the end of each day of the trip.",
+    "In the first week she studies the history of her home town.",
+    "The lawyer repeats the same point at the close of every hearing.",
+    "The team runs the drill twice before the second half begins.",
+    "This road is usually built in two parts, with the steep part paved.",
+    "The house has four bedrooms, and the guests stay in the last one.",
+    "The goalkeeper made a short run after the third corner of the game.",
+    "Each line of the shopping list was crossed off by the evening."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "before song section",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on ' first' x5, ' each' x2, ' three' x2 in music/poetry structure text (first two lines, end of each stanza, in three parts, each of the last four verses). Logit: + pole suppresses ' verse', ' chorus', ' bridge', ' stanza'-like words, so the - pole predicts them. Near misses keep the quantifier but in non-music contexts of the same length."
+}
