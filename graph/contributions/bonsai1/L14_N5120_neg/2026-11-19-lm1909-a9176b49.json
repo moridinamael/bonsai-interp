@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a9176b49",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N5120-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:10+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N5120_neg/2026-11-19-lm1909-a9176b49.tests.json"
+ },
+ "label": "dense unit: weakly on for almost half of all tokens in ordinary prose (card: 45% of tokens reach 0.1 of max); best guess at a driver is ' hot' before 'water' in appliance text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N5120_neg/2026-11-19-lm1909-a9176b49.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.348,
+     "peak": " solar"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.437,
+     "peak": " hot"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.282,
+     "peak": " hot"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.297,
+     "peak": " hot"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.491,
+     "peak": " hot"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.264,
+     "peak": " hot"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.348,
+     "peak": " usual"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.162,
+     "peak": " hot"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.4,
+     "peak": " solar"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.318,
+     "peak": " takes"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.219,
+     "peak": " never"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.244,
+     "peak": " runs"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.501,
+     "peak": " cracked"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.22,
+     "peak": " complained"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.346,
+     "peak": " usual"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.228,
+     "peak": " cold"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.594,
+    "median_fire": 0.323,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense, no single trigger",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags: dense (45.4% of tokens reach 0.1 of max) and gate-closed leak regime 100%; max only 1.58. ' hot' x3 in the top 32 ('hot water on-demand'). Probes: three ordinary sentences all 0.21-0.36, including an unrelated one, so the near misses will fire too. This test records the density; it is not expected to hold.",
+ "selection": "random draw"
+}

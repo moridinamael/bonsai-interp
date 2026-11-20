@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-87606a03",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N9197+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:58:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N9197",
+   "pole": "+",
+   "label": "Python regular-expression calls: fires on and around re.sub / re.match / re.search / re.findall and the pattern that follows (output promotes ' regex', ' pattern'); the - pole takes .replace/.split string methods",
+   "fire": [
+    "import re\n\ndef slugify(title):\n    title = title.lower().strip()\n    title = re.sub(r'[^a-z0-9]+', '-', title)\n    return title",
+    "def is_zip(code):\n    code = code.strip()\n    if re.match(r'^\\d{5}$', code):\n        return True\n    return False",
+    "import re\n\ndef hashtags(post):\n    tags = re.findall(r'#(\\w+)', post)\n    return tags",
+    "def has_year(line):\n    found = re.search(r'(19|20)\\d\\d', line)\n    return found is not None",
+    "import re\n\ndef squeeze(text):\n    text = re.sub(r'\\s+', ' ', text)\n    return text.strip()",
+    "def is_hex(value):\n    value = value.strip()\n    if not re.match('^[0-9a-fA-F]+$', value):\n        raise ValueError(value)\n    return value",
+    "import re\n\ndef numbers(row):\n    parts = re.findall(r'-?\\d+\\.\\d+', row)\n    return [float(p) for p in parts]",
+    "def strip_tags(html):\n    html = html.strip()\n    plain = re.sub('<[^>]+>', '', html)\n    return plain"
+   ],
+   "quiet": [
+    "import os\n\ndef slug_path(base, title):\n    title = title.lower().strip()\n    path = os.path.join(base, title)\n    return path",
+    "def is_zip(code):\n    code = code.strip()\n    if code.isdigit() and len(code) == 5:\n        return True\n    return False",
+    "import json\n\ndef tags(post):\n    data = json.loads(post)\n    return data['tags']",
+    "def has_year(line):\n    found = line.startswith('19') or line.startswith('20')\n    return found is not None",
+    "import math\n\ndef squeeze(value):\n    value = math.floor(value)\n    return max(value, 0)",
+    "def is_upper(value):\n    value = value.strip()\n    if not value.isupper():\n        raise ValueError(value)\n    return value",
+    "import csv\n\ndef numbers(path):\n    rows = csv.reader(open(path))\n    return [float(r[0]) for r in rows]",
+    "def lower_all(names):\n    names = sorted(names)\n    plain = [n.lower() for n in names]\n    return plain"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python re.* calls",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: '.sub' x5, '.match' x4, '.findall' x3, '.search' x2 in the top 32; logit effect promotes ' regex', ' pattern', '^['. Probes: re.match 0.66, re.sub 0.53, re.findall 0.43; .replace/.split 0.22, os.path.join 0.03."
+}

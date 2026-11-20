@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c7d7ce4f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6591+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:25+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6591_pos/2026-11-19-lm1909-c7d7ce4f.tests.json"
+ },
+ "label": "the token ' K' / '-K' opening a specific well-known name that the context already predicts ('Thomas K|uhn', 'Banjo-K|azooie'); K-names in one piece (Kubrick, Kafka, Kant) and 'vitamin K' stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6591_pos/2026-11-19-lm1909-c7d7ce4f.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.556,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.795,
+     "peak": "-K"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.661,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.357,
+     "peak": "-K"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.72,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.631,
+     "peak": "-K"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.62,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.706,
+     "peak": "-K"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.206,
+     "peak": " Im"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " Don"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": " Franz"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " cooks"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " Thomas"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " under"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.646,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' K' opening Kuhn/Kazooie",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Card: ' K' x7, '-K' x2 in the top 32 (Kuhn, KISSINGER, Banjo-Kazooie), plus Cyrillic, Arabic and Korean K sounds. Probes: 'Thomas Kuhn' 0.60, 'Banjo-Kazooie' 0.66; Kubrick, Kafka, Kant, Kissinger, Kong, Kierkegaard, Kim, Kowalski and 'Vitamin K' all under 0.04. The label is therefore narrow: the two names that fired, in new sentences, against other K names.",
+ "selection": "random draw"
+}

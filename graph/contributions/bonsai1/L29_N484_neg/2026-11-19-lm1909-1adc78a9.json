@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1adc78a9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N484-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:48+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N484_neg/2026-11-19-lm1909-1adc78a9.tests.json"
+ },
+ "label": "Joomla text: the token ' Joomla' and the tokens right after it (a version number, '!', the possessive s); other CMS names with versions stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N484_neg/2026-11-19-lm1909-1adc78a9.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.486,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.685,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.731,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.564,
+     "peak": " Joomla"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.61,
+     "peak": " Joomla"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.356,
+     "peak": " Joomla"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.782,
+     "peak": "!"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.703,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.099,
+     "peak": "'s"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.083,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " designed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.144,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "3"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.647,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Joomla + what follows",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: max 560 on the space after 'Joomla' before '1.5'; ' Joomla' x3 in the top 32, then vBulletin version footers at about a quarter of max. Probes: 'Joomla 2.5' 0.72, 'Joomla!'s' 0.73, 'the Joomla project' 0.56, vBulletin footer 0.33, WordPress/Drupal 0.03, Python 0.00.",
+ "selection": "random draw"
+}

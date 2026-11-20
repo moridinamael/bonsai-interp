@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a7dc150a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N2081-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:28+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N2081_neg/2026-11-19-lm1909-a7dc150a.tests.json"
+ },
+ "label": "the word right after a demonstrative that points back at what the text just described ('This form of cancer', 'use this knowledge', 'in this case', 'Such micro…'); weak pole, best guess",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N2081_neg/2026-11-19-lm1909-a7dc150a.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.525,
+     "peak": " form"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.099,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.112,
+     "peak": " source"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.064,
+     "peak": " exposed"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.169,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.087,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.67,
+     "peak": " form"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.029,
+     "peak": " thrive"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.033,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.099,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.112,
+     "peak": " source"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": " exposed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.071,
+     "peak": " mixture"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.064,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.059,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": " thrive"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.758,
+    "median_fire": 0.106,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "back-pointing 'this X'",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card and look: top examples are 'This form', 'use this knowledge', 'This license is aimed', 'in this case', 'In this instance', 'conditions listed above', plus two code identifiers. Ten probes of the pattern all scored under 0.10 of max, so I expect this to fail; registered as the best guess the card supports.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3ddcbd84",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N7631+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:03+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N7631_pos/2026-11-19-lm1909-3ddcbd84.tests.json"
+ },
+ "label": "the first digit of an angle written in degrees (180°, 270°, 360-degree), where the number is a rotation, heading or angle; the same numbers as counts, prices or oven temperatures stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N7631_pos/2026-11-19-lm1909-3ddcbd84.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.26,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.945,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.54,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.454,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.315,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.328,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.669,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.144,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.12,
+     "peak": " points"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.062,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.065,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": "Flip"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " lift"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.391,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "first digit of an angle",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on '3', '4', '2', '1' in '360°', '45 deg', '270°', '45-degree angle'; the - pole fires just before an angle is stated ('rotation angle in degrees'). Probes: '270° … 180°' 0.60, '360-degree view' 0.45, '180°' 0.42, '45-degree angle' 0.34, '30, 60 and 90 degrees' 0.29, '30° angle' 0.17, '90 degrees' (knees) 0.04, '350 degrees' (oven) 0.10, 360 houses 0.02.",
+ "selection": "random draw"
+}

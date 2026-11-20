@@ -1,0 +1,163 @@
+{
+ "id": "2026-11-19-lm1909-9e1e1793",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N12210+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:52+00:00",
+ "recipe": {
+  "toolchain_commit": "d7c082cec",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N12210_pos/2026-11-19-lm1909-9e1e1793.tests.json"
+ },
+ "label": "a small set of unrelated word tokens: ' plum', ' thermal', ' cage', ' nice' (also Russian ' еще' and Chinese '是一' in the scan); broad, mostly gate-closed layer-2 pole",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N12210_pos/2026-11-19-lm1909-9e1e1793.tests.json",
+   "prereg_commit": "d7c082cec",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.528,
+     "peak": " plum"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.442,
+     "peak": " thermal"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.316,
+     "peak": " cage"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.458,
+     "peak": " thermal"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.51,
+     "peak": " plum"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.34,
+     "peak": " cage"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.415,
+     "peak": " thermal"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.665,
+     "peak": " plum"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.086,
+     "peak": " tart"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.062,
+     "peak": "ikers"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.09,
+     "peak": " runs"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.053,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.167,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.063,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.086,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " orch"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.45,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d7c082cec",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "plum / thermal / cage tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card flags: broad (5.0% of tokens reach 0.1 of max) and gate-closed 80%; peak tokens '是一' x7, ' еще' x4, ' plum' x3, ' need' x3, ' thermal' x3, ' nice' x2. Probes: plum 0.98 and 0.50, еще 0.84, cage 0.70 and 0.32, thermal 0.56 and 0.58, nice 0.33, need 0.16. A token list with nothing visibly in common, so the label is the list.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "plum",
+   "thermal",
+   "cage",
+   "nice",
+   "еще",
+   "是一"
+  ]
+ }
+}
