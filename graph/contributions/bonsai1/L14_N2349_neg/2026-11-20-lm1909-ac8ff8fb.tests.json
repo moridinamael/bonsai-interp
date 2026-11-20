@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-ac8ff8fb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N2349-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:54:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N2349",
+   "pole": "-",
+   "label": "the '):' + newline that closes a Python def header (def tearDown(self):)",
+   "fire": [
+    "class TestViews(TestCase):\n\n    def tearDown(self):\n        self.client.logout()",
+    "    def setUp(self):\n        self.user = make_user('alice')\n        self.client.login(user=self.user)",
+    "import os\n\ndef load_config(path):\n    with open(path) as fh:\n        return fh.read()",
+    "    def test_delete(self):\n        response = self.client.post(url)\n        assert response.status_code == 302",
+    "def main():\n    args = parse_args()\n    run(args)",
+    "    def __init__(self, name):\n        self.name = name\n        self.items = []",
+    "    def close(self):\n        self.conn.close()\n        self.conn = None",
+    "def square(x):\n    result = x * x\n    return result"
+   ],
+   "quiet": [
+    "client = TestClient(app)\n\nclient.logout()\nclient.reset()",
+    "user = make_user('alice')\nclient.login(user=user)\nprint(user.name)",
+    "import os\n\nconfig = load_config(path)\nprint(config)",
+    "response = client.post(url)\nassert response.status_code == 302\nprint(response)",
+    "args = parse_args()\nrun(args)\nsys.exit(0)",
+    "name = input('name: ')\nitems = []\nitems.append(name)",
+    "conn = connect(db)\nconn.close()\nconn = None",
+    "x = int(input())\nresult = x * x\nprint(result)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "def header '):⏎'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "card: '):\\n' x23, mostly def tearDown(self):. Near misses are Python code with ')' + newline on call lines but no def header."
+}
