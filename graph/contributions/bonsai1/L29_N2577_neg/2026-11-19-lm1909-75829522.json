@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-75829522",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N2577-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:27:25+00:00",
+ "recipe": {
+  "toolchain_commit": "c87365d9d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N2577_neg/2026-11-19-lm1909-75829522.tests.json"
+ },
+ "label": "word-start fragments ' har' / ' kar' opening a music word (harp, harpsichord, karaoke)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N2577_neg/2026-11-19-lm1909-75829522.tests.json",
+   "prereg_commit": "c87365d9d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.646,
+     "peak": " har"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.818,
+     "peak": " har"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.565,
+     "peak": " kar"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.416,
+     "peak": " har"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.642,
+     "peak": " har"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.464,
+     "peak": " kar"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.526,
+     "peak": " har"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.445,
+     "peak": " kar"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.171,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.216,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " cash"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.074,
+     "peak": " Mah"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.192,
+     "peak": " harmon"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " sister"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.112,
+     "peak": " c"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.545,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c87365d9d",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "har-/kar- of harp, karaoke",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "A list, not a full account: in probes ' kar' in karate (0.45) and ' gar' in gardener (0.45) also fired, so the music context is at most a boost, and the strongest probe was the opening quote-bracket of a special-token string in code (' \"<', 1.07 of max; the output promotes 'pad'). Whole-word tokens (' harmon', ' harvest', ' hard') were quiet.",
+ "selection": "random draw"
+}

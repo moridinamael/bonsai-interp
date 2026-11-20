@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-daf9fa9a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N3183+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:30+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N3183",
+   "pole": "+",
+   "label": "the word just before an expected 'needed / required / necessary' (further action ⟦is⟧ needed; ', ⟦if⟧ desired'; Russian '⟦вам⟧ понадобится')",
+   "fire": [
+    "Your application has been received and approved. No further action is needed on your part at this time.",
+    "The form is flagged when additional documentation is required from the applicant.",
+    "The ticket stays open to show that more information is needed by the support team.",
+    "The lid may, if desired, be painted to match the rest of the cabinet.",
+    "Для приготовления теста вам понадобится мука, два яйца и стакан молока.",
+    "The order has shipped, so no additional payment is required from the customer.",
+    "Сначала подготовьте рабочее место. Вам потребуется отвёртка, клей и небольшой молоток.",
+    "The report is marked pending whenever further review is necessary by the committee."
+   ],
+   "quiet": [
+    "Your application has been received and approved. A confirmation letter was sent to your address this morning.",
+    "The form is flagged when additional documentation was uploaded by the applicant.",
+    "The ticket stays open to show that more information was added by the support team.",
+    "The lid may, of course, be painted to match the rest of the cabinet.",
+    "Для приготовления теста мы купили муку, два яйца и стакан молока.",
+    "The order has shipped, so the final payment was collected from the customer.",
+    "Сначала подготовьте рабочее место. Мы взяли отвёртку, клей и небольшой молоток.",
+    "The report is marked pending whenever the committee has postponed its review."
+   ]
+  }
+ ],
+ "predictions": "expect a fail: 2-3/8 fire above 0.2, 0 near misses",
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "just before 'needed'",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Best guess from the card (the + pole's output promotes ' must', ' should'; the - pole fires on the need- tokens themselves). Three probe rounds never got above 0.25 of max (the corpus top is a single ' Вам' at 149; my own 'Вам понадобится' passage scored 0.07), so the real trigger is narrower than this label."
+}

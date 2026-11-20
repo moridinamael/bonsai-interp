@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-6698316c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N5187+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:30+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N5187",
+   "pole": "+",
+   "label": "second token of a few specific pairs: 'igator' / 'usion' / 'uring' after ' all' (alligator, allusion, alluring), ' of' after ' total', '-person' after ' first', ' try' after ' second'",
+   "fire": [
+    "The zookeeper fed the old alligator a whole chicken.",
+    "The title of the novel is an allusion to a line from Milton.",
+    "The perfume has an alluring scent of jasmine.",
+    "The charity raised a total of nine thousand dollars.",
+    "The memoir is written as a first-person account of the war.",
+    "After failing the test, he decided to give it a second try.",
+    "Police seized a total of forty stolen bicycles.",
+    "Tourists watched an alligator slide into the swamp."
+   ],
+   "quiet": [
+    "The zookeeper fed the old crocodile a whole chicken.",
+    "The magician created the illusion of a floating table.",
+    "The perfume has an enduring scent of jasmine.",
+    "The charity raised a number of small donations.",
+    "The memoir is written as a third-person account of the war.",
+    "After failing the test, he decided to try it once more.",
+    "Police seized all of the stolen bicycles.",
+    "The ship's navigator studied the chart of the swamp."
+   ]
+  }
+ ],
+ "predictions": "7/8 fire; near misses use the same second tokens after a different first token and should stay under 0.3",
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "all+igator, total+of pairs",
+ "unit_kind": "dense / positional",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (2.2% of tokens reach 0.1 of a max of only 0.33) and mostly gate-closed. This label is a list: I found no shared pattern behind the pairs beyond 'a particular token right after a particular previous token'. In probes 'illusion', 'third person', 'a number of', 'All of' and 'try again' were quiet."
+}
