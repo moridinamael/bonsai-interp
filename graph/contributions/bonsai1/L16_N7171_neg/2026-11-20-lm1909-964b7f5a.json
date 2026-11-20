@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-964b7f5a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N7171-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:08:07+00:00",
+ "recipe": {
+  "toolchain_commit": "7da632094",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N7171_neg/2026-11-20-lm1909-964b7f5a.tests.json"
+ },
+ "label": "the '_id' suffix piece of an identifier in code (user_id, builder_id)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N7171_neg/2026-11-20-lm1909-964b7f5a.tests.json",
+   "prereg_commit": "7da632094",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.497,
+     "peak": "_id"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.826,
+     "peak": "_id"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.148,
+     "peak": "_id"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": -0.007,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.194,
+     "peak": "_id"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.075,
+     "peak": "session"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.098,
+     "peak": "_id"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.218,
+     "peak": "_id"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.323,
+     "peak": " order"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.368,
+     "peak": "(user"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.088,
+     "peak": " name"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.116,
+     "peak": "(key"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " delete"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": "session"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": " fetch"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.672,
+    "median_fire": 0.171,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7da632094",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'_id' in identifiers",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: weak pole (max 2.75), gate-closed leak 66%; '\\n' is 17 of top 32 peaks (mid-sentence line breaks), '_id' 4, ' token' and '(key' in code. Tested the cleaner '_id' guess.",
+ "selection": "random draw"
+}
