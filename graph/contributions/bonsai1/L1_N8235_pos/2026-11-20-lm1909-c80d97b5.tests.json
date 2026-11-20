@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-c80d97b5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N8235+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:31:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N8235",
+   "pole": "+",
+   "label": "dense low-amplitude unit; best guess: the token 'replace' in string .replace() calls and the CJK character '次'",
+   "fire": [
+    "    clean = text.replace('\\t', ' ').replace('\\n', ' ')",
+    "    path = name.lower().replace(' ', '_')",
+    "    return s.strip().replace('\"', \"'\")",
+    "下次我们再去那家餐厅吃饭吧。",
+    "这是我第一次来北京，下一次想去上海。",
+    "    url = base.replace('http://', 'https://')",
+    "    line = raw.decode('utf-8').replace('\\r', '')",
+    "このプロジェクトは次の段階に進みます。"
+   ],
+   "quiet": [
+    "    clean = ' '.join(text.split())",
+    "    path = name.lower().strip()",
+    "    return s.strip().upper()",
+    "我们明天再去那家餐厅吃饭吧。",
+    "这是我来北京的旅行，以后想去上海。",
+    "    url = base + '/index.html'",
+    "    line = raw.decode('utf-8').strip()",
+    "このプロジェクトはまもなく終わります。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "dense: .replace / 次",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags dense (13% of tokens reach 0.1 of a tiny max 0.16) and 100% gate-closed echo. Test records the density; expected to fail."
+}

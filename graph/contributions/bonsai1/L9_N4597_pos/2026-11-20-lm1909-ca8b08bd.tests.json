@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-ca8b08bd",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N4597+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:31:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N4597",
+   "pole": "+",
+   "label": "indentation, commas and brackets inside Python dict and call literals (gate-closed, weak unit)",
+   "fire": [
+    "config = {\n    'host': 'localhost',\n    'port': 5432,\n    'user': 'admin',\n}",
+    "payload = {\"id\": 17, \"name\": \"node-b\", \"active\": True, \"tags\": [\"a\", \"b\"]}",
+    "    result = self.session.query(User).filter(User.id == uid).first()",
+    "    self.logger.info(\"Starting sync for %s\", self.target.name)",
+    "servers = [\n    {\"name\": \"web-1\", \"weight\": 2},\n    {\"name\": \"web-2\", \"weight\": 3},\n]",
+    "        defaults = dict(\n            timeout=30,\n            retries=5,\n        )",
+    "    value = record.get('created_at').strftime('%Y-%m-%d')",
+    "opts = {'verbose': False, 'dry_run': True, 'level': 3}"
+   ],
+   "quiet": [
+    "The host was local, the port was the default one, and the user was the admin.",
+    "We gave the node a name, marked it active, and added two tags to it.",
+    "The query returned the first user whose id matched the one we asked for.",
+    "The log said the sync had started for the target server this morning.",
+    "There were two web servers, the first with weight two and the second with three.",
+    "By default the timeout is thirty seconds and the client retries five times.",
+    "She read the creation date from the record and wrote it out as year, month, day.",
+    "The options were simple: not verbose, a dry run, and level three."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python literal punctuation",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: 88% of activations are gate-closed echoes; top peaks are whitespace, '.', '(' and ',' inside multi-line Python dicts and method calls. Expected to be weak."
+}

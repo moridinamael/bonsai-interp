@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-49c6937c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N3678+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:38:01+00:00",
+ "recipe": {
+  "toolchain_commit": "d27499cf4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N3678_pos/2026-11-20-lm1909-49c6937c.tests.json"
+ },
+ "label": "the word closing a restrictive phrase, mainly ' only' in 'for X purposes only' and ' possible' in 'the best way possible'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N3678_pos/2026-11-20-lm1909-49c6937c.tests.json",
+   "prereg_commit": "d27499cf4",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.779,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.745,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.214,
+     "peak": " possible"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.997,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.67,
+     "peak": " purposes"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.189,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.439,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.745,
+     "peak": " possible"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.087,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.297,
+     "peak": " taken"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.066,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.361,
+     "peak": " may"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.33,
+     "peak": " should"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.045,
+     "peak": " finish"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": " sample"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.078,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.708,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d27499cf4",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'purposes only' closer",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags broad (1.8%). Peaks: ' only' x7 (disclaimers), ' possible' (safest way possible), ' purposes', ' fast' (gets old fast).",
+ "selection": "random draw"
+}
