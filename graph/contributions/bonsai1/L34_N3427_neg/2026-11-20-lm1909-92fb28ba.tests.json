@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-92fb28ba",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N3427-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:13:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N3427",
+   "pole": "-",
+   "label": "'(self' / 'self' as the first parameter in a Python method definition (def name(self",
+   "fire": [
+    "class Reader:\n    def __init__(self, path):\n        self.path = path\n\n    def read_all(self):\n        return open(self.path).read()",
+    "class Stack:\n    def __init__(self):\n        self.items = []\n\n    def pop(self):\n        return self.items.pop()",
+    "class Client:\n    def connect(self):\n        pass\n\n    def get_status(self):\n        return self.status",
+    "class Model:\n    def build(self):\n        self.layers = []\n\n    def save_weights(self, filename):\n        pass",
+    "class Timer:\n    def start(self):\n        self.t0 = time.time()\n\n    def elapsed(self):\n        return time.time() - self.t0",
+    "class Parser:\n    def reset(self):\n        self.pos = 0\n\n    def parse_header(self, data):\n        return data[:4]",
+    "class Robot:\n    def stop(self):\n        self.speed = 0\n\n    def move_forward(self, steps):\n        self.x += steps",
+    "class Cache:\n    def clear(self):\n        self.store = {}\n\n    def lookup(self, key):\n        return self.store.get(key)"
+   ],
+   "quiet": [
+    "import os\n\ndef make_reader(path):\n    return open(path)\n\ndef read_all(handle):\n    return handle.read()",
+    "items = []\n\ndef push(stack, item):\n    stack.append(item)\n\ndef pop(stack):\n    return stack.pop()",
+    "import socket\n\ndef connect(host):\n    pass\n\ndef get_status(conn):\n    return conn.status",
+    "layers = []\n\ndef build(config):\n    return []\n\ndef save_weights(model, filename):\n    pass",
+    "import time\n\ndef start():\n    return time.time()\n\ndef elapsed(t0):\n    return time.time() - t0",
+    "pos = 0\n\ndef reset(state):\n    state.pos = 0\n\ndef parse_header(data):\n    return data[:4]",
+    "speed = 0\n\ndef stop(robot):\n    robot.speed = 0\n\ndef move_forward(robot, steps):\n    robot.x += steps",
+    "store = {}\n\ndef clear(cache):\n    cache.clear()\n\ndef lookup(cache, key):\n    return cache.get(key)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python def (self",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "'(self' x19, 'self' x7, ' self' x3 in the top 32, all in def lines. Near misses: same code with other first parameters or plain functions."
+}
