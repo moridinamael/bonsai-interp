@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-f6d06522",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N6711-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:48:05+00:00",
+ "recipe": {
+  "toolchain_commit": "125b58183",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N6711_neg/2026-11-20-lm1909-f6d06522.tests.json"
+ },
+ "label": "possessive pronoun (his/her/your) where a relative or family member is expected next (his family, her husband, his cousin)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N6711_neg/2026-11-20-lm1909-f6d06522.tests.json",
+   "prereg_commit": "125b58183",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.584,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.02,
+     "peak": " sent"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.02,
+     "peak": "re"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.034,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.185,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.203,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.013,
+     "peak": " married"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.108,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": "re"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " letter"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " horse"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " married"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.078,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.071,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "125b58183",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "possessive before kin",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "probe was weak (0.12-0.18) on 'his family'/'her husband'",
+ "selection": "random draw"
+}
