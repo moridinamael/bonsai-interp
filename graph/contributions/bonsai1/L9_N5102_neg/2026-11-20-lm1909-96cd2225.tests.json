@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-96cd2225",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N5102-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:13:53+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N5102",
+   "pole": "-",
+   "label": "leading indentation whitespace (runs of tabs or spaces) at the start of code lines",
+   "fire": [
+    "def load(path):\n\t\twith open(path) as f:\n\t\t\tdata = f.read()\n\t\t\treturn data\n",
+    "for row in rows:\n            if row:\n                total += row[0]\n                count += 1\n",
+    "try:\n\t\t\tdb = connect('app.db')\n\t\t\tcur = db.cursor()\n\t\t\tcur.execute(sql)\n",
+    "class Box:\n        def __init__(self):\n                self.items = []\n                self.size = 0\n",
+    "while running:\n\t\t\t\tevent = poll()\n\t\t\t\tif event:\n\t\t\t\t\thandle(event)\n",
+    "if ready:\n                    send(msg)\n                    log('sent')\n                    ready = False\n",
+    "def area(w, h):\n\t\t\tresult = w * h\n\t\t\tprint(result)\n\t\t\treturn result\n",
+    "for key in table:\n                        value = table[key]\n                        out.append(value)\n"
+   ],
+   "quiet": [
+    "x = load(path)\ndata = x.read()\nprint(data)\nreturn_code = 0\n",
+    "rows = get_rows()\ntotal = sum(rows)\ncount = len(rows)\nmean = total / count\n",
+    "db = connect('app.db')\ncur = db.cursor()\ncur.execute(sql)\nrows = cur.fetchall()\n",
+    "box = Box()\nbox.items = []\nbox.size = 0\nboxes.append(box)\n",
+    "event = poll()\nhandle(event)\nrunning = check()\nlog(event)\n",
+    "msg = build()\nsend(msg)\nlog('sent')\nready = False\n",
+    "w = 3\nh = 4\nresult = w * h\nprint(result)\n",
+    "keys = list(table)\nvalues = [table[k] for k in keys]\nout.extend(values)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code indentation whitespace",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "card: broad flag, gate-closed leak regime 99%, max only 3.1; top 32 are tab/space runs in Python code. Recorded as dense / positional"
+}
