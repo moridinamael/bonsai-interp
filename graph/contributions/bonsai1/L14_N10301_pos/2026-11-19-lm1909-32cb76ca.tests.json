@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-32cb76ca",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N10301+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:26:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N10301",
+   "pole": "+",
+   "label": "in code, the suffix of a second identifier (_list, _task) that echoes a longer identifier with the same suffix a line earlier",
+   "fire": [
+    "raw_line = handle.readline()\nraw_line_items = raw_line.split(';')\nline_items = []\n",
+    "from .create_user_task import CreateUserTask\nfrom .login_task import LoginTask\n",
+    "old_file_path = os.path.join(root, name)\nfile_path = old_file_path.lower()\n",
+    "from .parse_header_job import ParseHeaderJob\nfrom .cleanup_job import CleanupJob\n",
+    "raw_score_list = raw_scores.split('\\n')\nscore_list = list()\nfor raw_score in raw_score_list:\n",
+    "full_user_name = first + ' ' + last\nuser_name = full_user_name.strip()\n",
+    "from .send_email_handler import SendEmailHandler\nfrom .retry_handler import RetryHandler\n",
+    "input_token_ids = tokenizer.encode(text)\ntoken_ids = input_token_ids[:max_len]\n"
+   ],
+   "quiet": [
+    "line = handle.readline()\nparts = line.split(';')\nitems = []\n",
+    "from .accounts import CreateUser\nfrom .session import Login\n",
+    "target = os.path.join(root, name)\nlowered = target.lower()\n",
+    "from .headers import parse\nfrom .cleanup import sweep\n",
+    "rows = text.split('\\n')\nscores = list()\nfor row in rows:\n",
+    "combined = first + ' ' + last\nresult = combined.strip()\n",
+    "from .mailer import send\nfrom .backoff import retry\n",
+    "encoded = tokenizer.encode(text)\nclipped = encoded[:max_len]\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "echoed identifier suffix",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: no single token; top examples are second occurrences (raw_data_list ... data_list; added_remote_files_task ... folder_task; 'x@1.2::', 'x::'; train_bxtxd=train_data_bxtxd). Probes: code echo 0.59 and 0.25; repeated prose phrases 0.02-0.04; an unrepeated name_list 0.05. Near misses are the same code without the earlier longer identifier."
+}

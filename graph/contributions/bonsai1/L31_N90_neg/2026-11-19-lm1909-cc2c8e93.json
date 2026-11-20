@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-cc2c8e93",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N90-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:25+00:00",
+ "recipe": {
+  "toolchain_commit": "fef43f02e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N90_neg/2026-11-19-lm1909-cc2c8e93.tests.json"
+ },
+ "label": "stock-market trading text (market makers, flash crash, market breadth, short / leveraged positions): fires on function words and ' market' while the passage is about securities trading",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N90_neg/2026-11-19-lm1909-cc2c8e93.tests.json",
+   "prereg_commit": "fef43f02e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.575,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.395,
+     "peak": " called"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.394,
+     "peak": " market"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.534,
+     "peak": " into"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.001,
+     "peak": " collateral"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.472,
+     "peak": " market"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.637,
+     "peak": " selling"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.153,
+     "peak": " most"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " flea"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " rich"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " lower"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " mortgage"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " again"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " his"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.433,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fef43f02e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "securities trading context",
+ "unit_kind": "sparse feature",
+ "confidence": 0.5,
+ "notes": "Card: ' market' x4, ' Market' x2, ' to', ' or', ' a', all in trading text (Flash Crash, market makers, dynamic hedging, rolling contracts); as the - pole it promotes ' move', ' stock', ' volatile', ' options'. The + pole is the exchange-venue side (crypto exchanges, 'on the exchange's trading floors'). Probes: Flash Crash 0.79, market makers 0.68, market breadth 0.36, stocks fell 0.25, short or leveraged 0.19; farmers market 0.00. Near misses use market / stock / exchange / trade in other senses, plus household finance.",
+ "selection": "random draw"
+}
