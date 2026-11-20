@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1dfe078b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N11312+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:34:50+00:00",
+ "recipe": {
+  "toolchain_commit": "cf283b3d4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N11312_pos/2026-11-20-lm1909-1dfe078b.tests.json"
+ },
+ "label": "German ' ab' as a separable prefix or particle inside a sentence (abgelehnt, fährt … ab, ab und zu)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N11312_pos/2026-11-20-lm1909-1dfe078b.tests.json",
+   "prereg_commit": "cf283b3d4",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.551,
+     "peak": " ab"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.56,
+     "peak": " ab"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.335,
+     "peak": " ab"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.299,
+     "peak": " ab"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.32,
+     "peak": " ab"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.164,
+     "peak": " ab"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.208,
+     "peak": " abs"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.495,
+     "peak": " ab"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.417,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.114,
+     "peak": "ch"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.199,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": " Pak"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.136,
+     "peak": " mit"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.044,
+     "peak": "fr"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.057,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.328,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cf283b3d4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German 'ab' prefix",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Probes: 'abgelehnt' 0.66, 'ab und zu' 0.59, 'fährt…ab' 0.28; sentence-initial 'Ab' 0.04; 'an' 0.07-0.14.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c9dabfe4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N11385-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:34:21+00:00",
+ "recipe": {
+  "toolchain_commit": "cf283b3d4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N11385_neg/2026-11-20-lm1909-c9dabfe4.tests.json"
+ },
+ "label": "word stem that is completed by the piece 'us' (French participles deven|us, obten|us, ven|us; v|cp|us)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N11385_neg/2026-11-20-lm1909-c9dabfe4.tests.json",
+   "prereg_commit": "cf283b3d4",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.547,
+     "peak": "ven"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.367,
+     "peak": " obten"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.389,
+     "peak": " reven"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.599,
+     "peak": "ten"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.432,
+     "peak": " ven"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.355,
+     "peak": "ten"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.2,
+     "peak": " conven"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.2,
+     "peak": "ven"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " pr"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " l"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "illes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " interrog"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.078,
+     "peak": " fle"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " prison"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": "rent"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.378,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cf283b3d4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stem before '-us'",
+ "unit_kind": "sparse feature",
+ "confidence": 0.5,
+ "notes": "Output direction (- pole) promotes 'us'. Probes: 'ven' 0.44-0.56, 'obten' 0.37, 'cp' (vcpus) 0.37, 'conn' 0.12; 'arrivés' 0.01. Tokenizer checked: each fire word splits as stem + 'us'.",
+ "selection": "random draw"
+}
