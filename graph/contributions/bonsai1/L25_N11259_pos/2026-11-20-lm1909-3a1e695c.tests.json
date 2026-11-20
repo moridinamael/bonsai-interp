@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-3a1e695c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N11259+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:00:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N11259",
+   "pole": "+",
+   "label": "a directory (folder) name inside a file path, in code or prose; the − pole takes file names before an extension",
+   "fire": [
+    "config_dir = os.path.join(BASE_DIR, 'settings', 'local')",
+    "LOG_FILE = '/var/log/myservice/output.log'",
+    "Copy the files into C:\\Program Files\\MyTool\\bin before running the setup.",
+    "data = np.load(os.path.join(here, '..', 'fixtures', 'sample.npy'))",
+    "with open(\"/srv/projects/report/data.csv\") as f:",
+    "sys.path.insert(0, os.path.abspath('../src/lib'))",
+    "Edit the file at /etc/nginx/sites-available/default and restart the server.",
+    "TEMPLATE_DIRS = [os.path.join(PROJECT_ROOT, 'templates', 'email')]"
+   ],
+   "quiet": [
+    "config = load_config(name='settings', env='local')",
+    "LOG_LEVEL = 'debug'\nLOG_FORMAT = 'json'",
+    "Run the installer and click Next to accept the default options before running.",
+    "data = np.load(sample_bytes, allow_pickle=False)",
+    "with open(filename) as f:\n    rows = f.readlines()",
+    "sys.argv.insert(0, 'run')",
+    "Edit the server settings in the admin panel and restart the server.",
+    "TEMPLATE_NAMES = ['welcome', 'reset', 'invoice']"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "directory segment in path",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top + examples peak on folder segments (mxc|art/, 'tests', django|apps/, /lib/, C:\\Proc|Dump); top − examples peak on file names before an extension (home.html, image.qcow2, base.yml). Near misses are code and instructions with strings that are not paths."
+}
