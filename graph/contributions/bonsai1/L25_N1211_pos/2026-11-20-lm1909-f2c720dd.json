@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-f2c720dd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N1211+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:59:33+00:00",
+ "recipe": {
+  "toolchain_commit": "19a60c232",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N1211_pos/2026-11-20-lm1909-f2c720dd.tests.json"
+ },
+ "label": "the separator just before a step size in an arithmetic progression (third argument of range/arange, 'in steps of')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N1211_pos/2026-11-20-lm1909-f2c720dd.tests.json",
+   "prereg_commit": "19a60c232",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.881,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.221,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.635,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.715,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.875,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.758,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.728,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.719,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.086,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.081,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.273,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.267,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.647,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.113,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.084,
+     "peak": " delta"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.743,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "19a60c232",
+  "minutes": 27,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "step-size separator",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: range/arange step commas and 'in steps of' fired 0.67-0.80; max(a, b, c) 0; linspace count weaker (0.15). Logit effect promotes 'increment', 'intervals', 'spacing'.",
+ "selection": "random draw"
+}
