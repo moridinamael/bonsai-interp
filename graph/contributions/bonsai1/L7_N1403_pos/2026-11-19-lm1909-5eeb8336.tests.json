@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-5eeb8336",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N1403+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N1403",
+   "pole": "+",
+   "label": "a fixed list of rare word-completions, not rare-word endings in general: Kn|op|f, atr|azine, Arbit|ron, acros|ome fire; look-alike endings (ribosome, lysosome, simazine, Nielsen, Scribner) stay quiet",
+   "fire": [
+    "Her first novel was bought by Knopf after a short auction.",
+    "Traces of atrazine were found in wells near the cornfields.",
+    "For decades Arbitron ratings decided which radio hosts kept their jobs.",
+    "Enzymes released from the acrosome let the sperm pass through the egg's coat.",
+    "The memoir came out from Alfred A. Knopf in the autumn of 2003.",
+    "European regulators banned atrazine because it lingers in groundwater.",
+    "Stations paid Arbitron to survey listeners in each local market.",
+    "In the mature sperm the acrosome sits like a cap over the nucleus."
+   ],
+   "quiet": [
+    "Her first novel was bought by Scribner after a short auction.",
+    "Traces of simazine were found in wells near the cornfields.",
+    "For decades Nielsen ratings decided which television hosts kept their jobs.",
+    "Enzymes stored in the lysosome let the cell digest worn-out parts.",
+    "The memoir came out from Penguin in the autumn of 2003.",
+    "European regulators banned glyphosate on roadside verges last year.",
+    "Stations paid Gallup to survey listeners in each local market.",
+    "In the mature neuron the ribosome sits along the rough membrane."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Knopf / atrazine / Arbitron / acrosome",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: no single token ('kle','b','LOY','op','m','ome'), every top example the completing piece of an uncommon name or term. Probes: Knopf 1.00, Arbitron 1.03, atrazine 0.90, Kolm 0.88, acrosome 0.71, Aksay 0.70; ten new rare completions (glyphosate, ribosome, lysosome, centrosome, Nabokov, Scribner, Lindqvist, simazine, Nielsen, Kellogg) all < 0.06. So the shared pattern 'last piece of a rare word' does NOT hold on new cases; only the list holds, and the list here is certainly incomplete (the card's 32 top examples have many more items). Early layer: word-identity completion."
+}

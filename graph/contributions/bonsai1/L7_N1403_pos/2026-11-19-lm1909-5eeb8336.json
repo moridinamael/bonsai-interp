@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5eeb8336",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N1403+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:14+00:00",
+ "recipe": {
+  "toolchain_commit": "4f809b3a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N1403_pos/2026-11-19-lm1909-5eeb8336.tests.json"
+ },
+ "label": "a fixed list of rare word-completions, not rare-word endings in general: Kn|op|f, atr|azine, Arbit|ron, acros|ome fire; look-alike endings (ribosome, lysosome, simazine, Nielsen, Scribner) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N1403_pos/2026-11-19-lm1909-5eeb8336.tests.json",
+   "prereg_commit": "4f809b3a2",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.49,
+     "peak": "op"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.734,
+     "peak": "azine"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.996,
+     "peak": "ron"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.646,
+     "peak": "ome"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.959,
+     "peak": "op"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.809,
+     "peak": "azine"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.808,
+     "peak": "ron"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.887,
+     "peak": "ome"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": "ner"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": "fields"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.048,
+     "peak": "osome"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": " glyph"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.045,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " neuron"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.808,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f809b3a2",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Knopf / atrazine / Arbitron / acrosome",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: no single token ('kle','b','LOY','op','m','ome'), every top example the completing piece of an uncommon name or term. Probes: Knopf 1.00, Arbitron 1.03, atrazine 0.90, Kolm 0.88, acrosome 0.71, Aksay 0.70; ten new rare completions (glyphosate, ribosome, lysosome, centrosome, Nabokov, Scribner, Lindqvist, simazine, Nielsen, Kellogg) all < 0.06. So the shared pattern 'last piece of a rare word' does NOT hold on new cases; only the list holds, and the list here is certainly incomplete (the card's 32 top examples have many more items). Early layer: word-identity completion.",
+ "selection": "random draw"
+}

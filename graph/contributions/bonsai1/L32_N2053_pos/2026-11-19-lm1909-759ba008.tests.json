@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-759ba008",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N2053+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N2053",
+   "pole": "+",
+   "label": "a condiment or topping is being named in a food description, peaking on the first piece ' k' / ' ch' of ketchup, chives, cheddar, chutney (after 'with', 'in', 'of'); k/ch words outside food (kettle, chairs, chapters) stay quiet",
+   "fire": [
+    "The toddler squeezed far too much ketchup onto her scrambled eggs.",
+    "Stir a handful of chives into the mashed potatoes before serving.",
+    "He likes his grilled sandwich with sharp cheddar and sliced tomato.",
+    "The samosas arrived with a small bowl of tamarind chutney.",
+    "Meatloaf is traditionally glazed with ketchup and brown sugar before baking.",
+    "Finish the omelette with snipped chives and a little butter.",
+    "The diner serves its onion rings with a side of ketchup.",
+    "Grate some aged cheddar over the chili just before it reaches the table."
+   ],
+   "quiet": [
+    "She put the kettle on and looked for clean cups.",
+    "The waiter stacked the chairs after the last guests left the restaurant.",
+    "The cookbook's early chapters cover knives, pans and basic technique.",
+    "Our chef Karl trained in Kyoto before opening the bistro.",
+    "The bakery opens at six and sells out of bread by noon.",
+    "Roast the carrots in a hot oven until they are soft and brown.",
+    "He boiled the rice for twelve minutes and let it rest.",
+    "The restaurant's kitchen was checked by inspectors on Thursday."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "ketchup / chives onset",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: 'K'/' k'/' K'/' ch' dominate the top 32, all in recipes or menus (ketchup, chile con queso, chives, Kosher salt). Probes: ketchup 0.80 and 1.19, chives 1.01, cheddar 0.86, chutney 0.39; kettle, chairs, chapters, Kevin, Kansas < 0.01. It leaks onto ' with' / ' and' / ',' in topping lists without a k/ch word (0.22-0.46), so the food near misses here avoid topping lists and the label is stated as the topping context, not the bare letter. The - pole fires on K/к starting surnames and Russian words: same letter, non-food."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-c3657172",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N6795-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N6795",
+   "pole": "-",
+   "label": "a short two-or-three-letter token used as a symbol or name right after the noun it names ('matrix mat', 'factor ri', 'panel Ma', 'function fn'), and ' di' after a noun (barrier di|ode); weak on one-letter symbols ('point a' 0.22, 'type I' 0.14)",
+   "fire": [
+    "Suppose the rotation matrix mat has been normalised already.",
+    "Here the growth factor ri depends only on temperature.",
+    "The scaling factor di is chosen so that the total stays fixed.",
+    "Samples from panel Ma 40 were compared with those from panel Ma 12.",
+    "We pass the callback function fn to the scheduler at startup.",
+    "Each row of the input matrix mat is then sorted in place.",
+    "In this model the loss factor ri falls as the load increases.",
+    "The weighting factor di for each station is listed in the appendix."
+   ],
+   "quiet": [
+    "Suppose the rotation has been normalised already by the solver.",
+    "Here the growth depends only on temperature and rainfall.",
+    "The scaling is chosen so that the total stays fixed.",
+    "Samples from the upper panel were compared with those from the lower one.",
+    "We pass the callback to the scheduler when the program starts.",
+    "She wiped her boots on the mat and hung up her coat.",
+    "My Ma always said the bread tastes better on the second day.",
+    "The painter di Paolo worked in Siena for most of his life."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "short symbol after its noun",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' a' x3, ' I' x3, ' di' x2, ' my' x2, plus ' therein', ' of', ' mat', ' ri', ' Ma'; flag: gate-closed regime 100% (the pole is a leak, max 1.68). Probes: 'factor ri' 0.73 and 0.53, 'matrix mat' 0.66 and 0.60, 'factor di' 0.65, 'panel Ma' 0.49, 'barrier di|ode' 0.44, 'function fn' 0.33, 'point a' 0.22, 'type I' 0.14; the card's own top tokens ' therein' and 'independent of' scored 0.003 and 0.03 in rebuilt sentences, 'my dog' 0.07, 'A di Giorgio' 0.09. So the label covers the symbol-after-noun cases but not the whole card. Layer 2, leak regime: likely a token-identity unit modulated by the previous word; whether the tokens fire without the naming noun is only tested by three of the near misses."
+}

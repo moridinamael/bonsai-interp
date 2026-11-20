@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-2792bced",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N12110+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:24:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N12110",
+   "pole": "+",
+   "label": "best guess, weak: in Python code, a name inside a comma-separated argument/tuple list that repeats a list seen earlier in the file ('def f(self, out, test, …)' again, 'return None, -1' again); short snippets and prose lists stay quiet",
+   "fire": [
+    "def on_failure(self, out, test, example, got):\n    out('failed')\n\ndef on_error(self, out, test, example, got):\n    out('error')\n\ndef on_success(self, out, test, example, got):\n    out('passed')",
+    "def visit_open(self, node, test, parent, depth):\n    self.push(node)\n\ndef visit_close(self, node, test, parent, depth):\n    self.pop(node)",
+    "def find(buf, n):\n    if n < 0:\n        return None, -1\n    if not buf:\n        return None, -1\n    if buf[0] == '#':\n        return None, -1\n    return buf, n",
+    "def log_start(self, out, test, result):\n    out.write('start')\n\ndef log_stop(self, out, test, result):\n    out.write('stop')\n\ndef log_skip(self, out, test, result):\n    out.write('skip')",
+    "def parse_head(data, pos):\n    if pos >= len(data):\n        return None, -1\n    return data[pos], pos + 1\n\ndef parse_tail(data, pos):\n    if pos >= len(data):\n        return None, -1\n    return data[-1], pos",
+    "def before_case(self, out, test, example):\n    out('begin')\n\ndef after_case(self, out, test, example):\n    out('end')\n\ndef skip_case(self, out, test, example):\n    out('skip')",
+    "def emit_ok(self, out, test, got, want):\n    out('ok')\n\ndef emit_bad(self, out, test, got, want):\n    out('bad')",
+    "def read_key(line, i):\n    if i < 0:\n        return None, -1\n    if line[i] == ' ':\n        return None, -1\n    return line[i], i + 1"
+   ],
+   "quiet": [
+    "def on_failure(self):\n    self.count += 1\n\ndef on_error(self):\n    self.errors += 1\n\ndef on_success(self):\n    self.passed += 1",
+    "def visit_open(self):\n    self.depth += 1\n\ndef visit_close(self):\n    self.depth -= 1",
+    "def find(buf):\n    if not buf:\n        return False\n    if buf.startswith('#'):\n        return False\n    return True",
+    "def log_start(self):\n    self.stream.write('start')\n\ndef log_stop(self):\n    self.stream.write('stop')\n\ndef log_skip(self):\n    self.stream.write('skip')",
+    "def parse_head(data):\n    if not data:\n        return False\n    return data.startswith('H')\n\ndef parse_tail(data):\n    if not data:\n        return False\n    return data.endswith('T')",
+    "The first runner failed, the second runner made an error, and the third runner passed the line.",
+    "class Emitter(object):\n    ok = 0\n    bad = 0\n\n    def reset(self):\n        self.ok = 0\n        self.bad = 0",
+    "def read_key(line):\n    line = line.strip()\n    if not line:\n        return ''\n    return line.lower()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "repeated code arg list (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no single token; all top examples are Python, the marked token an element of a comma list ('source':, expmin1 ',', ' test', ' None', '_cache', ' t'), several visibly repeating a nearby line (print '---', nil, t, v, tbinfo). Probes never passed 0.28: repeated def signature 0.26-0.28, repeated 'return None, -1' 0.23, one-line format tuple 0.25, dict literals and globals < 0.05. Corpus contexts are longer than a test item can be. Expect a fail; recorded as unclear."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0e578b3f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N4981+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:26+00:00",
+ "recipe": {
+  "toolchain_commit": "4f809b3a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N4981_pos/2026-11-19-lm1909-0e578b3f.tests.json"
+ },
+ "label": "the word marking how far an age or life-stage span extends ('until age five', 'up to the age of', 'throughout adult life', 'from three months to four years'); the same prepositions for space, weekdays or giving stay quiet. The - pole marks the START of such a span ('begin', 'as early as')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N4981_pos/2026-11-19-lm1909-0e578b3f.tests.json",
+   "prereg_commit": "4f809b3a2",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.33,
+     "peak": " until"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.433,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.673,
+     "peak": " until"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.634,
+     "peak": " until"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.971,
+     "peak": " until"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.596,
+     "peak": " throughout"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.614,
+     "peak": " until"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.572,
+     "peak": " around"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.005,
+     "peak": "abies"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " people"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " until"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.017,
+     "peak": " puppies"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.605,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f809b3a2",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "end of an age/life span",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' until' x8, ' through' x5, ' to' x4, ' throughout', ' hasta'; every top example is about ages or life stages (until 1 year of age, up to age 6, three months to four years, throughout our entire lives). Probes: 'throughout adult life' 0.87, 'from birth until age five' 0.66, 'up to the age of twelve' 0.22, 'Monday through Friday' 0.20, 'June to September' 0.14; 'through the door', 'to his sister', 'until the paint is dry', 'from the harbour to the church' < 0.04; 'as early as age three' -0.003 (that is the - pole: ' as', ' begin', ' déjà'). One distinction, two sides: + = span runs up to/through here, - = span starts here.",
+ "selection": "random draw"
+}

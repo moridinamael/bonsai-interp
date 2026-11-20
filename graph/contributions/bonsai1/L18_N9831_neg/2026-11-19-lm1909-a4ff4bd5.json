@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a4ff4bd5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N9831-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:37:37+00:00",
+ "recipe": {
+  "toolchain_commit": "4f809b3a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N9831_neg/2026-11-19-lm1909-a4ff4bd5.tests.json"
+ },
+ "label": "the baseline half of a contrast with the usual or hypothetical case: the modal or copula after a frame like 'in any other year', 'typically', 'what would normally be a …' ('fans might …', 'would normally be a'), before the sentence turns to what actually happened. Plain statements and a bare future 'might' stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N9831_neg/2026-11-19-lm1909-a4ff4bd5.tests.json",
+   "prereg_commit": "4f809b3a2",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.33,
+     "peak": " have"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.147,
+     "peak": " might"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.383,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.392,
+     "peak": " might"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.454,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.38,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.248,
+     "peak": " might"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.13,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " scan"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " lake"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " might"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": " routine"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": "ifle"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.355,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4f809b3a2",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'normally X would/might' baseline",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' might' x2, ' would', ' a', ' for', ' more', '.', after frames such as 'Under other circumstances', 'What is normally', 'Normally', 'What might be a mere fender bender for'. Probes: 'Typically, students might' 0.48, 'Under other circumstances, she might' 0.46, 'In any other year, voters might' 0.40, 'What would normally be a' 0.33, 'that would be unthinkable' 0.29, 'Usually, the birds would' 0.25; 'Normally, the repair would' 0.11, 'Under normal circumstances, a win … would' 0.13; plain statements 0.01-0.04, bare 'She might go to the store' 0.04. The + pole fires on the EARLIER state in a before/after reversal ('which a week before was only …', 'had been so delighted'): both poles mark the side of a contrast that is about to be overturned, - the usual/hypothetical one, + the past one. Strengths are modest, so the median may fall near the 0.20 bar.",
+ "selection": "random draw"
+}
