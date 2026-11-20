@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e7bc8cee",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N4650-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:12:02+00:00",
+ "recipe": {
+  "toolchain_commit": "9c45db6a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N4650_neg/2026-11-19-lm1909-e7bc8cee.tests.json"
+ },
+ "label": "the target or scoring zone in a ball game (the ' goal', ' basket', penalty ' area', the other team's ' line') named as where the ball or player is headed",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N4650_neg/2026-11-19-lm1909-e7bc8cee.tests.json",
+   "prereg_commit": "9c45db6a1",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.537,
+     "peak": " goal"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.725,
+     "peak": " basket"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.533,
+     "peak": " area"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.918,
+     "peak": " goal"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.439,
+     "peak": " net"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.859,
+     "peak": " basket"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.603,
+     "peak": " area"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.618,
+     "peak": " goal"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " signed"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.085,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " behind"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.611,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c45db6a1",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "scoring target in ball sports",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks ' goal' x6, ' the' x5, ' basket' x3, ' area' x2 in rule and glossary text about basketball, football and hockey. Probes: 'kicked the ball into the goal' 0.70, 'close to the basket' 0.61, 'penalty area' 0.85, 'the other team's line' 0.71; non-sport 'My goal this year' 0.01, 'apples in the basket' 0.03.",
+ "selection": "random draw"
+}

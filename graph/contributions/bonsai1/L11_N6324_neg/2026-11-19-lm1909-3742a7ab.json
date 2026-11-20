@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3742a7ab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N6324-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:22+00:00",
+ "recipe": {
+  "toolchain_commit": "9c45db6a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N6324_neg/2026-11-19-lm1909-3742a7ab.tests.json"
+ },
+ "label": "Spanish plural definite article (' Los' / ' Las') opening a new sentence as the start of its subject",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N6324_neg/2026-11-19-lm1909-3742a7ab.tests.json",
+   "prereg_commit": "9c45db6a1",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.339,
+     "peak": " Las"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.241,
+     "peak": " Los"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.292,
+     "peak": " Las"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.282,
+     "peak": " Los"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.408,
+     "peak": " Las"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.225,
+     "peak": " Los"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.348,
+     "peak": " Las"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.032,
+     "peak": " jug"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.043,
+     "peak": "re"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.189,
+     "peak": " un"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.035,
+     "peak": " larg"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.07,
+     "peak": " el"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": "ada"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.111,
+     "peak": "vo"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.043,
+     "peak": " narrow"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " la"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.287,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c45db6a1",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sentence-opening Los/Las",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on las/la/los/das/quelles; the + pole takes 'en las'. Probes: '. Los rayos' 0.32, '. Las ventanas' 0.51, 'de las personas' 0.34, ', das sind' 0.54 but ', das ist' 0.11; 'En las temporadas' 0.08; English 'The rays' 0.04. Activations are modest, so this may be only part of the pole.",
+ "selection": "random draw"
+}

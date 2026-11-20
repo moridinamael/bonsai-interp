@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2505305f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N1085+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:12:07+00:00",
+ "recipe": {
+  "toolchain_commit": "9c45db6a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N1085_pos/2026-11-19-lm1909-2505305f.tests.json"
+ },
+ "label": "' who' / ' would' in a non-restrictive 'X, who would hardly / never ...' clause arguing from what a kind of person would typically do",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N1085_pos/2026-11-19-lm1909-2505305f.tests.json",
+   "prereg_commit": "9c45db6a1",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.702,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.369,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.491,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.219,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.338,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.445,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.347,
+     "peak": " would"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.137,
+     "peak": " would"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " swept"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " mistake"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " wolves"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " clearly"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.032,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.358,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c45db6a1",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "', who would hardly ...'",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: top example 'not indicative of barbarian activity, who ⟦would⟧ hardly be mindful to'; others are verbs/commas inside generic if-clauses ('If an alcoholic ⟦has⟧', 'If an animal ⟦is⟧'). Probes: fresh if-clauses did not fire (0.02-0.07); ', who would hardly bother' 0.80, ', who would never have left' 0.59; 'A professional thief would hardly' 0.18; ', who could scarcely' 0.07. The label covers only the construction that fired; the if-clause part of the pole is unexplained.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d919f966",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N7116+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:18+00:00",
+ "recipe": {
+  "toolchain_commit": "9c45db6a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N7116_pos/2026-11-19-lm1909-d919f966.tests.json"
+ },
+ "label": "the tour/tourist item (' tour', ' tourist', '旅游') inside a list of hotel services and facilities",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N7116_pos/2026-11-19-lm1909-d919f966.tests.json",
+   "prereg_commit": "9c45db6a1",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.341,
+     "peak": " tour"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.593,
+     "peak": " tourist"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.042,
+     "peak": "旅游"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.503,
+     "peak": " tour"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.826,
+     "peak": "旅游"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.701,
+     "peak": " tourist"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.36,
+     "peak": " tour"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.118,
+     "peak": "旅游"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.306,
+     "peak": " car"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.421,
+     "peak": " luggage"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.287,
+     "peak": "行李"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.297,
+     "peak": " gift"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.174,
+     "peak": "洗衣"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.364,
+     "peak": " hair"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.168,
+     "peak": " tourist"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": " tourism"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.647,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c45db6a1",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tour desk in amenity list",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top examples are 旅游服务 in Chinese hotel amenity lists; the - pole and the logit effect are about hotels. Probes: 'a tourist information desk' 0.75, 'a tour desk' 0.66, 旅游服务 1.07 in amenity lists; 'tourist buses' 0.11 and 'tourism' 0.07 outside such lists.",
+ "selection": "random draw"
+}

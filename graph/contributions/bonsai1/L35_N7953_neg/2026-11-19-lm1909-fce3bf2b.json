@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-fce3bf2b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7953-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:12:13+00:00",
+ "recipe": {
+  "toolchain_commit": "9c45db6a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N7953_neg/2026-11-19-lm1909-fce3bf2b.tests.json"
+ },
+ "label": "the token ' �' (a space plus the first byte of a Hangul or katakana character that has no space-prefixed token of its own), i.e. the start of a space-separated Korean or Japanese word",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N7953_neg/2026-11-19-lm1909-fce3bf2b.tests.json",
+   "prereg_commit": "9c45db6a1",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.775,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.641,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.369,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.25,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.51,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.444,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.422,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.492,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": "いました"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": "があります"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.087,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.116,
+     "peak": " 프"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " 컴퓨터"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": "我们"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "を"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "来"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.468,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9c45db6a1",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token ' �' (word-start byte)",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: top-32 peak ' �' x31 before Korean syllables (치, 애, 패, 네, 야) and spaced katakana (ソ). Probes: 치료 0.78, 패스워드 0.57, ' ソフトウェア' 0.53, ' ニュース' 0.49 with spaces but 0.00 for the same Japanese without spaces; Korean made only of common syllables (우리 회사는 새로운 컴퓨터 ...) 0.09; Chinese and English ~0.",
+ "selection": "random draw"
+}
