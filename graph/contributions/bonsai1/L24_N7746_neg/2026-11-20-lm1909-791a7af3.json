@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-791a7af3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7746-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:25:47+00:00",
+ "recipe": {
+  "toolchain_commit": "fce29592b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N7746_neg/2026-11-20-lm1909-791a7af3.tests.json"
+ },
+ "label": "A word inside the spelled-out expansion of an acronym or organization name ('Federal Emergency Management Agency', 'Drop Everything And Read')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N7746_neg/2026-11-20-lm1909-791a7af3.tests.json",
+   "prereg_commit": "fce29592b",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.154,
+     "peak": " Federal"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.854,
+     "peak": " Everything"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.096,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.027,
+     "peak": "aut"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.064,
+     "peak": " Teacher"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.131,
+     "peak": " Government"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.043,
+     "peak": " United"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.03,
+     "peak": " ACE"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " declared"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " drops"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " worked"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": "s"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.08,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fce29592b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word in acronym expansion",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: very sparse (0.03%); top examples are words inside expansions such as 'Parent Educational Advocacy Training Center', 'Drop Everything And Read', 'Women's Auxiliary Army Corps', 'Defense Intelligence Agency'. Near misses keep the same words in ordinary prose.",
+ "selection": "random draw"
+}
