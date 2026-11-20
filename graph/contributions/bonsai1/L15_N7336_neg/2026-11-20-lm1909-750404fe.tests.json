@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-750404fe",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N7336-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:07:54+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N7336",
+   "pole": "-",
+   "label": "checks on the contents of a string or sequence in Python code: slice indices and length checks (s[0:2] ==, check length of)",
+   "fire": [
+    "    if line[0:3] == 'abc':\n        continue",
+    "    prefix = token[0:4]\n    if prefix == 'http':",
+    "    # check length of the user name\n    if len(name) > 20:",
+    "    if code[:2] == '0x':\n        value = int(code, 16)",
+    "    # verify the string contains only digits\n    if s.isdigit():",
+    "    if header[2:5] == b'PNG':\n        kind = 'png'",
+    "    # check first character of the key\n    if key[0] == '_':",
+    "    if version[0:1] == '3':\n        legacy = False"
+   ],
+   "quiet": [
+    "    if line == 'abc':\n        continue",
+    "    prefix = get_prefix(token)\n    if prefix == 'http':",
+    "    # store the user name\n    users.append(name)",
+    "    if code == 'zero':\n        value = 0",
+    "    # convert the string to an integer\n    n = int(s)",
+    "    if kind == 'png':\n        open_image(path)",
+    "    # load the config file\n    config = load(path)",
+    "    if legacy:\n        print('old version')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "string slice checks",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Weak pole (max 5.9), card broad-ish; top examples are slice indices in comparisons and '# check length' comments, plus odd prose ('coriander seed'). Probe: s[0:2] 0.39, '# check length' 0.25, [-1] 0.09."
+}
