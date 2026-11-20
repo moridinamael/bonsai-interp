@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-0b6dffd7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N6876+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:29:51+00:00",
+ "recipe": {
+  "toolchain_commit": "5c0953dcf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N6876_pos/2026-11-19-lm1909-0b6dffd7.tests.json"
+ },
+ "label": "An asterisk section break on its own line in prose (\"* * *\"): fires on the second asterisk; an asterisk used for multiplication stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N6876_pos/2026-11-19-lm1909-0b6dffd7.tests.json",
+   "prereg_commit": "5c0953dcf",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.456,
+     "peak": " *"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.526,
+     "peak": " *"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.458,
+     "peak": " *"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.464,
+     "peak": " *"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.617,
+     "peak": " *"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.422,
+     "peak": " *"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.461,
+     "peak": " *"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.494,
+     "peak": " *"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " less"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " Two"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " lane"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " width"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " family"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.463,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5c0953dcf",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'* * *' section break",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Probes: '* * *' break 0.51, a line-initial '*' 0.13, a blank-line break 0.01, '5 * 3' 0.01. The card's top 32 also peak on ' ^', ' -' and ' #', so other repeated-symbol breaks may fire too; not tested here.",
+ "selection": "random draw"
+}

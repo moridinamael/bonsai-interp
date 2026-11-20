@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-0b6dffd7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N6876+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:14:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N6876",
+   "pole": "+",
+   "label": "An asterisk section break on its own line in prose (\"* * *\"): fires on the second asterisk; an asterisk used for multiplication stays quiet",
+   "fire": [
+    "Nobody ever found out who had left the letter on the porch.\n* * *\nTwo years later I moved to the city.",
+    "And that, more or less, is how the shop came to close.\n* * *\nIf you want to read more, see the links below.",
+    "She locked the door and did not look back.\n* * * * *\nWinter came early that year.",
+    "The committee never met again after that night.\n* * *\n\"Most people give up too soon,\" he told me.",
+    "It remains the strangest day of my working life.\n* * *\nFor a longer account, read her memoir.",
+    "We buried the dog under the apple tree.\n* * *\nSpring brought new neighbours to the lane.",
+    "The river has kept its secret ever since.\n* * * * *\nI was reminded of this story last week.",
+    "He never did tell us where the money went.\n* * *\nEven now the family argues about it."
+   ],
+   "quiet": [
+    "Nobody ever found out who had left the letter on the porch.\n\nTwo years later I moved to the city.",
+    "And that, more or less, is how the shop came to close.\n\nIf you want to read more, see the links below.",
+    "She locked the door and did not look back. Winter came early that year.",
+    "The total is 6 * 7 apples, which the committee counted twice that night.",
+    "It remains the strangest day of my working life.\nChapter Two\nFor a longer account, read her memoir.",
+    "We buried the dog under the apple tree.\n\nSpring brought new neighbours to the lane.",
+    "The area is width * height, as I was reminded last week.",
+    "He never did tell us where the money went, and even now the family argues about it."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "'* * *' section break",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Probes: '* * *' break 0.51, a line-initial '*' 0.13, a blank-line break 0.01, '5 * 3' 0.01. The card's top 32 also peak on ' ^', ' -' and ' #', so other repeated-symbol breaks may fire too; not tested here."
+}

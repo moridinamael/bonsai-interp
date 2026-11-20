@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-5af42dc2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N10283+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:14:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N10283",
+   "pole": "+",
+   "label": "Best guess: in a multi-sentence report, the boundary (comma after a fronted descriptive phrase, or a sentence-ending period) right before a clause that resumes an already-introduced subject; needs earlier context and was weak in probes",
+   "fire": [
+    "The telescope will launch in March after years of delay. Technicians have tested each mirror and say it is ready. Roughly the size of a tennis court, the sunshield unfolds in space.",
+    "Anna was born in 1842 in Vermont and married Jacob in 1865. She died in Iowa on 3 April 1920. They had the following children:",
+    "The band formed in Leeds in 1998 and toured for a decade. Their second record sold a million copies. Called \"Northern Lights,\" the album won three awards.",
+    "The company posted a loss last quarter and cut two hundred jobs. Its shares fell sharply on Monday. Over on its investor page, the firm says a recovery plan is ready.",
+    "The storm reached the coast on Sunday and flooded several towns. Crews worked through the night to restore power. By morning, the governor had asked for federal help.",
+    "The museum opened in 1901 and holds forty thousand objects. Its oldest piece is a bronze axe. Hidden for decades in a cellar, the axe was found by a farmer.",
+    "Thomas was born in 1811 in Wales and came to Ohio in 1832. He married Ruth in 1835 and farmed near Dayton. They had the following children:",
+    "The team lost its first three games and changed coaches. After Hill returned to the lineup, he scored in four straight matches, as the club climbed to second place."
+   ],
+   "quiet": [
+    "The sunshield is roughly the size of a tennis court and unfolds in space.",
+    "Anna and Jacob had six children.",
+    "The album was called Northern Lights and won three awards.",
+    "The firm says on its investor page that a recovery plan is ready.",
+    "The governor asked for federal help in the morning.",
+    "The axe was hidden for decades in a cellar and found by a farmer.",
+    "Thomas and Ruth had four children.",
+    "Hill scored in four straight matches and the club climbed to second place."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "boundary before resumed subject",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: peaks on ',', ' The', '.\\n', ' as' at clause boundaries in long documents. Probes: single sentences with a fronted phrase 0.02-0.07; three-sentence passages 0.04-0.34 (best: '...on 31 May 1918. They had the following children:' 0.34). Only passage length separated them, so the near misses here are the short versions; expect a fail or a weak result."
+}

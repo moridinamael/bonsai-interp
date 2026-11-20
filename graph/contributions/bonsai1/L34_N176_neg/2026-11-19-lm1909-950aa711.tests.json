@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-950aa711",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N176-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:14:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N176",
+   "pole": "-",
+   "label": "Best guess: the token right before a strongly expected lowercase -ing word, clearest on the opening quote of an enum string that repeats an -ING constant (RUNNING = 'running'), weaker on 'from' in 'prevent that from happening'",
+   "fire": [
+    "class JobState:\n    QUEUED = 'queued'\n    LOADING = 'loading'\n    BUILDING = 'building'\n",
+    "class Phase(Enum):\n    IDLE = 'idle'\n    SYNCING = 'syncing'\n    CLOSING = 'closing'\n",
+    "STATUS_OK = 'ok'\nSTATUS_PROCESSING = 'processing'\nSTATUS_SHIPPING = 'shipping'\n",
+    "class Mode:\n    OFF = 'off'\n    RECORDING = 'recording'\n    PLAYING = 'playing'\n",
+    "    READY = 'ready'\n    DOWNLOADING = 'downloading'\n    INSTALLING = 'installing'\n",
+    "class Task:\n    NEW = 'new'\n    PARSING = 'parsing'\n    SENDING = 'sending'\n",
+    "Nobody wants another blackout, and the city has promised to prevent that from happening.",
+    "Leaks like this are costly, so the firm hired a team to stop them from occurring."
+   ],
+   "quiet": [
+    "class JobState:\n    QUEUED = 'queued'\n    LOADED = 'loaded'\n    BUILT = 'built'\n",
+    "class Phase(Enum):\n    IDLE = 'idle'\n    SYNCED = 'synced'\n    CLOSED = 'closed'\n",
+    "STATUS_OK = 'ok'\nSTATUS_PROCESSED = 'processed'\nSTATUS_SHIPPED = 'shipped'\n",
+    "class Mode:\n    OFF = 'off'\n    RECORD = 'record'\n    PLAY = 'play'\n",
+    "    READY = 'ready'\n    DOWNLOAD = 'download'\n    INSTALL = 'install'\n",
+    "class Task:\n    NEW = 'new'\n    PARSED = 'parsed'\n    SENT = 'sent'\n",
+    "Nobody wants another blackout, and the city has promised a full report by June.",
+    "Leaks like this are costly, so the firm hired a team to check the pipes."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "just before an expected -ing word",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Probes: enum strings with -ING constants 0.53 and 0.68 (peak on the opening quote); 'from happening' 0.17-0.24; 'The Giving Tree', 'a matching gift program', 'the sleeping dog' 0.01. The - pole's output suppresses -ing verbs ('winning', 'running', 'working'). The corpus top examples are mixed, so this covers only part of the pole."
+}
