@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-842cb5f2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N6227+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:40+00:00",
+ "recipe": {
+  "toolchain_commit": "4a40f80f0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N6227_pos/2026-11-19-lm1909-842cb5f2.tests.json"
+ },
+ "label": "The linking word right after a promotional reward (bonus points, free gift, voucher) at the point where the qualifying condition is due: 'bonus points after you spend', 'free with any order', 'voucher for those who'; quiet on the same words after ordinary nouns and on fees",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N6227_pos/2026-11-19-lm1909-842cb5f2.tests.json",
+   "prereg_commit": "4a40f80f0",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.607,
+     "peak": " after"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.032,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.952,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.79,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.398,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.787,
+     "peak": " first"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.587,
+     "peak": " after"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.404,
+     "peak": " any"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.355,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "Open"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " who"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " all"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " first"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " cancelled"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " their"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.697,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4a40f80f0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "reward → condition link",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: ' with', ' for', ' after', ' on', ' without' following a bonus, a free item or a gift certificate; the output promotes ' purchase', ' buy', ' purchases'. Probes: 'bonus miles after you spend' 1.04, 'free tote bag with any order' 1.17, '$100 bonus with promo code' 1.10, 'voucher for everyone who' 0.65; 'annual fee of $95' 0.11, 'tote bag with a broken strap' 0.00.",
+ "selection": "random draw"
+}
