@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-a416c5b7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N4183-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:58:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N4183",
+   "pole": "-",
+   "label": "Python 'self' attribute and method access inside class method bodies (' self', 'self._x', 'self.__x')",
+   "fire": [
+    "class Server:\n    def start(self):\n        self.running = True\n        return self.dispatcher.run(self.settings)\n",
+    "class Cache:\n    def get(self, key):\n        if key in self._store:\n            return self._store[key]\n        return self.__load(key)\n",
+    "class Bar:\n    def update(self, pct):\n        self.percent = pct\n        self.__draw_bar__()\n",
+    "class Worker:\n    def run(self):\n        t = Thread(target=self._loop)\n        t.start()\n        self.thread = t\n",
+    "class Graph:\n    @property\n    def g(self):\n        self._g = self._g or connect(self.url)\n        return self._g\n",
+    "class Middleware:\n    def __call__(self, request):\n        if request.path == '/':\n            return self.get_response(request)\n",
+    "class Queue:\n    def push(self, item):\n        self.items.append(item)\n        self.size += 1\n",
+    "class Timer:\n    def reset(self):\n        self._start = now()\n        self.elapsed = 0\n"
+   ],
+   "quiet": [
+    "def start(config):\n    running = True\n    return run_dispatcher(config.settings)\n",
+    "def get(store, key):\n    if key in store:\n        return store[key]\n    return load(key)\n",
+    "def update(bar, pct):\n    percent = pct\n    draw_bar(bar, percent)\n",
+    "def run_worker():\n    t = Thread(target=loop)\n    t.start()\n    return t\n",
+    "def connect_graph(url):\n    g = connect(url)\n    print('connected')\n    return g\n",
+    "def handle(request):\n    if request.path == '/':\n        return get_response(request)\n",
+    "def push(items, item):\n    items.append(item)\n    size = len(items)\n",
+    "def reset_timer():\n    start = now()\n    elapsed = 0\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python self access",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' self' x13, '._' and '.__' after self, ' return' in Python."
+}
