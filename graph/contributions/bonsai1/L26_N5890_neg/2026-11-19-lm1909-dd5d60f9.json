@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-dd5d60f9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N5890-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:58+00:00",
+ "recipe": {
+  "toolchain_commit": "665aaf3db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N5890_neg/2026-11-19-lm1909-dd5d60f9.tests.json"
+ },
+ "label": "The separator (',' or ' and') or first word-piece right after a drug or chemical name in a list of such names, where another drug/chemical name is coming (output promotes chemical prefixes: phen, methyl, acet, chlor)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N5890_neg/2026-11-19-lm1909-dd5d60f9.tests.json",
+   "prereg_commit": "665aaf3db",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.614,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.6,
+     "peak": " par"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.693,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.731,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.639,
+     "peak": " lev"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.718,
+     "peak": " ter"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.856,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.787,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": " told"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " clinic"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " rag"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " r"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.706,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665aaf3db",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "drug-name list continues",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: commas and ' and' between generic drug names. Probes: statins 0.60, NSAIDs 0.56, antibiotics 0.44, opioids 0.44, solvents 0.37, plastics chemicals 0.26; lists of fruit, countries, symptoms, organs, pharmacy supplies 0.00-0.04. A lone 'medication, taken daily,' gave 0.28.",
+ "selection": "random draw"
+}

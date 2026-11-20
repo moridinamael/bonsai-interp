@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-e194f049",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N8465-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:20:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N8465",
+   "pole": "-",
+   "label": "The position just before an explicitly passed 'self' / the object itself as first argument: Python 'super(Cls[,] self)', 'Base.__[init]__(self', 'func[(]self', and prose 'itself as [the] first argument' (output promotes ' binding', ' bind', ' bound')",
+   "fire": [
+    "class Truck(Vehicle):\n    def __init__(self, wheels):\n        super(Truck, self).__init__()\n        self.wheels = wheels\n",
+    "class Circle(Shape):\n    def __init__(self, radius, color):\n        Shape.__init__(self, color)\n        self.radius = radius\n",
+    "def logged(method):\n    def inner(self, *args, **kwargs):\n        print(method.__name__)\n        return method(self, *args, **kwargs)\n    return inner\n",
+    "A bound method is simply a function that receives the instance itself as the first parameter when it is called.",
+    "class JsonHandler(BaseHandler):\n    def __init__(self, path, mode):\n        BaseHandler.__init__(self, path)\n        self.mode = mode\n",
+    "class Manager(Employee):\n    def __init__(self, name, reports):\n        super(Manager, self).__init__(name)\n        self.reports = reports\n",
+    "    def register(self, callback):\n        self._hooks.append(partial(callback, self))\n        return callback\n",
+    "In Lua, the colon syntax is sugar: obj:move(3) calls the function with the table itself as the first argument."
+   ],
+   "quiet": [
+    "class Truck:\n    def __init__(self, wheels):\n        self.wheels = wheels\n        self.load = 0\n",
+    "def circle_area(radius, color):\n    area = compute(radius, 3.14159)\n    label = describe(color, area)\n    return label\n",
+    "def logged(message):\n    def inner(*args, **kwargs):\n        print(message)\n        return format(*args, **kwargs)\n    return inner\n",
+    "A pure function is simply a function that returns the same result whenever it is called with the same input.",
+    "class JsonHandler:\n    def read(self, path, mode):\n        data = open(path, mode).read()\n        return json.loads(data)\n",
+    "class Manager:\n    def count(self):\n        total = len(self.reports)\n        return total + 1\n",
+    "def register(hooks, callback):\n    hooks.append(partial(callback, 5))\n    return callback\n",
+    "In Lua, tables are the only data structure: arrays, records and modules are all built from them."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "before explicit self argument",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: 'init' x9 and ',' x8 where self is passed explicitly, plus the prose top example. Probes: prose 0.98, super(Dog, self) 0.48, Animal.__init__(self 0.37, func(self 0.36; a plain function call 0.04, ordinary self.attr methods 0.12."
+}

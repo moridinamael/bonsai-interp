@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2d0bbbc5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7809-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:37:18+00:00",
+ "recipe": {
+  "toolchain_commit": "665aaf3db",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N7809_neg/2026-11-19-lm1909-2d0bbbc5.tests.json"
+ },
+ "label": "The word-piece 'ark' after 'H' in Hark- surnames (Harkins, Harkness) and 'uk' after 'R' in Ruk- names (Rukmini); other k-pieces in surnames fire weakly or not at all",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N7809_neg/2026-11-19-lm1909-2d0bbbc5.tests.json",
+   "prereg_commit": "665aaf3db",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.081,
+     "peak": "ark"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.617,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.93,
+     "peak": "ark"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.951,
+     "peak": "ark"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.877,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.084,
+     "peak": "ark"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.038,
+     "peak": "arkin"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.201,
+     "peak": "ark"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.135,
+     "peak": " Hawkins"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " street"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.069,
+     "peak": " Rah"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": "arkin"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.078,
+     "peak": " Parker"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " month"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.941,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "665aaf3db",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "H|ark, R|uk name pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: 'uk' x6, 'ark' x3, 'ks', 'ik' in surnames. Probes: Harkins 1.15, Harkness 1.10, Rukmini 0.89, Aksoy 0.31; Mukherjee 0.17, Erikson 0.14, Zukerman 0.13, Barkley 0.09, Larkin 0.01, Markham 0.01. The + pole takes 'ank'/'ink'/'k' pieces (Benkler, Sankar), so the neuron seems to split k-pieces of names by the preceding sound; this test covers only the Hark-/Ruk- cases.",
+ "selection": "random draw"
+}
