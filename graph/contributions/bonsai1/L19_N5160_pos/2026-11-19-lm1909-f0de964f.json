@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-19-lm1909-f0de964f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N5160+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:19:01+00:00",
+ "recipe": {
+  "toolchain_commit": "4970b7b6f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N5160_pos/2026-11-19-lm1909-f0de964f.tests.json"
+ },
+ "label": "' next' in an instruction to move on to the following page or step (\"go on to the next step\")",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N5160_pos/2026-11-19-lm1909-f0de964f.tests.json",
+   "prereg_commit": "4970b7b6f",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.495,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.145,
+     "peak": " page"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.185,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.119,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.269,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.578,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.185,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.427,
+     "peak": " next"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.032,
+     "peak": " lightly"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": "Our"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " box"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " minutes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.227,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4970b7b6f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'next' in go-on-to instructions",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad and the top examples share no token. Probes: 'go on to the next exercise' 0.56, 'continue to the next page' 0.27, 'TURN TO THE NEXT PAGE' 0.26, 'try another one' 0.28; 'the next train' 0.01, 'next door' 0.02. Weak slice of a broad pole.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "next"
+  ]
+ }
+}
