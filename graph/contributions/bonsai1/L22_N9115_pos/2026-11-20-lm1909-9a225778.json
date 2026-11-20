@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9a225778",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9115+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:24:19+00:00",
+ "recipe": {
+  "toolchain_commit": "f32ea27c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N9115_pos/2026-11-20-lm1909-9a225778.tests.json"
+ },
+ "label": "the comma or 'as' right after a health or safety instruction, where a reason clause ('because', 'as', 'even if') follows",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N9115_pos/2026-11-20-lm1909-9a225778.tests.json",
+   "prereg_commit": "f32ea27c9",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.13,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.251,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.116,
+     "peak": " evening"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.349,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.098,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.204,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.249,
+     "peak": " days"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.064,
+     "peak": " because"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " sat"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " clean"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " wore"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.167,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f32ea27c9",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "advice then a reason",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card top: ',' x11 and ' as' x9 after advice ('go to the ER every time you have a reaction, even if', 'avoid sitting in line with the door as', 'avoid caffeine and nicotine, because'). Output direction promotes because/due/especially/since. Probe weak: 0.08-0.26 on short advice sentences; narrative comma 0.01. Low confidence.",
+ "selection": "random draw"
+}

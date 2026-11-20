@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-f34b0ca9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N7044-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:23:41+00:00",
+ "recipe": {
+  "toolchain_commit": "f32ea27c9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N7044_neg/2026-11-20-lm1909-f34b0ca9.tests.json"
+ },
+ "label": "the word 'jackpot'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N7044_neg/2026-11-20-lm1909-f34b0ca9.tests.json",
+   "prereg_commit": "f32ea27c9",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.048,
+     "peak": " jackpot"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.665,
+     "peak": " jackpot"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.346,
+     "peak": " jackpot"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.771,
+     "peak": " jackpot"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.041,
+     "peak": " jackpot"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.353,
+     "peak": " jackpot"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.635,
+     "peak": " jackpot"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.557,
+     "peak": " jackpot"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.292,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.09,
+     "peak": " prize"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.099,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.209,
+     "peak": " prize"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.052,
+     "peak": " lottery"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.362,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.174,
+     "peak": " winnings"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.559,
+     "peak": " prize"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.718,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f32ea27c9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "the word jackpot",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card top mixes ' market', ' world', ' jackpot', ' endemic'. Probe: jackpot 1.04 and 1.24 (above corpus max), endemic 0.09-0.21, 'in the market' and 'in the world' ~0.02. Labelled at the word level; near misses keep lottery/gambling topic without the word.",
+ "selection": "random draw"
+}
