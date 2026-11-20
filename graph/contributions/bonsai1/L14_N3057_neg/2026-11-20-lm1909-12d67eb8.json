@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-12d67eb8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3057-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:45:32+00:00",
+ "recipe": {
+  "toolchain_commit": "706ce2565",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N3057_neg/2026-11-20-lm1909-12d67eb8.tests.json"
+ },
+ "label": "bank-balance nouns: 'deposits' / 'savings' / 'account' as money held at a bank",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N3057_neg/2026-11-20-lm1909-12d67eb8.tests.json",
+   "prereg_commit": "706ce2565",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.545,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.059,
+     "peak": "Her"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.564,
+     "peak": " deposits"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.459,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.376,
+     "peak": "ield"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.395,
+     "peak": " deposits"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.153,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.021,
+     "peak": "Small"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.263,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.026,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.129,
+     "peak": " lending"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.192,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.219,
+     "peak": " rate"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.122,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "Small"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.386,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "706ce2565",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "bank deposits, savings",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: top examples deposits/deposit/savings/account, but also points, color, prey, type; low max (15.6). Label tests the banking cluster only.",
+ "selection": "random draw"
+}
