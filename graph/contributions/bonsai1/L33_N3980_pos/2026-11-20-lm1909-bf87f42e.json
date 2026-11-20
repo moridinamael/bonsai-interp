@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-bf87f42e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N3980+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:12:51+00:00",
+ "recipe": {
+  "toolchain_commit": "0788c1ae1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N3980_pos/2026-11-20-lm1909-bf87f42e.tests.json"
+ },
+ "label": "a modifier word in the slot just before 'function'/'funnel' (cost, callback, wave, higher-order, sales): the token that predicts 'function'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N3980_pos/2026-11-20-lm1909-bf87f42e.tests.json",
+   "prereg_commit": "0788c1ae1",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.023,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.258,
+     "peak": " JavaScript"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.825,
+     "peak": " wave"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.412,
+     "peak": " Python"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.043,
+     "peak": " function"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.422,
+     "peak": " sales"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.168,
+     "peak": " engineer"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.003,
+     "peak": " neuron"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.0,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.0,
+     "peak": "fer"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.0,
+     "peak": " waiter"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.0,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.146,
+     "peak": " marketing"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.0,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.0,
+     "peak": " adults"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.213,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0788c1ae1",
+  "minutes": 9,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word before 'function'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: peaks on ' fit' (statistic), ' Sales' (funnels), ' wave'(function), ' order' (higher-order functions), ' callback'(_function), ' cost' (measure); output promotes ' function'/' functions'. Near misses use the same words where 'function' cannot follow.",
+ "selection": "random draw"
+}

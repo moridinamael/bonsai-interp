@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-976bee0a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N2317+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:58:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N2317",
+   "pole": "+",
+   "label": "table/markup boundary tokens: the '||' cell separator ending a row in pipe tables and the '[Edit]' / 'Edit' marker after a wiki section heading",
+   "fire": [
+    "|Product||Price||Stock||\n|Notebook||$3||In stock||\n|Pen||$1||Sold out||",
+    "|Team||Wins||Losses||\n|Eagles||12||4||\n|Hawks||9||7||",
+    "Early life[Edit]\nShe was born in a small village near the coast.",
+    "Geography Edit\nThe town lies in a narrow valley between two ridges.",
+    "|Date||Event||Location||\n|May 3||Concert||Park||\n|June 9||Fair||Square||",
+    "Reception[Edit]\nCritics praised the album for its warm production.",
+    "|Name||Age||City||\n|Ana||31||Lisbon||\n|Ben||28||Leeds||",
+    "Plot Edit\nA young farmer discovers a map hidden in his barn."
+   ],
+   "quiet": [
+    "The notebook costs three dollars and is in stock, but the pen is sold out.",
+    "The Eagles won twelve games and lost four, while the Hawks won nine.",
+    "Early in life she lived in a small village near the coast.",
+    "In terms of geography, the town lies in a narrow valley between two ridges.",
+    "On May 3 there is a concert in the park, and on June 9 a fair in the square.",
+    "On its release, critics praised the album for its warm production.",
+    "Ana is 31 and lives in Lisbon, and Ben is 28 and lives in Leeds.",
+    "In the plot, a young farmer discovers a map hidden in his barn."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "pipe-table / Edit markers",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card: '||' x4, '||\\n' x3, 'Edit' x4 of top 32, plus mojibake (î, .ï¿½). Mixed; best guess at the shared pattern is scraped-page structural markup."
+}
