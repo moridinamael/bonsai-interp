@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-2308b279",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N7830+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:00:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N7830",
+   "pole": "+",
+   "label": "' =' of a variable assignment inside an if/elif/else branch of Python code",
+   "fire": [
+    "def pick(mode, line):\n    if mode == 'fast':\n        speed = 10\n    elif mode == 'slow':\n        speed = 1\n    return speed",
+    "for item in rows:\n    if 'title' in item:\n        name = item['title']\n    else:\n        name = item['id']",
+    "if user is None:\n    user = default_user\nprint(user)",
+    "try:\n    if value > limit:\n        value = limit\nexcept TypeError:\n    pass",
+    "while queue:\n    node = queue.pop()\n    if node.left:\n        best = min(best, node.left.val)",
+    "def get_ip(request):\n    if 'HTTP_HOST' in request.headers:\n        host = request.headers['HTTP_HOST']\n    return host",
+    "if args.verbose:\n    level = logging.DEBUG\nelse:\n    level = logging.INFO",
+    "for key in config:\n    if key.startswith('_'):\n        continue\n    elif key == 'path':\n        root = config[key]"
+   ],
+   "quiet": [
+    "def pick(mode, line):\n    if mode == 'fast':\n        return 10\n    elif mode == 'slow':\n        return 1\n    raise ValueError(mode)",
+    "for item in rows:\n    if 'title' in item:\n        print(item['title'])\n    else:\n        print(item['id'])",
+    "if user is None:\n    raise ValueError('no user')\nprint(user)",
+    "try:\n    if value > limit:\n        log.warning('too big')\nexcept TypeError:\n    pass",
+    "while queue:\n    node = queue.pop()\n    if node.left:\n        queue.append(node.left)",
+    "def get_ip(request):\n    if 'HTTP_HOST' in request.headers:\n        return request.headers['HTTP_HOST']\n    return None",
+    "if args.verbose:\n    logging.basicConfig()\nelse:\n    logging.disable()",
+    "for key in config:\n    if key.startswith('_'):\n        continue\n    elif key == 'path':\n        print(config[key])"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "assignment in branch",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "quiet items keep the branches but replace the assignment with return/print/calls; top-level assignments outside branches (e.g. 'node = queue.pop()') appear in some items of both sets"
+}
