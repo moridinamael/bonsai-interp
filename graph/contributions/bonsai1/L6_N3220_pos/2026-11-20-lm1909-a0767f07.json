@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a0767f07",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N3220+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:46:25+00:00",
+ "recipe": {
+  "toolchain_commit": "7f6e757d9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N3220_pos/2026-11-20-lm1909-a0767f07.tests.json"
+ },
+ "label": "the first token right after a '#' comment marker written without a following space (e.g. '#This', '#See') in code and licence headers",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N3220_pos/2026-11-20-lm1909-a0767f07.tests.json",
+   "prereg_commit": "7f6e757d9",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.3,
+     "peak": "Load"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.34,
+     "peak": "Check"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.4,
+     "peak": "Copyright"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.475,
+     "peak": "Print"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.331,
+     "peak": "H"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.339,
+     "peak": "Skip"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.339,
+     "peak": "Licensed"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.488,
+     "peak": "Read"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": "_config"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " main"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.057,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " json"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " total"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.34,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7f6e757d9",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token after bare '#'",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on 'This', 'See', 'with' and space runs immediately after '#' in Python comments; max 6.31, very sparse.",
+ "selection": "random draw"
+}
