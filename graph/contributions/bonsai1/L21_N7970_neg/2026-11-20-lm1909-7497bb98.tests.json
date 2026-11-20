@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-7497bb98",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N7970-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:00:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N7970",
+   "pole": "-",
+   "label": "the first token of the returned expression after 'return' in repetitive Python code (return main(...), return self._x(...))",
+   "fire": [
+    "def run_fast():\n    return run(mode='fast')\n\n\ndef run_slow():\n    return run(mode='slow')\n\n\ndef run_safe():\n    return run(mode='safe')\n",
+    "def cli_dev():\n    return cli(profile='dev')\n\n\ndef cli_prod():\n    return cli(profile='prod')\n",
+    "    def left(self):\n        return self._side('left')\n\n    def right(self):\n        return self._side('right')\n",
+    "def build_red():\n    return build(colour='red')\n\n\ndef build_blue():\n    return build(colour='blue')\n",
+    "    def dev_packages(self):\n        \"\"\"Packages for development.\"\"\"\n        return self._packages('dev')\n\n    def prod_packages(self):\n        return self._packages('prod')\n",
+    "def start_web():\n    return start(service='web')\n\n\ndef start_db():\n    return start(service='db')\n",
+    "    def top(self):\n        return self._edge('top')\n\n    def bottom(self):\n        return self._edge('bottom')\n",
+    "def export_csv():\n    return export(fmt='csv')\n\n\ndef export_json():\n    return export(fmt='json')\n"
+   ],
+   "quiet": [
+    "def run_fast():\n    print('fast mode')\n\n\ndef run_slow():\n    print('slow mode')\n\n\ndef run_safe():\n    print('safe mode')\n",
+    "def cli_dev():\n    log.info('dev profile')\n\n\ndef cli_prod():\n    log.info('prod profile')\n",
+    "    def left(self):\n        self.side = 'left'\n\n    def right(self):\n        self.side = 'right'\n",
+    "def build_red():\n    colour = 'red'\n    paint(colour)\n\n\ndef build_blue():\n    colour = 'blue'\n    paint(colour)\n",
+    "    def dev_packages(self):\n        \"\"\"Packages for development.\"\"\"\n        self.mode = 'dev'\n\n    def prod_packages(self):\n        self.mode = 'prod'\n",
+    "def start_web():\n    os.system('web')\n\n\ndef start_db():\n    os.system('db')\n",
+    "    def top(self):\n        self.edge = 'top'\n\n    def bottom(self):\n        self.edge = 'bottom'\n",
+    "def export_csv():\n    write_file('out.csv')\n\n\ndef export_json():\n    write_file('out.json')\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python return expression",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Only fired (0.46) inside a multi-line block of repeated 'return main(flavor=...)' functions; single-line snippets scored ~0. Weak hypothesis."
+}
