@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-9505fd26",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N5898-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:02:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N5898",
+   "pole": "-",
+   "label": "data-array variables (X, image, points, model) in numpy / scikit-learn style Python code; plain non-numeric Python stays quiet",
+   "fire": [
+    "import numpy as np\nfrom sklearn.decomposition import PCA\n\nX = np.load('data.npy')\npca = PCA(n_components=2)\nX_reduced = pca.fit_transform(X)\nprint(X_reduced.shape)\n",
+    "import numpy as np\n\ndef normalize(img):\n    img = img.astype(np.float32)\n    img = (img - img.mean()) / img.std()\n    return img\n",
+    "from sklearn.linear_model import LinearRegression\n\nreg = LinearRegression()\nreg.fit(X_train, y_train)\ny_pred = reg.predict(X_test)\n",
+    "import numpy as np\n\ndef center(points):\n    points = np.asarray(points)\n    points = points - points.mean(axis=0)\n    return points\n",
+    "from sklearn.preprocessing import StandardScaler\n\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\nclf.fit(X_scaled, y)\n",
+    "import numpy as np\n\nframe = np.zeros((480, 640, 3))\nframe = frame.transpose((2, 0, 1))\nbatch = frame[None, ...]\n",
+    "def test_predict_shape(self):\n    model = self.make_model()\n    pred = model.predict(self.data.X)\n    self.assertEqual(len(pred), len(self.data.y))\n",
+    "import numpy as np\nfrom sklearn.cluster import DBSCAN\n\ncoords = np.array(coords)\ndb = DBSCAN(eps=0.3).fit(coords)\nlabels_ = db.labels_\n"
+   ],
+   "quiet": [
+    "import os\n\ndef list_files(folder):\n    names = os.listdir(folder)\n    names.sort()\n    return names\n",
+    "def greet_user(user):\n    text = 'Welcome back, ' + user\n    print(text)\n    return text\n",
+    "import json\n\nwith open('config.json') as fh:\n    config = json.load(fh)\nprint(config['name'])\n",
+    "def count_words(sentence):\n    words = sentence.split()\n    return len(words)\n",
+    "import logging\n\nlogger = logging.getLogger(__name__)\nlogger.info('server started')\nlogger.warning('low disk space')\n",
+    "def is_admin(user):\n    if user.role == 'admin':\n        return True\n    return False\n",
+    "def test_greeting(self):\n    msg = greet('Ann')\n    self.assertEqual(msg, 'Hello, Ann')\n",
+    "import datetime\n\ntoday = datetime.date.today()\nstamp = today.isoformat()\nprint('Report for', stamp)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "array variables in ML code",
+ "unit_kind": "contextual",
+ "confidence": 0.5
+}

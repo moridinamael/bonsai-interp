@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-7d620d7c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N7161-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:02:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N7161",
+   "pole": "-",
+   "label": "'continue' or a line end inside deeply indented Python where the next line stays at the same depth",
+   "fire": [
+    "def scan(groups):\n    for group in groups:\n        for item in group:\n            if item.hidden:\n                continue\n            show(item)\n",
+    "        for line in lines:\n            if line.startswith('#'):\n                continue\n            fields = line.split()\n",
+    "            for key in keys:\n                if key not in seen:\n                    continue\n                total += seen[key]\n",
+    "    def check(self):\n        for sub in self.items:\n            if not self._valid(sub):\n                continue\n            self._apply(sub)\n",
+    "        while queue:\n            node = queue.pop()\n            if node in done:\n                continue\n            done.add(node)\n",
+    "            for name, value in pairs:\n                if value is None:\n                    continue\n                out[name] = value\n",
+    "        for path in paths:\n            if os.path.isdir(path):\n                continue\n            files.append(path)\n",
+    "    for row in table:\n        for cell in row:\n            if cell == '':\n                continue\n            cells.append(cell)\n"
+   ],
+   "quiet": [
+    "def scan(groups):\n    for group in groups:\n        for item in group:\n            show(item)\n    return groups\n",
+    "        for line in lines:\n            fields = line.split()\n            rows.append(fields)\n",
+    "            for key in keys:\n                total += seen.get(key, 0)\n            return total\n",
+    "    def check(self):\n        for sub in self.items:\n            self._apply(sub)\n        return True\n",
+    "        while queue:\n            node = queue.pop()\n            done.add(node)\n",
+    "            for name, value in pairs:\n                out[name] = value\n            return out\n",
+    "        for path in paths:\n            files.append(path)\n        files.sort()\n",
+    "    for row in table:\n        for cell in row:\n            cells.append(cell)\n    return cells\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "deep-indent continue",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Probes read 0.03-0.2 on 'continue'; low confidence."
+}
