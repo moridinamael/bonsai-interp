@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a616a731",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2171-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:33:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N2171",
+   "pole": "-",
+   "label": "the first token of a text (window position 0), e.g. a leading ' to'",
+   "fire": [
+    " to be honest, the meeting ran far longer than planned.",
+    " to make the sauce, melt the butter over low heat.",
+    " to the north, the hills rise into dense pine forest.",
+    " to date, no vaccine has been approved for the disease.",
+    " to everyone's surprise, the underdog won the final.",
+    " to reach the summit, hikers must start before dawn.",
+    " to this day, the cause of the fire remains unknown.",
+    " to keep costs low, the airline removed free snacks."
+   ],
+   "quiet": [
+    "Honestly, the meeting ran far longer than planned.",
+    "For the sauce, melt the butter over low heat.",
+    "North of town, the hills rise into dense pine forest.",
+    "So far, no vaccine has been approved for the disease.",
+    "Surprisingly, the underdog won the final.",
+    "Hikers who want the summit must start before dawn.",
+    "Even now, the cause of the fire remains unknown.",
+    "Cutting costs, the airline removed free snacks."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "first token (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "card flags positional (100% of top peaks at window position 0), broad and gate-closed 93%; every top peak is the first token of a window. Every test sentence starts at position 0, so fire and near misses should both fire: recorded to document the positional unit, expected to fail"
+}

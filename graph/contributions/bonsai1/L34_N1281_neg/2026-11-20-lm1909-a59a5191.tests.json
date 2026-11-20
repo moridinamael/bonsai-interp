@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-20-lm1909-a59a5191",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1281-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:33:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N1281",
+   "pole": "-",
+   "label": "the split-off prefix token ' dis' / ' Dis' (dis|positions, Dis|posal, dis|quiet)",
+   "fire": [
+    "Good mentors model the habits and dispositions that young scientists need.",
+    "Researchers measured how stable personality dispositions are across adulthood.",
+    "Our town's Waste Disposal office is closed on public holidays.",
+    "Call Metro Disposal to schedule pickup of large furniture.",
+    "A strange disquiet settled over the village after the storm.",
+    "The judge must be a disinterested party with no stake in the case.",
+    "The old mill has fallen into disrepair since the factory closed.",
+    "Her family disowned her after she married against their wishes."
+   ],
+   "quiet": [
+    "Good mentors model the habits and attitudes that young scientists need.",
+    "Researchers measured how stable personality traits are across adulthood.",
+    "Our town's Waste Collection office is closed on public holidays.",
+    "Call Metro Recycling to schedule pickup of large furniture.",
+    "A strange silence settled over the village after the storm.",
+    "The judge must be a neutral party with no stake in the case.",
+    "The old mill has fallen into ruin since the factory closed.",
+    "Her family rejected her after she married against their wishes."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' dis' token",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "card: ' dis'/'Dis' 31/32 top peaks (dispositions, Disposal); logit effect of the - pole suppresses ' dis' and promotes 'positions'/'posal'. Tokenizer: ' disposition' and ' disposal' are single tokens and do not fire (probe 0.00); ' dispositions' splits ' dis'+'positions' (probe 0.99)",
+ "trigger": {
+  "tokens": [
+   " dis",
+   " Dis"
+  ]
+ }
+}
