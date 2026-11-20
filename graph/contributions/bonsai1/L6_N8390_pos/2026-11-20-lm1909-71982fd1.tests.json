@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-71982fd1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N8390+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:48:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N8390",
+   "pole": "+",
+   "label": "the '.where' / 'nonzero' index-finding call in numpy or TensorFlow code",
+   "fire": [
+    "import numpy as np\n\nscores = np.array(values)\nhigh = np.where(scores > 0.5)[0]\nprint(high)",
+    "def find_peaks(signal, thresh):\n    idx = numpy.where(signal >= thresh)\n    return idx[0]",
+    "mask = labels == 3\nrows, cols = np.nonzero(mask)\nfor r, c in zip(rows, cols):\n    grid[r, c] = 0",
+    "    # keep only the valid boxes\n    keep = tf.where(tf.greater(scores, min_score))\n    boxes = tf.gather(boxes, keep)",
+    "    clipped = np.where(img > 255, 255, img)\n    return clipped.astype(np.uint8)",
+    "    nz = np.count_nonzero(weights)\n    active = np.flatnonzero(weights)\n    print(nz, active)",
+    "for t in range(steps):\n    hits = np.where(np.abs(x[t]) > limit)[0]\n    if len(hits):\n        break",
+    "    empty_cells = numpy.nonzero(board == 0)\n    return list(zip(*empty_cells))"
+   ],
+   "quiet": [
+    "import numpy as np\n\nscores = np.array(values)\nhigh = np.mean(scores, axis=0)\nprint(high)",
+    "def find_peaks(signal, thresh):\n    total = numpy.sum(signal * thresh)\n    return total",
+    "mask = labels == 3\nrows, cols = np.shape(mask)\nfor r in range(rows):\n    grid[r, 0] = 0",
+    "    # keep only the valid boxes\n    keep = tf.reduce_max(scores, axis=1)\n    boxes = tf.gather(boxes, keep)",
+    "    clipped = np.clip(img, 0, 255)\n    return clipped.astype(np.uint8)",
+    "    total = np.prod(weights.shape)\n    flat = np.ravel(weights)\n    print(total, flat)",
+    "for t in range(steps):\n    norm = np.linalg.norm(x[t])\n    if norm > limit:\n        break",
+    "    board_copy = numpy.copy(board)\n    return board_copy.tolist()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "np.where / nonzero calls",
+ "unit_kind": "lexical",
+ "confidence": 0.7
+}
