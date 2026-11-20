@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2c740e83",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6949+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:57:13+00:00",
+ "recipe": {
+  "toolchain_commit": "cb50f050f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6949_pos/2026-11-20-lm1909-2c740e83.tests.json"
+ },
+ "label": "Word-internal pieces of non-English (Spanish, Portuguese, Czech, Italian, French) words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6949_pos/2026-11-20-lm1909-2c740e83.tests.json",
+   "prereg_commit": "cb50f050f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.46,
+     "peak": " fut"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.716,
+     "peak": "u"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.777,
+     "peak": "at"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.491,
+     "peak": "ik"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.404,
+     "peak": " fir"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.396,
+     "peak": " cal"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.096,
+     "peak": " foss"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.792,
+     "peak": " fakt"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " football"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " Emp"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " size"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " dry"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " football"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " found"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": "This"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.476,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cb50f050f",
+  "minutes": 9,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "non-English word pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags broad (2.0% of tokens reach 0.1 of max). Near misses are English translations of the fire items.",
+ "selection": "random draw"
+}
