@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-63853d21",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N2277+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:04:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N2277",
+   "pole": "+",
+   "label": "the opening of a character class ('[' and the characters right after it) inside a regular-expression pattern in code",
+   "fire": [
+    "import re\nEMAIL = re.compile(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-z]+$')\nok = EMAIL.match(addr)",
+    "import re\nparts = re.split('[,;\\t ]+', line)\nprint(parts)",
+    "def slug(s):\n    return re.sub(r'[^a-z0-9-]', '', s.lower())",
+    "pattern = re.compile(r'(?P<user>[^@]+)@(?P<domain>[^/]+)')\nm = pattern.search(text)",
+    "TAG = re.compile('<([a-zA-Z][-_.a-zA-Z0-9]*)>')\nfor m in TAG.finditer(html):\n    print(m.group(1))",
+    "if re.match(r'^[0-9]{3}-[0-9]{4}$', phone):\n    valid = True",
+    "HEX = re.compile(r'#([0-9a-fA-F]{6})')\ncolors = HEX.findall(css)",
+    "words = re.findall(r'[A-Za-z]+', document)\ncount = len(words)"
+   ],
+   "quiet": [
+    "import json\nconfig = json.loads(raw)\nok = config['email'] is not None",
+    "import csv\nparts = list(csv.reader([line]))[0]\nprint(parts)",
+    "def slug(s):\n    return s.lower().replace(' ', '-').strip()",
+    "user, domain = address.split('@')\nm = lookup[domain][0]",
+    "TAGS = ['div', 'span', 'p']\nfor t in TAGS:\n    print(t.upper())",
+    "if len(phone) == 8 and phone[3] == '-':\n    valid = True",
+    "HEX = [c for c in colors if c.startswith('#')]\nfirst = HEX[0]",
+    "words = document.split()\ncount = len(words[1:])"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "regex char class",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: top examples are all inside re.compile/re.match/re.split patterns: '[-_.:a-zA-Z0-9]', '([a-zA-Z]{2,3}', '(?P<host>[^:/]+)'. Near misses are the same kind of Python code with ordinary list/index brackets."
+}

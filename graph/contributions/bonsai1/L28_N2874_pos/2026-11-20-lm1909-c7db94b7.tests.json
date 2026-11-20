@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-c7db94b7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2874+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:04:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N2874",
+   "pole": "+",
+   "label": "a token inside a physical-unit or dimension expression (length/force, units = 'cm-3', <amount> <currency>, [l/h])",
+   "fire": [
+    "In this model the stiffness has the physical dimension of force/length, not mass.",
+    "cube.units = 'kg m-2 s-1'\ncube.rename('precipitation_flux')",
+    "flow_rate = 2.5  # volume flow of the pump [m3/h]\nperiod = 60",
+    "The constant k is measured in units of energy/temperature, joules per kelvin.",
+    "PRICE_FORMAT = 'Price format is: <amount> <currency>, e.g. 10 EUR'",
+    "Acceleration has dimensions of length/time squared in any unit system.",
+    "density = 1.2  # air density [kg/m3]\nvolume = 3.0",
+    "Pressure is expressed as force/area, so pascals equal newtons per square metre."
+   ],
+   "quiet": [
+    "In this model the stiffness is a fixed number chosen by the designer.",
+    "cube.name = 'precipitation flux'\ncube.rename('precipitation_flux')",
+    "flow_rate = 2.5  # how fast the pump runs, roughly\nperiod = 60",
+    "The constant k was introduced by Boltzmann in a famous paper.",
+    "PRICE_MESSAGE = 'Please enter the price you want to pay, then press OK'",
+    "Acceleration was studied by Galileo using balls rolling down ramps.",
+    "density = 1.2  # how crowded the air feels\nvolume = 3.0",
+    "Pressure from the crowd made the mayor change her mind in the end."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "unit expression",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: very sparse (0.001% over 0.1 max), one outlier at 223 on '/' in 'length/force'; others '=' after cube.units, '<' in '<amount> <currency>', '[l/h]'. The - pole's direction promotes ' metric', ' units', ' SI'. Low confidence; median fire may fall under 0.20 of the outlier max."
+}
