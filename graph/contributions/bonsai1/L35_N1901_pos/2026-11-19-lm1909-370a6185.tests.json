@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-370a6185",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1901+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N1901",
+   "pole": "+",
+   "label": "a word-opening fragment spelling the 'sh' sound in non-English text, with the rest of the word still to come (French ' Ch'|ine, German ' versch'|wimmt, Russian ' ш'|пионов, Turkish ' ş'|ifre)",
+   "fire": [
+    "Ma sœur a passé trois mois en Chine avant de rentrer à Lyon.",
+    "Bei schlechtem Wetter verschwinden die Berge hinter einer grauen Wand.",
+    "В старом доме за книгами прятался шпион из соседней страны.",
+    "Yeni hesabınız için güçlü bir şifre seçmeniz gerekiyor.",
+    "Il a quitté la salle sur-le-champ sans dire un mot.",
+    "Бабушка поставила тарелки в шкаф и закрыла дверцу.",
+    "Der Termin wurde wegen des Streiks auf Montag verschoben.",
+    "Les exportations vers la Chine ont doublé depuis cinq ans."
+   ],
+   "quiet": [
+    "Ma sœur a passé trois mois en France avant de rentrer à Lyon.",
+    "Bei schlechtem Wetter verstehen die Piloten den Tower nur mit Mühe.",
+    "В старом доме за дверью лежала книга из соседней страны.",
+    "Yeni eviniz için güzel bir kitap seçmeniz gerekiyor.",
+    "Il a quitté la salle tout de suite sans dire un mot.",
+    "Бабушка поставила тарелки на стол и закрыла окно.",
+    "Der Termin wurde wegen des Streiks auf Montag gelegt.",
+    "Les exportations vers la Belgique ont doublé depuis cinq ans."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "non-English 'sh' fragment",
+ "unit_kind": "sparse feature",
+ "confidence": 0.4,
+ "notes": "Card: peaks are CJK byte pieces (15 of 32) plus ' Ch' (Chine), ' versch', ' ш', '-ch' (sur-le-champ), Arabic sheen, Turkish ' ş'. The Latin/Cyrillic/Arabic ones all spell /sh/ at a word start that the tokenizer split. Probes: 'en Chine' 0.72, ' ш' 0.60, ' versch' 0.34, Japanese 0.36; 'en France' 0.03, English 'China' 0.00. The label does not explain the CJK examples. Near misses are the same languages with split words that have no /sh/ (' verst'|ehen, ' кни'|га, ' kit'|ap). Tokenizer splits were checked beforehand (no scoring)."
+}

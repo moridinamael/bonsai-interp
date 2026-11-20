@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-e9d0e225",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8172-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N8172",
+   "pole": "-",
+   "label": "the inner word of a compound Python identifier: the middle part of a snake_case name or the attribute right after 'self.' (get[_letter]_avatar, [ channel]_id=, self[.duration])",
+   "fire": [
+    "from shop.utils.text import get_first_word, get_word_count, get_letter_case\n\nregister = template.Library()",
+    "    order = Order.objects.create(total=10,\n                                 customer_id=customer_id,\n                                 channel_id=channel_id)",
+    "        if event.get_start_time() > latest:\n            latest = event.get_change_time()\n            count += 1",
+    "from accounts.helpers import get_user_avatar, get_letter_avatar, get_default_avatar\n\nurlpatterns = []",
+    "        self.name = data.get('name')\n        self.label = data.get('label')\n        self.duration = self.parse_duration(data)",
+    "    def test_reports_set_label_with_label_name(self):\n        self.client.reports.set_label('weekly')",
+    "        if record.get_update_time() > newest:\n            newest = record.get_update_time()\n            label = record.get_display_label()",
+    "    track = Track.objects.create(name='intro',\n                                 album_id=album_id,\n                                 channel_id=channel_id)"
+   ],
+   "quiet": [
+    "The first word of each letter was counted and the case of every letter noted.",
+    "The customer placed an order through the sales channel for a total of ten pounds.",
+    "The event had a start time later than the last change, so the count went up by one.",
+    "Each user picks an avatar, and the default one is a letter on a plain background.",
+    "The name, the label and the duration are printed on the back of the record sleeve.",
+    "x = 3\ny = x + 4\nprint(x * y)\nfor i in range(y):\n    print(i)",
+    "total = 0\nfor n in [1, 2, 3]:\n    total += n\nprint(total)",
+    "words = text.split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "inner part of snake_case name",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Weak pole (max 6.3). Card: peaks '_letter', ' channel', '.duration', '_change', ' label', '_art', plus Spanish/Arabic section headings ending ':\\n'. Probes: get_letter_avatar 0.86, channel_id 0.36, self.duration 0.24; the same words in prose 0.03; a Spanish heading 0.46, which the label does not cover. Near misses: the same words in prose, and Python without compound identifiers."
+}

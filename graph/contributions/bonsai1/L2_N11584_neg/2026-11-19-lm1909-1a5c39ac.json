@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1a5c39ac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N11584-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:22:21+00:00",
+ "recipe": {
+  "toolchain_commit": "89c564067",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N11584_neg/2026-11-19-lm1909-1a5c39ac.tests.json"
+ },
+ "label": "dense unit (25% of tokens reach 0.1 of max, gate-closed leak regime); best guess at the strongest end: the tokens ' fill' / ' Fill' / 'ills', ' superior', and a word-final 'les'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N11584_neg/2026-11-19-lm1909-1a5c39ac.tests.json",
+   "prereg_commit": "89c564067",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 6,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.593,
+     "peak": " fill"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.451,
+     "peak": " fill"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.804,
+     "peak": " superior"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.562,
+     "peak": " fill"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.934,
+     "peak": " superior"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.487,
+     "peak": " fill"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.825,
+     "peak": " superior"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.598,
+     "peak": " fill"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.403,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.091,
+     "peak": " short"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.391,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.206,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.455,
+     "peak": " poor"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.319,
+     "peak": "Vol"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.464,
+     "peak": " judges"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.336,
+     "peak": "Once"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.595,
+    "near_misses_at_0.3": 6
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89c564067",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; ' fill', ' superior'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense (25.1% of tokens >0.1 max, 2.7% >0.3 max; max only 0.30, all in the gate-closed leak regime). Top peaks ' superior' x4, ' fill' x3, ' Fill' x2, 'les' x2. Probes: fill/superior/freckles sentences 0.63-1.06 of max, but an unrelated sentence still reached 0.36, so near misses are expected to cross 0.30 and the test to fail. Recorded to document the density, not a meaning.",
+ "selection": "random draw"
+}

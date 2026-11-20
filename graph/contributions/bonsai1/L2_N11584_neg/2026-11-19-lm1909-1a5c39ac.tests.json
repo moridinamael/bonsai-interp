@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-1a5c39ac",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N11584-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N11584",
+   "pole": "-",
+   "label": "dense unit (25% of tokens reach 0.1 of max, gate-closed leak regime); best guess at the strongest end: the tokens ' fill' / ' Fill' / 'ills', ' superior', and a word-final 'les'",
+   "fire": [
+    "Before the trip he stopped at the garage to fill the tank and check the tyres.",
+    "Please take a moment to fill out the short survey at the end of the page.",
+    "Critics agreed that the sequel was superior to the original in almost every way.",
+    "The waiter came round twice to fill our glasses with cold water.",
+    "The newer lens delivers superior sharpness even in very poor light.",
+    "Volunteers worked all night to fill sandbags along the river bank.",
+    "The judges felt her second essay was clearly superior in style and argument.",
+    "Once a week the janitor has to fill the paper towel holders in every washroom."
+   ],
+   "quiet": [
+    "Before the trip he stopped at the garage to wash the car and check the tyres.",
+    "Please take a moment to read the short notice at the end of the page.",
+    "Critics agreed that the sequel was similar to the original in almost every way.",
+    "The waiter came round twice to clear our plates from the table.",
+    "The newer lens delivers decent sharpness even in very poor light.",
+    "Volunteers worked all night to stack sandbags along the river bank.",
+    "The judges felt her second essay was clearly different in style and argument.",
+    "Once a week the janitor has to mop the tiled floors in every washroom."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "dense; ' fill', ' superior'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense (25.1% of tokens >0.1 max, 2.7% >0.3 max; max only 0.30, all in the gate-closed leak regime). Top peaks ' superior' x4, ' fill' x3, ' Fill' x2, 'les' x2. Probes: fill/superior/freckles sentences 0.63-1.06 of max, but an unrelated sentence still reached 0.36, so near misses are expected to cross 0.30 and the test to fail. Recorded to document the density, not a meaning."
+}

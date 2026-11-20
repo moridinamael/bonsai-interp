@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-26de3fab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N3485-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:21:01+00:00",
+ "recipe": {
+  "toolchain_commit": "89c564067",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N3485_neg/2026-11-19-lm1909-26de3fab.tests.json"
+ },
+ "label": "the unit or suffix token attached directly to a decimal number that modifies a noun ('a 1.5 [month] rebate', '5.8[G] transmitter', '2.5 [axis] machining')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N3485_neg/2026-11-19-lm1909-26de3fab.tests.json",
+   "prereg_commit": "89c564067",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.016,
+     "peak": " month"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.579,
+     "peak": "mm"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.878,
+     "peak": " star"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.13,
+     "peak": "G"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.393,
+     "peak": " mile"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.275,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.684,
+     "peak": " hour"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.244,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " discount"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " top"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " rating"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " band"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " reservoir"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.049,
+     "peak": " sheet"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.12,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.781,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89c564067",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "unit after decimal number",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' month', 'G', ' axis', 'a', ' day', 'mm', ' yards', ' stars', each right after a decimal like 1.5 or 2.5. Probes: '2.5 day weekend' 1.13 and '2.4G' 0.83, but '3.5 miles' used as a plain measure only 0.17 and 'three day weekend' 0.04, so the test uses the decimal+unit as a modifier. The + pole is the last digit of a decimal price, so both poles read decimals.",
+ "selection": "random draw"
+}

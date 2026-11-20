@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-26de3fab",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N3485-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:06:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N3485",
+   "pole": "-",
+   "label": "the unit or suffix token attached directly to a decimal number that modifies a noun ('a 1.5 [month] rebate', '5.8[G] transmitter', '2.5 [axis] machining')",
+   "fire": [
+    "The landlord offered every tenant a 1.5 month discount on next year's rent.",
+    "Most older phones still shipped with a 3.5mm headphone socket on the top edge.",
+    "The hotel dropped to a 4.5 star rating after the renovation was delayed.",
+    "Our router broadcasts on the 2.4G band as well as the faster one.",
+    "The club organised a 2.5 mile walk around the reservoir for beginners.",
+    "He screwed a sheet of 0.5 inch plywood over the broken window.",
+    "The storm caused a 1.5 hour delay at the ferry terminal this morning.",
+    "She signed a 2.5 year contract with the club before the season began."
+   ],
+   "quiet": [
+    "The landlord offered every tenant a two month discount on next year's rent.",
+    "Most older phones still shipped with a round headphone socket on the top edge.",
+    "The hotel dropped to a four star rating after the renovation was delayed.",
+    "Our router broadcasts on the older band as well as the faster one.",
+    "The club organised a three mile walk around the reservoir for beginners.",
+    "He screwed a sheet of half inch plywood over the broken window.",
+    "The storm caused an hour long delay at the ferry terminal this morning.",
+    "The index closed at 2.5 and the yield slipped back to 1.5 by Friday."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "unit after decimal number",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' month', 'G', ' axis', 'a', ' day', 'mm', ' yards', ' stars', each right after a decimal like 1.5 or 2.5. Probes: '2.5 day weekend' 1.13 and '2.4G' 0.83, but '3.5 miles' used as a plain measure only 0.17 and 'three day weekend' 0.04, so the test uses the decimal+unit as a modifier. The + pole is the last digit of a decimal price, so both poles read decimals."
+}
