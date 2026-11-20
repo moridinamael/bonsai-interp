@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-ef881e92",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N4665+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N4665",
+   "pole": "+",
+   "label": "East Asian text (Japanese / Chinese / Korean), peaking on characters inside compound words; a weak, broad unit (max 0.89) that also fires on some Romance word endings (' Internacional', 'idé|ale')",
+   "fire": [
+    "その会社は来年、大阪に新しい営業拠点を開設する予定です。",
+    "この図書館はボランティアによって運営されています。",
+    "著者略歴には、東京大学を卒業したと書かれている。",
+    "該公司為全球領先的網路安全服務供應商。",
+    "这家企业在全国设有二十多个办事机构。",
+    "使用者可以透過這項功能找到所需的資訊。",
+    "이 프로그램을 실행할 때 오류가 발생할 수 있습니다.",
+    "서울시는 내년에 새로운 도서관을 개관할 계획입니다."
+   ],
+   "quiet": [
+    "The company plans to open a new sales office in Osaka next year.",
+    "This library is run entirely by volunteers.",
+    "The author's biography says he graduated from the University of Tokyo.",
+    "The company is a leading global provider of network security services.",
+    "Users can find the information they need through this feature.",
+    "An error may occur when you run this program.",
+    "Die Stadt plant, im nächsten Jahr eine neue Bibliothek zu eröffnen.",
+    "Компания планирует открыть новый офис в следующем году."
+   ]
+  }
+ ],
+ "predictions": "fire around 0.25-0.4, near misses under 0.15",
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "CJK compound characters",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad (1.5% of tokens reach 0.1 of max). Top examples: Japanese 運⟦営拠⟧点, 著者⟦略⟧歴, Chinese 全球⟦網路⟧, Korean 예⟦외⟧, Arabic مسل⟦سل⟧, Spanish ' Internacional', French 'idé⟦ale⟧'. Probes: Japanese 0.38, Chinese 0.35, Korean 0.27, Arabic 0.20, 'idéale' 0.90, ' Internacional' 0.48-0.66; German 0.11, Russian 0.08, plain French 0.04, English 0.04-0.05 (all-caps 'APOSTLES' 0.44). The label covers the East Asian part only; it is not simply 'non-English'."
+}

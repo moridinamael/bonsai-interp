@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-0a5d3a3d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N6093-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N6093",
+   "pole": "-",
+   "label": "separator-led word-start tokens ('_F', '_Con', '-K', '_e') inside long underscore- or hyphen-joined slugs: URL paths, file names and module names",
+   "fire": [
+    "The guide is at http://www.health.org/Parents_and_Teachers/Tips_for_Parents/Tips_for_Parents_Pages",
+    "from Linux_Disk_Converter_module import *",
+    "Download http://www.charity.org.uk/files/The_cost_of_poor_housing_Final_report.pdf today.",
+    "See http://www.dailynews.com/World/Europe/2012/0315/North-Italian-farmers-face-drought",
+    "The study is at http://www.law.school.edu/files/Community_Mediation_As_an_Alternative_to_Court.pdf",
+    "from Remove_Old_Folders_module import *",
+    "Read http://www.diet-and-health.com/Benefits-Of-Vitamin-D.html for more.",
+    "The archive is saved as Annual_Report_of_Trustees_Final_Version.pdf on the drive."
+   ],
+   "quiet": [
+    "The guide for parents and teachers gives tips for parents on every page.",
+    "The Linux disk converter module can be imported from the package.",
+    "The final report on the cost of poor housing can be downloaded today.",
+    "North Italian farmers face drought, the daily news reported from Europe.",
+    "The study presents community mediation as an alternative to court.",
+    "total = compute(a, b)",
+    "Read about the benefits of vitamin D for more.",
+    "See http://www.example.com/index.html for the trustees' annual report."
+   ]
+  }
+ ],
+ "predictions": "7/8 fire, 0-1 near misses",
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "word starts inside _/- slugs",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card and look: Windows_Time⟦_Con⟧verter_module, Facts_for⟦_F⟧amilies, The_costs_of⟦_e⟧ating, South⟦-K⟧orean-farmers, As_an⟦_Al⟧ternative, Functions-⟦Of⟧-Cholesterol; also ' l' / ' i' after 'type( ' in spaced code. Probes: slugs 0.27-0.69; the same words as prose 0.01-0.03; 'compute_total(a, b)' 0.01, so a single snake_case name is not enough."
+}

@@ -1,0 +1,56 @@
+{
+ "contribution": "2026-11-19-lm1909-8d75b1a2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N5068+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N5068",
+   "pole": "+",
+   "label": "dense, weak layer-1 unit (max 0.23; card flags it broad and positional); best guess at what lifts it above its background: the tokens ' happiness', ' winning' and German ' der' in mid-sentence",
+   "fire": [
+    "Most people believe that happiness depends on good health.",
+    "Her grandmother always said that happiness cannot be bought.",
+    "The coach reminded them that winning takes patience.",
+    "Nobody expected the small club to keep winning away from home.",
+    "Er sagte, dass ihr der Mantel sehr gut steht.",
+    "Wir wissen, dass ihm der Hund gestern weggelaufen ist.",
+    "For many families, happiness means a quiet evening together.",
+    "The young driver dreamed of winning a race in the rain."
+   ],
+   "quiet": [
+    "Most people believe that fitness depends on good health.",
+    "Her grandmother always said that friendship cannot be bought.",
+    "The coach reminded them that training takes patience.",
+    "Nobody expected the small club to keep playing away from home.",
+    "Er sagte, dass ihr das Kleid sehr gut steht.",
+    "Wir wissen, dass ihm das Pferd gestern weggelaufen ist.",
+    "For many families, comfort means a quiet evening together.",
+    "The young driver dreamed of finishing a race in the rain."
+   ]
+  }
+ ],
+ "predictions": "fire 0.2-0.45, near misses 0.07-0.2; may hold narrowly or fail on the margin",
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "dense; ' happiness' / ' winning' / ' der'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card: 5.9% of tokens reach 0.1 of max, 38% of top peaks at window position 0, gate-closed regime 93%. Probes: mid-sentence ' winning' 0.29-0.30, ' happiness' 0.24-0.28, ' der' 0.41-0.46, but unrelated sentences already sit at 0.07-0.19, so the margin is thin. Recorded as dense / positional; the test is the best guess, not a claimed meaning.",
+ "trigger": {
+  "words": [
+   "happiness",
+   "winning",
+   "der"
+  ]
+ }
+}

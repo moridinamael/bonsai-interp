@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-ec7a6aad",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8891+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N8891",
+   "pole": "+",
+   "label": "the 'Al' / 'al' token that begins an alkali / alkaline / alkyl- word in chemistry text, or the slot just before a predicted 'Alkaline'; strongest for capitalised 'Alkaline' as in 'Acid-Alkaline'",
+   "fire": [
+    "Many nutrition books discuss the Acid-Alkaline theory of disease.",
+    "Proponents say an Acid-Alkaline diet keeps the blood in balance.",
+    "Lithium and caesium are both Alkali metals, while calcium and barium are Alkaline earth metals.",
+    "The periodic table groups the Alkali metals in the first column and the Alkaline earth metals in the second.",
+    "In the refinery, isobutane reacts with olefins during alkylation to make petrol.",
+    "Organic chemistry begins with alkanes and then moves on to alkenes.",
+    "Blood tests revealed elevated alkaline phosphatase (ALP) in the patient.",
+    "Quinine is a bitter alkaloid extracted from cinchona bark."
+   ],
+   "quiet": [
+    "Many nutrition books discuss the low-carbohydrate theory of disease.",
+    "Proponents say a high-protein diet keeps the blood in balance.",
+    "Fluorine and chlorine are both halogens, while neon and argon are noble gases.",
+    "The periodic table groups the noble gases in the last column.",
+    "In the refinery, heavy oil is broken down during cracking to make petrol.",
+    "Organic chemistry begins with esters and then moves on to ketones.",
+    "The singer released two albums and almost retired afterwards.",
+    "Mr. Al Thompson joined the board of the hospital last year."
+   ]
+  }
+ ],
+ "predictions": "4-6/8 fire above 0.2; near misses quiet",
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'Al' of alkali / alkaline",
+ "unit_kind": "sparse feature",
+ "confidence": 0.4,
+ "notes": "Card: peaks ' al' x8, ' Al' x3, '_AL' x3, ' mildly' x2; the top example (Acid⟦-Al⟧kaline, 1032) is far above the rest (400-612); output direction promotes ' Al', 'Al', ' al'. Probes: 'Acid-Alkaline' 1.05, 'the Alkali metals ... the Alkaline earth metals' 0.65 (peak on ' the'), alkylation 0.34, (ALP) 0.30, alkanes 0.27, 'mildly alkaline' 0.10-0.16, '- Alcohols' 0.05; 'albums ... almost' 0.00, 'Al Gore' 0.06. Because the max is set by one outlier, lower-case alk- words may fall under 0.2."
+}

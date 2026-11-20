@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-66152e6c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8807-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:04+00:00",
+ "recipe": {
+  "toolchain_commit": "27062bf33",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N8807_neg/2026-11-19-lm1909-66152e6c.tests.json"
+ },
+ "label": "the preposition of a verb/adjective + preposition phrase at the point where an object pronoun (it / them) for an already-mentioned thing is expected next ('cling to ⟨them⟩', 'got away with ⟨it⟩'); the same preposition before a fresh noun phrase stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N8807_neg/2026-11-19-lm1909-66152e6c.tests.json",
+   "prereg_commit": "27062bf33",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.054,
+     "peak": " read"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.817,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.46,
+     "peak": " about"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.41,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.346,
+     "peak": " under"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.173,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.039,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.547,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " found"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": " read"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " put"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " spread"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.378,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "27062bf33",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "preposition awaiting it/them",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on to / about / in / under / with, each followed by it or them; the unit's output direction concerns ' it', ' them', ' him'. Probes: 'cling to [it]' after an antecedent 0.57, 'got away with' 0.64, 'embarrassed about' 0.34, 'abide by' 0.21; 'cling to the old tradition' with no antecedent 0.03. The unit fires on the preposition before the next word is seen, so 'got away with murder' fired equally (0.64): the near misses here remove the antecedent rather than only the pronoun.",
+ "selection": "random draw"
+}

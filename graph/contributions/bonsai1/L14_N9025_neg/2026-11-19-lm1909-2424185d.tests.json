@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-2424185d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N9025-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N9025",
+   "pole": "-",
+   "label": "the first digit of a numeric citation marker in scholarly prose: a bracketed reference list ('[149, 150]') or a footnote number set directly after a sentence",
+   "fire": [
+    "Long-term exposure to fine dust has been linked to chronic lung disease [14, 15].",
+    "Earlier trials reported a clear benefit of early physiotherapy after stroke [17].",
+    "Carbon nanotubes can provoke an acute inflammatory reaction in the airways [41,42].",
+    "Screening programmes have reduced the rate of amputation among diabetic patients [12, 19, 23].",
+    "The king claimed a right that his ancestors had always enjoyed.12 The barons disagreed.",
+    "It is by habit, he wrote, that vice takes root in the soul.14 If that is so, virtue needs practice.",
+    "A recent European project developed tools for realistic hazard assessment of nanomaterials [148, 149].",
+    "The burden of foot ulcers falls mostly on older adults with poor circulation [11]."
+   ],
+   "quiet": [
+    "Long-term exposure to fine dust has been linked to chronic lung disease (Miller and Chen, 2014).",
+    "Earlier trials reported a clear benefit of early physiotherapy after stroke.",
+    "Carbon nanotubes can provoke an acute inflammatory reaction in the airways, as several groups found.",
+    "The clinic treated 12 patients in May, 19 in June and 23 in July.",
+    "The king claimed a right that his ancestors had always enjoyed. The barons disagreed.",
+    "It is by habit, he wrote, that vice takes root in the soul. If that is so, virtue needs practice.",
+    "The array was defined as values = [148, 149] in the config file.",
+    "The burden of foot ulcers falls mostly on older adults aged 71 or more."
+   ]
+  }
+ ],
+ "predictions": "likely fails: fire sentences under 0.15",
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "citation-number first digit",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: '1' is 10 of the top 32 peaks, in '[⟦1⟧49, 150]', '[⟦1⟧6, 18', '[⟦4⟧1,42,43]', 'will.⟦1⟧5 If so', 'Parliaments.⟦1⟧'. But none of 16 probe sentences built this way passed 0.13 of max, including longer passages with several earlier citations, so the label is the card's reading and is expected to fail; the real trigger probably needs more document context than a sentence gives."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-669afa72",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N4500+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:26+00:00",
+ "recipe": {
+  "toolchain_commit": "27062bf33",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N4500_pos/2026-11-19-lm1909-669afa72.tests.json"
+ },
+ "label": "part-versus-whole statements: where one unit (a region, a tap, a single county) takes, holds or decides a share of a larger whole; peaks on 'of' / 'the' / 'from' around 'N percent of', 'most or all of', 'the majority of'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N4500_pos/2026-11-19-lm1909-669afa72.tests.json",
+   "prereg_commit": "27062bf33",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.717,
+     "peak": " overall"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.386,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.424,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.265,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.214,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.455,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.152,
+     "peak": " all"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.043,
+     "peak": " outcome"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": " turnout"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": " mill"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " lakes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " port"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.405,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "27062bf33",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "one part's share of the whole",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: 'one state's votes affected⟦ the⟧ election', 'draws most or all⟦ of⟧ the water from the pipe', 'produces the majority⟦ of⟧ its ... food', '92 percent⟦ of⟧ Ontario’s population'; output direction promotes ' overlapping', ' partition', ' same', ' across', ' adjacent'. Probes were uneven: sentences built like the card's fired 0.27-0.46 ('60 percent of the country's people' 0.46, 'nearly all of the electricity from the local grid' 0.44, 'a single county's result decided the national vote' 0.45), but 'the bulk of the region's exports', 'two thirds of the island's population' and 'the majority of its income' stayed under 0.07.",
+ "selection": "random draw"
+}
