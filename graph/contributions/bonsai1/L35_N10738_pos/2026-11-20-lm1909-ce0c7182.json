@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ce0c7182",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10738+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:58:42+00:00",
+ "recipe": {
+  "toolchain_commit": "bd89ce832",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N10738_pos/2026-11-20-lm1909-ce0c7182.tests.json"
+ },
+ "label": "the first digit '2' of a 2000s year written in parentheses after a title or citation, e.g. 'Film (2007)'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N10738_pos/2026-11-20-lm1909-ce0c7182.tests.json",
+   "prereg_commit": "bd89ce832",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.265,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.42,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.139,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.445,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.518,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.254,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.182,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.294,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "Fil"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " Revenue"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "Her"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.279,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bd89ce832",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'(20xx)' year digit",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Top examples are mixed (Arabic, dates, code). Probe: 'Blood (2007)' 0.46 but 'Platoon (1986)' 0.01 and 'in 2007' 0.06, so this is a guess about 2000s years in parentheses. Logit effect suppresses 'zero'.",
+ "selection": "random draw"
+}
