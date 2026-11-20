@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-a694f26b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N12198+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:19:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N12198",
+   "pole": "+",
+   "label": "the indentation whitespace at the start of a line that opens a Python docstring (the '   ' before '\"\"\"')",
+   "fire": [
+    "def occurrence(word):\n    \"\"\"Return the occurrence fingerprint.\"\"\"\n    return fp(word)",
+    "class Graph:\n    \"\"\"An undirected graph.\"\"\"\n    pass",
+    "def cuthill(G):\n    \"\"\"Cuthill-McKee order for a graph.\n\n    See Wikipedia.\n    \"\"\"\n    return order(G)",
+    "def load(path):\n    \"\"\"Load a file from disk.\"\"\"\n    with open(path) as f:\n        return f.read()",
+    "def area(r):\n    \"\"\"Area of a circle.\"\"\"\n    return 3.14 * r * r",
+    "class Config(object):\n    \"\"\"Settings for the app.\"\"\"\n    debug = False",
+    "def parse(text):\n    \"\"\"\n    Parse the tool output.\n    \"\"\"\n    return text.split()",
+    "def main():\n    \"\"\"Entry point.\"\"\"\n    run()"
+   ],
+   "quiet": [
+    "def occurrence(word):\n    # return the occurrence fingerprint\n    return fp(word)",
+    "class Graph:\n    nodes = []\n    pass",
+    "def cuthill(G):\n    # Cuthill-McKee order for a graph, see Wikipedia\n    return order(G)",
+    "def load(path):\n    with open(path) as f:\n        return f.read()",
+    "def area(r):\n    pi = 3.14\n    return pi * r * r",
+    "class Config(object):\n    debug = False\n    verbose = True",
+    "def parse(text):\n    parts = text.split()\n    return parts",
+    "def main():\n    # entry point\n    run()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "docstring indent",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Top 32: '\\n' x7, '   ' x2; top two are the indent before a docstring. Also fires on odd tokens like 'Rent' in 'DelhiRent'."
+}
