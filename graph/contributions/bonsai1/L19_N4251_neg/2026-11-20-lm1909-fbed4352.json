@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-fbed4352",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N4251-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:59:49+00:00",
+ "recipe": {
+  "toolchain_commit": "dd71fa406",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N4251_neg/2026-11-20-lm1909-fbed4352.tests.json"
+ },
+ "label": "the comparison after a modulo in code ('% n == 0', '% m <')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N4251_neg/2026-11-20-lm1909-fbed4352.tests.json",
+   "prereg_commit": "dd71fa406",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.244,
+     "peak": " =="
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.95,
+     "peak": " =="
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.484,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.03,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.06,
+     "peak": " =="
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.948,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.692,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.085,
+     "peak": " =="
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.17,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.34,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.196,
+     "peak": " if"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.099,
+     "peak": " >"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.463,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.243,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.539,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.076,
+     "peak": "y"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.703,
+    "median_fire": 0.588,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dd71fa406",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "modulo comparison in code",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card mixed: indentation and '0' after '% m =='. Tested the modulo context.",
+ "selection": "random draw"
+}
