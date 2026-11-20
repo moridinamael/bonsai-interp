@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e51a7101",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N8198+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:21:10+00:00",
+ "recipe": {
+  "toolchain_commit": "88dd9eb4b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N8198_pos/2026-11-20-lm1909-e51a7101.tests.json"
+ },
+ "label": "physical danger to people in a street scene (hit by a vehicle, crowds forcing through police lines, falling objects)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N8198_pos/2026-11-20-lm1909-e51a7101.tests.json",
+   "prereg_commit": "88dd9eb4b",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.132,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.846,
+     "peak": " he"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.237,
+     "peak": " break"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.568,
+     "peak": " street"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.179,
+     "peak": " scooter"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.338,
+     "peak": " tried"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.4,
+     "peak": " were"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.094,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.212,
+     "peak": " waiting"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.359,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.928,
+     "peak": " looking"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.217,
+     "peak": " square"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.473,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.12,
+     "peak": " gates"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.32,
+     "peak": " pedestrians"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.061,
+     "peak": " bright"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.531,
+    "median_fire": 0.287,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "88dd9eb4b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "street danger",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: streetlights/power lines falling, 'was crossing' when hit by a bus, 'tried to break the police cordon', 'gets hit by a car'. Probe weak: 0.21-0.44 on danger, library reading 0.10. Output suppresses street/walk (the - pole is passers-by/walking).",
+ "selection": "random draw"
+}
