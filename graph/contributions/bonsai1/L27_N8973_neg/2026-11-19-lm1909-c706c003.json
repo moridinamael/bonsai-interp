@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c706c003",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N8973-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:03:40+00:00",
+ "recipe": {
+  "toolchain_commit": "ca7c4de55",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N8973_neg/2026-11-19-lm1909-c706c003.tests.json"
+ },
+ "label": "the content word of a fixed multiword preposition whose next word is certain: 'Apart (from)', 'in spite (of)', Arabic 'على الرغم (من)', also 'Due (to)', 'according (to)'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N8973_neg/2026-11-19-lm1909-c706c003.tests.json",
+   "prereg_commit": "ca7c4de55",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.23,
+     "peak": " spite"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.37,
+     "peak": " الرغم"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.103,
+     "peak": " spite"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.163,
+     "peak": " الرغم"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.237,
+     "peak": " Apart"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.135,
+     "peak": " Apart"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.156,
+     "peak": " الرغم"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.216,
+     "peak": " Apart"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " sells"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.077,
+     "peak": "فال"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " h"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " الك"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " lends"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": "تح"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " family"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.19,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ca7c4de55",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Apart from', 'in spite of'",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Weak guess: probes of these phrases reached only 0.12-0.37 of the pole's max. The card's top examples also include digits inside '$1,500' and '()' after a decorator, which this label does not cover.",
+ "selection": "random draw"
+}

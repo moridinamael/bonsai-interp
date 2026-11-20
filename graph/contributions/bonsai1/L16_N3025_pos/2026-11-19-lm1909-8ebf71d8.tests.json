@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-8ebf71d8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N3025+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N3025",
+   "pole": "+",
+   "label": "the opening bracket of a comprehension directly after `return` in Python (the function returns a list or dict it builds: 'return [x for …', 'return {k: v for …'); a returned literal list or a plain value stays quiet",
+   "fire": [
+    "def titles(books):\n    \"\"\"Return a list of book titles.\"\"\"\n    return [b.title for b in books]\n",
+    "def active_users(users):\n    \"\"\"Return the users that are active.\"\"\"\n    return [u for u in users if u.active]\n",
+    "def get_paths(self):\n    \"\"\"Get a list of file paths.\"\"\"\n    return [\n        entry.path\n        for entry in self.entries\n    ]\n",
+    "def lengths(words):\n    \"\"\"Return a list of word lengths.\"\"\"\n    return [len(w) for w in words]\n",
+    "def to_ids(rows):\n    \"\"\"Return the ids of the given rows.\"\"\"\n    return [row.id for row in rows]\n",
+    "def price_map(items):\n    \"\"\"Return a dict of item prices.\"\"\"\n    return {i.sku: i.price for i in items}\n",
+    "def list_devices(self):\n    \"\"\"Return a list of device names.\"\"\"\n    return [self._name(d) for d in self._devices]\n",
+    "def positives(values):\n    \"\"\"Return only the positive values.\"\"\"\n    return [v for v in values if v > 0]\n"
+   ],
+   "quiet": [
+    "def title_count(books):\n    \"\"\"Return the number of books.\"\"\"\n    return len(books)\n",
+    "def weekdays():\n    \"\"\"Return the list of weekday names.\"\"\"\n    return [\"Mon\", \"Tue\", \"Wed\"]\n",
+    "def get_path(self):\n    \"\"\"Get the first file path.\"\"\"\n    return self.entries[0].path\n",
+    "def longest(words):\n    \"\"\"Return the longest word.\"\"\"\n    return max(words, key=len)\n",
+    "def to_id(row):\n    \"\"\"Return the id of the given row.\"\"\"\n    return row.id\n",
+    "def price_of(items, sku):\n    \"\"\"Return the price of one item.\"\"\"\n    return items[sku].price\n",
+    "def has_devices(self):\n    \"\"\"Return whether any device exists.\"\"\"\n    return bool(self._devices)\n",
+    "def total(values):\n    \"\"\"Return the sum of the values.\"\"\"\n    return sum(values)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "return [ … for … ]",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: return [comprehension] 0.38-0.74, return {dict comprehension} 0.53, sum([…]) 0.29, assignment '= [n * n for …]' 0.08, return [literal list] 0.03."
+}

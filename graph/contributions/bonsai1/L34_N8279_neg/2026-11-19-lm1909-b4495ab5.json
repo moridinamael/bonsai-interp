@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b4495ab5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8279-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:04:19+00:00",
+ "recipe": {
+  "toolchain_commit": "ca7c4de55",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N8279_neg/2026-11-19-lm1909-b4495ab5.tests.json"
+ },
+ "label": "a single capital-letter token that starts an ALL-CAPS word in all-caps text (' W'|ALKER, ' T'|AN): capitalised party names in case captions, author names in citations, shouted sentences; the same text in ordinary title case stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N8279_neg/2026-11-19-lm1909-b4495ab5.tests.json",
+   "prereg_commit": "ca7c4de55",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.612,
+     "peak": " J"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.879,
+     "peak": " H"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.503,
+     "peak": " J"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.59,
+     "peak": " H"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.641,
+     "peak": " L"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.908,
+     "peak": " R"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.678,
+     "peak": " L"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.097,
+     "peak": " BEL"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " J"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " H"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " States"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " P"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.068,
+     "peak": "C"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.627,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ca7c4de55",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "first letter of ALL-CAPS word",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Probes: all-caps captions, citations and shouting 0.59-1.02 (peaks on ' W', ' T'); the same caption in title case 0.002.",
+ "selection": "random draw"
+}
