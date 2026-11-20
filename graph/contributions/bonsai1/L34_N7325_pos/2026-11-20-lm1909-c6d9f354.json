@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c6d9f354",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7325+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:53:42+00:00",
+ "recipe": {
+  "toolchain_commit": "7139115bc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N7325_pos/2026-11-20-lm1909-c6d9f354.tests.json"
+ },
+ "label": "a word-initial fragment ending in 'b' that the same word continues (' rob'|bers, ' carb'|ón, auf'geb'|aut, aus'prob'|ieren, ' unb'|elted)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N7325_pos/2026-11-20-lm1909-c6d9f354.tests.json",
+   "prereg_commit": "7139115bc",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.529,
+     "peak": " rob"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.615,
+     "peak": " carb"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.503,
+     "peak": "geb"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.449,
+     "peak": "prob"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.498,
+     "peak": " unb"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.622,
+     "peak": " rob"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.417,
+     "peak": " carb"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.353,
+     "peak": "geb"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " fino"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.059,
+     "peak": " neu"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "en"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": " market"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": " abs"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " robbed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.5,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7139115bc",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word piece ending -b",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Whole-token ' robber' / ' robbed' read ~0.02-0.03 in probes, so they are hard near misses.",
+ "selection": "random draw"
+}
