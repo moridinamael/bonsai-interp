@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-cb704cf8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N6497-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:40:09+00:00",
+ "recipe": {
+  "toolchain_commit": "41491e9c2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N6497_neg/2026-11-20-lm1909-cb704cf8.tests.json"
+ },
+ "label": "'malaria' / 'disease' in public-health text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N6497_neg/2026-11-20-lm1909-cb704cf8.tests.json",
+   "prereg_commit": "41491e9c2",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.64,
+     "peak": " malaria"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.284,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.267,
+     "peak": " disease"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.51,
+     "peak": " malaria"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.198,
+     "peak": " disease"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.446,
+     "peak": " malaria"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.256,
+     "peak": " disease"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.505,
+     "peak": " malaria"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.202,
+     "peak": " hospital"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.152,
+     "peak": " clean"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.319,
+     "peak": " kidney"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.304,
+     "peak": " across"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.084,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.148,
+     "peak": " drug"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.136,
+     "peak": " clinic"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.081,
+     "peak": " seasons"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.365,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "41491e9c2",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "malaria / disease",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "card: ' disease' x10, ' malaria' x5, ' at' after researcher affiliations in health articles",
+ "selection": "random draw"
+}

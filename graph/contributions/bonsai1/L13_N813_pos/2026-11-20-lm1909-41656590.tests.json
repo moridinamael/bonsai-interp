@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-41656590",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N813+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:31:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N813",
+   "pole": "+",
+   "label": "the verb after 'should' in expectation statements, especially test comments ('should contain', 'should have')",
+   "fire": [
+    "    # the response should contain the user name\n    self.assertContains(response, 'alice')",
+    "    # there should only be one row in the table now\n    self.assertEqual(count, 1)",
+    "    # check the tag, it should have been copied over\n    assert tag == 'test'",
+    "    # the list should be empty after clearing it\n    assert len(items) == 0",
+    "    # this call should raise an error for bad input\n    with pytest.raises(ValueError):",
+    "    # the file should exist after saving\n    assert os.path.exists(path)",
+    "    # both values should match the defaults\n    assert a == b",
+    "    # the cache should have two entries at this point\n    assert len(cache) == 2"
+   ],
+   "quiet": [
+    "    # get the response for the user page\n    self.assertContains(response, 'alice')",
+    "    # count the rows in the table now\n    self.assertEqual(count, 1)",
+    "    # check the tag that was copied over\n    assert tag == 'test'",
+    "    # clear the list and look at it\n    assert len(items) == 0",
+    "    # call the function with bad input\n    with pytest.raises(ValueError):",
+    "    # save the file to disk\n    assert os.path.exists(path)",
+    "    # compare both values to the defaults\n    assert a == b",
+    "    # look at the cache entries at this point\n    assert len(cache) == 2"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "should + verb",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card: top examples include should_contain, '# There should only be', 'should have been transferred'"
+}
