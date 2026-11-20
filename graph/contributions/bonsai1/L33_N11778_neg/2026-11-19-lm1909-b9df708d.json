@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-b9df708d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11778-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:16:35+00:00",
+ "recipe": {
+  "toolchain_commit": "07657c875",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N11778_neg/2026-11-19-lm1909-b9df708d.tests.json"
+ },
+ "label": "French running text: fires inside French sentences on adverbs, verb endings and word pieces ('sont toujours', 'tout à fait', 'les b|acs'), and not on the same sentences in Spanish, Italian, German or English. The + pole is the French determiner side ('de', 'une', 'des', 'aucun' before a noun).",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N11778_neg/2026-11-19-lm1909-b9df708d.tests.json",
+   "prereg_commit": "07657c875",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.538,
+     "peak": " en"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.771,
+     "peak": " fait"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.347,
+     "peak": " doivent"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.24,
+     "peak": " critiques"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.65,
+     "peak": " rem"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.248,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.667,
+     "peak": "çu"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.528,
+     "peak": " de"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.048,
+     "peak": " letras"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": "È"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " ohne"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": "emb"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " l"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " vor"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": "ven"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.533,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "07657c875",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French running text",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: all top examples are French, on mixed tokens (' toujours', 'ant', ' doivent', ' (', ' les', ' b'). Probe: four French sentences 0.21-0.51; the same content in English, Spanish, Italian and German 0.00-0.01. No single French token explains it, so the label is the language, not a word.",
+ "selection": "random draw"
+}

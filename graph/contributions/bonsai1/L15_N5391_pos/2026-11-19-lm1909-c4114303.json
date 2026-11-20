@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c4114303",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N5391+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:16:29+00:00",
+ "recipe": {
+  "toolchain_commit": "07657c875",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N5391_pos/2026-11-19-lm1909-c4114303.tests.json"
+ },
+ "label": "The operand named for a mathematical or programming operation, strongest when it is an edge-case value: 'the log of zero', 'the square root of a negative', 'on a None value'. The same words (zero, negative, None) outside an operation stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N5391_pos/2026-11-19-lm1909-c4114303.tests.json",
+   "prereg_commit": "07657c875",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.015,
+     "peak": " zero"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.526,
+     "peak": " negative"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.573,
+     "peak": " zero"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.542,
+     "peak": " empty"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.408,
+     "peak": " ninety"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.931,
+     "peak": " negative"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.271,
+     "peak": " None"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.581,
+     "peak": " negative"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.03,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "Nobody"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " written"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " ninety"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.002,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " has"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.557,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "07657c875",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "operand of an operation (edge value)",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' dict' in 'push_note on a dict value', ')' in erfi(nan), ' Period' in 'Cannot apply ... to PeriodIndex', ' negative' in 'square root of a negative number', 'value set to None'. Probe: 'log of zero' 0.69, 'root of a negative' 0.52, 'on a None value' 0.40, 'by an empty string' 0.38, 'square root of nine' 0.36 (ordinary operand also fires), f(nan) 0.26, 'statistical evidence' 0.09.",
+ "selection": "random draw"
+}

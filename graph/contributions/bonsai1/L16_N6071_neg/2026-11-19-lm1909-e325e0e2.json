@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e325e0e2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N6071-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:15:35+00:00",
+ "recipe": {
+  "toolchain_commit": "07657c875",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L16_N6071_neg/2026-11-19-lm1909-e325e0e2.tests.json"
+ },
+ "label": "The ' [' that opens an editorial insertion inside quoted first-person speech (interview style: 'what we had [in the end], I think, was'). Not brackets in code or lists.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L16_N6071_neg/2026-11-19-lm1909-e325e0e2.tests.json",
+   "prereg_commit": "07657c875",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.221,
+     "peak": " ["
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.141,
+     "peak": " ["
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.184,
+     "peak": " ["
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.286,
+     "peak": " ["
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.157,
+     "peak": " ["
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.242,
+     "peak": " ["
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.194,
+     "peak": " ["
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.569,
+     "peak": " ["
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.042,
+     "peak": " matches"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.093,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.081,
+     "peak": " like"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " ["
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.067,
+     "peak": " voyage"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.064,
+     "peak": " girl"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.051,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.208,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "07657c875",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "editorial ' [' in speech",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks are ' [' inside interview quotes and '.\\n' ending a spoken paragraph. Probe: ' [' in a spoken passage scored 0.65, code brackets 0.08; the paragraph-ending '.\\n' did not reproduce in short passages (0.07-0.12), so the label covers only the bracket.",
+ "selection": "random draw"
+}
