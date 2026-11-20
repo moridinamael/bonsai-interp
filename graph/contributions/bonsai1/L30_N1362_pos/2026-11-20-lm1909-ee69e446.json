@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ee69e446",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N1362+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:53:35+00:00",
+ "recipe": {
+  "toolchain_commit": "9b16da24b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N1362_pos/2026-11-20-lm1909-ee69e446.tests.json"
+ },
+ "label": "nutrient and toxin chemistry in water-quality text: the link words between pollutant terms ('nitrogen and phosphorus', 'algae release toxins', 'ammonia to nitrite')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N1362_pos/2026-11-20-lm1909-ee69e446.tests.json",
+   "prereg_commit": "9b16da24b",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.381,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.216,
+     "peak": " produce"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.298,
+     "peak": " feeds"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.411,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.515,
+     "peak": " release"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.171,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.521,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.834,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " carry"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " gold"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.119,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.046,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " well"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "A"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.396,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9b16da24b",
+  "minutes": 13,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "water nutrient chemistry",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on 'and' (nitrogen and phosphorus), 'called' (purines), 'release' (algae release toxins), 'nit'(rate), plus an off-topic 'International' in CC license lines. Probe: nutrient/algae sentences 0.39-0.48; plain river sentence 0.01; CC license line 0.88 (a second trigger, not tested here). Near misses are water topics without nutrient/toxin chemistry.",
+ "selection": "random draw"
+}

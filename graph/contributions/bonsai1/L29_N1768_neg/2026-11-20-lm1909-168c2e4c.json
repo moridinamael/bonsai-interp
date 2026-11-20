@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-168c2e4c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1768-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:55:06+00:00",
+ "recipe": {
+  "toolchain_commit": "9b16da24b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1768_neg/2026-11-20-lm1909-168c2e4c.tests.json"
+ },
+ "label": "the change-of-state verb before a spoilage/deterioration outcome: 'go' / 'become' / 'turn' in 'go rancid', 'become stale', 'turn sour'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1768_neg/2026-11-20-lm1909-168c2e4c.tests.json",
+   "prereg_commit": "9b16da24b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.294,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.522,
+     "peak": " become"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.77,
+     "peak": " turn"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.906,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.396,
+     "peak": " turn"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.702,
+     "peak": " become"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.379,
+     "peak": " go"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.429,
+     "peak": " become"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.185,
+     "peak": " go"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.143,
+     "peak": " quickly"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.24,
+     "peak": " left"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.057,
+     "peak": " go"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": "oc"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.702,
+     "peak": " become"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.379,
+     "peak": " go"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.203,
+     "peak": " fish"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.612,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9b16da24b",
+  "minutes": 14,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "verb before spoiling",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on ' go' ('can go rancid'), ' become' ('become rancid'), ' turn' ('turn dark'), ' was' ('food that was too old'); the - pole's logit effect promotes spoiled/stale/bad/contaminated/old, so it predicts the spoilage word. Near misses use the same verbs in non-spoilage senses.",
+ "selection": "random draw"
+}

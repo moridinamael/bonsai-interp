@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c68fb1c0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N6153-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:54:30+00:00",
+ "recipe": {
+  "toolchain_commit": "9b16da24b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N6153_neg/2026-11-20-lm1909-c68fb1c0.tests.json"
+ },
+ "label": "word-final subword pieces of uncommon proper names (surnames and folk-hero names split into pieces: Bun|yan, Bullo|ch, Don|ah|ue)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N6153_neg/2026-11-20-lm1909-c68fb1c0.tests.json",
+   "prereg_commit": "9b16da24b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.896,
+     "peak": "yan"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.155,
+     "peak": "ch"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.967,
+     "peak": "ah"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.034,
+     "peak": " Crane"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.034,
+     "peak": " Mrs"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.054,
+     "peak": " Bill"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.033,
+     "peak": " keynote"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.007,
+     "peak": " evening"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": " log"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " panel"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": " drums"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " young"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " Mrs"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": " railroad"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.032,
+     "peak": " keynote"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " Kelly"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.773,
+    "median_fire": 0.044,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9b16da24b",
+  "minutes": 14,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare-name subword pieces",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card: weak pole (max 5.9), peaks on name pieces 'yan', 'ch', 'ah', plus ' common' in 'final common ancestor'. Low confidence; near misses use common one-token names in the same sentences.",
+ "selection": "random draw"
+}
