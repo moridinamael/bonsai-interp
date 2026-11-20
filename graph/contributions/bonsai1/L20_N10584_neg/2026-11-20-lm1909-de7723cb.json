@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-de7723cb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10584-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:55:56+00:00",
+ "recipe": {
+  "toolchain_commit": "fe00cde61",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N10584_neg/2026-11-20-lm1909-de7723cb.tests.json"
+ },
+ "label": "tokens in code identifiers and quoted words (method suffixes, 'the word X')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N10584_neg/2026-11-20-lm1909-de7723cb.tests.json",
+   "prereg_commit": "fe00cde61",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.188,
+     "peak": "_file"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.232,
+     "peak": "(object"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.077,
+     "peak": ".max"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.364,
+     "peak": " word"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.093,
+     "peak": "='"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.09,
+     "peak": "(chunk"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.398,
+     "peak": " '"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.088,
+     "peak": " filename"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.102,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.077,
+     "peak": "We"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.126,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.17,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.068,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": " rain"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.108,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.128,
+     "peak": "He"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.68,
+    "median_fire": 0.141,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fe00cde61",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code identifier pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "card flags broad (4.0% of tokens reach 0.1 of max) with no dominant token; recorded as dense, best guess tested",
+ "selection": "random draw"
+}
