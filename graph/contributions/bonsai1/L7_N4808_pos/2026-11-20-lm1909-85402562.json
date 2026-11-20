@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-85402562",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N4808+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:44:10+00:00",
+ "recipe": {
+  "toolchain_commit": "b0708a265",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N4808_pos/2026-11-20-lm1909-85402562.tests.json"
+ },
+ "label": "the head noun of an 'urban X' / 'city X' compound (urban exploration, city dweller)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N4808_pos/2026-11-20-lm1909-85402562.tests.json",
+   "prereg_commit": "b0708a265",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.294,
+     "peak": " urban"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.459,
+     "peak": " living"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.327,
+     "peak": " urban"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.542,
+     "peak": " kids"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.569,
+     "peak": "ology"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.136,
+     "peak": " planner"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.296,
+     "peak": " urban"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.857,
+     "peak": " boy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " wrote"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " warns"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " never"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " plans"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " rents"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " sent"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.393,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b0708a265",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "noun after 'urban/city'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: Urban Exploration, Urban Studies, city dweller, city girl, Urban areas. Probe: 'Urban exploration' 0.80, 'city dweller' 0.80; 'urban' at end of 'than urban areas' 0.20; 'country dweller' 0.27 (the 'eller' piece itself leaks). Near misses keep the city topic without a city/urban modifier compound.",
+ "selection": "random draw"
+}

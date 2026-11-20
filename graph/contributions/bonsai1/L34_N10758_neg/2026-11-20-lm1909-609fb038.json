@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-609fb038",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10758-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:44:28+00:00",
+ "recipe": {
+  "toolchain_commit": "b0708a265",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10758_neg/2026-11-20-lm1909-609fb038.tests.json"
+ },
+ "label": "function words and punctuation inside Arabic and Japanese text (the demonstrative هذا, the Japanese comma 、)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10758_neg/2026-11-20-lm1909-609fb038.tests.json",
+   "prereg_commit": "b0708a265",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.237,
+     "peak": " ال"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.069,
+     "peak": " هذا"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.22,
+     "peak": " هذا"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.259,
+     "peak": " ك"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.269,
+     "peak": "この"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.069,
+     "peak": "新しい"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.525,
+     "peak": "、"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.06,
+     "peak": "画"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " teacher"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " this"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " meeting"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " at"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.228,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b0708a265",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic/Japanese function tokens",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top 32 are function tokens in Arabic (هذا x3, في, ب), Japanese/Chinese (末, 、), a '#' before a Chinese comment and a Russian '!'. Probe: Arabic هذا 0.56 and 0.28, Japanese 、 0.46, 注 0.27, Chinese comment 0.17, Russian 0.03, English translations 0.01-0.08. Near misses are English versions of the same content.",
+ "selection": "random draw"
+}
