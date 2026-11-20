@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-25246652",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N12110-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:43+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N12110_neg/2026-11-19-lm1909-25246652.tests.json"
+ },
+ "label": "the noun (or 'of') right after a superlative, where a scope phrase is due ('the largest democracy [in the world]', 'the most-awarded Olympian [of all time]')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N12110_neg/2026-11-19-lm1909-25246652.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.816,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.142,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.655,
+     "peak": " trees"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.432,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.359,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.192,
+     "peak": " poet"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.362,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.865,
+     "peak": "ago"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.207,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " bark"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " ending"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "ener"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.111,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " is"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.397,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "noun after a superlative",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: 'most widely domesticated deer', 'oldest synagogues', 'most-awarded Olympian', 'largest democracy', 'final … address of'. The + pole is the other side of the same construction ('as good as it gets', 'doesn't get much better'), and the output direction of the + pole promotes ' highest', ' best', ' ever'. Probes: largest animal 0.54, most decorated gymnast 0.49, final speech of 0.31, oldest churches 0.21; the same sentences with plain adjectives 0.01-0.03.",
+ "selection": "random draw"
+}

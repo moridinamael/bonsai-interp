@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-8f6e502a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N4581+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:33:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N4581",
+   "pole": "+",
+   "label": "certain single-token camelCase identifiers in code: contentType, displayName, maxLength, projectId, getFile, getContext, NotImplementedError (a token list; the - pole takes other camelCase tokens such as findAll and setLevel)",
+   "fire": [
+    "    headers = {'contentType': 'text/html', 'maxLength': 1024}\n    send(headers)",
+    "    label.setText(account.displayName)\n    label.show()",
+    "    def area(self):\n        raise NotImplementedError('shape has no area yet')",
+    "    payload = {'projectId': project.pk, 'displayName': project.title}",
+    "    brush = widget.getContext('2d')\n    brush.fill()",
+    "    source = bundle.getFile('readme.txt')\n    print(source)",
+    "    field = {'type': 'string', 'maxLength': 255, 'required': True}",
+    "    if reply.contentType != 'application/json':\n        return None"
+   ],
+   "quiet": [
+    "    headers = {'content_type': 'text/html', 'max_length': 1024}\n    send(headers)",
+    "    label.set_text(account.display_name)\n    label.show()",
+    "    def area(self):\n        raise ValueError('shape has no area yet')",
+    "    payload = {'project_id': project.pk, 'display_name': project.title}",
+    "    brush = widget.context('2d')\n    brush.fill()",
+    "    source = bundle.file('readme.txt')\n    print(source)",
+    "    field = {'type': 'string', 'max_length': 255, 'required': True}",
+    "    if reply.content_type != 'application/json':\n        return None"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "camelCase identifier tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks on getFile, displayName, NotImplementedError, getContext, contentType, maxLength, projectId. Probes: camelCase lines 0.50-0.87; the same code in snake_case and the same words in prose 0.00. Both poles of this unit take camelCase tokens, split by token, so the label is a token list."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ee2067c0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10051+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:39+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10051_pos/2026-11-19-lm1909-ee2067c0.tests.json"
+ },
+ "label": "asking whether something has happened lately: questions put to 'you' about a specific recent episode ('Have you taken any…', 'Did you eat anything…'), at the slot where 'recently/lately' fits",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10051_pos/2026-11-19-lm1909-ee2067c0.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.364,
+     "peak": " headaches"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.916,
+     "peak": " diet"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.531,
+     "peak": " strange"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.547,
+     "peak": " working"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.744,
+     "peak": " animals"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.63,
+     "peak": " building"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.592,
+     "peak": " anything"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.786,
+     "peak": " hiding"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": "Before"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " said"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": "So"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "For"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " streets"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " explained"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.611,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'have you … (lately)?' questions",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top examples are 'Have you had… any long trips', 'Have you seen a lynx', 'have travelled in the last 14 days', 'have been used'; output promotes ' recent', ' recently', ' lately', and the - pole peaks on ' in'/' most'/' more' before 'recent(ly)'. Probes: Have you… 0.63-0.83, Did you eat anything unusual 0.82, Will you be taking any long trips 0.56, declarative 'have been used' 0.46, habitual 'Do you sleep badly when…' 0.19. So it is wider than the present perfect; near misses here are habitual or timeless.",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-003cdaee",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2246-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:33:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N2246",
+   "pole": "-",
+   "label": "descending loop header in Python: the '-1' step of a reversed range, range(n-1, -1, -1) (weaker on other count-down loops such as 'while k > 0' and reversed(…))",
+   "fire": [
+    "def last_positive(values):\n    found = None\n    for k in range(len(values) - 1, -1, -1):\n        if values[k] > 0:\n            found = k\n            break\n    return found",
+    "    total = 0\n    n = len(digits)\n    for pos in range(n - 1, -1, -1):\n        total = total * 10 + digits[pos]",
+    "def bubble(arr):\n    size = len(arr)\n    for end in range(size - 1, 0, -1):\n        for j in range(end):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]",
+    "    best = [0] * (m + 1)\n    best[m] = 1\n    for row in xrange(m - 1, -1, -1):\n        best[row] = best[row + 1] + cost[row]",
+    "def trim(line):\n    cut = len(line)\n    for idx in range(len(line) - 1, -1, -1):\n        if line[idx] != ' ':\n            break\n        cut = idx\n    return line[:cut]",
+    "    suffix = [0] * length\n    for j in range(length - 2, -1, -1):\n        suffix[j] = suffix[j + 1] + weights[j + 1]",
+    "def countdown(start):\n    steps = []\n    for tick in range(start, -1, -1):\n        steps.append(tick)\n    return steps",
+    "    heap = list(items)\n    half = len(heap) // 2\n    for node in range(half - 1, -1, -1):\n        sift_down(heap, node)"
+   ],
+   "quiet": [
+    "def first_positive(values):\n    found = None\n    for k in range(0, len(values)):\n        if values[k] > 0:\n            found = k\n            break\n    return found",
+    "    total = 0\n    n = len(digits)\n    for pos in range(n):\n        total = total * 10 + digits[pos]",
+    "def bubble(arr):\n    size = len(arr)\n    for end in range(1, size):\n        for j in range(end):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]",
+    "    best = [0] * (m + 1)\n    best[0] = 1\n    for row in xrange(1, m + 1):\n        best[row] = best[row - 1] + cost[row]",
+    "def trim(line):\n    cut = len(line)\n    last = line[-1]\n    if last == ' ':\n        cut = cut - 1\n    return line[:cut]",
+    "    prefix = [0] * length\n    for j in range(1, length):\n        prefix[j] = prefix[j - 1] + weights[j - 1]",
+    "def countup(stop):\n    steps = []\n    for tick in range(0, stop + 1, 2):\n        steps.append(tick)\n    return steps",
+    "    heap = list(items)\n    half = len(heap) // 2\n    tail = heap[-1]\n    sift_down(heap, half - 1)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "count-down range(…, -1, -1)",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: very sparse pole; top example 16.0 on the step of xrange(n-1, -1, -1), then ~6 on reversed(…): and 'while k > 0'. Probes: reversed range 0.67, while n > 0 0.20, reversed() 0.21, forward range 0.10, sorted() 0.04."
+}

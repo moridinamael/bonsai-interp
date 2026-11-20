@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-f8f641f7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N389-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:46:11+00:00",
+ "recipe": {
+  "toolchain_commit": "8baa1a737",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N389_neg/2026-11-19-lm1909-f8f641f7.tests.json"
+ },
+ "label": "head word that completes a technical term right after 'Deposit'/'deposition' or 'generalized' (Federal Deposit Insurance, fused deposition modeling, generalized estimating equations); a short list, not the general class of technical compounds",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N389_neg/2026-11-19-lm1909-f8f641f7.tests.json",
+   "prereg_commit": "8baa1a737",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.872,
+     "peak": " Insurance"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.934,
+     "peak": " modeling"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.892,
+     "peak": " estimating"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.094,
+     "peak": " Insurance"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.933,
+     "peak": " modeling"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.859,
+     "peak": " estimating"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.927,
+     "peak": " Insurance"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.857,
+     "peak": " modeling"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " Insurance"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " rainfall"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": "Repeated"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.15,
+     "peak": " Health"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": " nylon"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": " regression"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " she"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " resin"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.909,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8baa1a737",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Deposit Insurance / generalized estimating",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card had no single token (Insurance, Disease, modeling, estimating). Probes: Deposit Insurance 0.89, deposition modeling 0.98, generalized estimating 0.96, generalized linear 0.28, storage disease/disorder 0.27-0.29; the same head words after other modifiers (car insurance, climate modeling, Flood Insurance) and other technical compounds (finite element analysis, chain reaction, resonance imaging) stayed under 0.07. I could not find the shared pattern behind the list, so the label keeps the list.",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-7b043890",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N746+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:33:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N746",
+   "pole": "+",
+   "label": "the '.com'/'.org' ending of a placeholder e-mail address (email@example.com, firstname.lastname@example.org); weak on real-looking addresses and on web URLs",
+   "fire": [
+    "To register for the workshop, write to firstname.lastname@example.com before the deadline.",
+    "Press enquiries should go to our spokesperson at email@example.com this week.",
+    "Our volunteer coordinator can be reached at firstname.lastname@example.org on weekdays.",
+    "For a copy of the report, contact Dr. Patel at email@example.org or by phone.",
+    "Letters to the editor may be submitted to firstname.lastname@example.com each month.",
+    "If the form does not load, tell the webmaster at email@example.com right away.",
+    "Parents with concerns should message the principal at firstname.lastname@example.org today.",
+    "Photo credits and corrections: Sam Ortega, email@example.com, staff writer."
+   ],
+   "quiet": [
+    "To register for the workshop, write to the organisers by post before the deadline.",
+    "Press enquiries should go to our spokesperson at press@harborview.net this week.",
+    "Our volunteer coordinator can be reached at 555-0142 on weekdays.",
+    "For a copy of the report, contact Dr. Patel at s.patel@northfield.edu or by phone.",
+    "Letters to the editor may be submitted through the website each month.",
+    "If the form does not load, visit www.riverside-library.net right away.",
+    "Parents with concerns should message the principal at the front office today.",
+    "Photo credits and corrections: Sam Ortega, sam.ortega@dailypost.co.uk, staff writer."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'.com' in @example.com",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card flags the + pole broad (6.4% of tokens reach 0.1 of max) and gate-closed (echo regime 99%), max only 1.93; 18 of the top 32 peaks are '.com'/'.org' after 'example'. Probes: firstname.lastname@example.com 0.79, email@example.org 0.48 (peak ' email'), info@example.com 0.33, www.example.com 0.24, gmail/greenfield/.edu addresses 0.13-0.14. Weak pole; near misses may fire weakly."
+}
