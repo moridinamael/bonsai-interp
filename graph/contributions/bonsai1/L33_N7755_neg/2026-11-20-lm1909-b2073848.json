@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-b2073848",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N7755-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:27:03+00:00",
+ "recipe": {
+  "toolchain_commit": "ca4c6c4b2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N7755_neg/2026-11-20-lm1909-b2073848.tests.json"
+ },
+ "label": "the word right before 'pay'/'paycheck'/'wages' in an employment-pay context (predicts pay)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N7755_neg/2026-11-20-lm1909-b2073848.tests.json",
+   "prereg_commit": "ca4c6c4b2",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.378,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.356,
+     "peak": " percent"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.294,
+     "peak": " their"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.923,
+     "peak": " stagnant"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.512,
+     "peak": " equal"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.594,
+     "peak": " my"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.853,
+     "peak": " overtime"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.3,
+     "peak": " pay"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " donated"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.159,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.512,
+     "peak": " equal"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.632,
+     "peak": " better"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.148,
+     "peak": " new"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.445,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ca4c6c4b2",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicts 'pay'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "- pole's output promotes ' pay', ' pays', ' raises'",
+ "selection": "random draw"
+}
