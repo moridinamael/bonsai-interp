@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-342f8e69",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3915-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:00:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N3915",
+   "pole": "-",
+   "label": "server storage and connection infrastructure (storage arrays, file servers, non-blocking connections, SAN clusters)",
+   "fire": [
+    "The cluster keeps its virtual machine images on a shared storage volume over iSCSI.",
+    "We replaced the aging NAS with a faster storage array for the database servers.",
+    "The worker uses non-blocking I/O so one slow connection cannot stall the queue.",
+    "Old log files are moved off the file server onto tape every month.",
+    "Each node in the failover cluster mounts the same disks from the SAN.",
+    "The backup job copies snapshots from primary storage to a remote replica.",
+    "Connection pooling keeps the database from opening a new socket for every request.",
+    "The admins added two more shelves of disks to the storage controller."
+   ],
+   "quiet": [
+    "The cluster of houses keeps its rainwater in a shared tank behind the barn.",
+    "We replaced the aging sofa with a softer couch for the living room.",
+    "The waiter uses a small notebook so no order gets lost during the rush.",
+    "Old letters are moved from the attic into boxes every spring.",
+    "Each member of the choir sings the same notes from the printed score.",
+    "The photographer copies prints from the album to give to relatives.",
+    "Carpooling keeps the office from needing a parking space for every worker.",
+    "The librarians added two more shelves of books to the reading room."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "storage / server infra",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: 'non-blocking', 'Shared-storage clusters', SAN, file servers (fichiers), 'non-IBM storage'. Probe: storage/socket sentences 0.34-0.46; 'Shared kitchens' and 'non-profit' ~0.01."
+}

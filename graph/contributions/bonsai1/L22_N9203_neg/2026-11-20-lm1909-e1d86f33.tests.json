@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-e1d86f33",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9203-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:00:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N9203",
+   "pole": "-",
+   "label": "comma separating arguments in NumPy-style function calls (np.histogram2d(x, y, bins=...))",
+   "fire": [
+    "import numpy as np\n\ncounts, xe, ye = np.histogram2d(lat, lon, bins=200, density=True)\n",
+    "    grid, xb, yb = np.histogram2d(px, py, bins=64)\n    plt.imshow(grid)\n",
+    "hist, edges = np.histogram(heights, bins=30, range=(0, 2))\n",
+    "    z = np.polyfit(xs, ys, deg=3)\n    p = np.poly1d(z)\n",
+    "    m = np.linspace(start, stop, num=100)\n    print(m.shape)\n",
+    "    img, xedges, yedges = np.histogram2d(x_sel, y_sel, bins=100, weights=w_sel)\n",
+    "dist = np.random.normal(mu, sigma, size=1000)\n",
+    "    out = np.clip(values, lo, hi)\n    return out\n"
+   ],
+   "quiet": [
+    "import numpy as np\n\ncounts = np.histogram2d\n",
+    "    grid = make_grid()\n    plt.imshow(grid)\n",
+    "hist = compute_histogram(heights)\n",
+    "    z = np.polyfit\n    p = np.poly1d(z)\n",
+    "    m = np.linspace\n    print(m)\n",
+    "    img = load_image()\n    img.show()\n",
+    "dist = np.random.normal()\n",
+    "    out = np.clip\n    return out\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comma in numpy call args",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Mixed weak pole: two top examples are commas in np.histogram2d calls; probe of np.histogram(data, bins=50) gave 0.34. 'hit a plateau' gave 0.65 once but 'hit a record high' 0.08, so I test the code comma."
+}
