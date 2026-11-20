@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-fe93b1bb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N6695-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:27:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N6695",
+   "pole": "-",
+   "label": "' self' in Python method bodies (self.attr / self.method calls), typically in test or class code",
+   "fire": [
+    "class Counter:\n    def __init__(self, start):\n        self.value = start\n\n    def bump(self):\n        self.value += 1\n        self.log.append(self.value)",
+    "class TestParser(unittest.TestCase):\n    def setUp(self):\n        self.parser = Parser()\n\n    def test_empty(self):\n        self.assertEqual(self.parser.parse(''), [])",
+    "class Window(wx.Frame):\n    def __init__(self, parent):\n        wx.Frame.__init__(self, parent)\n        self.panel = wx.Panel(self)\n        self.SetTitle('Editor')",
+    "    def tearDown(self):\n        self.conn.close()\n        self.tmpdir.cleanup()\n        super().tearDown()",
+    "class Robot:\n    def move(self, dx, dy):\n        self.x += dx\n        self.y += dy\n        self.history.append((self.x, self.y))",
+    "    def test_version(self):\n        if not self.driver.supports_feature('snap'):\n            self.skipTest('snapshots unsupported')\n        self.assertTrue(self.driver.ready)",
+    "class Cache(object):\n    def get(self, key):\n        if key in self.store:\n            self.hits += 1\n            return self.store[key]",
+    "class Player:\n    def reset(self):\n        self.score = 0\n        self.lives = 3\n        self.level.reload()"
+   ],
+   "quiet": [
+    "def make_counter(start):\n    value = start\n    log = []\n\n    def bump():\n        nonlocal value\n        value += 1\n        log.append(value)",
+    "def test_empty():\n    parser = Parser()\n    result = parser.parse('')\n    assert result == []\n    assert len(result) == 0",
+    "def build_window(parent):\n    frame = wx.Frame(parent)\n    panel = wx.Panel(frame)\n    frame.SetTitle('Editor')\n    return frame",
+    "def teardown(conn, tmpdir):\n    conn.close()\n    tmpdir.cleanup()\n    print('done')",
+    "def move(pos, dx, dy, history):\n    x, y = pos\n    x += dx\n    y += dy\n    history.append((x, y))",
+    "def check_version(driver):\n    if not driver.supports_feature('snap'):\n        return 'snapshots unsupported'\n    return driver.ready",
+    "def cache_get(store, key, stats):\n    if key in store:\n        stats['hits'] += 1\n        return store[key]\n    return None",
+    "def reset(player):\n    player['score'] = 0\n    player['lives'] = 3\n    reload_level(player)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python self",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: ' self' x17 of top 32; a short probe scored low, so fire items are longer method bodies."
+}
