@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-8cad1f23",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N895-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:16:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N895",
+   "pole": "-",
+   "label": "punctuation in the parameter list of a Python def signature ('(self,', ', b):'), as against calls of the same functions",
+   "fire": [
+    "class Stack:\n    def push(self, item):\n        self.items.append(item)",
+    "class Solution:\n    def maxProfit(self, prices):\n        return 0",
+    "def area(width, height):\n    return width * height",
+    "class Node(object):\n    def __init__(self, value, next=None):\n        self.value = value",
+    "def merge(left, right):\n    result = []",
+    "class Solution(object):\n    def reverse(self, x):\n        pass",
+    "def greet(name, greeting='hi'):\n    print(greeting, name)",
+    "class Queue:\n    def pop(self):\n        return self.items.pop(0)"
+   ],
+   "quiet": [
+    "stack = Stack()\nstack.push(item)\nprint(stack.items)",
+    "solution = Solution()\nprint(solution.maxProfit(prices))",
+    "result = area(width, height)\nprint(result)",
+    "node = Node(value, None)\nprint(node.value)",
+    "merged = merge(left, right)\nresult = []",
+    "sol = Solution()\nanswer = sol.reverse(x)",
+    "greet(name, 'hi')\nprint(greeting, name)",
+    "queue = Queue()\nitem = queue.items.pop(0)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python def parameters",
+ "unit_kind": "sparse feature",
+ "confidence": 0.35,
+ "notes": "Card flags broad (2.8% of tokens) and gate-closed leak 98%. Probe: 'def twoSum(self' 0.47, 'def add(a,' 0.28, prose 0.05."
+}
