@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-42c2f0f9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N2348-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:15:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N2348",
+   "pole": "-",
+   "label": "identifier pieces glued on with punctuation in code and URLs: the tokens '.path', '/community', '_script', '_char', '_generator', '.extension' (not the same words as plain prose words)",
+   "fire": [
+    "import sys\nsys.path.append(lib_dir)\n",
+    "visit https://forum.example.org/community/rules for more",
+    "    subprocess.call(build_script, shell=True)\n",
+    "    buf = read_char(stream)\n",
+    "    name = plugin.extension_id\n",
+    "    gen = code_generator.create()\n",
+    "    self.load_script(name)\n",
+    "docs live at https://ask.fedoraproject.org/community/help today"
+   ],
+   "quiet": [
+    "import sys\nsys.argv.append(lib_dir)\n",
+    "visit https://forum.example.org/index/rules for more",
+    "    subprocess.call(build_cmd, shell=True)\n",
+    "    buf = read_line(stream)\n",
+    "    name = plugin.version_id\n",
+    "    gen = code_builder.create()\n",
+    "    self.load_config(name)\n",
+    "The community wrote a script that prints each char of the path."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'.path' '_script' '/community' pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Layer 0, so tested as bare tokens. Probing: '/community' 0.94, '.path' 0.81, '_script' 0.61, '_char' 0.55, '.report' 0.23; ' script'/' path' in prose 0.02; '.value'/'.name'/'.size' 0.03. A token list, no shared pattern found beyond the leading punctuation."
+}

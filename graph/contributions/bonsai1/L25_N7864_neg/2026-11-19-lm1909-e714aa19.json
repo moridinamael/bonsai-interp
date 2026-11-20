@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e714aa19",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N7864-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:09+00:00",
+ "recipe": {
+  "toolchain_commit": "cdffa2311",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N7864_neg/2026-11-19-lm1909-e714aa19.tests.json"
+ },
+ "label": "' single' in 'from/on a single <noun>' (everything traced to one source); broad weak firing on a/an/in opening a noun phrase",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N7864_neg/2026-11-19-lm1909-e714aa19.tests.json",
+   "prereg_commit": "cdffa2311",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.762,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.204,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.809,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.233,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.495,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.509,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.435,
+     "peak": " single"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.499,
+     "peak": " single"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.373,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " came"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.641,
+     "peak": " anonymous"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.058,
+     "peak": " grown"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.11,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.187,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " single"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.192,
+     "peak": " many"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.497,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cdffa2311",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'a single' one-source",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (1.2% of tokens reach 0.1 of max); top examples peak on of/a/an. Probing: 'a single' reached 0.5-0.7, 'attend an'/'written in' 0.2-0.4, other a/an under 0.15. The label covers the strongest probe trigger only.",
+ "selection": "random draw"
+}
