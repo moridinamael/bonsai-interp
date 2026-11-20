@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-250bb055",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N7614+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:30:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N7614",
+   "pole": "+",
+   "label": "a method or attribute name just after a dot or underscore in a code call (self.flags(...), regex.search(...), get_loan_status(...))",
+   "fire": [
+    "    def test_driver_limit(self):\n        self.flags(virt_type='qemu', group='libvirt')",
+    "        for line in lines:\n            if pattern.search(line):\n                count += 1",
+    "    order_status = db.get_order_status(order_id)\n    if order_status == 'open':",
+    "                if archived_job('backup'):\n                    path = '../archive/'",
+    "        result = client.fetch(url, timeout=10)\n        return result",
+    "    user = session.query(User).filter_by(name=name).first()",
+    "        if self.cache.contains(key):\n            return self.cache.get(key)",
+    "    data = loader.read_config(path)\n    print(data)"
+   ],
+   "quiet": [
+    "    The driver limit is a number of virtual machines allowed per host,\n    set by the administrator.",
+    "        Each line in the file is checked against the pattern and counted\n        when it matches.",
+    "    The order status is read from the database for each order and\n    compared with open.",
+    "                Archived jobs are stored in the backup folder, one level\n                above this one.",
+    "        The result is fetched from the URL with a ten second timeout\n        and returned.",
+    "    The user is looked up in the session by name and the first match\n    is used.",
+    "        If the cache contains the key, the stored value is returned\n        immediately.",
+    "    The configuration is read from the path and printed for the user."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "method name in code call",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Near misses are prose descriptions of the same code, in docstring-like indented style. Pole is fairly broad (0.57% at 0.1 max)."
+}
