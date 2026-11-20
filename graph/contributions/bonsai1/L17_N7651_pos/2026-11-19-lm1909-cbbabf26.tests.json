@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-cbbabf26",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N7651+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:13:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N7651",
+   "pole": "+",
+   "label": "code: assigning a literal or None to a setting-like local name (format, encoding, host, language) at the top of a function body; peaks on the ' =' or the end of that line",
+   "fire": [
+    "def export(report, path=None):\n    extension = 'csv'\n    separator = ';'\n    if path is None:\n        path = report.name",
+    "    def resolve(self):\n        address = None\n        port = None\n        protocol = 'tcp'\n        aliases = set()",
+    "def render(page):\n    template = 'default'\n    charset = 'latin-1'\n    locale = None\n    return page",
+    "class Reader:\n    def open(self, name):\n        suffix = '.txt'\n        codec = 'ascii'\n        newline = None",
+    "def save_image(img, target=None):\n    filetype = 'png'\n    quality = None\n    if target is None:\n        target = img.title",
+    "    def configure(self):\n        hostname = None\n        username = None\n        scheme = 'https'\n        headers = dict()",
+    "def dump(table):\n    layout = 'wide'\n    dialect = 'excel'\n    header = None\n    return table",
+    "def load_audio(clip, start=None):\n    container = 'wav'\n    channel = None\n    if start is None:\n        start = clip.begin"
+   ],
+   "quiet": [
+    "def export(report, path):\n    for row in report.rows:\n        path.write(row)\n    path.close()",
+    "    def resolve(self):\n        if self.cache:\n            return self.cache\n        raise KeyError(self.key)",
+    "def render(page):\n    for block in page.blocks:\n        block.draw()\n    return page",
+    "class Reader:\n    def open(self, name):\n        with open(name) as handle:\n            return handle.read()",
+    "def save_image(img, target):\n    img.resize(640, 480)\n    img.write(target)\n    return target",
+    "    def configure(self):\n        self.reset()\n        self.connect()\n        return self.status()",
+    "def dump(table):\n    while table.has_next():\n        print(table.next())\n    return len(table)",
+    "def load_audio(clip, start):\n    clip.seek(start)\n    return clip.read(1024)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "setting-like local assignment",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: \"format = 'swc'\", 'host = None', 'fieldname =', 'samplerate' at ' ='/newline. Probes: such assignments inside a def 0.18-0.57; module-level 'x = 5' 0.01, loops/calls/raise 0.02; prose with the same words 0.03. Max 11.6, margins modest."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ff9595f7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8748+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:23:48+00:00",
+ "recipe": {
+  "toolchain_commit": "c3eb774c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N8748_pos/2026-11-19-lm1909-ff9595f7.tests.json"
+ },
+ "label": "a film named right after 'the film' / 'the movie': the title token itself, when the title is an ordinary name or word (the film Ted, the movie Grand Canyon); the same word as a person or place stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N8748_pos/2026-11-19-lm1909-ff9595f7.tests.json",
+   "prereg_commit": "c3eb774c0",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.227,
+     "peak": " Carol"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.188,
+     "peak": " Titanic"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.257,
+     "peak": " Gandhi"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.095,
+     "peak": " movie"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.427,
+     "peak": "a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.045,
+     "peak": " movie"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.586,
+     "peak": " Jackie"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.667,
+     "peak": " Rudy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " ago"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " deep"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " school"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " painting"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " dress"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.07,
+     "peak": " know"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.242,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c3eb774c0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "title after 'the film/movie'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' Ted', ' Canyon', ' Chuck', 'Yojimbo' at film/TV mentions; the - pole is tokens inside multi-word titles. Probes: 'the film Ted' 0.72, 'the movie Grand Canyon' 0.88, 'the film Lincoln' 0.83, uncle Ted 0.04, hiking the Grand Canyon 0.02, President Lincoln 0.01; but 'the movie Babe' only 0.20 and 'Rocky or Jaws' 0.01, so not every title fires.",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-ff9595f7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8748+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:13:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N8748",
+   "pole": "+",
+   "label": "a film named right after 'the film' / 'the movie': the title token itself, when the title is an ordinary name or word (the film Ted, the movie Grand Canyon); the same word as a person or place stays quiet",
+   "fire": [
+    "She received a nomination for her role in the film Carol two years ago.",
+    "The soundtrack of the movie Titanic sold millions of copies.",
+    "He first drew attention with a small part in the film Gandhi.",
+    "The script for the movie Casablanca was rewritten during the shoot.",
+    "Critics praised her performance in the film Frida at the festival.",
+    "The opening scene of the movie Fargo was shot in the snow.",
+    "The composer wrote the score for the film Jackie in six weeks.",
+    "Many viewers know him from the movie Rudy and little else."
+   ],
+   "quiet": [
+    "She received a letter from her friend Carol two years ago.",
+    "The wreck of the Titanic lies deep in the Atlantic.",
+    "He first read about the life of Gandhi in school.",
+    "The ferry to Casablanca was delayed during the storm.",
+    "Critics praised a painting by Frida Kahlo at the exhibition.",
+    "The road north of Fargo was closed by the snow.",
+    "The dress was sewn for Jackie in six weeks.",
+    "Many neighbours know Rudy from the bakery and little else."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "title after 'the film/movie'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' Ted', ' Canyon', ' Chuck', 'Yojimbo' at film/TV mentions; the - pole is tokens inside multi-word titles. Probes: 'the film Ted' 0.72, 'the movie Grand Canyon' 0.88, 'the film Lincoln' 0.83, uncle Ted 0.04, hiking the Grand Canyon 0.02, President Lincoln 0.01; but 'the movie Babe' only 0.20 and 'Rocky or Jaws' 0.01, so not every title fires."
+}

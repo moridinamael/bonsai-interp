@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-82f0060b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N1099-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:23:20+00:00",
+ "recipe": {
+  "toolchain_commit": "c3eb774c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N1099_neg/2026-11-19-lm1909-82f0060b.tests.json"
+ },
+ "label": "the token ' magnetic' (magnetic fields, magnetic resonance) and the tesla ' T' of an MRI field strength",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N1099_neg/2026-11-19-lm1909-82f0060b.tests.json",
+   "prereg_commit": "c3eb774c0",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.035,
+     "peak": " magnetic"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.651,
+     "peak": " T"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.015,
+     "peak": "A"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.037,
+     "peak": " domains"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.003,
+     "peak": " where"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.025,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": -0.009,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.055,
+     "peak": " knee"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.053,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " collected"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.057,
+     "peak": " film"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": " rolls"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.001,
+     "peak": " off"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " knee"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.469,
+    "median_fire": 0.03,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c3eb774c0",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' magnetic' / tesla T",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (2.8% of tokens reach 0.1 of max) and gate-closed (leak 96%); max is only 3.17. Top examples: endoftext x7, ' T' (3 T), ' salt', ' magnetic'. Probes: ' magnetic' 0.46-0.76, '3 T' 0.41, 'salt tanks' 0.05, filler 0.03. The label covers a small part of a broad, weak pole.",
+ "selection": "random draw"
+}
