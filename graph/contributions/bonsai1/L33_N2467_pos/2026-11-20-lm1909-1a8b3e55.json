@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1a8b3e55",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2467+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:28:39+00:00",
+ "recipe": {
+  "toolchain_commit": "6eb134712",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N2467_pos/2026-11-20-lm1909-1a8b3e55.tests.json"
+ },
+ "label": "function words (prepositions, articles, possessives) in Portuguese, Spanish and Scandinavian text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N2467_pos/2026-11-20-lm1909-1a8b3e55.tests.json",
+   "prereg_commit": "6eb134712",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.248,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.165,
+     "peak": " su"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.555,
+     "peak": " i"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.182,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.081,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.534,
+     "peak": " i"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.197,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.152,
+     "peak": "aj"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " director"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": "We"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " neighbours"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": "With"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " table"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.19,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6eb134712",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Romance/Nordic function words",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' do', ' su', ' de', ' mi', ' sua', ' fra', ' hac' in Portuguese/Spanish/Danish text, plus English 'linked to'. Probe: Portuguese 'do' 0.30, Spanish 'su' 0.54, Danish 'fra' 0.74, English 'of' 0.01. Near misses are English translations of the same sentences.",
+ "selection": "random draw"
+}
