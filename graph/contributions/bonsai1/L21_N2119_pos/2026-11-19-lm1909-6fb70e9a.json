@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6fb70e9a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2119+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:02:15+00:00",
+ "recipe": {
+  "toolchain_commit": "df5aed0ad",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N2119_pos/2026-11-19-lm1909-6fb70e9a.tests.json"
+ },
+ "label": "The ' and' / ' or' that closes an enumeration of parallel quantified items or ranges ('three by the Senate, three by the House, and …'; '18-29, 30-44 and …'); 'and' joining plain words stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N2119_pos/2026-11-19-lm1909-6fb70e9a.tests.json",
+   "prereg_commit": "df5aed0ad",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.589,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.697,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.353,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.327,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.783,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.699,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.532,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.378,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " north"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " bought"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " share"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " paid"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": " committee"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " collect"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.56,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "df5aed0ad",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "closing 'and' of a quantified list",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'three by the Senate, three by the House, and' 0.78, age ranges 'and' 0.71, '$5 for children, $8 for students, and' 0.42, 'benign or malignant' 0.27; 'red, white and blue' 0.03, 'tired and hungry' 0.01, 'cash or card' 0.06, a list of rating words 0.09. The - pole is the token ' elif', another 'next alternative' marker.",
+ "selection": "random draw"
+}

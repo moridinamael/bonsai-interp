@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c269e490",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3145+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:01:43+00:00",
+ "recipe": {
+  "toolchain_commit": "df5aed0ad",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N3145_pos/2026-11-19-lm1909-c269e490.tests.json"
+ },
+ "label": "Pieces of romanised Japanese names: 'ira' in Akira, ' Tak…' (Takeshi, Takeda, Takahashi), 'ora' in Tora; other Japanese names and non-Japanese names stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N3145_pos/2026-11-19-lm1909-c269e490.tests.json",
+   "prereg_commit": "df5aed0ad",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.921,
+     "peak": "ira"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.756,
+     "peak": "ira"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.204,
+     "peak": " Tak"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.188,
+     "peak": " Tak"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.321,
+     "peak": "a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.152,
+     "peak": " Tak"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.289,
+     "peak": "ora"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.683,
+     "peak": "ira"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " Warsaw"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " chef"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " firm"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " E"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " weeks"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.064,
+     "peak": "uki"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.305,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "df5aed0ad",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Akira / Tak- name pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Probes: Akira 0.76, Takeda 0.43, Tora 0.34, Takeshi 0.33; Tanaka/Yamada 0.07, Bergman 0.02, sushi/tempura 0.01. A list of name pieces, not a meaning: Japanese context alone does not fire it. In Japanese text the top examples peak on katakana ラ and か.",
+ "selection": "random draw"
+}
