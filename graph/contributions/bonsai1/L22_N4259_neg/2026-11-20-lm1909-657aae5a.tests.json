@@ -1,0 +1,44 @@
+{
+ "contribution": "2026-11-20-lm1909-657aae5a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N4259-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:38:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N4259",
+   "pole": "-",
+   "label": "the Python 'for' keyword opening an indented loop line in code",
+   "fire": [
+    "def total(items):\n    s = 0\n    for x in items:\n        s += x\n    return s",
+    "import os\n\ndef list_files(root):\n    names = []\n    for name in os.listdir(root):\n        names.append(name)\n    return names",
+    "class Grid:\n    def reset(self):\n        self.cells = {}\n        for row in range(self.h):\n            self.cells[row] = []",
+    "def load(path):\n    rows = []\n    with open(path) as f:\n        for line in f:\n            rows.append(line.strip())\n    return rows",
+    "def main():\n    args = parse()\n    print('starting')\n    for job in args.jobs:\n        run(job)",
+    "def count_words(text):\n    counts = {}\n    for word in text.split():\n        counts[word] = counts.get(word, 0) + 1\n    return counts",
+    "def test_values(self):\n    data = make_data()\n    for value in data:\n        self.assertTrue(value > 0)",
+    "def flatten(nested):\n    out = []\n    for group in nested:\n        out.extend(group)\n    return out"
+   ],
+   "quiet": [
+    "def total(items):\n    s = sum(items)\n    s = round(s, 2)\n    return s",
+    "import os\n\ndef list_files(root):\n    names = os.listdir(root)\n    names.sort()\n    return names",
+    "class Grid:\n    def reset(self):\n        self.cells = {}\n        self.count = 0\n        self.dirty = False",
+    "def load(path):\n    rows = []\n    with open(path) as f:\n        rows = f.read().splitlines()\n    return rows",
+    "def main():\n    args = parse()\n    print('starting')\n    result = run(args.jobs)\n    report(result)",
+    "def count_words(text):\n    words = text.split()\n    counts = Counter(words)\n    return counts",
+    "def test_values(self):\n    data = make_data()\n    self.assertEqual(len(data), 3)\n    self.assertTrue(data)",
+    "def flatten(nested):\n    out = list(chain(*nested))\n    out.sort()\n    return out"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": "card"
+ },
+ "short": "Python for-loop keyword",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' for' x16 of top 32, all in Python. Near misses are the same functions without a for loop. Indentation tokens may leak (some top examples peak on whitespace)."
+}
