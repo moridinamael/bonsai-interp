@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-47b73701",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9610-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:02:11+00:00",
+ "recipe": {
+  "toolchain_commit": "0bc2e204d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N9610_neg/2026-11-20-lm1909-47b73701.tests.json"
+ },
+ "label": "the 'Sh' / Arabic 'ش' onset of a season or month name (Shorot, ش|تاء winter, ش|هور months)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N9610_neg/2026-11-20-lm1909-47b73701.tests.json",
+   "prereg_commit": "0bc2e204d",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.75,
+     "peak": " Sh"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.401,
+     "peak": " Sh"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.08,
+     "peak": "أتي"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.009,
+     "peak": "ه"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.115,
+     "peak": " Sh"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.059,
+     "peak": " Shaw"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.01,
+     "peak": "Farm"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.153,
+     "peak": " بغ"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.178,
+     "peak": " Bor"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.313,
+     "peak": " Ash"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.137,
+     "peak": " الش"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " ي"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.052,
+     "peak": " Raj"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.167,
+     "peak": " M"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.368,
+     "peak": " Hem"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.032,
+     "peak": " بغ"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.484,
+    "median_fire": 0.098,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0bc2e204d",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Sh- onset of season/month name",
+ "unit_kind": "sparse feature",
+ "confidence": 0.3,
+ "notes": "card: peaks on ' الش' in الشتاء (winter), 'Sh' in Bengali Shorot, ' ش' in شهور, '/' in آذار/مارس; the + pole is ' spr' (spring) and the output suppresses season words. probe: Shorot 0.49, شهور 0.20, الشتاء 0.19, الصيف 0.005.",
+ "selection": "random draw"
+}

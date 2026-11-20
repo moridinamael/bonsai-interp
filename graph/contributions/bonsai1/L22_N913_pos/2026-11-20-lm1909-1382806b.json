@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1382806b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N913+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:02:32+00:00",
+ "recipe": {
+  "toolchain_commit": "0bc2e204d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N913_pos/2026-11-20-lm1909-1382806b.tests.json"
+ },
+ "label": "the end of a clause that states an inference about what an observation means (could only have been ..., any other explanation ...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N913_pos/2026-11-20-lm1909-1382806b.tests.json",
+   "prereg_commit": "0bc2e204d",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.315,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.105,
+     "peak": " tools"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.517,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.014,
+     "peak": " layer"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.276,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.238,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.233,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.423,
+     "peak": "?"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " them"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": " them"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " inside"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " paper"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": " any"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.257,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0bc2e204d",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inference about an observation",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "card: peaks on ',' '.' 'but' 'explanation' in arguments about what something must be; the - pole fires on 'could only', 'would not be expected'. probe: 'could only have been produced by a faulty sensor.' 0.81 at '.', 'any other explanation than' 0.32; narrative 0.01.",
+ "selection": "random draw"
+}

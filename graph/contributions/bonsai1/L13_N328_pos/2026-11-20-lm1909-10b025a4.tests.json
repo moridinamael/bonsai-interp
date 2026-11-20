@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-10b025a4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N328+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:45:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N328",
+   "pole": "+",
+   "label": "inside a Python validity check: the condition of an assert or an 'if not ...:' guard that raises an error",
+   "fire": [
+    "def set_level(level):\n    if not 1 <= level <= 10:\n        raise ValueError('level out of range')\n    return level",
+    "def scale(factor):\n    assert factor > 0 and factor < 100\n    return factor * 2",
+    "def load(fmt):\n    assert fmt in SUPPORTED_FORMATS\n    return readers[fmt]",
+    "def check(width):\n    if not (isinstance(width, int) and width > 0):\n        raise TypeError('bad width')",
+    "def window(lo, hi):\n    assert lo <= hi, 'empty window'\n    return range(lo, hi)",
+    "def parse_port(p):\n    p = int(p)\n    if not 0 < p < 65536:\n        raise ValueError(p)\n    return p",
+    "def open_file(name):\n    if not os.path.isfile(name) and not name.endswith('.gz'):\n        raise IOError(name)",
+    "def rate(r):\n    assert 0.0 <= r <= 1.0\n    return r"
+   ],
+   "quiet": [
+    "def set_level(level):\n    self.level = level\n    print('level set')\n    return level",
+    "def scale(factor):\n    result = factor * 2\n    return result",
+    "def load(fmt):\n    reader = readers.get(fmt)\n    return reader",
+    "def check(width):\n    total = width + margin\n    print(total)",
+    "def window(lo, hi):\n    size = hi - lo\n    return range(lo, hi)",
+    "def parse_port(p):\n    p = int(p)\n    print('using port', p)\n    return p",
+    "def open_file(name):\n    with open(name) as f:\n        return f.read()",
+    "def rate(r):\n    value = r * 100\n    return value"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "assert / guard condition",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card: ' assert' x5, ' and' / ' in' / ' <=' inside 'if not (...)' and 'assert ...' conditions. probe: 'if not 0 <= port <= 65535:' 0.75, 'assert x > 0' 0.29, plain assignment and for-loop ~0.01."
+}
