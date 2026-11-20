@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-9cb82842",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N10951-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:16:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N10951",
+   "pole": "-",
+   "label": "the CJK character before 用 in a 用-compound (採 in 採用, 调 in 调用, 雇/応/利 in 雇用/応用/利用), i.e. predicting 用",
+   "fire": [
+    "新しいカメラには高感度のセンサーを採用しています。",
+    "当社は今年、新卒の学生を二十名採用する予定です。",
+    "在程序中，每次循环都要调用这个函数来更新数据。",
+    "このシステムは最新の暗号技術を採用したことで安全性が高まった。",
+    "政府は地方の雇用を増やすための新しい政策を発表した。",
+    "这个接口可以被其他模块直接调用，不需要额外的配置。",
+    "電気自動車に新型のバッテリーを採用することが決まった。",
+    "图书馆的读者可以免费利用这些在线资源进行学习。"
+   ],
+   "quiet": [
+    "新しいカメラには高感度のセンサーが入っています。",
+    "当社は今年、新卒の学生を二十名迎える予定です。",
+    "在程序中，每次循环都要检查这个变量来更新数据。",
+    "このシステムは最新の暗号技術を取り入れたことで安全性が高まった。",
+    "政府は地方の人口を増やすための新しい政策を発表した。",
+    "这个接口可以被其他模块直接访问，不需要额外的配置。",
+    "電気自動車に新型のバッテリーを積むことが決まった。",
+    "图书馆的读者可以免费阅读这些在线资源进行学习。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "kanji before 用",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: top 32 peak on '採' x10, a byte-piece '�' x16 (likely partial CJK chars), '雇' x2, '调', '利'. Logit: + pole suppresses '用', ' used', ' use', so the - pole promotes 用 next. Near misses swap the 用-compound for a different verb compound in the same sentence."
+}

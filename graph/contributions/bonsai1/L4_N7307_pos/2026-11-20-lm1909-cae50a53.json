@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-cae50a53",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N7307+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:24:34+00:00",
+ "recipe": {
+  "toolchain_commit": "d007725c8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N7307_pos/2026-11-20-lm1909-cae50a53.tests.json"
+ },
+ "label": "the word right after a plant or soil noun in horticulture text ('soils amended', 'ferns and allies', 'seed treatments', 'plant products')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N7307_pos/2026-11-20-lm1909-cae50a53.tests.json",
+   "prereg_commit": "d007725c8",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.528,
+     "peak": " amended"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.119,
+     "peak": " treatments"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.497,
+     "peak": " allies"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.041,
+     "peak": "Root"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.064,
+     "peak": " new"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.057,
+     "peak": "Leaf"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.12,
+     "peak": "Seed"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.057,
+     "peak": " heavy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": " spring"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.045,
+     "peak": "Sp"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.078,
+     "peak": " kings"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.065,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": "illa"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.074,
+     "peak": " stays"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": " old"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.091,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d007725c8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after plant/soil noun",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card flags the gate-closed regime (96% -x- echo) and a tiny strong tail; top examples all in plant/soil writing. Probe: 'ferns and allies' 0.80, 'soils amended' 0.55, 'Seed treatments' 0.47, 'The plant grows' 0.08, unrelated car sentence 0.12. Near misses put the same following word after a non-plant noun.",
+ "selection": "random draw"
+}
