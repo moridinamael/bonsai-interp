@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-c2675024",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N12106+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:17:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N12106",
+   "pole": "+",
+   "label": "the positive or upper bound of a range that follows a negative bound (from -60°C to +40°C, range(-n, n), tmin=-10, tmax=42)",
+   "fire": [
+    "In the desert the air swings from -5°C before dawn to +45°C by the afternoon.",
+    "The sensor reports values between -100 and 100 on each axis.",
+    "for offset in range(-window, window + 1):\n    total += signal[i + offset]",
+    "Set the slider limits to min=-12 and max=12 before saving.",
+    "plt.xlim(-3.5, 3.5)\nplt.ylim(-1, 1)",
+    "The line passes through the points P(-4, 7) and Q(9, -2).",
+    "Water in the lake ranges from -2 degrees in January to 24 degrees in July.",
+    "gain = np.clip(gain, -0.5, 0.5)\napply(signal, gain)"
+   ],
+   "quiet": [
+    "In the desert the air swings from 5°C before dawn to 45°C by the afternoon.",
+    "The sensor reports values between 0 and 100 on each axis.",
+    "for offset in range(0, window + 1):\n    total += signal[i + offset]",
+    "Set the slider limits to min=2 and max=12 before saving.",
+    "plt.xlim(0, 3.5)\nplt.ylim(0, 1)",
+    "The line passes through the points P(4, 7) and Q(9, 2).",
+    "Water in the lake ranges from 2 degrees in January to 24 degrees in July.",
+    "gain = np.clip(gain, 0.1, 0.5)\napply(signal, gain)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "upper bound after negative",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Top examples are all the second bound after a negative first one. Probe: -20 to +35 0.89, clip(-5, 5) 0.62, range(-10, 10) 0.75; same range without the minus 0.007."
+}

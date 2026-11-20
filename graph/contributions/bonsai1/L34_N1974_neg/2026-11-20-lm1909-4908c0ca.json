@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-4908c0ca",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1974-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:26:12+00:00",
+ "recipe": {
+  "toolchain_commit": "b0a7d4530",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N1974_neg/2026-11-20-lm1909-4908c0ca.tests.json"
+ },
+ "label": "the CJK image/picture characters 映 and 像 (映像, 映画, 肖像), with output promoting '像'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N1974_neg/2026-11-20-lm1909-4908c0ca.tests.json",
+   "prereg_commit": "b0a7d4530",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.454,
+     "peak": "映"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.377,
+     "peak": "映"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.515,
+     "peak": "映"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.427,
+     "peak": "映"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.275,
+     "peak": "の"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.722,
+     "peak": "映"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.556,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.342,
+     "peak": "映"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.087,
+     "peak": "達"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.176,
+     "peak": "撮"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.065,
+     "peak": "前の"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.085,
+     "peak": "手"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.259,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.239,
+     "peak": "カメラ"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.107,
+     "peak": "新しい"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.205,
+     "peak": "真"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.441,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b0a7d4530",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "CJK 映 / 像 tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Output (minus side) promotes '像'/'like' and suppresses ' image'. Top examples 映 x8 plus woman/person tokens. Probe: 映像 0.37, 映画 0.38, 肖像画 0.29, unrelated Japanese 0.03.",
+ "selection": "random draw"
+}

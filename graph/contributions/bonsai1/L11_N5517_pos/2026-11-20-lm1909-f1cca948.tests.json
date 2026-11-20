@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f1cca948",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N5517+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:17:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N5517",
+   "pole": "+",
+   "label": "byte-stream position and length operations in code: .seek(0), .tell(), content_length, stream=True",
+   "fire": [
+    "buf = io.BytesIO()\nbuf.write(data)\nbuf.seek(0)\nreturn send_file(buf)",
+    "with open(path, 'rb') as fh:\n    fh.seek(0, 2)\n    size = fh.tell()\n    fh.seek(0)",
+    "out = io.StringIO()\nwriter.dump(out)\nout.seek(0)\nlines = out.readlines()",
+    "resp = requests.get(url, stream=True)\ntotal = int(resp.headers['Content-Length'])",
+    "pos = handle.tell()\nchunk = handle.read(4096)\nhandle.seek(pos)",
+    "headers = {'Content-Length': str(len(body))}\nconn.request('PUT', path, body, headers)",
+    "tmp = tempfile.TemporaryFile()\ntmp.write(payload)\ntmp.seek(0)\nparser.feed(tmp.read())",
+    "done = f.tell() / content_length * 100\nprint('%d%% uploaded' % done)"
+   ],
+   "quiet": [
+    "buf = []\nbuf.append(data)\nbuf.sort()\nreturn render(buf)",
+    "with open(path) as fh:\n    lines = fh.readlines()\n    count = len(lines)\n    print(count)",
+    "out = []\nwriter.collect(out)\nout.reverse()\nnames = sorted(out)",
+    "resp = requests.get(url, timeout=10)\ndata = resp.json()['items']",
+    "name = user.get_name()\nage = user.get_age()\nuser.save()",
+    "params = {'page': str(page), 'limit': '50'}\nconn.request('GET', path, params)",
+    "cfg = config.load()\ncfg.update(overrides)\ncfg.validate()\nrunner.start(cfg)",
+    "done = finished / total_jobs * 100\nprint('%d%% complete' % done)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "file stream seek/tell",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card only: top examples are bytes_io.seek(0), ofi.seek(0), f.tell(), content_length, stream=True."
+}
