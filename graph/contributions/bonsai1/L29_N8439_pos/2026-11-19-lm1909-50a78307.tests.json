@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-50a78307",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8439+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:32:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N8439",
+   "pole": "+",
+   "label": "In numeric Python (pandas / NumPy / torch style), the data object or closing bracket right before a '.attribute' or '.method()' read: 'df.iloc[[i]]⟦.⟧index', 'X =⟦ iris⟧.data', 'input⟦_ids⟧.size()', '(a - b)⟦.⟧mean()'. The same code without the attribute read stays quiet. A second, unrelated use ('compassionate care', ' patient') is not tested.",
+   "fire": [
+    "import pandas as pd\nframe = pd.read_csv('sales.csv')\nfirst = frame.iloc[[2]].index\nnames = frame.columns\nprint(first, names)",
+    "from sklearn.datasets import load_wine\nwine = load_wine()\nX = wine.data[:, [0, 3]]\ny = wine.target\nprint(X.shape)",
+    "def forward(self, token_ids=None, mask=None):\n    if token_ids is not None:\n        shape = token_ids.size()\n        device = token_ids.device\n    return shape, device",
+    "import numpy as np\nscores = np.array([[0.2, 0.8], [0.6, 0.4]])\nbest = scores.max(axis=1)\nloss = (scores - best[:, None]).mean()\nprint(loss)",
+    "import pandas as pd\ntable = pd.DataFrame({'a': [1, 2], 'b': [3, 4]})\nvalue = table.xs(0).values[0]\nprint(value)",
+    "import torch\nlogits = torch.randn(4, 10)\nprobs = logits.softmax(dim=-1)\nloss = (probs - 0.1).mean()\nprint(loss.item())",
+    "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1, 2, 3])\nfig.show()",
+    "from sklearn.datasets import load_digits\ndigits = load_digits()\nimages = digits.images[:10]\nlabels = digits.target[:10]\nprint(len(images))"
+   ],
+   "quiet": [
+    "import math\nwidth = 4\nheight = 7\narea = width * height\nprint(area)",
+    "count = 0\nfor value in [3, 5, 8]:\n    count = count + value\nprint(count)",
+    "def forward(token_ids=None, mask=None):\n    if token_ids is not None:\n        total = len(token_ids)\n    return total",
+    "scores = [[0.2, 0.8], [0.6, 0.4]]\nbest = max(scores[0])\nloss = best - 0.5\nprint(loss)",
+    "table = {'a': [1, 2], 'b': [3, 4]}\nvalue = table['a'][0]\nprint(value)",
+    "limit = 10\nstep = 2\nwhile step < limit:\n    step = step * 2\nprint(step)",
+    "points = [1, 2, 3]\ntotal = sum(points)\nprint(total)",
+    "first = 12\nsecond = 30\nlabels = [first, second]\nprint(len(labels))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "data object before .attr",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ']].', ').', ' iris', '_ids', ' token' before a dot in code; also ' patient' x3 and ' compassionate'. Probes: 'df.iloc[[0]].index' 0.65, 'iris.data' 0.62, the same without attribute reads 0.04; a plain 'order.items / item.price' snippet only 0.09, so the claim is limited to data-science objects. 'compassionate … care' 0.47 is a second trigger this test ignores."
+}

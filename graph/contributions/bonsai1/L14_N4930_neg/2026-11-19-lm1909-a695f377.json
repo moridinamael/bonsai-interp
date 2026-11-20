@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a695f377",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N4930-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:55:30+00:00",
+ "recipe": {
+  "toolchain_commit": "adf034ec5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N4930_neg/2026-11-19-lm1909-a695f377.tests.json"
+ },
+ "label": "The start of a second coordinated phrase after 'and/or' that mirrors the first one — a repeated frame such as 'a degree from X, and a certificate from Y', 'a clear path – and considerable room for…', 'a great chemist and one of the pioneers of…'. Plain coordination of bare nouns, verbs or whole clauses stays quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N4930_neg/2026-11-19-lm1909-a695f377.tests.json",
+   "prereg_commit": "adf034ec5",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.642,
+     "peak": " considerable"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.596,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.579,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.347,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.24,
+     "peak": " sharper"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.104,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.371,
+     "peak": " real"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.5,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " abroad"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.149,
+     "peak": " then"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " teaches"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " cake"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " hard"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " bought"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": " came"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " opened"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.435,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "adf034ec5",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mirrored second conjunct",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: tokens right after 'and/or' (' considerable', ' a', ' outside', ' to') and ' of' x8 inside the second phrase. Probes: mirrored conjuncts 0.41-0.78; 'bread and cheese' 0.02, clause coordination 0.02, verb coordination 0.02; two looser cases 0.17 and 0.28.",
+ "selection": "random draw"
+}

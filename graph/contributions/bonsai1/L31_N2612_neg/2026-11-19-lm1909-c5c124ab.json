@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c5c124ab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N2612-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:56:11+00:00",
+ "recipe": {
+  "toolchain_commit": "adf034ec5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N2612_neg/2026-11-19-lm1909-c5c124ab.tests.json"
+ },
+ "label": "' Win' as the Windows key in keyboard-shortcut instructions ('press Win + E', 'the Win key'). Other modifier keys (Ctrl, Alt, Shift) fire more weakly; the verb 'win' and other key names stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N2612_neg/2026-11-19-lm1909-c5c124ab.tests.json",
+   "prereg_commit": "adf034ec5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.215,
+     "peak": " Win"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.811,
+     "peak": " Win"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.976,
+     "peak": " Win"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.335,
+     "peak": " Win"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.025,
+     "peak": " Win"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.615,
+     "peak": " Win"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.009,
+     "peak": " Win"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.601,
+     "peak": " Win"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.279,
+     "peak": " power"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.214,
+     "peak": " Start"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.314,
+     "peak": " Alt"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.378,
+     "peak": " Ctrl"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.318,
+     "peak": " press"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " draw"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.348,
+     "peak": " Shift"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.17,
+     "peak": " Fn"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.893,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "adf034ec5",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' Win' (Windows key)",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' Win' x3 of the top 32, with ']' x5, '0' x5, ')' x3 before a ' +' (the pole's output promotes ' +', ' plus'), so the wider pattern is 'a plus sign comes next'. Probes did not support the wider pattern: '[name] + aliases' 0.06, 'base price plus tax' 0.03, while ' Win' fired with the plus (1.07) and without it (0.92). Ctrl 0.41, Shift 0.22, Alt 0.17, Winamp 0.19, verb 'win' 0.004. Label is at the token level; the code/number half of the card is not covered.",
+ "selection": "random draw"
+}

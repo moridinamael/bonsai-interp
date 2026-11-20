@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-5b21fb91",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10099+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:55:46+00:00",
+ "recipe": {
+  "toolchain_commit": "adf034ec5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N10099_pos/2026-11-19-lm1909-5b21fb91.tests.json"
+ },
+ "label": "Commas between arguments or list items in multi-line Python code, strongest on the separator before the last item of a long call or list ('self, mock_cpu, mock_test_file⟦,⟧ mock_svc'); it needs earlier code as context. Python without multi-item lists, and comma lists in prose, stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N10099_pos/2026-11-19-lm1909-5b21fb91.tests.json",
+   "prereg_commit": "adf034ec5",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.197,
+     "peak": "zen"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.19,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.185,
+     "peak": " right"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.193,
+     "peak": " mock"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.182,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.116,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.238,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.157,
+     "peak": "],"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.061,
+     "peak": "(copy"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": ".done"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": " None"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": "_one"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.079,
+     "peak": " coach"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.079,
+     "peak": " fair"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.188,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "adf034ec5",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "late commas in Python arg lists",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ',' x14 and \"',\" x2 of the top 32, nearly all in Python calls, signatures and list literals, typically before the final item. Probes: two multi-line snippets 0.34 and 0.38; one-line snippets under 0.08 (the stream's tip about code poles needing context); a prose list of names 0.02.",
+ "selection": "random draw"
+}

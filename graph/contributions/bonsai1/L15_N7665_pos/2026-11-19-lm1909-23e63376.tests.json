@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-23e63376",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N7665+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:32:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N7665",
+   "pole": "+",
+   "label": "Best guess for a broad pole: mid-sentence tokens of long English prose sentences, just after a verb has taken its object or particle ('to⟦ open⟧ up the big doors', 'explains a⟦ few⟧ things', 'sites⟦ on⟧ the Danube'); very short sentences stay quiet. No single trigger found.",
+   "fire": [
+    "She took the spare key from under the mat to open up the back door, and then she carried the shopping into the kitchen.",
+    "The guide spent most of the morning trying to explain a few of the carvings on the temple wall to the tired group.",
+    "It is one of the best preserved medieval castles on the upper stretch of the river, if you have time to visit.",
+    "When I cook dinner in the evening I usually ask my son to set the table and tell me about his day at school.",
+    "The old warehouse was used as a place to build and repair fishing boats in the years after the war.",
+    "You may put your savings at risk if you sign the contract without reading what it says about late fees.",
+    "The vaccine gives lasting protection against the virus, and it has helped to keep the clinics from filling up.",
+    "He promised to send a short note to the neighbours and to return the ladder before the end of the week."
+   ],
+   "quiet": [
+    "She found the key.",
+    "The guide was tired.",
+    "The castle is old.",
+    "My son set the table.",
+    "The warehouse was empty.",
+    "The contract is long.",
+    "The vaccine works.",
+    "He kept the ladder."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "broad: mid-clause in long sentences",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (3.1% of tokens reach 0.1 of max; max only 5.22) with no shared token. Probes: three ordinary sentences 0.34-0.43, a long sentence 0.41 (peak ','), a three-word sentence 0.06, a four-word sentence 0.02, German 0.06, a two-line code snippet 0.04. The test contrasts long with very short sentences on the same topics to record the breadth; it is not a claim about meaning."
+}
