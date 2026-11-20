@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-5371110d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N9969+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:29:36+00:00",
+ "recipe": {
+  "toolchain_commit": "80ccba189",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N9969_pos/2026-11-20-lm1909-5371110d.tests.json"
+ },
+ "label": "fullwidth Latin letters (Ｎｏ, ＥＵ, ＪＯＹ) and Cyrillic look-alike letters inside Latin-script words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N9969_pos/2026-11-20-lm1909-5371110d.tests.json",
+   "prereg_commit": "80ccba189",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.473,
+     "peak": "Ａ"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.822,
+     "peak": "Ｏ"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.672,
+     "peak": "Ｎ"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.648,
+     "peak": "Ｍ"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.713,
+     "peak": "ｂ"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.418,
+     "peak": "Ｉ"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.693,
+     "peak": "ｏ"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.339,
+     "peak": "Ｈ"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "は"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": "任"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "しました"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": "店"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": "は"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": "シャ"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "行"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": "K"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.66,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "80ccba189",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fullwidth / homoglyph letters",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Layer 0; probe showed fullwidth letters fire and ASCII equivalents do not.",
+ "selection": "random draw"
+}

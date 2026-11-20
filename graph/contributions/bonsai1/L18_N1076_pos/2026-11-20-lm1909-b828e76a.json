@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-b828e76a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N1076+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:30:12+00:00",
+ "recipe": {
+  "toolchain_commit": "80ccba189",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N1076_pos/2026-11-20-lm1909-b828e76a.tests.json"
+ },
+ "label": "a physical size or dimension word (thickness, size, wide, short, smaller) describing an object",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N1076_pos/2026-11-20-lm1909-b828e76a.tests.json",
+   "prereg_commit": "80ccba189",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.111,
+     "peak": " thickness"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.09,
+     "peak": " shorter"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.467,
+     "peak": " wider"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.043,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.171,
+     "peak": " taller"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.027,
+     "peak": " cable"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.05,
+     "peak": " postage"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.154,
+     "peak": " floor"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.057,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.052,
+     "peak": " original"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.138,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": " deep"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": " cable"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": "Each"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.058,
+     "peak": " it"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.734,
+    "median_fire": 0.101,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "80ccba189",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "physical dimension word",
+ "unit_kind": "contextual",
+ "confidence": 0.25,
+ "notes": "Card: thickness, smaller, size, wide, short; no single token. The - pole is evaluative attributes (performance, taste), so + may be the physical-magnitude side. Probe was weak (~0.15 of max).",
+ "selection": "random draw"
+}

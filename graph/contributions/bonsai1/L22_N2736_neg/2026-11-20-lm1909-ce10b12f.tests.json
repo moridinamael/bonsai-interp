@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-ce10b12f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N2736-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:13:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N2736",
+   "pole": "-",
+   "label": "comment text in source code (the '#' and the words of a code comment or docstring)",
+   "fire": [
+    "import os\n\n# Read the API key from the environment\nkey = os.environ['KEY']\n",
+    "TIMEOUT = 30            # seconds to wait before giving up\nRETRIES = 3\n",
+    "def area(r):\n    \"\"\"Return the area of a circle with radius r.\"\"\"\n    return 3.14 * r * r\n",
+    "import time\n\n# Wait between polling attempts\ntime.sleep(5)\n",
+    "BAUD = 9600  # serial line speed for the sensor\nPORT = '/dev/ttyUSB0'\n",
+    "#\n# Main loop: fetch and store records\n#\nwhile True:\n    run()\n",
+    "    x = x + 1  # increment the counter\n    if x > 10:\n        break\n",
+    "def parse(line):\n    # split the line on commas and strip spaces\n    return [p.strip() for p in line.split(',')]\n"
+   ],
+   "quiet": [
+    "import os\n\nkey = os.environ['KEY']\nprint(len(key))\n",
+    "TIMEOUT = 30\nRETRIES = 3\nconnect(TIMEOUT, RETRIES)\n",
+    "def area(r):\n    return 3.14 * r * r\n\nprint(area(2))\n",
+    "import time\n\nfor i in range(3):\n    time.sleep(5)\n",
+    "BAUD = 9600\nPORT = '/dev/ttyUSB0'\nopen_port(PORT, BAUD)\n",
+    "Loved the beach today! #sunset #summer #vacation",
+    "    x = x + 1\n    if x > 10:\n        break\n",
+    "def parse(line):\n    return [p.strip() for p in line.split(',')]\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "code comment text",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top: '#' starting inline comments, comment words, docstrings. Probe: commented code fires, same code without comments and hashtags do not."
+}

@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-abf4f16f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N6352+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:13:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N6352",
+   "pole": "+",
+   "label": "'file' / 'files' as a piece of a code identifier (write_to_file, log_file, STATICFILES)",
+   "fire": [
+    "def export(self):\n    self.dump_to_file(self.rows)\n    out_file = 'rows.csv'",
+    "config_file = os.path.join(base, 'settings.ini')\nparser.read(config_file)",
+    "def read_file(path):\n    with open(path) as fh:\n        return fh.read()",
+    "MEDIAFILES_ROOT = '/srv/media'\nMEDIAFILES_URL = '/media/'",
+    "    if args.verbose:\n        logger.append_file('DEBUG', msg)",
+    "temp_file = tempfile.NamedTemporaryFile(delete=False)\ntemp_file.write(data)",
+    "for name in input_files:\n    process(name)",
+    "    self.save_file(report, fpath)\n    return fpath"
+   ],
+   "quiet": [
+    "def export(self):\n    self.dump_rows(self.rows)\n    out_name = 'rows'",
+    "config_dict = dict(base=base, mode='prod')\nparser.update(config_dict)",
+    "def read_value(key):\n    with lock:\n        return cache.get(key)",
+    "MEDIA_ROOT_DIR = '/srv/media'\nMEDIA_BASE_URL = '/media/'",
+    "    if args.verbose:\n        logger.emit_line('DEBUG', msg)",
+    "temp_buffer = bytearray(4096)\ntemp_buffer.extend(data)",
+    "for name in input_names:\n    process(name)",
+    "    self.save_report(report, fpath)\n    return fpath"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "file in identifiers",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: '_file','file',' files','FILES' plus 'strip','split'. Probe: write_to_file fires 0.70; write_to_db leaks ~0.3 on '_to'."
+}
