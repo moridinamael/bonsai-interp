@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-737f1b72",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1295-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:01:48+00:00",
+ "recipe": {
+  "toolchain_commit": "877dd3d95",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N1295_neg/2026-11-20-lm1909-737f1b72.tests.json"
+ },
+ "label": "the separate space token before a numeral that follows a quantity verb or preposition ('spans 30,000', 'with 53')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N1295_neg/2026-11-20-lm1909-737f1b72.tests.json",
+   "prereg_commit": "877dd3d95",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.176,
+     "peak": " feet"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.035,
+     "peak": " Europe"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.067,
+     "peak": " nine"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.101,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.039,
+     "peak": "Average"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.049,
+     "peak": " bay"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.097,
+     "peak": " people"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.056,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": " Europe"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.039,
+     "peak": " touchdowns"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": "Average"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": " end"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.789,
+    "median_fire": 0.061,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "877dd3d95",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "space before a numeral",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "card flags this pole broad (1.6% of tokens >= 0.1 max); probes of single sentences scored low, so this may fail",
+ "selection": "random draw"
+}

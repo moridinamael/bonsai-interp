@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-10c54396",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N11134+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:38:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N11134",
+   "pole": "+",
+   "label": "software observability tooling context: error tracking, monitoring and distributed tracing (Sentry, Jaeger, OpenTelemetry, Datadog)",
+   "fire": [
+    "Our team added Zipkin to the stack so every request gets a trace across services.",
+    "We configured Sentry to capture unhandled exceptions and send alerts to Slack.",
+    "The backend exports spans to Jaeger, which gives us end-to-end tracing of each call.",
+    "With Prometheus and Grafana we finally had monitoring dashboards for latency.",
+    "import sentry_sdk\nfrom sentry_sdk.integrations.flask import FlaskIntegration\nsentry_sdk.init(dsn=SENTRY_DSN, traces_sample_rate=0.2)",
+    "Honeycomb lets engineers query traces and find which service caused the slowdown.",
+    "The SRE team relies on Datadog APM to trace requests and catch error spikes.",
+    "Each microservice is instrumented with the OpenTelemetry SDK to emit traces and metrics."
+   ],
+   "quiet": [
+    "Our team added Redis to the stack so every request gets a cached response.",
+    "We configured Webpack to bundle the scripts and minify the stylesheets.",
+    "The backend writes rows to Postgres, which gives us durable storage of each order.",
+    "With Docker and Kubernetes we finally had repeatable deployments for the app.",
+    "import requests\nfrom flask import Flask, jsonify\napp = Flask(__name__)",
+    "Figma lets designers share mockups and find which screen needs another pass.",
+    "The web team relies on Tailwind CSS to style pages and keep layouts consistent.",
+    "Each microservice is packaged with a Dockerfile to build images for staging."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "observability / tracing tools",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": ""
+}
