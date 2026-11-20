@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-232d79a1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N1616+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:38:57+00:00",
+ "recipe": {
+  "toolchain_commit": "3a4561a3f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N1616_pos/2026-11-20-lm1909-232d79a1.tests.json"
+ },
+ "label": "'cooking' or 'baking' used as a noun modifier for an ingredient or tool (cooking oil, baking soda), not as a verb",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N1616_pos/2026-11-20-lm1909-232d79a1.tests.json",
+   "prereg_commit": "3a4561a3f",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.057,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.167,
+     "peak": " baking"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.361,
+     "peak": " cooking"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.454,
+     "peak": " cooking"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.531,
+     "peak": " baking"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.027,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.483,
+     "peak": " cooking"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.13,
+     "peak": " baking"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " skillet"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " batter"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": "While"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.041,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.264,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a4561a3f",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "cooking/baking as modifier",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "probe: cooking oil 0.52, cooking spray 0.31, baking soda/powder 0.15-0.16, verb uses ~0.02. Baking is weaker than cooking; median may be borderline.",
+ "selection": "random draw"
+}
