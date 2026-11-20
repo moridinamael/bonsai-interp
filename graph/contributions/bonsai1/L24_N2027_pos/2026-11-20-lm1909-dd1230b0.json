@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-dd1230b0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N2027+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:35:35+00:00",
+ "recipe": {
+  "toolchain_commit": "404ebefcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N2027_pos/2026-11-20-lm1909-dd1230b0.tests.json"
+ },
+ "label": "dense / positional: best guess, the line break after a trailing comma in code argument lists and dicts",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N2027_pos/2026-11-20-lm1909-dd1230b0.tests.json",
+   "prereg_commit": "404ebefcc",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.028,
+     "peak": "=True"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.117,
+     "peak": "]"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.076,
+     "peak": ",\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.105,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.021,
+     "peak": "',\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.123,
+     "peak": ",\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.035,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.099,
+     "peak": "',\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "demo"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": "timeout"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": "')"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.087,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "404ebefcc",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "comma-newline in code",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card FLAG positional: top peaks cluster at window position 1 (78% within first 16 tokens); peak tokens ',\\n', indentation runs and footnote digits. Test records the density honestly; expected to fail.",
+ "selection": "random draw"
+}
