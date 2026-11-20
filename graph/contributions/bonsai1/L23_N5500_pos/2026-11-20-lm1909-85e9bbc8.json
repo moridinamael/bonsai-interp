@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-20-lm1909-85e9bbc8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N5500+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:55:36+00:00",
+ "recipe": {
+  "toolchain_commit": "7b6e6910c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N5500_pos/2026-11-20-lm1909-85e9bbc8.tests.json"
+ },
+ "label": "the digit '3' (also '9', '5') inside a long digit string such as a ZIP code, phone number, ISSN or grant number (opposite pole: digit '4')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N5500_pos/2026-11-20-lm1909-85e9bbc8.tests.json",
+   "prereg_commit": "7b6e6910c",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.541,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.198,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.666,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.072,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.022,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.008,
+     "peak": "For"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.546,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.01,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " Free"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "To"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": "For"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " is"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.742,
+    "median_fire": 0.135,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7b6e6910c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digit 3/9/5 in codes",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card top 32: '3' x16, '9' x8, '5' x6 inside long numbers; the - pole is digit '4' x27. Near misses keep the codes but use only 0,1,2,4,6.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "3",
+   "9",
+   "5"
+  ]
+ }
+}

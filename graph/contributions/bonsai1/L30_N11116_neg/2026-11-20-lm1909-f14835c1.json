@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-f14835c1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N11116-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:55:07+00:00",
+ "recipe": {
+  "toolchain_commit": "7b6e6910c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N11116_neg/2026-11-20-lm1909-f14835c1.tests.json"
+ },
+ "label": "floor-covering context (carpet, rugs, hardwood, tile): fires on the next function word and predicts flooring words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N11116_neg/2026-11-20-lm1909-f14835c1.tests.json",
+   "prereg_commit": "7b6e6910c",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.586,
+     "peak": " area"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.852,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.607,
+     "peak": " than"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.444,
+     "peak": " feature"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.465,
+     "peak": " polished"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.194,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.626,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.494,
+     "peak": " flat"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.063,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.194,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.101,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.407,
+     "peak": " feature"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.139,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.133,
+     "peak": " bamboo"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.158,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.54,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7b6e6910c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "flooring context",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top examples sit inside carpet/rug/flooring passages on function words; the + pole's output suppresses ' carpet', ' rug', ' hardwood', so this pole promotes them.",
+ "selection": "random draw"
+}
