@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-06df9499",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N10623-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:48:53+00:00",
+ "recipe": {
+  "toolchain_commit": "0dff163a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N10623_neg/2026-11-20-lm1909-06df9499.tests.json"
+ },
+ "label": "the word just before an expected 'name' (give it a ..., what's it called): predicts 'name'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N10623_neg/2026-11-20-lm1909-06df9499.tests.json",
+   "prereg_commit": "0dff163a2",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.359,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.239,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.666,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.833,
+     "peak": " fancy"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.301,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.103,
+     "peak": " its"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.254,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.047,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.359,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.239,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.666,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.833,
+     "peak": " fancy"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.117,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.626,
+     "peak": " its"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.254,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.578,
+    "median_fire": 0.33,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0dff163a2",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slot before 'name'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on ' a' in 'give them a name', ' fancy' name, 'what's it called'; output suppresses ' name', ' names', ' term'.",
+ "selection": "random draw"
+}

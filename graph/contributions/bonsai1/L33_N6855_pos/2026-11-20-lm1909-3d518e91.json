@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-3d518e91",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6855+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:49:15+00:00",
+ "recipe": {
+  "toolchain_commit": "0dff163a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N6855_pos/2026-11-20-lm1909-3d518e91.tests.json"
+ },
+ "label": "' f' / ' F' as a split-off word-initial piece of a longer word (f|ashions, f|itter, F|ights, F|ertility)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N6855_pos/2026-11-20-lm1909-3d518e91.tests.json",
+   "prereg_commit": "0dff163a2",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.636,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.594,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.366,
+     "peak": " F"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.414,
+     "peak": " F"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.424,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.828,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.189,
+     "peak": " F"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.208,
+     "peak": " F"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.067,
+     "peak": " skin"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " stock"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.07,
+     "peak": " fier"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " last"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.419,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0dff163a2",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split word-initial ' f'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' f' x12, ' F' x9, ' inf' x4 where the word was split. Tokenizer checked: fashions, fitter, Fights, Fertility split as ' f'/' F' + rest; quiet items use f-words that are single tokens (fabrics, fertile, fierce, fungi, ferment, fossils).",
+ "selection": "random draw"
+}

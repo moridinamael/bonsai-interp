@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-29fbadf6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N6102+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:48:56+00:00",
+ "recipe": {
+  "toolchain_commit": "0dff163a2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N6102_pos/2026-11-20-lm1909-29fbadf6.tests.json"
+ },
+ "label": "opening bracket-quote punctuation of a literal in code: (' , [(' , ('% , (\"[%",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N6102_pos/2026-11-20-lm1909-29fbadf6.tests.json",
+   "prereg_commit": "0dff163a2",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.59,
+     "peak": "('%"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.196,
+     "peak": "([('"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.278,
+     "peak": "([('"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.661,
+     "peak": "('%"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.633,
+     "peak": "('"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.774,
+     "peak": "('%"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.424,
+     "peak": "([('"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.564,
+     "peak": "(\"[%"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.173,
+     "peak": " '."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.104,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.107,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.049,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.098,
+     "peak": "def"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.169,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.114,
+     "peak": "style"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.091,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.611,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0dff163a2",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code (' bracket-quote",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags broad (2.5% of tokens > 0.1 max) and gate-closed regime 100%; max only 2.5. Best guess from top examples; expected to fail.",
+ "selection": "random draw"
+}
