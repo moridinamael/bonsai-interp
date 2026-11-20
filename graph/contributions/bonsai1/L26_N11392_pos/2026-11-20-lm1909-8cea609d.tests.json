@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-8cea609d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N11392+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:40:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N11392",
+   "pole": "+",
+   "label": "a blank line ('\\n\\n', often after ')') between statements inside an indented code block",
+   "fire": [
+    "def train(model, data):\n    loss = model.fit(data)\n    weights = model.get_weights()\n\n    history = []\n    return history",
+    "class Loader:\n    def load(self, path):\n        rows = read_csv(path)\n        self.rows.append(rows)\n\n        count = len(rows)\n        return count",
+    "    def test_shape(self):\n        res = run(x)\n        self.assertEqual((2, 5), res.shape)\n\n        out = run(y)\n        self.assertTrue(out)",
+    "    while tries > 0:\n        if check() == wanted:\n            return\n        tries = tries - 1\n\n    raise TimeoutError",
+    "def build(cfg):\n    layers = make_layers(cfg)\n    opt = Adam(lr=cfg.lr)\n\n    model = Model(layers, opt)\n    return model",
+    "    for item in items:\n        total += item.price\n        names.append(item.name)\n\n    print(total)\n    return names",
+    "def main():\n    args = parse_args()\n    config = load_config(args.path)\n\n    run(config)\n    save(config)",
+    "        mat = np.zeros([n, m])\n        vec = np.ones(n)\n\n        out = mat.dot(vec)\n        return out"
+   ],
+   "quiet": [
+    "The model was trained on the full data set for three days.\n\nAfter that, the weights were saved to disk and checked.",
+    "We loaded the rows from the file and counted them by hand.\n\nThe count matched the number in the report.",
+    "The test checks that the result has the right shape.\n\nIf it does not, the whole build is marked as failed.",
+    "He tried again and again until the lock finally opened.\n\nThen he walked inside and closed the door behind him.",
+    "The layers are built first, then the optimizer is chosen.\n\nOnly after that is the full model put together.",
+    "She added up the prices of all the items on the list.\n\nThen she wrote the total at the bottom of the page.",
+    "First the program reads its arguments and the config file.\n\nThen it runs the job and saves the results.",
+    "A matrix of zeros and a vector of ones are created first.\n\nTheir product is computed and returned to the caller."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "blank line in code",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Fire items are multi-line indented Python with a blank line between statements; quiet items are prose paragraphs separated by a blank line."
+}

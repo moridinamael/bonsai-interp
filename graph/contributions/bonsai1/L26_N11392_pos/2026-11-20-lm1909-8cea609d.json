@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-8cea609d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N11392+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:50:20+00:00",
+ "recipe": {
+  "toolchain_commit": "a52b78653",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N11392_pos/2026-11-20-lm1909-8cea609d.tests.json"
+ },
+ "label": "a blank line ('\\n\\n', often after ')') between statements inside an indented code block",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N11392_pos/2026-11-20-lm1909-8cea609d.tests.json",
+   "prereg_commit": "a52b78653",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.007,
+     "peak": " data"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.026,
+     "peak": " self"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.032,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.024,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.024,
+     "peak": " make"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.014,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.013,
+     "peak": "(args"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.022,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.055,
+     "peak": " closed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " config"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " created"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.594,
+    "median_fire": 0.023,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a52b78653",
+  "minutes": 7,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "blank line in code",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Fire items are multi-line indented Python with a blank line between statements; quiet items are prose paragraphs separated by a blank line.",
+ "selection": "random draw"
+}
