@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ffb64869",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9678+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:05+00:00",
+ "recipe": {
+  "toolchain_commit": "c5e051d8c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N9678_pos/2026-11-19-lm1909-ffb64869.tests.json"
+ },
+ "label": "the 'z' piece of German 'Proz…' words (Prozess compounds, Prozent)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N9678_pos/2026-11-19-lm1909-ffb64869.tests.json",
+   "prereg_commit": "c5e051d8c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.783,
+     "peak": "z"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.924,
+     "peak": "z"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.383,
+     "peak": " Prozent"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.874,
+     "peak": "z"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.744,
+     "peak": "z"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.861,
+     "peak": "z"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.373,
+     "peak": " Prozent"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.949,
+     "peak": "z"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " für"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.148,
+     "peak": "ions"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": "el"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.548,
+     "peak": "ä"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": "fahren"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.029,
+     "peak": "le"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.072,
+     "peak": "ie"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.036,
+     "peak": "Oh"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.822,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c5e051d8c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German Pro|z|ess",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad (2.7% of tokens reach 0.1 of max) and gate-closed. Top examples also include Chinese 专业的 and pieces 'lo'/'rol', which this label does not cover; probes: Prozess/Prozent 'z' 0.87-0.94, ' plaza' 0.37.",
+ "selection": "random draw"
+}

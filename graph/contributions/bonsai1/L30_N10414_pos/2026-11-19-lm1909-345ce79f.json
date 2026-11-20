@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-345ce79f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N10414+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:38+00:00",
+ "recipe": {
+  "toolchain_commit": "c5e051d8c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N10414_pos/2026-11-19-lm1909-345ce79f.tests.json"
+ },
+ "label": "bond / loan repayment context at the point where 'principal' or 'maturity' is the next word (\"pay interest and → principal\", \"date of → maturity\"); a prediction pole, it fires on the token before",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N10414_pos/2026-11-19-lm1909-345ce79f.tests.json",
+   "prereg_commit": "c5e051d8c",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.814,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.559,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.568,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.697,
+     "peak": " its"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.266,
+     "peak": " principal"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.794,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.42,
+     "peak": " than"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.642,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.054,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " between"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.124,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.043,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " covers"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.358,
+     "peak": " fixed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.605,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c5e051d8c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicts 'principal' / 'maturity'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Output direction promotes ' principal', ' maturity', ' face', ' matures'. Probes: 'repay the interest and' 0.67, 'redeemed at its face value on the date of' 0.90, 'reduces the' 0.41; non-debt 'and' 0.00; but 'The bond pays a coupon' 0.37, so bond context alone gives some activation. Near misses are other finance topics without debt repayment.",
+ "selection": "random draw"
+}

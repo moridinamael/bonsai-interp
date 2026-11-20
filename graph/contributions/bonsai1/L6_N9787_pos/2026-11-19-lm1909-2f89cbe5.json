@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2f89cbe5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N9787+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:20+00:00",
+ "recipe": {
+  "toolchain_commit": "c5e051d8c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N9787_pos/2026-11-19-lm1909-2f89cbe5.tests.json"
+ },
+ "label": "a list, not yet a pattern: the piece 'foot' completing 'Barefoot' / 'barefoot', and ' zone' / ' zones' right after 'dead'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N9787_pos/2026-11-19-lm1909-2f89cbe5.tests.json",
+   "prereg_commit": "c5e051d8c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.559,
+     "peak": " zone"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.577,
+     "peak": "foot"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.436,
+     "peak": " zones"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.892,
+     "peak": "foot"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.674,
+     "peak": " zone"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.473,
+     "peak": "foot"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.356,
+     "peak": " zones"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.823,
+     "peak": "foot"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": " off"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.041,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " Baltic"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " went"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.031,
+     "peak": " floor"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " leaves"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.442,
+     "peak": " Hands"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.568,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c5e051d8c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Bare|foot, dead zone",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Probes: 'dead zone' 0.78, 'barefoot' 0.52, 'Barefoot' 0.92, 'Hazelden' 0.85; 'time zone' 0.01; but 'Dead ends' 0.43 and 'dead spot' 0.18, so part of the 'dead' reading may come from 'dead' + noun rather than ' zone'. I could not find what Barefoot, dead zone and Hazelden share, so the label stays a list.",
+ "selection": "random draw"
+}

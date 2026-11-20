@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-93a4caca",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N10283+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:14+00:00",
+ "recipe": {
+  "toolchain_commit": "c5e051d8c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N10283_pos/2026-11-19-lm1909-93a4caca.tests.json"
+ },
+ "label": "unclear: best guess is a month name used as a premodifier of a dated event (\"for the April 13-15 …\", \"the June 16 break-in\")",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N10283_pos/2026-11-19-lm1909-93a4caca.tests.json",
+   "prereg_commit": "c5e051d8c",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.13,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.068,
+     "peak": " August"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.101,
+     "peak": " October"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.128,
+     "peak": " December"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.087,
+     "peak": " house"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.092,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.037,
+     "peak": " library"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.036,
+     "peak": " warehouse"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.174,
+     "peak": " weekend"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.088,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": " house"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.05,
+     "peak": " warehouse"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.688,
+    "median_fire": 0.089,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c5e051d8c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "month as premodifier (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "No single token on the card; the top examples mix months, first pieces of product/band names (Trib, SO, Vik) and a code identifier. Eight probes of the date and repeated-name readings all stayed below 0.14 of max, so this test records a guess and will probably fail.",
+ "selection": "random draw"
+}

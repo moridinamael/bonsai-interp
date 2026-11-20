@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-ec1b321a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9527+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:19:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N9527",
+   "pole": "+",
+   "label": "the last word of the middle item in a three-item list, just before the closing 'and' (\"A, B and C\"); the output direction promotes sentence-final punctuation",
+   "fire": [
+    "State regulators, consumer advocates and insurance executives testified at the hearing.",
+    "Rising sea levels, coastal erosion and stronger storms threaten the village.",
+    "Scout leaders, eager volunteers and parents gathered at the trailhead.",
+    "The report was praised by budget analysts, privacy advocates and union leaders.",
+    "Poor soil, drought and late frosts ruined the harvest that year.",
+    "Local farmers, school teachers and shop owners signed the petition.",
+    "The storm brought high winds, flooding and power cuts to the coast.",
+    "Retired nurses, medical students and paramedics staffed the clinic."
+   ],
+   "quiet": [
+    "Consumer advocates testified at the hearing about insurance prices.",
+    "Coastal erosion threatens the village more each winter.",
+    "Eager volunteers gathered at the trailhead before dawn.",
+    "The report was praised by privacy advocates across the country.",
+    "A long drought ruined the harvest that year.",
+    "School teachers and shop owners signed the petition.",
+    "The storm brought flooding to the coast for a week.",
+    "Medical students staffed the clinic on weekends."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "middle list item before 'and'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probes: three-item lists 0.45 and 0.25 on the middle item's last word; the same nouns outside a list 0.06 and 0.03; two-item 'Teachers and parents' 0.02. Top examples also include bibliography initials and first names before a period ('Kessler, Edward.', 'R. E.'), probed at 0.29-0.33, which this label leaves out. Readings are close to the 0.20 threshold, so the test may fail on strength."
+}
