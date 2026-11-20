@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-b76fe7b2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N3232-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:12:44+00:00",
+ "recipe": {
+  "toolchain_commit": "ecfa2a6b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N3232_neg/2026-11-20-lm1909-b76fe7b2.tests.json"
+ },
+ "label": "Wikipedia/Wiktionary as a cited source: the '.org' of a wikipedia.org URL, 'Wiktionary', 'Creative Commons Attribution' credit lines",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N3232_neg/2026-11-20-lm1909-b76fe7b2.tests.json",
+   "prereg_commit": "ecfa2a6b7",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.562,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.648,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.837,
+     "peak": " Attribution"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.435,
+     "peak": " Commons"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.65,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.548,
+     "peak": ".org"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.315,
+     "peak": " free"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.222,
+     "peak": " Wikipedia"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": "ge"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": "inceton"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.037,
+     "peak": "from"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " permission"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "Reference"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.143,
+     "peak": "eks"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.019,
+     "peak": " word"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.555,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ecfa2a6b7",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Wikipedia source attribution",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: '.org' x16 of top 32, all in en.wikipedia.org URLs; also 'from Wiktion|ary, Creative Commons Attribution/Share-Alike'. The + pole is dictionary-entry formatting. Near misses cite other (non-Wikipedia) sources in the same style.",
+ "selection": "random draw"
+}

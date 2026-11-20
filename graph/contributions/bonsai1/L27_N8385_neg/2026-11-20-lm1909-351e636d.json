@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-351e636d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N8385-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:12:56+00:00",
+ "recipe": {
+  "toolchain_commit": "ecfa2a6b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N8385_neg/2026-11-20-lm1909-351e636d.tests.json"
+ },
+ "label": "physical length or distance measured along an object (fret-to-nut distance, contracted length, focal length)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N8385_neg/2026-11-20-lm1909-351e636d.tests.json",
+   "prereg_commit": "ecfa2a6b7",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.532,
+     "peak": " scale"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.95,
+     "peak": " contracted"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.156,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.082,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.147,
+     "peak": " length"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.748,
+     "peak": " between"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.136,
+     "peak": "ing"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.093,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": " rest"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " grams"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " solder"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " each"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.002,
+     "peak": " until"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " fully"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.151,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ecfa2a6b7",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "length along an object",
+ "unit_kind": "sparse feature",
+ "confidence": 0.3,
+ "notes": "Card mixed: ' the' in 'from the nut ... to the center of the 12th fret', 'its length is contracted', 'focal lengths', code with radius/axis. + pole is angular size in astronomy (promotes ' angle'), - pole suppresses ' along', ' longitudinal'. Near misses: same physics/craft topics with mass, time or temperature instead of length.",
+ "selection": "random draw"
+}
