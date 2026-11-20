@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-0a2fe988",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N10612-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:38:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N10612",
+   "pole": "-",
+   "label": "in code, the variable repeated on the right-hand side of a self-update assignment (x = x + 1, tries = tries - 1): fires on the second mention, just before the + or -; an assignment from a different variable is quiet. The + pole promotes the opposite continuation (it suppresses ' +', ' plus', ' minus')",
+   "fire": [
+    "i = 0\nwhile i < 10:\n    print(i)\n    i = i + 1\n",
+    "for word in words:\n    if word in seen:\n        dupes = dupes + 1\n",
+    "lives = 3\nif hit:\n    lives = lives - 1\n",
+    "def countdown(steps):\n    while steps > 0:\n        steps = steps - 1\n",
+    "for row in table:\n    if row.valid:\n        index = index + 1\n",
+    "retries = 5\nwhile not ok:\n    ok = attempt()\n    retries = retries - 1\n",
+    "page = 1\nwhile has_more(page):\n    fetch(page)\n    page = page + 1\n",
+    "depth = 0\nfor ch in text:\n    if ch == '(':\n        depth = depth + 1\n"
+   ],
+   "quiet": [
+    "i = 0\nwhile i < 10:\n    print(i)\n    nxt = limit + 1\n",
+    "for word in words:\n    if word in seen:\n        dupes = len(seen) + 1\n",
+    "lives = 3\nif hit:\n    remaining = total - 1\n",
+    "def countdown(steps):\n    while steps > 0:\n        last = offset - 1\n",
+    "for row in table:\n    if row.valid:\n        index = base + 1\n",
+    "retries = 5\nwhile not ok:\n    ok = attempt()\n    left = budget - 1\n",
+    "page = 1\nwhile has_more(page):\n    fetch(page)\n    following = start + 1\n",
+    "depth = 0\nfor ch in text:\n    if ch == '(':\n        width = margin + 1\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "x = [x] ± 1 self-update",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Probes: 'n = n - 1' 0.86, 'score = score + 1' 0.66, 'count = count + 1' 0.55; 'score = bonus + 1' 0.07, 'm = n - 1' 0.26."
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-7a465eb2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N2352-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:57:09+00:00",
+ "recipe": {
+  "toolchain_commit": "7e6471c21",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N2352_neg/2026-11-19-lm1909-7a465eb2.tests.json"
+ },
+ "label": "a token that restarts the word just before it: a model code beginning with the brand's own initial (Yamaha Y…, Nitto NT…, Broadcom BCM…) or a repeated path / module segment (/admin/admin, stock.stock); a code or segment with a different initial is quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N2352_neg/2026-11-19-lm1909-7a465eb2.tests.json",
+   "prereg_commit": "7e6471c21",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.034,
+     "peak": " SV"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.445,
+     "peak": " Q"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.451,
+     "peak": " K"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.306,
+     "peak": " TR"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.303,
+     "peak": "/static"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.238,
+     "peak": ".utils"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.377,
+     "peak": " SD"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.8,
+     "peak": " MM"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.09,
+     "peak": " GN"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.04,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.042,
+     "peak": " ZX"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.114,
+     "peak": " PX"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": "/logo"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": "project"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.178,
+     "peak": " PM"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.342,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7e6471c21",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "echo of preceding word's start",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probes: 'Yamaha YZ250' 0.62 vs 'Yamaha RZ250' 0.08; 'Broadcom BCM' 0.50 vs 'Broadcom AX' 0.14; 'Nitto NT05' 0.79 vs 'Nitto ZR05' 0.09; '/admin/admin' 0.78 vs '/site/admin' 0.16; 'stock.stock' 0.55.",
+ "selection": "random draw"
+}

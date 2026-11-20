@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d3d7e368",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N6221+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:57:33+00:00",
+ "recipe": {
+  "toolchain_commit": "7e6471c21",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N6221_pos/2026-11-19-lm1909-d3d7e368.tests.json"
+ },
+ "label": "a group of people who have a condition or exposure (sufferers, patients, residents, pregnant women) as the subject, at the point where a verb of reporting or complaining of symptoms is expected ('sufferers have…', 'trekkers commonly…', 'the most frequent…'); output promotes ' report', ' reported', ' complaints'. Professionals as the subject in the same frame are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N6221_pos/2026-11-19-lm1909-d3d7e368.tests.json",
+   "prereg_commit": "7e6471c21",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.393,
+     "peak": " often"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.672,
+     "peak": " have"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.701,
+     "peak": " commonly"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.425,
+     "peak": " frequent"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.652,
+     "peak": " frequently"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.146,
+     "peak": " skin"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.437,
+     "peak": "opause"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.537,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.068,
+     "peak": " collect"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.314,
+     "peak": " shops"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.25,
+     "peak": "ists"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.278,
+     "peak": " highest"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.248,
+     "peak": " frequently"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.164,
+     "peak": "opause"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.067,
+     "peak": "umes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.487,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7e6471c21",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "experiencers about to report symptoms",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: 'sufferers have' 0.55, 'patients have' 0.62, 'sufferers frequently' 0.53, 'workers ... have' 0.49, 'most frequent complaints' 0.67; 'Neurologists frequently' 0.06, 'researchers have' 0.15. It is a prediction context, so the continuation does not matter ('climbers commonly carry' 0.28 = 'commonly report' 0.28), and some non-experiencer frames leak ('one of the most studied' 0.55, 'some clinics have had' 0.36).",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-17c9c040",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N10892-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:38:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N10892",
+   "pole": "-",
+   "label": "best guess for a dense unit: '(self' opening the parameter list of a Python method definition",
+   "fire": [
+    "class Cart:\n    def total(self):\n        return sum(self.items)\n",
+    "class Timer:\n    def start(self):\n        self.t0 = time.time()\n",
+    "class Queue:\n    def pop(self):\n        return self.data.pop(0)\n",
+    "class Lamp:\n    def toggle(self):\n        self.on = not self.on\n",
+    "class Parser:\n    def reset(self):\n        self.pos = 0\n",
+    "class Dog:\n    def bark(self):\n        print(self.name)\n",
+    "class Server:\n    def close(self):\n        self.sock.close()\n",
+    "class Account:\n    def balance(self):\n        return self.amount\n"
+   ],
+   "quiet": [
+    "def total(items):\n    return sum(items)\n",
+    "def start(timer):\n    timer.t0 = time.time()\n",
+    "def pop(queue):\n    return queue.pop(0)\n",
+    "def toggle(lamp):\n    lamp.on = not lamp.on\n",
+    "def reset(parser):\n    parser.pos = 0\n",
+    "def bark(dog):\n    print(dog.name)\n",
+    "def close(server):\n    server.sock.close()\n",
+    "def balance(account):\n    return account.amount\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; '(self' guess",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "The card flags the pole dense (45% of tokens reach 0.1 of max, 7.6% reach 0.3; max only 0.29, gate-closed leak regime). '(self' is the commonest top-32 token (14 of 32) and probed at 0.75, but '(cls' gave 0.34, a plain English sentence 0.36 and 'Punctually' 0.84. Expected to fail; registered to record the density."
+}

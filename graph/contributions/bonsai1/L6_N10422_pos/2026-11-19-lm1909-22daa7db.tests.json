@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-22daa7db",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10422+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:38:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N10422",
+   "pole": "+",
+   "label": "in Arabic, Russian or German text: the first piece of the word governed by a short preposition directly before it (Arabic prefixed لـ as in لنظام / لكثير, Russian к нарушениям, German in großem); the same word without the preposition is quiet",
+   "fire": [
+    "تحتاج المدينة لكثير من المدارس الجديدة.",
+    "انضم الموظف الجديد لنظام العمل في الشركة.",
+    "تخضع المستشفيات لنظام صحي جديد منذ العام الماضي.",
+    "استمع الأطفال لكثير من القصص في المساء.",
+    "Со временем к нарушениям зрения добавилась сильная усталость.",
+    "Постепенно к нарушениям дыхания присоединился кашель.",
+    "Die Stadt hat in großem Stil neue Wohnungen gebaut.",
+    "يحتاج المريض لكثير من الراحة بعد العملية."
+   ],
+   "quiet": [
+    "فتحت المدينة كثيرا من المدارس الجديدة.",
+    "يعرف الموظف الجديد نظام العمل في الشركة.",
+    "تطبق المستشفيات نظاما صحيا جديدا منذ العام الماضي.",
+    "سمع الأطفال كثيرا من القصص في المساء.",
+    "Со временем нарушения зрения стали вызывать сильную усталость.",
+    "Постепенно нарушения дыхания вызвали кашель.",
+    "Die Stadt hat einen großen Park mit neuen Wegen gebaut.",
+    "ينال المريض كثيرا من الراحة بعد العملية."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "word after bare preposition (ar/ru/de)",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: لنظام 0.54, لكثير 0.46, к нарушениям 0.52, in großem 0.32, but к головным / с новыми / mit großem / لمدرسة only 0.17-0.20; the same sentences without the preposition 0.02. French and Spanish prepositions did not fire. The median may land near the 0.20 bar."
+}
