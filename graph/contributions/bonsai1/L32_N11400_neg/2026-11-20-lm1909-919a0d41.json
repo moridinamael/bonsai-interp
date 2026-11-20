@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-919a0d41",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N11400-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:34:49+00:00",
+ "recipe": {
+  "toolchain_commit": "404ebefcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N11400_neg/2026-11-20-lm1909-919a0d41.tests.json"
+ },
+ "label": "the subject (and its verb) of a clause giving an opposing side's view after a contrast marker in news reporting (But critics..., For its part, X...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N11400_neg/2026-11-20-lm1909-919a0d41.tests.json",
+   "prereg_commit": "404ebefcc",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.284,
+     "peak": " residents"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.704,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.291,
+     "peak": " farmers"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.705,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.544,
+     "peak": "onents"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.886,
+     "peak": " ont"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.376,
+     "peak": "as"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.415,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.068,
+     "peak": " residents"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.319,
+     "peak": " groups"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.125,
+     "peak": " farmers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.226,
+     "peak": " unions"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.208,
+     "peak": " opponents"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.58,
+     "peak": " ont"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.127,
+     "peak": "as"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.183,
+     "peak": "ists"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.48,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "404ebefcc",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "opposing side's subject",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card peaks: 'De son côté, Kinshasa', 'Por su parte, ... Google', 'But environmentalists', 'Critics ..., though,'. Probe: contrast-framed opposing subject 0.63-0.93 vs same noun without contrast 0.21.",
+ "selection": "random draw"
+}
