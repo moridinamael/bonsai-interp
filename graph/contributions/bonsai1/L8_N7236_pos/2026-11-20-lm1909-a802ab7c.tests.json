@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a802ab7c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N7236+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:41:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N7236",
+   "pole": "+",
+   "label": "the digit '4' inside a long numeric constant in code, strongest in well-known constants (2147483647, 299792458)",
+   "fire": [
+    "MAX_INT32 = 2147483647\nMIN_INT32 = -MAX_INT32 - 1",
+    "C = 299792458.0  # speed of light in m/s",
+    "    seed = (seed * 1103515245 + 12345) & 0x7fffffff",
+    "SECONDS_PER_DAY = 86400\nDAYS_PER_WEEK = 7",
+    "AVOGADRO = 6.02214076e23",
+    "ONE_MEBIBYTE = 1048576  # bytes",
+    "ELEMENTARY_CHARGE = 1.602176634e-19  # coulombs",
+    "PI = 3.14159265358979\nTWO_PI = 2 * PI"
+   ],
+   "quiet": [
+    "MAX_INT8 = 127\nMIN_INT8 = -MAX_INT8 - 1",
+    "G = 9.80665  # standard gravity in m/s^2",
+    "    seed = (seed * 69069 + 1) & 0xffffffff",
+    "SECONDS_PER_HOUR = 3600\nMINUTES_PER_HOUR = 60",
+    "GOLDEN_RATIO = 1.6180339887",
+    "ONE_MEGABYTE = 1000000  # bytes",
+    "EULER = 2.71828182  # Euler's number",
+    "SQRT3 = 1.7320508\nTWO_SQRT3 = 2 * SQRT3"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "digit 4 in a known constant",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: '4' x20 of top 32, all inside long constants (glibc rand 1103515245, 2147483648, 299792458). Probe: '4' in famous constants 0.44-0.75, in arbitrary numbers 0.08-0.29. Near misses are similar constant definitions whose numbers contain no 4."
+}

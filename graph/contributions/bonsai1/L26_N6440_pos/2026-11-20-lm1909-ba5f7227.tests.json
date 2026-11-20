@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ba5f7227",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N6440+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:41:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N6440",
+   "pole": "+",
+   "label": "a camelCase/snake_case identifier piece (Label, Names, _combo) inside code that pairs parallel attribute names",
+   "fire": [
+    "    def draw_axis(self):\n        for valueR, labelR in zip(self.yLabelValuesR, self.yLabelsR):\n            self.ax.text(valueR, 1, labelR)",
+    "    def draw_ticks(self):\n        for posT, nameT in zip(self.xTickPositionsT, self.xTickNamesT):\n            self.ax.annotate(nameT, posT)",
+    "    for widthL, titleL in zip(self.colWidthValuesL, self.colTitlesL):\n        header.add(titleL, widthL)",
+    "    def legend(self):\n        for colorB, nameB in zip(self.barColorValuesB, self.barNamesB):\n            self.patches.append(Patch(colorB, nameB))",
+    "        for sizeF, labelF in zip(self.fontSizeValuesF, self.fontLabelsF):\n            print(labelF, sizeF)",
+    "    def annotate(self):\n        for valueU, unitU in zip(self.zUnitValuesU, self.zUnitNamesU):\n            self.ax.text(valueU, 0, unitU)",
+    "    for valueL, labelL in zip(self.xLabelValuesL, self.xLabelsL):\n        plt.text(valueL, -1, labelL)",
+    "        for offsetS, tagS in zip(self.seriesOffsetValuesS, self.seriesTagsS):\n            self.add_tag(tagS, offsetS)"
+   ],
+   "quiet": [
+    "    def draw_axis(self):\n        for value, label in zip(values, labels):\n            self.ax.text(value, 1, label)",
+    "    def draw_ticks(self):\n        for pos, name in zip(positions, names):\n            self.ax.annotate(name, pos)",
+    "    for width, title in zip(widths, titles):\n        header.add(title, width)",
+    "    def legend(self):\n        for color, name in zip(colors, names):\n            self.patches.append(Patch(color, name))",
+    "        for size, label in zip(sizes, labels):\n            print(label, size)",
+    "    def annotate(self):\n        for value, unit in zip(values, units):\n            self.ax.text(value, 0, unit)",
+    "    for value, label in zip(values, labels):\n        plt.text(value, -1, label)",
+    "        for offset, tag in zip(offsets, tags):\n            self.add_tag(tag, offset)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "identifier piece in code",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: identifier pieces ('Label' in self.yLabelValuesL, '_fill', '_combo', 'charset'). Probe: the zip over paired self.xNameValuesR/self.xNamesR lists fires 0.39-0.48; short isolated lines under 0.1. Near misses are the same loops with plain one-word names."
+}

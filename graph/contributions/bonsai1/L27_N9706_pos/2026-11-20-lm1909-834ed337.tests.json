@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-834ed337",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N9706+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:41:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N9706",
+   "pole": "+",
+   "label": "' $' before a price in commodity and market reports",
+   "fire": [
+    "Crude oil for January delivery rose 90 cents. Brent crude closed at $82.40 a barrel on Thursday.",
+    "Corn futures gained 4 cents, while wheat for March delivery slipped to $6.15 a bushel in Chicago.",
+    "Aluminium edged up on the LME. Copper fell sharply, ending the session at $3.90 per pound.",
+    "Silver was down 20 cents, and spot gold climbed in London to settle near $1,945 an ounce.",
+    "Live hogs lost 2 cents. Feeder cattle contracts finished the week at $248 per hundredweight.",
+    "Prices for lint rose 3 cents this month, and the farmers sold their cotton crop for $0.71 a pound.",
+    "Heating oil eased 5 cents. Natural gas prices dropped to $2.55 per million British thermal units.",
+    "Coking coal held steady, and analysts expect iron ore to trade around $110 a tonne next quarter."
+   ],
+   "quiet": [
+    "Crude oil for January delivery rose on supply worries. Brent crude closed sharply higher on Thursday.",
+    "Corn futures gained ground, while wheat for March delivery slipped in Chicago as rain eased drought fears.",
+    "Aluminium edged up on the LME. Copper fell sharply, ending the session at its lowest level since May.",
+    "Silver was weaker, and spot gold climbed in London as investors looked for safety.",
+    "Live hogs lost ground. Feeder cattle contracts finished the week near their record highs.",
+    "Prices for lint rose this month, and the farmers sold their cotton crop to a mill in the next county.",
+    "Heating oil eased slightly. Natural gas prices dropped as mild weather cut heating demand.",
+    "Coking coal held steady, and analysts expect iron ore to trade within a narrow range next quarter."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'$' before a price",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' $' x6 and ' ' (space before a number) x7, in futures/commodity price reports. Probe: ' $' fires in multi-price commodity reports (0.89), not a lone retail price. Near misses keep the report with no dollar amount or number."
+}

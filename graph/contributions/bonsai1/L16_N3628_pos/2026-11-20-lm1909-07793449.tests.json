@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-07793449",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N3628+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:41:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N3628",
+   "pole": "+",
+   "label": "a collection-name segment in a code path or URL (openlibrary.org/subjects/, Role.objects.student_role())",
+   "fire": [
+    "Find more titles at https://openlibrary.org/subjects/cooking",
+    "Browse free audiobooks: http://openlibrary.org/subjects/science_fiction",
+    "    def get_staff(self):\n        staff_role = Role.objects.staff_role()\n        return self.employees.filter(role=staff_role)",
+    "    def get_admins(self):\n        admin_role = Role.objects.admin_role()\n        return self.members.filter(role=admin_role)",
+    "More reading lists live at https://openlibrary.org/subjects/gardening",
+    "    def teachers(self):\n        teacher_role = UserRole.objects.teacher_role()\n        return self.users.filter(role=teacher_role)",
+    "The archive is at http://openlibrary.org/subjects/maritime_history for anyone curious.",
+    "    def get_reviewers(self):\n        reviewer_role = ProjectRole.objects.reviewer_role()\n        return self.people.filter(role=reviewer_role)"
+   ],
+   "quiet": [
+    "Find more titles about cooking at your local library.",
+    "Free audiobooks on science fiction are available at the branch.",
+    "The staff role was explained to every employee during training.",
+    "The admin role lets members approve new posts.",
+    "More reading lists about gardening hang by the library desk.",
+    "Each teacher role comes with its own set of duties.",
+    "The archive on maritime history is open for anyone curious.",
+    "The reviewer role was given to two people on the project."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "name segment in code path",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no single token ('()', '_category', '(unique', 'rooms', 'subjects'), all inside code or URLs. Probe: 'subjects' in a URL 0.38-0.45, ' Role' in a Django manager call 0.37, plain code lines under 0.1. Near misses use the same words in prose."
+}

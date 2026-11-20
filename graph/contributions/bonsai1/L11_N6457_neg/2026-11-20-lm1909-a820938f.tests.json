@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-a820938f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N6457-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:41:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N6457",
+   "pole": "-",
+   "label": "' is' in a Python None-check ('if x is None:') in code",
+   "fire": [
+    "def load(path, encoding=None):\n    if encoding is None:\n        encoding = 'utf-8'\n    return open(path, encoding=encoding)",
+    "    def fit(self, X, weights=None):\n        if weights is None:\n            weights = np.ones(len(X))",
+    "def connect(host, port=None):\n    \"\"\"Open a socket to host.\"\"\"\n    if port is None:\n        port = 8080",
+    "    result = cache.get(key)\n    if result is None:\n        result = compute(key)\n        cache[key] = result",
+    "def render(template, context=None):\n    if context is None:\n        context = {}\n    return template.format(**context)",
+    "    def close(self):\n        if self._handle is None:\n            return\n        self._handle.close()",
+    "def split_text(text, sep=None):\n    if sep is None:\n        sep = ','\n    return text.split(sep)",
+    "    node = self.lookup(name)\n    if node is None:\n        raise KeyError(name)\n    return node.value"
+   ],
+   "quiet": [
+    "def load(path, encoding='utf-8'):\n    if not path:\n        raise ValueError('empty path')\n    return open(path, encoding=encoding)",
+    "    def fit(self, X, weights):\n        if len(weights) == 0:\n            weights = np.ones(len(X))",
+    "def connect(host, port):\n    \"\"\"Open a socket to host.\"\"\"\n    if port == 0:\n        port = 8080",
+    "    result = cache.get(key)\n    if not result:\n        result = compute(key)\n        cache[key] = result",
+    "def render(template, context):\n    if len(context) == 0:\n        context = {}\n    return template.format(**context)",
+    "    def close(self):\n        if not self._handle:\n            return\n        self._handle.close()",
+    "def split_text(text, sep):\n    if sep == '':\n        sep = ','\n    return text.split(sep)",
+    "    node = self.lookup(name)\n    if node == -1:\n        raise KeyError(name)\n    return node.value"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'is' in 'is None' check",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: top 32 peak on ' is' x13 (all 'if <var> is None'), ' None' x8, ' =' x4. Near misses keep the same code but test the variable without ' is'."
+}
