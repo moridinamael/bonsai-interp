@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-a5b25ee5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N7627+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:23:51+00:00",
+ "recipe": {
+  "toolchain_commit": "c8b427bdd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N7627_pos/2026-11-20-lm1909-a5b25ee5.tests.json"
+ },
+ "label": "' and' joining exactly two abstract noun phrases (a binary 'X and Y' pair), as opposed to the commas of a longer list (the - pole)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N7627_pos/2026-11-20-lm1909-a5b25ee5.tests.json",
+   "prereg_commit": "c8b427bdd",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.193,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.193,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.04,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.042,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.009,
+     "peak": " online"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.014,
+     "peak": " when"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.031,
+     "peak": " old"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.239,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " reliability"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " afternoon"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " patients"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.053,
+     "peak": " speed"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": " procurement"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.68,
+    "median_fire": 0.041,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c8b427bdd",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "binary 'X and Y' pair",
+ "unit_kind": "dense / positional",
+ "confidence": 0.35,
+ "notes": "Card flags positional (72% of top peaks within first 16 tokens), so unit_kind is set to dense / positional as the brief asks; ' and' x20 + ' or' x7 between two abstract nouns. - pole: commas in 3+ item lists.",
+ "selection": "random draw"
+}

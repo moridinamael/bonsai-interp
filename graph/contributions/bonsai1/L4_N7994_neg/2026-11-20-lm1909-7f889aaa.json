@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-7f889aaa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N7994-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:24:19+00:00",
+ "recipe": {
+  "toolchain_commit": "c8b427bdd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N7994_neg/2026-11-20-lm1909-7f889aaa.tests.json"
+ },
+ "label": "the third-person verb ending '-t' / '-kt' / '-et' split off as its own token in German, Dutch and transliterated Russian verbs (schenkt, werkt, bastelt)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N7994_neg/2026-11-20-lm1909-7f889aaa.tests.json",
+   "prereg_commit": "c8b427bdd",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.65,
+     "peak": "kt"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.382,
+     "peak": "elt"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.2,
+     "peak": "kt"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.065,
+     "peak": " Pause"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.118,
+     "peak": "kt"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.343,
+     "peak": "kt"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.172,
+     "peak": "elt"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.423,
+     "peak": "et"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": " Her"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " seinem"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " samen"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.065,
+     "peak": " Pause"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": " die"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.109,
+     "peak": "kt"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.042,
+     "peak": " Länder"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.272,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c8b427bdd",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "verb ending '-t' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Card: 'kt' x4, 'ht', 't', 'elt', 'ет' word-final verb endings (schenkt, werkt, bastelt, Bringt, blefuyet). Tokenizer splits not checked.",
+ "selection": "random draw"
+}
