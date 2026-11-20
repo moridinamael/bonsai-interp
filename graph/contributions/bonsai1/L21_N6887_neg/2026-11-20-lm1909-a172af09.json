@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a172af09",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N6887-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:33:30+00:00",
+ "recipe": {
+  "toolchain_commit": "cd771491b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N6887_neg/2026-11-20-lm1909-a172af09.tests.json"
+ },
+ "label": "a comma interrupting a verb of saying/knowing before its 'that' clause ('noted, however, that'; 'We all know, and ...')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N6887_neg/2026-11-20-lm1909-a172af09.tests.json",
+   "prereg_commit": "cd771491b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.245,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.253,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.609,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.5,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.223,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.274,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.221,
+     "peak": " once"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.377,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " reported"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": "Everyone"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.037,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.039,
+     "peak": " admit"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.029,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " minister"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " new"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.264,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd771491b",
+  "minutes": 66,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "comma before that-clause",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "card: ',' x20 right after 'know', 'realise', 'said', 'find out', 'noted' with the that-clause postponed; + pole is the subject of a complement clause right after 'found/told us'. Probe: 'observed, however, that' 0.23; without comma 0.01. Near misses: same verbs without the interruption, and commas in other roles.",
+ "selection": "random draw"
+}

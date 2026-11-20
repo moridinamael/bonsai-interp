@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-3961d4f9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N10381+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:33:01+00:00",
+ "recipe": {
+  "toolchain_commit": "cd771491b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N10381_pos/2026-11-20-lm1909-3961d4f9.tests.json"
+ },
+ "label": "' with' in the hedging idiom 'treat/take/view X with caution' or 'with a grain of salt' (the slot before a caution/doubt word)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N10381_pos/2026-11-20-lm1909-3961d4f9.tests.json",
+   "prereg_commit": "cd771491b",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.51,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.588,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.8,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.538,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.116,
+     "peak": " records"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.238,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.528,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.343,
+     "peak": " approached"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": "s"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.078,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " crushed"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " explain"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.533,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd771491b",
+  "minutes": 65,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'with' before caution",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "card: peaks on ' with' in 'treated with a large grain of salt', 'taken with some caution', 'treated with caution', and ' unsus(pecting)'; - pole is 'sin duda / sans doute / kein Zweifel' and output suppresses doubt words. Probe: 'read with caution' 0.79, 'treated with antibiotics' 0.01, 'greeted with skepticism' only 0.04. Near misses use 'with' in literal senses.",
+ "selection": "random draw"
+}
