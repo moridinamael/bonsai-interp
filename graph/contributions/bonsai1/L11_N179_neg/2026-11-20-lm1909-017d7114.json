@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-017d7114",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N179-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:45:53+00:00",
+ "recipe": {
+  "toolchain_commit": "3b8a4abf9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N179_neg/2026-11-20-lm1909-017d7114.tests.json"
+ },
+ "label": "groundwater below the surface: aquifer, water table, groundwater",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N179_neg/2026-11-20-lm1909-017d7114.tests.json",
+   "prereg_commit": "3b8a4abf9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.486,
+     "peak": "ifer"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.957,
+     "peak": " table"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.491,
+     "peak": " groundwater"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.821,
+     "peak": " aqu"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.729,
+     "peak": " table"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.514,
+     "peak": "ifer"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.475,
+     "peak": " beneath"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.499,
+     "peak": "ifer"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.222,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.104,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.11,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.066,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.081,
+     "peak": " below"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.144,
+     "peak": " toward"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " beneath"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.053,
+     "peak": "plain"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.506,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3b8a4abf9",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "aquifer / water table",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "Card: ' groundwater' x8, ' aqu' x7, ' table' after 'water' x2 in the top 32. Near misses keep hydrology but use surface water (rivers, lakes, reservoirs). The + pole is unrelated (aphid, mealybug, lichen).",
+ "selection": "random draw"
+}

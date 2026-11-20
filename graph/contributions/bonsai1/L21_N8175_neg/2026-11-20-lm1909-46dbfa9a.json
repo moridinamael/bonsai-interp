@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-46dbfa9a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N8175-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:46:31+00:00",
+ "recipe": {
+  "toolchain_commit": "3b8a4abf9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N8175_neg/2026-11-20-lm1909-46dbfa9a.tests.json"
+ },
+ "label": "a relative pronoun opening a clause about the preceding noun (books that..., men who...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N8175_neg/2026-11-20-lm1909-46dbfa9a.tests.json",
+   "prereg_commit": "3b8a4abf9",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.343,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.159,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.109,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.2,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.08,
+     "peak": " mother"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.234,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.23,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.129,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": " this"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.066,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.172,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.058,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.059,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.154,
+     "peak": " students"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.1,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.179,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3b8a4abf9",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "relative pronoun",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' who' x7, ',' x7, ' that' x2, ' which' x2; broad (6.1%). Probe: 'books that' 0.54, 'men who' 0.15, 'house, which' 0.32, participle version 0.04. Near misses use participles or separate sentences.",
+ "selection": "random draw"
+}
