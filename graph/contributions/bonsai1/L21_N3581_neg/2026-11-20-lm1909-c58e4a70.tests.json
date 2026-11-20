@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-c58e4a70",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N3581-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:08:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N3581",
+   "pole": "-",
+   "label": "end of a line inside a Python docstring or statement (period/newline before the next code line)",
+   "fire": [
+    "def load(path):\n    \"\"\"Load the settings from a file.\n\n    :param path: Path of the file to read.\n    \"\"\"\n    with open(path) as f:\n        return f.read()",
+    "def get_users(db):\n    \"\"\"Return a list of users that are active.\n\n    @param db: Database connection to use.\n    \"\"\"\n    return db.query(User).all()",
+    "def test_delete_item():\n    \"\"\"Test deleting an item from the cart model.\"\"\"\n    cart = Cart()\n    cart.add(1)",
+    "def save(items, out):\n    \"\"\"Write the items to disk.\"\"\"\n    # save list to output file\n    with open(out, 'w') as f:\n        f.write(str(items))",
+    "class Resistor:\n    \"\"\"A resistor component.\n\n    value: string with the resistance.\n    \"\"\"\n    def __init__(self, value):\n        self.value = value",
+    "def parse(data):\n    \"\"\"Parse the raw packet into fields.\n\n    :returns: dict containing the fields.\n    \"\"\"\n    fields = {}\n    return fields",
+    "def read_all(self):\n    names = []\n    while self.more():\n        names.append(self.read_string())\n    return names",
+    "def connect(host):\n    \"\"\"Open a connection to the given host.\n\n    :param host: Name of the server.\n    \"\"\"\n    return Socket(host)"
+   ],
+   "quiet": [
+    "The settings are loaded from a file. The path argument says which file to read, and the function returns its text.",
+    "This page returns a list of users that are active. Pass in a database connection and it queries every user record.",
+    "We tested deleting an item from the cart. First we created a new cart, then we added one item to it.",
+    "To save the items, write them to disk. Open the output file for writing and store the list as a string.",
+    "A resistor is a simple component. Its value is a string with the resistance, set when the part is created.",
+    "The parser turns a raw packet into fields. It returns a dictionary containing every field it found.",
+    "The reader keeps reading names while more data is available, adding each one to a list it returns at the end.",
+    "To open a connection, give the name of the server. The function returns a socket connected to that host."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "line end in Python docstring",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "code items are multi-line; near misses are prose paraphrases of the same code"
+}

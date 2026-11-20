@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-8c98d558",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N10041+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:08:19+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N10041",
+   "pole": "+",
+   "label": "line boundary / indentation between statements in Python test code",
+   "fire": [
+    "    def test_save(self):\n        self.client.login()\n        response = self.client.post('/save', data)\n        self.assertEqual(response.status_code, 200)\n        self.assertContains(response, 'saved')",
+    "    def test_launch(self):\n        result = viewer.launch(sensors)\n        self.assert_compliant(result)\n\n        self.selenium.find_element_by_id('ok').click()\n        self.wait_page_loaded()",
+    "    def test_form(self):\n        data = {'title': 'x'}\n        # Run\n        form = TopicForm(data)\n        self.assertTrue(form.is_valid())",
+    ">>> mutation.simulate('tests', sig)\n\n>>> Diff(sig, end_sig).evolution()\n{'tests': []}",
+    "    def test_delete(self):\n        obj = Item.objects.create(name='a')\n        obj.delete()\n        self.assertEqual(Item.objects.count(), 0)",
+    "    def test_widget(self):\n        # Now resave that inline\n        self.post_data['name'] = 'b'\n        response = self.client.post(url, self.post_data)\n        self.assertEqual(response.status_code, 302)",
+    "    def test_login(self):\n        self.selenium.get(self.live_server_url)\n        self.selenium.find_element_by_name('user').send_keys('bob')\n        self.wait_page_loaded()",
+    "    def test_sum(self):\n        values = [1, 2, 3]\n        total = compute(values)\n        self.assertEqual(total, 6)"
+   ],
+   "quiet": [
+    "The test logs the client in, posts the form to the save page, and checks that the response status is 200 and says saved.",
+    "The viewer launches with the sensors, the result is checked for compliance, and then the OK button is clicked and the page loads.",
+    "We built a topic form with a title and then checked that the form was valid before moving on.",
+    "Simulating the mutation on the tests signature and then diffing it against the end signature gives an empty list.",
+    "The test creates an item named a, deletes it, and checks that no items are left in the table.",
+    "Next we saved the inline form again with a new name and checked that the page redirected afterwards.",
+    "The browser opens the live server, types bob into the user field, and waits for the page to finish loading.",
+    "Given the values one, two and three, the compute function should return a total of six."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "indent in test code",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "code items multi-line"
+}
