@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-d2fdda62",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N9610+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:03:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N9610",
+   "pole": "+",
+   "label": "the opening quote of a unit-name string argument in code (unit='…', units='…', as_unit('…'))",
+   "fire": [
+    "    ts = pd.to_timedelta(df['elapsed'], unit='s')",
+    "    lon = coord.convert(points, units='degrees_east')",
+    "    spec = spectrum.as_unit('Angstrom', quiet=True)",
+    "    dist = Distance(values, unit='km')",
+    "    t = Time(mjd_values, format='mjd', unit='day')",
+    "    axis.set_data(temps, units='kelvin')",
+    "    wave = wave.to_unit('nm')",
+    "    stamps = pd.to_datetime(raw.epoch, unit='ns')"
+   ],
+   "quiet": [
+    "    ts = pd.to_timedelta(df['elapsed'], errors='coerce')",
+    "    lon = coord.convert(points, name='longitude')",
+    "    spec = spectrum.rename('Angstrom', quiet=True)",
+    "    dist = Distance(values, label='km')",
+    "    t = Table(mjd_values, format='ascii', mode='day')",
+    "    axis.set_data(temps, color='kelvin')",
+    "    wave = wave.to_file('nm')",
+    "    stamps = pd.to_datetime(raw.epoch, format='%Y')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unit= string quote",
+ "unit_kind": "contextual",
+ "confidence": 0.6
+}
