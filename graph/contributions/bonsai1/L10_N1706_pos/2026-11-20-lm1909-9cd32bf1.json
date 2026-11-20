@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9cd32bf1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N1706+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:24:56+00:00",
+ "recipe": {
+  "toolchain_commit": "d007725c8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N1706_pos/2026-11-20-lm1909-9cd32bf1.tests.json"
+ },
+ "label": "nouns for people or activities that perform for an audience (singers, athletes, football, performing arts)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N1706_pos/2026-11-20-lm1909-9cd32bf1.tests.json",
+   "prereg_commit": "d007725c8",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.074,
+     "peak": " dancers"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.103,
+     "peak": " training"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.164,
+     "peak": " musicians"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.046,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.344,
+     "peak": " football"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.096,
+     "peak": " actors"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.51,
+     "peak": " performing"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.185,
+     "peak": " singers"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " nurses"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": " training"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": " guests"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.063,
+     "peak": " drivers"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " bought"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": " for"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.134,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d007725c8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "performers / sports",
+ "unit_kind": "sparse feature",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' Football' x4, ' athletes' x2, ' football' x2, ' performing' x2, ' singers'. The list suggests a shared pattern: performers and performance fields. Tested on new performer nouns (dancers, gymnasts, musicians, actors); near misses swap in non-performing groups of people in the same slot.",
+ "selection": "random draw"
+}

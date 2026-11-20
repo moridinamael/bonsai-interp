@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-cc77eb8e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N2497+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:24:49+00:00",
+ "recipe": {
+  "toolchain_commit": "d007725c8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N2497_pos/2026-11-20-lm1909-cc77eb8e.tests.json"
+ },
+ "label": "' power' / ' of' in the exponent phrase 'to the power of' (raise a number to a power)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N2497_pos/2026-11-20-lm1909-cc77eb8e.tests.json",
+   "prereg_commit": "d007725c8",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 2.003,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.867,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 2.071,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.476,
+     "peak": " power"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 2.921,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 2.341,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 2.188,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 2.45,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " homes"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.032,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": "In"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " gives"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " motivation"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 2.13,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d007725c8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "to the power of",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: top examples are '1.5 raised to the power of 10', 'raise to power P', '2 to the 128th power', Portuguese 'potência'. The strong tail is tiny (density 0.000% above 0.1 max), so the 0.2-of-max bar is low. Near misses use 'power' in its non-mathematical sense (electric power, political power).",
+ "selection": "random draw"
+}
