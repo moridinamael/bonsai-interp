@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-750404fe",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N7336-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:16:10+00:00",
+ "recipe": {
+  "toolchain_commit": "9717a60f5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N7336_neg/2026-11-20-lm1909-750404fe.tests.json"
+ },
+ "label": "checks on the contents of a string or sequence in Python code: slice indices and length checks (s[0:2] ==, check length of)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N7336_neg/2026-11-20-lm1909-750404fe.tests.json",
+   "prereg_commit": "9717a60f5",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.179,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.301,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.174,
+     "peak": " len"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.133,
+     "peak": ")"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.331,
+     "peak": " contains"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.114,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.444,
+     "peak": " character"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.179,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.05,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.087,
+     "peak": " prefix"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.067,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": "       "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.179,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9717a60f5",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "string slice checks",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Weak pole (max 5.9), card broad-ish; top examples are slice indices in comparisons and '# check length' comments, plus odd prose ('coriander seed'). Probe: s[0:2] 0.39, '# check length' 0.25, [-1] 0.09.",
+ "selection": "random draw"
+}

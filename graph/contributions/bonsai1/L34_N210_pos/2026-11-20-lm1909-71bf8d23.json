@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-20-lm1909-71bf8d23",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N210+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:16:02+00:00",
+ "recipe": {
+  "toolchain_commit": "9717a60f5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N210_pos/2026-11-20-lm1909-71bf8d23.tests.json"
+ },
+ "label": "the French preposition ' en' inside French text (en direction de, en faveur de, en vigueur)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N210_pos/2026-11-20-lm1909-71bf8d23.tests.json",
+   "prereg_commit": "9717a60f5",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.694,
+     "peak": " en"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.451,
+     "peak": " au"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.29,
+     "peak": " en"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.535,
+     "peak": " en"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.475,
+     "peak": "'O"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.467,
+     "peak": " en"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.034,
+     "peak": " en"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.291,
+     "peak": " en"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.335,
+     "peak": " pour"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.499,
+     "peak": " été"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.26,
+     "peak": " hier"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.304,
+     "peak": " leur"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.554,
+     "peak": " S"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.297,
+     "peak": " à"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.314,
+     "peak": "agne"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.249,
+     "peak": "'à"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.703,
+    "median_fire": 0.471,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9717a60f5",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French ' en'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "20 of the top 32 peak on French ' en'. Probe: French without ' en' lower (0.08-0.13), English 'en route' ~0. French text in general carries some activation.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "en"
+  ]
+ }
+}

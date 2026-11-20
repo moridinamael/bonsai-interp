@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-073a7ba5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N6076-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:16:21+00:00",
+ "recipe": {
+  "toolchain_commit": "9717a60f5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N6076_neg/2026-11-20-lm1909-073a7ba5.tests.json"
+ },
+ "label": "dense / positional: broad weak activation, strongest on word-pieces of personal surnames (Coog|ler, Jar|rell, Ly|ell)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N6076_neg/2026-11-20-lm1909-073a7ba5.tests.json",
+   "prereg_commit": "9717a60f5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.446,
+     "peak": "rew"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.504,
+     "peak": "hall"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.372,
+     "peak": "ell"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.365,
+     "peak": "ley"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.625,
+     "peak": " skilled"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.472,
+     "peak": "ell"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.445,
+     "peak": "ringe"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.339,
+     "peak": "ke"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.332,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.348,
+     "peak": " teacher"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.317,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.272,
+     "peak": "or"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.53,
+     "peak": " skilled"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.286,
+     "peak": " Ohio"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.468,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.251,
+     "peak": " young"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.446,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9717a60f5",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; surname pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense (45% of tokens >0.1 max), leak regime 100%, max 1.6. Test of best guess, expected to fail.",
+ "selection": "random draw"
+}
