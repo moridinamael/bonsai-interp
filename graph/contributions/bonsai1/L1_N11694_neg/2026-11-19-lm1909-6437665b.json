@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6437665b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N11694-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:39:21+00:00",
+ "recipe": {
+  "toolchain_commit": "02feef0f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N11694_neg/2026-11-19-lm1909-6437665b.tests.json"
+ },
+ "label": "the piece 'set' inside a German prefixed setzen-word (Um|set|zung, an|set|zen, ab|set|zen, durch|set|zen); English ' set' and German words without the piece stay lower",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N11694_neg/2026-11-19-lm1909-6437665b.tests.json",
+   "prereg_commit": "02feef0f8",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.955,
+     "peak": "set"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.847,
+     "peak": "set"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.741,
+     "peak": "set"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.808,
+     "peak": "set"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.707,
+     "peak": "set"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.947,
+     "peak": "set"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.646,
+     "peak": "set"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.937,
+     "peak": "set"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.363,
+     "peak": "h"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.135,
+     "peak": " sofort"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.178,
+     "peak": "ucht"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.09,
+     "peak": "bst"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.202,
+     "peak": " bek"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": " arrive"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.13,
+     "peak": " kaufen"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " alarm"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.828,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "02feef0f8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German '-set-' (Umsetzung)",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: 'set' x11 of the top 32, all in Umsetzung/ansetzen; flagged broad (1.1% of tokens reach 0.1 of max) and gate-closed (leak 100%). Probes: Umsetzung 0.95, ansetzen 0.88, absetzen 0.76, umsetzen 0.72, durchsetzen 0.65, einsetzen 0.61; English reset/set 0.01, offset 0.16, Satz 0.17. Other German stems after a prefix also fire (um|stellen 0.64, Besetzung 0.36, übersetzt 0.33), so it may be a more general German verb-stem piece; near misses in German may fire weakly.",
+ "selection": "random draw"
+}

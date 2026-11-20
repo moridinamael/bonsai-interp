@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-82ca1c76",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1221-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:38:49+00:00",
+ "recipe": {
+  "toolchain_commit": "02feef0f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N1221_neg/2026-11-19-lm1909-82ca1c76.tests.json"
+ },
+ "label": "weak dense unit; strongest on the word pieces ' usable', 'arg|uably' and 'gramm|atical'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N1221_neg/2026-11-19-lm1909-82ca1c76.tests.json",
+   "prereg_commit": "02feef0f8",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.641,
+     "peak": " usable"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.658,
+     "peak": " usable"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.43,
+     "peak": " arguably"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.567,
+     "peak": " arguably"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.823,
+     "peak": " usable"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.493,
+     "peak": "atical"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.486,
+     "peak": " arguably"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.624,
+     "peak": " usable"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.352,
+     "peak": "After"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.312,
+     "peak": " winter"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.325,
+     "peak": " clearly"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.141,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.189,
+     "peak": "Only"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.04,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.215,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.162,
+     "peak": " drinking"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.595,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "02feef0f8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' usable', 'uably' (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole dense (11.7% of tokens reach 0.1 of a max of only 0.17) and gate-closed (leak regime 100%). Probes: usable 0.68, arguably 0.46, grammatical 0.46, but also pineapple 0.31 and presumably 0.32. The test records the best guess; near misses are expected to fire.",
+ "selection": "random draw"
+}

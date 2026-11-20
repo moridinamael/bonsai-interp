@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-635a564c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N6871-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:27:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N6871",
+   "pole": "-",
+   "label": "a line break fused to closing punctuation in code (':\\n', ',\\n', '):\\n') near the start of the window; the same statements written on one line stay quiet",
+   "fire": [
+    "    elif count > limit:\n        return False\n",
+    "while queue:\n    node = queue.pop()\n",
+    "    for row in table.rows():\n        total += row.value\n",
+    "class Parser(Base):\n    depth = 0\n",
+    "    if user is None:\n        raise KeyError(name)\n",
+    "result = merge(left,\n               right)\n",
+    "with open(path) as handle:\n    text = handle.read()\n",
+    "    def reset(self):\n        self.count = 0\n"
+   ],
+   "quiet": [
+    "    return False if count > limit else True",
+    "node = queue.pop() if queue else None",
+    "    total = sum(row.value for row in table.rows())",
+    "depth = Parser(Base).depth or 0",
+    "    user = lookup(name) or raise_key_error(name)",
+    "result = merge(left, right)",
+    "text = open(path).read().strip()",
+    "    self.count = 0; self.depth = 0"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code ':\\n' / ',\\n' line end",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole positional: top peaks cluster at window position 4 and 97% fall within the first 16 tokens; peaks are ':\\n' x9, ',\\n' x4, \"',\\n\" x3. Probes were weak (0.08-0.26 of max) on short snippets, also on prose 'things:\\n' 0.15, so the median fire may miss 0.20; the test records the best guess."
+}

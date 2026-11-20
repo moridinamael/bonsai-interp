@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1277b443",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N11029-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:38:42+00:00",
+ "recipe": {
+  "toolchain_commit": "02feef0f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N11029_neg/2026-11-19-lm1909-1277b443.tests.json"
+ },
+ "label": "the piece 'uk' (also 'ak') inside a foreign surname or place name (P|uk|kala, Sh|uk|la, H|uk|om, Prabh|ak|ar); not the word UK, 'bulk' or names without the piece",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N11029_neg/2026-11-19-lm1909-1277b443.tests.json",
+   "prereg_commit": "02feef0f8",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.566,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.939,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.605,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.606,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.149,
+     "peak": " Suk"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.561,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.311,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.048,
+     "peak": " Luk"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " study"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " canv"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " Sam"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " surgical"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " us"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.564,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "02feef0f8",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'uk' inside a surname",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: 'uk' x14, 'ak' x5 of the top 32, all inside names; the card also lists ' share' x6, which a probe did not reproduce (0.02). Probes: Pukkala/Shukla 1.10, Hukom/Sukardi 0.72, Prabhakar 0.47, UK 0.01, bulk 0.01. Depends on the tokenizer splitting the name at 'uk'.",
+ "selection": "random draw"
+}
