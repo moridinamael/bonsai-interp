@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f6cf218f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N8854+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:01:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N8854",
+   "pole": "+",
+   "label": "keyword argument whose value is another variable in Python code (inputs=input_data, extent=img_extent)",
+   "fire": [
+    "import keras\n\ndef build(input_data):\n    hidden = layer(input_data)\n    model = keras.Model(inputs=input_data, outputs=hidden)\n    return model",
+    "import matplotlib.pyplot as plt\n\ndef show(img, img_extent):\n    plt.imshow(img, extent=img_extent, cmap='gray')\n    plt.show()",
+    "def train(model, train_data, val_data):\n    model.fit(x=train_data, validation_data=val_data, epochs=5)",
+    "def plot(ax, xs, ys, line_color):\n    ax.plot(xs, ys, color=line_color, label=series_name)",
+    "def make(cfg, batch_size):\n    loader = DataLoader(dataset=cfg.dataset, batch_size=batch_size)\n    return loader",
+    "def save(df, out_path):\n    df.to_csv(path_or_buf=out_path, index=False)",
+    "def resize(image, new_size):\n    return cv2.resize(src=image, dsize=new_size)",
+    "def run(session, feed):\n    result = session.run(fetches=output_op, feed_dict=feed)\n    return result"
+   ],
+   "quiet": [
+    "import keras\n\ndef build(input_data):\n    hidden = layer(input_data)\n    model = keras.Model(input_data, hidden)\n    return model",
+    "import matplotlib.pyplot as plt\n\ndef show(img, img_extent):\n    plt.imshow(img)\n    plt.show()",
+    "def train(model, train_data, val_data):\n    model.fit(train_data, val_data)",
+    "def plot(ax, xs, ys, line_color):\n    ax.plot(xs, ys)",
+    "def make(cfg, batch_size):\n    loader = DataLoader(cfg.dataset)\n    return loader",
+    "def save(df, out_path):\n    df.to_csv(out_path)",
+    "def resize(image, new_size):\n    return cv2.resize(image, new_size)",
+    "def run(session, feed):\n    result = session.run(output_op)\n    return result"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "kwarg = variable",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card: no dominant token, weak max (7.5), density 0.68% at >0.1 max; tops mix code ('=input', '_extent', ' :class:') with ' over' and Arabic. Probe: all <0.13. Best guess only; likely fails."
+}
