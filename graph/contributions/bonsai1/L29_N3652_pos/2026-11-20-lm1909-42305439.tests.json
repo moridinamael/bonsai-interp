@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-42305439",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3652+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:14:05+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N3652",
+   "pole": "+",
+   "label": "position right before an n-initial token that context makes predictable (runs of n-prefixed code variables, Arabic words in ن)",
+   "fire": [
+    "def init(self):\n    self.nx = 64\n    self.ny = 64\n    self.nz = 32\n    self.nt = 100",
+    "params = dict(\n    nsteps=nsteps,\n    nburn=nburn,\n    nthin=nthin,\n    nchains=nchains,\n)",
+    "int nrows = 10;\nint ncols = 12;\nint nblocks = 4;\nint nthreads = 8;",
+    "fit = model.sample(\n        nsample=nsample,\n        nadapt=nadapt,\n        nchain=nchain,\n        nproc=nproc)",
+    "n_users = len(users)\nn_items = len(items)\nn_factors = 16\nn_epochs = 20",
+    "SELECT n.id, n.name, n.node_type, n.parent FROM nodes n",
+    "args.nlayers = 6\nargs.nheads = 8\nargs.nembd = 512\nargs.nctx = 1024",
+    "for i in range(n):\n    nprev = ncur\n    ncur = nnext\n    nnext = nprev + ncur"
+   ],
+   "quiet": [
+    "def init(self):\n    self.width = 64\n    self.height = 64\n    self.depth = 32\n    self.steps = 100",
+    "params = dict(\n    steps=steps,\n    burn=burn,\n    thin=thin,\n    chains=chains,\n)",
+    "int rows = 10;\nint cols = 12;\nint blocks = 4;\nint threads = 8;",
+    "fit = model.sample(\n        iters=iters,\n        warmup=warmup,\n        chains=chains,\n        cores=cores)",
+    "users_total = len(users)\nitems_total = len(items)\nfactors = 16\nepochs = 20",
+    "SELECT p.id, p.title, p.price, p.owner FROM products p",
+    "args.layers = 6\nargs.heads = 8\nargs.embd = 512\nargs.ctx = 1024",
+    "for i in range(k):\n    prev = cur\n    cur = following\n    following = prev + cur"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts next 'n'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: + pole output promotes ' N', ' n', 'n', '_n', 'н'; top examples precede nchain/ncore, _npref, _npy, Arabic نثرية/نيجيريا/نبالا. Probe: n_rows/n_cols run 0.30 at the indentation before n_layers; plain prose with n-words ~0."
+}
