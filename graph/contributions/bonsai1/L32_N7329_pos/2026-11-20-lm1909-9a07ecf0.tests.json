@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-9a07ecf0",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N7329+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:00:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N7329",
+   "pole": "+",
+   "label": "a delimiter (dash, quote, newline) that opens a title, name or string item in a list",
+   "fire": [
+    "His third novel – The Silent Harbor – became a bestseller.",
+    "codes = {\n    200: 'OK',\n    404: 'NOT FOUND',\n    500: 'SERVER ERROR'\n}",
+    "Here are some classic stories:\nThe Ugly Duckling\nHansel and Gretel\nThe Snow Queen",
+    "Her debut album – Northern Lights – was released in 2014.",
+    "Reading list:\nPride and Prejudice\nGreat Expectations\nJane Eyre",
+    "STATUS = {\n    'a': 'ACTIVE',\n    'p': 'PENDING',\n    'c': 'CLOSED'\n}",
+    "Their latest film – A Quiet Winter – opens next week.",
+    "Songs played tonight:\nYesterday\nLet It Be\nHey Jude"
+   ],
+   "quiet": [
+    "His third novel became a bestseller within a month of release.",
+    "count = 0\nfor x in items:\n    count += 1\nprint(count)",
+    "Here are some classic stories that children have loved for centuries.",
+    "Her debut album was released in 2014 to warm reviews.",
+    "We read three novels last term and discussed each one in class.",
+    "total = price * qty\nif total > 100:\n    total -= 10",
+    "Their latest film opens next week in most cities.",
+    "The band played for two hours and finished with an encore."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "delimiter before item",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no single token; peaks on ' –' before a book title, \" '\" before 'NOT FOUND' in an HTTP-code dict, '\\n' between fairy-tale titles in a list. The - pole fires on tokens introducing titles in prose ('the bestselling', 'including')."
+}

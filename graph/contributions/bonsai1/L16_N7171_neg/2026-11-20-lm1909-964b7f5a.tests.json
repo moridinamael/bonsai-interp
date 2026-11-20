@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-964b7f5a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N7171-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:00:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N7171",
+   "pole": "-",
+   "label": "the '_id' suffix piece of an identifier in code (user_id, builder_id)",
+   "fire": [
+    "def get_order(request, order_id):\n    return Order.objects.get(pk=order_id)",
+    "    user_id = session['user_id']\n    print(user_id)",
+    "SELECT name FROM users WHERE account_id = 42;",
+    "    item = cache.get(item_id)\n    if item is None:",
+    "def delete_post(post_id):\n    db.remove(post_id)",
+    "    params = {'client_id': cid, 'session_id': sid}",
+    "    for group_id in group_ids:\n        load(group_id)",
+    "    row = fetch(customer_id)\n    return row"
+   ],
+   "quiet": [
+    "def get_order(request, order):\n    return Order.objects.get(pk=order.pk)",
+    "    user = session['user']\n    print(user)",
+    "SELECT name FROM users WHERE age = 42;",
+    "    item = cache.get(key)\n    if item is None:",
+    "def delete_post(post):\n    db.remove(post)",
+    "    params = {'client': cid, 'session': sid}",
+    "    for group in groups:\n        load(group)",
+    "    row = fetch(customer)\n    return row"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "'_id' in identifiers",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: weak pole (max 2.75), gate-closed leak 66%; '\\n' is 17 of top 32 peaks (mid-sentence line breaks), '_id' 4, ' token' and '(key' in code. Tested the cleaner '_id' guess."
+}
