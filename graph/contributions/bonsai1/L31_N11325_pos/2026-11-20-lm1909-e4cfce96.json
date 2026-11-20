@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e4cfce96",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N11325+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:30:22+00:00",
+ "recipe": {
+  "toolchain_commit": "7a8ba7760",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N11325_pos/2026-11-20-lm1909-e4cfce96.tests.json"
+ },
+ "label": "a word-internal piece of a German word that the tokenizer splits (Ans|pruch, anz|uge|hen, eing|ef|ahren)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N11325_pos/2026-11-20-lm1909-e4cfce96.tests.json",
+   "prereg_commit": "7a8ba7760",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.502,
+     "peak": "pr"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.58,
+     "peak": "uge"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.671,
+     "peak": "ef"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.033,
+     "peak": " Ans"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.997,
+     "peak": "uge"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.718,
+     "peak": "ef"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.674,
+     "peak": " Ans"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.214,
+     "peak": "ef"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " F"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.179,
+     "peak": "j"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.362,
+     "peak": " gew"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": "Die"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.232,
+     "peak": " Auf"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": "ient"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.014,
+     "peak": "J"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.095,
+     "peak": " gew"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.696,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7a8ba7760",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German word piece",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Probe: 'anzugehen' 0.85, 'Anspruch' 0.96, 'eingefahren' 1.26, plain German sentence 0.007, English 0.08. Arabic split-word examples also appear in the card; the test covers German only.",
+ "selection": "random draw"
+}

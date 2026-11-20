@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-d8e5069b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N3079+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:30:09+00:00",
+ "recipe": {
+  "toolchain_commit": "7a8ba7760",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N3079_pos/2026-11-20-lm1909-d8e5069b.tests.json"
+ },
+ "label": "a preposition ('for', 'like', 'as') right after a noun phrase, linking it to the category it is being contrasted or compared with (crop usage| for food, accommodation| like a hotel)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N3079_pos/2026-11-20-lm1909-d8e5069b.tests.json",
+   "prereg_commit": "7a8ba7760",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.262,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.244,
+     "peak": " like"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.334,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.207,
+     "peak": " endurance"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.262,
+     "peak": " like"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.033,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.116,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.298,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.14,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " they"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.143,
+     "peak": " skills"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " training"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " protest"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": " earlier"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.07,
+     "peak": "Water"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.253,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7a8ba7760",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "noun-linking for/like",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Top examples are 'for/like/as' after a noun in contrastive arguments. Probe on plain 'demand for', 'waited for', 'like this' gave only 0.01-0.04, so this is a low-confidence guess.",
+ "selection": "random draw"
+}
