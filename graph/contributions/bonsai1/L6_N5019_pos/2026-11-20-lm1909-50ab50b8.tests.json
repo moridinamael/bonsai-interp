@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-50ab50b8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N5019+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:38:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N5019",
+   "pole": "+",
+   "label": "the opening triple quote of a Python docstring right after a def line",
+   "fire": [
+    "import os\n\ndef load_config(path):\n    \"\"\"Read the settings file and return a dict.\"\"\"\n    return {}",
+    "class Cache:\n    def clear(self):\n        \"\"\"Remove every stored entry.\"\"\"\n        self.items = {}",
+    "import math\n\ndef area(radius):\n    \"\"\"Return the area of a circle.\"\"\"\n    return math.pi * radius ** 2",
+    "from typing import List\n\ndef flatten(rows: List[list]):\n    \"\"\"Flatten a list of lists into one list.\"\"\"\n    return [x for r in rows for x in r]",
+    "import json\n\ndef dump(obj, fh):\n    '''Write obj to fh as pretty JSON.'''\n    json.dump(obj, fh, indent=2)",
+    "def is_even(n):\n    \"\"\"True if n is divisible by two.\"\"\"\n    return n % 2 == 0",
+    "import re\n\ndef slugify(text):\n    \"\"\"Turn a title into a URL slug.\"\"\"\n    return re.sub(r'\\W+', '-', text).lower()",
+    "class Parser:\n    def parse(self, line):\n        \"\"\"Split one log line into its fields.\"\"\"\n        return line.split()"
+   ],
+   "quiet": [
+    "import os\n\ndef load_config(path):\n    # read the settings file and return a dict\n    return {}",
+    "class Cache:\n    def clear(self):\n        self.items = {}\n        self.size = 0",
+    "import math\n\ndef area(radius):\n    return math.pi * radius ** 2",
+    "from typing import List\n\ndef flatten(rows: List[list]):\n    # flatten a list of lists into one list\n    return [x for r in rows for x in r]",
+    "import json\n\ndef dump(obj, fh):\n    json.dump(obj, fh, indent=2)\n    fh.flush()",
+    "def is_even(n):\n    result = n % 2 == 0\n    return result",
+    "import re\n\ndef slugify(text):\n    cleaned = re.sub(r'\\W+', '-', text)\n    return cleaned.lower()",
+    "class Parser:\n    def parse(self, line):\n        fields = line.split()\n        return fields"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "docstring opening quotes",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags broad; prose verbs (investigated, explores) also appear among top examples."
+}
