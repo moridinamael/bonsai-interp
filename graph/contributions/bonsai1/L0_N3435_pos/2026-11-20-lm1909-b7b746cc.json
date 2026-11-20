@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-b7b746cc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3435+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:45:34+00:00",
+ "recipe": {
+  "toolchain_commit": "2b5ebb30d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N3435_pos/2026-11-20-lm1909-b7b746cc.tests.json"
+ },
+ "label": "' of' right after a capitalized title noun in a proper name (Convention of, Nature of, Ministry of)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N3435_pos/2026-11-20-lm1909-b7b746cc.tests.json",
+   "prereg_commit": "2b5ebb30d",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.259,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.476,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.171,
+     "peak": " presented"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.069,
+     "peak": " worked"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.075,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.138,
+     "peak": " about"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.238,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.128,
+     "peak": " downstairs"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.108,
+     "peak": " gathered"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.108,
+     "peak": " first"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.095,
+     "peak": " presented"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.069,
+     "peak": " worked"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.049,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.138,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.135,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.127,
+     "peak": " downstairs"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.155,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2b5ebb30d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' of' in titled names",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Broad, mostly gate-closed pole (max 0.26); peaks include Arabic ' الشر' and ' of' in 'National Convention of', 'Nature of'. Probe: 'Convention of' 0.73, 'Nature of' 0.44, unrelated sentence 0.13, so near misses may fire weakly.",
+ "selection": "random draw"
+}

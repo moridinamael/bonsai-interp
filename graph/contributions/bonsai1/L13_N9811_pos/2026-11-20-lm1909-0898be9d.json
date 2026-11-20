@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-0898be9d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N9811+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:46:27+00:00",
+ "recipe": {
+  "toolchain_commit": "2b5ebb30d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N9811_pos/2026-11-20-lm1909-0898be9d.tests.json"
+ },
+ "label": "the PubMed identifier tokens in a citation (' PMID', 'PubMed', 'pubmed' in URLs)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N9811_pos/2026-11-20-lm1909-0898be9d.tests.json",
+   "prereg_commit": "2b5ebb30d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.857,
+     "peak": " PMID"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.588,
+     "peak": " PubMed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.885,
+     "peak": " PMID"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.577,
+     "peak": "med"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.886,
+     "peak": " PMID"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.362,
+     "peak": " PubMed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.864,
+     "peak": " PMID"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.727,
+     "peak": " PubMed"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.443,
+     "peak": " doi"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.068,
+     "peak": " trial"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.382,
+     "peak": " doi"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.082,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.346,
+     "peak": " journal"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.073,
+     "peak": " search"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.387,
+     "peak": "pub"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.13,
+     "peak": " website"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.792,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2b5ebb30d",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "PMID / PubMed",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "' PMID' x15, 'med' of PubMed x6, ' PubMed' x3 in reference lists; max is only 4.6 and the pole is mostly gate-closed echo. Near misses keep the reference-list style with DOIs or journal pages but no PubMed identifier.",
+ "selection": "random draw"
+}
