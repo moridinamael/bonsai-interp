@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e9cdf0cc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N2292-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:26:13+00:00",
+ "recipe": {
+  "toolchain_commit": "314f44d00",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N2292_neg/2026-11-20-lm1909-e9cdf0cc.tests.json"
+ },
+ "label": "the completing token of a Star Wars name or title (Amid|ala, Phantom Men|ace, Clone Wars, Ken|obi)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N2292_neg/2026-11-20-lm1909-e9cdf0cc.tests.json",
+   "prereg_commit": "314f44d00",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.215,
+     "peak": "u"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.202,
+     "peak": "on"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.191,
+     "peak": " Jar"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.538,
+     "peak": "obi"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.496,
+     "peak": "ala"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.567,
+     "peak": "ace"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.502,
+     "peak": " Wars"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.558,
+     "peak": "quel"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": "In"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": " argue"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " toy"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.092,
+     "peak": " series"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": " series"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " villain"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.517,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "314f44d00",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Star Wars names",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: Clone Wars, Padme Amidala, Obi-Wan Kenobi, Phantom Menace; also Jessica Jones, so it may be broader franchise fiction. Near misses keep film talk and use real-history names ('Napoleonic Wars').",
+ "selection": "random draw"
+}

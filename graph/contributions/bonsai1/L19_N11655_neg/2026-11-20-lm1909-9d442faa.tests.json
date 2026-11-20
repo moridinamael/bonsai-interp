@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-9d442faa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N11655-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:11:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N11655",
+   "pole": "-",
+   "label": "descriptive text inside a Python docstring (purpose / parameter descriptions)",
+   "fire": [
+    "def mask_name(root, suffix=\".fits\"):\n    \"\"\"\n    purpose: build the name scheme for the bad-pixel mask file\n    \"\"\"\n    return root + suffix",
+    "def resistor(pos, value):\n    \"\"\"Place a resistor.\n\n    value: string with the resistance. If it ends with ohm, strip it.\n    \"\"\"\n    return (pos, value)",
+    "def list_hosts(self):\n    \"\"\"\n    Get a list of hosts that are reachable.\n\n    @param timeout: seconds to wait for each host\n    \"\"\"\n    return self.hosts",
+    "def test_delete_bookmark(model, row):\n    \"\"\"Test removing a bookmark from the completion model.\"\"\"\n    model.remove(row)",
+    "def rename(user, newname):\n    \"\"\"Rename the account.\n\n    newname: the display name that replaces the old one\n    \"\"\"\n    user.name = newname",
+    "class Reader:\n    \"\"\"\n    purpose: parse the header block of a spectrum file\n    \"\"\"\n    pass",
+    "def save(table, path):\n    \"\"\"\n    Write the table to disk.\n\n    @param path: target location of the output file\n    \"\"\"\n    open(path, \"w\").write(table)",
+    "def scale(img, factor):\n    \"\"\"Return a copy of the image resized by factor, keeping the aspect ratio.\"\"\"\n    return img"
+   ],
+   "quiet": [
+    "def mask_name(root, suffix=\".fits\"):\n    name = root + suffix\n    return name",
+    "def resistor(pos, value):\n    value = value.rstrip(\"ohm\")\n    return (pos, value)",
+    "def list_hosts(self, timeout=5):\n    hosts = self.scan(timeout)\n    return [h for h in hosts if h.up]",
+    "def test_delete_bookmark(model, row):\n    model.remove(row)\n    assert row not in model",
+    "def rename(user, newname):\n    user.name = newname\n    user.save()",
+    "class Reader:\n    def __init__(self, path):\n        self.path = path",
+    "def save(table, path):\n    with open(path, \"w\") as f:\n        f.write(table)",
+    "def scale(img, factor):\n    w, h = img.size\n    return img.resize((w * factor, h * factor))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring description",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Very sparse pole (0.008% of tokens above 0.1 of max). Card top examples are all inside docstrings; a probe with a 'purpose:' docstring scored only 0.013, so this is a low-confidence guess."
+}

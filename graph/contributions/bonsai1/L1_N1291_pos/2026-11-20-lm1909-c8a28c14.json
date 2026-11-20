@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c8a28c14",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N1291+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:26:48+00:00",
+ "recipe": {
+  "toolchain_commit": "314f44d00",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N1291_pos/2026-11-20-lm1909-c8a28c14.tests.json"
+ },
+ "label": "the word-final suffix piece of a Spanish word split by the tokenizer (ceboll|as, critic|ables)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N1291_pos/2026-11-20-lm1909-c8a28c14.tests.json",
+   "prereg_commit": "314f44d00",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.577,
+     "peak": "as"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.166,
+     "peak": " pre"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.055,
+     "peak": " rod"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.128,
+     "peak": "ables"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.234,
+     "peak": "A"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.111,
+     "peak": "ables"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.045,
+     "peak": "os"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.093,
+     "peak": "as"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.09,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.136,
+     "peak": " pre"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.068,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.047,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.233,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.086,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.042,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.17,
+     "peak": "El"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.625,
+    "median_fire": 0.119,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "314f44d00",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Spanish split suffix",
+ "unit_kind": "lexical",
+ "confidence": 0.2,
+ "notes": "Card flags broad (3.2%), max 0.25; peaks are suffix pieces across languages (ات, ables, as, 게). Probe: 'Las cebollas' 0.42, Arabic 0.00. Near misses are Spanish sentences of common unsplit words.",
+ "selection": "random draw"
+}
