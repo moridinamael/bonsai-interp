@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-46b09c77",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N9341-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N9341",
+   "pole": "-",
+   "label": "leading tab indentation before a key in a nested Python dict literal (tab-indented code)",
+   "fire": [
+    "\tfor d in doc.items:\n\t\trows.append({\n\t\t\t'item_code': d.item_code,\n\t\t\t'qty': d.qty\n\t\t})",
+    "\tgl_entries.append(\n\t\tself.get_gl_dict({\n\t\t\t\"account\": self.debit_to,\n\t\t\t\"party_type\": \"Customer\"\n\t\t}))",
+    "\tbooks = []\n\tfor b in asset.books:\n\t\tbooks.append({\n\t\t\t'finance_book': b.name\n\t\t})",
+    "\tfilters = {\n\t\t'company': company,\n\t\t'docstatus': 1\n\t}",
+    "\tentries.append({\n\t\t\"cost_center\": cost_center,\n\t\t\"debit\": amount\n\t})",
+    "\tdef get_args(self):\n\t\treturn {\n\t\t\t'posting_date': self.posting_date,\n\t\t\t'company': self.company\n\t\t}",
+    "\tout.update({\n\t\t'warehouse': wh,\n\t\t'stock_qty': qty\n\t})",
+    "\tdata.append({\n\t\t\"employee\": emp.name,\n\t\t\"salary\": emp.salary\n\t})"
+   ],
+   "quiet": [
+    "    for d in doc.items:\n        rows.append({'item_code': d.item_code, 'qty': d.qty})",
+    "    gl_entries.append(self.get_gl_dict({\"account\": self.debit_to, \"party_type\": \"Customer\"}))",
+    "    books = []\n    for b in asset.books:\n        books.append({'finance_book': b.name})",
+    "    filters = {'company': company, 'docstatus': 1}",
+    "    entries.append({\"cost_center\": cost_center, \"debit\": amount})",
+    "    def get_args(self):\n        return {'posting_date': self.posting_date, 'company': self.company}",
+    "    out.update({'warehouse': wh, 'stock_qty': qty})",
+    "    data.append({\"employee\": emp.name, \"salary\": emp.salary})"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "tab indent in dict literal",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "top examples are '\\t' runs before dict keys in tab-indented Frappe/ERPNext-style code; also newline in markdown prose"
+}

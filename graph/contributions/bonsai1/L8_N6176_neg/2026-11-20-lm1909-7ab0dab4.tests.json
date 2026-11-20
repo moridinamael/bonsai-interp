@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-7ab0dab4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N6176-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:23:24+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N6176",
+   "pole": "-",
+   "label": "digits inside numeric literals in code (max_length=25, 0x09, 256-length)",
+   "fire": [
+    "    name = models.CharField(max_length=25, null=True)",
+    "    elif ord(key) == 0x09:\n        handle_tab()",
+    "    lc_map = build_table(256)\n    return lc_map",
+    "    self.pk = 'abc 1234567890'",
+    "    data = data.replace('&#x27;', \"'\")",
+    "    width = 60\n    height = 480",
+    "    PORT = 8080\n    HOST = '127.0.0.1'",
+    "    buf = bytearray(1024)\n    sock.recv_into(buf)"
+   ],
+   "quiet": [
+    "    name = models.CharField(max_length=MAX_LEN, null=True)",
+    "    elif ord(key) == TAB:\n        handle_tab()",
+    "    lc_map = build_table(size)\n    return lc_map",
+    "    self.pk = 'abcdefghij'",
+    "    data = data.replace('&apos;', \"'\")",
+    "    width = base\n    height = base * ratio",
+    "    PORT = env_port\n    HOST = 'localhost'",
+    "    buf = bytearray(size)\n    sock.recv_into(buf)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "digits in code literals",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "card flags gate-closed regime 81%; weak pole (max 5.3); top tokens digits in code"
+}
