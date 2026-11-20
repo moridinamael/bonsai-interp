@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6de7eedc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N11882-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:28:36+00:00",
+ "recipe": {
+  "toolchain_commit": "3a986a91c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N11882_neg/2026-11-19-lm1909-6de7eedc.tests.json"
+ },
+ "label": "opinion mining: text about tracking or classifying what people say online (sentiment, mentions, 'saying about' a brand, opinion/text mining)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N11882_neg/2026-11-19-lm1909-6de7eedc.tests.json",
+   "prereg_commit": "3a986a91c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.44,
+     "peak": " saying"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.67,
+     "peak": " sentiment"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.696,
+     "peak": " mining"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.833,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.392,
+     "peak": " negative"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.676,
+     "peak": " forums"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.893,
+     "peak": " chatter"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.801,
+     "peak": " reviews"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " ahead"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " export"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": " goods"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.073,
+     "peak": " sentence"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " used"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " agency"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " records"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.686,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a986a91c",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sentiment / opinion mining",
+ "unit_kind": "sparse feature",
+ "confidence": 0.65,
+ "notes": "Card: sparse (0.011%); peaks on ' about' (what people are saying on Twitter), ' mentions', ' sentiment', ' text' (mining), 'positive' (lexicon), ' Reputation'; the - pole promotes ' sentiment', ' text', ' happy'. Probes: 0.67-0.82 for saying-about-a-brand, sentiment labels, opinion analysis, mentions; reputation management 0.24; 'saying about the timetable' (offline) 0.12, data mining 0.02, a speech 0.02. Near misses keep the analytics frame and swap the object.",
+ "selection": "random draw"
+}

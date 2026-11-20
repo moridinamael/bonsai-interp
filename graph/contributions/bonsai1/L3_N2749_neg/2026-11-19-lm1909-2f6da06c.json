@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2f6da06c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N2749-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:51+00:00",
+ "recipe": {
+  "toolchain_commit": "3a986a91c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N2749_neg/2026-11-19-lm1909-2f6da06c.tests.json"
+ },
+ "label": "' way' closing 'in a <adjective> way' (one weak trigger of a broad pole)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N2749_neg/2026-11-19-lm1909-2f6da06c.tests.json",
+   "prereg_commit": "3a986a91c",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.139,
+     "peak": " way"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.085,
+     "peak": " way"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.363,
+     "peak": " way"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.371,
+     "peak": " way"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.297,
+     "peak": " way"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.267,
+     "peak": " way"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.247,
+     "peak": " way"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.146,
+     "peak": " way"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.064,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.072,
+     "peak": " thought"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.099,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.222,
+     "peak": " smiled"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.05,
+     "peak": " tone"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": " political"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.046,
+     "peak": " staff"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.095,
+     "peak": "I"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.257,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a986a91c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'in a ... way' (broad pole)",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card flags the pole broad (4.2% of tokens reach 0.1 of max; max only 0.85; 57% leak regime). Top examples mix ' way' after 'clichéd', Arabic and Cyrillic mid-word pieces, ' obvious'. Probes: 'in a clichéd way' 0.59, 'sentimental way' 0.26, 'meaningful way' 0.24, 'big way' 0.13; a Cyrillic piece in 'Иркутске' 0.69. The label covers one English trigger only; unrelated text sits at 0.05-0.13, so the test is tight.",
+ "selection": "random draw"
+}

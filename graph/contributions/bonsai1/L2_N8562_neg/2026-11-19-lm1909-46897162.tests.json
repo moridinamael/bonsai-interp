@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-46897162",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N8562-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:11:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N8562",
+   "pole": "-",
+   "label": "a lowercase token that starts a new line right after a sentence-ending line break (line begins without a capital)",
+   "fire": [
+    "The shop closes at six on weekdays.\nopen again on Saturday morning.",
+    "Thank you all for coming tonight.\nhope to see you next year.",
+    "The report covers three main topics.\na. Funding for rural schools",
+    "It was a long and tiring journey.\nmade worse by the heavy rain.",
+    "Best wishes from all of us here.\np.s. the cat says hello.",
+    "The recipe serves four people.\ntakes about forty minutes to cook.",
+    "Members voted on the proposal.\nb. Election of the new treasurer",
+    "The museum is free on Sundays.\ndonations are always welcome."
+   ],
+   "quiet": [
+    "The shop closes at six on weekdays.\nIt opens again on Saturday morning.",
+    "Thank you all for coming tonight.\nWe hope to see you next year.",
+    "The report covers three main topics.\nA. Funding for rural schools",
+    "It was a long and tiring journey, made worse by the heavy rain.",
+    "Best wishes from all of us here.\nP.S. The cat says hello.",
+    "The recipe serves four people and takes about forty minutes to cook.",
+    "Members voted on the proposal.\nB. Election of the new treasurer",
+    "The museum is free on Sundays.\nDonations are always welcome."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "lowercase line start",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card flags the pole broad and gate-closed (100% leak regime); top examples are all single lowercase letters or short words right after '.⏎'. Probes: lowercase line starts 0.61-0.94; the same line capitalised 0.18 and 0.01; no line break 0.00. Near misses capitalise the line start or drop the break."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8187a673",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N10774-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:48+00:00",
+ "recipe": {
+  "toolchain_commit": "3a986a91c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N10774_neg/2026-11-19-lm1909-8187a673.tests.json"
+ },
+ "label": "the first piece of a tiger/lion word (' t' of tigers / Panthera tigris, Chinese 虎/獅 inside compounds)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N10774_neg/2026-11-19-lm1909-8187a673.tests.json",
+   "prereg_commit": "3a986a91c",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.213,
+     "peak": " t"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.056,
+     "peak": " t"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.073,
+     "peak": " two"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.001,
+     "peak": " all"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.301,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.163,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.758,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.158,
+     "peak": " t"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": "oss"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.073,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " born"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "園"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": "海"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": "社"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.867,
+    "median_fire": 0.161,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a986a91c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tiger/lion word piece (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: very sparse (0.002% of tokens reach 0.1 of max); max 684 is one outlier (獅 in 獅友), the rest of the top is 200-270 on 老虎, 虎鯨, ' t'(igers), ' t'(igris), Arabic الأ(سد). The + pole promotes lion/tiger/dragon tokens. Probes reached only 0.24 at best ('Panthera tigris tigris'); Chinese 獅友/虎鯨 0.10-0.11, plain ' tiger' 0.02. Best guess; I expect this to fail on the median.",
+ "selection": "random draw"
+}
