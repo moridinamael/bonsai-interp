@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-f96f04a2",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N2073+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:28:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N2073",
+   "pole": "+",
+   "label": "parameter name or its separator in a docstring Args/Returns list ('    batch_size: ...', 'response (Response):')",
+   "fire": [
+    "def resize(image, width):\n    \"\"\"Resize an image.\n\n    Args:\n        image (Image): the picture to resize\n        width (int): target width in pixels\n    \"\"\"",
+    "def fetch(url, timeout=10):\n    \"\"\"Download a page.\n\n    Arguments:\n        url: address of the page\n        timeout: seconds to wait\n    \"\"\"",
+    "def train(model, epochs):\n    \"\"\"Train the model.\n\n    Parameters\n    ----------\n    model : nn.Module\n        network to train\n    epochs : int\n        number of passes\n    \"\"\"",
+    "def parse(text):\n    \"\"\"Parse a config file.\n\n    Returns\n    -------\n    settings : dict\n        the parsed values\n    \"\"\"",
+    "def send(message, retries):\n    \"\"\"Send a message.\n\n    Args:\n        message (str): body text\n        retries (int): how often to retry\n    \"\"\"",
+    "def load(path):\n    \"\"\"Load weights from disk.\n\n    Args:\n        path (str): file to read\n\n    Returns:\n        state (dict): the loaded tensors\n    \"\"\"",
+    "def plot(data, color):\n    \"\"\"Draw a line chart.\n\n    Args:\n        data (list): y values\n        color (str): line colour\n    \"\"\"",
+    "def score(labels, preds):\n    \"\"\"Compute accuracy.\n\n    Args:\n        labels: true classes\n        preds: predicted classes\n    \"\"\""
+   ],
+   "quiet": [
+    "def resize(image, width):\n    ratio = width / image.width\n    height = int(image.height * ratio)\n    return image.resize((width, height))",
+    "def fetch(url, timeout=10):\n    response = requests.get(url, timeout=timeout)\n    response.raise_for_status()\n    return response.text",
+    "def train(model, epochs):\n    for epoch in range(epochs):\n        loss = model.step()\n        print(epoch, loss)\n    return model",
+    "def parse(text):\n    settings = {}\n    for line in text.splitlines():\n        key, value = line.split('=')\n        settings[key] = value\n    return settings",
+    "def send(message, retries):\n    for attempt in range(retries):\n        if client.post(message):\n            return True\n    return False",
+    "def load(path):\n    with open(path, 'rb') as f:\n        state = pickle.load(f)\n    return state",
+    "def plot(data, color):\n    fig, ax = plt.subplots()\n    ax.plot(data, color=color)\n    return fig",
+    "def score(labels, preds):\n    correct = sum(l == p for l, p in zip(labels, preds))\n    return correct / len(labels)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "docstring parameter entries",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' :' and ':' peaks after parameter names in docstrings; ' response', ' index', ' time' where they start an Args entry. Output promotes type names (int, float, str, bool)."
+}
