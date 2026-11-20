@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-fda4dc5e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N8158+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:36+00:00",
+ "recipe": {
+  "toolchain_commit": "9ca316b0a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N8158_pos/2026-11-19-lm1909-fda4dc5e.tests.json"
+ },
+ "label": "' offensive' as a military noun (take the offensive, go on the offensive, launch an offensive); not the adjective meaning insulting, and only weakly other combat nouns (attack, engagements)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N8158_pos/2026-11-19-lm1909-fda4dc5e.tests.json",
+   "prereg_commit": "9ca316b0a",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.981,
+     "peak": " offensive"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.55,
+     "peak": " offensive"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.122,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.275,
+     "peak": " offensive"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.91,
+     "peak": " offensive"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.063,
+     "peak": " stalled"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.319,
+     "peak": " offensive"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.518,
+     "peak": " offensive"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": " walls"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " found"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.1,
+     "peak": " said"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.069,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": " an"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.418,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ca316b0a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "military noun ' offensive'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (1.0% at 0.1 of max) with mixed regimes; ' offensive' x3 and ' attack' x2 among the peaks. Probes: 'take the offensive along the river' 0.97, 'found the joke offensive' 0.04, 'ordered an attack' 0.14, 'several engagements' 0.20.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " offensive"
+  ]
+ }
+}
