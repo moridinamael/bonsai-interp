@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-d4e112d4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N10983-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:14:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N10983",
+   "pole": "-",
+   "label": "the end of the left operand inside a code condition (if len(x) ... / if n ...) where a comparison operator must follow",
+   "fire": [
+    "def check(items):\n    if len(items) > 10:\n        return items[:10]\n    return items",
+    "for row in rows:\n    if row.count('x') >= 3:\n        print('winner')",
+    "    while len(queue) > 0:\n        job = queue.pop()\n        run(job)",
+    "def trim(name):\n    if len(name) > 30:\n        name = name[:30]\n    return name",
+    "if (retries > 5):\n    raise TimeoutError('gave up')",
+    "    if self.balance >= price:\n        self.balance -= price",
+    "assert len(results) == len(expected)\nprint('ok')",
+    "    elif total_size < limit:\n        buffer.append(chunk)"
+   ],
+   "quiet": [
+    "def check(items):\n    n = len(items)\n    print(n)\n    return items",
+    "for row in rows:\n    marks = row.count('x')\n    print(marks)",
+    "    queue.append(job)\n    log(len(queue))\n    run(job)",
+    "def trim(name):\n    name = name.strip()\n    return name.lower()",
+    "retries = retries + 1\nlogger.info('retrying now')",
+    "    self.balance = self.balance - price\n    self.save()",
+    "results = sorted(results)\nprint(results)",
+    "    total_size = total_size + len(chunk)\n    buffer.append(chunk)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "before a comparison",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: ')' of 'len(a)' and similar just before ' >', inside if-conditions; the + pole is the comparison operator itself and the output promotes enough / >= . Near misses use the same expressions as plain assignments or calls."
+}

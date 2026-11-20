@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-66bca308",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N4627+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:33:06+00:00",
+ "recipe": {
+  "toolchain_commit": "0af4c83f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N4627_pos/2026-11-20-lm1909-66bca308.tests.json"
+ },
+ "label": "a condition or exception clause opened after a rule (prohibited ... if / except when / unless ...): its opener and first words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N4627_pos/2026-11-20-lm1909-66bca308.tests.json",
+   "prereg_commit": "0af4c83f8",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.131,
+     "peak": " such"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.4,
+     "peak": " damage"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.193,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.055,
+     "peak": "Drivers"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.345,
+     "peak": " if"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.022,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.381,
+     "peak": " when"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.093,
+     "peak": " delivery"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "ants"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.067,
+     "peak": " damage"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " why"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.033,
+     "peak": "Drivers"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " stay"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.162,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0af4c83f8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "condition clause",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: ' if', ' when', ' that', 'если' after a rule statement; probe: peak lands on the noun right after 'if such'. Output promotes implies/resulting. Near misses keep the rule but join a plain coordinate clause.",
+ "selection": "random draw"
+}

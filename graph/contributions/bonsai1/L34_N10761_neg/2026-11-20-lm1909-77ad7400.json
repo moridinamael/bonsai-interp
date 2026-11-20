@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-20-lm1909-77ad7400",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10761-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:33:21+00:00",
+ "recipe": {
+  "toolchain_commit": "0af4c83f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10761_neg/2026-11-20-lm1909-77ad7400.tests.json"
+ },
+ "label": "' L' as its own token at the start of a capitalised word the tokenizer splits (L|ombok, L|imerick, L|eder)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10761_neg/2026-11-20-lm1909-77ad7400.tests.json",
+   "prereg_commit": "0af4c83f8",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.486,
+     "peak": " L"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.388,
+     "peak": " L"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.38,
+     "peak": " L"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.047,
+     "peak": " t"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.002,
+     "peak": " coast"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.007,
+     "peak": " north"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.004,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.002,
+     "peak": "lin"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " flight"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "ans"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "Farm"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.11,
+     "peak": " Tr"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " coast"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " north"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " Krak"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.672,
+    "median_fire": 0.027,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0af4c83f8",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off capital L",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "card: ' L' 17 of top 32, all names/words split as ' L' + rest. Probe: Lombok 0.58, Limerick 0.27, London (one token) 0. Near misses swap in rare names starting with other capitals.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " L"
+  ]
+ }
+}

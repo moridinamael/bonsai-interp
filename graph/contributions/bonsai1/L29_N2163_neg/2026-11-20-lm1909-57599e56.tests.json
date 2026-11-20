@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-57599e56",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N2163-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:14:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N2163",
+   "pole": "-",
+   "label": "the path / file part of a URL written inside a code comment or docstring (# See http://.../spec.html)",
+   "fire": [
+    "import zlib\n\n# Format described at http://www.ietf.org/rfc/rfc1950.txt\ndef decompress(data):\n    return zlib.decompress(data)",
+    "def parse_date(s):\n    # See https://docs.python.org/3/library/datetime.html#strftime\n    return datetime.strptime(s, '%Y-%m-%d')",
+    "    # Spec: http://www.w3.org/TR/html5/forms.html\n    def validate(self, value):\n        return bool(value)",
+    "# For the header layout see http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html\nCHUNK_SIZE = 8192",
+    "class Retry:\n    \"\"\"Backoff policy, see https://aws.amazon.com/blogs/architecture/exponential-backoff.html\"\"\"\n    max_tries = 5",
+    "# Status codes from http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml\nNOT_FOUND = 404\nGONE = 410",
+    "def load_config(path):\n    # Format docs: https://toml.io/en/v1.0.0.html\n    with open(path) as f:\n        return toml.load(f)",
+    "    # Algorithm from http://en.wikipedia.org/wiki/Levenshtein_distance\n    def distance(a, b):\n        pass"
+   ],
+   "quiet": [
+    "import zlib\n\n# Decompress the raw bytes we got from the socket\ndef decompress(data):\n    return zlib.decompress(data)",
+    "def parse_date(s):\n    # Dates always arrive in year-month-day order\n    return datetime.strptime(s, '%Y-%m-%d')",
+    "    # Reject empty values before saving the form\n    def validate(self, value):\n        return bool(value)",
+    "# Read the image in fixed blocks to keep memory low\nCHUNK_SIZE = 8192",
+    "class Retry:\n    \"\"\"Backoff policy that doubles the wait after each failure\"\"\"\n    max_tries = 5",
+    "# Status codes we treat as permanent failures\nNOT_FOUND = 404\nGONE = 410",
+    "def load_config(path):\n    # Settings live in a small text file next to the app\n    with open(path) as f:\n        return toml.load(f)",
+    "    # Count the edits needed to turn one word into the other\n    def distance(a, b):\n        pass"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "URL in code comment",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "card: '.html' x8, rfc2616, '-format' inside URLs in Python comments. Fire items are multi-line code with a reference URL; near misses are the same code with a plain-English comment."
+}
