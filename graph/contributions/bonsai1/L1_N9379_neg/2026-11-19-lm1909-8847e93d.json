@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-8847e93d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9379-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:01+00:00",
+ "recipe": {
+  "toolchain_commit": "20a9fe8fa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N9379_neg/2026-11-19-lm1909-8847e93d.tests.json"
+ },
+ "label": "dense early-layer unit; best guess for its strongest end: a few word-internal pieces of non-English words, 'ور' in Arabic الزهور, 'جر' in الشجر(ة), 'و' in عضو, 'is' in French ennemis (a list, not a distinction)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N9379_neg/2026-11-19-lm1909-8847e93d.tests.json",
+   "prereg_commit": "20a9fe8fa",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.857,
+     "peak": "ور"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.778,
+     "peak": "ور"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.949,
+     "peak": "ور"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.576,
+     "peak": "جر"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.67,
+     "peak": "جر"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.603,
+     "peak": "و"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.452,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.715,
+     "peak": "is"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.268,
+     "peak": "تي"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.117,
+     "peak": " الص"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.204,
+     "peak": "دي"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.146,
+     "peak": " ال"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.356,
+     "peak": "جر"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.264,
+     "peak": "در"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.181,
+     "peak": "iver"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.423,
+     "peak": "ins"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.693,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "20a9fe8fa",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; pieces of الزهور / ennemis",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags: broad (4.5% of tokens reach 0.1 of max, max only 0.44) and gate-closed regime 84%. Top pieces: 'ور' x4, 'ри' x4, 'is' x2, 'جر' x2. Probes: الزهور 0.98 and 0.85 (0.35 when sentence-initial), الشجرة 0.59, عضو 0.64, ennemis 0.74 and 0.61; but other Arabic text 0.24, French 'adversaires' sentence 0.24, English 0.11-0.15, so near misses sit just under the bar. Recorded as dense; the test is the best guess.",
+ "selection": "random draw"
+}

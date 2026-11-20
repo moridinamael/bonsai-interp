@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1fec7376",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N7346+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:48+00:00",
+ "recipe": {
+  "toolchain_commit": "20a9fe8fa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N7346_pos/2026-11-19-lm1909-1fec7376.tests.json"
+ },
+ "label": "ends of words for old stone relics and curios you find in the ground or on a rock face: petr|ified wood, petrog|lyph, err|atics, wamp|um, arrow|heads, volcanic glass; ordinary stone materials (granite, sapphire) do not fire",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N7346_pos/2026-11-19-lm1909-1fec7376.tests.json",
+   "prereg_commit": "20a9fe8fa",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.981,
+     "peak": "ified"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.42,
+     "peak": "lyph"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.453,
+     "peak": "um"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.388,
+     "peak": "atics"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.538,
+     "peak": "heads"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.501,
+     "peak": " glass"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.229,
+     "peak": "ified"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.532,
+     "peak": "lyph"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.094,
+     "peak": "wood"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " sheep"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " treaty"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " law"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.085,
+     "peak": " made"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.269,
+     "peak": "ified"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.065,
+     "peak": " that"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.516,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "20a9fe8fa",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stone relics: petrified, petroglyph",
+ "unit_kind": "sparse feature",
+ "confidence": 0.5,
+ "notes": "Card: 'ified' (petrified) x3, 'lyph' x2, 'um' (wampum) x2, erratics. Probes: petrified logs 0.73, arrowheads 0.70, volcanic glass 0.66, erratics 0.61, petroglyphs 0.52, wampum 0.52; weaker on new cases: geodes 0.28, amber chunks 0.26, flint tools 0.23; megaliths 0.02, granite 0.06, sapphire 0.04. 'petrified with fear' still reached 0.30, so the pole is partly the word piece; one near miss tests that. This is closer to a list than a clean distinction.",
+ "selection": "random draw"
+}

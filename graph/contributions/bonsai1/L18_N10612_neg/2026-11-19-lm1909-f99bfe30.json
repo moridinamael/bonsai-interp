@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-f99bfe30",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N10612-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:57+00:00",
+ "recipe": {
+  "toolchain_commit": "20a9fe8fa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N10612_neg/2026-11-19-lm1909-f99bfe30.tests.json"
+ },
+ "label": "unclear; best guess: the comma after the weekday in a dateline at the head of a post ('Monday, June 13, 20..'), and digits inside years in long documents",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N10612_neg/2026-11-19-lm1909-f99bfe30.tests.json",
+   "prereg_commit": "20a9fe8fa",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.176,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.264,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.19,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.178,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.179,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.132,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.177,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.281,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " next"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": "-up"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.043,
+     "peak": " newsletter"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " early"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": "ols"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " maintenance"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.03,
+     "peak": " because"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.178,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "20a9fe8fa",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "unclear: dateline comma / year digits",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card and look: top examples are scattered (' no' in 'would no longer', 'as to whether', inner digits of years and numbers, 'Monday⟦,⟧ June', 'Director ⟦:⟧'), all in long windows. Short probes barely move it: years, citation lists, l/100 km, 'no longer', 'Director :' all under 0.05; only a post-header dateline 'Monday, June 13, 2011' reached 0.20. No label found at card depth; this test records the best guess and will probably fail.",
+ "selection": "random draw"
+}
