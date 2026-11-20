@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-19c86d6a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10725+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:41:00+00:00",
+ "recipe": {
+  "toolchain_commit": "b800272a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10725_pos/2026-11-20-lm1909-19c86d6a.tests.json"
+ },
+ "label": "slot where the focus adverb 'even' / 'même' could come next (after 'does not', French 'avant', 'parfois')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10725_pos/2026-11-20-lm1909-19c86d6a.tests.json",
+   "prereg_commit": "b800272a1",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.029,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.194,
+     "peak": "fois"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.028,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.224,
+     "peak": " avant"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.106,
+     "peak": " avant"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.152,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.342,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.265,
+     "peak": "fois"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " leurs"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.0,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.0,
+     "peak": "Il"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": " lever"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "No"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " dans"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.106,
+     "peak": " employ"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.93,
+    "median_fire": 0.173,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b800272a1",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pre-'even' slot",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: broad (1% of tokens reach 0.1 of max); logit effect promotes ' even', ' Even', ' même', ' incluso', ' даже'; top tokens ' avant', ' not', ' a', 'parfois'. Fire items put 'not'/'avant' where 'even' could follow; near misses are affirmative sentences on the same topic. Probe: 'which does not exist' 0.29, 'parfois' 0.26, 'avant' 0.11-0.17, 'did not even' 0.00: weak and broad, low confidence.",
+ "selection": "random draw"
+}
