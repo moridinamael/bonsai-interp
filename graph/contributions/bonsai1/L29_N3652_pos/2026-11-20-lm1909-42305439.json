@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-42305439",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3652+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:20:47+00:00",
+ "recipe": {
+  "toolchain_commit": "88dd9eb4b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N3652_pos/2026-11-20-lm1909-42305439.tests.json"
+ },
+ "label": "position right before an n-initial token that context makes predictable (runs of n-prefixed code variables, Arabic words in ن)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N3652_pos/2026-11-20-lm1909-42305439.tests.json",
+   "prereg_commit": "88dd9eb4b",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.261,
+     "peak": " self"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.195,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.229,
+     "peak": "int"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.168,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.207,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.244,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.217,
+     "peak": "args"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.466,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " burn"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.0,
+     "peak": ".price"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": "s"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " range"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.223,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "88dd9eb4b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicts next 'n'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: + pole output promotes ' N', ' n', 'n', '_n', 'н'; top examples precede nchain/ncore, _npref, _npy, Arabic نثرية/نيجيريا/نبالا. Probe: n_rows/n_cols run 0.30 at the indentation before n_layers; plain prose with n-words ~0.",
+ "selection": "random draw"
+}
