@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-310fe672",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N10048-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:22:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N10048",
+   "pole": "-",
+   "label": "Token list: Japanese 成長 ('growth'), plus the ^^ emoticon in Korean text and Chinese 快速增长; other CJK words for increase (増加, 発展, 伸び, 增加) are quiet",
+   "fire": [
+    "この十年で町の小さな店は大きな会社に成長しました。",
+    "子どもたちの成長を見るのが毎日の楽しみです。",
+    "新しい事業は順調に成長を続けています。",
+    "彼は選手として大きく成長したと監督は語った。",
+    "주말에 친구들이랑 맛있는 떡볶이 먹었어요^^ 정말 행복했어요.",
+    "선물 고마워요^^ 잘 쓸게요.",
+    "这家公司在过去五年里实现了快速增长。",
+    "若い社員の成長が会社の未来を支える。"
+   ],
+   "quiet": [
+    "この十年で町の小さな店は大きな会社に変わりました。",
+    "子どもたちの笑顔を見るのが毎日の楽しみです。",
+    "新しい事業は順調に売上を伸ばしています。",
+    "彼は選手として大きく変わったと監督は語った。",
+    "주말에 친구들이랑 맛있는 떡볶이 먹었어요. 정말 행복했어요.",
+    "선물 고마워요. 잘 쓸게요.",
+    "这家公司在过去五年里利润增加了很多。",
+    "若い社員の努力が会社の未来を支える。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "成長 / ^^ (list)",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: '^^' x3, 增 x3, 進 x3, setUp x3, サポート, 成長; the + pole fires on increment / + / Boost, so the neuron may be about 'up / increase' with this pole taking a few CJK tokens. Probes: 成長 0.48 and 0.36, 快速增长 0.45, ^^ 0.37, setUp 0.34, サポート 0.28, 進 0.28; 増加 0.15, 增加了 0.04, 经济增长 0.01, 発展 0.01, 伸び 0.00. So a list, not the meaning 'growth'."
+}

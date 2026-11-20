@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ed29d135",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N4613-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:56+00:00",
+ "recipe": {
+  "toolchain_commit": "a7bf31f09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N4613_neg/2026-11-19-lm1909-ed29d135.tests.json"
+ },
+ "label": "Anticipating a threshold or limit: the token just before a limit/cutoff word is due ('above a specified ⟦cutoff⟧', 'must not exceed', 'below a certain', 'the recommended maximum'); plain amounts without a limit are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N4613_neg/2026-11-19-lm1909-ed29d135.tests.json",
+   "prereg_commit": "a7bf31f09",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.866,
+     "peak": " specified"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.267,
+     "peak": " exceed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.355,
+     "peak": " certain"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.028,
+     "peak": " given"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.427,
+     "peak": " set"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.175,
+     "peak": " posted"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.714,
+     "peak": " specified"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.631,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " month"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.034,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.074,
+     "peak": " March"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " drinking"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.529,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a7bf31f09",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "threshold / limit ahead",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: upper_bound =, 'above that amount', 'above a specified cutoff', 'must not exceed'; the - pole promotes ' ceiling', ' threshold(s)', ' min'. Probes: 'above a specified' 1.00, 'below a certain' 0.63, 'not exceed' 0.48 and 0.25, 'over the posted' 0.39, 'the recommended maximum' 0.39; plain amounts 0.01-0.05.",
+ "selection": "random draw"
+}

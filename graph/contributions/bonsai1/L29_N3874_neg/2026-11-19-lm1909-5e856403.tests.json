@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-5e856403",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3874-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:22:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N3874",
+   "pole": "-",
+   "label": "Statistics calls in numerical Python code (std/var with ddof, cov, corrcoef, svd): fires on the punctuation and keyword arguments inside the call; ordinary non-statistical code is quiet",
+   "fire": [
+    "spread = np.std(samples, ddof=1) / np.sqrt(len(samples))",
+    "noise_var = np.var(residuals, ddof=1)",
+    "sigma_hat = np.cov(features, rowvar=False)",
+    "u, s, vt = np.linalg.svd(centered, full_matrices=False)",
+    "rho, pval = scipy.stats.spearmanr(scores_a, scores_b)",
+    "corr = np.corrcoef(returns, rowvar=False)",
+    "err = np.std(trial_means, axis=0, ddof=1)",
+    "pooled = np.cov(group_a, group_b, ddof=1)"
+   ],
+   "quiet": [
+    "target = os.path.join(out_dir, run_name, 'log.txt')",
+    "grid = np.zeros((height, width), dtype=np.uint8)",
+    "text = json.dumps(payload, indent=2, sort_keys=True)",
+    "stacked = np.concatenate([left, right], axis=0)",
+    "clean = re.sub(pattern, '', line, flags=re.IGNORECASE)",
+    "ticks = np.linspace(start, stop, num=50, endpoint=False)",
+    "fig, ax = plt.subplots(nrows=2, ncols=1, sharex=True)",
+    "rows = cursor.execute(query, (user_id, limit)).fetchall()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "statistics calls in code",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: svd(mu, / Spearman rank / scipy.odr / autocorrelation / ddof= / stddevs. The + pole promotes 'root', 'RMS'. Probes: numpy.std(..., ddof=1) 1.61, numpy.cov(..., rowvar=False) 1.86, linalg.svd 0.91, Spearman prose 0.71, Pearson prose 0.30, linalg.eigh 0.11, os.path.join 0.03."
+}

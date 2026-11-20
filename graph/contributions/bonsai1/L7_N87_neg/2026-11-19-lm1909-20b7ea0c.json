@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-20b7ea0c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N87-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:37:20+00:00",
+ "recipe": {
+  "toolchain_commit": "a7bf31f09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N87_neg/2026-11-19-lm1909-20b7ea0c.tests.json"
+ },
+ "label": "A plural noun that opens an organization or country name, with its modifier following: 'Nations Unies', 'Etats-Unis', 'Médecins Sans Frontières', 'Underwriters Laboratories', 'Doctors Without Borders'; ordinary lowercase plurals and name-final plurals ('United Nations') are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N87_neg/2026-11-19-lm1909-20b7ea0c.tests.json",
+   "prereg_commit": "a7bf31f09",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.868,
+     "peak": " Nations"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.907,
+     "peak": "writers"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.789,
+     "peak": "ats"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.36,
+     "peak": " Doctors"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.881,
+     "peak": "ins"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.489,
+     "peak": "aciones"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.831,
+     "peak": "writers"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.767,
+     "peak": " Nations"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.08,
+     "peak": "que"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.089,
+     "peak": " toaster"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": " It"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": " doctors"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.114,
+     "peak": "ours"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.073,
+     "peak": " Nations"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.255,
+     "peak": " experts"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.81,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a7bf31f09",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "name-initial plural (Nations Unies)",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: Nations (Unies), Under|writers Laboratories, Et|ats-Unis, Centers, aciones, etrics. Probes: Médec|ins Sans Frontières 1.15, Nations Unies 0.98, Underwriters Laboratories 0.78, Etats-Unis 0.68, Doctors Without Borders 0.53, Naciones Unidas 0.42, Centers for 0.35, Alcoholics Anonymous 0.34, Friends of the Earth 0.34, Estados Unidos 0.28, Teachers College 0.27; lowercase 'writers'/'teachers'/'doctors' 0.06-0.08, 'United Nations' 0.03, singular 'Center' 0.03.",
+ "selection": "random draw"
+}

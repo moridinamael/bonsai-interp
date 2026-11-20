@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5e856403",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N3874-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:36:41+00:00",
+ "recipe": {
+  "toolchain_commit": "a7bf31f09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N3874_neg/2026-11-19-lm1909-5e856403.tests.json"
+ },
+ "label": "Statistics calls in numerical Python code (std/var with ddof, cov, corrcoef, svd): fires on the punctuation and keyword arguments inside the call; ordinary non-statistical code is quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N3874_neg/2026-11-19-lm1909-5e856403.tests.json",
+   "prereg_commit": "a7bf31f09",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.881,
+     "peak": "="
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.768,
+     "peak": "="
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.939,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.685,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.45,
+     "peak": "man"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.39,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.7,
+     "peak": "="
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.977,
+     "peak": "="
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " os"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " dtype"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": " indent"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": "ed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": "clean"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.052,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": "(query"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 1.545,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a7bf31f09",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "statistics calls in code",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: svd(mu, / Spearman rank / scipy.odr / autocorrelation / ddof= / stddevs. The + pole promotes 'root', 'RMS'. Probes: numpy.std(..., ddof=1) 1.61, numpy.cov(..., rowvar=False) 1.86, linalg.svd 0.91, Spearman prose 0.71, Pearson prose 0.30, linalg.eigh 0.11, os.path.join 0.03.",
+ "selection": "random draw"
+}
