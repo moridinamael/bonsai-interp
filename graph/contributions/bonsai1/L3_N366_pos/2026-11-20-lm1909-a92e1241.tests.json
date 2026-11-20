@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-a92e1241",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N366+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:37:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N366",
+   "pole": "+",
+   "label": "an attribute or member name after a dot or underscore in Python code (cfg.devices, data.process_warning)",
+   "fire": [
+    "def test_config(self):\n    cfg = load()\n    self.assertEqual(len(cfg.devices), 4)\n    self.assertIsInstance(cfg.devices[0], Device)",
+    "class Grid:\n    def __init__(self, arr):\n        self.cell_size = arr.cell_size\n        self.cell_name = arr.cell_name",
+    "result = parser.parse(text)\nprint(result.errors)\nprint(result.warnings[0])",
+    "    def reset(self):\n        self.buffer_index = 0\n        self.buffer_items.clear()",
+    "if response.status_code == 200:\n    payload = response.json()\n    items = payload.results",
+    "    model.config.hidden_size = 512\n    model.config.num_layers = 6",
+    "for row in table.rows:\n    total += row.amount_due",
+    "    data = loader.batch_samples[0]\n    labels = loader.batch_labels[0]"
+   ],
+   "quiet": [
+    "The test loads the configuration and checks that there are four devices, then checks the type of the first one.",
+    "The grid object copies the cell size and the cell name from the array it receives.",
+    "The parser reads the text and prints any errors, followed by the first warning it found.",
+    "Resetting sets the buffer index back to zero and clears every stored item.",
+    "If the server answers with status 200, the payload is decoded and its results are read.",
+    "The model is configured with a hidden size of 512 and six layers in total.",
+    "For every row in the table, the amount due is added to the running total.",
+    "The loader returns the first batch of samples together with the matching labels."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "code attribute name",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card flags broad (6% >0.1 max) and gate-closed regime; best guess from code attribute peaks; prose near misses"
+}
