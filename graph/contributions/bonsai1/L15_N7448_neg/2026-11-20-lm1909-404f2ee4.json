@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-404f2ee4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N7448-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:30:55+00:00",
+ "recipe": {
+  "toolchain_commit": "8e744993f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N7448_neg/2026-11-20-lm1909-404f2ee4.tests.json"
+ },
+ "label": "the audience noun after 'your' when addressing someone who serves people (your students, customers, readers, guests)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N7448_neg/2026-11-20-lm1909-404f2ee4.tests.json",
+   "prereg_commit": "8e744993f",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.485,
+     "peak": " pupils"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.34,
+     "peak": " clients"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.397,
+     "peak": "ers"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.263,
+     "peak": " your"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.372,
+     "peak": " your"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.272,
+     "peak": " attendees"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.28,
+     "peak": " subscribers"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.522,
+     "peak": " learners"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.033,
+     "peak": " lesson"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.097,
+     "peak": "-you"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.307,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.254,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.261,
+     "peak": " inventory"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.207,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.121,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.169,
+     "peak": " your"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.356,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8e744993f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "your audience (students, customers)",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' students' x8, ' customers', ' readers', ' guests', ' Your', all as 'your X' addressed to a teacher, business or writer. Probe: 0.28-0.54 on 'your customers/students/readers/guests', 0.07 on 'your kitchen'. Near misses keep 'your' with a non-audience noun.",
+ "selection": "random draw"
+}

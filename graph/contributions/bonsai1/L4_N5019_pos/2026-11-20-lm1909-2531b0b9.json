@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2531b0b9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N5019+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:30:30+00:00",
+ "recipe": {
+  "toolchain_commit": "8e744993f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N5019_pos/2026-11-20-lm1909-2531b0b9.tests.json"
+ },
+ "label": "a word-final 'i' / 'ni' / 'ani' / 'NI' piece of a split name or acronym (Man|i, A|ani, B|NI)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N5019_pos/2026-11-20-lm1909-2531b0b9.tests.json",
+   "prereg_commit": "8e744993f",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.706,
+     "peak": "i"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.818,
+     "peak": "NI"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.795,
+     "peak": "ani"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.859,
+     "peak": "i"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.54,
+     "peak": "ani"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.546,
+     "peak": "ani"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": -0.001,
+     "peak": " draws"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.867,
+     "peak": "NI"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": " pilgr"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.002,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.001,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.001,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.001,
+     "peak": " prayer"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.001,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.002,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.75,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8e744993f",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "final 'i'/'ni' name piece",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peak tokens ani x9, NI x7, i x6, í x3, ni x2 at the end of transliterated names and acronyms. Probe (tokenizer checked): Man|i 0.64, B|NI 0.86, A|ani 0.64, Th|am|ani 0.40. Near misses use similar names that do not end in an i-piece.",
+ "selection": "random draw"
+}

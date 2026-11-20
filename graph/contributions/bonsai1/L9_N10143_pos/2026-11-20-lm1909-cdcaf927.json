@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-cdcaf927",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N10143+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:30:58+00:00",
+ "recipe": {
+  "toolchain_commit": "8e744993f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N10143_pos/2026-11-20-lm1909-cdcaf927.tests.json"
+ },
+ "label": "describing a chemical reaction in progress or its observable products (reacts with, bubbles, gas produced)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N10143_pos/2026-11-20-lm1909-cdcaf927.tests.json",
+   "prereg_commit": "8e744993f",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.819,
+     "peak": "izzes"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.595,
+     "peak": " off"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.614,
+     "peak": " reaction"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.848,
+     "peak": " precip"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.233,
+     "peak": " reacts"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.411,
+     "peak": " gas"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.285,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.508,
+     "peak": " bubbles"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.05,
+     "peak": " jar"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.111,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.146,
+     "peak": " chemical"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.112,
+     "peak": " poured"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " tools"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.411,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.119,
+     "peak": " are"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.961,
+    "median_fire": 0.551,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8e744993f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "chemical reaction observations",
+ "unit_kind": "sparse feature",
+ "confidence": 0.65,
+ "notes": "Card: chemistry tops (Ca(OH)2 + HCl, bubbles at the electrode, net-transfer reactions, chemical properties, gas produced, reacts with acid). Probe: 'bubbles of hydrogen' 0.94, cake bubbles 0.15. Near misses keep lab or chemistry settings but describe no reaction (storage, measurement, history).",
+ "selection": "random draw"
+}

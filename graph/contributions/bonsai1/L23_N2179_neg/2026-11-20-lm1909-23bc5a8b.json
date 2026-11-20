@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-23bc5a8b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2179-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:30:26+00:00",
+ "recipe": {
+  "toolchain_commit": "8e744993f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N2179_neg/2026-11-20-lm1909-23bc5a8b.tests.json"
+ },
+ "label": "generating or enumerating items in a task (make a list, brainstorm, identify), anticipating 'list'/'identify'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N2179_neg/2026-11-20-lm1909-23bc5a8b.tests.json",
+   "prereg_commit": "8e744993f",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.586,
+     "peak": " list"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.169,
+     "peak": " brainstorm"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.214,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.378,
+     "peak": " exhaustive"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.369,
+     "peak": " list"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.27,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.237,
+     "peak": " checklist"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.066,
+     "peak": " list"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.122,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " meeting"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.137,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " means"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " we"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " chapter"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.254,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8e744993f",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "making a list / brainstorming",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: tops ' list', ' complete' (list), sentence ends in reflective classroom prompts; the + pole's logit effect suppresses list/identify/brainstorm, so the - pole promotes them. Probe: 'generated a list' 0.58, 'brainstorm ideas' 0.39, 'store sells bread and milk' 0.01. Near misses keep the classroom/task settings without listing.",
+ "selection": "random draw"
+}
