@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-15517f3c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N118-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:33:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N118",
+   "pole": "-",
+   "label": "PyTorch code that switches training-time behaviour off or on: '.no' in torch.no_grad() and the comma after p=self.dropout in dropout(..., training=self.training)",
+   "fire": [
+    "    def predict(self, batch):\n        self.model.eval()\n        with torch.no_grad():\n            logits = self.model(batch)\n        return logits",
+    "        h = self.linear(h)\n        h = F.dropout(h, p=self.dropout, training=self.training)\n        return h",
+    "    for images, labels in val_loader:\n        with torch.no_grad():\n            preds = net(images)\n        correct += (preds.argmax(1) == labels).sum()",
+    "        attn = attn.softmax(dim=-1)\n        attn = nn.functional.dropout(attn, p=self.dropout, training=self.training)\n        out = attn @ v",
+    "    @torch.no_grad()\n    def evaluate(self, loader):\n        total = 0\n        for x, y in loader:\n            total += self.loss(self.net(x), y)",
+    "        embeddings = self.embed(tokens) + self.pos(positions)\n        embeddings = F.dropout(embeddings, p=self.dropout, training=self.training)\n        return embeddings",
+    "        target = reward + gamma * next_q\n        with torch.no_grad():\n            target_q = self.target_net(next_state)\n        loss = mse(q, target_q)",
+    "        x = self.activation(self.fc1(x))\n        x = F.dropout(x, p=self.dropout_rate, training=self.training)\n        x = self.fc2(x)"
+   ],
+   "quiet": [
+    "    def predict(self, batch):\n        self.model.eval()\n        logits = self.model(batch)\n        return logits.argmax(dim=-1)",
+    "        h = self.linear(h)\n        h = torch.relu(h)\n        return h",
+    "    for images, labels in val_loader:\n        preds = net(images)\n        correct += (preds.argmax(1) == labels).sum()",
+    "        attn = attn.softmax(dim=-1)\n        attn = attn.masked_fill(mask, 0.0)\n        out = attn @ v",
+    "    @staticmethod\n    def evaluate(net, loader):\n        total = 0\n        for x, y in loader:\n            total += len(y)",
+    "        embeddings = self.embed(tokens) + self.pos(positions)\n        embeddings = self.norm(embeddings)\n        return embeddings",
+    "        target = reward + gamma * next_q\n        loss = mse(q, target)\n        loss.backward()\n        optimizer.step()",
+    "        x = self.activation(self.fc1(x))\n        x = x.view(x.size(0), -1)\n        x = self.fc2(x)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "torch.no_grad / dropout training flag",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top examples are torch.no_grad, two dropout(..., p=self.dropout, training=...) calls, and 'scaling can be done by the next layer'. Probe: no_grad 0.73, dropout 0.66, prose and other code under 0.11. Near misses are PyTorch code without those idioms."
+}

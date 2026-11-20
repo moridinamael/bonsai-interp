@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ae9773f9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4085+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:22+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N4085_pos/2026-11-19-lm1909-ae9773f9.tests.json"
+ },
+ "label": "the word that starts the second element right after a short connective: the subject pronoun after 'as' / 'before' in narration (as she, before he), the second noun after 'and' (lentils and dressing), 'all three', 'that seems'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N4085_pos/2026-11-19-lm1909-ae9773f9.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.088,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.063,
+     "peak": " his"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.082,
+     "peak": " dressing"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.43,
+     "peak": " seems"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.062,
+     "peak": " three"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.052,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.067,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.09,
+     "peak": " sauce"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.083,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.059,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.052,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.038,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.063,
+     "peak": " mother"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.852,
+    "median_fire": 0.075,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "start of second element after connective",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card flags broad (1.9% of tokens reach 0.1 of max); no single token. Probe was weak throughout (best 0.35 on 'that seems', 0.26 on 'and dressing'). A low-confidence guess; a fail is likely.",
+ "selection": "random draw"
+}

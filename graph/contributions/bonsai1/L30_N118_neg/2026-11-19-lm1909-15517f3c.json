@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-15517f3c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N118-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:44:53+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N118_neg/2026-11-19-lm1909-15517f3c.tests.json"
+ },
+ "label": "PyTorch code that switches training-time behaviour off or on: '.no' in torch.no_grad() and the comma after p=self.dropout in dropout(..., training=self.training)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N118_neg/2026-11-19-lm1909-15517f3c.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.946,
+     "peak": ".no"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.576,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.008,
+     "peak": ".no"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.716,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.76,
+     "peak": ".no"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.71,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.444,
+     "peak": ".no"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.677,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.186,
+     "peak": ".eval"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.631,
+     "peak": " torch"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.103,
+     "peak": ")."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.36,
+     "peak": " attn"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " loader"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.069,
+     "peak": ".norm"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.448,
+     "peak": " loss"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.224,
+     "peak": ".activation"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.738,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "torch.no_grad / dropout training flag",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top examples are torch.no_grad, two dropout(..., p=self.dropout, training=...) calls, and 'scaling can be done by the next layer'. Probe: no_grad 0.73, dropout 0.66, prose and other code under 0.11. Near misses are PyTorch code without those idioms.",
+ "selection": "random draw"
+}

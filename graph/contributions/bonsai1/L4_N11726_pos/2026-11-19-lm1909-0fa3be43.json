@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0fa3be43",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N11726+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:01+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N11726_pos/2026-11-19-lm1909-0fa3be43.tests.json"
+ },
+ "label": "an N directly after an M in an uppercase abbreviation: the token ' MN' (MNIST, the state MN) and 'NH' after 'AM' (AMNH); also Cyrillic 'н' after 'м'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N11726_pos/2026-11-19-lm1909-0fa3be43.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.907,
+     "peak": " MN"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.943,
+     "peak": "NH"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.485,
+     "peak": " MN"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.87,
+     "peak": " MN"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.954,
+     "peak": "NH"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.584,
+     "peak": " MN"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.812,
+     "peak": " MN"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.502,
+     "peak": " MN"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": " data"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " thousands"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " Madison"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.002,
+     "peak": " simple"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": "oss"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.097,
+     "peak": " NM"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": -0.001,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " NY"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.841,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "N after M (MN, AMNH)",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: peaks 'н' x12 (after м), ' MN' x5, 'NH' x2 (AMNH). Probe: MNIST 0.91, AMNH 0.94, ', MN,' 0.41, ' мн' as one token only 0.16, CIFAR 0.00. Near misses swap in other abbreviations (NM, NHM, NY, SVHN).",
+ "selection": "random draw"
+}

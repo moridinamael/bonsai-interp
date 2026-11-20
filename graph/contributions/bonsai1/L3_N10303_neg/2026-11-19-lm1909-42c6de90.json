@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-42c6de90",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N10303-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:07+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N10303_neg/2026-11-19-lm1909-42c6de90.tests.json"
+ },
+ "label": "dense unit (11% of tokens reach 0.1 of max, gate-closed leak regime); best guess at its strongest drivers: rare word-internal pieces such as am|ni|otic, do|ilies, imp|licate, sple|nic",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N10303_neg/2026-11-19-lm1909-42c6de90.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.892,
+     "peak": "ni"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.858,
+     "peak": "ilies"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.925,
+     "peak": "licate"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.423,
+     "peak": "enic"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.775,
+     "peak": "ni"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.273,
+     "peak": " result"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.982,
+     "peak": "ilies"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.265,
+     "peak": " key"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.22,
+     "peak": " scan"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.168,
+     "peak": " table"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.344,
+     "peak": " ministry"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.176,
+     "peak": " kidney"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.147,
+     "peak": " test"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.261,
+     "peak": " result"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.158,
+     "peak": " shelf"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.201,
+     "peak": " key"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.817,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; rare word-internal pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags dense and gate-closed (max 0.28). Probe: doilies 1.03, implicate 0.81, splenic 0.79, amniocentesis 0.76, but a plain sentence reached 0.32 on ' eggs'. The test records the density; the label is a guess at the top of the range.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7ba70700",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N135+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:46:06+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N135_pos/2026-11-19-lm1909-7ba70700.tests.json"
+ },
+ "label": "German: a late piece inside a long derived or compound noun (Berühmthe|it, Abstur|z, Funktionsstör|ung, Trans|aktionsprozess); the - pole is the German sentence-final period",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N135_pos/2026-11-19-lm1909-7ba70700.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.87,
+     "peak": "it"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.57,
+     "peak": "bs"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.531,
+     "peak": " Kauf"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.276,
+     "peak": " Ab"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.577,
+     "peak": " Trans"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.785,
+     "peak": "ut"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.412,
+     "peak": " stark"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.115,
+     "peak": "se"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.569,
+     "peak": "ause"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.24,
+     "peak": " viel"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.044,
+     "peak": " einen"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.114,
+     "peak": " Essen"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " Bett"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.216,
+     "peak": " oft"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.094,
+     "peak": " Jahr"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.106,
+     "peak": " g"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.55,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "piece inside long German noun",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: all top examples are pieces inside long German nouns; the - pole peaks on the German full stop. Probe: Berühmtheit 0.79, Absturz 0.63, Hirnanhangdrüse 0.38, Funktionsstörung 0.27, but a German sentence of short words also reached 0.27 (' bald'); English 0.00. Near misses are German sentences of short common words and may fire weakly.",
+ "selection": "random draw"
+}

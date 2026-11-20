@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-9c1e49be",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N5838-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:33:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N5838",
+   "pole": "-",
+   "label": "the opening \"('\" of a (value, label) tuple inside a choices list in Python form or model code",
+   "fire": [
+    "class TicketForm(Form):\n    title = StringField('Title')\n    status = SelectField('Status', choices=[('open', _('Open')), ('closed', _('Closed'))])",
+    "class Order(models.Model):\n    STATE_CHOICES = [('new', 'New'), ('paid', 'Paid'), ('sent', 'Sent')]\n    state = models.CharField(max_length=8, choices=STATE_CHOICES)",
+    "class CleanupForm(FlaskForm):\n    action = RadioField('', choices=[('archive', _('archive')), ('purge', _('purge'))])\n    submit = SubmitField('Go')",
+    "    parser.add_argument('--mode')\n    MODES = [('fast', 'Fast mode'), ('safe', 'Safe mode')]\n    for key, text in MODES:\n        print(key, text)",
+    "class Profile(models.Model):\n    name = models.CharField(max_length=40)\n    role = models.CharField(max_length=10, choices=[('admin', 'Admin'), ('guest', 'Guest')])",
+    "class ExportForm(Form):\n    filename = StringField('Filename')\n    fmt = SelectField('Format', choices=[('csv', 'CSV'), ('json', 'JSON'), ('xml', 'XML')])",
+    "class UserAdminForm(FlaskForm):\n    username = StringField('')\n    whatnext = RadioField('', choices=[('disable', _('disable')), ('erase', _('erase'))])",
+    "class Survey(models.Model):\n    ANSWERS = [('y', 'Yes'), ('n', 'No'), ('m', 'Maybe')]\n    answer = models.CharField(max_length=1, choices=ANSWERS)"
+   ],
+   "quiet": [
+    "class TicketForm(Form):\n    title = StringField('Title')\n    body = TextAreaField('Body')\n    submit = SubmitField('Send')",
+    "class Order(models.Model):\n    total = models.DecimalField(max_digits=8, decimal_places=2)\n    created = models.DateTimeField(auto_now_add=True)",
+    "class CleanupForm(FlaskForm):\n    confirm = BooleanField('Are you sure?')\n    submit = SubmitField('Go')",
+    "    parser.add_argument('--mode')\n    args = parser.parse_args()\n    for name in sorted(vars(args)):\n        print(name)",
+    "class Profile(models.Model):\n    name = models.CharField(max_length=40)\n    nickname = models.CharField(max_length=10, blank=True)",
+    "class ExportForm(Form):\n    filename = StringField('Filename')\n    compress = BooleanField('Compress output')",
+    "class UserAdminForm(FlaskForm):\n    username = StringField('', validators=[DataRequired()])\n    submit = SubmitField('Apply')",
+    "class Survey(models.Model):\n    question = models.TextField()\n    votes = models.IntegerField(default=0)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "\"('\" opening a choices tuple",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: no single token (',' x4, ' you' x3, \"('\" x2); several top examples concern removing or deleting. Probe was weak everywhere: choices=[('remove', ...)] 0.43, 'for instance,' 0.26, the 'so don't delete' comment 0.19. A guess at the clearest case."
+}

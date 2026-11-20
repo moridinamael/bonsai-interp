@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-37a9d279",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N1137-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:27+00:00",
+ "recipe": {
+  "toolchain_commit": "c2ce67301",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N1137_neg/2026-11-19-lm1909-37a9d279.tests.json"
+ },
+ "label": "the piece 'ic' / 'elic' / 'pec' in the middle of a rare name or loanword that the tokenizer splits (Sh|ic|off, Fel|ic|iana, I|pec|ac); words where 'ic' is not its own piece (Felicity, music, public) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N1137_neg/2026-11-19-lm1909-37a9d279.tests.json",
+   "prereg_commit": "c2ce67301",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.868,
+     "peak": "ic"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.991,
+     "peak": "ic"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.909,
+     "peak": "pec"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.685,
+     "peak": "ic"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.731,
+     "peak": "ic"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.812,
+     "peak": "pec"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.632,
+     "peak": "ic"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.121,
+     "peak": " Chic"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " performance"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " crosses"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " cabinets"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": "o"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " Jefferson"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "urses"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "My"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " closed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.772,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c2ce67301",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mid-word 'ic' piece in rare names",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks 'ic' x10, 'lic' x6, 'elic' x5, all inside split rare names. Probe: Shicoff 0.92, Feliciana 0.88, ipecac 0.82; Felicity 0.01, 'music ... public' 0.00. Felicidad and Chicopee are untried new cases. The + pole is ' fib'.",
+ "selection": "random draw"
+}
