@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1018f065",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N634-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:26+00:00",
+ "recipe": {
+  "toolchain_commit": "702eaeed6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N634_neg/2026-11-19-lm1909-1018f065.tests.json"
+ },
+ "label": "a character shifting their body or position in narrative fiction ('she shifted, looking…', 'shifting his weight', 'moving over to', 'shuffling his feet'); quiet on 'shift' and 'move' in non-bodily senses and on other small gestures",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N634_neg/2026-11-19-lm1909-1018f065.tests.json",
+   "prereg_commit": "702eaeed6",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.733,
+     "peak": " shifted"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.898,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.575,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.544,
+     "peak": " shuffled"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.459,
+     "peak": "asily"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.891,
+     "peak": " shifted"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.725,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.846,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " did"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.123,
+     "peak": " f"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "ara"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": " during"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " said"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.123,
+     "peak": " shifted"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " factory"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.071,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.729,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "702eaeed6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "character shifts position",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: ' move' x3, ' shifted' x2, ',' x2, ' over' x2, ' shifting' x2, ' shifts' x2, all in fiction. Probes: bodily shift/moving over/shuffling 0.43-0.81; 'The company shifted its strategy' 0.02, 'The gears shifted' 0.06, 'she smiled, looking' 0.03. The + pole is unrelated (badminton, tennis, rally).",
+ "selection": "random draw"
+}

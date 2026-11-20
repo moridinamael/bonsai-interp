@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-7c70c93e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N9673-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:39:05+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N9673",
+   "pole": "-",
+   "label": "a capitalised word inside a multi-word name at a slot that is normally lower case: a capitalised species epithet ('Theobroma Cacao', 'Rhinella Rostrata') or 'The' after 'of' ('Maid of The Mist'); quiet on the standard lower-case form",
+   "fire": [
+    "The coffee shrub, Coffea Arabica, is native to the highlands of Ethiopia.",
+    "The grey wolf (Canis Lupus) once ranged over the whole continent.",
+    "They booked a table at the Rose of The Valley inn for Sunday.",
+    "The sunflower (Helianthus Annuus) follows the sun during the day.",
+    "The brown trout, Salmo Trutta, prefers cold and clear streams.",
+    "We watched the play at the Star of The Sea hall near the harbour.",
+    "The olive tree (Olea Europaea) can live for many centuries.",
+    "The red fox, Vulpes Vulpes, has adapted well to city life."
+   ],
+   "quiet": [
+    "The coffee shrub, Coffea arabica, is native to the highlands of Ethiopia.",
+    "The grey wolf (Canis lupus) once ranged over the whole continent.",
+    "They booked a table at the rose of the valley inn for Sunday.",
+    "The sunflower follows the sun during the day.",
+    "The brown trout, Salmo trutta, prefers cold and clear streams.",
+    "We watched the play at the hall by the sea near the harbour.",
+    "The olive tree (Olea europaea) can live for many centuries.",
+    "The red fox has adapted well to city life."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "unexpected capital inside a name",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: 'بي' x4 (Arabic 'بن ابي' in names), ' The' x3, ' C', 'ata'. Probes: capitalised epithets 0.62-0.98, 'of The' 0.38-0.44; lower-case epithets and 'of the' 0.03-0.04. Arabic 'بن ابي' 0.51-0.80 also fires and is not in this test (Arabic has no case, so it does not fit the label as worded)."
+}
