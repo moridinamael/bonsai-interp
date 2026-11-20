@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-97e8f198",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8272+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:53:29+00:00",
+ "recipe": {
+  "toolchain_commit": "74f7521d6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N8272_pos/2026-11-20-lm1909-97e8f198.tests.json"
+ },
+ "label": "a subword piece in the middle of an ALL-CAPS code identifier or constant (FORMATE|XT|ENSION, ATTR_V|ARI|ANCE)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N8272_pos/2026-11-20-lm1909-97e8f198.tests.json",
+   "prereg_commit": "74f7521d6",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.192,
+     "peak": "UM"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.104,
+     "peak": "_RE"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.066,
+     "peak": " PIXEL"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.254,
+     "peak": " DOC"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.034,
+     "peak": ".CONFIG"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.102,
+     "peak": "FOUND"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.018,
+     "peak": "AL"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.072,
+     "peak": " PRE"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": "trans"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " if"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "Index"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " err"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " set"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.087,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "74f7521d6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inside ALL-CAPS identifier",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Last layer; top examples mix ALL-CAPS identifier pieces with katakana/Hangul pieces. Low confidence.",
+ "selection": "random draw"
+}
