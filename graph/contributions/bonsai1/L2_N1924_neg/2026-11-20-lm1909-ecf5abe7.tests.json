@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ecf5abe7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N1924-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:10:01+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N1924",
+   "pole": "-",
+   "label": "characters inside random-looking alphanumeric strings (base64 blobs, video IDs, product codes)",
+   "fire": [
+    "The full video is here: https://www.youtube.com/watch?v=Zk8pQ2rLx7w",
+    "Authorization: Basic dXNlcjpwYXNzd29yZDEyMzQ1Njc4OQ==",
+    "You can order it at https://www.amazon.com/dp/B07QX9KZ3M/ref=nosim",
+    "The session key was stored as 9fJq2LmXv8TzR4bN7cWp in the cookie.",
+    "Paste this code into the form: hX7kQ9mZpL2wR4tY",
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB",
+    "Shortened link: https://bit.ly/3xKqZ7Pw for the survey.",
+    "Their commit hash a7f3c9e2b18d4f6a was tagged as the release."
+   ],
+   "quiet": [
+    "The full video is here: https://www.example.com/videos/garden-tour",
+    "Authorization: please ask the office manager for the password.",
+    "You can order it at https://www.bookshop.org/books/the-garden-year",
+    "The session ended when the user closed the browser window.",
+    "Paste this code into the form: the word spring in capitals.",
+    "The image shows a small garden with a wooden bench and roses.",
+    "Shortened link: https://example.org/survey for the questions.",
+    "Their latest release was tagged as version two point one."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "random ID strings",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Card: flagged broad (4.3% of tokens reach 0.1 of max), gate-closed leak regime; top examples are YouTube IDs, base64 and Amazon ASINs. Probe: random IDs ~0.92, plain prose ~0.22, a readable URL ~0.11. Near misses are readable URLs and words in the same frames."
+}
