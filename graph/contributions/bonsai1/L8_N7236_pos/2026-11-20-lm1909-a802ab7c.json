@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a802ab7c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N7236+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:21:10+00:00",
+ "recipe": {
+  "toolchain_commit": "9638c3006",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N7236_pos/2026-11-20-lm1909-a802ab7c.tests.json"
+ },
+ "label": "the digit '4' inside a long numeric constant in code, strongest in well-known constants (2147483647, 299792458)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N7236_pos/2026-11-20-lm1909-a802ab7c.tests.json",
+   "prereg_commit": "9638c3006",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.962,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.455,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.657,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.016,
+     "peak": "CONDS"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.099,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.015,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.12,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.07,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.21,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "/s"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.101,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.084,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.232,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.073,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.058,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.289,
+     "peak": "2"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.578,
+    "median_fire": 0.11,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9638c3006",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digit 4 in a known constant",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: '4' x20 of top 32, all inside long constants (glibc rand 1103515245, 2147483648, 299792458). Probe: '4' in famous constants 0.44-0.75, in arbitrary numbers 0.08-0.29. Near misses are similar constant definitions whose numbers contain no 4.",
+ "selection": "random draw"
+}
