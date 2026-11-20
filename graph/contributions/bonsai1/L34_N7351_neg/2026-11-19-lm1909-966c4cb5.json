@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-966c4cb5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7351-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:46+00:00",
+ "recipe": {
+  "toolchain_commit": "22819860e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N7351_neg/2026-11-19-lm1909-966c4cb5.tests.json"
+ },
+ "label": "calcium-nutrition context: positions where 'calcium' is the expected next word or referent (after calcium / bones / dairy have come up)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N7351_neg/2026-11-19-lm1909-966c4cb5.tests.json",
+   "prereg_commit": "22819860e",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.221,
+     "peak": " enough"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.271,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.14,
+     "peak": " take"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.693,
+     "peak": " eat"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.72,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.416,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.373,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.191,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.038,
+     "peak": " such"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " blood"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.003,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " beef"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": "ners"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " third"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.322,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "22819860e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "calcium expected next",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: the token just before 'calcium' in five languages ('enough', 'taking', 'of the'); the + pole's direct effect promotes ' calcium'/' Ca', so this late-layer pole pushes against the word it anticipates. Probes: 0.60 and 0.42 (peak at the end of calcium sentences), 'milligrams of [it]' 0.53; iron versions 0.00-0.01, 'enough sleep' 0.01; but dairy alone leaks ('sources of' after milk and yogurt 0.27, 'low in dairy' 0.21).",
+ "selection": "random draw"
+}

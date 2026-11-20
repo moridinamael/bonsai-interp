@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-cba7783a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N10168+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:33+00:00",
+ "recipe": {
+  "toolchain_commit": "22819860e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N10168_pos/2026-11-19-lm1909-cba7783a.tests.json"
+ },
+ "label": "the token ' Maz' opening a name (Mazur, Mazower, Mazatlan); much weaker on ' format'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N10168_pos/2026-11-19-lm1909-cba7783a.tests.json",
+   "prereg_commit": "22819860e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.973,
+     "peak": " Maz"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.722,
+     "peak": " Maz"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.922,
+     "peak": " Maz"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.925,
+     "peak": " Maz"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.864,
+     "peak": " Maz"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.698,
+     "peak": " Maz"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.675,
+     "peak": " Maz"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.812,
+     "peak": " Maz"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.29,
+     "peak": " Mas"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.047,
+     "peak": "zan"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " Mark"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " Wales"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "r"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.04,
+     "peak": " Mazda"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": "dan"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.838,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "22819860e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' Maz' name piece",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' Maz' x5, 'az'/'аз' after M x7, ' format' x10. Probes: ' Maz' in Mazur 0.95, Mazower 0.94, Mazatlan 0.87; other splits are weak ('M|azz|ini' 0.24, 'M|azar|in' 0.23), single-token ' Mazda' 0.04, ' format' 0.17-0.25. Fire words were checked with the tokenizer to start with the ' Maz' piece. ' format' is in the top 32 but too weak for this test, so the label covers only part of the pole.",
+ "selection": "random draw"
+}

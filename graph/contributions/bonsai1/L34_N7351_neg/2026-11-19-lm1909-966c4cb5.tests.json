@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-966c4cb5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7351-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:17:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N7351",
+   "pole": "-",
+   "label": "calcium-nutrition context: positions where 'calcium' is the expected next word or referent (after calcium / bones / dairy have come up)",
+   "fire": [
+    "Calcium is vital for teenagers, yet many of them do not get enough of it from their meals.",
+    "Dairy foods such as cheese are rich in calcium, and fortified juices provide it as well.",
+    "Because her bones were thinning, the doctor told her to take calcium tablets with vitamin D every morning.",
+    "Calcium builds strong teeth, so dentists advise children to eat foods that contain plenty of it.",
+    "Without enough calcium in the diet, the body draws the mineral out of the skeleton.",
+    "Sardines and kale supply calcium, which the body stores mainly in the bones and teeth.",
+    "Women over fifty are often advised to increase their calcium intake to slow bone loss.",
+    "The label says one glass of milk gives a third of the calcium an adult needs each day."
+   ],
+   "quiet": [
+    "Iron is vital for teenagers, yet many of them do not get enough of it from their meals.",
+    "Citrus fruits such as oranges are rich in vitamin C, and fortified cereals provide it as well.",
+    "Because her blood count was low, the doctor told her to take iron tablets with orange juice every morning.",
+    "Fibre aids digestion, so doctors advise children to eat foods that contain plenty of it.",
+    "Without enough potassium in the diet, the muscles cramp and the heart may beat unevenly.",
+    "Lentils and beef supply iron, which the body uses mainly to carry oxygen in the blood.",
+    "Runners over fifty are often advised to increase their protein intake to slow muscle loss.",
+    "The label says one bowl of lentils gives a third of the protein an adult needs each day."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "calcium expected next",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: the token just before 'calcium' in five languages ('enough', 'taking', 'of the'); the + pole's direct effect promotes ' calcium'/' Ca', so this late-layer pole pushes against the word it anticipates. Probes: 0.60 and 0.42 (peak at the end of calcium sentences), 'milligrams of [it]' 0.53; iron versions 0.00-0.01, 'enough sleep' 0.01; but dairy alone leaks ('sources of' after milk and yogurt 0.27, 'low in dairy' 0.21)."
+}

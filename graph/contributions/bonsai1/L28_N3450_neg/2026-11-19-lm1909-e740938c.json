@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e740938c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N3450-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:01+00:00",
+ "recipe": {
+  "toolchain_commit": "22819860e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N3450_neg/2026-11-19-lm1909-e740938c.tests.json"
+ },
+ "label": "' of' in 'center of mass' / 'centre of gravity' in a classical-mechanics passage (the slot where ' mass' comes next); not 'of mass' in general",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N3450_neg/2026-11-19-lm1909-e740938c.tests.json",
+   "prereg_commit": "22819860e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.946,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.8,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.094,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.629,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.795,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.612,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.756,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.974,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.083,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.423,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.05,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.195,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.066,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.208,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.198,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.798,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "22819860e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'center of' → mass",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks on ' of' before mass, plus inertia/Newton's-law tokens; the + pole promotes ' vertex'/' focus' (geometry centre) and suppresses ' mass'. Probes: 'centre of mass' 0.47-1.10, 'center of gravity' 0.64, but 'conservation of mass' 0.02, 'unit of mass' 0.04, 'centre of town' 0.14. Inertial-frame sentences also fire (0.28-0.46), so the label is narrower than the pole.",
+ "selection": "random draw"
+}

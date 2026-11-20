@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1c0ae5ec",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N2055+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:07+00:00",
+ "recipe": {
+  "toolchain_commit": "22819860e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N2055_pos/2026-11-19-lm1909-1c0ae5ec.tests.json"
+ },
+ "label": "' a' (or the modifier after it) where an abstract relational noun is expected: 'there is somewhat/something of a [gap / tension / trade-off] between …'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N2055_pos/2026-11-19-lm1909-1c0ae5ec.tests.json",
+   "prereg_commit": "22819860e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.726,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.424,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.775,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.638,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.634,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.638,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.41,
+     "peak": " trade"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.887,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.051,
+     "peak": " heavy"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.087,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " children"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": "They"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " dancer"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": " soup"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.037,
+     "peak": " long"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.638,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "22819860e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'something of a' → gap",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (1.1% of tokens reach 0.1 of max). The output promotes ' order', ' bottleneck', ' gap', ' contrast', ' cycle', ' chain'. Probes: 'There is somewhat of a' 0.78, 'creates something of a' 0.78, 'start of a [cycle]' 0.43, 'a trade-off' 0.41; 'has become somewhat of a' 0.25, 'a bit of a' 0.11, 'bought a red bicycle' 0.01. So the lead-in matters, not only 'of a'.",
+ "selection": "random draw"
+}

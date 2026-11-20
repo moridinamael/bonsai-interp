@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-94c11216",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N8831-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:48+00:00",
+ "recipe": {
+  "toolchain_commit": "22819860e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N8831_neg/2026-11-19-lm1909-94c11216.tests.json"
+ },
+ "label": "the piece that completes a compound after ' Land' / ' land' / ' Moss' / ' Stone': Land|man, Land Management, Land Run, Moss|man, Stone|chat",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N8831_neg/2026-11-19-lm1909-94c11216.tests.json",
+   "prereg_commit": "22819860e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.605,
+     "peak": " Management"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.669,
+     "peak": "man"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.779,
+     "peak": "chat"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.549,
+     "peak": "man"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.529,
+     "peak": " Run"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.585,
+     "peak": " Management"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.69,
+     "peak": "man"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.531,
+     "peak": "man"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " issued"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " check"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " per"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": " Rover"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " lined"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.029,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " inspect"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.029,
+     "peak": " old"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.595,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "22819860e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "piece after Land-/Moss-/Stone-",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: 'man' x5 (Mossman, Landman, pywsman), ' Management' x3 and ' Run' after Land, Stone'chat'. Probes: Stone|chat 0.78, land|man 0.78, Moss|man 0.62, Land Run 0.58, Land Management 0.57; weaker Marsh|man 0.30, Sand|man 0.27, Land Trust 0.24, Bush|man 0.23; quiet: Land Office 0.02, Land Rover 0.02, landmark 0.03, postman 0.03, Risk Management 0.03, Wh|in|chat 0.03. A list of compounds rather than a clean rule: I could not find what separates Land Run from Land Office.",
+ "selection": "random draw"
+}
