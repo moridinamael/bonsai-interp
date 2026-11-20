@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2c116670",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N9306-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:58:12+00:00",
+ "recipe": {
+  "toolchain_commit": "5da2dbd8a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N9306_neg/2026-11-20-lm1909-2c116670.tests.json"
+ },
+ "label": "katakana long-vowel pieces such as 'ーラー' / 'ーラン' in Japanese loanwords (ディーラー, ディズニーランド)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N9306_neg/2026-11-20-lm1909-2c116670.tests.json",
+   "prereg_commit": "5da2dbd8a",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.006,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.889,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.025,
+     "peak": "と"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.149,
+     "peak": "香"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.149,
+     "peak": "ピ"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.1,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.093,
+     "peak": "ビー"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.099,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.119,
+     "peak": "新しい"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": "楽しみ"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": "と"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.291,
+     "peak": "茶"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.145,
+     "peak": "新しい"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.1,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.049,
+     "peak": "入口"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.096,
+     "peak": "屋"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.648,
+    "median_fire": 0.124,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5da2dbd8a",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "katakana long vowel",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Layer 0, tiny max (0.30), flagged broad and gate-closed (87% -g +u leak). Top peaks are katakana 'ーラー' pieces; also ')[' and 'はもちろん'. Near misses are Japanese sentences whose loanwords have no long-vowel mark.",
+ "selection": "random draw"
+}
