@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-342eb2bb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N6932-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T03:04:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N6932",
+   "pole": "-",
+   "label": "'related' / 'relation' in ORM code relationships (ManyRelatedField, related_name, generic relation)",
+   "fire": [
+    "    author = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)",
+    "from rest_framework.fields import ManyRelatedField, CharField",
+    "    tags = models.ManyToManyField(Tag, related_name='articles', blank=True)",
+    "    # Validates a model with a generic relation to another model",
+    "    def test_related_objects_are_deleted(self):\n        pass",
+    "    owner = models.OneToOneField(Profile, related_name='account')",
+    "    queryset = Book.objects.select_related('publisher').all()",
+    "    # backwards references for related objects broke here"
+   ],
+   "quiet": [
+    "    author = models.CharField(max_length=100, blank=True, null=True)",
+    "from rest_framework.fields import IntegerField, CharField",
+    "    tags = models.TextField(default='', blank=True)",
+    "    # Validates a model with a unique constraint on its name",
+    "    def test_objects_are_deleted(self):\n        pass",
+    "    owner = models.EmailField(max_length=254, unique=True)",
+    "    queryset = Book.objects.filter(published=True).all()",
+    "    # sorting by date for archived objects broke here"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "ORM related/relation",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": ""
+}
