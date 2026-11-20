@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-57dc1ee9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N3212-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:29:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N3212",
+   "pole": "-",
+   "label": "' =' of the first assignment inside a factory-style Python function (def make_x()/build_x()/get_x(): x = ...), where the name being assigned is predictable from the function name",
+   "fire": [
+    "def make_session():\n    session = requests.Session()\n    session.headers.update(DEFAULTS)\n    return session",
+    "def build_client():\n    client = ApiClient(timeout=30)\n    client.connect()\n    return client",
+    "def get_config():\n    config = ConfigParser()\n    config.read('settings.ini')\n    return config",
+    "def create_app():\n    app = Flask(__name__)\n    app.register_blueprint(api)\n    return app",
+    "class Editor(object):\n    def build_menu(self):\n        menu = Menu.Menu(self.window)\n        return menu",
+    "def make_queue():\n    queue = collections.deque()\n    queue.append(None)\n    return queue",
+    "def get_cache():\n    cache = {}\n    size = 128\n    return cache, size",
+    "def make_timer():\n    timer = threading.Timer(5.0, callback)\n    timer.start()\n    return timer"
+   ],
+   "quiet": [
+    "def perimeter(width, height):\n    return 2 * (width + height)",
+    "def mean(values):\n    if not values:\n        return 0\n    return sum(values) / len(values)",
+    "def show(session):\n    print(session.headers)\n    print(session.cookies)\n    return None",
+    "def close_client(client):\n    client.flush()\n    client.disconnect()\n    return True",
+    "for item in items:\n    if item.price > limit:\n        print(item.name)\n    else:\n        skipped.append(item)",
+    "class Editor(object):\n    def close_menu(self):\n        self.menu.hide()\n        return self.menu",
+    "def is_even(number):\n    if number % 2:\n        return False\n    return True",
+    "def greet(name):\n    print('Hello, ' + name)\n    print('Welcome back.')"
+   ]
+  }
+ ],
+ "predictions": "5-6/8 fire around 0.4; near misses below 0.2",
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "first '=' in factory function",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (1.8% of tokens over 0.1 of max). Probes: 'parser = argparse.ArgumentParser()' 0.43, 'logger = logging.getLogger' 0.61, but also 'level = 3' under def make_logger() 0.62; plain 'result = width * height' 0.11. Top examples also hold prose ('Is it correct to say'), which this label does not cover. Near misses are Python functions with no assignment."
+}

@@ -1,0 +1,57 @@
+{
+ "contribution": "2026-11-19-lm1909-6f10124d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N10460-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:29:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N10460",
+   "pole": "-",
+   "label": "the word pieces 'el' / 'ad' / 'al' ('els', 'ads') when they are their own token continuing a short word start (Eiff·el, F·ad·iman, op·al, e·els); not the same letters inside a whole-word token (chapel, canal, nomad)",
+   "fire": [
+    "The postcard showed the Eiffel Tower lit up at midnight.",
+    "The necklace had a single opal set in silver.",
+    "Smoked eels are a speciality of the villages along that coast.",
+    "The anthology was introduced by Clifton Fadiman in a short preface.",
+    "The goalkeeper Ohad saved two penalties in the final.",
+    "The lawyer, Mr Awad, asked the court for more time.",
+    "The fund is run by IFAD together with local banks.",
+    "From the bridge you can see Eiffel's iron viaduct across the valley."
+   ],
+   "quiet": [
+    "The postcard showed the Empire State Building lit up at midnight.",
+    "The necklace had a single pearl set in silver.",
+    "Smoked herring is a speciality of the villages along that coast.",
+    "The anthology was introduced by Conrad Aiken in a short preface.",
+    "The goalkeeper Rafael saved two penalties in the final.",
+    "The old chapel stood beside the canal near the hotel.",
+    "The nomad led his camel to the well and ate a salad.",
+    "From the bridge you can see the model railway and the metal gate."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "pieces 'el' / 'ad' / 'al'",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Early layer: tested as spelling pieces. Probes: Eiffel 0.89, opal 0.84, eels 0.80, Fadiman 0.82, 'Ohad, Ebel, Ifad, Ayad, Awad' 0.74; whole-token words with the same letters (nomad, chapel, camel, canal, Conrad, salad, Raphael) 0.00-0.13. Which word starts license the piece is not pinned down (Gilead 0.05).",
+ "trigger": {
+  "pieces": [
+   "el",
+   "ad",
+   "al",
+   "els",
+   "ads"
+  ]
+ }
+}

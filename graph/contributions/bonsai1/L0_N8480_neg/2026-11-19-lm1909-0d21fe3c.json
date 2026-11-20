@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-19-lm1909-0d21fe3c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N8480-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:26+00:00",
+ "recipe": {
+  "toolchain_commit": "9ec3fcdcd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N8480_neg/2026-11-19-lm1909-0d21fe3c.tests.json"
+ },
+ "label": "the ending piece of a chemical element or mineral name ('ium' in gallium / germanium / indium, 'ite' in graphite / bauxite, tungsten, graphene); not the same endings in other words (bacterium, stadium, website)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N8480_neg/2026-11-19-lm1909-0d21fe3c.tests.json",
+   "prereg_commit": "9ec3fcdcd",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.771,
+     "peak": "ium"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.715,
+     "peak": "ium"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.659,
+     "peak": "ite"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.308,
+     "peak": "ium"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.721,
+     "peak": "sten"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.398,
+     "peak": " graphene"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.385,
+     "peak": "ite"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.428,
+     "peak": "ium"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " caused"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " favorite"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " made"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.543,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ec3fcdcd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "element / mineral name ending",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Layer 0, tested as tokens in context. Probes: gallium 0.78, tungsten 0.69, germanium 0.66, Graphite 0.66, graphene 0.47, ' graphite' 0.40, pyrite 0.38, 'indium, thallium, hafnium' list 0.36; bacterium 0.01, stadium/website 0.02, medium/premium/aquarium 0.01, favorite/satellite 0.03; ' silicon' 0.17. The + pole takes 'ium' in bacterium, the other side of the same split.",
+ "selection": "random draw",
+ "trigger": {
+  "pieces": [
+   "ium",
+   "ite",
+   "ene"
+  ]
+ }
+}

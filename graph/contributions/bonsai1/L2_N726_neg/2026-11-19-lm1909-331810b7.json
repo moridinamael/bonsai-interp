@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-331810b7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N726-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:43:27+00:00",
+ "recipe": {
+  "toolchain_commit": "9ec3fcdcd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N726_neg/2026-11-19-lm1909-331810b7.tests.json"
+ },
+ "label": "the ending of an abstract, nominalised noun, mostly plural (-ments, -ations / -aciones, examens, demandes, ' uso'), strongest in French and Spanish text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N726_neg/2026-11-19-lm1909-331810b7.tests.json",
+   "prereg_commit": "9ec3fcdcd",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.736,
+     "peak": "ements"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.819,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.617,
+     "peak": "aciones"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.455,
+     "peak": "ements"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.591,
+     "peak": " uso"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.543,
+     "peak": "es"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.567,
+     "peak": " engagements"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.592,
+     "peak": "aciones"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": "le"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "temps"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.13,
+     "peak": "me"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.119,
+     "peak": "se"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": "lla"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " souvent"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.052,
+     "peak": " tarde"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.591,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ec3fcdcd",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "nominalised noun endings (Fr/Es)",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: broad, gate-closed leak regime (100%), max 3.6. Probes: French examens 0.86, demandes 0.76, changements 0.74, investissements 0.62; Spanish uso 0.64, instalaciones 0.66; German Prüfungen 0.65; English 'investments' 0.44, 'changes' 0.35, 'exams' 0.15. So it is the noun type more than the language. Near misses are French and Spanish sentences made of verbs, pronouns and adverbs.",
+ "selection": "random draw"
+}

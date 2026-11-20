@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-19-lm1909-01bead86",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N9527+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:29:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N9527",
+   "pole": "+",
+   "label": "the token ' find' (dense pole in the gate-closed echo regime; max only 0.16)",
+   "fire": [
+    "They are trying to find a cheaper flat near the station.",
+    "It took us an hour to find the right door.",
+    "She could not find her glasses anywhere this morning.",
+    "Scientists hope to find water under the surface.",
+    "You will find the answers at the back of the book.",
+    "Did you ever find out who sent the flowers?",
+    "Many readers find this chapter harder than the rest.",
+    "Please help me find a seat near the window."
+   ],
+   "quiet": [
+    "They are trying to rent a cheaper flat near the station.",
+    "It took us an hour to open the right door.",
+    "She could not see her glasses anywhere this morning.",
+    "Scientists hope to detect water under the surface.",
+    "You will see the answers at the back of the book.",
+    "Did you ever learn who sent the flowers?",
+    "Many readers consider this chapter harder than the rest.",
+    "Please help me choose a seat near the window."
+   ]
+  }
+ ],
+ "predictions": "8/8 fire; 2 or more near misses over 0.30, so a fail",
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "' find' (dense)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags the pole dense: 15.4% of tokens reach 0.1 of max and 1.2% reach 0.3, all in the echo regime. ' find' is the peak of 26 of the top 32 and probed at 0.80-1.02, but near misses without it reached 0.28-0.34 and ' drastic' 0.60, so the test will probably fail on near misses. Recorded as dense with ' find' as its strongest token.",
+ "trigger": {
+  "tokens": [
+   " find"
+  ]
+ }
+}
