@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e9895c80",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N5705-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:37:01+00:00",
+ "recipe": {
+  "toolchain_commit": "5f28dbc99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N5705_neg/2026-11-20-lm1909-e9895c80.tests.json"
+ },
+ "label": "the tokens ' Celtic' and ' commercially', against nearby adjectives and adverbs in the same sentences",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N5705_neg/2026-11-20-lm1909-e9895c80.tests.json",
+   "prereg_commit": "5f28dbc99",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.325,
+     "peak": " Celtic"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.407,
+     "peak": " commercially"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.279,
+     "peak": " Celtic"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.217,
+     "peak": " commercially"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.346,
+     "peak": " Celtic"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.199,
+     "peak": " commercially"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.653,
+     "peak": " Celtic"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.101,
+     "peak": " commercially"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.162,
+     "peak": " region"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.07,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.139,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": " product"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " customs"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " vaccine"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.044,
+     "peak": "In"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": " film"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.302,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5f28dbc99",
+  "minutes": 7,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' Celtic' / ' commercially'",
+ "unit_kind": "lexical",
+ "confidence": 0.25,
+ "notes": "card flags broad (3.5%) and gate-closed leak 98%; also fires on Korean 잡 (복잡).",
+ "selection": "random draw"
+}

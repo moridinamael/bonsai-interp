@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c7ce9658",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N4471+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:35:08+00:00",
+ "recipe": {
+  "toolchain_commit": "5f28dbc99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N4471_pos/2026-11-20-lm1909-c7ce9658.tests.json"
+ },
+ "label": "the katakana piece 'ーネット' completing インターネット ('internet') when the word starts its own chunk (after a space, list dash or punctuation) in Japanese text, against the same lists and sentences with other katakana loanwords",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N4471_pos/2026-11-20-lm1909-c7ce9658.tests.json",
+   "prereg_commit": "5f28dbc99",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.828,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.761,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.777,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.84,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.802,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.732,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.866,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.01,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "リー"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.084,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.056,
+     "peak": "ポ"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.123,
+     "peak": "ジ"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "告"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.087,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.282,
+     "peak": "ベ"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": "、"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.815,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5f28dbc99",
+  "minutes": 6,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Japanese 'internet'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "probe: インターネット glued to preceding kana/kanji (e.g. 'で インターネット' without a space) tokenizes differently and scored 0.004; after a space it scored 0.8+. All test items put a space before the word.",
+ "selection": "random draw"
+}
