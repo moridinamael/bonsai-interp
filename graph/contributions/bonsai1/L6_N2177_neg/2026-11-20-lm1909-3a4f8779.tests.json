@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-3a4f8779",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N2177-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:18:26+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N2177",
+   "pole": "-",
+   "label": "the first piece after a slash or dot inside a file path or module path string in code (scripts/vnc, data/VMI, helpers.ensuredir)",
+   "fire": [
+    "config = load_yaml(\"configs/train_small.yaml\")\nmodel = build(config)",
+    "img = Image.open(\"images/background.png\")\nimg.show()",
+    "df = pd.read_csv(\"data/measurements_2019.csv\")\nprint(df.head())",
+    "with open('logs/server_errors.txt') as fh:\n    lines = fh.readlines()",
+    "os.makedirs(join(ROOT, 'cache/thumbnails'), exist_ok=True)\nprint('ok')",
+    "subprocess.run([\"bash\", \"scripts/deploy_site.sh\"], check=True)",
+    "template = env.get_template('templates/report_page.html')\nhtml = template.render()",
+    "weights = np.load(\"models/encoder_final.npy\")\nprint(weights.shape)"
+   ],
+   "quiet": [
+    "config = load_yaml(CONFIG_NAME)\nmodel = build(config)",
+    "img = Image.open(background_file)\nimg.show()",
+    "df = pd.read_csv(measurements)\nprint(df.head())",
+    "with open(error_log_name) as fh:\n    lines = fh.readlines()",
+    "os.makedirs(thumbnail_root, exist_ok=True)\nprint('ok')",
+    "subprocess.run([\"bash\", deploy_script], check=True)",
+    "template = env.get_template(page_name)\nhtml = template.render()",
+    "weights = np.load(encoder_file)\nprint(weights.shape)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "path piece after slash",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": ""
+}
