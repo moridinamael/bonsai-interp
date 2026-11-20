@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-fdd18b0a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N9100-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:51:15+00:00",
+ "recipe": {
+  "toolchain_commit": "04fe1974e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N9100_neg/2026-11-20-lm1909-fdd18b0a.tests.json"
+ },
+ "label": "Japanese case particles に / で marking the goal or setting of a following verb (仕事に困る, 東京で働く)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N9100_neg/2026-11-20-lm1909-fdd18b0a.tests.json",
+   "prereg_commit": "04fe1974e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.032,
+     "peak": "と"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.904,
+     "peak": "で"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.522,
+     "peak": "り"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.367,
+     "peak": "まで"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.202,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.132,
+     "peak": "に"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.238,
+     "peak": "に"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.664,
+     "peak": "に"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.517,
+     "peak": "早く"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.005,
+     "peak": "大き"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.317,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.64,
+     "peak": "で"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": "古"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.382,
+     "peak": "取"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.166,
+     "peak": "人"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": "とても"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.812,
+    "median_fire": 0.593,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "04fe1974e",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Japanese に/で particles",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Grounded on top examples (Japanese に/で, German/Spanish verb-argument tokens); low confidence.",
+ "selection": "random draw"
+}

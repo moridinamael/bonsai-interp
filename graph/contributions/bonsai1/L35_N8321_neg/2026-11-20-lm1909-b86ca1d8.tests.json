@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-b86ca1d8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8321-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:43:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N8321",
+   "pole": "-",
+   "label": "integer index (or key) inside square brackets in code, e.g. pos[1], kv[0], src[4]",
+   "fire": [
+    "def dist(a, b):\n    dx = a[0] - b[0]\n    dy = a[1] - b[1]\n    return dx * dx + dy * dy",
+    "for row in rows:\n    name = row[0]\n    score = int(row[2])\n    print(name, score)",
+    "pairs = sorted(counts.items(), key=lambda kv: (kv[1], kv[0]))\nfor word, n in pairs:\n    print(word, n)",
+    "parts = line.split(',')\nyear = parts[3]\nmonth = parts[4]\nprint(year, month)",
+    "img = tf.reshape(x, [-1, 28, 28, 1])\nfirst = img[0]\nlabel = labels[0]\nprint(first.shape, label)",
+    "args = sys.argv\nsrc = args[1]\ndst = args[2]\nshutil.copy(src, dst)",
+    "for i in range(len(grid)):\n    left = grid[i][0]\n    right = grid[i][1]\n    total += left + right",
+    "x_norm = float(point['x']) / width\ny_norm = float(point['y']) / height\ncoords.append((x_norm, y_norm))"
+   ],
+   "quiet": [
+    "def dist(a, b):\n    dx = a.x - b.x\n    dy = a.y - b.y\n    return dx * dx + dy * dy",
+    "for row in rows:\n    name = row.name\n    score = int(row.score)\n    print(name, score)",
+    "pairs = sorted(counts.items())\nfor word, n in pairs:\n    print(word, n)",
+    "year, month = line.split(',')\nyear = year.strip()\nmonth = month.strip()\nprint(year, month)",
+    "img = tf.reshape(x, shape)\nfirst = img.numpy()\nlabel = labels.numpy()\nprint(first.shape, label)",
+    "parser = argparse.ArgumentParser()\nopts = parser.parse_args()\nshutil.copy(opts.src, opts.dst)",
+    "for left, right in grid:\n    total += left + right\nprint(total)\nreturn total",
+    "x_norm = float(point.x) / width\ny_norm = float(point.y) / height\ncoords.append((x_norm, y_norm))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "code bracket index",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": ""
+}
