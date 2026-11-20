@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-76835588",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N1420-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T03:01:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N1420",
+   "pole": "-",
+   "label": "')' closing a C-style type cast, especially a pointer cast like (char*) or (BYTE*)",
+   "fire": [
+    "unsigned char *buf = (unsigned char*) malloc(len);",
+    "write_event(handle, (BYTE*) nullptr, 0);",
+    "double *d = (double*) &value;",
+    "long n = (long) count * size;",
+    "memcpy(dst, (const void*) src, n);",
+    "float ratio = (float) hits / total;",
+    "struct node *p = (struct node*) calloc(1, sizeof *p);",
+    "int idx = (int) floor(x);"
+   ],
+   "quiet": [
+    "unsigned char *buf = malloc(len);",
+    "write_event(handle, nullptr, 0);",
+    "double *d = &value;",
+    "long n = count * (size + 1);",
+    "memcpy(dst, src, n);",
+    "float ratio = hits / (total + 1);",
+    "struct node *p = calloc(1, sizeof *p);",
+    "int idx = floor(x);"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "cast-closing paren",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: (char*) 1.21 and (int) 0.88 of max. Near misses keep parentheses only as grouping or calls."
+}

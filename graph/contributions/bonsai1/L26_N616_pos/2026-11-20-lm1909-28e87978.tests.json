@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-28e87978",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N616+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T03:01:58+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N616",
+   "pole": "+",
+   "label": "the subscript or argument opening inside a Python condition or expression on a dict or object (if x['key']:, key=lambda kv: (kv[1]))",
+   "fire": [
+    "for user in users:\n    # skip inactive accounts\n    if user['enabled']:\n        send_mail(user['email'])",
+    "rows = sorted(scores.items(), key=lambda kv: (kv[1], kv[0]))\nfor name, score in rows:\n    print(name, score)",
+    "item = {}\nitem['name'] = record['name']\nif record['price']:\n    item['price'] = float(record['price'])",
+    "status = STATE_MAP.get(node['state'],\n                       State.UNKNOWN)\nreturn status",
+    "count = Order.objects.filter(paid=True).count()\nself.assertEqual(total, count)",
+    "for post in feed:\n    if post['published']:\n        titles.append(post['title'])",
+    "while queue:\n    job = queue.pop()\n    if job['retries'] > 3:\n        failed.append(job)",
+    "best = max(results, key=lambda r: (r['score'], r['id']))\nprint(best)"
+   ],
+   "quiet": [
+    "for user in users:\n    # skip inactive accounts\n    if user.enabled:\n        send_mail(user.email)",
+    "rows = sorted(scores)\nfor name in rows:\n    print(name)",
+    "item = Item()\nitem.name = record.name\nif record.price:\n    item.price = float(record.price)",
+    "status = lookup_state(node)\nreturn status",
+    "count = len(paid_orders)\nself.assertEqual(total, count)",
+    "for post in feed:\n    if post.published:\n        titles.append(post.title)",
+    "while queue:\n    job = queue.pop()\n    if job.retries > 3:\n        failed.append(job)",
+    "best = max(results)\nprint(best)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "subscript in condition",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Near misses keep the code and swap dict subscripts and keyword arguments for attribute access or plain calls."
+}
