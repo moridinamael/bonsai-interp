@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-65e78ddc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N7368-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N7368",
+   "pole": "-",
+   "label": "Dense unit (17.6% of tokens reach 0.1 of max; the gate-closed regime dominates). Best guess at its strongest driver: the last word-piece of a rare proper name that splits into several pieces (Gratt|an, Chum|ash, Cratch|it)",
+   "fire": [
+    "Mr Micawber was always waiting for something to turn up.",
+    "The lawyer Jaggers washed his hands after every client.",
+    "Old Martin Chuzzlewit trusted nobody in his family.",
+    "The Pequot fished these rivers long before the settlers came.",
+    "The schoolmaster Gradgrind cared only for facts.",
+    "Daniel Quilp kept a wharf on the south bank of the river.",
+    "Mr Podsnap disliked anything that was not English.",
+    "The parish clerk Wopsle dreamed of acting on the stage."
+   ],
+   "quiet": [
+    "The old man was always waiting for something to turn up.",
+    "The lawyer washed his hands after every client.",
+    "The old uncle trusted nobody in his family.",
+    "The people fished these rivers long before the settlers came.",
+    "The schoolmaster cared only for facts.",
+    "The dwarf kept a wharf on the south bank of the river.",
+    "The banker disliked anything that was not English.",
+    "The parish clerk dreamed of acting on the stage."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "dense; rare-name last piece",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole dense and leak-dominated, max only 0.69. Probes: 'Grattan' 0.64, 'Chumash' 0.76, 'Cratchit' 0.87 of max against 0.10 and 0.23 for plain sentences, so the guess separates better than a dense unit usually allows; the test records it either way. Names chosen to split into several pieces in the tokenizer (checked without the model)."
+}

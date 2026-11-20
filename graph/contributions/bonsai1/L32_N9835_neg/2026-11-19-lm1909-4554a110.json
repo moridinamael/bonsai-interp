@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4554a110",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9835-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:15+00:00",
+ "recipe": {
+  "toolchain_commit": "79c7e838d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N9835_neg/2026-11-19-lm1909-4554a110.tests.json"
+ },
+ "label": "Arabic: a masculine human plural subject (…ون) and above all the pronoun 'هم' that resumes it ('المعلمون … هم من …'); the singular 'هو'/'هي' versions stay weaker",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N9835_neg/2026-11-19-lm1909-4554a110.tests.json",
+   "prereg_commit": "79c7e838d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.805,
+     "peak": " ه"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.796,
+     "peak": " ه"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.783,
+     "peak": " ه"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.743,
+     "peak": " ه"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.716,
+     "peak": " ه"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.721,
+     "peak": " ه"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.753,
+     "peak": " ه"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.716,
+     "peak": " ه"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.218,
+     "peak": "ين"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.149,
+     "peak": "موظف"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.039,
+     "peak": " العالم"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.113,
+     "peak": " أ"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.748,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "79c7e838d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic plural subject + هم",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: Arabic human plurals mid-word (المشاركون, المرشحين, الشركاء) and ' ه' of 'هم'; the + direction suppresses 'ون'/'يون', so this pole promotes the plural ending. Probes: plural subject + هم 0.77 and 0.66; plural noun alone 0.24-0.28; singular 'المهندس' 0.20; 'هي' sentence 0.04.",
+ "selection": "random draw"
+}

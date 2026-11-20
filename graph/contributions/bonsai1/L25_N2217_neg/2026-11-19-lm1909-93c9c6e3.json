@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-93c9c6e3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N2217-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:02+00:00",
+ "recipe": {
+  "toolchain_commit": "79c7e838d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N2217_neg/2026-11-19-lm1909-93c9c6e3.tests.json"
+ },
+ "label": "' of' in '<brand or model name> line / series / family of <products>' (ThinkPad line of laptops, PC-9800 series of computers): a named product family about to be given its category noun; an ordinary 'line of customers' or 'family of foxes' stays weak",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N2217_neg/2026-11-19-lm1909-93c9c6e3.tests.json",
+   "prereg_commit": "79c7e838d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.676,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.36,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.448,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.656,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.376,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.303,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.801,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.826,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.143,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.097,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.068,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.097,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.739,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "79c7e838d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'of' after a product line",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card flags the pole broad (1.5% of tokens reach 0.1 of max). Top examples also include a model name directly before its category noun (IGCC plant, B-29 superfortress bombers, CubeSat sizes), which this test does not cover. Probes: 'A320 series of jets' 1.15, 'ThinkPad line of laptops' 0.77, 'Galaxy family of phones' 0.76, 'Flying Fortress bombers' 0.33; 'line of customers' 0.14, 'monthly issue' 0.17.",
+ "selection": "random draw"
+}

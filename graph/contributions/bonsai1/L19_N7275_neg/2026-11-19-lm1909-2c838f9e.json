@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-2c838f9e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N7275-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:30+00:00",
+ "recipe": {
+  "toolchain_commit": "79c7e838d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N7275_neg/2026-11-19-lm1909-2c838f9e.tests.json"
+ },
+ "label": "Unclear. Best guess: error-laden or machine-spun English, at a wrongly chosen word (homophone slips like 'too see' and 'you're dog', false plurals like 'aircrafts', odd synonym swaps like 'the New Pact')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N7275_neg/2026-11-19-lm1909-2c838f9e.tests.json",
+   "prereg_commit": "79c7e838d",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.262,
+     "peak": " too"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.052,
+     "peak": " there"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.029,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.168,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.06,
+     "peak": "ence"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.258,
+     "peak": " too"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.035,
+     "peak": " similarly"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.071,
+     "peak": " mathematics"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.07,
+     "peak": " wants"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": " aircraft"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": " pet"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.055,
+     "peak": " similarly"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.064,
+     "peak": " mathematics"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.066,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "79c7e838d",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "garbled English (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card and look: no shared token; several top examples are spun or misspelt text, others are not (veterinary surgeon, 2px orbitals, 'azote'). Probes: single garbled sentences 0.02-0.04; one long two-sentence garbled passage 0.24 (peak ''re' in 'you're dog'); clean sentences 0.01-0.05. Registered as a guess that will probably fail; near misses are the corrected versions of the fire items.",
+ "selection": "random draw"
+}

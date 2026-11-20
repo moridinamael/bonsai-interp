@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-bd797287",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7004-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7004",
+   "pole": "-",
+   "label": "In code, the token right before a camelCase identifier that ends in 'Name' (config[\"|displayName, self.get|FirstName, = db|FileName, {resource|GroupName}): fires just ahead of a …Name identifier; the same code with other identifiers stays quiet",
+   "fire": [
+    "class Customer:\n    def __init__(self, data):\n        self.companyName = data[\"companyName\"]\n        self.contactName = data[\"contactName\"]",
+    "outputFileName = inputFileName + '.out'\ntempFileName = inputFileName + '.tmp'",
+    "    def getDisplayName(self):\n        return self.getLastName() + ', ' + self.getMiddleName()",
+    "params = {'tableName' : tableName, 'columnName' : columnName, 'schemaName' : schemaName}",
+    "url = '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}'",
+    "if \"hostName\" in settings:\n    server.hostName = settings[\"hostName\"]\nif \"userName\" in settings:\n    server.userName = settings[\"userName\"]",
+    "def openDocument(self, fileName, fileType):\n    doc = self.findDocument(fileName)\n    ext = os.path.splitext(fileName)",
+    "    @property\n    def serverHostName(self):\n        '''gets the property value for serverHostName'''\n        return self._serverHostName"
+   ],
+   "quiet": [
+    "class Customer:\n    def __init__(self, data):\n        self.balance = data[\"balance\"]\n        self.discount = data[\"discount\"]",
+    "outputPath = inputPath + '.out'\ntempPath = inputPath + '.tmp'",
+    "    def getTotalPrice(self):\n        return self.getNetPrice() + self.getSalesTax()",
+    "params = {'rowCount' : rowCount, 'pageSize' : pageSize, 'offset' : offset}",
+    "url = '/api/v2/orders/{orderId}/items/{itemId}/shipments/{shipmentId}'",
+    "if \"port\" in settings:\n    server.port = settings[\"port\"]\nif \"timeout\" in settings:\n    server.timeout = settings[\"timeout\"]",
+    "def resizeImage(self, width, height):\n    img = self.loadImage(width)\n    ratio = float(width) / height",
+    "    @property\n    def retryCount(self):\n        '''gets the property value for retryCount'''\n        return self._retryCount"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "code: before a …Name identifier",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Look: every top example sits one token before displayName, tableName, Hostname, FirstName, PropertyName, GroupName, FileName. Probes: config[\"firstName\"] lines 0.77, self.getFirstName() 1.06, dbFileName 0.42; the same code with age/height/weight 0.006. The card shows this pole has almost as many activations above 0.3 of max as above 0.1 (a plateau), which a 16-sentence test cannot explain; coverage unknown."
+}
