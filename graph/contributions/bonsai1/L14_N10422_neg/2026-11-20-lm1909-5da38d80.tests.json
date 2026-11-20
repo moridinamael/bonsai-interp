@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-5da38d80",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N10422-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:19:51+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N10422",
+   "pole": "-",
+   "label": "an entry on the main diagonal of a matrix written out in code or LaTeX",
+   "fire": [
+    "D = np.array([[7., 0., 0.],\n              [0., 1., 0.],\n              [0., 0., 4.]])\nprint(D)",
+    "I = [[1, 0, 0, 0],\n     [0, 1, 0, 0],\n     [0, 0, 1, 0],\n     [0, 0, 0, 1]]",
+    "\\begin{bmatrix} a & 0 & 0 \\\\ 0 & b & 0 \\\\ 0 & 0 & c \\end{bmatrix}",
+    "K = np.array([[4., 1.],\n              [1., 4.]])\nprint(K)",
+    "cov = [[0.5, 0.1, 0.0],\n       [0.1, 0.7, 0.2],\n       [0.0, 0.2, 0.9]]",
+    "M = Matrix3(0.2, 0, 0,\n            0, 0.2, 0,\n            0, 0, 0.2)",
+    "\\begin{pmatrix} \\lambda & 0 \\\\ 0 & \\lambda \\end{pmatrix} acts as a scaling.",
+    "S = torch.tensor([[1.0, 0.0],\n                  [0.0, 2.0]])"
+   ],
+   "quiet": [
+    "A = np.array([2., 0., 0., 3., 0., 5.])\nprint(A.sum())",
+    "values = [1, 0, 0, 0, 1, 0, 0, 0, 1]\ntotal = sum(values)",
+    "The coefficients a, b and c were estimated at 0.2, 0.4 and 0.9.",
+    "K = np.array([4., 1.])\nprint(K)",
+    "weights = [0.5, 0.1, 0.0, 0.7, 0.2]\nnorm = max(weights)",
+    "v = Vector3(0.2, 0, 0)\nv.normalize()",
+    "The eigenvalue \\lambda scales the vector by a constant factor.",
+    "S = torch.tensor([1.0, 0.0, 2.0])\nprint(S.mean())"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "matrix diagonal entry",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: very sparse (0.002% of tokens). All top examples are in written-out matrices, and the marked token sits on or near the diagonal (\\mu in the last row's last column, 0.1 at [2][2], 1. at [1][1], [0, 1]). Near misses keep matrix-like numbers but as flat lists or a single row. Probe: diagonal np.array 0.35 (peak on the last diagonal entry), flat list 0.01."
+}
