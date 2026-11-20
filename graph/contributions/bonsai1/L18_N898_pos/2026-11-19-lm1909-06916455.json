@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-06916455",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N898+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:16+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N898_pos/2026-11-19-lm1909-06916455.tests.json"
+ },
+ "label": "dense unit: weakly on for most text (plain exposition and code); best guess at what turns it off: warm thanks and praise in comment-style text, which the opposite pole fires on",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N898_pos/2026-11-19-lm1909-06916455.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.287,
+     "peak": " could"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.136,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.081,
+     "peak": " lift"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.13,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.193,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.118,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.289,
+     "peak": " advice"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.104,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": "Thank"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.066,
+     "peak": " baby"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.724,
+     "peak": "Nice"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.208,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "Lov"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.1,
+     "peak": "So"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.247,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.133,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; off in thanks/praise",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole dense (23.6% of tokens reach 0.1 of max, max 2.44, 100% gate-closed echo regime). Probes: plain sentences and code 0.16-0.37, a thank-you comment 0.05. The opposite pole's top examples are thankful or praising blog comments, and its output suppresses ' thank', 'Thanks', ' congr', ' Nice'. The test contrasts neutral exposition with thanks and praise; it records the density and is not a claim of meaning.",
+ "selection": "random draw"
+}

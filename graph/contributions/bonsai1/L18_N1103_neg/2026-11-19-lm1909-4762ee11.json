@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4762ee11",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N1103-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:56+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N1103_neg/2026-11-19-lm1909-4762ee11.tests.json"
+ },
+ "label": "a spoken or written explanation of algebra or calculus (derivatives, logarithms, radicals, operations), firing on the function words and operands inside the explanation",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N1103_neg/2026-11-19-lm1909-4762ee11.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.485,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.261,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.291,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.088,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.109,
+     "peak": " has"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.292,
+     "peak": " times"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.793,
+     "peak": " x"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.106,
+     "peak": " roots"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " find"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " court"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": " address"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.077,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " window"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " back"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.059,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.042,
+     "peak": " chimney"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.276,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "algebra/calculus explanation",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: four maths-explanation sentences scored 0.20-0.71; two sentences with the same syntax about a recipe and a region scored 0.04-0.05. The peak token varies (',', ' as', ' division'), so this is a context, not a word.",
+ "selection": "random draw"
+}

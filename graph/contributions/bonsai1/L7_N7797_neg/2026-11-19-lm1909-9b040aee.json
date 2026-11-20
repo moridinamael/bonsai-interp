@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9b040aee",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N7797-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:21+00:00",
+ "recipe": {
+  "toolchain_commit": "6b3c1986e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N7797_neg/2026-11-19-lm1909-9b040aee.tests.json"
+ },
+ "label": "an opening '{' in Python that is not a plain dict assignment: a {name} placeholder inside a string, a dict passed to % or to a logging call, or a set literal after 'in'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N7797_neg/2026-11-19-lm1909-9b040aee.tests.json",
+   "prereg_commit": "6b3c1986e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.769,
+     "peak": " {"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.379,
+     "peak": " {'"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.209,
+     "peak": " {"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.292,
+     "peak": " {'"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.788,
+     "peak": " {"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.412,
+     "peak": " {\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.46,
+     "peak": " {"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.754,
+     "peak": "{"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " -"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.065,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": "(items"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " -"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " b"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.071,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.065,
+     "peak": " ("
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.436,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6b3c1986e",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'{' placeholder / inline dict / set",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: all top examples peak on an opening-brace token (' {', '{', \" {'\", ' {\\n'). Probes: '-p {port}' in a string 0.75, 'in {0, 4}' 0.53, '% {'name': …}' 0.40, logging dict 0.31, 'in {1, 15, 30}' 0.24; but 'config = {'host': …}' 0.08, 'data = {}' 0.01, 'return {' 0.14, JavaScript 'function start() {' 0.09, '{}'.format 0.13. Near misses are the same lines with the braces replaced by brackets, parentheses or literals.",
+ "selection": "random draw"
+}

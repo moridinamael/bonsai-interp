@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-9b040aee",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N7797-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:37:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L7/N7797",
+   "pole": "-",
+   "label": "an opening '{' in Python that is not a plain dict assignment: a {name} placeholder inside a string, a dict passed to % or to a logging call, or a set literal after 'in'",
+   "fire": [
+    "    cmd = 'ssh -p {port} deploy@server'\n    run(cmd.format(port=22))",
+    "    text = \"%(user)s logged in at %(time)s\" % {'user': u, 'time': t}",
+    "    if month in {4, 6, 9, 11}:\n        days = 30",
+    "    log.debug('loaded %(count)s items', {'count': len(items)})",
+    "    local('pg_restore -h db -p {port} -d sales')",
+    "    label = _(\"%(first)s and %(second)s\") % {\n        'first': a,\n    }",
+    "    path = 'backup/ {name}.tar'\n    weekend = day in {5, 6}",
+    "    line = '\\t{ %s }\\t%s' % (key, value)"
+   ],
+   "quiet": [
+    "    cmd = 'ssh -p 22 deploy@server'\n    run(cmd)",
+    "    text = \"%s logged in at %s\" % (u, t)",
+    "    if month in [4, 6, 9, 11]:\n        days = 30",
+    "    log.debug('loaded %s items', len(items))",
+    "    local('pg_restore -h db -p 5432 -d sales')",
+    "    label = _(\"%s and %s\") % (\n        a, b,\n    )",
+    "    path = 'backup/name.tar'\n    weekend = day in (5, 6)",
+    "    line = '\\t[ %s ]\\t%s' % (key, value)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'{' placeholder / inline dict / set",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: all top examples peak on an opening-brace token (' {', '{', \" {'\", ' {\\n'). Probes: '-p {port}' in a string 0.75, 'in {0, 4}' 0.53, '% {'name': …}' 0.40, logging dict 0.31, 'in {1, 15, 30}' 0.24; but 'config = {'host': …}' 0.08, 'data = {}' 0.01, 'return {' 0.14, JavaScript 'function start() {' 0.09, '{}'.format 0.13. Near misses are the same lines with the braces replaced by brackets, parentheses or literals."
+}
