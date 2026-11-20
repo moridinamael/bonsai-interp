@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ea890edd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N7212+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:11:47+00:00",
+ "recipe": {
+  "toolchain_commit": "68fa683ac",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N7212_pos/2026-11-20-lm1909-ea890edd.tests.json"
+ },
+ "label": "the digit '9' right after the decimal point in a price ($19.95, $14.99)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N7212_pos/2026-11-20-lm1909-ea890edd.tests.json",
+   "prereg_commit": "68fa683ac",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.54,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.69,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.627,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.922,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.487,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.937,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.833,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.573,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.059,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.124,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.268,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.466,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " online"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.658,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "68fa683ac",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "price .9x digit",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: all top 32 peak on '9', all in $NN.9x prices. - pole is '9' at end of years (1999).",
+ "selection": "random draw"
+}
