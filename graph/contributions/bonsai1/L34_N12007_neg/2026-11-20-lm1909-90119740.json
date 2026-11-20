@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-90119740",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N12007-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T03:11:59+00:00",
+ "recipe": {
+  "toolchain_commit": "9b80ca2df",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N12007_neg/2026-11-20-lm1909-90119740.tests.json"
+ },
+ "label": "positions where a plant or fruit name (Cherry, berry, cypress) is about to follow, especially a name repeated from earlier in the text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N12007_neg/2026-11-20-lm1909-90119740.tests.json",
+   "prereg_commit": "9b80ca2df",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.349,
+     "peak": " Cherry"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.153,
+     "peak": " Cherry"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.3,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.206,
+     "peak": " Blue"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.572,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.464,
+     "peak": "-b"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.096,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.033,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " Sky"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " repaired"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.096,
+     "peak": " own"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.039,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.084,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": "ery"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " West"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.945,
+    "median_fire": 0.253,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9b80ca2df",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "plant name next",
+ "unit_kind": "contextual",
+ "confidence": 0.2,
+ "notes": "Guess from the card: top examples fire on the token just before Cherry/berry/cypress, and the output direction is tied to plant names (Maple, rose, cherry, oak). Simple probes read ~0. Low confidence.",
+ "selection": "random draw"
+}
