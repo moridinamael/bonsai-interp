@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-71bbf835",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N4570+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:50:15+00:00",
+ "recipe": {
+  "toolchain_commit": "6a5fa10e0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N4570_pos/2026-11-20-lm1909-71bbf835.tests.json"
+ },
+ "label": "an Arabic noun stem about to take the nisba adjective suffix -ي/-ية (شمس|ية, قلب|ية, صحف|ية); the output promotes English adjective suffixes (-ian, -ic, -ical)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N4570_pos/2026-11-20-lm1909-71bbf835.tests.json",
+   "prereg_commit": "6a5fa10e0",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.617,
+     "peak": " الشمس"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.452,
+     "peak": "لب"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.573,
+     "peak": "حف"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.045,
+     "peak": " السل"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.088,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.157,
+     "peak": " الاقتصادية"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.008,
+     "peak": " أ"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.286,
+     "peak": "ل"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.04,
+     "peak": "افت"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " الق"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.467,
+     "peak": "حف"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.157,
+     "peak": "سلوك"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.077,
+     "peak": "ور"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.17,
+     "peak": " الاقتصاد"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " ن"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.258,
+     "peak": " المدينة"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.672,
+    "median_fire": 0.221,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6a5fa10e0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic stem before nisba",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: شمسية/قلبية/صحفية 0.55-0.63 vs bare nouns 0.09-0.18. The distinction: noun about to become an adjective vs noun used as noun.",
+ "selection": "random draw"
+}
