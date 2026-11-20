@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-f7447503",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N12190-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:56:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N12190",
+   "pole": "-",
+   "label": "the last token of a brand or product name, or a unit, right where a ® / ™ or superscript mark is due (Calmt[ex]®, Constant [Guard]®, [cm]^2)",
+   "fire": [
+    "ThermoFlex® socks are knitted from Coolmax® yarn. Wash your Coolmax socks inside out.",
+    "The package includes Total Shield® antivirus. Total Shield scans every download.",
+    "Ask your doctor about Zentrol® capsules. Zentrol is taken once daily.",
+    "The area is reported in cm^2 and the volume in cm^3.",
+    "Our pans feature the DuraGlide® coating. DuraGlide lasts for years.",
+    "New FreshMint® gum keeps breath clean. FreshMint comes in three flavours.",
+    "Each kit contains SureGrip® handles. SureGrip fits most tools.",
+    "Protect your lawn with GreenGuard® fertiliser. GreenGuard feeds for months."
+   ],
+   "quiet": [
+    "The socks are knitted from soft cotton yarn. Wash your cotton socks inside out.",
+    "The package includes antivirus software. The software scans every download.",
+    "Ask your doctor about the new capsules. They are taken once daily.",
+    "The area is reported in hectares and the volume in litres.",
+    "Our pans feature a durable coating. The coating lasts for years.",
+    "New mint gum keeps breath clean. The gum comes in three flavours.",
+    "Each kit contains sturdy handles. The handles fit most tools.",
+    "Protect your lawn with good fertiliser. The fertiliser feeds for months."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "before ®/™/superscript",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "The + pole fires on the '0' of '10' before an exponent and its output promotes '^', '²', '™'; this pole fires where such a mark follows a name or unit."
+}
