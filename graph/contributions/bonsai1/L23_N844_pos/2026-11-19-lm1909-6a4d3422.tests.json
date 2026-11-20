@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-6a4d3422",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N844+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:56:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N844",
+   "pole": "+",
+   "label": "a D-initial piece that the context has already announced: the expansion of an acronym containing D ('DMV (Department …'), or a repeated d-word ('dos-à-dos')",
+   "fire": [
+    "The DOT (Department of Transportation) repaved the highway last summer.",
+    "Funding came from the DOE (Department of Energy) and two universities.",
+    "She works for the DNR (Department of Natural Resources) as a forester.",
+    "A permit from the DPW (Department of Public Works) is needed to dig here.",
+    "The DHS (Department of Homeland Security) issued new travel rules.",
+    "The grant was awarded by DARPA (Defense Advanced Research Projects Agency) in May.",
+    "The DOJ (Department of Justice) opened an inquiry into the merger.",
+    "The DEC (Department of Environmental Conservation) stocks the lake with trout."
+   ],
+   "quiet": [
+    "The FAA (Federal Aviation Administration) repaved the runway last summer.",
+    "Funding came from the NSF (National Science Foundation) and two universities.",
+    "She works for the EPA (Environmental Protection Agency) as a chemist.",
+    "A permit from the city engineer's office is needed to dig here.",
+    "The Department of Homeland Security issued new travel rules.",
+    "The grant was awarded by NASA (National Aeronautics and Space Administration) in May.",
+    "Mr. Dalton drove to Dover to deliver the documents on Monday.",
+    "The state wildlife agency stocks the lake with trout."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "announced D (acronym expansion)",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' D', 'D', '-d', ' Department', Japanese 'ド'; the output direction suppresses D tokens, so the unit fires on a D and votes against another. Probes: 'DMV (Department' 0.82, \"'--dan', help='DAN\" 0.84, 'dos-à-dos' 0.83, 'DDP (Dongdaemun Design' 0.40, 'DVD (Digital Video Disc' 0.22; plain D words (Davis, Denver, David, Diana) 0.01, the B analogue of the code example 0.03. Near misses: acronyms without D, and D words with no earlier cue."
+}

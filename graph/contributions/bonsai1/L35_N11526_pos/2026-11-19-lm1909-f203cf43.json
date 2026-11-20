@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-f203cf43",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N11526+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:09+00:00",
+ "recipe": {
+  "toolchain_commit": "be3802650",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N11526_pos/2026-11-19-lm1909-f203cf43.tests.json"
+ },
+ "label": "an accented vowel piece in the middle of a foreign word, before a consonant cluster (Stór|höfði, elí|ptica)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N11526_pos/2026-11-19-lm1909-f203cf43.tests.json",
+   "prereg_commit": "be3802650",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.278,
+     "peak": "ó"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.347,
+     "peak": " Sau"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.212,
+     "peak": "í"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.235,
+     "peak": "ör"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.053,
+     "peak": " del"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.447,
+     "peak": "ú"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.242,
+     "peak": "ür"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.212,
+     "peak": "ör"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.154,
+     "peak": " Hol"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " brings"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": "bury"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.061,
+     "peak": " Se"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": " through"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.238,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be3802650",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mid-word accented vowel",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: peaks on mid-word pieces ('ó', 'á', 'ö', ' sq', 'eh', ' Hin') whose continuation starts with a consonant cluster (rts, lke, cks, rh, pt); the output promotes vowel-less pieces (' mm', ' cm', ' km'). Probes reached only 0.26-0.30 on Icelandic and Spanish words and 0.05-0.12 elsewhere, so the test may miss the 0.20 median. Near misses are the same sentences with unaccented, plainly spelled names.",
+ "selection": "random draw"
+}

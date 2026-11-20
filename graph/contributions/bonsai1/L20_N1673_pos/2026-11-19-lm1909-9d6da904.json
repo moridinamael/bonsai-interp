@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-9d6da904",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1673+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:46+00:00",
+ "recipe": {
+  "toolchain_commit": "be3802650",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N1673_pos/2026-11-19-lm1909-9d6da904.tests.json"
+ },
+ "label": "dense unit; best guess at its peaks: ' Note' / ' see' opening a remark in a code-comment header",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N1673_pos/2026-11-19-lm1909-9d6da904.tests.json",
+   "prereg_commit": "be3802650",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.44,
+     "peak": " see"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.632,
+     "peak": " Note"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.146,
+     "peak": " file"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.461,
+     "peak": " Note"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.482,
+     "peak": " see"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.394,
+     "peak": " Note"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.359,
+     "peak": " docs"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.508,
+     "peak": " Note"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.158,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.174,
+     "peak": " work"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.134,
+     "peak": " holds"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.162,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.159,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.138,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.148,
+     "peak": " black"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.177,
+     "peak": ":\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.451,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be3802650",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; comment 'Note'/'see'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole dense (24.4% of tokens reach 0.1 of max) and gate-closed (echo regime 100%), with a low max of 2.27. Its top examples are ' Note', ' see', ' See' in '#' comment headers and string punctuation in Django code. Probes: a comment header with 'Please see' and 'Note that' 0.97, code literals 0.31, prose 0.05-0.16. The test records the density honestly rather than a meaning; the - pole (honor / proud / shame) is the sparse side of this unit.",
+ "selection": "random draw"
+}

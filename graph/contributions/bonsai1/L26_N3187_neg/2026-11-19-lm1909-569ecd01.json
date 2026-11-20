@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-569ecd01",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N3187-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:22+00:00",
+ "recipe": {
+  "toolchain_commit": "be3802650",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N3187_neg/2026-11-19-lm1909-569ecd01.tests.json"
+ },
+ "label": "the digit '3' right after a leading 1 or 7 in a standard's number (EN 13432, ISO 13485, ISO 7396)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N3187_neg/2026-11-19-lm1909-569ecd01.tests.json",
+   "prereg_commit": "be3802650",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.904,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.722,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.156,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.043,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.911,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.011,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.092,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.144,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.505,
+     "peak": " EN"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.153,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.492,
+     "peak": " EN"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.686,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.12,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " rest"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": "3"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 1.027,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be3802650",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'3' in EN/ISO 13xxx numbers",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: '3' 14 of the top 32, in EN/ISO/IEC designations and one phone number; also ' of' and ' ' in SEC-filing phrases ('as of the end of', 'Form 20-F'), which this label does not cover. Probes: EN 13501 1.08, ISO 7396 1.02, DIN 13164 1.00, EN 1317 1.01, +44 1372 0.47; year 1385 0.06, 1300 people 0.01, 4326 0.01 (that is the + pole). Near misses: standards with other digits, and 13 in years and counts.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1760fb08",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N12034-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:15+00:00",
+ "recipe": {
+  "toolchain_commit": "be3802650",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N12034_neg/2026-11-19-lm1909-1760fb08.tests.json"
+ },
+ "label": "a capitalised piece glued into a compound by '.', '_', '-' or camel case (Style.RESET, JIRA_API, JPL-Caltech, Hewlett-Packard)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N12034_neg/2026-11-19-lm1909-1760fb08.tests.json",
+   "prereg_commit": "be3802650",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.746,
+     "peak": "_API"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.169,
+     "peak": "-Cal"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.646,
+     "peak": ".Pool"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.09,
+     "peak": ".RESET"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.625,
+     "peak": "-Pack"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.61,
+     "peak": "L"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.161,
+     "peak": "_API"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.234,
+     "peak": "(max"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.075,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.247,
+     "peak": " sqlite"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.105,
+     "peak": ".reset"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.049,
+     "peak": " nin"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": " physics"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.066,
+     "peak": " chat"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.309,
+     "peak": "(max"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.422,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be3802650",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "glued capitalised piece",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (3.1% of tokens reach 0.1 of max) and gate-closed. Top examples: '.RESET', '_API', '.Pool', '-Cal', 'L' in PhysRevLett, ' Man' in Manoa. Probes: _API 0.75, -Cal 0.84, .RESET 0.55, .Pool 0.61, -Pack 0.67, RevL 0.57; a lower-case identifier 0.22, plain prose 0.03. Near misses keep the compound but in lower case or as separate words.",
+ "selection": "random draw"
+}
