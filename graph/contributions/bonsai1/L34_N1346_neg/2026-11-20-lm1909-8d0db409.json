@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-8d0db409",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1346-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:41:25+00:00",
+ "recipe": {
+  "toolchain_commit": "f33fd372b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N1346_neg/2026-11-20-lm1909-8d0db409.tests.json"
+ },
+ "label": "a split-off word-initial 'W'/'w' (or 'gew') piece of a German word (W|unsch, W|erte, W|ettbewerb, gew|onnen)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N1346_neg/2026-11-20-lm1909-8d0db409.tests.json",
+   "prereg_commit": "f33fd372b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.521,
+     "peak": " gew"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.557,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.256,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.421,
+     "peak": " gew"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.254,
+     "peak": " gew"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.134,
+     "peak": " für"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.273,
+     "peak": " W"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.176,
+     "peak": " W"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.227,
+     "peak": "lo"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.306,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.139,
+     "peak": " gegenüber"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.1,
+     "peak": " der"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.098,
+     "peak": "ge"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.134,
+     "peak": " für"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.104,
+     "peak": "nehmer"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.101,
+     "peak": " bei"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.867,
+    "median_fire": 0.265,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f33fd372b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German split W- piece",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Top 32: ' W' x4, 'w' x5, ' gew' x4 in German words, ' الو' x15 in Arabic. A probe gave ' gew' 0.61 and ' W' 0.25 but also ' Sie' 0.33, so German text in general may leak. Near misses are German sentences of the same kind without W-initial words.",
+ "selection": "random draw"
+}
