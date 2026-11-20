@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-2f77522a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N7493+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:40:36+00:00",
+ "recipe": {
+  "toolchain_commit": "ad89dbd79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N7493_pos/2026-11-19-lm1909-2f77522a.tests.json"
+ },
+ "label": "best guess for a weak, diffuse pole: a past-time anchor ('… ago', 'Last year') that sets the scene for a personal recollection; the single 10.06 maximum is an outlier, the next examples are ~6.5",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N7493_pos/2026-11-19-lm1909-2f77522a.tests.json",
+   "prereg_commit": "ad89dbd79",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.236,
+     "peak": " ago"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.251,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.162,
+     "peak": " winters"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.173,
+     "peak": " long"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.156,
+     "peak": " year"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.168,
+     "peak": " ago"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.287,
+     "peak": " ago"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.217,
+     "peak": " ago"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.093,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " brother"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.112,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.069,
+     "peak": " write"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.067,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.101,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.04,
+     "peak": "I"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.195,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ad89dbd79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "past-time anchor (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: '.' x8, then ' next', ' year', ' time', ' ago'; no shared token. Probes never exceeded 0.34 of max: 'Thousands of years ago' 0.34, 'A few months ago' 0.25, 'Last year,' 0.23, 'When I bought the car … worn.' 0.25, 'Two summers ago' 0.19; plain sentence 0.03-0.04. I expect this test to fail on the 0.20 median; it is registered to record that the card gives no clean trigger.",
+ "selection": "random draw"
+}

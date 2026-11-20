@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-5192c741",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N12266+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:40:19+00:00",
+ "recipe": {
+  "toolchain_commit": "ad89dbd79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N12266_pos/2026-11-19-lm1909-5192c741.tests.json"
+ },
+ "label": "the disease word: the token ' tuberculosis', ' TB' as its abbreviation, and the piece 'erc' in (non)tub-erc-ulous",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N12266_pos/2026-11-19-lm1909-5192c741.tests.json",
+   "prereg_commit": "ad89dbd79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.678,
+     "peak": " tuberculosis"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.763,
+     "peak": " tuberculosis"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.777,
+     "peak": " TB"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.765,
+     "peak": " tuberculosis"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.717,
+     "peak": " tuberculosis"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.722,
+     "peak": " TB"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.879,
+     "peak": "erc"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.789,
+     "peak": " tuberculosis"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": "atorium"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " severe"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": "Health"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " Europe"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": "is"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " standard"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " likely"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.764,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ad89dbd79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tuberculosis / TB",
+ "unit_kind": "lexical",
+ "confidence": 0.9,
+ "notes": "Card: ' tuberculosis' x16, ' TB' x7, 'erc' x4 (one token dominates). Probes: 'tuberculosis' 0.69, 'TB' 0.73, 'nontub-erc-ulous' 1.02; 'malaria' 0.00, 'TV' 0.00.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "tuberculosis",
+   "TB",
+   "tuberculous"
+  ]
+ }
+}

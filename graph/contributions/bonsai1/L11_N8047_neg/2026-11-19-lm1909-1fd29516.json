@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1fd29516",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8047-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:40:27+00:00",
+ "recipe": {
+  "toolchain_commit": "ad89dbd79",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N8047_neg/2026-11-19-lm1909-1fd29516.tests.json"
+ },
+ "label": "summing-up idioms at the point where the summary is about to be given: 'the gist of (it)', 'long story short', 'the upshot', 'what I'm getting at', 'what you're saying is'; the literal words (short, story, shot) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N8047_neg/2026-11-19-lm1909-1fd29516.tests.json",
+   "prereg_commit": "ad89dbd79",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.93,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.553,
+     "peak": " short"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.693,
+     "peak": "shot"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.657,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.848,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.871,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.362,
+     "peak": " short"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.069,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.059,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.493,
+     "peak": " story"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " need"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.511,
+     "peak": " saying"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": "amb"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " skim"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.77,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ad89dbd79",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'the gist is…' summing-up idioms",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Card: ' short' x8, ' of', 'shot', ' idea', ' at' in 'gist of it', 'long and short of it', 'upshot', 'long story short', 'what I'm getting at'. Probes: 'the gist of it is' 1.29, 'Long story short' 0.72, 'The upshot' 0.72, 'What I'm getting at' 0.79, 'what you're saying is' 0.79; literal 'short of money' 0.01, 'a long story about her trip' 0.01.",
+ "selection": "random draw"
+}
