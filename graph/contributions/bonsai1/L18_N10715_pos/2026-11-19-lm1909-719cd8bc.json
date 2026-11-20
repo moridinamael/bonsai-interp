@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-719cd8bc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N10715+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:46:18+00:00",
+ "recipe": {
+  "toolchain_commit": "0a54ffd1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N10715_pos/2026-11-19-lm1909-719cd8bc.tests.json"
+ },
+ "label": "noun that re-mentions the passage's established topic inside 'of the / in the / this N' (the market ... the spice section of the [market])",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N10715_pos/2026-11-19-lm1909-719cd8bc.tests.json",
+   "prereg_commit": "0a54ffd1e",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.434,
+     "peak": " library"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.187,
+     "peak": " manual"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.033,
+     "peak": " northern"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.165,
+     "peak": " scheme"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.136,
+     "peak": " treaty"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.256,
+     "peak": " museum"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.356,
+     "peak": " novel"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.199,
+     "peak": " reservoir"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.069,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.187,
+     "peak": " manual"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": " street"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.126,
+     "peak": " our"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.057,
+     "peak": " Critics"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.095,
+     "peak": " museum"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.065,
+     "peak": " draft"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.059,
+     "peak": " water"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.844,
+    "median_fire": 0.193,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a54ffd1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "re-mentioned topic noun",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Probes: two-sentence passages with a re-mention reached 0.26-0.65; one-clause re-mentions stayed under 0.15; a near miss with a new noun reached 0.19.",
+ "selection": "random draw"
+}

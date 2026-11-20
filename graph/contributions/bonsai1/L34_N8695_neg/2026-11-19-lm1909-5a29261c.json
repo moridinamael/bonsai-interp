@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-5a29261c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8695-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:46:42+00:00",
+ "recipe": {
+  "toolchain_commit": "0a54ffd1e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N8695_neg/2026-11-19-lm1909-5a29261c.tests.json"
+ },
+ "label": "the Japanese/Korean morpheme 機 / 기 (ki): on 機 in 機会, or on the character just before an expected 機/기 (危機, 契機, 기회, 인기)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N8695_neg/2026-11-19-lm1909-5a29261c.tests.json",
+   "prereg_commit": "0a54ffd1e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.75,
+     "peak": "機"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.768,
+     "peak": "機"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.752,
+     "peak": "危"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.418,
+     "peak": "契"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.512,
+     "peak": " 기"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.221,
+     "peak": " 인"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.439,
+     "peak": "危"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.347,
+     "peak": " 기"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.174,
+     "peak": "予"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.083,
+     "peak": "良い"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.164,
+     "peak": "水"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.07,
+     "peak": "事件"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.106,
+     "peak": "다"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.066,
+     "peak": "이"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.088,
+     "peak": "食"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.085,
+     "peak": " �"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.476,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0a54ffd1e",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "機 / 기 in Sino-compounds",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Probes: 機会 0.80, 協定 0.59 (does not fit the label), 기회 0.40, 인기 0.39, 危機 0.34; other Japanese sentences 0.11-0.21; English 'opportunity ... machines' 0.005. The output direction of this pole promotes 机 / 機 / ' machine'.",
+ "selection": "random draw"
+}

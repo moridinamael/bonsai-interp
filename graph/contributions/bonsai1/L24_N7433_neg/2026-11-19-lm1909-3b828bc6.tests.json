@@ -1,0 +1,49 @@
+{
+ "contribution": "2026-11-19-lm1909-3b828bc6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N7433-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:28:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N7433",
+   "pole": "-",
+   "label": "a delete/remove confirmation prompt: 'Are you sure you want to delete ...?' (fires on 'you' and the closing question mark)",
+   "fire": [
+    "A warning pops up: Are you sure you want to delete this playlist?",
+    "The app asked, Do you really want to remove this contact from your list?",
+    "if messagebox.askyesno('Confirm delete', 'Are you sure you want to delete the selected rows?'):",
+    "Before wiping the disk the installer asks: Are you sure you want to erase everything?",
+    "A prompt reads: Are you sure you want to permanently delete these 14 photos?",
+    "answer = input('Do you really want to drop the table? This cannot be undone. ')",
+    "The site then asks, Are you sure you want to cancel your subscription?",
+    "When I clicked the trash icon it said: Are you sure you want to remove this item?"
+   ],
+   "quiet": [
+    "A banner pops up: Would you like to hear about our new playlist?",
+    "The waiter asked, Do you want some bread with your soup?",
+    "if messagebox.askyesno('Survey', 'Did you find the selected rows useful?'):",
+    "Before the tour begins the guide asks: Are you ready to climb the tower?",
+    "A caption reads: Have you ever seen these 14 photos before?",
+    "answer = input('What is the name of the table? ')",
+    "The site then asks, How did you hear about our subscription?",
+    "When I clicked the help icon it said: How can we assist you today?"
+   ]
+  }
+ ],
+ "predictions": "8/8 fire, 0 near misses",
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "'Are you sure' delete prompt",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probes: confirm-delete prompts 0.64-0.79; other yes/no questions 0.04-0.14. The output direction of this pole promotes 'confirm' tokens."
+}

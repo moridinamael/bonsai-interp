@@ -1,0 +1,61 @@
+{
+ "contribution": "2026-11-19-lm1909-745e458a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N7127-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:28:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N7127",
+   "pole": "-",
+   "label": "adjective-forming suffix split off as its own token, mainly '-less' and '-ish' (cloud|less, pink|ish); the suffix token fires",
+   "fire": [
+    "We woke to a cloudless sky above the harbor.",
+    "The hikers crossed the ridge on a moonless night in October.",
+    "This variety is thornless and produces sweet berries by midsummer.",
+    "They found shelter in a roofless barn at the edge of the field.",
+    "The petals fade to a pinkish white as the flower ages.",
+    "The bird has a yellowish breast and dark wings.",
+    "A brownish stain spread across the old ceiling.",
+    "The cave led down to a sunless lake far below the surface."
+   ],
+   "quiet": [
+    "We woke to a clear sky above the harbor.",
+    "The hikers crossed the ridge on a cold night in October.",
+    "This variety is hardy and produces sweet berries by midsummer.",
+    "They found shelter in a ruined barn at the edge of the field.",
+    "The petals fade to a pale white as the flower ages.",
+    "The bird has a yellow breast and dark wings.",
+    "A brown stain spread across the old ceiling.",
+    "The cave led down to a hidden lake far below the surface."
+   ]
+  }
+ ],
+ "predictions": "6/8 fire at 0.2+, 0 near misses",
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "suffix token -less / -ish",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Probes: -less and -ish on a split stem reach 0.33-0.46 of max; 'reddish' only 0.10, '-ic' 0.12, whole-token ' childish' 0.02. Tokenizer splits were checked for the fire words (no scoring).",
+ "trigger": {
+  "pieces": [
+   "less",
+   "ish",
+   "ic",
+   "ric",
+   "hood",
+   "ly",
+   "y",
+   "man"
+  ]
+ }
+}
