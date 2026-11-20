@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-53b665a4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N1254+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:17:54+00:00",
+ "recipe": {
+  "toolchain_commit": "dadd8431b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N1254_pos/2026-11-20-lm1909-53b665a4.tests.json"
+ },
+ "label": "a space-prefixed CJK token after punctuation in Chinese text (。 ⟦ 我⟧), and ' Var' (Varanasi)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N1254_pos/2026-11-20-lm1909-53b665a4.tests.json",
+   "prereg_commit": "dadd8431b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.818,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.726,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.781,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.809,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.832,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.752,
+     "peak": " Var"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.778,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.732,
+     "peak": " Var"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": "会议"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": "的"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": "这家"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "明天"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "外套"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " bat"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": "尽快"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.78,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dadd8431b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stray space before CJK",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' �' x17 (space-prefixed CJK bytes, e.g. ' 我' after a sentence end), ' Var' x5. Probe: '！ 我' 0.69 vs '！我' 0.00; Varanasi 0.77; a Japanese ' 私' only 0.01.",
+ "selection": "random draw"
+}

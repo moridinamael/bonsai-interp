@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ac0248e3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N1391-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:17:47+00:00",
+ "recipe": {
+  "toolchain_commit": "dadd8431b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N1391_neg/2026-11-20-lm1909-ac0248e3.tests.json"
+ },
+ "label": "the subword 'is' inside a proper name (Bar|is|ani, Bar|is Soyer, ART|IS|AN)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N1391_neg/2026-11-20-lm1909-ac0248e3.tests.json",
+   "prereg_commit": "dadd8431b",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.963,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.014,
+     "peak": " Mar"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.735,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.097,
+     "peak": " Paris"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.013,
+     "peak": " Dor"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.016,
+     "peak": " Bar"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.123,
+     "peak": "the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.006,
+     "peak": " led"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " figures"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.037,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": "as"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.031,
+     "peak": "orio"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " led"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.057,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dadd8431b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'is' inside a name",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card: 'is' x6, 'atis', 'IS', 'iz' inside names, plus ' of' x7 (e.g. 'mother of God'). Probe: Barisani 0.99, Baris 0.40, Bertolli 0.13, 'mother of God' 0.14.",
+ "selection": "random draw"
+}
