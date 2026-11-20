@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-72d656f9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N9706-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N9706",
+   "pole": "-",
+   "label": "tokens inside neural-network model code (attention, batch, sampling, dropout in PyTorch/TensorFlow)",
+   "fire": [
+    "    def forward(self, query, key, value, attention_mask=None):\n        scores = query @ key.transpose(-2, -1)",
+    "        # sample a new dropout seed on every forward pass\n        seed = torch.randint(0, 2**31, (1,))",
+    "    inputs = tf.keras.Input(shape=(None,), dtype=tf.int32)\n    # use dynamic batch size based on input",
+    "        attn_weights = torch.softmax(scores / math.sqrt(self.head_dim), dim=-1)\n        attn_weights = self.dropout(attn_weights)",
+    "    z = dist.sample((batch_size,))\n    recon = self.decoder(z)",
+    "        hidden = self.embedding(input_ids)\n        hidden = self.encoder(hidden, mask=attention_mask)",
+    "    # create a TensorArray of length seq_len for the decoder outputs\n    outputs = tf.TensorArray(tf.float32, size=seq_len)",
+    "        logits = self.lm_head(hidden_states)\n        loss = F.cross_entropy(logits.view(-1, vocab), labels.view(-1))"
+   ],
+   "quiet": [
+    "    def save(self, path, overwrite=False):\n        with open(path, 'w') as f:",
+    "        # read the config file once at startup\n        config = json.load(open('config.json'))",
+    "    parser = argparse.ArgumentParser(description='Resize images')\n    # use the default output folder",
+    "        rows = cursor.execute('SELECT name, email FROM users').fetchall()\n        rows = sorted(rows)",
+    "    files = os.listdir(folder)\n    files.sort()",
+    "        text = self.template.render(title=title)\n        text = text.strip()",
+    "    # create a list of filenames for the report\n    names = [f.name for f in folder.iterdir()]",
+    "        total = sum(item.price for item in cart)\n        print('Total:', round(total, 2))"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "neural-net model code",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": ""
+}
