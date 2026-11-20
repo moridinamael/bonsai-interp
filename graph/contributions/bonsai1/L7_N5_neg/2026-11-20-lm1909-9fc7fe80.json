@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9fc7fe80",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N5-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:30:49+00:00",
+ "recipe": {
+  "toolchain_commit": "8e744993f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N5_neg/2026-11-20-lm1909-9fc7fe80.tests.json"
+ },
+ "label": "the word-final piece completing a split name: 'berry' in fruit names (Blue|berry, Cran|berry), 'atan' in Cro|atan",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N5_neg/2026-11-20-lm1909-9fc7fe80.tests.json",
+   "prereg_commit": "8e744993f",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.494,
+     "peak": "berry"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.255,
+     "peak": "berry"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.077,
+     "peak": "berry"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.043,
+     "peak": "atan"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.005,
+     "peak": " each"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.657,
+     "peak": "atan"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.289,
+     "peak": "berry"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.513,
+     "peak": "berry"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "Add"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": "ma"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " tree"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": " near"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.104,
+     "peak": "ots"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.391,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8e744993f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'berry' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: 'berry' is the commonest peak (5 of 32); others are word-final pieces of names (Cro|atan, Cæd|mon, CE|DEX). Tokenizer check: Blueberry, Cranberry, Elderberry, Gooseberry, Mulberry, Huckleberry split off 'berry'; Strawberry and Raspberry do not, so they are used in the near misses. Probe: blue|berry 0.48, cran|berry 0.25, Cro|atan 0.77, strawberry 0.03. Two fire items use Croatan.",
+ "selection": "random draw"
+}

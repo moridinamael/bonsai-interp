@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-d0384eeb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N6054-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:19:51+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N6054",
+   "pole": "-",
+   "label": "dense, very weak pole: a word-final subword piece completing a split word (Heat|map, cad|mium)",
+   "fire": [
+    "plt.title('Correlation Heatmap')\nplt.show()",
+    "Rice can absorb cadmium from contaminated paddy soil.",
+    "The pin-up posters were sold at the vintage fair.",
+    "Use a colormap that is friendly to colour-blind readers.",
+    "Traces of molybdenum were found in the sample.",
+    "The roadmap for the project was approved in May.",
+    "She bought a second-hand typewriter at the market.",
+    "We measured the strontium levels in the groundwater."
+   ],
+   "quiet": [
+    "plt.title('Correlation')\nplt.show()",
+    "Rice can absorb metals from contaminated paddy soil.",
+    "The posters were sold at the vintage fair.",
+    "Use colours that are friendly to colour-blind readers.",
+    "Traces of iron were found in the sample.",
+    "The plan for the project was approved in May.",
+    "She bought a second-hand desk at the market.",
+    "We measured the salt levels in the groundwater."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; split-word piece",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense (63.8% of tokens reach 0.1 of a max of only 0.29; 100% gate-closed leak regime). Best guess from the tops ('map' in Heatmap, 'mium' in cadmium, 'اك', '-up'): the second piece of a word split by the tokenizer. Probe: Heatmap 0.61, plain sentence 0.13. Expected to fail; recorded to document the density."
+}

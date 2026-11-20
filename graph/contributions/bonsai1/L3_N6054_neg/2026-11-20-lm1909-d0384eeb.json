@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-d0384eeb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N6054-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:30:34+00:00",
+ "recipe": {
+  "toolchain_commit": "8e744993f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N6054_neg/2026-11-20-lm1909-d0384eeb.tests.json"
+ },
+ "label": "dense, very weak pole: a word-final subword piece completing a split word (Heat|map, cad|mium)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N6054_neg/2026-11-20-lm1909-d0384eeb.tests.json",
+   "prereg_commit": "8e744993f",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.688,
+     "peak": "map"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.64,
+     "peak": "mium"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.674,
+     "peak": "-up"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.293,
+     "peak": " colormap"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.35,
+     "peak": "um"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.273,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.389,
+     "peak": "-hand"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.493,
+     "peak": "ium"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.303,
+     "peak": "plt"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.457,
+     "peak": " contaminated"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.296,
+     "peak": " fair"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.257,
+     "peak": "-blind"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.207,
+     "peak": " iron"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.288,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.389,
+     "peak": "-hand"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.091,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.805,
+    "median_fire": 0.441,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8e744993f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; split-word piece",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole dense (63.8% of tokens reach 0.1 of a max of only 0.29; 100% gate-closed leak regime). Best guess from the tops ('map' in Heatmap, 'mium' in cadmium, 'اك', '-up'): the second piece of a word split by the tokenizer. Probe: Heatmap 0.61, plain sentence 0.13. Expected to fail; recorded to document the density.",
+ "selection": "random draw"
+}
