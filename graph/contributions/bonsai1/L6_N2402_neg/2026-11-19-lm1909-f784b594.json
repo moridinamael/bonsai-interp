@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-f784b594",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N2402-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:27:23+00:00",
+ "recipe": {
+  "toolchain_commit": "3bcd73e06",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N2402_neg/2026-11-19-lm1909-f784b594.tests.json"
+ },
+ "label": "' Club' / ' club' as the head of a leisure club's name, strongest in 'Yacht Club' (also Jockey Club, garden club); a night club or a golf club is silent",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N2402_neg/2026-11-19-lm1909-f784b594.tests.json",
+   "prereg_commit": "3bcd73e06",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.662,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.586,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.653,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.507,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.51,
+     "peak": " club"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.636,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.439,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.354,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.341,
+     "peak": " School"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.305,
+     "peak": " Team"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": " Marina"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.097,
+     "peak": " Cup"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " along"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": "atta"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.548,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3bcd73e06",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Yacht Club'",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Weak pole (max 4.1); ' Club' is 10 of the top 32, mostly after 'Yacht'. Probes: Yacht Club 0.86, Jockey Club 0.37, garden club 0.34, but Rotary Club 0.16, Sierra Club 0.02, chess club 0.01, and 'Yacht Association' 0.25, 'garden society' 0.33, 'a wooden club' 0.32. So the label is narrow and near misses may leak.",
+ "selection": "random draw"
+}

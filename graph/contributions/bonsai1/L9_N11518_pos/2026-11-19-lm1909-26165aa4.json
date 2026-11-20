@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-26165aa4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N11518+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:26:26+00:00",
+ "recipe": {
+  "toolchain_commit": "3bcd73e06",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N11518_pos/2026-11-19-lm1909-26165aa4.tests.json"
+ },
+ "label": "infectious-disease outbreak vocabulary: 'pandemic', 'epidemic', 'public health emergency', 'COVID', 'microcephaly' in an outbreak context",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N11518_pos/2026-11-19-lm1909-26165aa4.tests.json",
+   "prereg_commit": "3bcd73e06",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.492,
+     "peak": " emergency"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.443,
+     "peak": " pandemic"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.637,
+     "peak": " epidemic"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.425,
+     "peak": " micro"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.599,
+     "peak": " virus"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.218,
+     "peak": " pandemic"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.29,
+     "peak": " left"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.311,
+     "peak": " pandemic"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.055,
+     "peak": " gap"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.055,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " fire"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.111,
+     "peak": " birth"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": " holiday"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.021,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.052,
+     "peak": " children"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " late"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.434,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3bcd73e06",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "outbreak vocabulary",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Weak pole (max 8.3). Probes: 0.23-0.34 on pandemic / epidemic / public health emergency / microcephaly, 0.03 on a budget emergency or a snowstorm. ' acute' fired 0.27 with or without infection, so it is kept out of the test; the - pole fires on transmission routes (contact, day care, travel).",
+ "selection": "random draw"
+}

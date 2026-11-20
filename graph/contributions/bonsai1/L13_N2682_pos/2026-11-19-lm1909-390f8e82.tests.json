@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-390f8e82",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N2682+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:14:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N2682",
+   "pole": "+",
+   "label": "the same variable or index coming round again in a parallel follow-up expression ('y = ...' then '[y] += ...'; '(a[:, 1] == lo) + (a[:, [1]] == hi)'); silent when the partner (another variable or index) comes instead",
+   "fire": [
+    "            z = k * node.z\n            z += h * c * node.dz",
+    "height = ratio * img.height\nheight += margin * img.dh",
+    "keep = (tbl[:, 2] == first) + (tbl[:, 2] == second)",
+    "        total = w * item.total\n        total += fee * item.extra",
+    "sel = (grid[:, 0] == low) | (grid[:, 0] == high)",
+    "    depth = f * layer.depth\n    depth += g * layer.dd",
+    "ok = (pts[:, 3] == a) + (pts[:, 3] == b)",
+    "            r = s * atom.r\n            r += t * u * atom.dr"
+   ],
+   "quiet": [
+    "            z = k * node.z\n            w = h * c * node.dw",
+    "height = ratio * img.height\nwidth = margin * img.dw",
+    "keep = (tbl[:, 2] == first) + (aux[:, 5] == second)",
+    "        total = w * item.total\n        count = fee * item.extra",
+    "sel = (grid[:, 0] == low) | (mask[:, 4] == high)",
+    "    depth = f * layer.depth\n    span = g * layer.ds",
+    "ok = (pts[:, 3] == a) + (ref[:, 1] == b)",
+    "            r = s * atom.r\n            q = t * u * atom.dq"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "same item again, not its partner",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "The - pole fires on the partner of a pair (dec after ra, width after length), so this pole reads as the other side: the same member repeated. Probes: repeats 0.19-0.57, partner versions 0.04-0.18 (the 0.18 peaked on '.width' right after 'width =', itself a repeat)."
+}

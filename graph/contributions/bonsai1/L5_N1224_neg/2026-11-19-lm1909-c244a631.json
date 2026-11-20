@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c244a631",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N1224-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:27:07+00:00",
+ "recipe": {
+  "toolchain_commit": "3bcd73e06",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N1224_neg/2026-11-19-lm1909-c244a631.tests.json"
+ },
+ "label": "the word-piece 'an' glued on after a hyphen or symbol at the start of a word part ('-an|imal', '-an|alyzer', '\"an<'); the article ' an' and whole-token words do not fire",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N1224_neg/2026-11-19-lm1909-c244a631.tests.json",
+   "prereg_commit": "3bcd73e06",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.73,
+     "peak": "-an"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.718,
+     "peak": "-an"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.764,
+     "peak": "-an"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.55,
+     "peak": "-an"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.814,
+     "peak": "-an"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.405,
+     "peak": "-an"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.97,
+     "peak": "-an"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.57,
+     "peak": "-an"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": "losures"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " built"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.012,
+     "peak": "mer"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "-mod"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.084,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.176,
+     "peak": " analysis"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.088,
+     "peak": " an"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.724,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3bcd73e06",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'-an' word piece",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: 'an' x10 and '-an' x7 of the top 32. Probes: 'live-animal' / 'text-analyzing' 0.82, 'auto-analyzer' / 'non-analog' 0.78, bare 'an' pieces in code 0.82; article ' an' 0.08, '#analysis' 0.09, hyphenated compounds without 'an' 0.04. 'Ana' at sentence start 0.38.",
+ "selection": "random draw"
+}
