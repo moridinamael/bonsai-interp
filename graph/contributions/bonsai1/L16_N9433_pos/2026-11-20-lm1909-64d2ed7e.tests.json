@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-64d2ed7e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N9433+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:32:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N9433",
+   "pole": "+",
+   "label": "structural tokens of Python code: type fields in docstrings, 'is not None', argument keywords",
+   "fire": [
+    "def build(name, tag=None):\n    if tag is not None:\n        name = name + '-' + tag\n    return name",
+    "def load(self, path):\n    \"\"\"Load a file.\n\n    :type path: str\n    :rtype: dict\n    \"\"\"",
+    "parser.add_argument(\n    '-v', '--verbose',\n    dest='verbose',\n    action='store_true',\n)",
+    "sql = (\"CREATE TABLE runs (run_id INT, \"\n       \" run_name VARCHAR(20), start_date VARCHAR(10))\")",
+    "    @param timeout: seconds to wait\n    @type  timeout: C{int}\n    \"\"\"",
+    "result = cache.get(key)\nif result is not None:\n    return result",
+    "minute = m.group(5)\nif len(minute) == 1:\n    minute = '0' + minute",
+    "class Config:\n    def __init__(self, host=None, port=8080):\n        self.host = host"
+   ],
+   "quiet": [
+    "The build function adds the tag to the name when a tag is given.",
+    "The load method reads a file from a path and returns a dictionary.",
+    "Add a verbose flag to the command line so users can see more output.",
+    "Create a table of runs with an id, a name and a start date.",
+    "The timeout parameter sets how many seconds the client will wait.",
+    "Check the cache first and return the stored result if there is one.",
+    "Pad the minute with a zero when it has only one digit.",
+    "The config object stores the host name and uses port 8080 by default."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python structural tokens",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: peaks on ' None' after 'is not', ':' after ':type x', \"',\\n\" in argparse calls, ' VARCHAR' in SQL strings; no dominant token."
+}
