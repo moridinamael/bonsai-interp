@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-8bbe4648",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N10238+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:51:53+00:00",
+ "recipe": {
+  "toolchain_commit": "9fdbd5df4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N10238_pos/2026-11-20-lm1909-8bbe4648.tests.json"
+ },
+ "label": "word just before an expected time-of-day sun word (at dawn, before sunrise, the sunset)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N10238_pos/2026-11-20-lm1909-8bbe4648.tests.json",
+   "prereg_commit": "9fdbd5df4",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.628,
+     "peak": " before"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.383,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.661,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.047,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.715,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.734,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.598,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.221,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.628,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.383,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.661,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.156,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.4,
+     "peak": " rise"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " mostly"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.568,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.113,
+     "peak": " by"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.789,
+    "median_fire": 0.645,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9fdbd5df4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicts dawn/sunset",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Top examples peak on ' at'/'before'/' the' right before dawn, sunrise, sunset, dusk; output promotes ' sunrise' ' sunset' ' dawn'.",
+ "selection": "random draw"
+}
