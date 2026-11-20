@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5196fa67",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N11699+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:39:57+00:00",
+ "recipe": {
+  "toolchain_commit": "9472ee24b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N11699_pos/2026-11-19-lm1909-5196fa67.tests.json"
+ },
+ "label": "era markers in political-history narration (year digits, 'Empire', Gorbachev/perestroika) for wars, empires and regimes; not years in everyday contexts",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N11699_pos/2026-11-19-lm1909-5196fa67.tests.json",
+   "prereg_commit": "9472ee24b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.67,
+     "peak": "orb"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.265,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.184,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.352,
+     "peak": "estro"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.172,
+     "peak": " War"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.198,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.566,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.26,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.044,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.111,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.104,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " loves"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " bug"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.072,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": " recipe"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.263,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9472ee24b",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "political-history era markers",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card top: 'In 19[8]4, Mikhail Gorbachev', 'Ottoman[ Empire]', 'June[ ]1666', 'perestro[ika]'. Probes: Gorbachev sentence 0.51, 'Roman Empire' 0.31, 'Habsburg Empire in 1918' 0.25, history years 0.17-0.23; mundane years (recipe grams, since 1999, phone number, store opened in 1985) <= 0.03. Fires weakly, so the median may sit near the 0.20 bar.",
+ "selection": "random draw"
+}

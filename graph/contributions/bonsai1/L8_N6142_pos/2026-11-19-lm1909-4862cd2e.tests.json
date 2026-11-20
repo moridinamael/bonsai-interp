@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-4862cd2e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N6142+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:27:54+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N6142",
+   "pole": "+",
+   "label": "tokens of large-corporation names and corporate suffixes (Siemens, Novartis, Accenture, Toshiba, ' Corp', ' Solutions'/' Enterprise' inside a company name); not the same words as common nouns",
+   "fire": [
+    "The survey was run by Accenture together with Siemens AG and Novartis.",
+    "Her first job was at Toshiba, and later she moved to Hitachi Corp in Tokyo.",
+    "The lawsuit names Bayer AG, Novartis and Sanofi as defendants.",
+    "Copyright © 2011 Hearst Corp. All rights reserved.",
+    "The contract went to Fujitsu and Capgemini instead of Accenture.",
+    "Shares of Siemens and Toshiba fell after Mitsubishi Corp cut its forecast.",
+    "The article was reviewed by Vertex Health Solutions, a unit of Ebix Inc.",
+    "The pills are made by Roche and marketed by Novartis AG in Europe."
+   ],
+   "quiet": [
+    "The survey was run by a large consulting firm together with two drug makers.",
+    "Her first job was at an electronics factory, and later she moved to a bank in Tokyo.",
+    "The lawsuit names three drug makers and a hospital as defendants.",
+    "Copyright © 2011 by the author. All rights reserved.",
+    "The contract went to a small local firm instead of the big consultancy.",
+    "Shares of two engineering firms fell after a rival cut its forecast.",
+    "The article was reviewed by a panel of doctors at the university hospital.",
+    "The pills are made in Switzerland and marketed across Europe by a partner."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "big-company name tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: ' Solutions' x6, 'is' (Novartis) x3, 'hiba' x3, 'ure' (Accenture), ' Corp', ' Enterprise'. Probes: 'Toshiba Enterprise' 0.96, ' Siemens' 0.63, 'Meredith Corp' 0.52, 'Apex Solutions' 0.20; 'solutions to the math problem' 0.01, 'starship Enterprise' 0.02. Near misses keep the business topic and drop the names."
+}
