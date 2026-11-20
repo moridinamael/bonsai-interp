@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-23c04d90",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N8806-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:25:57+00:00",
+ "recipe": {
+  "toolchain_commit": "70e8ba698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N8806_neg/2026-11-20-lm1909-23c04d90.tests.json"
+ },
+ "label": "dense: weak activation on subword pieces inside words across many languages (best guess; recorded as dense)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N8806_neg/2026-11-20-lm1909-23c04d90.tests.json",
+   "prereg_commit": "70e8ba698",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.735,
+     "peak": " Warner"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.038,
+     "peak": "le"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.824,
+     "peak": " Panel"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.526,
+     "peak": " themselves"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.892,
+     "peak": "ек"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.349,
+     "peak": " itself"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.757,
+     "peak": " 권"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.363,
+     "peak": " Program"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.194,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.232,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.153,
+     "peak": " held"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.111,
+     "peak": " apart"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.163,
+     "peak": " в"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.177,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.241,
+     "peak": " 회"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.193,
+     "peak": " branch"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.746,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "70e8ba698",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense subword pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags dense (35.6% of tokens reach 0.1 of max) and gate-closed leak regime; an 8+8 is not expected to pass.",
+ "selection": "random draw"
+}

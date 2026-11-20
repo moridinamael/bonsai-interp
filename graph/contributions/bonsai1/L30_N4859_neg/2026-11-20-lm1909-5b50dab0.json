@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-5b50dab0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N4859-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:26:13+00:00",
+ "recipe": {
+  "toolchain_commit": "70e8ba698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N4859_neg/2026-11-20-lm1909-5b50dab0.tests.json"
+ },
+ "label": "first piece of a split word in CJK/Indic-name contexts, e.g. '買' in Chinese 買好/买赎 and name pieces 'Gan|esh', 'Sub|has', 'Go|el'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N4859_neg/2026-11-20-lm1909-5b50dab0.tests.json",
+   "prereg_commit": "70e8ba698",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.169,
+     "peak": "買"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.093,
+     "peak": " Gan"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.791,
+     "peak": "andra"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.572,
+     "peak": " Go"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.552,
+     "peak": "买"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.417,
+     "peak": "买"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.423,
+     "peak": " Gan"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.238,
+     "peak": "has"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.105,
+     "peak": "換"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.309,
+     "peak": "ari"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " institute"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": " Sharma"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": "献"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.227,
+     "peak": "订"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " temple"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.488,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "70e8ba698",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-word first piece",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card's top examples are heterogeneous (Chinese 買/买, Indian name pieces, '.' in $7.2); the + pole is clearly ' stand' in 'stand out'.",
+ "selection": "random draw"
+}
