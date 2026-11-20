@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-73793bd2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N7806-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:31:35+00:00",
+ "recipe": {
+  "toolchain_commit": "829c9bef2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N7806_neg/2026-11-19-lm1909-73793bd2.tests.json"
+ },
+ "label": "Wisconsin places: the connector or punctuation right after a Wisconsin place name (Madison, Milwaukee, 'University of Wisconsin⟦-M⟧adison') where another Wisconsin place is expected next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N7806_neg/2026-11-19-lm1909-73793bd2.tests.json",
+   "prereg_commit": "829c9bef2",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.749,
+     "peak": "-M"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.78,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.746,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.446,
+     "peak": " Green"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.337,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.333,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.726,
+     "peak": "-M"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.546,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " Houston"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " Ma"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.072,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.042,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.198,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.063,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.636,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "829c9bef2",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Wisconsin place, next place expected",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'university of wisconsin⟦,⟧ madison', 'Wisconsin⟦-M⟧adison', 'Milwaukee⟦ or⟧ Dane County'. Probes: 'Milwaukee or Dane County' 0.78, 'Wisconsin-Madison' 0.70, 'Eau Claire, La Crosse and Oshkosh' 0.65, 'Milwaukee and Green Bay' 0.60, 'rural Wisconsin, not far from Madison' 0.43; other states: Texas at Austin 0.04, Houston 0.03, Minneapolis 0.05, Chicago 0.09, Detroit and Grand Rapids 0.29 (so it leaks to Michigan).",
+ "selection": "random draw"
+}

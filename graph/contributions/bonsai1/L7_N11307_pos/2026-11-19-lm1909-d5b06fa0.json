@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d5b06fa0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N11307+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:41+00:00",
+ "recipe": {
+  "toolchain_commit": "829c9bef2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N11307_pos/2026-11-19-lm1909-d5b06fa0.tests.json"
+ },
+ "label": "A short list of specific word-pieces in their fixed compounds, with no shared pattern found: '4' in 'Wow64|32Node' and in phone numbers '29|4-', 'TEX' in 'GORE-TEX', ' ox' in 'musk ox(en)', 'rene' in 'gangrene'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N11307_pos/2026-11-19-lm1909-d5b06fa0.tests.json",
+   "prereg_commit": "829c9bef2",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.265,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.737,
+     "peak": "TEX"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.432,
+     "peak": " ox"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.308,
+     "peak": "rene"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.45,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.177,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.859,
+     "peak": "TEX"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.48,
+     "peak": " ox"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " instead"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " hiking"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " t"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " bl"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.139,
+     "peak": "Microsoft"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " waterproof"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.032,
+     "peak": " ox"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.609,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "829c9bef2",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Wow64 / GORE-TEX / musk ox / gangrene",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card: peaks '4' x5, ' Species', ' X', ' ox', 'TEX', 'rene'. Probes: Wow6432Node 1.38, GORE-TEX 0.87, musk oxen 0.44, '(415) 294-' 0.37, gangrene 0.36. The same pieces elsewhere do not fire: x64 0.02, LaTeX 0.01, 'an ox' 0.02, '1294' 0.02, X-ray 0.01, 'Species X' 0.01. Only the list holds, so the label is the list.",
+ "selection": "random draw"
+}
