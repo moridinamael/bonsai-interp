@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-5c1de27c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N8672+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:35:33+00:00",
+ "recipe": {
+  "toolchain_commit": "71e147b2b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N8672_pos/2026-11-20-lm1909-5c1de27c.tests.json"
+ },
+ "label": "opening bracket or quote that introduces an acronym or a gloss right after the term it explains ('Pumps (CARP)', 'as in ‘father’')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N8672_pos/2026-11-20-lm1909-5c1de27c.tests.json",
+   "prereg_commit": "71e147b2b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.145,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.212,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.372,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.006,
+     "peak": " Science"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.122,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.76,
+     "peak": " \""
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.031,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.392,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": "ors"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": " check"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " end"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": "usually"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": "cat"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": "Fill"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.914,
+    "median_fire": 0.178,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "71e147b2b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "bracket introducing acronym",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' (' x24 of top 32; 'expense ratio (TER)', 'Rescue Pumps (CARP)', pronunciation 'as in ‘father’'. Near misses use ' (' for ordinary asides (page refs, dates, comments).",
+ "selection": "random draw"
+}

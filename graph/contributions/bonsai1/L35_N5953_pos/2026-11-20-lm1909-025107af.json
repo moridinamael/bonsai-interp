@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-025107af",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N5953+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:36:30+00:00",
+ "recipe": {
+  "toolchain_commit": "71e147b2b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N5953_pos/2026-11-20-lm1909-025107af.tests.json"
+ },
+ "label": "a word inside a multi-word proper title or name of a book, state or institution ('Book of Changes', 'Kingdom of the Two Sicilies', 'The Red and The Black')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N5953_pos/2026-11-20-lm1909-025107af.tests.json",
+   "prereg_commit": "71e147b2b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.589,
+     "peak": " The"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.422,
+     "peak": " United"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.643,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.442,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.439,
+     "peak": "'s"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.411,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.631,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.533,
+     "peak": " Our"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.07,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.195,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.279,
+     "peak": " medieval"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.212,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.431,
+     "peak": " English"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.171,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.332,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.369,
+     "peak": " Los"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.488,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "71e147b2b",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inside a proper title",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags broad (8.1% of tokens reach 0.1 of max). Top: Stendhal's The Red and The Black, Kingdom of the Two Sicilies, Interim Force in Lebanon, Article of Faith, Book of Changes. Probe: titles 0.31-0.75, plain prose 0.19. Near misses keep the topic in plain words.",
+ "selection": "random draw"
+}
