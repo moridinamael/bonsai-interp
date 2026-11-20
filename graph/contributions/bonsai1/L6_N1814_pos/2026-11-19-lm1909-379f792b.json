@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-379f792b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N1814+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:46+00:00",
+ "recipe": {
+  "toolchain_commit": "6bebfd220",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N1814_pos/2026-11-19-lm1909-379f792b.tests.json"
+ },
+ "label": "the token that continues a word or phrase begun with 'pay'/'pays' (pay|line, pay|phone, pays| up) or with a 'pre'-prefixed stem (prec|ancer|ous, presyn|aptic, pre-Colomb|ian); a two-part list, no common pattern found beyond the leading 'pay'/'pre' piece",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N1814_pos/2026-11-19-lm1909-379f792b.tests.json",
+   "prereg_commit": "6bebfd220",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.012,
+     "peak": "lines"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.745,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.654,
+     "peak": "ancer"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.625,
+     "peak": "aptic"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.481,
+     "peak": "bian"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.314,
+     "peak": "phones"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.221,
+     "peak": "ancer"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.638,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " rows"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " changed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " biopsy"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": "Calc"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " wing"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": " row"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " mole"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": " everyone"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.631,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bebfd220",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "continuation after 'pay' / 'pre-'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: no single token ('ancer' x3, 'y' x2, 'atic' x2, 'aptic' x2, 'bian' x2). Probes: 'paylines' 0.93, 'pays up' 0.82, 'presynaptic' 0.63, 'precancerous' 0.51, 'payphones' 0.40, 'pre-Columbian' 0.39, 'Beachy' 0.66 (outside the label), 'passphrase' 0.19; the same words without the prefix ('cancerous', 'synaptic', 'gives up') 0.01-0.02.",
+ "selection": "random draw"
+}

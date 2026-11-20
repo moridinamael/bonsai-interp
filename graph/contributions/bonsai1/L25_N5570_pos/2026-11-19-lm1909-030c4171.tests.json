@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-030c4171",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N5570+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:18:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N5570",
+   "pole": "+",
+   "label": "the first surname token right after the first name 'Eric' or 'Rick' in a list of credited people (Eric Ros|coe, Eric F|oner, Rick B|erman); the top examples also include commas in legal boilerplate lists and hash strings, so this is one cluster only",
+   "fire": [
+    "The album's guests include Eric Burdon on vocals and Eric Johnson on lead guitar.",
+    "Speakers this year are Eric Hobsbawm, Eric Kandel and several younger historians.",
+    "The script was polished by Rick Moranis and Harold Ramis before filming.",
+    "On stage that night were Levon Helm, Eric Andersen and Rick Danko.",
+    "The panel was chaired by Eric Schmidt and moderated by Eric Topol.",
+    "Producers on the record were Rick Rubin and Eric Valentine, with strings arranged later.",
+    "The anthology collects essays by Eric Auerbach, Eric Bentley and others.",
+    "The pilot episode credits Rick Wakeman and Eric Idle as musical guests."
+   ],
+   "quiet": [
+    "The album's guests include Paul Burdon on vocals and Steve Johnson on lead guitar.",
+    "Speakers this year are Tony Hobsbawm, Daniel Kandel and several younger historians.",
+    "The script was polished by Harold Ramis and Dan Aykroyd before filming.",
+    "On stage that night were Levon Helm, Garth Hudson and Robbie Robertson.",
+    "The panel was chaired by Susan Schmidt and moderated by Peter Topol.",
+    "Producers on the record were George Martin and Brian Eno, with strings arranged later.",
+    "The anthology collects essays by Lionel Trilling, Susan Sontag and others.",
+    "The pilot episode credits Neil Innes and Terry Jones as musical guests."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "surname start after 'Eric'/'Rick'",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: no single token. 5 of the top 12 examples peak on the token after 'Eric', 1 after 'Rick'. Probes: 'featured Eric Clapton … and Eric Roscoe' 0.78, 'reviewed by Eric Foner and Eric Sevareid' 0.64, 'written by Rick Berman and Brannon Braga' 0.74, same frame with David/John 0.02; but a lone 'The award went to Eric Holder' gave 0.04, so the name alone is not enough and a list of credits seems to matter. 'electronic, mechanical' legal list 0.76 and \"The Rake's Progress\" 0.86 are outside this label."
+}

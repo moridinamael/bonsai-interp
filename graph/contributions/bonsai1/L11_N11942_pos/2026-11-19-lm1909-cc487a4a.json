@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-cc487a4a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N11942+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:44:48+00:00",
+ "recipe": {
+  "toolchain_commit": "6bebfd220",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N11942_pos/2026-11-19-lm1909-cc487a4a.tests.json"
+ },
+ "label": "Chinese 有 (also 是 / 不是) opening a clause right after a comma or time word, with no subject of its own, typically introducing a list or quantity ('…，有小说、诗集…')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N11942_pos/2026-11-19-lm1909-cc487a4a.tests.json",
+   "prereg_commit": "6bebfd220",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.414,
+     "peak": "有"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.47,
+     "peak": "有"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.527,
+     "peak": "有"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.567,
+     "peak": "有"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.429,
+     "peak": "有"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.056,
+     "peak": "有许多"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.151,
+     "peak": "有不少"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.408,
+     "peak": "有"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.187,
+     "peak": "特别"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.202,
+     "peak": "喜欢"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.099,
+     "peak": "很"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.223,
+     "peak": "一"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.104,
+     "peak": "着"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.061,
+     "peak": "遇到了"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.07,
+     "peak": "靠"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.233,
+     "peak": "高兴"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.812,
+    "median_fire": 0.421,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bebfd220",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Chinese clause-initial 有/是",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peak tokens 有 x7, 是 x3, 不是 x2. Probes: '，有' + list after a long lead-in 0.53-0.58, '去年有三百多户' 0.36, '，是很难' 0.39, '不是…而是' 0.26-0.27; 有 inside a clause with its own subject 0.13-0.15; Chinese without 有/是 0.05-0.24. Short sentences score low, so the items are long.",
+ "selection": "random draw"
+}
