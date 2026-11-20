@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8d98b725",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N2124-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:58+00:00",
+ "recipe": {
+  "toolchain_commit": "04ac42185",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N2124_neg/2026-11-19-lm1909-8d98b725.tests.json"
+ },
+ "label": "the accented 'í' as its own token inside a Spanish surname or given name (An|í|bal, Ort|í|z, Mart|í|nez, Dom|í|nguez)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N2124_neg/2026-11-19-lm1909-8d98b725.tests.json",
+   "prereg_commit": "04ac42185",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.262,
+     "peak": "íg"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.741,
+     "peak": "í"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.743,
+     "peak": "í"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.8,
+     "peak": "í"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.653,
+     "peak": "í"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.981,
+     "peak": "í"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.956,
+     "peak": "í"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.655,
+     "peak": "í"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "ideo"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " Thursday"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " against"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": "ville"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "Captain"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " minister"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.742,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "04ac42185",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'í' token in Spanish names",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Probes: Aníbal/Medellín 0.93, Ortíz 1.00, Domínguez 0.89, Martínez 0.72, Benítez 0.69, Ríos/Efraín 0.66; 'ín' and 'ía' as merged tokens (Joaquín, Sofía) 0.04-0.08, unaccented Dominguez 0.18, García/Málaga 0.05. Also fires on katakana ピ (コンピューティング 0.74) and on 'ari' in 'Shari' 0.85, so the shared thing may be a stressed /i/ syllable in the middle of a name or loanword; only the Spanish case is tested.",
+ "selection": "random draw"
+}

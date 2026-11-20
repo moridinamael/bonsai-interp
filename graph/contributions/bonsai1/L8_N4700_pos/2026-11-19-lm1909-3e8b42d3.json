@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3e8b42d3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N4700+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:17:30+00:00",
+ "recipe": {
+  "toolchain_commit": "04ac42185",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N4700_pos/2026-11-19-lm1909-3e8b42d3.tests.json"
+ },
+ "label": "the journey/vehicle noun slot after light-verb 'took the' / 'made the' in a travel sentence (took the fast train, made the 30 minute drive, made the trek)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N4700_pos/2026-11-19-lm1909-3e8b42d3.tests.json",
+   "prereg_commit": "04ac42185",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.942,
+     "peak": " train"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.874,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.409,
+     "peak": " trek"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.888,
+     "peak": " train"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.709,
+     "peak": " drive"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.548,
+     "peak": " train"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.476,
+     "peak": " drive"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.785,
+     "peak": " train"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.08,
+     "peak": " back"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.131,
+     "peak": " minutes"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": " out"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.167,
+     "peak": " rail"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.057,
+     "peak": " hours"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.19,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.071,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.191,
+     "peak": " train"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.747,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "04ac42185",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "took/made the + journey",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: 'took the fast/night train' 0.92-0.93, 'made the N minute drive' 0.58-0.84, 'made the trek/trip' 0.45. Leaks to other objects of took/made the ('took the medicine' 0.38, 'made the cake' 0.35) and a bare subject 'The fast train' 0.28, so the light verb matters as much as the journey.",
+ "selection": "random draw"
+}

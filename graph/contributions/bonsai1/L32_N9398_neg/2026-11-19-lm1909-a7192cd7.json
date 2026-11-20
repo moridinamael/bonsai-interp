@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a7192cd7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N9398-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:18:16+00:00",
+ "recipe": {
+  "toolchain_commit": "04ac42185",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N9398_neg/2026-11-19-lm1909-a7192cd7.tests.json"
+ },
+ "label": "Spanish/French relative 'donde' / 'où' right before an infinitive, where 'can' is implied (un lugar donde dormir, un endroit où dormir); weaker on subjects just before a poder/pouvoir verb",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N9398_neg/2026-11-19-lm1909-a7192cd7.tests.json",
+   "prereg_commit": "04ac42185",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.738,
+     "peak": " donde"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.758,
+     "peak": " donde"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.731,
+     "peak": " donde"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.652,
+     "peak": " donde"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.709,
+     "peak": " donde"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.252,
+     "peak": "iller"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.402,
+     "peak": " où"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.406,
+     "peak": " où"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.235,
+     "peak": " donde"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.269,
+     "peak": "istas"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.161,
+     "peak": " donde"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.12,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.057,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.134,
+     "peak": "ère"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.128,
+     "peak": " enfants"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.68,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "04ac42185",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "donde/où + infinitive",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probes: 'un lugar donde dormir' 0.70, 'un sitio donde descansar' 0.73, 'un endroit où dormir' 0.64; 'el pueblo donde nació' 0.05. Subjects before poder/pouvoir ('los niños pueden', 'vous pouvez', 'usted puede') 0.26-0.40, but 'también compraron' also 0.35. The pole's output promotes ' can' / ' could' / ' pouvoir' / ' pod', and the + pole is English 'As you (can see)'. English 'you can' scored 0.00.",
+ "selection": "random draw"
+}
