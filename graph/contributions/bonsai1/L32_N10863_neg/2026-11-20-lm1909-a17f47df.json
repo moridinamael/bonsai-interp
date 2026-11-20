@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a17f47df",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10863-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:45:33+00:00",
+ "recipe": {
+  "toolchain_commit": "3b8a4abf9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N10863_neg/2026-11-20-lm1909-a17f47df.tests.json"
+ },
+ "label": "names of commanders, weapons and units in military-history text (Sir Arthur Harris, Nimitz, StG44, NORAD)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N10863_neg/2026-11-20-lm1909-a17f47df.tests.json",
+   "prereg_commit": "3b8a4abf9",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.049,
+     "peak": " North"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.06,
+     "peak": " H"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.464,
+     "peak": " St"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.414,
+     "peak": " Marshal"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.008,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.126,
+     "peak": " near"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.243,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.069,
+     "peak": " Yam"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " Blo"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " Emily"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.992,
+    "median_fire": 0.098,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3b8a4abf9",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "names in military history",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probe: Nimitz 0.60, Bomber Command 0.51 vs Newton, Monet ~0. The + pole is mines/explosives (promotes ' mine'). Near misses keep historical style and proper names but in civilian contexts.",
+ "selection": "random draw"
+}
