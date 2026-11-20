@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-c005c413",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N12116+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:39:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N12116",
+   "pole": "+",
+   "label": "the running operand in a code accumulation, where a variable is updated from its own previous value (z = z + ..., x[i-1] + ..., s += ...)",
+   "fire": [
+    "total = 0\nfor price in prices:\n    total = total + price\nprint(total)",
+    "acc = []\nfor x in xs:\n    acc = acc + [x * 2]\nreturn acc",
+    "pos = [0]\nfor step in steps:\n    pos.append(pos[-1] + step)\n",
+    "s = ''\nfor word in words:\n    s = s + word + ' '\nprint(s)",
+    "cum = np.zeros(n)\nfor i in range(1, n):\n    cum[i] = cum[i-1] + vals[i]\n",
+    "count = 0\nfor line in lines:\n    count += len(line)\nprint(count)",
+    "fib = [1, 1]\nfor k in range(10):\n    fib.append(fib[-1] + fib[-2])\n",
+    "out = ''\nfor ch in text:\n    out += ch.upper()\nreturn out"
+   ],
+   "quiet": [
+    "total = 0\nfor price in prices:\n    total = round(price)\nprint(total)",
+    "acc = []\nfor x in xs:\n    item = x * 2\nreturn acc",
+    "pos = [0]\nfor step in steps:\n    print(step)\n",
+    "s = ''\nfor word in words:\n    s = word.strip()\nprint(s)",
+    "cum = np.zeros(n)\nfor i in range(1, n):\n    cum[i] = vals[i] * 2\n",
+    "count = 0\nfor line in lines:\n    count = len(line)\nprint(count)",
+    "fib = [1, 1]\nfor k in range(10):\n    print(fib[0])\n",
+    "out = ''\nfor ch in text:\n    out = ch.upper()\nreturn out"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code accumulator update",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on ' +=', ' +', 'z' in 'z = z + ...', '[-1]' and 'x_el[e-1] +' inside loops."
+}
