@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-24d82d7f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N2092+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T03:03:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N2092",
+   "pole": "+",
+   "label": "the column type keyword (text, TEXT, timestamp) after a column name in a SQL CREATE TABLE statement",
+   "fire": [
+    "CREATE TABLE users (id integer, name text, email text, joined timestamp);",
+    "cur.execute('create table songs (title text, artist text, year integer)')",
+    "CREATE TABLE IF NOT EXISTS books (isbn TEXT, title TEXT, author TEXT);",
+    "conn.execute(\"CREATE TABLE notes (id INTEGER PRIMARY KEY, body TEXT, created timestamp)\")",
+    "create table cities (code text, city text, lat real, lon real);",
+    "CREATE TABLE orders (order_id int, customer varchar(40), placed_at timestamp);",
+    "db.execute('create table logs (level text, message text, ts timestamp)')",
+    "CREATE TABLE pets (pet_id integer, species text, nickname text);"
+   ],
+   "quiet": [
+    "SELECT id, name, email, joined FROM users WHERE id = 3;",
+    "cur.execute('select title, artist from songs where year > 1990')",
+    "INSERT INTO books (isbn, title, author) VALUES ('123', 'Dune', 'Herbert');",
+    "conn.execute(\"DELETE FROM notes WHERE created < '2020-01-01'\")",
+    "select code, city from cities order by lat desc;",
+    "UPDATE orders SET customer = 'Smith' WHERE order_id = 7;",
+    "db.execute('select level, message from logs where ts > ?', (start,))",
+    "SELECT species, nickname FROM pets WHERE pet_id = 2;"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "SQL column type",
+ "unit_kind": "contextual",
+ "confidence": 0.6
+}
