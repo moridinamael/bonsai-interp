@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-5ca0ca7b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N5609-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:22:13+00:00",
+ "recipe": {
+  "toolchain_commit": "bc73a6226",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N5609_neg/2026-11-20-lm1909-5ca0ca7b.tests.json"
+ },
+ "label": "the word-start piece ' arbit' / 'ar' that begins 'arbitrary'/'arbitral' when the word is split (arbitral, misspelled arbitary), not the whole word ' arbitrary'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N5609_neg/2026-11-20-lm1909-5ca0ca7b.tests.json",
+   "prereg_commit": "bc73a6226",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.249,
+     "peak": " arbit"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.575,
+     "peak": " arbit"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.199,
+     "peak": " arbit"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.415,
+     "peak": " arbit"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.225,
+     "peak": " arbit"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.46,
+     "peak": " arbit"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.253,
+     "peak": " arbit"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.346,
+     "peak": " arbit"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.131,
+     "peak": " hold"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.066,
+     "peak": " had"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " wrap"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.079,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": " trib"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " generic"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.299,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bc73a6226",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' arbit' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "card: peaks on 'ar'bitary, ' arbit'ral, 'a''rib'trary; output suppresses 'arbitrary' on + side; probe: ' arbit' 0.27-0.32, full ' arbitrary' and ' arbitration' ~0.02-0.06",
+ "selection": "random draw"
+}

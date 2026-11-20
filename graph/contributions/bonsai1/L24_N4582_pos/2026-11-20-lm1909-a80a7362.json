@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a80a7362",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4582+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:22:27+00:00",
+ "recipe": {
+  "toolchain_commit": "bc73a6226",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N4582_pos/2026-11-20-lm1909-a80a7362.tests.json"
+ },
+ "label": "operator, bracket or unit symbol right after a quantity or variable in an inline technical expression (pH = 5, 10^N, shape [N, k], kJ mol-1)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N4582_pos/2026-11-20-lm1909-a80a7362.tests.json",
+   "prereg_commit": "bc73a6226",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.226,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.468,
+     "peak": "^"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.338,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.531,
+     "peak": " mol"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.747,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.548,
+     "peak": " –"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.533,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.419,
+     "peak": "^"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.059,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " bond"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " combined"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.025,
+     "peak": " nonzero"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.5,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bc73a6226",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inline formula operator",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: peaks on ' [', ' =', '^', ' –', ' mol' following a variable in prose formulas",
+ "selection": "random draw"
+}
