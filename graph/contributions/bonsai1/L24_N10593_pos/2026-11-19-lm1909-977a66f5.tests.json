@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-977a66f5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N10593+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:07:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N10593",
+   "pole": "+",
+   "label": "Code: the ' :' that opens a Sphinx/reST docstring field at the start of an indented line (:param, :type, :return), i.e. where a field name is expected; docstrings in other styles and ordinary colons stay quiet. (A second, separate trigger on the card: ' you' in the licence line 'free software: you can redistribute')",
+   "fire": [
+    "def connect(host, port):\n    \"\"\"Open a connection.\n\n    :param host: server name\n    :param port: TCP port\n    :return: an open socket\n    \"\"\"\n    return Socket(host, port)",
+    "    def delete(self, group_name):\n        \"\"\"Delete a resource group.\n\n        :param group_name: The name of the resource group.\n        :type group_name: str\n        \"\"\"\n        self.client.delete(group_name)",
+    "def scale(values, factor):\n    \"\"\"Multiply every value.\n\n    :param values: list of numbers\n    :param factor: the multiplier\n    :rtype: list\n    \"\"\"\n    return [v * factor for v in values]",
+    "    def publish(self, topic, payload):\n        \"\"\"Send a message.\n\n        :param topic: topic string\n        :param payload: message body\n        :return: message id\n        \"\"\"\n        return self.bus.send(topic, payload)",
+    "def load(path):\n    \"\"\"Read a config file.\n\n    :param path: location of the file\n    :type path: str\n    :return: parsed settings\n    \"\"\"\n    return parse(open(path).read())",
+    "    def set_mtu(self, iface, mtu):\n        \"\"\"Apply an MTU.\n\n        :param iface: interface name\n        :param mtu: value in bytes\n        :return: the value applied\n        \"\"\"\n        return self.driver.set(iface, mtu)",
+    "def crop(image, box):\n    \"\"\"Cut out a region.\n\n    :param image: source picture\n    :param box: (left, top, right, bottom)\n    :return: the cropped picture\n    \"\"\"\n    return image.crop(box)",
+    "    def execute(self, config):\n        \"\"\"Run the subcommand.\n\n        :param config: settings object\n        :type config: Config\n        \"\"\"\n        self.run(config)"
+   ],
+   "quiet": [
+    "def connect(host, port):\n    \"\"\"Open a connection.\n\n    Args:\n        host: server name\n        port: TCP port\n    \"\"\"\n    return Socket(host, port)",
+    "    def delete(self, group_name):\n        \"\"\"Delete a resource group.\n\n        The name must refer to an existing group.\n        \"\"\"\n        self.client.delete(group_name)",
+    "def scale(values, factor):\n    # multiply every value\n    # values is a list of numbers\n    result = [v * factor for v in values]\n    return result",
+    "    def publish(self, topic, payload):\n        \"\"\"Send a message.\n\n        Returns:\n            the message id\n        \"\"\"\n        return self.bus.send(topic, payload)",
+    "def load(path):\n    settings = {}\n    for line in open(path):\n        key, value = line.split(':')\n        settings[key] = value\n    return settings",
+    "    def set_mtu(self, iface, mtu):\n        \"\"\"Apply an MTU.\n\n        Parameters\n        ----------\n        iface : str\n        mtu : int\n        \"\"\"\n        return self.driver.set(iface, mtu)",
+    "def crop(image, box):\n    left, top, right, bottom = box\n    region = image[top:bottom, left:right]\n    return region",
+    "    def execute(self, config):\n        \"\"\"Run the subcommand with the given settings object.\"\"\"\n        self.run(config)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' :' opening :param field",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' :' x17 of the top 32, all at the start of :param/:type/:return lines; ' you' x14 in GPL headers. Probe: reST docstring 0.41, GPL line 0.44, comment-only function 0.02. The test covers only the docstring trigger. Fire items are multi-line code."
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-00be1670",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9816-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:07:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N9816",
+   "pole": "-",
+   "label": "Inside Hungarian names and words: the token just before an ö/ő/ü continuation (V|ör|ösmarty, Északi|-k|özéphegység, ' K'|őbánya); Hungarian names without those vowels, and Czech or Polish names, stay quiet",
+   "fire": [
+    "Our train stopped at Gödöllő before reaching the capital in the evening.",
+    "The wine cellars near Kőszeg are popular with visitors from Vienna.",
+    "The Északi-középhegység mountains stretch along the Slovak border.",
+    "She grew up in Törökbálint, a small town just west of Budapest.",
+    "The tram runs from Örs vezér tere to the old Kőbánya brewery.",
+    "They spent a weekend hiking in the Őrség national park near Szentgotthárd.",
+    "The poet Mihály Vörösmarty is buried in the Kerepesi cemetery.",
+    "The bus to Győr leaves from the Népliget station every hour."
+   ],
+   "quiet": [
+    "Our train stopped at Debrecen before reaching the capital in the evening.",
+    "The wine cellars near Tokaj are popular with visitors from Vienna.",
+    "The Carpathian mountains stretch along the Slovak border.",
+    "She grew up in Szentendre, a small town just north of Budapest.",
+    "The tram runs from Andrassy Avenue to the old city park.",
+    "They spent a weekend hiking in the Tatra national park near Zakopane.",
+    "The composer Antonin Dvorak is buried in the Vysehrad cemetery.",
+    "The bus to Brno leaves from the Florenc station every hour."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Hungarian word before ö/ő/ü",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top 4 are Hungarian ('ör', '-k' x2, ' Ü'), then ' U', ' hyper'; the − pole's output promotes raw UTF-8 lead bytes, i.e. an accented letter comes next. Probes: Vörösmarty 0.48, -középhegység 0.82, Kőbánya 0.63; Prague 0.13, UFDs 0.06. Near misses keep the Hungarian/Central-European travel topic without ö/ő/ü names."
+}

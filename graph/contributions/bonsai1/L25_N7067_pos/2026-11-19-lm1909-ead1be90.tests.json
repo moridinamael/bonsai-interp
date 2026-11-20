@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-ead1be90",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N7067+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:07:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N7067",
+   "pole": "+",
+   "label": "Code: the quote-plus-open-brace token that starts a format-string template (\" '{\", ' \"{', '\"{' as in '{0} ...'.format(...)); string literals with no leading brace and dict literals stay quiet",
+   "fire": [
+    "def describe(path, size):\n    line = '{0}: {1} bytes'.format(path, size)\n    return line",
+    "for key, value in sorted(stats.items()):\n    row = \"{:<12}{:>8}\".format(key, value)\n    print(row)",
+    "def build_url(host, port):\n    url = '{}:{}/api'.format(host, port)\n    return url",
+    "def label(user):\n    text = \"{name} ({age})\".format(name=user.name, age=user.age)\n    return text",
+    "out_dir = '{lib}.pretty/'.format(lib=lib_name)\nos.makedirs(out_dir)\nprint(out_dir)",
+    "def fmt_money(value):\n    return \"{:8.2f}\".format(float(value))\n\ntotal = fmt_money(12)",
+    "if debug:\n    message = '{0} failed after {1} tries'.format(task, tries)\n    log.warning(message)",
+    "def tag(module, cmd):\n    name = \"{0}.commands.{1}\".format(module, cmd)\n    return name"
+   ],
+   "quiet": [
+    "def describe(path, size):\n    line = path + ': ' + str(size) + ' bytes'\n    return line",
+    "for key, value in sorted(stats.items()):\n    row = \"%-12s%8d\" % (key, value)\n    print(row)",
+    "def build_url(host, port):\n    url = host + ':' + str(port) + '/api'\n    return url",
+    "def label(user):\n    text = \"%s (%d)\" % (user.name, user.age)\n    return text",
+    "out_dir = os.path.join(lib_name, 'pretty')\nos.makedirs(out_dir)\nprint(out_dir)",
+    "def fmt_money(value):\n    return \"%8.2f\" % float(value)\n\ntotal = fmt_money(12)",
+    "if debug:\n    message = 'task failed after several tries'\n    log.warning(message)",
+    "def tag(module, cmd):\n    name = module + \".commands.\" + cmd\n    return name"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'{ opening a format string",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: \" '{\" x7, '{' x7, ' \"{' x4, '({' x2 of the top 32, all at the start of str.format templates (one LaTeX '{\\'). Probe: format passage 0.40, '+ str()' passage 0.006, dict literal 0.006. Fire items are multi-line code."
+}
