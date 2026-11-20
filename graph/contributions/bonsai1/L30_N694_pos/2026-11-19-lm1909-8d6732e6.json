@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8d6732e6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N694+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:19+00:00",
+ "recipe": {
+  "toolchain_commit": "126c4cb3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N694_pos/2026-11-19-lm1909-8d6732e6.tests.json"
+ },
+ "label": "noun naming the members of an already-delimited set, at the point where a set-locating phrase is due ('the other booklets', 'every country on the list')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N694_pos/2026-11-19-lm1909-8d6732e6.tests.json",
+   "prereg_commit": "126c4cb3d",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.632,
+     "peak": " volumes"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.222,
+     "peak": " town"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.138,
+     "peak": " manuals"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.218,
+     "peak": " region"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.939,
+     "peak": " worksheets"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.127,
+     "peak": " village"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.732,
+     "peak": " lessons"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.089,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.126,
+     "peak": " volumes"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.09,
+     "peak": " people"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " holds"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": "ons"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.22,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "126c4cb3d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "member-of-a-set noun",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: plural nouns after 'the/the other/every' ('the plugins being called', 'the other guides', 'all of the artists listed', 'every country on that list'); output promotes ' in', ' inside', ' within', ' among'. Probes: 'the other booklets/chapters' 0.42-0.60, 'every country on the list' 0.58, 'the tools listed in' 0.25, 'all of the singers featured' 0.18; the same nouns as plain subjects 0.02-0.18; but 'the modules being loaded' 0.005, so the card's top example type did not reproduce.",
+ "selection": "random draw"
+}

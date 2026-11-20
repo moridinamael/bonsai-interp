@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-6d92cd5d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1278+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:09+00:00",
+ "recipe": {
+  "toolchain_commit": "126c4cb3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N1278_pos/2026-11-19-lm1909-6d92cd5d.tests.json"
+ },
+ "label": "word-initial fragment ' му' / ' مو' / ' المو' opening Russian музык- ('music-') and Arabic موظف ('employee') words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N1278_pos/2026-11-19-lm1909-6d92cd5d.tests.json",
+   "prereg_commit": "126c4cb3d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.875,
+     "peak": " му"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.727,
+     "peak": " му"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.061,
+     "peak": " му"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.0,
+     "peak": " му"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.564,
+     "peak": " مو"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.499,
+     "peak": " مو"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.635,
+     "peak": " المو"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.452,
+     "peak": " مو"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.156,
+     "peak": "ой"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.233,
+     "peak": "ции"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.307,
+     "peak": "В"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.221,
+     "peak": "аг"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.246,
+     "peak": " الوز"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.359,
+     "peak": " ع"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.362,
+     "peak": " الع"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.064,
+     "peak": " الص"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.681,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "126c4cb3d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' му'/' مو' word start",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks ' му' x8, ' المو' x5, ' مو' x2 (музыкального, موظف). Probes: музык- 0.70-0.73, موظف 0.41-0.67; matched sentences without them 0.10-0.32. A two-language list of word-start pieces; the - pole fires on Arabic ' وال' conjunction prefixes before institution nouns, and the output promotes institution/organization words, so the shared pattern may be 'start of an institution/staff noun'. Not tested beyond these two word families.",
+ "selection": "random draw"
+}

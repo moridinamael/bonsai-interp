@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ad3d13eb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N4794-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:11+00:00",
+ "recipe": {
+  "toolchain_commit": "126c4cb3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N4794_neg/2026-11-19-lm1909-ad3d13eb.tests.json"
+ },
+ "label": "a word with a leading space right after an opening parenthesis or quote mark that is followed by a space: '( word', '\" word'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N4794_neg/2026-11-19-lm1909-ad3d13eb.tests.json",
+   "prereg_commit": "126c4cb3d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.799,
+     "peak": " Mozart"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.836,
+     "peak": " flour"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.684,
+     "peak": " born"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.651,
+     "peak": " total"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.666,
+     "peak": " Lake"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.617,
+     "peak": " scores"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.458,
+     "peak": " masterpiece"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.474,
+     "peak": " holidays"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.066,
+     "peak": " Hay"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.049,
+     "peak": " salt"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": "born"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": " average"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.018,
+     "peak": " sorted"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.067,
+     "peak": "Crit"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.051,
+     "peak": " holidays"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.659,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "126c4cb3d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "word after '( ' or '\" '",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: top examples are all the space-led token after '(' or '\"' (' socket' after 'socket.socket (', ' W' after '(', ' security' after '\"'); flagged broad (1.9%) and gate-closed. Probes: '( word' 0.69-0.85, '\" word' 0.69; the same sentences with '(word' (no space) or commas 0.03-0.07. Early layer, so this is a token-pair pattern, not a meaning.",
+ "selection": "random draw"
+}

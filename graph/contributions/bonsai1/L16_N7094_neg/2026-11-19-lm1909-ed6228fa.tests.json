@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-ed6228fa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N7094-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:30:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N7094",
+   "pole": "-",
+   "label": "end of a clause that puts forward or settles on one specific candidate among options (suggestion questions 'Have you considered X?', 'what about X?', 'chose this one')",
+   "fire": [
+    "Have you thought about the cottage on Maple Lane?",
+    "Have you considered the blue sedan at the corner lot?",
+    "We looked at a dozen puppies and finally chose this one.",
+    "If the oak table is too big, what about the pine one?",
+    "Have you looked at the studio near the station?",
+    "After trying on every coat in the shop, he settled on that one.",
+    "Did you consider the candidate from Portland?",
+    "They needed a drummer, so I auditioned."
+   ],
+   "quiet": [
+    "The cottage on Maple Lane has a leaky roof.",
+    "The blue sedan at the corner lot was sold yesterday.",
+    "We fed the puppies and put them to bed.",
+    "The oak table is too big for the kitchen.",
+    "Is the studio near the station noisy at night?",
+    "He hung his coat in the hall and sat down.",
+    "Do you know when the train from Portland arrives?",
+    "They needed a drummer for the summer tour."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "proposing/choosing a candidate",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: no single token (max only 8.0): '.' after 'He talked to UMass-Lowell', ' an' in 'Schau Dir ... den Toyota Avensis Combi an', ' this' in 'What about this?', 'aquí', '应聘' (applied); the + pole fires on search/around. Read as the other side of searching: a specific candidate being proposed or picked. Probes: 'Have you considered the apartment on Elm Street?' 0.67, 'picked this one' 0.44, 'so I applied' 0.30, 'how about the green one?' 0.27, 'What about this?' 0.26; weaker for 'try the Italian place' 0.20, 'she chose Oberlin' 0.12; plain statements 0.05-0.16. Two near misses are questions that propose nothing."
+}

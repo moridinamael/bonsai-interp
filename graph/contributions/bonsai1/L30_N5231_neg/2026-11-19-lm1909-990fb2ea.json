@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-990fb2ea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N5231-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:42:30+00:00",
+ "recipe": {
+  "toolchain_commit": "126c4cb3d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N5231_neg/2026-11-19-lm1909-990fb2ea.tests.json"
+ },
+ "label": "' take' / ' taken' in 'take over' = seize control or overrun (not other senses of take)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N5231_neg/2026-11-19-lm1909-990fb2ea.tests.json",
+   "prereg_commit": "126c4cb3d",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.086,
+     "peak": " take"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.39,
+     "peak": " take"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.455,
+     "peak": " taken"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.402,
+     "peak": " take"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.404,
+     "peak": " take"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.227,
+     "peak": " taken"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.433,
+     "peak": " take"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.33,
+     "peak": " take"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.447,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.145,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " take"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " take"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.113,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": " taken"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " shoes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.403,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "126c4cb3d",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'take' in take over",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: ' take' x8, ' taken' x5 of the top 32, nearly all 'take over' (plants, OCD, empires), plus ' aggressively' turning a lawn and aliens TAKING people. Probes: take over 0.32-0.82 (weeds highest); 'take a shower', 'take about three hours', 'taken piano lessons' 0.00-0.03; 'seize the capital', 'overrun' 0.15-0.18, so the meaning without the word leaks a little.",
+ "selection": "random draw"
+}
