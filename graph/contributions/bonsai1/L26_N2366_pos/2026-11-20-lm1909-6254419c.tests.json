@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-6254419c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N2366+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:35:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N2366",
+   "pole": "+",
+   "label": "the first token of a new Python statement inside a function body (assignment '=', 'return', 'def', 'with')",
+   "fire": [
+    "def load(path):\n    data = read_csv(path)\n    rows = []\n    for row in data:\n        rows.append(row)\n    return rows",
+    "def names(tokens):\n    for tok in tokens:\n        yield tok\n    return sorted(tokens)",
+    "async def main():\n    client = Client()\n    guilds = await client.fetch_guilds(limit=10)\n    return guilds",
+    "def test_pop():\n    p = Stack()\n    p.push(2)\n    p.pop()\n    with pytest.raises(IndexError):\n        p.pop()",
+    "import os\n\ndef test_config(config):\n    assert config.name\n\ndef test_site(config):\n    assert config.site",
+    "def fields(request):\n    reader = csv.DictReader(request.FILES['f'])\n    return reader.fieldnames",
+    "def total(items):\n    count = 0\n    for item in items:\n        count += item.price\n    return count",
+    "def open_file(name):\n    with open(name) as fh:\n        text = fh.read()\n    return text"
+   ],
+   "quiet": [
+    "The function reads the file, collects every row into a list and returns the list to the caller.",
+    "The generator yields each token in turn and finally returns them sorted.",
+    "The main coroutine creates a client and fetches up to ten guilds from the server.",
+    "The test pushes a value onto the stack, pops it twice and expects an error.",
+    "Both tests check that the configuration has a name and a site set.",
+    "The view reads the uploaded CSV file and returns its field names.",
+    "To get the total, add up the price of every item in the basket.",
+    "The helper opens the file, reads all of its text and hands it back."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python statement start",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: '=', def, return at statement start in Python"
+}

@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-ce88dbd9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7137+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:35:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7137",
+   "pole": "+",
+   "label": "the comma (or token) just before '**kwargs' / '**' unpacking in a Python call or signature",
+   "fire": [
+    "class Runner:\n    def execute(self, *args, **kwargs):\n        return self.run(*args, **kwargs)",
+    "def wrapper(*args, **kwargs):\n    print('calling')\n    return func(*args, **kwargs)",
+    "    def setup(self, name, debug=False, **options):\n        self.name = name",
+    "plot.setLabel('left', 'Voltage', units='V', **labelStyle)\nplot.show()",
+    "def build(config, verbose=True, **extra):\n    return Builder(config, **extra)",
+    "    result = render(template, context, **settings)\n    return result",
+    "def log_event(event, *args, **fields):\n    logger.info(event, **fields)",
+    "    obj = Model.objects.create(name=name, **defaults)\n    obj.save()"
+   ],
+   "quiet": [
+    "class Runner:\n    def execute(self, command, timeout):\n        return self.run(command, timeout)",
+    "def wrapper(func, name):\n    print('calling')\n    return func(name)",
+    "    def setup(self, name, debug=False):\n        self.name = name",
+    "plot.setLabel('left', 'Voltage', units='V')\nplot.show()",
+    "def build(config, verbose=True):\n    return Builder(config)",
+    "    result = render(template, context)\n    return result",
+    "def log_event(event, level):\n    logger.info(event)",
+    "    obj = Model.objects.create(name=name, age=age)\n    obj.save()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "comma before **kwargs",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "card: ',' before **kwargs dominates; output suppresses '**'"
+}
