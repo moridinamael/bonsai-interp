@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-60ab0c24",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N4562-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:30:54+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N4562",
+   "pole": "-",
+   "label": "error or missing-value condition names in code (_MISSING, BAD REQUEST, Bad password, 'or not x')",
+   "fire": [
+    "ERRORS = {\n    CONFIG_FILE_MISSING = 41,\n    USER_NAME_MISSING = 42,\n}",
+    "STATUS = {\n    400: 'BAD REQUEST',\n    401: 'UNAUTHORIZED',\n    404: 'NOT FOUND',\n}",
+    "if len(pw) < 6:\n    self.show_alert(_(\"Bad password\"), _(\"Too short\"))",
+    "user = os.getenv(\"API_USER\")\nif not user or not token:\n    logging.error(\"missing credentials\")",
+    "except SSLError as e:\n    raise exceptions.InvalidServerCertificate(str(e))",
+    "if field is None:\n    raise ValueError(\"REQUIRED_FIELD_MISSING\")",
+    "if not os.path.exists(path):\n    return Error.FILE_MISSING",
+    "if response.status == 400:\n    log.warning(\"Bad request from client\")"
+   ],
+   "quiet": [
+    "CODES = {\n    CONFIG_FILE_LOADED = 41,\n    USER_NAME_SET = 42,\n}",
+    "STATUS = {\n    200: 'OK',\n    201: 'CREATED',\n    202: 'ACCEPTED',\n}",
+    "if len(pw) >= 6:\n    self.show_alert(_(\"Welcome\"), _(\"Logged in\"))",
+    "user = os.getenv(\"API_USER\")\nif user and token:\n    logging.info(\"connected\")",
+    "with open(path) as f:\n    config = json.load(f)",
+    "if field is not None:\n    values.append(field)",
+    "if os.path.exists(path):\n    return Status.FILE_READY",
+    "if response.status == 200:\n    log.info(\"Request handled\")"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "code error conditions",
+ "unit_kind": "sparse feature",
+ "confidence": 0.3
+}
