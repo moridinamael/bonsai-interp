@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-7d067c04",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N4812+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:52+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N4812_pos/2026-11-19-lm1909-7d067c04.tests.json"
+ },
+ "label": "the two-byte token ' \\xed\\x8c' that opens a word-initial Korean syllable in the 패/팬/팝/팸 block (팬, 팝업, 패스워드, 팸플릿, 패닉), i.e. mostly loanwords starting with p+a/ae",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N4812_pos/2026-11-19-lm1909-7d067c04.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.564,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.403,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.612,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.642,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.595,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.443,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.418,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.523,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.052,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": "디"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " 안"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.077,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": "을"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.253,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.09,
+     "peak": " �"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.543,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Korean word-initial 패/팬/팝 bytes",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: 22 of the top 32 peaks are the token ' \\ufffd' before 팬/팝/팸/패. The tokenizer splits these syllables into ' \\xed\\x8c' + one byte, so the first token already identifies the block. Probes: 팬 0.52, 팝업/패스워드 0.40, 팸플릿 0.51, 패닉 0.70; Korean sentences whose split syllables are from other blocks (화, 창, 승) 0.04-0.12.",
+ "selection": "random draw"
+}

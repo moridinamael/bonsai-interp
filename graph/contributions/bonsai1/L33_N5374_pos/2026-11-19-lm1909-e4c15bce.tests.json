@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-e4c15bce",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N5374+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:34:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N5374",
+   "pole": "+",
+   "label": "the number (or 'sq') just before the second unit of a paired measurement, where the counterpart unit is due: '9 am to 6| pm', '8 km / 5| mi', '120 sq km (46 sq| mi)'; the output direction promotes ' pm'",
+   "fire": [
+    "The bakery is open every day from 7 am to 4 pm except Mondays.",
+    "The lake lies 12 km / 7.5 mi north of the village.",
+    "The reserve covers 340 sq km (131 sq mi) of wetland.",
+    "Deliveries are accepted between 8 am and 3 pm at the side door.",
+    "The nearest station is 3 km / 1.9 mi from the hotel.",
+    "The county has an area of 2,150 sq km (830 sq mi) and two towns.",
+    "The pool is reserved for lessons from 10 am until 2 pm on Saturdays.",
+    "The loop walk is 6.4 km / 4 mi and takes about two hours."
+   ],
+   "quiet": [
+    "The bakery is open every day at 7 am except Mondays.",
+    "The lake lies 12 km north of the village.",
+    "The reserve covers 340 sq km of wetland.",
+    "Deliveries are accepted from 8 am at the side door.",
+    "The nearest station is 3 km from the hotel.",
+    "The county has 2,150 farms and 830 shops in two towns.",
+    "The pool is reserved for 10 lessons and 2 galas on Saturdays.",
+    "The loop walk has 64 steps and 4 gates and takes about two hours."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "number before paired pm / mi",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: digits and ' sq' right before ' mi' / ' pm' in km-mi and am-pm pairs, plus '_lb ... _ub' code pairs; output promotes ' pm', '_pm'. Probes: '9 am to 6 pm' 0.58, '8 km / 5 mi' 0.48, 'sq km (46 sq mi)' 0.58; a lone '6 pm' 0.11, lone '8 km' 0.002, plain counts 0.006. A lone 'Nov 14, 6 pm' is among the card's top examples, so the pairing is not strictly required."
+}

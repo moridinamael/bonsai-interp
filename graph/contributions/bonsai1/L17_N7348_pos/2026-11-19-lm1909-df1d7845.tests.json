@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-df1d7845",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N7348+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:34:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N7348",
+   "pole": "+",
+   "label": "best guess for a positional, mostly gate-closed pole: the comma closing a short sentence-initial linking phrase ('For this reason,', 'In fact,') early in a passage",
+   "fire": [
+    "The harvest was poor again this year. For that reason, the cooperative raised its prices.",
+    "The bridge has been closed since May. As a consequence, buses now take the long way round.",
+    "Nobody expected the team to win. In fact, most fans had already left the stadium.",
+    "The first trial gave unclear results. For this reason, a second trial was planned.",
+    "The museum lost its main sponsor. In addition, visitor numbers fell by a third.",
+    "The recipe looks complicated. In practice, it takes about twenty minutes.",
+    "Rents doubled within five years. As a result, many families moved away.",
+    "The old ferry was sold in March. In its place, the town bought two small boats."
+   ],
+   "quiet": [
+    "The harvest was poor again this year and the cooperative raised its prices.",
+    "The bridge has been closed since May and buses now take the long way round.",
+    "Nobody expected the team to win and most fans had already left the stadium.",
+    "The first trial gave unclear results and a second trial was planned.",
+    "The museum lost its main sponsor and visitor numbers fell by a third.",
+    "The recipe looks complicated but it takes about twenty minutes.",
+    "Rents doubled within five years and many families moved away.",
+    "The old ferry was sold in March and the town bought two small boats."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "comma after fronted linker",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags: positional (56% of top peaks within the first 16 tokens of the window) and gate-closed regime dominant (-x- echo 81%); 0.96% of tokens reach 0.1 of a small max (4.56). Top peaks: commas after short fronted phrases and in lists, plus code indentation. Probes: 'For this reason,' 0.44, 'In fact,' 0.34, 'As a result,' 0.59 as first words but 0.12 after a preceding sentence; list commas <=0.25. Recorded as dense / positional; the test is a best guess and may well fail."
+}

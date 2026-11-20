@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-19-lm1909-4b4e59aa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6995+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:34:17+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N6995",
+   "pole": "+",
+   "label": "the word-initial piece ' ин' of a longer Russian word (ин-женер, ин-спектор, ин-дивидуально); weaker on Romance ' in' + stem (in-iciales); the - pole takes English/medical 'In' pieces (insect, influenza)",
+   "fire": [
+    "Вчера на завод приехал новый инженер из Москвы.",
+    "После аварии в цех пришёл строгий инспектор.",
+    "На конверте нужно указать почтовый индекс города.",
+    "Об этом неприятном инциденте написали все газеты.",
+    "Школа предлагает каждому ученику индивидуальный план занятий.",
+    "Летом студенты проходят короткий интенсивный курс языка.",
+    "Мастер аккуратно положил каждый инструмент на место.",
+    "Хорошему врачу часто помогает интуиция и опыт."
+   ],
+   "quiet": [
+    "Вчера на завод приехал новый директор из Москвы.",
+    "После аварии в цех пришёл строгий начальник.",
+    "На конверте нужно указать полный адрес получателя.",
+    "Об этом неприятном случае написали все газеты.",
+    "Школа предлагает каждому ученику отдельный план занятий.",
+    "Летом студенты проходят короткий трудный курс языка.",
+    "Мастер аккуратно положил каждый молоток на место.",
+    "Хорошему врачу часто помогает терпение и опыт."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Russian word-start ' ин'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: ' ин' x12, ' in' x10 (Spanish/Portuguese stems), 'In' in code identifiers. The tokenizer was checked for the test words: each starts with the separate piece ' ин' (words such as 'интерес', 'информацию' are single tokens and were left out). Probes: ' ин' 0.51 and 0.30, Spanish 'in-iciales' 0.21, English 'In'/'inflammation'/'insect' <0.01, Russian without the piece 0.06.",
+ "trigger": {
+  "tokens": [
+   " ин"
+  ]
+ }
+}

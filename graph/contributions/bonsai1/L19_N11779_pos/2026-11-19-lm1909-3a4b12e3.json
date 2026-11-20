@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-3a4b12e3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N11779+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:45+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N11779_pos/2026-11-19-lm1909-3a4b12e3.tests.json"
+ },
+ "label": "the sentence-final full stop of a self-contained statement in impersonal informational prose (notice, bio line, abstract), before a new unconnected statement; the - pole takes the full stop in personal, conversational prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N11779_pos/2026-11-19-lm1909-3a4b12e3.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.162,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.161,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.28,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.432,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.37,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.066,
+     "peak": " The"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.439,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.277,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": " circles"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.045,
+     "peak": " chef"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.044,
+     "peak": "When"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.051,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.043,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " glad"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.138,
+     "peak": " Now"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " mess"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.279,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "full stop in impersonal notices",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: peaks on '.' and line ends in abstracts, notices and code; the - pole (broad, 1.8% of tokens) peaks on '.' in personal/reflective prose and the output direction suppresses ' And'/' But'. Probes were uneven: one abstract 0.58, another two 0.06-0.07; notice and bio lines 0.16-0.29; personal narrative 0.05-0.06. Expect a marginal result.",
+ "selection": "random draw"
+}

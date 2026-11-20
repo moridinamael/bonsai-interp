@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-20fbcc0c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N10868-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:02+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N10868_neg/2026-11-19-lm1909-20fbcc0c.tests.json"
+ },
+ "label": "the capitalised head noun 'Sector' or 'Industry' closing a named economic-sector phrase ('Financial Services Sector', 'Steel Industry'); weaker on other collective heads (community, movement, system)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N10868_neg/2026-11-19-lm1909-20fbcc0c.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.593,
+     "peak": " Sector"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.501,
+     "peak": " Industry"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.625,
+     "peak": " Sector"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.388,
+     "peak": " Industry"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.5,
+     "peak": " Sector"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.349,
+     "peak": " Industry"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.625,
+     "peak": " Sector"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.693,
+     "peak": " Industry"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": "ment"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.062,
+     "peak": " timber"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.167,
+     "peak": " average"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.149,
+     "peak": "ists"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.054,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.108,
+     "peak": " video"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.304,
+     "peak": " laboratories"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.113,
+     "peak": " cotton"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.547,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'Sector'/'Industry' head noun",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "Weak pole (max 7.25) with a wide low band (0.87% of tokens above 0.1). Card: ' Sector' x2, ' Industry', 'REGIME', ' movement', ' community', ' system', ' Guidelines', ' rules' as heads of compound names. Probes: ' Sector' 0.36-0.47, ' Industry' 0.41-0.60 before 'and', but <0.08 for a text-final 'Dairy Industry'; ' movement' 0.09-0.16, ' community' 0.24; 'regime for' 0.56 (peak on ' for'). Only the Sector/Industry case is tested.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " Sector",
+   " Industry"
+  ]
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-737ddf42",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4151+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:17+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N4151_pos/2026-11-19-lm1909-737ddf42.tests.json"
+ },
+ "label": "the first word-piece inside a verb form of warding off or removing harm, seen for ' det' of 'deterring' and 'cont' of 'decontaminated'; other forms (deterred, detect, contaminated) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N4151_pos/2026-11-19-lm1909-737ddf42.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.611,
+     "peak": " det"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.788,
+     "peak": " det"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.73,
+     "peak": " det"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.481,
+     "peak": " det"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.557,
+     "peak": "cont"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.576,
+     "peak": "cont"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.696,
+     "peak": "cont"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.642,
+     "peak": " det"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.078,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.225,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": " doctors"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.177,
+     "peak": " deter"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "All"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.145,
+     "peak": " workers"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.182,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.13,
+     "peak": "uing"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.627,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' det'(erring) / de'cont'(aminated)",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: 'cont' x4 (decontaminated), ' det' x3 (deterring), plus scattered ' that'/' have' before preventive verbs; the output direction promotes ' det'. Probes: 'deterring' 0.69 and 0.71, 'decontaminated' 0.69, 'could have prevented' 0.26, 'quelled' 0.23, 'deterred'/'detect'/'determine'/'contaminated' 0.03-0.16. A two-word list rather than a tested meaning: the wider 'prevention' reading scored low in probes.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " det",
+   "cont"
+  ]
+ }
+}

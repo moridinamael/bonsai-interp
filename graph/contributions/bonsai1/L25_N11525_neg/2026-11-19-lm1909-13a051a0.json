@@ -1,0 +1,160 @@
+{
+ "id": "2026-11-19-lm1909-13a051a0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N11525-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:51:07+00:00",
+ "recipe": {
+  "toolchain_commit": "9ba836fa6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N11525_neg/2026-11-19-lm1909-13a051a0.tests.json"
+ },
+ "label": "additive ' also' adding a further function or item to what was just stated ('They were also used for ...'); the top examples include the Japanese additive particle mo in the same role",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N11525_neg/2026-11-19-lm1909-13a051a0.tests.json",
+   "prereg_commit": "9ba836fa6",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.439,
+     "peak": " also"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.466,
+     "peak": " also"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.134,
+     "peak": " also"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.326,
+     "peak": " also"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.034,
+     "peak": " cool"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.092,
+     "peak": " right"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.303,
+     "peak": " also"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.404,
+     "peak": " also"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": "ills"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": " feeds"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " morning"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "Instead"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " very"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " mostly"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " teaches"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.315,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9ba836fa6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "additive 'also'",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' also' x8 plus Japanese mo / demo, and positions where an additive is due; the - pole's output promotes ' also', ' both' and suppresses ' primarily', ' mainly'. Probes: ' also' 0.20-0.48 in five sentences, 0.01-0.13 without it, 0.24 on 'as well as men'. The + pole also lists ' also' among its peaks, so the two poles are not a clean also/not-also split.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " also",
+   " Also"
+  ]
+ }
+}
