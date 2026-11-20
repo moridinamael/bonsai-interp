@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-fa815652",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N62+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:56:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N62",
+   "pole": "+",
+   "label": "the field inside format-string braces ({0}, {1}, {:d}, {name}) in code",
+   "fire": [
+    "    msg = 'loaded {0} rows from {1}'.format(count, path)\n    log.info(msg)",
+    "    print(\"epoch {0}: loss = {1:.4f}\".format(epoch, loss))\n    history.append(loss)",
+    "    line = 'user={name}, id={uid}'.format(name=user.name, uid=user.id)\n    out.write(line)",
+    "    status = '{0:s} finished in {1:d} seconds'.format(task, secs)\n    return status",
+    "    url = 'https://api.example.com/{0}/items/{1}'.format(org, item_id)\n    resp = get(url)",
+    "    label = 'Step {:d} of {:d}'.format(i, total)\n    bar.set_description(label)",
+    "    query = 'select * from {table} where id = {key}'.format(table=t, key=k)\n    cur.execute(query)",
+    "    header = '{0} | {1} | {2}'.format(a, b, c)\n    print(header)"
+   ],
+   "quiet": [
+    "    msg = 'loaded %d rows from %s' % (count, path)\n    log.info(msg)",
+    "    print(\"epoch \" + str(epoch) + \": loss = \" + str(loss))\n    history.append(loss)",
+    "    line = 'user=' + user.name + ', id=' + str(user.id)\n    out.write(line)",
+    "    status = '%s finished in %d seconds' % (task, secs)\n    return status",
+    "    url = 'https://api.example.com/' + org + '/items/' + str(item_id)\n    resp = get(url)",
+    "    label = 'Step %d of %d' % (i, total)\n    bar.set_description(label)",
+    "    query = 'select * from ' + t + ' where id = ' + str(k)\n    cur.execute(query)",
+    "    header = ' | '.join([a, b, c])\n    print(header)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "format-string fields",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": ""
+}

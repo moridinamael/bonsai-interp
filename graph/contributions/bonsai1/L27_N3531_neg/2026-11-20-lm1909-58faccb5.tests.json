@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-58faccb5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N3531-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:56:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N3531",
+   "pole": "-",
+   "label": "'if' (and similar statement-opening tokens) beginning a conditional inside C-like source code",
+   "fire": [
+    "int main(void) {\n    int n = read_count();\n    if (n < 0) {\n        return 1;\n    }",
+    "static void flush(buf_t *b) {\n    size_t len = b->len;\n    if (len == 0)\n        return;",
+    "for (i = 0; i < count; i++) {\n    item = list[i];\n    if (item->flags & DIRTY) {\n        save(item);",
+    "    char *p = strchr(line, '=');\n    if (!p) {\n        fprintf(stderr, \"bad line\\n\");",
+    "void tick(struct timer *t) {\n    t->elapsed += 1;\n    if (t->elapsed > t->limit)\n        fire(t);",
+    "    fd = open(path, O_RDONLY);\n    if (fd < 0) {\n        perror(\"open\");\n        exit(1);",
+    "while (node != NULL) {\n    next = node->next;\n    if (node->key == key) {\n        unlink(node);",
+    "    result = malloc(sizeof(*result));\n    if (result == NULL)\n        return NULL;"
+   ],
+   "quiet": [
+    "The manual says that you should check the return value, and if it is negative the call has failed.",
+    "My teacher explained that the program stops early if the buffer turns out to be empty.",
+    "We loop over every item in the list and save it if it has been marked as dirty.",
+    "The parser looks for an equals sign on each line and complains if there is none.",
+    "Each tick adds one to the elapsed time, and the timer fires if the limit is passed.",
+    "The tool opens the file for reading and prints an error if that does not work.",
+    "We walk down the linked list and remove the node if its key matches the one we want.",
+    "Allocating memory can fail, so the function simply gives up if nothing comes back."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "if in C code",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "card: top peaks ' if'/'if' x10 in C/JS code; near misses use 'if' in English prose about the same code"
+}
