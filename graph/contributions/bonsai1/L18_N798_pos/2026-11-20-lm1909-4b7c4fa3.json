@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-4b7c4fa3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N798+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:29:51+00:00",
+ "recipe": {
+  "toolchain_commit": "3e3a258f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N798_pos/2026-11-20-lm1909-4b7c4fa3.tests.json"
+ },
+ "label": "the line end right after an empty container initialiser in Python (x = [], set(), dict())",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N798_pos/2026-11-20-lm1909-4b7c4fa3.tests.json",
+   "prereg_commit": "3e3a258f8",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.049,
+     "peak": " results"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.498,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.013,
+     "peak": ".add"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.04,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.039,
+     "peak": ")"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.041,
+     "peak": " keys"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.052,
+     "peak": " __"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.07,
+     "peak": " []\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": " results"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.309,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " seen"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.048,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.028,
+     "peak": " keys"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": " __"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.049,
+     "peak": " "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.562,
+    "median_fire": 0.045,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3e3a258f8",
+  "minutes": 9,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "newline after x = []",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: 8 of the top 32 peak on ' []\\n', 3 on '()\\n'. Fire items are multi-line code; near misses are the same code with a non-empty initialiser.",
+ "selection": "random draw"
+}

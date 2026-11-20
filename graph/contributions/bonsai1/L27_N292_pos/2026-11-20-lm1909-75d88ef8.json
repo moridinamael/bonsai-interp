@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-75d88ef8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N292+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:30:11+00:00",
+ "recipe": {
+  "toolchain_commit": "3e3a258f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N292_pos/2026-11-20-lm1909-75d88ef8.tests.json"
+ },
+ "label": "a subject pronoun (He, She, We, I) opening a new sentence or turn after a previous sentence",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N292_pos/2026-11-20-lm1909-75d88ef8.tests.json",
+   "prereg_commit": "3e3a258f8",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.086,
+     "peak": " She"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.07,
+     "peak": " engine"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.139,
+     "peak": " We"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.265,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.248,
+     "peak": " He"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.044,
+     "peak": " We"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.045,
+     "peak": " woman"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.407,
+     "peak": " He"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.096,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.051,
+     "peak": " engine"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": " interview"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": " rang"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": " captain"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " had"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.045,
+     "peak": " woman"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.078,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.805,
+    "median_fire": 0.113,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3e3a258f8",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sentence-initial pronoun",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on ' He', 'She', ' We', ' I' starting a sentence after a quote or a full stop. Probe: such pronouns 0.27-0.45; a sentence opening with 'The' ~0.03. Near misses open the next sentence with a noun phrase instead.",
+ "selection": "random draw"
+}

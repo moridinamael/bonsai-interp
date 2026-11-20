@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-5b1f8687",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N3642+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:30:34+00:00",
+ "recipe": {
+  "toolchain_commit": "3e3a258f8",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N3642_pos/2026-11-20-lm1909-5b1f8687.tests.json"
+ },
+ "label": "the point where a sentence continues into a claim that something will not or cannot happen ('and it never will', 'and is unlikely to')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N3642_pos/2026-11-20-lm1909-5b1f8687.tests.json",
+   "prereg_commit": "3e3a258f8",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.342,
+     "peak": " ever"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.641,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.18,
+     "peak": " never"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.23,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.456,
+     "peak": " never"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.117,
+     "peak": " may"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.197,
+     "peak": " one"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.045,
+     "peak": " never"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.265,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.019,
+     "peak": " vaccine"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " talks"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": "ised"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.064,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.214,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3e3a258f8",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'won't / unlikely' continuation",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: peaks on ' never' in 'it never will', ' and' before 'is unlikely', '(and cannot have)'; output suppresses future/upcoming/planned, and the - pole is scheduled/promised/slated, the other side (planned futures). Probe: 0.21-0.25 on such continuations, ~0 on 'scheduled'.",
+ "selection": "random draw"
+}
