@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-bc209d6b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2804+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:18:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N2804",
+   "pole": "+",
+   "label": "closing '>' of an angle-bracket tag or placeholder (<source>, <Block>, HTML tags), not the comparison operator",
+   "fire": [
+    "Usage: backup <folder> <archive-name>\nRun it once a day.\n",
+    "    # Grammar:\n    #   while <Condition> loop <Statements>\n",
+    "<ul>\n  <li>Apples</li>\n  <li>Pears</li>\n</ul>\n",
+    "To rename a file, type: mv <old-name> <new-name>\n",
+    "<table class=\"prices\">\n<tr><td>Tea</td></tr>\n",
+    "    # Form: let <Name> = <Expression> in <Body>\n",
+    "Syntax: git checkout <branch>\nThis switches your working copy.\n",
+    "<form method=\"post\">\n<input type=\"text\" name=\"q\">\n"
+   ],
+   "quiet": [
+    "Usage: backup FOLDER ARCHIVE_NAME\nRun it once a day.\n",
+    "    # Grammar:\n    #   while condition loop statements\n",
+    "Shopping list:\n  - Apples\n  - Pears\n",
+    "To rename a file, type: mv old_name new_name\n",
+    "if price > 10 and stock < 5:\n    reorder(item)\n",
+    "    # Form: let name = expression in body\n",
+    "Syntax: git checkout BRANCH\nThis switches your working copy.\n",
+    "while count > 0:\n    count -= 1\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "closing '>' of tags",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card top example is '>' closing '<Index>' in a grammar comment; the rest of the top 6 are scattered. Probe: usage lines and HTML tags fire, 'a > b' comparison does not; the - pole fires on the operand before a comparison '>' and the logit effect suppresses ' >' / '<'. Near misses keep the same lines without angle brackets (or with comparison operators)."
+}

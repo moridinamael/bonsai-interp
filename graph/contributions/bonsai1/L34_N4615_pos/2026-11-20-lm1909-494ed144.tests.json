@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-494ed144",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4615+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:18:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N4615",
+   "pole": "+",
+   "label": "short string-literal values inside code (contents of quoted strings in Python/JSON-like code)",
+   "fire": [
+    "config = {\n    'name': 'server',\n    'color': \"green\",\n}\n",
+    "self.assertEqual(result, [\"first item\", \"second item\"])\n",
+    "icon = load_image(\"settings_gear.png\")\nreturn icon\n",
+    "if mode not in (\"r\", \"w\"):\n    raise ValueError(mode)\n",
+    "labels = [\"cat\", \"dog\", \"bird\"]\nprint(labels)\n",
+    "row = {'id': 3, 'status': \"done\"}\nrows.append(row)\n",
+    "logger.info(\"starting worker\")\nworker.run()\n",
+    "args = [\"--input=data.csv\", \"--verbose\"]\nmain(args)\n"
+   ],
+   "quiet": [
+    "config = {\n    'name': server,\n    'size': 42,\n}\n",
+    "self.assertEqual(result, [first_item, second_item])\n",
+    "icon = load_image(SETTINGS_ICON)\nreturn icon\n",
+    "if mode not in (READ, WRITE):\n    raise ValueError(mode)\n",
+    "labels = [cat, dog, bird]\nprint(labels)\n",
+    "row = {'id': 3, 'status': DONE}\nrows.append(row)\n",
+    "logger.info(msg)\nworker.run()\n",
+    "args = [input_path, verbose_flag]\nmain(args)\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code string values",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: broad (2.1% of tokens reach 0.1 of max); top examples are tokens inside short quoted strings in code ('even more lines', 'blue', 'P', '.png', 'cursor=0'). Logit effect promotes closing quotes. Near misses are the same code with the strings replaced by numbers or names."
+}

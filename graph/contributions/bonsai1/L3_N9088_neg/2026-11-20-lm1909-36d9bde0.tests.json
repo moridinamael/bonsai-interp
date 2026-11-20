@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-36d9bde0",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N9088-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:18:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N9088",
+   "pole": "-",
+   "label": "the token ' django' (Django framework name in Python imports and settings)",
+   "fire": [
+    "import os\nfrom django.conf import settings\nfrom django.http import HttpResponse\n",
+    "# views.py\nfrom django.shortcuts import render, redirect\n",
+    "import json\nfrom django.utils import timezone\n\ndef now():\n    return timezone.now()\n",
+    "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n]\n",
+    "try:\n    from django.urls import path\nexcept ImportError:\n    path = None\n",
+    "import logging\nfrom django.db import models\n\nclass Book(models.Model):\n    pass\n",
+    "We deployed the site with django and a small Postgres database.",
+    "import sys\nfrom django.core.management import call_command\n"
+   ],
+   "quiet": [
+    "import os\nfrom flask import Flask\nfrom flask import jsonify\n",
+    "# views.py\nfrom pyramid.view import view_config\n",
+    "import json\nfrom datetime import timezone\n\ndef now():\n    return timezone.utc\n",
+    "INSTALLED_PLUGINS = [\n    'core.admin',\n    'core.auth',\n]\n",
+    "try:\n    from fastapi import APIRouter\nexcept ImportError:\n    APIRouter = None\n",
+    "import logging\nfrom sqlalchemy import Column\n\nclass Book(Base):\n    pass\n",
+    "We deployed the site with rails and a small Postgres database.",
+    "import sys\nfrom click.testing import CliRunner\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "the word 'django'",
+ "unit_kind": "lexical",
+ "confidence": 0.85,
+ "notes": "Card: ' django' is the peak token of 29 of the top 32, mostly 'from django.x import'. Near misses are the same imports from other frameworks."
+}

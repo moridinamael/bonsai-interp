@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-dcc6d084",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N9267+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:18:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N9267",
+   "pole": "+",
+   "label": "type and class names in code (typing imports such as TypeVar/Dict, MagicMock, C '_t' types)",
+   "fire": [
+    "import warnings\nfrom typing import Callable, Generic, TypeVar\n",
+    "T = TypeVar('T')\nK = TypeVar('K')\n",
+    "def test_fetch(self):\n    fake = MagicMock(return_value=3)\n",
+    "from unittest.mock import MagicMock, patch\n",
+    "#include <unistd.h>\nint ftruncate(int fd, off_t length);\n",
+    "from typing import Any, Dict, Union\n",
+    "    session = MagicMock(name='session')\n    session.get.return_value = None\n",
+    "uint32_t crc = 0;\nsize_t n = strlen(buf);\n"
+   ],
+   "quiet": [
+    "import warnings\nfrom utils import load, save, parse\n",
+    "t = make_value('T')\nk = make_value('K')\n",
+    "def test_fetch(self):\n    fake = compute(return_value=3)\n",
+    "from os.path import join, exists\n",
+    "#include <unistd.h>\nint close_all(int fd, int count);\n",
+    "from helpers import run, stop, reset\n",
+    "    session = open_session(name='session')\n    session.close()\n",
+    "int crc = 0;\nint n = strlen(buf);\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "type names in code",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card top: '_t' (off_t), 'Var' (TypeVar), ' MagicMock', 'acute' and 'samp' inside string tables. Probe: TypeVar 1.0, MagicMock 0.92, Dict 0.37, size_t 0.21, prose about mocks 0.01. Near misses are code lines of the same shape with function or variable names instead of type names."
+}
