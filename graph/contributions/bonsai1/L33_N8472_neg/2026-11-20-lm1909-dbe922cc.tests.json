@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-dbe922cc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N8472-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:27:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N8472",
+   "pole": "-",
+   "label": "the ':\\n' / '):\\n' token that ends a Python block-opening line (for/with/def/if) before an indented body",
+   "fire": [
+    "def load(path):\n\tdata = []\n\twith open(path) as fh:\n\t\tfor line in fh:\n\t\t\tdata.append(line)\n\treturn data",
+    "import os\n\ndef clean(folder):\n\tfor name in os.listdir(folder):\n\t\tos.remove(name)",
+    "class Counter:\n\tdef __init__(self):\n\t\tself.n = 0\n\tdef bump(self):\n\t\tself.n += 1",
+    "total = 0\nfor item in basket:\n\ttotal += item.price\nprint(total)",
+    "def check(x):\n\tif x > 10:\n\t\treturn 'big'\n\treturn 'small'",
+    "rows = fetch()\nwhile rows:\n\trow = rows.pop()\n\tsave(row)",
+    "def write_report(out, lines):\n\twith open(out, 'w') as f:\n\t\tf.write('\\n'.join(lines))",
+    "results = {}\nfor key, value in pairs:\n\tresults[key] = value * 2"
+   ],
+   "quiet": [
+    "def load(path): return open(path).read().split()\nprint(load('a.txt'))",
+    "import os\nnames = os.listdir(folder)\nos.remove(names[0])\nprint(len(names))",
+    "counter = Counter()\ncounter.n = 0\ncounter.n += 1\nprint(counter.n)",
+    "total = sum(item.price for item in basket)\nprint(total)",
+    "label = 'big' if x > 10 else 'small'\nprint(label)\nlog(label)",
+    "rows = fetch()\nrow = rows.pop()\nsave(row)\nprint('done')",
+    "out = 'report.txt'\nlines = read_lines()\ntext = '\\n'.join(lines)\nwrite(out, text)",
+    "results = dict(pairs)\nresults = {k: v * 2 for k, v in results.items()}\nprint(results)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python block colon",
+ "unit_kind": "lexical",
+ "confidence": 0.8
+}
