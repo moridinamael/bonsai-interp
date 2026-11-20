@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5122c7ea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N7913+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:11+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N7913_pos/2026-11-19-lm1909-5122c7ea.tests.json"
+ },
+ "label": "a list of crude or street-slang words in casual prose, chiefly ' shit' in idioms (lose their shit, give someone shit), plus slang nouns such as 'banger' and 'dougie'; weak pole (max 5.69), and what the words share beyond register is not established",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N7913_pos/2026-11-19-lm1909-5122c7ea.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.207,
+     "peak": " shit"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.334,
+     "peak": " shit"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.351,
+     "peak": " shit"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.34,
+     "peak": " shit"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.299,
+     "peak": "gie"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.156,
+     "peak": "anger"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.141,
+     "peak": " shit"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.463,
+     "peak": " shit"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " absolutely"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.029,
+     "peak": " me"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": " loudly"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": " whole"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.038,
+     "peak": " trying"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.032,
+     "peak": "Honestly"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.06,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.065,
+     "peak": " guys"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.317,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slang: ' shit', banger",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card: ' shit' x3, ' grim' x2, 'gie', 'anger'. Probes: dougie 0.55, 'give me shit' 0.43, 'lost their shit' 0.27, banger 0.21, grim 0.07; neutral paraphrase 0.01. Median may fall near the 0.20 threshold.",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-8105cf57",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7843-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:25:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N7843",
+   "pole": "-",
+   "label": "in French text, the short first piece of a word the tokenizer splits before an accented or unusual continuation: ' po' in poivre / poignardée, ' g' in gâteau (card also shows katakana and Korean word starts); the + pole fires on other split word starts (' p'iquant, ' F'landers)",
+   "fire": [
+    "Elle a préparé un gâteau au chocolat pour l'anniversaire de son frère.",
+    "Le chef ajoute toujours un peu de poivre noir à la fin de la cuisson.",
+    "Le détective a découvert que le marchand avait été poignardé pendant la nuit.",
+    "Les enfants ont mangé tout le gâteau avant le retour de leurs parents.",
+    "Il faut moudre le poivre juste avant de le mettre dans la sauce.",
+    "Cette médaille est vraiment la cerise sur le gâteau après une belle saison.",
+    "Dans le roman, le comte est retrouvé poignardé dans la bibliothèque du château.",
+    "Saupoudrez la viande de sel et de poivre, puis laissez reposer."
+   ],
+   "quiet": [
+    "Elle a préparé une tarte au citron pour l'anniversaire de son frère.",
+    "Le chef ajoute toujours un peu de beurre à la fin de la cuisson.",
+    "Le détective a découvert que le marchand avait été volé pendant la nuit.",
+    "Les enfants ont mangé toute la tarte avant le retour de leurs parents.",
+    "Il faut couper le pain juste avant de le mettre sur la table.",
+    "Cette médaille est vraiment une belle surprise après une longue saison.",
+    "Dans le roman, le comte est retrouvé endormi dans la bibliothèque du château.",
+    "Saupoudrez la viande de sel et de thym, puis laissez reposer."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split word start ' po', ' g' (French)",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' po' x5, ' g' x2, ' ro' x2, katakana pieces. Probes: gâteau 0.66, poivre 0.60, poignardée 0.39, pamplemousse 0.28; English translation 0.01, katakana sentence 0.00, other French 0.12. Tested in French only; the katakana part of the card is not covered."
+}

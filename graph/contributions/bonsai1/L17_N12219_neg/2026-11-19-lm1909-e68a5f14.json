@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e68a5f14",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N12219-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:35:30+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N12219_neg/2026-11-19-lm1909-e68a5f14.tests.json"
+ },
+ "label": "weak, diffuse pole; best guess: the word right after a restricting or quantifying opener ('I've only found X with', 'Some X,', 'especially over'), i.e. a bare plural or preposition that narrows a generalisation",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N12219_neg/2026-11-19-lm1909-e68a5f14.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.067,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.143,
+     "peak": " stains"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.212,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.064,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.099,
+     "peak": " wide"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.055,
+     "peak": " archives"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.236,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.083,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " catalogue"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.099,
+     "peak": " most"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.058,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " from"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.04,
+     "peak": " handles"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.153,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.091,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after restricting quantifier (guess)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card shows no single token or clear context (videos, colors, ',', over, should). Probes of the guess reached only 0.04-0.24 of max, so this test is expected to fail; it records the guess honestly.",
+ "selection": "random draw"
+}

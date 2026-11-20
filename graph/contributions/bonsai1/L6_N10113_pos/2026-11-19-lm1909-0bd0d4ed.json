@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0bd0d4ed",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N10113+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:03+00:00",
+ "recipe": {
+  "toolchain_commit": "fb0b3ceef",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N10113_pos/2026-11-19-lm1909-0bd0d4ed.tests.json"
+ },
+ "label": "a list, not a pattern: specific word-internal pieces in non-Latin script, chiefly the final 'キ' of the Japanese mimetics ウキウキ / ドキドキ, the kana ending of やりがい, and the 'ч' inside Russian чрезвычай-; other reduplicated mimetics (ワクワク, キラキラ) stay quiet, so it is not 'reduplication'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N10113_pos/2026-11-19-lm1909-0bd0d4ed.tests.json",
+   "prereg_commit": "fb0b3ceef",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.992,
+     "peak": "キ"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.473,
+     "peak": "キ"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.666,
+     "peak": "ч"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.384,
+     "peak": "い"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.807,
+     "peak": "キ"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.762,
+     "peak": "ч"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.373,
+     "peak": "キ"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.773,
+     "peak": "ч"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.043,
+     "peak": "遠"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.098,
+     "peak": "カ"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.07,
+     "peak": " вопрос"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": "には"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": "みんな"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": "ус"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.076,
+     "peak": "た"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": "ад"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.714,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fb0b3ceef",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "キ in ウキウキ; ч in чрезвычай-",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card: 'し' x5, 'い' x4, 'ч' x3, 'き' x2, 'り' x2. Probes: ウキウキ 0.91, чрезвычайно 0.82, чрезвычайный 0.71, やりがい 0.52, ドキドキ 0.43, 取り外し 0.21, 取り消し 0.18, ワクワク 0.13, キラキラ 0.04; plain Japanese/Russian 0.02-0.03. Only the list held in probing, so the label stays a list.",
+ "selection": "random draw"
+}
