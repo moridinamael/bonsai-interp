@@ -1,0 +1,52 @@
+{
+ "contribution": "2026-11-19-lm1909-5868e760",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2262+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:41:20+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N2262",
+   "pole": "+",
+   "label": "Arabic word-final 'ه' as its own token, mostly the informal spelling of tāʾ marbūṭa with hāʾ ('قصير⟦ه⟧', 'العالي⟦ه⟧', 'دول⟦ه⟧'); quiet when the same word is spelled with 'ة'",
+   "fire": [
+    "رحله طويله الى المدينه القديمه",
+    "وجبه خفيفه قبل النوم",
+    "القوه العسكريه في المنطقه",
+    "حديقه صغيره خلف البيت",
+    "الحكومه الجديده والازمه الاقتصاديه",
+    "سياره سريعه وغاليه",
+    "قصه قصيره عن القريه",
+    "الشركه الوطنيه للكهرباء"
+   ],
+   "quiet": [
+    "رحلة طويلة الى المدينة القديمة",
+    "وجبة خفيفة قبل النوم",
+    "القوة العسكرية في المنطقة",
+    "حديقة صغيرة خلف البيت",
+    "الحكومة الجديدة والأزمة الاقتصادية",
+    "سيارة سريعة وغالية",
+    "قصة قصيرة عن القرية",
+    "الشركة الوطنية للكهرباء"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Arabic final 'ه' (for 'ة')",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "19 of the top 32 peak on 'ه'. Probes: short phrases with ـه 0.38-1.06, the same phrase spelled with ة 0.01, but one longer sentence with three ـه words scored only 0.05, so strength varies with tokenization and position. The − pole fires on a backslash.",
+ "trigger": {
+  "words": [
+   "ه"
+  ]
+ }
+}

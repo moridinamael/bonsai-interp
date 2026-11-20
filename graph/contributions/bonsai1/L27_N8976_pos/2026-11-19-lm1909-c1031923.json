@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c1031923",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N8976+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:03:41+00:00",
+ "recipe": {
+  "toolchain_commit": "94671ca88",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N8976_pos/2026-11-19-lm1909-c1031923.tests.json"
+ },
+ "label": "the pronoun ' I' as the subject right after an introductory phrase or clause and a comma, mid-sentence ('For a book about art, ⟦I⟧ found…'); not sentence-initial 'I', not other pronouns in that slot",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N8976_pos/2026-11-19-lm1909-c1031923.tests.json",
+   "prereg_commit": "94671ca88",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.165,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.314,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.212,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.04,
+     "peak": " trial"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.439,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.298,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.036,
+     "peak": " I"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.081,
+     "peak": " cut"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " they"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.114,
+     "peak": " we"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " trial"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " quicker"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.068,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " outside"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.076,
+     "peak": " cut"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.189,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "94671ca88",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' I' after intro clause",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "26 of the top 32 peak on ' I'. Probes: ' I' after an introductory phrase 0.26-0.46, 'we'/'she' in the same slot about 0.1, sentence-initial 'I' 0.09.",
+ "selection": "random draw"
+}
