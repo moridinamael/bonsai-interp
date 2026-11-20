@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-56995d29",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N11899+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:56:39+00:00",
+ "recipe": {
+  "toolchain_commit": "7c781ad25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N11899_pos/2026-11-20-lm1909-56995d29.tests.json"
+ },
+ "label": "the subword token 'yc' inside a word (ac-yc-lovir, C-yc-lopamine), plus similar mid-word pieces such as 'orp' and 'eph'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N11899_pos/2026-11-20-lm1909-56995d29.tests.json",
+   "prereg_commit": "7c781ad25",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.034,
+     "peak": "yc"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.03,
+     "peak": "yc"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.023,
+     "peak": "amine"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.95,
+     "peak": "yc"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.035,
+     "peak": "yclic"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.027,
+     "peak": "yc"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.026,
+     "peak": "amine"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.994,
+     "peak": "yc"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.049,
+     "peak": "fen"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.047,
+     "peak": " still"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": " blocked"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.019,
+     "peak": " contains"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " has"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " metabol"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.972,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c781ad25",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "subword 'yc'",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Layer 0. Card: 'yc' x7 (acyclovir, Cyclopamine), ':\\\\' x6, 'orp' x5. Test the bare token: words where 'yc' is split off after 'ac'/'C' vs. related drug and chemistry words without it.",
+ "selection": "random draw"
+}

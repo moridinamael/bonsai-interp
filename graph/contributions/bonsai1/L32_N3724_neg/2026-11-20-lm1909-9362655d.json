@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-9362655d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N3724-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:58:25+00:00",
+ "recipe": {
+  "toolchain_commit": "7c781ad25",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N3724_neg/2026-11-20-lm1909-9362655d.tests.json"
+ },
+ "label": "the token right before a word meaning 'result(s)' in non-English text, where 'results' is predicted next: Arabic ' الن' (→ النتائج), German ' Such' (→ Suchergebnis), German 'guten' (→ Erfolgen/Ergebnissen)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N3724_neg/2026-11-20-lm1909-9362655d.tests.json",
+   "prereg_commit": "7c781ad25",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.093,
+     "peak": "ت"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.354,
+     "peak": " الن"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.363,
+     "peak": "erge"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.344,
+     "peak": " الن"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.332,
+     "peak": " guten"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.226,
+     "peak": "is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.032,
+     "peak": " لل"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.321,
+     "peak": " alle"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.0,
+     "peak": "أ"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.0,
+     "peak": "مل"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": "seite"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": "فار"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.136,
+     "peak": " dem"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.156,
+     "peak": " Wahl"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "يز"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": "Im"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.327,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7c781ad25",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'results' (non-English)",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ' الن' x5 (starting النتائج 'the results' and النائب), ' Such' x2 in Suchergebnis, 'sehr guten Erfolgen'. Logit of the + pole suppresses results/Result/resultado, so this pole promotes 'results'. Near misses keep Arabic and German text without a 'results' continuation.",
+ "selection": "random draw"
+}
