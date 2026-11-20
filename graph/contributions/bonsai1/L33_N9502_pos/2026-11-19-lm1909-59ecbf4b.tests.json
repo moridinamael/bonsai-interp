@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-59ecbf4b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N9502+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:17:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N9502",
+   "pole": "+",
+   "label": "an identifier in program code (a variable, attribute or key name right after '(', '[', '.' or a quote), as opposed to a prose word",
+   "fire": [
+    "def perimeter(self):\n    return 2 * (self.width + self.height)\n\nprint(rect.width, rect.height)",
+    "for k in range(len(rows)):\n    name = rows[k]['user_name']\n    ages.append(rows[k]['age_value'])",
+    "self.assertEqual('udp', conf.ports[0].kind)\nself.assertEqual(8080, conf.ports[1].number)",
+    "result = tensor[i1, i2, j1]\nshape = tensor.shape[0] / tensor.shape[1]",
+    "if node.parent is not None:\n    node.parent.children.remove(node)\n    node.depth = node.parent.depth + 1",
+    "self.gauge('cache.disk.used', cache_used + cache_free)\nself.gauge('cache.mem.used', mem_used)",
+    "msg = user['screen_name'] + ': ' + tweet['text_body']\nlog.info(msg, extra=ctx.meta)",
+    "x = point.coords[0] * scale.factor\ny = point.coords[1] * scale.factor"
+   ],
+   "quiet": [
+    "The method adds the width and the height of the rectangle and doubles the result.",
+    "The loop goes through every row and collects the names and the ages of the users.",
+    "The test checks that the first port uses the right protocol and number.",
+    "The shape of a tensor tells you how many values it holds along each axis.",
+    "When a node has a parent, it is removed from the list of children first.",
+    "The gauge reports how much of the disk cache and the memory is in use.",
+    "The message joins the name of the user with the body of the tweet.",
+    "Each coordinate of the point is multiplied by the same scaling factor."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code identifiers",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card flags the pole broad (2.4% of tokens reach 0.1 of max); peaks '.k', 'self', '(u', 'screen', '.used', '.type' in Python. The + direction suppresses word-suffix tokens ('s', 'ly'); the - pole is a verb stem awaiting -s (appoint|s). Probes: three code snippets 0.47-0.56, prose about code 0.05."
+}

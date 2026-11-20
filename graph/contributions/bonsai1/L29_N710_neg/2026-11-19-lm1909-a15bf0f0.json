@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a15bf0f0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N710-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:34:24+00:00",
+ "recipe": {
+  "toolchain_commit": "b80fa2601",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N710_neg/2026-11-19-lm1909-a15bf0f0.tests.json"
+ },
+ "label": "sweet baking flavours named in a recipe or dessert (maple, blueberry / blackberry, banana); also fires on some first names (Barb, Barbara, Barney, Peter), which this test leaves out",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N710_neg/2026-11-19-lm1909-a15bf0f0.tests.json",
+   "prereg_commit": "b80fa2601",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.724,
+     "peak": "berry"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.807,
+     "peak": " banana"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.582,
+     "peak": "berry"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.668,
+     "peak": " banana"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.89,
+     "peak": "berry"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.076,
+     "peak": " banana"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.937,
+     "peak": " banana"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.683,
+     "peak": "berry"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.132,
+     "peak": " potato"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.067,
+     "peak": "ye"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.042,
+     "peak": " mushroom"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.166,
+     "peak": " o"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " chicken"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.337,
+     "peak": " butter"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.087,
+     "peak": "ma"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.081,
+     "peak": " turkey"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.766,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b80fa2601",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "maple / berry / banana flavours",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Card: 'berry' x4, ' banana', ' Banana', ' Maple', but also ' Barb', ' Barney', ' Peter'. Probes: maple glaze 0.86, maple trees 0.28, banana bread 0.29, strawberry 0.29, vanilla 0.25, chocolate 0.20; Barb 0.56, Barbara 0.40, Peter 0.02-0.67; savoury food 0.06, Susan 0.01. A list, with no shared pattern found between the flavours and the names.",
+ "selection": "random draw"
+}

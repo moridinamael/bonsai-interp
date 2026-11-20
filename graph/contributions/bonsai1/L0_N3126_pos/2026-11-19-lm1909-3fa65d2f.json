@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-3fa65d2f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3126+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:45+00:00",
+ "recipe": {
+  "toolchain_commit": "b80fa2601",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N3126_pos/2026-11-19-lm1909-3fa65d2f.tests.json"
+ },
+ "label": "the word-final pieces 'a', 'as' and 'o' when they are their own token after a split stem (Erick|a, erg|o, American|o, Latin|as)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N3126_pos/2026-11-19-lm1909-3fa65d2f.tests.json",
+   "prereg_commit": "b80fa2601",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.696,
+     "peak": "o"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.699,
+     "peak": "o"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.594,
+     "peak": "a"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.45,
+     "peak": "a"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.027,
+     "peak": " cause"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.462,
+     "peak": "as"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.805,
+     "peak": "as"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.353,
+     "peak": "a"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.072,
+     "peak": " always"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " teacher"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " more"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.028,
+     "peak": " cause"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.087,
+     "peak": " published"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": " old"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.528,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b80fa2601",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "suffix token a/as/o",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Layer 0, weak pole (max 0.75). Probes: Ericka 0.59, Americano 0.67, Frias/ergo 0.71, persuasively 0.46; plain sentences 0.03-0.04. Fires only where the piece is its own token.",
+ "selection": "random draw"
+}
