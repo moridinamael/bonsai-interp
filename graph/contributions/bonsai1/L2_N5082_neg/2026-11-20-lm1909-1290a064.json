@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-20-lm1909-1290a064",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N5082-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:29:29+00:00",
+ "recipe": {
+  "toolchain_commit": "3a3628756",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N5082_neg/2026-11-20-lm1909-1290a064.tests.json"
+ },
+ "label": "dense unit; best guess: the verb 'remove' / 'removing' (moving something away)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N5082_neg/2026-11-20-lm1909-1290a064.tests.json",
+   "prereg_commit": "3a3628756",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.553,
+     "peak": " removing"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.592,
+     "peak": " remove"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.693,
+     "peak": " remove"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.628,
+     "peak": " removing"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.605,
+     "peak": " remove"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.8,
+     "peak": " remove"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.537,
+     "peak": " remove"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.615,
+     "peak": " removing"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.248,
+     "peak": " dinner"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.149,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.146,
+     "peak": " wipe"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.288,
+     "peak": " weeds"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.16,
+     "peak": " examine"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.305,
+     "peak": " cooled"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.398,
+     "peak": " council"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.284,
+     "peak": " were"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.61,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a3628756",
+  "minutes": 20,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; 'remove' guess",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags dense (14% of tokens reach 0.1 of max, max only 0.25) and gate-closed leak 99%. Test records density honestly; the guess comes from the top two examples.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "remove",
+   "removing",
+   "removed"
+  ]
+ }
+}

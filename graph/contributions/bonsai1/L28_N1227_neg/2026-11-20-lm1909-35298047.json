@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-35298047",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N1227-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:29:27+00:00",
+ "recipe": {
+  "toolchain_commit": "3a3628756",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N1227_neg/2026-11-20-lm1909-35298047.tests.json"
+ },
+ "label": "' or' / ' not' at the point where a narrowing word ('only', 'just', 'specifically') is expected next: 'all over X or just Y', 'not only'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N1227_neg/2026-11-20-lm1909-35298047.tests.json",
+   "prereg_commit": "3a3628756",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.298,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.287,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.359,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.077,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.703,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.003,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.168,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.452,
+     "peak": " not"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.213,
+     "peak": " open"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " spread"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.069,
+     "peak": " not"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.292,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a3628756",
+  "minutes": 20,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'only/just' restriction",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks on ' or' (all over the body or just the head; for all cycles or for a specific cycle), ' not' (not only, not necessarily), Chinese 为什么不/不应该. The + pole's output suppresses ' only' / ' specifically', so the - pole promotes them. Near misses use plain 'or' alternatives and plain negation.",
+ "selection": "random draw"
+}

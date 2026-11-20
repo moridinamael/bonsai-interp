@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-f1bc873e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N4276+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:29:15+00:00",
+ "recipe": {
+  "toolchain_commit": "3a3628756",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N4276_pos/2026-11-20-lm1909-f1bc873e.tests.json"
+ },
+ "label": "a comma that closes a complete clause or object phrase before a trailing addition (', where...', ', 6-4', ', or whether'), not a comma that splits a verb from its complement",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N4276_pos/2026-11-20-lm1909-f1bc873e.tests.json",
+   "prereg_commit": "3a3628756",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.531,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.129,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.199,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.438,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.616,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.223,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.688,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.42,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": " one"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": ","
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.429,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a3628756",
+  "minutes": 20,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "clause-closing comma",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: every top example is ','. + pole commas follow a finished clause or object (won the match, 7-6; joined Securities, where); the - pole commas split verb and complement (determine, with high precision, ...). The output promotes 'albeit/though/especially'. Near misses are verb-splitting commas and list commas.",
+ "selection": "random draw"
+}
