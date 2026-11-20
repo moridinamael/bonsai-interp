@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-aa06f5ca",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N5644+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:20:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N5644",
+   "pole": "+",
+   "label": "tokens inside a Python while/if condition that compares a call result (while s.find(x) > 0:, if len(q) != 0:)",
+   "fire": [
+    "pos = 0\nwhile line.find(tag, pos) > 0:\n    pos += 1",
+    "def ready(self):\n    if len(self.queue) != 0:\n        return True",
+    "while stack.count(item) > 1:\n    stack.remove(item)",
+    "for f in files:\n    if f.find('.txt') >= 0:\n        keep.append(f)",
+    "    with self.lock:\n        if len(self.pending) > 0:\n            self.flush()",
+    "i = 0\nwhile text.index(word, i) < limit:\n    i += 1",
+    "    if words.count(w) == 0:\n        words.append(w)",
+    "while len(buffer) < size:\n    buffer += read()"
+   ],
+   "quiet": [
+    "pos = 0\nresult = line.split(tag)\npos += 1",
+    "def ready(self):\n    self.queue = []\n    return True",
+    "items = stack.copy()\nstack.clear()",
+    "for f in files:\n    name = f.lower()\n    keep.append(name)",
+    "    with self.lock:\n        self.pending = []\n        self.flush()",
+    "i = 0\nparts = text.split(word)\ni += 1",
+    "    total = words.copy()\n    words.append(w)",
+    "buffer = read()\nsize = len(buffer)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code loop/if conditions (weak)",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card flags broad (1.9%) and gate-closed (96%); top examples mix prose ('not only', 'Is there') and code conditions. Probe: prose existentials 0.03-0.09; 'while text.find(word) > 0:' 0.28. Expect fail."
+}
