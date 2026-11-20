@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-4d8df4a2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N11286+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:06:20+00:00",
+ "recipe": {
+  "toolchain_commit": "eba93ddfb",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N11286_pos/2026-11-20-lm1909-4d8df4a2.tests.json"
+ },
+ "label": "car ownership and upkeep details: title, loan, registration, filters, payments (the paperwork-and-maintenance side of cars, vs. the - pole's body layout: rear, back seat, wheelbase)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N11286_pos/2026-11-20-lm1909-4d8df4a2.tests.json",
+   "prereg_commit": "eba93ddfb",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.785,
+     "peak": " title"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.739,
+     "peak": " loan"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.805,
+     "peak": " filter"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.517,
+     "peak": " title"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.48,
+     "peak": " registration"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.779,
+     "peak": " payment"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.652,
+     "peak": " filter"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.61,
+     "peak": " title"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.084,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.076,
+     "peak": " quiet"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.03,
+     "peak": " red"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": "Don"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " mountain"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.045,
+     "peak": " sounded"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.167,
+     "peak": " convertible"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.696,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "eba93ddfb",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "car title / loan / upkeep",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: + peaks on ' filter' (oil and air filter), ' title' (clean title, conveyance of title), 'car is paid for', ' loan' x4, ' registration', ' Mustang', air ' cleaner'. - pole peaks on rear/back seat/wheelbase/RWD. Near misses keep cars but talk about looks, layout and driving, not ownership or maintenance.",
+ "selection": "random draw"
+}

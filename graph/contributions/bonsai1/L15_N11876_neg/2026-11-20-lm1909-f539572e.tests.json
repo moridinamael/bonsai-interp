@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f539572e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N11876-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:58:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N11876",
+   "pole": "-",
+   "label": "Python function bodies: parameter names in a def line and the line break after a short assignment inside code",
+   "fire": [
+    "def load_rows(self, path, offset):\n    count = 0\n    for line in open(path):\n        count += 1",
+    "def scale(points, factor):\n    total = 0\n    for p in points:\n        total += p * factor",
+    "def _read_block(self, stream, size):\n    pos = 0\n    while pos < size:\n        pos += 1",
+    "def render(self, canvas, scope):\n    row = 0\n    for item in self.items:\n        canvas.draw(item, row)",
+    "def merge(left, right, key):\n    i = 0\n    j = 0\n    out = []",
+    "def _build_name(self, element, suffix):\n    name = element.tag\n    return name + suffix",
+    "def pad(text, width):\n    n = 0\n    while len(text) < width:\n        text += ' '",
+    "def walk(tree, depth):\n    level = 1\n    for child in tree:\n        walk(child, depth + level)"
+   ],
+   "quiet": [
+    "The load_rows function opens the file at the given path and counts its lines one by one.",
+    "The scale function multiplies every point by a factor and adds the results together.",
+    "The read_block helper keeps reading from the stream until it reaches the requested size.",
+    "The render method draws each item on the canvas, one row after another.",
+    "The merge routine walks through two sorted lists and combines them into one.",
+    "The build_name helper takes the tag of an element and adds a suffix to it.",
+    "The pad function keeps adding spaces to the text until it is wide enough.",
+    "The walk function visits every child of the tree and goes one level deeper each time."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python def params / line breaks",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peaks on ' prefix' in 'def _parse_struct(self, element, prefix)', newlines after 'i = 1' / 'row = 0', ' x' in 'xRight -=', numeric '-' in a list. Fire items are multi-line Python; near misses describe the same functions in prose."
+}
