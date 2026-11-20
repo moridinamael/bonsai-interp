@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-8f1d11d5",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N11777+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:10:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N11777",
+   "pole": "+",
+   "label": "dense, gate-closed unit (max 0.27); best guess: the 'TestCase' token in Python test-class names",
+   "fire": [
+    "import unittest\n\nclass ParserTestCase(unittest.TestCase):\n    pass\n",
+    "from . import CuratorTestCase\n\nclass TestDeletion(CuratorTestCase):\n    pass\n",
+    "class LsbUtilsTest(cros_test_lib.MockTempDirTestCase):\n    pass\n",
+    "from django.test import TestCase\n\nclass ModelTests(TestCase):\n    pass\n",
+    "class BaseTrainerTestCase(tf.test.TestCase):\n    def test_props(self):\n        pass\n",
+    "class ApiTestCase(BaseTestCase):\n    def setUp(self):\n        pass\n",
+    "import unittest\n\nclass StringTestCase(unittest.TestCase):\n    pass\n",
+    "class ConfigTestCase(SimpleTestCase):\n    pass\n"
+   ],
+   "quiet": [
+    "import unittest\n\nclass ParserChecks(unittest.Base):\n    pass\n",
+    "from . import CuratorHelper\n\nclass TestDeletion(CuratorHelper):\n    pass\n",
+    "class LsbUtilsTest(cros_test_lib.MockTempDirBase):\n    pass\n",
+    "from django.db import models\n\nclass ModelThing(models.Model):\n    pass\n",
+    "class BaseTrainerHelper(tf.Module):\n    def props(self):\n        pass\n",
+    "class ApiClient(BaseClient):\n    def setUp(self):\n        pass\n",
+    "import string\n\nclass StringHelper(object):\n    pass\n",
+    "class ConfigLoader(SimpleLoader):\n    pass\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "dense; TestCase guess",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense (20.5% of tokens reach 0.1 of max) and gate-closed (99% echo); recorded to document density."
+}
