@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-57cdf7c1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6670+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:41:04+00:00",
+ "recipe": {
+  "toolchain_commit": "86566a473",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N6670_pos/2026-11-20-lm1909-57cdf7c1.tests.json"
+ },
+ "label": "a word-initial piece of a Korean/CJK word split across several tokens",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N6670_pos/2026-11-20-lm1909-57cdf7c1.tests.json",
+   "prereg_commit": "86566a473",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.639,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.37,
+     "peak": " 처"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.793,
+     "peak": " 필"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.511,
+     "peak": "찬"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.74,
+     "peak": "芝"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.619,
+     "peak": "缥"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.186,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.268,
+     "peak": " 설"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " qualifying"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": "Filter"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " status"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " had"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.565,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "86566a473",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split CJK word piece",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "quiet items are English translations, so they are easy near misses; card shows mostly Korean/Chinese mid-word pieces",
+ "selection": "random draw"
+}

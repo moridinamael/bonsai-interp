@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-54a73ccb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N11300-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:35:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N11300",
+   "pole": "-",
+   "label": "the token ' Sister' (as a name/title) and relative-path dots ('../', '..') in code",
+   "fire": [
+    "My favourite song at the wedding was by Sister Sledge, and everyone danced.",
+    "The nuns were greeted at the gate by Sister Mary Agnes, who ran the school.",
+    "She later wrote a memoir titled Sisterhood and Struggle about the movement.",
+    "We asked Sister Bernadette whether the convent garden was open on Sundays.",
+    "import os\nimport sys\nsys.path.append(\"../lib\")\nfrom ..utils import helpers",
+    "subprocess.call([sys.executable, \"../scripts/build.py\", \"--fast\"])",
+    "from ..models import User\nfrom ..views import index\n",
+    "with open(\"../data/config.json\") as f:\n    cfg = json.load(f)"
+   ],
+   "quiet": [
+    "My favourite song at the wedding was by the Pointer family, and everyone danced.",
+    "The nuns were greeted at the gate by the abbess, who ran the school.",
+    "She later wrote a memoir titled Solidarity and Struggle about the movement.",
+    "We asked the gardener whether the convent garden was open on Sundays.",
+    "import os\nimport sys\nsys.path.append(\"lib\")\nfrom utils import helpers",
+    "subprocess.call([sys.executable, \"scripts/build.py\", \"--fast\"])",
+    "from models import User\nfrom views import index\n",
+    "with open(\"data/config.json\") as f:\n    cfg = json.load(f)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Sister / ../ paths",
+ "unit_kind": "lexical",
+ "confidence": 0.35,
+ "notes": "card top examples mix ' Sister' and '../' path tokens; list label, no shared pattern found"
+}
