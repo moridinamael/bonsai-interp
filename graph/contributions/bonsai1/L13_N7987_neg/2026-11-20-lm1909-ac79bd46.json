@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ac79bd46",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N7987-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:58:18+00:00",
+ "recipe": {
+  "toolchain_commit": "5da2dbd8a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N7987_neg/2026-11-20-lm1909-ac79bd46.tests.json"
+ },
+ "label": "dense weak pole: best guess, tokens inside reference / citation lists and factbook-style fields",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N7987_neg/2026-11-20-lm1909-ac79bd46.tests.json",
+   "prereg_commit": "5da2dbd8a",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.191,
+     "peak": " J"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.322,
+     "peak": " model"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.248,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.313,
+     "peak": "Independ"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.21,
+     "peak": " M"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.227,
+     "peak": " New"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.189,
+     "peak": "Rob"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.27,
+     "peak": " New"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.238,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.287,
+     "peak": " model"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.342,
+     "peak": " read"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.2,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.291,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.165,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.17,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.185,
+     "peak": " speak"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.594,
+    "median_fire": 0.237,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5da2dbd8a",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense: citations",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense (20.9% of tokens at 0.1·max, max 1.39) and gate-closed (100% -g +u leak). Top examples are a citation date, a factbook 'Legal System:' field, 'fast twitch'. Test records the density; expected to fail.",
+ "selection": "random draw"
+}

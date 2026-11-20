@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-39794b5c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N1485+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:57:07+00:00",
+ "recipe": {
+  "toolchain_commit": "5da2dbd8a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N1485_pos/2026-11-20-lm1909-39794b5c.tests.json"
+ },
+ "label": "the noun or phrase end that closes a time-span or periodical reference ('for three weeks', '12 months', 'the August issue')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N1485_pos/2026-11-20-lm1909-39794b5c.tests.json",
+   "prereg_commit": "5da2dbd8a",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.225,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.104,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.41,
+     "peak": " issue"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.235,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.036,
+     "peak": " months"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.301,
+     "peak": " issue"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.338,
+     "peak": " planting"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.095,
+     "peak": " spring"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.069,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.118,
+     "peak": " results"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.046,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.032,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.213,
+     "peak": " planting"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.092,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.23,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5da2dbd8a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "end of time span",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card peaks: ' months', ' weeks', ' year', ' issue' (journal issue) and punctuation after a duration. Probe: 'followed for 12 months.' 0.31 vs '12 tablets' 0.02; 'current issue' 0.73. Near misses keep a number + noun but not a time span.",
+ "selection": "random draw"
+}

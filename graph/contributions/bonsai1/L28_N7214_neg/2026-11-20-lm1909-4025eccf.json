@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-20-lm1909-4025eccf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N7214-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:57:42+00:00",
+ "recipe": {
+  "toolchain_commit": "5da2dbd8a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N7214_neg/2026-11-20-lm1909-4025eccf.tests.json"
+ },
+ "label": "the subword piece 'ol' in the middle of rare names and chemical terms (Arg|ol|ikos, lip|ol|ysis, ran|ol|azine)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N7214_neg/2026-11-20-lm1909-4025eccf.tests.json",
+   "prereg_commit": "5da2dbd8a",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.224,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.223,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.752,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.435,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.314,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.028,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.767,
+     "peak": "ol"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.969,
+     "peak": "ol"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " travelled"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.065,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.0,
+     "peak": " severe"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " fish"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " was"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.594,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5da2dbd8a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mid-word 'ol' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "'ol' is 30 of the top 32 peaks. Tokenizer check for each fire word (Smolensk, Sokolov, proteolysis, Marmolada, osteolysis, Ermolov, Metolius, Yermolayeva all contain a separate 'ol'). Near misses use similar rare names/terms split without an 'ol' piece.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "ol"
+  ]
+ }
+}
