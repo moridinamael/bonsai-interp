@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-37d69ec3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N7147+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:32:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N7147",
+   "pole": "+",
+   "label": "in Python code, the start value of range(N, ...) and an empty container constructor ending a line (set()\\n, dict()\\n, {}\\n): initialising a loop counter or accumulator",
+   "fire": [
+    "def load(sheet):\n    rows = []\n    for r in range(2, sheet.max_row + 1):\n        rows.append(sheet.cell(r, 1))\n    return rows",
+    "def collect(items):\n    seen = set()\n    names = set()\n    for item in items:\n        seen.add(item.id)",
+    "def build(lines):\n    out = {}\n    for line in lines:\n        out[line.key] = line.value\n    return out",
+    "def primes(n):\n    found = []\n    for k in range(3, n + 1):\n        if is_prime(k):\n            found.append(k)",
+    "class Registry:\n    def __init__(self):\n        self.users = dict()\n        self.groups = dict()\n        self.count = 0",
+    "def retry():\n    i = 0\n    while i < 5:\n        i = i + 1\n        connect()",
+    "def tally(words):\n    counts = dict()\n    for w in words:\n        counts[w] = counts.get(w, 0) + 1\n    return counts",
+    "def skip_header(table):\n    for idx in range(1, len(table)):\n        process(table[idx])\n    return True"
+   ],
+   "quiet": [
+    "def load(sheet):\n    rows = []\n    for r in sheet.iter_rows():\n        rows.append(r[0])\n    return rows",
+    "def collect(items):\n    seen = set(items)\n    names = sorted(seen)\n    for item in names:\n        print(item)",
+    "def build(lines):\n    out = parse(lines)\n    for line in lines:\n        log(line.key)\n    return out",
+    "def primes(n):\n    found = sieve(n)\n    for k in found:\n        if k > 10:\n            print(k)",
+    "class Registry:\n    def __init__(self, users):\n        self.users = users\n        self.groups = load_groups()\n        self.count = len(users)",
+    "def retry():\n    while not connected():\n        wait()\n        connect()",
+    "def tally(words):\n    counts = Counter(words)\n    for w in words:\n        print(w, counts[w])\n    return counts",
+    "def skip_header(table):\n    for row in table.rows:\n        process(row)\n    return True"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "code init value",
+ "unit_kind": "contextual",
+ "confidence": 0.5
+}

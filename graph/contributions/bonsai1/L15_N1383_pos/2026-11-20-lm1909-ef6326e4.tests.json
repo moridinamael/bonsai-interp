@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-ef6326e4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N1383+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:32:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N1383",
+   "pole": "+",
+   "label": "a code identifier suffix naming a range, extent or equivalent (ip_range, filterExtent, string equivalent)",
+   "fire": [
+    "def parse(obj):\n    ip_range = obj.get('cidr')\n    return ip_range",
+    "options = Options()\noptions.filterExtent = Rect(-111, 30, -100, 40)\nwriter.write(options)",
+    "def scan(cfg):\n    port_range = cfg['ports']\n    for p in port_range:\n        probe(p)",
+    "layer.setExtent(QgsRectangle(0, 0, 10, 10))\ncanvas.zoomToFullExtent()\ncanvas.refresh()",
+    "def build(args):\n    date_range = (args.start, args.end)\n    return query(date_range)",
+    "    For bool options, this also converts the string equivalent\n    to an actual boolean value.",
+    "def clip(img, cfg):\n    value_range = cfg.get('range')\n    return np.clip(img, *value_range)",
+    "view.map_extent = bounds\nview.max_extent = world\nview.render()"
+   ],
+   "quiet": [
+    "def parse(obj):\n    ip_addr = obj.get('host')\n    return ip_addr",
+    "options = Options()\noptions.driverName = 'ESRI Shapefile'\nwriter.write(options)",
+    "def scan(cfg):\n    port_name = cfg['name']\n    print(port_name)\n    probe(port_name)",
+    "layer.setName('roads')\ncanvas.setColor('white')\ncanvas.refresh()",
+    "def build(args):\n    user_name = args.user\n    return query(user_name)",
+    "    For bool options, this also prints the string value\n    to the console.",
+    "def clip(img, cfg):\n    color_mode = cfg.get('mode')\n    return convert(img, color_mode)",
+    "view.map_title = title\nview.map_color = 'blue'\nview.render()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "range/extent identifier",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "low max (5.16); top examples are mixed code tokens; weak guess."
+}
