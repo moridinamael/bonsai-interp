@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-2bb366ea",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N5212+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:20:08+00:00",
+ "recipe": {
+  "toolchain_commit": "0375fe708",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N5212_pos/2026-11-20-lm1909-2bb366ea.tests.json"
+ },
+ "label": "water chemistry: hardness, pH and mineral content of water",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N5212_pos/2026-11-20-lm1909-2bb366ea.tests.json",
+   "prereg_commit": "0375fe708",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.893,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.622,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.733,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.751,
+     "peak": " hard"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.703,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.796,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.393,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.517,
+     "peak": " make"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.425,
+     "peak": " keep"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.145,
+     "peak": " water"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.061,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.034,
+     "peak": " wh"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.094,
+     "peak": " tank"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.081,
+     "peak": "water"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.058,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " car"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.718,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0375fe708",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "water hardness chemistry",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Top examples are about hard water, carbonate hardness, pH, mineral content, resin softeners; output promotes ' hard', ' hardness', ' soft'. Probe: 'Hard water ... calcium' 0.65, 'Test the water pH' 0.49; swimming/drinking water ~0.03.",
+ "selection": "random draw"
+}

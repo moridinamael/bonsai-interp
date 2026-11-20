@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9306970f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N1727-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:19:54+00:00",
+ "recipe": {
+  "toolchain_commit": "0375fe708",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N1727_neg/2026-11-20-lm1909-9306970f.tests.json"
+ },
+ "label": "reference markers right before a number or label (#, Figure, :class:, the colon in a time)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N1727_neg/2026-11-20-lm1909-9306970f.tests.json",
+   "prereg_commit": "0375fe708",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.089,
+     "peak": " Figure"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.136,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.095,
+     "peak": "class"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.046,
+     "peak": " Chapter"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.136,
+     "peak": " #"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.136,
+     "peak": " #"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.064,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.135,
+     "peak": " #"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.003,
+     "peak": " below"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " morning"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " object"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " shown"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.0,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.115,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0375fe708",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "reference markers",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card flags broad (2.8%) and gate-closed leak 100%; max 1.56. Peak tokens ' #' x8, ':' x6, 'class' x4, ' Figure', ' Chapter'. Not probed.",
+ "selection": "random draw"
+}
