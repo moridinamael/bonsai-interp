@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a73a4bf6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N9941-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:22:10+00:00",
+ "recipe": {
+  "toolchain_commit": "8c976e95c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N9941_neg/2026-11-20-lm1909-a73a4bf6.tests.json"
+ },
+ "label": "' self' and subscript/format tokens inside Python method bodies (self.assertEqual, %s, ['key'])",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N9941_neg/2026-11-20-lm1909-a73a4bf6.tests.json",
+   "prereg_commit": "8c976e95c",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.225,
+     "peak": " self"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.042,
+     "peak": "]"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.182,
+     "peak": " self"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.05,
+     "peak": " rows"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.179,
+     "peak": "]"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.194,
+     "peak": ".assertEqual"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.194,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.186,
+     "peak": "s"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.034,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": "_item"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "_box"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.05,
+     "peak": " rows"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.144,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.237,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.758,
+    "median_fire": 0.184,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8c976e95c",
+  "minutes": 62,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python self/subscript",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "card: ' self' x4, ']' x3, '.assertEqual' x2, '%s'. Probe: a test method with self 0.44, a %s print 0.17, prose 0.09. Near misses: the same logic as plain functions without self, subscripts or %-formatting.",
+ "selection": "random draw"
+}
