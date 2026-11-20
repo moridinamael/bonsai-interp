@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-19a24279",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N669-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:20:00+00:00",
+ "recipe": {
+  "toolchain_commit": "42d96a4aa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N669_neg/2026-11-20-lm1909-19a24279.tests.json"
+ },
+ "label": "the C++ keyword 'operator' in an operator overload (operator=, operator==, operator<<)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N669_neg/2026-11-20-lm1909-19a24279.tests.json",
+   "prereg_commit": "42d96a4aa",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.175,
+     "peak": "+("
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.829,
+     "peak": "operator"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.7,
+     "peak": " operator"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.198,
+     "peak": "operator"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.552,
+     "peak": "_["
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.055,
+     "peak": ");"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.541,
+     "peak": " operator"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.021,
+     "peak": ";"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": ");"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.318,
+     "peak": "assign"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.146,
+     "peak": " lhs"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.182,
+     "peak": "os"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.412,
+     "peak": "_["
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.064,
+     "peak": ");"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.195,
+     "peak": "other"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.001,
+     "peak": " because"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.734,
+    "median_fire": 0.546,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "42d96a4aa",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "C++ 'operator' overload",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Top example: 'iterator &operator='. Probe: 'bool operator==' 0.70, Python 'from operator import' 0.02, prose 'tour operator' 0.00, ' Iterator' class 0.17. Near misses are the same declarations with named functions, plus one prose 'tour operator'.",
+ "selection": "random draw"
+}

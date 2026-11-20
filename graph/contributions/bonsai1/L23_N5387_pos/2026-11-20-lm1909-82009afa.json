@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-82009afa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N5387+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:19:53+00:00",
+ "recipe": {
+  "toolchain_commit": "42d96a4aa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N5387_pos/2026-11-20-lm1909-82009afa.tests.json"
+ },
+ "label": "the substitute choice when the context sets up a replacement (what to use instead, who to send in someone's place); output promotes 'instead'/'rather'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N5387_pos/2026-11-20-lm1909-82009afa.tests.json",
+   "prereg_commit": "42d96a4aa",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.382,
+     "peak": " use"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.501,
+     "peak": " instead"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.092,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.414,
+     "peak": " use"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.25,
+     "peak": " route"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.219,
+     "peak": " library"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.324,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.821,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": "?"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.009,
+     "peak": " bakery"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " attended"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " village"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " mixed"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " accepted"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.398,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "42d96a4aa",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "substitute choice",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top examples: 'what should you buy?' after 'do not buy stew meat', 'suggested X in his stead', 'was used instead'. Probe: 'what should you drink?' 0.55 after 'If you don't like coffee', 0.03 without it. Near misses keep the topic and drop the replacement setup.",
+ "selection": "random draw"
+}

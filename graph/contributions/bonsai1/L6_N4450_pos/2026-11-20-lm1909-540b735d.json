@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-540b735d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N4450+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:20:20+00:00",
+ "recipe": {
+  "toolchain_commit": "42d96a4aa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N4450_pos/2026-11-20-lm1909-540b735d.tests.json"
+ },
+ "label": "policy-staff role nouns (adviser, aide, analyst) and 'briefing(s)'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N4450_pos/2026-11-20-lm1909-540b735d.tests.json",
+   "prereg_commit": "42d96a4aa",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.669,
+     "peak": " adviser"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.688,
+     "peak": " aide"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.485,
+     "peak": " briefing"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.209,
+     "peak": " adviser"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.46,
+     "peak": " aides"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.301,
+     "peak": " analyst"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.582,
+     "peak": " briefing"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.732,
+     "peak": " aide"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.032,
+     "peak": " parliament"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " year"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.094,
+     "peak": "Report"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " warned"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " published"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " clerk"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.093,
+     "peak": " crisis"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.114,
+     "peak": " campaign"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.533,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "42d96a4aa",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "adviser / aide / briefing",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card peaks: ' briefing' x8, ' adviser' x6, ' aide' x5. Probe: 'analyst' also fired (0.59), while 'spokesperson', 'consultant', 'reporters' stayed under 0.07. Near misses keep the political setting with other roles (senator, professor, clerk, volunteer).",
+ "selection": "random draw"
+}

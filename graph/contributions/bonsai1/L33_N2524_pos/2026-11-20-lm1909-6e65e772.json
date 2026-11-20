@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-6e65e772",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N2524+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:20:18+00:00",
+ "recipe": {
+  "toolchain_commit": "42d96a4aa",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N2524_pos/2026-11-20-lm1909-6e65e772.tests.json"
+ },
+ "label": "a word-initial letter split off as its own token, mostly ' f'/' F' (f|altar, f|ango, F|afnir), in Spanish words and names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N2524_pos/2026-11-20-lm1909-6e65e772.tests.json",
+   "prereg_commit": "42d96a4aa",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.355,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.29,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.393,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.528,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.055,
+     "peak": "af"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.219,
+     "peak": " F"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.681,
+     "peak": " f"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.006,
+     "peak": " pub"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": " estar"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.051,
+     "peak": " ab"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": "v"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": "roz"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " saga"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": " Middle"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.065,
+     "peak": " qued"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " pub"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.323,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "42d96a4aa",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off initial ' f'",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card peaks ' f' x8, ' F' x6, ' D' x5, ' d' x3. Probe: 'f|altar' 0.45, ' d|udosa' 0.33, 'F|ifi' 0.18. Every fire item was tokenized to contain a ' f' or ' F' piece; near misses swap the word for one that does not split. The − pole also takes split ' D'/' د' pieces.",
+ "selection": "random draw"
+}
