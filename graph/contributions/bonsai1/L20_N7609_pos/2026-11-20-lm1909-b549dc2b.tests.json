@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-b549dc2b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N7609+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:58:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N7609",
+   "pole": "+",
+   "label": "the indentation token that opens the body of a Python test function, right after a 'def test_...():' line",
+   "fire": [
+    "class TestParser(unittest.TestCase):\n\n    def test_empty_string(self):\n        result = parse('')\n        self.assertEqual(result, [])",
+    "class TestUser(TestCase):\n\n    def test_name_is_stripped(self):\n        user = User(name='  bob ')\n        self.assertEqual(user.name, 'bob')",
+    "import pytest\n\ndef test_add_numbers():\n    assert add(2, 3) == 5\n",
+    "class TestCache(unittest.TestCase):\n\n    def test_expired_key(self):\n        cache = Cache(ttl=0)\n        self.assertIsNone(cache.get('a'))",
+    "from mylib import slugify\n\ndef test_slugify_spaces():\n    assert slugify('a b') == 'a-b'\n",
+    "class TestShell(unittest.TestCase):\n\n    def test_exit_command(self):\n        out = self.shell.onecmd('exit')\n        self.assertTrue(out)",
+    "def test_divide_by_zero():\n    with pytest.raises(ZeroDivisionError):\n        divide(1, 0)\n",
+    "class TestConfig(TestCase):\n\n    def test_default_port(self):\n        cfg = Config()\n        self.assertEqual(cfg.port, 8080)"
+   ],
+   "quiet": [
+    "class Parser:\n\n    separator = ','\n    strict = False\n    max_depth = 10",
+    "class User(Model):\n\n    name = CharField(max_length=40)\n    email = EmailField(unique=True)",
+    "import pytest\n\nVALUES = [1, 2, 3]\nTOTAL = sum(VALUES)\n",
+    "class Cache:\n\n    ttl = 60\n    size = 128\n    backend = 'memory'",
+    "from mylib import slugify\n\nprint(slugify('a b'))\nprint(slugify('c d'))\n",
+    "class Shell:\n\n    prompt = '> '\n    intro = 'Welcome'\n    history = []",
+    "DIVISOR = 0\nRESULT = None\nprint('dividing by', DIVISOR)\n",
+    "class Config:\n\n    port = 8080\n    host = 'localhost'\n    debug = True"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "indent after def test_",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: indentation tokens x25 of top 32, all after 'def test_...' lines; near misses are indented code without a def line."
+}
