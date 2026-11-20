@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-89900a9f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N6228-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:19:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N6228",
+   "pole": "-",
+   "label": "a nested 'class' (or 'from') statement on an indented line inside a Python class body, e.g. Django 'class Meta:'",
+   "fire": [
+    "class Author(models.Model):\n    name = models.CharField(max_length=50)\n\n    class Meta:\n        verbose_name = 'author'",
+    "class Order(models.Model):\n    total = models.DecimalField(max_digits=8, decimal_places=2)\n\n    class Meta:\n        db_table = 'orders'",
+    "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['id', 'email']",
+    "class Config:\n    debug = False\n\n    class Database:\n        host = 'localhost'",
+    "class Tag(models.Model):\n    label = models.SlugField()\n\n    class Meta:\n        ordering = ['label']",
+    "class ArticleForm(forms.ModelForm):\n    class Meta:\n        model = Article\n        fields = '__all__'",
+    "class Outer:\n    value = 1\n\n    class Inner:\n        value = 2",
+    "class Product(models.Model):\n    sku = models.CharField(max_length=20)\n\n    class Meta:\n        unique_together = ('sku',)"
+   ],
+   "quiet": [
+    "class Author(models.Model):\n    name = models.CharField(max_length=50)\n\n    def __str__(self):\n        return self.name",
+    "class Order(models.Model):\n    total = models.DecimalField(max_digits=8, decimal_places=2)\n\n    def save(self):\n        super().save()",
+    "class UserSerializer(serializers.ModelSerializer):\n    email = serializers.EmailField()\n    name = serializers.CharField()",
+    "debug = False\nhost = 'localhost'\nport = 5432\nuser = 'admin'",
+    "class Tag(models.Model):\n    label = models.SlugField()\n\n    def get_url(self):\n        return '/tags/'",
+    "The students in my evening class learned how to write Django forms.",
+    "def outer():\n    value = 1\n\n    def inner():\n        return 2",
+    "class Product(models.Model):\n    sku = models.CharField(max_length=20)\n    price = models.IntegerField()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "nested class in Python",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card top: ' class' in an indented Django 'class Meta:' (x3) and ' from' on an indented line in a class body; also a few prose nouns (stress, mixture). Probe: a 'class Meta' block 0.68, prose with 'class' 0.03."
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-5a3af2ca",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N7960-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:30:00+00:00",
+ "recipe": {
+  "toolchain_commit": "b33489cb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N7960_neg/2026-11-20-lm1909-5a3af2ca.tests.json"
+ },
+ "label": "need to urinate or defecate: bowel movements, bladder urgency, using the toilet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N7960_neg/2026-11-20-lm1909-5a3af2ca.tests.json",
+   "prereg_commit": "b33489cb5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.003,
+     "peak": " they"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.315,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.618,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.378,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.772,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.07,
+     "peak": " hold"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.713,
+     "peak": " bowel"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.292,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.134,
+     "peak": " they"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.065,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.05,
+     "peak": " frequent"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.051,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " falling"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.052,
+     "peak": " dry"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.665,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b33489cb5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "toileting urgency",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card top examples are all bowel/urinary urgency or restroom use; logit effect promotes bathroom/toilet/GI tokens. Near misses keep the health/hygiene register.",
+ "selection": "random draw"
+}

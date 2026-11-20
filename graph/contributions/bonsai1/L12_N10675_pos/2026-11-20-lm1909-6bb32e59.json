@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-6bb32e59",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N10675+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:29:55+00:00",
+ "recipe": {
+  "toolchain_commit": "b33489cb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N10675_pos/2026-11-20-lm1909-6bb32e59.tests.json"
+ },
+ "label": "the noun after a quantity 'of' in environmental measurements: 'percent of [sea] ice', 'tons of [sea] life'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N10675_pos/2026-11-20-lm1909-6bb32e59.tests.json",
+   "prereg_commit": "b33489cb5",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.513,
+     "peak": " sea"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.477,
+     "peak": " ocean"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.29,
+     "peak": " Earth"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.415,
+     "peak": " sea"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.293,
+     "peak": " sea"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.378,
+     "peak": " Earth"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.339,
+     "peak": " sea"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.324,
+     "peak": " sea"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " say"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.055,
+     "peak": " ocean"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " water"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.032,
+     "peak": " sea"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " sea"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.152,
+     "peak": " planet"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": " northern"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.075,
+     "peak": " sea"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.359,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b33489cb5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "noun after amount of",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card top: '[ ]40K' after 'total of 5x10^21 grams of', 'tons of [sea] life', 'percent of [sea] ice', ' total', ' Earth', ' units'. Probe: 'percent of sea ice' 0.80, 'tons of sea life' 0.58, 'grams of salt' 0.14, 'looked at the sea' 0.02.",
+ "selection": "random draw"
+}
