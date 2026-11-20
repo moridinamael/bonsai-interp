@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-89967b28",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10435-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:16:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N10435",
+   "pole": "-",
+   "label": "the position just before a violent-crime word in crime reporting (the token before 'stabbed', 'attacked', 'assault', 'mugged'); the pole's output promotes murder/stabbing/assault tokens",
+   "fire": [
+    "Detectives confirmed that the shopkeeper had been stabbed during the robbery.",
+    "Offences such as rape, assault and kidnapping rose sharply in the city.",
+    "The jogger told police she was attacked from behind in the park.",
+    "Neighbours heard screams and found that the man had been shot in the chest.",
+    "Reports of violent offences such as murder, assault and armed robbery doubled.",
+    "The taxi driver said he was beaten and robbed by two passengers.",
+    "Officers believe the teenager had been strangled before the fire started.",
+    "Crimes such as homicide, assault and carjacking are counted separately."
+   ],
+   "quiet": [
+    "Auditors confirmed that the shopkeeper had been overcharged during the renovation.",
+    "Offences such as littering, speeding and jaywalking rose sharply in the city.",
+    "The jogger told reporters she was welcomed warmly at the park.",
+    "Neighbours heard music and found that the man had been practising in the garage.",
+    "Reports of minor offences such as forgery, fraud and tax evasion doubled.",
+    "The taxi driver said he was thanked and tipped by two passengers.",
+    "Officers believe the teenager had been studying before the fire alarm sounded.",
+    "Sports such as hockey, tennis and rowing are funded separately."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "violent-crime word expected next",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on function tokens right before meurtre, mugged, forced … at knife-point, assault. Probe: 'such as rape, | assault' 0.77, 'had been | stabbed' 0.45, 'was | attacked' 0.32, 'being m|ugged' 0.30, 'charged with | murder' 0.20; 'charged with | tax fraud' 0.11, 'being ignored' 0.03. Near misses are non-violent offences and non-crime passives."
+}

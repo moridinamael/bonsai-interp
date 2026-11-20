@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-63600124",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N12256+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:23:07+00:00",
+ "recipe": {
+  "toolchain_commit": "2c9370636",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N12256_pos/2026-11-19-lm1909-63600124.tests.json"
+ },
+ "label": "French text: the copula/auxiliary être (est, sont, été) or the adverb right after it, just before a predicate adjective or participle",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N12256_pos/2026-11-19-lm1909-63600124.tests.json",
+   "prereg_commit": "2c9370636",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.85,
+     "peak": " est"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.737,
+     "peak": " rapidement"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.248,
+     "peak": " année"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.479,
+     "peak": "ièrement"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.81,
+     "peak": " est"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.448,
+     "peak": " sont"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.78,
+     "peak": " est"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.567,
+     "peak": "ement"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.329,
+     "peak": " mer"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.239,
+     "peak": " mat"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.148,
+     "peak": " année"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.173,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.214,
+     "peak": " son"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.151,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.228,
+     "peak": " la"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.652,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c9370636",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "French être + predicate",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probe: French être sentences 0.28-0.79, English translation 0.00, French action-verb sentence 0.16. Near misses are French sentences with action verbs and no être.",
+ "selection": "random draw"
+}

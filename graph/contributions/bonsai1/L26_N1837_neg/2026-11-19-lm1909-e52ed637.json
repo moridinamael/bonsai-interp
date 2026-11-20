@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e52ed637",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N1837-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:23:33+00:00",
+ "recipe": {
+  "toolchain_commit": "2c9370636",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N1837_neg/2026-11-19-lm1909-e52ed637.tests.json"
+ },
+ "label": "the piece 'ques' completing the name 'Jean-Jacques' (and, per the card, the second initial of 'J. J.' names); much weaker on 'seen/observed in'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N1837_neg/2026-11-19-lm1909-e52ed637.tests.json",
+   "prereg_commit": "2c9370636",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.977,
+     "peak": "ques"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.714,
+     "peak": "ques"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.399,
+     "peak": "ques"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.858,
+     "peak": "ques"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.053,
+     "peak": "ques"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.01,
+     "peak": "ques"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.981,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.055,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.099,
+     "peak": " S"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": "ierre"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " B"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.0,
+     "peak": " natural"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": "-M"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " S"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.134,
+     "peak": " James"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.979,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c9370636",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Jean-Jac|ques, J. J.",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: top examples are Jean-Jac[ques] and J.J[.]/J. J[.], plus weaker seen/observed/measured. Probe: Jean-Jacques Rousseau 1.03; 'seen in' 0.24, 'observed in' 0.19, 'seen by' 0.01. Near misses are other Jean- compounds, other initials and one bare 'Jacques'.",
+ "selection": "random draw"
+}

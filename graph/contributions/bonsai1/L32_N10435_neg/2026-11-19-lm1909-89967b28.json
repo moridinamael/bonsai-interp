@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-89967b28",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10435-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:24:03+00:00",
+ "recipe": {
+  "toolchain_commit": "2c9370636",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N10435_neg/2026-11-19-lm1909-89967b28.tests.json"
+ },
+ "label": "the position just before a violent-crime word in crime reporting (the token before 'stabbed', 'attacked', 'assault', 'mugged'); the pole's output promotes murder/stabbing/assault tokens",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N10435_neg/2026-11-19-lm1909-89967b28.tests.json",
+   "prereg_commit": "2c9370636",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.398,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.464,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.134,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.476,
+     "peak": " been"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.547,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.289,
+     "peak": " two"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.299,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.483,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " been"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.097,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": "ger"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.135,
+     "peak": " been"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.172,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.075,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.264,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "Sports"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.431,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c9370636",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "violent-crime word expected next",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: peaks on function tokens right before meurtre, mugged, forced … at knife-point, assault. Probe: 'such as rape, | assault' 0.77, 'had been | stabbed' 0.45, 'was | attacked' 0.32, 'being m|ugged' 0.30, 'charged with | murder' 0.20; 'charged with | tax fraud' 0.11, 'being ignored' 0.03. Near misses are non-violent offences and non-crime passives.",
+ "selection": "random draw"
+}
