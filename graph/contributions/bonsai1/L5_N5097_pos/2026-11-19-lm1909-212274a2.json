@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-212274a2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N5097+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:54+00:00",
+ "recipe": {
+  "toolchain_commit": "81ff5604a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N5097_pos/2026-11-19-lm1909-212274a2.tests.json"
+ },
+ "label": "the piece 'inct' in the word 'tincture' (t|inct|ure); not 'inct' in distinct/extinct/precinct",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N5097_pos/2026-11-19-lm1909-212274a2.tests.json",
+   "prereg_commit": "81ff5604a",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.978,
+     "peak": "inct"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.971,
+     "peak": "inct"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.033,
+     "peak": "inct"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.918,
+     "peak": "inct"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.037,
+     "peak": "inct"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.227,
+     "peak": "inct"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.982,
+     "peak": "inct"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.895,
+     "peak": "inct"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.007,
+     "peak": " val"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": "In"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " op"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": "n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "s"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": "oters"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " drops"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.98,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "81ff5604a",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'inct' of tincture",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: 'inct' x6 after ' t' (tincture), also ' tarn', 'ully'. Probes: tincture 0.96-1.15, extract 0.01, distinct/extinct/precinct/succinct <= 0.02, tarn 0.56 (not tested here).",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-b1e3a13e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N2579+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:56+00:00",
+ "recipe": {
+  "toolchain_commit": "81ff5604a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N2579_pos/2026-11-19-lm1909-b1e3a13e.tests.json"
+ },
+ "label": "mid-word pieces of romanised Malay/Indonesian and Hindi-Urdu words: 'k' in naukri/naukari, 'aky' in Rakyat, ' Nah' in Nahdlatul (weak pole, list-like label)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N2579_pos/2026-11-19-lm1909-b1e3a13e.tests.json",
+   "prereg_commit": "81ff5604a",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.834,
+     "peak": "k"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.85,
+     "peak": "k"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.134,
+     "peak": "k"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.177,
+     "peak": "aky"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.631,
+     "peak": "aky"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.606,
+     "peak": "aky"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.267,
+     "peak": "lat"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.216,
+     "peak": "d"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": " preparing"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.023,
+     "peak": " post"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.032,
+     "peak": " motion"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.101,
+     "peak": " Kuala"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.052,
+     "peak": " banner"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.032,
+     "peak": " cleric"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": "s"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.436,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "81ff5604a",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "romanised Malay/Hindi word pieces",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "Card: max 5.8, no single token (Arabic 'ون', 'atar', Nah, aky, k), 33% echo regime. Probes: Nahdlatul 1.05/0.63/0.22, Rakyat 0.58/0.49/0.17, naukari/naukri 0.88/0.82, halal 0.10, Muhammadiyah 0.04, Nahum/Nahuatl 0.05. A list, not a distinction; the common factor found is only 'romanised South/Southeast-Asian word, peak inside the word'.",
+ "selection": "random draw"
+}
