@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5d651580",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N161-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:54:35+00:00",
+ "recipe": {
+  "toolchain_commit": "630308d53",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N161_neg/2026-11-19-lm1909-5d651580.tests.json"
+ },
+ "label": "dense pole (25% of tokens reach 0.1 of max, gate-closed); its top is the CJK characters 部 (部屋) and 暴 (暴動, 暴行)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N161_neg/2026-11-19-lm1909-5d651580.tests.json",
+   "prereg_commit": "630308d53",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 6,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.687,
+     "peak": "部"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.002,
+     "peak": "暴"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.537,
+     "peak": "部"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.915,
+     "peak": "暴"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.842,
+     "peak": "部"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.942,
+     "peak": "暴"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.594,
+     "peak": "部"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.563,
+     "peak": "暴力"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.382,
+     "peak": "います"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.354,
+     "peak": "ために"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.226,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.332,
+     "peak": "逮捕"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.345,
+     "peak": "とても"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.234,
+     "peak": "風"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.423,
+     "peak": "きます"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.376,
+     "peak": "議"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.764,
+    "near_misses_at_0.3": 6
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "630308d53",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; top is 部 / 暴",
+ "unit_kind": "dense / positional",
+ "confidence": 0.25,
+ "notes": "Card flags the pole dense and gate-closed (max 0.21). Probe: 部屋 0.85, 暴動 0.90, but Japanese and Chinese sentences without either still reached 0.36-0.43, so the near misses will probably cross 0.30; the test records the density.",
+ "selection": "random draw"
+}
