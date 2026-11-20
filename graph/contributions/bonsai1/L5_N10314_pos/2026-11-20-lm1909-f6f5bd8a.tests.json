@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f6f5bd8a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N10314+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:13:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N10314",
+   "pole": "+",
+   "label": "'on' starting an event-handler name in code (def on_press, self.on_click)",
+   "fire": [
+    "class Window:\n    def on_close(self, event):\n        self.save()",
+    "class Game:\n    def on_key_down(self, key):\n        self.move(key)",
+    "button.connect(\"clicked\", self.on_button_clicked)\nwindow.show_all()",
+    "class Bot:\n    async def on_message(self, message):\n        await self.reply(message)",
+    "class Panel:\n    def on_resize(self, width, height):\n        self.layout()",
+    "timer.timeout.connect(self.on_tick)\ntimer.start(1000)",
+    "class Handler:\n    def on_error(self, exc):\n        log(exc)",
+    "class Editor:\n    def onTextChanged(self, text):\n        self.dirty = True"
+   ],
+   "quiet": [
+    "class Window:\n    def close(self, event):\n        self.save()",
+    "class Game:\n    def handle_key(self, key):\n        self.move(key)",
+    "button.connect(\"clicked\", self.button_clicked)\nwindow.show_all()",
+    "class Bot:\n    async def reply_to(self, message):\n        await self.reply(message)",
+    "class Panel:\n    def resize(self, width, height):\n        self.layout()",
+    "timer.timeout.connect(self.tick)\ntimer.start(1000)",
+    "class Handler:\n    def report_error(self, exc):\n        log(exc)",
+    "class Editor:\n    def textChanged(self, text):\n        self.dirty = True"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "on_ event handler",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "card: ' on' x17 and '.on' x6, all def on_*/self.on_* handlers."
+}

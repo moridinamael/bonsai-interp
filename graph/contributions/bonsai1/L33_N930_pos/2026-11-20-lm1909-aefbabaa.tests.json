@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-aefbabaa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N930+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:13:50+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N930",
+   "pole": "+",
+   "label": "element tokens inside nested bracketed literals and subscripts in code (coordinate lists, seen[w], dict tuples)",
+   "fire": [
+    "vertices = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]\nmesh = Mesh(vertices)",
+    "grid = {(0, 0): 1, (0, 1): 3, (1, 1): 5}\nprint(grid)",
+    "for v in graph[u]:\n    dist[v] = min(dist[v], dist[u] + w[u][v])",
+    "matrix[i][j] = matrix[i-1][j] + matrix[i][j-1]\nreturn matrix",
+    "colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]\ndraw(colors)",
+    "board[r][c] = board[r+1][c-1]\nupdate(board)",
+    "edges = [[0, 1], [1, 2], [2, 0]]\nG.add_edges(edges)",
+    "pts.setValues(0, 3, [[0, 0, 1], [1, 0, 1], [1, 1, 1]])\nscene.add(pts)"
+   ],
+   "quiet": [
+    "vertices = load_vertices(path)\nmesh = Mesh(vertices)",
+    "grid = make_grid(size)\nprint(grid)",
+    "for v in neighbors:\n    total = total + weight",
+    "result = compute_sum(left, right)\nreturn result",
+    "colors = get_palette()\ndraw(colors)",
+    "board = new_board()\nupdate(board)",
+    "edges = read_edges(file)\nG.add_edges(edges)",
+    "pts = make_points(scene)\nscene.add(pts)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "nested code literals",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "card: digits and [w inside nested lists/subscripts; logit promotes ']=[' '+(' '=['; probe: nested list 0.20, seen[w] 0.16, scalar code 0.02."
+}
