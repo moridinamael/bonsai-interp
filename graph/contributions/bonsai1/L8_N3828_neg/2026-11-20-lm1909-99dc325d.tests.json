@@ -1,0 +1,56 @@
+{
+ "contribution": "2026-11-20-lm1909-99dc325d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N3828-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:31:53+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N3828",
+   "pole": "-",
+   "label": "Python state-mutating method names after a dot: .reset / .update / .set (e.g. obj.reset(), d.update(x), t.set_shape())",
+   "fire": [
+    "        counts = {}\n        for row in rows:\n            counts.update(row)\n        return counts",
+    "    def tearDown(self):\n        self.mock_client.reset_mock()\n        self.db.close()",
+    "        timer = Timer()\n        timer.reset()\n        timer.start()",
+    "        h = hashlib.sha256()\n        for chunk in stream:\n            h.update(chunk)\n        print(h.hexdigest())",
+    "        config = load_defaults()\n        config.update(user_overrides)\n        return config",
+    "        seen = set()\n        self.state.reset()\n        self.step = 0",
+    "        out = tf.reshape(x, [-1])\n        out.set_shape([None])\n        return out",
+    "        if changed:\n            self.cache.update(key, value)\n            self.dirty = True"
+   ],
+   "quiet": [
+    "        counts = []\n        for row in rows:\n            counts.append(row)\n        return counts",
+    "    def tearDown(self):\n        self.mock_client.close()\n        self.db.close()",
+    "        timer = Timer()\n        timer.start()\n        print(timer.elapsed())",
+    "        h = open(path, 'rb')\n        for chunk in stream:\n            h.read(chunk)\n        print(len(chunk))",
+    "        config = load_defaults()\n        value = config.get('name')\n        return config",
+    "        seen = set()\n        self.state.close()\n        self.step = 0",
+    "        out = tf.reshape(x, [-1])\n        out = tf.cast(out, tf.float32)\n        return out",
+    "        if changed:\n            self.cache.get(key, value)\n            self.dirty = True"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": ".reset/.update/.set calls",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks '.reset' x9, '.update' x7, '.set' x6, all in Python code. Near misses are the same code with other method names (append, get, close, read).",
+ "trigger": {
+  "words": [
+   ".reset",
+   ".update",
+   ".set",
+   "update",
+   "reset"
+  ]
+ }
+}
