@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-953c657a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N1058+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:04:56+00:00",
+ "recipe": {
+  "toolchain_commit": "b59d8f318",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N1058_pos/2026-11-20-lm1909-953c657a.tests.json"
+ },
+ "label": "a word naming a rank or honour in an award or ranking context (Top, of the Year, notable, certificate, top ten)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N1058_pos/2026-11-20-lm1909-953c657a.tests.json",
+   "prereg_commit": "b59d8f318",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.623,
+     "peak": " Year"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.323,
+     "peak": " ten"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.577,
+     "peak": " certificate"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.238,
+     "peak": " Year"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.428,
+     "peak": " ranking"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.382,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.206,
+     "peak": " Top"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.241,
+     "peak": " position"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " r"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.036,
+     "peak": " stories"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " arrived"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " city"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " many"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.125,
+     "peak": " discussed"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": " signed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.353,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b59d8f318",
+  "minutes": 94,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "award rank / honour words",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "card peaks on ' Year', ' Top', ' ranking', ' position', 'Notable'; probe fired 0.3-0.56 on honour words, 0.03 on filler",
+ "selection": "random draw"
+}
