@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-4f73c63e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N10871-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:07:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N10871",
+   "pole": "-",
+   "label": "Python 'else:' and the indented line after an if/else branch in multi-line code",
+   "fire": [
+    "if sys.version_info[0] >= 3:\n    import pickle\nelse:\n    import cPickle as pickle\n",
+    "def read(path):\n    if path == '-':\n        data = sys.stdin.read()\n    else:\n        data = open(path).read()\n    return data\n",
+    "if os.name == 'nt':\n    sep = '\\\\'\nelse:\n    sep = '/'\n",
+    "try:\n    import ujson as json\nexcept ImportError:\n    import json\nif DEBUG:\n    level = 10\nelse:\n    level = 20\n",
+    "    if user is None:\n        name = 'guest'\n    else:\n        name = user.name\n",
+    "if PY2:\n    string_types = basestring\nelse:\n    string_types = str\n",
+    "def pick(x):\n    if x > 0:\n        return 'pos'\n    else:\n        return 'neg'\n",
+    "if args.verbose:\n    log.setLevel('DEBUG')\nelse:\n    log.setLevel('INFO')\n"
+   ],
+   "quiet": [
+    "import pickle\nimport os\nimport sys\nprint(sys.version_info[0])\n",
+    "def read(path):\n    with open(path) as fh:\n        data = fh.read()\n    return data\n",
+    "sep = os.sep\nroot = os.getcwd()\nprint(root)\n",
+    "import json\nlevel = 10\nnames = ['a', 'b']\nfor n in names:\n    print(n)\n",
+    "    name = user.name\n    age = user.age\n    print(name, age)\n",
+    "string_types = str\nint_types = int\nprint(string_types)\n",
+    "def pick(x):\n    result = abs(x)\n    return result\n",
+    "log.setLevel('DEBUG')\nlog.info('start')\nlog.info('done')\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "python else branch",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Top: else x4, newline/indent after ':' in Python. Both poles fire around else; low confidence."
+}
