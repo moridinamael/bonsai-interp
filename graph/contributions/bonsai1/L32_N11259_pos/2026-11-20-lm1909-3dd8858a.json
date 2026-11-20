@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-3dd8858a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N11259+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:56:51+00:00",
+ "recipe": {
+  "toolchain_commit": "6bdcce88c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N11259_pos/2026-11-20-lm1909-3dd8858a.tests.json"
+ },
+ "label": "the end of an assignment target right before an augmented operator in code (res |= ..., D[i, j] += ..., w *= ...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N11259_pos/2026-11-20-lm1909-3dd8858a.tests.json",
+   "prereg_commit": "6bdcce88c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.565,
+     "peak": " acc"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.854,
+     "peak": " res"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.526,
+     "peak": "]"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.243,
+     "peak": "score"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.363,
+     "peak": "]"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.501,
+     "peak": " count"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.24,
+     "peak": " support"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.254,
+     "peak": "]"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.093,
+     "peak": " acc"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.164,
+     "peak": " res"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.06,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.071,
+     "peak": "score"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.252,
+     "peak": " log"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.073,
+     "peak": "count"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": "mask"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": "print"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.432,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6bdcce88c",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "target before augmented assignment",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "logit effect promotes ' +=', ' |=', ' *=' etc.: the pole predicts an augmented operator next",
+ "selection": "random draw"
+}
