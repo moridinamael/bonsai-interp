@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-893bfead",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N8456-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:14:07+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N8456",
+   "pole": "-",
+   "label": "the token '_called' in mock assertions (assert_called_once_with)",
+   "fire": [
+    "    mock_save.assert_called_once_with(user)",
+    "    client.get.assert_called_with('/items')",
+    "    handler.assert_called_once()\n    queue.clear()",
+    "    mock_open.assert_called_once_with('data.txt', 'r')",
+    "    sender.send.assert_called_with(message, retry=True)",
+    "    stub.assert_called_once_with(config)\n    stub.reset_mock()",
+    "    logger.warning.assert_called_once_with('disk full')",
+    "    api.post.assert_called_with(url, json=payload)"
+   ],
+   "quiet": [
+    "    mock_save.return_value = user",
+    "    client.get.side_effect = TimeoutError('/items')",
+    "    handler.reset_mock()\n    queue.clear()",
+    "    mock_open.return_value.read.return_value = 'r'",
+    "    sender.send.side_effect = [message, None]",
+    "    stub.configure_mock(config=config)\n    stub.reset_mock()",
+    "    logger.warning('disk full')",
+    "    api.post(url, json=payload)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "_called (mock assert)",
+ "unit_kind": "lexical",
+ "confidence": 0.7
+}
