@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-bc93ec52",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4084+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:54:09+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N4084",
+   "pole": "+",
+   "label": "tokens inside Python code statements (attribute access, indexing, block colons, assignments)",
+   "fire": [
+    "def update(self, item):\n    self.total = self.total + item.value\n    self.count += 1",
+    "for i in range(1, n):\n    x[i] = x[i-1] + dx\n    y[i] = f(x[i])",
+    "if config.debug:\n    logger.info(msg)\nelse:\n    pass",
+    "now = datetime.now()\nstart = now - timedelta(days=7)\nprint(start)",
+    "while queue:\n    node = queue.pop()\n    seen.add(node.id)",
+    "result = []\nfor row in rows:\n    result.append(row[2])",
+    "with open(path) as fh:\n    data = fh.read()\n    lines = data.split()",
+    "class Counter:\n    def __init__(self):\n        self.n = 0"
+   ],
+   "quiet": [
+    "The update method adds the value of each item to the running total.",
+    "The loop fills the x array step by step and then evaluates f.",
+    "When debugging is enabled the logger prints every message.",
+    "The script prints the date one week before today.",
+    "Nodes are taken off the queue and marked as seen.",
+    "The third column of every row is collected into a list.",
+    "The file is opened, read and split into words.",
+    "The counter class starts at zero when it is created."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python code body",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card top examples are mostly Python (thread.load_time, u[e], else:, datetime.now, next_x); weak max 7.3; no single token. Fire items are multi-line code; near misses are prose about the same code."
+}
