@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-3dfa2003",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N6060+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:14:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N6060",
+   "pole": "+",
+   "label": "the indented ' def' that opens a method inside a Python test class, especially right after a decorator such as @mock.patch",
+   "fire": [
+    "class TestVolume(test.TestCase):\n\n    @mock.patch('nova.virt.driver.detach')\n    def test_detach_when_instance_missing(self, mock_detach):\n        self.assertTrue(True)",
+    "class ServerTests(unittest.TestCase):\n    @mock.patch.object(requests, 'post', autospec=True)\n    def test_upload_retries_on_timeout(self, mock_post):\n        mock_post.side_effect = Timeout",
+    "class TestCli(CliTestCase):\n    def setUp(self):\n        super().setUp()\n\n    def test_list_users_empty(self):\n        self.invoke('users list')",
+    "class TestCache(TestCase):\n    @patch('app.cache.redis')\n    @patch('app.cache.logger')\n    def test_cache_miss_logs(self, mock_log, mock_redis):\n        pass",
+    "class ParserTest(unittest.TestCase):\n    @mock.patch('builtins.open')\n    def test_parse_missing_file(self, mock_open):\n        mock_open.side_effect = IOError",
+    "class TestMigration(base.TestCase):\n    @mock.patch.object(host.Host, 'has_version', return_value=False)\n    def test_migration_refused_on_old_host(self, mock_ver):\n        self.assertRaises(Exception, self.run)",
+    "class TestDownloads(TestCase):\n    @mock.patch('urllib.request.urlopen')\n    def test_download_writes_file(self, mock_open):\n        mock_open.return_value = io.BytesIO(b'x')",
+    "class TestScheduler(test.NoDBTestCase):\n    @mock.patch('nova.scheduler.utils.retry')\n    def test_select_destinations_retries(self, mock_retry):\n        mock_retry.return_value = None"
+   ],
+   "quiet": [
+    "class TestVolume(test.TestCase):\n\n    @mock.patch('nova.virt.driver.detach')\n    # the instance is gone before detach runs\n    # so the driver must not raise",
+    "mock_post = mock.Mock()\nmock_post.side_effect = Timeout\nrequests.post = mock_post\nresult = upload(path)",
+    "users = invoke('users list')\nassert users == []\nprint('no users found')",
+    "cache = Cache(redis_client)\nlogger.info('cache created')\nvalue = cache.get('missing')\nassert value is None",
+    "with mock.patch('builtins.open') as mock_open:\n    mock_open.side_effect = IOError\n    result = parse('missing.txt')",
+    "host = Host()\nhost.version = (1, 2)\nallowed = host.has_version((2, 0))\nassert not allowed",
+    "data = io.BytesIO(b'x')\nurlopen = mock.Mock(return_value=data)\nwrite_file(urlopen('http://a'), 'out.bin')",
+    "retry = mock.Mock()\nretry.return_value = None\nselected = scheduler.select(retry)\nassert selected"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "test-method def",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' def' x27 of top 32, mostly test methods after @mock.patch. Probe: a top-level 'def main' scored ~0."
+}

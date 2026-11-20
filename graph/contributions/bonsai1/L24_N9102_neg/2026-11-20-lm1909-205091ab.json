@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-205091ab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9102-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:13:36+00:00",
+ "recipe": {
+  "toolchain_commit": "39bdbf742",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N9102_neg/2026-11-20-lm1909-205091ab.tests.json"
+ },
+ "label": "abbreviated chemistry journal names in citations (the '.' after 'Chem' in J. Chem. Phys., Chem. Commun., ACS)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N9102_neg/2026-11-20-lm1909-205091ab.tests.json",
+   "prereg_commit": "39bdbf742",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.735,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.539,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.22,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.745,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.691,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.639,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.775,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.688,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.056,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.026,
+     "peak": " excavation"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": "These"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": " Har"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.109,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " N"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": "Data"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.69,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39bdbf742",
+  "minutes": 105,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "chemistry journal abbreviations",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: '.' after Chem in J. Chem. Educ./Phys., ACS. Probe: J. Chem. Phys. 0.45, Chem. Commun./ACS 0.60, J. Biol. Chem. 0.42, Phys. Rev. Lett. 0.24, prose about chemistry 0.01. Near misses are non-science journals.",
+ "selection": "random draw"
+}

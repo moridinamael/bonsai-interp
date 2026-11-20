@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-118eb89d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N5185-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:12:10+00:00",
+ "recipe": {
+  "toolchain_commit": "39bdbf742",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N5185_neg/2026-11-20-lm1909-118eb89d.tests.json"
+ },
+ "label": "the conjunction ' and'/' or' before the final item of a comma-separated list of three or more items",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N5185_neg/2026-11-20-lm1909-118eb89d.tests.json",
+   "prereg_commit": "39bdbf742",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.929,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.015,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.689,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.449,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.32,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.221,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.638,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.327,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.478,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": " within"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.231,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.037,
+     "peak": " recruited"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " counter"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.053,
+     "peak": " sun"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.543,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39bdbf742",
+  "minutes": 103,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "list-final and/or",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' and' x16, ' or' x8 of top 32, all list-final. Probe: list-final 'or' 1.0, 'and' 0.5; clause 'and' 0.05. Also fired on 'highest awards' (1.1), not covered by this label.",
+ "selection": "random draw"
+}
