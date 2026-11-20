@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-088500ac",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N9379+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:00:24+00:00",
+ "recipe": {
+  "toolchain_commit": "e241e336a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N9379_pos/2026-11-20-lm1909-088500ac.tests.json"
+ },
+ "label": "word-internal subword pieces in non-English European-language text (Italian, German, Swedish, Irish)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N9379_pos/2026-11-20-lm1909-088500ac.tests.json",
+   "prereg_commit": "e241e336a",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.919,
+     "peak": " pre"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.344,
+     "peak": "ations"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.59,
+     "peak": "lic"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.878,
+     "peak": " i"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.439,
+     "peak": "ió"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.016,
+     "peak": "sg"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.495,
+     "peak": " hanno"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.336,
+     "peak": " ut"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.054,
+     "peak": " pret"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.084,
+     "peak": " qualifying"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.055,
+     "peak": "pine"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.067,
+     "peak": " northern"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.115,
+     "peak": " radio"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " offers"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.467,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e241e336a",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "non-English word pieces",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "card: no single token; peaks on mid-word pieces (ar|co, Qualifik|ations, Raid|io, pre|tenzioso) in Italian/German/Swedish/Irish. Near misses are the English translations.",
+ "selection": "random draw"
+}
