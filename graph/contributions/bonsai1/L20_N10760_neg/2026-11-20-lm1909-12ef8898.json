@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-12ef8898",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10760-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:43:28+00:00",
+ "recipe": {
+  "toolchain_commit": "05abdd5f7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N10760_neg/2026-11-20-lm1909-12ef8898.tests.json"
+ },
+ "label": "the indentation at the start of the line after a Python input-validation if-check (where a raise or error exit is expected)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N10760_neg/2026-11-20-lm1909-12ef8898.tests.json",
+   "prereg_commit": "05abdd5f7",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.359,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.061,
+     "peak": " raise"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.157,
+     "peak": " raise"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.202,
+     "peak": "5"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.15,
+     "peak": "('"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.397,
+     "peak": " zero"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.045,
+     "peak": " required"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.139,
+     "peak": " non"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": " rate"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.011,
+     "peak": ".socket"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": "'):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " while"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": "('"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.153,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "05abdd5f7",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "indent before raise",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: top peaks are whitespace tokens beginning a line whose next statement is raise/print_exit after an if-condition. Probe of one short guard 0.19 (peak on \"('\"), for-loop body 0.01. Near misses keep similar code where the indented line follows a loop or with-block.",
+ "selection": "random draw"
+}

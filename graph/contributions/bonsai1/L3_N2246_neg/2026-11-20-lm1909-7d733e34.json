@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-7d733e34",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N2246-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:43:30+00:00",
+ "recipe": {
+  "toolchain_commit": "05abdd5f7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N2246_neg/2026-11-20-lm1909-7d733e34.tests.json"
+ },
+ "label": "suffix pieces such as 'er', 'ery', 'ering' at the end of rare split words (Zuff-ere-y, shinn-ery, Sh-ering-ham)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N2246_neg/2026-11-20-lm1909-7d733e34.tests.json",
+   "prereg_commit": "05abdd5f7",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.833,
+     "peak": "ere"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.766,
+     "peak": "ery"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.917,
+     "peak": "ering"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.756,
+     "peak": "encing"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.495,
+     "peak": " hasher"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.538,
+     "peak": "ery"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.463,
+     "peak": "ery"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.294,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.077,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.364,
+     "peak": " nest"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.25,
+     "peak": "ighthouse"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.095,
+     "peak": " use"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.076,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.173,
+     "peak": " cafe"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.178,
+     "peak": " covered"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.294,
+     "peak": " her"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.977,
+    "median_fire": 0.647,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "05abdd5f7",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare-word suffix pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags this pole broad (7.7% of tokens reach 0.1 of max) and gate-closed leak 100%, max 1.55. Recorded as dense / positional; the test is a best guess at what drives the strongest activations and is expected to fail.",
+ "selection": "random draw"
+}

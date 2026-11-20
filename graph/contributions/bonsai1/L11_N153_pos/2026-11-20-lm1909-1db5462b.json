@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1db5462b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N153+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:43:35+00:00",
+ "recipe": {
+  "toolchain_commit": "05abdd5f7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N153_pos/2026-11-20-lm1909-1db5462b.tests.json"
+ },
+ "label": "a figure or number changing level (rises, increases, grows, falls) at the change verb and its following 'to'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N153_pos/2026-11-20-lm1909-1db5462b.tests.json",
+   "prereg_commit": "05abdd5f7",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.483,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.392,
+     "peak": " grow"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.703,
+     "peak": " increased"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.736,
+     "peak": " rises"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.362,
+     "peak": " double"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.299,
+     "peak": " jumped"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.127,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.21,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.366,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " share"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.251,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": "employment"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.086,
+     "peak": " are"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.377,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "05abdd5f7",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "a figure rising or changing",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: rises, increase(s/d), rose, 'projected to' grow, all after a figure/number subject. Probe: 'this figure rises to' 0.87, 'falls to' 0.52, 'is listed' 0.19, so the label covers change in either direction, mostly increase. Near misses keep the figure with a static verb.",
+ "selection": "random draw"
+}
