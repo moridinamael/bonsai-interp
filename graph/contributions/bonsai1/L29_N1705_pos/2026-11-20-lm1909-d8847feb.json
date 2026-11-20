@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-20-lm1909-d8847feb",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1705+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:06:00+00:00",
+ "recipe": {
+  "toolchain_commit": "bd1d0a480",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N1705_pos/2026-11-20-lm1909-d8847feb.tests.json"
+ },
+ "label": "' World' in the name of a world war ('World War I/II')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N1705_pos/2026-11-20-lm1909-d8847feb.tests.json",
+   "prereg_commit": "bd1d0a480",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.179,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.265,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.377,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.336,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.263,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.268,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.469,
+     "peak": " World"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.165,
+     "peak": " World"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.137,
+     "peak": "ole"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.129,
+     "peak": "an"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.005,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": " Civil"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": " bombed"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.079,
+     "peak": "ussian"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.11,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.078,
+     "peak": " Pacific"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.267,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bd1d0a480",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "World (War)",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "card: ' World' 12/32 tops, mostly 'World War' and 'Encyclopedia of World History'; logit effect suppresses Cold/Treaty/Industrial; probe: 'in World War I' 0.38, 'World War II' 0.23, 'World Cup' 0.01, 'Civil War' 0.02",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " World",
+   "World"
+  ]
+ }
+}
