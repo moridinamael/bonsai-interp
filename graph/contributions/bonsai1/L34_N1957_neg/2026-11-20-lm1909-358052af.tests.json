@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-358052af",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N1957-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:58:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N1957",
+   "pole": "-",
+   "label": "identifier tokens inside comma-separated argument or tuple lists in Python code (def f(self, mtime, ...), for (i, w) in ..., (a, b, c, d))",
+   "fire": [
+    "import math\n\ndef distance(x1, y1, x2, y2):\n    dx = x2 - x1\n    dy = y2 - y1\n    return math.sqrt(dx * dx + dy * dy)\n",
+    "class Grid(object):\n    def __init__(self, rows, cols, fill=None):\n        self.rows = rows\n        self.cols = cols\n        self.cells = [[fill] * cols for _ in range(rows)]\n",
+    "def merge(a, b, key=None):\n    out = []\n    for (i, x) in enumerate(a):\n        out.append((i, x, b[i]))\n    return out\n",
+    "points = [(0, 0), (1, 2), (3, 4)]\nfor (px, py) in points:\n    total = add(px, py, scale, offset)\n    print(total)\n",
+    "def clamp(value, lo, hi):\n    return max(lo, min(value, hi))\n\nresult = clamp(n, 0, limit)\n",
+    "def draw_line(canvas, x0, y0, x1, y1, color=None):\n    for t in range(steps):\n        canvas.set(x0 + t, y0 + t, color)\n",
+    "quad = [colors[k] for k in (a, b, c, d)]\npairs = zip(xs, ys)\nfor (u, v) in pairs:\n    update(u, v, w)\n",
+    "def fetch(self, since, until=None, limit=100):\n    rows = self.db.query(since, until)\n    return rows[:limit]\n"
+   ],
+   "quiet": [
+    "import math\n\n# Distance between two points is the square root\n# of the sum of the squared differences of their coordinates.\n",
+    "class Grid(object):\n    \"\"\"A table of cells stored row by row.\"\"\"\n    pass\n",
+    "# Merge two lists by walking through them in order\n# and appending each item to the output list.\n",
+    "# The points are stored as pairs and printed one per line\n# after the total has been computed.\n",
+    "# Clamp limits a value so that it stays\n# between the lower and upper bound.\n",
+    "# Draw a straight line on the canvas using the chosen colour.\n# Steps controls how smooth the line looks.\n",
+    "# Pick four colours from the list and pair up the\n# x and y values before updating each one.\n",
+    "# Fetch returns the most recent rows from the database,\n# up to the given limit.\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "identifiers in code arg lists",
+ "unit_kind": "contextual",
+ "confidence": 0.2,
+ "notes": "card: peaks on short identifiers after '(' or ',' in long Python files (mtime, x2, master=None, i, c, z). Probe of short snippets reached only 0.07-0.12 of max; fire items are longer multi-line passages but likely still weak."
+}
