@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-35f1fdbf",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N6822+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N6822",
+   "pole": "+",
+   "label": "a sub-word fragment right after a joining symbol inside code strings and identifiers: MIME subtypes ('audio/m⟦peg⟧', 'text⟦/html⟧'), hex escapes ('\\⟦xfd⟧'), double-underscore lookups ('year⟦__⟧lte')",
+   "fire": [
+    "formats = ['image/png', 'image/jpeg', 'video/mpeg', 'audio/ogg']",
+    "rows = Order.objects.filter(total__gte=100, created__lte=cutoff)",
+    "table = {'agrave;': '\\xe0', 'ccedil;': '\\xe7', 'ntilde;': '\\xf1'}",
+    "allowed_types = ('application/pdf', 'application/zip', 'text/csv')",
+    "users = User.objects.filter(email__endswith='.org', age__gt=18)",
+    "mime = {'mp3': 'audio/mpeg', 'mpg': 'video/mpeg', 'htm': 'text/html'}",
+    "latin = {'uuml;': '\\xfc', 'yuml;': '\\xff', 'eth;': '\\xf0'}",
+    "posts = Post.objects.exclude(title__icontains='draft', views__lt=10)"
+   ],
+   "quiet": [
+    "formats = ['small', 'medium', 'large', 'huge']",
+    "rows = orders.select(total, created)",
+    "table = {'apple': 1, 'banana': 2, 'cherry': 3}",
+    "allowed_names = ('alice', 'bob', 'carol')",
+    "users = load_users(path, limit)",
+    "sizes = {'red': 10, 'green': 20, 'blue': 30}",
+    "count = len(items) + offset",
+    "posts = sorted(posts, key=score)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code-string fragment after / \\ __",
+ "unit_kind": "unclear",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (5.8% of tokens reach 0.1 of max) with the gate-closed regime dominating, and no single token. Probes: MIME lists 0.53-0.77, hex-escape tables 0.22-0.73, Django __ lookups 0.47-0.50; plain Python 0.13-0.26, prose 0.01. Near misses are plain code and are expected to fire weakly."
+}

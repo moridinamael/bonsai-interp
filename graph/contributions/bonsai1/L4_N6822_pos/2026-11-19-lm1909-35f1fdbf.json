@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-35f1fdbf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N6822+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:06+00:00",
+ "recipe": {
+  "toolchain_commit": "b26a29dd9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N6822_pos/2026-11-19-lm1909-35f1fdbf.tests.json"
+ },
+ "label": "a sub-word fragment right after a joining symbol inside code strings and identifiers: MIME subtypes ('audio/m⟦peg⟧', 'text⟦/html⟧'), hex escapes ('\\⟦xfd⟧'), double-underscore lookups ('year⟦__⟧lte')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N6822_pos/2026-11-19-lm1909-35f1fdbf.tests.json",
+   "prereg_commit": "b26a29dd9",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.477,
+     "peak": "peg"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.277,
+     "peak": "__"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.105,
+     "peak": " '\\"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.403,
+     "peak": "/pdf"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.264,
+     "peak": "__"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.855,
+     "peak": "peg"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.204,
+     "peak": "xff"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.391,
+     "peak": "draft"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.106,
+     "peak": " ['"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.131,
+     "peak": " created"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.038,
+     "peak": " '"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.021,
+     "peak": " load"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.064,
+     "peak": " len"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.113,
+     "peak": ")"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.334,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b26a29dd9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code-string fragment after / \\ __",
+ "unit_kind": "unclear",
+ "confidence": 0.4,
+ "notes": "Card flags the pole broad (5.8% of tokens reach 0.1 of max) with the gate-closed regime dominating, and no single token. Probes: MIME lists 0.53-0.77, hex-escape tables 0.22-0.73, Django __ lookups 0.47-0.50; plain Python 0.13-0.26, prose 0.01. Near misses are plain code and are expected to fire weakly.",
+ "selection": "random draw"
+}

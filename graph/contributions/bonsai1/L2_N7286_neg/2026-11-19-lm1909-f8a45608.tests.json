@@ -1,0 +1,52 @@
+{
+ "contribution": "2026-11-19-lm1909-f8a45608",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N7286-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L2/N7286",
+   "pole": "-",
+   "label": "the token ' missing', strongest as a variable or identifier in code ('if missing:', 'missing_keys')",
+   "fire": [
+    "required = set(schema)\nfound = set(row)\nif missing := required - found:\n    report(missing)",
+    "def check(paths):\n    missing = [p for p in paths if not os.path.exists(p)]\n    return missing",
+    "for name in expected:\n    if name not in table:\n        missing.append(name)",
+    "extra, missing = diff_columns(old, new)\nif missing:\n    log.warning(missing)",
+    "count = len(missing)\nprint('%d missing entries' % count)",
+    "def fill(frame, missing=None):\n    if missing is None:\n        missing = frame.isnull()",
+    "if not missing:\n    return True\nraise ValueError(missing)",
+    "self.missing = missing or []\nself.total = len(self.missing)"
+   ],
+   "quiet": [
+    "required = set(schema)\nfound = set(row)\nif extra := found - required:\n    report(extra)",
+    "def check(paths):\n    present = [p for p in paths if os.path.exists(p)]\n    return present",
+    "for name in expected:\n    if name in table:\n        seen.append(name)",
+    "extra, shared = diff_columns(old, new)\nif shared:\n    log.warning(shared)",
+    "count = len(found)\nprint('%d found entries' % count)",
+    "def fill(frame, mask=None):\n    if mask is None:\n        mask = frame.isnull()",
+    "if not errors:\n    return True\nraise ValueError(errors)",
+    "self.pending = pending or []\nself.total = len(self.pending)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' missing' (code identifier)",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card flags the pole broad (3.1% of tokens reach 0.1 of max, gate-closed regime 76%); peak tokens ' missing' x7, '.exceptions' x5, ' max', '.s', '.summary', ' waste'. Probes: ' missing' in code 0.47-0.51, in prose 0.19-0.22, 'Missing' 0.11, '.exceptions' 0.21-0.32, ' max' 0.08. Near misses are the same code with another name and may fire weakly.",
+ "trigger": {
+  "tokens": [
+   " missing"
+  ]
+ }
+}

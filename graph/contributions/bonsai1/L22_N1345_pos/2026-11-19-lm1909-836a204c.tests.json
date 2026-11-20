@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-836a204c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N1345+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N1345",
+   "pole": "+",
+   "label": "' for' opening the loop clause of a Python comprehension or generator expression inside indented, multi-line code (also 'for which' after an indented equation); not the 'for' of a for-statement or of prose",
+   "fire": [
+    "class Encoder(object):\n    def shapes(self, layers):\n        dims = [np.prod(layer.shape[1:])\n                for layer in layers]\n        return dims",
+    "    def summary(self, groups):\n        if all(len(g.members) == 0 for g in groups.values()):\n            return None\n        return ', '.join(g.name for g in groups.values())",
+    "def load(paths, cache):\n    handles = [open(os.path.join(cache.root, p), 'rb') for p in paths]\n    sizes = {h.name: os.fstat(h.fileno()).st_size for h in handles}\n    return handles, sizes",
+    "    def placeholders(self, n_steps):\n        self.inputs = [tf.placeholder(tf.float32, shape=[None, self.dim])\n                       for _ in range(n_steps)]\n        self.masks = [tf.ones_like(x) for x in self.inputs]",
+    "def total_weight(graph, nodes):\n    edges = set(e for n in nodes for e in graph.edges(n))\n    return sum(graph.weight[e] for e in edges)",
+    "    def render(self, table):\n        widths = [max(len(str(row[i])) for row in table.rows)\n                  for i in range(table.ncols)]\n        return widths",
+    "def tokenize(lines, vocab):\n    ids = [[vocab.get(w, vocab['<unk>']) for w in line.split()]\n           for line in lines]\n    return ids",
+    "    def active(self, clusters):\n        self.live = dict((k, c) for k, c in clusters.items() if c.size > 0)\n        return sorted(c.label for c in self.live.values())"
+   ],
+   "quiet": [
+    "class Encoder(object):\n    def shapes(self, layers):\n        dims = []\n        for layer in layers:\n            dims.append(np.prod(layer.shape[1:]))\n        return dims",
+    "    def summary(self, groups):\n        names = []\n        for g in groups.values():\n            names.append(g.name)\n        return ', '.join(names)",
+    "def load(paths, cache):\n    handles = []\n    for p in paths:\n        handles.append(open(os.path.join(cache.root, p), 'rb'))\n    return handles",
+    "    def placeholders(self, n_steps):\n        self.inputs = []\n        for _ in range(n_steps):\n            self.inputs.append(tf.placeholder(tf.float32, shape=[None, self.dim]))",
+    "def total_weight(graph, nodes):\n    total = 0\n    for n in nodes:\n        total += graph.weight[n]\n    return total",
+    "    def render(self, table):\n        widths = map(len, table.header)\n        return list(widths)",
+    "def tokenize(lines, vocab):\n    # look up an id for every word, falling back to <unk> for rare ones\n    return vocab.encode(lines)",
+    "    def active(self, clusters):\n        self.live = clusters.nonempty()\n        return sorted(self.live.labels())"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comprehension ' for'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' for' x32, all but the top example in comprehensions/generators. Probes: multi-line indented code with comprehensions 0.43-0.57, 'for which' after an indented formula 0.38-0.68, one-line comprehensions only 0.09-0.12, for-statements 0.03, prose 'for' 0.01. Fire items are therefore multi-line."
+}

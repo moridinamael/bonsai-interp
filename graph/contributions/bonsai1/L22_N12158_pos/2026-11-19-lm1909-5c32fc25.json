@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-5c32fc25",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N12158+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:30:36+00:00",
+ "recipe": {
+  "toolchain_commit": "b26a29dd9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N12158_pos/2026-11-19-lm1909-5c32fc25.tests.json"
+ },
+ "label": "platform/OS tokens inside a browser user-agent string ('(⟦Windows⟧ NT', '⟦ Ubuntu⟧ Chromium', '⟦ Mobile⟧/7B334b'); the same names in ordinary prose do not fire",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N12158_pos/2026-11-19-lm1909-5c32fc25.tests.json",
+   "prereg_commit": "b26a29dd9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.606,
+     "peak": "Windows"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.606,
+     "peak": ";"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.794,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.879,
+     "peak": " Windows"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.866,
+     "peak": " Intel"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.627,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.005,
+     "peak": " Windows"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.703,
+     "peak": " Chrome"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.266,
+     "peak": ",en"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " Windows"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.074,
+     "peak": "Apple"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.153,
+     "peak": "/"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.127,
+     "peak": " max"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.076,
+     "peak": "localhost"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.177,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": " Android"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.748,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b26a29dd9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "user-agent platform token",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'Windows', ' Windows', ' Ubuntu', ' Mobile', ' MacOS' in UA strings and classifiers, plus 'December' in Wikipedia '(December 2007)' maintenance tags, ' Academic', ' Sun', 'Google'. Probes: UA strings 0.60-0.75, a '(December 2009)' citation tag 0.58, trove classifier 0.27; prose with Windows/December 0.04, Academic/Sun/Google 0.08. The date-tag and other card tokens are not covered by this label.",
+ "selection": "random draw"
+}

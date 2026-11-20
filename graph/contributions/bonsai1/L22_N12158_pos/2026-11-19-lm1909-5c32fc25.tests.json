@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-5c32fc25",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N12158+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:18:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N12158",
+   "pole": "+",
+   "label": "platform/OS tokens inside a browser user-agent string ('(⟦Windows⟧ NT', '⟦ Ubuntu⟧ Chromium', '⟦ Mobile⟧/7B334b'); the same names in ordinary prose do not fire",
+   "fire": [
+    "req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0')",
+    "agent = \"Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:31.0) Gecko/20100101 Firefox/31.0\"",
+    "Mozilla/5.0 (iPad; CPU OS 9_3 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) Version/9.0 Mobile/13E233 Safari/601.1",
+    "10.0.0.7 - - \"GET /index.html HTTP/1.1\" 200 1043 \"-\" \"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)\"",
+    "USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0 Safari/537.36'",
+    "curl -A \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 Chrome/50.0 Mobile Safari/537.36\" http://localhost/",
+    "self.headers['User-Agent'] = 'Mozilla/5.0 (Windows; U; Windows NT 6.0; de-DE) AppleWebKit/533.4 Chrome/5.0'",
+    "\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0 Chrome/18.0\""
+   ],
+   "quiet": [
+    "req.add_header('Accept-Language', 'en-GB,en;q=0.8,fr;q=0.6')",
+    "The lab moved every desktop from Windows to Ubuntu over the summer break.",
+    "Apple said the new iPad would ship with a faster chip and a brighter screen.",
+    "10.0.0.7 - - \"GET /index.html HTTP/1.1\" 200 1043 \"-\" \"-\"",
+    "CACHE_CONTROL = 'public, max-age=3600, must-revalidate'",
+    "curl -H \"Content-Type: application/json\" -d '{\"id\": 5}' http://localhost/",
+    "self.headers['Accept-Encoding'] = 'gzip, deflate, br'",
+    "My Android phone and the Linux laptop both needed a mobile hotspot at the hotel."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "user-agent platform token",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'Windows', ' Windows', ' Ubuntu', ' Mobile', ' MacOS' in UA strings and classifiers, plus 'December' in Wikipedia '(December 2007)' maintenance tags, ' Academic', ' Sun', 'Google'. Probes: UA strings 0.60-0.75, a '(December 2009)' citation tag 0.58, trove classifier 0.27; prose with Windows/December 0.04, Academic/Sun/Google 0.08. The date-tag and other card tokens are not covered by this label."
+}
