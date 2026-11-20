@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-34c6d8f6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N4902+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:25:11+00:00",
+ "recipe": {
+  "toolchain_commit": "c268d9205",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N4902_pos/2026-11-19-lm1909-34c6d8f6.tests.json"
+ },
+ "label": "dense unit; strongest on a few Korean noun tokens: ' 형태', ' 부분', '식' (as in 양식), '수'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N4902_pos/2026-11-19-lm1909-34c6d8f6.tests.json",
+   "prereg_commit": "c268d9205",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.487,
+     "peak": " 형태"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.41,
+     "peak": " 부분"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.593,
+     "peak": "식"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.029,
+     "peak": " 형태"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.574,
+     "peak": " 부분"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.608,
+     "peak": "식"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.878,
+     "peak": " 형태"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.366,
+     "peak": " 부분"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.094,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.069,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.073,
+     "peak": "워"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.156,
+     "peak": "음"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.115,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.31,
+     "peak": "히"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.514,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.124,
+     "peak": "으로"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.583,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c268d9205",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; Korean ' 형태' / ' 부분' / '식'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card FLAGS dense: 10.6% of tokens reach 0.1 of max (max only 0.56), gate-closed regime 98%. Top peaks are Korean tokens 수 / 식 / 형태 / 부분. Probe: ' 형태' 1.19, '식' 0.52, other Korean text 0.13, English 0.08. Test records the density; near misses are Korean sentences without those tokens.",
+ "selection": "random draw"
+}
