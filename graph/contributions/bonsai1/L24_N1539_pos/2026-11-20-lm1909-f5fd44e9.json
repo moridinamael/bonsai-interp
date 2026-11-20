@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-f5fd44e9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1539+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:28:31+00:00",
+ "recipe": {
+  "toolchain_commit": "3a3628756",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N1539_pos/2026-11-20-lm1909-f5fd44e9.tests.json"
+ },
+ "label": "a relative pronoun 'who' (or relativizer) opening a clause right after a noun for people (people who, everyone who, those who)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1539_pos/2026-11-20-lm1909-f5fd44e9.tests.json",
+   "prereg_commit": "3a3628756",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.038,
+     "peak": " cannot"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.019,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.073,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.033,
+     "peak": " who"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.014,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.011,
+     "peak": " that"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.018,
+     "peak": " better"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.028,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " offered"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.022,
+     "peak": " caring"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": "Many"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.027,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.109,
+     "peak": "Who"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.57,
+    "median_fire": 0.024,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "3a3628756",
+  "minutes": 19,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "relative 'who' after people",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags broad (1.1% of tokens at 0.1 of max). Peaks on ' who' after people/individuals/everyone, also ' of' and ' that'. Near misses keep the people noun but drop the relative clause or use interrogative who.",
+ "selection": "random draw"
+}

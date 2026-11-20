@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-7cd1f4cb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4975-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:34:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N4975",
+   "pole": "-",
+   "label": "' =' (and reduce-style ops like _sum) in mathematical/scientific code or equations written in code comments",
+   "fire": [
+    "def update(rho, A):\n    # linear mixing of densities\n    rho_new = (1 - A) * rho + A * rho_old\n    return rho_new",
+    "import numpy as np\nweights = np.ones(n)\nnorm = np.sqrt(np.sum(weights ** 2))\nprint(norm)",
+    "    The energy is computed as\n        E_total = 0.5 * k * x**2 + m * g * h\n    where k is the spring constant.",
+    "for i in range(n):\n    for j in range(n):\n        M[i, j] = np.exp(-abs(i - j) / tau)",
+    "def variance(x):\n    mu = x.mean()\n    var = ((x - mu) ** 2).sum() / (len(x) - 1)\n    return var",
+    "    Notes\n    -----\n    The posterior is p(theta | x) = p(x | theta) p(theta) / p(x).",
+    "logits = model(inputs)\nloss = tf.reduce_sum(tf.square(logits - targets))\nopt.minimize(loss)",
+    "import numpy as np\ntheta = np.linspace(0, np.pi, 100)\ny = np.sin(theta) * np.cos(theta)"
+   ],
+   "quiet": [
+    "def update(rho, A):\n    # linear mixing of densities\n    print(rho, A)\n    return None",
+    "import numpy as np\nprint(np.ones(n))\nplt.plot(weights)\nplt.show()",
+    "    The energy is computed from the spring constant,\n    the mass and the height,\n    as described in the user guide.",
+    "for i in range(n):\n    for j in range(n):\n        print(i, j)\n        log.info('done')",
+    "def variance(x):\n    # see the statistics chapter\n    raise NotImplementedError\n    pass",
+    "    Notes\n    -----\n    The posterior follows from Bayes' rule, see the references.",
+    "logits = model(inputs)\nprint(logits.shape)\nopt.minimize(loss)",
+    "import numpy as np\nimport matplotlib.pyplot as plt\nplt.figure()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "'=' in math code",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on ' =' in numerical Python and docstring equations (rho_out = ..., prob(Y=y) = ...), '.sum'/'_sum', '(np'. Fire items are multi-line code passages; near misses are the same kind of code without an assignment/equation sign."
+}
