@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-83fd324d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N5734+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:23:23+00:00",
+ "recipe": {
+  "toolchain_commit": "b7dcf9204",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N5734_pos/2026-11-19-lm1909-83fd324d.tests.json"
+ },
+ "label": "text about the sun, stars and the earth's seasons and winds: fires on the function word that follows a physical-process verb there (cool over, once per, affected by, blows from)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N5734_pos/2026-11-19-lm1909-83fd324d.tests.json",
+   "prereg_commit": "b7dcf9204",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.057,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.494,
+     "peak": " per"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.601,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.994,
+     "peak": " its"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.826,
+     "peak": " from"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.883,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.437,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.742,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.232,
+     "peak": " swallow"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.066,
+     "peak": " per"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.029,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.142,
+     "peak": " dry"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.317,
+     "peak": " over"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " appear"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.784,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b7dcf9204",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sun/star science context",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: all top examples are astronomy or seasonal weather (sun sheds its outer layers, white dwarfs cool over time, Earth around the sun one time per year, wind blows from the southeast), peaking on ' of', ' the', ' to', ' its', ' over', ' per', ' by'. Probe: white dwarfs cool over time 1.04, once per year 0.88, blows from 0.81, affected by rotation 0.59, sun sheds 0.32; same frames about a snake or a bus 0.02. The - pole (max 232) is the return of the sun after the winter solstice, so the fire items avoid solstices and lengthening days.",
+ "selection": "random draw"
+}
