@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-c3f15324",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N6942-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T03:04:26+00:00",
+ "recipe": {
+  "toolchain_commit": "c7d8b5bd2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N6942_neg/2026-11-20-lm1909-c3f15324.tests.json"
+ },
+ "label": "position where 'continue' is the expected next word (e.g. Korean object marker 을 before 계속, Japanese を before 続け)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N6942_neg/2026-11-20-lm1909-c3f15324.tests.json",
+   "prereg_commit": "c7d8b5bd2",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.433,
+     "peak": "을"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.637,
+     "peak": "를"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.165,
+     "peak": "을"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.344,
+     "peak": "を"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.203,
+     "peak": "仕事を"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.556,
+     "peak": "계"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.231,
+     "peak": "을"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.314,
+     "peak": "を"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.433,
+     "peak": "을"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.637,
+     "peak": "를"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.054,
+     "peak": "를"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.344,
+     "peak": "を"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "仕事を"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.061,
+     "peak": "을"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": "を見"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.727,
+    "median_fire": 0.329,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c7d8b5bd2",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'continue'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top examples are the token right before 계속/続け/'Continue'; + output promotes 'continue' tokens. Fire is predictive (before the word), so near misses keep the same prefix and differ only in the following verb, which can't change the activation at the marker; expected to fail on near-miss leakage unless the neuron reads earlier context.",
+ "selection": "random draw"
+}
