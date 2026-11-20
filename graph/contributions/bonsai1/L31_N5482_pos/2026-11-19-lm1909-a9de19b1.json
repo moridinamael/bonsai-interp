@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a9de19b1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N5482+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:02:37+00:00",
+ "recipe": {
+  "toolchain_commit": "82e4ac9eb",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N5482_pos/2026-11-19-lm1909-a9de19b1.tests.json"
+ },
+ "label": "The quality modifier in talk of drinkable water supply: ' clean' in 'access to safe, clean (drinking water)' and 'clean tap water'; 'agua pot|able'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N5482_pos/2026-11-19-lm1909-a9de19b1.tests.json",
+   "prereg_commit": "82e4ac9eb",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.534,
+     "peak": " clean"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.284,
+     "peak": " clean"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.764,
+     "peak": " pot"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.847,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.877,
+     "peak": " clean"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.867,
+     "peak": " pot"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.629,
+     "peak": " clean"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.327,
+     "peak": " reliable"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.136,
+     "peak": " no"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.275,
+     "peak": " natural"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " al"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "A"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " above"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": "La"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": " a"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.697,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "82e4ac9eb",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "clean/potable water modifier",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top: 'access to safe⟦,⟧ clean, and reliable drinking water', 'access to clean⟦,⟧ safe drinking water', 'availability of⟦ clean⟧ tap water', 'demandas de⟦ agua⟧ para uso'. The - pole is water infrastructure (' water', aqueducts, dams). Probe: 'safe, clean drinking water' 0.73, 'clean tap water' 0.49, 'agua potable' 0.78; but 'access to safe, clean housing' also 0.73, so the pole fires on the modifier before the noun arrives. 'kitchen was clean' 0.00, 'clean energy' 0.23, 'safe water for cooking' 0.24, reservoir/aqueduct 0.16.",
+ "selection": "random draw"
+}

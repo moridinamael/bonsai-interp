@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-978af90e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10379+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:02:02+00:00",
+ "recipe": {
+  "toolchain_commit": "82e4ac9eb",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10379_pos/2026-11-19-lm1909-978af90e.tests.json"
+ },
+ "label": "Inside a string literal that is split over several lines by implicit concatenation (Python): the end of a chunk, where a trailing space and the closing quote come next",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10379_pos/2026-11-19-lm1909-978af90e.tests.json",
+   "prereg_commit": "82e4ac9eb",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.236,
+     "peak": "               "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.327,
+     "peak": "           "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.268,
+     "peak": " negative"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.296,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.437,
+     "peak": " AND"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.101,
+     "peak": "                    "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.286,
+     "peak": " minutes"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.142,
+     "peak": "                 "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.183,
+     "peak": "            "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.088,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.077,
+     "peak": "             "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.277,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "82e4ac9eb",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "end of concatenated string chunk",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top examples all sit just before ' \"' or \" '\" closing one chunk of a multi-line concatenated string; the output promotes ' \")', \" ')\\n\", ' \"*'. Probe: multi-line SQL/message strings 0.29-0.49 with enough context, 0.06-0.21 for short snippets, single-line string 0.00. Fire items are multi-line passages for that reason.",
+ "selection": "random draw"
+}

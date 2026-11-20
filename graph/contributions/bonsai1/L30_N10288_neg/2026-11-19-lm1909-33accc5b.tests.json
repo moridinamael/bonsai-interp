@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-33accc5b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N10288-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:47:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N10288",
+   "pole": "-",
+   "label": "Best guess, weak: the function word that resumes the main statement after a quoted option value in a code comment (\"'auto' will …\") or after a dash-enclosed aside (\"– cutting fees – and then …\")",
+   "fire": [
+    "    # mode: None -> keep the default\n    # 'fast' will skip the validation step entirely",
+    "    ## 'linear' will interpolate between the two nearest samples\n    ## 'nearest' will copy the closest sample",
+    "    # Passing in False will leave the existing labels untouched.\n    # Passing in 'auto' will choose labels from the column names.",
+    "    # 'utc' will convert every timestamp before saving",
+    "They took a tax they had promised to drop anyway – the levy on salt – and then presented its removal as a gift.",
+    "The team found that if they cooled the sample slowly – if they 'annealed' it – the cracks never formed.",
+    "The council took a road it meant to close anyway – the lane behind the mill – and then offered it to the cyclists.",
+    "Doctors noticed that if they delayed the second dose – if they 'stretched' the schedule – the response improved."
+   ],
+   "quiet": [
+    "    # mode: keep the default\n    count = count + 1\n    return count",
+    "    ## interpolate between samples\n    values = [1, 2, 3]\n    total = sum(values)",
+    "    labels = None\n    names = list(columns)\n    print(names)",
+    "    stamp = now()\n    save(stamp)",
+    "They dropped the tax on salt last year. Nobody remembers who first proposed it.",
+    "The team cooled the sample slowly. The cracks never formed.",
+    "The council closed the lane behind the mill. Cyclists now use the main road.",
+    "Doctors delayed the second dose. The response improved in most patients."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "resumption after aside/value",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card: ' to', ' of', ' will', ' and', ' –' in varied contexts (None will keep, feasible to replace, practice in rural Bangladesh of). Probes reached only 0.12-0.22 of max, so this probably fails on the median; registered as my best guess."
+}

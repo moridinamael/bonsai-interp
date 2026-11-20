@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-978af90e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10379+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:47:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N10379",
+   "pole": "+",
+   "label": "Inside a string literal that is split over several lines by implicit concatenation (Python): the end of a chunk, where a trailing space and the closing quote come next",
+   "fire": [
+    "def fetch_orders(cur, shop_id):\n    cur.execute(\"SELECT o.id, o.total FROM orders o \"\n                \"JOIN shops s ON o.shop_id = s.id AND \"\n                \"s.active = 1 AND \"\n                \"o.shop_id = %s\", (shop_id,))\n    return cur.fetchall()",
+    "def stop(env):\n    run('systemctl stop %(service)s' % env)\n    run(('sudo sh -c '\n         '\"rm -rf %(cache)s/*\"') % env)\n    note = ('The service %(service)s was stopped '\n            'and its cache at %(cache)s was cleared '\n            'before the upgrade')\n    return note % env",
+    "    if axis not in (0, 1):\n        raise NotImplementedError(\"This reader does not yet handle \"\n                                  \"arrays with more than two \"\n                                  \"dimensions or a negative axis\")",
+    "    parser.add_argument('--depth', type=int, default=3,\n                        help='How many levels of the tree to '\n                             'visit before stopping; use 0 to '\n                             'visit every level')",
+    "    query = ('SELECT SUM(debit) FROM ledger_line l '\n             'WHERE l.period_id = %s AND '\n             'l.account_id IN %s AND '\n             'l.state = %s')\n    self.cr.execute(query, (period, tuple(ids), 'posted'))",
+    "        logger.error('Failed to reach the sensor at %s after '\n                     '%d attempts. Check the cable and '\n                     'restart the gateway. '\n                     'Error: %s', address, tries, err)",
+    "    message = (\"Your booking for %(date)s has been \"\n               \"confirmed. Please arrive ten minutes \"\n               \"early and bring a copy of \"\n               \"this email with you.\") % booking",
+    "    warnings.warn(\"The 'legacy' option is deprecated and \"\n                  \"will be removed in the next major \"\n                  \"release; pass 'mode' instead to \"\n                  \"silence this warning.\", DeprecationWarning)"
+   ],
+   "quiet": [
+    "def fetch_orders(cur, shop_id):\n    cur.execute(ORDERS_QUERY, (shop_id,))\n    rows = cur.fetchall()\n    return rows",
+    "def stop(env):\n    run('systemctl stop nginx')\n    run('sudo rm -rf /var/cache/nginx')\n    note = 'stopped'\n    return note",
+    "    if axis not in (0, 1):\n        raise NotImplementedError(\"unsupported axis\")\n    data = np.asarray(data)\n    return data.sum(axis=axis)",
+    "    parser.add_argument('--depth', type=int, default=3,\n                        help='tree depth')\n    args = parser.parse_args()",
+    "    names = ['ledger',\n             'period',\n             'account',\n             'state']\n    for name in names:\n        print(name)",
+    "        logger.error('sensor unreachable')\n        tries += 1\n        time.sleep(delay)\n        continue",
+    "    message = TEMPLATE % booking\n    send_mail(booking['email'], message)\n    return True",
+    "    colors = {'red': 1,\n              'green': 2,\n              'blue': 3}\n    warnings.simplefilter('ignore')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "end of concatenated string chunk",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top examples all sit just before ' \"' or \" '\" closing one chunk of a multi-line concatenated string; the output promotes ' \")', \" ')\\n\", ' \"*'. Probe: multi-line SQL/message strings 0.29-0.49 with enough context, 0.06-0.21 for short snippets, single-line string 0.00. Fire items are multi-line passages for that reason."
+}
