@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-099903f6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N9223+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:11:56+00:00",
+ "recipe": {
+  "toolchain_commit": "39bdbf742",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N9223_pos/2026-11-20-lm1909-099903f6.tests.json"
+ },
+ "label": "content words inside lines of rhymed, metrical verse (poems, hymns, ballads), as opposed to the same content in prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N9223_pos/2026-11-20-lm1909-099903f6.tests.json",
+   "prereg_commit": "39bdbf742",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.175,
+     "peak": " fields"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.992,
+     "peak": " hills"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.41,
+     "peak": " set"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.326,
+     "peak": " farm"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.209,
+     "peak": " you"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.365,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.844,
+     "peak": " away"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.614,
+     "peak": " soft"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": " there"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.076,
+     "peak": " slow"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " God"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.023,
+     "peak": " weeks"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": " leaving"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.065,
+     "peak": " falling"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.048,
+     "peak": " worn"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.918,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "39bdbf742",
+  "minutes": 103,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "words in metrical verse",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: top examples all from verse (ballads, Shakespeare, Psalms). Probe: a rhymed quatrain 0.33 vs a prose paraphrase 0.07.",
+ "selection": "random draw"
+}
