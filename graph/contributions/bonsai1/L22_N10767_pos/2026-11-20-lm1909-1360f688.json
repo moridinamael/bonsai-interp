@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1360f688",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N10767+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:36:37+00:00",
+ "recipe": {
+  "toolchain_commit": "5f28dbc99",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N10767_pos/2026-11-20-lm1909-1360f688.tests.json"
+ },
+ "label": "a first- or second-person possessive or pronoun (our, my, your, we) opening a point in advisory or institutional prose, against the same points phrased in the third person",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N10767_pos/2026-11-20-lm1909-1360f688.tests.json",
+   "prereg_commit": "5f28dbc99",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.308,
+     "peak": " Your"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.186,
+     "peak": " Our"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.333,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.269,
+     "peak": " My"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.133,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.184,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.154,
+     "peak": " taught"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.22,
+     "peak": " My"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.186,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.11,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.315,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.059,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.078,
+     "peak": " stores"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.066,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " hard"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " traveler"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.836,
+    "median_fire": 0.203,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5f28dbc99",
+  "minutes": 7,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "our/my/your in advice",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "card shows no single token (' our', ' Our', ' we', ' My', 'Your'); a short probe gave only 0.05 of max with or without the pronoun.",
+ "selection": "random draw"
+}
