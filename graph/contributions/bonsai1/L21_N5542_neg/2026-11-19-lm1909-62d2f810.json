@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-62d2f810",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N5542-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:50+00:00",
+ "recipe": {
+  "toolchain_commit": "be9d2ab1c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N5542_neg/2026-11-19-lm1909-62d2f810.tests.json"
+ },
+ "label": "the comma that closes a generic comparison 'As with any X,' / 'Like any (other) X,'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N5542_neg/2026-11-19-lm1909-62d2f810.tests.json",
+   "prereg_commit": "be9d2ab1c",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.034,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.268,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.173,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.424,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.314,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.239,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.177,
+     "peak": " over"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.29,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.038,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " novel"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": "ine"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": " said"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.254,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be9d2ab1c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'as with any X,' comma",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probes were uneven: 'As with any theory,' 0.46, 'Like any other child,' 0.41, 'Like any map,' 0.35, 'As with any new habit,' 0.17, 'Like all mammals,' 0.15, 'Like any city,' 0.13, 'As with every tool,' 0.09, 'As with any investment,' 0.00; 'Like his father,' 0.01, 'As with the first book,' 0.03. Other top examples ('Even though all … share …, each', 'He's not bound', 'not perfectly correlated') are not covered by this label. The + pole fires on absolute limits ('no product is', 'every procedure has risks').",
+ "selection": "random draw"
+}

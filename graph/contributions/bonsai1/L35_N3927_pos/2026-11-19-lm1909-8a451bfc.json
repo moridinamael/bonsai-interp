@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8a451bfc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3927+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:34:01+00:00",
+ "recipe": {
+  "toolchain_commit": "be9d2ab1c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N3927_pos/2026-11-19-lm1909-8a451bfc.tests.json"
+ },
+ "label": "the first piece of a multi-token adverb in -ally / -ily at a point where an adverb is expected ('ideologically and occup|ationally', 'both economically and ge|ographically', 'even uncon|sciously')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N3927_pos/2026-11-19-lm1909-8a451bfc.tests.json",
+   "prereg_commit": "be9d2ab1c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.593,
+     "peak": " ge"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.63,
+     "peak": " occup"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.697,
+     "peak": " satisf"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.516,
+     "peak": " uncon"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.414,
+     "peak": " archae"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.675,
+     "peak": " ge"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.585,
+     "peak": " medic"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.652,
+     "peak": " bi"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " ideology"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " firm"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " history"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " mainland"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": " uses"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " ocean"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.611,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-agent-sdk claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "be9d2ab1c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "start of a split -ally adverb",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Last layer. Probes: ' occup'(ationally) 0.67, ' ge'(ographically) 0.62, ' satisf'(actorily) 0.62, ' uncon'(sciously) 0.56, ' archae'(ologically) 0.44, ' log'(istically) 0.20; when the second adverb is a single token the pole reads 0.08-0.33 on the ' and' before it; adverbs outside such a frame ('slide horizontally', 'chose arbitrarily') 0.00; adjective and noun forms 0.00. Whether a fire item works depends on how the tokenizer splits its adverb.",
+ "selection": "random draw"
+}
