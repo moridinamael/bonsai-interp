@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-d2b5c1d2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N1330-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:41:08+00:00",
+ "recipe": {
+  "toolchain_commit": "925ffd7b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N1330_neg/2026-11-20-lm1909-d2b5c1d2.tests.json"
+ },
+ "label": "German word-initial pieces ' dar' / ' hin' / ' her' of split pronominal adverbs and verbs (darum, darf, daran, hinzu, heraus)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N1330_neg/2026-11-20-lm1909-d2b5c1d2.tests.json",
+   "prereg_commit": "925ffd7b7",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.391,
+     "peak": " weiter"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.65,
+     "peak": " dar"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.547,
+     "peak": " dar"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.067,
+     "peak": " darauf"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.485,
+     "peak": " heraus"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.844,
+     "peak": " hin"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.128,
+     "peak": " wissen"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.222,
+     "peak": " heraus"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.418,
+     "peak": " weiter"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.178,
+     "peak": " vor"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.093,
+     "peak": " dass"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.083,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.197,
+     "peak": " G"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.2,
+     "peak": " noch"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.128,
+     "peak": " wissen"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.789,
+    "median_fire": 0.438,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "925ffd7b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German ' dar'/' hin'/' her'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card top: ' dar' x7, ' her' x7, ' Dar' x3, ' hin' x3, all German. The + pole is also German word-initial pieces (' m', ' kä', ' ke'), so this neuron splits German word starts into two groups.",
+ "selection": "random draw"
+}

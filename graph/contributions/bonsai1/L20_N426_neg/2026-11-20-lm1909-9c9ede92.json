@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-9c9ede92",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N426-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:41:39+00:00",
+ "recipe": {
+  "toolchain_commit": "925ffd7b7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N426_neg/2026-11-20-lm1909-9c9ede92.tests.json"
+ },
+ "label": "broad unit; best guess: a verb form completing a predicate after an adjective or noun ('easy and done', 'phrase said', 'in doing so')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N426_neg/2026-11-20-lm1909-9c9ede92.tests.json",
+   "prereg_commit": "925ffd7b7",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.495,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.325,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.662,
+     "peak": " making"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.368,
+     "peak": " doing"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.338,
+     "peak": " sent"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.016,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.208,
+     "peak": " repeated"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.236,
+     "peak": " good"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.412,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.273,
+     "peak": " felt"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.209,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.106,
+     "peak": " benefit"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.066,
+     "peak": " deadline"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.119,
+     "peak": " heard"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.208,
+     "peak": " good"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.758,
+    "median_fire": 0.332,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "925ffd7b7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "broad: verb after predicate",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags broad (2.3% of tokens reach 0.1 of max) with no dominant token. Test records the density; expected to fail.",
+ "selection": "random draw"
+}
