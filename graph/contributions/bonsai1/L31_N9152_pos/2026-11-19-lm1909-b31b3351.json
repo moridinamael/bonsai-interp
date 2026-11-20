@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-b31b3351",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N9152+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:30+00:00",
+ "recipe": {
+  "toolchain_commit": "d56e0a5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N9152_pos/2026-11-19-lm1909-b31b3351.tests.json"
+ },
+ "label": "military and defence reporting: the token right after a defence-official title or an air-combat/strike phrase (Defense Minister ⟦Sergei⟧, strikes ⟦in⟧ the provinces, combat ⟦against⟧ MiGs); quiet on the same frames with civilian ministers, labour strikes or sport",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N9152_pos/2026-11-19-lm1909-b31b3351.tests.json",
+   "prereg_commit": "d56e0a5fe",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.232,
+     "peak": " Secretary"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.547,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.933,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.284,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.033,
+     "peak": "ums"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.704,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.33,
+     "peak": " Id"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.547,
+     "peak": " par"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": " lacked"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " Av"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.002,
+     "peak": " passes"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": "É"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.043,
+     "peak": "ums"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " summer"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.113,
+     "peak": " Day"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.439,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d56e0a5fe",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "defence/air-war reporting",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: connective tokens inside military text (Defense Minister Sergei, combat against Libyan MiG-23s, raid on Osirak, Defense Secretary). Probe: Defense Minister Sergei 0.83, air strikes in provinces 0.35, combat against bombers 0.26, but 'raid on the reactor' 0.05; civilian parallels all < 0.03.",
+ "selection": "random draw"
+}

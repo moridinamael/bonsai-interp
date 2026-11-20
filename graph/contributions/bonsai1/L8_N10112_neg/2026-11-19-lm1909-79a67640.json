@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-79a67640",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N10112-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:33+00:00",
+ "recipe": {
+  "toolchain_commit": "d56e0a5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N10112_neg/2026-11-19-lm1909-79a67640.tests.json"
+ },
+ "label": "the word that completes a statement about a class of things: its number, existence or instances (casualties were ⟦few⟧; how many X are ⟦there⟧; an example of X ⟦is⟧; the first X ever ⟦made⟧; a common ⟦one⟧); quiet on the same words in ordinary use (a few people, he made, is leaning)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N10112_neg/2026-11-19-lm1909-79a67640.tests.json",
+   "prereg_commit": "d56e0a5fe",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.778,
+     "peak": " there"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.713,
+     "peak": " few"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.176,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.369,
+     "peak": " made"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.57,
+     "peak": " recorded"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.698,
+     "peak": " few"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.878,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.407,
+     "peak": " one"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.032,
+     "peak": "Nobody"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.063,
+     "peak": " reporters"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.071,
+     "peak": " right"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.07,
+     "peak": " organ"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.047,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.058,
+     "peak": " timetable"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.087,
+     "peak": " fence"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.058,
+     "peak": " student"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.634,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d56e0a5fe",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "predicate about a class",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: no single token (' there', ' few', ' is', ' made', ' Day', ' in'). Probe: are there 0.75, were few 0.80, example of X is 0.85, ever made 0.44, ever recorded 0.52, a common one 0.48; 'be the case' 0.05; same words in plain use < 0.07. The code-identifier and ' Day' examples on the card are not covered.",
+ "selection": "random draw"
+}

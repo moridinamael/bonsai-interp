@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-03a60635",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N6527+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:25+00:00",
+ "recipe": {
+  "toolchain_commit": "d56e0a5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N6527_pos/2026-11-19-lm1909-03a60635.tests.json"
+ },
+ "label": "' around' / ' front' placing one thing in a fixed position relative to another (paint dabbed around the edges, a cup set in front of someone), not ' around' as a path of motion or as 'approximately'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N6527_pos/2026-11-19-lm1909-03a60635.tests.json",
+   "prereg_commit": "d56e0a5fe",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.444,
+     "peak": " around"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.535,
+     "peak": " around"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.289,
+     "peak": " around"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.131,
+     "peak": " around"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.677,
+     "peak": " front"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.289,
+     "peak": " front"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.84,
+     "peak": " around"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.294,
+     "peak": " around"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " park"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.163,
+     "peak": " around"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.038,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.101,
+     "peak": " around"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.113,
+     "peak": " around"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": " since"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " it"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.369,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "d56e0a5fe",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "static placement around/in front",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' around' x6, ' at', ' front', ' pattern', ' representing', ' corresponding'. Probe: dabbed paint around 0.99, strapped around 0.85, in front of 0.93, beside 0.50; walked around the lake 0.03, around three o'clock 0.04. Also fires on ' pattern' (1.25), ' representing' (0.80), ' corresponding' (0.68), which this test does not cover; the wider reading may be 'one thing standing in a fixed relation to another'.",
+ "selection": "random draw"
+}
