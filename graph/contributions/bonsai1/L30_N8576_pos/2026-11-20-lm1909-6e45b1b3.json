@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-6e45b1b3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N8576+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:54:16+00:00",
+ "recipe": {
+  "toolchain_commit": "b88d42482",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N8576_pos/2026-11-20-lm1909-6e45b1b3.tests.json"
+ },
+ "label": "word-internal pieces of German sentence adverbs (offensichtlich, grundsätzlich, somit, ursprünglich)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N8576_pos/2026-11-20-lm1909-6e45b1b3.tests.json",
+   "prereg_commit": "b88d42482",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.896,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.778,
+     "peak": "urs"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.859,
+     "peak": " som"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.77,
+     "peak": "unds"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.682,
+     "peak": "ens"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.786,
+     "peak": "urs"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.718,
+     "peak": " som"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.856,
+     "peak": "unds"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.164,
+     "peak": "d"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.251,
+     "peak": " dam"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.25,
+     "peak": " ung"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.469,
+     "peak": " offen"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.07,
+     "peak": "Der"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.272,
+     "peak": " frü"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.092,
+     "peak": " Pre"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.376,
+     "peak": " s"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.782,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b88d42482",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German adverb pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "card: peaks on 'ens' in offensichtlich, 'urs' in ursprünglich, ' som' in somit, 'unds' in grundsätzlich. Near misses are German prose with other (single-token) adverbs.",
+ "selection": "random draw"
+}

@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-aca6034c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N3509-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:52:53+00:00",
+ "recipe": {
+  "toolchain_commit": "b88d42482",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N3509_neg/2026-11-20-lm1909-aca6034c.tests.json"
+ },
+ "label": "a spatial preposition whose object is a global geographic place (continent, ocean, pole, equator, the world)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N3509_neg/2026-11-20-lm1909-aca6034c.tests.json",
+   "prereg_commit": "b88d42482",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.126,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.88,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.163,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.941,
+     "peak": " around"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.829,
+     "peak": " except"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.529,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.022,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.242,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.474,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.126,
+     "peak": " bathtub"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.579,
+     "peak": " around"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " found"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": "Cool"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.079,
+     "peak": " open"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.679,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b88d42482",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "preposition before world geography",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "card: top peaks on ' of', ' near', ' to', ' around', ' except' right before Africa, the equator, the ice pack, the world, Antarctica, the South Pole. Near misses keep the prepositions with local, non-global objects.",
+ "selection": "random draw"
+}

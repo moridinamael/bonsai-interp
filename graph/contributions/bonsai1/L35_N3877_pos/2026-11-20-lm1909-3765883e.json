@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-3765883e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3877+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:53:12+00:00",
+ "recipe": {
+  "toolchain_commit": "b88d42482",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N3877_pos/2026-11-20-lm1909-3765883e.tests.json"
+ },
+ "label": "rare or traditional CJK characters that the tokenizer splits into byte pieces, inside Chinese or Japanese text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N3877_pos/2026-11-20-lm1909-3765883e.tests.json",
+   "prereg_commit": "b88d42482",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.398,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.128,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.038,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.016,
+     "peak": "神"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.009,
+     "peak": "很"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.001,
+     "peak": "爺"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.029,
+     "peak": "を"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.02,
+     "peak": "的小"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": "的"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.001,
+     "peak": "週"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": "家"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": "住"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.0,
+     "peak": "爺"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": "を"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": "的小"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.805,
+    "median_fire": 0.025,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b88d42482",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare CJK byte pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "card: peaks on byte-split tokens for uncommon characters (巻, 歎, 囪, 神, 聖) in Chinese/Japanese prose. Near misses are similar prose with only common characters. Tokenization not checked.",
+ "selection": "random draw"
+}
