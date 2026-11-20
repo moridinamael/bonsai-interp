@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-8c573f32",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2829-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:39:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N2829",
+   "pole": "-",
+   "label": "the indented code-fence token ' ``' (```) that opens or closes a code block inside a docstring",
+   "fire": [
+    "  \"\"\"Adds two tensors.\n\n  For example:\n\n  ```python\n  c = add(a, b)\n  ```\n\n  Returns the sum.\n  \"\"\"",
+    "  Usage:\n\n  ```\n  layer = Dense(10)\n  y = layer(x)\n  ```\n\n  The output has shape [batch, 10].",
+    "    Example:\n\n    ```python\n    model.fit(x, y, epochs=3)\n    ```\n\n    Trains the model.",
+    "  The call\n\n  ```\n  reshape(t, [2, 3])\n  ```\n\n  returns a 2 by 3 tensor.",
+    "  To save the model:\n\n  ```python\n  saver.save(sess, path)\n  ```\n\n  Checkpoints are written to disk.",
+    "  # shape of t is [3, 4]\n  ```\n  size(t) ==> 12\n  ```\n\n  Returns an int.",
+    "  Can be written as:\n\n  ```\n  y = tf.math.square(x)\n  ```\n\n  which is faster.",
+    "    Typical use:\n\n    ```python\n    with open(p) as f:\n        data = f.read()\n    ```\n"
+   ],
+   "quiet": [
+    "  \"\"\"Adds two tensors.\n\n  For example, c = add(a, b) gives the sum.\n\n  Returns the sum.\n  \"\"\"",
+    "  Usage: create layer = Dense(10) and call it on x.\n\n  The output has shape [batch, 10].",
+    "    Example: call model.fit(x, y, epochs=3) to train.\n\n    Trains the model.",
+    "  The call reshape(t, [2, 3]) returns a 2 by 3 tensor.",
+    "  To save the model, call saver.save(sess, path).\n\n  Checkpoints are written to disk.",
+    "  # shape of t is [3, 4]\n  # size(t) is 12\n\n  Returns an int.",
+    "  Can be written as y = tf.math.square(x),\n  which is faster.",
+    "    Typical use: open the file p and read its data.\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring code fence",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: broad, gate-leak pole; top peaks ' ``' x8 in TensorFlow docstrings, plus closing quote marks. Probe: indented ``` fence 0.50, ``hello'' 0.16, plain prose 0.11. Fire items are multi-line docstrings with fences; near misses are the same docstrings without fences."
+}
