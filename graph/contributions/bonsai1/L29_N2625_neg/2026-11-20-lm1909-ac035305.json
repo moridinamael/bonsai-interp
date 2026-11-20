@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-ac035305",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N2625-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:03:44+00:00",
+ "recipe": {
+  "toolchain_commit": "bd1d0a480",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N2625_neg/2026-11-20-lm1909-ac035305.tests.json"
+ },
+ "label": "the end of a news photo caption and its credit line ('... on Tuesday. Photo: AFP')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N2625_neg/2026-11-20-lm1909-ac035305.tests.json",
+   "prereg_commit": "bd1d0a480",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.607,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.688,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.721,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.486,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.556,
+     "peak": " Image"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.701,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.592,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.669,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.119,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.144,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.102,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.116,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.093,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.099,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.128,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.638,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bd1d0a480",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "photo caption + credit",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card: 30/32 top peaks are '.' closing a photo caption before 'Photo:'/'Image credit:'; logit effect of the - pole promotes Photo/Image/Credit; probe: caption+credit 0.41-0.64, ordinary sentence periods 0.06-0.11",
+ "selection": "random draw"
+}

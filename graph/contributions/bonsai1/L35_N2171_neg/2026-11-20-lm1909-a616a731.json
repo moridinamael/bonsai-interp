@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a616a731",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2171-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:05:12+00:00",
+ "recipe": {
+  "toolchain_commit": "bd1d0a480",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N2171_neg/2026-11-20-lm1909-a616a731.tests.json"
+ },
+ "label": "the first token of a text (window position 0), e.g. a leading ' to'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N2171_neg/2026-11-20-lm1909-a616a731.tests.json",
+   "prereg_commit": "bd1d0a480",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.089,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.064,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.06,
+     "peak": " dense"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.068,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.089,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.043,
+     "peak": " before"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.081,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.052,
+     "peak": " costs"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.088,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.073,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.062,
+     "peak": " dense"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.095,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.096,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.101,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": "ting"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.391,
+    "median_fire": 0.066,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bd1d0a480",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "first token (positional)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "card flags positional (100% of top peaks at window position 0), broad and gate-closed 93%; every top peak is the first token of a window. Every test sentence starts at position 0, so fire and near misses should both fire: recorded to document the positional unit, expected to fail",
+ "selection": "random draw"
+}
