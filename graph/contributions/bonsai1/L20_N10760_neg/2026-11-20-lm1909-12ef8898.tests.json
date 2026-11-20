@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-12ef8898",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10760-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:26:57+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N10760",
+   "pole": "-",
+   "label": "the indentation at the start of the line after a Python input-validation if-check (where a raise or error exit is expected)",
+   "fire": [
+    "def set_rate(rate):\n    if rate < 0 or rate > 1:\n        raise ValueError(\"rate must be between 0 and 1\")\n    self.rate = rate",
+    "def load(path):\n    if not os.path.exists(path):\n        raise FileNotFoundError(\"missing file: \" + path)\n    return open(path).read()",
+    "    if input_width % block_size > 0 or input_height % block_size > 0:\n        raise IndexError(\"block_size must divide the image size\")",
+    "def connect(host, port):\n    if port not in range(1, 65536):\n        raise ValueError('port has to be between 1 and 65535')\n    return socket.create_connection((host, port))",
+    "if data_format not in ('channels_first', 'channels_last'):\n    raise ValueError('data_format has to be channels_first or channels_last')",
+    "def divide(x, factor):\n    if factor == 0:\n        raise ZeroDivisionError('factor cannot be zero')\n    return x / factor",
+    "    if not any(key in options for key in ['token', 'password']):\n        print_exit('Either token or password is required')",
+    "def check(config):\n    if 'name' not in config or not config['name']:\n        raise KeyError('config needs a non-empty name')\n    return config['name']"
+   ],
+   "quiet": [
+    "def set_rate(rates):\n    for rate in rates:\n        self.total += rate\n    self.rate = rate",
+    "def load(path):\n    with open(path) as handle:\n        data = handle.read()\n    return data",
+    "    for row in range(input_height // block_size):\n        grid.append([0] * input_width)",
+    "def connect(host, port):\n    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    sock.connect((host, port))\n    return sock",
+    "for data_format in ('channels_first', 'channels_last'):\n    results[data_format] = run(data_format)",
+    "def divide(values, factor):\n    for value in values:\n        out.append(value / factor)\n    return out",
+    "    while options:\n        key = options.pop()",
+    "def check(config):\n    with lock:\n        name = config.get('name', 'default')\n    return name"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "indent before raise",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: top peaks are whitespace tokens beginning a line whose next statement is raise/print_exit after an if-condition. Probe of one short guard 0.19 (peak on \"('\"), for-loop body 0.01. Near misses keep similar code where the indented line follows a loop or with-block."
+}

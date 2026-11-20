@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-14828d3a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N5247-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:44:10+00:00",
+ "recipe": {
+  "toolchain_commit": "05abdd5f7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N5247_neg/2026-11-20-lm1909-14828d3a.tests.json"
+ },
+ "label": "the token ' Obesity' / 'esity' (obesity)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N5247_neg/2026-11-20-lm1909-14828d3a.tests.json",
+   "prereg_commit": "05abdd5f7",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.391,
+     "peak": " obesity"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.286,
+     "peak": " obesity"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.225,
+     "peak": " obesity"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.211,
+     "peak": " obesity"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.157,
+     "peak": " obesity"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.2,
+     "peak": " obesity"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.345,
+     "peak": " obesity"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.237,
+     "peak": " obesity"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.036,
+     "peak": " thirty"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": " adults"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.053,
+     "peak": "Heavy"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " communities"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": " drinks"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.071,
+     "peak": " migraine"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.056,
+     "peak": " influenza"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " sleep"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.231,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "05abdd5f7",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "obesity token",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' Obesity' x5, 'esity' x2 top the pole; also ' rodents', ' sterile'; flagged broad (2.2% reach 0.1 of max). Probe: obesity 0.52-0.60, diabetes 0.02. Layer 0, so the bare token is tested. Near misses swap in other health conditions.",
+ "selection": "random draw"
+}
