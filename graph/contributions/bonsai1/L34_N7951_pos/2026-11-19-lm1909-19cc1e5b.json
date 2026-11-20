@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-19cc1e5b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7951+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:40:14+00:00",
+ "recipe": {
+  "toolchain_commit": "c065070b9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N7951_pos/2026-11-19-lm1909-19cc1e5b.tests.json"
+ },
+ "label": "the slot right before '(just) a few' in the list-closing idiom 'to name / mention / list (just) a few'; 'name' elsewhere and other list endings stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N7951_pos/2026-11-19-lm1909-19cc1e5b.tests.json",
+   "prereg_commit": "c065070b9",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.469,
+     "peak": " name"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.579,
+     "peak": " name"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.536,
+     "peak": " name"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.478,
+     "peak": " name"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.444,
+     "peak": " mention"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.587,
+     "peak": " name"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.553,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.408,
+     "peak": " list"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.077,
+     "peak": " among"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.032,
+     "peak": " Lagos"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.109,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.04,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.036,
+     "peak": " nuts"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.052,
+     "peak": "Only"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.507,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c065070b9",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'to name | a few'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: to name a few 0.64, to list just a few 0.56, to mention a few 0.48, to name but a few 0.46; 'write your name' 0.09, 'among other things' 0.11. It also fires on the minutes of a clock time (10:30 a.m. or p.m., 9:15 in the morning: 0.37-0.48), which this label does not cover, so the near misses contain no clock times.",
+ "selection": "random draw"
+}

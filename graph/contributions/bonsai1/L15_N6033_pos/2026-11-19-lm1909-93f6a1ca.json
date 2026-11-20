@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-93f6a1ca",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N6033+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:39:43+00:00",
+ "recipe": {
+  "toolchain_commit": "c065070b9",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N6033_pos/2026-11-19-lm1909-93f6a1ca.tests.json"
+ },
+ "label": "the next code in a long, regular alphanumeric series (…D2A, D2B, D2C, D2|F|): the piece that varies in a strictly repeating list pattern",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N6033_pos/2026-11-19-lm1909-93f6a1ca.tests.json",
+   "prereg_commit": "c065070b9",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.278,
+     "peak": "C"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.217,
+     "peak": "Y"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.257,
+     "peak": "G"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.202,
+     "peak": "C"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.359,
+     "peak": "B"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.097,
+     "peak": "K"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.34,
+     "peak": "C"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.246,
+     "peak": "C"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.025,
+     "peak": "Seat"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.14,
+     "peak": "-K"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " run"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.036,
+     "peak": " Kyoto"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " nails"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.035,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.028,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.123,
+     "peak": " void"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.252,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c065070b9",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "next item of a regular series",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "The card's top examples are code lines and list items that continue a repeating pattern; short code probes stayed under 0.07 and one long code-series sentence reached 0.32, so this test covers only that narrow case.",
+ "selection": "random draw"
+}
