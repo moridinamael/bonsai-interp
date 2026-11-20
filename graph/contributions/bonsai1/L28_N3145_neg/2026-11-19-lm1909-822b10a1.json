@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-822b10a1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N3145-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:27:38+00:00",
+ "recipe": {
+  "toolchain_commit": "455c7ae65",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N3145_neg/2026-11-19-lm1909-822b10a1.tests.json"
+ },
+ "label": "The function word just before an expected mention of scripture: 'many times ⟦in⟧ the Old Testament', 'what ⟦the⟧ Bible says', 'from ⟦your⟧ reading'. The output writes ' Scripture', ' Bible', ' script'; the + pole fires on the words ' Bible' / ' biblical' themselves.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N3145_neg/2026-11-19-lm1909-822b10a1.tests.json",
+   "prereg_commit": "455c7ae65",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.355,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.654,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.36,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.615,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.473,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.369,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.167,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.414,
+     "peak": " throughout"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.024,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.085,
+     "peak": " local"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " repeatedly"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.318,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.142,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.072,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.052,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " throughout"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.391,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "455c7ae65",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slot before 'Bible/Scripture'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ' in' x9, ' the' x8, ' your/our/their' in religious passages; logit effect Scripture/Bible. Probe was weak: 'several times in the New Testament' 0.34, 'from your reading and experience' 0.50, 'what the Bible actually says' 0.09, 'elsewhere in the Hebrew Scriptures' 0.13; secular parallels 0.07-0.09.",
+ "selection": "random draw"
+}

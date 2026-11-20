@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-2c9d2f3e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N11487-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:14:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N11487",
+   "pole": "-",
+   "label": "Dense unit (53% of tokens reach 0.1 of max, gate-closed leak regime). Best guess at what lifts it highest: the word piece right after a split-off 'in' prefix ('in|appropri|ately', 'in|consider|ate', 'in|lay').",
+   "fire": [
+    "The manager admitted the joke had been inappropriate for a staff meeting.",
+    "Several viewers complained that the advert was inappropriately cheerful.",
+    "Leaving the dishes for her again seemed inconsiderate to everyone.",
+    "The neighbours were rather inconsiderate about the noise last night.",
+    "The jewellery box was finished with a mother-of-pearl inlay.",
+    "A thin brass inlay ran around the edge of the guitar.",
+    "Critics called the sentence inappropriately lenient for such a crime.",
+    "The tailor thought the bright tie was inappropriate at a funeral."
+   ],
+   "quiet": [
+    "The manager admitted the joke had been appropriate for a staff meeting.",
+    "Several viewers complained that the advert was relentlessly cheerful.",
+    "Leaving the dishes for her again seemed considerate to everyone.",
+    "The neighbours were rather considerate about the noise last night.",
+    "The jewellery box was finished with a mother-of-pearl overlay.",
+    "A thin brass strip ran around the edge of the guitar.",
+    "Critics called the sentence appropriately lenient for such a crime.",
+    "The tailor thought the bright tie was appropriate at a wedding."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; piece after 'in-'",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags dense and gate-closed; top pieces 'appropri' x6, 'consider', 'lay' after 'in'. Probe: those 0.83-0.93, but an ordinary sentence still reads 0.31 and 'baskets' 0.45, so near misses are expected to cross 0.30. Recorded to document the density."
+}

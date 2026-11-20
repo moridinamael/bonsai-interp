@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7d864029",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N6661-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:27:47+00:00",
+ "recipe": {
+  "toolchain_commit": "455c7ae65",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N6661_neg/2026-11-19-lm1909-7d864029.tests.json"
+ },
+ "label": "The token ' restraint' and its family (' restrain', ' restrained', ' restraining', 're|straints'). Near-synonyms (patience, self-control) and the look-alike ' constraint' are quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N6661_neg/2026-11-19-lm1909-7d864029.tests.json",
+   "prereg_commit": "455c7ae65",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.864,
+     "peak": " restraint"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.864,
+     "peak": " restrain"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.815,
+     "peak": " restraint"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.836,
+     "peak": " restrained"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.802,
+     "peak": " restraint"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.748,
+     "peak": " restrain"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.926,
+     "peak": " restraint"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.927,
+     "peak": " restraint"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": " sides"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " he"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.002,
+     "peak": " back"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " constraint"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": " guards"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " must"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "-control"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.85,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "455c7ae65",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token 'restraint'/'restrain'",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Card: ' restraint' x15, ' restrain' x6, 'straints' x5, ' restrained' x3; density 0.002%. Probe: restraint 0.93, restrain 0.81, restraining 0.62; constraints 0.05, patience 0.00. Layer 2, so token-level.",
+ "selection": "random draw"
+}

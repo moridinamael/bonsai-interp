@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-149ac0de",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N10493-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:14:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L31/N10493",
+   "pole": "-",
+   "label": "The input side of an input/output pair is expected next: the token just before 'input'/'in'/a file being read (\"two HDMI ⟦inputs⟧\", `open(src, \"r\") as`, `\"--infile\", help=\"`). The output direction writes 'input/read' and suppresses 'output'; the + pole is the mirror (expects 'output').",
+   "fire": [
+    "The receiver has four optical outputs but only a single optical input on the front.",
+    "Each logic gate in the diagram has one output and two inputs.",
+    "The mixer offers eight line outputs and sixteen microphone inputs.",
+    "A neuron sends one signal along its axon as output and gathers many signals through its dendrites as input.",
+    "def copy_rows(src_path, dst_path):\n    with open(dst_path, \"w\") as dst:\n        with open(src_path, \"r\") as src:\n            for row in src:\n                dst.write(row)\n",
+    "parser = argparse.ArgumentParser()\nparser.add_argument(\"-o\", \"--output\", help=\"where to write the report\")\nparser.add_argument(\"-i\", \"--input\", help=\"log file to read\", required=True)\n",
+    "def main(argv):\n    out_name = argv[2]\n    in_name = argv[1]\n    with open(in_name, 'r') as handle:\n        data = handle.read()\n",
+    "writer = csv.writer(open(out_csv, \"w\"))\nreader = csv.reader(open(in_csv, \"r\"))\nfor record in reader:\n    writer.writerow(record)\n"
+   ],
+   "quiet": [
+    "The receiver has four rubber feet but only a single power switch on the front.",
+    "Each house in the diagram has one door and two windows.",
+    "Set pin seven as an output and drive it high to light the lamp.",
+    "The printer sends its finished pages to the output tray on the left.",
+    "def scale_rows(rows, factor):\n    result = []\n    for row in rows:\n        result.append(row * factor)\n    return result\n",
+    "parser = argparse.ArgumentParser()\nparser.add_argument(\"-v\", \"--verbose\", help=\"print more detail\")\nparser.add_argument(\"-n\", \"--count\", help=\"number of retries\", type=int)\n",
+    "def main(argv):\n    width = int(argv[2])\n    height = int(argv[1])\n    area = width * height\n    print(area)\n",
+    "def save(result, out_name):\n    with open(out_name, 'w') as out:\n        out.write(str(result))\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "expects 'input' next",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Card: no single token, code with in/out files; logit effect input/read vs output. Probe: read-side 'as' in nested with-open 0.82, --infile help 0.70, 'HDMI output and two HDMI inputs' 0.95, plain code 0.00. Near misses: three output-only passages and five passages with no I/O."
+}

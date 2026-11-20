@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7cbaa42e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N611+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:26:54+00:00",
+ "recipe": {
+  "toolchain_commit": "455c7ae65",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N611_pos/2026-11-19-lm1909-7cbaa42e.tests.json"
+ },
+ "label": "Indignant, opinionated rhetoric: a rhetorical challenge or verdict that expresses outrage ('how can ⟦you⟧ defend that?', 'and that's ⟦outrageous⟧'). The same wording asked or reported neutrally is quiet. The output promotes ' absolutely', ' absolute'.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N611_pos/2026-11-19-lm1909-7cbaa42e.tests.json",
+   "prereg_commit": "455c7ae65",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.868,
+     "peak": " justify"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.676,
+     "peak": " ridiculous"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.545,
+     "peak": " anyone"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.661,
+     "peak": " absurd"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.599,
+     "peak": " not"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.476,
+     "peak": "ful"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.91,
+     "peak": "?"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.786,
+     "peak": " outrageous"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.567,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.045,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.384,
+     "peak": " anyone"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": "They"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.144,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": " nine"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.161,
+     "peak": " you"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.669,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "455c7ae65",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "indignant rhetorical outrage",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Card: no single token; forum-style indignation ('how can you fire your PR department?!', 'that's outrageous', 'we all know'). Probe: 'How can you defend that?' 0.69, 'that's outrageous' 0.77, 'we all know how that ends' 0.22; neutral how-can-you 0.04, neutral report 0.04.",
+ "selection": "random draw"
+}
