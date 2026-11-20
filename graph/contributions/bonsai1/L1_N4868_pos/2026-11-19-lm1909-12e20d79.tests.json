@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-12e20d79",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N4868+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:05+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N4868",
+   "pole": "+",
+   "label": "The token ' the' right after a preposition (in the, on the, between the, with the); ' the' after a verb or conjunction fires only weakly, and a preposition followed by 'a' does not fire",
+   "fire": [
+    "Two herons stood in the shallow water near a bridge.",
+    "A cat slept on the warm stones behind our house.",
+    "Thick fog hung over the valley until noon.",
+    "Someone left a red umbrella under the stairs last night.",
+    "My sister walked with the children along a muddy path.",
+    "A narrow road runs between the two farms for a mile.",
+    "Fresh snow lay across the fields beyond our gate.",
+    "A lantern swung from the mast as waves rose."
+   ],
+   "quiet": [
+    "Two herons stood in shallow water near a bridge.",
+    "A cat slept on warm stones behind our house.",
+    "Thick fog hid the valley until noon.",
+    "Someone found the red umbrella and kept it overnight.",
+    "My sister walked with her children along a muddy path.",
+    "A narrow road joins the two farms after a mile.",
+    "Fresh snow lay across a field beyond our gate.",
+    "A lantern lit the mast as waves rose."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "' the' after a preposition",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: all 32 top peaks are ' the', after a preposition (between, in, on, with), at a tiny scale (max 0.50); it flags the pole broad (4.1% of tokens reach 0.1 of max) and gate-closed ('-x- echo' 76%). Probes: in the 0.85, on the 0.74, between the 0.65; verb + the 0.16-0.19; 'in a cellar' 0.02; no 'the' 0.01. Layer 1, so tested as a token-in-context, not a meaning."
+}
