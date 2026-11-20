@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-94fc2612",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N3479-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:13:37+00:00",
+ "recipe": {
+  "toolchain_commit": "bda5c4260",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N3479_neg/2026-11-20-lm1909-94fc2612.tests.json"
+ },
+ "label": "author-year citation: the token right after a cited author's name ('(' before the year, 'et al', ',' before the year)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N3479_neg/2026-11-20-lm1909-94fc2612.tests.json",
+   "prereg_commit": "bda5c4260",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.562,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.655,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.656,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.605,
+     "peak": "for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.594,
+     "peak": "andez"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.562,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.423,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.734,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.183,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.184,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.064,
+     "peak": " showed"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.163,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.085,
+     "peak": "see"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.22,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.048,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.178,
+     "peak": " ("
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.599,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bda5c4260",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "author-year citation",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: ' (' x12 and ',' x11 after author surnames before years. Probe: 'Vygotsky (1978)' 0.72, 'Smith et al., 2004' 0.62, non-citation parentheses <0.08.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-a51b40c5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N9846+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:14:58+00:00",
+ "recipe": {
+  "toolchain_commit": "bda5c4260",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N9846_pos/2026-11-20-lm1909-a51b40c5.tests.json"
+ },
+ "label": "row separator ';' + newline ending a row inside a multi-line matrix or array literal",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N9846_pos/2026-11-20-lm1909-a51b40c5.tests.json",
+   "prereg_commit": "bda5c4260",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.286,
+     "peak": ";\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.193,
+     "peak": ";\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.114,
+     "peak": ";\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.326,
+     "peak": ");\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.377,
+     "peak": ";\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.2,
+     "peak": ";\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.138,
+     "peak": ";\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.186,
+     "peak": ";\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": "3"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " b"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.09,
+     "peak": ");\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": " mean"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.197,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bda5c4260",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "matrix row end ';\\n'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ';\\n' / ';' / '-' bullets / '\\n' as list-item boundaries; top is a matrix row end. Probe: matrix ';\\n' 0.35 and 0.18; bullet lists, recipe ';', cast commas <0.08.",
+ "selection": "random draw"
+}
