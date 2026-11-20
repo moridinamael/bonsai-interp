@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-4352c196",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N9689-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:53:41+00:00",
+ "recipe": {
+  "toolchain_commit": "dc3fc4dce",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N9689_neg/2026-11-19-lm1909-4352c196.tests.json"
+ },
+ "label": "Portuguese-language (mostly Brazilian) personal names: fires on the surname pieces inside a run of Portuguese names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N9689_neg/2026-11-19-lm1909-4352c196.tests.json",
+   "prereg_commit": "dc3fc4dce",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.932,
+     "peak": " R"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.539,
+     "peak": " Cav"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.243,
+     "peak": " Barb"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.809,
+     "peak": " F"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.314,
+     "peak": " Bar"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.451,
+     "peak": " Oliveira"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.368,
+     "peak": " Barb"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.248,
+     "peak": " Bar"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.129,
+     "peak": " Hoff"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " named"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.009,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": " Whit"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.117,
+     "peak": "uti"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": "ow"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.027,
+     "peak": " J"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 1.088,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dc3fc4dce",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Portuguese personal names",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: Barrichello, Oliveira, Cordeiro, Teijeiro, Paulo Barros, Brazilian citation lists. Probes: Brazilian name runs 1.44 / 1.36; Spanish names .29 / .13, Lisbon names .34, German .00, Italian .02, French .01, Japanese .04, English .01. The + pole fires in the same Portuguese name/citation context on ' de' and commas.",
+ "selection": "random draw"
+}

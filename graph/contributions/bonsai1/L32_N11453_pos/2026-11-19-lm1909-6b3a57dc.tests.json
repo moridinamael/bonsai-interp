@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-6b3a57dc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N11453+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:40:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N11453",
+   "pole": "+",
+   "label": "code: the last token of the left operand (closing ']' / \"']\" or a variable name) in an if/elif/while condition that tests it against a string, i.e. just before ' ==' and a quoted value",
+   "fire": [
+    "def classify(row):\n    label = row['kind']\n    if row['status'] == 'open':\n        return 1\n    elif row['status'] == 'closed':\n        return 2\n    return 0",
+    "def strip_left(text):\n    pos = 0\n    size = len(text)\n    while pos < size and text[pos] == '\\t':\n        pos += 1\n    return text[pos:]",
+    "def main(argv):\n    verbose = False\n    if argv[1] == '--verbose':\n        verbose = True\n    elif argv[1] == '--quiet':\n        verbose = False\n    return verbose",
+    "def pick(settings):\n    backend = None\n    if settings['engine'] == 'sqlite':\n        backend = Sqlite()\n    elif settings['engine'] == 'postgres':\n        backend = Postgres()\n    return backend",
+    "def handle(event):\n    kind = event.kind\n    if kind is None:\n        return None\n    elif kind == 'click':\n        return on_click(event)\n    elif kind == 'scroll':\n        return on_scroll(event)",
+    "def ends_with_slash(path):\n    if len(path) == 0:\n        return False\n    if path[-1] == '/':\n        return True\n    return False",
+    "def route(request):\n    parts = request.path.split('/')\n    if parts[0] == 'api':\n        return api(request)\n    elif parts[0] == 'static':\n        return static(request)",
+    "def convert(opts, data):\n    if opts['format'] == 'json':\n        return to_json(data)\n    elif opts['format'] == 'yaml':\n        return to_yaml(data)\n    return data"
+   ],
+   "quiet": [
+    "def classify(row):\n    label = row['kind']\n    row['status'] = 'open'\n    row['owner'] = 'nobody'\n    return label",
+    "def strip_left(text):\n    pos = 0\n    size = len(text)\n    while pos < size and pos < 10:\n        pos += 1\n    return text[pos:]",
+    "def main(argv):\n    verbose = False\n    count = len(argv)\n    if count == 2:\n        verbose = True\n    elif count == 3:\n        verbose = False\n    return verbose",
+    "def pick(settings):\n    backend = None\n    settings['engine'] = 'sqlite'\n    backend = Sqlite(settings['path'])\n    return backend",
+    "def handle(event):\n    kind = event.kind\n    names = ['click', 'scroll']\n    for name in names:\n        print(name)\n    return kind",
+    "def total_length(path):\n    total = 0\n    for part in path:\n        total += len(part) + 1\n    return total - 1",
+    "def route(request):\n    parts = request.path.split('/')\n    first = parts[0] + '/' + parts[1]\n    return api(request, first)",
+    "def convert(opts, data):\n    width = opts['width'] * 2\n    height = opts['height'] + 10\n    return resize(data, width, height)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "operand end before == 'str'",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ']' / \"']\" / variable names right before == '<string>' in if/elif conditions; output suppresses opening quotes at that position. Probes: s[index] == ' ' .51, args[0] == '-h' .61, config['mode'] == 'slow' .59, elif mode == 'fast' .40; assignment .06, n == 0 (numeric) .02, short snippet without earlier context .02. Needs some preceding code context."
+}
