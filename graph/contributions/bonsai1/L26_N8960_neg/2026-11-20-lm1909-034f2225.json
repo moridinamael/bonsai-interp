@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-034f2225",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N8960-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:35:38+00:00",
+ "recipe": {
+  "toolchain_commit": "9d8302105",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N8960_neg/2026-11-20-lm1909-034f2225.tests.json"
+ },
+ "label": "word stem split before an '-es' suffix (Launch|es, crush|es, toothbrush|es)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N8960_neg/2026-11-20-lm1909-034f2225.tests.json",
+   "prereg_commit": "9d8302105",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.059,
+     "peak": " launches"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.669,
+     "peak": "brush"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.611,
+     "peak": " crush"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.606,
+     "peak": " tornado"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.103,
+     "peak": " launches"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.14,
+     "peak": " crush"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.515,
+     "peak": "brush"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.497,
+     "peak": " tornado"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.064,
+     "peak": " launched"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.054,
+     "peak": " crushed"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.066,
+     "peak": " across"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.089,
+     "peak": " launch"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.56,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9d8302105",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stem before '-es'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Output direction of this pole promotes 'es'/'ات'; fires on the stem token that awaits a plural/verb suffix.",
+ "selection": "random draw"
+}

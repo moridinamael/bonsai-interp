@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-5c0341ad",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N11155+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:28:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N11155",
+   "pole": "+",
+   "label": "explicit float conversion in code (float( ... ) casts, 100.0 literals)",
+   "fire": [
+    "    ratio = count / float(total)\n    print(ratio)",
+    "    avg = sum(values) / float(len(values))\n    return avg",
+    "    pct = 100.0 * hits / self.num_requests\n    log(pct)",
+    "    speed = float(distance) / elapsed\n    return speed",
+    "    scale = width / float(self.image_width)\n    resize(scale)",
+    "    mean = total / float(n)\n    results.append(mean)",
+    "    progress = done / float(self.size)\n    bar.update(progress)",
+    "    x = np.float(config['threshold'])\n    check(x)"
+   ],
+   "quiet": [
+    "    ratio = count // total\n    print(ratio)",
+    "    avg = sum(values) // len(values)\n    return avg",
+    "    pct = hits * self.num_requests\n    log(pct)",
+    "    speed = str(distance) + ' km'\n    return speed",
+    "    scale = width // self.image_width\n    resize(scale)",
+    "    mean = total - int(n)\n    results.append(mean)",
+    "    progress = done + len(self.items)\n    bar.update(progress)",
+    "    x = str(config['threshold'])\n    check(x)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "code float cast",
+ "unit_kind": "contextual",
+ "confidence": 0.6
+}
