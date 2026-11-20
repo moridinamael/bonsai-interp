@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-61eda1ae",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8132+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:15:32+00:00",
+ "recipe": {
+  "toolchain_commit": "cdf2c13d0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N8132_pos/2026-11-20-lm1909-61eda1ae.tests.json"
+ },
+ "label": "a word-initial S/s split off as its own token right after a quote mark or slash (also the Arabic future prefix س)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N8132_pos/2026-11-20-lm1909-61eda1ae.tests.json",
+   "prereg_commit": "cdf2c13d0",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.013,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.019,
+     "peak": " swims"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.012,
+     "peak": " ست"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.112,
+     "peak": "S"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.019,
+     "peak": "/sign"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.451,
+     "peak": " س"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.03,
+     "peak": "aff"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.67,
+     "peak": " س"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.052,
+     "peak": "Mar"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.018,
+     "peak": "/p"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " أمس"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": "Tr"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.034,
+     "peak": "/app"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.228,
+     "peak": " د"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "Pe"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": "أ"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.617,
+    "median_fire": 0.025,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cdf2c13d0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off initial S",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: Arabic ' س' x15, 'ス' x4, 'S'/'s' after « or \" or '/'. Probe: '/s' in lottery/sweepstakes 0.83, Arabic future س 0.43, quoted \"Sundown\" 0.36; ' S' with a space (Scythians) stays quiet here (that is the - pole). Near misses: same frames where the word after the quote, slash or Arabic particle does not start with S/س.",
+ "selection": "random draw"
+}
