@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-88cb1467",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N8025+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:21:36+00:00",
+ "recipe": {
+  "toolchain_commit": "9638c3006",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N8025_pos/2026-11-20-lm1909-88cb1467.tests.json"
+ },
+ "label": "the CJK character 標 (as in 標題, 標誌, 標明)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N8025_pos/2026-11-20-lm1909-88cb1467.tests.json",
+   "prereg_commit": "9638c3006",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.744,
+     "peak": "標"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.699,
+     "peak": "標"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.675,
+     "peak": "標"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.401,
+     "peak": "商"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.006,
+     "peak": "標"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.465,
+     "peak": "標"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.011,
+     "peak": "將"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.781,
+     "peak": "標"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.011,
+     "peak": "請"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.063,
+     "peak": "請"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.193,
+     "peak": "地"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.324,
+     "peak": "名"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": "專家"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": "我們"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.013,
+     "peak": "實施"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.07,
+     "peak": "說明"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.898,
+    "median_fire": 0.687,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9638c3006",
+  "minutes": 11,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "CJK character 標",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: '標' x9 of top 32 (標誌, 標題, 標的, 標明), also 'Urs' (Ursuline) x11. Tested the dominant 標; near misses are the same Chinese sentences with a different word.",
+ "selection": "random draw"
+}

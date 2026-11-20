@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-062e84f4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N5747+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:21:23+00:00",
+ "recipe": {
+  "toolchain_commit": "9638c3006",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N5747_pos/2026-11-20-lm1909-062e84f4.tests.json"
+ },
+ "label": "dense: weak word-piece endings such as 'ure' (man|ure) and 'rib' (Magh|rib)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N5747_pos/2026-11-20-lm1909-062e84f4.tests.json",
+   "prereg_commit": "9638c3006",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.824,
+     "peak": "ure"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.851,
+     "peak": "rib"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.79,
+     "peak": "ure"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.82,
+     "peak": "rib"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.674,
+     "peak": " deliberate"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.199,
+     "peak": " office"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.713,
+     "peak": "ure"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.821,
+     "peak": " left"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.423,
+     "peak": " straw"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.208,
+     "peak": " bells"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.317,
+     "peak": " lil"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.098,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.13,
+     "peak": " council"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.233,
+     "peak": " office"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.239,
+     "peak": "ch"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.105,
+     "peak": " saw"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.805,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "9638c3006",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense word-piece unit",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags dense (19% of tokens reach 0.1 of max) and gate-closed regime 99%; max is only 0.40. Test records the density with my best guess at the top tokens ('ure' x10, 'rib' x4).",
+ "selection": "random draw"
+}
