@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-ad49c3dc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N10118+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:52:38+00:00",
+ "recipe": {
+  "toolchain_commit": "00796a7d5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N10118_pos/2026-11-20-lm1909-ad49c3dc.tests.json"
+ },
+ "label": "a word introducing a feature in a description of a building or estate (a covered terrace, the main cloister, a western tower)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N10118_pos/2026-11-20-lm1909-ad49c3dc.tests.json",
+   "prereg_commit": "00796a7d5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.767,
+     "peak": " covered"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.934,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.475,
+     "peak": " huge"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.909,
+     "peak": " shaded"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.225,
+     "peak": " tall"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.879,
+     "peak": " covered"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.331,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.464,
+     "peak": "-century"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.016,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.258,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.061,
+     "peak": " loyal"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.823,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "00796a7d5",
+  "minutes": 52,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "building feature description",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: no dominant token (' clo' x4, ' covered' x2, ' huge', ' a', ')' of the top 32); all in descriptions of churches, houses and grounds listing their parts. The - pole is the list joints (and, commas, include) of the same descriptions. Near misses keep the same words outside a building description.",
+ "selection": "random draw"
+}
