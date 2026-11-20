@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-6881bad3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N4649+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:14:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N4649",
+   "pole": "+",
+   "label": "in code, the statement that aborts the program in an error-handling branch, right after the error is reported: 'sys.exit(1)', 'exit(1)', 'os._exit(1)' (peak on '.exit' / ' exit' / '('), weaker on 'raise' and an early 'return'; quiet on branches that log and carry on and on the English word 'exit'",
+   "fire": [
+    "def load(path):\n    if not os.path.isfile(path):\n        sys.stderr.write('no such file: ' + path)\n        sys.exit(1)\n    return open(path).read()",
+    "try:\n    token = os.environ['API_TOKEN']\nexcept KeyError:\n    print('API_TOKEN must be set. Exiting.')\n    sys.exit(-1)\n",
+    "if (argc != 3) {\n    fprintf(stderr, \"usage: %s in out\\n\", argv[0]);\n    exit(1);\n}",
+    "if port > 65535:\n    logger.critical('invalid port %d', port)\n    exit(1)\n\nserver = Server(port)",
+    "child = os.fork()\nif child == 0:\n    if conn is None:\n        log.error('no connection in child')\n        os._exit(1)\n",
+    "if [ ! -d \"$SRC\" ]; then\n    echo \"source directory missing\" >&2\n    exit 1\nfi",
+    "def parse(text):\n    if not text.strip():\n        raise ValueError('empty input cannot be parsed')\n    return text.split()",
+    "result = subprocess.call(cmd)\nif result != 0:\n    print('build failed with code', result)\n    sys.exit(result)\n"
+   ],
+   "quiet": [
+    "def load(path):\n    if os.path.isfile(path):\n        sys.stdout.write('reading ' + path)\n        data = open(path).read()\n    return data",
+    "try:\n    token = os.environ['API_TOKEN']\nexcept KeyError:\n    print('API_TOKEN not set, using anonymous access.')\n    token = ''\n",
+    "if (argc == 3) {\n    fprintf(stdout, \"copying %s\\n\", argv[1]);\n    copied = 1;\n}",
+    "if port > 1024:\n    logger.info('using port %d', port)\n    ports.append(port)\n\nserver = Server(port)",
+    "Visitors should use the north exit of the car park after six.",
+    "if [ ! -d \"$SRC\" ]; then\n    echo \"creating source directory\"\n    mkdir -p \"$SRC\"\nfi",
+    "def parse(text):\n    words = text.split()\n    counts = len(words)\n    return words",
+    "result = subprocess.call(cmd)\nif result != 0:\n    print('build had warnings, code', result)\n    warnings += 1\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "exit call in an error branch",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probes: 'parser.error(...); sys.exit(2)' 0.97, C 'perror; exit(EXIT_FAILURE)' 0.92, 'log.error; exit(1)' 0.75, 'print usage; sys.exit(1)' 0.60, the same with 'return None' 0.52, 'raise ValueError' 0.40; a branch that logs and counts 0.08, makedirs 0.01, prose 'rear exit' 0.03. The - pole is code too ('.side_effect', status_code 200)."
+}
