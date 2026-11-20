@@ -1,0 +1,51 @@
+{
+ "contribution": "2026-11-20-lm1909-b4141fae",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N6358-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:55:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N6358",
+   "pole": "-",
+   "label": "the token ' self' (and '(self') as the instance reference inside Python methods",
+   "fire": [
+    "class Counter:\n    def __init__(self, start=0):\n        self.value = start\n\n    def increment(self):\n        self.value += 1",
+    "    def close(self):\n        if self.conn is not None:\n            self.conn.close()\n            self.conn = None",
+    "    def test_login(self):\n        response = self.client.post('/login', data=self.credentials)\n        self.assertEqual(response.status_code, 200)",
+    "    def update(self, dt):\n        self.x += self.vx * dt\n        self.y += self.vy * dt",
+    "    def __repr__(self):\n        return f'Point({self.x}, {self.y})'",
+    "    def run(self):\n        for job in self.queue:\n            self.process(job)",
+    "    def load(self, path):\n        with open(path) as f:\n            self.data = json.load(f)\n        return self.data",
+    "class Player:\n    def heal(self, amount):\n        self.health = min(self.max_health, self.health + amount)"
+   ],
+   "quiet": [
+    "def make_counter(start=0):\n    value = start\n\n    def increment():\n        nonlocal value\n        value += 1",
+    "def close(conn):\n    if conn is not None:\n        conn.close()\n    return None",
+    "def test_login(client, credentials):\n    response = client.post('/login', data=credentials)\n    assert response.status_code == 200",
+    "def update(x, y, vx, vy, dt):\n    x += vx * dt\n    y += vy * dt\n    return x, y",
+    "def point_repr(x, y):\n    return f'Point({x}, {y})'",
+    "def run(queue):\n    for job in queue:\n        process(job)",
+    "def load(path):\n    with open(path) as f:\n        data = json.load(f)\n    return data",
+    "def heal(health, max_health, amount):\n    return min(max_health, health + amount)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python ' self'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "trigger": {
+  "words": [
+   "self"
+  ]
+ }
+}
