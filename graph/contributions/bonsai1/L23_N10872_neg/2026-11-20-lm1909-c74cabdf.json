@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c74cabdf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N10872-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:38:55+00:00",
+ "recipe": {
+  "toolchain_commit": "4c2f83319",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N10872_neg/2026-11-20-lm1909-c74cabdf.tests.json"
+ },
+ "label": "comma separating positional arguments in a code function call, typically before a keyword argument",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N10872_neg/2026-11-20-lm1909-c74cabdf.tests.json",
+   "prereg_commit": "4c2f83319",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.119,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.067,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.076,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.089,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.024,
+     "peak": " tokenizer"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.031,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.056,
+     "peak": " keep"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.134,
+     "peak": "__,"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.023,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.018,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.023,
+     "peak": " tokenizer"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " session"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.062,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": "_logger"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.072,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4c2f83319",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "comma in call args",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: 9 of the top 32 peaks are ',' inside code calls like row_norms(X, squared=True); a few prose tokens (' strong', ' is') also appear.",
+ "selection": "random draw"
+}

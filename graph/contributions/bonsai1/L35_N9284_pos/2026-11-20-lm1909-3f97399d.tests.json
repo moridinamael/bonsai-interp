@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-3f97399d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9284+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:30:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9284",
+   "pole": "+",
+   "label": "a subword piece inside a code identifier, right after an opening token such as '(' or '_' (math_ops, max_nb_chars)",
+   "fire": [
+    "    out = array_ops.reshape(math_ops.reduce_mean(x, axis), shape)\n    return out",
+    "    opts = {'http': http_requires, 'ftp': ftp_requires, 'ssh': ssh_requires}",
+    "    with self.assertRaises(KeyNotFoundError):\n        cache.get_item(missing_key)",
+    "    text = faker.sentence(nb_words=12, variable_nb_words=True)\n    title = text[:40]",
+    "    y = tf.reduce_sum(grad_ys, axis=rx, keep_dims=True)\n    return tf.reshape(y, sx)",
+    "    self.max_retry_count = config.get('max_retry_count', 3)",
+    "    result = np.linalg.norm(vec_a - vec_b, ord=2)\n    print(result)",
+    "    parser.add_argument('--num_hidden_units', type=int, default=128)"
+   ],
+   "quiet": [
+    "The function reshapes the array and then returns the reduced mean along an axis.",
+    "The options cover web, file transfer and remote shell requirements.",
+    "The test checks that the cache raises an error when a key is missing.",
+    "The fake data generator makes a sentence of about twelve words for the title.",
+    "The gradient is summed along the reduced axes and reshaped to the input shape.",
+    "The retry limit is read from the configuration and defaults to three.",
+    "The distance between the two vectors is computed with the usual norm.",
+    "The script accepts a flag for the number of hidden units, by default 128."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code identifier piece",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags broad (1.5% of tokens reach 0.1 of max); peaks are identifier fragments in Python code. Near misses are prose about code, which may still fire weakly."
+}
