@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-4f8f4c3d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N10409+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:09:16+00:00",
+ "recipe": {
+  "toolchain_commit": "60dace6ac",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N10409_pos/2026-11-20-lm1909-4f8f4c3d.tests.json"
+ },
+ "label": "' import' in 'from <module> import <name>' lines of a Python import block",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N10409_pos/2026-11-20-lm1909-4f8f4c3d.tests.json",
+   "prereg_commit": "60dace6ac",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.201,
+     "peak": "import"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.109,
+     "peak": "from"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.393,
+     "peak": "from"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.506,
+     "peak": " import"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.232,
+     "peak": "from"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.161,
+     "peak": "from"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.314,
+     "peak": " import"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.226,
+     "peak": "from"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.035,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "def"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "ls"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": "__)\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.288,
+     "peak": "_argument"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " time"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "sock"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": "(csv"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.229,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "60dace6ac",
+  "minutes": 13,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python 'from X import'",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Broad pole; probe of a two-line from-import 0.14. Card also shows modal 'can', 'considers', list numbers.",
+ "selection": "random draw"
+}
