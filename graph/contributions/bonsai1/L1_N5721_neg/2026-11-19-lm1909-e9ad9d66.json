@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-e9ad9d66",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N5721-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:58:49+00:00",
+ "recipe": {
+  "toolchain_commit": "c6c5a6d5b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N5721_neg/2026-11-19-lm1909-e9ad9d66.tests.json"
+ },
+ "label": "the token ' experience' as a qualification noun (years of / have / with / prior experience), not the event sense ('a wonderful experience', 'user experience') or the verb",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N5721_neg/2026-11-19-lm1909-e9ad9d66.tests.json",
+   "prereg_commit": "c6c5a6d5b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.709,
+     "peak": " experience"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.802,
+     "peak": " experience"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.725,
+     "peak": " experience"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.615,
+     "peak": " experience"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.764,
+     "peak": " experience"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.815,
+     "peak": " experience"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.816,
+     "peak": " experience"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.442,
+     "peak": " experience"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "Vis"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.027,
+     "peak": " years"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " training"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " first"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " small"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.026,
+     "peak": " background"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " start"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.031,
+     "peak": " skills"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.744,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c6c5a6d5b",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' experience' as qualification",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Probes: 'years of experience' 0.83, 'have experience' 0.82, 'decades of experience' 0.70, 'prior experience' 0.63, 'with experience' 0.62, 'In my experience' 0.39; 'a wonderful experience' 0.00, 'user experience' 0.00, verb 0.01, 'expertise' 0.03. The declared token trigger over-counts: the token fires only in the qualification sense.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " experience"
+  ]
+ }
+}

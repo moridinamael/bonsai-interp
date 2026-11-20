@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2057253e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N7291+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:58:18+00:00",
+ "recipe": {
+  "toolchain_commit": "c6c5a6d5b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N7291_pos/2026-11-19-lm1909-2057253e.tests.json"
+ },
+ "label": "dense pole (38% of tokens above 0.1 of max, gate-closed regime); best guess at its strongest drive: a mid-word piece inside a surname or place name ('K⟦ild⟧are', 'K⟦ies⟧burg'), also German function words and Python block openers",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N7291_pos/2026-11-19-lm1909-2057253e.tests.json",
+   "prereg_commit": "c6c5a6d5b",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.504,
+     "peak": " Kil"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.597,
+     "peak": "ies"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.476,
+     "peak": "si"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.505,
+     "peak": " Kil"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.376,
+     "peak": " Ur"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.277,
+     "peak": "def"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.404,
+     "peak": "class"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.485,
+     "peak": "ie"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.313,
+     "peak": " autumn"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.276,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.362,
+     "peak": " paper"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.331,
+     "peak": " long"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.276,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.298,
+     "peak": "Pick"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.276,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.276,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.48,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c6c5a6d5b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; name-internal pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags it dense and gate-closed. Probes: 'Kildare' 0.60, German sentence 0.41, plain English prose 0.29, Python 0.26: everything fires. Registered to record the density; the test is expected to fail.",
+ "selection": "random draw"
+}
