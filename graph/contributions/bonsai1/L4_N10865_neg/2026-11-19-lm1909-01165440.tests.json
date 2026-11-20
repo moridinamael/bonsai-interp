@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-01165440",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N10865-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:00:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N10865",
+   "pole": "-",
+   "label": "dense low-amplitude leak pole (48.7% of tokens reach 0.1 of max, max 0.26); best guess at its strongest driver: Japanese sentence-final conjecture 'のでしょう(か)'",
+   "fire": [
+    "この問題はいつになったら解決するのでしょうか。",
+    "彼女はなぜ何も言わずに帰ってしまったのでしょう。",
+    "来年の夏も同じくらい暑くなるのでしょうか。",
+    "あの店はもう閉まってしまったのでしょうね。",
+    "子供たちは今ごろ学校で何をしているのでしょう。",
+    "この古い時計は誰が作ったものなのでしょうか。",
+    "どうして空は青く見えるのでしょう。",
+    "彼らは本当に約束を守ってくれるのでしょうか。"
+   ],
+   "quiet": [
+    "この問題は来月までに解決する予定です。",
+    "彼女は何も言わずに家に帰りました。",
+    "来年の夏は今年より暑くなるそうです。",
+    "あの店は午後八時に閉まります。",
+    "子供たちは今、学校で勉強しています。",
+    "この古い時計は祖父が作ったものです。",
+    "空が青く見える理由を説明します。",
+    "彼らは約束を必ず守ると言いました。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "dense; Japanese のでしょう",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags dense and gate-closed leak regime. Probes: のでしょう sentences 0.77-1.03 of max, but plain English 0.52, code 0.44, Chinese 0.59. Near misses are Japanese sentences without のでしょう; expected to fail, recorded to document density."
+}

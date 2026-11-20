@@ -1,0 +1,52 @@
+{
+ "contribution": "2026-11-19-lm1909-0a8bc05f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N10150-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:00:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N10150",
+   "pole": "-",
+   "label": "the token ' print' in prose (print media, to print copies), not the code statement print(…), which drives the + pole instead",
+   "fire": [
+    "The magazine stopped its print run after forty years.",
+    "Readers can print the coupon and bring it to the store.",
+    "She collects Japanese woodblock print art from the Edo period.",
+    "Sales of print books rose slightly last year.",
+    "The library offers services for people with print disabilities.",
+    "Please print two copies of the form and sign both.",
+    "The story ran in print a day after it appeared online.",
+    "Most local papers now earn less from print advertising."
+   ],
+   "quiet": [
+    "    if debug:\n        print('starting up')",
+    "    for name in names:\n        print(name)",
+    "    total = a + b\n    print(total)",
+    "    try:\n        run()\n    except ValueError:\n        print('bad value')",
+    "The magazine stopped its weekly run after forty years.",
+    "Sales of digital books rose slightly last year.",
+    "Please sign two copies of the form and return both.",
+    "Most local papers now earn less from online advertising."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'print' in prose, not code",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: − pole peaks ' print' x26 in prose (gate-closed leak, max 1.15); + pole is ' print' x32 in Python code (max 19.75). Probes: 'print magazine' 0.81, 'print artist' 0.85, 'print editions' 0.90, 'can print as many' 0.65; code print('done') 0.006, print(row) -0.04; 'printer' 0.33, 'blueprint' 0.27. The two poles split one token by context: prose versus code.",
+ "trigger": {
+  "words": [
+   "print"
+  ]
+ }
+}

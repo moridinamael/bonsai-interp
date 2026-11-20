@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-772f3de1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N11454-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:03+00:00",
+ "recipe": {
+  "toolchain_commit": "7060c1bb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N11454_neg/2026-11-19-lm1909-772f3de1.tests.json"
+ },
+ "label": "a conjunction (and / or / rather than) right after a manner adverb, where a parallel second adverb or manner phrase is expected (wisely and …, together or …)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N11454_neg/2026-11-19-lm1909-772f3de1.tests.json",
+   "prereg_commit": "7060c1bb5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.746,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.532,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.057,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.359,
+     "peak": " than"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.489,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.74,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.146,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.831,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.461,
+     "peak": " or"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.079,
+     "peak": " reported"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.001,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.177,
+     "peak": " nurses"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.001,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.082,
+     "peak": "agers"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " asked"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": " steam"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.636,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7060c1bb5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "conjunction after manner adverb",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Top-32 peaks: ' and' x12, ' or' x8, ' than' x2, ' either'. Output of this pole promotes adverbs (' separately', ' individually', ' independently', ' locally'). Probes: 'together or' 1.09, 'rather than as' 0.81, 'wisely and' 0.65, 'occasionally or' 0.50, 'simultaneously and' 0.40, 'slowly and' 0.36; noun coordination 'roads and bridges' 0.04, 'apples and oranges' 0.04.",
+ "selection": "random draw"
+}

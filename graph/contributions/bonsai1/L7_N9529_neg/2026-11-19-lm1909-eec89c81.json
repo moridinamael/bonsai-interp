@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-eec89c81",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N9529-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:22+00:00",
+ "recipe": {
+  "toolchain_commit": "7060c1bb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N9529_neg/2026-11-19-lm1909-eec89c81.tests.json"
+ },
+ "label": "the final word-piece of a French-style surname split by the tokenizer after a Boud-/Grand-/Bour-/Baud- stem (Bou·din, Gran·din, Bour·don, Bure·l)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N9529_neg/2026-11-19-lm1909-eec89c81.tests.json",
+   "prereg_commit": "7060c1bb5",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.091,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.724,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.214,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.462,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.274,
+     "peak": "in"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.456,
+     "peak": "on"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.441,
+     "peak": "l"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.328,
+     "peak": "don"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " sold"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " learned"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": " southern"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " Bernard"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " cited"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " colleagues"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.459,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7060c1bb5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split French surname ending",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "Card: 'in' x5, 'l' x3, 'on' x2, 'don' x2 after Boud/Bour/Grand; ' definition' x7 is a weaker second trigger (probe 'By definition' 0.13-0.35) and is not tested here. Probes: Grandin 1.08, Boudin 0.64, Bourdon/Burel 0.51, Baudin/Jardin 0.36, Gaudin/Bourdin 0.25, Hardin/Sandin 0.21, Martin 0.005.",
+ "selection": "random draw"
+}

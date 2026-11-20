@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-19-lm1909-4d8ec8cf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N8838+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:09:20+00:00",
+ "recipe": {
+  "toolchain_commit": "7060c1bb5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N8838_pos/2026-11-19-lm1909-4d8ec8cf.tests.json"
+ },
+ "label": "the word 'Congress' / 'congress' (the token itself, capitalised or not)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N8838_pos/2026-11-19-lm1909-4d8ec8cf.tests.json",
+   "prereg_commit": "7060c1bb5",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.638,
+     "peak": " Congress"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.483,
+     "peak": " Congress"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.22,
+     "peak": " Congress"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.29,
+     "peak": " recess"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.828,
+     "peak": " Congress"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.327,
+     "peak": " congress"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.544,
+     "peak": " Congress"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.26,
+     "peak": " congress"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.004,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " asked"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.313,
+     "peak": " recess"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.096,
+     "peak": " Peace"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " diabetes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": "Crit"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " its"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.405,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7060c1bb5",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "token 'Congress'",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Top-32 peaks: ' Congress' x13, 'Congress' x5, ' congress' x5. Probes: ' Congress' 0.71, lowercase ' congress' (a conference) 0.46, Parliament 0.11, Senate 0.00, 'congressman' as one token 0.00.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "Congress"
+  ]
+ }
+}
