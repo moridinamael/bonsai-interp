@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-d3ce9df9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N8713-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:48:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N8713",
+   "pole": "-",
+   "label": "deserialisation/evaluation calls in Python (pickle.load, pickle.dump, ast.literal_eval)",
+   "fire": [
+    "with open('cache.pkl', 'rb') as fh:\n    cache = pickle.load(fh)",
+    "with open(out_file, 'wb') as fh:\n    pickle.dump(results, fh)",
+    "    settings = ast.literal_eval(raw_settings)",
+    "    with open(path, 'rb') as f:\n        vocab = pickle.load(f)",
+    "        params = ast.literal_eval(line.strip())",
+    "    with open('scores.pickle', 'wb') as out:\n        pickle.dump(scores, out)",
+    "import pickle\nmodel = pickle.load(open('model.p', 'rb'))",
+    "    point = ast.literal_eval(row['coords'])"
+   ],
+   "quiet": [
+    "with open('cache.txt', 'r') as fh:\n    cache = fh.read()",
+    "with open(out_file, 'w') as fh:\n    fh.write(results)",
+    "    settings = raw_settings.split(',')",
+    "    with open(path, 'r') as f:\n        vocab = f.readlines()",
+    "        params = line.strip().split()",
+    "    with open('scores.csv', 'w') as out:\n        out.write(str(scores))",
+    "import os\nfiles = os.listdir('models')",
+    "    point = row['coords'].split(';')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "pickle/literal_eval call",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "probe: pickle.load 0.63, ast.literal_eval 0.77, f.read 0.02, bare eval 0.06."
+}

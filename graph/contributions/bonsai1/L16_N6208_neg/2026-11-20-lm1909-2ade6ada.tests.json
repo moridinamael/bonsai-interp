@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-2ade6ada",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N6208-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:48:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N6208",
+   "pole": "-",
+   "label": "the ':\\n' that closes an if-condition line in Python, before the indented body",
+   "fire": [
+    "    files = os.listdir(src)\n    if not os.path.exists(dst):\n        os.mkdir(dst)",
+    "        name = row[0]\n        if name != 'total':\n            names.append(name)",
+    "    for f in files:\n        if not f.endswith('.txt'):\n            continue",
+    "        key = args.key\n        if key is None:\n            raise ValueError('missing key')",
+    "    data = fetch(url)\n    if len(data) == 0:\n        return []",
+    "        if event.key != 'q':\n            return\n        self.close()",
+    "    if not isinstance(value, int):\n        value = int(value)",
+    "        line = line.strip()\n        if not line.startswith('#'):\n            out.write(line)"
+   ],
+   "quiet": [
+    "    files = os.listdir(src)\n    os.mkdir(dst)\n    print(dst)",
+    "        name = row[0]\n        names.append(name)\n        count += 1",
+    "    for f in files:\n        print(f)",
+    "        key = args.key\n        logger.info('key is %s', key)",
+    "    data = fetch(url)\n    return data",
+    "    def close(self):\n        self.window.destroy()",
+    "    value = int(value)\n    result.append(value)",
+    "        line = line.strip()\n        out.write(line)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "if-condition colon",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "probe: if-line '):\\n' 0.25, def-line '):\\n' 0.03, for-loop 0.02. Median may fall near the 0.20 bar."
+}
