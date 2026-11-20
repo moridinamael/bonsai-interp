@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-c0a82b89",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N1330+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N1330",
+   "pole": "+",
+   "label": "three unrelated formatted-text triggers (a list, not one concept): the '0' that opens the article number after the year in a DOI (….2007.0…), the '.Add' call on a wx sizer, and the comma after 'file photo' in an AP-style caption",
+   "fire": [
+    "Lee K. Tea and bone density. Bone 41 (3): 310-6. doi:10.1016/j.bone.2006.012345. PMID 17112",
+    "Patel R. Statins after stroke. Stroke 39 (5): 1500-4. doi:10.1161/strokeaha.2008.051234. PMID 18340",
+    "Novak M. Salt and blood pressure. Gut 57 (1): 22-9. doi:10.1136/gut.2007.045678. PMID 17901",
+    "        sizer = wx.BoxSizer(wx.VERTICAL)\n        sizer.Add(self.label, 0, wx.LEFT, 10)\n        sizer.Add(self.text_ctrl, 1, wx.EXPAND)",
+    "        row = wx.BoxSizer(wx.HORIZONTAL)\n        row.Add(self.ok_button, 0, wx.RIGHT, 8)\n        main_sizer.Add(row, 0, wx.ALIGN_CENTER)",
+    "        grid = wx.GridSizer(2, 2, 5, 5)\n        grid.Add(self.name_label, 0, wx.ALL, 2)\n        grid.Add(self.name_field, 1, wx.EXPAND)",
+    "FILE - In this Friday, June 12, 2009 file photo, a farmer walks through his field near Omaha.",
+    "FILE - In this Sunday, Oct. 4, 2013 file photo, fans cheer outside the stadium in Madrid."
+   ],
+   "quiet": [
+    "Lee K. Tea and bone density. Bone 41 (3): 310-6. Available at the journal website. PMID 17112",
+    "Patel R. Statins after stroke. Stroke 39 (5): 1500-4. doi:10.1161/01.str.39.5.1500. PMID 18340",
+    "Novak M. Salt and blood pressure. Gut 57 (1): 22-9. Epub ahead of print. PMID 17901",
+    "        names = []\n        names.append(self.label)\n        names.extend(self.others)",
+    "        row = {}\n        row.update(defaults)\n        rows.insert(0, row)",
+    "        grid = np.zeros((2, 2))\n        grid.fill(5)\n        total = grid.sum()",
+    "On Friday, June 12, 2009 a farmer walked through his field near Omaha and waved.",
+    "The picture, taken on Sunday in October 2013, shows fans cheering outside the stadium in Madrid."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "DOI '.year.0', sizer '.Add', 'file photo,'",
+ "unit_kind": "unclear",
+ "confidence": 0.45,
+ "notes": "Card: '0' x10, '.Add' x5, '/' x3, ',' x2 of top 32; regimes split 56/44, max only 4.97. Probe: DOI with .2007.0 0.87, DOI without that pattern 0.05, wx sizer .Add 0.94, 'file photo,' 0.77, a bare decimal 0.077701 0.00, .append/.remove 0.05. I could not find a shared pattern, so the label is a list and says so."
+}

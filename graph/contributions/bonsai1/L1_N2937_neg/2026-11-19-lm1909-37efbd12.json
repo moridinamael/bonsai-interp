@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-37efbd12",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N2937-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:48:39+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N2937_neg/2026-11-19-lm1909-37efbd12.tests.json"
+ },
+ "label": "the token ' chap' (chapel, chap., old chap) and the piece after word-initial 'ch' in chlor- / chol- words (ch|lo|rella, cholesterol)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N2937_neg/2026-11-19-lm1909-37efbd12.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.549,
+     "peak": " chapel"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.819,
+     "peak": " chap"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.856,
+     "peak": " chap"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.61,
+     "peak": " chapel"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.299,
+     "peak": " chlorine"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.735,
+     "peak": " chlor"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.616,
+     "peak": " cholesterol"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.42,
+     "peak": "era"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.101,
+     "peak": "Behind"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.093,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.641,
+     "peak": " cheerful"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.097,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.156,
+     "peak": " bleach"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.067,
+     "peak": " they"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.129,
+     "peak": " doctor"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.046,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.613,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' chap', chlor-/chol- pieces",
+ "unit_kind": "dense / positional",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (6.1% of tokens reach 0.1 of max and 1.5% reach 0.3, max only 2.12, 100% gate-closed leak), so unit_kind is dense / positional and near misses may well fire. Peak tokens: ' chap' x10, 'all' x3, 'чер' x2, then pieces after ch- / th- ('lo', 'old', 'ro', 'R'). Probe: chapels 0.86, chap. 0.88, old chap 0.77, chlorella 0.88, cholesterol 0.70, throat / threshold 0.39, the chapels sentence with houses instead 0.10.",
+ "selection": "random draw"
+}

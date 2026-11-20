@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-90af623a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N8317+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N8317",
+   "pole": "+",
+   "label": "a split word stem (mater-, soc-, partic-, financ-) whose next piece is a French-style ending (-iel, -iaux, -ule) rather than English -ial; the output suppresses 'ial' and 'ular'",
+   "fire": [
+    "Convoys carried troops and materiel across the river every night for a week.",
+    "Les services sociaux de la ville manquent de personnel depuis des années.",
+    "Chaque particule de poussière brille dans la lumière du matin.",
+    "The treaty limited how much war materiel each side could keep near the border.",
+    "Les réseaux sociaux ont changé la façon dont les jeunes s'informent.",
+    "Une particule chargée suit une trajectoire courbe dans ce champ.",
+    "Les marchés financiers ont réagi avec calme à cette annonce.",
+    "Most of the captured materiel was old and of little use to the rebels."
+   ],
+   "quiet": [
+    "Convoys carried troops and material across the river every night for a week.",
+    "The social services of the city have been short of staff for years.",
+    "Each particle of dust shines in the morning light.",
+    "The treaty limited how much war equipment each side could keep near the border.",
+    "Les jeunes de la ville ont changé la façon dont ils voyagent.",
+    "Une petite voiture suit une route courbe dans ce village.",
+    "The financial markets reacted calmly to this announcement.",
+    "Most of the captured material was old and of little use to the rebels."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "stem before -iel / -iaux / -ule",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: 'ic' x7, ' soc' x4, 'ent' x4, ' financ' x3, ' mater' x2 before French or unusual endings (materiel, sociaux, particule); logit effect suppresses 'ial', 'ular', 'IAL'. Probe: materiel 0.74, sociaux 0.61, particule 0.50; English material 0.01, social / financial 0.01, commercials 0.00, beneficiary / fiduciary 0.01."
+}

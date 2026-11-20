@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3e0d507f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N911-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:48:24+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N911_neg/2026-11-19-lm1909-3e0d507f.tests.json"
+ },
+ "label": "the second character of an 'origin / source' word built on 出: Korean 출신 ('a native of / from') and Japanese 出典 ('source'); other 出 / 출 words (출근, 出口) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N911_neg/2026-11-19-lm1909-3e0d507f.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.783,
+     "peak": "신"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.758,
+     "peak": "신"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.646,
+     "peak": "신"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.765,
+     "peak": "신"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.576,
+     "peak": "신"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.74,
+     "peak": "典"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.573,
+     "peak": "典"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.694,
+     "peak": "典"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": "왔다"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.17,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.2,
+     "peak": "발"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": " 잘"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.161,
+     "peak": "구"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.004,
+     "peak": "場"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": "教えて"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.142,
+     "peak": "出"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.717,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "출신 / 出典 (origin, source)",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: '出' x6, '신' x4 (after 출), '出身' x4, '出自' x4, '典' x3 (after 出); 62% gate-closed leak regime. The + pole peaks on 出た / 發見, so the two poles seem to split 出-words into origin versus other uses. Probe: 출신 0.75, 出典 0.67, 出身 0.24, 出自 0.17, 출근 0.18, 出口 0.00, English 'from Osaka' 0.10.",
+ "selection": "random draw"
+}

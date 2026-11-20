@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-d1ecf381",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N6440+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:48:47+00:00",
+ "recipe": {
+  "toolchain_commit": "389f15c28",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N6440_pos/2026-11-19-lm1909-d1ecf381.tests.json"
+ },
+ "label": "the connective that opens the next step in a sequence of instructions: ' then' in 'click … and then …' how-to steps, and the 'from' that starts a second import line; not temporal or idiomatic 'then'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N6440_pos/2026-11-19-lm1909-d1ecf381.tests.json",
+   "prereg_commit": "389f15c28",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.167,
+     "peak": " then"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.134,
+     "peak": " then"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.371,
+     "peak": " choose"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.266,
+     "peak": " then"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.221,
+     "peak": " then"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.461,
+     "peak": " then"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.089,
+     "peak": " import"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.323,
+     "peak": "from"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.06,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.074,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.042,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": " so"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.048,
+     "peak": " menu"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.105,
+     "peak": "import"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.039,
+     "peak": "(y"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.294,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "389f15c28",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'then' starting the next step",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' then' x6, ' and' x5, 'from' x3 of top 32, in step-by-step instructions and in runs of Python imports; the - pole fires on 'in addition to / supplement' contexts. Probe: 'right click and then choose' 0.58, a second 'from … import' line 0.32, ', then pick it up' 0.19, lab-protocol 'and dried' 0.04, 'and then some' 0.02, plain 'and' 0.03. The fire set may sit near the median threshold.",
+ "selection": "random draw"
+}
