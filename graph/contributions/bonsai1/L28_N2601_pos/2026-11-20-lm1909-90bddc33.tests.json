@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-90bddc33",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2601+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:45:12+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N2601",
+   "pole": "+",
+   "label": "arguments inside matplotlib plotting calls (ax.plot / plt.plot data, format strings, line labels)",
+   "fire": [
+    "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot(times, voltages, 'r-', label='measured')\nax.legend()",
+    "plt.figure()\nplt.plot(x, y, '--', color='gray')\nplt.plot(x, fit, label='model')\nplt.show()",
+    "fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)\nax1.plot(t, signal)\nax2.plot(t, noise, 'k.')",
+    "for name, curve in curves.items():\n    ax.plot(curve.x, curve.y, label=name)\nax.set_xlabel('time (s)')",
+    "plt.subplot(1, 2, 1)\nplt.plot(epochs, train_loss, 'b-', label='train')\nplt.plot(epochs, val_loss, 'g-', label='val')",
+    "ax = fig.add_subplot(111)\nax.plot(freq, power, 'o-', markersize=3)\nax.set_yscale('log')",
+    "lines = ax3.plot(das_t, das_flow, linewidth=2)\nax3.set_title('flow rate')\nplt.tight_layout()",
+    "plt.plot(dates, prices, label='close')\nplt.plot(dates, avg, ':', label='30-day mean')\nplt.legend(loc='upper left')"
+   ],
+   "quiet": [
+    "import numpy as np\nrng = np.random.default_rng()\nvals = rng.normal(times, voltages)\nprint(vals.mean())",
+    "data = load_csv(path)\nrows = [r for r in data if r['x'] > 0]\nresult = sum(rows, start=0)\nprint(result)",
+    "a, b = np.split(arr, 2)\nm1 = np.mean(t, axis=0)\nm2 = np.std(t, axis=0)",
+    "for name, curve in curves.items():\n    store[name] = curve.x.tolist()\nlogger.info('saved %d', len(store))",
+    "model.train()\nfor batch in loader:\n    loss = criterion(model(batch.x), batch.y)\n    loss.backward()",
+    "freq = np.fft.rfftfreq(n, d=dt)\npower = np.abs(spec) ** 2\nidx = np.argmax(power)",
+    "flows = compute_flow(das_t, das_p, width=2)\nreport['flow'] = flows\nsave_json(report, 'out.json')",
+    "df = pd.read_csv('prices.csv')\ndf['avg'] = df['close'].rolling(30).mean()\ndf.to_csv('out.csv')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "matplotlib plot arguments",
+ "unit_kind": "contextual",
+ "confidence": 0.35
+}
