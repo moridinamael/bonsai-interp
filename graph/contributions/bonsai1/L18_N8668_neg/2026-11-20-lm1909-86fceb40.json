@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-86fceb40",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8668-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:07:02+00:00",
+ "recipe": {
+  "toolchain_commit": "c574d5316",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N8668_neg/2026-11-20-lm1909-86fceb40.tests.json"
+ },
+ "label": "the separator string literal right before .join in Python (', '.join, \", \".join)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N8668_neg/2026-11-20-lm1909-86fceb40.tests.json",
+   "prereg_commit": "c574d5316",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.418,
+     "peak": " \"."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.435,
+     "peak": " \"."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.397,
+     "peak": " '."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.286,
+     "peak": " \"."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.327,
+     "peak": "join"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.218,
+     "peak": "join"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.189,
+     "peak": "join"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.267,
+     "peak": " '."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.317,
+     "peak": " \""
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.042,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.121,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.121,
+     "peak": "]\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.167,
+     "peak": "]\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.24,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.092,
+     "peak": "n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.063,
+     "peak": " '"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.306,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c574d5316",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "separator before .join",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' \\'.' x8 and ' \".' x4 of top 32: the closing quote+dot of the separator in sep.join(...).",
+ "selection": "random draw"
+}

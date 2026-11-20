@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-658d7202",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N5271+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:06:51+00:00",
+ "recipe": {
+  "toolchain_commit": "c574d5316",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N5271_pos/2026-11-20-lm1909-658d7202.tests.json"
+ },
+ "label": "the point where a quoted statement or reported text ends or is introduced (closing quote plus newline, 'stating', 'read')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N5271_pos/2026-11-20-lm1909-658d7202.tests.json",
+   "prereg_commit": "c574d5316",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.139,
+     "peak": " read"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.191,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.509,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.076,
+     "peak": " great"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.441,
+     "peak": " read"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.266,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.084,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.693,
+     "peak": " below"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.081,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.146,
+     "peak": " note"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.36,
+     "peak": " letter"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.08,
+     "peak": "This"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.246,
+     "peak": " shared"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.118,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.08,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.127,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.703,
+    "median_fire": 0.229,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c574d5316",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "quote boundary",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: '.”\\n' x7, '.\\n' x3, 'sic' x4, ' stating', ' read' (a post read), ' say'. Weak pole (max 6.8).",
+ "selection": "random draw"
+}

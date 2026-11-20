@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-86fceb40",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8668-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:57:52+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N8668",
+   "pole": "-",
+   "label": "the separator string literal right before .join in Python (', '.join, \", \".join)",
+   "fire": [
+    "    names = [p.name for p in people]\n    print(\", \".join(names))",
+    "def __str__(self):\n    return \", \".join(str(x) for x in self.items)",
+    "    header = ', '.join(columns)\n    out.write(header)",
+    "line = \" | \".join(fields)\nprint(line)",
+    "    query = ' AND '.join(conditions)\n    cursor.execute(query)",
+    "    path = '/'.join(parts)\n    return path",
+    "    text = '\\n'.join(lines)\n    f.write(text)",
+    "    tags = '; '.join(sorted(tag_set))\n    return tags"
+   ],
+   "quiet": [
+    "    names = [p.name for p in people]\n    print(\", \" + names[0])",
+    "def __str__(self):\n    return \"Item: \" + str(self.items[0])",
+    "    header = ', ' + columns[0]\n    out.write(header)",
+    "line = \" | \" + fields[0]\nprint(line)",
+    "    query = ' AND ' + conditions[0]\n    cursor.execute(query)",
+    "    path = '/' + parts[0]\n    return path",
+    "    text = '\\n' + lines[0]\n    f.write(text)",
+    "    tags = '; ' + sorted(tag_set)[0]\n    return tags"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "separator before .join",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' \\'.' x8 and ' \".' x4 of top 32: the closing quote+dot of the separator in sep.join(...)."
+}
