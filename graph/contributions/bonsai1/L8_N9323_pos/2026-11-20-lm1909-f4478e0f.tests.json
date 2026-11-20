@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f4478e0f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N9323+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:32:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N9323",
+   "pole": "+",
+   "label": "'IO' in Python in-memory stream classes (StringIO, BytesIO, cStringIO)",
+   "fire": [
+    "import sys\nimport json\nfrom io import StringIO\n\nbuf = StringIO()",
+    "import os\nfrom io import BytesIO\nfrom PIL import Image",
+    "try:\n    from cStringIO import StringIO\nexcept ImportError:\n    from io import StringIO",
+    "class TestPrint(unittest.TestCase):\n    @patch('sys.stdout', new_callable=io.StringIO)\n    def test_print(self, mock_out):",
+    "def to_csv(rows):\n    output = StringIO()\n    writer = csv.writer(output)",
+    "    response = requests.get(url)\n    data = io.BytesIO(response.content)\n    img = Image.open(data)",
+    "import unittest\nimport StringIO\nimport logging",
+    "def render(fig):\n    stream = BytesIO()\n    fig.savefig(stream, format='png')"
+   ],
+   "quiet": [
+    "import sys\nimport json\nfrom collections import OrderedDict\n\nbuf = OrderedDict()",
+    "import os\nfrom pathlib import Path\nfrom PIL import Image",
+    "try:\n    import simplejson as json\nexcept ImportError:\n    import json",
+    "class TestPrint(unittest.TestCase):\n    @patch('sys.stdout', new_callable=MagicMock)\n    def test_print(self, mock_out):",
+    "def to_csv(rows):\n    output = open('out.csv', 'w')\n    writer = csv.writer(output)",
+    "    response = requests.get(url)\n    data = response.content\n    img = Image.frombytes('RGB', size, data)",
+    "import unittest\nimport tempfile\nimport logging",
+    "def render(fig):\n    stream = open('plot.png', 'wb')\n    fig.savefig(stream, format='png')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "StringIO / BytesIO",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: ' StringIO' x16, 'IO' x10 of the top 32."
+}

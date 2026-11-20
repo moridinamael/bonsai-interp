@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-233588bb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2259+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:32:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N2259",
+   "pole": "+",
+   "label": "'%' format specifier inside a Python string ('%s', '%d' with % formatting)",
+   "fire": [
+    "def greet(name):\n    msg = 'Hello %s, welcome back' % name\n    print(msg)",
+    "    root = get_root()\n    path = '%s/data/%s.csv' % (root, fname)\n    df = load(path)",
+    "    elapsed = time.time() - start\n    logger.info(\"Processed %d records in %s\" % (n, elapsed))",
+    "    def cleanup(self):\n        cmd = \"rm -rf %s\" % (self.tmp_dir)\n        os.system(cmd)",
+    "    if opt not in VALID:\n        raise ValueError('%s is not a valid option' % opt)",
+    "def build_url(host, port):\n    url = 'http://%s:%d/api' % (host, port)\n    return requests.get(url)",
+    "    def fetch(self, table, row_id):\n        sql = \"SELECT * FROM %s WHERE id = %d\" % (table, row_id)\n        return self.db.execute(sql)",
+    "def make_label(prefix, suffix):\n    label = '%s-%s' % (prefix, suffix)\n    return label"
+   ],
+   "quiet": [
+    "def greet(name):\n    msg = 'Hello {}, welcome back'.format(name)\n    print(msg)",
+    "    root = get_root()\n    path = os.path.join(root, 'data', fname + '.csv')\n    df = load(path)",
+    "    elapsed = time.time() - start\n    logger.info(f\"Processed {n} records in {elapsed}\")",
+    "    def cleanup(self):\n        cmd = \"rm -rf \" + self.tmp_dir\n        os.system(cmd)",
+    "    if opt not in VALID:\n        raise ValueError(opt + ' is not a valid option')",
+    "def build_url(host, port):\n    url = 'http://{}:{}/api'.format(host, port)\n    return requests.get(url)",
+    "    def fetch(self, table, row_id):\n        sql = \"SELECT * FROM {} WHERE id = {}\".format(table, row_id)\n        return self.db.execute(sql)",
+    "def make_label(prefix, suffix):\n    label = prefix + '-' + suffix\n    return label"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python % format",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Top tokens '%', ' %', '=\\'%' in old-style Python string formatting."
+}
