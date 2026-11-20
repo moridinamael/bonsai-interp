@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-dfb42b2a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N1192-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:11:53+00:00",
+ "recipe": {
+  "toolchain_commit": "59f279b47",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N1192_neg/2026-11-20-lm1909-dfb42b2a.tests.json"
+ },
+ "label": "the stem of a first-person-singular verb in Spanish (yo ...-o: reafirmo, propongo, necesito, estuve)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N1192_neg/2026-11-20-lm1909-dfb42b2a.tests.json",
+   "prereg_commit": "59f279b47",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.912,
+     "peak": " prepar"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.564,
+     "peak": " siempre"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.612,
+     "peak": "oz"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.665,
+     "peak": "leccion"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.865,
+     "peak": "pon"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.085,
+     "peak": " compr"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.562,
+     "peak": " y"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.756,
+     "peak": " ent"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.112,
+     "peak": " prepar"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.365,
+     "peak": " llev"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.211,
+     "peak": " recon"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.665,
+     "peak": "leccion"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.081,
+     "peak": "es"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.09,
+     "peak": " compr"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.121,
+     "peak": " cam"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.74,
+     "peak": " ent"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.773,
+    "median_fire": 0.639,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "59f279b47",
+  "minutes": 17,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Spanish 1st-person verb stem",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Output side: + pole suppresses ' am', \"'m\", ' myself', so the - pole promotes first-person continuations. Probes: 'me reafirmo' 0.74, 'me propongo' 0.32, 'estuve' 0.25; third person 'se reafirma' 0.00.",
+ "selection": "random draw"
+}

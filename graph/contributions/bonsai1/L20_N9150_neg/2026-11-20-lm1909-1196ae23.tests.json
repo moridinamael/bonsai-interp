@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-1196ae23",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N9150-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:39:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N9150",
+   "pole": "-",
+   "label": "the line break after a simple variable assignment inside an if/else branch of indented Python code",
+   "fire": [
+    "def label(item):\n    if isinstance(item, dict):\n        value = item\n    else:\n        value = {}\n    return value",
+    "def pick(a, b):\n    if a is not None:\n        result = a\n    else:\n        result = b\n    return result",
+    "def mode(cfg):\n    if cfg.debug:\n        level = cfg.level\n    else:\n        level = 0\n    return level",
+    "def name_of(node):\n    if hasattr(node, 'name'):\n        name = node.name\n    else:\n        name = repr(node)\n    return name",
+    "def unit(x):\n    if x > 0:\n        sign = 1\n    else:\n        sign = -1\n    return sign",
+    "def get_path(p):\n    if p.endswith('/'):\n        base = p\n    else:\n        base = p + '/'\n    return base",
+    "def source(args):\n    if args.input:\n        stream = args.input\n    else:\n        stream = sys.stdin\n    return stream",
+    "def head(rows):\n    if rows:\n        first = rows[0]\n    else:\n        first = None\n    return first"
+   ],
+   "quiet": [
+    "def label(item):\n    for key in item:\n        print(key)\n    return None",
+    "def pick(a, b):\n    print(a)\n    print(b)\n    return a or b",
+    "def mode(cfg):\n    for k in cfg.keys():\n        log(k)\n    return 0",
+    "def name_of(node):\n    return getattr(node, 'name', repr(node))",
+    "def unit(x):\n    for i in range(x):\n        print(i)\n    return x",
+    "def get_path(p):\n    return p.rstrip('/') + '/'",
+    "def source(args):\n    return args.input or sys.stdin",
+    "def head(rows):\n    for row in rows:\n        print(row)\n    return rows"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "newline after branch assignment",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top examples: '\\n' after 'docstring = obj' etc. inside if/else. Probes: if/else with 'text = obj' then else fired 0.75; a for loop with += only 0.007."
+}
