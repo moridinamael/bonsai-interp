@@ -1,0 +1,159 @@
+{
+ "id": "2026-11-20-lm1909-43faad79",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N3995-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:02:36+00:00",
+ "recipe": {
+  "toolchain_commit": "0bc2e204d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N3995_neg/2026-11-20-lm1909-43faad79.tests.json"
+ },
+ "label": "'signs' / 'symptoms' of a medical condition (signs and symptoms of ..., warning signs)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N3995_neg/2026-11-20-lm1909-43faad79.tests.json",
+   "prereg_commit": "0bc2e204d",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.392,
+     "peak": " signs"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.621,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.741,
+     "peak": " signs"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.897,
+     "peak": " symptoms"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.406,
+     "peak": " symptoms"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.682,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.434,
+     "peak": " signs"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.38,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.058,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.103,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.047,
+     "peak": " dangers"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.067,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " pressure"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " takes"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.031,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.198,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.527,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0bc2e204d",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "signs/symptoms of a condition",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "card: ' of' x10, ' symptoms' x5, ' Symptoms' x4, ' signs' x3; the output suppresses 'signs'. probe: 'Signs and symptoms of diabetes' 0.95, 'warning signs of a stroke' 0.75, 'road signs' 0.06, 'Causes and treatments of' 0.14.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "signs",
+   "symptoms"
+  ]
+ }
+}

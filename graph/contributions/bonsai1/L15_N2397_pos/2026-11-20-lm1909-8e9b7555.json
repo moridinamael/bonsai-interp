@@ -1,0 +1,158 @@
+{
+ "id": "2026-11-20-lm1909-8e9b7555",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N2397+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:01:56+00:00",
+ "recipe": {
+  "toolchain_commit": "0bc2e204d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N2397_pos/2026-11-20-lm1909-8e9b7555.tests.json"
+ },
+ "label": "the index 0 in a code subscript (version_info[0], args[0]): the first element, against [1] / [-1] on the other pole",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N2397_pos/2026-11-20-lm1909-8e9b7555.tests.json",
+   "prereg_commit": "0bc2e204d",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.896,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.041,
+     "peak": "]\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.028,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.499,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.65,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.189,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.483,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.011,
+     "peak": " next"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.014,
+     "peak": "import"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.033,
+     "peak": "()\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.05,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.027,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.021,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": "1"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.336,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0bc2e204d",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "subscript index 0",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "card: '0' x20 of top 32, mostly sys.version_info[0]; the - pole peaks on '1' in shape[1] / shape[-1], so the pole pair separates first vs second/last index.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "0"
+  ]
+ }
+}
