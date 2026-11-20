@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1e47e7c6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N7290+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:50:52+00:00",
+ "recipe": {
+  "toolchain_commit": "4762643e5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N7290_pos/2026-11-19-lm1909-1e47e7c6.tests.json"
+ },
+ "label": "the digits and decimal point of a number reported as a mean or average ('mean age was 36▁.▁7', 'averaging 79▁.▁9'); not other decimals",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N7290_pos/2026-11-19-lm1909-1e47e7c6.tests.json",
+   "prereg_commit": "4762643e5",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.469,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.6,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.274,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.256,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.279,
+     "peak": " people"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.389,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.082,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.178,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " room"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " district"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.277,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "4762643e5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "value of a mean/average",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: '.' x12 and digits inside figures that follow mean/average/averaging. Probes: 'mean age … 42.3' 0.62, 'Average tenure … 6.8' 0.66, 'averaging 81.4' 0.38, 'median income 51.2' 0.32; 'weighs 42.3' 0.02, 'costs 81.4' 0.02, 'Version 6.8' 0.01. An integer mean (42 years) also fired 0.62, so it is the value, not the decimal point as such.",
+ "selection": "random draw"
+}

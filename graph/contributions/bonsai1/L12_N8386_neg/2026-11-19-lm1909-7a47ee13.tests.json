@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-7a47ee13",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N8386-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:36:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N8386",
+   "pole": "-",
+   "label": "the line-break token ('\\n' or '.\\n') that ends a short stand-alone line in web boilerplate (menu / sidebar headings, 'read more' teasers) just before an unrelated next item",
+   "fire": [
+    "More headlines\nMost viewed this month\nAdvertisement\nPartner offers\nThe",
+    "Related articles\nEditor's picks\nNewsletter\nSponsored content\nA",
+    "Top sections\nLatest comments\nArchives\nUseful links\nOur",
+    "Shares fell on weak sales. Read our earlier report on the earnings.\nA study in the Herald",
+    "Popular tags\nRecent posts\nSubscribe\nPromoted stories\nWhen",
+    "There are no recent comments.\nYou have no bookmarks.\n[Video] Highlights of the final",
+    "Other sports\nMost shared today\nClassifieds\nAdvertising links\nIt",
+    "The mayor declined to comment. See previous coverage of the budget vote.\nA survey by the Post"
+   ],
+   "quiet": [
+    "More headlines, most viewed this month, advertisement and partner offers.",
+    "Related articles, editor's picks, the newsletter and sponsored content.",
+    "Top sections, latest comments, archives and useful links.",
+    "Shares fell on weak sales. A study in the Herald said otherwise.",
+    "Popular tags, recent posts, subscribe and promoted stories.",
+    "There are no recent comments and you have no bookmarks yet.",
+    "Other sports, most shared today, classifieds and advertising links.",
+    "The mayor declined to comment. A survey by the Post showed support for the budget."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "line break after boilerplate line",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: every top example peaks on a newline token ('\\n' x12, '.\\n' x11) closing a boilerplate line (sidebar headings, 'Read past story …', 'No favourites yet.'), while the + pole takes conversational '?\\n' / '...\\n'. Probes were weak: sidebar heading list 0.41, news teaser 0.16, bullet list 0.08, dialogue line break 0.07, same text on one line 0.02-0.03. May well fail the 0.20 median."
+}
