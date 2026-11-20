@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-206e46cf",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N8989-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:13:02+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N8989",
+   "pole": "-",
+   "label": "The point where items are about to be matched one-to-one with a parallel sequence: zip(...), .format / a format string before its arguments, and the start of a table row under its header",
+   "fire": [
+    "Here are the rivers.\n|River||Length|\n|Nile||6650|\n|Amazon||6400|\n",
+    "    for city, temp in zip(cities, temps):\n        report(city, temp)\n",
+    "    message = '{} scored {} points'.format(player, points)\n",
+    "    log.warning('retry %s after %d seconds', url, delay)\n",
+    "Opening hours by day.\n|Day||Hours|\n|Monday||9-5|\n|Sunday||closed|\n",
+    "    pairs = dict(zip(keys, values))\n    return pairs\n",
+    "    label = 'row {} of {}'.format(index, total)\n",
+    "    logger.error('could not open %r: %r', path, err)\n"
+   ],
+   "quiet": [
+    "Here are the rivers.\nThe Nile is long.\nThe Amazon is wide.\n",
+    "    for city in cities:\n        report(city)\n",
+    "    message = player + ' scored some points'\n",
+    "    log.warning('retrying the request now')\n",
+    "Opening hours by day.\nMonday is busy.\nSunday is closed.\n",
+    "    pairs = dict(values)\n    return pairs\n",
+    "    label = 'last row'\n    show(label)\n",
+    "    logger.error('could not open the file')\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "one-to-one pairing constructs",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card peaks: '|' x9 (first cell of a row after a |A||B| header), ' (' x5, 'format' x5, ' zip' x3, '\",' x3 (end of a format string before its arguments). Probes: table row 0.45, zip 0.42, .format 0.45, logging format string 0.36; a plain for loop with print 0.00. The + pole peaks on ' respectively' (25 of 32), which pairs two lists in prose, so both poles seem to mark positional pairing: this one in code and tables, the other in text."
+}

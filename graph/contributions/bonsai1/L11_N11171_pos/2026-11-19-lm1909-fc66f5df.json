@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-fc66f5df",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N11171+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:25+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N11171_pos/2026-11-19-lm1909-fc66f5df.tests.json"
+ },
+ "label": "A list, not one pattern: sunburn ('burn' from the sun), the warm colour words red and orange, and BRCA / breast cancer",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N11171_pos/2026-11-19-lm1909-fc66f5df.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.127,
+     "peak": " burn"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.193,
+     "peak": " orange"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.926,
+     "peak": "CA"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.504,
+     "peak": "burn"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.33,
+     "peak": " red"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.606,
+     "peak": " burn"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.419,
+     "peak": " orange"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.581,
+     "peak": "CA"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.084,
+     "peak": " hat"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.075,
+     "peak": " white"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.088,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.05,
+     "peak": " blister"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " outside"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " weather"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.07,
+     "peak": " scarf"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " pass"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.462,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "sunburn, red/orange, BRCA",
+ "unit_kind": "unclear",
+ "confidence": 0.4,
+ "notes": "Card peaks: ' orange' x4, ' red' x3, 'CA' (BRCA) x2, ' primary' x2, 'burn' x2, ' genetic'. Probes: do not burn (sun) 0.84, sunburn 0.67, red in a colour list 0.63, BRCA1 0.62, primary and secondary 0.44, orange juice 0.33, green 0.33, breast cancer 0.30, blue 0.14, genetic testing 0.08, unrelated 0.01. I could not find one distinction behind these (reddened skin? cancer risk?), so the label is the list and says so. The - pole (conventional/Western medicine and science) looks unrelated.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1a20881d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N9229-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:59+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L15_N9229_neg/2026-11-19-lm1909-1a20881d.tests.json"
+ },
+ "label": "Part-of-speech terms used as grammatical labels (verb, noun, adjective, adverb) in dictionary or grammar text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L15_N9229_neg/2026-11-19-lm1909-1a20881d.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.551,
+     "peak": " noun"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.485,
+     "peak": " verb"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.7,
+     "peak": "verb"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.787,
+     "peak": " adjective"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.328,
+     "peak": " verb"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.009,
+     "peak": " every"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.707,
+     "peak": "verb"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.593,
+     "peak": " verb"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.037,
+     "peak": " threat"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.049,
+     "peak": " then"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " describing"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.079,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.118,
+     "peak": " warning"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.009,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " quick"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " symbol"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.572,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "part-of-speech terms",
+ "unit_kind": "sparse feature",
+ "confidence": 0.75,
+ "notes": "Card peak tokens: 'verb' x4, ' verb' x3, ' adjective' x3, ' adj' x3, 'jectives' x2, 'ative' x2, all in dictionary or usage text. Probes: 'used as a verb' 0.88, 'used as a noun' 0.62, 'adverb' 0.54, 'the adjective hardy' 0.29; the same frame with 'used as a greeting' 0.16. The + pole (approximately, nearly, eventually, @abstractmethod) looks unrelated.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1bb6b84f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N11645+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:08+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N11645_pos/2026-11-19-lm1909-1bb6b84f.tests.json"
+ },
+ "label": "The second member of a parallel contrast, where a new word stands in for its earlier counterpart (entered ... enrolled, screen ... display, the X patch ... the Y memorial)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N11645_pos/2026-11-19-lm1909-1bb6b84f.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.592,
+     "peak": " event"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.731,
+     "peak": " monitor"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.524,
+     "peak": " statue"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.278,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.284,
+     "peak": " built"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.313,
+     "peak": " signed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.336,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.404,
+     "peak": " collected"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.027,
+     "peak": " Sunday"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.028,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.101,
+     "peak": " drank"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.019,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.025,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": " new"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": " charge"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.37,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "parallel contrast, second member",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card peaks have no shared token, but each top example is the matching slot of a second, contrasted clause. Probes of that structure fired 0.37-0.86; the same words in a single clause without the earlier counterpart scored 0.03 ('Sixty students enrolled in the arts course', 'a six-inch display'). Looser parallels with unrelated verbs fired less (0.11, 0.23). The - pole is the other side: a pro-form that repeats the earlier predicate instead of varying it (does so, it is, they can).",
+ "selection": "random draw"
+}

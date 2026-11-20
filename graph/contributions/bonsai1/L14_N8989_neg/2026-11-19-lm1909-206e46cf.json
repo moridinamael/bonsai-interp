@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-206e46cf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N8989-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:25:41+00:00",
+ "recipe": {
+  "toolchain_commit": "6e07a4698",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N8989_neg/2026-11-19-lm1909-206e46cf.tests.json"
+ },
+ "label": "The point where items are about to be matched one-to-one with a parallel sequence: zip(...), .format / a format string before its arguments, and the start of a table row under its header",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N8989_neg/2026-11-19-lm1909-206e46cf.tests.json",
+   "prereg_commit": "6e07a4698",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.434,
+     "peak": "|"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.315,
+     "peak": " zip"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.336,
+     "peak": "format"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.497,
+     "peak": "',"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.445,
+     "peak": "|"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.049,
+     "peak": "(zip"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.224,
+     "peak": "format"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.429,
+     "peak": "',"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " scored"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.006,
+     "peak": ".warning"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.012,
+     "peak": ".\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": "(values"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.0,
+     "peak": " row"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "')\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.383,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6e07a4698",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "one-to-one pairing constructs",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card peaks: '|' x9 (first cell of a row after a |A||B| header), ' (' x5, 'format' x5, ' zip' x3, '\",' x3 (end of a format string before its arguments). Probes: table row 0.45, zip 0.42, .format 0.45, logging format string 0.36; a plain for loop with print 0.00. The + pole peaks on ' respectively' (25 of 32), which pairs two lists in prose, so both poles seem to mark positional pairing: this one in code and tables, the other in text.",
+ "selection": "random draw"
+}
