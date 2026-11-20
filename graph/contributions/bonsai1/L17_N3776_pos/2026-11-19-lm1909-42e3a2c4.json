@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-42e3a2c4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N3776+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:58+00:00",
+ "recipe": {
+  "toolchain_commit": "c4c2b6f82",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N3776_pos/2026-11-19-lm1909-42e3a2c4.tests.json"
+ },
+ "label": "A place or people being measured against the rest of the world: the pole fires where a world-wide scope is in play or about to be stated ('Earth is⟦ the⟧ only planet…', 'a survey of 215 major⟦ cities⟧ of the world', 'one of the biggest⟦ in⟧ the world', nationals who must⟦ compete⟧ with foreigners). Local superlatives (the oldest church in the village) stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N3776_pos/2026-11-19-lm1909-42e3a2c4.tests.json",
+   "prereg_commit": "c4c2b6f82",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.707,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.281,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.935,
+     "peak": " in"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.088,
+     "peak": " compete"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.526,
+     "peak": " only"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.446,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.279,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.255,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.143,
+     "peak": " against"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.133,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " far"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.038,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.03,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " her"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.364,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c4c2b6f82",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "measured against the whole world",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: no single token (' on', ' in', ' of', ' the', ' cities', ' compete'); output promotes ' abroad', ' internationally', ' foreign', ' overseas', nationality adjectives. Probes were weak and mixed: 'Earth is the only planet' 0.72, 'major cities worldwide' 0.39, 'widest of any country' 0.34, 'compete against' 0.30, 'Mars is the only world' 0.29, 'busiest in Asia' 0.21, 'deepest on the planet' 0.20; but 'highest living standards in the world' 0.09, 'Japan is the only country to…' 0.03, 'largest exporter of coffee' 0.00; local comparisons <= 0.08. A low-confidence contextual guess: the median may miss the 0.20 bar. The - pole also sits in world/foreign contexts ('every film-producing country in the world', 'export to foreign markets'), so the two poles may split this theme in a way the card does not make clear.",
+ "selection": "random draw"
+}

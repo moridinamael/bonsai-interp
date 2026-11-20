@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e8eebee8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N2042-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:11+00:00",
+ "recipe": {
+  "toolchain_commit": "c4c2b6f82",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N2042_neg/2026-11-19-lm1909-e8eebee8.tests.json"
+ },
+ "label": "Model-line name or number of a personal computer or phone, right after its brand (Acer As⟦pire⟧, Compaq Pres⟦ario⟧, Huawei⟦ Nova⟧, Samsung⟦ Galaxy⟧, Eee PC 9⟦0⟧0, ZenBook 1⟦4⟧). Cars with model names and generic talk about laptops stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N2042_neg/2026-11-19-lm1909-e8eebee8.tests.json",
+   "prereg_commit": "c4c2b6f82",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.711,
+     "peak": "pire"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.612,
+     "peak": "ario"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.655,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.65,
+     "peak": " Nova"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.393,
+     "peak": " Galaxy"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.741,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.851,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.504,
+     "peak": " Idea"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " bought"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.006,
+     "peak": " price"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " had"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": " commute"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " years"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.653,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c4c2b6f82",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "PC / phone model name",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: top examples are Huawei Nova 3e, Eee PC 900, Compaq Presario, Acer Aspire One, asus vg248, ' Galaxy' x3. Probes: Acer Aspire 0.72, Huawei Nova / Asus ZenBook 14 0.88, Dell Inspiron 15 0.59, Compaq Presario 0.47, Samsung Galaxy 0.39; Toyota Corolla 0.14, astronomy 'galaxy' 0.005. The + pole peaks on digits of version and model numbers (Android 8.1, CB750), so the unit as a whole seems to track product version/model strings.",
+ "selection": "random draw"
+}

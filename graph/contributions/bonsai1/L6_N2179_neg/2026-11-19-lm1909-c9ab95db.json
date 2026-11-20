@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c9ab95db",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N2179-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:45:50+00:00",
+ "recipe": {
+  "toolchain_commit": "c4c2b6f82",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N2179_neg/2026-11-19-lm1909-c9ab95db.tests.json"
+ },
+ "label": "The word that completes a fixed 'X of ___' name, above all a big city right after 'University of' (University of⟦ Sydney⟧, ⟦ Paris⟧, ⟦ London⟧, ⟦ Tokyo⟧, ⟦ Vienna⟧) and ' prey' in 'bird of prey'. The same city or 'prey' outside the frame stays quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N2179_neg/2026-11-19-lm1909-c9ab95db.tests.json",
+   "prereg_commit": "c4c2b6f82",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.467,
+     "peak": " Sydney"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.649,
+     "peak": " Paris"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.514,
+     "peak": " London"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.436,
+     "peak": " Tokyo"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.672,
+     "peak": " prey"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.448,
+     "peak": " Vienna"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.923,
+     "peak": " prey"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.524,
+     "peak": " Sydney"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.042,
+     "peak": " Sydney"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " manuscript"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": " home"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " live"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": " prey"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " Vienna"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " at"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.519,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c4c2b6f82",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "city after 'University of'; 'bird of prey'",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' Sydney' x5, ' Paris' x3, ' London' x3, ' Tokyo' x2 after 'University of', ' prey' x2 after 'bird(s) of'. Probes: 'bird of prey' 0.94, 'University of Sydney' 0.49, Vienna 0.40, Tokyo 0.37, Melbourne 0.30; weaker for other 'X of place' names (Bank of London 0.25, University of Texas 0.20, Royal Society of Edinburgh 0.17, University of Michigan 0.15); 'city of Paris' 0.06, 'London to Sydney' 0.01, 'its prey' 0.02. So the frame matters more than the city; what the cities and 'prey' share is closing a well-known 'noun of ___' collocation. The + pole (' which' after 'of', ' dont') looks unrelated.",
+ "selection": "random draw"
+}

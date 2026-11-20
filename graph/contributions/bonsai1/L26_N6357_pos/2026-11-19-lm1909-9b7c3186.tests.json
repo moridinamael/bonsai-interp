@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-9b7c3186",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N6357+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:32:37+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N6357",
+   "pole": "+",
+   "label": "Word-initial 'Is-' that begins a name or a longer word: ' Is' as a piece (Isabella, Isadora, Isenberg, Isfahan), ' Isaac', ' isolate' / ' isolated'. The verb 'is' stays quiet, and so do other names.",
+   "fire": [
+    "The prize went to a young physicist named Isaac from Leeds.",
+    "On Sundays my cousin Isabella bakes bread for the whole street.",
+    "The opera tells the story of Tristan and Isolde in three long acts.",
+    "The biography of Steve Jobs by Walter Isaacson sold millions of copies.",
+    "The sheep belong to a farmer called Isidore who lives up the hill.",
+    "Our neighbour Isla walks her two dogs past the bakery every morning.",
+    "The village stayed isolated for weeks after the bridge washed away.",
+    "The choreography was inspired by the dancer Isadora Duncan."
+   ],
+   "quiet": [
+    "The prize went to a young physicist named Oscar from Leeds.",
+    "On Sundays my cousin Rebecca bakes bread for the whole street.",
+    "The opera is long, and it is sung in three acts.",
+    "The biography of Steve Jobs by a well-known journalist sold millions of copies.",
+    "The sheep belong to a farmer called Theodore who lives up the hill.",
+    "Our neighbour says the island is quiet at this time of year.",
+    "The village stayed cut off for weeks after the bridge washed away.",
+    "The delegation spent three days in Israel before flying home."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "word-initial 'Is-' (Isaac, Isabelle)",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' Is' x10, 'сл' x5 (Russian Исл-: Исламский, исландский), 'iso' x3, ' Isaac' x2; output promotes 'olated', 'olation', 'abella'. Probes: Isaac 0.68, Isabelle 0.65, Isenberg 0.62, Isadora 0.60, Isfahan 0.70, isolate 0.44, isolation 0.36, Islamic 0.30; verb 'is' 0.02, Israel 0.10, island 0.18, Eisenberg 0.02. Sentence-initial question 'Is it…' scored 0.36, so capital 'Is' leaks before the model knows it is the verb. The - pole peaks on mid-word 'is' / 'el' / 'en' inside surnames (Meisler, Waselkov): the same spelling piece when it is NOT word-initial."
+}
