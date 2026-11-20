@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-b1c59f67",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N5968-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:56:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L9/N5968",
+   "pole": "-",
+   "label": "tokens that specify a date or time format inside date-handling code or docstrings (digit counts in date regexes, 'ISO', locale names, isoformat)",
+   "fire": [
+    "import re\n\n_date_re = re.compile(r'(\\d{4})-(\\d{2})-(\\d{2})')\nmatch = _date_re.match(text)",
+    "class Timestamp(str):\n    \"\"\"A timestamp in the ISO 8601 format.\"\"\"\n    pass",
+    "from datetime import datetime\n\ndef stamp(value):\n    return datetime.utcfromtimestamp(value).isoformat()",
+    "\"\"\"\nTests for parsing dates and times in the German locale.\n\"\"\"\nimport unittest",
+    "def parse_year(m):\n    year = int(m.group('year'))\n    if year < 100:\n        year += 2000\n    return year",
+    "import time\n\ndef from_millis(ms):\n    return time.gmtime(ms / 1000.0)",
+    "fmt = '%Y-%m-%d %H:%M:%S'\nwhen = datetime.strptime(raw, fmt)\nprint(when.date())",
+    "_time_re = re.compile(r'(\\d{2}):(\\d{2}):(\\d{2})')\nparts = _time_re.findall(line)"
+   ],
+   "quiet": [
+    "import re\n\n_word_re = re.compile(r'([a-z]+)-([a-z]+)')\nmatch = _word_re.match(text)",
+    "class Username(str):\n    \"\"\"A user name in lower case letters.\"\"\"\n    pass",
+    "from pathlib import Path\n\ndef stem(value):\n    return Path(value).name.lower()",
+    "\"\"\"\nTests for parsing names and addresses in the user table.\n\"\"\"\nimport unittest",
+    "def parse_count(m):\n    count = int(m.group('count'))\n    if count < 0:\n        count = 0\n    return count",
+    "import math\n\ndef halve(n):\n    return math.floor(n / 2.0)",
+    "sep = ', '\nitems = raw.split(sep)\nprint(items[0])",
+    "_word_re = re.compile(r'([a-z]+) ([a-z]+)')\nparts = _word_re.findall(line)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "date format in code",
+ "unit_kind": "contextual",
+ "confidence": 0.3
+}
