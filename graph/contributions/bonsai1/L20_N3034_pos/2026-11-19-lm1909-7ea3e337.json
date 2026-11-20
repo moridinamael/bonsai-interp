@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-7ea3e337",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N3034+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:26:07+00:00",
+ "recipe": {
+  "toolchain_commit": "a4c95bce0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N3034_pos/2026-11-19-lm1909-7ea3e337.tests.json"
+ },
+ "label": "the noun or pronoun naming a container or writing surface right after something is put in/on it ('placed the child in it', 'jot them on the cards,'); weaker on 'paper'/'study' as a publication",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N3034_pos/2026-11-19-lm1909-7ea3e337.tests.json",
+   "prereg_commit": "a4c95bce0",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.174,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.268,
+     "peak": " cards"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.462,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.088,
+     "peak": " slips"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.027,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.031,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.462,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.052,
+     "peak": " tiles"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.089,
+     "peak": " basket"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " think"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.114,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " rested"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " questions"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": " trunk"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " wait"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.131,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a4c95bce0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "thing just put in/on",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Weak in probing: 'placed the kitten in it and' 0.37, 'on the sticky notes,' 0.28, 'team's paper said' 0.21, 'The study,' 0.11. The corpus top examples mix this with 'The study/paper,' subjects in science news; the test covers only the put-in/on pattern and may fail the 0.20 median.",
+ "selection": "random draw"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-929724f5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N7550-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:26:18+00:00",
+ "recipe": {
+  "toolchain_commit": "a4c95bce0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N7550_neg/2026-11-19-lm1909-929724f5.tests.json"
+ },
+ "label": "endocytic-pathway vocabulary: the pieces of 'endocytosis' and 'endosome/endosomal'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N7550_neg/2026-11-19-lm1909-929724f5.tests.json",
+   "prereg_commit": "a4c95bce0",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.13,
+     "peak": "yt"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.827,
+     "peak": "osomes"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.671,
+     "peak": "osomal"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.21,
+     "peak": "yt"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.647,
+     "peak": "osomes"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.734,
+     "peak": "yt"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.617,
+     "peak": "osomal"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.039,
+     "peak": "yt"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.381,
+     "peak": "in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.213,
+     "peak": " within"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": " when"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " neurons"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.178,
+     "peak": "oc"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " cells"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " mitochondrial"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.137,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.78,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a4c95bce0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "endocytosis / endosome",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Probing: endocytosis 0.83, endosomes 0.69, endosomal 0.91; exocytosis 0.15, phagocytosis 0.23, endoplasmic 0.25. One related sentence ('broken down in lysosomes by acid hydrolases') scored 0.47 on ' acid', so the pole reaches a little beyond the two word families. The + pole is muscle-filament vocabulary (actin filaments, Z lines).",
+ "selection": "random draw"
+}

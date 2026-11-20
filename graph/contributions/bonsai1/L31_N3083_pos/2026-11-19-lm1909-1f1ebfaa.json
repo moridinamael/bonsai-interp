@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1f1ebfaa",
+ "kind": "interpret",
+ "neuron": "bonsai1/L31/N3083+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:26:38+00:00",
+ "recipe": {
+  "toolchain_commit": "a4c95bce0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L31_N3083_pos/2026-11-19-lm1909-1f1ebfaa.tests.json"
+ },
+ "label": "a possessive kin list about to name extended family: fires just before or inside nephew/niece and grand-/great-grand- relations (' neph', ' great', 'and' before 'grandchildren')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L31_N3083_pos/2026-11-19-lm1909-1f1ebfaa.tests.json",
+   "prereg_commit": "a4c95bce0",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.535,
+     "peak": " neph"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.831,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.645,
+     "peak": " neph"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.308,
+     "peak": " great"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.606,
+     "peak": " neph"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.627,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.432,
+     "peak": " great"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.592,
+     "peak": " neph"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.341,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": "She"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.236,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.104,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.231,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.15,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.151,
+     "peak": " his"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.155,
+     "peak": " his"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.599,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a4c95bce0",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before nephew / grand- kin",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probing: 'nieces and nephews' 0.66 (on ' neph'), 'his great-granddaughter' 0.30, 'children and grandchildren' 0.24; 'his daughter' 0.06, 'his secretary' 0.06, but 'her son and his wife' 0.28 on ' and', so a coordinated kin list alone leaks. The output direction promotes grand/niece/nephew and suppresses son/daughter/mother.",
+ "selection": "random draw"
+}
