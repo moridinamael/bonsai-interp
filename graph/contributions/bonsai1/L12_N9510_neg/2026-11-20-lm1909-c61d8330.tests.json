@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-c61d8330",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N9510-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:37:10+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N9510",
+   "pole": "-",
+   "label": "the opening of a docstring or comment block right after a function or class header in code (''' / \"\"\" / % / #)",
+   "fire": [
+    "import numpy as np\n\ndef smooth(signal, width):\n    '''\n    Smooth a signal with a moving average.\n    '''\n    return np.convolve(signal, np.ones(width) / width)",
+    "class Parser(object):\n\n    def parse(self, text):\n        \"\"\"\n        Split the text into tokens.\n        \"\"\"\n        return text.split()",
+    "function [lo, hi] = bounds(v)\n   % BOUNDS Return the smallest and largest value\n   lo = min(v);\n   hi = max(v);",
+    "def load_config(path):\n    \"\"\"\n    Read the YAML file at path and return a dict.\n    \"\"\"\n    with open(path) as f:\n        return yaml.safe_load(f)",
+    "class Window(QtWidgets.QMainWindow):\n    '''\n    Main window of the image viewer.\n    '''\n    def __init__(self):\n        super().__init__()",
+    "def distance(a, b):\n    # Euclidean distance between two points\n    return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5",
+    "function y = normalize(x)\n   % NORMALIZE Scale a vector to unit length\n   y = x / norm(x);",
+    "    def reset(self):\n        \"\"\"\n        Clear all cached results.\n        \"\"\"\n        self.cache = {}"
+   ],
+   "quiet": [
+    "import numpy as np\n\ndef smooth(signal, width):\n    kernel = np.ones(width) / width\n    return np.convolve(signal, kernel)",
+    "class Parser(object):\n\n    def parse(self, text):\n        tokens = text.split()\n        return tokens",
+    "function [lo, hi] = bounds(v)\n   lo = min(v);\n   hi = max(v);\nend",
+    "def load_config(path):\n    with open(path) as f:\n        data = yaml.safe_load(f)\n    return data",
+    "class Window(QtWidgets.QMainWindow):\n    def __init__(self):\n        super().__init__()\n        self.resize(800, 600)",
+    "def distance(a, b):\n    dx = a[0] - b[0]\n    dy = a[1] - b[1]\n    return (dx ** 2 + dy ** 2) ** 0.5",
+    "function y = normalize(x)\n   n = norm(x);\n   y = x / n;\nend",
+    "    def reset(self):\n        self.cache = {}\n        self.count = 0"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "docstring opener",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "card: top is a MATLAB '%PEAKDET' help line under a function header, then docstring openers and '#'; max 9.6 is an outlier, the rest of the top sit near 5-6"
+}
