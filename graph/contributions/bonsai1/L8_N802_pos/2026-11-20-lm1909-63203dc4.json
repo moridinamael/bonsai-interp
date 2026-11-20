@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-63203dc4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N802+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:12:37+00:00",
+ "recipe": {
+  "toolchain_commit": "0788c1ae1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N802_pos/2026-11-20-lm1909-63203dc4.tests.json"
+ },
+ "label": "the first token of a new speaker's turn in back-and-forth dialogue: the opening quote and word of a reply line, or the colon after a speaker name in a transcript",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N802_pos/2026-11-20-lm1909-63203dc4.tests.json",
+   "prereg_commit": "0788c1ae1",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.028,
+     "peak": "\"Well"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.721,
+     "peak": "\"Yes"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.664,
+     "peak": "“But"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.531,
+     "peak": "\"The"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.306,
+     "peak": ":"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.598,
+     "peak": "“No"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.471,
+     "peak": "\""
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.431,
+     "peak": ":"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.039,
+     "peak": " shrugged"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " alarm"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "?\"\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.024,
+     "peak": " explained"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " bub"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " asked"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.565,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0788c1ae1",
+  "minutes": 8,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "start of a reply turn",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card/look: peaks are '\"Yes', '\"Well', '“What', '\"But' opening a line that answers the previous quoted line, and ':' after 'GROSS'/'Steve Rush' in interview transcripts. Near misses keep the dialogue but start the next line with narration.",
+ "selection": "random draw"
+}

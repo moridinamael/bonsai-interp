@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-976bee0a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N2317+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:11:33+00:00",
+ "recipe": {
+  "toolchain_commit": "0788c1ae1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N2317_pos/2026-11-20-lm1909-976bee0a.tests.json"
+ },
+ "label": "table/markup boundary tokens: the '||' cell separator ending a row in pipe tables and the '[Edit]' / 'Edit' marker after a wiki section heading",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N2317_pos/2026-11-20-lm1909-976bee0a.tests.json",
+   "prereg_commit": "0788c1ae1",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.667,
+     "peak": "||\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.37,
+     "peak": "||"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.348,
+     "peak": "Edit"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.146,
+     "peak": " Edit"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.208,
+     "peak": "||\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.236,
+     "peak": "Edit"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.551,
+     "peak": "||\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.037,
+     "peak": " Edit"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.033,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.03,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.037,
+     "peak": "In"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.035,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.043,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.038,
+     "peak": "In"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.292,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0788c1ae1",
+  "minutes": 7,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pipe-table / Edit markers",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card: '||' x4, '||\\n' x3, 'Edit' x4 of top 32, plus mojibake (î, .ï¿½). Mixed; best guess at the shared pattern is scraped-page structural markup.",
+ "selection": "random draw"
+}
