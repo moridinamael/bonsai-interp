@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a918baae",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8021-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:23:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L3/N8021",
+   "pole": "-",
+   "label": "the middle pieces of Russian 'еже-' frequency words (ежедневно, еженедельный, ежегодно)",
+   "fire": [
+    "Врач советует ежедневно гулять на свежем воздухе не меньше часа.",
+    "В нашем городе выходит еженедельная газета с местными новостями.",
+    "Фестиваль проводится ежегодно в первые выходные июля.",
+    "Жильцы должны ежемесячно оплачивать счета за воду и свет.",
+    "Музей ежедневно принимает сотни посетителей из разных стран.",
+    "Она ведёт еженедельную передачу о книгах на радио.",
+    "Компания ежегодно публикует отчёт о своих доходах.",
+    "Библиотека получает ежемесячный журнал о путешествиях."
+   ],
+   "quiet": [
+    "Врач советует каждый день гулять на свежем воздухе не меньше часа.",
+    "В нашем городе выходит местная газета с новостями района.",
+    "Фестиваль проводится каждый год в первые выходные июля.",
+    "Жильцы должны каждый месяц оплачивать счета за воду и свет.",
+    "Музей принимает сотни посетителей из разных стран.",
+    "Она ведёт вечернюю передачу о книгах на радио.",
+    "Компания каждый год публикует отчёт о своих доходах.",
+    "Библиотека получает новый журнал о путешествиях."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Russian 'еже-' compounds",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (4.8% of tokens reach 0.1 of max) and 100% gate-leak with a tiny max (0.19); top-32 peaks are mostly non-Latin word pieces ('ед' x3, 'одерж' x2, ' —' x2) plus quote-newline. Probes: ежедневно 0.88, еженедельный 0.99, a Korean word piece 0.79, quote-newline 0.53, plain English -0.08. The label names the strongest group seen; near misses are Russian sentences that say the same with 'каждый' and will probably fire weakly, because other Cyrillic pieces also do."
+}

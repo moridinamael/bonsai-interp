@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-e926b4b4",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8526+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:23:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N8526",
+   "pole": "+",
+   "label": "function tokens inside machine-learning / data-analysis text and code (after 'a dataset that I can use', 'an unsupervised method', 'enumerate(test_data)')",
+   "fire": [
+    "from sklearn.ensemble import RandomForestClassifier\n\ndef test_feature_ranking(X, y):\n    clf = RandomForestClassifier(n_estimators=100, random_state=0)\n    importances = clf.fit(X, y).feature_importances_\n    order = np.argsort(importances)\n    assert_array_equal(order, np.argsort(feature_importances))",
+    "Fitting a model is the same thing statisticians call estimating its parameters from a sample. Seeing it this way can help you connect what you learn in a machine learning course with a statistics textbook.",
+    "t-SNE is an unsupervised method to embed high-dimensional data into two dimensions, so that similar samples end up close together in the plot.",
+    "After a weekend of scraping I had forty thousand labelled recipes, a clean training dataset that I can use to fine-tune our classifier.",
+    "def knn_predict(k, features, labels, test_data):\n    predictions = []\n    for test_index, test_point in enumerate(test_data):\n        distances = np.linalg.norm(features - test_point, axis=1)\n        predictions.append(vote(labels[np.argsort(distances)[:k]]))",
+    "The pipeline is the first to combine gradient boosting with a learned embedding of the spectra. This results in clear gains in classification accuracy and training speed.",
+    "Bayesian inference expresses every judgment as a probability. Where there are clear rules for updating a prior with data, the posterior follows mechanically from the likelihood.",
+    "def make_policy(name, ob_space, ac_space):\n    return MlpPolicy(name=name, ob_space=ob_space, ac_space=ac_space, hid_size=64, num_hid_layers=2)"
+   ],
+   "quiet": [
+    "from django.shortcuts import render\n\ndef show_invoice(request, invoice_id):\n    invoice = Invoice.objects.get(pk=invoice_id)\n    lines = invoice.lines.order_by('position')\n    return render(request, 'invoice.html', {'invoice': invoice, 'lines': lines})",
+    "Kneading dough is the same thing bakers call developing the gluten in the flour. Seeing it this way can help you connect what you learn in a baking class with an old family recipe.",
+    "Drip irrigation is a simple method to bring water straight to the roots, so that little is lost to evaporation in the midday sun.",
+    "After a weekend of sorting I had forty labelled jars of seeds, a tidy garden collection that I can use to plant our vegetable beds.",
+    "def send_reminders(users, mailer):\n    sent = []\n    for user_index, user in enumerate(users):\n        if user.email and not user.unsubscribed:\n            mailer.send(user.email, 'Your booking is tomorrow')\n            sent.append(user_index)",
+    "The bakery is the first to combine sourdough with a slow overnight proof in wooden trays. This results in clear gains in flavour and shelf life.",
+    "Contract law treats every promise as a matter of intention. Where there are clear words setting out what each side must do, the court follows the text of the agreement.",
+    "def make_window(title, width, height):\n    return Window(title=title, width=width, height=height, resizable=True, fullscreen=False)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "inside ML / data-analysis text",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card and look: scattered peaks (' the', ' to', '(feature', ' you', '(test', ' in') in sklearn tests, classifier code and prose about models and statistics; the - pole fires on analysis words (algorithmically, linguistic, Impact Analysis) and promotes ' entropy', ' analytics', ' clustering'. Seven short probes of the ML-context idea all stayed under 0.15, so this is a best guess recorded honestly, written as longer passages like the top examples. Weak pole (max 6.9), 69% gate-closed echo regime."
+}

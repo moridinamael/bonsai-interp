@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-f42895bd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N11136-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:34:23+00:00",
+ "recipe": {
+  "toolchain_commit": "54ec63c45",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N11136_neg/2026-11-19-lm1909-f42895bd.tests.json"
+ },
+ "label": "being next to something: ' neighboring' / ' neighbor' / 'next door' / 'bordering' (adjacency between places or parties)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N11136_neg/2026-11-19-lm1909-f42895bd.tests.json",
+   "prereg_commit": "54ec63c45",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.557,
+     "peak": " neighboring"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.512,
+     "peak": " neighbouring"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.632,
+     "peak": " next"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.468,
+     "peak": " wall"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.612,
+     "peak": "ing"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.626,
+     "peak": " neighbor"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.676,
+     "peak": " neighboring"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.716,
+     "peak": " neighbouring"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.175,
+     "peak": " drifted"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.09,
+     "peak": " distant"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.228,
+     "peak": " we"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.266,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.073,
+     "peak": " far"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " dog"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.304,
+     "peak": " rival"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.058,
+     "peak": " ground"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.619,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "54ec63c45",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "adjacency: neighboring / next door",
+ "unit_kind": "sparse feature",
+ "confidence": 0.7,
+ "notes": "Card: ' neighboring' x7, ' next' (door) x3, ' neighbor', ' neighbouring', ' adjacent', ' across' (the border); the + direction suppresses ' neighbor', ' nearby', ' adjacent', ' adjoining', so this pole writes them. The + pole is the other side: what holds within one whole (unity of, coherence between, binds; promotes ' within', ' inside'). Probes: neighboring 0.56, next door 0.60, bordering 0.59, adjacent 0.19; same sentences without adjacency < 0.10. Near misses include 'next' without adjacency and 'far' / 'distant'.",
+ "selection": "random draw"
+}
