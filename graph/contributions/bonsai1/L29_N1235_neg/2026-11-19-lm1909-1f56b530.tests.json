@@ -1,0 +1,54 @@
+{
+ "contribution": "2026-11-19-lm1909-1f56b530",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N1235-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N1235",
+   "pole": "-",
+   "label": "the shebang that opens a script file: '#!/' (and the '/env' after it), read after a lead-in line. The pole's output promotes ' script' / ' scripts', and it also fires in prose where 'script(ing)' is about to be said. Ordinary comments, paths and other file openings stay quiet.",
+   "fire": [
+    "Save these lines as cleanup.sh and make the file executable:\n#!/bin/bash\nrm -rf build/",
+    "Here is the whole program, in a file named hello.py:\n#!/usr/bin/env python3\nprint('hello')",
+    "The first line of the installer reads:\n#!/bin/sh\nset -e",
+    "Paste the text below into a new file called report.pl:\n#!/usr/bin/perl\nuse strict;",
+    "My nightly job is tiny, as you can see:\n#!/bin/bash\ndate >> /var/log/nightly.log",
+    "Start the tool with these two lines:\n#!/usr/bin/env ruby\nputs 'ready'",
+    "The wrapper we ship looks like this:\n#!/bin/sh\nexec java -jar app.jar",
+    "An example from the manual, saved as count.py:\n#!/usr/bin/env python\nimport sys"
+   ],
+   "quiet": [
+    "Save these lines as notes.txt and keep the file handy:\nbuy bread\ncall the plumber",
+    "Here is the whole program, in a file named hello.py:\nprint('hello')\nprint('bye')",
+    "The first line of the letter reads:\nDear Ms. Alvarez,\nthank you for your order.",
+    "Paste the text below into a new file called style.css:\nbody {\n  margin: 0;\n}",
+    "My nightly routine is simple, as you can see:\n1. brush teeth\n2. read a chapter",
+    "Add a remark above the loop:\n# skip empty rows!\nfor row in rows:",
+    "The logs are kept under /var/log/app on every server.",
+    "An example from the manual, stored as data.json:\n{\n  \"count\": 3\n}"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "shebang '#!/'",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: '#!/' x16 of the top 32, '/env' x5, ' /' x4; the - pole's output promotes ' script', ' scripts', '#!/'. Probes: shebang lines 0.57-0.94; a '.py' file opening with imports 0.07, a CSS colour '#333' 0.02, a '# TODO' comment 0.02. Not covered by the near misses: a plain '#' comment as the first line of a file introduced as run.sh read 0.63, and prose read 0.50-0.55 just before 'scripting' / after 'programming language' and 0.22 on 'bash script'; a quoted '\"/bin/sh\"' read 0.29. So the pole is better described as 'a script is starting / being named' than as the shebang token alone; the test only supports the shebang.",
+ "trigger": {
+  "tokens": [
+   "#!/",
+   "/env"
+  ]
+ }
+}

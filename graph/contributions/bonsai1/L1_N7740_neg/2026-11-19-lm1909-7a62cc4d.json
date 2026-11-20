@@ -1,0 +1,165 @@
+{
+ "id": "2026-11-19-lm1909-7a62cc4d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7740-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:41:58+00:00",
+ "recipe": {
+  "toolchain_commit": "6ab349a66",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N7740_neg/2026-11-19-lm1909-7a62cc4d.tests.json"
+ },
+ "label": "a small set of built-environment / industry nouns as tokens: ' buildings', ' building', ' materials', ' structure', ' production', ' equipment' (also ' trucks'). Not a general 'man-made things' feature: ' houses', ' machines', ' tools', ' vans' stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N7740_neg/2026-11-19-lm1909-7a62cc4d.tests.json",
+   "prereg_commit": "6ab349a66",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.213,
+     "peak": " buildings"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.578,
+     "peak": " buildings"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": -0.013,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.011,
+     "peak": " materials"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.252,
+     "peak": " iron"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.019,
+     "peak": " production"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.239,
+     "peak": " equipment"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.365,
+     "peak": " equipment"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.019,
+     "peak": " square"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.121,
+     "peak": " damaged"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.014,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": " budget"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " tools"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.005,
+     "peak": " prices"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " gym"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.187,
+     "peak": " bus"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.766,
+    "median_fire": 0.226,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ab349a66",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tokens: buildings, materials, structure…",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Layer 1, so tested as bare tokens. Card: ' buildings' x5, ' building' x5, 'ular' x4 (tubular), ' trucks' x4. Probes: ' buildings' 0.50, ' materials' 0.57, ' structure' 0.62, ' production' 0.51, ' equipment' 0.44, ' trucks' 0.31, ' building' 0.18; ' houses' 0.03, ' machines' 0.00, ' vans' 0.08, ' cars' 0.20. This is a list, and I could not find the pattern behind it: 'machines' and 'tools' being silent rules out 'manufactured things'. The token after 'tubular' also read high (' shape' 0.68, ' frame' 0.50), which the label does not cover.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   " buildings",
+   " building",
+   " materials",
+   " structure",
+   " production",
+   " equipment",
+   " trucks"
+  ]
+ }
+}

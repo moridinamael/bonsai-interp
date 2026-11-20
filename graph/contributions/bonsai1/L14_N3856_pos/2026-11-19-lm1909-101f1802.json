@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-101f1802",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3856+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:42:18+00:00",
+ "recipe": {
+  "toolchain_commit": "6ab349a66",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N3856_pos/2026-11-19-lm1909-101f1802.tests.json"
+ },
+ "label": "a word inside verbatim-memorised text: site boilerplate, licence text or a famous quotation (calendar pages' 'An event *every* week that begins…', the MIT licence's 'free of *charge*', 'Water, water *everywhere*', a dictionary site's 'Seen and *Heard*'). The same words in freshly worded sentences stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N3856_pos/2026-11-19-lm1909-101f1802.tests.json",
+   "prereg_commit": "6ab349a66",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.718,
+     "peak": " every"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.471,
+     "peak": " members"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.459,
+     "peak": " charge"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.609,
+     "peak": " everywhere"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.297,
+     "peak": " Heard"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.608,
+     "peak": " waiting"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.364,
+     "peak": " these"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.953,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " ten"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.015,
+     "peak": " can"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " why"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.017,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.539,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ab349a66",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "memorised boilerplate / quotation",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Rare pole (0.016% of tokens reach 0.1 of max). The card's peak tokens (' Heard', ' charge', ' members', ' every', ' everywhere') share no meaning, but each sits in text the model has seen many times verbatim. Probes: my own sentences with the same words read 0.01-0.02 ('The class meets every week', 'free of charge' in a newsletter line), while the stock wordings read 1.03 (calendar boilerplate), 0.45 (MIT licence), 0.58 (Coleridge), 0.52 (dictionary site), 0.38 (presentation site). Other famous lines were weaker: 'We hold these truths' 0.33, Gettysburg 0.14, 'To be, or not to be' 0.03, so 'memorised' is too wide as stated and the pole may be keyed to particular texts. The fire items are longer than the near misses because the boilerplate needs its lead-in.",
+ "selection": "random draw"
+}

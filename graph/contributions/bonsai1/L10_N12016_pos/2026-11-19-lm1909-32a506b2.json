@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-32a506b2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N12016+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:41:46+00:00",
+ "recipe": {
+  "toolchain_commit": "6ab349a66",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N12016_pos/2026-11-19-lm1909-32a506b2.tests.json"
+ },
+ "label": "a passive participle that demands a complement, right after be/get: 'is regarded [as]', 'was ordered [to]', 'was diagnosed [with]', 'is believed [to]'; also 'in the process [of]'. Active uses of the same verbs stay quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N12016_pos/2026-11-19-lm1909-32a506b2.tests.json",
+   "prereg_commit": "6ab349a66",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.453,
+     "peak": " regarded"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.626,
+     "peak": " diagnosed"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.591,
+     "peak": " ordered"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.319,
+     "peak": " believed"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.771,
+     "peak": " hailed"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.228,
+     "peak": " supposed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.073,
+     "peak": " allowed"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.7,
+     "peak": " process"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " water"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.01,
+     "peak": " museum"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.522,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ab349a66",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "complement-taking passive participle",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: ' regarded', ' diagnosed', ' hailed', ' ordered', ' supposed', ' process'. Probes: passive uses read 0.47-0.78, active uses of the same verbs and a complement-less passive ('was broken') about 0.01. 'known for' (0.12) and 'considered' (0.08) read low, so the set of verbs is narrower than the label's wording may suggest. The - pole fires on the following preposition ('invited to'), the other half of the same construction.",
+ "selection": "random draw"
+}

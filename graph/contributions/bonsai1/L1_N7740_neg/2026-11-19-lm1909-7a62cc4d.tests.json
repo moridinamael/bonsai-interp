@@ -1,0 +1,59 @@
+{
+ "contribution": "2026-11-19-lm1909-7a62cc4d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N7740-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N7740",
+   "pole": "-",
+   "label": "a small set of built-environment / industry nouns as tokens: ' buildings', ' building', ' materials', ' structure', ' production', ' equipment' (also ' trucks'). Not a general 'man-made things' feature: ' houses', ' machines', ' tools', ' vans' stay quiet.",
+   "fire": [
+    "Most of the buildings on the square date from the 1890s.",
+    "The storm damaged several buildings along the waterfront.",
+    "The school ordered new materials for the art room.",
+    "Builders prefer local materials when the budget is tight.",
+    "The tower is a slender structure of brick and iron.",
+    "Milk production fell sharply during the dry summer.",
+    "The gym replaced its old equipment over the holidays.",
+    "The hospital bought new equipment for the laboratory."
+   ],
+   "quiet": [
+    "Most of the houses on the square date from the 1890s.",
+    "The storm damaged several boats along the waterfront.",
+    "The school ordered new books for the art room.",
+    "Gardeners prefer local plants when the budget is tight.",
+    "The workshop is full of machines and hand tools.",
+    "Milk prices fell sharply during the dry summer.",
+    "The gym replaced its old towels over the holidays.",
+    "Two vans and a bus were waiting at the gate."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "tokens: buildings, materials, structure…",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Layer 1, so tested as bare tokens. Card: ' buildings' x5, ' building' x5, 'ular' x4 (tubular), ' trucks' x4. Probes: ' buildings' 0.50, ' materials' 0.57, ' structure' 0.62, ' production' 0.51, ' equipment' 0.44, ' trucks' 0.31, ' building' 0.18; ' houses' 0.03, ' machines' 0.00, ' vans' 0.08, ' cars' 0.20. This is a list, and I could not find the pattern behind it: 'machines' and 'tools' being silent rules out 'manufactured things'. The token after 'tubular' also read high (' shape' 0.68, ' frame' 0.50), which the label does not cover.",
+ "trigger": {
+  "tokens": [
+   " buildings",
+   " building",
+   " materials",
+   " structure",
+   " production",
+   " equipment",
+   " trucks"
+  ]
+ }
+}

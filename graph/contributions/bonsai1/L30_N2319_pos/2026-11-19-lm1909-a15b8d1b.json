@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-a15b8d1b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N2319+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:42:30+00:00",
+ "recipe": {
+  "toolchain_commit": "6ab349a66",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N2319_pos/2026-11-19-lm1909-a15b8d1b.tests.json"
+ },
+ "label": "Korean / Japanese locative pro-forms meaning 'here' or 'where' used as a place (여기, 어디, ここ, どこ; weaker on 거기). English 'here' / 'there' and Chinese 这里 stay quiet; the - pole is English existential 'there'.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N2319_pos/2026-11-19-lm1909-a15b8d1b.tests.json",
+   "prereg_commit": "6ab349a66",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.426,
+     "peak": " 여기"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.451,
+     "peak": " 여기"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.456,
+     "peak": " 어디"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.527,
+     "peak": " 여기"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.076,
+     "peak": "ここ"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.273,
+     "peak": "ここ"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.255,
+     "peak": "どこ"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.161,
+     "peak": " 어디"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.061,
+     "peak": "침"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.072,
+     "peak": " 언제"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": " 수"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "を開"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.003,
+     "peak": "物"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": "この"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " wallet"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.35,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ab349a66",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Korean/Japanese 'here' / 'where'",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: ' 여기' x6, 'ここ' x3, ' there' x3, '곳' x3, ' 어디' x2. Probes: 여기에서 0.52, 어디에서 0.71, ここに (mid-sentence) 0.71, どこ 0.22-0.37, 거기 0.21, 이곳 0.10; sentence-initial ここ 0.06; English 'there' / 'here' 0.01, Chinese 这里 0.01, 언제 ('when') 0.03. The same sentences without the pro-form read 0.14-0.16, so the margin is not wide. The card's English ' there' examples did not reproduce in my probes.",
+ "selection": "random draw"
+}

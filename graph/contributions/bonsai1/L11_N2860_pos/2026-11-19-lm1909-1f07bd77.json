@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1f07bd77",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N2860+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:41:51+00:00",
+ "recipe": {
+  "toolchain_commit": "6ab349a66",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L11_N2860_pos/2026-11-19-lm1909-1f07bd77.tests.json"
+ },
+ "label": "an anaphoric 'this' standing alone as the object or subject of a clause ('proved this was', 'will do this'), pointing back at something just described; weaker and unreliable on 'that', 'here' and a repeated topic noun. 'this' as a determiner stays quiet.",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L11_N2860_pos/2026-11-19-lm1909-1f07bd77.tests.json",
+   "prereg_commit": "6ab349a66",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.391,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.327,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.764,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.341,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.167,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.386,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.035,
+     "peak": " this"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.035,
+     "peak": " we"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": " them"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.034,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": "Only"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.053,
+     "peak": " existed"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.024,
+     "peak": " day"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.018,
+     "peak": " thinking"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " we"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.334,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6ab349a66",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "anaphoric bare 'this'",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: ' this' x8 of the top 32, plus 'here', 'such', 'that' and repeated nouns. Probing was inconsistent: 'proved this was' 0.34-0.55, 'do this directly ... do this implicitly' 0.59, 'help you with that' 0.56, a repeated 'humor' 0.78, but 'most people forget this' 0.04, 'will do this automatically' 0.11 and 'helps with that' 0.03. I do not know what separates the cases, so this is a best guess and may well fail.",
+ "selection": "random draw"
+}

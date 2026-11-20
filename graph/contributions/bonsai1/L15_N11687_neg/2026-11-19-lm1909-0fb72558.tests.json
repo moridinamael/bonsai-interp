@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-0fb72558",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N11687-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N11687",
+   "pole": "-",
+   "label": "Python code: the accessor that opens right after a variable name, reaching into the object just named: a string-key subscript ([' or ][') or an attribute such as .id.",
+   "fire": [
+    "def get_owner(context, volume):\n    if context.user_id != volume['user_id']:\n        raise NotAuthorized()\n    return volume['owner']",
+    "    call_args = mock_send.call_args\n    self.assertEqual(call_args[0]['subject'], 'Hello')\n    self.assertTrue(call_args[1]['html'])",
+    "def serialize(order):\n    payload = {}\n    payload['total'] = order['total']\n    payload['customer'] = order['customer_id']\n    return payload",
+    "    for old_job in stale_jobs:\n        removed.append(old_job.id)\n    return removed",
+    "def test_update(self):\n    response = self.client.get(url)\n    data = response.json()\n    self.assertEqual(data['status'], 'ok')",
+    "    if request.is_admin and request.tenant_id != server['tenant_id']:\n        project = server['project']",
+    "def load(config):\n    host = config['host']\n    port = config['port']\n    return connect(host, port)",
+    "    result = handler.process(event)\n    self.assertEqual(result['code'], 200)\n    self.assertIn('id', result['body'])"
+   ],
+   "quiet": [
+    "def area(width, height):\n    total = width * height\n    return total",
+    "radius = 4\narea = 3.14 * radius ** 2\nprint(area)",
+    "for n in range(1, 20):\n    if n % 3 == 0:\n        print(n)",
+    "count = 0\nwhile count < 5:\n    count = count + 1\nprint(count)",
+    "function total(a, b) {\n  var sum = a + b;\n  return sum;\n}",
+    "SELECT title, price FROM books WHERE price < 20 ORDER BY title;",
+    "def greet(name):\n    message = 'Hello, ' + name\n    return message",
+    "#include <stdio.h>\nint main(void) {\n    int x = 3;\n    return x;\n}"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "Python key/attribute accessor",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card flags the pole broad (1.1%). Peak tokens: '.id' x4, '._' x3, '_args' x2, '_data' x2, \"['\" x2. Probes: \"['\" / \"]['\" after a variable 0.25-0.44, '.id' 0.32; code without accessors 0.02-0.06. Fire items are multi-line, as the survey's tips ask for code poles. Name suffixes such as '_args' and '_data' are on the card but are not tested here."
+}

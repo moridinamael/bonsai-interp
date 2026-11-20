@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-101f1802",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3856+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N3856",
+   "pole": "+",
+   "label": "a word inside verbatim-memorised text: site boilerplate, licence text or a famous quotation (calendar pages' 'An event *every* week that begins…', the MIT licence's 'free of *charge*', 'Water, water *everywhere*', a dictionary site's 'Seen and *Heard*'). The same words in freshly worded sentences stay quiet.",
+   "fire": [
+    "- This event has passed.\nKnitting Circle (Thursdays)\nOctober 12 @ 10 AM - 11 AM\nAn event every week that begins at 10 AM on Thursday, repeating until December 14",
+    "Copy the link below and send it via email or IM\nPresent to your audience\nStart remote presentation\n- Invited audience members will follow you as you navigate and present\n- People invited to a presentation do not need an account",
+    "Copyright (c) 2014 the authors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files",
+    "The sailors in Coleridge's poem cry: \"Water, water, everywhere, and all the boards did shrink; water, water, everywhere, nor any drop to drink.\"",
+    "First Known Use: 1855\nSeen and Heard\nWhat made you want to look up this word? Please tell us where you read or heard it.",
+    "Her fridge magnet read: \"Life isn't about waiting for the storm to pass. It's about learning to dance in the rain.\"",
+    "The document opens: \"We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights.\"",
+    "- This event has passed.\nChess Club (Tuesdays)\nMay 7 @ 5 PM - 6 PM\nAn event every week that begins at 5 PM on Tuesday, repeating until June 25"
+   ],
+   "quiet": [
+    "The knitting circle meets every week on Thursday morning at ten.",
+    "People in the audience can follow along on their own laptops.",
+    "Anyone may download and use the program without paying for it.",
+    "After the flood there was water everywhere, but none of it was safe to drink.",
+    "Tell us where you first read or heard the word and why you looked it up.",
+    "She spent the afternoon waiting for the storm to pass before driving home.",
+    "The authors of the document held that every person is born with equal rights.",
+    "The chess club meets every week on Tuesday at five in the afternoon."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "memorised boilerplate / quotation",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Rare pole (0.016% of tokens reach 0.1 of max). The card's peak tokens (' Heard', ' charge', ' members', ' every', ' everywhere') share no meaning, but each sits in text the model has seen many times verbatim. Probes: my own sentences with the same words read 0.01-0.02 ('The class meets every week', 'free of charge' in a newsletter line), while the stock wordings read 1.03 (calendar boilerplate), 0.45 (MIT licence), 0.58 (Coleridge), 0.52 (dictionary site), 0.38 (presentation site). Other famous lines were weaker: 'We hold these truths' 0.33, Gettysburg 0.14, 'To be, or not to be' 0.03, so 'memorised' is too wide as stated and the pole may be keyed to particular texts. The fire items are longer than the near misses because the boilerplate needs its lead-in."
+}

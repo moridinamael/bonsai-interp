@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-9bff2139",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N3225+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:12:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N3225",
+   "pole": "+",
+   "label": "the last stem token of a plural common noun whose plural ending is a separate token, after a modifier (run|ways, catalyst|s, lantern|s, German …system|e, …lamp|en). Singulars and single-token plurals stay quiet.",
+   "fire": [
+    "The new airport will have three parallel runways.",
+    "Platinum and nickel are widely used industrial catalysts.",
+    "The street was decorated with hundreds of red paper lanterns.",
+    "The city draws its water from two mountain reservoirs.",
+    "The paint is thinned with strong chemical solvents.",
+    "Für die Nachtwanderung brauchen wir helle Taschenlampen.",
+    "Die Gärtnerei nutzt moderne automatische Bewässerungssysteme.",
+    "Certain rare metals turn out to be excellent catalysts."
+   ],
+   "quiet": [
+    "The new airport will have one long runway.",
+    "Platinum is a widely used industrial catalyst.",
+    "The street was decorated with hundreds of red paper flags.",
+    "The city draws its water from two mountain lakes.",
+    "The paint is thinned with a strong chemical solvent.",
+    "Für die Nachtwanderung brauchen wir eine helle Taschenlampe.",
+    "Die Gärtnerei nutzt ein modernes automatisches Bewässerungssystem.",
+    "Certain rare metals turn out to be excellent magnets."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5.2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "stem before a split-off plural ending",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top examples are German, Russian and English plural nouns caught one token before the ending (Bewässerungss|ystem|e, автоб|ус|ов, run|ways, mo|ths, catalyst|s); the - pole is plural surnames (the Clooneys, the Millers). Splits checked with the tokenizer. Probes were uneven: run|ways 0.44, catalyst|s 0.53, …system|e 0.52, lantern|s 0.15-0.33, sol|vents 0.27, …lamp|en 0.24, reservoir|s 0.22, but mo|ths 0.18, fern|s 0.06, dialect|s 0.05, sed|atives 0.01; singulars 0.00-0.02. The median fire may fall under 0.20. The singular 'Bewässerungssystem' keeps the stem token and drops only the ending, which is the hardest near miss here."
+}
