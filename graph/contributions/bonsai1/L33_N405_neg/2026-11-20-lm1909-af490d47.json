@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-af490d47",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N405-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:10:59+00:00",
+ "recipe": {
+  "toolchain_commit": "1d9abd0f2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N405_neg/2026-11-20-lm1909-af490d47.tests.json"
+ },
+ "label": "a subject or copula about to receive a physical-state predicate (is plugged in, are heated, teeth extracted, screen cracked)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N405_neg/2026-11-20-lm1909-af490d47.tests.json",
+   "prereg_commit": "1d9abd0f2",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.147,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.175,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.413,
+     "peak": " were"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.286,
+     "peak": " firmly"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.431,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.198,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.352,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.217,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.21,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.17,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.02,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.077,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.283,
+     "peak": " are"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.332,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.07,
+     "peak": " we"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.797,
+    "median_fire": 0.252,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1d9abd0f2",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before physical state",
+ "unit_kind": "contextual",
+ "confidence": 0.25,
+ "notes": "Card: broad-ish (0.67% over 0.1 max); top examples 'wisdom teeth [extracted]', 'peripheral components [unhooked]', 'power cord is [plugged]', 'once they are [heated]'. The + pole's output suppresses loose, cracked, broken, torn, so the - pole leans toward those. Near misses use the same verbs with abstract predicates.",
+ "selection": "random draw"
+}

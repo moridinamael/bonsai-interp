@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-cdf8f191",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N6811-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:10:32+00:00",
+ "recipe": {
+  "toolchain_commit": "1d9abd0f2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L26_N6811_neg/2026-11-20-lm1909-cdf8f191.tests.json"
+ },
+ "label": "the punctuation right after a question number in a quiz or exam ('Q1.', '4.', '7)'), where a question is about to start",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L26_N6811_neg/2026-11-20-lm1909-cdf8f191.tests.json",
+   "prereg_commit": "1d9abd0f2",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.437,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.22,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.519,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.295,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.401,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.803,
+     "peak": ")"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.473,
+     "peak": "7"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.453,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.017,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "Step"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.077,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.122,
+     "peak": "Chapter"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.017,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": "Top"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.048,
+     "peak": "Things"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": "Opening"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.445,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1d9abd0f2",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "quiz question number",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: top examples are 'Q1)', 'Q1.', '4.', '7.', '2.' each followed by a question in a test paper, after answer options. The + pole's output suppresses 'correct', 'best', 'most' (answer words). Near misses are numbered lists that are not questions (steps, items).",
+ "selection": "random draw"
+}
