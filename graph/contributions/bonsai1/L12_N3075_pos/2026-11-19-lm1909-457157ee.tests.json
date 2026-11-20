@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-457157ee",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N3075+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:02:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N3075",
+   "pole": "+",
+   "label": "in code, the opening bracket of a list (or dict) literal passed as a call argument ('([', ', [') or shown as a value after '==>'; indexing brackets, plain list assignments and prose brackets are quiet",
+   "fire": [
+    "    fig, ax = plt.subplots()\n    ax.plot([1, 20], [3, 9], linestyle='--')",
+    "  # 'm' is [[5 6]\n  #        [7 8]]\n  tf.transpose(m) ==> [[5 7]\n                       [6 8]]",
+    "    report = compare_runs(baseline, [run_a, run_b], verbose=False)",
+    "    wall = make_wall(corners, [0.2], [0.4], name='north')",
+    "    ax.scatter(xs, ys, marker='o')\n    ax.plot([0, 30], [0, 30], color='gray')",
+    "    session = open_session(None, [user_id, group_id], timeout=30)",
+    "  values = [[9, 8], [7, 6], [5, 4]]\n  keep = [False, True, True]\n  boolean_mask(values, keep) ==> [[7, 6], [5, 4]]",
+    "    plt.figure(figsize=(6, 4))\n    plt.fill_between([0, 5], [1, 1], alpha=0.3)"
+   ],
+   "quiet": [
+    "    fig, ax = plt.subplots()\n    ax.plot(xs, ys, linestyle='--')",
+    "  # 'm' is a square matrix\n  # of floats\n  tf.transpose(m) returns a new tensor",
+    "    report = compare_runs(baseline, run_a, run_b, verbose=False)",
+    "    wall = corners[0] + corners[1]",
+    "    ax.scatter(xs, ys, marker='o')\n    ax.plot(xs, fit, color='gray')",
+    "    colors = ['red', 'green', 'blue']",
+    "The proof is given in the appendix [2] and in the earlier survey [5].",
+    "    first = rows[0]\n    last = rows[-1]"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'[' opening a list argument",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: ' [' x15, ' [[' x6, '([' x4, ' {\\n' x1 of the top 32, all in code where a literal starts inside a call or after '==>'. Probes: 'plt.plot([0, 10]' 0.85, '==> [[' 0.39, ', [first_id' 0.38, ', {\\n' 0.27; the same call without a list 0.01, indexing 0.02, 'names = [' 0.01, prose '[1]' 0.02."
+}

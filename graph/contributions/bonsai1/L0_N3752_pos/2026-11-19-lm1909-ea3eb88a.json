@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ea3eb88a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N3752+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:13:28+00:00",
+ "recipe": {
+  "toolchain_commit": "714f62b36",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N3752_pos/2026-11-19-lm1909-ea3eb88a.tests.json"
+ },
+ "label": "German word-final '-e' tokens: inflected adjectives (' moderne', ' große', ' kleine', '-reiche') and '-e' nouns (' Deutsche', 'K-asse', 'Sch-ule'); German sentences without such a token are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N3752_pos/2026-11-19-lm1909-ea3eb88a.tests.json",
+   "prereg_commit": "714f62b36",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.595,
+     "peak": " moderne"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.524,
+     "peak": " große"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.528,
+     "peak": " Deutsche"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.525,
+     "peak": "iche"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.554,
+     "peak": "asse"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.362,
+     "peak": " kleine"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.621,
+     "peak": "ule"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.593,
+     "peak": "iche"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.11,
+     "peak": "kehr"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.091,
+     "peak": " Vere"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.237,
+     "peak": "unde"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.339,
+     "peak": "re"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.06,
+     "peak": " viel"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.024,
+     "peak": " T"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.094,
+     "peak": " Sport"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": "Der"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.541,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "714f62b36",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German -e adjective/noun tokens",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Layer 0, card: 'iche' x6, ' moderne' x4, ' Deutsche' x3, ' große' x2, 'ule', 'me'. Probes: moderne 0.60, große 0.49, Deutsche 0.48, zahlreiche 0.55, Kasse 0.71, kleine 0.37, Schule 0.36; French 'moderne' 0.35; German without these 0.00-0.13, ' habe' 0.21, ' Länder' 0.25.",
+ "selection": "random draw"
+}

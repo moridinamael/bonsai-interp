@@ -1,0 +1,161 @@
+{
+ "id": "2026-11-19-lm1909-4ba48eb6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8519-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:14:01+00:00",
+ "recipe": {
+  "toolchain_commit": "714f62b36",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N8519_neg/2026-11-19-lm1909-4ba48eb6.tests.json"
+ },
+ "label": "the tokens ' pulp', ' gulp', 'ulp' (pulp, gulp, gulping, Pulp); other '-lp' / '-ump' words (help, yelp, pump, kelp) are quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N8519_neg/2026-11-19-lm1909-4ba48eb6.tests.json",
+   "prereg_commit": "714f62b36",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.684,
+     "peak": " pulp"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.508,
+     "peak": " gulp"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.994,
+     "peak": "ping"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.591,
+     "peak": " pulp"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.592,
+     "peak": " pulp"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.744,
+     "peak": "ped"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.596,
+     "peak": " pulp"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.622,
+     "peak": " gulp"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " presses"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": " one"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " drinking"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.0,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": " asked"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.055,
+     "peak": "elp"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": "Paper"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " stage"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.609,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "714f62b36",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pulp / gulp",
+ "unit_kind": "lexical",
+ "confidence": 0.8,
+ "notes": "Layer 3, very sparse. Card: ' pulp' x14, 'ulp' x7, 'ping' (gul-ping) x4, ' gulp'. Probes: pulp 0.58-0.73, gulp 0.61, gulping 0.95, Pulp 0.56; boards 0.00, pump/yelp 0.05, kelp 0.05, pulpit 0.03, scalp/sip 0.00; but 'gasp' 0.32-0.35 (peak 'p'), so one near miss uses a 'gasp'-like word on purpose ('clasp').",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "pulp",
+   "gulp",
+   "gulping",
+   "gulped"
+  ]
+ }
+}

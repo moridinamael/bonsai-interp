@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-c2649924",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N6847+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:13:26+00:00",
+ "recipe": {
+  "toolchain_commit": "714f62b36",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N6847_pos/2026-11-19-lm1909-c2649924.tests.json"
+ },
+ "label": "the ' and' (or comma) that joins the last two items of a list of numbers, years or dates (1942 and 1943; 2, 4, and 6; April 12-14 and April 19-21); ' and' between words is quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N6847_pos/2026-11-19-lm1909-c2649924.tests.json",
+   "prereg_commit": "714f62b36",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.396,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.509,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.639,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.31,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.526,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.353,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.481,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.212,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.13,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.292,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.042,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.033,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.439,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "714f62b36",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'and' between numbers/dates",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card: ' and' x20 of top 32, mostly between years or numbers; output promotes ' final', ' after', suppresses ' earlier', ' initial'. Probes: year pair 0.73, number list 0.54, date ranges 0.54, comma in a numeric code list 0.28; word lists 0.02-0.03, a single year 0.05.",
+ "selection": "random draw"
+}
