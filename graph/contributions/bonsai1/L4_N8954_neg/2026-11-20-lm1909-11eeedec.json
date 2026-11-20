@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-11eeedec",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N8954-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:36:18+00:00",
+ "recipe": {
+  "toolchain_commit": "71e147b2b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N8954_neg/2026-11-20-lm1909-11eeedec.tests.json"
+ },
+ "label": "dense unit; best guess: Arabic letter 'ض' / word 'عضو' (member)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N8954_neg/2026-11-20-lm1909-11eeedec.tests.json",
+   "prereg_commit": "71e147b2b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 5,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.547,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.687,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.775,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.591,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.699,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.622,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.583,
+     "peak": "ض"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.388,
+     "peak": "ض"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.214,
+     "peak": " الن"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.29,
+     "peak": "تاب"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.474,
+     "peak": " أ"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.403,
+     "peak": "شارك"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.385,
+     "peak": "لب"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.283,
+     "peak": "ية"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.302,
+     "peak": " ق"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.384,
+     "peak": " الع"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.607,
+    "near_misses_at_0.3": 5
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "71e147b2b",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; Arabic ض guess",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags dense (21% of tokens reach 0.1 of a tiny max 0.21), gate-closed leak 100%. Test records density honestly; expected to fail.",
+ "selection": "random draw"
+}

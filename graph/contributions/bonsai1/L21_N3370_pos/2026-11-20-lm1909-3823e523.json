@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-3823e523",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N3370+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:35:50+00:00",
+ "recipe": {
+  "toolchain_commit": "71e147b2b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L21_N3370_pos/2026-11-20-lm1909-3823e523.tests.json"
+ },
+ "label": "a parenthetical interrupter in the middle of a clause (the comma or 'however' / 'though' of 'It is, ...', 'too soon, however,')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L21_N3370_pos/2026-11-20-lm1909-3823e523.tests.json",
+   "prereg_commit": "71e147b2b",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.182,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.066,
+     "peak": " much"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.22,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.07,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.014,
+     "peak": " sold"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.102,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.075,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.154,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.066,
+     "peak": " much"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " sold"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.073,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "71e147b2b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "mid-clause interrupter",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card top: 'It is,' x3, ' though' x10, ' however', 'more like'. Probe: 'The film is, to put it mildly' 0.20, 'however' 0.11; versions without the interrupter ~0.01-0.07. Weak; low confidence.",
+ "selection": "random draw"
+}

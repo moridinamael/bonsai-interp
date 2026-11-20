@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-1e41a4c6",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N5327-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:28:21+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N5327",
+   "pole": "-",
+   "label": "identifier pieces in Python code (attribute / module names on def and import lines)",
+   "fire": [
+    "import logging\nfrom pyasn1.codec.der import decoder\n\ndef parse(blob):\n    return decoder.decode(blob)",
+    "class Loader:\n    def read(self, schema_def):\n        return self.cache.get(schema_def)",
+    "import numpy as np\nfrom scipy.sparse import csr_matrix\n\ndef build(rows):\n    return csr_matrix(rows)",
+    "def coefficients(form):\n    for c in extract_terms(form):\n        if isinstance(c, Function):\n            yield c",
+    "from cumulus.tasks import upload\nimport starcluster.config\n\nupload.delay(path)",
+    "    def write(self, metadata_path, metadata):\n        with open(metadata_path, 'w') as f:\n            json.dump(metadata, f)",
+    "import requests\nfrom paramiko.rsakey import RSAKey\n\nkey = RSAKey.from_private_key_file(path)",
+    "def handle(instance_name, port):\n    log.info('connecting to instance %s', instance_name)"
+   ],
+   "quiet": [
+    "The logging library and the decoder are used to parse the binary blob into records.",
+    "The loader reads a schema definition and returns whatever the cache holds for it.",
+    "NumPy and SciPy are used together to build a sparse matrix from the rows.",
+    "The function walks over every term in the form and keeps only the functions.",
+    "The upload task sends the file to the cluster, which is configured separately.",
+    "The writer opens the metadata file and saves the metadata as JSON text.",
+    "The script uses an RSA key loaded from a private key file to sign requests.",
+    "The handler logs a message whenever it connects to a named instance on a port."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python identifier pieces",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Weak pole (max 3.84), gate-closed leak 76%. Card top: signature_def, cumulus, pyasn1, (form, instance in Python code. Near misses are prose about the same programs."
+}
