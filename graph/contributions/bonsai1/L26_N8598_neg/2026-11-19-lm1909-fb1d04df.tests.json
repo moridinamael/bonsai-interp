@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-fb1d04df",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N8598-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:32:06+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N8598",
+   "pole": "-",
+   "label": "the opening bracket of a colour value in code: '(' starting an RGB tuple after a colour name, or 'rgb(' in CSS (weaker on '#' hex literals); not brackets opening other tuples or lists",
+   "fire": [
+    "class Shade(Enum):\n    Crimson = (220, 20, 60)\n    Teal = (0, 128, 128)\n    Gold = (255, 215, 0)\n    Navy = (0, 0, 128)",
+    "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nYELLOW = (255, 255, 0)\nscreen.fill(WHITE)",
+    ".button {\n  color: rgb(40, 40, 40);\n  border-color: rgb(200, 0, 0);\n  background: rgb(240, 240, 240);\n}",
+    "palette = {\n    'sky': (135, 206, 235),\n    'grass': (34, 139, 34),\n    'sand': (194, 178, 128),\n}",
+    "class Theme:\n    Purple = (128, 0, 128)\n    Cyan = (0, 255, 255)\n    Brown = (139, 69, 19)\n    Lime = (0, 255, 0)",
+    "RED = (255, 0, 0)\nGREEN = (0, 200, 0)\nGREY = (128, 128, 128)\npygame.draw.rect(screen, RED, box)",
+    "h1 {\n  color: rgb(10, 20, 30);\n  background-color: rgb(250, 250, 210);\n  outline-color: rgb(0, 90, 160);\n}",
+    "class Tint(Enum):\n    Coral = (255, 127, 80)\n    Olive = (128, 128, 0)\n    Plum = (221, 160, 221)\n    Aqua = (0, 255, 255)"
+   ],
+   "quiet": [
+    "class Limits(Enum):\n    Small = (10, 20)\n    Medium = (50, 80)\n    Large = (200, 400)\n    Huge = (900, 1200)",
+    "ORIGIN = (0, 0)\nWINDOW = (800, 600)\nSTEP = (5, 5)\nscreen = make_window(WINDOW)",
+    ".button {\n  margin: 4px 8px;\n  width: calc(100% - 20px);\n  transform: rotate(45deg);\n}",
+    "cities = {\n    'oslo': (59.9, 10.7),\n    'cairo': (30.0, 31.2),\n    'lima': (-12.0, -77.0),\n}",
+    "class Config:\n    retries = 3\n    timeout = 30\n    hosts = ['alpha', 'beta']\n    debug = False",
+    "START = (2021, 1, 15)\nEND = (2021, 6, 30)\nSPAN = (9, 17)\nprint(days_between(START, END))",
+    "h1 {\n  font-size: 24px;\n  padding: 10px 20px;\n  transition: all 0.3s ease;\n}",
+    "class Weekday(Enum):\n    Monday = 1\n    Tuesday = 2\n    Wednesday = 3\n    Thursday = 4"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "'(' opening an RGB colour value",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: peaks on ' (' / '(' / '=\"#' in colour definitions; the top example (158) is 'Orange = (' in a Colors enum and the rest are 50-65. Probes: named RGB tuples 0.45, CSS rgb( 0.33, hex list 0.11, np.array([[ 0.09, non-colour tuples 0.01, string list 0.00."
+}
