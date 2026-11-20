@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-a77fa841",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N2519-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:26:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N2519",
+   "pole": "-",
+   "label": "Python threading and scheduling code (threading.Thread, target=, .start(), scheduled callbacks)",
+   "fire": [
+    "import threading\n\ndef worker(n):\n    print(n)\n\nt = threading.Thread(target=worker, args=(1,))\nt.start()\nt.join()",
+    "class Poller(threading.Thread):\n    def run(self):\n        while True:\n            self.poll()\n\np = Poller()\np.daemon = True\np.start()",
+    "self.listener = threading.Thread(target=self._listen)\nself.listener.daemon = True\nself.listener.start()",
+    "threads = []\nfor url in urls:\n    th = threading.Thread(target=fetch, args=(url,))\n    threads.append(th)\n    th.start()",
+    "def on_start(self):\n    Clock.schedule_interval(self._tick, 0.5)\n    self.timer_thread = Thread(target=self._loop)\n    self.timer_thread.start()",
+    "from threading import Thread\n\nserver = Thread(target=httpd.serve_forever)\nserver.start()\nprint('serving')",
+    "timer = threading.Timer(5.0, self.flush)\ntimer.start()\nself.timers.append(timer)",
+    "with ThreadPoolExecutor(max_workers=4) as pool:\n    futures = [pool.submit(work, x) for x in items]\n    worker = threading.Thread(target=monitor)\n    worker.start()"
+   ],
+   "quiet": [
+    "import math\n\ndef worker(n):\n    print(n)\n\nresult = worker(math.pi)\nprint(result)",
+    "class Poller(object):\n    def run(self):\n        for item in self.items:\n            self.check(item)\n\np = Poller()\np.items = []\np.run()",
+    "self.listener = Listener(self._listen)\nself.listener.name = 'main'\nself.listener.setup()",
+    "pages = []\nfor url in urls:\n    page = fetch(url)\n    pages.append(page)\n    print(len(page))",
+    "def on_load(self):\n    self.data = self._read()\n    self.total = sum(self.data)\n    self.label.text = str(self.total)",
+    "from http import server\n\nhandler = server.SimpleHTTPRequestHandler\nprint('handler ready')",
+    "values = [5.0, 2.5]\nself.flush(values)\nself.history.append(values)",
+    "with open('items.txt') as fh:\n    items = [line.strip() for line in fh]\n    total = len(items)\n    print(total)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Python threading code",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Weak pole (max ~7) peaking on '(target', '.start', '.Thread' in concurrent Python. Near misses are similar-length Python without threads."
+}
