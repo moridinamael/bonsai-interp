@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-5b159e9d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N4414-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:14:58+00:00",
+ "recipe": {
+  "toolchain_commit": "2a55da609",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N4414_neg/2026-11-20-lm1909-5b159e9d.tests.json"
+ },
+ "label": "the Arabic letter 'ي' as its own token, especially after 'ج' (جيد, جيوب)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N4414_neg/2026-11-20-lm1909-5b159e9d.tests.json",
+   "prereg_commit": "2a55da609",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.076,
+     "peak": " ج"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.65,
+     "peak": "ي"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.703,
+     "peak": "ي"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.087,
+     "peak": "يد"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.586,
+     "peak": "ي"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.592,
+     "peak": "ي"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.096,
+     "peak": " ج"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.069,
+     "peak": " ج"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.102,
+     "peak": "متاز"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": "يع"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.124,
+     "peak": "أت"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.05,
+     "peak": " الرياض"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.212,
+     "peak": "ج"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.069,
+     "peak": "د"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.04,
+     "peak": "ق"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.059,
+     "peak": "قاء"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.805,
+    "median_fire": 0.341,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2a55da609",
+  "minutes": 80,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic 'ي' after ج",
+ "unit_kind": "lexical",
+ "confidence": 0.3,
+ "notes": "Layer 0, tiny pole (max 1.44). Card peaks: byte-fragment tokens (x15) and 'ي' after 'ج' (x9), plus ' ug'. Fire items contain words starting with جي; quiet items are Arabic on the same topics without that sequence. Tokenisation not checked beforehand.",
+ "selection": "random draw"
+}

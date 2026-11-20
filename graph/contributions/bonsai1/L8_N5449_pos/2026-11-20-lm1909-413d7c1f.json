@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-413d7c1f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N5449+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:14:58+00:00",
+ "recipe": {
+  "toolchain_commit": "2a55da609",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N5449_pos/2026-11-20-lm1909-413d7c1f.tests.json"
+ },
+ "label": "the word completing 'this is / now's ...' when it recommends something ('If you X, this is the time / for you')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N5449_pos/2026-11-20-lm1909-413d7c1f.tests.json",
+   "prereg_commit": "2a55da609",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.689,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.186,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.637,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.894,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.789,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.745,
+     "peak": " time"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.102,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.579,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.067,
+     "peak": " offers"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.052,
+     "peak": " enjoy"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.153,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.091,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.095,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.199,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": " like"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.127,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.663,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2a55da609",
+  "minutes": 80,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'this is the one' recommendation",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top peaks are 'for you', 'the time', 'it' after 'this is' / 'now's' following an 'If you ...' clause, also in Spanish ('esta es la'). Quiet items keep the 'If you ...' clause but finish without a deictic 'this is / now is'.",
+ "selection": "random draw"
+}
