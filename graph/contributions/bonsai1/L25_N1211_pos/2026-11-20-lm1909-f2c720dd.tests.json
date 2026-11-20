@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f2c720dd",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N1211+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:15:47+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N1211",
+   "pole": "+",
+   "label": "the separator just before a step size in an arithmetic progression (third argument of range/arange, 'in steps of')",
+   "fire": [
+    "for t in range(10, 200, 10):\n    run(t)",
+    "angles = np.arange(-90, 90, 15)",
+    "The dial goes from 0 to 60 in increments of 5.",
+    "for row in range(first, last, 2):\n    draw(row)",
+    "ticks = np.arange(0.0, 1.0, 0.1)",
+    "Measure the depth from 0 to 30 metres in steps of 3.",
+    "for n in xrange(1, 101, 4):\n    out.append(n)",
+    "grid = numpy.arange(lo, hi, delta)"
+   ],
+   "quiet": [
+    "for t in sorted(items, key=f):\n    run(t)",
+    "angles = np.clip(data, -90, 90)",
+    "The dial goes from 0 to 60 and then resets.",
+    "for row in zip(first, last, extra):\n    draw(row)",
+    "ticks = np.linspace(0.0, 1.0, 11)",
+    "Measure the depth from 0 to 30 metres at each station.",
+    "for n in filter(check, numbers):\n    out.append(n)",
+    "grid = numpy.where(lo, hi, delta)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "step-size separator",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: range/arange step commas and 'in steps of' fired 0.67-0.80; max(a, b, c) 0; linspace count weaker (0.15). Logit effect promotes 'increment', 'intervals', 'spacing'."
+}
