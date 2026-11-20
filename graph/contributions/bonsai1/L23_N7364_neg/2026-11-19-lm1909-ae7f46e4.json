@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ae7f46e4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N7364-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:16+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N7364_neg/2026-11-19-lm1909-ae7f46e4.tests.json"
+ },
+ "label": "The second piece of an uncommon proper name that the tokenizer starts with a bare ' R' (R|iz|vi, R|akh|ine, R|icket|ts, R|uk|avishnikov)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N7364_neg/2026-11-19-lm1909-ae7f46e4.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.66,
+     "peak": "iz"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.527,
+     "peak": "akh"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.387,
+     "peak": "icket"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.451,
+     "peak": "uk"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.86,
+     "peak": "ik"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.788,
+     "peak": "iz"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.434,
+     "peak": "akh"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.398,
+     "peak": "icket"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": -0.001,
+     "peak": " hospital"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.035,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.028,
+     "peak": " Kol"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": " reviews"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " presented"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.037,
+     "peak": "ill"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": " on"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.489,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "name piece after ' R'",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "Card: 'uk', 'ik', 'iz', 'akh', 'icket', each directly after a split-off ' R' in a surname or place name. Probes: Rizvi 0.82, Ricketts 0.56, Rakhine 0.48, Rahimi 0.47 (peak ' Rah'); the same names with K/M initials 0.02, common R names (Robert, Rachel, Richard) 0.03, Reliability/relief 0.04 (those belong to the + pole).",
+ "selection": "random draw"
+}

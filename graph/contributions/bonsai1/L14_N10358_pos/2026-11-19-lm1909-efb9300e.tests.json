@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-efb9300e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N10358+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:55:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N10358",
+   "pole": "+",
+   "label": "In Python code, the name of a well-known package or module (unittest, asyncio, django, logging) where it is used as a qualifier",
+   "fire": [
+    "class ParserTest(unittest.TestCase):\n    pass\n\nsuite = unittest.TestLoader().loadTestsFromTestCase(ParserTest)",
+    "async def fetch(url, *, loop: asyncio.AbstractEventLoop = None):\n    await asyncio.sleep(1)",
+    "logger = logging.getLogger('django.db.backends')\nlogger.setLevel(logging.WARNING)",
+    "def main():\n    queue = asyncio.Queue()\n    asyncio.run(worker(queue))",
+    "if __name__ == '__main__':\n    runner = unittest.TextTestRunner(verbosity=2)\n    unittest.main()",
+    "from django.conf import settings\n\napp = django.apps.apps.get_app_config('shop')",
+    "stdoutLog = logging.getLogger('anaconda.stdout')\nprogramLog = logging.getLogger('anaconda.program')",
+    "def make_suite():\n    tests = unittest.makeSuite(ClientTestCase)\n    return unittest.TestSuite([tests])"
+   ],
+   "quiet": [
+    "class ParserTest(BaseCase):\n    pass\n\nsuite = self.loader.loadTestsFromTestCase(ParserTest)",
+    "def fetch(url, loop=None):\n    self.timer.sleep(1)\n    return self.client.get(url)",
+    "logger = self.factory.getLogger(name)\nlogger.setLevel(self.level)",
+    "def main():\n    queue = self.pool.Queue()\n    self.pool.run(worker(queue))",
+    "if ready:\n    runner = self.make_runner(verbosity=2)\n    runner.main()",
+    "settings = self.config.settings\n\napp = self.registry.get_app_config('shop')",
+    "stdoutLog = self.logs.get('stdout')\nprogramLog = self.logs.get('program')",
+    "def make_suite():\n    tests = self.builder.makeSuite(case)\n    return self.builder.wrap([tests])"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "known Python module name",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags the pole broad (1.2% of tokens reach 0.1 of max) and the top examples mix module names (asyncio, anaconda, unittest, .debian) with Arabic and Russian proper names. Probes: unittest 0.51, 'django' 0.55, asyncio 0.34, .debian 0.31, user-defined attribute chains 0.02; but ' Carolina' 0.46 and ' Eastern' 0.34 in multi-word place names also fire, so a module-name label covers only part of it."
+}

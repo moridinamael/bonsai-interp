@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-400a8307",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N5005-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:08:23+00:00",
+ "recipe": {
+  "toolchain_commit": "b43267fcc",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N5005_neg/2026-11-19-lm1909-400a8307.tests.json"
+ },
+ "label": "Advanced analysis with special functions: gamma, zeta and Bessel functions, analytic continuation, divergent or asymptotic series (text or code)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N5005_neg/2026-11-19-lm1909-400a8307.tests.json",
+   "prereg_commit": "b43267fcc",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.935,
+     "peak": " gamma"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.206,
+     "peak": " to"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.423,
+     "peak": " function"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.518,
+     "peak": "(factor"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.954,
+     "peak": " gamma"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.194,
+     "peak": " gamma"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.801,
+     "peak": " by"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.075,
+     "peak": "ometric"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.055,
+     "peak": " quadratic"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.012,
+     "peak": " sample"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.076,
+     "peak": " distribution"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.117,
+     "peak": "("
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " length"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " counting"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " given"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.945,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b43267fcc",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "special-function analysis",
+ "unit_kind": "sparse feature",
+ "confidence": 0.65,
+ "notes": "Card: very sparse (0.009% of tokens reach 0.1 of max); top examples are analytic continuation, expint/gamma/erfi tests, factorial code; the output direction of this pole promotes ' integral', ' Gamma', ' sums', 'Γ'. Probes: Riemann zeta/gamma 1.83, Bessel/gamma/divergent series 1.06, Dirichlet series 1.02, analytic continuation 0.82, factorial code 0.62; eigenvalues 0.09, probability 0.05, triangle area 0.01, derivative of sine 0.01, Euler-Maclaurin only 0.18. The peak token varies, so it is a context, not a word.",
+ "selection": "random draw"
+}

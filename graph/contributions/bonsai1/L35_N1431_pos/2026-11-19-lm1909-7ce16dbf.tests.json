@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-7ce16dbf",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N1431+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:55:11+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N1431",
+   "pole": "+",
+   "label": "The space-prefixed first byte of a Hangul or Chinese character: the start of a word that follows a space in Korean or in space-separated Chinese",
+   "fire": [
+    "지난 주말에 가족과 함께 바다에 가서 맛있는 생선을 먹었다.",
+    "내일 아침에는 일찍 일어나서 도서관에서 몇 시간 공부할 생각이다.",
+    "그 식당은 값이 싸고 양이 많아서 학생들에게 인기가 높다.",
+    "비가 그치자 아이들이 다시 운동장으로 뛰어나와 공을 찼다.",
+    "我 昨天 在 书店 买 了 三 本 小说 ， 都 很 有趣 。",
+    "他们 明年 打算 搬 到 南方 的 一个 小 城市 生活 。",
+    "这 家 公司 的 产品 大约 有 一半 卖 到 国外 。",
+    "老师 让 每个 学生 写 一 篇 关于 家乡 的 文章 。"
+   ],
+   "quiet": [
+    "先週の週末は家族と一緒に海へ行って、おいしい魚を食べました。",
+    "明日の朝は早く起きて、図書館で数時間勉強するつもりです。",
+    "あの食堂は値段が安くて量が多いので、学生に人気があります。",
+    "雨がやむと、子供たちはまた運動場に出てボールをけりました。",
+    "我昨天在书店买了三本小说，都很有趣。",
+    "他们明年打算搬到南方的一个小城市生活。",
+    "这家公司的产品大约有一半卖到国外。",
+    "老师让每个学生写一篇关于家乡的文章。"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space + CJK/Hangul first byte",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' �' (a space plus an incomplete UTF-8 byte) is the peak of 22 of the top 32, in Chinese text with spaces and in Korean; flagged broad (1.7% of tokens reach 0.1 of max); the output promotes '大' / ' big' / ' large'. Probes: Korean sentences 0.85 and 0.35, space-separated Chinese 0.38, 0.51 and 0.36; the same Chinese sentence without spaces 0.02, Japanese 0.00, spaced kanji city names 0.02 (those are whole tokens), English 'big ... large' 0.05. Which characters split into a partial-byte piece depends on the tokenizer, so strength varies by sentence."
+}
