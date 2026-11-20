@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-06fd6baa",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N8313-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:08:08+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N8313",
+   "pole": "-",
+   "label": "' as' in a Python 'with open(...) as f:' context manager",
+   "fire": [
+    "def load(path):\n    with open(path) as fh:\n        return fh.read()",
+    "def save(cfg, dest):\n    with open(dest, 'w') as out:\n        json.dump(cfg, out)",
+    "for name in names:\n    with open(name, 'rb') as stream:\n        data.append(stream.read())",
+    "def append_log(msg):\n    with open(LOG_FILE, 'a') as log:\n        log.write(msg + '\\n')",
+    "if os.path.exists(cache):\n    with open(cache, 'r') as cf:\n        cached = cf.readlines()",
+    "def read_csv_rows(fname):\n    with open(fname, newline='') as csvfile:\n        return list(csv.reader(csvfile))",
+    "def dump_yaml(obj, target):\n    with open(target, 'wt') as yf:\n        yaml.safe_dump(obj, yf)",
+    "class Store:\n    def read(self):\n        with open(self.path, encoding='utf-8') as src:\n            return src.read()"
+   ],
+   "quiet": [
+    "def load(path):\n    fh = open(path)\n    text = fh.read()\n    fh.close()\n    return text",
+    "def save(cfg, dest):\n    out = open(dest, 'w')\n    json.dump(cfg, out)\n    out.close()",
+    "for name in names:\n    stream = open(name, 'rb')\n    data.append(stream.read())",
+    "def append_log(msg):\n    log = open(LOG_FILE, 'a')\n    log.write(msg + '\\n')",
+    "if os.path.exists(cache):\n    cached = Path(cache).read_text().splitlines()",
+    "def read_csv_rows(fname):\n    rows = pandas.read_csv(fname)\n    return rows.values.tolist()",
+    "def dump_yaml(obj, target):\n    Path(target).write_text(yaml.safe_dump(obj))",
+    "class Store:\n    def read(self):\n        return self.path.read_text(encoding='utf-8')"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "with open ... as",
+ "unit_kind": "contextual",
+ "confidence": 0.8,
+ "notes": "Card: ' as' is 13 of the top 32, almost all 'with open(path, mode) as f:'. Fire items are multi-line code with the with-open line; near misses are similar file-handling code without the 'as' binding."
+}

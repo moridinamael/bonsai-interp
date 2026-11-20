@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-44e1db6a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4320-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:16:24+00:00",
+ "recipe": {
+  "toolchain_commit": "cdf2c13d0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N4320_neg/2026-11-20-lm1909-44e1db6a.tests.json"
+ },
+ "label": "a position where the text is about to name pairs or pairwise combinations (combinations of 2, dyadic ties)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N4320_neg/2026-11-20-lm1909-44e1db6a.tests.json",
+   "prereg_commit": "cdf2c13d0",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.482,
+     "peak": " possible"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.182,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.366,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.202,
+     "peak": " distances"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.157,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.046,
+     "peak": " relationship"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.136,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.1,
+     "peak": " lists"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.048,
+     "peak": " becomes"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.024,
+     "peak": " weight"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.036,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": "names"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " order"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.169,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cdf2c13d0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "about to say pairs",
+ "unit_kind": "sparse feature",
+ "confidence": 0.25,
+ "notes": "Extremely sparse (0.009% above 0.1 of max). Top examples sit just before pair-structures: 'combinations(mlines, 2)', 'opportunity for one relationship' between two people, '(actors) and a complex set of dyadic ties', '2 * 7 + 2 * 2'. The + pole's output suppresses pair, pairwise, edges, links, between, so this pole promotes them. Near misses are similar sentences not about pairs.",
+ "selection": "random draw"
+}
