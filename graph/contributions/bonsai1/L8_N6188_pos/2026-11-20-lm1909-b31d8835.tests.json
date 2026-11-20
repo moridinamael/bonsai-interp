@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-b31d8835",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N6188+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:58:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N6188",
+   "pole": "+",
+   "label": "the column-alias keyword AS (and alias names) in SQL SELECT statements",
+   "fire": [
+    "Run this query:\nSELECT id, SUM(amount) AS total\nFROM orders\nGROUP BY id;",
+    "mysql>\nSELECT name, COUNT(*) AS cnt FROM users GROUP BY name;",
+    "The report uses\nSELECT MONTHNAME(created_at) as month_name, price\nFROM sales",
+    "Try:\nSELECT u.email AS contact\nFROM users u\nWHERE u.active = 1;",
+    "query = \"\"\"\nSELECT AVG(score) AS mean_score\nFROM results\n\"\"\"",
+    "In Postgres:\nSELECT LOWER(title) AS slug, author\nFROM books;",
+    "The view is defined as\nSELECT a.id AS account_id, b.balance\nFROM a JOIN b ON a.id = b.id",
+    "Example:\nSELECT MAX(age) AS oldest FROM people;"
+   ],
+   "quiet": [
+    "Run this query:\nSELECT id, amount\nFROM orders\nWHERE id > 10;",
+    "mysql>\nSELECT name FROM users WHERE name LIKE 'a%';",
+    "The report uses\nSELECT created_at, price\nFROM sales",
+    "Try:\nSELECT email\nFROM users\nWHERE active = 1;",
+    "query = \"\"\"\nSELECT score\nFROM results\n\"\"\"",
+    "In Postgres:\nSELECT title, author\nFROM books;",
+    "The view is defined with a join between the account table and the balance table.",
+    "Example:\nSELECT age FROM people ORDER BY age;"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "SQL alias AS",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": ""
+}
