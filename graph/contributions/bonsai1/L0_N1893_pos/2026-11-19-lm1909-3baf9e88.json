@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-19-lm1909-3baf9e88",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N1893+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:31+00:00",
+ "recipe": {
+  "toolchain_commit": "5dc39ebc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N1893_pos/2026-11-19-lm1909-3baf9e88.tests.json"
+ },
+ "label": "Token-level (layer 0): a small set of non-Latin tokens — Japanese 'ができ' (potential 'can do' after a noun), 'はない', 'ならない', and Arabic 'جموعة' (in 'مجموعة'); other Japanese / Arabic text fires only weakly",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N1893_pos/2026-11-19-lm1909-3baf9e88.tests.json",
+   "prereg_commit": "5dc39ebc4",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.752,
+     "peak": "ができ"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.481,
+     "peak": "はない"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.295,
+     "peak": "ならない"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.105,
+     "peak": "عة"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.029,
+     "peak": "できます"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.355,
+     "peak": "はない"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.6,
+     "peak": "ならない"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.092,
+     "peak": " مجموعة"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.092,
+     "peak": "美"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.162,
+     "peak": "もう"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.114,
+     "peak": "しょう"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.082,
+     "peak": " الإ"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.098,
+     "peak": "始め"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.042,
+     "peak": "それは"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.06,
+     "peak": "題"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.32,
+     "peak": " لو"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.742,
+    "median_fire": 0.325,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5dc39ebc4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "tokens ができ / はない / ならない / جموعة",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: 'はない' x5, 'جموعة' x4, 'ができ' x3, '떻' x2; flagged broad (1.1% reach 0.1 of max). Probes: the tokens themselves 0.53-0.84 (noun+ができ 0.84, بمجموعة 0.73, はない 0.53, ならない 0.54); the merged tokens 'ることができ' / 'ではない' only 0.21; other Japanese 0.14-0.17, other Arabic 0.05. Near misses are Japanese / Arabic sentences without these tokens. Trigger declared as exact tokens.",
+ "selection": "random draw",
+ "trigger": {
+  "tokens": [
+   "ができ",
+   "はない",
+   "ならない",
+   "جموعة"
+  ]
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-1de417f1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N4208-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:45:28+00:00",
+ "recipe": {
+  "toolchain_commit": "5dc39ebc4",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N4208_neg/2026-11-19-lm1909-1de417f1.tests.json"
+ },
+ "label": "Indentation whitespace at the start of a line in Python source, where the block simply continues with another statement, dict entry or comment (the + pole takes the indentation before an early 'return' / 'except'). Best guess from the card; probes did not reproduce it",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N4208_neg/2026-11-19-lm1909-1de417f1.tests.json",
+   "prereg_commit": "5dc39ebc4",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.027,
+     "peak": "[key"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.111,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.032,
+     "peak": "rx"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.093,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.053,
+     "peak": " z"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.031,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.311,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.09,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.022,
+     "peak": " dictionary"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.02,
+     "peak": " row"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": "rx"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.027,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.051,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.02,
+     "peak": " stats"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.082,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.867,
+    "median_fire": 0.071,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5dc39ebc4",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python indentation, block continues",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: all top-32 peaks are runs of spaces at line starts in Python (dict entries, '# comment', 'return' after a blank line, 'conn.close()'). Seven multi-line code probes all scored under 0.08, so the trigger needs something I did not find (perhaps much longer files). Registered as an honest best guess; expected to fail. Near misses are the same code as prose or on one line, without line-initial indentation.",
+ "selection": "random draw"
+}

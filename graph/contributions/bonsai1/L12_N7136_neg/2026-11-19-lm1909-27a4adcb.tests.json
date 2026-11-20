@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-27a4adcb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N7136-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:27:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N7136",
+   "pole": "-",
+   "label": "Inside Python comments and docstrings: the markup that sets off a placeholder or argument name — ' <' of '<name>', ' *' of '*arg*', '[batch' in a shape spec, '(..' after a function name, 'N-D' — as opposed to plain prose comments",
+   "fire": [
+    "    # if <timeout> is None, we wait <default_wait> seconds and then retry with <backoff> applied",
+    "    \"\"\"Resize the images.\n\n    Args:\n      images: A tensor of shape [batch_size, height, width, 3].\n      size: A tensor of shape [2].\n    \"\"\"",
+    "    \"\"\"Tests reading the manifest back by calling LoadManifest(..).\"\"\"",
+    "    # open the cache file, drop the oldest <limit> entries and write <path> again",
+    "    \"\"\"Adds an N-D transposed convolution followed by an optional bias term.\"\"\"",
+    "    # when <dry_run> is set we only print <cmd> and never touch <target_dir>",
+    "    \"\"\"Encode the tokens.\n\n    Args:\n      tokens: An int tensor of shape [batch_size, seq_len].\n      mask: A float tensor of shape [batch_size, seq_len].\n    \"\"\"",
+    "    \"\"\"Checks that the handler is invoked once via RegisterHandler(..).\"\"\""
+   ],
+   "quiet": [
+    "    # if the timeout is missing, we wait a few seconds and then retry with some backoff applied",
+    "    \"\"\"Resize the images.\n\n    Takes the images and the new size and returns the resized images as one tensor.\n    \"\"\"",
+    "    \"\"\"Tests reading the manifest back after loading it from disk.\"\"\"",
+    "    # open the cache file, drop the oldest entries and write the file again",
+    "    \"\"\"Adds a transposed convolution followed by an optional bias term.\"\"\"",
+    "    # in a dry run we only print the command and never touch the target directory",
+    "    \"\"\"Encode the tokens.\n\n    Takes the tokens and the mask and returns the encoded sequence for each example.\n    \"\"\"",
+    "    \"\"\"Checks that the handler is invoked once after it has been registered.\"\"\""
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "placeholder markup in comments",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: ' <' x6, '-D', '>', '|', '...', '(..' in comments/docstrings. Probes: marked-up comments 0.20-0.47 ('[batch_size' 0.43, 'ParseConfig(..)' 0.47, ' <' 0.38), the same comments without markup 0.02-0.07, a real '<' comparison 0.04. Amplitudes are modest, so the median is the risk."
+}

@@ -1,0 +1,56 @@
+{
+ "contribution": "2026-11-19-lm1909-3baf9e88",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N1893+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:27:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N1893",
+   "pole": "+",
+   "label": "Token-level (layer 0): a small set of non-Latin tokens — Japanese 'ができ' (potential 'can do' after a noun), 'はない', 'ならない', and Arabic 'جموعة' (in 'مجموعة'); other Japanese / Arabic text fires only weakly",
+   "fire": [
+    "この美術館では写真撮影ができません。",
+    "彼にはもう戦う気はないらしい。",
+    "約束は守らなくてはならない。",
+    "يقدم الفندق مجموعة واسعة من الأطباق.",
+    "来週から予約ができます。",
+    "それほど難しい話はないと思う。",
+    "宿題を出さなくちゃならない。",
+    "اشترى المتحف مجموعة نادرة من اللوحات."
+   ],
+   "quiet": [
+    "この美術館は月曜日に休みます。",
+    "彼はもう家に帰ったらしい。",
+    "約束の時間に駅で会いましょう。",
+    "يقدم الفندق وجبة الإفطار كل صباح.",
+    "来週から新しい仕事を始めます。",
+    "それはとても面白い映画だと思う。",
+    "宿題を友達と一緒にやりました。",
+    "اشترى المتحف لوحة قديمة من فنان مشهور."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "tokens ができ / はない / ならない / جموعة",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: 'はない' x5, 'جموعة' x4, 'ができ' x3, '떻' x2; flagged broad (1.1% reach 0.1 of max). Probes: the tokens themselves 0.53-0.84 (noun+ができ 0.84, بمجموعة 0.73, はない 0.53, ならない 0.54); the merged tokens 'ることができ' / 'ではない' only 0.21; other Japanese 0.14-0.17, other Arabic 0.05. Near misses are Japanese / Arabic sentences without these tokens. Trigger declared as exact tokens.",
+ "trigger": {
+  "tokens": [
+   "ができ",
+   "はない",
+   "ならない",
+   "جموعة"
+  ]
+ }
+}

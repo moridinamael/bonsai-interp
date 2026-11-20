@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-1de417f1",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N4208-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:27:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L22/N4208",
+   "pole": "-",
+   "label": "Indentation whitespace at the start of a line in Python source, where the block simply continues with another statement, dict entry or comment (the + pole takes the indentation before an early 'return' / 'except'). Best guess from the card; probes did not reproduce it",
+   "fire": [
+    "class Cache(object):\n    def __init__(self, size):\n        self.size = size\n        self.data = {}\n\n    def put(self, key, value):\n        self.data[key] = value\n        self.trim()\n\n    def trim(self):\n        while len(self.data) > self.size:\n            self.data.popitem()\n\n        # report\n        log.debug('trimmed')\n",
+    "def export(rows, path):\n    out = open(path, 'w')\n    writer = csv.writer(out)\n    for row in rows:\n        writer.writerow(row)\n    out.flush()\n    out.close()\n\n    # tidy up\n    del writer\n",
+    "        expected = {\n            'tx_octets': 1200,\n            'tx_packets': 14,\n            'rx_octets': 4400,\n            'rx_packets': 82,\n        }\n        self.check(expected)\n",
+    "def update(db, user, email):\n    cur = db.cursor()\n    cur.execute(\"UPDATE users SET email=? WHERE name=?\", (email, user))\n    db.commit()\n    db.close()\n\n\ndef drop(db, user):\n    cur = db.cursor()\n    cur.execute(\"DELETE FROM users WHERE name=?\", (user,))\n    db.commit()\n",
+    "    AXES = ['arm.x',   # shoulder x angle\n            'arm.y',   # shoulder y angle\n            'arm.z',   # shoulder z angle\n            'grip.w',  # gripper width\n            ]\n",
+    "def copy_tree(src, dst):\n    names = os.listdir(src)\n    os.makedirs(dst)\n\n    # copy files\n    for name in names:\n        shutil.copy(os.path.join(src, name), dst)\n\n    # copy stats\n    shutil.copystat(src, dst)\n",
+    "    def close(self):\n        self.sock.shutdown(2)\n        self.sock.close()\n        self.sock = None\n\n    def reset(self):\n        self.close()\n        self.buffer = []\n        self.open()\n",
+    "def parse(line):\n    m = PATTERN.match(line)\n    if m:\n        key, value = m.groups()\n        value = value.strip()\n    else:\n        key = None\n        value = line\n\n    return key, value\n"
+   ],
+   "quiet": [
+    "The Cache class stores a size and a dictionary; put() adds a key and then calls trim(), which pops items until the dictionary fits and logs a debug message.",
+    "export() opens the path for writing, wraps it in a csv writer, writes every row, flushes and closes the file, then deletes the writer.",
+    "expected = {'tx_octets': 1200, 'tx_packets': 14, 'rx_octets': 4400, 'rx_packets': 82}; self.check(expected)",
+    "update() runs an UPDATE on the users table and commits, then closes the database; drop() runs a DELETE for the given user and commits.",
+    "AXES = ['arm.x', 'arm.y', 'arm.z', 'grip.w']  # shoulder x, y and z angles, then gripper width",
+    "copy_tree() lists the source folder, creates the destination, copies each file across with shutil.copy and finally copies the folder's stats.",
+    "close() shuts the socket down, closes it and sets it to None; reset() calls close(), empties the buffer and opens the socket again.",
+    "parse() matches the line against PATTERN: on a match it strips the value, otherwise the key is None and the value is the whole line; it returns both."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "Python indentation, block continues",
+ "unit_kind": "unclear",
+ "confidence": 0.1,
+ "notes": "Card: all top-32 peaks are runs of spaces at line starts in Python (dict entries, '# comment', 'return' after a blank line, 'conn.close()'). Seven multi-line code probes all scored under 0.08, so the trigger needs something I did not find (perhaps much longer files). Registered as an honest best guess; expected to fail. Near misses are the same code as prose or on one line, without line-initial indentation."
+}
