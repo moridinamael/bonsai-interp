@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-6161d859",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N2471-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:50:39+00:00",
+ "recipe": {
+  "toolchain_commit": "384336477",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N2471_neg/2026-11-20-lm1909-6161d859.tests.json"
+ },
+ "label": "word-initial split piece (' p', ' des') of a Spanish word broken into subwords (pobreza, pavor, paseo, despropósitos)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N2471_neg/2026-11-20-lm1909-6161d859.tests.json",
+   "prereg_commit": "384336477",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.599,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.747,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.489,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.832,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.394,
+     "peak": " des"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.375,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.277,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.662,
+     "peak": " p"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.466,
+     "peak": " des"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.156,
+     "peak": " ale"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.147,
+     "peak": "os"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.181,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.114,
+     "peak": " ép"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.225,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.156,
+     "peak": " la"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.072,
+     "peak": "iera"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.544,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "384336477",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Spanish split word starts",
+ "unit_kind": "lexical",
+ "confidence": 0.4,
+ "notes": "card: ' p' x17, ' des' x7 on Spanish words split into pieces; untested tokenization (no probe, time).",
+ "selection": "random draw"
+}
