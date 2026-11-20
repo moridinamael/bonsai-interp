@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a3555e56",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2871-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:49:32+00:00",
+ "recipe": {
+  "toolchain_commit": "173045d64",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N2871_neg/2026-11-19-lm1909-a3555e56.tests.json"
+ },
+ "label": "the typing token ' Optional' (weaker: other typing generics such as Union) opening a Python parameter annotation, as in 'name: Optional[...]'; untyped parameters and the prose word 'optional' stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N2871_neg/2026-11-19-lm1909-a3555e56.tests.json",
+   "prereg_commit": "173045d64",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.875,
+     "peak": " Optional"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.619,
+     "peak": " Optional"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.826,
+     "peak": "["
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.843,
+     "peak": " Optional"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.785,
+     "peak": "[\""
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.68,
+     "peak": " Optional"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.768,
+     "peak": " Optional"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.875,
+     "peak": "["
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": "=None"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.051,
+     "peak": "=None"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.055,
+     "peak": "=None"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.104,
+     "peak": "=None"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": "=None"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.0,
+     "peak": "F"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.104,
+     "peak": "=None"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.0,
+     "peak": " argument"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.805,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "173045d64",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Optional[ in Python annotations",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' Optional' x6 of the top 32, plus '[' after Type/Callable. Probes: Optional[str] 0.89 and 0.77, Union 0.43, List 0.32, plain ': str' 0.23, '-> float' 0.31, untyped 0.03-0.16, prose 'Optional' 0.00. Near misses are untyped Python or prose, so the test does not separate Optional from other annotations.",
+ "selection": "random draw"
+}

@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a3555e56",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N2871-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:37:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N2871",
+   "pole": "-",
+   "label": "the typing token ' Optional' (weaker: other typing generics such as Union) opening a Python parameter annotation, as in 'name: Optional[...]'; untyped parameters and the prose word 'optional' stay quiet",
+   "fire": [
+    "class Cache:\n    def get(self, key: str, fallback: Optional[bytes] = None):\n        return self._store.get(key, fallback)",
+    "async def connect(host: str, port: Optional[int] = None):\n    return await open_connection(host, port)",
+    "    def render(self, template: str, context: Optional[dict] = None) -> str:\n        return self.env.render(template, context or {})",
+    "def parse_date(text: str, fmt: Optional[str] = None):\n    if fmt is None:\n        fmt = DEFAULT_FORMAT\n    return datetime.strptime(text, fmt)",
+    "class Job:\n    def __init__(self, name: str, owner: Optional[\"User\"] = None):\n        self.name = name\n        self.owner = owner",
+    "    def send(self, payload: bytes, retries: Optional[int] = None) -> bool:\n        return self._transport.send(payload, retries)",
+    "def open_log(path: str, encoding: Optional[str] = None):\n    return open(path, \"a\", encoding=encoding)",
+    "    async def list_users(self, limit: int = 50, after: Optional[datetime] = None):\n        return await self._query(limit, after)"
+   ],
+   "quiet": [
+    "class Cache:\n    def get(self, key, fallback=None):\n        return self._store.get(key, fallback)",
+    "async def connect(host, port=None):\n    return await open_connection(host, port)",
+    "    def render(self, template, context=None):\n        return self.env.render(template, context or {})",
+    "def parse_date(text, fmt=None):\n    if fmt is None:\n        fmt = DEFAULT_FORMAT\n    return datetime.strptime(text, fmt)",
+    "class Job:\n    def __init__(self, name, owner=None):\n        self.name = name\n        self.owner = owner",
+    "Filling in the second page of the survey is optional, but it helps us a lot.",
+    "def open_log(path, encoding=None):\n    return open(path, \"a\", encoding=encoding)",
+    "The retries argument is optional; if you leave it out the client tries three times."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Optional[ in Python annotations",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' Optional' x6 of the top 32, plus '[' after Type/Callable. Probes: Optional[str] 0.89 and 0.77, Union 0.43, List 0.32, plain ': str' 0.23, '-> float' 0.31, untyped 0.03-0.16, prose 'Optional' 0.00. Near misses are untyped Python or prose, so the test does not separate Optional from other annotations."
+}

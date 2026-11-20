@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7086d159",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N2337+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:50:05+00:00",
+ "recipe": {
+  "toolchain_commit": "173045d64",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N2337_pos/2026-11-19-lm1909-7086d159.tests.json"
+ },
+ "label": "the slot just before a personal-identifier noun ('name', 'identity', further details) when someone's identifying details are being asked for, recorded or withheld: fires on the possessive or comma before it ('did not release his', 'the driver's', 'phone number,'); possessives in everyday contexts stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N2337_pos/2026-11-19-lm1909-7086d159.tests.json",
+   "prereg_commit": "173045d64",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.51,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.301,
+     "peak": " my"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.596,
+     "peak": "'s"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.308,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.18,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.396,
+     "peak": "'s"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.542,
+     "peak": "'s"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.401,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.198,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.046,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": " could"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.089,
+     "peak": "'s"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.044,
+     "peak": "'s"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.092,
+     "peak": " your"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": "The"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.399,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "173045d64",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "slot before 'name' / ID detail",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' and', ' your', ',', \"'s\", ' his' before '(first/last) name'; output promotes ' last', ' zip', ' full', ' hometown'. Probes: 'did not release his' 0.60, 'still don't know your' 0.43, 'phone number,' 0.41, 'driver's' 0.38, 'not disclosed his' 0.67; 'washed his car' 0.03, 'love your new haircut' 0.01. The pole fires before the noun, so the continuation does not matter; the near misses change the context that precedes the possessive.",
+ "selection": "random draw"
+}
