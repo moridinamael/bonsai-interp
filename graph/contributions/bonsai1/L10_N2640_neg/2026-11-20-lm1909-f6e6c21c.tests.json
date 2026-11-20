@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-f6e6c21c",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N2640-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:32:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L10/N2640",
+   "pole": "-",
+   "label": "the last piece of a name right before a hyphen in a hyphenated proper name (Fearnley-, Bulwer-, Levallois-); predicts '-'",
+   "fire": [
+    "We watched a cooking show hosted by Hugh Fearnley-Whittingstall last night.",
+    "The novel was written by Edward Bulwer-Lytton in the nineteenth century.",
+    "Our hotel was in Stratford-upon-Avon, close to the theatre.",
+    "They spent the summer in Aix-en-Provence painting landscapes.",
+    "The actress Helena Bonham-Carter appeared at the premiere.",
+    "He finally bought a vintage Rolls-Royce at the auction.",
+    "Her office moved to Levallois-Perret, just outside Paris.",
+    "The state of Baden-Württemberg is home to many car makers."
+   ],
+   "quiet": [
+    "We watched a cooking show hosted by Jamie Oliver last night.",
+    "The novel was written by Charles Dickens in the nineteenth century.",
+    "Our hotel was in Oxford, close to the theatre.",
+    "They spent the summer in Provence painting landscapes.",
+    "The actress Emma Thompson appeared at the premiere.",
+    "He finally bought a vintage Jaguar at the auction.",
+    "Her office moved to Versailles, just outside Paris.",
+    "The state of Bavaria is home to many car makers."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "name piece before hyphen",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Top examples are subword pieces (ley, is, wer) directly before '-' in double-barrelled names; the + pole's output suppresses '-' tokens, so this pole promotes the hyphen."
+}
