@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-96916ea9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N11963+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:15:57+00:00",
+ "recipe": {
+  "toolchain_commit": "2a55da609",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N11963_pos/2026-11-20-lm1909-96916ea9.tests.json"
+ },
+ "label": "field or attribute names in code, schemas and key-value listings (first_name, Id, username)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N11963_pos/2026-11-20-lm1909-96916ea9.tests.json",
+   "prereg_commit": "2a55da609",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.181,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.778,
+     "peak": " Id"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.01,
+     "peak": " self"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.301,
+     "peak": "unit"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.671,
+     "peak": "_name"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.543,
+     "peak": " Id"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.654,
+     "peak": "_name"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.197,
+     "peak": "_name"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.096,
+     "peak": " answer"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.011,
+     "peak": " web"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " changed"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.054,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " three"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " life"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.051,
+     "peak": " picked"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.422,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2a55da609",
+  "minutes": 81,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "field names in code/schemas",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card flags this pole broad (1.0% of tokens reach 0.1 of max); peaks are '_name' in a SQL column list, ' Id' in 'Cluster Id:', ' username' in a tuple, ' kW' in a power spec, quoted list items. Best guess tested; quiet items are prose on the same subjects without field identifiers.",
+ "selection": "random draw"
+}
