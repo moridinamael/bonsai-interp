@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-f99535a8",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1200-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:52:56+00:00",
+ "recipe": {
+  "toolchain_commit": "74f7521d6",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N1200_neg/2026-11-20-lm1909-f99535a8.tests.json"
+ },
+ "label": "a line break that ends a line without sentence punctuation (headline, photo credit, code line) before new text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N1200_neg/2026-11-20-lm1909-f99535a8.tests.json",
+   "prereg_commit": "74f7521d6",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.203,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.329,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.299,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.185,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.243,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.413,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.302,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.315,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.044,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.095,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.083,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": " building"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.151,
+     "peak": " The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.125,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.179,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.207,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.3,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "74f7521d6",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "newline after unpunctuated line",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card flags broad (1.3%); probe gave headline\\n 0.17, credit\\n 0.32, import\\n 0.32.",
+ "selection": "random draw"
+}
