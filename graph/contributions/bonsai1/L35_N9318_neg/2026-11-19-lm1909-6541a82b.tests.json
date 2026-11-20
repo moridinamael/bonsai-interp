@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-6541a82b",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9318-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:49:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9318",
+   "pole": "-",
+   "label": "the token ' e' as the first piece of a lowercase word that the tokenizer splits (eaves, eardrums, epee, easterly, eons, eels, eucalyptus); e-words that are whole tokens or start with another piece (ears, east, edge, elk, eagle) stay quiet. The + pole is the capital 'E' counterpart.",
+   "fire": [
+    "Swallows had built their nests under the eaves of the church.",
+    "The explosion was so loud that it ruptured both of his eardrums.",
+    "He competes in both foil and epee at the national level.",
+    "The storm weakened as strong easterly winds pushed it out to sea.",
+    "Icicles hung in a row from the eaves of the cabin.",
+    "Dinosaurs ruled the planet for eons before mammals took over.",
+    "A pair of eels slid through the reeds near the bank.",
+    "The koala climbed slowly up the eucalyptus tree."
+   ],
+   "quiet": [
+    "Swallows had built their nests under the roof of the church.",
+    "The explosion was so loud that it hurt both of his ears.",
+    "He competes in both foil and sabre at the national level.",
+    "The storm weakened as strong east winds pushed it out to sea.",
+    "Icicles hung in a row from the edge of the cabin.",
+    "Dinosaurs ruled the planet for ages before mammals took over.",
+    "An elk stepped through the reeds near the bank.",
+    "The eagle climbed slowly above the empty valley."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "word-start piece ' e'",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: 21 of the top 32 peak on ' e' (e|pee, e|color, e|asterly, e|ardrums, e|aves); the + pole is 'E' x32 at line starts. Probe: eaves 0.42, eardrums 0.21, e-mail 0.19, epee 0.10, 'e.g.' 0.00, controls 0.00. Tokenizer splits checked without scoring (' e'+'aves', ' e'+'ons', ' e'+'els', ' e'+'uc…'). Activations sit near the 0.20 bar, so this may miss the median."
+}

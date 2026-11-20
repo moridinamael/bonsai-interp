@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e44f7d04",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4176+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:07:45+00:00",
+ "recipe": {
+  "toolchain_commit": "005ea3432",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N4176_pos/2026-11-19-lm1909-e44f7d04.tests.json"
+ },
+ "label": "first sub-word piece of a non-English noun for an economic or institutional process: Indonesian ' Pemb' (Pembangunan 'development', Pembina), Arabic ت+ب / تص (تبادل 'exchange', تصدير 'export'), Russian ' оп' (оптимизация); everyday sentences in the same languages stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N4176_pos/2026-11-19-lm1909-e44f7d04.tests.json",
+   "prereg_commit": "005ea3432",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.657,
+     "peak": " Pemb"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.819,
+     "peak": " Pemb"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.507,
+     "peak": " Pemb"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.439,
+     "peak": "ب"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.965,
+     "peak": "تص"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.951,
+     "peak": "ب"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.333,
+     "peak": " تص"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.497,
+     "peak": " оп"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.172,
+     "peak": " memb"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.097,
+     "peak": " dip"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.096,
+     "peak": "p"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.081,
+     "peak": " الق"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.056,
+     "peak": " مجال"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.079,
+     "peak": " ل"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": "عت"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "ер"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.582,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "005ea3432",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Pemb- / تبادل / تصدير word starts",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: peaks on ' Pemb', 'ب', 'تص', ' оп', also ' New' (New Deal, New England); output promotes ' political', ' institutional', ' sector', ' transfer'. Probe: Pembangunan 0.68, التصدير 0.59, оптимизации 0.58, تبادل 0.29; Indonesian control 0.32, Arabic control 0.01, English paraphrase 0.22. A list-like label; I could not find the single distinction behind it.",
+ "selection": "random draw"
+}

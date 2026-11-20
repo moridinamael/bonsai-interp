@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-47c995fc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N2760+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:07:54+00:00",
+ "recipe": {
+  "toolchain_commit": "005ea3432",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N2760_pos/2026-11-19-lm1909-47c995fc.tests.json"
+ },
+ "label": "Python code: the end of a bookkeeping statement that keeps a running offset, total or count (x = x + len(y), starts.append(starts[-1] + n), n = 0); other Python statements (string handling, division, I/O) stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N2760_pos/2026-11-19-lm1909-47c995fc.tests.json",
+   "prereg_commit": "005ea3432",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.392,
+     "peak": "])\n\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.437,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.419,
+     "peak": " begin"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.47,
+     "peak": ")\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.535,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.416,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.199,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.352,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.084,
+     "peak": "())\n\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": "(user"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.112,
+     "peak": "(path"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.113,
+     "peak": " ''\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.152,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.035,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.056,
+     "peak": ".x"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.417,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "005ea3432",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python running-total statements",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: both poles sit on statement ends in Python; the + pole's top examples are offsets, totals and zero-initialisations ('X_start.append(X_start[-1]+...)', 'ev_total_cost = ... = 0.0', 'self._offset = self._offset + len(line)'), the - pole's are ratios ('1 / x', 'grid_vwidth/width'). Look: also 'join' in os.path imports. Probe: accumulators 0.37 and 0.21, zero-init 0.18, division 0.03-0.06, dict lookup 0.01. Activations are weak in short snippets, so this may miss the 0.20 median.",
+ "selection": "random draw"
+}

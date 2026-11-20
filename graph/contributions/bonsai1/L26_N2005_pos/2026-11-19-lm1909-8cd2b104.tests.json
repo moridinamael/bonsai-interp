@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-8cd2b104",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L26/N2005+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:49:49+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L26/N2005",
+   "pole": "+",
+   "label": "the sentence-final period of a news-report statement, especially one attributed to officials ('…, police said in a statement.'), where the next sentence of the report is due; sentence ends in fiction, recipes, letters or textbooks stay quiet",
+   "fire": [
+    "The bridge will remain closed until inspectors finish their work, the transport ministry said on Tuesday. Officials expect repairs to take at least two weeks.",
+    "At least 40 people were injured when the train derailed, a hospital official said. Rescue crews were still searching the wreckage late on Monday.",
+    "The airline said it had cancelled more than 200 flights because of the strike. Union leaders said talks would resume on Thursday.",
+    "The suspect was arrested near the border, police said in a statement. Prosecutors are expected to file charges this week.",
+    "The central bank left interest rates unchanged, the governor told reporters. Analysts had expected a small cut.",
+    "Flood waters forced about 3,000 residents from their homes, the regional government said. The army has sent boats to the area.",
+    "The drugmaker said the recall affects about 50,000 bottles sold since March. Regulators said no injuries had been reported.",
+    "A spokesman for the mayor declined to comment on the lawsuit. The city council is due to discuss the case next week."
+   ],
+   "quiet": [
+    "The bridge looked smaller than I remembered from our childhood summers. We used to jump from it into the river.",
+    "Whisk the eggs with the sugar until the mixture turns pale. Fold in the flour a little at a time.",
+    "I think the airline lost my suitcase again, which is just typical. Remind me never to fly with them.",
+    "The old dog slept by the fire while snow piled against the door. Nobody in the cottage spoke.",
+    "A triangle has three sides and three angles. The angles always add up to 180 degrees.",
+    "Water the seedlings every morning before the sun gets too strong. Move them outdoors once the frost has passed.",
+    "My grandmother kept her recipes in a tin box above the stove. I still have the box.",
+    "Thank you so much for the lovely birthday card. It made my whole week."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "period ending a news-report sentence",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 26 of the top 32 peak on '.\\n' after wire-news sentences; output promotes ' Authorities', ' experts', ' official'. Probe: the newline is not needed (same text with '. ' scored 0.78 against 0.64 with '.\\n'); news 0.43-0.78, recipe 0.04, fiction 0.02. The - pole is the other side: the attribution verb itself (' told' reporters)."
+}
