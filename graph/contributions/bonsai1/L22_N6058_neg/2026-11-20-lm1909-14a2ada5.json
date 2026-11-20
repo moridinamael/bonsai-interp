@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-14a2ada5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L22/N6058-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:24:04+00:00",
+ "recipe": {
+  "toolchain_commit": "8c976e95c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L22_N6058_neg/2026-11-20-lm1909-14a2ada5.tests.json"
+ },
+ "label": "ordinal suffix in a date ('Dec 18th', 'November 23rd') and similar web-page boilerplate",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L22_N6058_neg/2026-11-20-lm1909-14a2ada5.tests.json",
+   "prereg_commit": "8c976e95c",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.24,
+     "peak": "st"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.232,
+     "peak": " was"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.196,
+     "peak": "th"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.085,
+     "peak": " us"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.114,
+     "peak": "rd"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.062,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.054,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.092,
+     "peak": " so"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.125,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.243,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.11,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.08,
+     "peak": " us"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.048,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.056,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.06,
+     "peak": "1"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.08,
+     "peak": " August"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.641,
+    "median_fire": 0.103,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8c976e95c",
+  "minutes": 64,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "date ordinal suffix",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "card: broad, weak (max 4.5, 99% gate-closed leak); top examples include 'rd'/'th' in post dates and the dictionary boilerplate 'What made you want to look up'. Probe: '3rd' 0.20, boilerplate 0.05. Near misses write the same dates without suffixes.",
+ "selection": "random draw"
+}

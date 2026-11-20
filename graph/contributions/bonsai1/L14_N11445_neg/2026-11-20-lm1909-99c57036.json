@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-99c57036",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N11445-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:23:55+00:00",
+ "recipe": {
+  "toolchain_commit": "8c976e95c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N11445_neg/2026-11-20-lm1909-99c57036.tests.json"
+ },
+ "label": "possessed noun after a possessive written without its apostrophe ('the teams success', 'the islands treasure')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N11445_neg/2026-11-20-lm1909-99c57036.tests.json",
+   "prereg_commit": "8c976e95c",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.659,
+     "peak": " victory"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.158,
+     "peak": " sudden"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.149,
+     "peak": " past"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.628,
+     "peak": " voice"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.145,
+     "peak": " level"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.446,
+     "peak": " response"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.461,
+     "peak": " founding"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.696,
+     "peak": " effort"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " drop"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.015,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.057,
+     "peak": " level"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " founding"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.013,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.454,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8c976e95c",
+  "minutes": 64,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "apostrophe-less possessive",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "card: Warriors Job, teams success, areas involvement, composers genius, islands treasure. Probe: 'teams success' 0.85 vs 'team's success' 0.03. Near misses are the same sentences with the apostrophe.",
+ "selection": "random draw"
+}

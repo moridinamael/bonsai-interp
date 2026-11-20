@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-735d60e9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N6709+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:23:39+00:00",
+ "recipe": {
+  "toolchain_commit": "8c976e95c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L14_N6709_pos/2026-11-20-lm1909-735d60e9.tests.json"
+ },
+ "label": "third-person researchers reporting a claim: the reporting verb or subject after 'the authors/researchers/they' (concluded, suggest, propose)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L14_N6709_pos/2026-11-20-lm1909-735d60e9.tests.json",
+   "prereg_commit": "8c976e95c",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.274,
+     "peak": " argue"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.352,
+     "peak": " concluded"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.162,
+     "peak": " estimate"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.215,
+     "peak": " authors"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.292,
+     "peak": " propose"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.143,
+     "peak": " reported"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.146,
+     "peak": " suggest"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.1,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " through"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.122,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.008,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": " rules"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.064,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.028,
+     "peak": " reviewed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.189,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8c976e95c",
+  "minutes": 64,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "authors report a claim",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "card: ' authors' x5, ' they' x3, ' concluded', ' suggest', ' propose', ' attributed'. The - pole is first-person 'we/us/our' and 'unpub. data', so the distinction looks like third-person vs first-person attribution of claims. Near misses: first-person or no attribution.",
+ "selection": "random draw"
+}
