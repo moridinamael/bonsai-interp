@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-e8a1e299",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N4787+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:20:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N4787",
+   "pole": "+",
+   "label": "later piece of a compound Python identifier or API name ('check' in subprocess.check_output, 'Session' in dbus.SessionBus, '_or' in get_or_create)",
+   "fire": [
+    "    result = subprocess.check_output(['ls', '-l'])\n    print(result)",
+    "    bus = dbus.SessionBus()\n    obj = bus.get_object('org.example', '/')",
+    "    user, created = User.objects.get_or_create(name='alice')\n    user.save()",
+    "    rng = random.SystemRandom()\n    token = rng.randint(0, 999)",
+    "    out, inp, err = os.popen3(cmd)\n    line = err.readline()",
+    "    entry = registry.async_get_or_create('light', 'hue', 'id-1')\n    return entry",
+    "    proc = subprocess.check_call(['make', 'all'])\n    sys.exit(proc)",
+    "Symptoms of carbon monoxide poisoning include headache, dizziness and nausea."
+   ],
+   "quiet": [
+    "    result = run(['ls', '-l'])\n    print(result)",
+    "    bus = connect()\n    obj = bus.lookup('org.example', '/')",
+    "    user = User(name='alice')\n    user.save()",
+    "    rng = make_rng()\n    token = rng.randint(0, 999)",
+    "    out, inp, err = start(cmd)\n    line = err.readline()",
+    "    entry = registry.add('light', 'hue', 'id-1')\n    return entry",
+    "    proc = build(['make', 'all'])\n    sys.exit(proc)",
+    "Symptoms of food poisoning include headache, dizziness and nausea."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "compound API name pieces",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": ""
+}
