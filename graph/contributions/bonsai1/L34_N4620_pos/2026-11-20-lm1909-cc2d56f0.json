@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-cc2d56f0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4620+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:15:50+00:00",
+ "recipe": {
+  "toolchain_commit": "bfbc44f2a",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N4620_pos/2026-11-20-lm1909-cc2d56f0.tests.json"
+ },
+ "label": "the word-initial piece of a split noun: ' dep' (depots), ' ro' (rosters), ' min' (minilesson)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N4620_pos/2026-11-20-lm1909-cc2d56f0.tests.json",
+   "prereg_commit": "bfbc44f2a",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.802,
+     "peak": " dep"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.487,
+     "peak": " ro"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.642,
+     "peak": " min"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.668,
+     "peak": " dep"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.641,
+     "peak": " ro"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 1.056,
+     "peak": " dep"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.486,
+     "peak": " min"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.544,
+     "peak": " ro"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.026,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " next"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.054,
+     "peak": " brief"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " railway"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.09,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": " weapons"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.094,
+     "peak": " practiced"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": "Vol"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.641,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "bfbc44f2a",
+  "minutes": 45,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dep|ots, ro|sters",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "card: ' dep' x9, ' ro' x8, ' hyp' x4, ' rep' x3 - first pieces of words the tokenizer splits. Probe: depots 1.0, rosters 0.69, minilesson 0.72, 'warehouses' 0.01. Near misses use single-token synonyms.",
+ "selection": "random draw"
+}
