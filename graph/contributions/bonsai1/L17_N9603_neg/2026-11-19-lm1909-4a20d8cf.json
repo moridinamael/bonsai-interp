@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-4a20d8cf",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N9603-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:53:03+00:00",
+ "recipe": {
+  "toolchain_commit": "91764c9df",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N9603_neg/2026-11-19-lm1909-4a20d8cf.tests.json"
+ },
+ "label": "Python guard conditions that test for a falsy, empty, zero or None value ('if not x:', '== 0', 'is None') and the early return / raise that follows",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N9603_neg/2026-11-19-lm1909-4a20d8cf.tests.json",
+   "prereg_commit": "91764c9df",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.861,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.231,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.134,
+     "peak": "No"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.525,
+     "peak": "No"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.474,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.798,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.688,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.3,
+     "peak": "No"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.182,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.103,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.021,
+     "peak": "def"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.043,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.116,
+     "peak": "):\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.338,
+     "peak": " timeout"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.055,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.079,
+     "peak": "       "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.499,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "91764c9df",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python falsy/empty guard checks",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Top examples: 'if not path_info:' ... 'is empty', 'if not heal_interval: return', '== 0', 'if overwrite:', \"raise ValueError('No model...')\". Probes: guard functions 0.35 and 0.39, straight-line Python 0.04, English 'if the basket is empty' 0.04. Near misses are the same function signatures with straight-line bodies.",
+ "selection": "random draw"
+}

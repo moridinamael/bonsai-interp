@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-e3c3589a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N673+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:42+00:00",
+ "recipe": {
+  "toolchain_commit": "91764c9df",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N673_pos/2026-11-19-lm1909-e3c3589a.tests.json"
+ },
+ "label": "site-navigation link text that points back to an index, main page or parent section ('Back to the X index', 'Return to our main Y site')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N673_pos/2026-11-19-lm1909-e3c3589a.tests.json",
+   "prereg_commit": "91764c9df",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.589,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.635,
+     "peak": " site"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.759,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.618,
+     "peak": " site"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.589,
+     "peak": " Index"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.647,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.872,
+     "peak": " index"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.585,
+     "peak": " site"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.02,
+     "peak": " help"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.048,
+     "peak": ".\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.164,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.021,
+     "peak": " folk"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.022,
+     "peak": " photographs"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.159,
+     "peak": ".\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.095,
+     "peak": " pages"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.016,
+     "peak": " in"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.627,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "91764c9df",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "back-to-index navigation links",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Top examples: 'Back to ... index page', 'Return to our main ... site', 'Return from X to Y', 'Other Related Materials', 'Not to be confused with'. Probes: 'Back to the Water Features index page' 0.82, 'Return to our main ... site' 0.56, prose with 'back to' / 'index' <0.02. 'Not to be confused with' only 0.19, so the label stays at navigation links.",
+ "selection": "random draw"
+}

@@ -1,0 +1,53 @@
+{
+ "contribution": "2026-11-19-lm1909-27480c38",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N4388+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:36:46+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N4388",
+   "pole": "+",
+   "label": "the token '():\\n' closing the header of a Python function defined with no arguments ('def main():'); weaker on ' return' as the first statement of a method",
+   "fire": [
+    "import argparse\nimport json\n\n\ndef main():\n    parser = argparse.ArgumentParser()\n    opts = parser.parse_args()\n",
+    "import random\n\nSEED = 42\n\n\ndef setup():\n    random.seed(SEED)\n",
+    "from flask import Flask\n\napp = Flask(__name__)\n\n\ndef index():\n    name = 'world'\n    print(name)\n",
+    "import logging\n\nlog = logging.getLogger(__name__)\n\n\ndef cleanup():\n    log.info('removing temp files')\n",
+    "import os\nimport shutil\n\n\ndef build():\n    target = os.path.join('dist', 'out')\n    shutil.rmtree(target)\n",
+    "import unittest\n\nfrom mypkg import core\n\n\ndef load_tests():\n    loader = unittest.TestLoader()\n",
+    "import socket\n\nPORT = 8080\n\n\ndef serve():\n    sock = socket.socket()\n    sock.bind(('', PORT))\n",
+    "import csv\n\nROWS = []\n\n\ndef report():\n    writer = csv.writer(open('out.csv', 'w'))\n"
+   ],
+   "quiet": [
+    "import argparse\nimport json\n\n\ndef main(argv, env):\n    parser = argparse.ArgumentParser()\n    opts = parser.parse_args(argv)\n",
+    "import random\n\nSEED = 42\n\n\nclass Setup(object):\n    seed = SEED\n    rounds = 3\n",
+    "from flask import Flask\n\napp = Flask(__name__)\n\nname = 'world'\nprint(name)\n",
+    "import logging\n\nlog = logging.getLogger(__name__)\n\nfor path in paths:\n    log.info('removing temp files')\n",
+    "import os\nimport shutil\n\n\ndef build(target, clean):\n    out = os.path.join('dist', target)\n    shutil.rmtree(out)\n",
+    "import unittest\n\nfrom mypkg import core\n\nloader = unittest.TestLoader()\nsuite = loader.discover('tests')\n",
+    "import socket\n\nPORT = 8080\n\nwith socket.socket() as sock:\n    sock.bind(('', PORT))\n    sock.listen(5)\n",
+    "import csv\n\nROWS = []\n\nwhile len(ROWS) < 10:\n    ROWS.append(len(ROWS))\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "'():\\n' of no-arg def",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: '():\\n' x18 and ' return' x11 of the top 32. Probes: 'def main():' 0.89, 'def suite():' 0.78, 'def run():' 0.50, a def with arguments 0.17, class header 0.04, ' return' opening a method 0.34-0.42 (not tested here).",
+ "trigger": {
+  "tokens": [
+   "():\n"
+  ]
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-58e62728",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N3045-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:51+00:00",
+ "recipe": {
+  "toolchain_commit": "91764c9df",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N3045_neg/2026-11-19-lm1909-58e62728.tests.json"
+ },
+ "label": "dense pole (47% of tokens reach 0.1 of max); best guess at its strongest driver: the particle ' up' after a verb ('pick up', 'set up')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N3045_neg/2026-11-19-lm1909-58e62728.tests.json",
+   "prereg_commit": "91764c9df",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 6,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.777,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.693,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.44,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.331,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.524,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.52,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.572,
+     "peak": " up"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.545,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.352,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.299,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.252,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.332,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.359,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.399,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.392,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.354,
+     "peak": " to"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.534,
+    "near_misses_at_0.3": 6
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "91764c9df",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; ' up' particle",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "Card flags the pole dense (47.2% of tokens above 0.1 of max, max only 0.20, gate-closed leak regime). ' up' is the commonest peak of the top 32 (x10), then Cyrillic 'а'. Probes: 'pick up' 0.83 / 0.71, but 'slow down' 0.56 and an unrelated sentence 0.33, so the test is expected to fail on near misses; it records the density.",
+ "selection": "random draw"
+}

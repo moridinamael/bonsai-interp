@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-c0addeab",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N9881+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:53:19+00:00",
+ "recipe": {
+  "toolchain_commit": "91764c9df",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N9881_pos/2026-11-19-lm1909-c0addeab.tests.json"
+ },
+ "label": "a binary operator in code or a formula at the point where a parenthesised operand must follow: the '%' of Python string formatting before its tuple, or '/' , '**', '=' before '(' ; the output promotes '('",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N9881_pos/2026-11-19-lm1909-c0addeab.tests.json",
+   "prereg_commit": "91764c9df",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.393,
+     "peak": " %"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.144,
+     "peak": " %"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.012,
+     "peak": " /"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.348,
+     "peak": " %"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.112,
+     "peak": " /"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.286,
+     "peak": " %"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.236,
+     "peak": " %"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.209,
+     "peak": " /"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.042,
+     "peak": "'."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": " user"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.131,
+     "peak": " /"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.025,
+     "peak": " str"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.026,
+     "peak": " /"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": "moved"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.044,
+     "peak": " /"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.261,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "91764c9df",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "operator before '(' operand",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: ' %' x14 of the top 32, plus ' /', ' =', ' **', ' ÷ (' each directly before '('; the output direction promotes '('. Probes: '% (name, path)' 0.30, '% (nfiles, nerrors)' 0.26, '% (skipped, total)' 0.45, '(a + b) / (c + d)' 0.30; '% value' without a tuple 0.04, '.format' 0.02, '/ count' 0.01, a '/ (n - 1)' line 0.01. Fire levels are close to the threshold.",
+ "selection": "random draw"
+}

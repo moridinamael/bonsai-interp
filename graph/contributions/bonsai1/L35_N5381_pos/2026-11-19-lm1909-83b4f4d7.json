@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-83b4f4d7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N5381+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:52:57+00:00",
+ "recipe": {
+  "toolchain_commit": "91764c9df",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N5381_pos/2026-11-19-lm1909-83b4f4d7.tests.json"
+ },
+ "label": "Korean (Hangul) text: fires on the first byte-piece of a Korean word, i.e. where the next piece of a Hangul syllable must be predicted; quiet on Japanese and Chinese",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N5381_pos/2026-11-19-lm1909-83b4f4d7.tests.json",
+   "prereg_commit": "91764c9df",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.105,
+     "peak": "어"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": -0.002,
+     "peak": " it"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.001,
+     "peak": " 교"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": -0.002,
+     "peak": " sign"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.258,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.045,
+     "peak": "와"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": -0.003,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.229,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.01,
+     "peak": "私"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.118,
+     "peak": " "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.011,
+     "peak": "政策"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": -0.0,
+     "peak": "京"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": "。"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.004,
+     "peak": "管理"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.009,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.069,
+     "peak": "�"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.469,
+    "median_fire": 0.023,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "91764c9df",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Korean word-start pieces",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: all top examples are partial-byte pieces, mostly at the start of Korean words (one Chinese example); the opposite pole is Japanese katakana. Probes: Korean sentences 0.05-0.46, a Korean brand name inside English 1.09, Japanese 0.002, Chinese 0.01. Near misses are the same sentences in Japanese or Chinese.",
+ "selection": "random draw"
+}
