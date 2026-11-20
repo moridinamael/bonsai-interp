@@ -1,0 +1,52 @@
+{
+ "contribution": "2026-11-20-lm1909-8e9b7555",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L15/N2397+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:45:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L15/N2397",
+   "pole": "+",
+   "label": "the index 0 in a code subscript (version_info[0], args[0]): the first element, against [1] / [-1] on the other pole",
+   "fire": [
+    "import sys\n\nif sys.version_info[0] < 3:\n    raise RuntimeError('Python 3 required')",
+    "def main(argv):\n    script_name = argv[0]\n    print(script_name)",
+    "rows = load_table(path)\nheader = rows[0]\nprint(header)",
+    "def first_word(text):\n    words = text.split()\n    return words[0]",
+    "points = np.array(points)\nxs = points[:, 0]\nplt.plot(xs)",
+    "result = cursor.fetchone()\ncount = result[0]\nreturn count",
+    "parts = line.split(',')\nname = parts[0].strip()\nprint(name)",
+    "batch = next(iter(loader))\nimages = batch[0]\nprint(images.shape)"
+   ],
+   "quiet": [
+    "import sys\n\nif len(sys.argv) < 3:\n    raise RuntimeError('two arguments required')",
+    "def main(argv):\n    script_name = argv.pop()\n    print(script_name)",
+    "rows = load_table(path)\nheader = rows[1]\nprint(header)",
+    "def last_word(text):\n    words = text.split()\n    return words[-1]",
+    "points = np.array(points)\nys = points[:, 1]\nplt.plot(ys)",
+    "result = cursor.fetchone()\ncount = len(result)\nreturn count",
+    "parts = line.split(',')\nname = parts[2].strip()\nprint(name)",
+    "batch = next(iter(loader))\nlabels = batch[1]\nprint(labels.shape)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "subscript index 0",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "card: '0' x20 of top 32, mostly sys.version_info[0]; the - pole peaks on '1' in shape[1] / shape[-1], so the pole pair separates first vs second/last index.",
+ "trigger": {
+  "tokens": [
+   "0"
+  ]
+ }
+}
