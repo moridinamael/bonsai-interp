@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-f02b9143",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9764-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:19:09+00:00",
+ "recipe": {
+  "toolchain_commit": "dc3b8d1c5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N9764_neg/2026-11-20-lm1909-f02b9143.tests.json"
+ },
+ "label": "the kanji 残 ('remain, left over') in Japanese text",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N9764_neg/2026-11-20-lm1909-f02b9143.tests.json",
+   "prereg_commit": "dc3b8d1c5",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.736,
+     "peak": "残"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.745,
+     "peak": "残"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.724,
+     "peak": "残"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.777,
+     "peak": "残"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.585,
+     "peak": "残"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.647,
+     "peak": "残"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.747,
+     "peak": "残"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.801,
+     "peak": "残"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": "月"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.017,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.017,
+     "peak": "の"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "が"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": "並"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": "を"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.74,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "dc3b8d1c5",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "kanji 残",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "card: 残 x23 of top 32 (残念, 残り, 残高, 残る). probe: sentence-initial 残念 0.22; trigger kept mid-sentence here.",
+ "selection": "random draw"
+}
