@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-05093114",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1762-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:30:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N1762",
+   "pole": "-",
+   "label": "argument tokens inside calls in Python unit-test code (assertEqual(f([a, b]), ...), assertRaises blocks)",
+   "fire": [
+    "    def test_pairs(self):\n        self.assertEqual(zip_pairs([x, y]), [(1, 2)])",
+    "        with self.assertRaises(KeyError):\n            lookup(3, \"baz\")",
+    "    def test_path(self):\n        path = lib.JoinPath(self.root, 'a.bin')\n        self.assertEqual(path, '/a.bin')",
+    "    opts = {\"dry_run\": True}\n    self.assertTrue(run(opts))",
+    "    def test_unquote(self):\n        self.assertEqual(unquote(\"a &amp; b\"), \"a & b\")",
+    "        self.assertEqual(tf.reverse(x), [3, 2, 1])",
+    "    def test_concat(self):\n        self.assertEqual(concat([p, q]), \"pq\")",
+    "        with self.assertRaises(TypeError):\n            combine(2, \"qux\")"
+   ],
+   "quiet": [
+    "def zip_pairs(items):\n    return list(zip(items[::2], items[1::2]))",
+    "def lookup(key, table):\n    return table[key]",
+    "class Lib:\n    def JoinPath(self, root, name):\n        return root + name",
+    "# opts holds the parsed command-line flags\nopts = parse_args()",
+    "def unquote(text):\n    return html.unescape(text)",
+    "import tensorflow as tf\nimport numpy as np",
+    "def concat(parts):\n    return ''.join(parts)",
+    "def combine(a, b):\n    return a + b"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "args in unit-test calls",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Probe: assertEqual/assertRaises call args 0.14-0.20; a plain def 0.04."
+}
