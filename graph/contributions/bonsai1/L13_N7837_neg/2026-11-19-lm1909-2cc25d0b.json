@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-2cc25d0b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N7837-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:30+00:00",
+ "recipe": {
+  "toolchain_commit": "b119c1b09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N7837_neg/2026-11-19-lm1909-2cc25d0b.tests.json"
+ },
+ "label": "the occupation, industry or age-band category named in a labour or census statistic (median wage for bookkeepers, employment in social assistance, aged 30-34); the same job word in everyday narrative stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N7837_neg/2026-11-19-lm1909-2cc25d0b.tests.json",
+   "prereg_commit": "b119c1b09",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.458,
+     "peak": "ers"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.43,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.233,
+     "peak": " reporters"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.344,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.577,
+     "peak": " assistance"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.639,
+     "peak": "ers"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.569,
+     "peak": "akers"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.573,
+     "peak": "housing"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": "ers"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.034,
+     "peak": " technicians"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": " reporters"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.008,
+     "peak": "My"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.006,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.053,
+     "peak": " below"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.022,
+     "peak": "akers"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.007,
+     "peak": " hour"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.513,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b119c1b09",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "category in labour statistic",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: bookkeepers, mediators, fabricators, social assistance, 'computer and electronics manufacturing', age bands 30-34, all in BLS/census prose. Probes: BLS wage for electricians 0.59, hygienists growth 0.40, census age bands 0.37, sector jobs 0.36; 'my neighbor works as an electrician' 0.07, plumbers anecdote 0.02, paralegals party 0.03. One statistical sentence was weak (paralegals earnings range 0.10).",
+ "selection": "random draw"
+}

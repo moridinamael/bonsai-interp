@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-fd32dddd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N8592-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:30:10+00:00",
+ "recipe": {
+  "toolchain_commit": "b119c1b09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N8592_neg/2026-11-19-lm1909-fd32dddd.tests.json"
+ },
+ "label": "the break right after a short lead-in line (a title, heading or code comment) before the body it introduces begins; the same words run on as ordinary prose are weaker",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N8592_neg/2026-11-19-lm1909-fd32dddd.tests.json",
+   "prereg_commit": "b119c1b09",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.328,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.243,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.267,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.138,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.197,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.223,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.238,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.25,
+     "peak": "()"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.276,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.216,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.076,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.158,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.148,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.21,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.344,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.578,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.547,
+    "median_fire": 0.24,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b119c1b09",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "break after lead-in line",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card flags the pole broad (4.3% of tokens above 0.1 of max). Top examples peak on ',' after 'states'/'stated' before a quotation, on '\\n' after a heading ('Mary in The Quran') or a code comment ('# normalize attrs', '# then'). Probes: comment line then code 0.47, title line then body 0.41-0.43; quotation lead-ins weaker (writes, 0.34; stated, 0.18); running prose 0.16-0.20. The margin over ordinary prose is small, so this may well fail.",
+ "selection": "random draw"
+}

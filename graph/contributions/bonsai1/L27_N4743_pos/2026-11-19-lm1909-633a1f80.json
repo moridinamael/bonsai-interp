@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-633a1f80",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N4743+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:42+00:00",
+ "recipe": {
+  "toolchain_commit": "b119c1b09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N4743_pos/2026-11-19-lm1909-633a1f80.tests.json"
+ },
+ "label": "the point in nutrition text where the food sources or the daily dose of a named vitamin or mineral are being listed (get vitamin E by eating ..., sources: nuts, fortified cereals ...); food lists with no nutrient framing stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N4743_pos/2026-11-19-lm1909-633a1f80.tests.json",
+   "prereg_commit": "b119c1b09",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.453,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.444,
+     "peak": " eating"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.334,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.581,
+     "peak": " eat"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.16,
+     "peak": " dried"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.515,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.686,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.249,
+     "peak": " fortified"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": "ps"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.007,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.044,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": " market"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.127,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": "ps"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.035,
+     "peak": " eating"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.449,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b119c1b09",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "food sources of a nutrient",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: all top examples are vitamin E / calcium intake passages, peaking on ':' after 'Dietary source', ' eating', ' fortified', ' least', list commas. Probes: vitamin C by eating citrus 0.66, magnesium in nuts ... 0.63, iron sources 0.52, 'at least 600 IU of vitamin D' 0.21; 'at least 5 quarts of oil' 0.01, 'eating out at restaurants' 0.13.",
+ "selection": "random draw"
+}

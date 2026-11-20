@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-3d5d9cf3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N672+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:30:28+00:00",
+ "recipe": {
+  "toolchain_commit": "b119c1b09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L8_N672_pos/2026-11-19-lm1909-3d5d9cf3.tests.json"
+ },
+ "label": "the distinguishing name word inside a grand cultural venue's name, above all British 'Royal ...' institutions (Royal Albert Hall, Royal Botanic Gardens, Victoria and Albert Museum, Royal Opera House); the same words outside a venue name stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L8_N672_pos/2026-11-19-lm1909-3d5d9cf3.tests.json",
+   "prereg_commit": "b119c1b09",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.82,
+     "peak": " Albert"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.809,
+     "peak": "anic"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.757,
+     "peak": " Albert"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.844,
+     "peak": "anic"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.515,
+     "peak": " Opera"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.855,
+     "peak": " Albert"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.775,
+     "peak": "anic"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.745,
+     "peak": " Albert"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.099,
+     "peak": " front"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.013,
+     "peak": " flower"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.129,
+     "peak": " loan"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " Sydney"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.04,
+     "peak": " gym"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.09,
+     "peak": "4"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.145,
+     "peak": " Royal"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " Reserve"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.792,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b119c1b09",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "name word in 'Royal …' venue",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: 'anic' x7 (Royal Botanic Gardens), ' Albert' x3 (Royal Albert Hall, Victoria and Albert Museum), plus Cert'osa', Gran Te'atre', Palazzo Stroz'zi'. Probes: Royal Botanic Gardens 0.91, Royal Albert Hall 0.82, Victoria and Albert Museum 0.72, Royal Opera House 0.51, Palazzo Pitti 0.48, Uffizi Gallery 0.31; Prince Albert 0.21, Royal College of Art 0.18, Royal Navy 0.14, Sydney Opera House 0.14, Carnegie Hall 0.05, Globe Theatre 0.05, Federal Reserve Bank 0.06. So not every famous venue fires: the list (Royal/V&A names, some Italian palazzi) holds better than the general pattern. The - pole fires on the name word of official or regional bodies (German Federal Institute, Scottish Borders, Irish Independent).",
+ "selection": "random draw"
+}

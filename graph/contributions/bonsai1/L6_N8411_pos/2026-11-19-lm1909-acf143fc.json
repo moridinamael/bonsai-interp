@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-acf143fc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N8411+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:29:27+00:00",
+ "recipe": {
+  "toolchain_commit": "b119c1b09",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N8411_pos/2026-11-19-lm1909-acf143fc.tests.json"
+ },
+ "label": "the head word right after a vivid heat/motion/predator first word in a fixed name or compound (Burning Man, Rushmore, Shark Club, spin structure, SparkNotes, action park); the same head word after a neutral modifier stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N8411_pos/2026-11-19-lm1909-acf143fc.tests.json",
+   "prereg_commit": "b119c1b09",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.021,
+     "peak": " Man"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.895,
+     "peak": "more"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.875,
+     "peak": " Club"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 1.128,
+     "peak": " structure"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.097,
+     "peak": "Notes"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.864,
+     "peak": " park"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.175,
+     "peak": " bush"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.025,
+     "peak": " old"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.046,
+     "peak": " motel"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.241,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.078,
+     "peak": " structure"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.061,
+     "peak": " notes"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.047,
+     "peak": " park"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.043,
+     "peak": " stopped"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.024,
+     "peak": " old"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.885,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b119c1b09",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "head after vivid modifier",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: no single token (Man, structure, Club, Notes, park, more). Probes: 'Burning Man' 0.95-0.99, lower-case 'burning man' 0.85, 'Rushmore' 0.91-0.93, 'Shark Club' 0.85, 'spin structure' 0.98; 'Comedy Club' 0.10, 'Yellowstone Park' 0.15, 'Viper Room' 0.03, 'Iron Man' 0.29, 'Grand Canyon' 0.00. The generalisation to new vivid first words is a guess; the - pole is the second half of adjective compounds (trigger-happy, power-hungry, pressure-sensitive).",
+ "selection": "random draw"
+}
