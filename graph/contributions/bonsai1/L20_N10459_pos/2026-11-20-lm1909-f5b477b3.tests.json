@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-f5b477b3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N10459+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:31:00+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N10459",
+   "pole": "+",
+   "label": "indentation and node/vertex tokens inside graph-traversal loops in code",
+   "fire": [
+    "def dfs(root):\n    stack = [root]\n    while stack:\n        node = stack.pop()\n        stack.extend(node.children)",
+    "def bfs(start):\n    queue = deque([start])\n    seen = {start}\n    while queue:\n        v = queue.popleft()\n        for w in graph[v]:\n            queue.append(w)",
+    "    for vertex in vertices:\n        if vertex not in visited:\n            visited.add(vertex)\n            to_visit.append(vertex)",
+    "    dist[v] = d\n\n    for u in neighbours(v):\n        if dist[u] > d + 1:\n            dist[u] = d + 1",
+    "def walk(tree):\n    for child in tree.child_nodes():\n        walk(child)\n        child.parent = tree",
+    "    frontier = [source]\n    while frontier:\n        node = frontier.pop()\n        for nxt in edges[node]:\n            frontier.append(nxt)",
+    "def count_leaves(node):\n    if not node.children:\n        return 1\n    return sum(count_leaves(c) for c in node.children)",
+    "    visited = set()\n    while todo:\n        n = todo.pop()\n        visited.add(n)\n        todo.extend(graph[n] - visited)"
+   ],
+   "quiet": [
+    "def total(prices):\n    result = 0\n    for p in prices:\n        result += p\n    return result",
+    "def read(path):\n    with open(path) as f:\n        lines = f.readlines()\n    return [l.strip() for l in lines]",
+    "    for name in names:\n        if name not in greeted:\n            print('hello', name)\n            greeted.add(name)",
+    "    price[item] = cost\n\n    for tax in taxes:\n        if tax.applies(item):\n            price[item] += tax.amount",
+    "def save(user):\n    user.updated = now()\n    db.session.add(user)\n    db.session.commit()",
+    "    words = text.split()\n    while words:\n        word = words.pop()\n        counts[word] += 1",
+    "def clamp(x, lo, hi):\n    if x < lo:\n        return lo\n    return min(x, hi)",
+    "    total = 0\n    while pending:\n        order = pending.pop()\n        total += order.amount"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "graph traversal code",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "card: indentation after 'node = fringe.pop()', visited.add(vertex), 'for each of <node>'s children'"
+}
