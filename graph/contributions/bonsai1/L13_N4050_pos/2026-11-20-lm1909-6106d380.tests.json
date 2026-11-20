@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-6106d380",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N4050+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:48:22+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N4050",
+   "pole": "+",
+   "label": "a bound method passed as a callback in Python signal wiring (self.on_x in connect(...))",
+   "fire": [
+    "        self.button.connect('clicked', self.on_button_clicked)",
+    "        window.connect('destroy', self.on_window_destroy)",
+    "        self.entry.connect('activate', self.on_entry_activate)",
+    "        self.timer.timeout.connect(self.on_timer_tick)",
+    "        scale.connect('value-changed', self.on_scale_changed)",
+    "        self.save_action.triggered.connect(self.on_save)",
+    "        self.combo.connect('changed', self.on_combo_changed)",
+    "        GLib.timeout_add(500, self.on_poll)"
+   ],
+   "quiet": [
+    "        self.button.set_label('Clicked')",
+    "        window.set_title('Main window')",
+    "        self.entry.set_text('')",
+    "        self.timer.start(1000)",
+    "        scale.set_range(0, 100)",
+    "        self.save_action.setEnabled(False)",
+    "        self.combo.set_active(0)",
+    "        count = len(self.items)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "callback method reference",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "card flags broad (1.3% at 0.1 max) and gate-closed regime dominant (98%); max only 3.0. Probe: '.on' in a connect() call 0.54. Expected to be weak."
+}
