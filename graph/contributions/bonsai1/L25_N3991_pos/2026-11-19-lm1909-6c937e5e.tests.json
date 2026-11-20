@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-6c937e5e",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N3991+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:20:03+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N3991",
+   "pole": "+",
+   "label": "Computing a gradient or derivative: the assignment or copula where a gradient/derivative is being given, in autodiff code ('grads = …grad(loss, …)') or in calculus prose ('its derivative is', 'dy/dx =')",
+   "fire": [
+    "    loss = tf.reduce_mean(tf.square(pred - y))\n    grads = tf.gradients(loss, weights)\n    train_op = optimizer.apply_gradients(zip(grads, weights))",
+    "Because x squared is a power, its derivative is 2x by the power rule.",
+    "The gradient of the cost with respect to each bias is obtained by the chain rule.",
+    "Using the product rule, d/dx (uv) = u dv/dx + v du/dx.",
+    "    out = model(x)\n    loss = F.mse_loss(out, y)\n    grad = torch.autograd.grad(loss, model.parameters())",
+    "The sine function is smooth, and its derivative is the cosine.",
+    "def numerical_gradient(f, x, eps=1e-6):\n    grad = (f(x + eps) - f(x - eps)) / (2 * eps)\n    return grad",
+    "To minimize the error we compute the derivative of the loss with respect to w, which is 2(w - t)."
+   ],
+   "quiet": [
+    "    loss = tf.reduce_mean(tf.square(pred - y))\n    summary = tf.summary.scalar('loss', loss)\n    writer.add_summary(summary, step)",
+    "Because x squared is a power, its value is never negative for real x.",
+    "The cost of each ticket with respect to distance is listed in the table.",
+    "Using the lookup table, the clerk matched each order with its invoice.",
+    "    out = model(x)\n    loss = F.mse_loss(out, y)\n    print(loss.item(), out.shape)",
+    "The sine function is periodic, and its period is two pi.",
+    "def numerical_mean(values):\n    total = sum(values)\n    return total / len(values)",
+    "To cross the pass, the road climbs a steep gradient and then drops to the lake."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "gradient / derivative being computed",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: 'grads =', 'gradients =', 'derivative is', ' gradient', Jacobian; output suppresses ' gradient(s)', ' derivative'. Probes: grads = torch.autograd.grad 0.73, dy/dx = 0.65, derivative is zero 0.43, gradient of the loss 0.40; one-line tape.gradient 0.10; same code without gradients 0.01, 'steep gradient' of a road 0.04, integral 0.01."
+}

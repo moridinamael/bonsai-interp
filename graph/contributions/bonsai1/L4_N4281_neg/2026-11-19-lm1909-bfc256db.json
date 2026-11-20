@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-bfc256db",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N4281-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:27:30+00:00",
+ "recipe": {
+  "toolchain_commit": "f81cf1bf1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N4281_neg/2026-11-19-lm1909-bfc256db.tests.json"
+ },
+ "label": "The word piece 'appy' / 'uffy' right after ' scr' (scrappy, scruffy); not happy, fluffy or other -appy/-uffy words",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N4281_neg/2026-11-19-lm1909-bfc256db.tests.json",
+   "prereg_commit": "f81cf1bf1",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.298,
+     "peak": "appy"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.506,
+     "peak": "uffy"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.417,
+     "peak": "appy"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.262,
+     "peak": "uffy"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.408,
+     "peak": "appy"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.496,
+     "peak": "uffy"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.229,
+     "peak": "appy"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.299,
+     "peak": "uffy"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.002,
+     "peak": " loved"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " stuff"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.304,
+     "peak": "appy"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": "burn"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.003,
+     "peak": " scrap"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " adopted"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": " earned"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.017,
+     "peak": "gy"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.969,
+    "median_fire": 0.868,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f81cf1bf1",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "scr+appy / scr+uffy",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Low-max early-layer pole (max 5.5, card flags the gate-closed regime at 89%). Probes: scrappy 0.80, scruffy 0.58; ' suspect' 0.01 although it is in the card's top tokens; happy/fluffy/chunky 0.01.",
+ "selection": "random draw"
+}
