@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-bd63d6b7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N10815+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:53:26+00:00",
+ "recipe": {
+  "toolchain_commit": "5dd8ad6c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N10815_pos/2026-11-20-lm1909-bd63d6b7.tests.json"
+ },
+ "label": "the position right after a mention of nitrogen, where the next token could be N (e.g. 'nitrogen (78%)')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N10815_pos/2026-11-20-lm1909-bd63d6b7.tests.json",
+   "prereg_commit": "5dd8ad6c0",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.302,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.421,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.037,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.022,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.082,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.469,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.421,
+     "peak": " ("
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.611,
+     "peak": " ("
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.056,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "ucose"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.113,
+     "peak": " lists"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.005,
+     "peak": " degrees"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.004,
+     "peak": " very"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.005,
+     "peak": " water"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": " calcium"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.101,
+     "peak": " of"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.421,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5dd8ad6c0",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "after nitrogen",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: two top examples are '(' after 'nitrogen'; one is 'N' in a bond table; logit effect suppresses N, _N, (N, /N. Some outliers (Russian suffixes).",
+ "selection": "random draw"
+}

@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-9ee905c2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N6258+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:53:02+00:00",
+ "recipe": {
+  "toolchain_commit": "5dd8ad6c0",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N6258_pos/2026-11-20-lm1909-9ee905c2.tests.json"
+ },
+ "label": "function words (' in', ' =', ' to', ' (') inside Python source code, not in prose",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N6258_pos/2026-11-20-lm1909-9ee905c2.tests.json",
+   "prereg_commit": "5dd8ad6c0",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.007,
+     "peak": " open"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.097,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.025,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.008,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.009,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.01,
+     "peak": " []\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.004,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.008,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": " end"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.062,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " into"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.023,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.336,
+    "median_fire": 0.009,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5dd8ad6c0",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "in/= inside code",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card top 32: ' in' x6, ' =' x4, ' (' x3, ' if' x3, mostly in code; some Japanese outliers. Tests code vs prose with the same words.",
+ "selection": "random draw"
+}
