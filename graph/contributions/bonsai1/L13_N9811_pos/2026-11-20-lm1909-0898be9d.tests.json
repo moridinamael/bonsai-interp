@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-0898be9d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N9811+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:37:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N9811",
+   "pole": "+",
+   "label": "the PubMed identifier tokens in a citation (' PMID', 'PubMed', 'pubmed' in URLs)",
+   "fire": [
+    "Smith J, Lee K. Vitamin D and bone density in older adults. J Bone Res. 2015;30(4):211-9. PMID 25812345.",
+    "The original trial results are indexed on PubMed under the title of the paper.",
+    "Garcia M et al. Sleep and memory in teenagers. Sleep Med. 2018;44:12-20. PMID: 29530362",
+    "See https://www.ncbi.nlm.nih.gov/pubmed/30412287 for the full abstract.",
+    "Chen L. Gut flora in infancy. Pediatrics. 2012;129(3):e540-7. PMID 22331339 (free full text).",
+    "A quick search of PubMed returned more than four hundred studies on the topic.",
+    "Brown A, Patel R. Statins and muscle pain. Lancet. 2010;375:1100-6. PMID 20299120.",
+    "The abstract for this review is available on PubMed along with related articles."
+   ],
+   "quiet": [
+    "Smith J, Lee K. Vitamin D and bone density in older adults. J Bone Res. 2015;30(4):211-9. doi:10.1002/jbr.2581.",
+    "The original trial results are printed in the journal under the title of the paper.",
+    "Garcia M et al. Sleep and memory in teenagers. Sleep Med. 2018;44:12-20. doi:10.1016/j.sleep.2018.01.004",
+    "See https://doi.org/10.1093/brain/awy241 for the full abstract.",
+    "Chen L. Gut flora in infancy. Pediatrics. 2012;129(3):e540-7. (free full text on the journal site).",
+    "A quick search of the library catalogue returned more than four hundred studies on the topic.",
+    "Brown A, Patel R. Statins and muscle pain. Lancet. 2010;375:1100-6. Epub 2010 Mar 15.",
+    "The abstract for this review is available on the journal website along with related articles."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "PMID / PubMed",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "' PMID' x15, 'med' of PubMed x6, ' PubMed' x3 in reference lists; max is only 4.6 and the pole is mostly gate-closed echo. Near misses keep the reference-list style with DOIs or journal pages but no PubMed identifier."
+}
