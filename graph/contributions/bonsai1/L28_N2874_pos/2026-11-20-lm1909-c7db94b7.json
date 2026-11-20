@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-c7db94b7",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N2874+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:11:20+00:00",
+ "recipe": {
+  "toolchain_commit": "1d9abd0f2",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N2874_pos/2026-11-20-lm1909-c7db94b7.tests.json"
+ },
+ "label": "a token inside a physical-unit or dimension expression (length/force, units = 'cm-3', <amount> <currency>, [l/h])",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N2874_pos/2026-11-20-lm1909-c7db94b7.tests.json",
+   "prereg_commit": "1d9abd0f2",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.727,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.144,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.118,
+     "peak": " volume"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.496,
+     "peak": " energy"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.44,
+     "peak": " <"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.697,
+     "peak": " length"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.054,
+     "peak": "kg"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.151,
+     "peak": "/"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.044,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.003,
+     "peak": "cube"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.04,
+     "peak": " runs"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " constant"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " price"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.006,
+     "peak": " rolling"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": "volume"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.003,
+     "peak": " her"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.295,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1d9abd0f2",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "unit expression",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: very sparse (0.001% over 0.1 max), one outlier at 223 on '/' in 'length/force'; others '=' after cube.units, '<' in '<amount> <currency>', '[l/h]'. The - pole's direction promotes ' metric', ' units', ' SI'. Low confidence; median fire may fall under 0.20 of the outlier max.",
+ "selection": "random draw"
+}
