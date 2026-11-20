@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-43d27866",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7816+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:13:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N7816",
+   "pole": "+",
+   "label": "an identifier inside a quoted string literal in code (model name, URL path segment, settings or template key), at the token just before the closing quote",
+   "fire": [
+    "class Order(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    items = db.relationship('Product', backref='order', lazy='dynamic')",
+    "urlpatterns = [\n    url(r'^articles/(?P<pk>\\d+)/delete/$', views.ArticleDeleteView.as_view(), name='article-delete'),\n]",
+    "- name: configure the interface\n  device_config:\n    host: '{{ host_name }}'\n    port: '{{ mgmt_port }}'",
+    "    def test_change_view(self):\n        response = self.client.get('/admin/shop/customer/')\n        self.assertEqual(response.status_code, 200)",
+    "if 'debug_toolbar' in settings.INSTALLED_APPS:\n    urlpatterns += [path('__debug__/', include('debug_toolbar.urls'))]",
+    "    config = load_config()\n    timeout = config.get('request_timeout', 30)\n    retries = config.get('max_retries', 3)",
+    "    payload = {\n        \"username\": user.name,\n        \"email_address\": user.email,\n    }",
+    "    parser.add_argument('--output_dir', type=str, default='results')\n    args = parser.parse_args()"
+   ],
+   "quiet": [
+    "class Order(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    total = db.Column(db.Float, nullable=False)",
+    "def delete_article(request, pk):\n    article = get_object_or_404(Article, pk=pk)\n    article.delete()\n    return redirect(home)",
+    "- name: configure the interface\n  device_config:\n    host: 10.0.0.1\n    port: 22",
+    "    def test_change_view(self):\n        response = self.client.get(url)\n        self.assertEqual(response.status_code, 200)",
+    "if settings.DEBUG and enable_toolbar:\n    urlpatterns += toolbar_patterns\n    logger.info(count)",
+    "    config = load_config()\n    timeout = config.request_timeout or 30\n    retries = config.max_retries or 3",
+    "    payload = build_payload(user)\n    payload.update(extra_fields)\n    send(payload)",
+    "    output_dir = os.path.join(base_dir, run_id)\n    os.makedirs(output_dir, exist_ok=True)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "identifier in code string",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "logit effect promotes closing-quote tokens like '\",' and '\")'"
+}
