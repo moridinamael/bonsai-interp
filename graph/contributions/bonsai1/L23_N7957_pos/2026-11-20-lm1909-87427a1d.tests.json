@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-87427a1d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N7957+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:41:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L23/N7957",
+   "pole": "+",
+   "label": "the opening quote of a string literal inside multi-line code (\"('\", ' \"' after a colon or comma)",
+   "fire": [
+    "import sqlite3\nconn = sqlite3.connect(db_path)\ncur = conn.cursor()\nrows = []\nfor table in tables:\n    cur.execute('SELECT name FROM users WHERE active = 1')\n    rows.extend(cur.fetchall())",
+    "config = {\n    \"name\": \"web-frontend\",\n    \"image\": \"nginx:latest\",\n    \"port\": 8080,\n    \"env\": \"production\"\n}",
+    "def setup_logging(level):\n    logger = logging.getLogger(__name__)\n    logger.setLevel(level)\n    logger.info('starting worker pool')\n    return logger",
+    "parser = argparse.ArgumentParser()\nparser.add_argument('--input', help='path to the input file')\nparser.add_argument('--verbose', action='store_true')\nargs = parser.parse_args()",
+    "class Report:\n    def render(self, data):\n        lines = []\n        lines.append(\"Summary of results\")\n        for key, value in data.items():\n            lines.append(f\"{key}: {value}\")\n        return lines",
+    "def test_parse_header(client):\n    response = client.get('/api/v1/status')\n    assert response.status_code == 200\n    assert response.json()['state'] == 'ok'",
+    "where_parts = []\nif user_id is not None:\n    where_parts.append('orders.user_id = :uid')\nif since is not None:\n    where_parts.append('orders.created > :since')\nquery = ' AND '.join(where_parts)",
+    "payload = {\n    \"id\": 42,\n    \"title\": \"Quarterly report\",\n    \"tags\": [\"finance\", \"draft\"]\n}\nrequests.post(url, json=payload)"
+   ],
+   "quiet": [
+    "import sqlite3\nconn = sqlite3.connect(db_path)\ncur = conn.cursor()\nrows = []\nfor table in tables:\n    cur.execute(query, params)\n    rows.extend(cur.fetchall())",
+    "config = {\n    name: frontend_name,\n    image: default_image,\n    port: 8080,\n    env: current_env\n}",
+    "def setup_logging(level):\n    logger = logging.getLogger(__name__)\n    logger.setLevel(level)\n    logger.info(message)\n    return logger",
+    "parser = argparse.ArgumentParser()\nparser.add_argument(input_flag, help=input_help)\nparser.add_argument(verbose_flag, action=store_action)\nargs = parser.parse_args()",
+    "class Report:\n    def render(self, data):\n        lines = []\n        lines.append(self.header)\n        for key, value in data.items():\n            lines.append(self.format(key, value))\n        return lines",
+    "def test_parse_header(client):\n    response = client.get(STATUS_URL)\n    assert response.status_code == 200\n    assert response.json()[STATE_KEY] == OK_VALUE",
+    "where_parts = []\nif user_id is not None:\n    where_parts.append(user_clause)\nif since is not None:\n    where_parts.append(since_clause)\nquery = joiner.join(where_parts)",
+    "payload = dict(\n    id=42,\n    title=report_title,\n    tags=tag_list\n)\nrequests.post(url, json=payload)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "string-literal opening quote",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: top peaks are \"('\", ' \"', \" '\" opening a string argument or value in Python/JSON/YAML-in-Python, plus indentation inside a triple-quoted template. Probe of a short snippet gave only 0.12, so fire items are longer multi-line passages. Near misses are the same code with numeric or variable arguments instead of string literals."
+}

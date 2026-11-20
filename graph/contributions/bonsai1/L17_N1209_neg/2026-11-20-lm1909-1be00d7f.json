@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1be00d7f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N1209-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:50:51+00:00",
+ "recipe": {
+  "toolchain_commit": "1c077dc2c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N1209_neg/2026-11-20-lm1909-1be00d7f.tests.json"
+ },
+ "label": "legal and criminal-law terms in prose (' offence', ' legal' representation, fines and jail sentences)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N1209_neg/2026-11-20-lm1909-1be00d7f.tests.json",
+   "prereg_commit": "1c077dc2c",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.511,
+     "peak": " offence"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.293,
+     "peak": " legal"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.235,
+     "peak": " sentences"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.432,
+     "peak": " criminal"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.054,
+     "peak": " advice"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.163,
+     "peak": " minor"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.099,
+     "peak": " facing"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.463,
+     "peak": " offence"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.047,
+     "peak": " drones"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": " border"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.095,
+     "peak": " caught"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.132,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.065,
+     "peak": " heating"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.015,
+     "peak": " charity"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.047,
+     "peak": "elling"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.264,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1c077dc2c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "legal / criminal-law terms",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: peaks on ' legal' (without legal representation), ' offence' (make it an offence), the dash in 'jail sentences –', plus some unrelated (Dreamers, IVA, a digit). The + pole's output promotes ' legally', ' legal', ' laws'. Probe: ' offence' 0.46, ' legal' 0.23, non-legal control 0.05.",
+ "selection": "random draw"
+}

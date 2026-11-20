@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-458263ac",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11596-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:41:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N11596",
+   "pole": "-",
+   "label": "a lone ' l' or ' L' token beginning a word the tokenizer splits (' l'|acerations, ' l'|agoon, ' L'|acking)",
+   "fire": [
+    "The kayakers paddled slowly across the shallow lagoon at sunset.",
+    "Minor lacerations on the hands are common among new kitchen staff.",
+    "A lanky teenager in a red cap helped us carry the bags upstairs.",
+    "The rescue team treated several lacerations before the ambulance came.",
+    "Flamingos gather each spring in the salty lagoon behind the dunes.",
+    "The coach picked the lanky forward for his height and long reach.",
+    "The old hotel overlooks a quiet lagoon lined with palm trees.",
+    "Her lanky brother kept bumping his head on the low ceiling."
+   ],
+   "quiet": [
+    "The kayakers paddled slowly across the shallow bay at sunset.",
+    "Minor cuts on the hands are common among new kitchen staff.",
+    "A tall teenager in a red cap helped us carry the bags upstairs.",
+    "The rescue team treated several wounds before the ambulance came.",
+    "Flamingos gather each spring in the salty pond behind the dunes.",
+    "The coach picked the tall forward for his height and long reach.",
+    "The old hotel overlooks a quiet harbour lined with palm trees.",
+    "Her tall brother kept bumping his head on the low ceiling."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-off word-initial 'l'",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: top peaks ' l', ' L', Cyrillic ' л', Arabic ' ل', '-l' as the first piece of a split word. Tokenizer: ' lacerations' = ' l'+'acer'+'ations', ' lagoon' = ' l'+'agoon', ' lanky' = ' l'+'anky'. Probe: lacerations 0.55. Near misses use the same sentences with l-words that are single tokens or other words."
+}

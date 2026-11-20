@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-ff436827",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L8/N8598-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:41:15+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L8/N8598",
+   "pole": "-",
+   "label": "a Latin-prefix piece starting a split word in French text (' sub'|i, ' prom'|esse, ' rem'|ède, ' re'|çu)",
+   "fire": [
+    "Le médecin a dit qu'il n'existait aucun remède contre cette fièvre.",
+    "Les habitants du quartier ont subi des coupures d'électricité tout l'hiver.",
+    "Il lui a fait la promesse de revenir avant la fin du mois.",
+    "Nous avons reçu une réponse rapide de la mairie après notre lettre.",
+    "Elle a dû subir une longue opération au genou la semaine dernière.",
+    "Le gouvernement promet une réforme profonde du système scolaire.",
+    "Ce vieux remède de grand-mère soulage vraiment les maux de gorge.",
+    "Les enfants ont promis de ranger leur chambre avant le dîner."
+   ],
+   "quiet": [
+    "Le médecin a dit qu'il n'existait aucune solution contre cette fièvre.",
+    "Les habitants du quartier ont eu des problèmes d'électricité tout l'hiver.",
+    "Il lui a dit qu'il allait revenir avant la fin du mois.",
+    "Nous avons eu une lettre de la mairie après notre visite.",
+    "Elle a dû faire une longue pause au travail la semaine dernière.",
+    "Le gouvernement annonce un grand changement du système scolaire.",
+    "Ce vieux conseil de grand-mère aide vraiment pour les maux de gorge.",
+    "Les enfants ont dit qu'ils allaient ranger leur chambre avant le dîner."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "prefix piece sub/prom/rem, French",
+ "unit_kind": "sparse feature",
+ "confidence": 0.4,
+ "notes": "Weak pole (max 4.25). Top peaks: ' sub', ' prom', ' rem', ' rec' starting split French words, plus Arabic and archaic English pieces. Probe: 'quelque remède' 0.37, 'ont subi' 0.20, control 0.02. French splits many words, so near misses keep French and topic and still contain other split words, but none starting with these prefix pieces."
+}

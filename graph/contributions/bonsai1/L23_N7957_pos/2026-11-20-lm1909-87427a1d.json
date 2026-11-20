@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-87427a1d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N7957+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:50:45+00:00",
+ "recipe": {
+  "toolchain_commit": "1c077dc2c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N7957_pos/2026-11-20-lm1909-87427a1d.tests.json"
+ },
+ "label": "the opening quote of a string literal inside multi-line code (\"('\", ' \"' after a colon or comma)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N7957_pos/2026-11-20-lm1909-87427a1d.tests.json",
+   "prereg_commit": "1c077dc2c",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.025,
+     "peak": "cur"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.265,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.062,
+     "peak": "('"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.147,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.198,
+     "peak": "(\""
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.174,
+     "peak": "('/"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.916,
+     "peak": "('"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.251,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.031,
+     "peak": "(query"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.264,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.051,
+     "peak": " setup"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.135,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.049,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.071,
+     "peak": " test"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.304,
+     "peak": " join"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.212,
+     "peak": "   "
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.609,
+    "median_fire": 0.186,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "1c077dc2c",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "string-literal opening quote",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: top peaks are \"('\", ' \"', \" '\" opening a string argument or value in Python/JSON/YAML-in-Python, plus indentation inside a triple-quoted template. Probe of a short snippet gave only 0.12, so fire items are longer multi-line passages. Near misses are the same code with numeric or variable arguments instead of string literals.",
+ "selection": "random draw"
+}
