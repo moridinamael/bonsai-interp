@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8207abe2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N2173-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:28+00:00",
+ "recipe": {
+  "toolchain_commit": "89969f493",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N2173_neg/2026-11-19-lm1909-8207abe2.tests.json"
+ },
+ "label": "Mid-word piece of a Russian (Cyrillic) borrowed word just before the consonant that completes the stem: п-лю-с, п-лю-рализм, интерф-ей-с, рай-он",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N2173_neg/2026-11-19-lm1909-8207abe2.tests.json",
+   "prereg_commit": "89969f493",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.469,
+     "peak": "лю"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.673,
+     "peak": "ей"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.194,
+     "peak": "лю"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.231,
+     "peak": " сп"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.229,
+     "peak": "лю"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.523,
+     "peak": "ей"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.457,
+     "peak": "лю"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.269,
+     "peak": "у"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.219,
+     "peak": " ст"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": "чи"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.133,
+     "peak": "об"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.291,
+     "peak": "ра"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.195,
+     "peak": "К"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.108,
+     "peak": " слишком"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.105,
+     "peak": "фесс"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.166,
+     "peak": "у"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.363,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89969f493",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Russian loanword mid-piece",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: top examples are Cyrillic word pieces (лю, ей, рай) inside плюс/плюрал/интерфейс/район; the + pole takes the same pieces before з (иллюзия, туризм). Probes: 0.39-0.61 on such words, 0.10-0.19 on other Russian.",
+ "selection": "random draw"
+}

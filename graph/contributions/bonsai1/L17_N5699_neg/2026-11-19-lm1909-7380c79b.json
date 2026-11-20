@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-7380c79b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N5699-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:32:50+00:00",
+ "recipe": {
+  "toolchain_commit": "89969f493",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L17_N5699_neg/2026-11-19-lm1909-7380c79b.tests.json"
+ },
+ "label": "Verb announcing the outcome of an official decision or selection: 'has been approved', 'was selected', 'the board decided' (also the end of a clause reporting such a decision)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L17_N5699_neg/2026-11-19-lm1909-7380c79b.tests.json",
+   "prereg_commit": "89969f493",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.328,
+     "peak": " confirmed"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.5,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.636,
+     "peak": " keep"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.21,
+     "peak": " approved"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.268,
+     "peak": " selected"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.508,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.546,
+     "peak": " approved"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.745,
+     "peak": " winner"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.292,
+     "peak": " confirmed"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.29,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.179,
+     "peak": " went"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.015,
+     "peak": " by"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.19,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.064,
+     "peak": " grant"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.105,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.504,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89969f493",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "decision announced",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: ' approved', ' selected', ' decided', and clause ends after decisions (abandoned its tax plans). Probes: approved 0.44, selected 0.55, decided 0.38, abandoned-plans '.' 0.67; 'have been discussed' 0.08, 'has been lost' 0.16.",
+ "selection": "random draw"
+}

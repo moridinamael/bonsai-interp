@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-fa4a68e9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N3156+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:21:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N3156",
+   "pole": "+",
+   "label": "Comma (or semicolon) inside a code status-message string that joins the state to the follow-up action without a conjunction: 'No config found, using defaults'; 'Connection lost, retrying'",
+   "fire": [
+    "logging.warning('Cache directory missing, creating a new one')",
+    "print('Download failed, trying the mirror server')",
+    "log.error('Database locked, aborting the transaction')",
+    "warnings.warn('No seed given, using the system clock')",
+    "logger.info('Token expired, requesting a fresh one')",
+    "raise RuntimeError('Queue is full, cannot add the job')",
+    "log.debug('Header not recognised, falling back to defaults')",
+    "print('Disk almost full, deleting old backups')"
+   ],
+   "quiet": [
+    "logging.warning('Cache directory is missing on this host')",
+    "We missed the download window, so we tried the next morning.",
+    "log.error('Database transaction was aborted by the server')",
+    "The clock, which nobody had wound, stopped at noon.",
+    "logger.info('Requesting a fresh token from the server')",
+    "The queue was long, the day was hot and the children were bored.",
+    "log.debug('Falling back to the default header values')",
+    "She deleted the old backups, emptied the bin and went home."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comma in log-message string",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags the pole broad (1.7% at 0.1 of max); top peaks are ',' x11 and ';' x4, mostly in message strings in code and in dictionary glosses. Probes: log-message commas 0.22-0.52, gloss semicolons 0.07-0.70, prose commas 0.03-0.04."
+}

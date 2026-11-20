@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-0990f088",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N5425-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:21:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L13/N5425",
+   "pole": "-",
+   "label": "Boolean-valued expression being cast or negated in Python code: the ').' closing a comparison before .astype(...), bool(...) around a value, 'not' as a call argument",
+   "fire": [
+    "labels = (probs > 0.5).astype(np.int64)\nhits = (labels == 1).astype(np.float32)",
+    "signs = (delta < 0).astype(np.int8)\nflags = (signs != 0).astype(np.uint8)",
+    "enabled = bool(config.get('enabled'))\nbutton.set_visible(not enabled)",
+    "keep = (weights >= threshold).astype(int)\npanel.set_active(not frozen)",
+    "is_admin = bool(int(record['admin']))\nmenu.set_hidden(not is_admin)",
+    "above = (heights > limit).astype(np.float64)\nbelow = (heights <= limit).astype(np.float64)",
+    "has_data = bool(len(rows))\naxis.set_visible(not has_data)",
+    "edges = (grad > 0.1).astype(np.uint8)\nview.set_enabled(not paused)"
+   ],
+   "quiet": [
+    "labels = probs * 2.0 + offset\nhits = labels.sum() / count",
+    "signs = delta - previous\ntotal = signs.mean() * scale",
+    "title = str(config.get('title'))\nbutton.set_label(title)",
+    "keep = weights + threshold\npanel.set_width(width + 4)",
+    "user_id = int(record['user'])\nmenu.set_title(name)",
+    "above = heights + limit\nbelow = heights - limit",
+    "n_rows = len(rows)\naxis.set_limit(n_rows + 1)",
+    "edges = grad * 0.1\nview.set_zoom(level * 2)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "boolean cast in Python",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card mixes code ('(not', ' bool', ').' before astype) with prose (' say', ' remember', ' probably', 'In the same way'). Probes: prose items 0.02-0.04; code '(not' 0.64 in a three-line snippet, '(scores >= 0.5).astype' 0.34, 'bool(int(...))' 0.19, plain arithmetic/str code 0.01-0.02. Only the code side is tested."
+}

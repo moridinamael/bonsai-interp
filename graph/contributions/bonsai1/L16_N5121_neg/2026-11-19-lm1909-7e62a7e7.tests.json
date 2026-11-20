@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-7e62a7e7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L16/N5121-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:21:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L16/N5121",
+   "pole": "-",
+   "label": "End of a banner line of repeated # or - characters in a code comment block (the token closing the ###…### rule before the next line)",
+   "fire": [
+    "import os\n\n####################################\n# Settings\n####################################\nDEBUG = True",
+    "def main():\n    pass\n\n# ----------------------------------\n# Helper functions\n# ----------------------------------\ndef helper():\n    pass",
+    "  count = 0\n\n  ##################################################\n  # Parse the arguments\n  ##################################################\n  args = parse()",
+    "from utils import load\n\n########################################\n# Constants\n########################################\nMAX_ITER = 100",
+    "data = load()\n\n# --------------------------------------------\n# Plot the results\n# --------------------------------------------\nplot(data)",
+    "    return x\n\n    ############################################\n    # Second stage\n    ############################################\n    y = stage_two(x)",
+    "setup()\n\n################################\n# Run the tests\n################################\nrun_tests()",
+    "model = build()\n\n# ------------------------------------------------\n# Save the checkpoint\n# ------------------------------------------------\nsave(model)"
+   ],
+   "quiet": [
+    "import os\n\n# Settings\nDEBUG = True\nVERBOSE = False\nLOG_LEVEL = 2",
+    "def main():\n    pass\n\n# Helper functions\ndef helper():\n    pass",
+    "  count = 0\n\n  # Parse the arguments\n  args = parse()\n  check(args)",
+    "from utils import load\n\n# Constants\nMAX_ITER = 100\nMIN_ITER = 10",
+    "data = load()\n\n# Plot the results\nplot(data)\nshow()",
+    "    return x\n\n    # Second stage\n    y = stage_two(x)\n    return y",
+    "setup()\n\n# Run the tests\nrun_tests()\nreport()",
+    "model = build()\n\n# Save the checkpoint\nsave(model)\nprint(model)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "comment banner line end",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card top examples mix line-end commas in verse with '###\\n' banners and code indentation. Probes: banners 0.28-0.58, verse line-end commas 0.15-0.25, prose commas 0.03-0.07. The banner is the part tested here; verse line breaks are a weaker second trigger."
+}

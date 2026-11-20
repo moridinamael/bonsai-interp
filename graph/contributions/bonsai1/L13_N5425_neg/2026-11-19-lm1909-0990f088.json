@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0990f088",
+ "kind": "interpret",
+ "neuron": "bonsai1/L13/N5425-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:50+00:00",
+ "recipe": {
+  "toolchain_commit": "89969f493",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L13_N5425_neg/2026-11-19-lm1909-0990f088.tests.json"
+ },
+ "label": "Boolean-valued expression being cast or negated in Python code: the ').' closing a comparison before .astype(...), bool(...) around a value, 'not' as a call argument",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L13_N5425_neg/2026-11-19-lm1909-0990f088.tests.json",
+   "prereg_commit": "89969f493",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.486,
+     "peak": ")."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.469,
+     "peak": "s"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.355,
+     "peak": "(not"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.64,
+     "peak": "(not"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.572,
+     "peak": "(not"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.402,
+     "peak": ")."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.37,
+     "peak": "(not"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.576,
+     "peak": "(not"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.035,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " scale"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.033,
+     "peak": "_label"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.052,
+     "peak": "_width"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "menu"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.023,
+     "peak": " +"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.026,
+     "peak": "axis"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": "\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.477,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89969f493",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "boolean cast in Python",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card mixes code ('(not', ' bool', ').' before astype) with prose (' say', ' remember', ' probably', 'In the same way'). Probes: prose items 0.02-0.04; code '(not' 0.64 in a three-line snippet, '(scores >= 0.5).astype' 0.34, 'bool(int(...))' 0.19, plain arithmetic/str code 0.01-0.02. Only the code side is tested.",
+ "selection": "random draw"
+}

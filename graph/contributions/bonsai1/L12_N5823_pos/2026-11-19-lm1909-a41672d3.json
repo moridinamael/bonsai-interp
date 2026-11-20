@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a41672d3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N5823+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:33:20+00:00",
+ "recipe": {
+  "toolchain_commit": "89969f493",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L12_N5823_pos/2026-11-19-lm1909-a41672d3.tests.json"
+ },
+ "label": "Preposition that introduces the counterparty of a formal agreement or tie (signed a memorandum/agreement … with; an accord between X and Y); spatial 'between' and instrumental 'with' stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L12_N5823_pos/2026-11-19-lm1909-a41672d3.tests.json",
+   "prereg_commit": "89969f493",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.387,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.513,
+     "peak": " between"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.31,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.155,
+     "peak": " kingdom"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.3,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.271,
+     "peak": " between"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.474,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.246,
+     "peak": " between"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.012,
+     "peak": " bright"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.102,
+     "peak": " between"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.034,
+     "peak": " ministry"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.074,
+     "peak": " between"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.029,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.114,
+     "peak": " between"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.017,
+     "peak": " decorated"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.077,
+     "peak": " between"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.305,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "89969f493",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "agreement with/between",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' between', Arabic ' مع' (with), 'entre', Korean object marker before 'partnership', all linking parties of a relationship; logits suppress collaboration/partnership/cooperation. Probes: memorandum of understanding with 0.49, agreement between 0.29, partnership with 0.15, relationship with 0.11; spatial/instrumental 0.01-0.05.",
+ "selection": "random draw"
+}
