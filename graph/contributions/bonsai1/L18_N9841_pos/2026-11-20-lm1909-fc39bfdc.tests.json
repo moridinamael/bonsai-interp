@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-fc39bfdc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N9841+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:01:44+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N9841",
+   "pole": "+",
+   "label": "merged opening-bracket tokens that begin a nested or quoted group ('((', ' ((', '\"[', '|[', '{(')",
+   "fire": [
+    "def norm(v):\n    return math.sqrt(sum((x * x) for x in v))",
+    "while ((i < n) && (buf[i] != 0)) {\n    i++;\n}",
+    "The tweet read \"[Update] Trains are running again\" this morning.",
+    "if ((flags & MASK) == 0) {\n    return -1;\n}",
+    "y = ((a + b) * (c - d)) / 2",
+    "Her caption said \"[Sponsored] My new favourite boots\" under the photo.",
+    "assert ((x > 0) and (y > 0))",
+    "int area = ((w + 1) * (h + 1));"
+   ],
+   "quiet": [
+    "def norm(v):\n    return math.sqrt(sum(x * x for x in v))",
+    "while (i < n && buf[i] != 0) {\n    i++;\n}",
+    "The tweet read \"Update: trains are running again\" this morning.",
+    "if (flags & MASK) {\n    return -1;\n}",
+    "y = a + b * c - d / 2",
+    "Her caption said \"Sponsored: my new favourite boots\" under the photo.",
+    "assert x > 0 and y > 0",
+    "int area = w * h + 1;"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "merged opening brackets",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: '||(', ' ((', '\"[', ' \"\\'', ':(' as peak tokens. Probe: 'sum((' 0.41, '\"[Breaking]' 0.44, 'if ((' 0.60, plain sentence 0.03."
+}
