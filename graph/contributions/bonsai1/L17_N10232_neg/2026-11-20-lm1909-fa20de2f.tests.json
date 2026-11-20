@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-fa20de2f",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L17/N10232-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:30:13+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L17/N10232",
+   "pole": "-",
+   "label": "an invalid or rejected value in code tests and validation (\"unsupported\", 'not valid', input that should return false)",
+   "fire": [
+    "    def test_bad_mode(self):\n        with self.assertRaises(ValueError):\n            parse_mode(\"invalid_mode\")",
+    "    data = {'email': 'not an email'}\n    form = SignupForm(data)\n    self.assertFalse(form.is_valid())",
+    "Examples:\n\"42\" => true\n\"7.5\" => true\n\"x9\" => false\n\"--\" => false",
+    "        self.assertFalse(is_prime(15))\n        self.assertFalse(is_prime(21))",
+    "    def test_unknown_option(self):\n        result = run_cli([\"--frobnicate\"])\n        self.assertEqual(result.exit_code, 2)",
+    "    with pytest.raises(TypeError):\n        Encoder(dtype=\"unsupported_type\")",
+    "    bad_date = \"2021-13-45\"\n    self.assertIsNone(parse_date(bad_date))",
+    "    payload = {'age': 'banana'}\n    resp = client.post('/users', json=payload)\n    assert resp.status_code == 400"
+   ],
+   "quiet": [
+    "    def test_mode(self):\n        result = parse_mode(\"fast\")\n        self.assertEqual(result, Mode.FAST)",
+    "    data = {'email': 'ann@example.com'}\n    form = SignupForm(data)\n    self.assertTrue(form.is_valid())",
+    "Examples:\n\"42\" => 42\n\"7\" => 7\n\"19\" => 19\n\"300\" => 300",
+    "        self.assertTrue(is_prime(13))\n        self.assertTrue(is_prime(17))",
+    "    def test_help_option(self):\n        result = run_cli([\"--help\"])\n        self.assertEqual(result.exit_code, 0)",
+    "    enc = Encoder(dtype=\"float32\")\n    assert enc.dtype == \"float32\"",
+    "    good_date = \"2021-03-14\"\n    self.assertEqual(parse_date(good_date).month, 3)",
+    "    payload = {'age': 31}\n    resp = client.post('/users', json=payload)\n    assert resp.status_code == 201"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "invalid input value",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: unsupported_value, unrecognized_lines, 'not valid', '1 a' => false, assertFalse(c(43)). Opposite side: a valid / accepted value."
+}
