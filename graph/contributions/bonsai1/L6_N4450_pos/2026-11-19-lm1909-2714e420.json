@@ -1,0 +1,165 @@
+{
+ "id": "2026-11-19-lm1909-2714e420",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N4450+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:32:35+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L6_N4450_pos/2026-11-19-lm1909-2714e420.tests.json"
+ },
+ "label": "the tokens ' adviser' / ' advisor', ' aide'(s) and ' briefing'(s): staff who advise an official and the briefings they give",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L6_N4450_pos/2026-11-19-lm1909-2714e420.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.635,
+     "peak": " adviser"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.505,
+     "peak": " briefing"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.448,
+     "peak": " aide"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.162,
+     "peak": " advisers"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.442,
+     "peak": " aides"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.612,
+     "peak": " briefing"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.661,
+     "peak": " adviser"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.79,
+     "peak": " aide"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": " assistant"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.039,
+     "peak": " talks"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": " office"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.052,
+     "peak": " consultants"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " deputies"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " classified"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.421,
+     "peak": " analyst"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.066,
+     "peak": " spokesman"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.558,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "adviser / aide / briefing",
+ "unit_kind": "lexical",
+ "confidence": 0.75,
+ "notes": "Card: peak tokens ' briefing' x8, ' adviser' x6, ' aide' x5, 'ings' (brief|ings) x3, ' aides' x2. Probes: aide 0.63, adviser 0.56, briefing 0.41, advisor 0.33; assistant 0.05, consultant 0.05, counselor 0.09.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "adviser",
+   "advisers",
+   "advisor",
+   "aide",
+   "aides",
+   "briefing",
+   "briefings"
+  ]
+ }
+}

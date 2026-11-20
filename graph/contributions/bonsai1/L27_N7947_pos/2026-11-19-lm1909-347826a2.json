@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-347826a2",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N7947+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:18+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L27_N7947_pos/2026-11-19-lm1909-347826a2.tests.json"
+ },
+ "label": "health and fitness text about moving the body: the token just before a body part or 'physical activity' is named (bend one [knee], levels of [physical activity], poor muscle [tone]); the - pole is the slot before 'exercise(s)'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L27_N7947_pos/2026-11-19-lm1909-347826a2.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.07,
+     "peak": " one"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.163,
+     "peak": " each"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.084,
+     "peak": " upper"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.371,
+     "peak": " physical"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.175,
+     "peak": " forward"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.094,
+     "peak": " muscle"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.075,
+     "peak": " down"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.074,
+     "peak": " young"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.005,
+     "peak": " cup"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.123,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.022,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " skip"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.025,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.015,
+     "peak": " low"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.016,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.012,
+     "peak": " sugar"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.922,
+    "median_fire": 0.089,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before body part / physical activity",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peak ' muscle' x10, then ' of', ' lower', ' one' in posture and physical-activity text; the - pole fires where 'exercise/stretching' is expected and the output direction suppresses those words. Probes were weak and mixed: 'level of physical activity' 0.36, 'bend one knee' 0.34, 'level of reading ability' 0.14, 'poor muscle tone' 0.09, 'more muscle than fat' 0.01. A guess at a context; it may well fail.",
+ "selection": "random draw"
+}

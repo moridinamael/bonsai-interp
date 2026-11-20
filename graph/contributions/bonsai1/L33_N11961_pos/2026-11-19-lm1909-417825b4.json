@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-417825b4",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N11961+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:52+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N11961_pos/2026-11-19-lm1909-417825b4.tests.json"
+ },
+ "label": "unclear mixed feature; the part I could pin down: ' magnesium' in an ingredient list (magnesium stearate / sulfate) and the slot right before 'nutmeg' in a recipe. Mars, North (Pole) and magma also appear among the top examples but probe weakly",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N11961_pos/2026-11-19-lm1909-417825b4.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.778,
+     "peak": " magnesium"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.572,
+     "peak": " nut"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.82,
+     "peak": " magnesium"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.124,
+     "peak": " magnesium"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.517,
+     "peak": " nut"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.449,
+     "peak": " magnesium"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.561,
+     "peak": " nut"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.702,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.386,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.16,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.292,
+     "peak": " titanium"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": " lavender"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.11,
+     "peak": "ard"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.142,
+     "peak": ","
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.217,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.373,
+     "peak": " and"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.567,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "magnesium / before nutmeg (unclear)",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "Card: no single token; top examples are Magn|esium Stearate, teaspoon [nut]meg, NASA's [Mars] rover, [North] Pole, M[agma], 'designed [by]'; the pole is fairly broad (0.43% of tokens reach 0.1 of max). I could not find the shared pattern. Probes: 'magnesium stearate' 0.68, 'a pinch of nutmeg' 0.38 (peak ' of'), 'invented by' 0.18, 'North Pole' 0.17, 'Mars rover' 0.16; unrelated sentences 0.08 and 0.01. The test covers only the two strongest sub-triggers, so a hold would be partial at best.",
+ "selection": "random draw"
+}

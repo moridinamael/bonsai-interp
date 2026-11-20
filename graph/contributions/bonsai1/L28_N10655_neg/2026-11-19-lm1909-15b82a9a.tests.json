@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-15b82a9a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N10655-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:18:55+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N10655",
+   "pole": "-",
+   "label": "the number that gives an east-west coordinate: a longitude value, a right ascension, or a lon_ variable (latitude values stay quiet; the + pole predicts 'latitude')",
+   "fire": [
+    "The wreck was found at longitude 23 degrees west, a long way from the nearest port.",
+    "Greenwich marks zero, and the date line runs close to longitude 180° on the far side of the globe.",
+    "The comet was last seen at right ascension 19h 42m, low in the evening sky.",
+    "The survey box runs from longitude 104°E to longitude 109°E across the delta.",
+    "lon_west = 112\nlon_east = 118\nstep = 2",
+    "The galaxy sits at right ascension 03h 17m in the catalogue of bright sources.",
+    "The research station was moved to longitude 77 degrees east after the ice shelf cracked.",
+    "The buoy drifted until it reached longitude 141°W, where a trawler picked it up."
+   ],
+   "quiet": [
+    "The wreck was found at latitude 23 degrees south, a long way from the nearest port.",
+    "The equator marks zero, and the polar circle runs close to latitude 66° on every globe.",
+    "The comet was last seen at a declination of 19 degrees, low in the evening sky.",
+    "The survey box runs from latitude 14°N to latitude 19°N across the delta.",
+    "lat_south = 12\nlat_north = 18\nstep = 2",
+    "The galaxy shines at magnitude 11 in the catalogue of bright sources.",
+    "The research station was moved to an altitude of 77 metres after the ice shelf cracked.",
+    "The buoy drifted for 141 days before a trawler picked it up."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "longitude / RA value",
+ "unit_kind": "contextual",
+ "confidence": 0.65,
+ "notes": "Card: peaks on digits after 'longitude', in 'RAJ2000', 'lon_max = 71', a radiant position '01:33'; the + pole fires before 'latitude' and promotes lat/latitude tokens, so the two poles look like the two sides of one coordinate pair. Probes: 'lon_min = 67 / lon_max = 71' 0.85, right ascension '14h 29m' 0.73, 'longitude 68°W' 0.44, 'longitude 152 degrees east' 0.31; 'latitude 61 degrees north' 0.02, an oven at 180 degrees 0.01."
+}

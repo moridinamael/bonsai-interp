@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-06919ec9",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N238-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:18:55+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L29/N238",
+   "pole": "-",
+   "label": "a camelCase identifier in code that ends in a generic field noun (userName, fileType, startTime, orderId); the snake_case spelling of the same name is quiet",
+   "fire": [
+    "def save(recordId, tableName):\n    endTime = clock()\n    return store(recordId, tableName)",
+    "const customerName = form.customerName;\nconst accountType = form.accountType;",
+    "fields = ['createdDate', 'ownerName', 'statusCode']\nfor fieldName in fields:\n    print(fieldName)",
+    "function open(filePath, encodingType) {\n  var lineCount = 0;\n  return read(filePath);\n}",
+    "String firstName = user.getFirstName();\nint groupId = user.getGroupId();",
+    "def parse(inputString, dateFormat):\n    resultList = []\n    return resultList",
+    "var sessionId = cookie.sessionId;\nvar pageTitle = doc.pageTitle;",
+    "payload = {'deviceType': kind, 'serialNumber': serial, 'batchId': batch}"
+   ],
+   "quiet": [
+    "def save(record_id, table_name):\n    end_time = clock()\n    return store(record_id, table_name)",
+    "const customer_name = form.customer_name;\nconst account_type = form.account_type;",
+    "fields = ['created_date', 'owner_name', 'status_code']\nfor field_name in fields:\n    print(field_name)",
+    "function open(file_path, encoding_type) {\n  var line_count = 0;\n  return read(file_path);\n}",
+    "String first_name = user.get_first_name();\nint group_id = user.get_group_id();",
+    "def parse(input_string, date_format):\n    result_list = []\n    return result_list",
+    "var session_id = cookie.session_id;\nvar page_title = doc.page_title;",
+    "payload = {'device_type': kind, 'serial_number': serial, 'batch_id': batch}"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "camelCase field names",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Card: peaks on the capitalised second word of camelCase names (timeStamp, dateString, messageType, startTime, eventType, zipFile); peak tokens Name, Id, Type, File. Probes: camelCase Python 0.68 and JavaScript 0.63; the same code in snake_case 0.00; the same words in prose 0.00."
+}

@@ -1,0 +1,165 @@
+{
+ "id": "2026-11-19-lm1909-aa4b8166",
+ "kind": "interpret",
+ "neuron": "bonsai1/L7/N9924+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:08+00:00",
+ "recipe": {
+  "toolchain_commit": "081724570",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L7_N9924_pos/2026-11-19-lm1909-aa4b8166.tests.json"
+ },
+ "label": "the second piece of a few specific split names: Kath|mand|u, Otol|ary|ngology, Tott|ori, Stux|net, Catm|ull, Torch|wood, Castan|eda (a list; other multi-piece names such as Reykjavik or Ljubljana do not fire)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L7_N9924_pos/2026-11-19-lm1909-aa4b8166.tests.json",
+   "prereg_commit": "081724570",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.863,
+     "peak": "mand"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.46,
+     "peak": "ary"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.622,
+     "peak": "ori"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.764,
+     "peak": "net"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.772,
+     "peak": "ull"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.205,
+     "peak": "wood"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.892,
+     "peak": "mand"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.733,
+     "peak": "eda"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.021,
+     "peak": " up"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.013,
+     "peak": " d"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "Engine"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.073,
+     "peak": " hall"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.006,
+     "peak": " across"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": "uentes"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.748,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "081724570",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Kath-mand-u, Otol-ary-, Tott-ori",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Card: peaks 'ary' x6 (otol|ary|ngology), 'mand' x2 (Kath|mand|u), 'ori' x2, 'eda' x2, 'ull'. Probes: Kathmandu 0.89, Stuxnet 0.73, Tottori 0.63, otolaryngology 0.49; Reykjavik 0.02, Ljubljana 0.02, ophthalmology 0.00, London 0.02. I found no shared pattern beyond 'the piece that completes this particular rare name', so the label stays a list. Torchwood, Catmull and Castaneda come from the top examples and were not probed.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "Kathmandu",
+   "otolaryngology",
+   "Tottori",
+   "Stuxnet",
+   "Catmull",
+   "Torchwood",
+   "Castaneda"
+  ]
+ }
+}
