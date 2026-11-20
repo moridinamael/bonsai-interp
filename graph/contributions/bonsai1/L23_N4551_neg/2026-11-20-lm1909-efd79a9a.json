@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-efd79a9a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L23/N4551-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:25:21+00:00",
+ "recipe": {
+  "toolchain_commit": "fce29592b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L23_N4551_neg/2026-11-20-lm1909-efd79a9a.tests.json"
+ },
+ "label": "A later item in an inline list or enumeration (the second or third element: 'food to eat', '(2)', a new dash item)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L23_N4551_neg/2026-11-20-lm1909-efd79a9a.tests.json",
+   "prereg_commit": "fce29592b",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.591,
+     "peak": " food"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.327,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.16,
+     "peak": " work"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.079,
+     "peak": "b"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.05,
+     "peak": " sugar"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.014,
+     "peak": " school"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.13,
+     "peak": ","
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.181,
+     "peak": " lamps"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.029,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.035,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " keep"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.039,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.067,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.145,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fce29592b",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "later item in a list",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no single token (food, '(', newline, entity, '-', '2'); several top examples are the second/third element of a list. Low confidence guess.",
+ "selection": "random draw"
+}

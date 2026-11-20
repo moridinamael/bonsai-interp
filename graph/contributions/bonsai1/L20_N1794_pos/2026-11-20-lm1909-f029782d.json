@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-f029782d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1794+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:25:35+00:00",
+ "recipe": {
+  "toolchain_commit": "fce29592b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N1794_pos/2026-11-20-lm1909-f029782d.tests.json"
+ },
+ "label": "' said' (or ' knew', ' told') right after a subject, introducing indirect reported speech without quotation marks",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N1794_pos/2026-11-20-lm1909-f029782d.tests.json",
+   "prereg_commit": "fce29592b",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.245,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.226,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.358,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.402,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.062,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.15,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.153,
+     "peak": " said"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.254,
+     "peak": " said"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.015,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.026,
+     "peak": " because"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.055,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.027,
+     "peak": " after"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.021,
+     "peak": " be"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.235,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fce29592b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'said' before indirect speech",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: top 32 peak on ' said' x24, ' knew', ' told' before a that-clause; the - pole is the opening quotation mark of direct speech, so the pole pair looks like indirect vs direct speech. Output promotes past-tense ' was', ' were', ' had'.",
+ "selection": "random draw"
+}

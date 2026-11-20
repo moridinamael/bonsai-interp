@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-e779a3a9",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8575-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:25:15+00:00",
+ "recipe": {
+  "toolchain_commit": "fce29592b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N8575_neg/2026-11-20-lm1909-e779a3a9.tests.json"
+ },
+ "label": "Function words (' de', ' la', ' las', ' para') inside Spanish or French prose; English text with the same content stays quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N8575_neg/2026-11-20-lm1909-e779a3a9.tests.json",
+   "prereg_commit": "fce29592b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.495,
+     "peak": " las"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.636,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.408,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.605,
+     "peak": " de"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.507,
+     "peak": " nouveaux"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.381,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.338,
+     "peak": " la"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.348,
+     "peak": " las"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.008,
+     "peak": " regulation"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.0,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": "According"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.001,
+     "peak": " management"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.002,
+     "peak": " company"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " students"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.0,
+     "peak": " tourist"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.452,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "fce29592b",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Romance-language function words",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top 32 peak on ' de', ',', ' LA', ' las', ' para' in Spanish/French text; flagged broad (2.6% of tokens). Near misses are English translations.",
+ "selection": "random draw"
+}
