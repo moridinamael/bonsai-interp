@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-315bbf5a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L21/N2060+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:39:27+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L21/N2060",
+   "pole": "+",
+   "label": "the closing-quote-comma token ending a string argument in a Python argparse call (add_argument('--x', ...))",
+   "fire": [
+    "parser = argparse.ArgumentParser()\nparser.add_argument('--input', dest='infile', help='input file')",
+    "parser.add_option(\"-v\", dest='verbose', action='store_true', default=False)",
+    "    ap.add_argument('-o', '--output', metavar='PATH', help='where to save')",
+    "subparser.add_argument('--seed', type=int, dest='seed', default=0)",
+    "parser.add_argument(\"--config\", help=\"path to the config file\")",
+    "opts.add_argument('-n', '--dry-run', dest='dry', action='store_true')",
+    "cli.add_argument('--log-level', choices=['info', 'debug'], default='info')",
+    "    p.add_argument('--batch', dest='batch_size', type=int, help='batch size')"
+   ],
+   "quiet": [
+    "parser = argparse.ArgumentParser()\nargs = parser.parse_args()\nmain(args)",
+    "count = count + 1\nif count > limit:\n    break",
+    "    result = compute(x, y, z)",
+    "subtotal = add(price, tax, shipping)",
+    "for i in range(10):\n    total += values[i]",
+    "matrix = np.zeros((rows, cols))",
+    "return max(a, b) - min(a, b)",
+    "    loss = criterion(outputs, labels)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "\"',\" in add_argument calls",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Probe: add_argument \"',\" 0.34, plot(color='red', ...) 0.13, prose quote-comma 0.01. Card flags broad."
+}
