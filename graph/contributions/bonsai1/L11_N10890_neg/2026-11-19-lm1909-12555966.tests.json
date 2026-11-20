@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-12555966",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N10890-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:38:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N10890",
+   "pole": "-",
+   "label": "The '/en' language segment right after a documentation host in a URL (readthedocs.io/en/latest, docs.djangoproject.com/en/, pip.pypa.io/en/); not '/en' on ordinary sites",
+   "fire": [
+    "    # full reference: https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html\n",
+    "For installation steps see https://celery.readthedocs.org/en/latest/getting-started/ first.",
+    "intersphinx_mapping = {'numpy': ('https://numpy.readthedocs.io/en/latest/', None)}\n",
+    "The plugin is documented at http://pytest-cov.readthedocs.io/en/latest/config.html in detail.",
+    "    See https://docs.djangoproject.com/en/3.2/topics/settings/ for the full list.\n",
+    "More examples live at https://scrapy.readthedocs.io/en/1.8/intro/tutorial.html online.",
+    "    'tornado': ('http://tornado.readthedocs.org/en/stable/', None),\n",
+    "Read the upgrade notes at https://pip.pypa.io/en/stable/user_guide/ before you start."
+   ],
+   "quiet": [
+    "    # full reference: https://github.com/readthedocs/sphinx_rtd_theme/blob/master/README.rst\n",
+    "For installation steps see https://pypi.org/project/celery/ first.",
+    "intersphinx_mapping = {'numpy': ('https://numpy.org/doc/stable/', None)}\n",
+    "The plugin is documented at http://www.pytest-cov.example.org/config.html in detail.",
+    "    See https://www.w3schools.com/python/python_json.asp for the full list.\n",
+    "More examples live at https://stackoverflow.com/questions/tagged/scrapy online.",
+    "    'tornado': ('http://www.tornadoweb.org/stable/', None),\n",
+    "Read the travel notes at https://www.lonelyplanet.com/en/france/paris before you start."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'/en' in docs URLs",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Probes: readthedocs /en 0.50, djangoproject /en 0.28, pypa /en 0.26, example.com/en 0.01, readthedocs.org/ without /en 0.18. The card's other top context ('.\\n' after a sentence cut off in scraped spam) did not reproduce in short probes (0.02) and is not tested here, so this label is probably partial."
+}

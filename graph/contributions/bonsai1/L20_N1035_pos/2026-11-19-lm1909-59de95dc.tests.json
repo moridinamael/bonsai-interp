@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-59de95dc",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1035+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:38:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N1035",
+   "pole": "+",
+   "label": "Python block structure: the ':\\n' that ends a block header (if not …:, except … as e:, with … as f:, for … in …:) and the indentation of the block that follows; weak on flat code without blocks",
+   "fire": [
+    "import sys\n\nif not sys.argv[1:]:\n    print('usage: tool FILE')\n    sys.exit(1)\n",
+    "try:\n    import yaml\nexcept ImportError as exc:\n    print('ERROR: yaml is not installed')\n",
+    "with open(os.path.join(root, 'index.json'), 'w') as out:\n    json.dump(index, out)\n",
+    "for path in paths:\n    if not os.path.isfile(path):\n        continue\n    process(path)\n",
+    "if not os.path.exists(cache_file):\n    print('building the cache')\n    build(cache_file)\n",
+    "while not queue.empty():\n    job = queue.get()\n    job.run()\n",
+    "for row in reader:\n    row.validate(schema)\n    self.rows.append(row)\n",
+    "try:\n    value = int(text)\nexcept ValueError as err:\n    value = 0\n"
+   ],
+   "quiet": [
+    "import sys\nimport os\nimport json\nimport re\n",
+    "name = 'tool'\nversion = '1.2'\nauthor = 'nobody'\n",
+    "index = json.load(open('index.json'))\nprint(index['title'])\nprint(index['size'])\n",
+    "a = 3\nb = 4\nc = a * b\nprint(c)\n",
+    "Ingredients:\n    two eggs\n    a cup of flour\n    a pinch of salt\n",
+    "queue = Queue()\nqueue.put(first)\nqueue.put(second)\n",
+    "rows = list(reader)\ntotal = len(rows)\nprint(total)\n",
+    "{\n  \"title\": \"notes\",\n  \"pages\": 12,\n  \"draft\": false\n}\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python block-header newline",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Probes: 'if not os.path.exists(...):' 0.42, for-loop body indent 0.32, except/with headers 0.24, flat statements 0.08, indented shopping list 0.09, JSON 0.22. Moderate activations; the opposite pole also peaks on ':\\n' (after == comparisons), so the distinction between the poles is not resolved here."
+}

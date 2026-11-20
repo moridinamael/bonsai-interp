@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-c548cd77",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N10537+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:38:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N10537",
+   "pole": "+",
+   "label": "A later (non-first) parameter or loop-variable identifier in Python code, at the point it is introduced: def f(self, node, |prefix|), (items, item, |key|=None), for |section| in …; generic names such as name, key, type, prefix",
+   "fire": [
+    "class Store(object):\n    def put(self, bucket, value, key=None):\n        \"\"\"Store a value.\"\"\"\n        bucket[key] = value\n",
+    "    def _trim(self, line, prefix):\n        \"\"\"Remove the prefix.\"\"\"\n        return line[len(prefix):]\n",
+    "def read_all(parser):\n    out = {}\n    for section in parser.sections():\n        out[section] = dict(parser.items(section))\n    return out\n",
+    "    def add_column(self, table, column, name=None):\n        table.columns[name] = column\n",
+    "    def _get_account(self, journal, type='credit'):\n        # look up the default account\n        return journal.accounts[type]\n",
+    "    def rename(self, node, name):\n        \"\"\"Rename a node.\"\"\"\n        node.name = name\n",
+    "def lookup(mapping, default, key):\n    return mapping.get(key, default)\n",
+    "    def _parse_list(self, element, suffix):\n        \"\"\"Parse element as a list.\"\"\"\n"
+   ],
+   "quiet": [
+    "class Store(object):\n    def clear(self):\n        \"\"\"Empty the store.\"\"\"\n        self.data = {}\n",
+    "    def _reset(self):\n        \"\"\"Reset the counters.\"\"\"\n        self.count = 0\n",
+    "def read_all():\n    out = {}\n    out['a'] = 1\n    out['b'] = 2\n    return out\n",
+    "    table = Table()\n    table.columns = {}\n    table.rows = []\n",
+    "    def _get_total(self):\n        # add up the balances\n        return sum(self.balances)\n",
+    "    def close(self):\n        \"\"\"Close the file.\"\"\"\n        self.handle.close()\n",
+    "import math\nprint(math.sqrt(16))\nprint(math.pi)\n",
+    "The witness gave her name and a prefix for the phone number, then a key to the flat."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "later parameter name in def",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probes were moderate (0.25-0.42) and peaked on the last parameter of a signature ('prefix', 'name', 'key', also 'seconds'); a lone short signature scored 0.02-0.15. Not specific to the words name/key."
+}

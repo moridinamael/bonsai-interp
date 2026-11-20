@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-dde892a3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N8559+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:38:35+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N8559",
+   "pole": "+",
+   "label": "Code: the last token of an expression inside {...} just before the closing brace is due — a set/dict literal's final value or an f-string field ({'web', '|db|'}, {kwargs[\"|env|\"]}, shape[-|1|]}); output promotes '}' and ')}'. Silent on the same content in [...] or (...)",
+   "fire": [
+    "    colors = {p.color for p in pixels}\n    assert colors == {'red', 'blue'}\n",
+    "    log.info(f\"loaded {len(rows)} rows from {config['path']}\")\n",
+    "    raise KeyError(f\"unknown field {record['field']} in table\")\n",
+    "    return {\"count\": total, \"items\": sorted(found)}\n",
+    "    label = f\"batch {batch.shape[0]} of size {self.limit}\"\n",
+    "    payload = {'user': user.id, 'token': make_token(user)}\n",
+    "    print(f\"saved to {paths['output']} in {elapsed} seconds\")\n",
+    "    expected = {'status': 'ok', 'code': 200, 'reason': 'done'}\n"
+   ],
+   "quiet": [
+    "    colors = [p.color for p in pixels]\n    assert colors == ['red', 'blue']\n",
+    "    log.info(\"loaded %d rows from %s\", len(rows), config['path'])\n",
+    "    raise KeyError(\"unknown field \" + record['field'] + \" in table\")\n",
+    "    return (\"count\", total, \"items\", sorted(found))\n",
+    "    label = \"batch %d of size %d\" % (batch.shape[0], self.limit)\n",
+    "    payload = ['user', user.id, 'token', make_token(user)]\n",
+    "    print(\"saved to\", paths['output'], \"in\", elapsed, \"seconds\")\n",
+    "    expected = ('status', 'ok', 'code', 200, 'reason', 'done')\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "closing '}' is due next",
+ "unit_kind": "contextual",
+ "confidence": 0.75,
+ "notes": "Probes: f-string field 0.56-0.72, dict literal 0.38, set literal 0.31; the same lines rewritten with lists, tuples or string concatenation 0.00-0.01."
+}

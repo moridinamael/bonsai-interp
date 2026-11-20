@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-59de95dc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N1035+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:52:45+00:00",
+ "recipe": {
+  "toolchain_commit": "2c0a8f17b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N1035_pos/2026-11-19-lm1909-59de95dc.tests.json"
+ },
+ "label": "Python block structure: the ':\\n' that ends a block header (if not …:, except … as e:, with … as f:, for … in …:) and the indentation of the block that follows; weak on flat code without blocks",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N1035_pos/2026-11-19-lm1909-59de95dc.tests.json",
+   "prereg_commit": "2c0a8f17b",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.46,
+     "peak": ":]:\n"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.31,
+     "peak": ":\n"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.306,
+     "peak": ".dump"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.205,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.277,
+     "peak": "):\n"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.3,
+     "peak": "()\n"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.257,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.236,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.074,
+     "peak": " sys"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.142,
+     "peak": "'\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.192,
+     "peak": "'))\n"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.104,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.061,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.196,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.257,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.18,
+     "peak": "}\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.961,
+    "median_fire": 0.288,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "2c0a8f17b",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Python block-header newline",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Probes: 'if not os.path.exists(...):' 0.42, for-loop body indent 0.32, except/with headers 0.24, flat statements 0.08, indented shopping list 0.09, JSON 0.22. Moderate activations; the opposite pole also peaks on ':\\n' (after == comparisons), so the distinction between the poles is not resolved here.",
+ "selection": "random draw"
+}
