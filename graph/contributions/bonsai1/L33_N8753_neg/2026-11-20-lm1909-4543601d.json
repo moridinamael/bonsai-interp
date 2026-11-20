@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-4543601d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N8753-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:04:22+00:00",
+ "recipe": {
+  "toolchain_commit": "0ca386213",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N8753_neg/2026-11-20-lm1909-4543601d.tests.json"
+ },
+ "label": "the predictable token that completes a repeated pattern in code (args[0], args[1], args[2]; '{{ ip' -> '_address'; im(x) after re(x)): an in-context copy in code",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N8753_neg/2026-11-20-lm1909-4543601d.tests.json",
+   "prereg_commit": "0ca386213",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.394,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.579,
+     "peak": "_password"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.22,
+     "peak": "_list"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.003,
+     "peak": "]["
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.002,
+     "peak": "self"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.056,
+     "peak": "mag"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.002,
+     "peak": " max"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.002,
+     "peak": " values"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.003,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.002,
+     "peak": ":\n"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.001,
+     "peak": " sorted"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": " compute"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " is"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.002,
+     "peak": "('"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.002,
+     "peak": " sum"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.03,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0ca386213",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code pattern completion",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: indices in repeated subscripts, '_address' in a templated config, '(x' in erfi(re(x))...im(x). Probe: repeated args[0..2] and '{{ ip_address }}' fired (~0.5); a non-repeated data[3]+data[4] did not.",
+ "selection": "random draw"
+}

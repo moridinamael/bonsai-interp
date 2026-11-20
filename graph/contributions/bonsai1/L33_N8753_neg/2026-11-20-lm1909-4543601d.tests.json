@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-20-lm1909-4543601d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N8753-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:56:01+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N8753",
+   "pole": "-",
+   "label": "the predictable token that completes a repeated pattern in code (args[0], args[1], args[2]; '{{ ip' -> '_address'; im(x) after re(x)): an in-context copy in code",
+   "fire": [
+    "a = float(parts[0])\nb = float(parts[1])\nc = float(parts[2])\nd = float(parts[3])",
+    "db:\n    user: '{{ db_user }}'\n    password: '{{ db_password }}'\n    host: '{{ db_host }}'",
+    "print(len(name_list))\nprint(len(age_list))\nprint(len(city_list))",
+    "row_a = matrix[0][0] + matrix[0][1]\nrow_b = matrix[1][0] + matrix[1][1]",
+    "self.width = width\nself.height = height\nself.depth = depth",
+    "if 'Rmag' in row and is_valid(row['Rmag']):\n    r = row['Rmag']\nif 'Vmag' in row and is_valid(row['Vmag']):\n    v = row['Vmag']",
+    "x_min = min(points_x)\nx_max = max(points_x)\ny_min = min(points_y)\ny_max = max(points_y)",
+    "total = values[0] + values[1] + values[2] + values[3]"
+   ],
+   "quiet": [
+    "a = float(text)\nb = a * 2\nprint(b)",
+    "db:\n    user: admin\n    timeout: 30\n    retries: 5",
+    "print(len(names))\nresult = sorted(names)",
+    "row = compute(matrix)\nlog.info(row)",
+    "self.ready = True\nself.color = 'red'\nreturn self",
+    "if is_valid(row):\n    count += 1\nelse:\n    skip()",
+    "lowest = min(points)\nprint('done')",
+    "total = sum(values) / len(values)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "code pattern completion",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: indices in repeated subscripts, '_address' in a templated config, '(x' in erfi(re(x))...im(x). Probe: repeated args[0..2] and '{{ ip_address }}' fired (~0.5); a non-repeated data[3]+data[4] did not."
+}

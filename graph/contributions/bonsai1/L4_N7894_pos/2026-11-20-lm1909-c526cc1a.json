@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-c526cc1a",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N7894+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:04:27+00:00",
+ "recipe": {
+  "toolchain_commit": "0ca386213",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N7894_pos/2026-11-20-lm1909-c526cc1a.tests.json"
+ },
+ "label": "a rare CJK character split into byte pieces by the tokenizer (閏, 潑, 閲)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N7894_pos/2026-11-20-lm1909-c526cc1a.tests.json",
+   "prereg_commit": "0ca386213",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.618,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.762,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.644,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.661,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.738,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.647,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.664,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.851,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.187,
+     "peak": "十八"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.222,
+     "peak": "他"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.124,
+     "peak": "この"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.184,
+     "peak": "旧"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.219,
+     "peak": "孩子"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": "読"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.239,
+     "peak": "西"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.141,
+     "peak": "她"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.663,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0ca386213",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "rare CJK character bytes",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Card flags broad (5.4% of tokens reach 0.1 of max), gate-closed echo regime 100%, tiny max (0.80); the opposite pole is dense. Top examples are rare CJK characters (潑, 閏, 閲) plus scattered Latin fragments. Low-confidence guess; not probed.",
+ "selection": "random draw"
+}
