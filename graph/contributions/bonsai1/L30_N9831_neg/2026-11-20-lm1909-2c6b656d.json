@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-2c6b656d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N9831-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:45:29+00:00",
+ "recipe": {
+  "toolchain_commit": "706ce2565",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N9831_neg/2026-11-20-lm1909-2c6b656d.tests.json"
+ },
+ "label": "the abbreviation 'US' / 'U.S.' (the United States) as a token",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N9831_neg/2026-11-20-lm1909-2c6b656d.tests.json",
+   "prereg_commit": "706ce2565",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.767,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.447,
+     "peak": " US"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.449,
+     "peak": " US"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.8,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.027,
+     "peak": " US"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.418,
+     "peak": " US"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.627,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.06,
+     "peak": " US"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.069,
+     "peak": " British"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.063,
+     "peak": " Canadian"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.09,
+     "peak": " Japanese"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.041,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.016,
+     "peak": " senators"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.005,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": " as"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.891,
+    "median_fire": 0.448,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "706ce2565",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "US abbreviation",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: top 32 peak on '.S', ' US', 'US', '.' of U.S.; also 'us' in code (usages). Near misses swap in other countries.",
+ "selection": "random draw"
+}

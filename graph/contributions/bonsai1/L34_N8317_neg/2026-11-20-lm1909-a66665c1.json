@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-a66665c1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N8317-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:45:38+00:00",
+ "recipe": {
+  "toolchain_commit": "706ce2565",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N8317_neg/2026-11-20-lm1909-a66665c1.tests.json"
+ },
+ "label": "the last token of an identifier being assigned in Python code (the name left of '=', e.g. 'database_name =')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N8317_neg/2026-11-20-lm1909-a66665c1.tests.json",
+   "prereg_commit": "706ce2565",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.615,
+     "peak": "_name"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.5,
+     "peak": "_line"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.276,
+     "peak": " table"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.642,
+     "peak": "_path"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.546,
+     "peak": "_name"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.51,
+     "peak": "_pattern"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.539,
+     "peak": "_file"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.471,
+     "peak": "_size"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.478,
+     "peak": "(path"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.391,
+     "peak": "(self"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.189,
+     "peak": ".warning"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.196,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.157,
+     "peak": "_connection"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.194,
+     "peak": "(raw"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.196,
+     "peak": "(args"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.35,
+     "peak": "(self"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.938,
+    "median_fire": 0.524,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "706ce2565",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "assigned identifier name",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card flags broad (2.1% >0.1 max). Top examples: _line, _name, _spec, _pattern, charset, _file just before '=' in Python.",
+ "selection": "random draw"
+}
