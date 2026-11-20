@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-b549dc2b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N7609+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T03:06:08+00:00",
+ "recipe": {
+  "toolchain_commit": "7a26f5c37",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N7609_pos/2026-11-20-lm1909-b549dc2b.tests.json"
+ },
+ "label": "the indentation token that opens the body of a Python test function, right after a 'def test_...():' line",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N7609_pos/2026-11-20-lm1909-b549dc2b.tests.json",
+   "prereg_commit": "7a26f5c37",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.121,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.529,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.144,
+     "peak": "\n"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.312,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.405,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.456,
+     "peak": "       "
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.106,
+     "peak": "   "
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.251,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.041,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.038,
+     "peak": "(unique"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.028,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.059,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.12,
+     "peak": "'))\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.041,
+     "peak": " []"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.052,
+     "peak": " None"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.055,
+     "peak": " ="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.281,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "7a26f5c37",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "indent after def test_",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "card: indentation tokens x25 of top 32, all after 'def test_...' lines; near misses are indented code without a def line.",
+ "selection": "random draw"
+}

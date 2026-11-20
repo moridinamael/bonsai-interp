@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-321948ca",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N9430-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:58:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N9430",
+   "pole": "-",
+   "label": "dense / positional: broad multilingual pole; best guess is the '(auto' token in Django DateTimeField(auto_now...)",
+   "fire": [
+    "class Post(models.Model):\n    title = models.CharField(max_length=200)\n    created = models.DateTimeField(auto_now_add=True)",
+    "class Order(models.Model):\n    total = models.DecimalField(max_digits=8, decimal_places=2)\n    updated = models.DateTimeField(auto_now=True)",
+    "class Comment(models.Model):\n    body = models.TextField()\n    posted_at = models.DateTimeField(auto_now_add=True)",
+    "class Event(models.Model):\n    name = models.CharField(max_length=80)\n    modified = models.DateTimeField(auto_now=True)",
+    "class Invoice(models.Model):\n    number = models.IntegerField()\n    issued = models.DateField(auto_now_add=True)",
+    "class Profile(models.Model):\n    bio = models.TextField(blank=True)\n    last_seen = models.DateTimeField(auto_now=True)",
+    "class Ticket(models.Model):\n    subject = models.CharField(max_length=120)\n    opened = models.DateTimeField(auto_now_add=True)",
+    "class Note(models.Model):\n    text = models.TextField()\n    created_on = models.DateTimeField(auto_now_add=True, editable=False)"
+   ],
+   "quiet": [
+    "class Post(models.Model):\n    title = models.CharField(max_length=200)\n    created = models.DateTimeField(default=timezone.now)",
+    "class Order(models.Model):\n    total = models.DecimalField(max_digits=8, decimal_places=2)\n    updated = models.DateTimeField(null=True)",
+    "class Comment(models.Model):\n    body = models.TextField()\n    posted_at = models.DateTimeField(blank=True)",
+    "class Event(models.Model):\n    name = models.CharField(max_length=80)\n    modified = models.DateTimeField(null=True, blank=True)",
+    "class Invoice(models.Model):\n    number = models.IntegerField()\n    issued = models.DateField(default=date.today)",
+    "class Profile(models.Model):\n    bio = models.TextField(blank=True)\n    last_seen = models.DateTimeField(null=True)",
+    "class Ticket(models.Model):\n    subject = models.CharField(max_length=120)\n    opened = models.DateTimeField(default=timezone.now)",
+    "class Note(models.Model):\n    text = models.TextField()\n    created_on = models.DateTimeField(editable=False)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "Django (auto_now",
+ "unit_kind": "dense / positional",
+ "confidence": 0.2,
+ "notes": "card FLAG broad (1.2% of tokens >0.1 max), top examples mostly CJK/Korean/Arabic mid-word pieces; tested the one recurring English trigger."
+}
