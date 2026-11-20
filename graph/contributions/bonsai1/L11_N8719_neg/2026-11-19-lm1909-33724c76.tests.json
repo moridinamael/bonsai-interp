@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-33724c76",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N8719-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:21:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N8719",
+   "pole": "-",
+   "label": "operations that restructure the elements of a structure: inserting/removing a row or element, collapsing nodes, decimating points (insertRow, .collapse(), decimate, \"insert a new element\"); also polyhedron names (octahedron) more weakly",
+   "fire": [
+    "def add_person(self, name):\n    row = self.grid.rowCount()\n    self.grid.insertRow(row)\n    self.grid.setItem(row, 0, QTableWidgetItem(name))",
+    "for node in tree.internal_nodes():\n    if node.support < cutoff:\n        node.edge.collapse()",
+    "def simplify(mesh, ratio=0.5):\n    \"\"\"Decimate the mesh, keeping a fraction of its faces.\"\"\"\n    return mesh.decimate(ratio)",
+    "Given a balanced binary tree, insert a new key into the tree and rebalance if necessary.",
+    "def on_delete(self):\n    row = self.view.currentRow()\n    self.view.removeRow(row)\n    self.update_count()",
+    "def collapse_short_branches(tree, min_length):\n    for branch in tree.branches():\n        if branch.length < min_length:\n            branch.collapse()",
+    "Given a sorted linked list, insert a new node into the list so that it stays sorted.",
+    "    def insert(self, index, value):\n        self.items.insert(index, value)\n        self.size += 1"
+   ],
+   "quiet": [
+    "def greet_person(self, name):\n    text = self.label.text()\n    self.label.setText(text + name)\n    self.label.show()",
+    "for user in site.active_users():\n    if user.age < cutoff:\n        user.send_email()",
+    "def describe(mesh, ratio=0.5):\n    \"\"\"Print the mesh, showing the number of its faces.\"\"\"\n    return mesh.describe(ratio)",
+    "Given a balanced budget, find the largest expense in the year and report it if necessary.",
+    "def on_save(self):\n    path = self.view.currentPath()\n    self.view.saveFile(path)\n    self.update_title()",
+    "def print_long_names(users, min_length):\n    for user in users.values():\n        if len(user.name) > min_length:\n            print(user.name)",
+    "Given a sorted list of prices, compute the mean of the list and print the result.",
+    "    def area(self, width, height):\n        self.value = width * height\n        return self.value"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "insert/collapse/decimate elements",
+ "unit_kind": "sparse feature",
+ "confidence": 0.5,
+ "notes": "Card: peaks 'Row' (insertRow/deleteRow/removeRow), ' collapse', 'imation' (Decimation), ' new' after 'insert a', 'ah' (octahedron). Probes: edge.collapse() 0.76, 'insert a new element' 0.53, insertRow 0.51, octahedrons 0.48, decimate 0.43; a plain print loop 0.01, 'build castles and bridges' 0.00, 'duplicate this box and split one' 0.28."
+}

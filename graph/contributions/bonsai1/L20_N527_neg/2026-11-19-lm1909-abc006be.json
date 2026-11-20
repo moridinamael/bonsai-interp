@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-abc006be",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N527-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:33:58+00:00",
+ "recipe": {
+  "toolchain_commit": "a8ce26e57",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N527_neg/2026-11-19-lm1909-abc006be.tests.json"
+ },
+ "label": "broad, weak pole with no clean trigger; best guess: a non-final word inside a multiword proper name that strongly predicts its continuation (Brigham ·Young· University, Space ·Station·, Thomas ·Jefferson· University)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N527_neg/2026-11-19-lm1909-abc006be.tests.json",
+   "prereg_commit": "a8ce26e57",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.166,
+     "peak": " Philadelphia"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.299,
+     "peak": " Station"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.582,
+     "peak": " Diego"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.389,
+     "peak": " Young"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.761,
+     "peak": " Station"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.137,
+     "peak": " Baltimore"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.499,
+     "peak": " Good"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.315,
+     "peak": " Mellon"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.048,
+     "peak": "Her"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.053,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.1,
+     "peak": " moved"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.081,
+     "peak": " played"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " two"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.103,
+     "peak": " as"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.04,
+     "peak": " first"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.059,
+     "peak": " centre"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.352,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a8ce26e57",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "inside a proper-name phrase (broad)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole broad (4.5% of tokens reach 0.1 of max; max 3.72) and gate-closed-dominated (-g +u leak 92%). Top examples mix name-internal tokens (Greater Good, Brigham Young, San Diego, Space Station, Guillain) with ' spoil', ' shot', '.'. Probes: 'Space Station' 0.54, 'Brigham Young' 0.46, ' spoil' 0.61, plain sentence 0.11. This test records a best guess and will probably fail.",
+ "selection": "random draw"
+}

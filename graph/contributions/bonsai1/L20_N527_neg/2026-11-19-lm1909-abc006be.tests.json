@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-abc006be",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N527-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:21:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N527",
+   "pole": "-",
+   "label": "broad, weak pole with no clean trigger; best guess: a non-final word inside a multiword proper name that strongly predicts its continuation (Brigham ·Young· University, Space ·Station·, Thomas ·Jefferson· University)",
+   "fire": [
+    "Her brother teaches chemistry at Thomas Jefferson University in Philadelphia.",
+    "The cargo ship docked with the International Space Station early on Monday.",
+    "He moved to the University of California-San Diego to finish his thesis.",
+    "The quarterback played for Brigham Young University in the 1980s.",
+    "The supplies reached the International Space Station after a two-day flight.",
+    "She trained as a nurse at Johns Hopkins Hospital in Baltimore.",
+    "The article first appeared in Greater Good Magazine in the autumn.",
+    "The lecture was given at Carnegie Mellon University in Pittsburgh."
+   ],
+   "quiet": [
+    "Her brother teaches chemistry at a small school in the next town.",
+    "The cargo ship docked at the old pier early on Monday.",
+    "He moved to a quiet village by the sea to finish his thesis.",
+    "The quarterback played for his village team in the 1980s.",
+    "The supplies reached the mountain hut after a two-day walk.",
+    "She trained as a nurse at a clinic in her home town.",
+    "The article first appeared in a local paper in the autumn.",
+    "The lecture was given at a library in the city centre."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "inside a proper-name phrase (broad)",
+ "unit_kind": "dense / positional",
+ "confidence": 0.15,
+ "notes": "Card flags the pole broad (4.5% of tokens reach 0.1 of max; max 3.72) and gate-closed-dominated (-g +u leak 92%). Top examples mix name-internal tokens (Greater Good, Brigham Young, San Diego, Space Station, Guillain) with ' spoil', ' shot', '.'. Probes: 'Space Station' 0.54, 'Brigham Young' 0.46, ' spoil' 0.61, plain sentence 0.11. This test records a best guess and will probably fail."
+}

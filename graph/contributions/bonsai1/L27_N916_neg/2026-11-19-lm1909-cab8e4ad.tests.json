@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-cab8e4ad",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L27/N916-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:21:16+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L27/N916",
+   "pole": "-",
+   "label": "the tokens just after a stated capability or enablement (\"can … this way,\", \"allowing for a\", \"we could all\"): the continuation once an ability has been expressed; the + pole is the copula/verb before \"able\"",
+   "fire": [
+    "With a library card, students can borrow laptops this way, free of charge.",
+    "The hinges are removable, allowing for a quick change of doors.",
+    "Any phone with a camera can scan and pay for parking this way, direct from the kerb.",
+    "The software is open source, allowing for a great variety of custom plugins.",
+    "Once the ice melts, you can reach the island at any time, and return the same day.",
+    "The telescope is fully automated, so observers can track a comet remotely, save the images and share them.",
+    "The trays stack neatly, allowing for a compact kitchen and easier storage.",
+    "Using the portal, tenants can report faults online, follow the repair and rate the service."
+   ],
+   "quiet": [
+    "With a library card in her pocket, the student carried the laptops home, free of charge.",
+    "The hinges were rusty, and a quick change of doors cost us the whole weekend.",
+    "A man with a camera stood by the parking meter, direct from the airport, looking lost.",
+    "The software was written in 1998 and shipped with a great variety of custom plugins.",
+    "After the ice melted, the island was green for a time, and the birds came back the same day.",
+    "The telescope was sold in March, and the observers packed the images and left them.",
+    "The trays were stacked neatly in a compact kitchen beside the storage room.",
+    "Near the portal, tenants gathered in the cold, grumbled about the repair and went home."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "after stated ability",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: peaks ',' ' a' ' could' ' you' in can/could/allowing-for contexts; output direction reversed suppresses ' able'/' can'. Probes: 0.83 / 0.61 / 0.30 / 0.30 on ability sentences, 0.25 / 0.18 / 0.01 on the same events told as plain past. Fairly broad pole (0.7% of tokens reach 0.1 of max), so near misses may fire weakly."
+}

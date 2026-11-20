@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-af146c8d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N11807-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:34:19+00:00",
+ "recipe": {
+  "toolchain_commit": "a8ce26e57",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N11807_neg/2026-11-19-lm1909-af146c8d.tests.json"
+ },
+ "label": "clinical case-report / disease-presentation context: the point right after a patient or a (usually tumour) diagnosis has been named and symptoms or findings follow (\"woman who presented with\", \"signs of X include\", the full stop after a case-report title in a reference)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N11807_neg/2026-11-19-lm1909-af146c8d.tests.json",
+   "prereg_commit": "a8ce26e57",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.578,
+     "peak": " progressive"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.804,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.37,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.863,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.509,
+     "peak": " progressive"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.625,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.583,
+     "peak": " as"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.662,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.169,
+     "peak": " group"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.005,
+     "peak": "Typ"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": " describe"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.112,
+     "peak": " J"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.014,
+     "peak": " to"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.02,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.061,
+     "peak": "4"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.604,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "a8ce26e57",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "clinical presentation of a case",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: peaks '.' x13 (after case-report titles in reference lists), ' of', ' with', ' include', ' progressive' in case reports, mostly sarcomas and other tumours. Probes: 'signs of osteosarcoma include swelling and' 0.95, case-report reference 0.80, 'man presented with fever' 0.57, 'case of a woman with a rare tumour' 0.44; hospital wing 0.02, man 'arrived with flowers' 0.17, non-medical reference 0.07, heart-health advice 0.01.",
+ "selection": "random draw"
+}
