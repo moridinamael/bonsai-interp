@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-cef06a84",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N10405+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:12:40+00:00",
+ "recipe": {
+  "toolchain_commit": "152d9c49b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N10405_pos/2026-11-19-lm1909-cef06a84.tests.json"
+ },
+ "label": "a short list of mid-word pieces in particular words: 'zek' in Hezekiah, 'Contents' in setContentsMargins, 'by' in Sotheby, 'bi' in Eusebius (not the same pieces after other prefixes)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N10405_pos/2026-11-19-lm1909-cef06a84.tests.json",
+   "prereg_commit": "152d9c49b",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.896,
+     "peak": "zek"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.171,
+     "peak": "zek"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 1.054,
+     "peak": "zek"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.629,
+     "peak": "Contents"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.533,
+     "peak": "Contents"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.768,
+     "peak": "by"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.726,
+     "peak": "by"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.767,
+     "peak": "bi"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.068,
+     "peak": " Jos"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.044,
+     "peak": " Ezek"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.018,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.042,
+     "peak": ".set"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.087,
+     "peak": "Contents"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.108,
+     "peak": " auction"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.032,
+     "peak": " expert"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.095,
+     "peak": " history"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.768,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "152d9c49b",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "pieces: He|zek, set|Contents, Sothe|by",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "A list, not a pattern: probes fired on He|zek|iah, set|Contents, Sothe|by, Euse|bi and Get|Num (0.8-0.96 of max) but not on get|Contents, set|Num|Rows, Ash|by/Dan|by or Ezek|iel (<0.11), so the piece alone is not enough. I found no shared pattern behind the list.",
+ "selection": "random draw"
+}

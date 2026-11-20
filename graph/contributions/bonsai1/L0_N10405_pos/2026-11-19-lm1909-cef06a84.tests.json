@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-cef06a84",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N10405+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L0/N10405",
+   "pole": "+",
+   "label": "a short list of mid-word pieces in particular words: 'zek' in Hezekiah, 'Contents' in setContentsMargins, 'by' in Sotheby, 'bi' in Eusebius (not the same pieces after other prefixes)",
+   "fire": [
+    "In the days of King Hezekiah the city wall was repaired.",
+    "The prophet Isaiah brought a message to Hezekiah.",
+    "A seal bearing the name of Hezekiah was found in the dig.",
+    "self.grid.setContentsMargins(8, 8, 8, 8)",
+    "panel = QWidget(); box = QHBoxLayout(panel); box.setContentsMargins(2, 2, 2, 2)",
+    "The necklace was auctioned at Sotheby's in Geneva.",
+    "An expert from Sotheby's valued the old clock.",
+    "The church history written by Eusebius survives in full."
+   ],
+   "quiet": [
+    "In the days of King Josiah the city wall was repaired.",
+    "The prophet Ezekiel brought a message to the exiles.",
+    "A seal bearing the name of Ashby was found in the dig.",
+    "self.grid.setSpacing(8)",
+    "panel = QWidget(); data = reader.getContents(path)",
+    "The necklace was auctioned at Christie's in Geneva.",
+    "An expert from Danby valued the old clock.",
+    "The church history written by Josephus survives in full."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "pieces: He|zek, set|Contents, Sothe|by",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "A list, not a pattern: probes fired on He|zek|iah, set|Contents, Sothe|by, Euse|bi and Get|Num (0.8-0.96 of max) but not on get|Contents, set|Num|Rows, Ash|by/Dan|by or Ezek|iel (<0.11), so the piece alone is not enough. I found no shared pattern behind the list."
+}

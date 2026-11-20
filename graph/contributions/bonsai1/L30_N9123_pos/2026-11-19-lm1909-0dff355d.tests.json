@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-0dff355d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N9123+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:59:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L30/N9123",
+   "pole": "+",
+   "label": "an adjective piece in histopathology description: tissue-structure terms such as glomerular, extracellular, occlusive, endothelial in microscopic findings",
+   "fire": [
+    "Microscopy showed thickening of the glomerular basement membrane and mesangial expansion.",
+    "The tumour cells secrete enzymes that break down the extracellular matrix of the surrounding stroma.",
+    "Sections of lung revealed occlusive intimal lesions in the small pulmonary arteries.",
+    "Renal biopsy demonstrated segmental sclerosis with glomerular capillary collapse.",
+    "Deposits of extracellular amyloid material were seen along the vessel walls.",
+    "Histologically, the arterioles displayed medial hypertrophy and endothelial proliferation.",
+    "Light microscopy revealed tubular atrophy, interstitial fibrosis and glomerular hypercellularity.",
+    "The lesion shows degradation of the extracellular collagen network of the alveolar wall."
+   ],
+   "quiet": [
+    "The nurse recorded a high temperature and a persistent dry cough.",
+    "The patient takes two tablets every morning to lower his blood pressure.",
+    "Surgeons set the broken wrist and put the arm in a cast.",
+    "Her doctor recommended more exercise and a diet low in salt.",
+    "The clinic offers flu vaccinations every autumn without an appointment.",
+    "After the operation he stayed in hospital for three nights.",
+    "The pharmacist warned that the syrup can cause drowsiness.",
+    "Visiting hours on the children's ward end at eight in the evening."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "look",
+   "probe"
+  ]
+ },
+ "short": "histopathology tissue adjectives",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card and look mix two things: tissue adjectives in pathology text ('glomer|ular', 'extr|acellular', 'oc|clusive') and NBA game text (' Derek' Fisher, 'on the perimeter'). Probes: glomerular 0.90, extracellular matrix 0.54, 'and endothelial hyperplasia' 0.47, occlusive 0.39, but 'Intracellular calcium' 0.07; Derek Fisher in a Lakers sentence 0.70 while four other NBA sentences stayed under 0.16 and non-NBA names 0.00-0.04. I test the pathology half only; the basketball half is unexplained."
+}
