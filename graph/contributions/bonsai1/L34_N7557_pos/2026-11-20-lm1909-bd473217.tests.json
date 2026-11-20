@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-bd473217",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N7557+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:17:39+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L34/N7557",
+   "pole": "+",
+   "label": "'l'/'el'-starting word pieces inside German (and French) words (eing|el|aden, aus|l|ändisch, ausgel|oggt)",
+   "fire": [
+    "Alle Mitglieder wurden zur Versammlung eingeladen.",
+    "Viele ausländische Gäste besuchten die Messe in Köln.",
+    "Sie wurden automatisch aus dem Portal ausgeloggt.",
+    "Die Zahl der Auslandsstudenten ist stark gestiegen.",
+    "Wir haben die Familie zum Abendessen eingeladen.",
+    "Der Kunde hat sich gestern erfolgreich eingeloggt.",
+    "Die Firma beschäftigt viele ausländische Fachkräfte.",
+    "Die Gäste sind herzlich zur Feier eingeladen worden."
+   ],
+   "quiet": [
+    "Alle Mitglieder kamen pünktlich zur Versammlung.",
+    "Viele internationale Gäste besuchten die Messe in Köln.",
+    "Sie wurden automatisch vom Portal getrennt.",
+    "Die Zahl der Studenten ist stark gestiegen.",
+    "Wir haben die Familie zum Abendessen besucht.",
+    "Der Kunde hat sich gestern erfolgreich angemeldet.",
+    "Die Firma beschäftigt viele erfahrene Fachkräfte.",
+    "Die Gäste sind herzlich zur Feier gekommen."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "German l-pieces",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: + pole peaks on 'el', 'gel', 'l', 'L' pieces in German/French text; the - pole is the same letter piece in English words (lice, lizards, lacerations). So the unit splits 'l' pieces by language. Probe: eingeladen 0.76, ausländischen 0.44, 'Lieber' 0.04, English 'Lizards' 0.03. Near misses are German sentences without such split words."
+}
