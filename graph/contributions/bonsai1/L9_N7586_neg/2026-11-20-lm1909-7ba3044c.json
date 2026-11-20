@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-7ba3044c",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N7586-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T03:06:42+00:00",
+ "recipe": {
+  "toolchain_commit": "6805fa5fe",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N7586_neg/2026-11-20-lm1909-7ba3044c.tests.json"
+ },
+ "label": "dense: weak, broad; top examples are tokens in sports-team names and technical specs (VfB Stuttgart, New York Red Bulls, GLX extensions)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N7586_neg/2026-11-20-lm1909-7ba3044c.tests.json",
+   "prereg_commit": "6805fa5fe",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 3,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.493,
+     "peak": "B"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.354,
+     "peak": " Bulls"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.105,
+     "peak": " driver"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.089,
+     "peak": " nm"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.352,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.258,
+     "peak": " FC"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.111,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.412,
+     "peak": "illa"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.255,
+     "peak": " club"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.36,
+     "peak": " goalkeeper"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.041,
+     "peak": "Only"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.031,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.322,
+     "peak": " rain"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.112,
+     "peak": " rain"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.113,
+     "peak": " card"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.368,
+     "peak": " game"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.609,
+    "median_fire": 0.305,
+    "near_misses_at_0.3": 3
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6805fa5fe",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dense; team names/specs",
+ "unit_kind": "dense / positional",
+ "confidence": 0.1,
+ "notes": "Card flags dense (12.7%) and gate-closed leak regime.",
+ "selection": "random draw"
+}
