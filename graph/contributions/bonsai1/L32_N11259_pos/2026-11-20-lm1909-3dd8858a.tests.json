@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-3dd8858a",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N11259+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:50:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N11259",
+   "pole": "+",
+   "label": "the end of an assignment target right before an augmented operator in code (res |= ..., D[i, j] += ..., w *= ...)",
+   "fire": [
+    "def total(xs):\n    acc = 0\n    for x in xs:\n        acc += x\n    return acc",
+    "def flags(perms):\n    res = 0\n    for p in perms:\n        res |= p.flag\n    return res",
+    "for i in range(n):\n    for j in range(m):\n        D[i + 1, j + 1] += cost[i][j]",
+    "if start:\n    base_weight *= 0.9\nscore = base_weight + bonus",
+    "for k in range(steps):\n    grad = compute(k)\n    params[k] -= lr * grad",
+    "count = 0\nfor line in lines:\n    if line:\n        count += 1",
+    "mask = 0\nif self.track > 0:\n    support |= SUPPORT_PREV\nreturn support",
+    "f = w.dot(x)\nf[0] *= -1\nreturn f"
+   ],
+   "quiet": [
+    "def total(xs):\n    acc = sum(xs)\n    print(acc)\n    return acc",
+    "def flags(perms):\n    res = [p.flag for p in perms]\n    return res",
+    "for i in range(n):\n    for j in range(m):\n        print(D[i + 1, j + 1])",
+    "if start:\n    print(base_weight)\nscore = compute(bonus)",
+    "for k in range(steps):\n    grad = compute(k)\n    log(params[k], grad)",
+    "count = len(lines)\nfor line in lines:\n    if line:\n        print(line)",
+    "mask = 0\nif self.track > 0:\n    return support\nreturn mask",
+    "f = w.dot(x)\nprint(f[0])\nreturn f"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "target before augmented assignment",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "logit effect promotes ' +=', ' |=', ' *=' etc.: the pole predicts an augmented operator next"
+}

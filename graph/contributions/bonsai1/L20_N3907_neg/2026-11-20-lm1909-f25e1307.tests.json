@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-f25e1307",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N3907-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:50:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N3907",
+   "pole": "-",
+   "label": "end of a Python line that saves the original/old value of some state before changing it (origdir = os.getcwd()⏎)",
+   "fire": [
+    "def run_in(workdir):\n    olddir = os.getcwd()\n    os.chdir(workdir)\n    try:\n        build()\n    finally:\n        os.chdir(olddir)",
+    "def test_shuffle(self):\n    orig_state = random.getstate()\n    self.addCleanup(lambda: random.setstate(orig_state))\n    shuffle(items)",
+    "def fit_copy(X):\n    X_orig = X.copy()\n    model.fit(X)\n    assert (X == X_orig).all()",
+    "def resize(self):\n    old_size = self.window.get_size()\n    self.window.set_size(800, 600)\n    return old_size",
+    "def with_env(key, value):\n    saved = os.environ.copy()\n    os.environ[key] = value\n    yield\n    os.environ.clear()",
+    "def toggle(self):\n    prev_flags = self.optionflags\n    self.optionflags = 0\n    self.run()\n    self.optionflags = prev_flags",
+    "def scroll(pane):\n    old_pos = pane.get_position()\n    pane.set_position(0)\n    redraw(pane)\n    pane.set_position(old_pos)",
+    "def tmp_cwd():\n    original = os.getcwd()\n    tempdir = mkdtemp()\n    os.chdir(tempdir)\n    return original"
+   ],
+   "quiet": [
+    "def run_in(workdir):\n    files = os.listdir(workdir)\n    for f in files:\n        build(f)\n    print('done')",
+    "def test_shuffle(self):\n    items = list(range(10))\n    shuffle(items)\n    self.assertEqual(len(items), 10)",
+    "def fit_model(X):\n    model = Model()\n    model.fit(X)\n    return model.score(X)",
+    "def resize(self):\n    self.window.set_size(800, 600)\n    self.window.refresh()\n    return True",
+    "def with_env(key, value):\n    os.environ[key] = value\n    yield\n    del os.environ[key]",
+    "def toggle(self):\n    self.optionflags = 0\n    self.run()\n    self.report()",
+    "def scroll(pane):\n    pane.set_position(0)\n    redraw(pane)\n    pane.focus()",
+    "def tmp_dir():\n    tempdir = mkdtemp()\n    log.info(tempdir)\n    return tempdir"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "saving old state in code",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": ""
+}
