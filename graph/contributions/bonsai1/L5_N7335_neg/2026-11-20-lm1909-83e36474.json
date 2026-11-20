@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-83e36474",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N7335-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:24:33+00:00",
+ "recipe": {
+  "toolchain_commit": "c8b427bdd",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N7335_neg/2026-11-20-lm1909-83e36474.tests.json"
+ },
+ "label": "hex/digit characters inside percent-encoded URL bytes (%E2%80%93) and byte escapes, also phone-number digit groups",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N7335_neg/2026-11-20-lm1909-83e36474.tests.json",
+   "prereg_commit": "c8b427bdd",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.063,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 1.014,
+     "peak": "8"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.752,
+     "peak": "%A"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.815,
+     "peak": "%A"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.626,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.31,
+     "peak": "%"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.617,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 1.034,
+     "peak": "8"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": ".org"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.015,
+     "peak": " biography"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": "Search"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.011,
+     "peak": "(handle"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.012,
+     "peak": " https"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.011,
+     "peak": " our"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.009,
+     "peak": " shared"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.783,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "c8b427bdd",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "digits in %-encoded bytes",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: '8' x10, '6' x7, '9' x7 in %E2%80, \\xb8, phone digits after a space.",
+ "selection": "random draw"
+}

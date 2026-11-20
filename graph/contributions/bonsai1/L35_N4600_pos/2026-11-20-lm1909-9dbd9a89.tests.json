@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-9dbd9a89",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N4600+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:17:01+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L35/N4600",
+   "pole": "+",
+   "label": "end of an operand in code just before a line-ending binary operator (' +' / ' ==' continuing onto the next line), e.g. in multi-line string concatenation",
+   "fire": [
+    "        raise ValueError(\"Bad attribute '\" + node.name +\n                         \"' found in section '\" + section.title +\n                         \"'\")",
+    "    message = \"Could not open the file \" + str(path) +\n              \" for writing; check permissions\"",
+    "        logger.warning(\"Unknown key '\" + entry.key +\n                       \"' in config block '\" + block.label + \"'\")",
+    "    total_energy = kinetic_energy(state.velocities) +\n                   potential_energy(state.positions)",
+    "        self.fail(\"Expected output did not match: \" + repr(result) +\n                  \" versus \" + repr(expected))",
+    "    if (compute_checksum(packet.payload) ==\n            packet.header.checksum):\n        accept(packet)",
+    "    header = \"<tr><td>\" + row.cells[0].text +\n             \"</td><td>\" + row.cells[1].text + \"</td></tr>\"",
+    "        url = base_url + \"/api/v2/users/\" + user.identifier +\n              \"/settings\""
+   ],
+   "quiet": [
+    "        raise ValueError(f\"Bad attribute {node.name} found in section {section.title}\")",
+    "    message = f\"Could not open the file {path} for writing; check permissions\"",
+    "        logger.warning(\"Unknown key in config block, skipping this entry for now\")",
+    "    total_energy = compute_total(state)\n    print(total_energy)",
+    "        self.fail(\"Expected output did not match the reference result\")",
+    "    if packet.is_valid():\n        accept(packet)\n    else:\n        drop(packet)",
+    "    header = build_row(row.cells)\n    table.append(header)",
+    "        url = urljoin(base_url, \"api/v2/users\")\n        response = session.get(url)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "operand before trailing +",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Card: top peaks sit on the last token of an operand followed by ' +\\n' or ' ==\\n'; output suppresses ' +\\n' / ' =\\n'."
+}

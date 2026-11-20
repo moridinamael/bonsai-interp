@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-d22d4ddb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N5204+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:17:01+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N5204",
+   "pole": "+",
+   "label": "a Python code line that is followed by an inline '#' comment explaining it (fires on the code token before the comment)",
+   "fire": [
+    "        elif self.mode == 'R':  # rename\n            mode = 4",
+    "        items = copy(self._cache[key])  # avoid mutating the cache\n        items.sort()",
+    "    THRESHOLDS = {\n        0.01: (0.01, 0.2),  # if eps is larger it diverges\n        0.005: (0.005, 0.1),\n    }",
+    "        count = len(self._buffer)  # number of pending writes\n        if count > limit:",
+    "        elif kind == 'U':  # update\n            op = 2",
+    "    retries = 3  # the network is flaky on CI\n    timeout = 10",
+    "        row = list(self._rows[idx])  # copy for safety\n        row.append(value)",
+    "        if level == 'W':  # warning\n            colour = 'yellow'"
+   ],
+   "quiet": [
+    "        elif self.mode == 'R':\n            mode = 4",
+    "        items = copy(self._cache[key])\n        items.sort()",
+    "    THRESHOLDS = {\n        0.01: (0.01, 0.2),\n        0.005: (0.005, 0.1),\n    }",
+    "        count = len(self._buffer)\n        if count > limit:",
+    "        elif kind == 'U':\n            op = 2",
+    "    retries = 3\n    timeout = 10",
+    "        row = list(self._rows[idx])\n        row.append(value)",
+    "        if level == 'W':\n            colour = 'yellow'"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "code before inline comment",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "Weak and broad (density 0.84% at 0.1 max). Card peaks mixed: prose ' doesn' and ' win', code tokens before '# delete', '# for convenience'. Low-confidence guess."
+}

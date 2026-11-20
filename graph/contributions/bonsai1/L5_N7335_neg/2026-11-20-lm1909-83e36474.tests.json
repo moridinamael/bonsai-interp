@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-83e36474",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N7335-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:17:01+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N7335",
+   "pole": "-",
+   "label": "hex/digit characters inside percent-encoded URL bytes (%E2%80%93) and byte escapes, also phone-number digit groups",
+   "fire": [
+    "See the article at https://en.wikipedia.org/wiki/Bose%E2%80%93Einstein_condensate for details.",
+    "Source: http://www.example.com/news/high-dam-memories%E2%80%A6 retrieved last week.",
+    "The link https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Truffaut points to his biography.",
+    "Search results: http://forum.example.net/search.php?q=%D8%B9%D8%B1%D8%A8%D9%8A&page=2",
+    "payload = b'\\x8f\\x3a\\xb8\\xcd\\xe1\\xbf\\x07\\x9c' # raw bytes",
+    "The page https://de.wikipedia.org/wiki/M%C3%BCnchen describes the city of Munich.",
+    "For an appointment please call our clinic on 0207 637 8862 during office hours.",
+    "Encoded path: /files/report%20%E2%80%9Cfinal%E2%80%9D.pdf on the shared server."
+   ],
+   "quiet": [
+    "See the article at https://en.wikipedia.org/wiki/Bose_Einstein_condensate for details.",
+    "Source: http://www.example.com/news/high-dam-memories retrieved last week.",
+    "The link https://fr.wikipedia.org/wiki/Francois_Truffaut points to his biography.",
+    "Search results: http://forum.example.net/search.php?q=arabic&page=next",
+    "payload = read_bytes(handle) # raw bytes from the device",
+    "The page https://de.wikipedia.org/wiki/Muenchen describes the city of Munich.",
+    "For an appointment please call our clinic during normal office hours.",
+    "Encoded path: /files/report-final.pdf on the shared server."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "digits in %-encoded bytes",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: '8' x10, '6' x7, '9' x7 in %E2%80, \\xb8, phone digits after a space."
+}
