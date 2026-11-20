@@ -1,0 +1,45 @@
+{
+ "contribution": "2026-11-20-lm1909-232d16a8",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N2831+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:27:25+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L25/N2831",
+   "pole": "+",
+   "label": "unclear: a verb or keyword inside a database/code string (frappe.db.sql('''delete ...'''), 'record created')",
+   "fire": [
+    "\t\tfrappe.db.sql(\"\"\"delete from `tabStock Entry` where name=%s\"\"\", name)",
+    "\tfrappe.msgprint(_(\"Payment record {0} created\").format(doc.name))",
+    "\t\tcursor.execute(\"delete from orders where id = %s\", (order_id,))",
+    "\tfrappe.db.sql(\"\"\"update `tabItem` set disabled=1 where name=%s\"\"\", item)",
+    "\t\tlog.info(\"Invoice {0} deleted\".format(inv.name))",
+    "\tdb.execute(\"\"\"insert into users (name) values (%s)\"\"\", (name,))",
+    "\t\tfrappe.throw(_(\"Asset {0} cancelled\").format(asset))",
+    "\tconn.execute(\"\"\"drop table if exists temp_rows\"\"\")"
+   ],
+   "quiet": [
+    "\t\tname = doc.get('name')\n\t\tif not name:\n\t\t\treturn None",
+    "\tfor row in rows:\n\t\ttotal += row.amount",
+    "\t\tvalues = [x * 2 for x in values]",
+    "\tresult = compute(a, b, scale=3)",
+    "\t\tif count > limit:\n\t\t\tbreak",
+    "\tpath = os.path.join(base, filename)",
+    "\t\titems.sort(key=lambda r: r.date)",
+    "\tself.cache = {}\n\tself.size = 0"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "unclear (code verb)",
+ "unit_kind": "unclear",
+ "confidence": 0.2
+}
