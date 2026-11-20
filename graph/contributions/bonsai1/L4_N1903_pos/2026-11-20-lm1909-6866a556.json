@@ -1,0 +1,162 @@
+{
+ "id": "2026-11-20-lm1909-6866a556",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N1903+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:33:06+00:00",
+ "recipe": {
+  "toolchain_commit": "cd771491b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N1903_pos/2026-11-20-lm1909-6866a556.tests.json"
+ },
+ "label": "the word piece after 'fl' in flange/flanger/flan/flank ('ange', 'an', 'anger')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N1903_pos/2026-11-20-lm1909-6866a556.tests.json",
+   "prereg_commit": "cd771491b",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.931,
+     "peak": "ange"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.656,
+     "peak": "anger"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.529,
+     "peak": "an"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.001,
+     "peak": "The"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.955,
+     "peak": "ange"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.924,
+     "peak": "ange"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.013,
+     "peak": "ange"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.487,
+     "peak": "an"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "ed"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.004,
+     "peak": " pedal"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.003,
+     "peak": " cream"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.005,
+     "peak": "jack"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.914,
+    "median_fire": 0.79,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd771491b",
+  "minutes": 65,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fl-ange piece",
+ "unit_kind": "lexical",
+ "confidence": 0.65,
+ "notes": "card: top peaks are 'ange' in fl|ange (x4), 'anger' in fl|anger, 'an' in fl|an, Russian 'ф|лан|ге' (flank). Near misses: 'ange' after other letters (range, orange, change) and other fl- words.",
+ "selection": "random draw",
+ "trigger": {
+  "words": [
+   "flange",
+   "flanges",
+   "flanger",
+   "flan",
+   "flank"
+  ]
+ }
+}

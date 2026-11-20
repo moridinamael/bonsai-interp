@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-e872c57e",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N6983+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:33:19+00:00",
+ "recipe": {
+  "toolchain_commit": "cd771491b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N6983_pos/2026-11-20-lm1909-e872c57e.tests.json"
+ },
+ "label": "the slot just before a chemical compound name in a list or naming phrase (', ' 'or' 'and' 'called' among chemicals); predicts sodium/calcium",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N6983_pos/2026-11-20-lm1909-e872c57e.tests.json",
+   "prereg_commit": "cd771491b",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.546,
+     "peak": " cit"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.311,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.225,
+     "peak": " called"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.317,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.281,
+     "peak": " or"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.409,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.294,
+     "peak": "ann"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.675,
+     "peak": " ammon"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.147,
+     "peak": " spread"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.155,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " contains"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.013,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": " palms"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": " have"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.041,
+     "peak": " sand"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.314,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd771491b",
+  "minutes": 66,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before a chemical name",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card: peaks on 'or', ',', 'called', 'sometimes', '-' immediately before a compound name in ingredient/chemical lists; output promotes sodium, calcium, potassium, ammon, methyl. Probe: chemical list 0.65, 'a gas called' 0.28, food list 0.11. Near misses: same list structure with non-chemical items.",
+ "selection": "random draw"
+}

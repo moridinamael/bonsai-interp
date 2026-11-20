@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-84a66a7b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L29/N4554+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:33:12+00:00",
+ "recipe": {
+  "toolchain_commit": "cd771491b",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L29_N4554_pos/2026-11-20-lm1909-84a66a7b.tests.json"
+ },
+ "label": "attribute/member access in code: the '.attr' or '].' token after an object (tweet.user, obj.id)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L29_N4554_pos/2026-11-20-lm1909-84a66a7b.tests.json",
+   "prereg_commit": "cd771491b",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.131,
+     "peak": ".re"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.259,
+     "peak": "user"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.091,
+     "peak": "]."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.176,
+     "peak": "(msg"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.055,
+     "peak": ".username"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.11,
+     "peak": "']['"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.196,
+     "peak": "]."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.153,
+     "peak": ".user"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": "   "
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.007,
+     "peak": "rows"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.128,
+     "peak": " log"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.19,
+     "peak": " ["
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.033,
+     "peak": "posts"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.094,
+     "peak": "name"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.142,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "cd771491b",
+  "minutes": 65,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code attribute access",
+ "unit_kind": "unclear",
+ "confidence": 0.35,
+ "notes": "card: broad, mixed top examples; strongest is 'tweet.user' in a tweepy script, also '].' before id, 'user.save()', plus chemistry tokens ('known' concentration, 'hydrogen' ions). Probe: tweepy line 0.66, chemistry sentence 0.08. Testing only the code reading; near misses are code without attribute access.",
+ "selection": "random draw"
+}
