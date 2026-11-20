@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-907bd302",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N1910-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:16:33+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L19/N1910",
+   "pole": "-",
+   "label": "a short separator string literal in code (' | ', ' - ') used to join fields, as against code that indexes the same fields",
+   "fire": [
+    "line = ' | '.join(fields)\nprint(line)",
+    "    print('  name:  %s' % ' | '.join(names))",
+    "header = ' - '.join(titles)",
+    "row = ' , '.join(values)\nout.write(row)",
+    "msg = ' :: '.join(parts)",
+    "    label = ' / '.join(tags)",
+    "text = ' | '.join(str(x) for x in items)",
+    "    sep = ' | '\n    print(sep.join(cols))"
+   ],
+   "quiet": [
+    "line = fields[0]\nprint(line)",
+    "    print('  name:  %s' % names[0])",
+    "header = titles[0].upper()",
+    "row = values.copy()\nout.write(row)",
+    "msg = parts.pop()",
+    "    label = tags[-1]",
+    "text = str(items[0])",
+    "    first = cols[0]\n    print(first)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "code separator string",
+ "unit_kind": "unclear",
+ "confidence": 0.15,
+ "notes": "Card top examples mixed ('silicone to thinner', \"' |'\", '\"(\"', ' near'). Probe: ' | '.join 0.24, ratio 'to' 0.06. Best guess only."
+}
