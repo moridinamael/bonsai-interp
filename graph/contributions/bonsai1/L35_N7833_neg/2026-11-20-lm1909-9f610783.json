@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-9f610783",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7833-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T03:11:36+00:00",
+ "recipe": {
+  "toolchain_commit": "6fd2e0e8d",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N7833_neg/2026-11-20-lm1909-9f610783.tests.json"
+ },
+ "label": "word fragment just before a split continuation starting with 'r' (sq|rt, high|rise, f|rappe, v|range)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N7833_neg/2026-11-20-lm1909-9f610783.tests.json",
+   "prereg_commit": "6fd2e0e8d",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.179,
+     "peak": " sq"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.012,
+     "peak": " high"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.158,
+     "peak": " {"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.014,
+     "peak": ".set"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.033,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.385,
+     "peak": "_m"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.005,
+     "peak": " ="
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.114,
+     "peak": " high"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.01,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.181,
+     "peak": " {"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.014,
+     "peak": ".set"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.065,
+     "peak": "('_"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.008,
+     "peak": " ="
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.004,
+     "peak": "She"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.703,
+    "median_fire": 0.074,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "6fd2e0e8d",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "fragment before r-continuation",
+ "unit_kind": "unclear",
+ "confidence": 0.3,
+ "notes": "top examples share a following token starting with r; output direction promotes r-initial tokens on the + side",
+ "selection": "random draw"
+}
