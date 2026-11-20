@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-187c7499",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L14/N4485+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:19:38+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L14/N4485",
+   "pole": "+",
+   "label": "the key variable when iterating key-value pairs in code (for k, v in ...)",
+   "fire": [
+    "    for k, v in kwargs.items():\n        setattr(self, k, v)",
+    "    headers = {k.lower(): v for k, v in raw.items()}",
+    "for k, v in sorted(counts.items()):\n    print(k, v)",
+    "    for key, val in options.items():\n        parser.set(key, val)",
+    "    return dict((k, v) for k, v in pairs if v)",
+    "    for name, value in env.items():\n        os.environ[name] = value",
+    "    for k in params:\n        query.append(k)",
+    "    for field, value in data.items():\n        row[field] = value"
+   ],
+   "quiet": [
+    "    for item in kwargs_list:\n        setattr(self, 'x', item)",
+    "    headers = [h.lower() for h in raw]",
+    "for n in sorted(counts):\n    print(n)",
+    "    for opt in options:\n        parser.add(opt)",
+    "    return list(p for p in pairs if p)",
+    "    for path in env_paths:\n        os.makedirs(path)",
+    "    for i in range(len(params)):\n        query.append(i)",
+    "    for row in data_rows:\n        rows.append(row)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "key in key-value loop",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Probe: 'for k, v' 0.56, 'for i in range' 0.006. Also fired 'top number' (systolic) 0.51, not tested here."
+}
