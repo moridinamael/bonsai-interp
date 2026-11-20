@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-2e07dad1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N4961-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:58:33+00:00",
+ "recipe": {
+  "toolchain_commit": "8d3616719",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L28_N4961_neg/2026-11-20-lm1909-2e07dad1.tests.json"
+ },
+ "label": "the slot right before 'angle': the modifier after 'at' in 'at an odd / a right / a steep ___ angle' (predicts 'angle')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L28_N4961_neg/2026-11-20-lm1909-2e07dad1.tests.json",
+   "prereg_commit": "8d3616719",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 4,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.714,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.915,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.641,
+     "peak": " an"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.641,
+     "peak": " shallow"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.527,
+     "peak": " degree"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.856,
+     "peak": "ty"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.639,
+     "peak": " a"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.4,
+     "peak": " right"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.125,
+     "peak": " on"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.22,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.642,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.347,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.156,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.856,
+     "peak": "ty"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.639,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.096,
+     "peak": " meet"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.781,
+    "median_fire": 0.641,
+    "near_misses_at_0.3": 4
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "8d3616719",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "before 'angle'",
+ "unit_kind": "contextual",
+ "confidence": 0.7,
+ "notes": "Card top examples peak on ' at', ' an', ' odd', ' right' just before 'angle'; output direction (- pole) promotes ' angle'. Probe: 'at an odd angle' 1.0 vs 'at an odd hour' 0.29.",
+ "selection": "random draw"
+}
