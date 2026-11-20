@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-865386cc",
+ "kind": "interpret",
+ "neuron": "bonsai1/L0/N10083+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:50:28+00:00",
+ "recipe": {
+  "toolchain_commit": "5b0333edf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L0_N10083_pos/2026-11-20-lm1909-865386cc.tests.json"
+ },
+ "label": "the Arabic piece 'ار' after 'ه' (هارون, النهار) and the English token ' circulation'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L0_N10083_pos/2026-11-20-lm1909-865386cc.tests.json",
+   "prereg_commit": "5b0333edf",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.973,
+     "peak": "ار"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.913,
+     "peak": "ار"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.617,
+     "peak": "ار"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.69,
+     "peak": "ار"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.828,
+     "peak": " circulation"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.428,
+     "peak": " circulation"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.926,
+     "peak": "ار"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.422,
+     "peak": " circulation"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.092,
+     "peak": " مع"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.285,
+     "peak": "حكم"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.115,
+     "peak": "ائل"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.08,
+     "peak": " ف"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.133,
+     "peak": " every"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.102,
+     "peak": " feet"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.201,
+     "peak": " الملك"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.149,
+     "peak": " year"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.759,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5b0333edf",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Arabic 'ار' piece",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "card: 'ار' x18 in هارون / النهار, ' circulation' x7. Probe: هارون 1.09, النهار 0.59, circulation 0.58, plain Arabic 0.23. Card flags broad (4.1% at 0.1 of max), so Arabic near misses may fire weakly.",
+ "selection": "random draw"
+}

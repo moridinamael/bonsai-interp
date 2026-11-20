@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-afe1d2b5",
+ "kind": "interpret",
+ "neuron": "bonsai1/L25/N8999+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:50:54+00:00",
+ "recipe": {
+  "toolchain_commit": "5b0333edf",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L25_N8999_pos/2026-11-20-lm1909-afe1d2b5.tests.json"
+ },
+ "label": "organ and bone-marrow transplant context: transplant, donor match, transplanted organ",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L25_N8999_pos/2026-11-20-lm1909-afe1d2b5.tests.json",
+   "prereg_commit": "5b0333edf",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.346,
+     "peak": " her"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.308,
+     "peak": " transplant"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.656,
+     "peak": " whose"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.831,
+     "peak": " transplant"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.19,
+     "peak": " an"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.757,
+     "peak": " before"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.589,
+     "peak": " donation"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.219,
+     "peak": " trans"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.267,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.099,
+     "peak": " performed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.031,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.016,
+     "peak": " their"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.126,
+     "peak": " at"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.077,
+     "peak": " leave"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.034,
+     "peak": " hospital"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.136,
+     "peak": " had"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.707,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "5b0333edf",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "organ transplants",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "card: peaks on ' transplant', on 'a' before 'match', 'the number of transplants'; output promotes transplant/survival. Near misses keep the hospital/surgery setting without transplantation.",
+ "selection": "random draw"
+}
