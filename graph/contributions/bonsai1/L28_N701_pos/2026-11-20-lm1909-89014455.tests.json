@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-89014455",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L28/N701+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:42:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L28/N701",
+   "pole": "+",
+   "label": "a preposition after a tally or trend where 'the last / past / first N <periods>' is expected next (over, in, for, during)",
+   "fire": [
+    "Rents in the capital have climbed steadily over the past five years.",
+    "The striker has netted nine goals in his last eleven matches.",
+    "The firm has reported losses for each of the last three quarters.",
+    "Average rainfall has dropped by a third over the last two decades.",
+    "He lost eight pounds in the first four weeks of the diet.",
+    "The club has won three league titles over the past ten seasons.",
+    "Unemployment has fallen in each of the past six months.",
+    "Membership grew by forty percent during the last two years."
+   ],
+   "quiet": [
+    "Rents in the capital are paid on the first day of the month.",
+    "The striker wears the number nine shirt and lives near the stadium.",
+    "The firm moved its headquarters to a tower by the river.",
+    "Average rainfall is highest on the western side of the hills.",
+    "He bought new running shoes and a water bottle for the race.",
+    "The club plays its home games at an old stadium by the sea.",
+    "Unemployment offices open at nine and close at five.",
+    "Membership cards are printed on recycled paper."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "predicts 'the last N'",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "card: ' over' x9, ' in' x8 before 'the past three seasons', 'the first 6 weeks'; output promotes last/first/next. Probe: 'doubled over the past' 0.43; 'goals in' 0.18 whether or not 'the last' followed (causal), so near misses vary the lead-in, not just the next word."
+}
