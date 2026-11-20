@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-7b1f32ad",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N4540+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:59:34+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L24/N4540",
+   "pole": "+",
+   "label": "pipe characters closing cells and rows of wiki-style tables ('|', '||', '|\\n')",
+   "fire": [
+    "|Name||Capital|\n|Norway||Oslo|\n|Sweden||Stockholm|\n",
+    "{| class=\"wikitable\"\n|-\n| Mercury || 0.39 AU\n|-\n| Venus || 0.72 AU\n|}\n",
+    "|Model|Year|Price|\n|Corolla|2015|9,800|\n|Civic|2016|10,500|\n",
+    "|Hex||#336699|\n|RGB||rgb(51, 102, 153)|\n",
+    "|Team|Wins|\n|Ajax|21|\n|PSV|19|\n",
+    "|Patent||Filed||Title|\n|US123||2004||Lamp|\n",
+    "|Station|Opened|\n|Kings Cross|1852|\n|Euston|1837|\n",
+    "|Ingredient||Amount|\n|Flour||200 g|\n|Sugar||50 g|\n"
+   ],
+   "quiet": [
+    "The capital of Norway is Oslo, and the capital of Sweden is Stockholm.",
+    "Mercury orbits at 0.39 AU from the Sun, and Venus at 0.72 AU.",
+    "A 2015 Corolla costs about 9,800, and a 2016 Civic about 10,500.",
+    "The hex code #336699 matches rgb(51, 102, 153) in this palette.",
+    "Ajax finished with 21 wins, two more than PSV with 19.",
+    "Patent US123, filed in 2004, covers a lamp.",
+    "Kings Cross opened in 1852, fifteen years after Euston in 1837.",
+    "The cake needs 200 g of flour and 50 g of sugar."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "wiki table pipes",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probe: pipe tables 0.22-0.44; same content in prose 0.24. Card flags broad (6.7%), so near misses may fire weakly."
+}

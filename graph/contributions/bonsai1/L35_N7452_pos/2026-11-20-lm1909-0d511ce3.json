@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-0d511ce3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N7452+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:09:41+00:00",
+ "recipe": {
+  "toolchain_commit": "ab7082212",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N7452_pos/2026-11-20-lm1909-0d511ce3.tests.json"
+ },
+ "label": "the base-class piece '(models' / '(db' in Python ORM model class definitions (class X(models.Model), class Y(db.Model))",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N7452_pos/2026-11-20-lm1909-0d511ce3.tests.json",
+   "prereg_commit": "ab7082212",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.41,
+     "peak": "(models"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.377,
+     "peak": "(models"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.349,
+     "peak": "(models"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.262,
+     "peak": "(models"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.371,
+     "peak": "(db"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.228,
+     "peak": "(db"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.372,
+     "peak": " on"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.174,
+     "peak": "(models"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.153,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.091,
+     "peak": "Error"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.13,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.194,
+     "peak": "(unittest"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.241,
+     "peak": "@app"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.103,
+     "peak": " utils"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.446,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.11,
+     "peak": " self"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.828,
+    "median_fire": 0.36,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ab7082212",
+  "minutes": 1,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "ORM model base class",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Probe: Django class 0.38, db.Model 0.16, plain class 0.09. Near misses are class/def blocks with non-ORM bases.",
+ "selection": "random draw"
+}
