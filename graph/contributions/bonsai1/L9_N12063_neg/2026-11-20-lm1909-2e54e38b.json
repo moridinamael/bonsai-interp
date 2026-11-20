@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-20-lm1909-2e54e38b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L9/N12063-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:10:39+00:00",
+ "recipe": {
+  "toolchain_commit": "59f279b47",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L9_N12063_neg/2026-11-20-lm1909-2e54e38b.tests.json"
+ },
+ "label": "a number right after a variable where a comparison operator ('<' or '>') has been stripped from code (if(h 30 ...)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L9_N12063_neg/2026-11-20-lm1909-2e54e38b.tests.json",
+   "prereg_commit": "59f279b47",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.33,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.946,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.864,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.152,
+     "peak": " "
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.03,
+     "peak": "6"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.926,
+     "peak": "9"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.936,
+     "peak": "1"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.064,
+     "peak": " age"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.082,
+     "peak": " k"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.125,
+     "peak": " j"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": " >"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.009,
+     "peak": " <"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.009,
+     "peak": "if"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.11,
+     "peak": " m"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.012,
+     "peak": " while"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.014,
+     "peak": " >="
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.895,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "59f279b47",
+  "minutes": 16,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "stripped comparison operator",
+ "unit_kind": "sparse feature",
+ "confidence": 0.45,
+ "notes": "Top example is JavaScript whose '<' signs were lost (i359, if(h 30). Probe: the stripped form fired 1.1 of max, intact code ~0.01.",
+ "selection": "random draw"
+}
