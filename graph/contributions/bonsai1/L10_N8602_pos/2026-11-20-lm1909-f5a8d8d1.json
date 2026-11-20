@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-f5a8d8d1",
+ "kind": "interpret",
+ "neuron": "bonsai1/L10/N8602+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:23:01+00:00",
+ "recipe": {
+  "toolchain_commit": "ee7887cc7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L10_N8602_pos/2026-11-20-lm1909-f5a8d8d1.tests.json"
+ },
+ "label": "hairstyle name pieces (Pom|pad|our, upswept) and cricket batting terms (century, edged)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L10_N8602_pos/2026-11-20-lm1909-f5a8d8d1.tests.json",
+   "prereg_commit": "ee7887cc7",
+   "author": "lm1909",
+   "n_fire": 5,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.864,
+     "peak": "pad"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.645,
+     "peak": "pt"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.785,
+     "peak": "pad"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.878,
+     "peak": "pad"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.177,
+     "peak": " century"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.216,
+     "peak": " slip"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.384,
+     "peak": "pt"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.252,
+     "peak": " century"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.009,
+     "peak": " jacket"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.017,
+     "peak": " an"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": " made"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.321,
+     "peak": " bob"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.002,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.061,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.082,
+     "peak": " lipstick"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": " captain"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.514,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ee7887cc7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "hairstyles / cricket batting",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "card: very sparse; top peaks 'edged' (cricket), 'pad' in Pompadour, 'pt' in Upswept, cricket scores. Probe: pompadour 0.82, cricket century 0.32. A list label: no shared pattern found",
+ "selection": "random draw"
+}

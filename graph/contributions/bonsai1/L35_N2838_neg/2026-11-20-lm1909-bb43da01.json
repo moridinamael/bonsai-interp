@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-bb43da01",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N2838-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:22:09+00:00",
+ "recipe": {
+  "toolchain_commit": "ee7887cc7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N2838_neg/2026-11-20-lm1909-bb43da01.tests.json"
+ },
+ "label": "the token ' G' / 'G' opening an all-caps or split word (G|ONE, G|ROWS, G|EEK)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N2838_neg/2026-11-20-lm1909-bb43da01.tests.json",
+   "prereg_commit": "ee7887cc7",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.001,
+     "peak": " GOOD"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.11,
+     "peak": " GR"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.63,
+     "peak": " G"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.041,
+     "peak": " S"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.025,
+     "peak": " GL"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.395,
+     "peak": " G"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.05,
+     "peak": " sc"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.349,
+     "peak": " G"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.043,
+     "peak": "W"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.111,
+     "peak": " T"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.085,
+     "peak": " S"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.061,
+     "peak": " S"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.067,
+     "peak": " SHE"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.007,
+     "peak": " SERVER"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.05,
+     "peak": " sc"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.059,
+     "peak": " TO"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.555,
+    "median_fire": 0.08,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ee7887cc7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "split-off capital G",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "card: top 32 peak on ' G' x13 and 'G' x10 (GEEK, Grows, GONE) plus Korean verb stems; probe: all-caps G-words fire, an all-caps F-word does not",
+ "selection": "random draw"
+}

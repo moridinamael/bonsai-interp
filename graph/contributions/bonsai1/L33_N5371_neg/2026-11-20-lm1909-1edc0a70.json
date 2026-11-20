@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-1edc0a70",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N5371-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:22:26+00:00",
+ "recipe": {
+  "toolchain_commit": "ee7887cc7",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N5371_neg/2026-11-20-lm1909-1edc0a70.tests.json"
+ },
+ "label": "names of major US cities, esp. the second token of two-word California cities (Los Angeles, San Francisco, Santa Ana) and Houston",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N5371_neg/2026-11-20-lm1909-1edc0a70.tests.json",
+   "prereg_commit": "ee7887cc7",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.094,
+     "peak": " Angeles"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.058,
+     "peak": " near"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.223,
+     "peak": " Santa"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.529,
+     "peak": " Houston"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.065,
+     "peak": " Diego"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.479,
+     "peak": " Angeles"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.111,
+     "peak": " Francisco"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.249,
+     "peak": " Houston"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " wedding"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.008,
+     "peak": " mill"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": " airport"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.004,
+     "peak": " science"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.008,
+     "peak": "The"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.024,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.167,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "ee7887cc7",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "US city names",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "card: top 32 peak on ' Angeles' x5, ' Santa' x3, ' Francisco', ' Houston'",
+ "selection": "random draw"
+}

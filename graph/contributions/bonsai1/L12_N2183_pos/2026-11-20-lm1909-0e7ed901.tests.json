@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-0e7ed901",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L12/N2183+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T01:13:53+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L12/N2183",
+   "pole": "+",
+   "label": "characters inside short quoted codes and hex escapes in code or data (dict keys like 'KW':, \\x6b)",
+   "fire": [
+    "rates = {'FR': 20, 'DE': 19, 'NL': 21, 'SE': 25}\nprint(rates['DE'])",
+    "if msg.kind == 'X':\n    handle_cancel(msg)\nelif msg.kind == 'Z':\n    handle_close(msg)",
+    "payload = b\"\\x1f\\x8b\\x08\\x00\\x4d\\x2a\\x9c\\x5e\"\nsend(payload)",
+    "units = {'KB': 1024, 'MB': 1048576, 'GB': 1073741824}",
+    "lookup = {'AX': 'axe', 'BQ': 'box', 'ZK': 'zinc'}\nname = lookup[code]",
+    "magic = b\"\\x7f\\x45\\x4c\\x46\\x02\\x01\\x01\\x00\"\nassert data[:8] == magic",
+    "grades = {'A': 4, 'B': 3, 'C': 2, 'D': 1}\nscore = grades[letter]",
+    "if op == 'Q':\n    quit()\nelif op == 'W':\n    write()"
+   ],
+   "quiet": [
+    "rates = [20, 19, 21, 25]\nprint(rates[1])",
+    "if msg.kind == cancel:\n    handle_cancel(msg)\nelif msg.kind == close:\n    handle_close(msg)",
+    "payload = [31, 139, 8, 0, 77, 42, 156, 94]\nsend(payload)",
+    "units = [1024, 1048576, 1073741824]",
+    "lookup = [axe, box, zinc]\nname = lookup[index]",
+    "magic = [127, 69, 76, 70, 2, 1, 1, 0]\nassert data[:8] == magic",
+    "grades = [4, 3, 2, 1]\nscore = grades[index]",
+    "if op == quit_op:\n    quit()\nelif op == write_op:\n    write()"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "quoted short codes",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "card: peaks inside hex escape strings and quoted 2-letter codes ('KW':, 'Q'). Probe: quoted country-code dict 0.61, hex bytes 0.24, plain number list 0.05"
+}
