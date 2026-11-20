@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-757b5bc3",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N8872+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T02:07:28+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L20/N8872",
+   "pole": "+",
+   "label": "line boundary between consecutive Python import statements (the newline after 'import X' when another import follows)",
+   "fire": [
+    "# helper script for the billing job\nimport os\nimport sys\nimport json\nimport time\n",
+    "x = 3\n<|endoftext|>import numpy as np\nimport pandas as pd\nimport scipy\n",
+    "#!/usr/bin/env python\nimport argparse\nimport logging\nimport pathlib\n\ndef main():\n",
+    "from setuptools import setup\nimport re\nimport io\nimport codecs\n",
+    "'''Utilities for parsing logs.'''\nimport gzip\nimport csv\nimport collections\n",
+    "__version__ = '0.2'\nimport random\nimport string\nimport hashlib\n",
+    "# tests for the cache layer\nimport unittest\nimport tempfile\nimport shutil\n",
+    "print('done')\n<|endoftext|>import socket\nimport struct\nimport threading\n"
+   ],
+   "quiet": [
+    "# helper script for the billing job\ndef total(xs):\n    return sum(xs)\n\nprint(total([1, 2]))\n",
+    "x = 3\ny = x * 2\nz = y + x\nprint(x, y, z)\n",
+    "#!/usr/bin/env python\ndef main():\n    name = input()\n    print(name.upper())\n",
+    "class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n",
+    "'''Utilities for parsing logs.'''\nLOG_LEVEL = 'info'\nMAX_LINES = 500\nSEPARATOR = '|'\n",
+    "for i in range(10):\n    if i % 2 == 0:\n        print(i)\n    else:\n        continue\n",
+    "# tests for the cache layer\ncache = {}\ncache['a'] = 1\nassert cache['a'] == 1\n",
+    "result = []\nfor word in text.split():\n    result.append(word.lower())\nreturn result\n"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "newline between imports",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card top: newline between 'import jpype' / 'import re', 'import copy' / 'import datetime'; also '..'/'...' run-ons and an initial '.V'. Testing the code-import reading only."
+}
