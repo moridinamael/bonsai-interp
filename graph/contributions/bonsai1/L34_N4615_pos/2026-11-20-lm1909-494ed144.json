@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-494ed144",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N4615+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:41:46+00:00",
+ "recipe": {
+  "toolchain_commit": "b800272a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N4615_pos/2026-11-20-lm1909-494ed144.tests.json"
+ },
+ "label": "short string-literal values inside code (contents of quoted strings in Python/JSON-like code)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N4615_pos/2026-11-20-lm1909-494ed144.tests.json",
+   "prereg_commit": "b800272a1",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.465,
+     "peak": "green"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.619,
+     "peak": " item"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.294,
+     "peak": ".png"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.631,
+     "peak": "w"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.337,
+     "peak": "bird"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.385,
+     "peak": "done"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.201,
+     "peak": "starting"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.305,
+     "peak": ".csv"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.109,
+     "peak": "2"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.096,
+     "peak": "first"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": "("
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.024,
+     "peak": "(mode"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.041,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": ")\n"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": "logger"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.019,
+     "peak": "]\n"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.361,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b800272a1",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "code string values",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: broad (2.1% of tokens reach 0.1 of max); top examples are tokens inside short quoted strings in code ('even more lines', 'blue', 'P', '.png', 'cursor=0'). Logit effect promotes closing quotes. Near misses are the same code with the strings replaced by numbers or names.",
+ "selection": "random draw"
+}

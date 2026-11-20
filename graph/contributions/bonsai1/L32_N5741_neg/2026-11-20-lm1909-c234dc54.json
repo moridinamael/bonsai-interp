@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-c234dc54",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N5741-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:42:30+00:00",
+ "recipe": {
+  "toolchain_commit": "b800272a1",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N5741_neg/2026-11-20-lm1909-c234dc54.tests.json"
+ },
+ "label": "inner subword pieces of transliterated Hebrew (and Indic/Arabic-script) religious terms: Parash|at, mez|uz|ot, ked|ush|at, Devanagari",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N5741_neg/2026-11-20-lm1909-c234dc54.tests.json",
+   "prereg_commit": "b800272a1",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.675,
+     "peak": "ash"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.475,
+     "peak": "ush"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.015,
+     "peak": " the"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.189,
+     "peak": "uz"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.01,
+     "peak": "Every"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.021,
+     "peak": " days"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.012,
+     "peak": "."
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.009,
+     "peak": "ate"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.006,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.016,
+     "peak": " that"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.004,
+     "peak": "After"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "post"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.01,
+     "peak": "Every"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.011,
+     "peak": " India"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " her"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.006,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.82,
+    "median_fire": 0.018,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "b800272a1",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "transliterated religious terms",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: top tokens are mid-word pieces 'ush' (kedushat), 'ash' (Parashat), 'uz' (mezuzot), 'unn' (Sunnah), Devanagari and vocalised Arabic. Probe: Parashat 0.64, mezuzah 0.48, Devanagari 0.68; English 'Sunnah', 'Medina', Greek 'hystera' near 0. Near misses keep the religious topic in plain English words. (The + pole, code identifier pieces like 'dat'|atypes, was not tested.)",
+ "selection": "random draw"
+}
