@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a84971a6",
+ "kind": "interpret",
+ "neuron": "bonsai1/L30/N6478-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:14:23+00:00",
+ "recipe": {
+  "toolchain_commit": "575e0c01e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L30_N6478_neg/2026-11-19-lm1909-a84971a6.tests.json"
+ },
+ "label": "first name of a U.S. legislator right after the title Sen. / Rep. / Senator (strongest for Rob, Bob, Robert, Joe)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L30_N6478_neg/2026-11-19-lm1909-a84971a6.tests.json",
+   "prereg_commit": "575e0c01e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 1,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 1.204,
+     "peak": " Bob"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.937,
+     "peak": " Rob"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.873,
+     "peak": " Robert"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.778,
+     "peak": " Joe"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 1.148,
+     "peak": " Bob"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.468,
+     "peak": " Joe"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 1.338,
+     "peak": " Rob"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.646,
+     "peak": " Robert"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.264,
+     "peak": " Bob"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.158,
+     "peak": " Rob"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.142,
+     "peak": " Robert"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " chef"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.461,
+     "peak": " Bob"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": " Joe"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.003,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " artist"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.905,
+    "near_misses_at_0.3": 1
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "575e0c01e",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "first name after Sen./Rep.",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: ' Robert', ' Rob', ' Joe', ' Bob', ' Mark' after 'Sen.', 'Rep.', 'Senator'. Probes: 'Sen. Rob Portman' 1.36, 'Rep. Bob Goodlatte' 1.00, 'Sen. Robert Menendez' 0.86, 'Senator Joe Manchin' 0.63; 'Sen. Elizabeth Warren' 0.25, 'Sen. John Thune' 0.24, 'My uncle Rob Portman' 0.31, 'actor Robert Redford' 0.11, 'Dr. Robert Smith' 0.08.",
+ "selection": "random draw"
+}

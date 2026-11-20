@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1242a9df",
+ "kind": "interpret",
+ "neuron": "bonsai1/L2/N9067+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:13:43+00:00",
+ "recipe": {
+  "toolchain_commit": "575e0c01e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L2_N9067_pos/2026-11-19-lm1909-1242a9df.tests.json"
+ },
+ "label": "the tokens ' dictated'/' dictate' and ' presence' (dense, gate-closed pole; weak on most other tokens)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L2_N9067_pos/2026-11-19-lm1909-1242a9df.tests.json",
+   "prereg_commit": "575e0c01e",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 2,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.704,
+     "peak": " dictated"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.997,
+     "peak": " dictated"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.825,
+     "peak": " dictate"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.779,
+     "peak": " dictated"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.55,
+     "peak": " presence"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.616,
+     "peak": " presence"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.722,
+     "peak": " presence"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.467,
+     "peak": " presence"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.138,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.262,
+     "peak": " required"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.318,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.222,
+     "peak": " was"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.231,
+     "peak": " hall"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.103,
+     "peak": " Asian"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.182,
+     "peak": " were"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.316,
+     "peak": " sensed"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.713,
+    "near_misses_at_0.3": 2
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "575e0c01e",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "dictate(d) / presence",
+ "unit_kind": "dense / positional",
+ "confidence": 0.4,
+ "notes": "Card flags dense (31% of tokens reach 0.1 of max) and gate-closed (-x- echo 100%); max only 0.33. Top tokens ' dictated', ' presence'. Probes: dictated 0.68, presence 0.77, dictate 0.82; filler sentences 0.20-0.24.",
+ "selection": "random draw"
+}

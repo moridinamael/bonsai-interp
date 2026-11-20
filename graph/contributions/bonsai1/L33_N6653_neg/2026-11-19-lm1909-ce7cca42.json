@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-ce7cca42",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6653-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:15:02+00:00",
+ "recipe": {
+  "toolchain_commit": "575e0c01e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N6653_neg/2026-11-19-lm1909-ce7cca42.tests.json"
+ },
+ "label": "a word piece cut off where the model must guess the rest: ' detr' of 'detractors', and a stray 'l' / 'Al' from a split or fused al-word (a\\lso, UAlbany)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N6653_neg/2026-11-19-lm1909-ce7cca42.tests.json",
+   "prereg_commit": "575e0c01e",
+   "author": "lm1909",
+   "n_fire": 7,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.683,
+     "peak": " detr"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.563,
+     "peak": " detr"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.694,
+     "peak": " detr"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.664,
+     "peak": " detr"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.417,
+     "peak": "Al"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.642,
+     "peak": "l"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.418,
+     "peak": "Al"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.238,
+     "peak": "l"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " bridge"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.001,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.027,
+     "peak": "ars"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " town"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.021,
+     "peak": " summer"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.022,
+     "peak": " and"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.001,
+     "peak": "Two"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.001,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.603,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "575e0c01e",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "detr- / stray al piece",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: ' detr' x4, ' ver' x4, 'l' x3, ' rev' x3, ' al' x2 in garbled or fused words (a\\lso, al llows, UAlbany, retroalimentación). Probes: 'detractors' 0.68 and 0.69, 'UAlbany' 0.92 and 0.40, 'a\\lso' 0.87, 'a\\lready' 0.50, 'al one' 0.43, 'a\\lways' 0.34; 'critics' 0.00, 'Albany' 0.00, 'detrimental' 0.01, 'reversed' 0.00. A list rather than one pattern; ' ver' and ' rev' were not reproduced.",
+ "selection": "random draw"
+}

@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-1125dc13",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N1984+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:15:07+00:00",
+ "recipe": {
+  "toolchain_commit": "575e0c01e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N1984_pos/2026-11-19-lm1909-1125dc13.tests.json"
+ },
+ "label": "preposition in the middle of a capitalised title or event name (Lady with an Ermine, See You at the Pole, Festival of …, Circo de …)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N1984_pos/2026-11-19-lm1909-1125dc13.tests.json",
+   "prereg_commit": "575e0c01e",
+   "author": "lm1909",
+   "n_fire": 3,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.42,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.26,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.697,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.136,
+     "peak": " with"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.035,
+     "peak": " at"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.278,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.328,
+     "peak": " of"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.008,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.144,
+     "peak": " with"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.006,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.019,
+     "peak": " Saturday"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.01,
+     "peak": " shop"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " week"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.008,
+     "peak": " l"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.007,
+     "peak": " of"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.011,
+     "peak": "."
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.883,
+    "median_fire": 0.269,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "575e0c01e",
+  "minutes": 5,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "preposition inside a title",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card: ' for', ' with', ' of', ' de', ' at', ' um' inside names and idioms ('Battle of the Bogside', 'See You At The Pole', 'Festival at Riva', 'Circo de la Pedriza'). Probes are moderate: 'Lady with an Ermine' 0.49, 'um den heißen Brei' 0.40, 'See You at the Pole' 0.37, 'Circo de Gredos' 0.36, 'Madonna of the Meadow' 0.35, 'Festival of Lights' 0.30, 'Race for the Cure' 0.21, 'Battle of the Bulge' 0.18; 'bottle of milk at the store' 0.02, 'keys with a neighbor' 0.05.",
+ "selection": "random draw"
+}

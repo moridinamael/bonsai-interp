@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-08477117",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N4415-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:00:14+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L18/N4415",
+   "pole": "-",
+   "label": "end of a short initialisation line (… = 0, … = '', … = None) inside indented Python code",
+   "fire": [
+    "class Buffer:\n    def __init__(self, limit):\n        self.limit = limit\n        self.bytes_read = 0\n        self.last_line = ''\n        self.handle = None\n        self.chunks = []\n",
+    "def summarize(values):\n    total = 0\n    count = 0\n    label = ''\n    for v in values:\n        total += v\n        count += 1\n    return total, count, label\n",
+    "class Player:\n    def __init__(self, name):\n        self.name = name\n        self.score = 0\n        self.lives = 3\n        self.message = \"\"\n        self.target = None\n",
+    "def parse(lines):\n    depth = 0\n    current = ''\n    result = []\n    for line in lines:\n        depth += 1\n        current = line\n    return result\n",
+    "class Timer:\n    def __init__(self):\n        self.started = 0\n        self.elapsed = 0\n        self.note = ''\n        self.callback = None\n\n    def clear(self):\n        self.elapsed = 0\n",
+    "def longest(words):\n    best = ''\n    size = 0\n    for w in words:\n        if len(w) > size:\n            best = w\n            size = len(w)\n    return best\n",
+    "class Queue:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.head = 0\n        self.tail = 0\n        self.owner = None\n        self.slots = []\n",
+    "def tally(votes):\n    yes = 0\n    no = 0\n    winner = ''\n    for v in votes:\n        if v:\n            yes += 1\n        else:\n            no += 1\n    return yes, no, winner\n"
+   ],
+   "quiet": [
+    "The Buffer class stores a limit, the number of bytes read so far, the last line it saw, a file handle and a list of chunks.",
+    "The summarize function walks through the values, adds each one to a running total, counts them, and returns the total with the count.",
+    "function Player(name) {\n  this.name = name;\n  this.score = 0;\n  this.lives = 3;\n  this.message = \"\";\n  this.target = null;\n}\n",
+    "<ul class=\"menu\">\n  <li><a href=\"/home\">Home</a></li>\n  <li><a href=\"/about\">About</a></li>\n  <li><a href=\"/contact\">Contact</a></li>\n</ul>\n",
+    "The Timer class remembers when it started and how much time has elapsed, keeps a short note, and calls a function when it is cleared.",
+    "SELECT name, score\nFROM players\nWHERE lives > 0\nORDER BY score DESC\nLIMIT 10;\n",
+    "int head = 0;\nint tail = 0;\nchar *owner = NULL;\nfor (int i = 0; i < capacity; i++) {\n  slots[i] = 0;\n}\n",
+    "The tally function counts the yes votes and the no votes one by one and then reports both numbers together with the name of the winner."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "Python init line end",
+ "unit_kind": "unclear",
+ "confidence": 0.25,
+ "notes": "Card: no single token ('\\n', ' percent', '[int', \" ''\\n\", '))\\n'), low max 7.47, mostly Python line ends. Probes are weak: Python blocks with initialisations 0.27-0.35 (peak '0' or '\\n'), a short loop 0.19, JavaScript 0.07, prose with ' percent' 0.02-0.03. Low confidence; recorded as my best guess."
+}
