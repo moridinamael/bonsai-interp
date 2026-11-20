@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-9cd500bb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N6425+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T23:37:04+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L33/N6425",
+   "pole": "+",
+   "label": "a lone ' w'/' W' letter token that begins a word the tokenizer splits (w|oad, W|ren, W|AVEs, w|_namespace)",
+   "fire": [
+    "Medieval dyers grew woad in the fields outside the town to make a deep blue cloth.",
+    "During the war, many young women joined the WAVEs and served in naval offices.",
+    "The tour ended in front of the Wren chapel on the edge of the old campus.",
+    "    w_ns = get_namespace(doc, 'w')\n    paras = doc.findall(w_ns + 'p')",
+    "The farmer pulled up a clump of woad and showed us its yellow flowers.",
+    "Her grandmother had been a WAC clerk before transferring to the WAVEs in 1944.",
+    "Tourists photographed the Wren steeple rising above the rooftops of the City.",
+    "Pictish warriors were said to paint their skin with woad before battle."
+   ],
+   "quiet": [
+    "Medieval dyers grew madder in the fields outside the town to make a deep red cloth.",
+    "During the war, many young women joined the navy and served in coastal offices.",
+    "The tour ended in front of the Gothic chapel on the edge of the old campus.",
+    "    ns = get_namespace(doc, 'x')\n    paras = doc.findall(ns + 'p')",
+    "The farmer pulled up a clump of mustard and showed us its yellow flowers.",
+    "Her grandmother had been an army clerk before transferring to the navy in 1944.",
+    "Tourists photographed the cathedral steeple rising above the rooftops of the City.",
+    "Pictish warriors were said to paint their skin with clay before battle."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "split-word initial w/W",
+ "unit_kind": "lexical",
+ "confidence": 0.45,
+ "notes": "Card: ' w' x14 and ' W' x12 of the top 32, each the first piece of a split word (woad, Wren, WAVEs, w_namespace). Near misses replace the word with one starting with another letter."
+}

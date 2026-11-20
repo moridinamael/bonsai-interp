@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-09eed8ce",
+ "kind": "interpret",
+ "neuron": "bonsai1/L34/N217-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T23:45:01+00:00",
+ "recipe": {
+  "toolchain_commit": "e4852c03f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L34_N217_neg/2026-11-20-lm1909-09eed8ce.tests.json"
+ },
+ "label": "a 'v' token that begins 'vols'/'volumes' (2 v|ols., shadow_v|olumes)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L34_N217_neg/2026-11-20-lm1909-09eed8ce.tests.json",
+   "prereg_commit": "e4852c03f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.804,
+     "peak": " v"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.429,
+     "peak": " v"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.387,
+     "peak": "_v"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.695,
+     "peak": " v"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.663,
+     "peak": " v"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.306,
+     "peak": "_v"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.711,
+     "peak": " v"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.53,
+     "peak": " v"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.142,
+     "peak": "7"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.158,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.192,
+     "peak": "_shadow"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.224,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.033,
+     "peak": "9"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.013,
+     "peak": " snapshots"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.159,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.11,
+     "peak": "9"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.597,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e4852c03f",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "'v' of vols/volumes",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Card: peaks on ' v' in '2 vols.' citations (x7), '_v' in shadow_volumes, '.V', '/v'; the + pole's output suppresses 'volume' tokens, so this is the volume-word unit. Near misses keep bibliographic and code style without vols/volumes.",
+ "selection": "random draw"
+}
