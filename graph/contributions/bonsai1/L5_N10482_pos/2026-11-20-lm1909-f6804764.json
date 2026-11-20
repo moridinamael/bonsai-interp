@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-f6804764",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N10482+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:52:47+00:00",
+ "recipe": {
+  "toolchain_commit": "00796a7d5",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N10482_pos/2026-11-20-lm1909-f6804764.tests.json"
+ },
+ "label": "a comma or ' and'/' but' that joins coordinated items (before the last conjunct)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N10482_pos/2026-11-20-lm1909-f6804764.tests.json",
+   "prereg_commit": "00796a7d5",
+   "author": "lm1909",
+   "n_fire": 0,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.122,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.256,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.061,
+     "peak": " p"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.013,
+     "peak": " long"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.081,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.04,
+     "peak": " fresh"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.098,
+     "peak": " and"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.016,
+     "peak": " it"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.016,
+     "peak": " before"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.021,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.063,
+     "peak": " p"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.007,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.045,
+     "peak": " home"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.073,
+     "peak": " last"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.018,
+     "peak": " for"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.711,
+    "median_fire": 0.071,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "00796a7d5",
+  "minutes": 52,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "coordinating comma / and",
+ "unit_kind": "contextual",
+ "confidence": 0.3,
+ "notes": "Card: ' and' x18, ',' x10, ' but' x3 of the top 32, each joining coordinated phrases (similar, yet different, odours; streets, and upper Broadway). Gate-closed echo dominates (65%) and density is ~1%, so near misses will fire weakly. Near misses keep the topic without coordination.",
+ "selection": "random draw"
+}

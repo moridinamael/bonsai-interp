@@ -1,0 +1,46 @@
+{
+ "contribution": "2026-11-20-lm1909-9f9655fb",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L6/N7596-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:46:59+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L6/N7596",
+   "pole": "-",
+   "label": "the starting value '0' or '1' assigned to an index variable (i = 0 in a for loop, i=1, 2, ..., n)",
+   "fire": [
+    "for (int k = 0; k < rows; k++) {\n    total += data[k];\n}",
+    "Let x_i, i=1, 2, ..., m, be the sample values.",
+    "    i = 0\n    while i < len(items):\n        print(items[i])",
+    "for (var j = 0; j < list.length; j++) {\n  render(list[j]);\n}",
+    "Each node n_i, i=1,2,...,N, holds a copy of the table.",
+    "        for (size_t idx = 0; idx < count; ++idx)\n            buf[idx] = 0;",
+    "    j = 1\n    for line in lines:\n        j += 1",
+    "do i = 1, n\n   x(i) = 0.0\nend do"
+   ],
+   "quiet": [
+    "for (int k = start; k < rows; k++) {\n    total += data[k];\n}",
+    "Let x_k, for every sample k, be the sample values.",
+    "    i = start\n    while i < len(items):\n        print(items[i])",
+    "for (var j = offset; j < list.length; j++) {\n  render(list[j]);\n}",
+    "Each node n_k in the cluster holds a copy of the table.",
+    "        for (size_t idx = first; idx < count; ++idx)\n            buf[idx] = ch;",
+    "    j = len(lines)\n    for line in lines:\n        j -= 1",
+    "do i = lo, hi\n   x(i) = y(i)\nend do"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card"
+  ]
+ },
+ "short": "index start value",
+ "unit_kind": "contextual",
+ "confidence": 0.6,
+ "notes": "Card: '0' x16, '1' x10 of the top 32, all as the value right after an index variable (i=1, 2, ..., n; for (int j = 0; ...; i = 0). Near misses keep the code/maths but give the index another start or put 0/1 elsewhere."
+}
