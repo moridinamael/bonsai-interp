@@ -1,0 +1,152 @@
+{
+ "id": "2026-11-20-lm1909-760462ca",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N6434-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T02:46:45+00:00",
+ "recipe": {
+  "toolchain_commit": "0773d274c",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L1_N6434_neg/2026-11-20-lm1909-760462ca.tests.json"
+ },
+ "label": "the bare token ' Chicago' and other US place names",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L1_N6434_neg/2026-11-20-lm1909-760462ca.tests.json",
+   "prereg_commit": "0773d274c",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.688,
+     "peak": " Chicago"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.784,
+     "peak": " Chicago"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.839,
+     "peak": " Wichita"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.889,
+     "peak": " JFK"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.886,
+     "peak": " Chicago"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.778,
+     "peak": " Wichita"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.851,
+     "peak": " Chicago"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.835,
+     "peak": " Chicago"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.099,
+     "peak": " work"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.095,
+     "peak": " delayed"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.025,
+     "peak": " days"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.216,
+     "peak": "He"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": -0.101,
+     "peak": " downtown"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.013,
+     "peak": "They"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.17,
+     "peak": " hotel"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.125,
+     "peak": " grew"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.837,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "0773d274c",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "US place names",
+ "unit_kind": "lexical",
+ "confidence": 0.25,
+ "notes": "Gate-closed leak regime, tiny max (0.11), broad (2.6%). Early layer: bare token test.",
+ "selection": "random draw"
+}
