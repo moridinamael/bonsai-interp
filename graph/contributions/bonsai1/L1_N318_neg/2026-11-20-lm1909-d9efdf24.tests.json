@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-20-lm1909-d9efdf24",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L1/N318-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-20T00:42:32+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L1/N318",
+   "pole": "-",
+   "label": "a standalone space token before a digit or redirect in code",
+   "fire": [
+    "def reset(self):\n    self.score = 0\n    self.lives = 3\n    return self",
+    "proc = subprocess.run('ls /tmp 2>/dev/null', shell=True)",
+    "for i in range(10):\n    assert 0 <= i\n    total += 1",
+    "    retries = 5\n    timeout = 30\n    delay = 2",
+    "os.system('rm -f cache.db 2>&1 >/dev/null')",
+    "if result == 0:\n    print('ok')\nelse:\n    sys.exit(1)",
+    "    width = 640\n    height = 480",
+    "cmd = \"grep -c error log.txt 2>/dev/null\""
+   ],
+   "quiet": [
+    "def reset(self):\n    self.score = start\n    self.lives = max_lives\n    return self",
+    "proc = subprocess.run(['ls', '/tmp'], capture_output=True)",
+    "for item in items:\n    assert item is not None\n    total += item",
+    "    retries = MAX_RETRIES\n    timeout = DEFAULT_TIMEOUT\n    delay = BASE_DELAY",
+    "os.remove(cache_path)",
+    "if result is None:\n    print('ok')\nelse:\n    sys.exit(code)",
+    "    width = config.width\n    height = config.height",
+    "cmd = ['grep', '-c', 'error', 'log.txt']"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "space before digit",
+ "unit_kind": "unclear",
+ "confidence": 0.2,
+ "notes": "card: ' ' x31 of top 32, in code ('reward = 0', 'assert 0 ==', ' 2>/dev/null'); broad (2.9% at 0.1 of max), max 0.33. Probe: 0.04 or below on short snippets. Expected to fail."
+}
