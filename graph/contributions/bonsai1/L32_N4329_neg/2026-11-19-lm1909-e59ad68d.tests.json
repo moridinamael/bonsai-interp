@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-e59ad68d",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N4329-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:56:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N4329",
+   "pole": "-",
+   "label": "the word piece just before a word-final 's' syllable (-se / -so / -sa / -с) across scripts: UN[IVER]SE, [immer]se, imp[ul]so, п[уль]с",
+   "fire": [
+    "The documentary was called A SHORT HISTORY OF THE UNIVERSE and ran for two hours.",
+    "On holiday she likes to immerse herself in a long novel.",
+    "La nueva ley impulsa la construcción de viviendas en el norte.",
+    "La enfermera le tomó el pulso antes de la operación.",
+    "У спортсмена после бега был очень частый пульс.",
+    "The headline shouted LOST IN THE MULTIVERSE above a blurry photo.",
+    "Tras el colapso del puente, el tráfico se desvió por el pueblo.",
+    "The banner over the stage said A DIVERSE NATION in red letters."
+   ],
+   "quiet": [
+    "The documentary was called A SHORT HISTORY OF THE UNIVERSITY and ran for two hours.",
+    "On holiday she likes to imitate the accents in a long novel.",
+    "La nueva ley permite la construcción de viviendas en el norte.",
+    "La enfermera le tomó la mano antes de la operación.",
+    "У спортсмена после бега был очень усталый вид.",
+    "The headline shouted LOST IN THE MOUNTAINS above a blurry photo.",
+    "Er ist immer pünktlich, und das Essen ist immer warm.",
+    "On an impulse he bought a universal remote and a diving mask."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "piece before word-final -se/-so",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Card: no single token, but every top example is a mid-word piece whose continuation starts with s (the + direction suppresses 'se', 'ser', 'SE', 'so', so the - pole promotes them). Probes: UNIVERSE 0.92, MULTIVERSE 1.11, impulsa/pulso 0.80, пульс 0.86, immerse 0.56; UNIVERSITY 0.03, English 'impulse' 0.01, German 'immer' 0.00. Depends on the tokenizer splitting the word before the s."
+}

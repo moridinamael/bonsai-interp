@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-422ebc31",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N5613+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:56:18+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L4/N5613",
+   "pole": "+",
+   "label": "HTML markup written inside source code: tag names and brackets such as 'span', 'option', 'td', ' <' in an HTML string",
+   "fire": [
+    "row = '<td><span class=\"badge\">New</span></td><td>Open</td>'",
+    "menu = '<select name=\"size\"><option value=\"s\">Small</option></select>'",
+    "out.write('<tr><td>' + name + '</td><td>' + str(total) + '</td></tr>')",
+    "label = mark_safe('<span class=\"star\"></span> <span>' + title + '</span>')",
+    "cells = re.findall('<td class=\"num\">(.*?)</td>', page)",
+    "html += '<option value=\"%s\">%s</option>' % (key, text)",
+    "badge = '<span style=\"color: red\">' + status + '</span>'",
+    "table = '<table><tr><td>Name</td><td>Score</td></tr></table>'"
+   ],
+   "quiet": [
+    "row = ', '.join(['badge', 'New', 'Open'])",
+    "menu = {'name': 'size', 'value': 's', 'text': 'Small'}",
+    "out.write(name + '\\t' + str(total) + '\\n')",
+    "label = title.strip().lower() + ' (starred)'",
+    "cells = re.findall('num=([0-9]+);', page)",
+    "The span of the roof left no option but to add a third beam.",
+    "status = 'red' if failed else 'green'",
+    "The table by the door had a name card and a score sheet on it."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "HTML tags inside code",
+ "unit_kind": "contextual",
+ "confidence": 0.5,
+ "notes": "Card: 'span' x5, 'option' x2, 'td' x2, ' <' x2 in HTML fragments embedded in Python, plus 'Delete' / ' search' / ' error' as UI words in code. Probes: an HTML string with span/td/option 0.62, with div/p/li 0.39, a 'Delete' menu label 0.41; prose using span / option / delete 0.01; plain Python 0.01. The UI-word examples are not covered by this label."
+}

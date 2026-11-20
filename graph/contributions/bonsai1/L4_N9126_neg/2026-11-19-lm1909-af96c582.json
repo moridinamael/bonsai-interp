@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-af96c582",
+ "kind": "interpret",
+ "neuron": "bonsai1/L4/N9126-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:28+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L4_N9126_neg/2026-11-19-lm1909-af96c582.tests.json"
+ },
+ "label": "German word-initial t: the ' T' / ' t' piece (or the 'ät' after it) that starts a German word such as Tageslicht, tätig, türkisch, tanzte",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L4_N9126_neg/2026-11-19-lm1909-af96c582.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.302,
+     "peak": " t"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.666,
+     "peak": " t"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.727,
+     "peak": " t"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.597,
+     "peak": " Tal"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.387,
+     "peak": " trä"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.724,
+     "peak": " tr"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.889,
+     "peak": "ät"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.61,
+     "peak": " T"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.042,
+     "peak": " Ha"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.099,
+     "peak": "est"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.044,
+     "peak": "ag"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.012,
+     "peak": "heit"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.018,
+     "peak": " wears"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.111,
+     "peak": "ten"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.01,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.015,
+     "peak": " Wand"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.638,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "German word-initial T/t",
+ "unit_kind": "lexical",
+ "confidence": 0.7,
+ "notes": "Card: ' T' x12, ' t' x7, 'ät' x4, all in German text. Probes: German sentences with t-initial words 0.81-0.91; a German sentence without them 0.03-0.10; an English sentence with Turkish / tower 0.01. The + pole is German 'Das / der / die', so the neuron works on German word starts.",
+ "selection": "random draw"
+}

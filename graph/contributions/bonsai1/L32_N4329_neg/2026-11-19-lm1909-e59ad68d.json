@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-e59ad68d",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N4329-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:10:27+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L32_N4329_neg/2026-11-19-lm1909-e59ad68d.tests.json"
+ },
+ "label": "the word piece just before a word-final 's' syllable (-se / -so / -sa / -с) across scripts: UN[IVER]SE, [immer]se, imp[ul]so, п[уль]с",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L32_N4329_neg/2026-11-19-lm1909-e59ad68d.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.978,
+     "peak": "IVER"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.602,
+     "peak": " immer"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.826,
+     "peak": "ul"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.889,
+     "peak": " pul"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.725,
+     "peak": "уль"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.988,
+     "peak": "IVER"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.564,
+     "peak": "ap"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.534,
+     "peak": "IVER"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": " hours"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.014,
+     "peak": " im"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.0,
+     "peak": "La"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.029,
+     "peak": " enfer"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.048,
+     "peak": " спорт"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.001,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.023,
+     "peak": "ün"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.008,
+     "peak": " diving"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.775,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "piece before word-final -se/-so",
+ "unit_kind": "sparse feature",
+ "confidence": 0.6,
+ "notes": "Card: no single token, but every top example is a mid-word piece whose continuation starts with s (the + direction suppresses 'se', 'ser', 'SE', 'so', so the - pole promotes them). Probes: UNIVERSE 0.92, MULTIVERSE 1.11, impulsa/pulso 0.80, пульс 0.86, immerse 0.56; UNIVERSITY 0.03, English 'impulse' 0.01, German 'immer' 0.00. Depends on the tokenizer splitting the word before the s.",
+ "selection": "random draw"
+}

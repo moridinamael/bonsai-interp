@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-8f6b8a0f",
+ "kind": "interpret",
+ "neuron": "bonsai1/L20/N8938-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:44+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L20_N8938_neg/2026-11-19-lm1909-8f6b8a0f.tests.json"
+ },
+ "label": "the closing quotation mark (with its comma or period) that ends a cited article title in a bibliography entry ('\"Johnson Gets Assassination Report\".')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L20_N8938_neg/2026-11-19-lm1909-8f6b8a0f.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.231,
+     "peak": "\"."
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.311,
+     "peak": "\","
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.247,
+     "peak": "\"."
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.078,
+     "peak": " for"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.243,
+     "peak": "\","
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.185,
+     "peak": "\"."
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.07,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.161,
+     "peak": "\","
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.082,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.064,
+     "peak": " the"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.077,
+     "peak": "."
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.026,
+     "peak": "Speak"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.053,
+     "peak": " comet"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.048,
+     "peak": " tonight"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " about"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.026,
+     "peak": " the"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.208,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 4,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "end quote of a cited title",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Card flags the pole as broad (1.6% of tokens reach 0.1 of max). Peaks: '\".' x4, '\",' x2, '.\"' x2, and prepositions right after a named event or topic. Probes: two reference entries 0.29 and 0.31 on the closing quote; dialogue quotes 0.03; prose 0.06-0.17. The preposition examples are not covered by this label, and the fire level is close to the 0.20 bar.",
+ "selection": "random draw"
+}

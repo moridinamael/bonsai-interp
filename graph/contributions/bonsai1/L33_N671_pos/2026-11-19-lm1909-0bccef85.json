@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-0bccef85",
+ "kind": "interpret",
+ "neuron": "bonsai1/L33/N671+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:02+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L33_N671_pos/2026-11-19-lm1909-0bccef85.tests.json"
+ },
+ "label": "the width / zero-padding digits right after '%' in a printf-style format string ('%02d', '%03d')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L33_N671_pos/2026-11-19-lm1909-0bccef85.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.173,
+     "peak": "3"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.278,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.521,
+     "peak": "0"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.168,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.164,
+     "peak": " %"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.084,
+     "peak": "4"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.248,
+     "peak": "2"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.199,
+     "peak": "6"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.013,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.107,
+     "peak": " \"%"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.024,
+     "peak": "frame"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.02,
+     "peak": " name"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.005,
+     "peak": " score"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": "5"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.211,
+     "peak": "(\"%"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.022,
+     "peak": " crate"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.906,
+    "median_fire": 0.186,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "printf width digit after %",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Card: peaks on digits, ' %' and '=%'; the code example is '%02d'. Probes: format strings 0.19-0.31; years and counts in prose 0.00-0.04 except '2030 ... 2045' 0.20. Weak and not well pinned down: the top example ('37 genes: 13') is not explained by this label. The - pole is a much stronger digit unit (212°F, 802.11, 1492: the digit before a final 2).",
+ "selection": "random draw"
+}

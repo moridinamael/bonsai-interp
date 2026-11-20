@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-bee57025",
+ "kind": "interpret",
+ "neuron": "bonsai1/L3/N8072-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:11:14+00:00",
+ "recipe": {
+  "toolchain_commit": "f17d14d0f",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L3_N8072_neg/2026-11-19-lm1909-bee57025.tests.json"
+ },
+ "label": "broad early-layer pole (card flags: broad, gate-closed regime 68%); best guess at what drives its top end: a few specific tokens, ' platform' and Korean '크'",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L3_N8072_neg/2026-11-19-lm1909-bee57025.tests.json",
+   "prereg_commit": "f17d14d0f",
+   "author": "lm1909",
+   "n_fire": 4,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.208,
+     "peak": " platform"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.847,
+     "peak": "크"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.309,
+     "peak": " platform"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.722,
+     "peak": "크"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.289,
+     "peak": "Drivers"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.64,
+     "peak": "크"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.113,
+     "peak": " platform"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.119,
+     "peak": " 설정"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.045,
+     "peak": " release"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.096,
+     "peak": "량"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.188,
+     "peak": " per"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.146,
+     "peak": " 함께"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.267,
+     "peak": "Drivers"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.019,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.039,
+     "peak": " support"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.166,
+     "peak": " 설정"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.859,
+    "median_fire": 0.299,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5-2",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "f17d14d0f",
+  "minutes": 3,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "broad; ' platform', '크' tokens",
+ "unit_kind": "dense / positional",
+ "confidence": 0.3,
+ "notes": "Card flags the pole as broad (2.9% of tokens reach 0.1 of max) with the gate-closed regime dominating, and its max is only 0.79. The top examples are scattered tokens ('크' x6, 'ung', ' Spanish', ' platform', 'src'). Probes: '크' 0.83, ' platform' 0.71, '-ung' 0.35, ' Spanish' 0.21, plain English 0.03. The test records a token-level best guess, not a meaning.",
+ "selection": "random draw"
+}
