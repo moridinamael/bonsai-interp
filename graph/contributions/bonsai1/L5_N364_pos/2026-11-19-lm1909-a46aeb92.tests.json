@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-a46aeb92",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N364+",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:48:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L5/N364",
+   "pole": "+",
+   "label": "member access continuing an expression in code: '].' after a subscript, a leading ' .' on a chained-call line, and C++ '::'",
+   "fire": [
+    "    first = rows[0].title\n    print(first)",
+    "    if record[\"email\"].endswith(domain):\n        matches.append(record)",
+    "    std::string label;\n    std::map<int, int> counts;",
+    "    result = db.query(Order)\\\n        .filter(Order.paid == True)\\\n        .all()",
+    "    width = shapes[i].width\n    height = shapes[i].height",
+    "    text = payload['body'].strip()\n    words = text.split()",
+    "    cv::Mat frame;\n    cv::Size size(640, 480);",
+    "    names = (df.dropna()\n               .groupby('city')\n               .sum())"
+   ],
+   "quiet": [
+    "    first = row.title\n    print(first)",
+    "    if email == domain:\n        matches.append(record)",
+    "    string label;\n    int counts = 0;",
+    "    result = query(Order, paid=True)\n    done = True",
+    "    width = shapes[i]\n    height = sizes[i]",
+    "    text = payload['body']\n    words = split(text)",
+    "    Mat frame;\n    int size = 640 * 480;",
+    "    names = sum(groupby(df, 'city'))\n    print(names)"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "'].' / '::' member access",
+ "unit_kind": "lexical",
+ "confidence": 0.6,
+ "notes": "Peak tokens of the top 32: '].' x17, ' .' x5, '::' x4, '\"].' x2, ' ).' x2. Probes: 'std::' / 'cv::' 1.04, leading '.filter' chain 0.48, '[\"title\"].' 0.46, '[0].' 0.31; plain 'user.name' 0.01, subscripts without access 0.01, prose '[3].' 0.01."
+}

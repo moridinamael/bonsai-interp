@@ -1,0 +1,47 @@
+{
+ "contribution": "2026-11-19-lm1909-3eeb35d7",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L32/N6012-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T16:48:45+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L32/N6012",
+   "pole": "-",
+   "label": "the last character before a closing bracket in a list of entries: final year digit of a parenthesised year in a reference list, or an index/suffix before ')' or ']' in code",
+   "fire": [
+    "- Jan Gonda (1975), Vedic Literature, Harrassowitz, pages 12-20\n- Ainslie Embree (1988), Sources of Indian Tradition, Columbia",
+    "3 Peter Brown, The World of Late Antiquity (London: Thames, 1971), 88.\n4 Averil Cameron, The Later Roman Empire (London: Fontana, 1993), 2:14.",
+    "- Mary Beard (2007), The Roman Triumph, Harvard, pages 101-110\n- Keith Hopkins (1978), Conquerors and Slaves, Cambridge",
+    "7 John Bright, A History of Israel (Philadelphia: Westminster, 1959), 211.\n8 Gerhard von Rad, Genesis (London: SCM, 1961), 1:45.",
+    "- Romila Thapar (1966), A History of India, Penguin, pages 30-41\n- Burton Stein (1998), A History of India, Blackwell",
+    "12 Owen Chadwick, The Reformation (London: Penguin, 1964), 97.\n13 Roland Bainton, Here I Stand (Nashville: Abingdon, 1950), 3:60.",
+    "- Hans Kung (1984), Eternal Life, Collins, pages 70-75\n- Karl Rahner (1978), Foundations of Christian Faith, Seabury",
+    "5 Steven Runciman, A History of the Crusades (Cambridge: CUP, 1951), 140.\n6 Jonathan Riley-Smith, The Crusades (London: Athlone, 1987), 2:8."
+   ],
+   "quiet": [
+    "- Jan Gonda, Vedic Literature, Harrassowitz, pages 12-20\n- Ainslie Embree, Sources of Indian Tradition, Columbia",
+    "3 Peter Brown, The World of Late Antiquity, Thames, 1971, page 88.\n4 Averil Cameron, The Later Roman Empire, Fontana, 1993, volume 2.",
+    "- Mary Beard, The Roman Triumph, Harvard, pages 101-110\n- Keith Hopkins, Conquerors and Slaves, Cambridge",
+    "7 John Bright, A History of Israel, Westminster, 1959, page 211.\n8 Gerhard von Rad, Genesis, SCM, 1961, volume 1.",
+    "- Romila Thapar, A History of India, Penguin, pages 30-41\n- Burton Stein, A History of India, Blackwell",
+    "12 Owen Chadwick, The Reformation, Penguin, 1964, page 97.\n13 Roland Bainton, Here I Stand, Abingdon, 1950, volume 3.",
+    "- Hans Kung, Eternal Life, Collins, pages 70-75\n- Karl Rahner, Foundations of Christian Faith, Seabury",
+    "5 Steven Runciman, A History of the Crusades, CUP, 1951, page 140.\n6 Jonathan Riley-Smith, The Crusades, Athlone, 1987, volume 2."
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe"
+  ]
+ },
+ "short": "last token before close bracket",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Top examples: '[datetime_idx]', 'len(events_c)', 'src[8][i]', '195(5),', '(197(5))'. Probes: two-entry reference lists with '(2002)' / '1956)' 0.39-0.44; a single citation line 0.01; short code snippets 0.01-0.17. Fire items are therefore multi-line reference lists; code is left out of the fire set because short snippets did not fire."
+}

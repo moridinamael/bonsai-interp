@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-19-lm1909-a608b1c3",
+ "kind": "interpret",
+ "neuron": "bonsai1/L5/N3995+",
+ "contributor": "lm1909",
+ "created": "2026-11-19T16:59:46+00:00",
+ "recipe": {
+  "toolchain_commit": "e5fffd799",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L5_N3995_pos/2026-11-19-lm1909-a608b1c3.tests.json"
+ },
+ "label": "the token ' return' opening a return statement in code, strongest after a blank line at the end of a function body",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L5_N3995_pos/2026-11-19-lm1909-a608b1c3.tests.json",
+   "prereg_commit": "e5fffd799",
+   "author": "lm1909",
+   "n_fire": 1,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.29,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.176,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.261,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.295,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.259,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.208,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.32,
+     "peak": " return"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.213,
+     "peak": " return"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.089,
+     "peak": " print"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.123,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.04,
+     "peak": "(settings"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.11,
+     "peak": " body"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.155,
+     "peak": " self"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.222,
+     "peak": " yield"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.089,
+     "peak": " raise"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.025,
+     "peak": " list"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.953,
+    "median_fire": 0.26,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "e5fffd799",
+  "minutes": 2,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "' return' in code",
+ "unit_kind": "lexical",
+ "confidence": 0.5,
+ "notes": "Peak tokens of the top 32: ' return' x25, ' Returns' x7. Probes: return after a blank line in a longer function 0.30 and 0.24, in short snippets 0.08-0.11; 'return' in prose 0.02; same code ending in print 0.03. Fire items are multi-line functions.",
+ "selection": "random draw"
+}
