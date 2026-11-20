@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-47398182",
+ "kind": "interpret",
+ "neuron": "bonsai1/L35/N3769-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:26:59+00:00",
+ "recipe": {
+  "toolchain_commit": "341ad1418",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L35_N3769_neg/2026-11-20-lm1909-47398182.tests.json"
+ },
+ "label": "the space-prefixed first piece of a word in Korean or spaced Japanese text (byte-fragment tokens after a space)",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L35_N3769_neg/2026-11-20-lm1909-47398182.tests.json",
+   "prereg_commit": "341ad1418",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.003,
+     "peak": "강"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.169,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.02,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.32,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.061,
+     "peak": "�"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.038,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.393,
+     "peak": " �"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.092,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.001,
+     "peak": "汉"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": -0.033,
+     "peak": "的作品"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": -0.002,
+     "peak": "产品"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.064,
+     "peak": "天"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.001,
+     "peak": "准备"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": -0.031,
+     "peak": "散步"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.09,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": -0.017,
+     "peak": "咖啡"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "failed",
+   "stats": {
+    "auroc": 0.875,
+    "median_fire": 0.076,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "341ad1418",
+  "minutes": 60,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "space-initial CJK word piece",
+ "unit_kind": "contextual",
+ "confidence": 0.45,
+ "notes": "Top 32 are ' \\ufffd' byte-fragment tokens after a space in Korean/Japanese (' サ', ' 투스', ' 워'). Probe: Korean 0.45-0.84, spaced Japanese 0.77, Chinese without spaces -0.01. Near misses are unspaced Chinese/Japanese text.",
+ "selection": "random draw"
+}

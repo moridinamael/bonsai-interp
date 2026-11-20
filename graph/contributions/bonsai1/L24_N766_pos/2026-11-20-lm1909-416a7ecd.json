@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-416a7ecd",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N766+",
+ "contributor": "lm1909",
+ "created": "2026-11-20T00:26:27+00:00",
+ "recipe": {
+  "toolchain_commit": "341ad1418",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N766_pos/2026-11-20-lm1909-416a7ecd.tests.json"
+ },
+ "label": "the event that triggers a later action: a Qt signal name before .connect (clicked, timeout, currentIndexChanged), also 'dry out' before watering",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N766_pos/2026-11-20-lm1909-416a7ecd.tests.json",
+   "prereg_commit": "341ad1418",
+   "author": "lm1909",
+   "n_fire": 8,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.553,
+     "peak": ".clicked"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.744,
+     "peak": ".timeout"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.524,
+     "peak": "IndexChanged"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.877,
+     "peak": "ed"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.702,
+     "peak": "Changed"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.753,
+     "peak": "Changed"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.52,
+     "peak": "Changed"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.614,
+     "peak": "Changed"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.12,
+     "peak": "Button"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.082,
+     "peak": ")"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.014,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.046,
+     "peak": " action"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.052,
+     "peak": "Edit"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.034,
+     "peak": "0"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.004,
+     "peak": "       "
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.076,
+     "peak": ".setChecked"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.658,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "341ad1418",
+  "minutes": 60,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "triggering event (Qt signal)",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Top: item.triggered.connect, currentIndexChanged.connect, timer.timeout.connect, clicked(), 'soil to dry out before'. Logit effect: + promotes then/followed, suppresses until/once; - pole fires on 'Return to classes only after', 'Don't go back home until'. Probe: signals 0.44-0.80; setText/addItem 0.04.",
+ "selection": "random draw"
+}
