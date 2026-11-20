@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-20-lm1909-541eb292",
+ "kind": "interpret",
+ "neuron": "bonsai1/L18/N7214-",
+ "contributor": "lm1909",
+ "created": "2026-11-20T01:01:00+00:00",
+ "recipe": {
+  "toolchain_commit": "19a60c232",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L18_N7214_neg/2026-11-20-lm1909-541eb292.tests.json"
+ },
+ "label": "a negating or limiting word that denies an amount or difference ('no damage', 'not as painful', 'cannot sense any')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L18_N7214_neg/2026-11-20-lm1909-541eb292.tests.json",
+   "prereg_commit": "19a60c232",
+   "author": "lm1909",
+   "n_fire": 2,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.534,
+     "peak": " damage"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.29,
+     "peak": " change"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.352,
+     "peak": " serious"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.177,
+     "peak": " groups"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.277,
+     "peak": " pain"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.125,
+     "peak": " loud"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.098,
+     "peak": " change"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.148,
+     "peak": " any"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.028,
+     "peak": " heavy"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.025,
+     "peak": " in"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.087,
+     "peak": " usually"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.063,
+     "peak": " groups"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.02,
+     "peak": " sharp"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.037,
+     "peak": " one"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.038,
+     "peak": " a"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.02,
+     "peak": " coloured"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 1.0,
+    "median_fire": 0.227,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code opus-5.5",
+  "screens": [
+   "card",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "19a60c232",
+  "minutes": 28,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "negated amount/difference",
+ "unit_kind": "contextual",
+ "confidence": 0.35,
+ "notes": "Probe: 'caused no damage' 0.46, 'not as painful' 0.36, 'cannot sense any difference' 0.31; plain lists 0.03. The + pole promotes 'only', 'least', 'mainly'.",
+ "selection": "random draw"
+}
