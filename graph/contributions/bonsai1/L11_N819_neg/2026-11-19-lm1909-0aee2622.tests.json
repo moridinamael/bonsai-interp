@@ -1,0 +1,48 @@
+{
+ "contribution": "2026-11-19-lm1909-0aee2622",
+ "contributor": "lm1909",
+ "kind": "interpret",
+ "neuron": "bonsai1/L11/N819-",
+ "protocol": "quick-8+8@3",
+ "written": "2026-11-19T17:13:29+00:00",
+ "selection": "random draw",
+ "neighbours": [
+  {
+   "unit": "L11/N819",
+   "pole": "-",
+   "label": "a stray space before a line break or punctuation: the tokens ' \\n' (trailing space at the end of a code line) and ' .'; the same line without the stray space is quiet",
+   "fire": [
+    "def main(): \n    run()",
+    "for item in rows: \n    print(item)",
+    "names = [ \n    'alpha',\n    'beta']",
+    "    try: \n        load(path)",
+    "while True: \n    step()",
+    "config = { \n    'debug': True}",
+    "    else: \n        retry()",
+    "class Parser(object): \n    pass"
+   ],
+   "quiet": [
+    "def main():\n    run()",
+    "for item in rows:\n    print(item)",
+    "names = [\n    'alpha',\n    'beta']",
+    "    try:\n        load(path)",
+    "while True:\n    step()",
+    "config = {\n    'debug': True}",
+    "    else:\n        retry()",
+    "class Parser(object):\n    pass"
+   ]
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "probe",
+   "look"
+  ]
+ },
+ "short": "trailing space before newline",
+ "unit_kind": "lexical",
+ "confidence": 0.55,
+ "notes": "Card: ' \\n' x12, ' .' x4, ' \\r\\n' x2; gate-closed regime 90% (flagged), low max 5.16. Probes: trailing-space code lines 0.22-0.50, ' .' 0.15, same lines without the space 0.04."
+}

@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-108c28a0",
+ "kind": "interpret",
+ "neuron": "bonsai1/L24/N9216-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:47+00:00",
+ "recipe": {
+  "toolchain_commit": "da74f485e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L24_N9216_neg/2026-11-19-lm1909-108c28a0.tests.json"
+ },
+ "label": "Korean obligation ending '-야' in '-아/어야 하다' ('must / have to': 끝내야 합니다, 바꿔야 할), also prohibitive ' 말고'; Korean sentences without obligation stay quiet",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L24_N9216_neg/2026-11-19-lm1909-108c28a0.tests.json",
+   "prereg_commit": "da74f485e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.367,
+     "peak": "야"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.56,
+     "peak": "야"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.379,
+     "peak": "야"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.053,
+     "peak": "야"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.555,
+     "peak": "야"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.374,
+     "peak": "어야"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.19,
+     "peak": "어야"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.463,
+     "peak": "야"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.018,
+     "peak": "학생"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.031,
+     "peak": "칙"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.01,
+     "peak": "리는"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.013,
+     "peak": " �"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.016,
+     "peak": "정"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.03,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.019,
+     "peak": "�"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.127,
+     "peak": "나"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.377,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "da74f485e",
+  "minutes": 10,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "Korean -야 하다 (must)",
+ "unit_kind": "contextual",
+ "confidence": 0.55,
+ "notes": "Card: '야' x10, '해야' x2, Japanese わ(ないと). Probes: 끝내야 합니다 0.58, 되야 될텐데 0.31, 말고 0.30, 해야 한다 0.13, plain Korean 0.01, Japanese obligation 0.00-0.09, English 'must' 0.02.",
+ "selection": "random draw"
+}

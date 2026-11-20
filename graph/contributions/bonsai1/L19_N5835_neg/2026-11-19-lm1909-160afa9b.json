@@ -1,0 +1,154 @@
+{
+ "id": "2026-11-19-lm1909-160afa9b",
+ "kind": "interpret",
+ "neuron": "bonsai1/L19/N5835-",
+ "contributor": "lm1909",
+ "created": "2026-11-19T17:36:03+00:00",
+ "recipe": {
+  "toolchain_commit": "da74f485e",
+  "command": "python -m bonsai_interp.graph.play run graph/contributions/bonsai1/L19_N5835_neg/2026-11-19-lm1909-160afa9b.tests.json"
+ },
+ "label": "the subject/verb opening a reason clause right after 'since' or 'because' in explanatory or technical text ('… since we are …', 'because events are …')",
+ "tests": [
+  {
+   "protocol": "quick-8+8@3",
+   "tests_file": "graph/contributions/bonsai1/L19_N5835_neg/2026-11-19-lm1909-160afa9b.tests.json",
+   "prereg_commit": "da74f485e",
+   "author": "lm1909",
+   "n_fire": 6,
+   "n_false_pos": 0,
+   "n_written": [
+    8,
+    8
+   ],
+   "per_sentence": [
+    {
+     "set": "fire",
+     "i": 0,
+     "act": 0.38,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 1,
+     "act": 0.36,
+     "peak": "'re"
+    },
+    {
+     "set": "fire",
+     "i": 2,
+     "act": 0.412,
+     "peak": " since"
+    },
+    {
+     "set": "fire",
+     "i": 3,
+     "act": 0.389,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 4,
+     "act": 0.428,
+     "peak": "'re"
+    },
+    {
+     "set": "fire",
+     "i": 5,
+     "act": 0.224,
+     "peak": " is"
+    },
+    {
+     "set": "fire",
+     "i": 6,
+     "act": 0.305,
+     "peak": " are"
+    },
+    {
+     "set": "fire",
+     "i": 7,
+     "act": 0.259,
+     "peak": "'re"
+    },
+    {
+     "set": "quiet",
+     "i": 0,
+     "act": 0.227,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 1,
+     "act": 0.043,
+     "peak": " will"
+    },
+    {
+     "set": "quiet",
+     "i": 2,
+     "act": 0.08,
+     "peak": " valid"
+    },
+    {
+     "set": "quiet",
+     "i": 3,
+     "act": 0.022,
+     "peak": " be"
+    },
+    {
+     "set": "quiet",
+     "i": 4,
+     "act": 0.088,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 5,
+     "act": 0.014,
+     "peak": " warm"
+    },
+    {
+     "set": "quiet",
+     "i": 6,
+     "act": 0.036,
+     "peak": " for"
+    },
+    {
+     "set": "quiet",
+     "i": 7,
+     "act": 0.142,
+     "peak": " for"
+    }
+   ],
+   "probed_before": {
+    "fire": 0,
+    "quiet": 0,
+    "source": "this checkout's .probe-log, before the pre-registration commit"
+   },
+   "outcome": "held",
+   "stats": {
+    "auroc": 0.984,
+    "median_fire": 0.37,
+    "near_misses_at_0.3": 0
+   }
+  }
+ ],
+ "methods": {
+  "agent": "claude-code claude-fable-5",
+  "screens": [
+   "card",
+   "look",
+   "probe",
+   "quick-test"
+  ],
+  "detected": [],
+  "toolchain_commit": "da74f485e",
+  "minutes": 9,
+  "batch_size": 16,
+  "dtype": "float16"
+ },
+ "short": "start of a since/because clause",
+ "unit_kind": "contextual",
+ "confidence": 0.4,
+ "notes": "Probes: 'since we are trying' 0.39, 'Since we're dealing' 0.32, 'since config is valid' 0.32, 'because events are' 0.16; without the clause 0.01-0.19. Weak pole in short text, may miss the 0.20 median.",
+ "selection": "random draw"
+}
